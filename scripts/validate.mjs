@@ -8,7 +8,7 @@ const failures = [];
 const assert = (condition, message) => { if (!condition) failures.push(message); };
 
 const sandbox = { window: {} };
-for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js"]) {
+for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js"]) {
   vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }
 
@@ -35,6 +35,17 @@ for (const problem of PROBLEMS) {
   assert(problem.solvedWhen?.length > 20, `${problem.id}: missing resolution criterion`);
   assert(problem.whyOpenEn?.length > 20, `${problem.id}: missing English rationale`);
   assert(problem.solvedWhenEn?.length > 20, `${problem.id}: missing English resolution criterion`);
+  assert(problem.overview?.length >= problem.whyOpen.length * 3, `${problem.id}: Korean overview must be at least 3x the prior rationale`);
+  assert(problem.overviewEn?.length >= problem.whyOpenEn.length * 3, `${problem.id}: English overview must be at least 3x the prior rationale`);
+  assert(problem.importantAttempts?.length === 3, `${problem.id}: requires exactly 3 established approaches`);
+  assert(problem.recentAttempts?.length === 3, `${problem.id}: requires exactly 3 current directions`);
+  for (const attempt of [...problem.importantAttempts, ...problem.recentAttempts]) {
+    assert(attempt.title?.length > 5 && attempt.titleEn?.length > 5, `${problem.id}: attempt requires a bilingual title`);
+    assert(attempt.description?.length > 80 && attempt.descriptionEn?.length > 100, `${problem.id}: attempt explanation is too short`);
+    assert(Boolean(sources[attempt.sourceId]), `${problem.id}: attempt has unknown source ${attempt.sourceId}`);
+    assert(problem.sourceIds.includes(attempt.sourceId), `${problem.id}: attempt source must be linked to the problem`);
+  }
+  assert(/^\d{4}-\d{2}-\d{2}$/.test(problem.researchContextReviewedOn), `${problem.id}: missing research context review date`);
   assert(Array.isArray(problem.themes), `${problem.id}: themes must be an array`);
   assert(Array.isArray(problem.prizeIds), `${problem.id}: prizeIds must be an array`);
   for (const prizeId of problem.prizeIds) assert(Boolean(prizes[prizeId]), `${problem.id}: unknown prize ${prizeId}`);
@@ -84,7 +95,7 @@ assert(PROBLEMS.filter(item => item.nature !== "boundary").every(item => item.im
 
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const css = fs.readFileSync(path.join(root, "styles.css"), "utf8");
-for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "app.js", "assets/mark.svg", "assets/og-744.png"]) {
+for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "app.js", "assets/mark.svg", "assets/og-744.png"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing asset ${asset}`);
   assert(html.includes(asset), `index.html does not reference ${asset}`);
 }

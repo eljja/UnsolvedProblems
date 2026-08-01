@@ -43,7 +43,8 @@
       criterionOne: "학술기관의 명명된 대표 난제", criterionTwo: "최신 연구 로드맵에서 반복되는 우선과제", criterionThree: "여러 연구축 또는 사회에 큰 파급력이 있는 지속적 프런티어", criterionFour: "공식 상금·연구경진이 명시한 검증 가능한 목표",
       methodNote: "중요도는 명명된 난제, 로드맵의 명시적 우선순위와 예상 파급력을 바탕으로 한 편집적 판단입니다. 상금은 문제의 중요도나 해결 가능성을 보증하지 않으며, 총상금은 한 문제의 단독 지급액과 다를 수 있습니다. 검토일은 2026년 8월 1일입니다.",
       footerTagline: "모르는 것의 목록이 아니라, 알아내기 위한 지도.", sourceContribution: "소스 및 기여", classificationPrinciples: "분류 원칙", allProblems: "전체 난제", closeDetails: "상세 보기 닫기",
-      whyOpen: "왜 아직 열려 있는가", solvedWhen: "무엇을 해결로 볼 것인가", classification: "분류 해석", prizeInformation: "상금·도전 정보", prizeConditions: "지급·참가 조건", officialRules: "공식 규정", relatedSources: "관련 로드맵·상금 주관기관",
+      overviewTitle: "문제 맥락과 핵심 병목", whyOpen: "왜 아직 열려 있는가", solvedWhen: "무엇을 해결로 볼 것인가", classification: "분류 해석", prizeInformation: "상금·도전 정보", prizeConditions: "지급·참가 조건", officialRules: "공식 규정", relatedSources: "관련 로드맵·상금 주관기관",
+      importantAttempts: "대표적 해결 시도 3개", importantAttemptsNote: "오랫동안 축적된 핵심 연구 프로그램입니다. 개별 논문 3편의 순위가 아닙니다.", recentAttempts: "최근 연구 흐름 3개", recentAttemptsNote: "2023–2026년 공식 로드맵과 연구 프로그램에서 반복되는 방향입니다.", attemptSource: "연결 근거", researchReviewed: "연구 맥락 검토",
       mapGroup: "분야별 난제 수", mapDistribution: "분포", searchPrefix: "검색", items: "항목", remaining: "개 남음", loadMore: "더 보기",
       fullCatalog: "전체 카탈로그", selectToFilter: "색 구간을 선택하면 바로 필터링됩니다.", selectedConditions: "조건에서", problemWord: "난제",
       problemDescription: "문제입니다."
@@ -81,7 +82,8 @@
       criterionOne: "Named major problems from scholarly institutions", criterionTwo: "Priorities recurring in current research roadmaps", criterionThree: "Durable frontiers with broad scientific or societal leverage", criterionFour: "Verifiable goals defined by official prizes and research competitions",
       methodNote: "Importance is an editorial judgment based on named-problem status, explicit roadmap priority, and expected leverage. A prize does not guarantee importance or solvability, and a total purse may differ from the amount paid for one problem. Reviewed 1 August 2026.",
       footerTagline: "Not just a list of unknowns—a map for finding out.", sourceContribution: "Source and contribute", classificationPrinciples: "Classification principles", allProblems: "All problems", closeDetails: "Close details",
-      whyOpen: "Why it remains open", solvedWhen: "What would count as a solution", classification: "How it is classified", prizeInformation: "Prize and challenge information", prizeConditions: "Award and entry conditions", officialRules: "Official rules", relatedSources: "Related roadmaps and prize organizers",
+      overviewTitle: "Problem context and central bottleneck", whyOpen: "Why it remains open", solvedWhen: "What would count as a solution", classification: "How it is classified", prizeInformation: "Prize and challenge information", prizeConditions: "Award and entry conditions", officialRules: "Official rules", relatedSources: "Related roadmaps and prize organizers",
+      importantAttempts: "3 established research approaches", importantAttemptsNote: "Long-running research programs, not a ranking of three individual papers.", recentAttempts: "3 current research directions", recentAttemptsNote: "Directions recurring in official roadmaps and programs during 2023–2026.", attemptSource: "Linked evidence", researchReviewed: "Research context reviewed",
       mapGroup: "Problem counts by discipline", mapDistribution: "distribution", searchPrefix: "Search", items: "items", remaining: "remaining", loadMore: "Load more",
       fullCatalog: "Full catalog", selectToFilter: "Select a color segment to filter immediately.", selectedConditions: "under", problemWord: "problems",
       problemDescription: "problem."
@@ -244,6 +246,7 @@
     if (state.query) {
       const haystack = normalize([
         problem.question, problem.questionEn, problem.subfield, problem.subfieldEn,
+        problem.overview, problem.overviewEn,
         meta.disciplines[problem.discipline].label, meta.disciplines[problem.discipline].labelEn,
         meta.importance[problem.importance].label, meta.importance[problem.importance].labelEn,
         meta.approaches[problem.approach].label, meta.approaches[problem.approach].labelEn,
@@ -253,7 +256,9 @@
           const prize = prizes[prizeId];
           return prize ? [prize.title, prize.titleEn, prize.organization, prize.organizationEn, prize.amount, prize.amountEn] : [];
         }),
-        ...(problem.themes || []).flatMap(key => [meta.themes[key]?.label, meta.themes[key]?.labelEn])
+        ...(problem.themes || []).flatMap(key => [meta.themes[key]?.label, meta.themes[key]?.labelEn]),
+        ...(problem.importantAttempts || []).flatMap(item => [item.title, item.titleEn, item.description, item.descriptionEn]),
+        ...(problem.recentAttempts || []).flatMap(item => [item.title, item.titleEn, item.description, item.descriptionEn])
       ].filter(Boolean).join(" "));
       if (!haystack.includes(normalize(state.query))) return false;
     }
@@ -468,6 +473,21 @@
     });
   }
 
+  function renderAttemptCards(attempts) {
+    return `<div class="attempt-list">${attempts.map((attempt, index) => {
+      const source = sources[attempt.sourceId];
+      return `<article class="attempt-card">
+        <div class="attempt-card-top">
+          <span class="attempt-number">${String(index + 1).padStart(2, "0")}</span>
+          <span class="attempt-period">${escapeHTML(localized(attempt, "period"))}</span>
+        </div>
+        <h4>${escapeHTML(localized(attempt, "title"))}</h4>
+        <p>${escapeHTML(localized(attempt, "description"))}</p>
+        ${source ? `<a class="attempt-source" href="${source.url}" target="_blank" rel="noreferrer"><span>${escapeHTML(t("attemptSource"))}</span>${escapeHTML(source.title)} ↗</a>` : ""}
+      </article>`;
+    }).join("")}</div>`;
+  }
+
   function openDialog(id) {
     const problem = problems.find(item => item.id === id);
     if (!problem) return;
@@ -488,8 +508,27 @@
           ${themeTags.map(item => `<span class="meta-pill theme">#${escapeHTML(label(item))}</span>`).join("")}
         </div>
         <h2 id="dialog-title">${escapeHTML(question(problem))}</h2>
-        <section class="dialog-section"><h3>${escapeHTML(t("whyOpen"))}</h3><p>${escapeHTML(whyOpen(problem))}</p></section>
-        <section class="dialog-section"><h3>${escapeHTML(t("solvedWhen"))}</h3><p>${escapeHTML(solvedWhen(problem))}</p></section>
+        <section class="dialog-section research-overview">
+          <h3>${escapeHTML(t("overviewTitle"))}</h3>
+          <p>${escapeHTML(localized(problem, "overview"))}</p>
+          <span class="research-reviewed">${escapeHTML(t("researchReviewed"))} · ${escapeHTML(problem.researchContextReviewedOn || problem.reviewedOn)}</span>
+        </section>
+        <div class="resolution-grid">
+          <section class="dialog-section"><h3>${escapeHTML(t("whyOpen"))}</h3><p>${escapeHTML(whyOpen(problem))}</p></section>
+          <section class="dialog-section"><h3>${escapeHTML(t("solvedWhen"))}</h3><p>${escapeHTML(solvedWhen(problem))}</p></section>
+        </div>
+        <div class="research-columns">
+          <section class="dialog-section attempt-group established-attempts">
+            <h3>${escapeHTML(t("importantAttempts"))}</h3>
+            <p class="attempt-note">${escapeHTML(t("importantAttemptsNote"))}</p>
+            ${renderAttemptCards(problem.importantAttempts || [])}
+          </section>
+          <section class="dialog-section attempt-group recent-attempts">
+            <h3>${escapeHTML(t("recentAttempts"))}</h3>
+            <p class="attempt-note">${escapeHTML(t("recentAttemptsNote"))}</p>
+            ${renderAttemptCards(problem.recentAttempts || [])}
+          </section>
+        </div>
         <section class="dialog-section"><h3>${escapeHTML(t("classification"))}</h3><p>${escapeHTML(description(importance))} ${escapeHTML(description(meta.approaches[problem.approach]))} ${escapeHTML(description(meta.natures[problem.nature]))} ${escapeHTML(description(meta.feasibility[problem.feasibility]))}</p></section>
         ${linkedPrizes.length ? `<section class="dialog-section"><h3>${escapeHTML(t("prizeInformation"))}</h3><div class="prize-list">
           ${linkedPrizes.map(prize => `<article class="prize-entry" style="--prize-color:${meta.prizeStatuses[prize.status].color}">
