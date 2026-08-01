@@ -9,8 +9,8 @@
   <meta property="og:title" content="Unsolved Problems — 미해결 문제 지도">
   <meta property="og:description" content="13개 학문 분야의 난제를 이론·실험·공학·가능성 경계와 횡단 주제로 교차 탐색합니다.">
   <meta property="og:url" content="https://eljja.github.io/UnsolvedProblems/">
-  <meta property="og:image" content="https://eljja.github.io/UnsolvedProblems/assets/og.png">
-  <meta property="og:image:alt" content="Unsolved Problems — 555 questions across 13 disciplines">
+  <meta property="og:image" content="https://eljja.github.io/UnsolvedProblems/assets/og-738.png">
+  <meta property="og:image:alt" content="Unsolved Problems — 738 research questions across 13 disciplines">
   <meta name="twitter:card" content="summary_large_image">
   <title>Unsolved Problems — 미해결 문제 지도</title>
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
@@ -18,6 +18,7 @@
   <script defer src="data.js"></script>
   <script defer src="expansion-data.js"></script>
   <script defer src="translations.js"></script>
+  <script defer src="priority-data.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
@@ -54,8 +55,8 @@
       </div>
       <figure class="hero-poster" id="hero-poster">
         <img
-          src="assets/og.png"
-          alt="13개 학문 분야와 555개 난제를 표현한 Unsolved Problems 연구 지도"
+          src="assets/og-738.png"
+          alt="13개 학문 분야와 738개 연구 질문을 표현한 Unsolved Problems 연구 지도"
           data-i18n-alt="heroPosterAlt"
           width="1728"
           height="912"
@@ -69,6 +70,7 @@
       <div><strong id="total-count">—</strong><span data-i18n="statItems">수록 항목</span></div>
       <div><strong id="discipline-count">—</strong><span data-i18n="statDisciplines">대분야</span></div>
       <div><strong id="subfield-count">—</strong><span data-i18n="statSubfields">세부분야</span></div>
+      <div><strong id="priority-count">—</strong><span data-i18n="statPriorities">핵심·우선과제</span></div>
       <div><strong id="source-count">—</strong><span data-i18n="statSources">주요 출처</span></div>
     </section>
 
@@ -78,7 +80,7 @@
           <p class="eyebrow">LANDSCAPE</p>
           <h2 id="map-title" data-i18n="mapTitle">미해결 문제의 지형</h2>
         </div>
-        <p data-i18n="mapDescription">막대 하나가 한 분야의 수록 범위입니다. 선택하면 아래 카탈로그가 같은 조건으로 좁혀집니다.</p>
+        <p data-i18n="mapDescription">막대는 근거를 확인해 수록한 질문의 범위이며 분야의 중요도 순위가 아닙니다. 선택하면 아래 카탈로그가 같은 조건으로 좁혀집니다.</p>
       </div>
       <div class="map-toolbar">
         <span data-i18n="barColorBy">막대 색상 기준</span>
@@ -86,6 +88,7 @@
           <button type="button" data-lens="nature" aria-pressed="true" data-i18n="nature">문제 성격</button>
           <button type="button" data-lens="approach" aria-pressed="false" data-i18n="approach">해결 방식</button>
           <button type="button" data-lens="feasibility" aria-pressed="false" data-i18n="feasibility">가능성</button>
+          <button type="button" data-lens="importance" aria-pressed="false" data-i18n="importance">중요도</button>
         </div>
       </div>
       <div class="map-legend" id="map-legend" aria-label="막대 색상 범례"></div>
@@ -97,7 +100,7 @@
       <div class="section-heading">
         <div>
           <p class="eyebrow">FIVE AXES</p>
-          <h2 id="taxonomy-title" data-i18n="taxonomyTitle">난제를 보는 다섯 개의 축</h2>
+          <h2 id="taxonomy-title" data-i18n="taxonomyTitle">난제를 보는 여섯 개의 축</h2>
         </div>
         <p data-i18n="taxonomyDescription">각 축은 서로 독립적입니다. 한 문제를 학문 분야, 해결 방식, 문제 성격, 가능성 경계와 횡단 주제로 함께 볼 수 있습니다.</p>
       </div>
@@ -127,6 +130,11 @@
           <h3 data-i18n="axisTheme">횡단 주제</h3>
           <p data-i18n="axisThemeText">에너지, 우주, 양자, 기후, AI, 지속가능성, 건강, 안전·보안으로 학문 간 연결을 찾습니다.</p>
         </article>
+        <article>
+          <span class="axis-number">06</span>
+          <h3 data-i18n="axisImportance">선정 중요도</h3>
+          <p data-i18n="axisImportanceText">핵심 난제, 로드맵 우선과제, 주요 프런티어와 불가능 경계를 근거 수준에 따라 구분합니다.</p>
+        </article>
       </div>
       <aside class="boundary-note">
         <span data-i18n="importantDistinction">중요한 구분</span>
@@ -151,6 +159,10 @@
         <label>
           <span data-i18n="discipline">학문 분야</span>
           <select id="discipline-filter"><option value="all" data-i18n="allDisciplines">모든 분야</option></select>
+        </label>
+        <label>
+          <span data-i18n="importance">중요도</span>
+          <select id="importance-filter"><option value="all" data-i18n="allImportance">모든 중요도</option></select>
         </label>
         <label>
           <span data-i18n="approach">해결 방식</span>
@@ -188,6 +200,17 @@
         </div>
         <p data-i18n="sourcesDescription">고정된 ‘공식 난제 목록’이 아니라 연구기관 로드맵, 학술 프로그램과 주요 보고서를 교차해 만든 살아 있는 분류입니다.</p>
       </div>
+      <aside class="curation-note">
+        <div>
+          <strong data-i18n="noQuotaTitle">수량 목표 없음</strong>
+          <p data-i18n="noQuotaText">분야별·세부분야별 개수를 맞추지 않습니다. 권위 있는 목록과 로드맵을 기준으로 중요 질문이 확인될 때만 포함합니다.</p>
+        </div>
+        <ul>
+          <li data-i18n="criterionOne">학술기관의 명명된 대표 난제</li>
+          <li data-i18n="criterionTwo">최신 연구 로드맵에서 반복되는 우선과제</li>
+          <li data-i18n="criterionThree">여러 연구축 또는 사회에 큰 파급력이 있는 지속적 프런티어</li>
+        </ul>
+      </aside>
       <div class="source-groups" id="source-groups"></div>
       <p class="method-note" data-i18n="methodNote">분류는 연구 우선순위를 설명하기 위한 편집적 판단입니다. ‘현재 기술로 불가능’은 미래에도 불가능하다는 뜻이 아니며, ‘이론적 불가능’은 적용한 이론의 전제가 바뀌면 재검토될 수 있습니다.</p>
     </section>

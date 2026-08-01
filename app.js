@@ -16,27 +16,30 @@
       navMap: "지도", navTaxonomy: "분류법", navCatalog: "난제", navSources: "출처",
       heroTitle: "인류가 아직 모르는 것을<br><em>분류하고 탐색하다.</em>",
       heroLede: "수학에서 사회 복잡계까지. 난제를 학문명만으로 나열하지 않고, 무엇이 부족한지—이론, 실험, 측정, 확장, 혹은 법칙이 정한 경계인지—여러 축으로 함께 봅니다.",
-      heroPosterAlt: "13개 학문 분야와 555개 난제를 표현한 Unsolved Problems 연구 지도",
+      heroPosterAlt: "13개 학문 분야와 738개 연구 질문을 표현한 Unsolved Problems 연구 지도",
       exploreProblems: "난제 탐색", viewTaxonomy: "분류 기준 보기",
       orbitMath: "수학", orbitLife: "생명", orbitEarth: "지구", orbitTech: "기술", orbitSociety: "사회",
-      catalogSummary: "카탈로그 요약", statItems: "수록 항목", statDisciplines: "대분야", statSubfields: "세부분야", statSources: "주요 출처",
-      mapTitle: "미해결 문제의 지형", mapDescription: "막대 하나가 한 분야의 수록 범위입니다. 선택하면 아래 카탈로그가 같은 조건으로 좁혀집니다.",
-      barColorBy: "막대 색상 기준", barColorGroup: "막대 색상 분류 기준", nature: "문제 성격", approach: "해결 방식", feasibility: "가능성",
+      catalogSummary: "카탈로그 요약", statItems: "수록 항목", statDisciplines: "대분야", statSubfields: "세부분야", statPriorities: "핵심·우선과제", statSources: "주요 출처",
+      mapTitle: "미해결 문제의 지형", mapDescription: "막대는 근거를 확인해 수록한 질문의 범위이며 분야의 중요도 순위가 아닙니다. 선택하면 아래 카탈로그가 같은 조건으로 좁혀집니다.",
+      barColorBy: "막대 색상 기준", barColorGroup: "막대 색상 분류 기준", nature: "문제 성격", approach: "해결 방식", feasibility: "가능성", importance: "중요도",
       barLegend: "막대 색상 범례",
-      taxonomyTitle: "난제를 보는 다섯 개의 축", taxonomyDescription: "각 축은 서로 독립적입니다. 한 문제를 학문 분야, 해결 방식, 문제 성격, 가능성 경계와 횡단 주제로 함께 볼 수 있습니다.",
+      taxonomyTitle: "난제를 보는 여섯 개의 축", taxonomyDescription: "각 축은 서로 독립적입니다. 한 문제를 학문 분야, 중요도, 해결 방식, 문제 성격, 가능성 경계와 횡단 주제로 함께 볼 수 있습니다.",
       axisDiscipline: "학문 분야", axisDisciplineText: "자연과학·수학·공학·의학·인지·사회과학의 13개 대분야와 각 세부분야",
       axisApproach: "필요한 해결 방식", axisApproachText: "이론 중심, 실험 중심, 이론+실험, 공학·시스템으로 구분합니다.",
       axisNature: "문제 성격", axisNatureText: "근본 원리, 예측·모델, 관측·계측, 확장·재현, 설계·시스템, 불가능 경계로 나눕니다.",
       axisFeasibility: "가능성의 경계", axisFeasibilityText: "열린 문제, 현재 기술로 불가능, 현실적 한계, 이론적 불가능을 분리합니다.",
       axisTheme: "횡단 주제", axisThemeText: "에너지, 우주, 양자, 기후, AI, 지속가능성, 건강, 안전·보안으로 학문 간 연결을 찾습니다.",
+      axisImportance: "선정 중요도", axisImportanceText: "핵심 난제, 로드맵 우선과제, 주요 프런티어와 불가능 경계를 근거 수준에 따라 구분합니다.",
       importantDistinction: "중요한 구분",
       boundaryNote: "<strong>난제</strong>는 답을 아직 모르는 질문입니다. <strong>이론적 불가능</strong>은 현재 확립된 법칙·정리 또는 소실된 정보가 금지한 경계입니다. 둘을 함께 보여주되 같은 의미로 취급하지 않습니다.",
-      catalogTitle: "난제 카탈로그", search: "검색", searchPlaceholder: "암흑물질, 생명 기원, 초전도체…", discipline: "학문 분야",
+      catalogTitle: "난제 카탈로그", search: "검색", searchPlaceholder: "암흑물질, 생명 기원, 초전도체…", discipline: "학문 분야", allImportance: "모든 중요도",
       allDisciplines: "모든 분야", allApproaches: "모든 방식", allNatures: "모든 성격", allFeasibility: "모든 가능성",
       theme: "횡단 주제", allThemes: "모든 주제", reset: "초기화", activeFilters: "적용된 필터",
       emptyTitle: "조건에 맞는 항목이 없습니다.", emptyText: "검색어를 줄이거나 필터를 초기화해 보세요.",
-      sourcesTitle: "범위와 출처", sourcesDescription: "고정된 ‘공식 난제 목록’이 아니라 연구기관 로드맵, 학술 프로그램과 주요 보고서를 교차해 만든 살아 있는 분류입니다.",
-      methodNote: "분류는 연구 우선순위를 설명하기 위한 편집적 판단입니다. ‘현재 기술로 불가능’은 미래에도 불가능하다는 뜻이 아니며, ‘이론적 불가능’은 적용한 이론의 전제가 바뀌면 재검토될 수 있습니다.",
+      sourcesTitle: "범위와 출처", sourcesDescription: "분야별 숫자를 맞추지 않고, 연구기관 로드맵·학술 프로그램·대표 난제 목록에서 중요 질문을 근거 중심으로 선별한 살아 있는 분류입니다.",
+      noQuotaTitle: "수량 목표 없음", noQuotaText: "분야별·세부분야별 개수를 맞추지 않습니다. 권위 있는 목록과 로드맵을 기준으로 중요 질문이 확인될 때만 포함합니다.",
+      criterionOne: "학술기관의 명명된 대표 난제", criterionTwo: "최신 연구 로드맵에서 반복되는 우선과제", criterionThree: "여러 연구축 또는 사회에 큰 파급력이 있는 지속적 프런티어",
+      methodNote: "중요도는 명명된 난제, 로드맵의 명시적 우선순위와 예상 파급력을 바탕으로 한 편집적 판단입니다. 검토일은 2026년 8월 1일이며, 새 근거와 연구 진전에 따라 계속 갱신합니다.",
       footerTagline: "모르는 것의 목록이 아니라, 알아내기 위한 지도.", sourceContribution: "소스 및 기여", classificationPrinciples: "분류 원칙", allProblems: "전체 난제", closeDetails: "상세 보기 닫기",
       whyOpen: "왜 아직 열려 있는가", solvedWhen: "무엇을 해결로 볼 것인가", classification: "분류 해석", relatedSources: "관련 로드맵·기관",
       mapGroup: "분야별 난제 수", mapDistribution: "분포", searchPrefix: "검색", items: "항목", remaining: "개 남음", loadMore: "더 보기",
@@ -50,27 +53,30 @@
       navMap: "Map", navTaxonomy: "Taxonomy", navCatalog: "Problems", navSources: "Sources",
       heroTitle: "Map and explore<br><em>what humanity does not yet know.</em>",
       heroLede: "From mathematics to complex social systems. Explore not only disciplines, but what each problem lacks—new theory, experiments, measurement, scale, systems engineering, or a boundary set by established laws.",
-      heroPosterAlt: "Unsolved Problems research atlas representing 555 questions across 13 disciplines",
+      heroPosterAlt: "Unsolved Problems research atlas representing 738 research questions across 13 disciplines",
       exploreProblems: "Explore problems", viewTaxonomy: "View taxonomy",
       orbitMath: "Math", orbitLife: "Life", orbitEarth: "Earth", orbitTech: "Tech", orbitSociety: "Society",
-      catalogSummary: "Catalog summary", statItems: "cataloged items", statDisciplines: "disciplines", statSubfields: "subfields", statSources: "major sources",
-      mapTitle: "The landscape of open problems", mapDescription: "Each bar shows this catalog's coverage of one discipline. Select a field or color segment to filter the catalog below.",
-      barColorBy: "Color bars by", barColorGroup: "Bar color classification", nature: "Problem nature", approach: "Required approach", feasibility: "Feasibility",
+      catalogSummary: "Catalog summary", statItems: "cataloged items", statDisciplines: "disciplines", statSubfields: "subfields", statPriorities: "core & priorities", statSources: "major sources",
+      mapTitle: "The landscape of open problems", mapDescription: "Each bar shows evidence-backed catalog coverage, not a ranking of disciplines. Select a field or color segment to filter the catalog below.",
+      barColorBy: "Color bars by", barColorGroup: "Bar color classification", nature: "Problem nature", approach: "Required approach", feasibility: "Feasibility", importance: "Importance",
       barLegend: "Bar color legend",
-      taxonomyTitle: "Five axes for reading an open problem", taxonomyDescription: "The axes are independent. A problem can be viewed simultaneously by discipline, required approach, problem nature, feasibility boundary, and cross-cutting theme.",
+      taxonomyTitle: "Six axes for reading an open problem", taxonomyDescription: "The axes are independent. A problem can be viewed simultaneously by discipline, importance, required approach, problem nature, feasibility boundary, and cross-cutting theme.",
       axisDiscipline: "Academic discipline", axisDisciplineText: "Thirteen disciplines spanning natural science, mathematics, engineering, medicine, cognition, and social science.",
       axisApproach: "Required approach", axisApproachText: "Theory-led, experiment-led, theory plus experiment, or engineering and systems.",
       axisNature: "Problem nature", axisNatureText: "Fundamental principle, prediction and modeling, observation and measurement, scale and reproducibility, design and systems, or an impossibility boundary.",
       axisFeasibility: "Feasibility boundary", axisFeasibilityText: "Open to solution, beyond current technology, practical limit, or theoretically impossible.",
       axisTheme: "Cross-cutting theme", axisThemeText: "Connect disciplines through energy, space, quantum, climate, AI, sustainability, health, and safety or security.",
+      axisImportance: "Selection importance", axisImportanceText: "Separate core open problems, roadmap priorities, major frontiers, and impossibility boundaries by evidence level.",
       importantDistinction: "An important distinction",
       boundaryNote: "An <strong>open problem</strong> is a question whose answer is not yet known. A <strong>theoretical impossibility</strong> is forbidden by established laws, theorems, or irretrievably missing information. This atlas shows both but does not treat them as equivalent.",
-      catalogTitle: "Problem catalog", search: "Search", searchPlaceholder: "dark matter, origin of life, superconductors…", discipline: "Discipline",
+      catalogTitle: "Problem catalog", search: "Search", searchPlaceholder: "dark matter, origin of life, superconductors…", discipline: "Discipline", allImportance: "All importance levels",
       allDisciplines: "All disciplines", allApproaches: "All approaches", allNatures: "All problem types", allFeasibility: "All feasibility levels",
       theme: "Cross-cutting theme", allThemes: "All themes", reset: "Reset", activeFilters: "Active filters",
       emptyTitle: "No items match these conditions.", emptyText: "Shorten the search or reset the filters.",
-      sourcesTitle: "Scope and sources", sourcesDescription: "This is not a frozen ‘official list.’ It is a living editorial taxonomy cross-checked against institutional roadmaps, research programs, and major reports.",
-      methodNote: "The classifications are editorial judgments intended to explain research priorities. ‘Beyond current technology’ does not mean impossible forever, and ‘theoretically impossible’ can be reconsidered if the assumptions of the governing theory change.",
+      sourcesTitle: "Scope and sources", sourcesDescription: "Discipline totals are never equalized. Important questions are selected from institutional roadmaps, research programs, and established problem lists using an evidence-led review.",
+      noQuotaTitle: "No count quotas", noQuotaText: "Counts are not matched across disciplines or subfields. An item is included only when authoritative lists and roadmaps support its importance.",
+      criterionOne: "Named major problems from scholarly institutions", criterionTwo: "Priorities recurring in current research roadmaps", criterionThree: "Durable frontiers with broad scientific or societal leverage",
+      methodNote: "Importance is an editorial judgment based on named problem status, explicit roadmap priority, and expected leverage. Reviewed 1 August 2026 and updated as evidence and research progress change.",
       footerTagline: "Not just a list of unknowns—a map for finding out.", sourceContribution: "Source and contribute", classificationPrinciples: "Classification principles", allProblems: "All problems", closeDetails: "Close details",
       whyOpen: "Why it remains open", solvedWhen: "What would count as a solution", classification: "How it is classified", relatedSources: "Related roadmaps and institutions",
       mapGroup: "Problem counts by discipline", mapDistribution: "distribution", searchPrefix: "Search", items: "items", remaining: "remaining", loadMore: "Load more",
@@ -84,6 +90,7 @@
   const state = {
     query: "",
     discipline: "all",
+    importance: "all",
     approach: "all",
     nature: "all",
     feasibility: "all",
@@ -94,9 +101,9 @@
 
   const $ = id => document.getElementById(id);
   const els = {
-    total: $("total-count"), disciplines: $("discipline-count"), subfields: $("subfield-count"), sources: $("source-count"),
+    total: $("total-count"), disciplines: $("discipline-count"), subfields: $("subfield-count"), priorities: $("priority-count"), sources: $("source-count"),
     map: $("discipline-map"), mapLens: $("map-lens"), mapLegend: $("map-legend"), lensSummary: $("lens-summary"),
-    resultCount: $("result-count"), search: $("search-input"), discipline: $("discipline-filter"), approach: $("approach-filter"),
+    resultCount: $("result-count"), search: $("search-input"), discipline: $("discipline-filter"), importance: $("importance-filter"), approach: $("approach-filter"),
     nature: $("nature-filter"), feasibility: $("feasibility-filter"), theme: $("theme-filter"), reset: $("reset-filters"),
     active: $("active-filters"), grid: $("problem-grid"), loadMore: $("load-more"), empty: $("empty-state"),
     sourceGroups: $("source-groups"), dialog: $("problem-dialog"), dialogIndex: $("dialog-index"), dialogContent: $("dialog-content"),
@@ -166,11 +173,13 @@
 
   function renderFilterOptions() {
     els.discipline.dataset.stateKey = "discipline";
+    els.importance.dataset.stateKey = "importance";
     els.approach.dataset.stateKey = "approach";
     els.nature.dataset.stateKey = "nature";
     els.feasibility.dataset.stateKey = "feasibility";
     els.theme.dataset.stateKey = "theme";
     renderSelect(els.discipline, t("allDisciplines"), meta.disciplines);
+    renderSelect(els.importance, t("allImportance"), meta.importance);
     renderSelect(els.approach, t("allApproaches"), meta.approaches);
     renderSelect(els.nature, t("allNatures"), meta.natures);
     renderSelect(els.feasibility, t("allFeasibility"), meta.feasibility);
@@ -181,6 +190,7 @@
     const params = new URLSearchParams(location.search);
     const allowed = {
       discipline: meta.disciplines,
+      importance: meta.importance,
       approach: meta.approaches,
       nature: meta.natures,
       feasibility: meta.feasibility,
@@ -188,7 +198,7 @@
     };
     state.query = params.get("q") || "";
     const lens = params.get("lens");
-    if (["nature", "approach", "feasibility"].includes(lens)) state.mapLens = lens;
+    if (["nature", "approach", "feasibility", "importance"].includes(lens)) state.mapLens = lens;
     Object.entries(allowed).forEach(([key, collection]) => {
       const value = params.get(key);
       if (value && collection[value]) state[key] = value;
@@ -197,7 +207,7 @@
 
   function syncControls() {
     els.search.value = state.query;
-    ["discipline", "approach", "nature", "feasibility", "theme"].forEach(key => { els[key].value = state[key]; });
+    ["discipline", "importance", "approach", "nature", "feasibility", "theme"].forEach(key => { els[key].value = state[key]; });
     els.mapLens.querySelectorAll("button[data-lens]").forEach(button => {
       button.setAttribute("aria-pressed", String(button.dataset.lens === state.mapLens));
     });
@@ -206,7 +216,7 @@
   function writeURLState() {
     const params = new URLSearchParams();
     if (state.query) params.set("q", state.query);
-    ["discipline", "approach", "nature", "feasibility", "theme"].forEach(key => {
+    ["discipline", "importance", "approach", "nature", "feasibility", "theme"].forEach(key => {
       if (state[key] !== "all") params.set(key, state[key]);
     });
     if (state.mapLens !== "nature") params.set("lens", state.mapLens);
@@ -217,6 +227,7 @@
 
   function matches(problem, options = {}) {
     if (!options.ignoreDiscipline && state.discipline !== "all" && problem.discipline !== state.discipline) return false;
+    if (options.ignoreAxis !== "importance" && state.importance !== "all" && problem.importance !== state.importance) return false;
     if (options.ignoreAxis !== "approach" && state.approach !== "all" && problem.approach !== state.approach) return false;
     if (options.ignoreAxis !== "nature" && state.nature !== "all" && problem.nature !== state.nature) return false;
     if (options.ignoreAxis !== "feasibility" && state.feasibility !== "all" && problem.feasibility !== state.feasibility) return false;
@@ -225,6 +236,7 @@
       const haystack = normalize([
         problem.question, problem.questionEn, problem.subfield, problem.subfieldEn,
         meta.disciplines[problem.discipline].label, meta.disciplines[problem.discipline].labelEn,
+        meta.importance[problem.importance].label, meta.importance[problem.importance].labelEn,
         meta.approaches[problem.approach].label, meta.approaches[problem.approach].labelEn,
         meta.natures[problem.nature].label, meta.natures[problem.nature].labelEn,
         meta.feasibility[problem.feasibility].label, meta.feasibility[problem.feasibility].labelEn,
@@ -235,18 +247,21 @@
     return true;
   }
 
-  const filteredProblems = () => problems.filter(problem => matches(problem));
+  const filteredProblems = () => problems
+    .filter(problem => matches(problem))
+    .sort((a, b) => meta.importance[b.importance].rank - meta.importance[a.importance].rank || a.id.localeCompare(b.id));
 
   function renderStats() {
     els.total.textContent = number(problems.length);
     els.disciplines.textContent = number(Object.keys(meta.disciplines).length);
     els.subfields.textContent = number(new Set(problems.map(item => `${item.discipline}:${item.subfield}`)).size);
+    els.priorities.textContent = number(problems.filter(item => ["core", "roadmap"].includes(item.importance)).length);
     els.sources.textContent = number(Object.keys(sources).length);
   }
 
   function renderMap() {
-    const axisCollections = { nature: meta.natures, approach: meta.approaches, feasibility: meta.feasibility };
-    const axisLabels = { nature: t("nature"), approach: t("approach"), feasibility: t("feasibility") };
+    const axisCollections = { nature: meta.natures, approach: meta.approaches, feasibility: meta.feasibility, importance: meta.importance };
+    const axisLabels = { nature: t("nature"), approach: t("approach"), feasibility: t("feasibility"), importance: t("importance") };
     const collection = axisCollections[state.mapLens];
     const mapPool = problems.filter(problem => matches(problem, { ignoreDiscipline: true, ignoreAxis: state.mapLens }));
     const values = disciplineOrder.map(id => {
@@ -302,6 +317,7 @@
     if (state.approach !== "all") lensParts.push(label(meta.approaches[state.approach]));
     if (state.nature !== "all") lensParts.push(label(meta.natures[state.nature]));
     if (state.feasibility !== "all") lensParts.push(label(meta.feasibility[state.feasibility]));
+    if (state.importance !== "all") lensParts.push(label(meta.importance[state.importance]));
     if (state.theme !== "all") lensParts.push(label(meta.themes[state.theme]));
     if (state.query) lensParts.push(`${t("searchPrefix")}: “${state.query}”`);
     els.lensSummary.textContent = lensParts.length
@@ -334,13 +350,14 @@
 
   function cardHTML(problem) {
     const discipline = meta.disciplines[problem.discipline];
+    const importance = meta.importance[problem.importance];
     const boundaryClass = problem.nature === "boundary" ? " boundary" : "";
     const themes = (problem.themes || []).slice(0, 2).map(key => meta.themes[key]).filter(Boolean);
     const natureLabel = label(meta.natures[problem.nature]);
     return `
       <button class="problem-card" type="button" data-id="${problem.id}"
         data-hover-title="${escapeHTML(question(problem))}"
-        data-hover-text="${escapeHTML(`${subfield(problem)} · ${natureLabel}. ${whyOpen(problem)}`)}"
+        data-hover-text="${escapeHTML(`${label(importance)} · ${subfield(problem)} · ${natureLabel}. ${whyOpen(problem)}`)}"
         style="--discipline-soft:${discipline.soft}">
         <span class="card-top">
           <span class="card-number">${problem.id}</span>
@@ -348,6 +365,7 @@
         </span>
         <h3>${escapeHTML(question(problem))}</h3>
         <span class="card-meta">
+          <span class="meta-pill importance" style="--importance-color:${importance.color}">${escapeHTML(label(importance))}</span>
           <span class="meta-pill">${escapeHTML(label(meta.approaches[problem.approach]))}</span>
           <span class="meta-pill">${escapeHTML(natureLabel)}</span>
           <span class="meta-pill${boundaryClass}">${escapeHTML(label(meta.feasibility[problem.feasibility]))}</span>
@@ -413,6 +431,7 @@
     const chips = [];
     if (state.query) chips.push({ key: "query", label: `${t("searchPrefix")}: ${state.query}` });
     if (state.discipline !== "all") chips.push({ key: "discipline", label: label(meta.disciplines[state.discipline]) });
+    if (state.importance !== "all") chips.push({ key: "importance", label: label(meta.importance[state.importance]) });
     if (state.approach !== "all") chips.push({ key: "approach", label: label(meta.approaches[state.approach]) });
     if (state.nature !== "all") chips.push({ key: "nature", label: label(meta.natures[state.nature]) });
     if (state.feasibility !== "all") chips.push({ key: "feasibility", label: label(meta.feasibility[state.feasibility]) });
@@ -434,12 +453,14 @@
     const problem = problems.find(item => item.id === id);
     if (!problem) return;
     const discipline = meta.disciplines[problem.discipline];
+    const importance = meta.importance[problem.importance];
     const linkedSources = problem.sourceIds.map(sourceId => sources[sourceId]).filter(Boolean);
     const themeTags = (problem.themes || []).map(key => meta.themes[key]).filter(Boolean);
     els.dialogIndex.textContent = `${problem.id} · ${label(discipline)} / ${subfield(problem)}`;
     els.dialogContent.innerHTML = `
       <div class="dialog-body">
         <div class="dialog-tags">
+          <span class="meta-pill importance" style="--importance-color:${importance.color}">${escapeHTML(label(importance))}</span>
           <span class="meta-pill">${escapeHTML(label(meta.approaches[problem.approach]))}</span>
           <span class="meta-pill">${escapeHTML(label(meta.natures[problem.nature]))}</span>
           <span class="meta-pill${problem.nature === "boundary" ? " boundary" : ""}">${escapeHTML(label(meta.feasibility[problem.feasibility]))}</span>
@@ -448,7 +469,7 @@
         <h2 id="dialog-title">${escapeHTML(question(problem))}</h2>
         <section class="dialog-section"><h3>${escapeHTML(t("whyOpen"))}</h3><p>${escapeHTML(whyOpen(problem))}</p></section>
         <section class="dialog-section"><h3>${escapeHTML(t("solvedWhen"))}</h3><p>${escapeHTML(solvedWhen(problem))}</p></section>
-        <section class="dialog-section"><h3>${escapeHTML(t("classification"))}</h3><p>${escapeHTML(description(meta.approaches[problem.approach]))} ${escapeHTML(description(meta.natures[problem.nature]))} ${escapeHTML(description(meta.feasibility[problem.feasibility]))}</p></section>
+        <section class="dialog-section"><h3>${escapeHTML(t("classification"))}</h3><p>${escapeHTML(description(importance))} ${escapeHTML(description(meta.approaches[problem.approach]))} ${escapeHTML(description(meta.natures[problem.nature]))} ${escapeHTML(description(meta.feasibility[problem.feasibility]))}</p></section>
         <section class="dialog-section"><h3>${escapeHTML(t("relatedSources"))}</h3><div class="dialog-sources">
           ${linkedSources.map(source => `<a href="${source.url}" target="_blank" rel="noreferrer">${escapeHTML(source.title)} ↗</a>`).join("")}
         </div></section>
@@ -499,6 +520,7 @@
   function resetFilters() {
     state.query = "";
     state.discipline = "all";
+    state.importance = "all";
     state.approach = "all";
     state.nature = "all";
     state.feasibility = "all";
@@ -520,7 +542,7 @@
       update();
     }, 120);
   });
-  ["discipline", "approach", "nature", "feasibility", "theme"].forEach(key => {
+  ["discipline", "importance", "approach", "nature", "feasibility", "theme"].forEach(key => {
     els[key].addEventListener("change", event => {
       state[key] = event.target.value;
       visibleCount = PAGE_SIZE;

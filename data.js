@@ -92,7 +92,7 @@
   }
 
   const GROUPS = [
-    // Physics — 60 open questions
+    // Physics — legacy foundation set; evidence-led additions live in priority-data.js.
     G("physics", "우주론", "hybrid", "fundamental", "open", ["nasa_dm", "doe_hep"], [
       "암흑물질은 어떤 입자 또는 장으로 이루어져 있는가?",
       "암흑에너지의 물리적 본질은 무엇인가?",
@@ -178,7 +178,7 @@
       "복잡계에서 거시적 인과 법칙이 어떻게 출현하는가?"
     ]),
 
-    // Chemistry — 60 open questions
+    // Chemistry — legacy foundation set; evidence-led additions live in priority-data.js.
     G("chemistry", "전자구조", "theory", "prediction", "practical", ["doe_chem", "nsf_chem"], [
       "강상관 분자의 바닥상태를 효율적이고 정확하게 계산할 수 있는가?",
       "전이금속 화합물의 스핀 상태와 반응성을 사전에 예측할 수 있는가?",
@@ -264,7 +264,7 @@
       "표면 아래 묻힌 계면의 화학상태를 작동 중 직접 볼 수 있는가?"
     ]),
 
-    // Biology — 60 open questions
+    // Biology — legacy foundation set; evidence-led additions live in priority-data.js.
     G("biology", "생명 기원·진화", "hybrid", "fundamental", "current", ["ncbi"], [
       "생명은 지구에서 정확히 언제 어디서 어떻게 시작되었는가?",
       "최초의 세포는 어떤 화학계에서 출현했는가?",
@@ -350,7 +350,7 @@
       "디지털 생물모형이 실제 임상 결정을 신뢰성 있게 대신할 수 있는가?"
     ]),
 
-    // Materials science — 60 open questions
+    // Materials science — legacy foundation set; evidence-led additions live in priority-data.js.
     G("materials", "재료 발견", "hybrid", "prediction", "practical", ["nist_materials", "doe_materials"], [
       "원하는 물성을 입력하면 합성 가능한 재료를 역설계할 수 있는가?",
       "방대한 조성·구조 공간을 탐색하지 않고 최적 재료를 찾을 수 있는가?",
@@ -436,7 +436,7 @@
       "복합재와 전자제품을 처음부터 분해·수리 가능하게 설계할 수 있는가?"
     ]),
 
-    // Semiconductor & electronics — 60 open questions
+    // Semiconductor & electronics — legacy foundation set; evidence-led additions live in priority-data.js.
     G("semiconductor", "소자 물리", "theory", "fundamental", "open", ["doe_micro", "src_decadal"], [
       "빠르고 신뢰할 수 있는 전자 스위치가 란다우어 한계에 얼마나 접근할 수 있는가?",
       "실온에서 볼츠만 subthreshold 한계를 안정적으로 우회할 수 있는가?",
