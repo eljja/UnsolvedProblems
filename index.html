@@ -71,6 +71,15 @@
         </div>
         <p>막대 하나가 한 분야의 수록 범위입니다. 선택하면 아래 카탈로그가 같은 조건으로 좁혀집니다.</p>
       </div>
+      <div class="map-toolbar">
+        <span>막대 색상 기준</span>
+        <div class="map-lens" id="map-lens" role="group" aria-label="막대 색상 분류 기준">
+          <button type="button" data-lens="nature" aria-pressed="true">문제 성격</button>
+          <button type="button" data-lens="approach" aria-pressed="false">해결 방식</button>
+          <button type="button" data-lens="feasibility" aria-pressed="false">가능성</button>
+        </div>
+      </div>
+      <div class="map-legend" id="map-legend" aria-label="막대 색상 범례"></div>
       <div class="discipline-map" id="discipline-map" role="group" aria-label="분야별 난제 수"></div>
       <div class="lens-summary" id="lens-summary" aria-live="polite"></div>
     </section>
@@ -180,5 +189,6 @@
     </div>
     <div id="dialog-content"></div>
   </dialog>
+  <div class="hover-tooltip" id="hover-tooltip" role="tooltip" hidden></div>
 </body>
 </html>

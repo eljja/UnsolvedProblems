@@ -33,6 +33,12 @@ for (const discipline of Object.keys(meta.disciplines)) {
   assert(count === 63, `${discipline}: expected 63 entries, received ${count}`);
 }
 
+for (const collectionName of ["approaches", "natures", "feasibility"]) {
+  for (const [key, item] of Object.entries(meta[collectionName])) {
+    assert(/^#[0-9a-f]{6}$/i.test(item.color), `${collectionName}.${key}: missing chart color`);
+  }
+}
+
 const boundaryCount = PROBLEMS.filter(item => item.nature === "boundary").length;
 assert(boundaryCount === 15, `expected 15 boundary entries, received ${boundaryCount}`);
 assert(PROBLEMS.filter(item => item.feasibility === "impossible").every(item => item.nature === "boundary"), "theoretically impossible entries must be boundaries");
@@ -42,7 +48,7 @@ for (const asset of ["styles.css", "data.js", "app.js", "assets/mark.svg"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing asset ${asset}`);
   assert(html.includes(asset), `index.html does not reference ${asset}`);
 }
-for (const id of ["map", "taxonomy", "catalog", "sources", "problem-dialog"]) {
+for (const id of ["map", "map-lens", "map-legend", "taxonomy", "catalog", "sources", "problem-dialog", "hover-tooltip"]) {
   assert(html.includes(`id="${id}"`), `index.html missing #${id}`);
 }
 

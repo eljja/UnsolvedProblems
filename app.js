@@ -13,7 +13,8 @@
     discipline: "all",
     approach: "all",
     nature: "all",
-    feasibility: "all"
+    feasibility: "all",
+    mapLens: "nature"
   };
 
   const $ = id => document.getElementById(id);
@@ -23,6 +24,8 @@
     subfields: $("subfield-count"),
     sources: $("source-count"),
     map: $("discipline-map"),
+    mapLens: $("map-lens"),
+    mapLegend: $("map-legend"),
     lensSummary: $("lens-summary"),
     resultCount: $("result-count"),
     search: $("search-input"),
@@ -39,7 +42,8 @@
     dialog: $("problem-dialog"),
     dialogIndex: $("dialog-index"),
     dialogContent: $("dialog-content"),
-    dialogClose: $("dialog-close")
+    dialogClose: $("dialog-close"),
+    hoverTooltip: $("hover-tooltip")
   };
 
   function escapeHTML(value) {
@@ -73,6 +77,8 @@
       feasibility: meta.feasibility
     };
     state.query = params.get("q") || "";
+    const lens = params.get("lens");
+    if (["nature", "approach", "feasibility"].includes(lens)) state.mapLens = lens;
     Object.entries(allowed).forEach(([key, collection]) => {
       const value = params.get(key);
       if (value && collection[value]) state[key] = value;
@@ -85,6 +91,9 @@
     els.approach.value = state.approach;
     els.nature.value = state.nature;
     els.feasibility.value = state.feasibility;
+    els.mapLens.querySelectorAll("button[data-lens]").forEach(button => {
+      button.setAttribute("aria-pressed", String(button.dataset.lens === state.mapLens));
+    });
   }
 
   function writeURLState() {
@@ -93,6 +102,7 @@
     ["discipline", "approach", "nature", "feasibility"].forEach(key => {
       if (state[key] !== "all") params.set(key, state[key]);
     });
+    if (state.mapLens !== "nature") params.set("lens", state.mapLens);
     const queryString = params.toString();
     history.replaceState(null, "", `${location.pathname}${queryString ? `?${queryString}` : ""}${location.hash}`);
   }
@@ -100,9 +110,9 @@
   function matches(problem, options = {}) {
     const ignoreDiscipline = options.ignoreDiscipline === true;
     if (!ignoreDiscipline && state.discipline !== "all" && problem.discipline !== state.discipline) return false;
-    if (state.approach !== "all" && problem.approach !== state.approach) return false;
-    if (state.nature !== "all" && problem.nature !== state.nature) return false;
-    if (state.feasibility !== "all" && problem.feasibility !== state.feasibility) return false;
+    if (options.ignoreAxis !== "approach" && state.approach !== "all" && problem.approach !== state.approach) return false;
+    if (options.ignoreAxis !== "nature" && state.nature !== "all" && problem.nature !== state.nature) return false;
+    if (options.ignoreAxis !== "feasibility" && state.feasibility !== "all" && problem.feasibility !== state.feasibility) return false;
     if (state.query) {
       const haystack = normalize([
         problem.question,
@@ -129,23 +139,61 @@
   }
 
   function renderMap() {
-    const mapPool = problems.filter(problem => matches(problem, { ignoreDiscipline: true }));
-    const values = disciplineOrder.map(id => ({
-      id,
-      count: mapPool.filter(problem => problem.discipline === id).length
-    }));
+    const axisCollections = {
+      nature: meta.natures,
+      approach: meta.approaches,
+      feasibility: meta.feasibility
+    };
+    const axisLabels = { nature: "문제 성격", approach: "해결 방식", feasibility: "가능성" };
+    const collection = axisCollections[state.mapLens];
+    const mapPool = problems.filter(problem => matches(problem, { ignoreDiscipline: true, ignoreAxis: state.mapLens }));
+    const values = disciplineOrder.map(id => {
+      const disciplineProblems = mapPool.filter(problem => problem.discipline === id);
+      return {
+        id,
+        count: disciplineProblems.length,
+        segments: Object.keys(collection).map(key => ({
+          key,
+          count: disciplineProblems.filter(problem => problem[state.mapLens] === key).length
+        }))
+      };
+    });
     const max = Math.max(1, ...values.map(item => item.count));
 
-    els.map.innerHTML = values.map(({ id, count }) => {
+    els.mapLegend.innerHTML = Object.entries(collection).map(([key, item]) => `
+      <button class="legend-item" type="button" data-axis="${state.mapLens}" data-key="${key}"
+        aria-pressed="${state[state.mapLens] === key}"
+        data-hover-title="${escapeHTML(item.label)}"
+        data-hover-text="${escapeHTML(item.description)}">
+        <span class="legend-swatch" style="--segment-color:${item.color}"></span>
+        <span>${escapeHTML(item.label)}</span>
+      </button>`).join("");
+
+    els.map.innerHTML = values.map(({ id, count, segments }) => {
       const discipline = meta.disciplines[id];
-      const width = Math.max(0, (count / max) * 100);
       const selected = state.discipline === id;
-      return `
-        <button class="map-row" type="button" data-discipline="${id}" aria-pressed="${selected}" style="--bar-color:${discipline.color};--bar-width:${width}%">
-          <span class="map-row-label">${escapeHTML(discipline.label)}</span>
-          <span class="map-track"><span class="map-bar"></span></span>
-          <span class="map-value">${count}</span>
+      const segmentHTML = segments.filter(segment => segment.count > 0).map(segment => {
+        const item = collection[segment.key];
+        const width = (segment.count / max) * 100;
+        const isActive = state[state.mapLens] === "all" || state[state.mapLens] === segment.key;
+        return `<button class="map-segment" type="button" data-axis="${state.mapLens}" data-key="${segment.key}"
+          aria-pressed="${state[state.mapLens] === segment.key}"
+          aria-label="${escapeHTML(`${discipline.label} · ${item.label} ${segment.count}개`)}"
+          data-hover-title="${escapeHTML(`${discipline.label} · ${item.label}`)}"
+          data-hover-text="${escapeHTML(`${segment.count}개 난제. ${item.description}`)}"
+          style="--segment-color:${item.color};--segment-width:${width}%;--segment-opacity:${isActive ? 1 : .28}">
+          <span>${segment.count >= 6 ? segment.count : ""}</span>
         </button>`;
+      }).join("");
+      return `
+        <div class="map-row">
+          <button class="map-discipline" type="button" data-discipline="${id}" aria-pressed="${selected}">
+            <span class="discipline-dot" style="--discipline-color:${discipline.color}"></span>
+            <span>${escapeHTML(discipline.label)}</span>
+          </button>
+          <div class="map-track" role="group" aria-label="${escapeHTML(`${discipline.label}의 ${axisLabels[state.mapLens]} 분포`)}">${segmentHTML}</div>
+          <span class="map-value">${count}</span>
+        </div>`;
     }).join("");
 
     const lensParts = [];
@@ -154,10 +202,10 @@
     if (state.feasibility !== "all") lensParts.push(meta.feasibility[state.feasibility].label);
     if (state.query) lensParts.push(`“${state.query}” 검색`);
     els.lensSummary.textContent = lensParts.length
-      ? `${lensParts.join(" · ")} 조건에서 분야별 분포`
-      : "현재 전체 카탈로그의 분야별 수록 범위";
+      ? `${lensParts.join(" · ")} 조건에서 ${axisLabels[state.mapLens]}별 분포`
+      : `전체 카탈로그의 ${axisLabels[state.mapLens]}별 구성 — 색 구간을 선택하면 바로 필터링됩니다.`;
 
-    els.map.querySelectorAll(".map-row").forEach(button => {
+    els.map.querySelectorAll(".map-discipline").forEach(button => {
       button.addEventListener("click", () => {
         const value = button.dataset.discipline;
         state.discipline = state.discipline === value ? "all" : value;
@@ -167,13 +215,28 @@
         document.querySelector("#catalog").scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
+    [...els.map.querySelectorAll(".map-segment"), ...els.mapLegend.querySelectorAll(".legend-item")].forEach(button => {
+      button.addEventListener("click", () => {
+        const axis = button.dataset.axis;
+        const value = button.dataset.key;
+        state[axis] = state[axis] === value ? "all" : value;
+        visibleCount = PAGE_SIZE;
+        syncControls();
+        update();
+      });
+    });
+    bindHoverTooltips(els.map);
+    bindHoverTooltips(els.mapLegend);
   }
 
   function cardHTML(problem) {
     const discipline = meta.disciplines[problem.discipline];
     const boundaryClass = problem.nature === "boundary" ? " boundary" : "";
     return `
-      <button class="problem-card" type="button" data-id="${problem.id}" style="--discipline-soft:${discipline.soft}">
+      <button class="problem-card" type="button" data-id="${problem.id}"
+        data-hover-title="${escapeHTML(problem.question)}"
+        data-hover-text="${escapeHTML(`${problem.subfield}의 ${meta.natures[problem.nature].label} 문제입니다. ${problem.whyOpen}`)}"
+        style="--discipline-soft:${discipline.soft}">
         <span class="card-top">
           <span class="card-number">${problem.id}</span>
           <span class="discipline-pill">${escapeHTML(discipline.label)} · ${escapeHTML(problem.subfield)}</span>
@@ -199,6 +262,46 @@
     }
     els.grid.querySelectorAll(".problem-card").forEach(card => {
       card.addEventListener("click", () => openDialog(card.dataset.id));
+    });
+    bindHoverTooltips(els.grid);
+  }
+
+  let tooltipTarget = null;
+
+  function positionTooltip(target) {
+    const tooltip = els.hoverTooltip;
+    const rect = target.getBoundingClientRect();
+    const tipRect = tooltip.getBoundingClientRect();
+    const margin = 12;
+    let left = rect.left + (rect.width - tipRect.width) / 2;
+    left = Math.max(margin, Math.min(left, window.innerWidth - tipRect.width - margin));
+    let top = rect.top - tipRect.height - margin;
+    if (top < margin) top = rect.bottom + margin;
+    tooltip.style.left = `${left}px`;
+    tooltip.style.top = `${top}px`;
+  }
+
+  function showTooltip(target) {
+    tooltipTarget = target;
+    els.hoverTooltip.innerHTML = `<strong>${escapeHTML(target.dataset.hoverTitle)}</strong><span>${escapeHTML(target.dataset.hoverText)}</span>`;
+    els.hoverTooltip.hidden = false;
+    target.setAttribute("aria-describedby", "hover-tooltip");
+    requestAnimationFrame(() => positionTooltip(target));
+  }
+
+  function hideTooltip(target) {
+    if (tooltipTarget !== target) return;
+    target.removeAttribute("aria-describedby");
+    els.hoverTooltip.hidden = true;
+    tooltipTarget = null;
+  }
+
+  function bindHoverTooltips(scope) {
+    scope.querySelectorAll("[data-hover-title]").forEach(target => {
+      target.addEventListener("mouseenter", () => showTooltip(target));
+      target.addEventListener("mouseleave", () => hideTooltip(target));
+      target.addEventListener("focus", () => showTooltip(target));
+      target.addEventListener("blur", () => hideTooltip(target));
     });
   }
 
@@ -333,6 +436,13 @@
     });
   });
   els.reset.addEventListener("click", resetFilters);
+  els.mapLens.addEventListener("click", event => {
+    const button = event.target.closest("button[data-lens]");
+    if (!button) return;
+    state.mapLens = button.dataset.lens;
+    syncControls();
+    update();
+  });
   els.loadMore.addEventListener("click", () => {
     visibleCount += PAGE_SIZE;
     renderGrid();
@@ -344,4 +454,7 @@
   document.addEventListener("keydown", event => {
     if (event.key === "Escape" && els.dialog.hasAttribute("open")) closeDialog();
   });
+  window.addEventListener("scroll", () => {
+    if (tooltipTarget) hideTooltip(tooltipTarget);
+  }, { passive: true, capture: true });
 })();

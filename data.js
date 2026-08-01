@@ -12,24 +12,24 @@
       semiconductor: { label: "반도체·전자", color: "#b89331", soft: "#f2e7c9" }
     },
     approaches: {
-      theory: { label: "이론 중심", description: "수학적 구조, 원리 또는 예측 모형의 진전이 먼저 필요한 문제" },
-      experiment: { label: "실험 중심", description: "새로운 관측, 실험계 또는 데이터가 결정적인 문제" },
-      hybrid: { label: "이론+실험", description: "설명과 검증이 반복적으로 함께 전진해야 하는 문제" },
-      engineering: { label: "공학·시스템", description: "원리 입증을 넘어 규모, 수율, 비용, 신뢰성을 해결해야 하는 문제" }
+      theory: { label: "이론 중심", color: "#4169a1", description: "수학적 구조, 원리 또는 예측 모형의 진전이 먼저 필요한 문제" },
+      experiment: { label: "실험 중심", color: "#cf6d3d", description: "새로운 관측, 실험계 또는 데이터가 결정적인 문제" },
+      hybrid: { label: "이론+실험", color: "#4e9276", description: "설명과 검증이 반복적으로 함께 전진해야 하는 문제" },
+      engineering: { label: "공학·시스템", color: "#8d619b", description: "원리 입증을 넘어 규모, 수율, 비용, 신뢰성을 해결해야 하는 문제" }
     },
     natures: {
-      fundamental: { label: "근본 원리", description: "현상의 원인이나 지배 법칙 자체가 충분히 알려지지 않음" },
-      prediction: { label: "예측·모델", description: "현상은 알지만 필요한 정확도와 범위에서 예측하지 못함" },
-      measurement: { label: "관측·계측", description: "질문을 판별할 감도, 해상도 또는 실험 접근법이 부족함" },
-      scale: { label: "확장·재현", description: "작은 규모의 성공을 실제 규모에서 균일하게 재현하지 못함" },
-      system: { label: "설계·시스템", description: "여러 상충 조건을 동시에 만족하는 전체 해법이 없음" },
-      boundary: { label: "불가능 경계", description: "확립된 법칙이나 정보 부족이 금지하는 영역을 표시" }
+      fundamental: { label: "근본 원리", color: "#3f72a6", description: "현상의 원인이나 지배 법칙 자체가 충분히 알려지지 않음" },
+      prediction: { label: "예측·모델", color: "#d17a37", description: "현상은 알지만 필요한 정확도와 범위에서 예측하지 못함" },
+      measurement: { label: "관측·계측", color: "#559268", description: "질문을 판별할 감도, 해상도 또는 실험 접근법이 부족함" },
+      scale: { label: "확장·재현", color: "#b85c59", description: "작은 규모의 성공을 실제 규모에서 균일하게 재현하지 못함" },
+      system: { label: "설계·시스템", color: "#4c9696", description: "여러 상충 조건을 동시에 만족하는 전체 해법이 없음" },
+      boundary: { label: "불가능 경계", color: "#8d619b", description: "확립된 법칙이나 정보 부족이 금지하는 영역을 표시" }
     },
     feasibility: {
-      open: { label: "해결 가능성 열림", description: "현재 이론이 금지하지 않으며 연구로 답할 가능성이 열려 있음" },
-      current: { label: "현재 기술로 불가능", description: "원칙상 가능할 수 있으나 현재의 에너지, 시간, 해상도 또는 데이터가 부족함" },
-      practical: { label: "현실적 한계", description: "조합 폭발, 비용, 시간 또는 제어 복잡도가 실용적 장벽을 이룸" },
-      impossible: { label: "이론적 불가능", description: "현재 확립된 법칙·정리 또는 소실된 정보가 요구를 금지함" }
+      open: { label: "해결 가능성 열림", color: "#4c9272", description: "현재 이론이 금지하지 않으며 연구로 답할 가능성이 열려 있음" },
+      current: { label: "현재 기술로 불가능", color: "#d49a34", description: "원칙상 가능할 수 있으나 현재의 에너지, 시간, 해상도 또는 데이터가 부족함" },
+      practical: { label: "현실적 한계", color: "#c76b45", description: "조합 폭발, 비용, 시간 또는 제어 복잡도가 실용적 장벽을 이룸" },
+      impossible: { label: "이론적 불가능", color: "#8d5573", description: "현재 확립된 법칙·정리 또는 소실된 정보가 요구를 금지함" }
     }
   };
 
