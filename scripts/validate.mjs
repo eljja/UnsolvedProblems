@@ -83,6 +83,7 @@ assert(PROBLEMS.filter(item => item.nature === "boundary").every(item => item.im
 assert(PROBLEMS.filter(item => item.nature !== "boundary").every(item => item.importance !== "boundary"), "open research entries cannot use boundary importance");
 
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
+const css = fs.readFileSync(path.join(root, "styles.css"), "utf8");
 for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "app.js", "assets/mark.svg", "assets/og-744.png"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing asset ${asset}`);
   assert(html.includes(asset), `index.html does not reference ${asset}`);
@@ -90,6 +91,9 @@ for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations
 for (const id of ["language-switch", "hero-poster", "priority-count", "prize-count", "map", "map-lens", "map-legend", "taxonomy", "catalog", "importance-filter", "prize-filter", "theme-filter", "sources", "problem-dialog", "hover-tooltip"]) {
   assert(html.includes(`id="${id}"`), `index.html missing #${id}`);
 }
+assert(html.includes("<span>인류가 아직 모르는 것을</span>"), "hero title must preserve its semantic first line");
+assert(css.includes("word-break: keep-all"), "hero title must prevent character-by-character Korean wrapping");
+assert(css.includes("@media (max-width: 900px)"), "site must include a tablet hero breakpoint");
 
 if (failures.length) {
   console.error(`Validation failed with ${failures.length} issue(s):`);
