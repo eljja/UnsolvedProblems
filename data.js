@@ -35,7 +35,7 @@
 
   const SOURCES = {
     clay: { discipline: "physics", title: "Clay Mathematics Institute — Millennium Problems", url: "https://www.claymath.org/millennium-problems/" },
-    cern: { discipline: "physics", title: "CERN — Open questions in particle physics", url: "https://home.cern/science/physics/open-questions" },
+    cern: { discipline: "physics", title: "CERN — Physics and open questions", url: "https://home.cern/science/physics/" },
     nasa_dm: { discipline: "physics", title: "NASA Science — Dark Matter", url: "https://science.nasa.gov/universe/dark-matter-dark-energy/" },
     ligo: { discipline: "physics", title: "LIGO Scientific Collaboration", url: "https://www.ligo.org/science.php" },
     doe_hep: { discipline: "physics", title: "DOE Office of High Energy Physics", url: "https://science.osti.gov/hep" },
@@ -55,10 +55,10 @@
     ncbi: { discipline: "biology", title: "NCBI — Genomes and biological data", url: "https://www.ncbi.nlm.nih.gov/" },
 
     doe_materials: { discipline: "materials", title: "DOE Basic Energy Sciences — Materials Sciences", url: "https://science.osti.gov/bes/mse" },
-    doe_quantum_materials: { discipline: "materials", title: "DOE — Basic Research Needs for Quantum Materials", url: "https://science.osti.gov/-/media/bes/pdf/reports/2016/BRN_Quantum_Materials_for_Energy_Relevant_Technology.pdf" },
+    doe_quantum_materials: { discipline: "materials", title: "DOE — Basic Research Needs for Quantum Materials", url: "https://science.osti.gov/-/media/bes/pdf/reports/2016/BRN_Quantum_Materials_for-Energy_Relevant_Technology.pdf" },
     doe_superconductivity: { discipline: "materials", title: "DOE — Basic Research Needs for Superconductivity", url: "https://science.osti.gov/-/media/bes/pdf/reports/files/Basic_Research_Needs_for_Superconductivity_rpt.pdf" },
     nist_materials: { discipline: "materials", title: "NIST Materials Genome Initiative", url: "https://www.nist.gov/mgi" },
-    doe_critical: { discipline: "materials", title: "DOE Critical Materials", url: "https://www.energy.gov/cmm/critical-materials" },
+    doe_critical: { discipline: "materials", title: "DOE Critical Minerals and Materials Program", url: "https://www.energy.gov/cmm/critical-minerals-and-materials-program" },
 
     doe_micro: { discipline: "semiconductor", title: "DOE Microelectronics Initiative", url: "https://science.osti.gov/Initiatives/Microelectronics" },
     src_decadal: { discipline: "semiconductor", title: "SRC — Decadal Plan for Semiconductors", url: "https://www.src.org/about/decadal-plan/" },

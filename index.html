@@ -3,44 +3,53 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="물리학, 화학, 생물학, 재료공학, 반도체·전자공학의 미해결 문제를 여러 관점으로 탐색하는 공개 카탈로그">
+  <meta name="description" content="13개 학문 분야의 미해결 문제를 한국어와 영어로 탐색하는 공개 연구 지도">
   <meta name="theme-color" content="#0b1d26">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Unsolved Problems — 미해결 문제 지도">
-  <meta property="og:description" content="5개 학문 분야의 난제를 이론·실험·공학·가능성 경계로 교차 탐색합니다.">
+  <meta property="og:description" content="13개 학문 분야의 난제를 이론·실험·공학·가능성 경계와 횡단 주제로 교차 탐색합니다.">
   <meta property="og:url" content="https://eljja.github.io/UnsolvedProblems/">
+  <meta property="og:image" content="https://eljja.github.io/UnsolvedProblems/assets/og.png">
+  <meta property="og:image:alt" content="Unsolved Problems — 555 questions across 13 disciplines">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Unsolved Problems — 미해결 문제 지도</title>
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script defer src="data.js"></script>
+  <script defer src="expansion-data.js"></script>
+  <script defer src="translations.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#catalog">카탈로그로 건너뛰기</a>
+  <a class="skip-link" href="#catalog" data-i18n="skipCatalog">카탈로그로 건너뛰기</a>
 
   <header class="site-header">
-    <a class="brand" href="./" aria-label="Unsolved Problems 홈">
+    <a class="brand" href="./" aria-label="Unsolved Problems 홈" data-i18n-aria="brandHome">
       <img src="assets/mark.svg" alt="" width="34" height="34">
       <span>Unsolved Problems</span>
     </a>
-    <nav aria-label="주요 메뉴">
-      <a href="#map">지도</a>
-      <a href="#taxonomy">분류법</a>
-      <a href="#catalog">난제</a>
-      <a href="#sources">출처</a>
+    <nav aria-label="주요 메뉴" data-i18n-aria="mainNav">
+      <a href="#map" data-i18n="navMap">지도</a>
+      <a href="#taxonomy" data-i18n="navTaxonomy">분류법</a>
+      <a href="#catalog" data-i18n="navCatalog">난제</a>
+      <a href="#sources" data-i18n="navSources">출처</a>
       <a class="github-link" href="https://github.com/eljja/UnsolvedProblems">GitHub ↗</a>
     </nav>
+    <div class="language-switch" id="language-switch" role="group" aria-label="언어 선택" data-i18n-aria="languageSelect">
+      <button type="button" data-lang="ko" aria-pressed="true">한국어</button>
+      <button type="button" data-lang="en" aria-pressed="false">English</button>
+    </div>
   </header>
 
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">OPEN RESEARCH ATLAS · 2026</p>
-        <h1 id="hero-title">인류가 아직 모르는 것을<br><em>분류하고 탐색하다.</em></h1>
-        <p class="lede">물리학부터 반도체공학까지. 난제를 학문명만으로 나열하지 않고, 무엇이 부족한지—이론, 실험, 측정, 확장, 혹은 물리 법칙이 정한 경계인지—여러 축으로 함께 봅니다.</p>
+        <h1 id="hero-title" data-i18n-html="heroTitle">인류가 아직 모르는 것을<br><em>분류하고 탐색하다.</em></h1>
+        <p class="lede" data-i18n="heroLede">수학에서 사회 복잡계까지. 난제를 학문명만으로 나열하지 않고, 무엇이 부족한지—이론, 실험, 측정, 확장, 혹은 법칙이 정한 경계인지—여러 축으로 함께 봅니다.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#catalog">난제 탐색</a>
-          <a class="button secondary" href="#taxonomy">분류 기준 보기</a>
+          <a class="button primary" href="#catalog" data-i18n="exploreProblems">난제 탐색</a>
+          <a class="button secondary" href="#taxonomy" data-i18n="viewTaxonomy">분류 기준 보기</a>
         </div>
       </div>
       <div class="hero-orbit" aria-hidden="true">
@@ -48,35 +57,35 @@
         <div class="orbit orbit-b"></div>
         <div class="orbit orbit-c"></div>
         <div class="core">?</div>
-        <span class="satellite s1">물리</span>
-        <span class="satellite s2">화학</span>
-        <span class="satellite s3">생물</span>
-        <span class="satellite s4">재료</span>
-        <span class="satellite s5">전자</span>
+        <span class="satellite s1" data-i18n="orbitMath">수학</span>
+        <span class="satellite s2" data-i18n="orbitLife">생명</span>
+        <span class="satellite s3" data-i18n="orbitEarth">지구</span>
+        <span class="satellite s4" data-i18n="orbitTech">기술</span>
+        <span class="satellite s5" data-i18n="orbitSociety">사회</span>
       </div>
     </section>
 
-    <section class="stats-strip" aria-label="카탈로그 요약">
-      <div><strong id="total-count">—</strong><span>수록 항목</span></div>
-      <div><strong id="discipline-count">—</strong><span>대분야</span></div>
-      <div><strong id="subfield-count">—</strong><span>세부분야</span></div>
-      <div><strong id="source-count">—</strong><span>주요 출처</span></div>
+    <section class="stats-strip" aria-label="카탈로그 요약" data-i18n-aria="catalogSummary">
+      <div><strong id="total-count">—</strong><span data-i18n="statItems">수록 항목</span></div>
+      <div><strong id="discipline-count">—</strong><span data-i18n="statDisciplines">대분야</span></div>
+      <div><strong id="subfield-count">—</strong><span data-i18n="statSubfields">세부분야</span></div>
+      <div><strong id="source-count">—</strong><span data-i18n="statSources">주요 출처</span></div>
     </section>
 
     <section class="map-section section-shell" id="map" aria-labelledby="map-title">
       <div class="section-heading">
         <div>
           <p class="eyebrow">LANDSCAPE</p>
-          <h2 id="map-title">미해결 문제의 지형</h2>
+          <h2 id="map-title" data-i18n="mapTitle">미해결 문제의 지형</h2>
         </div>
-        <p>막대 하나가 한 분야의 수록 범위입니다. 선택하면 아래 카탈로그가 같은 조건으로 좁혀집니다.</p>
+        <p data-i18n="mapDescription">막대 하나가 한 분야의 수록 범위입니다. 선택하면 아래 카탈로그가 같은 조건으로 좁혀집니다.</p>
       </div>
       <div class="map-toolbar">
-        <span>막대 색상 기준</span>
-        <div class="map-lens" id="map-lens" role="group" aria-label="막대 색상 분류 기준">
-          <button type="button" data-lens="nature" aria-pressed="true">문제 성격</button>
-          <button type="button" data-lens="approach" aria-pressed="false">해결 방식</button>
-          <button type="button" data-lens="feasibility" aria-pressed="false">가능성</button>
+        <span data-i18n="barColorBy">막대 색상 기준</span>
+        <div class="map-lens" id="map-lens" role="group" aria-label="막대 색상 분류 기준" data-i18n-aria="barColorGroup">
+          <button type="button" data-lens="nature" aria-pressed="true" data-i18n="nature">문제 성격</button>
+          <button type="button" data-lens="approach" aria-pressed="false" data-i18n="approach">해결 방식</button>
+          <button type="button" data-lens="feasibility" aria-pressed="false" data-i18n="feasibility">가능성</button>
         </div>
       </div>
       <div class="map-legend" id="map-legend" aria-label="막대 색상 범례"></div>
@@ -87,31 +96,41 @@
     <section class="taxonomy section-shell" id="taxonomy" aria-labelledby="taxonomy-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">THREE AXES</p>
-          <h2 id="taxonomy-title">난제를 보는 세 개의 축</h2>
+          <p class="eyebrow">FIVE AXES</p>
+          <h2 id="taxonomy-title" data-i18n="taxonomyTitle">난제를 보는 다섯 개의 축</h2>
         </div>
-        <p>세 축은 서로 독립적입니다. 예를 들어 ‘생물학’ 문제이면서 ‘실험+이론’, ‘측정 난제’, ‘현재 기술로 접근 가능’일 수 있습니다.</p>
+        <p data-i18n="taxonomyDescription">각 축은 서로 독립적입니다. 한 문제를 학문 분야, 해결 방식, 문제 성격, 가능성 경계와 횡단 주제로 함께 볼 수 있습니다.</p>
       </div>
       <div class="taxonomy-grid">
         <article>
           <span class="axis-number">01</span>
-          <h3>학문 분야</h3>
-          <p>물리학 · 화학 · 생물학 · 재료공학 · 반도체/전자공학과 각 세부분야</p>
+          <h3 data-i18n="axisDiscipline">학문 분야</h3>
+          <p data-i18n="axisDisciplineText">자연과학·수학·공학·의학·인지·사회과학의 13개 대분야와 각 세부분야</p>
         </article>
         <article>
           <span class="axis-number">02</span>
-          <h3>필요한 해결 방식</h3>
-          <p><b>이론 중심</b>, <b>실험 중심</b>, <b>이론+실험</b>, <b>공학·시스템</b>으로 구분합니다.</p>
+          <h3 data-i18n="axisApproach">필요한 해결 방식</h3>
+          <p data-i18n="axisApproachText">이론 중심, 실험 중심, 이론+실험, 공학·시스템으로 구분합니다.</p>
         </article>
         <article>
           <span class="axis-number">03</span>
-          <h3>가능성의 경계</h3>
-          <p><b>열린 문제</b>, <b>현재 기술로 불가능</b>, <b>현실적 한계</b>, <b>이론적 불가능</b>을 분리합니다.</p>
+          <h3 data-i18n="axisNature">문제 성격</h3>
+          <p data-i18n="axisNatureText">근본 원리, 예측·모델, 관측·계측, 확장·재현, 설계·시스템, 불가능 경계로 나눕니다.</p>
+        </article>
+        <article>
+          <span class="axis-number">04</span>
+          <h3 data-i18n="axisFeasibility">가능성의 경계</h3>
+          <p data-i18n="axisFeasibilityText">열린 문제, 현재 기술로 불가능, 현실적 한계, 이론적 불가능을 분리합니다.</p>
+        </article>
+        <article>
+          <span class="axis-number">05</span>
+          <h3 data-i18n="axisTheme">횡단 주제</h3>
+          <p data-i18n="axisThemeText">에너지, 우주, 양자, 기후, AI, 지속가능성, 건강, 안전·보안으로 학문 간 연결을 찾습니다.</p>
         </article>
       </div>
       <aside class="boundary-note">
-        <span>중요한 구분</span>
-        <p><strong>난제</strong>는 답을 아직 모르는 질문입니다. <strong>이론적 불가능</strong>은 영구기관·초광속 정보전달·미지 양자상태의 완전 복제처럼 현재 확립된 이론이 금지한 경계입니다. 이 사이트는 둘을 함께 보여주되 절대로 같은 의미로 취급하지 않습니다.</p>
+        <span data-i18n="importantDistinction">중요한 구분</span>
+        <p data-i18n-html="boundaryNote"><strong>난제</strong>는 답을 아직 모르는 질문입니다. <strong>이론적 불가능</strong>은 현재 확립된 법칙·정리 또는 소실된 정보가 금지한 경계입니다. 둘을 함께 보여주되 같은 의미로 취급하지 않습니다.</p>
       </aside>
     </section>
 
@@ -119,41 +138,45 @@
       <div class="section-heading catalog-heading">
         <div>
           <p class="eyebrow">CATALOG</p>
-          <h2 id="catalog-title">난제 카탈로그</h2>
+          <h2 id="catalog-title" data-i18n="catalogTitle">난제 카탈로그</h2>
         </div>
         <p id="result-count" aria-live="polite">전체 항목을 불러오는 중입니다.</p>
       </div>
 
       <form class="filters" id="filters" role="search">
         <label class="search-field">
-          <span>검색</span>
-          <input id="search-input" type="search" placeholder="암흑물질, 생명 기원, 초전도체…" autocomplete="off">
+          <span data-i18n="search">검색</span>
+          <input id="search-input" type="search" placeholder="암흑물질, 생명 기원, 초전도체…" data-i18n-placeholder="searchPlaceholder" autocomplete="off">
         </label>
         <label>
-          <span>학문 분야</span>
-          <select id="discipline-filter"><option value="all">모든 분야</option></select>
+          <span data-i18n="discipline">학문 분야</span>
+          <select id="discipline-filter"><option value="all" data-i18n="allDisciplines">모든 분야</option></select>
         </label>
         <label>
-          <span>해결 방식</span>
-          <select id="approach-filter"><option value="all">모든 방식</option></select>
+          <span data-i18n="approach">해결 방식</span>
+          <select id="approach-filter"><option value="all" data-i18n="allApproaches">모든 방식</option></select>
         </label>
         <label>
-          <span>문제 성격</span>
-          <select id="nature-filter"><option value="all">모든 성격</option></select>
+          <span data-i18n="nature">문제 성격</span>
+          <select id="nature-filter"><option value="all" data-i18n="allNatures">모든 성격</option></select>
         </label>
         <label>
-          <span>가능성</span>
-          <select id="feasibility-filter"><option value="all">모든 가능성</option></select>
+          <span data-i18n="feasibility">가능성</span>
+          <select id="feasibility-filter"><option value="all" data-i18n="allFeasibility">모든 가능성</option></select>
         </label>
-        <button class="reset-button" id="reset-filters" type="button">초기화</button>
+        <label>
+          <span data-i18n="theme">횡단 주제</span>
+          <select id="theme-filter"><option value="all" data-i18n="allThemes">모든 주제</option></select>
+        </label>
+        <button class="reset-button" id="reset-filters" type="button" data-i18n="reset">초기화</button>
       </form>
 
-      <div class="active-filters" id="active-filters" aria-label="적용된 필터"></div>
+      <div class="active-filters" id="active-filters" aria-label="적용된 필터" data-i18n-aria="activeFilters"></div>
       <div class="problem-grid" id="problem-grid"></div>
       <button class="load-more" id="load-more" type="button" hidden>더 보기</button>
       <div class="empty-state" id="empty-state" hidden>
-        <strong>조건에 맞는 항목이 없습니다.</strong>
-        <p>검색어를 줄이거나 필터를 초기화해 보세요.</p>
+        <strong data-i18n="emptyTitle">조건에 맞는 항목이 없습니다.</strong>
+        <p data-i18n="emptyText">검색어를 줄이거나 필터를 초기화해 보세요.</p>
       </div>
     </section>
 
@@ -161,31 +184,31 @@
       <div class="section-heading">
         <div>
           <p class="eyebrow">EVIDENCE</p>
-          <h2 id="sources-title">범위와 출처</h2>
+          <h2 id="sources-title" data-i18n="sourcesTitle">범위와 출처</h2>
         </div>
-        <p>정전된 ‘공식 난제 목록’이 아니라 연구기관 로드맵, 학술 프로그램과 주요 보고서를 교차해 만든 살아 있는 분류입니다.</p>
+        <p data-i18n="sourcesDescription">고정된 ‘공식 난제 목록’이 아니라 연구기관 로드맵, 학술 프로그램과 주요 보고서를 교차해 만든 살아 있는 분류입니다.</p>
       </div>
       <div class="source-groups" id="source-groups"></div>
-      <p class="method-note">분류는 연구 우선순위를 설명하기 위한 편집적 판단입니다. ‘현재 기술로 불가능’은 미래에도 불가능하다는 뜻이 아니며, ‘이론적 불가능’은 적용한 이론의 전제가 바뀌면 재검토될 수 있습니다.</p>
+      <p class="method-note" data-i18n="methodNote">분류는 연구 우선순위를 설명하기 위한 편집적 판단입니다. ‘현재 기술로 불가능’은 미래에도 불가능하다는 뜻이 아니며, ‘이론적 불가능’은 적용한 이론의 전제가 바뀌면 재검토될 수 있습니다.</p>
     </section>
   </main>
 
   <footer>
     <div>
       <strong>Unsolved Problems</strong>
-      <p>모르는 것의 목록이 아니라, 알아내기 위한 지도.</p>
+      <p data-i18n="footerTagline">모르는 것의 목록이 아니라, 알아내기 위한 지도.</p>
     </div>
     <div class="footer-links">
-      <a href="https://github.com/eljja/UnsolvedProblems">소스 및 기여</a>
-      <a href="#taxonomy">분류 원칙</a>
-      <a href="#catalog">전체 난제</a>
+      <a href="https://github.com/eljja/UnsolvedProblems" data-i18n="sourceContribution">소스 및 기여</a>
+      <a href="#taxonomy" data-i18n="classificationPrinciples">분류 원칙</a>
+      <a href="#catalog" data-i18n="allProblems">전체 난제</a>
     </div>
   </footer>
 
   <dialog id="problem-dialog" aria-labelledby="dialog-title">
     <div class="dialog-topline">
       <span id="dialog-index"></span>
-      <button id="dialog-close" type="button" aria-label="상세 보기 닫기">×</button>
+      <button id="dialog-close" type="button" aria-label="상세 보기 닫기" data-i18n-aria="closeDetails">×</button>
     </div>
     <div id="dialog-content"></div>
   </dialog>

@@ -2,7 +2,7 @@
   "name": "unsolved-problems-atlas",
   "version": "1.0.0",
   "private": true,
-  "description": "A multi-axis atlas of open research problems across science and engineering.",
+  "description": "A bilingual multi-axis atlas of 555 open research problems across 13 disciplines.",
   "scripts": {
     "test": "node scripts/validate.mjs"
   }
