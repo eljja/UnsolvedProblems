@@ -16,6 +16,7 @@
       navMap: "지도", navTaxonomy: "분류법", navCatalog: "난제", navSources: "출처",
       heroTitle: "인류가 아직 모르는 것을<br><em>분류하고 탐색하다.</em>",
       heroLede: "수학에서 사회 복잡계까지. 난제를 학문명만으로 나열하지 않고, 무엇이 부족한지—이론, 실험, 측정, 확장, 혹은 법칙이 정한 경계인지—여러 축으로 함께 봅니다.",
+      heroPosterAlt: "13개 학문 분야와 555개 난제를 표현한 Unsolved Problems 연구 지도",
       exploreProblems: "난제 탐색", viewTaxonomy: "분류 기준 보기",
       orbitMath: "수학", orbitLife: "생명", orbitEarth: "지구", orbitTech: "기술", orbitSociety: "사회",
       catalogSummary: "카탈로그 요약", statItems: "수록 항목", statDisciplines: "대분야", statSubfields: "세부분야", statSources: "주요 출처",
@@ -49,6 +50,7 @@
       navMap: "Map", navTaxonomy: "Taxonomy", navCatalog: "Problems", navSources: "Sources",
       heroTitle: "Map and explore<br><em>what humanity does not yet know.</em>",
       heroLede: "From mathematics to complex social systems. Explore not only disciplines, but what each problem lacks—new theory, experiments, measurement, scale, systems engineering, or a boundary set by established laws.",
+      heroPosterAlt: "Unsolved Problems research atlas representing 555 questions across 13 disciplines",
       exploreProblems: "Explore problems", viewTaxonomy: "View taxonomy",
       orbitMath: "Math", orbitLife: "Life", orbitEarth: "Earth", orbitTech: "Tech", orbitSociety: "Society",
       catalogSummary: "Catalog summary", statItems: "cataloged items", statDisciplines: "disciplines", statSubfields: "subfields", statSources: "major sources",
@@ -140,6 +142,7 @@
     document.querySelectorAll("[data-i18n-html]").forEach(node => { node.innerHTML = t(node.dataset.i18nHtml); });
     document.querySelectorAll("[data-i18n-placeholder]").forEach(node => { node.setAttribute("placeholder", t(node.dataset.i18nPlaceholder)); });
     document.querySelectorAll("[data-i18n-aria]").forEach(node => { node.setAttribute("aria-label", t(node.dataset.i18nAria)); });
+    document.querySelectorAll("[data-i18n-alt]").forEach(node => { node.setAttribute("alt", t(node.dataset.i18nAlt)); });
     els.languageSwitch.querySelectorAll("button[data-lang]").forEach(button => {
       button.setAttribute("aria-pressed", String(button.dataset.lang === state.lang));
     });
