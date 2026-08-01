@@ -8,11 +8,11 @@ const failures = [];
 const assert = (condition, message) => { if (!condition) failures.push(message); };
 
 const sandbox = { window: {} };
-for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js"]) {
+for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js"]) {
   vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }
 
-const { PROBLEMS, CATALOG_META: meta, CATALOG_SOURCES: sources } = sandbox.window;
+const { PROBLEMS, CATALOG_META: meta, CATALOG_SOURCES: sources, CATALOG_PRIZES: prizes } = sandbox.window;
 assert(Array.isArray(PROBLEMS), "PROBLEMS must be an array");
 assert(PROBLEMS.length > 0, "catalog must contain at least one problem");
 assert(new Set(PROBLEMS.map(item => item.id)).size === PROBLEMS.length, "problem IDs must be unique");
@@ -36,6 +36,8 @@ for (const problem of PROBLEMS) {
   assert(problem.whyOpenEn?.length > 20, `${problem.id}: missing English rationale`);
   assert(problem.solvedWhenEn?.length > 20, `${problem.id}: missing English resolution criterion`);
   assert(Array.isArray(problem.themes), `${problem.id}: themes must be an array`);
+  assert(Array.isArray(problem.prizeIds), `${problem.id}: prizeIds must be an array`);
+  for (const prizeId of problem.prizeIds) assert(Boolean(prizes[prizeId]), `${problem.id}: unknown prize ${prizeId}`);
   assert(/^\d{4}-\d{2}-\d{2}$/.test(problem.reviewedOn), `${problem.id}: missing review date`);
   assert(problem.selectionBasis?.length > 5, `${problem.id}: missing selection basis`);
   for (const theme of problem.themes) assert(Boolean(meta.themes[theme]), `${problem.id}: unknown theme ${theme}`);
@@ -52,11 +54,23 @@ for (const [sourceId, source] of Object.entries(sources)) {
   assert(/^https:\/\//.test(source.url), `${sourceId}: source must use HTTPS`);
 }
 
-for (const collectionName of ["approaches", "natures", "feasibility", "themes", "importance"]) {
+for (const collectionName of ["approaches", "natures", "feasibility", "themes", "importance", "prizeStatuses"]) {
   for (const [key, item] of Object.entries(meta[collectionName])) {
     assert(/^#[0-9a-f]{6}$/i.test(item.color), `${collectionName}.${key}: missing chart color`);
     assert(item.labelEn?.length > 0, `${collectionName}.${key}: missing English label`);
   }
+}
+
+assert(prizes && Object.keys(prizes).length > 0, "catalog must expose prize definitions");
+for (const [prizeId, prize] of Object.entries(prizes || {})) {
+  assert(Boolean(meta.prizeStatuses[prize.status]), `${prizeId}: unknown prize status`);
+  assert(Boolean(meta.prizeTypes[prize.type]), `${prizeId}: unknown prize type`);
+  assert(Boolean(sources[prize.sourceId]), `${prizeId}: unknown prize source`);
+  assert(/^https:\/\//.test(prize.rulesUrl), `${prizeId}: official rules must use HTTPS`);
+  assert(prize.amount?.length > 2 && prize.amountEn?.length > 2, `${prizeId}: missing bilingual amount`);
+  assert(prize.conditions?.length > 20 && prize.conditionsEn?.length > 20, `${prizeId}: missing bilingual conditions`);
+  assert(/^\d{4}-\d{2}-\d{2}$/.test(prize.reviewedOn), `${prizeId}: missing review date`);
+  assert(PROBLEMS.some(problem => problem.prizeIds.includes(prizeId)), `${prizeId}: prize has no linked catalog item`);
 }
 for (const theme of Object.keys(meta.themes)) {
   assert(PROBLEMS.some(item => item.themes.includes(theme)), `${theme}: theme has no catalog entries`);
@@ -69,11 +83,11 @@ assert(PROBLEMS.filter(item => item.nature === "boundary").every(item => item.im
 assert(PROBLEMS.filter(item => item.nature !== "boundary").every(item => item.importance !== "boundary"), "open research entries cannot use boundary importance");
 
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
-for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "app.js", "assets/mark.svg", "assets/og-738.png"]) {
+for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "app.js", "assets/mark.svg", "assets/og-744.png"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing asset ${asset}`);
   assert(html.includes(asset), `index.html does not reference ${asset}`);
 }
-for (const id of ["language-switch", "hero-poster", "priority-count", "map", "map-lens", "map-legend", "taxonomy", "catalog", "importance-filter", "theme-filter", "sources", "problem-dialog", "hover-tooltip"]) {
+for (const id of ["language-switch", "hero-poster", "priority-count", "prize-count", "map", "map-lens", "map-legend", "taxonomy", "catalog", "importance-filter", "prize-filter", "theme-filter", "sources", "problem-dialog", "hover-tooltip"]) {
   assert(html.includes(`id="${id}"`), `index.html missing #${id}`);
 }
 

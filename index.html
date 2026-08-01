@@ -9,8 +9,8 @@
   <meta property="og:title" content="Unsolved Problems — 미해결 문제 지도">
   <meta property="og:description" content="13개 학문 분야의 난제를 이론·실험·공학·가능성 경계와 횡단 주제로 교차 탐색합니다.">
   <meta property="og:url" content="https://eljja.github.io/UnsolvedProblems/">
-  <meta property="og:image" content="https://eljja.github.io/UnsolvedProblems/assets/og-738.png">
-  <meta property="og:image:alt" content="Unsolved Problems — 738 research questions across 13 disciplines">
+  <meta property="og:image" content="https://eljja.github.io/UnsolvedProblems/assets/og-744.png">
+  <meta property="og:image:alt" content="Unsolved Problems — 744 research questions across 13 disciplines">
   <meta name="twitter:card" content="summary_large_image">
   <title>Unsolved Problems — 미해결 문제 지도</title>
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
@@ -19,6 +19,7 @@
   <script defer src="expansion-data.js"></script>
   <script defer src="translations.js"></script>
   <script defer src="priority-data.js"></script>
+  <script defer src="prize-data.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
@@ -55,8 +56,8 @@
       </div>
       <figure class="hero-poster" id="hero-poster">
         <img
-          src="assets/og-738.png"
-          alt="13개 학문 분야와 738개 연구 질문을 표현한 Unsolved Problems 연구 지도"
+          src="assets/og-744.png"
+          alt="13개 학문 분야와 744개 연구 질문을 표현한 Unsolved Problems 연구 지도"
           data-i18n-alt="heroPosterAlt"
           width="1728"
           height="912"
@@ -71,6 +72,7 @@
       <div><strong id="discipline-count">—</strong><span data-i18n="statDisciplines">대분야</span></div>
       <div><strong id="subfield-count">—</strong><span data-i18n="statSubfields">세부분야</span></div>
       <div><strong id="priority-count">—</strong><span data-i18n="statPriorities">핵심·우선과제</span></div>
+      <div><strong id="prize-count">—</strong><span data-i18n="statPrizeItems">상금 연계 항목</span></div>
       <div><strong id="source-count">—</strong><span data-i18n="statSources">주요 출처</span></div>
     </section>
 
@@ -151,6 +153,14 @@
         <p id="result-count" aria-live="polite">전체 항목을 불러오는 중입니다.</p>
       </div>
 
+      <aside class="prize-scope">
+        <div>
+          <strong data-i18n="prizeScopeTitle">상금 표기 기준</strong>
+          <p data-i18n="prizeScopeText">증명 상금과 성능 목표형 연구경진을 구분합니다. ‘진행 중’은 상금·경진이 유효하다는 뜻이며 신규 참가 가능성을 보장하지 않습니다.</p>
+        </div>
+        <a href="?prize=active#catalog" data-i18n="viewActivePrizes">현재 상금만 보기</a>
+      </aside>
+
       <form class="filters" id="filters" role="search">
         <label class="search-field">
           <span data-i18n="search">검색</span>
@@ -163,6 +173,10 @@
         <label>
           <span data-i18n="importance">중요도</span>
           <select id="importance-filter"><option value="all" data-i18n="allImportance">모든 중요도</option></select>
+        </label>
+        <label>
+          <span data-i18n="prize">상금</span>
+          <select id="prize-filter"><option value="all" data-i18n="allPrizes">모든 상금 상태</option></select>
         </label>
         <label>
           <span data-i18n="approach">해결 방식</span>
@@ -198,7 +212,7 @@
           <p class="eyebrow">EVIDENCE</p>
           <h2 id="sources-title" data-i18n="sourcesTitle">범위와 출처</h2>
         </div>
-        <p data-i18n="sourcesDescription">고정된 ‘공식 난제 목록’이 아니라 연구기관 로드맵, 학술 프로그램과 주요 보고서를 교차해 만든 살아 있는 분류입니다.</p>
+        <p data-i18n="sourcesDescription">고정된 ‘공식 난제 목록’이 아니라 연구기관 로드맵, 학술 프로그램, 상금 주관기관과 주요 보고서를 교차해 만든 살아 있는 분류입니다.</p>
       </div>
       <aside class="curation-note">
         <div>
@@ -209,6 +223,7 @@
           <li data-i18n="criterionOne">학술기관의 명명된 대표 난제</li>
           <li data-i18n="criterionTwo">최신 연구 로드맵에서 반복되는 우선과제</li>
           <li data-i18n="criterionThree">여러 연구축 또는 사회에 큰 파급력이 있는 지속적 프런티어</li>
+          <li data-i18n="criterionFour">공식 상금·연구경진이 명시한 검증 가능한 목표</li>
         </ul>
       </aside>
       <div class="source-groups" id="source-groups"></div>
