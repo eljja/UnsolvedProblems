@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Unsolved Problems">
+  <rect width="64" height="64" rx="16" fill="#f1ad42"/>
+  <path d="M18 18h11v11H18zm17 0h11v11H35zM18 35h11v11H18z" fill="#0b1d26"/>
+  <circle cx="40.5" cy="40.5" r="6.5" fill="none" stroke="#0b1d26" stroke-width="3"/>
+  <circle cx="40.5" cy="40.5" r="1.8" fill="#0b1d26"/>
+</svg>
