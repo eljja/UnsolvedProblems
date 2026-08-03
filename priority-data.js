@@ -1,4 +1,4 @@
-/* Evidence-led expansion: no per-discipline or per-subfield count quotas. */
+/* Evidence-led expansion from institutional problem lists and research roadmaps. */
 (function () {
   "use strict";
 
@@ -395,7 +395,7 @@
     ["수십 년 축적된 질산염·비소·PFAS 오염의 이동과 회복 시간을 유역 규모로 예측할 수 있는가?", "Can the transport and recovery time of decades-old nitrate, arsenic, and PFAS contamination be predicted at watershed scale?"]
   ]});
 
-  // Medicine & health — major disease systems missing from the earlier quota-limited catalog.
+  // Medicine & health — major disease systems from current research priorities.
   add({ discipline: "medicine", subfield: "심혈관 질환", subfieldEn: "Cardiovascular Disease", approach: "hybrid", nature: "prediction", sourceIds: ["nhlbi_vision", "nih_common"], themes: ["health"], items: [
     ["동맥경화반을 안전하게 퇴행시키고 파열 위험을 없앨 수 있는가?", "Can atherosclerotic plaques be regressed safely and their rupture risk eliminated?", "core"],
     ["박출률 보존 심부전의 서로 다른 기전을 환자별로 분류하고 치료할 수 있는가?", "Can the distinct mechanisms of heart failure with preserved ejection fraction be classified and treated patient by patient?"],

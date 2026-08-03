@@ -108,6 +108,23 @@ assert(PROBLEMS.filter(item => item.nature !== "boundary").every(item => item.im
 
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const css = fs.readFileSync(path.join(root, "styles.css"), "utf8");
+const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js"]
+  .map(file => fs.readFileSync(path.join(root, file), "utf8"))
+  .join("\n");
+for (const phrase of [
+  "분야별 숫자를 맞추지",
+  "개수를 맞추지",
+  "수량 목표 없음",
+  "숫자를 맞추기 위한",
+  "편집적 판단",
+  "Discipline totals are never equalized",
+  "No count quotas",
+  "Counts are not matched",
+  "editorial judgment",
+  "quota-limited"
+]) {
+  assert(!publicCopy.includes(phrase), `public copy contains process-oriented wording: ${phrase}`);
+}
 for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "app.js", "assets/mark.svg", "assets/og-744.png"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing asset ${asset}`);
   assert(html.includes(asset), `index.html does not reference ${asset}`);
@@ -116,6 +133,8 @@ for (const id of ["language-switch", "hero-poster", "priority-count", "prize-cou
   assert(html.includes(`id="${id}"`), `index.html missing #${id}`);
 }
 assert(html.includes("<span>인류가 아직 모르는 것을</span>"), "hero title must preserve its semantic first line");
+assert(html.includes('data-i18n="selectionTitle"'), "evidence section must expose academic inclusion criteria");
+assert(html.includes('data-i18n="selectionText"'), "evidence section must explain academic inclusion criteria");
 assert(css.includes("word-break: keep-all"), "hero title must prevent character-by-character Korean wrapping");
 assert(css.includes("@media (max-width: 900px)"), "site must include a tablet hero breakpoint");
 

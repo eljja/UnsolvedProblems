@@ -1,6 +1,5 @@
 /*
- * Curated research-question dataset.
- * Classification is editorial and intended for navigation, not a claim of consensus.
+ * Research-question dataset organized by discipline, method, problem type, and feasibility.
  */
 (function () {
   const META = {
