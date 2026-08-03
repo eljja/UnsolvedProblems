@@ -1,9 +1,8 @@
 /*
  * Bilingual research context for every catalog entry.
  *
- * The attempt cards summarize established research programs and recent
- * directions supported by each entry's linked institutional sources. They are
- * deliberately not presented as an exhaustive paper bibliography.
+ * Each entry receives a compact bottleneck, breakthrough, and resolution pitch,
+ * plus established and recent research approaches.
  */
 (function () {
   "use strict";
@@ -112,6 +111,270 @@
       "Beyond component-level proof of principle, integrated prototypes, stress and lifetime tests, manufacturability evidence, and field-operating data are therefore needed."
     ]
   };
+
+  const breakthroughLens = {
+    theory: [
+      "돌파구는 핵심 가정을 분리하고 증명·반례·정량 예측으로 가능한 경우와 불가능한 경우를 가르는 것이다.",
+      "The breakthrough is to isolate the decisive assumptions and separate possible from impossible cases with a proof, counterexample, or quantitative prediction."
+    ],
+    experiment: [
+      "돌파구는 경쟁 설명이 다른 결과를 내는 조건을 겨냥한 새 실험과 독립 재현이다.",
+      "The breakthrough is a new experiment targeted where competing explanations diverge, followed by independent replication."
+    ],
+    hybrid: [
+      "돌파구는 이론의 사전 예측과 관측·실험 검증을 같은 기준으로 반복하는 폐루프다.",
+      "The breakthrough is a closed loop that repeatedly tests preregistered theoretical predictions against observations or experiments under one standard."
+    ],
+    engineering: [
+      "돌파구는 통합 시제품이 성능·수율·비용·수명을 실제 조건에서 함께 통과하는 것이다.",
+      "The breakthrough is an integrated prototype that simultaneously meets performance, yield, cost, and lifetime targets under real conditions."
+    ],
+    boundary: [
+      "핵심은 불가능을 만드는 전제와 자원 한계를 증명하고, 어떤 조건을 완화하면 가능한지 경계를 정확히 그리는 것이다.",
+      "The task is to prove which assumptions and resource limits create the impossibility, then map what becomes feasible when those conditions are relaxed."
+    ]
+  };
+
+  const definitionLens = {
+    fundamental: [
+      "목표는 후보 설명을 더 늘리는 것이 아니라, 현상을 실제로 지배하는 원리를 서로 다른 예측으로 가려내는 것이다.",
+      "The goal is not to add more candidate explanations, but to identify the governing principle through predictions that distinguish the alternatives."
+    ],
+    prediction: [
+      "목표는 이미 본 자료를 맞추는 모형이 아니라, 보지 못한 조건에서도 결과와 오차 범위를 함께 예측하는 모형을 만드는 것이다.",
+      "The goal is a model that predicts both outcomes and uncertainty under unseen conditions, not one that merely fits known data."
+    ],
+    measurement: [
+      "목표는 간접 징후를 더 모으는 데 그치지 않고, 신호와 잡음·편향을 분리하는 독립적이고 재현 가능한 측정을 확보하는 것이다.",
+      "The goal is an independent, reproducible measurement that separates signal from noise and bias, rather than more indirect hints."
+    ],
+    scale: [
+      "핵심 질문은 실험실의 작은 성공이 규모가 커져도 품질·수율·비용·수명을 유지할 수 있는가이다.",
+      "The question is whether a small laboratory success can retain quality, yield, cost, and lifetime when scaled up."
+    ],
+    system: [
+      "핵심은 한 부품의 최고 성능이 아니라, 서로 충돌하는 요구를 실제 운용 조건에서 모두 만족하는 전체 시스템이다.",
+      "The target is not peak performance from one component, but a complete system that meets conflicting requirements under real operating conditions."
+    ],
+    boundary: [
+      "이 항목은 해법을 찾는 난제가 아니라, 현재의 물리·수학·정보 전제 아래 어디부터 요구가 불가능해지는지 묻는다.",
+      "This is not a search for an ordinary solution; it asks where the request becomes impossible under current physical, mathematical, or information assumptions."
+    ]
+  };
+
+  const disciplineDefinition = {
+    physics: [
+      "관측을 맞추는 후보 가운데 어떤 입자·장·법칙이 실제 원인인지, 서로 다른 정량 예측으로 판별해야 한다.",
+      "The task is to distinguish which particle, field, or law is the real cause by testing quantitative predictions that differ among viable explanations."
+    ],
+    chemistry: [
+      "분자와 반응이 어떤 전자구조·중간체·에너지 경로를 거쳐 관측된 결과를 내는지 원자 수준에서 설명해야 한다.",
+      "The task is to explain at atomic scale which electronic structures, intermediates, and energy pathways produce the observed molecular or reaction outcome."
+    ],
+    biology: [
+      "어떤 분자·세포·환경 과정이 현상을 일으키는지, 관찰된 상관관계를 교란 실험과 시간 순서로 인과관계까지 좁혀야 한다.",
+      "The task is to identify which molecular, cellular, and environmental processes cause the phenomenon, narrowing correlation to causation through perturbation and temporal evidence."
+    ],
+    materials: [
+      "조성만이 아니라 결함·미세구조·공정 이력이 물성을 만드는 인과관계를 밝혀, 만들 수 있는 재료의 성능을 예측해야 한다.",
+      "The task is to explain how defects, microstructure, and processing history—not composition alone—cause properties and determine the performance of manufacturable materials."
+    ],
+    semiconductor: [
+      "소자 하나의 성능이 아니라 트랜지스터·배선·메모리·열·패키지가 함께 작동할 때의 에너지, 속도, 오류와 수율을 설명해야 한다.",
+      "The task is to explain energy, speed, error, and yield when transistors, interconnect, memory, heat, and packaging operate together—not just one device in isolation."
+    ],
+    mathematics: [
+      "유한한 사례를 계산해 확인하는 것으로는 부족하며, 명제가 모든 허용된 경우에 참임을 증명하거나 반례 하나를 찾아야 한다.",
+      "Checking finitely many cases is insufficient: the statement must be proved for every allowed case or defeated by one counterexample."
+    ],
+    computer: [
+      "입력 크기가 커질 때 필요한 시간·메모리·통신량이 어떻게 증가하는지 밝히고, 더 효율적인 알고리즘이 원리적으로 가능한지 판정해야 한다.",
+      "The task is to determine how time, memory, and communication grow with input size and whether a more efficient algorithm is possible in principle."
+    ],
+    earth: [
+      "직접 실험할 수 없는 하나의 지구를 대상으로 관측·과거 대리자료·수치모형을 결합해 원인과 미래 변화 범위를 추정해야 한다.",
+      "The task is to combine observations, historical proxies, and numerical models to infer causes and future change on the one Earth that cannot be rerun as a controlled experiment."
+    ],
+    medicine: [
+      "세포나 동물에서 그럴듯한 기전을 보이는 데서 끝나지 않고, 다양한 환자에게 실제 이득이 위해보다 큰지 검증해야 한다.",
+      "The task goes beyond plausible cell or animal mechanisms: benefit must outweigh harm in diverse patients."
+    ],
+    mechanical: [
+      "이상적인 계산과 시험 조건을 넘어 제조 오차·센서 한계·외란이 있는 실제 환경에서도 안전하고 반복 가능한 성능을 보여야 한다.",
+      "The task is to retain safe, repeatable performance beyond ideal models and tests, despite manufacturing variation, sensor limits, and real disturbances."
+    ],
+    cognitive: [
+      "직접 볼 수 없는 마음의 과정을 행동·뇌·생리 자료로 정의하고, 경쟁 이론이 다른 결과를 내는 실험으로 구분해야 한다.",
+      "The task is to define an unobservable mental process using behavior, brain, and physiological evidence, then separate competing theories with discriminating experiments."
+    ],
+    agriculture: [
+      "유전형·토양·기후·미생물·관리가 함께 만드는 결과를 설명하고, 여러 지역과 계절의 실제 농장에서 효과가 유지되는지 확인해야 한다.",
+      "The task is to explain outcomes jointly shaped by genotype, soil, climate, microbes, and management, then confirm that gains persist across real farms, regions, and seasons."
+    ],
+    social: [
+      "같은 사회의 두 역사를 동시에 볼 수 없으므로, 관측자료와 자연실험에서 실제 원인과 단순 상관을 구분해야 한다.",
+      "Because two histories of the same society cannot be observed at once, the task is to distinguish genuine causes from correlation using observational data and natural experiments."
+    ]
+  };
+
+  const conceptGlossary = [
+    ["암흑물질", "dark matter", "암흑물질은 빛을 내거나 흡수하지 않지만 중력 효과로 존재가 추론되는 미지의 물질이다.", "Dark matter is unseen matter inferred from its gravitational effects rather than emitted or absorbed light."],
+    ["암흑에너지", "dark energy", "암흑에너지는 우주 팽창이 빨라지는 현상을 설명하기 위해 붙인 이름으로, 정체와 물리적 기원은 모른다.", "Dark energy is the name given to whatever drives the accelerating expansion of the universe; its nature and origin remain unknown."],
+    ["우주 인플레이션", "cosmic inflation", "우주 인플레이션은 초기 우주가 극히 짧은 시간에 급팽창했다는 가설이다.", "Cosmic inflation is the hypothesis that the very early universe underwent an extremely brief period of rapid expansion."],
+    ["중성미자", "neutrino", "중성미자는 물질과 거의 반응하지 않고 질량이 매우 작은 기본입자다.", "A neutrino is an elementary particle with tiny mass that interacts only very weakly with matter."],
+    ["CP 대칭", "CP symmetry", "CP 대칭은 입자를 반입자로 바꾸고 공간을 거울처럼 뒤집어도 물리법칙이 같은지를 나타낸다.", "CP symmetry asks whether the laws remain unchanged when particles become antiparticles and space is mirror-reflected."],
+    ["양자 얽힘", "quantum entanglement", "양자 얽힘은 떨어진 계들의 측정 결과를 하나의 양자상태가 강하게 연결하는 현상이다.", "Quantum entanglement is a connection in which one quantum state strongly correlates measurement outcomes across separated systems."],
+    ["질량 간극", "mass gap", "질량 간극은 가능한 가장 낮은 들뜬 상태가 진공보다 유한한 에너지만큼 높은 성질이다.", "A mass gap means the lowest possible excitation lies a finite energy above the vacuum."],
+    ["초전도", "superconduct", "초전도는 특정 조건에서 전기저항이 사라지고 자기장이 배제되는 집단 양자상태다.", "Superconductivity is a collective quantum state with zero electrical resistance and magnetic-field exclusion under suitable conditions."],
+    ["난류", "turbulen", "난류는 소용돌이가 여러 크기에서 불규칙하게 상호작용하는 유체 운동이다.", "Turbulence is fluid motion in which eddies interact irregularly across many scales."],
+    ["플라즈마", "plasma", "플라즈마는 전자와 이온이 분리되어 전자기장에 집단적으로 반응하는 물질 상태다.", "A plasma is a state of matter with separated electrons and ions that respond collectively to electromagnetic fields."],
+    ["바닥상태", "ground state", "바닥상태는 주어진 계가 가질 수 있는 가장 낮은 에너지의 양자상태다.", "The ground state is the lowest-energy quantum state available to a system."],
+    ["전이상태", "transition state", "전이상태는 반응물이 생성물로 바뀌는 경로에서 넘어야 하는 가장 높은 에너지 구조다.", "A transition state is the highest-energy structure crossed along a reaction path from reactants to products."],
+    ["촉매", "catalyst", "촉매는 반응에 소모되지 않으면서 더 낮은 에너지 경로를 제공해 반응 속도와 선택성을 바꾸는 물질이다.", "A catalyst changes reaction rate or selectivity by providing a lower-energy path without being consumed overall."],
+    ["C–H 결합", "C–H bond", "C–H 결합은 유기분자에 매우 흔하지만 서로 비슷하고 안정해 원하는 위치만 선택적으로 바꾸기 어렵다.", "C–H bonds are abundant, similar, and stable, which makes selective modification at one desired position difficult."],
+    ["오페란도", "operando", "오페란도 측정은 장치나 촉매가 실제로 작동하는 동안 내부 구조와 화학상태를 관찰한다.", "Operando measurement observes structure and chemistry while a device or catalyst is actually operating."],
+    ["자기조립", "self-assembly", "자기조립은 구성요소 사이의 상호작용만으로 질서 있는 구조가 스스로 형성되는 과정이다.", "Self-assembly is the spontaneous formation of ordered structures through interactions among their components."],
+    ["후성유전", "epigenetic", "후성유전은 DNA 염기서열을 바꾸지 않고 유전자 사용 방식을 오래 바꾸는 조절 현상이다.", "Epigenetics concerns persistent changes in gene use that do not alter the DNA sequence."],
+    ["미생물군", "microbiome", "미생물군은 한 환경에 사는 미생물과 그 유전자·대사 활동 전체를 뜻한다.", "A microbiome is the community of microbes in an environment together with their genes and metabolic activity."],
+    ["단일세포", "single-cell", "단일세포 분석은 조직 평균 대신 세포 하나하나의 상태와 차이를 측정한다.", "Single-cell analysis measures individual cells rather than averaging over an entire tissue."],
+    ["다중오믹스", "multi-omics", "다중오믹스는 DNA, RNA, 단백질, 대사물처럼 서로 다른 분자층을 함께 분석한다.", "Multi-omics jointly analyzes molecular layers such as DNA, RNA, proteins, and metabolites."],
+    ["노화세포", "senescent cell", "노화세포는 분열을 멈췄지만 살아 남아 주변 조직에 염증성 신호를 보낼 수 있는 세포다.", "A senescent cell has stopped dividing but remains alive and can release inflammatory signals into nearby tissue."],
+    ["프로토셀", "protocell", "프로토셀은 막, 화학반응과 정보복제의 일부 기능을 갖춘 단순한 세포 모형이다.", "A protocell is a simple cell-like model combining some functions of membranes, chemistry, and information replication."],
+    ["미세구조", "microstructure", "미세구조는 재료 내부의 결정립, 상, 기공과 결함이 공간적으로 배열된 모습이다.", "Microstructure is the spatial arrangement of grains, phases, pores, and defects inside a material."],
+    ["파괴인성", "fracture toughness", "파괴인성은 이미 균열이 있는 재료가 균열 성장을 얼마나 잘 버티는지를 나타낸다.", "Fracture toughness measures how strongly a cracked material resists further crack growth."],
+    ["열전", "thermoelectric", "열전 재료는 온도 차이를 전압으로, 또는 전류를 냉각 효과로 바꾼다.", "Thermoelectric materials convert temperature differences into voltage, or electric current into cooling."],
+    ["고체전해질", "solid electrolyte", "고체전해질은 전자는 막고 이온은 이동시키는 고체로, 전지의 액체 전해질을 대체할 수 있다.", "A solid electrolyte blocks electrons while conducting ions and can replace a battery's liquid electrolyte."],
+    ["위상재료", "topological material", "위상재료는 전자상태의 전역적 수학 구조 때문에 표면이나 가장자리에 특별한 전도 상태가 나타나는 재료다.", "A topological material hosts unusual surface or edge conduction because of the global mathematical structure of its electronic states."],
+    ["준안정", "metastable", "준안정 상태는 가장 낮은 에너지는 아니지만 에너지 장벽 때문에 오래 유지되는 상태다.", "A metastable state is not the lowest-energy state but persists because an energy barrier blocks relaxation."],
+    ["란다우어 한계", "Landauer limit", "란다우어 한계는 정보 한 비트를 지울 때 열로 버려야 하는 최소 에너지를 정하는 열역학적 경계다.", "The Landauer limit is the thermodynamic minimum energy that must be dissipated when one bit of information is erased."],
+    ["CMOS", "CMOS", "CMOS는 오늘날 대부분의 디지털 칩을 만드는 상보형 트랜지스터 회로 기술이다.", "CMOS is the complementary-transistor technology used to build most modern digital chips."],
+    ["EUV", "EUV", "EUV 노광은 극자외선으로 웨이퍼에 수 나노미터 크기의 회로 패턴을 전사하는 공정이다.", "EUV lithography uses extreme-ultraviolet light to print nanometer-scale circuit patterns on wafers."],
+    ["칩렛", "chiplet", "칩렛은 서로 다른 기능과 공정으로 만든 작은 칩들을 한 패키지에서 연결하는 설계 방식이다.", "A chiplet architecture connects small dies, often made with different processes, inside one package."],
+    ["인메모리", "in-memory", "인메모리 컴퓨팅은 데이터가 저장된 위치 가까이에서 계산해 데이터 이동 비용을 줄인다.", "In-memory computing performs operations near stored data to reduce data-movement cost."],
+    ["리만 가설", "Riemann hypothesis", "리만 가설은 소수의 분포를 나타내는 제타함수의 비자명한 영점이 모두 한 직선 위에 있다는 명제다.", "The Riemann hypothesis states that all nontrivial zeros of the zeta function, which encodes prime-number distribution, lie on one line."],
+    ["타원곡선", "elliptic curve", "타원곡선은 특정한 삼차방정식의 해들이 기하와 정수론적 덧셈 구조를 이루는 대상이다.", "An elliptic curve is a cubic equation whose solutions carry both geometric structure and an arithmetic addition law."],
+    ["호지 추측", "Hodge conjecture", "호지 추측은 복소 기하의 특정 위상적 구조가 실제 대수방정식으로 정의된 부분공간들의 조합인지 묻는다.", "The Hodge conjecture asks whether certain topological structures in complex geometry arise from combinations of algebraically defined subspaces."],
+    ["나비에–스토크스", "Navier–Stokes", "나비에–스토크스 방정식은 점성과 압력을 가진 유체의 속도 변화를 기술한다.", "The Navier–Stokes equations describe how the velocity of a viscous, pressurized fluid evolves."],
+    ["해바라기 추측", "sunflower conjecture", "해바라기는 여러 집합의 공통 교집합은 같고 나머지 원소는 서로 겹치지 않는 집합족이다.", "A sunflower is a family of sets with the same common intersection and otherwise disjoint elements."],
+    ["P와 NP", "P versus NP", "P는 답을 빠르게 찾을 수 있는 문제, NP는 주어진 답을 빠르게 확인할 수 있는 문제의 모음이다.", "P contains problems whose answers can be found efficiently; NP contains those whose proposed answers can be checked efficiently."],
+    ["형식 검증", "formal verification", "형식 검증은 프로그램이나 시스템의 성질을 수학적 논리로 증명하는 방법이다.", "Formal verification uses mathematical logic to prove properties of programs or systems."],
+    ["차등 개인정보보호", "differential privacy", "차등 개인정보보호는 한 사람의 데이터 포함 여부가 결과에 미치는 영향을 수학적으로 제한한다.", "Differential privacy mathematically limits how much any one person's data can affect an output."],
+    ["기후 민감도", "climate sensitivity", "기후 민감도는 대기 이산화탄소가 두 배가 되었을 때 지구 평균기온이 장기적으로 얼마나 오르는지 나타낸다.", "Climate sensitivity is the long-term global warming caused by a doubling of atmospheric carbon dioxide."],
+    ["AMOC", "AMOC", "AMOC는 대서양에서 따뜻한 표층수와 차가운 심층수를 순환시키는 거대한 해류 체계다.", "The AMOC is the large Atlantic circulation that moves warm surface water and cold deep water."],
+    ["자료동화", "data assimilation", "자료동화는 관측값으로 시뮬레이션의 현재 상태와 매개변수를 지속적으로 보정하는 방법이다.", "Data assimilation continually adjusts a simulation's state and parameters using observations."],
+    ["티핑포인트", "tipping point", "티핑포인트는 작은 추가 변화가 시스템을 되돌리기 어려운 다른 상태로 넘기는 임계점이다.", "A tipping point is a threshold beyond which a small additional change pushes a system into a hard-to-reverse state."],
+    ["대리자료", "proxy", "대리자료는 빙핵, 나이테, 퇴적물처럼 직접 측정 이전의 환경을 간접적으로 기록한 자료다.", "A proxy is an indirect record—such as an ice core, tree ring, or sediment—of conditions before direct measurement."],
+    ["암 전이", "metastasis", "암 전이는 암세포가 원래 종양을 떠나 다른 장기에 자리잡고 자라는 과정이다.", "Cancer metastasis is the process by which tumor cells leave the original site, colonize another organ, and grow there."],
+    ["바이오마커", "biomarker", "바이오마커는 질병 상태나 치료 반응을 나타내는 측정 가능한 생물학적 지표다.", "A biomarker is a measurable biological indicator of disease state or treatment response."],
+    ["항생제 내성", "antimicrobial resistance", "항생제 내성은 미생물이 약물에 노출되어도 살아남고 증식하는 능력이다.", "Antimicrobial resistance is the ability of microbes to survive and reproduce despite drug exposure."],
+    ["오가노이드", "organoid", "오가노이드는 줄기세포로 만든 작은 3차원 조직 모형으로 실제 장기의 일부 구조와 기능을 재현한다.", "An organoid is a small three-dimensional tissue model grown from stem cells that reproduces some organ structure and function."],
+    ["디지털 트윈", "digital twin", "디지털 트윈은 센서 자료로 계속 갱신되며 실제 장비나 공정의 상태를 모사하는 계산 모형이다.", "A digital twin is a computational model updated by sensor data to mirror the state of a real machine or process."],
+    ["캐비테이션", "cavitation", "캐비테이션은 액체 압력이 낮아져 기포가 생겼다가 붕괴하며 충격과 손상을 만드는 현상이다.", "Cavitation occurs when low pressure forms bubbles in a liquid that later collapse and cause shock and damage."],
+    ["마찰·마모·윤활", "tribology", "트라이볼로지는 접촉하는 표면의 마찰, 마모와 윤활을 함께 연구하는 분야다.", "Tribology is the study of friction, wear, and lubrication between contacting surfaces."],
+    ["작업기억", "working memory", "작업기억은 몇 초 동안 정보를 유지하고 조작해 현재 과제를 수행하는 능력이다.", "Working memory is the ability to hold and manipulate information for a few seconds while performing a task."],
+    ["메타인지", "metacognition", "메타인지는 자신의 판단, 기억과 확신이 얼마나 정확한지 평가하는 능력이다.", "Metacognition is the ability to evaluate the accuracy of one's own judgments, memories, and confidence."],
+    ["예측부호화", "predictive coding", "예측부호화는 뇌가 감각 입력을 수동적으로 받기보다 예측과 예측오차를 계속 갱신한다는 계산 관점이다.", "Predictive coding views the brain as continually updating predictions and prediction errors rather than passively receiving sensation."],
+    ["유전자형–환경", "genotype–environment", "유전자형–환경 상호작용은 같은 유전형도 토양·기후·관리 조건에 따라 다른 형질을 보이는 현상이다.", "Genotype–environment interaction means the same genotype can express different traits under different soil, climate, or management conditions."],
+    ["팬유전체", "pangenome", "팬유전체는 한 종의 여러 개체가 공유하거나 일부만 가진 유전자 전체를 함께 나타낸다.", "A pangenome represents all genes shared by, or present in only some, members of a species."],
+    ["근권", "rhizosphere", "근권은 식물 뿌리의 분비물과 미생물 활동이 강하게 영향을 미치는 주변 토양이다.", "The rhizosphere is the soil immediately around roots, strongly shaped by root secretions and microbial activity."],
+    ["반사실", "counterfactual", "반사실은 실제로 일어나지 않았지만 다른 선택을 했다면 일어났을 결과다.", "A counterfactual is the outcome that would have occurred under a choice that was not actually taken."],
+    ["인과추론", "causal inference", "인과추론은 단순한 동반 변화가 아니라 한 요인의 변화가 결과를 바꿨는지 판단하는 방법이다.", "Causal inference asks whether changing one factor changes an outcome, rather than merely observing correlation."],
+    ["에이전트 기반", "agent-based", "에이전트 기반 모형은 서로 다른 규칙을 가진 개인들의 상호작용에서 집단 패턴이 어떻게 생기는지 모의한다.", "An agent-based model simulates how population patterns emerge from interactions among individuals following different rules."],
+    ["사회이동성", "social mobility", "사회이동성은 개인이나 가구가 세대 안팎에서 소득·교육·직업 계층을 얼마나 이동하는지를 뜻한다.", "Social mobility is movement in income, education, or occupational status within or across generations."]
+  ];
+
+  function questionGoalKo(problem) {
+    const stem = problem.question.replace(/\?$/, "");
+    if (/(참인가|성립하는가)$/.test(stem)) {
+      return `“${stem}”에 예라고 답할 보편적 증명이나 아니라고 답할 반례 하나를 찾는 문제다.`;
+    }
+    if (/할 수 있는가$/.test(stem)) {
+      const goal = stem.replace(/할 수 있는가$/, "할 수 있는지");
+      return `${goal}, 가능하다면 어떤 조건과 자원이 필요한지 밝히는 문제다.`;
+    }
+    if (/가능한가$/.test(stem)) {
+      const goal = stem.replace(/가능한가$/, "가능한지");
+      return `${goal}, 가능 영역과 불가능 경계를 구분하는 문제다.`;
+    }
+    if (/얼마인가$/.test(stem)) {
+      const goal = stem.replace(/얼마인가$/, "얼마인지");
+      return `${goal} 신뢰할 수 있는 값과 오차 범위로 정하는 문제다.`;
+    }
+    if (/무엇인가$/.test(stem)) {
+      const goal = stem.replace(/무엇인가$/, "무엇인지");
+      return `${goal} 관측·실험·이론으로 구체적으로 특정하는 문제다.`;
+    }
+    if (["mathematics", "computer"].includes(problem.discipline) && problem.approach === "theory") {
+      return `“${stem}”에 답할 엄밀한 증명·하한·반례 가운데 하나를 찾는 문제다.`;
+    }
+    const indirect = stem
+      .replace(/있는가$/, "있는지")
+      .replace(/없는가$/, "없는지")
+      .replace(/되는가$/, "되는지")
+      .replace(/하는가$/, "하는지")
+      .replace(/는가$/, "는지")
+      .replace(/인가$/, "인지");
+    if (indirect !== stem) return `${indirect} 재현 가능한 근거로 판정하는 문제다.`;
+    return `“${stem}”라는 질문에 정량적이고 검증 가능한 답을 찾는 문제다.`;
+  }
+
+  function questionGoalEn(problem) {
+    const question = problem.questionEn.replace(/\?$/, "");
+    const lowerFirst = text => text ? text[0].toLowerCase() + text.slice(1) : text;
+    if (/^Can /i.test(question)) {
+      return `The concrete task is to determine whether ${lowerFirst(question.replace(/^Can\s+/i, ""))}, and if so, under which assumptions, resources, and performance limits.`;
+    }
+    if (/^Is /i.test(question)) {
+      return `The concrete task is to prove whether ${lowerFirst(question.replace(/^Is\s+/i, ""))} or provide a counterexample.`;
+    }
+    if (/^Does /i.test(question)) {
+      return `The concrete task is to determine whether ${lowerFirst(question.replace(/^Does\s+/i, ""))} in every allowed case or identify where it fails.`;
+    }
+    if (/^Are /i.test(question)) {
+      return `The concrete task is to determine whether ${lowerFirst(question.replace(/^Are\s+/i, ""))}, with evidence that separates the alternatives.`;
+    }
+    if (/^What /i.test(question)) {
+      return `The concrete task is to identify ${lowerFirst(question.replace(/^What\s+/i, ""))} with a quantitative, testable account.`;
+    }
+    if (/^How /i.test(question)) {
+      return `The concrete task is to explain how ${lowerFirst(question.replace(/^How\s+/i, ""))} through a mechanism that makes testable predictions.`;
+    }
+    return `The concrete task is to answer “${problem.questionEn}” with quantitative, reproducible evidence.`;
+  }
+
+  function plainDefinition(problem) {
+    const haystack = `${problem.question} ${problem.subfield}`;
+    const matched = conceptGlossary
+      .filter(entry => haystack.toLocaleLowerCase("ko-KR").includes(entry[0].toLocaleLowerCase("ko-KR")))
+      .sort((a, b) => b[0].length - a[0].length)
+      .slice(0, 2);
+    const conceptsKo = matched.map(entry => entry[2]).join(" ");
+    const conceptsEn = matched.map(entry => entry[3]).join(" ");
+    const discipline = disciplineDefinition[problem.discipline];
+    const lens = ["fundamental", "prediction"].includes(problem.nature)
+      ? discipline
+      : definitionLens[problem.nature];
+    const goalKo = questionGoalKo(problem);
+    const goalEn = questionGoalEn(problem);
+    return {
+      definition: conceptsKo ? `${conceptsKo} ${goalKo}` : `${goalKo} ${lens[0]}`,
+      definitionEn: conceptsEn ? `${conceptsEn} ${goalEn}` : `${goalEn} ${lens[1]}`
+    };
+  }
+
+  function pitchItems(problem, criterionKo, criterionEn) {
+    const labels = {
+      fundamental: ["답으로 인정될 조건", "What would settle it"],
+      prediction: ["통과해야 할 검증", "Required validation"],
+      measurement: ["결정적 증거", "Decisive evidence"],
+      scale: ["현실 규모의 합격선", "Real-scale success test"],
+      system: ["통합 해법의 합격선", "Integrated-system success test"],
+      boundary: ["경계를 다시 그으려면", "What could redraw the boundary"]
+    }[problem.nature];
+    return [
+      { label: labels[0], labelEn: labels[1], text: criterionKo, textEn: criterionEn }
+    ];
+  }
 
   const methods = {
     physics: [
@@ -305,17 +568,11 @@
   function attempt(entry, problem, index, isRecent) {
     const discipline = meta.disciplines[problem.discipline];
     const sourceId = sourceFor(problem, index);
-    const focusKo = problem.nature === "boundary"
-      ? `이 경계 사례에서는 ‘${problem.question}’의 전제와 자원 범위를 명시하는 데 적용된다.`
-      : `${problem.subfield}의 ‘${problem.question}’을 판별 가능한 하위 질문으로 좁히는 데 적용된다.`;
-    const focusEn = problem.nature === "boundary"
-      ? `For this boundary case, it is applied by making the assumptions and resource scope of “${problem.questionEn}” explicit.`
-      : `For ${problem.subfieldEn}, it is applied by narrowing “${problem.questionEn}” into discriminating subquestions.`;
     return {
       title: entry[0],
       titleEn: entry[1],
-      description: `${entry[2]} ${focusKo}`,
-      descriptionEn: `${entry[3]} ${focusEn}`,
+      description: entry[2],
+      descriptionEn: entry[3],
       period: isRecent ? "2023–2026 연구 흐름" : "축적된 핵심 접근",
       periodEn: isRecent ? "2023–2026 direction" : "Established approach",
       sourceId,
@@ -325,28 +582,34 @@
   }
 
   function buildOverview(problem) {
-    const discipline = meta.disciplines[problem.discipline];
-    const importance = meta.importance[problem.importance];
-    const sourceNames = (problem.sourceIds || []).map(id => sources[id]?.title).filter(Boolean).slice(0, 3);
-    const evidenceKo = sourceNames.length
-      ? `수록과 연구 방향의 근거는 ${sourceNames.join(" · ")}의 문제 목록·연구 프로그램·로드맵이며, 아래 시도는 개별 논문 3편을 뜻하기보다 이 근거들에서 반복되는 대표 연구축을 요약한다.`
-      : "아래 시도는 단일 논문 목록이 아니라 이 분야에서 반복되어 온 대표 연구축을 요약한다.";
-    const evidenceEn = sourceNames.length
-      ? `Catalog inclusion and research directions are grounded in the problem lists, programs, or roadmaps of ${sourceNames.join(" · ")}; the attempts below summarize recurring research programs rather than claiming to be three exhaustive papers.`
-      : "The attempts below summarize recurring research programs rather than an exhaustive three-paper bibliography.";
-    const criterionKo = /[.!?]$/.test(problem.solvedWhen) ? problem.solvedWhen : `${problem.solvedWhen}.`;
-    const criterionEn = /[.!?]$/.test(problem.solvedWhenEn) ? problem.solvedWhenEn : `${problem.solvedWhenEn}.`;
-    const resolutionKo = problem.nature === "boundary"
-      ? `경계를 바꾸려면 적용한 전제 가운데 무엇이 실제 세계에서 성립하지 않는지 보이거나, 요구 조건을 완화한 새로운 문제를 정의해야 한다. 현재 분류에서의 판정 기준은 다음과 같다: ${criterionKo}`
-      : `해결 주장은 한 데이터셋이나 한 시제품의 성과만으로는 충분하지 않다. 이 카탈로그가 사용하는 판정 기준은 다음과 같다: ${criterionKo}`;
-    const resolutionEn = problem.nature === "boundary"
-      ? `Changing the boundary would require showing which stated assumption fails in the real setting, or defining a new problem with relaxed demands. The present catalog criterion is: ${criterionEn}`
-      : `A claim of resolution cannot rest on one dataset or one prototype alone. This catalog uses the following criterion: ${criterionEn}`;
+    const definition = plainDefinition(problem);
+    let criterionKo = /[.!?]$/.test(problem.solvedWhen) ? problem.solvedWhen : `${problem.solvedWhen}.`;
+    let criterionEn = /[.!?]$/.test(problem.solvedWhenEn) ? problem.solvedWhenEn : `${problem.solvedWhenEn}.`;
+    if (problem.discipline === "mathematics" && problem.approach === "theory") {
+      criterionKo = "정의된 전제 아래 명제를 빠짐없이 증명하거나, 명제를 거짓으로 만드는 명시적 반례를 제시해야 한다.";
+      criterionEn = "The statement must be proved without gaps under its stated assumptions, or defeated by an explicit counterexample.";
+    } else if (problem.discipline === "computer" && problem.approach === "theory" && problem.nature === "fundamental") {
+      criterionKo = "명확히 정의된 계산 모형에서 성립하는 증명·복잡도 하한·알고리즘 가운데 하나로 질문을 결정해야 한다.";
+      criterionEn = "The question must be settled in a precisely defined computational model by a proof, a complexity lower bound, or an algorithm.";
+    } else if (/나비에.?스토크스/.test(problem.question)) {
+      criterionKo = "3차원 방정식의 해가 모든 허용 초기조건에서 존재하고 매끄럽다는 엄밀한 증명, 또는 유한시간 특이점의 명시적 구성이 필요하다.";
+      criterionEn = "A rigorous proof of global existence and smoothness for all admissible three-dimensional initial data, or an explicit finite-time singularity, is required.";
+    } else if (/양.?밀스/.test(problem.question) && /질량 간극/.test(problem.question)) {
+      criterionKo = "4차원 양자 양–밀스 이론을 수학적으로 구성하고, 진공 위의 최소 들뜸 에너지가 양수임을 엄밀히 증명해야 한다.";
+      criterionEn = "Four-dimensional quantum Yang–Mills theory must be constructed mathematically and rigorously shown to have a positive minimum excitation energy above the vacuum.";
+    }
 
     return {
-      overview: `‘${problem.question}’이라는 질문은 ${discipline.label}의 ${problem.subfield}에서 다루는 ${importance.label}다. ${problem.whyOpen} ${disciplineLens[problem.discipline][0]} ${natureLens[problem.nature][0]} ${approachLens[problem.approach][0]} ${resolutionKo} ${evidenceKo}`,
-      overviewEn: `“${problem.questionEn}” is a ${importance.labelEn.toLowerCase()} in ${problem.subfieldEn}, within ${discipline.labelEn}. ${problem.whyOpenEn} ${disciplineLens[problem.discipline][1]} ${natureLens[problem.nature][1]} ${approachLens[problem.approach][1]} ${resolutionEn} ${evidenceEn}`
+      pitchItems: pitchItems(problem, criterionKo, criterionEn),
+      definition: definition.definition,
+      definitionEn: definition.definitionEn,
+      overview: `${definition.definition} ${overviewPitchText(pitchItems(problem, criterionKo, criterionEn), "text")}`,
+      overviewEn: `${definition.definitionEn} ${overviewPitchText(pitchItems(problem, criterionKo, criterionEn), "textEn")}`
     };
+  }
+
+  function overviewPitchText(items, key) {
+    return items.map(item => item[key]).join(" ");
   }
 
   for (const problem of problems) {
@@ -355,6 +618,9 @@
     const current = customRecent[problem.id] || (problem.nature === "boundary" ? boundaryRecent : recent[problem.discipline]);
     problem.overview = overview.overview;
     problem.overviewEn = overview.overviewEn;
+    problem.plainDefinition = overview.definition;
+    problem.plainDefinitionEn = overview.definitionEn;
+    problem.pitchItems = overview.pitchItems;
     problem.importantAttempts = established.map((entry, index) => attempt(entry, problem, index, false));
     problem.recentAttempts = current.map((entry, index) => attempt(entry, problem, index, true));
     problem.researchContextReviewedOn = "2026-08-02";

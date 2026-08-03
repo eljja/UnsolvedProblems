@@ -35,17 +35,27 @@ for (const problem of PROBLEMS) {
   assert(problem.solvedWhen?.length > 20, `${problem.id}: missing resolution criterion`);
   assert(problem.whyOpenEn?.length > 20, `${problem.id}: missing English rationale`);
   assert(problem.solvedWhenEn?.length > 20, `${problem.id}: missing English resolution criterion`);
-  assert(problem.overview?.length >= problem.whyOpen.length * 3, `${problem.id}: Korean overview must be at least 3x the prior rationale`);
-  assert(problem.overviewEn?.length >= problem.whyOpenEn.length * 3, `${problem.id}: English overview must be at least 3x the prior rationale`);
+  assert(problem.overview?.length > 100 && problem.overview.length < 260, `${problem.id}: Korean overview must remain a concise elevator pitch`);
+  assert(problem.overviewEn?.length > 300 && problem.overviewEn.length < 700, `${problem.id}: English overview must remain a concise elevator pitch`);
+  assert(problem.plainDefinition?.length > 45 && problem.plainDefinitionEn?.length > 100, `${problem.id}: requires a bilingual undergraduate-level definition`);
+  assert(problem.pitchItems?.length === 1, `${problem.id}: requires one concise, problem-specific resolution test`);
+  for (const item of problem.pitchItems || []) {
+    assert(item.label?.length > 3 && item.labelEn?.length > 3, `${problem.id}: diagnostic point requires a bilingual label`);
+    assert(item.text?.length > 20 && item.textEn?.length > 20, `${problem.id}: diagnostic point requires bilingual content`);
+  }
   assert(problem.importantAttempts?.length === 3, `${problem.id}: requires exactly 3 established approaches`);
   assert(problem.recentAttempts?.length === 3, `${problem.id}: requires exactly 3 current directions`);
   for (const attempt of [...problem.importantAttempts, ...problem.recentAttempts]) {
     assert(attempt.title?.length > 5 && attempt.titleEn?.length > 5, `${problem.id}: attempt requires a bilingual title`);
-    assert(attempt.description?.length > 80 && attempt.descriptionEn?.length > 100, `${problem.id}: attempt explanation is too short`);
+    assert(attempt.description?.length > 45 && attempt.description.length < 120, `${problem.id}: Korean attempt must be concise and substantive`);
+    assert(attempt.descriptionEn?.length > 100 && attempt.descriptionEn.length < 260, `${problem.id}: English attempt must be concise and substantive`);
     assert(Boolean(sources[attempt.sourceId]), `${problem.id}: attempt has unknown source ${attempt.sourceId}`);
     assert(problem.sourceIds.includes(attempt.sourceId), `${problem.id}: attempt source must be linked to the problem`);
   }
   assert(/^\d{4}-\d{2}-\d{2}$/.test(problem.researchContextReviewedOn), `${problem.id}: missing research context review date`);
+  for (const phrase of ["개별 논문 3편", "단일 논문 목록", "대표 연구축을 요약", "exhaustive paper bibliography", "ranking of three individual papers"]) {
+    assert(![problem.overview, problem.overviewEn, ...problem.importantAttempts.map(item => item.description), ...problem.recentAttempts.map(item => item.description)].some(text => text?.includes(phrase)), `${problem.id}: contains editorial boilerplate: ${phrase}`);
+  }
   assert(Array.isArray(problem.themes), `${problem.id}: themes must be an array`);
   assert(Array.isArray(problem.prizeIds), `${problem.id}: prizeIds must be an array`);
   for (const prizeId of problem.prizeIds) assert(Boolean(prizes[prizeId]), `${problem.id}: unknown prize ${prizeId}`);
@@ -53,6 +63,9 @@ for (const problem of PROBLEMS) {
   assert(problem.selectionBasis?.length > 5, `${problem.id}: missing selection basis`);
   for (const theme of problem.themes) assert(Boolean(meta.themes[theme]), `${problem.id}: unknown theme ${theme}`);
 }
+
+assert(new Set(PROBLEMS.map(problem => problem.plainDefinition)).size === PROBLEMS.length, "Korean problem definitions must be individually specific");
+assert(new Set(PROBLEMS.map(problem => problem.plainDefinitionEn)).size === PROBLEMS.length, "English problem definitions must be individually specific");
 
 for (const discipline of Object.keys(meta.disciplines)) {
   const count = PROBLEMS.filter(item => item.discipline === discipline).length;
