@@ -73,7 +73,7 @@
     },
     erdos_prizes: {
       discipline: "mathematics",
-      title: "Erdős Problems — Open problems and recorded prize offers",
+      title: "Erdős Problems — Open problems, prize records, and payment guidance",
       url: "https://www.erdosproblems.com/prizes/1000"
     }
   });
@@ -251,22 +251,22 @@
       reviewedOn: "2026-08-05"
     },
     erdos_sunflower: {
-      title: "Erdős 해바라기 문제 상금 제안",
-      titleEn: "Erdős sunflower-problem prize offer",
-      organization: "Paul Erdős의 역사적 제안 / Erdős Problems 기록",
-      organizationEn: "Historical offer by Paul Erdős / recorded by Erdős Problems",
+      title: "Erdős 해바라기 문제 상금",
+      titleEn: "Erdős sunflower-problem prize",
+      organization: "Combinatorics Foundation / Paul Erdős 상금 기록",
+      organizationEn: "Combinatorics Foundation / Paul Erdős prize record",
       type: "proof",
-      status: "legacy",
-      amount: "미화 1,000달러 제안",
-      amountEn: "US$1,000 historical offer",
-      amountShort: "US$1K · 역사적",
-      amountShortEn: "US$1K · legacy",
-      summary: "Erdős가 해바라기 수의 지수형 상한을 밝히는 문제에 제안한 금액이 현재 공개 문제 데이터베이스에 기록되어 있다.",
-      summaryEn: "A public problem database records Erdős's offer for settling the exponential-bound form of the sunflower problem.",
-      conditions: "공식 기관이 현재 지급을 보증하는 상금으로 확인되지 않으므로 ‘역사적 제안’으로만 표시한다. 실제 수령 가능성을 전제해서는 안 된다.",
-      conditionsEn: "No current institutional guarantee of payment was verified, so this is shown only as a historical offer and must not be treated as presently claimable.",
+      status: "active",
+      amount: "미화 1,000달러",
+      amountEn: "US$1,000",
+      amountShort: "US$1K",
+      amountShortEn: "US$1K",
+      summary: "Erdős Problems는 해바라기 문제 #20을 미해결 1,000달러 문제로 기록하며, Combinatorics Foundation이 Erdős 문제 상금 지급을 이어간다고 안내한다.",
+      summaryEn: "Erdős Problems lists sunflower problem #20 as an open US$1,000 problem and states that the Combinatorics Foundation continues to award Erdős problem prizes.",
+      conditions: "평판 있는 학술지에 해법이 출판되어야 하고, Erdős가 해당 금액을 제안했다는 문서를 제출해야 한다. 지급은 Combinatorics Foundation을 대신해 Steve Butler가 관리하며 Erdős Problems 웹사이트 자체는 지급 주체가 아니다.",
+      conditionsEn: "A solution must be published in a reputable journal with documentation that Erdős offered the stated amount. Steve Butler administers awards on behalf of the Combinatorics Foundation; the Erdős Problems website is not the payer.",
       sourceId: "erdos_prizes",
-      rulesUrl: "https://www.erdosproblems.com/20",
+      rulesUrl: "https://www.erdosproblems.com/faq",
       reviewedOn: "2026-08-05"
     }
   };
