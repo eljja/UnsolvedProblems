@@ -1,4 +1,4 @@
-/* Official prize and challenge data, reviewed against organizer pages on 2026-08-01. */
+/* Official prize and challenge data, reviewed against organizer pages on 2026-08-05. */
 (function () {
   "use strict";
 
@@ -96,7 +96,7 @@
       conditionsEn: "A complete solution must appear in a qualifying outlet, at least two years must pass, and it must gain general acceptance in the global mathematics community. CMI does not accept direct submissions.",
       sourceId: "clay_prize",
       rulesUrl: "https://www.claymath.org/millennium-problems/rules/",
-      reviewedOn: "2026-08-01"
+      reviewedOn: "2026-08-05"
     },
     beal_prize: {
       title: "Beal 추측 상금",
@@ -115,7 +115,7 @@
       conditionsEn: "A solution must be published in a respected refereed mathematics journal and is evaluated under the AMS procedure.",
       sourceId: "ams_beal",
       rulesUrl: "https://www.ams.org/about-us/governance/council-meetings/council-minutes0114.pdf",
-      reviewedOn: "2026-08-01"
+      reviewedOn: "2026-08-05"
     },
     xprize_quantum: {
       title: "XPRIZE Quantum Applications",
@@ -134,7 +134,7 @@
       conditionsEn: "Entries must analyze and benchmark a novel algorithm, a new application, or a major resource improvement. The competition is active, but phase-specific entry deadlines must be checked separately.",
       sourceId: "xprize_quantum",
       rulesUrl: "https://www.xprize.org/competitions/qc-apps",
-      reviewedOn: "2026-08-01"
+      reviewedOn: "2026-08-05"
     },
     xprize_healthspan: {
       title: "XPRIZE Healthspan",
@@ -153,7 +153,7 @@
       conditionsEn: "Treatment must take no more than one year and meet specified functional and biomarker criteria. The competition is active, but finals eligibility and registration conditions must be checked on the official page.",
       sourceId: "xprize_healthspan",
       rulesUrl: "https://www.xprize.org/competitions/healthspan",
-      reviewedOn: "2026-08-01"
+      reviewedOn: "2026-08-05"
     },
     xprize_water: {
       title: "XPRIZE Water Scarcity",
@@ -172,7 +172,7 @@
       conditionsEn: "The system track must produce at least one million liters per day over one year; the materials and methods track must demonstrate an operating life of at least ten years. Current entry availability must be checked separately.",
       sourceId: "xprize_water",
       rulesUrl: "https://www.xprize.org/competitions/water",
-      reviewedOn: "2026-08-01"
+      reviewedOn: "2026-08-05"
     },
     xprize_wildfire: {
       title: "XPRIZE Wildfire",
@@ -191,7 +191,7 @@
       conditionsEn: "Track-specific field tests assess speed, accuracy, autonomy, decoy rejection, and suppression. The competition is in its finals, so active status does not imply that new teams can enter.",
       sourceId: "xprize_wildfire",
       rulesUrl: "https://www.xprize.org/competitions/wildfire",
-      reviewedOn: "2026-08-01"
+      reviewedOn: "2026-08-05"
     },
     hutter_compression: {
       title: "Hutter Prize",
@@ -210,7 +210,7 @@
       conditionsEn: "A reproducible compressor must improve the current record while meeting the published corpus, runtime, memory, and disclosure rules. Payment is calculated from the improvement under the current rules.",
       sourceId: "hutter_prize",
       rulesUrl: "https://prize.hutter1.net/",
-      reviewedOn: "2026-08-01"
+      reviewedOn: "2026-08-05"
     },
     eff_large_prime: {
       title: "EFF Cooperative Computing Awards",
@@ -229,7 +229,7 @@
       conditionsEn: "A claim needs a specific integer, a deterministic primality proof, prior open peer-reviewed publication, and reproducible disclosure of methods, code, and hardware. A theorem or algorithm alone is not eligible.",
       sourceId: "eff_coop",
       rulesUrl: "https://www.eff.org/awards/coop/rules",
-      reviewedOn: "2026-08-01"
+      reviewedOn: "2026-08-05"
     },
     feynman_grand: {
       title: "Feynman Grand Prize",
@@ -248,7 +248,7 @@
       conditionsEn: "Both devices must be physically constructed and meet the published functional, dimensional, and verification specifications; a concept or only one device is insufficient.",
       sourceId: "foresight_feynman",
       rulesUrl: "https://foresight.org/prizes/feynman-prizes/",
-      reviewedOn: "2026-08-01"
+      reviewedOn: "2026-08-05"
     },
     erdos_sunflower: {
       title: "Erdős 해바라기 문제 상금 제안",
@@ -267,7 +267,7 @@
       conditionsEn: "No current institutional guarantee of payment was verified, so this is shown only as a historical offer and must not be treated as presently claimable.",
       sourceId: "erdos_prizes",
       rulesUrl: "https://www.erdosproblems.com/20",
-      reviewedOn: "2026-08-01"
+      reviewedOn: "2026-08-05"
     }
   };
 
@@ -293,7 +293,7 @@
     problems.push({
       id: `UP-${String(nextId++).padStart(3, "0")}`,
       feasibility: "open",
-      reviewedOn: "2026-08-01",
+      reviewedOn: "2026-08-05",
       selectionBasis: "official-prize-challenge",
       ...problem
     });

@@ -41,10 +41,11 @@
       sourcesTitle: "근거와 참고자료", sourcesDescription: "각 항목은 학술기관의 대표 난제 목록, 정부·학회의 연구 로드맵, 공식 연구 프로그램과 상금 규정을 근거로 연결합니다.",
       selectionTitle: "수록 기준", selectionText: "장기간 미해결 상태가 지속되며, 해결 조건이 명확하고 학문적·기술적 파급력이 큰 질문을 수록합니다.",
       criterionOne: "학술기관이 명명한 대표 난제", criterionTwo: "정부·학회·연구기관 로드맵의 전략적 우선과제", criterionThree: "여러 분야의 이론·측정·기술을 바꿀 수 있는 지속적 프런티어", criterionFour: "공식 상금·연구경진이 제시한 검증 가능한 목표",
-      methodNote: "중요도는 학술기관의 명명 여부, 로드맵 우선순위와 예상 파급력으로 구분합니다. ‘현재 기술로 불가능’은 기술적 한계, ‘이론적 불가능’은 법칙·정리·정보 제약에 따른 경계를 뜻합니다. 출처·상금 정보 검토일: 2026년 8월 1일.",
+      methodNote: "중요도는 학술기관의 명명 여부, 로드맵 우선순위와 예상 파급력으로 구분합니다. ‘현재 기술로 불가능’은 기술적 한계, ‘이론적 불가능’은 법칙·정리·정보 제약에 따른 경계를 뜻합니다. 출처·상금 정보 검토일: 2026년 8월 5일.",
       footerTagline: "모르는 것의 목록이 아니라, 알아내기 위한 지도.", sourceContribution: "소스 및 기여", classificationPrinciples: "분류 원칙", allProblems: "전체 난제", closeDetails: "상세 보기 닫기",
-      overviewTitle: "문제 정의", prizeInformation: "상금·도전 정보", prizeConditions: "지급·참가 조건", officialRules: "공식 규정", relatedSources: "관련 로드맵·상금 주관기관",
-      importantAttempts: "대표적 해결 시도 3개", recentAttempts: "최근 연구 흐름 3개 · 2023–2026", attemptSource: "연결 근거",
+      overviewTitle: "두 단계로 읽는 문제 정의", generalLevel: "1단계 · 처음 읽는 사람", generalLevelHint: "전문용어보다 질문의 뜻과 중요성을 먼저 설명합니다.", specialistLevel: "2단계 · 전공자 핵심", specialistLevelHint: "핵심 병목, 기술 영역과 해결 판정 기준을 압축합니다.", technicalDifficulties: "핵심 기술 영역",
+      prizeInformation: "상금·도전 정보", prizeAmount: "상금액", prizeBadge: "상금", prizeReviewed: "금액·상태 확인", prizeConditions: "지급·참가 조건", officialRules: "공식 규정", relatedSources: "관련 로드맵·상금 주관기관",
+      importantAttempts: "대표적 해결 시도 3개", recentAttempts: "최근 연구 흐름 3개 · 2023–2026", attemptIdea: "핵심 아이디어", attemptExpert: "전공자 포인트", attemptSource: "연결 근거",
       mapGroup: "분야별 난제 수", mapDistribution: "분포", searchPrefix: "검색", items: "항목", remaining: "개 남음", loadMore: "더 보기",
       fullCatalog: "전체 카탈로그", selectToFilter: "색 구간을 선택하면 바로 필터링됩니다.", selectedConditions: "조건에서", problemWord: "난제",
       problemDescription: "문제입니다."
@@ -80,10 +81,11 @@
       sourcesTitle: "Evidence and references", sourcesDescription: "Each entry is linked to established problem lists, government and scholarly roadmaps, official research programs, and prize rules.",
       selectionTitle: "Inclusion criteria", selectionText: "The catalog includes long-standing open questions with clear resolution criteria and substantial scientific or technological consequences.",
       criterionOne: "Named open problems recognized by scholarly institutions", criterionTwo: "Strategic priorities in government, society, and research-institution roadmaps", criterionThree: "Durable frontiers capable of changing theory, measurement, or technology across fields", criterionFour: "Verifiable objectives defined by official prizes and research competitions",
-      methodNote: "Importance reflects named-problem status, roadmap priority, and expected scientific leverage. ‘Beyond current technology’ denotes a technical limit; ‘theoretically impossible’ denotes a boundary imposed by laws, theorems, or information constraints. Sources and prizes reviewed 1 August 2026.",
+      methodNote: "Importance reflects named-problem status, roadmap priority, and expected scientific leverage. ‘Beyond current technology’ denotes a technical limit; ‘theoretically impossible’ denotes a boundary imposed by laws, theorems, or information constraints. Sources and prizes reviewed 5 August 2026.",
       footerTagline: "Not just a list of unknowns—a map for finding out.", sourceContribution: "Source and contribute", classificationPrinciples: "Classification principles", allProblems: "All problems", closeDetails: "Close details",
-      overviewTitle: "Problem definition", prizeInformation: "Prize and challenge information", prizeConditions: "Award and entry conditions", officialRules: "Official rules", relatedSources: "Related roadmaps and prize organizers",
-      importantAttempts: "3 established research approaches", recentAttempts: "3 current directions · 2023–2026", attemptSource: "Linked evidence",
+      overviewTitle: "Problem definition at two levels", generalLevel: "Level 1 · New to the field", generalLevelHint: "Start with the meaning and importance of the question before specialist terminology.", specialistLevel: "Level 2 · Specialist brief", specialistLevelHint: "Compress the core bottleneck, technical territory, and resolution test.", technicalDifficulties: "Core technical territory",
+      prizeInformation: "Prize and challenge information", prizeAmount: "Prize amount", prizeBadge: "Prize", prizeReviewed: "Amount and status checked", prizeConditions: "Award and entry conditions", officialRules: "Official rules", relatedSources: "Related roadmaps and prize organizers",
+      importantAttempts: "3 established research approaches", recentAttempts: "3 current directions · 2023–2026", attemptIdea: "Core idea", attemptExpert: "Specialist focus", attemptSource: "Linked evidence",
       mapGroup: "Problem counts by discipline", mapDistribution: "distribution", searchPrefix: "Search", items: "items", remaining: "remaining", loadMore: "Load more",
       fullCatalog: "Full catalog", selectToFilter: "Select a color segment to filter immediately.", selectedConditions: "under", problemWord: "problems",
       problemDescription: "problem."
@@ -246,7 +248,8 @@
     if (state.query) {
       const haystack = normalize([
         problem.question, problem.questionEn, problem.subfield, problem.subfieldEn,
-        problem.overview, problem.overviewEn,
+        problem.overview, problem.overviewEn, problem.generalExplanation, problem.generalExplanationEn,
+        problem.specialistExplanation, problem.specialistExplanationEn,
         meta.disciplines[problem.discipline].label, meta.disciplines[problem.discipline].labelEn,
         meta.importance[problem.importance].label, meta.importance[problem.importance].labelEn,
         meta.approaches[problem.approach].label, meta.approaches[problem.approach].labelEn,
@@ -257,8 +260,9 @@
           return prize ? [prize.title, prize.titleEn, prize.organization, prize.organizationEn, prize.amount, prize.amountEn] : [];
         }),
         ...(problem.themes || []).flatMap(key => [meta.themes[key]?.label, meta.themes[key]?.labelEn]),
-        ...(problem.importantAttempts || []).flatMap(item => [item.title, item.titleEn, item.description, item.descriptionEn]),
-        ...(problem.recentAttempts || []).flatMap(item => [item.title, item.titleEn, item.description, item.descriptionEn])
+        ...(problem.technicalTopics || []).flatMap(item => [item.text, item.textEn]),
+        ...(problem.importantAttempts || []).flatMap(item => [item.title, item.titleEn, item.description, item.descriptionEn, item.technicalDetail, item.technicalDetailEn]),
+        ...(problem.recentAttempts || []).flatMap(item => [item.title, item.titleEn, item.description, item.descriptionEn, item.technicalDetail, item.technicalDetailEn])
       ].filter(Boolean).join(" "));
       if (!haystack.includes(normalize(state.query))) return false;
     }
@@ -387,7 +391,7 @@
         </span>
         <h3>${escapeHTML(question(problem))}</h3>
         <span class="card-meta">
-          ${featuredPrize ? `<span class="meta-pill prize-badge" style="--prize-color:${meta.prizeStatuses[featuredPrize.status].color}">◆ ${escapeHTML(localized(featuredPrize, "amountShort"))}</span>` : ""}
+          ${featuredPrize ? `<span class="meta-pill prize-badge" style="--prize-color:${meta.prizeStatuses[featuredPrize.status].color}">◆ ${escapeHTML(t("prizeBadge"))} · ${escapeHTML(localized(featuredPrize, "amountShort"))}</span>` : ""}
           <span class="meta-pill importance" style="--importance-color:${importance.color}">${escapeHTML(label(importance))}</span>
           <span class="meta-pill">${escapeHTML(label(meta.approaches[problem.approach]))}</span>
           <span class="meta-pill">${escapeHTML(natureLabel)}</span>
@@ -482,7 +486,14 @@
           <span class="attempt-period">${escapeHTML(localized(attempt, "period"))}</span>
         </div>
         <h4>${escapeHTML(localized(attempt, "title"))}</h4>
-        <p>${escapeHTML(localized(attempt, "description"))}</p>
+        <div class="attempt-explanation">
+          <span>${escapeHTML(t("attemptIdea"))}</span>
+          <p>${escapeHTML(localized(attempt, "description"))}</p>
+        </div>
+        <div class="attempt-technical">
+          <span>${escapeHTML(t("attemptExpert"))}</span>
+          <p>${escapeHTML(localized(attempt, "technicalDetail"))}</p>
+        </div>
         ${source ? `<a class="attempt-source" href="${source.url}" target="_blank" rel="noreferrer"><span>${escapeHTML(t("attemptSource"))}</span>${escapeHTML(source.title)} ↗</a>` : ""}
       </article>`;
     }).join("")}</div>`;
@@ -500,7 +511,7 @@
     els.dialogContent.innerHTML = `
       <div class="dialog-body">
         <div class="dialog-tags">
-          ${linkedPrizes.map(prize => `<span class="meta-pill prize-badge" style="--prize-color:${meta.prizeStatuses[prize.status].color}">◆ ${escapeHTML(localized(prize, "amountShort"))}</span>`).join("")}
+          ${linkedPrizes.map(prize => `<span class="meta-pill prize-badge" style="--prize-color:${meta.prizeStatuses[prize.status].color}">◆ ${escapeHTML(t("prizeBadge"))} · ${escapeHTML(localized(prize, "amountShort"))}</span>`).join("")}
           <span class="meta-pill importance" style="--importance-color:${importance.color}">${escapeHTML(label(importance))}</span>
           <span class="meta-pill">${escapeHTML(label(meta.approaches[problem.approach]))}</span>
           <span class="meta-pill">${escapeHTML(label(meta.natures[problem.nature]))}</span>
@@ -510,9 +521,21 @@
         <h2 id="dialog-title">${escapeHTML(question(problem))}</h2>
         <section class="dialog-section research-overview">
           <h3>${escapeHTML(t("overviewTitle"))}</h3>
-          <p class="plain-definition">${escapeHTML(localized(problem, "plainDefinition"))}</p>
-          <div class="pitch-list">
-            ${(problem.pitchItems || []).map(item => `<article><span>${escapeHTML(localized(item, "label"))}</span><p>${escapeHTML(localized(item, "text"))}</p></article>`).join("")}
+          <div class="reader-levels">
+            <article class="reader-level general-reader">
+              <header><span>01</span><div><h4>${escapeHTML(t("generalLevel"))}</h4><p>${escapeHTML(t("generalLevelHint"))}</p></div></header>
+              <p class="level-explanation">${escapeHTML(localized(problem, "generalExplanation"))}</p>
+            </article>
+            <article class="reader-level specialist-reader">
+              <header><span>02</span><div><h4>${escapeHTML(t("specialistLevel"))}</h4><p>${escapeHTML(t("specialistLevelHint"))}</p></div></header>
+              <p class="level-explanation">${escapeHTML(localized(problem, "specialistExplanation"))}</p>
+              <div class="technical-topics"><strong>${escapeHTML(t("technicalDifficulties"))}</strong><ul>
+                ${(problem.technicalTopics || []).map(item => `<li>${escapeHTML(localized(item, "text"))}</li>`).join("")}
+              </ul></div>
+              <div class="pitch-list">
+                ${(problem.pitchItems || []).map(item => `<article><span>${escapeHTML(localized(item, "label"))}</span><p>${escapeHTML(localized(item, "text"))}</p></article>`).join("")}
+              </div>
+            </article>
           </div>
         </section>
         <div class="research-columns">
@@ -527,10 +550,11 @@
         </div>
         ${linkedPrizes.length ? `<section class="dialog-section"><h3>${escapeHTML(t("prizeInformation"))}</h3><div class="prize-list">
           ${linkedPrizes.map(prize => `<article class="prize-entry" style="--prize-color:${meta.prizeStatuses[prize.status].color}">
-            <div class="prize-entry-top"><strong>${escapeHTML(localized(prize, "title"))}</strong><span>${escapeHTML(localized(prize, "amount"))}</span></div>
+            <div class="prize-entry-top"><strong>${escapeHTML(localized(prize, "title"))}</strong><div class="prize-amount"><small>${escapeHTML(t("prizeAmount"))}</small><span>${escapeHTML(localized(prize, "amount"))}</span></div></div>
             <p class="prize-organization">${escapeHTML(localized(prize, "organization"))} · ${escapeHTML(label(meta.prizeTypes[prize.type]))} · ${escapeHTML(label(meta.prizeStatuses[prize.status]))}</p>
             <p>${escapeHTML(localized(prize, "summary"))}</p>
             <p><b>${escapeHTML(t("prizeConditions"))}:</b> ${escapeHTML(localized(prize, "conditions"))}</p>
+            <p class="prize-reviewed">${escapeHTML(t("prizeReviewed"))}: ${escapeHTML(prize.reviewedOn)}</p>
             <a href="${prize.rulesUrl}" target="_blank" rel="noreferrer">${escapeHTML(t("officialRules"))} ↗</a>
           </article>`).join("")}
         </div></section>` : ""}

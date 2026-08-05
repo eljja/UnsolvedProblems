@@ -1,8 +1,8 @@
 /*
  * Bilingual research context for every catalog entry.
  *
- * Each entry receives a compact bottleneck, breakthrough, and resolution pitch,
- * plus established and recent research approaches.
+ * Each entry receives a two-level explanation for general and specialist readers,
+ * plus established and recent research approaches with technical context.
  */
 (function () {
   "use strict";
@@ -109,6 +109,131 @@
     engineering: [
       "따라서 구성요소의 원리 증명을 넘어 통합 시제품, 극한·수명 시험, 제조성과 현장 운용 자료가 필요하다.",
       "Beyond component-level proof of principle, integrated prototypes, stress and lifetime tests, manufacturability evidence, and field-operating data are therefore needed."
+    ]
+  };
+
+  const generalImpact = {
+    fundamental: [
+      "이 질문을 풀면 여러 후보 설명 가운데 실제 원인을 가려내고, 비슷한 현상에도 적용되는 원리를 세울 수 있다.",
+      "Solving it would distinguish the real cause from competing explanations and establish a principle that applies to related phenomena."
+    ],
+    prediction: [
+      "이 질문을 풀면 이미 관측한 사례를 설명하는 데서 그치지 않고, 새로운 조건에서 결과와 위험을 미리 계산할 수 있다.",
+      "Solving it would move beyond fitting known cases and allow outcomes and risks to be forecast under new conditions."
+    ],
+    measurement: [
+      "이 질문을 풀면 간접적인 징후가 아니라 독립적으로 반복할 수 있는 측정으로 현상의 존재와 크기를 판정할 수 있다.",
+      "Solving it would replace indirect hints with an independently repeatable measurement of whether the effect exists and how large it is."
+    ],
+    scale: [
+      "이 질문을 풀면 작은 실험의 성공을 실제 규모에서도 품질·비용·수명을 유지하는 기술로 바꿀 수 있다.",
+      "Solving it would turn a small experimental success into a technology that preserves quality, cost, and lifetime at real scale."
+    ],
+    system: [
+      "이 질문을 풀면 잘 작동하는 개별 부품을 넘어 안전성과 경제성을 갖춘 완전한 시스템을 만들 수 있다.",
+      "Solving it would move beyond promising components to a complete system with credible safety and economics."
+    ],
+    boundary: [
+      "이 경계를 이해하면 불가능한 목표에 자원을 낭비하지 않고, 어떤 조건을 바꾸면 가능한 목표가 되는지 알 수 있다.",
+      "Understanding this boundary prevents effort being spent on impossible goals and shows which assumptions must change to make a useful target feasible."
+    ]
+  };
+
+  const technicalAxes = {
+    physics: [
+      ["유효장론의 적용 범위, 대칭·보존법칙과 모형 축퇴", "effective-theory validity, symmetries and conservation laws, and model degeneracy"],
+      ["검출기 선택효율, 배경 분포, 계통오차와 통계적 식별가능성", "detector acceptance, background distributions, systematic error, and statistical identifiability"],
+      ["서로 다른 에너지·시간·길이 척도의 연결과 외삽 불확실성", "links across energy, time, and length scales, including extrapolation uncertainty"]
+    ],
+    chemistry: [
+      ["전자상관, 전이상태, 자유에너지면과 반응속도론", "electron correlation, transition states, free-energy surfaces, and reaction kinetics"],
+      ["용매·전해질·계면·촉매 활성점의 동적 구조와 오페란도 측정", "dynamic solvent, electrolyte, interface, and catalytic-site structure under operando measurement"],
+      ["배치 간 재현성, 물질·에너지 수지, 선택도와 열화 경로", "batch reproducibility, mass and energy balances, selectivity, and degradation pathways"]
+    ],
+    biology: [
+      ["유전자형–표현형 연결, 비선형 조절망과 진화적 제약", "genotype–phenotype links, nonlinear regulatory networks, and evolutionary constraints"],
+      ["세포 상태 이질성, 시공간 다중오믹스와 인과 교란", "cell-state heterogeneity, spatiotemporal multi-omics, and causal perturbation"],
+      ["모형생물–인간 간 번역, 개체차와 종단 검증", "translation from model organisms to humans, individual variation, and longitudinal validation"]
+    ],
+    materials: [
+      ["조성–결함–상–미세구조–물성의 다중척도 연결", "multiscale links among composition, defects, phases, microstructure, and properties"],
+      ["준안정 구조·계면의 현장 계측과 구조 추론 역문제", "in-situ measurement of metastable structures and interfaces, and the inverse problem of structural inference"],
+      ["공정창·수율·피로·열화·수명 분포를 포함한 스케일업", "scale-up including process windows, yield, fatigue, degradation, and lifetime distributions"]
+    ],
+    semiconductor: [
+      ["양자·전하·열 수송, 계면 상태와 소자 변동성", "quantum, charge, and heat transport, interface states, and device variability"],
+      ["리소그래피·증착·식각·계측 오차의 공정 통합과 수율", "process integration and yield across lithography, deposition, etch, and metrology errors"],
+      ["배선·메모리·패키지·전력 무결성을 포함한 소자–시스템 공동 최적화", "device-to-system co-optimization including interconnect, memory, packaging, and power integrity"]
+    ],
+    mathematics: [
+      ["가정의 최소화, 불변량·극단구조·환원과 정량적 하한", "minimal assumptions, invariants, extremal structures, reductions, and quantitative lower bounds"],
+      ["특수 경우·계산 검증과 일반 증명 사이의 논리적 간극", "the logical gap between special cases or computation and a general proof"],
+      ["장벽 정리, 반례 공간과 형식 검증 가능한 보조정리", "barrier theorems, counterexample spaces, and machine-checkable lemmas"]
+    ],
+    computer: [
+      ["최악·평균 경우 복잡도, 환원, 하한과 표본복잡도", "worst- and average-case complexity, reductions, lower bounds, and sample complexity"],
+      ["분포 이동·적대적 입력·데이터 누수와 평가 식별성", "distribution shift, adversarial inputs, data leakage, and evaluation identifiability"],
+      ["메모리·통신·에너지·지연을 포함한 종단 시스템 비용", "end-to-end system cost including memory, communication, energy, and latency"]
+    ],
+    earth: [
+      ["비선형 결합과 피드백, 초기조건·매개변수·구조 불확실성", "nonlinear coupling and feedback, with initial-condition, parameter, and structural uncertainty"],
+      ["관측망 편향, 대리자료 보정, 시공간 해상도와 자료동화", "observing-network bias, proxy calibration, spatiotemporal resolution, and data assimilation"],
+      ["극한사건 꼬리확률, 원인 귀속과 지역 규모 외삽", "tail probabilities of extremes, causal attribution, and regional-scale extrapolation"]
+    ],
+    medicine: [
+      ["표적 기전, 질병 아형, 약동·약력과 바이오마커 타당성", "target mechanisms, disease subtypes, pharmacokinetics and pharmacodynamics, and biomarker validity"],
+      ["교란·선택편향·평가지표 정의와 환자군 이질성", "confounding, selection bias, endpoint definition, and patient heterogeneity"],
+      ["임상적 효과크기, 위해·추적기간·외부 타당성과 접근성", "clinical effect size, harms, follow-up duration, external validity, and access"]
+    ],
+    mechanical: [
+      ["비선형 동역학, 접촉·난류·파괴와 모형 불확실성", "nonlinear dynamics, contact, turbulence, fracture, and model uncertainty"],
+      ["센서·구동기·제어기의 지연, 포화와 고장 상호작용", "delay, saturation, and failure interactions across sensors, actuators, and controllers"],
+      ["공차·인증·극한환경·정비성과 현장 신뢰도", "tolerances, certification, extreme environments, maintainability, and field reliability"]
+    ],
+    cognitive: [
+      ["잠재변수의 조작적 정의, 계산모형 식별성과 측정 불변성", "operational definitions of latent variables, computational-model identifiability, and measurement invariance"],
+      ["행동–뇌–생리 신호의 시간 정렬과 인과 교란", "temporal alignment and causal perturbation across behavioral, neural, and physiological signals"],
+      ["과제·문화·발달·개인차를 넘는 재현성과 일반화", "replication and generalization across tasks, cultures, development, and individual differences"]
+    ],
+    agriculture: [
+      ["유전형×환경×관리 상호작용과 다형질 절충", "genotype-by-environment-by-management interactions and multi-trait tradeoffs"],
+      ["토양·미생물군·기상·병해의 시공간 이질성", "spatiotemporal heterogeneity in soil, microbiomes, weather, pests, and disease"],
+      ["다환경 수량 안정성, 경제성·전과정 영향과 농가 채택", "yield stability across environments, economics, life-cycle impacts, and farm adoption"]
+    ],
+    social: [
+      ["내생성·선택편향·간섭과 인과 식별 가정", "endogeneity, selection bias, interference, and assumptions for causal identification"],
+      ["네트워크·전략적 반응·제도 피드백과 모형 민감도", "networks, strategic response, institutional feedback, and model sensitivity"],
+      ["외적 타당성, 분배효과·윤리·재현성과 정책 이행", "external validity, distributional effects, ethics, replication, and policy implementation"]
+    ]
+  };
+
+  const theoreticalComputerAxes = [
+    ["계산모형, 균일성·비균일성, 무작위성·조언과 자원 척도의 정의", "the computational model, uniformity versus nonuniformity, randomness or advice, and the resource measure"],
+    ["완전문제·환원, 회로·증명·통신 복잡도 하한과 알려진 장벽 정리", "complete problems and reductions, lower bounds in circuit, proof, or communication complexity, and known barrier theorems"],
+    ["최악·평균·매개변수화 경우의 구분과 기계 검증 가능한 증명", "the distinction among worst-case, average-case, and parameterized regimes, with machine-checkable proofs"]
+  ];
+
+  const boundaryTechnicalAxes = [
+    ["금지 정리가 의존하는 정확한 공리·물리법칙·정보 접근 가정", "the exact axioms, physical laws, and information-access assumptions used by the no-go result"],
+    ["정확·근사·확률적 해법의 구분과 시간·메모리·에너지 자원 모형", "the distinction among exact, approximate, and probabilistic solutions, with time, memory, and energy resource models"],
+    ["명시적 반례·하한 인증서와 전제를 완화했을 때의 가능 영역", "explicit counterexamples or lower-bound certificates and the feasible region after assumptions are relaxed"]
+  ];
+
+  const problemTechnicalAxes = {
+    "UP-121": [
+      ["초기 지구에서 가능한 광물·대기·에너지원과 전생물 합성 경로의 지구화학적 일관성", "geochemical consistency among plausible early-Earth minerals, atmospheres, energy sources, and prebiotic synthesis routes"],
+      ["효소 없는 복제, 자기촉매 반응망, 키랄 선택과 오류 문턱", "enzyme-free replication, autocatalytic networks, chiral selection, and error thresholds"],
+      ["유전·대사·막 성장의 결합, 습윤–건조 주기와 지질·동위원소 증거", "coupling heredity, metabolism, and membrane growth with wet–dry cycling and lipid or isotopic evidence"]
+    ],
+    "UP-632": [
+      ["입력·출력 비용과 정확도를 포함한 고전–양자 복잡도 분리", "classical–quantum complexity separation including input, output, and accuracy costs"],
+      ["논리 큐비트·게이트·마법상태·디코딩과 오류정정 문턱의 종단 자원 추정", "end-to-end resource estimates for logical qubits, gates, magic states, decoding, and error-correction thresholds"],
+      ["강한 고전 기준선, 결과 검증 가능성과 시간·에너지 손익분기점", "strong classical baselines, output verifiability, and time or energy break-even points"]
+    ],
+    "UP-744": [
+      ["원자 배치 오차, 위치 선택적 결합 형성과 기계합성 반응 경로", "atomic placement error, site-selective bond formation, and mechanosynthetic reaction pathways"],
+      ["분자 구동기의 에너지 공급·제어·입출력·오류 누적과 조립", "energy delivery, control, input/output, error accumulation, and assembly for molecular actuators"],
+      ["나노 로봇팔과 계산장치의 치수·기능을 함께 판정하는 독립 계측", "independent metrology that jointly verifies the dimensions and functions of the nanoscale arm and computing device"]
     ]
   };
 
@@ -362,6 +487,67 @@
     };
   }
 
+  function sentence(text) {
+    const clean = String(text || "").trim();
+    return /[.!?]$/.test(clean) ? clean : `${clean}.`;
+  }
+
+  function generalExplanation(problem, definition) {
+    let impact = generalImpact[problem.nature] || generalImpact.fundamental;
+    if (problem.discipline === "mathematics" && problem.approach === "theory") {
+      impact = [
+        "해결은 모든 허용 경우를 포괄하는 증명이나 명시적 반례가 되어야 하며, 그 과정에서 다른 문제에도 쓸 수 있는 새로운 수학 도구가 나올 수 있다.",
+        "A resolution must cover every allowed case or give an explicit counterexample, and the proof may create tools useful far beyond this one problem."
+      ];
+    } else if (problem.discipline === "computer" && problem.approach === "theory") {
+      impact = [
+        "해결은 어떤 계산이 주어진 시간·메모리로 가능한지 경계를 정해 알고리즘, 암호, 검증의 기본 한계를 바꿀 수 있다.",
+        "A resolution would locate the boundary of what can be computed with given time and memory, changing basic limits in algorithms, cryptography, and verification."
+      ];
+    }
+    return {
+      text: `${sentence(definition.definition)} ${impact[0]}`,
+      textEn: `${sentence(definition.definitionEn)} ${impact[1]}`
+    };
+  }
+
+  function specialistExplanation(problem) {
+    let discipline = disciplineLens[problem.discipline];
+    if (problem.discipline === "mathematics" && problem.approach === "theory") {
+      discipline = [
+        "전공자 관점에서는 명제의 양화사, 차원·정칙성·경계조건을 고정하고 특수 경우의 성립이 일반 정리로 확장되지 않는 지점을 찾아야 한다.",
+        "For a specialist, the quantifiers, dimension, regularity, and boundary conditions must be fixed precisely, and the obstruction to extending special cases into a general theorem must be identified."
+      ];
+    } else if (problem.discipline === "computer" && problem.approach === "theory") {
+      discipline = [
+        "전공자 관점에서는 계산모형과 자원 척도를 먼저 고정하고, 환원·상하한·완전성 결과가 무작위성·비균일성·오라클을 허용할 때도 유지되는지 구분해야 한다.",
+        "For a specialist, the computational model and resource measure must be fixed first, then reductions, upper and lower bounds, and completeness results must be separated across randomness, nonuniformity, and oracle access."
+      ];
+    }
+    const nature = natureLens[problem.nature];
+    const approach = approachLens[problem.approach];
+    const questionKo = problem.question.replace(/\?$/, "");
+    const questionEn = problem.questionEn.replace(/\?$/, "");
+    return {
+      text: `전공자 관점의 질문은 “${questionKo}”이다. 이는 ${problem.subfield}의 모형·증거·판정 조건을 함께 묻는다. ${discipline[0]} ${nature[0]} ${approach[0]} 현재 이 질문이 열려 있는 직접적인 이유는 다음과 같다. ${sentence(problem.whyOpen)}`,
+      textEn: `For a specialist, “${questionEn}” jointly concerns the models, evidence, and decision criteria of ${problem.subfieldEn}. ${discipline[1]} ${nature[1]} ${approach[1]} The immediate reason the question remains open is: ${sentence(problem.whyOpenEn)}`
+    };
+  }
+
+  function axesForProblem(problem) {
+    let axes = problemTechnicalAxes[problem.id] || technicalAxes[problem.discipline] || [];
+    if (problem.nature === "boundary") axes = boundaryTechnicalAxes;
+    else if (!problemTechnicalAxes[problem.id] && problem.discipline === "computer" && problem.approach === "theory" && /복잡도|알고리즘|계산|P와 NP|하한/.test(`${problem.subfield} ${problem.question}`)) axes = theoreticalComputerAxes;
+    return axes;
+  }
+
+  function problemTechnicalTopics(problem) {
+    return axesForProblem(problem).map(axis => ({
+      text: `${problem.subfield}: ${axis[0]}`,
+      textEn: `${problem.subfieldEn}: ${axis[1]}`
+    }));
+  }
+
   function pitchItems(problem, criterionKo, criterionEn) {
     const labels = {
       fundamental: ["답으로 인정될 조건", "What would settle it"],
@@ -565,14 +751,77 @@
     return ids[index % ids.length];
   }
 
+  function attemptTechnicalDetail(entry, problem, index, isRecent) {
+    const axis = axesForProblem(problem)[index] || [problem.subfield, problem.subfieldEn];
+    const questionKo = problem.question.replace(/\?$/, "");
+    const questionEn = problem.questionEn.replace(/\?$/, "");
+    const criterionKo = problem.resolutionCriterion || problem.solvedWhen;
+    const criterionEn = problem.resolutionCriterionEn || problem.solvedWhenEn;
+    if (isRecent && index === 0) {
+      return {
+        text: `${problem.subfield}의 최근 ${entry[0]} 연구에서 다루는 기술 초점은 ${axis[0]}이다. 새 자료·계산을 연결해 “${questionKo}”의 탐색 범위를 좁힌다.`,
+        textEn: `Recent work on ${entry[1]} in ${problem.subfieldEn} links ${axis[1]} to new data and computation to narrow the solution space for “${questionEn}.”`
+      };
+    }
+    if (isRecent && index === 1) {
+      return {
+        text: `연구 질문: “${questionKo}”. 여기서 확인할 전공자 초점은 ${axis[0]}이다. ${sentence(problem.whyOpen)} 이 한계가 다른 조건에서도 남는지를 전향적으로 시험해야 한다.`,
+        textEn: `For “${questionEn},” the specialist focus is ${axis[1]}. ${sentence(problem.whyOpenEn)} Prospective tests must determine whether that limitation persists under new conditions.`
+      };
+    }
+    if (isRecent) {
+      return {
+        text: `“${questionKo}”의 종단 평가 항목은 ${axis[0]}이다. 해결 판정 기준: ${sentence(criterionKo)}`,
+        textEn: `Long-horizon evaluation of “${questionEn}” must cover ${axis[1]}. Resolution test: ${sentence(criterionEn)}`
+      };
+    }
+    if (index === 0) {
+      const connection = {
+        theory: [
+          "이 질문을 정의·가정·보조정리로 분해해 증명 가능한 중간 목표를 만든다.",
+          `It decomposes “${questionEn}” into definitions, assumptions, and lemmas that can serve as provable intermediate targets.`
+        ],
+        experiment: [
+          "이 질문을 조작변수·관측량·대조군으로 분해해 판별 가능한 신호를 만든다.",
+          `It decomposes “${questionEn}” into interventions, observables, and controls that can produce a discriminating signal.`
+        ],
+        hybrid: [
+          "이 문제의 모형 변수와 측정량을 연결해 후보 설명의 정량 예측을 비교한다.",
+          `It links model variables to observables so candidate answers to “${questionEn}” can be compared quantitatively.`
+        ],
+        engineering: [
+          "이 질문을 구성요소·인터페이스·성능 지표로 분해해 시스템 절충을 비교한다.",
+          `It decomposes “${questionEn}” into components, interfaces, and performance metrics so system tradeoffs can be compared.`
+        ]
+      }[problem.approach] || [questionKo, questionEn];
+      return {
+        text: `${problem.subfield}에서 ${entry[0]}의 기술 초점은 ${axis[0]}이다. 연구 질문: “${questionKo}”. ${connection[0]}`,
+        textEn: `In ${problem.subfieldEn}, the technical focus of ${entry[1]} is ${axis[1]}. ${connection[1]}`
+      };
+    }
+    if (index === 1) {
+      return {
+        text: `연구 질문: “${questionKo}”. 이를 검정할 때는 ${axis[0]}을 통제해 실제 신호와 모형 오류를 분리해야 한다. 현재 병목: ${sentence(problem.whyOpen)}`,
+        textEn: `Testing “${questionEn}” requires control of ${axis[1]} to separate the real signal from model error. Current bottleneck: ${sentence(problem.whyOpenEn)}`
+      };
+    }
+    return {
+      text: `“${questionKo}”의 독립 검증에서 확인할 항목은 ${axis[0]}이다. 해결 판정 기준: ${sentence(criterionKo)}`,
+      textEn: `Independent validation of “${questionEn}” must cover ${axis[1]}. Resolution test: ${sentence(criterionEn)}`
+    };
+  }
+
   function attempt(entry, problem, index, isRecent) {
     const discipline = meta.disciplines[problem.discipline];
     const sourceId = sourceFor(problem, index);
+    const technical = attemptTechnicalDetail(entry, problem, index, isRecent);
     return {
       title: entry[0],
       titleEn: entry[1],
       description: entry[2],
       descriptionEn: entry[3],
+      technicalDetail: technical.text,
+      technicalDetailEn: technical.textEn,
       period: isRecent ? "2023–2026 연구 흐름" : "축적된 핵심 접근",
       periodEn: isRecent ? "2023–2026 direction" : "Established approach",
       sourceId,
@@ -583,6 +832,8 @@
 
   function buildOverview(problem) {
     const definition = plainDefinition(problem);
+    const general = generalExplanation(problem, definition);
+    const specialist = specialistExplanation(problem);
     let criterionKo = /[.!?]$/.test(problem.solvedWhen) ? problem.solvedWhen : `${problem.solvedWhen}.`;
     let criterionEn = /[.!?]$/.test(problem.solvedWhenEn) ? problem.solvedWhenEn : `${problem.solvedWhenEn}.`;
     if (problem.discipline === "mathematics" && problem.approach === "theory") {
@@ -603,6 +854,13 @@
       pitchItems: pitchItems(problem, criterionKo, criterionEn),
       definition: definition.definition,
       definitionEn: definition.definitionEn,
+      generalExplanation: general.text,
+      generalExplanationEn: general.textEn,
+      specialistExplanation: specialist.text,
+      specialistExplanationEn: specialist.textEn,
+      technicalTopics: problemTechnicalTopics(problem),
+      resolutionCriterion: criterionKo,
+      resolutionCriterionEn: criterionEn,
       overview: `${definition.definition} ${overviewPitchText(pitchItems(problem, criterionKo, criterionEn), "text")}`,
       overviewEn: `${definition.definitionEn} ${overviewPitchText(pitchItems(problem, criterionKo, criterionEn), "textEn")}`
     };
@@ -620,15 +878,22 @@
     problem.overviewEn = overview.overviewEn;
     problem.plainDefinition = overview.definition;
     problem.plainDefinitionEn = overview.definitionEn;
+    problem.generalExplanation = overview.generalExplanation;
+    problem.generalExplanationEn = overview.generalExplanationEn;
+    problem.specialistExplanation = overview.specialistExplanation;
+    problem.specialistExplanationEn = overview.specialistExplanationEn;
+    problem.technicalTopics = overview.technicalTopics;
     problem.pitchItems = overview.pitchItems;
+    problem.resolutionCriterion = overview.resolutionCriterion;
+    problem.resolutionCriterionEn = overview.resolutionCriterionEn;
     problem.importantAttempts = established.map((entry, index) => attempt(entry, problem, index, false));
     problem.recentAttempts = current.map((entry, index) => attempt(entry, problem, index, true));
-    problem.researchContextReviewedOn = "2026-08-02";
+    problem.researchContextReviewedOn = "2026-08-05";
   }
 
   window.RESEARCH_CONTEXT_META = {
-    version: "2026-08-02",
-    scope: "3 established research programs and 3 current directions per catalog entry",
-    scopeKo: "각 항목당 대표적 해결 시도 3개와 2023–2026 최근 연구 방향 3개"
+    version: "2026-08-05",
+    scope: "Two reader levels, 3 established research programs, and 3 current directions per catalog entry",
+    scopeKo: "각 항목당 입문·전공자 2단계 설명, 대표적 해결 시도 3개와 2023–2026 최근 연구 방향 3개"
   };
 })();
