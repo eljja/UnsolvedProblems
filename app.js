@@ -43,9 +43,9 @@
       criterionOne: "학술기관이 명명한 대표 난제", criterionTwo: "정부·학회·연구기관 로드맵의 전략적 우선과제", criterionThree: "여러 분야의 이론·측정·기술을 바꿀 수 있는 지속적 프런티어", criterionFour: "공식 상금·연구경진이 제시한 검증 가능한 목표",
       methodNote: "중요도는 학술기관의 명명 여부, 로드맵 우선순위와 예상 파급력으로 구분합니다. ‘현재 기술로 불가능’은 기술적 한계, ‘이론적 불가능’은 법칙·정리·정보 제약에 따른 경계를 뜻합니다. 출처·상금 정보 검토일: 2026년 8월 5일.",
       footerTagline: "모르는 것의 목록이 아니라, 알아내기 위한 지도.", sourceContribution: "소스 및 기여", classificationPrinciples: "분류 원칙", allProblems: "전체 난제", closeDetails: "상세 보기 닫기",
-      overviewTitle: "두 단계로 읽는 문제 정의", generalLevel: "1단계 · 처음 읽는 사람", generalLevelHint: "전문용어보다 질문의 뜻과 중요성을 먼저 설명합니다.", specialistLevel: "2단계 · 전공자 핵심", specialistLevelHint: "핵심 병목, 기술 영역과 해결 판정 기준을 압축합니다.", technicalDifficulties: "핵심 기술 영역",
+      overviewTitle: "문제 설명",
       prizeInformation: "상금·도전 정보", prizeAmount: "상금액", prizeBadge: "상금", prizeReviewed: "금액·상태 확인", prizeConditions: "지급·참가 조건", officialRules: "공식 규정", relatedSources: "관련 로드맵·상금 주관기관",
-      importantAttempts: "대표적 해결 시도 3개", recentAttempts: "최근 연구 흐름 3개 · 2023–2026", attemptIdea: "핵심 아이디어", attemptExpert: "전공자 포인트", attemptSource: "연결 근거",
+      importantAttempts: "대표적 해결 시도 3개", recentAttempts: "최근 연구 흐름 3개 · 2023–2026", attemptSource: "연결 근거",
       mapGroup: "분야별 난제 수", mapDistribution: "분포", searchPrefix: "검색", items: "항목", remaining: "개 남음", loadMore: "더 보기",
       fullCatalog: "전체 카탈로그", selectToFilter: "색 구간을 선택하면 바로 필터링됩니다.", selectedConditions: "조건에서", problemWord: "난제",
       problemDescription: "문제입니다."
@@ -83,9 +83,9 @@
       criterionOne: "Named open problems recognized by scholarly institutions", criterionTwo: "Strategic priorities in government, society, and research-institution roadmaps", criterionThree: "Durable frontiers capable of changing theory, measurement, or technology across fields", criterionFour: "Verifiable objectives defined by official prizes and research competitions",
       methodNote: "Importance reflects named-problem status, roadmap priority, and expected scientific leverage. ‘Beyond current technology’ denotes a technical limit; ‘theoretically impossible’ denotes a boundary imposed by laws, theorems, or information constraints. Sources and prizes reviewed 5 August 2026.",
       footerTagline: "Not just a list of unknowns—a map for finding out.", sourceContribution: "Source and contribute", classificationPrinciples: "Classification principles", allProblems: "All problems", closeDetails: "Close details",
-      overviewTitle: "Problem definition at two levels", generalLevel: "Level 1 · New to the field", generalLevelHint: "Start with the meaning and importance of the question before specialist terminology.", specialistLevel: "Level 2 · Specialist brief", specialistLevelHint: "Compress the core bottleneck, technical territory, and resolution test.", technicalDifficulties: "Core technical territory",
+      overviewTitle: "Problem explanation",
       prizeInformation: "Prize and challenge information", prizeAmount: "Prize amount", prizeBadge: "Prize", prizeReviewed: "Amount and status checked", prizeConditions: "Award and entry conditions", officialRules: "Official rules", relatedSources: "Related roadmaps and prize organizers",
-      importantAttempts: "3 established research approaches", recentAttempts: "3 current directions · 2023–2026", attemptIdea: "Core idea", attemptExpert: "Specialist focus", attemptSource: "Linked evidence",
+      importantAttempts: "3 established research approaches", recentAttempts: "3 current directions · 2023–2026", attemptSource: "Linked evidence",
       mapGroup: "Problem counts by discipline", mapDistribution: "distribution", searchPrefix: "Search", items: "items", remaining: "remaining", loadMore: "Load more",
       fullCatalog: "Full catalog", selectToFilter: "Select a color segment to filter immediately.", selectedConditions: "under", problemWord: "problems",
       problemDescription: "problem."
@@ -486,14 +486,8 @@
           <span class="attempt-period">${escapeHTML(localized(attempt, "period"))}</span>
         </div>
         <h4>${escapeHTML(localized(attempt, "title"))}</h4>
-        <div class="attempt-explanation">
-          <span>${escapeHTML(t("attemptIdea"))}</span>
-          <p>${escapeHTML(localized(attempt, "description"))}</p>
-        </div>
-        <div class="attempt-technical">
-          <span>${escapeHTML(t("attemptExpert"))}</span>
-          <p>${escapeHTML(localized(attempt, "technicalDetail"))}</p>
-        </div>
+        <p class="attempt-summary">${escapeHTML(localized(attempt, "description"))}</p>
+        <p class="attempt-continuation">${escapeHTML(localized(attempt, "technicalDetail"))}</p>
         ${source ? `<a class="attempt-source" href="${source.url}" target="_blank" rel="noreferrer"><span>${escapeHTML(t("attemptSource"))}</span>${escapeHTML(source.title)} ↗</a>` : ""}
       </article>`;
     }).join("")}</div>`;
@@ -521,21 +515,10 @@
         <h2 id="dialog-title">${escapeHTML(question(problem))}</h2>
         <section class="dialog-section research-overview">
           <h3>${escapeHTML(t("overviewTitle"))}</h3>
-          <div class="reader-levels">
-            <article class="reader-level general-reader">
-              <header><span>01</span><div><h4>${escapeHTML(t("generalLevel"))}</h4><p>${escapeHTML(t("generalLevelHint"))}</p></div></header>
-              <p class="level-explanation">${escapeHTML(localized(problem, "generalExplanation"))}</p>
-            </article>
-            <article class="reader-level specialist-reader">
-              <header><span>02</span><div><h4>${escapeHTML(t("specialistLevel"))}</h4><p>${escapeHTML(t("specialistLevelHint"))}</p></div></header>
-              <p class="level-explanation">${escapeHTML(localized(problem, "specialistExplanation"))}</p>
-              <div class="technical-topics"><strong>${escapeHTML(t("technicalDifficulties"))}</strong><ul>
-                ${(problem.technicalTopics || []).map(item => `<li>${escapeHTML(localized(item, "text"))}</li>`).join("")}
-              </ul></div>
-              <div class="pitch-list">
-                ${(problem.pitchItems || []).map(item => `<article><span>${escapeHTML(localized(item, "label"))}</span><p>${escapeHTML(localized(item, "text"))}</p></article>`).join("")}
-              </div>
-            </article>
+          <div class="explanation-prose">
+            <p class="explanation-opening">${escapeHTML(localized(problem, "generalExplanation"))}</p>
+            <p class="explanation-detail">${escapeHTML(localized(problem, "specialistExplanation"))}</p>
+            <p class="explanation-resolution">${escapeHTML(localized(problem, "resolutionCriterion"))}</p>
           </div>
         </section>
         <div class="research-columns">

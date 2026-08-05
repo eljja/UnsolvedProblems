@@ -1,8 +1,8 @@
 /*
  * Bilingual research context for every catalog entry.
  *
- * Each entry receives a two-level explanation for general and specialist readers,
- * plus established and recent research approaches with technical context.
+ * Each entry receives a continuous explanation that moves from a plain definition
+ * into its specific technical bottlenecks, resolution test, and research approaches.
  */
 (function () {
   "use strict";
@@ -206,6 +206,280 @@
       ["외적 타당성, 분배효과·윤리·재현성과 정책 이행", "external validity, distributional effects, ethics, replication, and policy implementation"]
     ]
   };
+
+  const subfieldCore = {
+    "우주론": ["거리사다리·우주배경복사·대규모구조가 주는 우주론 매개변수의 축퇴와 계통오차", "parameter degeneracies and systematics across the distance ladder, cosmic microwave background, and large-scale structure"],
+    "초기 우주": ["원시 요동의 스펙트럼·비가우스성·재가열 이력과 우주배경복사 편광의 연결", "links among primordial spectra, non-Gaussianity, reheating history, and cosmic-background polarization"],
+    "입자물리": ["게이지 대칭·맛 구조·CP 위반과 표준모형 너머 연산자의 에너지 의존성", "gauge symmetry, flavor structure, CP violation, and the energy dependence of operators beyond the Standard Model"],
+    "고에너지 탐색": ["희귀 붕괴·장수명 입자·누락에너지 신호의 생성률과 검출기 수용도", "production rates and detector acceptance for rare decays, long-lived particles, and missing-energy signatures"],
+    "중력": ["시공간의 양자 자유도·인과구조·블랙홀 엔트로피와 저에너지 일반상대론의 일치", "consistency among quantum spacetime degrees of freedom, causal structure, black-hole entropy, and low-energy general relativity"],
+    "양자 기초": ["측정 맥락성·파동함수 존재론·붕괴 동역학과 보른 확률의 실험적 구별", "experimental distinctions among contextuality, wave-function ontology, collapse dynamics, and Born probabilities"],
+    "응집물질": ["강상관 다체상태의 유효 자유도·질서매개변수·위상 불변량과 스펙트럼 함수", "effective degrees of freedom, order parameters, topological invariants, and spectral functions in strongly correlated many-body states"],
+    "유체·비선형": ["레이놀즈수에 따른 에너지 캐스케이드·특이구조·간헐성과 폐쇄 모형", "Reynolds-number dependence of energy cascades, singular structures, intermittency, and closure models"],
+    "플라즈마·핵융합": ["난류 수송·자기재결합·고속입자·벽 상호작용과 플라즈마 안정성", "turbulent transport, magnetic reconnection, energetic particles, plasma-wall interactions, and stability"],
+    "천체물리": ["복사수송·상태방정식·자기유체역학과 다중메신저 시간변화의 결합", "coupling radiative transfer, equations of state, magnetohydrodynamics, and time-variable multimessenger signals"],
+    "핵·강입자": ["QCD 자유도에서 핵력·핵구조·반응률·중성자 과잉계로 이어지는 다중척도 계산", "multiscale calculation from QCD degrees of freedom to nuclear forces, structure, reaction rates, and neutron-rich systems"],
+    "통계·수리물리": ["비평형 정상상태·열평형화·희귀사건·보편성류를 미시 동역학에서 유도하는 문제", "deriving nonequilibrium steady states, thermalization, rare events, and universality classes from microscopic dynamics"],
+    "알려진 물리 경계": ["보존법칙·열역학·상대론·양자정보가 허용하는 정확성·에너지·인과성의 한계", "limits on accuracy, energy, and causality imposed by conservation laws, thermodynamics, relativity, and quantum information"],
+    "힉스·정밀 대칭": ["힉스 자기결합·진공 안정성·정밀 전약 관측량과 희귀 대칭 위반 연산자", "Higgs self-coupling, vacuum stability, precision electroweak observables, and rare symmetry-violating operators"],
+    "중성미자 정밀물리": ["질량 순서·절대질량·혼합행렬 위상·마요라나 성질과 물질효과의 분리", "separating mass ordering, absolute mass, mixing-matrix phases, Majorana character, and matter effects"],
+    "강한 상호작용": ["비섭동 QCD의 구속·키랄대칭 깨짐·유한밀도 상구조와 실시간 동역학", "confinement, chiral-symmetry breaking, finite-density phases, and real-time dynamics in nonperturbative QCD"],
+    "태양·우주 플라즈마": ["코로나 가열·태양풍 가속·자기재결합과 입자 가속의 현장·원격 관측 연결", "linking in-situ and remote observations of coronal heating, solar-wind acceleration, reconnection, and particle acceleration"],
+
+    "전자구조": ["강상관·상대론·들뜬상태를 포함한 다전자 파동함수와 에너지 오차의 제어", "controlling many-electron wave functions and energy errors with strong correlation, relativity, and excited states"],
+    "반응 동역학": ["비단열 전자–핵 운동·전이상태 우회·터널링과 생성물 상태분포", "nonadiabatic electron-nuclear motion, transition-state bypass, tunneling, and product-state distributions"],
+    "촉매": ["작동 중 활성점의 구조분포·피복도·미세반응 속도론과 선택성–안정성 절충", "operating-state distributions of active sites, coverage, microkinetics, and selectivity-stability tradeoffs"],
+    "합성": ["반응 호환성·화학선택성·입체선택성·경로 수렴성과 정제 부담을 함께 최적화하는 문제", "joint optimization of reaction compatibility, chemo- and stereoselectivity, route convergence, and purification burden"],
+    "생명 기원 화학": ["지구화학적으로 가능한 원팟 합성·키랄 선택·자기복제와 구획화의 결합", "coupling geochemically plausible one-pot synthesis, chiral selection, self-replication, and compartmentalization"],
+    "용액·계면": ["용매화 껍질·이온 상관·전기이중층·나노구속이 자유에너지와 수송에 미치는 영향", "effects of solvation shells, ion correlations, electric double layers, and nanoconfinement on free energy and transport"],
+    "전기화학": ["전극 전위에서의 전자이동·계면 구조·핵생성·물질수송과 열화의 동시 기술", "joint treatment of electron transfer, interface structure, nucleation, mass transport, and degradation at electrode potential"],
+    "에너지·탄소 화학": ["결합 활성화·프로톤–전자 전달·탄소 선택성·에너지 효율과 촉매 수명의 결합", "coupling bond activation, proton-electron transfer, carbon selectivity, energy efficiency, and catalyst lifetime"],
+    "환경·대기": ["다상 반응·광화학·에어로졸 노화·혼합독성과 장거리 이동의 시간척도", "timescales of multiphase chemistry, photochemistry, aerosol aging, mixture toxicity, and long-range transport"],
+    "계산·AI 화학": ["전자구조 정확도·반응공간 탐색·불확실성 보정과 훈련분포 밖 화학의 일반화", "electronic-structure accuracy, reaction-space search, uncertainty calibration, and generalization beyond the training chemistry"],
+    "초분자·자기조립": ["약한 상호작용의 협동성·동역학적 오류교정·준안정 경로와 구조 다형성", "cooperativity of weak interactions, kinetic error correction, metastable pathways, and structural polymorphism"],
+    "분석·계측": ["검출한계·선택성·매트릭스 효과·표준물질과 서로 독립적인 신호 판독", "limits of detection, selectivity, matrix effects, reference materials, and orthogonal signal readouts"],
+    "알려진 화학 경계": ["양자역학·열역학·정보량이 정하는 분자 식별·반응 제어·분리의 하한", "quantum, thermodynamic, and information-theoretic lower bounds on molecular identification, reaction control, and separation"],
+    "선택적 결합 활성화": ["유사한 결합 사이의 위치·화학·입체선택성과 촉매 휴지상태의 제어", "control of site, chemo-, and stereoselectivity among similar bonds and of catalyst resting states"],
+    "분리·핵화학": ["동위원소·악티나이드 선택성, 방사선 화학, 용매 추출 평형과 폐기물 형태 안정성", "isotope and actinide selectivity, radiation chemistry, solvent-extraction equilibria, and waste-form stability"],
+    "순환 분자설계": ["성능을 유지하면서 해중합·재사용·독성·원료 회수 경로를 분자구조에 내장하는 설계", "molecular design that embeds depolymerization, reuse, toxicity control, and feedstock recovery without losing performance"],
+    "기계·스핀 화학": ["힘·스핀·라디칼쌍이 반응좌표와 분기비를 바꾸는 비평형 반응 경로", "nonequilibrium pathways by which force, spin, and radical pairs alter reaction coordinates and branching ratios"],
+    "자율실험": ["로봇 합성·온라인 분석·능동학습의 폐루프에서 실패 검출과 화학적 외삽을 보장하는 문제", "guaranteeing failure detection and chemical extrapolation in closed loops of robotic synthesis, online analysis, and active learning"],
+
+    "생명 기원·진화": ["전생물 화학·복제·대사·막 구획화와 초기 진화 선택의 연속성", "continuity among prebiotic chemistry, replication, metabolism, membrane compartmentalization, and early evolutionary selection"],
+    "유전체": ["희귀·구조 변이와 조절서열이 세포형별 표현형으로 이어지는 인과 연결", "causal links from rare and structural variants and regulatory sequence to cell-type-specific phenotypes"],
+    "후성유전": ["크로마틴 상태의 기록·유지·소거와 세포분열을 넘는 인과적 기억", "writing, maintenance, and erasure of chromatin states as causal memory across cell division"],
+    "세포생물학": ["소기관·막접촉·상분리·세포골격이 만드는 시공간적 반응 조직화", "spatiotemporal organization of reactions by organelles, membrane contacts, phase separation, and cytoskeleton"],
+    "발생·재생": ["형태형성 신호·기계력·세포계보·위치정보가 조직 형태와 재생한계를 정하는 방식", "how morphogen signals, mechanics, lineage, and positional information determine tissue form and regenerative limits"],
+    "뇌·의식": ["전역적 접근성·재귀처리·각성·주관보고를 신경동역학과 분리해 연결하는 문제", "linking and separating global access, recurrent processing, arousal, subjective report, and neural dynamics"],
+    "신경회로": ["세포형별 연결·가소성·신경조절과 집단 활동이 행동 계산으로 이어지는 변환", "transformation from cell-type-specific connectivity, plasticity, neuromodulation, and population activity to behavioral computation"],
+    "면역": ["항원 특이성·기억·관용·염증 해소와 조직별 면역 미세환경의 조절", "regulation of antigen specificity, memory, tolerance, inflammation resolution, and tissue-specific immune microenvironments"],
+    "미생물군": ["균주 수준 기능·대사 교차급식·파지·숙주 면역 사이의 방향성 인과", "directional causality among strain-level functions, metabolic cross-feeding, phages, and host immunity"],
+    "노화": ["손상 축적·세포노화·줄기세포 고갈·면역·대사 변화의 원인 순서와 가역성", "causal ordering and reversibility among damage accumulation, senescence, stem-cell exhaustion, immunity, and metabolism"],
+    "생태·지구생물학": ["종 상호작용·먹이망·진화 적응·생지화학 순환이 교란에 반응하는 다중척도 피드백", "multiscale feedback among species interactions, food webs, adaptation, and biogeochemical cycles under disturbance"],
+    "시스템·정밀의학": ["세포상태·유전·환경·치료반응을 환자별 기전 모형과 임상 결과로 연결하는 문제", "linking cell state, genetics, environment, and treatment response to patient-specific mechanisms and clinical outcomes"],
+    "정보가 소실된 생물 경계": ["재구성 불가능한 계보·환경·분자상태 정보가 생물학적 설명에 남기는 식별 한계", "identifiability limits created by irretrievably lost lineage, environmental, and molecular-state information"],
+    "단백질·RNA 동역학": ["접힘 에너지 지형·구조 앙상블·번역후수식·RNA 구조전환과 기능 시간척도", "folding landscapes, structural ensembles, post-translational modification, RNA switching, and functional timescales"],
+    "체세포 유전체·세포상태": ["체세포 돌연변이·클론 선택·후성상태 전환과 조직 내 공간 경쟁", "somatic mutation, clonal selection, epigenetic-state transitions, and spatial competition within tissues"],
+    "식물 시스템 생물학": ["광·온도·수분·호르몬 신호가 생장·방어·번식 사이 자원배분을 바꾸는 방식", "how light, temperature, water, and hormone signals redistribute resources among growth, defense, and reproduction"],
+    "숙주·병원체 진화": ["면역 회피·전파 적합도·병원성·약제 내성과 숙주범위 변화의 공동진화", "coevolution of immune escape, transmission fitness, virulence, drug resistance, and host-range shifts"],
+    "생물권의 미지 다양성": ["배양되지 않은 생물·환경 DNA·기능 유전자와 생태적 역할의 연결", "linking uncultured organisms, environmental DNA, functional genes, and ecological roles"],
+    "최소 생명·합성생물학": ["복제·대사·막 유지·오류교정에 필요한 최소 유전자·반응망과 진화 가능성", "minimal genes and reaction networks for replication, metabolism, membrane maintenance, error correction, and evolvability"],
+
+    "재료 발견": ["조성·결정구조·준안정성·합성 가능성과 목표 물성의 역설계", "inverse design across composition, crystal structure, metastability, synthesizability, and target properties"],
+    "결함·미세구조": ["점결함·전위·입계·상분율의 공간분포가 수송과 강도를 정하는 연결", "links from spatial distributions of point defects, dislocations, grain boundaries, and phase fractions to transport and strength"],
+    "계면·접착": ["계면 화학·전하·잔류응력·거칠기와 균열 핵생성·전파의 결합", "coupling interface chemistry, charge, residual stress, roughness, and crack nucleation or propagation"],
+    "파괴·피로": ["미세균열 발생·짧은균열 성장·환경 취성·하중 이력과 수명 분포", "microcrack initiation, short-crack growth, environmental embrittlement, load history, and lifetime distributions"],
+    "열·열전": ["포논·전자·계면 열저항과 전기전도·제벡계수·열전도도의 상충", "tradeoffs among phonons, electrons, interface thermal resistance, electrical conductivity, Seebeck coefficient, and thermal conductivity"],
+    "초전도": ["쌍형성 상호작용·위상강성·경쟁질서·보텍스 동역학과 임계전류", "pairing interactions, phase stiffness, competing orders, vortex dynamics, and critical current"],
+    "양자재료": ["밴드 위상·강상관·스핀–궤도 결합·무질서와 표면·벌크 상태의 분리", "band topology, strong correlation, spin-orbit coupling, disorder, and separation of surface and bulk states"],
+    "배터리·에너지": ["이온·전자 수송, 계면막 형성, 상변화, 덴드라이트와 열폭주의 수명 진화", "lifetime evolution of ionic and electronic transport, interphase formation, phase change, dendrites, and thermal runaway"],
+    "고분자·연성재료": ["사슬 얽힘·가교·유리전이·점탄성과 손상·자가치유의 시간의존성", "time dependence of chain entanglement, crosslinking, glass transition, viscoelasticity, damage, and self-healing"],
+    "바이오·복합재료": ["이종 계면·계층구조·수분·생체반응과 방향별 손상 누적", "heterogeneous interfaces, hierarchy, moisture, biological response, and anisotropic damage accumulation"],
+    "제조·공정": ["공정 경로가 기공·조직·잔류응력·치수정밀도·수율에 남기는 이력", "process-history effects on porosity, texture, residual stress, dimensional accuracy, and yield"],
+    "순환·핵심소재": ["불순물 허용도·선택 분리·재활용 열화와 공급망 제약을 포함한 폐루프 물질수지", "closed-loop mass balances including impurity tolerance, selective separation, recycling degradation, and supply constraints"],
+    "재료의 현실적 경계": ["강도·인성·밀도·온도·비용·가공성 사이의 물리적·통계적 상한", "physical and statistical bounds among strength, toughness, density, temperature, cost, and processability"],
+    "부식·환경열화": ["전기화학 반응·수소·응력·미생물과 보호막 파괴의 국소 결합", "localized coupling of electrochemistry, hydrogen, stress, microbes, and protective-film breakdown"],
+    "시멘트·건설재료": ["수화 반응·기공망·탄산화·철근부식과 수십 년 구조 수명의 연결", "links among hydration, pore networks, carbonation, rebar corrosion, and multi-decade structural life"],
+    "막·분리재료": ["투과도–선택도 상충, 오염·팽윤·결함과 장기 모듈 성능", "permeability-selectivity tradeoffs, fouling, swelling, defects, and long-term module performance"],
+    "비정질·복잡합금": ["에너지 지형·국소원자질서·유리형성능·전단밴드와 상안정성", "energy landscapes, local atomic order, glass-forming ability, shear bands, and phase stability"],
+    "광전·메타재료": ["전자·광자 모드 결합, 나노패턴 공차, 손실과 능동 가변성", "electron-photon mode coupling, nanopattern tolerances, loss, and active tunability"],
+    "담수화·분리재료": ["염 제거 선택성·물 투과·스케일링·에너지회수와 10년급 운전 안정성", "salt selectivity, water flux, scaling, energy recovery, and decade-scale operating stability"],
+    "원자정밀 제조": ["위치 선택적 결합 형성·원자 배치 오차·분자기계 구동과 계측 가능한 조립", "site-selective bond formation, atomic placement error, molecular-machine actuation, and measurable assembly"],
+
+    "소자 물리": ["채널 전기장·접촉저항·양자수송·트랩과 소자 간 변동성", "channel electrostatics, contact resistance, quantum transport, traps, and device-to-device variability"],
+    "CMOS 미세화": ["게이트 제어·단채널 효과·누설·변동성·접촉과 전력밀도의 동시 축소", "simultaneous scaling of gate control, short-channel effects, leakage, variability, contacts, and power density"],
+    "Beyond-CMOS": ["새 상태변수의 스위칭 에너지·이득·팬아웃·오류율과 CMOS 인터페이스", "switching energy, gain, fan-out, error rate, and CMOS interfaces for new state variables"],
+    "재료·공정": ["원자층 증착·식각·도핑·계면 결함과 웨이퍼 균일성의 공정창", "process windows for atomic-layer deposition, etch, doping, interface defects, and wafer uniformity"],
+    "EUV·계측": ["확률적 결함·레지스트 화학·광원·마스크 3D 효과와 원자급 계측 추적성", "stochastic defects, resist chemistry, source and mask 3D effects, and traceable atomic-scale metrology"],
+    "배선·열": ["저항–커패시턴스 지연·전자이동·열경계저항·핫스폿과 전력 전달", "RC delay, electromigration, thermal boundary resistance, hotspots, and power delivery"],
+    "메모리·인메모리": ["상태 보존·쓰기 에너지·내구성·아날로그 변동과 계산 정확도의 연결", "links among state retention, write energy, endurance, analog variability, and computational accuracy"],
+    "칩렛·패키징": ["다이 간 대역폭·지연·열팽창·테스트·수율과 이기종 공정 분할", "die-to-die bandwidth, latency, thermal expansion, test, yield, and heterogeneous process partitioning"],
+    "아날로그·RF": ["잡음·선형성·위상잡음·수동소자 손실과 공정·온도·전압 편차", "noise, linearity, phase noise, passive loss, and process-voltage-temperature variation"],
+    "전력전자": ["고전압 항복·온저항·스위칭 손실·게이트 신뢰성과 열패키징", "high-voltage breakdown, on-resistance, switching loss, gate reliability, and thermal packaging"],
+    "포토닉스·양자": ["광 결합손실·위상안정성·단일광자 소스·검출·양자오류와 집적", "optical coupling loss, phase stability, single-photon generation and detection, quantum error, and integration"],
+    "EDA·제조·보안": ["설계공간 탐색·형식검증·공정변동·하드웨어 트로이와 공급망 추적성", "design-space exploration, formal verification, process variation, hardware Trojans, and supply-chain traceability"],
+    "전자정보의 경계": ["란다우어 에너지·잡음·통신 하한·가역성·오류정정 비용이 정하는 계산 경계", "computing limits set by Landauer energy, noise, communication bounds, reversibility, and error-correction cost"],
+    "새 계산 궤적": ["초전도·스핀·광·확률 소자의 장치 이득이 회로·워크로드 이득으로 남는 조건", "conditions under which gains from superconducting, spintronic, photonic, or stochastic devices survive at circuit and workload levels"],
+    "데이터 이동·저장 한계": ["메모리 계층·근접계산·압축·광인터커넥트의 비트당 에너지와 지연", "energy and latency per bit across memory hierarchies, near-data computing, compression, and optical interconnects"],
+    "검증 가능한 이기종 집적": ["칩렛 인터페이스·열기계 신뢰성·보안 경계·테스트 커버리지의 조합 검증", "compositional verification of chiplet interfaces, thermomechanical reliability, security boundaries, and test coverage"],
+    "팹 전환·지속가능성": ["공정 변경의 수율 학습·장비 호환·물·가스·전력·배출과 제품 신뢰성", "yield learning, tool compatibility, water, gas, energy, emissions, and product reliability during process transitions"],
+
+    "수론": ["소수 분포·L함수·디오판토스 해의 국소–대역 대응과 오차항", "prime distribution, L-functions, local-global relations for Diophantine solutions, and error terms"],
+    "대수·대수기하": ["스킴·코호몰로지·모티브·모듈라이 공간과 대수적 순환의 구조", "schemes, cohomology, motives, moduli spaces, and the structure of algebraic cycles"],
+    "기하·위상수학": ["곡률·기본군·매듭·다양체 불변량과 위상적 분류", "curvature, fundamental groups, knots, manifold invariants, and topological classification"],
+    "해석·편미분방정식": ["약해의 존재·유일성·정칙성·특이점 형성과 장시간 거동", "existence, uniqueness, regularity, singularity formation, and long-time behavior of weak solutions"],
+    "확률·동역학": ["불변측도·혼합률·확률적 안정성·희귀사건과 장시간 궤도", "invariant measures, mixing rates, stochastic stability, rare events, and long-time trajectories"],
+    "조합론·그래프": ["극단 구조·금지 부분구조·색칠·확률적 구성과 점근 경계", "extremal structures, forbidden substructures, coloring, probabilistic constructions, and asymptotic bounds"],
+    "논리·수학기초": ["공리계의 일관성·독립성·모형·기수와 형식화 가능한 증명의 범위", "consistency, independence, models, cardinals, and the range of formalizable proofs in axiomatic systems"],
+    "증명가능성의 경계": ["공리·추론 규칙·증명 길이에 따라 달라지는 독립 명제와 불완전성 장벽", "independent statements and incompleteness barriers that depend on axioms, inference rules, and proof length"],
+    "수론의 고전 난제": ["정수 해·소수 패턴·타원곡선·제타함수 사이의 정량적 대응", "quantitative correspondences among integer solutions, prime patterns, elliptic curves, and zeta functions"],
+    "랑글랜즈·대수적 순환": ["갈루아 표현·자동형식·L함수·모티브와 순환류 사이의 함자적 대응", "functorial correspondences among Galois representations, automorphic forms, L-functions, motives, and cycle classes"],
+    "기하측도·해석": ["특이집합의 차원·정류성·조화측도와 비매끄러운 경계의 정칙성", "dimension and rectifiability of singular sets, harmonic measure, and regularity on rough boundaries"],
+    "극단조합론": ["밀도 문턱·안정성 정리·준무작위성·램지형 구조의 최적 상수", "density thresholds, stability theorems, quasirandomness, and optimal constants in Ramsey-type structures"],
+    "통계 추론의 기초": ["식별가능성·선택 후 추론·고차원 불확실성·강건성과 빈도주의·베이즈 보장", "identifiability, post-selection inference, high-dimensional uncertainty, robustness, and frequentist-Bayesian guarantees"],
+    "지수 디오판토스 방정식": ["선형형 로그 하한·모듈러 방법·높이 함수와 정수해의 효과적 상계", "lower bounds for linear forms in logarithms, modular methods, height functions, and effective bounds on integer solutions"],
+    "계산 수론": ["정수분해·이산로그·격자·소수 판정 알고리즘의 증명된 복잡도와 실제 계산", "proved complexity and practical computation for factoring, discrete logarithms, lattices, and primality algorithms"],
+
+    "복잡도·알고리즘": ["계산모형·환원·최악 및 평균 복잡도·근사비와 조건부 하한", "computational models, reductions, worst- and average-case complexity, approximation ratios, and conditional lower bounds"],
+    "소프트웨어·분산시스템": ["동시성·부분고장·일관성·관측가능성과 사양에서 구현까지의 정제", "concurrency, partial failure, consistency, observability, and refinement from specification to implementation"],
+    "암호·사이버보안": ["공격자 능력·보안 정의·계산 가정·부채널과 조합 가능한 증명", "adversary capabilities, security definitions, computational assumptions, side channels, and composable proofs"],
+    "머신러닝 이론": ["표현력·표본복잡도·최적화 편향·분포이동과 일반화 경계", "expressivity, sample complexity, optimization bias, distribution shift, and generalization bounds"],
+    "신뢰할 수 있는 AI": ["보정·강건성·해석가능성·불확실성·감사 가능성을 실제 실패율과 연결하는 검증", "validation that connects calibration, robustness, interpretability, uncertainty, and auditability to real failure rates"],
+    "로봇·체화지능": ["부분관측·접촉동역학·온라인 적응·안전 제약과 현실–시뮬레이션 전이", "partial observability, contact dynamics, online adaptation, safety constraints, and simulation-to-reality transfer"],
+    "네트워크·데이터 인프라": ["혼잡제어·꼬리지연·장애 전파·데이터 일관성과 에너지 비용", "congestion control, tail latency, failure propagation, data consistency, and energy cost"],
+    "계산가능성의 경계": ["결정가능성·반결정가능성·오라클·근사 허용 여부가 바꾸는 계산 한계", "computational limits changed by decidability, semidecidability, oracles, and allowance for approximation"],
+    "복잡도 하한": ["회로·통신·증명 복잡도에서 장벽 정리를 우회하는 명시적 함수와 하한 기법", "explicit functions and lower-bound techniques that evade barrier theorems in circuit, communication, and proof complexity"],
+    "검증 가능한 양자계산": ["잡음 많은 양자장치의 고전 검증·대화형 증명·표본복잡도와 계산 우위 인증", "classical verification, interactive proofs, sample complexity, and certification of quantum advantage on noisy devices"],
+    "프로그램 합성·전스택 검증": ["자연어·예제에서 사양을 복원하고 컴파일러·런타임·하드웨어까지 보존되는 의미론", "recovering specifications from language or examples and preserving semantics through compilers, runtimes, and hardware"],
+    "적대 환경 분산시스템": ["비잔틴 행위·네트워크 분할·시빌 공격·경제적 유인 아래의 안전성과 생존성", "safety and liveness under Byzantine behavior, partitions, Sybil attacks, and economic incentives"],
+    "AI 감독·정렬 검증": ["목표 오명세·기만적 행동·감독 확장·상황 인식과 배치 후 통제 가능성", "objective misspecification, deceptive behavior, scalable oversight, situational awareness, and post-deployment control"],
+    "지속학습·기억": ["파국적 망각·기억 간섭·분포 변화·가소성–안정성 절충과 장기 평가", "catastrophic forgetting, memory interference, distribution change, the plasticity-stability tradeoff, and long-horizon evaluation"],
+    "데이터 권리·모델 삭제": ["학습 기여 추적·기계적 망각·개인정보 누출과 삭제 완료의 검증 가능성", "training-contribution tracing, machine unlearning, privacy leakage, and verifiable completion of deletion"],
+    "인간–AI 집단지능": ["과신·자동화 편향·의견 다양성·정보 집계와 책임 배분이 집단 오류에 미치는 영향", "effects of overtrust, automation bias, opinion diversity, information aggregation, and accountability on collective error"],
+    "지능·데이터 압축": ["예측·압축·추론·계획 사이의 관계와 계산 자원을 제한한 최소 기술 길이", "relations among prediction, compression, inference, and planning under resource-bounded minimum description length"],
+
+    "기후 시스템": ["구름·복사·탄소순환 피드백과 평형·과도 기후민감도의 분리", "separating cloud, radiation, and carbon-cycle feedbacks in equilibrium and transient climate sensitivity"],
+    "극한기상·예측": ["초기조건 오차·대류 매개화·복합극한의 꼬리확률과 수주–계절 예측성", "initial-condition error, convective parameterization, tail probabilities of compound extremes, and subseasonal predictability"],
+    "해양·빙권": ["심층순환·혼합·해빙·빙상 접지선과 해수면 상승의 비선형 결합", "nonlinear coupling of overturning circulation, mixing, sea ice, ice-sheet grounding lines, and sea-level rise"],
+    "고체지구·자연재해": ["단층 마찰·맨틀 유변학·마그마 이동·지각 변형과 재해 발생률", "fault friction, mantle rheology, magma transport, crustal deformation, and hazard occurrence rates"],
+    "물·토지·생태계": ["증발산·토양수분·식생 천이·토지이용이 유역 물질수지에 미치는 피드백", "feedback of evapotranspiration, soil moisture, vegetation succession, and land use on watershed budgets"],
+    "생지화학·오염": ["원소 순환·산화환원 경계·미생물 변환·오염물의 체류시간과 생물가용성", "element cycles, redox fronts, microbial transformations, pollutant residence times, and bioavailability"],
+    "지구관측·통합모형": ["위성·현장·고기후 자료의 시공간 해상도 차이와 자료동화·모형 편향", "resolution mismatch among satellite, in-situ, and paleoclimate records, data assimilation, and model bias"],
+    "예측과 기록의 경계": ["불완전한 지질 기록·초기조건 상실·혼돈이 과거 복원과 미래 전망에 주는 식별 한계", "identifiability limits on reconstruction and projection from incomplete geological records, lost initial conditions, and chaos"],
+    "심부지구·행성 분화": ["고압 광물상·핵–맨틀 분배·열화학 대류와 지진파·중력 관측의 역산", "inversion of seismic and gravity observations for high-pressure phases, core-mantle partitioning, and thermochemical convection"],
+    "지진 핵생성·느린 미끄럼": ["마찰 상태변수·유체압·단층대 구조와 느린 미끄럼에서 동적 파열로의 전이", "friction state variables, fluid pressure, fault-zone structure, and transition from slow slip to dynamic rupture"],
+    "대기 산화·몬순": ["OH 산화능·에어로졸–구름 상호작용·육해 열대비와 몬순 수분수송", "OH oxidative capacity, aerosol-cloud interactions, land-sea thermal contrast, and monsoon moisture transport"],
+    "해양 생지화학 변화": ["탄소펌프·탈산소화·산성화·영양염 제한과 해양 생태계 적응", "the carbon pump, deoxygenation, acidification, nutrient limitation, and marine-ecosystem adaptation"],
+    "탄소제거 검증": ["추가성·영속성·누출·기준선과 토양·해양·지중 탄소량의 독립 측정", "independent measurement of additionality, permanence, leakage, baselines, and soil, ocean, or geological carbon stocks"],
+    "지하수 오염의 유산": ["대수층 이질성·흡착·비수상액·반응수송과 수십 년 지연된 오염 플룸", "aquifer heterogeneity, sorption, nonaqueous liquids, reactive transport, and contaminant plumes delayed for decades"],
+    "산불 감지·대응": ["연료수분·점화·화염 확산·연기 수송과 센서–의사결정 지연의 실시간 결합", "real-time coupling of fuel moisture, ignition, fire spread, smoke transport, and sensor-to-decision latency"],
+
+    "암": ["종양 내 이질성·클론 진화·미세환경·전이·약물내성과 치료 선택압", "intratumoral heterogeneity, clonal evolution, microenvironment, metastasis, drug resistance, and treatment selection pressure"],
+    "감염병·항생제 내성": ["전파망·병원체 진화·숙주면역·약물 노출과 내성 비용의 공동동역학", "joint dynamics of transmission networks, pathogen evolution, host immunity, drug exposure, and fitness costs of resistance"],
+    "신경·정신질환": ["증상 이질성·회로 기능·발달 경로·바이오마커와 치료반응의 환자별 연결", "patient-specific links among symptom heterogeneity, circuit function, developmental trajectories, biomarkers, and treatment response"],
+    "면역·만성질환": ["관용 붕괴·조직상주 면역·염증 해소·자가항체와 대사·환경 촉발요인", "breakdown of tolerance, tissue-resident immunity, inflammation resolution, autoantibodies, and metabolic or environmental triggers"],
+    "재생·유전·희귀질환": ["병원성 변이·조직별 발현·세포 전달·면역원성과 장기 기능 회복", "pathogenic variants, tissue-specific expression, cellular delivery, immunogenicity, and long-term functional recovery"],
+    "정밀진단·치료": ["위험층화·동반진단·인과 바이오마커·치료효과 이질성과 임상 의사결정", "risk stratification, companion diagnostics, causal biomarkers, treatment-effect heterogeneity, and clinical decisions"],
+    "임상시험·공중보건": ["대조군·순응도·중도탈락·군집 간 간섭·외적 타당성과 자원 배분", "controls, adherence, attrition, interference across groups, external validity, and resource allocation"],
+    "의학적 추론의 경계": ["관찰자료의 교란·비식별성·결측·윤리적 실험 제약이 진단과 인과 판단에 주는 한계", "limits on diagnosis and causal judgment from confounding, nonidentifiability, missingness, and ethical constraints on experiments"],
+    "심혈관 질환": ["죽상경화반 불안정성·혈전·심근 재형성·전기생리와 전신 염증의 상호작용", "interactions among plaque instability, thrombosis, cardiac remodeling, electrophysiology, and systemic inflammation"],
+    "대사·비만·간질환": ["에너지 항상성·인슐린 저항성·지방조직–간 신호·섬유화와 체중 재증가", "energy homeostasis, insulin resistance, adipose-liver signaling, fibrosis, and weight regain"],
+    "통증·여성·생식 건강": ["말초·중추 감작·호르몬 주기·면역·장기 간 신호와 성별에 따른 진단 편향", "peripheral and central sensitization, hormonal cycles, immunity, inter-organ signaling, and sex-related diagnostic bias"],
+    "지속감염·치료": ["잠복 저장소·면역 회피·조직 침투·치료 압력과 재활성화의 시간척도", "timescales of latent reservoirs, immune escape, tissue penetration, treatment pressure, and reactivation"],
+    "장기 기능 회복": ["세포 생착·혈관화·신경지배·섬유화·기계적 통합과 수년 단위 기능 유지", "cell engraftment, vascularization, innervation, fibrosis, mechanical integration, and multiyear function"],
+    "예방·건강격차": ["노출·접근성·구조적 불평등·위험소통과 예방효과의 집단별 차이", "group differences in exposure, access, structural inequality, risk communication, and preventive effectiveness"],
+
+    "유체·난류공학": ["천이·박리·다상유동·난류 폐쇄와 형상·경계조건에 대한 축척 법칙", "transition, separation, multiphase flow, turbulence closure, and scaling with geometry and boundary conditions"],
+    "자율제어·안전": ["부분관측·모형 오차·고장·적대 입력 아래 도달가능성과 실시간 안전 보장", "reachability and real-time safety guarantees under partial observation, model error, failures, and adversarial inputs"],
+    "추진·열유체": ["연소·충격파·열전달·터보기계 불안정성과 추력–효율–배출 절충", "combustion, shocks, heat transfer, turbomachinery instabilities, and thrust-efficiency-emission tradeoffs"],
+    "구조·제조": ["공정 이력·잔류응력·결함 분포·비선형 좌굴과 치수·수명 편차", "process history, residual stress, defect distributions, nonlinear buckling, and dimensional or lifetime variation"],
+    "로봇 메커니즘": ["기구학 특이점·컴플라이언스·접촉·구동기 대역폭과 에너지 효율", "kinematic singularities, compliance, contact, actuator bandwidth, and energy efficiency"],
+    "우주·극한환경 시스템": ["방사선·진공·열주기·먼지·통신지연 아래의 고장허용성과 현장 수리", "fault tolerance and in-situ repair under radiation, vacuum, thermal cycling, dust, and communication delay"],
+    "시스템 신뢰성": ["희귀 고장·공통원인 고장·소프트웨어–하드웨어 상호작용과 수명 자료의 검열", "rare and common-cause failures, software-hardware interactions, and censoring in lifetime data"],
+    "제어·예측의 경계": ["비선형성·혼돈·관측가능성·계산 지연이 폐루프 안정성과 예측 수평선에 주는 한계", "limits on closed-loop stability and prediction horizon from nonlinearity, chaos, observability, and computational delay"],
+    "마찰·마모·윤활": ["실접촉 면적·제3체 입자·윤활막 붕괴·표면화학과 마모 입자 생성", "real contact area, third-body particles, lubricant-film breakdown, surface chemistry, and wear-debris generation"],
+    "비등·열관리 한계": ["기포 핵생성·임계열유속·건조점·계면저항과 핫스폿의 불안정성", "bubble nucleation, critical heat flux, dryout, interface resistance, and hotspot instability"],
+    "연소 불안정·신추진": ["화염–음향 결합·분사 동역학·고주파 모드와 전기·핵·극초음속 추진의 재료 한계", "flame-acoustic coupling, injector dynamics, high-frequency modes, and material limits in electric, nuclear, or hypersonic propulsion"],
+    "인간–로봇 신체 증강": ["생체신호 해독·의도 추정·촉각 피드백·사용자 적응과 장시간 인체 안전성", "biosignal decoding, intent inference, tactile feedback, user adaptation, and long-duration human safety"],
+    "자율 정비·우주 조립": ["비구조화 접촉·부품 공차·상태진단·도구 교체와 원격 감독 없는 작업 검증", "unstructured contact, part tolerances, state diagnosis, tool changing, and validation of work without remote supervision"],
+
+    "의식": ["주관 경험·보고·전역 접근·재귀처리와 각성 수준을 분리하는 조작과 신경 표지", "perturbations and neural markers that separate subjective experience, report, global access, recurrent processing, and arousal"],
+    "지각": ["감각 잡음·사전기대·주의·행동 피드백이 지각 내용과 확신을 만드는 계산", "computations by which sensory noise, priors, attention, and action feedback produce percepts and confidence"],
+    "기억·학습": ["기억 부호화·공고화·인출·재고착과 해마–피질 표현의 시간적 변화", "temporal changes in encoding, consolidation, retrieval, reconsolidation, and hippocampal-cortical representations"],
+    "언어·사고": ["구문·의미·화용·개념 표상과 언어 간 전이가 추론을 형성하는 방식", "how syntax, semantics, pragmatics, conceptual representation, and cross-language transfer shape reasoning"],
+    "의사결정·감정": ["가치학습·불확실성·정서·내수용감각·사회적 맥락과 선택 편향", "value learning, uncertainty, affect, interoception, social context, and choice biases"],
+    "발달·개인차": ["유전·경험·민감기·신경가소성이 발달 궤적과 개인차를 만드는 상호작용", "interactions among genes, experience, sensitive periods, and neural plasticity that produce developmental trajectories and individual differences"],
+    "사회인지·문화": ["마음 추론·규범 학습·집단 정체성·문화 전파와 과제의 측정 불변성", "theory of mind, norm learning, group identity, cultural transmission, and measurement invariance across tasks"],
+    "마음 측정의 경계": ["보고 불가능한 경험·잠재변수의 다중 실현·과제 요구와 신경 역추론의 비식별성", "nonidentifiability from unreportable experience, multiple realization of latent variables, task demands, and reverse neural inference"],
+    "주의·작업기억": ["선택적 게이팅·용량·방해 저항·활동잠복 상태와 전전두–감각 영역 상호작용", "selective gating, capacity, distractor resistance, activity-silent states, and prefrontal-sensory interactions"],
+    "자아·행위주체성": ["신체소유감·의도·예측오차·기억 연속성과 행동 결과의 귀속", "body ownership, intention, prediction error, memory continuity, and attribution of action outcomes"],
+    "개념·추론·창의성": ["구성적 개념 학습·유추·인과 추론·탐색과 통찰의 표현 전환", "compositional concept learning, analogy, causal reasoning, search, and representational change during insight"],
+    "수면·인지 회복": ["수면단계·리플·방추·서파·글림프 흐름과 기억·정서·주의 회복", "sleep stages, ripples, spindles, slow waves, glymphatic flow, and restoration of memory, emotion, and attention"],
+    "문화 간 재현성": ["번역·응답양식·표본 구성·사회규범과 측정도구의 구성개념 동등성", "construct equivalence across translation, response styles, sample composition, social norms, and measurement instruments"],
+
+    "작물·유전": ["다유전자 형질·유전자 다면발현·유전형×환경 상호작용과 육종 세대시간", "polygenic traits, pleiotropy, genotype-environment interaction, and breeding generation time"],
+    "토양·미생물군": ["토양 응집체·뿌리분비물·미생물 기능중복·탄소 안정화와 영양분 가용성", "soil aggregates, root exudates, microbial functional redundancy, carbon stabilization, and nutrient availability"],
+    "병해충·생물다양성": ["병원체·해충 진화·천적망·경관 연결성과 방제 선택압", "pathogen and pest evolution, natural-enemy networks, landscape connectivity, and control selection pressure"],
+    "축산·수산": ["유전·사료·질병·복지·메탄·수질과 생산성 사이의 다목적 절충", "multiobjective tradeoffs among genetics, feed, disease, welfare, methane, water quality, and productivity"],
+    "식품·영양": ["식품 구조·가공·소화·미생물군·개인 대사와 장기 건강결과의 연결", "links among food structure, processing, digestion, microbiomes, individual metabolism, and long-term health outcomes"],
+    "기후·물 적응": ["고온·가뭄·염·홍수의 복합 스트레스와 관개·토양·품종 관리의 지역별 효과", "regional effects of irrigation, soil, and cultivar management under compound heat, drought, salinity, and flood stress"],
+    "식량시스템·순환": ["생산–저장–유통 손실·영양·무역·폐기물 회수와 전과정 환경부하", "production, storage, distribution losses, nutrition, trade, waste recovery, and life-cycle environmental burdens"],
+    "농업 예측의 경계": ["기상·토양·관리 기록의 결측과 생물학적 적응이 수량·병해 예측에 주는 한계", "limits on yield and disease forecasts from missing weather, soil, and management records and biological adaptation"],
+    "생물학적 질소·인 이용": ["질소고정·균근·근권 수송·비료 손실과 작물 탄소비용의 결합", "coupling nitrogen fixation, mycorrhizae, rhizosphere transport, fertilizer losses, and crop carbon costs"],
+    "유전자형–환경–관리": ["다환경 시험·반응규범·관리 개입과 유전체 예측의 지역·연도 간 이동성", "transferability across regions and years of multi-environment trials, reaction norms, management interventions, and genomic prediction"],
+    "내구성 작물면역·잡초": ["면역수용체·병원체 효과기·잡초 종자은행·제초제 저항성과 다중 방제", "immune receptors, pathogen effectors, weed seed banks, herbicide resistance, and integrated control"],
+    "축산·양식 기후회복력": ["열스트레스·산소·질병·사료 공급과 동물의 적응·복지·생산성", "heat stress, oxygen, disease, feed supply, animal adaptation, welfare, and productivity"],
+    "영양·발효 식품시스템": ["발효 군집·대사산물·오염 제어·생체이용률과 사람별 영양 반응", "fermentation communities, metabolites, contamination control, bioavailability, and person-specific nutritional response"],
+    "재생농업 검증": ["토양탄소 기준선·추가성·수량 변동·누출과 장기 다지역 대조시험", "soil-carbon baselines, additionality, yield variation, leakage, and long-term multisite controlled trials"],
+
+    "거시경제·금융": ["기대·금융마찰·이질적 행위자·정책 충격과 총량자료의 식별", "identification of expectations, financial frictions, heterogeneous agents, and policy shocks from aggregate data"],
+    "불평등·이동성": ["세대 간 전달·자산·교육·지역·차별과 생애소득의 인과 경로", "causal paths from intergenerational transmission, assets, education, place, and discrimination to lifetime income"],
+    "제도·거버넌스": ["권력 배분·집행능력·부패·정당성과 제도 변화의 내생성", "power allocation, state capacity, corruption, legitimacy, and endogeneity of institutional change"],
+    "정보·사회연결망": ["확산·동질성·추천 알고리즘·허위정보와 네트워크 간섭의 분리", "separating diffusion, homophily, recommender algorithms, misinformation, and network interference"],
+    "갈등·협력": ["안보 딜레마·신뢰·협상·집단 정체성·자원 충격과 폭력의 확산", "security dilemmas, trust, bargaining, group identity, resource shocks, and diffusion of violence"],
+    "도시·인구": ["주거·교통·토지이용·집적효과·이주와 인구구조의 공간적 상호작용", "spatial interactions among housing, transport, land use, agglomeration, migration, and demographic structure"],
+    "측정·인과추론": ["잠재변수·측정오차·내생성·간섭·선택편향과 반사실의 식별", "identification of counterfactuals under latent variables, measurement error, endogeneity, interference, and selection bias"],
+    "사회적 추론의 경계": ["실험 불가능성·전략적 반응·역사적 단회성과 자료 생성과정의 변화가 만드는 식별 한계", "identifiability limits from infeasible experiments, strategic response, historical uniqueness, and changing data-generating processes"],
+    "AI·자동화와 노동": ["과업 대체·보완·생산성 분배·임금 협상과 새 직무 생성의 동태", "dynamics of task substitution, complementarity, productivity distribution, wage bargaining, and creation of new work"],
+    "거시정책 상호작용": ["통화·재정·거시건전성 정책의 시차·기대·국경 간 파급과 비선형 반응", "lags, expectations, cross-border spillovers, and nonlinear responses across monetary, fiscal, and macroprudential policy"],
+    "차별·교육·범죄": ["제도적 처우·동료효과·신고 편향·선별과 장기 생애결과의 인과 식별", "causal identification of institutional treatment, peer effects, reporting bias, selection, and long-run life outcomes"],
+    "기후 적응의 분배": ["위험 노출·보험·이주·공공투자와 적응 비용·편익의 계층별 귀속", "distribution of exposure, insurance, migration, public investment, and adaptation costs and benefits across social groups"],
+    "AI·플랫폼 거버넌스": ["시장지배력·추천·콘텐츠 집행·감사 접근권과 규제의 국경 간 효과", "market power, recommendation, content enforcement, audit access, and cross-border effects of regulation"],
+    "인구·이주·도시 전환": ["저출산·고령화·이주 선택·주택·돌봄과 지역 노동시장의 공동 변화", "joint change in fertility, aging, migration selection, housing, care, and local labor markets"],
+    "과학·복지의 측정": ["연구성과·삶의 질·불평등을 나타내는 지표의 타당성·게임 가능성과 시간 비교", "validity, gameability, and temporal comparability of indicators for research performance, quality of life, and inequality"]
+  };
+
+  const natureCore = {
+    fundamental: ["관측적으로 같은 결과를 내는 설명들을 갈라놓을 판별 예측", "discriminating predictions that separate explanations with the same observed consequences"],
+    prediction: ["훈련·보정 범위를 벗어난 조건에서의 오차 상계와 사전 등록 검증", "error bounds and preregistered validation outside the training or calibration range"],
+    measurement: ["배경·계통오차·표본선택을 독립 판독으로 제거하는 추적 가능한 계측 사슬", "a traceable measurement chain that removes background, systematics, and selection through independent readouts"],
+    scale: ["실험실 결과를 생산 규모로 옮길 때 생기는 분산·열화·자원수지", "variance, degradation, and resource balances that emerge when laboratory results move to production scale"],
+    system: ["구성요소 사이의 피드백·고장 전파·운용 조건을 포함한 종단 성능", "end-to-end performance including feedback, failure propagation, and operating conditions across components"],
+    boundary: ["전제를 하나씩 바꿨을 때 가능 영역과 불가능 영역이 갈리는 정확한 문턱", "the exact threshold separating feasible and impossible regimes as assumptions are varied"]
+  };
+
+  const approachCore = {
+    theory: ["특수 사례를 넘어서는 정리·구성법·하한 또는 명시적 반례", "a theorem, construction, lower bound, or explicit counterexample that extends beyond special cases"],
+    experiment: ["가설들이 다른 값을 예측하는 조건에서 수행한 맹검·대조·독립 재현", "blinded, controlled, and independently replicated tests where hypotheses predict different values"],
+    hybrid: ["모형의 사전 정량예측과 개입·관측 결과가 반복해서 맞물리는 폐루프", "a closed loop in which prospective quantitative predictions repeatedly meet interventions or observations"],
+    engineering: ["성능뿐 아니라 수율·비용·수명·안전성까지 포함한 통합 시연", "an integrated demonstration covering yield, cost, lifetime, and safety as well as performance"]
+  };
+
+  const formalTheoryCore = [
+    "특수 사례·수치 증거와 모든 허용 경우를 포괄하는 논증 사이의 논리적 간극",
+    "the logical gap between special cases or numerical evidence and an argument covering every admissible case"
+  ];
+
+  const reasonFrequencyKo = new Map();
+  for (const problem of problems) {
+    reasonFrequencyKo.set(problem.whyOpen, (reasonFrequencyKo.get(problem.whyOpen) || 0) + 1);
+  }
+
+  function researchObstacle(problem) {
+    if ((reasonFrequencyKo.get(problem.whyOpen) || 0) <= 2) {
+      return { text: sentence(problem.whyOpen), textEn: sentence(problem.whyOpenEn) };
+    }
+    const field = axesForProblem(problem)[0];
+    const generated = {
+      theory: [
+        `현재 기법은 이 문제의 중심 구조—${field[0]}—를 특수 사례 밖의 증명·구성·하한으로 확장하지 못한다.`,
+        `Current methods have not extended the central structure of this problem—${field[1]}—beyond special cases into a proof, construction, or lower bound.`
+      ],
+      experiment: [
+        `현재 계측은 핵심 신호—${field[0]}—를 배경·계통오차·표본 편향에서 충분히 분리하지 못한다.`,
+        `Current measurements do not yet separate the key signal—${field[1]}—from background, systematic error, and sampling bias.`
+      ],
+      hybrid: [
+        `현재 모형과 관측은 핵심 연결—${field[0]}—을 후보 설명별 사전 예측과 독립 검증으로 닫지 못한다.`,
+        `Current models and observations have not closed the key connection—${field[1]}—through hypothesis-specific prospective predictions and independent validation.`
+      ],
+      engineering: [
+        `현재 시제품은 시스템 병목—${field[0]}—을 성능·수율·비용·수명 조건에서 동시에 넘지 못한다.`,
+        `Current prototypes have not overcome the system bottleneck—${field[1]}—simultaneously under performance, yield, cost, and lifetime constraints.`
+      ]
+    }[problem.approach];
+    return { text: generated[0], textEn: generated[1] };
+  }
 
   const theoreticalComputerAxes = [
     ["계산모형, 균일성·비균일성, 무작위성·조언과 자원 척도의 정의", "the computational model, uniformity versus nonuniformity, randomness or advice, and the resource measure"],
@@ -512,33 +786,75 @@
   }
 
   function specialistExplanation(problem) {
-    let discipline = disciplineLens[problem.discipline];
-    if (problem.discipline === "mathematics" && problem.approach === "theory") {
-      discipline = [
-        "전공자 관점에서는 명제의 양화사, 차원·정칙성·경계조건을 고정하고 특수 경우의 성립이 일반 정리로 확장되지 않는 지점을 찾아야 한다.",
-        "For a specialist, the quantifiers, dimension, regularity, and boundary conditions must be fixed precisely, and the obstruction to extending special cases into a general theorem must be identified."
-      ];
-    } else if (problem.discipline === "computer" && problem.approach === "theory") {
-      discipline = [
-        "전공자 관점에서는 계산모형과 자원 척도를 먼저 고정하고, 환원·상하한·완전성 결과가 무작위성·비균일성·오라클을 허용할 때도 유지되는지 구분해야 한다.",
-        "For a specialist, the computational model and resource measure must be fixed first, then reductions, upper and lower bounds, and completeness results must be separated across randomness, nonuniformity, and oracle access."
-      ];
-    }
-    const nature = natureLens[problem.nature];
-    const approach = approachLens[problem.approach];
+    const axes = axesForProblem(problem);
+    const obstacle = researchObstacle(problem);
+    const axisKo = axes.map(axis => axis[0]).join("; ");
+    const axisEn = axes.map(axis => axis[1]).join("; ");
     const questionKo = problem.question.replace(/\?$/, "");
     const questionEn = problem.questionEn.replace(/\?$/, "");
+    let connection = {
+      fundamental: [
+        `“${questionKo}”에 답하려면 세 측면—${axisKo}—을 하나의 설명 안에서 맞물리게 하고, 경쟁 가설을 가르는 정량 예측으로 이어야 한다.`,
+        `Answering “${questionEn}” requires ${axisEn} to fit into one account and produce quantitative predictions that separate competing hypotheses.`
+      ],
+      prediction: [
+        `질문 “${questionKo}”에 신뢰할 만한 예측으로 답하려면 세 측면—${axisKo}—이 보정 자료 밖에서도 이어지는 하나의 검증 사슬을 이루어야 한다.`,
+        `A reliable prediction for “${questionEn}” requires ${axisEn} to form one validation chain that survives outside the calibration data.`
+      ],
+      measurement: [
+        `질문 “${questionKo}”에 측정으로 답하려면 세 측면—${axisKo}—이 같은 신호를 독립적으로 확인하는 추적 가능한 계측 사슬로 연결돼야 한다.`,
+        `Deciding “${questionEn}” by measurement requires ${axisEn} to form a traceable chain of independent readings of the same signal.`
+      ],
+      scale: [
+        `질문 “${questionKo}”에 실제 규모의 증거로 답하려면 세 측면—${axisKo}—을 실험실 조건부터 생산·운용 환경까지 끊김 없이 추적해야 한다.`,
+        `Showing that “${questionEn}” holds at useful scale requires ${axisEn} to be tracked without a gap from laboratory conditions into production and operation.`
+      ],
+      system: [
+        `질문 “${questionKo}”에 작동하는 시스템으로 답하려면 세 측면—${axisKo}—이 구성요소의 성능부터 전체 시스템의 지표까지 일관되게 연결돼야 한다.`,
+        `Implementing “${questionEn}” as a working system requires ${axisEn} to connect component performance consistently to whole-system metrics.`
+      ],
+      boundary: [
+        `질문 “${questionKo}”에 답하려면 세 측면—${axisKo}—을 명시하고, 전제별 가능·불가능 영역을 나누는 증명이나 반례를 제시해야 한다.`,
+        `Answering “${questionEn}” requires ${axisEn} to be stated explicitly and used in a proof or counterexample that separates feasible from impossible regimes assumption by assumption.`
+      ]
+    }[problem.nature];
+    if (problem.approach === "theory") {
+      connection = [
+        `“${questionKo}”에 답하려면 세 측면—${axisKo}—을 정확한 정의와 가정 아래 연결하고, 명제의 참·거짓 또는 계산 경계를 논리적으로 결정해야 한다.`,
+        `Answering “${questionEn}” requires ${axisEn} to be connected under precise definitions and assumptions, then used to determine the statement's truth or computational boundary logically.`
+      ];
+    }
+    const test = {
+      theory: [
+        `“${questionKo}”에 대한 완전한 해결에는 특수 사례를 넘어서는 정리·구성법·하한 또는 명시적 반례가 필요하다.`,
+        `A complete resolution of “${questionEn}” requires a theorem, construction, lower bound, or explicit counterexample that extends beyond special cases.`
+      ],
+      experiment: [
+        `“${questionKo}”에 결정적인 답을 내려면 신호를 배경·편향·교란에서 분리하고 독립된 장비와 표본에서 재현해야 한다.`,
+        `A decisive answer to “${questionEn}” must separate signal from background, bias, and confounding and reproduce it with independent instruments and samples.`
+      ],
+      hybrid: [
+        `“${questionKo}”에 답하려면 모형의 사전 정량예측과 개입·관측 결과가 반복해서 맞물리는 폐루프 검증이 필요하다.`,
+        `Answering “${questionEn}” requires a closed validation loop in which prospective quantitative predictions repeatedly meet interventions or observations.`
+      ],
+      engineering: [
+        `“${questionKo}”의 해결로 인정되려면 성능뿐 아니라 수율·비용·수명·안전성까지 통과하는 통합 시연이 필요하다.`,
+        `A resolution of “${questionEn}” requires an integrated demonstration that passes yield, cost, lifetime, and safety targets as well as performance.`
+      ]
+    }[problem.approach];
     return {
-      text: `전공자 관점의 질문은 “${questionKo}”이다. 이는 ${problem.subfield}의 모형·증거·판정 조건을 함께 묻는다. ${discipline[0]} ${nature[0]} ${approach[0]} 현재 이 질문이 열려 있는 직접적인 이유는 다음과 같다. ${sentence(problem.whyOpen)}`,
-      textEn: `For a specialist, “${questionEn}” jointly concerns the models, evidence, and decision criteria of ${problem.subfieldEn}. ${discipline[1]} ${nature[1]} ${approach[1]} The immediate reason the question remains open is: ${sentence(problem.whyOpenEn)}`
+      text: `${connection[0]} ${obstacle.text} ${test[0]}`,
+      textEn: `${connection[1]} ${obstacle.textEn} ${test[1]}`
     };
   }
 
   function axesForProblem(problem) {
-    let axes = problemTechnicalAxes[problem.id] || technicalAxes[problem.discipline] || [];
-    if (problem.nature === "boundary") axes = boundaryTechnicalAxes;
-    else if (!problemTechnicalAxes[problem.id] && problem.discipline === "computer" && problem.approach === "theory" && /복잡도|알고리즘|계산|P와 NP|하한/.test(`${problem.subfield} ${problem.question}`)) axes = theoreticalComputerAxes;
-    return axes;
+    if (problemTechnicalAxes[problem.id]) return problemTechnicalAxes[problem.id];
+    const disciplineFallback = technicalAxes[problem.discipline] || boundaryTechnicalAxes;
+    const fieldAxis = subfieldCore[problem.subfield]
+      || (problem.discipline === "computer" && problem.approach === "theory" ? theoreticalComputerAxes[0] : disciplineFallback[0]);
+    const natureAxis = problem.approach === "theory" ? formalTheoryCore : natureCore[problem.nature];
+    return [fieldAxis, natureAxis, approachCore[problem.approach]];
   }
 
   function problemTechnicalTopics(problem) {
@@ -753,26 +1069,27 @@
 
   function attemptTechnicalDetail(entry, problem, index, isRecent) {
     const axis = axesForProblem(problem)[index] || [problem.subfield, problem.subfieldEn];
+    const obstacle = researchObstacle(problem);
     const questionKo = problem.question.replace(/\?$/, "");
     const questionEn = problem.questionEn.replace(/\?$/, "");
     const criterionKo = problem.resolutionCriterion || problem.solvedWhen;
     const criterionEn = problem.resolutionCriterionEn || problem.solvedWhenEn;
     if (isRecent && index === 0) {
       return {
-        text: `${problem.subfield}의 최근 ${entry[0]} 연구에서 다루는 기술 초점은 ${axis[0]}이다. 새 자료·계산을 연결해 “${questionKo}”의 탐색 범위를 좁힌다.`,
-        textEn: `Recent work on ${entry[1]} in ${problem.subfieldEn} links ${axis[1]} to new data and computation to narrow the solution space for “${questionEn}.”`
+        text: `최근의 ${entry[0]} 연구는 ${axis[0]}의 문제를 새 자료와 계산으로 다루며 “${questionKo}”에 가능한 답을 줄여 간다.`,
+        textEn: `Recent ${entry[1]} work recasts “${questionEn}” in terms of ${axis[1]}, using new data and computation to narrow the possible answers.`
       };
     }
     if (isRecent && index === 1) {
       return {
-        text: `연구 질문: “${questionKo}”. 여기서 확인할 전공자 초점은 ${axis[0]}이다. ${sentence(problem.whyOpen)} 이 한계가 다른 조건에서도 남는지를 전향적으로 시험해야 한다.`,
-        textEn: `For “${questionEn},” the specialist focus is ${axis[1]}. ${sentence(problem.whyOpenEn)} Prospective tests must determine whether that limitation persists under new conditions.`
+        text: `이 접근은 “${questionKo}”에 대한 후보 답들을 비교하면서 기술적 조건—${axis[0]}—까지 확인한다. ${obstacle.text} 새 조건과 독립 표본에서 이 한계가 남는지 전향적으로 확인해야 한다.`,
+        textEn: `This approach compares candidate answers to “${questionEn}” while checking ${axis[1]}. ${obstacle.textEn} Prospective tests must show whether that limitation persists in new conditions and independent samples.`
       };
     }
     if (isRecent) {
       return {
-        text: `“${questionKo}”의 종단 평가 항목은 ${axis[0]}이다. 해결 판정 기준: ${sentence(criterionKo)}`,
-        textEn: `Long-horizon evaluation of “${questionEn}” must cover ${axis[1]}. Resolution test: ${sentence(criterionEn)}`
+        text: `“${questionKo}”에 대한 장기 평가에는 ${axis[0]}까지 포함한다. 이 연구가 난제를 끝내려면 다음 조건도 충족해야 한다. ${sentence(criterionKo)}`,
+        textEn: `Long-horizon evaluation of “${questionEn}” extends through ${axis[1]}. To settle the problem, the work must also meet this condition: ${sentence(criterionEn)}`
       };
     }
     if (index === 0) {
@@ -795,19 +1112,19 @@
         ]
       }[problem.approach] || [questionKo, questionEn];
       return {
-        text: `${problem.subfield}에서 ${entry[0]}의 기술 초점은 ${axis[0]}이다. 연구 질문: “${questionKo}”. ${connection[0]}`,
-        textEn: `In ${problem.subfieldEn}, the technical focus of ${entry[1]} is ${axis[1]}. ${connection[1]}`
+        text: `${entry[0]} 접근은 “${questionKo}”에 답하는 데 필요한 구조—${axis[0]}—를 구체화한다. ${connection[0]}`,
+        textEn: `${entry[1]} recasts “${questionEn}” in terms of ${axis[1]}. ${connection[1]}`
       };
     }
     if (index === 1) {
       return {
-        text: `연구 질문: “${questionKo}”. 이를 검정할 때는 ${axis[0]}을 통제해 실제 신호와 모형 오류를 분리해야 한다. 현재 병목: ${sentence(problem.whyOpen)}`,
-        textEn: `Testing “${questionEn}” requires control of ${axis[1]} to separate the real signal from model error. Current bottleneck: ${sentence(problem.whyOpenEn)}`
+        text: `“${questionKo}”에 답하려는 검정은 ${axis[0]}까지 확인해 실제 신호와 모형 오류를 분리해야 한다. ${obstacle.text}`,
+        textEn: `Testing “${questionEn}” must extend through ${axis[1]} to separate the real signal from model error. ${obstacle.textEn}`
       };
     }
     return {
-      text: `“${questionKo}”의 독립 검증에서 확인할 항목은 ${axis[0]}이다. 해결 판정 기준: ${sentence(criterionKo)}`,
-      textEn: `Independent validation of “${questionEn}” must cover ${axis[1]}. Resolution test: ${sentence(criterionEn)}`
+      text: `“${questionKo}”에 답하는 독립 검증에는 ${axis[0]}까지 포함한다. 이 접근이 최종 해법이 되려면 다음 조건을 충족해야 한다. ${sentence(criterionKo)}`,
+      textEn: `Independent validation of “${questionEn}” extends through ${axis[1]}. For this approach to become a resolution, it must meet this condition: ${sentence(criterionEn)}`
     };
   }
 
@@ -893,7 +1210,7 @@
 
   window.RESEARCH_CONTEXT_META = {
     version: "2026-08-05",
-    scope: "Two reader levels, 3 established research programs, and 3 current directions per catalog entry",
-    scopeKo: "각 항목당 입문·전공자 2단계 설명, 대표적 해결 시도 3개와 2023–2026 최근 연구 방향 3개"
+    scope: "A continuous plain-to-technical explanation, 3 established research programs, and 3 current directions per catalog entry",
+    scopeKo: "각 항목당 쉬운 정의에서 기술적 난점으로 이어지는 설명, 대표적 해결 시도 3개와 2023–2026 최근 연구 방향 3개"
   };
 })();

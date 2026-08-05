@@ -38,13 +38,13 @@ for (const problem of PROBLEMS) {
   assert(problem.overview?.length > 100 && problem.overview.length < 260, `${problem.id}: Korean overview must remain a concise elevator pitch`);
   assert(problem.overviewEn?.length > 300 && problem.overviewEn.length < 700, `${problem.id}: English overview must remain a concise elevator pitch`);
   assert(problem.plainDefinition?.length > 45 && problem.plainDefinitionEn?.length > 100, `${problem.id}: requires a bilingual undergraduate-level definition`);
-  assert(problem.generalExplanation?.length > 120 && problem.generalExplanation.length < 300, `${problem.id}: requires a substantive Korean general-reader explanation`);
-  assert(problem.generalExplanationEn?.length > 300 && problem.generalExplanationEn.length < 700, `${problem.id}: requires a substantive English general-reader explanation`);
-  assert(problem.specialistExplanation?.length > 300 && problem.specialistExplanation.length < 520, `${problem.id}: requires a substantive Korean specialist brief`);
-  assert(problem.specialistExplanationEn?.length > 700 && problem.specialistExplanationEn.length < 1200, `${problem.id}: requires a substantive English specialist brief`);
-  assert(problem.technicalTopics?.length === 3, `${problem.id}: requires exactly 3 specialist technical topics`);
+  assert(problem.generalExplanation?.length > 120 && problem.generalExplanation.length < 300, `${problem.id}: requires a substantive Korean opening explanation`);
+  assert(problem.generalExplanationEn?.length > 300 && problem.generalExplanationEn.length < 700, `${problem.id}: requires a substantive English opening explanation`);
+  assert(problem.specialistExplanation?.length > 240 && problem.specialistExplanation.length < 600, `${problem.id}: requires a substantive Korean technical continuation`);
+  assert(problem.specialistExplanationEn?.length > 600 && problem.specialistExplanationEn.length < 1400, `${problem.id}: requires a substantive English technical continuation`);
+  assert(problem.technicalTopics?.length === 3, `${problem.id}: requires exactly 3 problem-specific research facets`);
   for (const topic of problem.technicalTopics || []) {
-    assert(topic.text?.length > 20 && topic.textEn?.length > 45, `${problem.id}: specialist topic requires bilingual technical content`);
+    assert(topic.text?.length > 20 && topic.textEn?.length > 45, `${problem.id}: research facet requires bilingual technical content`);
   }
   assert(problem.resolutionCriterion?.length > 20 && problem.resolutionCriterionEn?.length > 20, `${problem.id}: requires a bilingual specialist resolution criterion`);
   assert(problem.pitchItems?.length === 1, `${problem.id}: requires one concise, problem-specific resolution test`);
@@ -58,8 +58,8 @@ for (const problem of PROBLEMS) {
     assert(attempt.title?.length > 5 && attempt.titleEn?.length > 5, `${problem.id}: attempt requires a bilingual title`);
     assert(attempt.description?.length > 45 && attempt.description.length < 120, `${problem.id}: Korean attempt must be concise and substantive`);
     assert(attempt.descriptionEn?.length > 100 && attempt.descriptionEn.length < 260, `${problem.id}: English attempt must be concise and substantive`);
-    assert(attempt.technicalDetail?.length > 80 && attempt.technicalDetail.length < 260, `${problem.id}: Korean attempt requires problem-specific specialist detail`);
-    assert(attempt.technicalDetailEn?.length > 200 && attempt.technicalDetailEn.length < 600, `${problem.id}: English attempt requires problem-specific specialist detail`);
+    assert(attempt.technicalDetail?.length > 80 && attempt.technicalDetail.length < 320, `${problem.id}: Korean attempt requires a problem-specific continuation`);
+    assert(attempt.technicalDetailEn?.length > 200 && attempt.technicalDetailEn.length < 700, `${problem.id}: English attempt requires a problem-specific continuation`);
     assert(Boolean(sources[attempt.sourceId]), `${problem.id}: attempt has unknown source ${attempt.sourceId}`);
     assert(problem.sourceIds.includes(attempt.sourceId), `${problem.id}: attempt source must be linked to the problem`);
   }
@@ -79,14 +79,22 @@ assert(new Set(PROBLEMS.map(problem => problem.plainDefinition)).size === PROBLE
 assert(new Set(PROBLEMS.map(problem => problem.plainDefinitionEn)).size === PROBLEMS.length, "English problem definitions must be individually specific");
 assert(new Set(PROBLEMS.map(problem => problem.generalExplanation)).size === PROBLEMS.length, "Korean general-reader explanations must be individually specific");
 assert(new Set(PROBLEMS.map(problem => problem.generalExplanationEn)).size === PROBLEMS.length, "English general-reader explanations must be individually specific");
-assert(new Set(PROBLEMS.map(problem => problem.specialistExplanation)).size === PROBLEMS.length, "Korean specialist briefs must be individually specific");
-assert(new Set(PROBLEMS.map(problem => problem.specialistExplanationEn)).size === PROBLEMS.length, "English specialist briefs must be individually specific");
+assert(new Set(PROBLEMS.map(problem => problem.specialistExplanation)).size === PROBLEMS.length, "Korean technical continuations must be individually specific");
+assert(new Set(PROBLEMS.map(problem => problem.specialistExplanationEn)).size === PROBLEMS.length, "English technical continuations must be individually specific");
 for (const key of ["importantAttempts", "recentAttempts"]) {
   for (let index = 0; index < 3; index += 1) {
-    assert(new Set(PROBLEMS.map(problem => problem[key][index].technicalDetail)).size === PROBLEMS.length, `Korean ${key}[${index}] specialist details must be individually specific`);
-    assert(new Set(PROBLEMS.map(problem => problem[key][index].technicalDetailEn)).size === PROBLEMS.length, `English ${key}[${index}] specialist details must be individually specific`);
+    assert(new Set(PROBLEMS.map(problem => problem[key][index].technicalDetail)).size === PROBLEMS.length, `Korean ${key}[${index}] continuations must be individually specific`);
+    assert(new Set(PROBLEMS.map(problem => problem[key][index].technicalDetailEn)).size === PROBLEMS.length, `English ${key}[${index}] continuations must be individually specific`);
   }
 }
+
+const firstFacetBySubfield = new Map();
+for (const problem of PROBLEMS) {
+  if (!firstFacetBySubfield.has(problem.subfield)) {
+    firstFacetBySubfield.set(problem.subfield, problem.technicalTopics[0].text.slice(`${problem.subfield}: `.length));
+  }
+}
+assert(new Set(firstFacetBySubfield.values()).size === firstFacetBySubfield.size, "each subfield must have a distinct technical research core");
 
 for (const discipline of Object.keys(meta.disciplines)) {
   const count = PROBLEMS.filter(item => item.discipline === discipline).length;
@@ -130,7 +138,7 @@ assert(PROBLEMS.filter(item => item.nature !== "boundary").every(item => item.im
 
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const css = fs.readFileSync(path.join(root, "styles.css"), "utf8");
-const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js"]
+const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js", "research-context.js"]
   .map(file => fs.readFileSync(path.join(root, file), "utf8"))
   .join("\n");
 for (const phrase of [
@@ -143,7 +151,17 @@ for (const phrase of [
   "No count quotas",
   "Counts are not matched",
   "editorial judgment",
-  "quota-limited"
+  "quota-limited",
+  "1단계 · 처음 읽는 사람",
+  "2단계 · 전공자 핵심",
+  "전공자 관점",
+  "전공자 포인트",
+  "핵심 아이디어",
+  "핵심 기술 영역",
+  "Level 1",
+  "Level 2",
+  "Specialist focus",
+  "Core idea"
 ]) {
   assert(!publicCopy.includes(phrase), `public copy contains process-oriented wording: ${phrase}`);
 }
