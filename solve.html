@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="미해결 문제를 실제 연구 질문과 검증 가능한 연구 경로로 전환하는 Unsolved Problems 연구 설계 페이지">
+  <meta name="theme-color" content="#0b1d26">
+  <meta name="robots" content="index,follow">
+  <title>Research Attempt — Unsolved Problems</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20260807-lab">
+  <link rel="stylesheet" href="solve.css?v=20260807-lab">
+  <script defer src="data.js?v=20260807-lab"></script>
+  <script defer src="expansion-data.js?v=20260807-lab"></script>
+  <script defer src="translations.js?v=20260807-lab"></script>
+  <script defer src="priority-data.js?v=20260807-lab"></script>
+  <script defer src="prize-data.js?v=20260807-lab"></script>
+  <script defer src="research-context.js?v=20260807-lab"></script>
+  <script defer src="solution-context.js?v=20260807-lab"></script>
+  <script defer src="solve.js?v=20260807-lab"></script>
+</head>
+<body class="lab-page">
+  <a class="skip-link" href="#research-plan" id="skip-link">연구 설계로 건너뛰기</a>
+
+  <header class="lab-header">
+    <a class="brand" href="./" id="brand-home" aria-label="Unsolved Problems 홈">
+      <img src="assets/mark.svg" alt="" width="34" height="34">
+      <span>Unsolved Problems</span>
+    </a>
+    <span class="lab-header-label">RESEARCH ATTEMPT</span>
+    <div class="lab-header-actions">
+      <button class="back-link" id="back-to-atlas" type="button">← 지도로 돌아가기</button>
+      <div class="language-switch" id="solution-language-switch" role="group" aria-label="언어 선택">
+        <button type="button" data-lang="ko" aria-pressed="true">한국어</button>
+        <button type="button" data-lang="en" aria-pressed="false">English</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="research-plan">
+    <section class="lab-error" id="solution-error" hidden>
+      <p class="eyebrow">NOT FOUND</p>
+      <h1 id="error-title">문제를 찾을 수 없습니다.</h1>
+      <p id="error-text">주소의 문제 ID를 확인하거나 전체 난제 지도로 돌아가세요.</p>
+      <a class="button primary" href="./" id="error-link">전체 지도 보기</a>
+    </section>
+
+    <div id="solution-content" hidden>
+      <section class="lab-hero" aria-labelledby="solution-title">
+        <div class="lab-hero-copy">
+          <div class="lab-breadcrumb" id="lab-breadcrumb"></div>
+          <p class="lab-kicker" id="lab-kicker">RESEARCH ATTEMPT · HYPOTHESIS, TEST, DECISION</p>
+          <h1 id="solution-title"></h1>
+          <p class="lab-deck" id="solution-deck"></p>
+          <div class="lab-tags" id="solution-tags"></div>
+        </div>
+        <aside class="decision-card" aria-labelledby="decision-card-title">
+          <span class="decision-card-number" id="solution-id"></span>
+          <p class="decision-card-label" id="decision-card-title">이번 연구가 답해야 할 질문</p>
+          <p class="decision-card-question" id="central-question"></p>
+          <div class="decision-card-rule">
+            <span id="decision-rule-label">해결 판정</span>
+            <p id="decision-rule"></p>
+          </div>
+        </aside>
+      </section>
+
+      <div class="lab-layout">
+        <aside class="lab-toc" aria-label="페이지 목차" id="lab-toc">
+          <span id="toc-title">이 페이지에서</span>
+          <a href="#starting-point" id="toc-start">출발점</a>
+          <a href="#proposals" id="toc-proposals">연구 제안</a>
+          <a href="#roadmap" id="toc-roadmap">실행 로드맵</a>
+          <a href="#requirements" id="toc-requirements">질문과 역량</a>
+          <a href="#prior-work" id="toc-prior">연구 흐름</a>
+          <a href="#evidence" id="toc-evidence">근거</a>
+        </aside>
+
+        <div class="lab-article">
+          <section class="lab-section starting-point" id="starting-point">
+            <div class="lab-section-heading">
+              <p class="eyebrow">01 · STARTING POINT</p>
+              <h2 id="starting-title">무엇이 남아 있는가</h2>
+            </div>
+            <div class="starting-grid">
+              <article>
+                <h3 id="current-state-title">현재까지 확인된 것</h3>
+                <p id="current-state"></p>
+              </article>
+              <article class="gap-card">
+                <h3 id="gap-title">지금 닫아야 할 간극</h3>
+                <p id="gap-text"></p>
+              </article>
+            </div>
+            <div class="technical-axis-list" id="technical-axes"></div>
+          </section>
+
+          <section class="lab-section" id="proposals">
+            <div class="lab-section-heading proposal-heading">
+              <div>
+                <p class="eyebrow">02 · PROPOSALS</p>
+                <h2 id="proposals-title">세 가지 검증 경로</h2>
+              </div>
+              <p class="proposal-note" id="proposal-note">검토된 연구 방향을 재조합해 만든 검증 가능한 제안입니다. 문헌상 최초라는 주장이 아니며, 첫 시험에서 살아남아야 다음 단계로 갑니다.</p>
+            </div>
+            <div id="recommended-proposal"></div>
+            <div class="alternative-grid" id="alternative-proposals"></div>
+          </section>
+
+          <section class="lab-section" id="roadmap">
+            <div class="lab-section-heading">
+              <p class="eyebrow">03 · RESEARCH GATES</p>
+              <h2 id="roadmap-title">아이디어를 결론까지 운반하는 관문</h2>
+            </div>
+            <div class="roadmap-list" id="roadmap-list"></div>
+          </section>
+
+          <section class="lab-section" id="requirements">
+            <div class="lab-section-heading">
+              <p class="eyebrow">04 · READINESS</p>
+              <h2 id="requirements-title">시작 전에 준비할 것</h2>
+            </div>
+            <div class="readiness-grid">
+              <article class="readiness-card">
+                <h3 id="questions-title">먼저 답할 설계 질문</h3>
+                <ol id="research-questions"></ol>
+              </article>
+              <article class="readiness-card dark">
+                <h3 id="capabilities-title">필요한 역량과 기반</h3>
+                <ul id="capabilities"></ul>
+              </article>
+            </div>
+            <div class="risk-panel">
+              <div>
+                <h3 id="pitfalls-title">피해야 할 함정</h3>
+                <ul id="pitfalls"></ul>
+              </div>
+              <div class="safety-note">
+                <span id="safety-title">안전·윤리 경계</span>
+                <p id="safety-note"></p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lab-section" id="prior-work">
+            <div class="lab-section-heading">
+              <p class="eyebrow">05 · RESEARCH LANDSCAPE</p>
+              <h2 id="prior-title">어디에서 이어받는가</h2>
+              <p id="prior-intro">제안은 아래의 축적된 프로그램과 현재 연구 방향을 출발점으로 삼습니다.</p>
+            </div>
+            <div class="prior-columns" id="prior-columns"></div>
+          </section>
+
+          <section class="lab-section evidence-section" id="evidence">
+            <div class="lab-section-heading">
+              <p class="eyebrow">06 · EVIDENCE</p>
+              <h2 id="evidence-title">근거와 판정 자료</h2>
+            </div>
+            <div id="prize-panel"></div>
+            <div class="evidence-list" id="evidence-list"></div>
+          </section>
+        </div>
+      </div>
+
+      <nav class="problem-pagination" id="problem-pagination" aria-label="다른 난제 연구 페이지"></nav>
+    </div>
+  </main>
+
+  <footer class="lab-footer">
+    <a class="brand" href="./">
+      <img src="assets/mark.svg" alt="" width="30" height="30">
+      <span>Unsolved Problems</span>
+    </a>
+    <p id="footer-note">가설은 빨리 만들고, 판정 기준은 먼저 고정하고, 결론은 독립적으로 검증합니다.</p>
+    <a href="https://github.com/eljja/UnsolvedProblems">GitHub ↗</a>
+  </footer>
+</body>
+</html>

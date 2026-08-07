@@ -43,7 +43,7 @@
       criterionOne: "학술기관이 명명한 대표 난제", criterionTwo: "정부·학회·연구기관 로드맵의 전략적 우선과제", criterionThree: "여러 분야의 이론·측정·기술을 바꿀 수 있는 지속적 프런티어", criterionFour: "공식 상금·연구경진이 제시한 검증 가능한 목표",
       methodNote: "중요도는 학술기관의 명명 여부, 로드맵 우선순위와 예상 파급력으로 구분합니다. ‘현재 기술로 불가능’은 기술적 한계, ‘이론적 불가능’은 법칙·정리·정보 제약에 따른 경계를 뜻합니다. 출처 연결 검토일: 2026년 8월 7일 · 상금 정보 검토일: 2026년 8월 5일.",
       footerTagline: "모르는 것의 목록이 아니라, 알아내기 위한 지도.", sourceContribution: "소스 및 기여", classificationPrinciples: "분류 원칙", allProblems: "전체 난제", closeDetails: "상세 보기 닫기",
-      overviewTitle: "문제 설명",
+      overviewTitle: "문제 설명", solutionLabLink: "해결 시도 설계 보기", solutionLabHint: "가설·결정적 시험·중단 조건·연구 로드맵",
       prizeInformation: "상금·도전 정보", prizeAmount: "상금액", prizeBadge: "상금", prizeReviewed: "금액·상태 확인", prizeConditions: "지급·참가 조건", officialRules: "공식 규정", relatedSources: "관련 로드맵·상금 주관기관",
       importantAttempts: "축적된 연구 프로그램 3개", recentAttempts: "현재 연구 방향 3개", attemptSource: "근거 자료", contentReviewed: "내용 검토", evidenceSources: "개 근거 자료", sourceReviewed: "확인",
       mapGroup: "분야별 난제 수", mapDistribution: "분포", searchPrefix: "검색", items: "항목", remaining: "개 남음", loadMore: "더 보기",
@@ -83,7 +83,7 @@
       criterionOne: "Named open problems recognized by scholarly institutions", criterionTwo: "Strategic priorities in government, society, and research-institution roadmaps", criterionThree: "Durable frontiers capable of changing theory, measurement, or technology across fields", criterionFour: "Verifiable objectives defined by official prizes and research competitions",
       methodNote: "Importance reflects named-problem status, roadmap priority, and expected scientific leverage. ‘Beyond current technology’ denotes a technical limit; ‘theoretically impossible’ denotes a boundary imposed by laws, theorems, or information constraints. Source links reviewed 7 August 2026; prize information reviewed 5 August 2026.",
       footerTagline: "Not just a list of unknowns—a map for finding out.", sourceContribution: "Source and contribute", classificationPrinciples: "Classification principles", allProblems: "All problems", closeDetails: "Close details",
-      overviewTitle: "Problem explanation",
+      overviewTitle: "Problem explanation", solutionLabLink: "Open research attempt", solutionLabHint: "Hypotheses, decisive tests, stop rules, and research roadmap",
       prizeInformation: "Prize and challenge information", prizeAmount: "Prize amount", prizeBadge: "Prize", prizeReviewed: "Amount and status checked", prizeConditions: "Award and entry conditions", officialRules: "Official rules", relatedSources: "Related roadmaps and prize organizers",
       importantAttempts: "3 established research programs", recentAttempts: "3 current research directions", attemptSource: "Evidence source", contentReviewed: "Content reviewed", evidenceSources: "evidence sources", sourceReviewed: "checked",
       mapGroup: "Problem counts by discipline", mapDistribution: "distribution", searchPrefix: "Search", items: "items", remaining: "remaining", loadMore: "Load more",
@@ -494,6 +494,14 @@
     }).join("")}</div>`;
   }
 
+  function solutionURL(problem) {
+    const url = new URL("solve.html", location.href);
+    url.searchParams.set("id", problem.id);
+    if (state.lang === "en") url.searchParams.set("lang", "en");
+    url.searchParams.set("return", `${location.pathname}${location.search}${location.hash}`);
+    return url.href;
+  }
+
   function openDialog(id) {
     const problem = problems.find(item => item.id === id);
     if (!problem) return;
@@ -524,6 +532,10 @@
           </div>
           <div class="research-meta"><span>${escapeHTML(t("contentReviewed"))}: ${escapeHTML(problem.researchContextReviewedOn)}</span><span>${linkedSources.length} ${escapeHTML(t("evidenceSources"))}</span></div>
         </section>
+        <a class="solution-lab-link" href="${escapeHTML(solutionURL(problem))}">
+          <span><small>RESEARCH ATTEMPT</small><strong>${escapeHTML(t("solutionLabLink"))}</strong><em>${escapeHTML(t("solutionLabHint"))}</em></span>
+          <b aria-hidden="true">→</b>
+        </a>
         <div class="research-columns">
           <section class="dialog-section attempt-group established-attempts">
             <h3>${escapeHTML(t("importantAttempts"))}</h3>
