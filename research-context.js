@@ -208,7 +208,7 @@
   };
 
   const subfieldCore = {
-    "우주론": ["거리사다리·우주배경복사·대규모구조가 주는 우주론 매개변수의 축퇴와 계통오차", "parameter degeneracies and systematics across the distance ladder, cosmic microwave background, and large-scale structure"],
+    "우주론": ["우주 팽창·구조 성장·중력렌즈·은하동역학을 잇는 우주론 매개변수의 축퇴와 보정 오차", "cosmological parameter degeneracies and calibration errors across expansion, structure growth, gravitational lensing, and galaxy dynamics"],
     "초기 우주": ["원시 요동의 스펙트럼·비가우스성·재가열 이력과 우주배경복사 편광의 연결", "links among primordial spectra, non-Gaussianity, reheating history, and cosmic-background polarization"],
     "입자물리": ["게이지 대칭·맛 구조·CP 위반과 표준모형 너머 연산자의 에너지 의존성", "gauge symmetry, flavor structure, CP violation, and the energy dependence of operators beyond the Standard Model"],
     "고에너지 탐색": ["희귀 붕괴·장수명 입자·누락에너지 신호의 생성률과 검출기 수용도", "production rates and detector acceptance for rare decays, long-lived particles, and missing-energy signatures"],
@@ -451,8 +451,10 @@
   ];
 
   const reasonFrequencyKo = new Map();
+  const solutionFrequencyKo = new Map();
   for (const problem of problems) {
     reasonFrequencyKo.set(problem.whyOpen, (reasonFrequencyKo.get(problem.whyOpen) || 0) + 1);
+    solutionFrequencyKo.set(problem.solvedWhen, (solutionFrequencyKo.get(problem.solvedWhen) || 0) + 1);
   }
 
   function researchObstacle(problem) {
@@ -481,6 +483,71 @@
     return { text: generated[0], textEn: generated[1] };
   }
 
+  function researchProgress(problem) {
+    const field = axesForProblem(problem)[0];
+    const questionKo = problem.question.replace(/\?$/, "");
+    const questionEn = problem.questionEn.replace(/\?$/, "");
+    if (problem.nature === "boundary") {
+      return {
+        text: `지금까지의 연구는 “${questionKo}”의 절대적 요구가 깨지는 조건과 중심 제약—${field[0]}—을 분리하고, 오차·자원·입력 범위를 제한한 해법을 넓혀 왔다.`,
+        textEn: `Work to date has separated the conditions under which the absolute demand in “${questionEn}” fails from its central constraint—${field[1]}—while expanding solutions with bounded error, resources, or input domains.`
+      };
+    }
+    const progress = {
+      theory: [
+        `지금까지의 연구는 “${questionKo}”에 필요한 중심 구조—${field[0]}—의 특수 사례, 조건부 정리와 계산 증거를 꾸준히 넓혀 왔다.`,
+        `Work to date has expanded special cases, conditional theorems, and computational evidence around the central structure needed for “${questionEn}”—${field[1]}.`
+      ],
+      experiment: [
+        `지금까지의 실험은 “${questionKo}”와 관련된 핵심 신호—${field[0]}—의 허용 범위를 좁히고 검출 한계를 개선해 왔다.`,
+        `Experiments have narrowed the allowed range and improved detection limits for the signal central to “${questionEn}”—${field[1]}.`
+      ],
+      hybrid: [
+        `지금까지의 연구는 질문 “${questionKo}”에 관한 핵심 연결—${field[0]}—에 모형 제약과 관측·개입 결과를 함께 축적해 왔다.`,
+        `Research has accumulated both model constraints and observational or intervention evidence for the connection central to “${questionEn}”—${field[1]}.`
+      ],
+      engineering: [
+        `지금까지의 시제품과 공정 연구는 “${questionKo}”의 시스템 병목—${field[0]}—을 구성요소 수준에서 차례로 줄여 왔다.`,
+        `Prototype and process work has reduced component-level portions of the system bottleneck in “${questionEn}”—${field[1]}.`
+      ]
+    }[problem.approach];
+    return { text: progress[0], textEn: progress[1] };
+  }
+
+  function researchResolution(problem) {
+    if ((solutionFrequencyKo.get(problem.solvedWhen) || 0) <= 2) {
+      return { text: sentence(problem.solvedWhen), textEn: sentence(problem.solvedWhenEn) };
+    }
+    const field = axesForProblem(problem)[0];
+    const questionKo = problem.question.replace(/\?$/, "");
+    const questionEn = problem.questionEn.replace(/\?$/, "");
+    if (problem.nature === "boundary") {
+      return {
+        text: `질문 “${questionKo}”에는 단순한 성공 사례가 아니라 경계를 정하는 전제—${field[0]}—를 명시한 금지 정리나 하한, 그리고 전제를 완화했을 때 가능한 제한형 해법이 필요하다.`,
+        textEn: `Answering “${questionEn}” requires a no-go theorem or lower bound that states the boundary assumptions—${field[1]}—together with restricted solutions made possible when those assumptions are relaxed.`
+      };
+    }
+    const resolution = {
+      theory: [
+        `질문 “${questionKo}”에 대한 해결은 중심 구조—${field[0]}—를 정의된 모든 경우에 다루는 엄밀한 증명·구성·하한, 또는 명제를 무너뜨리는 명시적 반례여야 한다.`,
+        `A resolution of “${questionEn}” must address the central structure—${field[1]}—for every defined case through a rigorous proof, construction, or lower bound, or defeat the claim with an explicit counterexample.`
+      ],
+      experiment: [
+        `질문 “${questionKo}”에 결정적인 답을 내려면 핵심 신호—${field[0]}—를 필요한 감도에서 검출하고, 독립된 장비·표본·분석으로 같은 결론을 재현해야 한다.`,
+        `A decisive answer to “${questionEn}” must detect the key signal—${field[1]}—at the required sensitivity and reproduce the conclusion with independent instruments, samples, and analyses.`
+      ],
+      hybrid: [
+        `질문 “${questionKo}”에 답하려면 핵심 연결—${field[0]}—에서 경쟁 모형들이 다른 수치를 예측해야 하며, 그 사전 예측이 독립된 관측이나 개입으로 반복 검증돼야 한다.`,
+        `Answering “${questionEn}” requires competing models to make different numerical predictions for the key connection—${field[1]}—and those prospective predictions to survive repeated independent observation or intervention.`
+      ],
+      engineering: [
+        `질문 “${questionKo}”의 해결로 인정되려면 시스템 병목—${field[0]}—을 대표 운용환경에서 넘고 성능·수율·비용·수명·안전성 목표를 동시에 재현해야 한다.`,
+        `A resolution of “${questionEn}” must overcome the system bottleneck—${field[1]}—in representative operation while reproducing performance, yield, cost, lifetime, and safety targets together.`
+      ]
+    }[problem.approach];
+    return { text: resolution[0], textEn: resolution[1] };
+  }
+
   const theoreticalComputerAxes = [
     ["계산모형, 균일성·비균일성, 무작위성·조언과 자원 척도의 정의", "the computational model, uniformity versus nonuniformity, randomness or advice, and the resource measure"],
     ["완전문제·환원, 회로·증명·통신 복잡도 하한과 알려진 장벽 정리", "complete problems and reductions, lower bounds in circuit, proof, or communication complexity, and known barrier theorems"],
@@ -494,6 +561,31 @@
   ];
 
   const problemTechnicalAxes = {
+    "UP-001": [
+      ["직접검출의 핵반동·전자반동, 간접검출의 붕괴·쌍소멸 신호와 충돌기의 누락운동량", "nuclear and electronic recoils in direct detection, decay or annihilation signatures in indirect searches, and collider missing momentum"],
+      ["후보 입자·장별 질량·결합·생성 이력과 은하 헤일로 분포의 축퇴", "degeneracies among candidate mass, coupling, production history, and the Galactic halo distribution"],
+      ["천체역학·지하검출기·우주망원경·가속기에서 같은 후보 매개변수를 교차 검증하는 일관성", "cross-consistency of the same candidate parameters across astrophysical dynamics, underground detectors, space telescopes, and colliders"]
+    ],
+    "UP-002": [
+      ["초신성·바리온음향진동·약한렌즈·표준사이렌이 측정하는 팽창률과 구조 성장", "expansion and structure growth measured by supernovae, baryon acoustic oscillations, weak lensing, and standard sirens"],
+      ["우주상수·시간변화 상태방정식·수정중력 모형 사이의 관측 축퇴", "observational degeneracies among a cosmological constant, time-varying equations of state, and modified-gravity models"],
+      ["측광·적색편이·은하 편향·비선형 중력의 계통오차를 공유하지 않는 독립 우주 탐사", "independent cosmic surveys that do not share systematics in photometry, redshift, galaxy bias, and nonlinear gravity"]
+    ],
+    "UP-003": [
+      ["세페이드·적색거성가지끝·메이저의 거리사다리와 우주배경복사·바리온음향진동의 초기우주 추론", "the Cepheid, tip-of-the-red-giant-branch, and maser distance ladder versus early-universe inference from the cosmic microwave background and baryon acoustic oscillations"],
+      ["거리 눈금의 금속도·먼지·군집 혼잡 오차와 재결합 이전 새 물리의 효과", "metallicity, dust, and crowding errors in the distance scale versus effects of new pre-recombination physics"],
+      ["서로 다른 표준촛불·표준사이렌·강한렌즈 시간지연을 이용한 맹검 교차보정", "blind cross-calibration with independent standard candles, standard sirens, and strong-lens time delays"]
+    ],
+    "UP-004": [
+      ["바리온수 위반·C와 CP 위반·비평형 동역학이라는 사하로프 조건의 구체적 구현", "concrete realization of the Sakharov conditions: baryon-number violation, C and CP violation, and nonequilibrium dynamics"],
+      ["전기약·렙토제네시스·대통일 바리오제네시스가 남기는 전기쌍극자모멘트·중성미자·양성자붕괴 신호", "electric-dipole-moment, neutrino, and proton-decay signatures of electroweak, leptogenesis, and grand-unified baryogenesis"],
+      ["초기우주 생성량을 현재의 바리온 대 광자 비와 입자실험 제약에 동시에 맞추는 계산", "calculations that match primordial production to today's baryon-to-photon ratio and particle-experiment constraints simultaneously"]
+    ],
+    "UP-005": [
+      ["원시 섭동의 진폭·기울기·비가우스성·등곡률 성분과 초기 양자상태", "primordial perturbation amplitude, tilt, non-Gaussianity, isocurvature components, and the initial quantum state"],
+      ["인플레이션 이전 동역학·우주 위상·경계조건이 관측 가능한 흔적을 남기는 방식", "how pre-inflationary dynamics, cosmic topology, and boundary conditions leave observable imprints"],
+      ["우주배경복사 편광·대규모구조·원시중력파에서 초기조건 모형을 구별하는 공동 우도", "joint likelihoods across cosmic-background polarization, large-scale structure, and primordial gravitational waves that distinguish initial-condition models"]
+    ],
     "UP-121": [
       ["초기 지구에서 가능한 광물·대기·에너지원과 전생물 합성 경로의 지구화학적 일관성", "geochemical consistency among plausible early-Earth minerals, atmospheres, energy sources, and prebiotic synthesis routes"],
       ["효소 없는 복제, 자기촉매 반응망, 키랄 선택과 오류 문턱", "enzyme-free replication, autocatalytic networks, chiral selection, and error thresholds"],
@@ -1067,80 +1159,176 @@
     return ids[index % ids.length];
   }
 
+  function evidenceLabel(sourceId) {
+    const source = sources[sourceId] || {};
+    const haystack = `${sourceId} ${source.title || ""}`;
+    if (/prize|xprize|feynman|erdős|erdos|award/i.test(haystack)) {
+      return ["공식 상금 규정", "Official prize rules"];
+    }
+    if (/problem|millennium|aim_math|clay/i.test(haystack)) {
+      return ["공식 난제 목록", "Named-problem source"];
+    }
+    if (/roadmap|plan|priorit|survey|vision|priorit|blueprint|taxonomy|grand challenge|decadal/i.test(haystack)) {
+      return ["기관 로드맵", "Institutional roadmap"];
+    }
+    if (/webbook|standard|framework|metrology/i.test(haystack)) {
+      return ["표준·참조 자료", "Standards or reference source"];
+    }
+    return ["기관 연구 프로그램", "Institutional research program"];
+  }
+
+  function attemptSummary(entry, problem, index) {
+    const axis = axesForProblem(problem)[index] || [problem.subfield, problem.subfieldEn];
+    return {
+      text: `${sentence(entry[2])} 이 난제에서는 연구 범위—${axis[0]}—까지 포함한다.`,
+      textEn: `${sentence(entry[3])} For this problem, the scope extends through ${axis[1]}.`
+    };
+  }
+
   function attemptTechnicalDetail(entry, problem, index, isRecent) {
     const axis = axesForProblem(problem)[index] || [problem.subfield, problem.subfieldEn];
     const obstacle = researchObstacle(problem);
     const questionKo = problem.question.replace(/\?$/, "");
     const questionEn = problem.questionEn.replace(/\?$/, "");
-    const criterionKo = problem.resolutionCriterion || problem.solvedWhen;
-    const criterionEn = problem.resolutionCriterionEn || problem.solvedWhenEn;
-    if (isRecent && index === 0) {
-      return {
-        text: `최근의 ${entry[0]} 연구는 ${axis[0]}의 문제를 새 자료와 계산으로 다루며 “${questionKo}”에 가능한 답을 줄여 간다.`,
-        textEn: `Recent ${entry[1]} work recasts “${questionEn}” in terms of ${axis[1]}, using new data and computation to narrow the possible answers.`
-      };
-    }
-    if (isRecent && index === 1) {
-      return {
-        text: `이 접근은 “${questionKo}”에 대한 후보 답들을 비교하면서 기술적 조건—${axis[0]}—까지 확인한다. ${obstacle.text} 새 조건과 독립 표본에서 이 한계가 남는지 전향적으로 확인해야 한다.`,
-        textEn: `This approach compares candidate answers to “${questionEn}” while checking ${axis[1]}. ${obstacle.textEn} Prospective tests must show whether that limitation persists in new conditions and independent samples.`
-      };
-    }
-    if (isRecent) {
-      return {
-        text: `“${questionKo}”에 대한 장기 평가에는 ${axis[0]}까지 포함한다. 이 연구가 난제를 끝내려면 다음 조건도 충족해야 한다. ${sentence(criterionKo)}`,
-        textEn: `Long-horizon evaluation of “${questionEn}” extends through ${axis[1]}. To settle the problem, the work must also meet this condition: ${sentence(criterionEn)}`
-      };
-    }
-    if (index === 0) {
-      const connection = {
-        theory: [
-          "이 질문을 정의·가정·보조정리로 분해해 증명 가능한 중간 목표를 만든다.",
-          `It decomposes “${questionEn}” into definitions, assumptions, and lemmas that can serve as provable intermediate targets.`
+    const established = {
+      theory: [
+        [
+          `${entry[0]} 접근은 질문 “${questionKo}”에 답하기 위해 정의·가정·보조정리를 정리하고 중심 구조—${axis[0]}—를 증명 가능한 중간 명제로 바꾼다.`,
+          `${entry[1]} decomposes “${questionEn}” into definitions, assumptions, and lemmas, turning the central structure—${axis[1]}—into provable intermediate statements.`
         ],
-        experiment: [
-          "이 질문을 조작변수·관측량·대조군으로 분해해 판별 가능한 신호를 만든다.",
-          `It decomposes “${questionEn}” into interventions, observables, and controls that can produce a discriminating signal.`
+        [
+          `“${questionKo}”에 답하기 위해 이 프로그램은 논증의 경계—${axis[0]}—를 분석하고 환원·하한·특수 사례를 넓혀 일반 명제로 가는 간극을 줄인다. ${obstacle.text}`,
+          `For “${questionEn},” this program analyzes the boundary of the argument—${axis[1]}—and extends reductions, bounds, and special cases to reduce the gap to the general claim. ${obstacle.textEn}`
         ],
-        hybrid: [
-          "이 문제의 모형 변수와 측정량을 연결해 후보 설명의 정량 예측을 비교한다.",
-          `It links model variables to observables so candidate answers to “${questionEn}” can be compared quantitatively.`
-        ],
-        engineering: [
-          "이 질문을 구성요소·인터페이스·성능 지표로 분해해 시스템 절충을 비교한다.",
-          `It decomposes “${questionEn}” into components, interfaces, and performance metrics so system tradeoffs can be compared.`
+        [
+          `“${questionKo}”에 대한 계산 검증과 형식화는 ${axis[0]}에서 반례 후보와 숨은 가정을 찾는다. 결정적 성과가 되려면 유한 사례 확인을 넘어 보편적 증명이나 명시적 반례로 이어져야 한다.`,
+          `Computation and formalization for “${questionEn}” search ${axis[1]} for candidate counterexamples and hidden assumptions. Decisive progress must go beyond finite checks to a universal proof or explicit counterexample.`
         ]
-      }[problem.approach] || [questionKo, questionEn];
-      return {
-        text: `${entry[0]} 접근은 “${questionKo}”에 답하는 데 필요한 구조—${axis[0]}—를 구체화한다. ${connection[0]}`,
-        textEn: `${entry[1]} recasts “${questionEn}” in terms of ${axis[1]}. ${connection[1]}`
-      };
-    }
-    if (index === 1) {
-      return {
-        text: `“${questionKo}”에 답하려는 검정은 ${axis[0]}까지 확인해 실제 신호와 모형 오류를 분리해야 한다. ${obstacle.text}`,
-        textEn: `Testing “${questionEn}” must extend through ${axis[1]} to separate the real signal from model error. ${obstacle.textEn}`
-      };
-    }
-    return {
-      text: `“${questionKo}”에 답하는 독립 검증에는 ${axis[0]}까지 포함한다. 이 접근이 최종 해법이 되려면 다음 조건을 충족해야 한다. ${sentence(criterionKo)}`,
-      textEn: `Independent validation of “${questionEn}” extends through ${axis[1]}. For this approach to become a resolution, it must meet this condition: ${sentence(criterionEn)}`
-    };
+      ],
+      experiment: [
+        [
+          `${entry[0]} 접근은 질문 “${questionKo}”에 답하기 위해 조작변수·관측량·대조군을 정하고 핵심 신호—${axis[0]}—를 직접 판독할 실험을 설계한다.`,
+          `${entry[1]} decomposes “${questionEn}” into interventions, observables, and controls, then designs an experiment that can read the key signal—${axis[1]}—directly.`
+        ],
+        [
+          `“${questionKo}”에 답하기 위해 이 프로그램은 ${axis[0]}까지 통제해 신호와 배경·계통오차·표본 편향을 분리한다. ${obstacle.text}`,
+          `For “${questionEn},” this program controls ${axis[1]} to separate signal from background, systematic error, and sampling bias. ${obstacle.textEn}`
+        ],
+        [
+          `“${questionKo}”에 대한 독립된 장비·표본·분석법으로 ${axis[0]}까지 재현해야 검출이나 부재의 상한을 신뢰할 수 있다. 한 번의 유의한 결과만으로는 난제가 끝나지 않는다.`,
+          `Independent instruments, samples, and analyses for “${questionEn}” must reproduce ${axis[1]} before a detection or exclusion bound is credible. One statistically significant result is not enough to settle the problem.`
+        ]
+      ],
+      hybrid: [
+        [
+          `${entry[0]} 접근은 “${questionKo}”의 모형 변수와 측정량을 연결하고 핵심 관계—${axis[0]}—에서 후보 설명의 정량 예측을 비교한다.`,
+          `${entry[1]} links model variables to observables for “${questionEn}” and compares quantitative predictions at the key relation—${axis[1]}.`
+        ],
+        [
+          `“${questionKo}”에 답하기 위해 이 프로그램은 ${axis[0]}에서 경쟁 모형들이 실제로 다른 값을 내는 조건을 찾고 관측·개입 자료로 축퇴를 줄인다. ${obstacle.text}`,
+          `For “${questionEn},” this program finds conditions in ${axis[1]} where competing models yield different values and uses observations or interventions to reduce degeneracy. ${obstacle.textEn}`
+        ],
+        [
+          `“${questionKo}”에 대한 독립 검증은 ${axis[0]}까지 포함해 모형의 사전 예측과 새 관측이 같은 방향으로 수렴하는지 확인한다. 자료에 맞춘 사후 설명은 해결로 보지 않는다.`,
+          `Independent validation of “${questionEn}” extends through ${axis[1]} and asks whether prospective model predictions converge with new observations. A post-hoc fit to existing data does not count as a resolution.`
+        ]
+      ],
+      engineering: [
+        [
+          `${entry[0]} 접근은 질문 “${questionKo}”에 답하기 위해 시스템을 구성요소·인터페이스·운용 지표로 분해하고 병목—${axis[0]}—의 절충을 정량화한다.`,
+          `${entry[1]} decomposes “${questionEn}” into components, interfaces, and operating metrics, quantifying tradeoffs in the system bottleneck—${axis[1]}.`
+        ],
+        [
+          `“${questionKo}”에 답하기 위해 이 프로그램은 ${axis[0]}까지 포함한 시제품과 가속시험으로 성능 향상이 다른 고장 모드를 키우지 않는지 확인한다. ${obstacle.text}`,
+          `For “${questionEn},” this program uses prototypes and accelerated tests covering ${axis[1]} to check whether a performance gain amplifies another failure mode. ${obstacle.textEn}`
+        ],
+        [
+          `“${questionKo}”의 대표 운용환경에서 ${axis[0]}까지 검증하고 제조 편차와 장기 열화를 공개해야 한다. 최고 성능 한 번보다 수율·비용·수명·안전성의 동시 재현이 결정적이다.`,
+          `Representative operation for “${questionEn}” must validate ${axis[1]} while reporting manufacturing variation and long-term degradation. Reproducing yield, cost, lifetime, and safety together matters more than one peak result.`
+        ]
+      ]
+    }[problem.approach];
+
+    const current = {
+      theory: [
+        [
+          `질문 “${questionKo}”에 관한 최근의 ${entry[0]} 연구는 ${axis[0]}에서 새 보조정리·환원·계산 실험을 결합해 알려진 장벽을 우회할 구조를 찾는다.`,
+          `Recent ${entry[1]} work on “${questionEn}” combines new lemmas, reductions, and computational experiments in ${axis[1]} to seek structures that evade known barriers.`
+        ],
+        [
+          `질문 “${questionKo}”에 관한 현재 연구는 논증의 경계—${axis[0]}—를 넓히면서 어떤 가정이 증명을 막는지 분리한다. ${obstacle.text} 다음 진전은 더 넓은 함수·구조·입력 계열에 적용되는 새 논증이어야 한다.`,
+          `Current work on “${questionEn}” enlarges the argument boundary—${axis[1]}—while isolating which assumption blocks a proof. ${obstacle.textEn} The next advance must apply to a broader class of functions, structures, or inputs.`
+        ],
+        [
+          `질문 “${questionKo}”에 답하기 위한 ${axis[0]}의 형식 검증과 대규모 계산은 오류와 반례를 찾는 데 유용하다. 다만 난제를 끝내려면 계산 범위를 넘어서는 일반 정리나 명시적 반례가 필요하다.`,
+          `Formal verification and large computation on ${axis[1]} for “${questionEn}” help find errors and counterexamples, but settling the problem still requires a general theorem or an explicit counterexample beyond the computed range.`
+        ]
+      ],
+      experiment: [
+        [
+          `질문 “${questionKo}”에 관한 최근의 ${entry[0]} 연구는 새 장비·표본·분석을 이용해 ${axis[0]}에서 더 약하거나 짧은 신호를 찾고 있다.`,
+          `Recent ${entry[1]} work on “${questionEn}” uses new instruments, samples, and analyses to search ${axis[1]} for weaker or shorter-lived signals.`
+        ],
+        [
+          `질문 “${questionKo}”에 관한 현재 연구는 핵심 조건—${axis[0]}—을 맹검·대조·교차계측으로 확인해 알려진 배경과 새 신호를 분리한다. ${obstacle.text} 독립 연구팀의 재현이 다음 관문이다.`,
+          `Current work on “${questionEn}” tests ${axis[1]} with blinding, controls, and orthogonal measurements to separate known background from new signal. ${obstacle.textEn} Replication by independent teams is the next gate.`
+        ],
+        [
+          `질문 “${questionKo}”에 답하기 위해 ${axis[0]}까지 포함한 장기·다기관 시험은 효과의 크기와 조건 의존성을 함께 측정한다. 감도 향상뿐 아니라 음성 결과의 상한과 분석 선택도 공개해야 한다.`,
+          `Long-running multisite tests of “${questionEn}” covering ${axis[1]} measure both effect size and condition dependence. They must report exclusion limits and analysis choices as well as sensitivity gains.`
+        ]
+      ],
+      hybrid: [
+        [
+          `질문 “${questionKo}”에 관한 최근의 ${entry[0]} 연구는 핵심 관계—${axis[0]}—를 새 자료·시뮬레이션·인과 모형으로 함께 분석해 후보 설명의 범위를 좁힌다.`,
+          `Recent ${entry[1]} work on “${questionEn}” combines new data, simulation, and causal models around ${axis[1]} to narrow competing explanations.`
+        ],
+        [
+          `질문 “${questionKo}”에 관한 현재 연구는 ${axis[0]}에서 후보 모형의 사전 예측을 만든 뒤 독립 관측이나 개입으로 시험한다. ${obstacle.text} 새 조건에서도 같은 매개변수로 설명되는지가 다음 관문이다.`,
+          `Current work on “${questionEn}” makes prospective model predictions for ${axis[1]} and tests them with independent observations or interventions. ${obstacle.textEn} The next gate is whether the same parameters explain new conditions.`
+        ],
+        [
+          `질문 “${questionKo}”에 답하기 위해 ${axis[0]}까지 포함한 다중 자료 검증은 한 데이터셋에서 맞춘 설명이 다른 척도와 환경에서도 유지되는지 확인한다. 모형 선택과 불확실성은 관측 전에 고정해야 한다.`,
+          `Multisource validation of “${questionEn}” covering ${axis[1]} asks whether a fit from one dataset survives other scales and environments. Model selection and uncertainty must be fixed before observing the test data.`
+        ]
+      ],
+      engineering: [
+        [
+          `질문 “${questionKo}”에 관한 최근의 ${entry[0]} 연구는 ${axis[0]}까지 포함한 통합 시제품으로 구성요소의 개선이 종단 성능으로 남는지 시험한다.`,
+          `Recent ${entry[1]} work on “${questionEn}” uses integrated prototypes covering ${axis[1]} to test whether component gains survive in end-to-end performance.`
+        ],
+        [
+          `질문 “${questionKo}”에 관한 현재 연구는 ${axis[0]}에서 공정 편차·고장 전파·운용 조건을 함께 측정한다. ${obstacle.text} 파일럿 규모에서 같은 결과를 재현하는 것이 다음 관문이다.`,
+          `Current work on “${questionEn}” measures process variation, failure propagation, and operating conditions across ${axis[1]}. ${obstacle.textEn} Reproduction at pilot scale is the next gate.`
+        ],
+        [
+          `질문 “${questionKo}”에 답하기 위해 ${axis[0]}까지 포함한 현장·가속수명 시험은 성능 저하와 유지비를 시간에 따라 추적한다. 성공은 최고 기록이 아니라 수율·비용·수명·안전성의 동시 달성으로 판정한다.`,
+          `Field and accelerated-life tests of “${questionEn}” covering ${axis[1]} track performance loss and maintenance cost over time. Success is judged by simultaneous yield, cost, lifetime, and safety, not a peak record.`
+        ]
+      ]
+    }[problem.approach];
+
+    const selected = (isRecent ? current : established)[index];
+    return { text: selected[0], textEn: selected[1] };
   }
 
   function attempt(entry, problem, index, isRecent) {
     const discipline = meta.disciplines[problem.discipline];
     const sourceId = sourceFor(problem, index);
+    const evidence = evidenceLabel(sourceId);
+    const summary = attemptSummary(entry, problem, index);
     const technical = attemptTechnicalDetail(entry, problem, index, isRecent);
     return {
-      title: entry[0],
-      titleEn: entry[1],
-      description: entry[2],
-      descriptionEn: entry[3],
+      title: `${entry[0]} · ${problem.subfield}`,
+      titleEn: `${entry[1]} · ${problem.subfieldEn}`,
+      description: summary.text,
+      descriptionEn: summary.textEn,
       technicalDetail: technical.text,
       technicalDetailEn: technical.textEn,
-      period: isRecent ? "2023–2026 연구 흐름" : "축적된 핵심 접근",
-      periodEn: isRecent ? "2023–2026 direction" : "Established approach",
+      period: isRecent ? "현재 연구 방향 · 2026 검토" : "축적된 연구 프로그램",
+      periodEn: isRecent ? "Current direction · reviewed 2026" : "Established research program",
+      evidenceLabel: evidence[0],
+      evidenceLabelEn: evidence[1],
       sourceId,
       discipline: discipline.label,
       disciplineEn: discipline.labelEn
@@ -1150,15 +1338,21 @@
   function buildOverview(problem) {
     const definition = plainDefinition(problem);
     const general = generalExplanation(problem, definition);
+    const progress = researchProgress(problem);
     const specialist = specialistExplanation(problem);
-    let criterionKo = /[.!?]$/.test(problem.solvedWhen) ? problem.solvedWhen : `${problem.solvedWhen}.`;
-    let criterionEn = /[.!?]$/.test(problem.solvedWhenEn) ? problem.solvedWhenEn : `${problem.solvedWhenEn}.`;
+    const compactCriterionKo = sentence(problem.solvedWhen);
+    const compactCriterionEn = sentence(problem.solvedWhenEn);
+    const generatedResolution = researchResolution(problem);
+    const questionKo = problem.question.replace(/\?$/, "");
+    const questionEn = problem.questionEn.replace(/\?$/, "");
+    let criterionKo = generatedResolution.text;
+    let criterionEn = generatedResolution.textEn;
     if (problem.discipline === "mathematics" && problem.approach === "theory") {
-      criterionKo = "정의된 전제 아래 명제를 빠짐없이 증명하거나, 명제를 거짓으로 만드는 명시적 반례를 제시해야 한다.";
-      criterionEn = "The statement must be proved without gaps under its stated assumptions, or defeated by an explicit counterexample.";
+      criterionKo = `명제 “${questionKo}”에 대해 정의된 전제 아래 빠짐없는 증명을 제시하거나, 명제를 거짓으로 만드는 명시적 반례를 제시해야 한다.`;
+      criterionEn = `The statement “${questionEn}” must be proved without gaps under its stated assumptions, or defeated by an explicit counterexample.`;
     } else if (problem.discipline === "computer" && problem.approach === "theory" && problem.nature === "fundamental") {
-      criterionKo = "명확히 정의된 계산 모형에서 성립하는 증명·복잡도 하한·알고리즘 가운데 하나로 질문을 결정해야 한다.";
-      criterionEn = "The question must be settled in a precisely defined computational model by a proof, a complexity lower bound, or an algorithm.";
+      criterionKo = `질문 “${questionKo}”에 답하려면 명확히 정의된 계산 모형에서 성립하는 증명·복잡도 하한·알고리즘 가운데 하나를 제시해야 한다.`;
+      criterionEn = `The question “${questionEn}” must be settled in a precisely defined computational model by a proof, a complexity lower bound, or an algorithm.`;
     } else if (/나비에.?스토크스/.test(problem.question)) {
       criterionKo = "3차원 방정식의 해가 모든 허용 초기조건에서 존재하고 매끄럽다는 엄밀한 증명, 또는 유한시간 특이점의 명시적 구성이 필요하다.";
       criterionEn = "A rigorous proof of global existence and smoothness for all admissible three-dimensional initial data, or an explicit finite-time singularity, is required.";
@@ -1168,23 +1362,32 @@
     }
 
     return {
-      pitchItems: pitchItems(problem, criterionKo, criterionEn),
+      pitchItems: pitchItems(problem, compactCriterionKo, compactCriterionEn),
       definition: definition.definition,
       definitionEn: definition.definitionEn,
       generalExplanation: general.text,
       generalExplanationEn: general.textEn,
+      currentKnowledge: progress.text,
+      currentKnowledgeEn: progress.textEn,
       specialistExplanation: specialist.text,
       specialistExplanationEn: specialist.textEn,
       technicalTopics: problemTechnicalTopics(problem),
       resolutionCriterion: criterionKo,
       resolutionCriterionEn: criterionEn,
-      overview: `${definition.definition} ${overviewPitchText(pitchItems(problem, criterionKo, criterionEn), "text")}`,
-      overviewEn: `${definition.definitionEn} ${overviewPitchText(pitchItems(problem, criterionKo, criterionEn), "textEn")}`
+      overview: `${definition.definition} ${compactCriterionKo}`,
+      overviewEn: `${definition.definitionEn} ${compactCriterionEn}`
     };
   }
 
   function overviewPitchText(items, key) {
     return items.map(item => item[key]).join(" ");
+  }
+
+  for (const [sourceId, source] of Object.entries(sources)) {
+    const evidence = evidenceLabel(sourceId);
+    source.evidenceLabel = evidence[0];
+    source.evidenceLabelEn = evidence[1];
+    source.reviewedOn = "2026-08-07";
   }
 
   for (const problem of problems) {
@@ -1197,6 +1400,8 @@
     problem.plainDefinitionEn = overview.definitionEn;
     problem.generalExplanation = overview.generalExplanation;
     problem.generalExplanationEn = overview.generalExplanationEn;
+    problem.currentKnowledge = overview.currentKnowledge;
+    problem.currentKnowledgeEn = overview.currentKnowledgeEn;
     problem.specialistExplanation = overview.specialistExplanation;
     problem.specialistExplanationEn = overview.specialistExplanationEn;
     problem.technicalTopics = overview.technicalTopics;
@@ -1205,12 +1410,12 @@
     problem.resolutionCriterionEn = overview.resolutionCriterionEn;
     problem.importantAttempts = established.map((entry, index) => attempt(entry, problem, index, false));
     problem.recentAttempts = current.map((entry, index) => attempt(entry, problem, index, true));
-    problem.researchContextReviewedOn = "2026-08-05";
+    problem.researchContextReviewedOn = "2026-08-07";
   }
 
   window.RESEARCH_CONTEXT_META = {
-    version: "2026-08-05",
-    scope: "A continuous plain-to-technical explanation, 3 established research programs, and 3 current directions per catalog entry",
-    scopeKo: "각 항목당 쉬운 정의에서 기술적 난점으로 이어지는 설명, 대표적 해결 시도 3개와 2023–2026 최근 연구 방향 3개"
+    version: "2026-08-07",
+    scope: "A continuous problem brief with current knowledge, technical bottlenecks, a resolution test, 3 established research programs, and 3 reviewed current directions per catalog entry",
+    scopeKo: "각 항목당 문제 정의·현재 지식·기술적 병목·해결 판정, 축적된 연구 프로그램 3개와 검토된 현재 연구 방향 3개"
   };
 })();

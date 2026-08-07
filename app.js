@@ -41,11 +41,11 @@
       sourcesTitle: "근거와 참고자료", sourcesDescription: "각 항목은 학술기관의 대표 난제 목록, 정부·학회의 연구 로드맵, 공식 연구 프로그램과 상금 규정을 근거로 연결합니다.",
       selectionTitle: "수록 기준", selectionText: "장기간 미해결 상태가 지속되며, 해결 조건이 명확하고 학문적·기술적 파급력이 큰 질문을 수록합니다.",
       criterionOne: "학술기관이 명명한 대표 난제", criterionTwo: "정부·학회·연구기관 로드맵의 전략적 우선과제", criterionThree: "여러 분야의 이론·측정·기술을 바꿀 수 있는 지속적 프런티어", criterionFour: "공식 상금·연구경진이 제시한 검증 가능한 목표",
-      methodNote: "중요도는 학술기관의 명명 여부, 로드맵 우선순위와 예상 파급력으로 구분합니다. ‘현재 기술로 불가능’은 기술적 한계, ‘이론적 불가능’은 법칙·정리·정보 제약에 따른 경계를 뜻합니다. 출처·상금 정보 검토일: 2026년 8월 5일.",
+      methodNote: "중요도는 학술기관의 명명 여부, 로드맵 우선순위와 예상 파급력으로 구분합니다. ‘현재 기술로 불가능’은 기술적 한계, ‘이론적 불가능’은 법칙·정리·정보 제약에 따른 경계를 뜻합니다. 출처 연결 검토일: 2026년 8월 7일 · 상금 정보 검토일: 2026년 8월 5일.",
       footerTagline: "모르는 것의 목록이 아니라, 알아내기 위한 지도.", sourceContribution: "소스 및 기여", classificationPrinciples: "분류 원칙", allProblems: "전체 난제", closeDetails: "상세 보기 닫기",
       overviewTitle: "문제 설명",
       prizeInformation: "상금·도전 정보", prizeAmount: "상금액", prizeBadge: "상금", prizeReviewed: "금액·상태 확인", prizeConditions: "지급·참가 조건", officialRules: "공식 규정", relatedSources: "관련 로드맵·상금 주관기관",
-      importantAttempts: "대표적 해결 시도 3개", recentAttempts: "최근 연구 흐름 3개 · 2023–2026", attemptSource: "연결 근거",
+      importantAttempts: "축적된 연구 프로그램 3개", recentAttempts: "현재 연구 방향 3개", attemptSource: "근거 자료", contentReviewed: "내용 검토", evidenceSources: "개 근거 자료", sourceReviewed: "확인",
       mapGroup: "분야별 난제 수", mapDistribution: "분포", searchPrefix: "검색", items: "항목", remaining: "개 남음", loadMore: "더 보기",
       fullCatalog: "전체 카탈로그", selectToFilter: "색 구간을 선택하면 바로 필터링됩니다.", selectedConditions: "조건에서", problemWord: "난제",
       problemDescription: "문제입니다."
@@ -81,11 +81,11 @@
       sourcesTitle: "Evidence and references", sourcesDescription: "Each entry is linked to established problem lists, government and scholarly roadmaps, official research programs, and prize rules.",
       selectionTitle: "Inclusion criteria", selectionText: "The catalog includes long-standing open questions with clear resolution criteria and substantial scientific or technological consequences.",
       criterionOne: "Named open problems recognized by scholarly institutions", criterionTwo: "Strategic priorities in government, society, and research-institution roadmaps", criterionThree: "Durable frontiers capable of changing theory, measurement, or technology across fields", criterionFour: "Verifiable objectives defined by official prizes and research competitions",
-      methodNote: "Importance reflects named-problem status, roadmap priority, and expected scientific leverage. ‘Beyond current technology’ denotes a technical limit; ‘theoretically impossible’ denotes a boundary imposed by laws, theorems, or information constraints. Sources and prizes reviewed 5 August 2026.",
+      methodNote: "Importance reflects named-problem status, roadmap priority, and expected scientific leverage. ‘Beyond current technology’ denotes a technical limit; ‘theoretically impossible’ denotes a boundary imposed by laws, theorems, or information constraints. Source links reviewed 7 August 2026; prize information reviewed 5 August 2026.",
       footerTagline: "Not just a list of unknowns—a map for finding out.", sourceContribution: "Source and contribute", classificationPrinciples: "Classification principles", allProblems: "All problems", closeDetails: "Close details",
       overviewTitle: "Problem explanation",
       prizeInformation: "Prize and challenge information", prizeAmount: "Prize amount", prizeBadge: "Prize", prizeReviewed: "Amount and status checked", prizeConditions: "Award and entry conditions", officialRules: "Official rules", relatedSources: "Related roadmaps and prize organizers",
-      importantAttempts: "3 established research approaches", recentAttempts: "3 current directions · 2023–2026", attemptSource: "Linked evidence",
+      importantAttempts: "3 established research programs", recentAttempts: "3 current research directions", attemptSource: "Evidence source", contentReviewed: "Content reviewed", evidenceSources: "evidence sources", sourceReviewed: "checked",
       mapGroup: "Problem counts by discipline", mapDistribution: "distribution", searchPrefix: "Search", items: "items", remaining: "remaining", loadMore: "Load more",
       fullCatalog: "Full catalog", selectToFilter: "Select a color segment to filter immediately.", selectedConditions: "under", problemWord: "problems",
       problemDescription: "problem."
@@ -250,6 +250,7 @@
         problem.question, problem.questionEn, problem.subfield, problem.subfieldEn,
         problem.overview, problem.overviewEn, problem.generalExplanation, problem.generalExplanationEn,
         problem.specialistExplanation, problem.specialistExplanationEn,
+        problem.currentKnowledge, problem.currentKnowledgeEn,
         meta.disciplines[problem.discipline].label, meta.disciplines[problem.discipline].labelEn,
         meta.importance[problem.importance].label, meta.importance[problem.importance].labelEn,
         meta.approaches[problem.approach].label, meta.approaches[problem.approach].labelEn,
@@ -483,7 +484,7 @@
       return `<article class="attempt-card">
         <div class="attempt-card-top">
           <span class="attempt-number">${String(index + 1).padStart(2, "0")}</span>
-          <span class="attempt-period">${escapeHTML(localized(attempt, "period"))}</span>
+          <div class="attempt-tags"><span class="attempt-period">${escapeHTML(localized(attempt, "period"))}</span><span class="attempt-evidence">${escapeHTML(localized(attempt, "evidenceLabel"))}</span></div>
         </div>
         <h4>${escapeHTML(localized(attempt, "title"))}</h4>
         <p class="attempt-summary">${escapeHTML(localized(attempt, "description"))}</p>
@@ -517,9 +518,11 @@
           <h3>${escapeHTML(t("overviewTitle"))}</h3>
           <div class="explanation-prose">
             <p class="explanation-opening">${escapeHTML(localized(problem, "generalExplanation"))}</p>
+            <p class="explanation-known">${escapeHTML(localized(problem, "currentKnowledge"))}</p>
             <p class="explanation-detail">${escapeHTML(localized(problem, "specialistExplanation"))}</p>
             <p class="explanation-resolution">${escapeHTML(localized(problem, "resolutionCriterion"))}</p>
           </div>
+          <div class="research-meta"><span>${escapeHTML(t("contentReviewed"))}: ${escapeHTML(problem.researchContextReviewedOn)}</span><span>${linkedSources.length} ${escapeHTML(t("evidenceSources"))}</span></div>
         </section>
         <div class="research-columns">
           <section class="dialog-section attempt-group established-attempts">
@@ -542,7 +545,7 @@
           </article>`).join("")}
         </div></section>` : ""}
         <section class="dialog-section"><h3>${escapeHTML(t("relatedSources"))}</h3><div class="dialog-sources">
-          ${linkedSources.map(source => `<a href="${source.url}" target="_blank" rel="noreferrer">${escapeHTML(source.title)} ↗</a>`).join("")}
+          ${linkedSources.map(source => `<a href="${source.url}" target="_blank" rel="noreferrer"><span>${escapeHTML(localized(source, "evidenceLabel"))} · ${escapeHTML(t("sourceReviewed"))} ${escapeHTML(source.reviewedOn)}</span><strong>${escapeHTML(source.title)} ↗</strong></a>`).join("")}
         </div></section>
       </div>`;
     if (typeof els.dialog.showModal === "function") els.dialog.showModal();
