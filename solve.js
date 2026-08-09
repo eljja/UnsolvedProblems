@@ -5,6 +5,7 @@
   const meta = window.CATALOG_META || {};
   const sources = window.CATALOG_SOURCES || {};
   const prizes = window.CATALOG_PRIZES || {};
+  const SITE_BASE = "https://eljja.github.io/UnsolvedProblems/";
   const params = new URLSearchParams(location.search);
   let lang = params.get("lang") === "en" ? "en" : "ko";
   const problem = problems.find(item => item.id === params.get("id"));
@@ -86,6 +87,74 @@
     if (element) element.textContent = value;
   }
 
+  function setMeta(selector, value) {
+    document.querySelector(selector)?.setAttribute("content", value);
+  }
+
+  function indexedProblemURL(item, locale) {
+    return `${SITE_BASE}solve.html?id=${encodeURIComponent(item.id)}&lang=${locale}`;
+  }
+
+  function setCanonical(url) {
+    let link = document.querySelector('link[rel="canonical"]');
+    if (!link) {
+      link = document.createElement("link");
+      link.setAttribute("rel", "canonical");
+      document.head.append(link);
+    }
+    link.setAttribute("href", url);
+  }
+
+  function updateDiscoveryMetadata(item) {
+    if (!item) {
+      setMeta('meta[name="robots"]', "noindex,follow");
+      document.querySelector('link[rel="canonical"]')?.remove();
+      return;
+    }
+    const title = `${question(item)} — ${t("pageSuffix")}`;
+    const description = `${localized(item, "generalExplanation")} ${localized(item, "resolutionCriterion")}`.slice(0, 300);
+    const canonical = indexedProblemURL(item, lang);
+    setCanonical(canonical);
+    setMeta('meta[name="robots"]', "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
+    setMeta('meta[name="description"]', description);
+    setMeta('meta[property="og:title"]', title);
+    setMeta('meta[property="og:description"]', description);
+    setMeta('meta[property="og:url"]', canonical);
+    setMeta('meta[property="og:locale"]', lang === "en" ? "en_US" : "ko_KR");
+    setMeta('meta[name="twitter:title"]', title);
+    setMeta('meta[name="twitter:description"]', description);
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: title,
+      description,
+      url: canonical,
+      inLanguage: lang,
+      dateModified: item.solutionLab.reviewedOn,
+      isAccessibleForFree: true,
+      isPartOf: {
+        "@type": "CollectionPage",
+        name: "Unsolved Problems — Open Research Atlas",
+        url: SITE_BASE
+      },
+      about: {
+        "@type": "Thing",
+        identifier: item.id,
+        name: question(item),
+        additionalType: label(meta.disciplines[item.discipline])
+      },
+      mainEntity: {
+        "@type": "Question",
+        name: question(item),
+        text: localized(item, "generalExplanation"),
+        answerCount: 0
+      },
+      keywords: [label(meta.disciplines[item.discipline]), subfield(item), ...(item.themes || []).map(key => label(meta.themes[key]))],
+      citation: item.sourceIds.map(id => sources[id]?.url).filter(Boolean)
+    };
+    $("research-structured-data").textContent = JSON.stringify(structuredData).replaceAll("<", "\\u003c");
+  }
+
   function atlasFallback() {
     return `index.html${lang === "en" ? "?lang=en" : ""}#catalog`;
   }
@@ -122,7 +191,7 @@
   function problemURL(item) {
     const next = new URL("solve.html", location.href);
     next.searchParams.set("id", item.id);
-    if (lang === "en") next.searchParams.set("lang", "en");
+    next.searchParams.set("lang", lang);
     const returnTarget = safeReturnTarget();
     if (returnTarget) next.searchParams.set("return", returnTarget);
     return next.href;
@@ -239,6 +308,7 @@
   function render() {
     updateStaticCopy();
     if (!problem || !problem.solutionLab) {
+      updateDiscoveryMetadata(null);
       $("solution-error").hidden = false;
       $("solution-content").hidden = true;
       document.title = `${t("notFound")} — Unsolved Problems`;
@@ -251,8 +321,7 @@
     $("solution-error").hidden = true;
     $("solution-content").hidden = false;
     document.title = `${question(problem)} — ${t("pageSuffix")}`;
-    const descriptionMeta = document.querySelector('meta[name="description"]');
-    if (descriptionMeta) descriptionMeta.content = `${question(problem)} · ${t("pageDescription")}`;
+    updateDiscoveryMetadata(problem);
 
     $("lab-breadcrumb").innerHTML = `<span>${escapeHTML(label(discipline))}</span><i>→</i><span>${escapeHTML(subfield(problem))}</span><i>→</i><strong>${escapeHTML(problem.id)}</strong>`;
     setText("solution-title", question(problem));

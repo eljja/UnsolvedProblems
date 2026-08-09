@@ -154,6 +154,20 @@
     document.documentElement.lang = state.lang;
     document.title = t("pageTitle");
     document.querySelector('meta[name="description"]')?.setAttribute("content", t("pageDescription"));
+    const canonicalURL = state.lang === "en" ? "https://eljja.github.io/UnsolvedProblems/?lang=en" : "https://eljja.github.io/UnsolvedProblems/";
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.append(canonical);
+    }
+    canonical.setAttribute("href", canonicalURL);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", t("pageTitle"));
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", t("pageDescription"));
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", canonicalURL);
+    document.querySelector('meta[property="og:locale"]')?.setAttribute("content", state.lang === "en" ? "en_US" : "ko_KR");
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", t("pageTitle"));
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", t("pageDescription"));
     document.querySelectorAll("[data-i18n]").forEach(node => { node.textContent = t(node.dataset.i18n); });
     document.querySelectorAll("[data-i18n-html]").forEach(node => { node.innerHTML = t(node.dataset.i18nHtml); });
     document.querySelectorAll("[data-i18n-placeholder]").forEach(node => { node.setAttribute("placeholder", t(node.dataset.i18nPlaceholder)); });
@@ -382,7 +396,7 @@
     const featuredPrize = linkedPrizes[0];
     const natureLabel = label(meta.natures[problem.nature]);
     return `
-      <button class="problem-card" type="button" data-id="${problem.id}"
+      <a class="problem-card" href="${escapeHTML(solutionURL(problem))}" data-id="${problem.id}"
         data-hover-title="${escapeHTML(question(problem))}"
         data-hover-text="${escapeHTML(`${featuredPrize ? `${localized(featuredPrize, "amount")} · ` : ""}${label(importance)} · ${subfield(problem)} · ${natureLabel}. ${whyOpen(problem)}`)}"
         style="--discipline-soft:${discipline.soft}">
@@ -399,7 +413,7 @@
           <span class="meta-pill${boundaryClass}">${escapeHTML(label(meta.feasibility[problem.feasibility]))}</span>
           ${themes.map(item => `<span class="meta-pill theme">#${escapeHTML(label(item))}</span>`).join("")}
         </span>
-      </button>`;
+      </a>`;
   }
 
   function renderGrid() {
@@ -413,7 +427,11 @@
       const left = result.length - visible.length;
       els.loadMore.textContent = state.lang === "en" ? `${t("loadMore")} · ${number(left)} ${t("remaining")}` : `${t("loadMore")} · ${number(left)}${t("remaining")}`;
     }
-    els.grid.querySelectorAll(".problem-card").forEach(card => card.addEventListener("click", () => openDialog(card.dataset.id)));
+    els.grid.querySelectorAll(".problem-card").forEach(card => card.addEventListener("click", event => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+      event.preventDefault();
+      openDialog(card.dataset.id);
+    }));
     bindHoverTooltips(els.grid);
   }
 
@@ -497,7 +515,7 @@
   function solutionURL(problem) {
     const url = new URL("solve.html", location.href);
     url.searchParams.set("id", problem.id);
-    if (state.lang === "en") url.searchParams.set("lang", "en");
+    url.searchParams.set("lang", state.lang);
     url.searchParams.set("return", `${location.pathname}${location.search}${location.hash}`);
     return url.href;
   }

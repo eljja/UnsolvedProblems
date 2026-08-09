@@ -4,6 +4,7 @@
   "private": true,
   "description": "A bilingual evidence-led atlas of 744 research questions across 13 disciplines, including verified research prizes.",
   "scripts": {
+    "sitemap": "node scripts/generate-sitemap.mjs",
     "test": "node scripts/validate.mjs"
   }
 }

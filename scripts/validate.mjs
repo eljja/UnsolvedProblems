@@ -181,6 +181,8 @@ const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const css = fs.readFileSync(path.join(root, "styles.css"), "utf8");
 const solveHtml = fs.readFileSync(path.join(root, "solve.html"), "utf8");
 const solveCss = fs.readFileSync(path.join(root, "solve.css"), "utf8");
+const robots = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
+const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js", "research-context.js", "solution-context.js", "solve.html", "solve.js"]
   .map(file => fs.readFileSync(path.join(root, file), "utf8"))
   .join("\n");
@@ -229,6 +231,48 @@ for (const id of ["back-to-atlas", "solution-language-switch", "solution-title",
 }
 assert(fs.readFileSync(path.join(root, "app.js"), "utf8").includes("solve.html"), "main problem details must link to a separate research-attempt page");
 assert(solveCss.includes("@media (max-width: 800px)"), "research-attempt page must include a mobile/tablet layout");
+
+const verificationTag = '<meta name="google-site-verification" content="tQU4ms4HtuSSnlNO14YJO8OMyy59mqlFixqXl3Lhlbw">';
+assert(html.includes(verificationTag), "index.html must contain the exact Google site-verification tag");
+assert(solveHtml.includes(verificationTag), "research pages must preserve the Google site-verification tag");
+for (const document of [{ name: "index.html", content: html }, { name: "solve.html", content: solveHtml }]) {
+  assert(document.content.includes('rel="sitemap"'), `${document.name} must advertise sitemap.xml`);
+  assert(document.content.includes('type="application/ld+json"'), `${document.name} requires structured data`);
+}
+assert(html.includes('hreflang="ko"') && html.includes('hreflang="en"') && html.includes('hreflang="x-default"'), "index.html requires Korean, English, and x-default alternate URLs");
+const indexStructuredDataMatch = html.match(/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/);
+assert(Boolean(indexStructuredDataMatch), "index.html structured data block is missing");
+if (indexStructuredDataMatch) {
+  try {
+    const structured = JSON.parse(indexStructuredDataMatch[1]);
+    assert(structured["@type"] === "CollectionPage", "index structured data must describe a CollectionPage");
+    assert(structured.mainEntity?.numberOfItems === PROBLEMS.length, "index structured-data item count must match the catalog");
+  } catch (error) {
+    assert(false, `index structured data is invalid JSON: ${error.message}`);
+  }
+}
+assert(robots.includes("User-agent: *") && robots.includes("Allow: /"), "robots.txt must permit crawling");
+assert(robots.includes("https://eljja.github.io/UnsolvedProblems/sitemap.xml"), "robots.txt must advertise the absolute sitemap URL");
+assert(sitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>'), "sitemap.xml must start with a UTF-8 XML declaration");
+assert(sitemap.includes('xmlns:xhtml="http://www.w3.org/1999/xhtml"'), "sitemap.xml must declare the XHTML namespace for hreflang alternates");
+const sitemapLocations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+assert(sitemapLocations.length === PROBLEMS.length * 2 + 2, "sitemap.xml must contain both languages for the atlas and every problem");
+assert(new Set(sitemapLocations).size === sitemapLocations.length, "sitemap.xml locations must be unique");
+assert(!sitemapLocations.some(location => location.includes("&lang=")), "sitemap.xml query separators must be XML escaped");
+for (const problem of PROBLEMS) {
+  for (const language of ["ko", "en"]) {
+    const expected = `https://eljja.github.io/UnsolvedProblems/solve.html?id=${problem.id}&amp;lang=${language}`;
+    assert(sitemapLocations.includes(expected), `${problem.id}: sitemap missing ${language} research page`);
+  }
+}
+const solveScript = fs.readFileSync(path.join(root, "solve.js"), "utf8");
+assert(solveScript.includes("updateDiscoveryMetadata"), "solve.js must update canonical, social, and structured metadata for each problem");
+assert(solveScript.includes("setCanonical"), "solve.js must inject one problem-specific canonical URL after resolving the problem");
+const appScript = fs.readFileSync(path.join(root, "app.js"), "utf8");
+assert(appScript.includes('href="${escapeHTML(solutionURL(problem))}"'), "problem cards must expose crawlable links to research pages");
+for (const asset of ["robots.txt", "sitemap.xml", "scripts/generate-sitemap.mjs"]) {
+  assert(fs.existsSync(path.join(root, asset)), `missing search-discovery asset ${asset}`);
+}
 
 if (failures.length) {
   console.error(`Validation failed with ${failures.length} issue(s):`);
