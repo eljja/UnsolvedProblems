@@ -23,7 +23,7 @@
   <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20260812-deep">
-  <link rel="stylesheet" href="solve.css?v=20260812-deep">
+  <link rel="stylesheet" href="solve.css?v=20260812-cycle1">
   <script defer src="data.js?v=20260812-deep"></script>
   <script defer src="expansion-data.js?v=20260812-deep"></script>
   <script defer src="translations.js?v=20260812-deep"></script>
@@ -32,7 +32,8 @@
   <script defer src="research-context.js?v=20260812-deep"></script>
   <script defer src="solution-context.js?v=20260812-deep"></script>
   <script defer src="deep-solution-context.js?v=20260812-deep"></script>
-  <script defer src="solve.js?v=20260812-deep"></script>
+  <script defer src="research-cycle-data.js?v=20260812-cycle1"></script>
+  <script defer src="solve.js?v=20260812-cycle1"></script>
   <script id="research-structured-data" type="application/ld+json">{}</script>
 </head>
 <body class="lab-page">
@@ -87,6 +88,7 @@
           <a href="#starting-point" id="toc-start">출발점</a>
           <a href="#research-logic" id="toc-logic">연구 논리</a>
           <a href="#hypothesis-matrix" id="toc-hypotheses">가설 경쟁</a>
+          <a href="#current-cycle" id="toc-cycle" hidden>현재 연구 사이클</a>
           <a href="#proposals" id="toc-proposals">연구 제안</a>
           <a href="#roadmap" id="toc-roadmap">실행 로드맵</a>
           <a href="#work-program" id="toc-program">실행 프로그램</a>
@@ -134,6 +136,37 @@
               <p id="hypotheses-intro">서로 다른 설명이 같은 결과를 예측하는 조건은 피하고, 하나의 시험이 후보를 가장 많이 줄이는 지점을 찾습니다.</p>
             </div>
             <div id="hypotheses-table"></div>
+          </section>
+
+          <section class="lab-section cycle-section" id="current-cycle" hidden>
+            <div class="lab-section-heading cycle-heading">
+              <div>
+                <p class="eyebrow">CURRENT RESEARCH CYCLE</p>
+                <h2 id="cycle-title">현재 진행 중인 해결 시도</h2>
+                <p id="cycle-intro"></p>
+              </div>
+              <a class="cycle-log-link" id="cycle-log-link" href="research-log.html">사이클 전체 기록 보기 →</a>
+            </div>
+            <div class="cycle-role" id="cycle-role"></div>
+            <div class="cycle-definition-grid">
+              <article><h3 id="cycle-definition-title">이번 사이클의 문제 정의</h3><p id="cycle-definition"></p></article>
+              <article><h3 id="cycle-boundary-title">현재 확인된 경계</h3><p id="cycle-boundary"></p></article>
+              <article class="cycle-bottleneck"><h3 id="cycle-bottleneck-title">결정적 병목</h3><p id="cycle-bottleneck"></p></article>
+              <article><h3 id="cycle-minimum-title">이번 사이클의 최소 진전</h3><p id="cycle-minimum"></p></article>
+            </div>
+            <div class="cycle-subsection">
+              <h3 id="cycle-hypotheses-title">문제 고유 경쟁 가설</h3>
+              <div class="cycle-hypotheses" id="cycle-hypotheses"></div>
+            </div>
+            <article class="cycle-test-card">
+              <span id="cycle-test-title">결정적 시험</span>
+              <p id="cycle-test"></p>
+            </article>
+            <div class="cycle-subsection">
+              <h3 id="cycle-connections-title">다른 난제와의 구조적 연결</h3>
+              <div class="cycle-connections" id="cycle-connections"></div>
+            </div>
+            <div class="cycle-unresolved"><strong id="cycle-unresolved-title">아직 남는 불확실성</strong><p id="cycle-unresolved"></p></div>
           </section>
 
           <section class="lab-section" id="proposals">

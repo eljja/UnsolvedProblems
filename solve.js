@@ -5,6 +5,8 @@
   const meta = window.CATALOG_META || {};
   const sources = window.CATALOG_SOURCES || {};
   const prizes = window.CATALOG_PRIZES || {};
+  const cycles = window.RESEARCH_CYCLES || [];
+  const connections = window.RESEARCH_CONNECTIONS || [];
   const SITE_BASE = "https://eljja.github.io/UnsolvedProblems/";
   const params = new URLSearchParams(location.search);
   let lang = params.get("lang") === "en" ? "en" : "ko";
@@ -22,10 +24,11 @@
       decisionQuestion: "이번 연구가 답해야 할 질문",
       resolution: "해결 판정",
       toc: "이 페이지에서",
-      tocStart: "출발점", tocLogic: "연구 논리", tocHypotheses: "가설 경쟁", tocProposals: "연구 제안", tocRoadmap: "실행 로드맵", tocProgram: "실행 프로그램", tocRequirements: "질문과 역량", tocPrior: "연구 흐름", tocEvidence: "근거",
+      tocStart: "출발점", tocLogic: "연구 논리", tocHypotheses: "가설 경쟁", tocCycle: "현재 연구 사이클", tocProposals: "연구 제안", tocRoadmap: "실행 로드맵", tocProgram: "실행 프로그램", tocRequirements: "질문과 역량", tocPrior: "연구 흐름", tocEvidence: "근거",
       startingTitle: "무엇이 남아 있는가", currentState: "현재까지 확인된 것", gap: "지금 닫아야 할 간극", axis: "판정을 좌우하는 기술 축",
       logicTitle: "어디까지 가면 실제 진전인가", logicIntro: "큰 질문을 한 번에 풀려 하지 않고, 해결 기준으로 이어지는 가장 약한 연결고리를 먼저 판정합니다.", minimumAdvance: "최소 진전 기준", bridgeFailure: "이 연결이 끊기는 경우",
       hypothesesTitle: "무엇이 맞는지보다 무엇을 탈락시킬지 정한다", hypothesesIntro: "서로 다른 설명이 같은 결과를 예측하는 조건은 피하고, 하나의 시험이 후보를 가장 많이 줄이는 지점을 찾습니다.", claim: "핵심 주장", prediction: "갈라지는 예측", test: "결정적 시험", reject: "기각 조건",
+      cycleTitle: "현재 진행 중인 해결 시도", cycleLog: "사이클 전체 기록 보기 →", cycleDefinition: "이번 사이클의 문제 정의", cycleBoundary: "현재 확인된 경계", cycleBottleneck: "결정적 병목", cycleMinimum: "이번 사이클의 최소 진전", cycleHypotheses: "문제 고유 경쟁 가설", cycleTest: "결정적 시험", cycleConnections: "다른 난제와의 구조적 연결", cycleUnresolved: "아직 남는 불확실성", mappedProblem: "연결된 난제", connectionTest: "최소 검증", connectionLimit: "연결이 깨지는 조건",
       proposalsTitle: "세 가지 검증 경로",
       proposalNote: "검토된 연구 방향을 재조합해 만든 검증 가능한 제안입니다. 문헌상 최초라는 주장이 아니며, 첫 시험에서 살아남아야 다음 단계로 갑니다.",
       recommended: "우선 검증할 경로", alternative: "대안 경로",
@@ -51,10 +54,11 @@
       decisionQuestion: "The question this research must answer",
       resolution: "Resolution criterion",
       toc: "On this page",
-      tocStart: "Starting point", tocLogic: "Research logic", tocHypotheses: "Hypothesis competition", tocProposals: "Proposals", tocRoadmap: "Roadmap", tocProgram: "Execution program", tocRequirements: "Questions & capacity", tocPrior: "Research landscape", tocEvidence: "Evidence",
+      tocStart: "Starting point", tocLogic: "Research logic", tocHypotheses: "Hypothesis competition", tocCycle: "Current research cycle", tocProposals: "Proposals", tocRoadmap: "Roadmap", tocProgram: "Execution program", tocRequirements: "Questions & capacity", tocPrior: "Research landscape", tocEvidence: "Evidence",
       startingTitle: "What remains unresolved", currentState: "What is established", gap: "The gap to close now", axis: "Technical axes that decide the result",
       logicTitle: "What would count as real progress", logicIntro: "Instead of trying to settle the entire question at once, adjudicate the weakest link that connects the work to the resolution criterion.", minimumAdvance: "Minimum meaningful advance", bridgeFailure: "What breaks this link",
       hypothesesTitle: "Decide what to eliminate, not merely what to favor", hypothesesIntro: "Avoid conditions where rival explanations predict the same result; choose the test that shrinks the candidate set most.", claim: "Core claim", prediction: "Divergent prediction", test: "Decisive test", reject: "Rejection rule",
+      cycleTitle: "Current solution attempt", cycleLog: "View the full cycle record →", cycleDefinition: "Problem definition for this cycle", cycleBoundary: "Established boundary", cycleBottleneck: "Decisive bottleneck", cycleMinimum: "Minimum advance in this cycle", cycleHypotheses: "Problem-specific competing hypotheses", cycleTest: "Decisive test", cycleConnections: "Structural links to other problems", cycleUnresolved: "Uncertainty that remains", mappedProblem: "Connected problem", connectionTest: "Minimum test", connectionLimit: "Where the link breaks",
       proposalsTitle: "Three testable paths",
       proposalNote: "These are testable proposals synthesized from the reviewed research directions. They are not claims of literature-first novelty, and each must survive its first test before advancing.",
       recommended: "Recommended first path", alternative: "Alternative path",
@@ -118,7 +122,8 @@
       return;
     }
     const title = `${question(item)} — ${t("pageSuffix")}`;
-    const description = `${localized(item, "generalExplanation")} ${localized(item, "resolutionCriterion")}`.slice(0, 300);
+    const opening = item.cycleResearch ? textPair(item.cycleResearch.updatedDefinition) : localized(item, "generalExplanation");
+    const description = `${opening} ${localized(item, "resolutionCriterion")}`.slice(0, 300);
     const canonical = indexedProblemURL(item, lang);
     setCanonical(canonical);
     setMeta('meta[name="robots"]', "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
@@ -152,7 +157,7 @@
       mainEntity: {
         "@type": "Question",
         name: question(item),
-        text: localized(item, "generalExplanation"),
+        text: opening,
         answerCount: 0
       },
       keywords: [label(meta.disciplines[item.discipline]), subfield(item), ...(item.themes || []).map(key => label(meta.themes[key]))],
@@ -214,11 +219,12 @@
     setText("decision-card-title", t("decisionQuestion"));
     setText("decision-rule-label", t("resolution"));
     setText("toc-title", t("toc"));
-    setText("toc-start", t("tocStart")); setText("toc-logic", t("tocLogic")); setText("toc-hypotheses", t("tocHypotheses")); setText("toc-proposals", t("tocProposals")); setText("toc-roadmap", t("tocRoadmap")); setText("toc-program", t("tocProgram"));
+    setText("toc-start", t("tocStart")); setText("toc-logic", t("tocLogic")); setText("toc-hypotheses", t("tocHypotheses")); setText("toc-cycle", t("tocCycle")); setText("toc-proposals", t("tocProposals")); setText("toc-roadmap", t("tocRoadmap")); setText("toc-program", t("tocProgram"));
     setText("toc-requirements", t("tocRequirements")); setText("toc-prior", t("tocPrior")); setText("toc-evidence", t("tocEvidence"));
     setText("starting-title", t("startingTitle")); setText("current-state-title", t("currentState")); setText("gap-title", t("gap"));
     setText("logic-title", t("logicTitle")); setText("logic-intro", t("logicIntro")); setText("minimum-advance-label", t("minimumAdvance"));
     setText("hypotheses-title", t("hypothesesTitle")); setText("hypotheses-intro", t("hypothesesIntro"));
+    setText("cycle-title", t("cycleTitle")); setText("cycle-log-link", t("cycleLog")); setText("cycle-definition-title", t("cycleDefinition")); setText("cycle-boundary-title", t("cycleBoundary")); setText("cycle-bottleneck-title", t("cycleBottleneck")); setText("cycle-minimum-title", t("cycleMinimum")); setText("cycle-hypotheses-title", t("cycleHypotheses")); setText("cycle-test-title", t("cycleTest")); setText("cycle-connections-title", t("cycleConnections")); setText("cycle-unresolved-title", t("cycleUnresolved"));
     setText("proposals-title", t("proposalsTitle")); setText("proposal-note", t("proposalNote"));
     setText("roadmap-title", t("roadmapTitle")); setText("requirements-title", t("requirementsTitle"));
     setText("program-title", t("programTitle")); setText("program-intro", t("programIntro")); setText("uncertainty-title", t("uncertaintyTitle")); setText("uncertainty-intro", t("uncertaintyIntro")); setText("decision-tree-title", t("decisionTreeTitle")); setText("decision-tree-intro", t("decisionTreeIntro"));
@@ -333,6 +339,59 @@
     </article>`).join("");
   }
 
+  function cycleHypothesesHTML(items) {
+    return items.map(item => `<article class="cycle-hypothesis">
+      <header><span>${escapeHTML(item.code)}</span><strong>${escapeHTML(textPair(item.claim))}</strong></header>
+      <div><b>${escapeHTML(t("prediction"))}</b><p>${escapeHTML(textPair(item.prediction))}</p></div>
+      <div class="cycle-reject"><b>${escapeHTML(t("reject"))}</b><p>${escapeHTML(textPair(item.reject))}</p></div>
+    </article>`).join("");
+  }
+
+  function cycleConnectionsHTML(item) {
+    const linked = connections.filter(connection => (item.researchConnections || []).includes(connection.id));
+    return linked.map(connection => {
+      const other = connection.problemIds.map(id => problems.find(problemItem => problemItem.id === id)).find(problemItem => problemItem && problemItem.id !== item.id);
+      return `<article class="cycle-connection">
+        <header><span>${escapeHTML(textPair(connection.type))}</span><em>${escapeHTML(connection.strength)}</em></header>
+        ${other ? `<a href="${escapeHTML(problemURL(other))}"><small>${escapeHTML(t("mappedProblem"))} · ${escapeHTML(other.id)}</small><strong>${escapeHTML(question(other))}</strong></a>` : ""}
+        <p>${escapeHTML(textPair(connection.mapping))}</p>
+        <dl>
+          <div><dt>${escapeHTML(t("connectionTest"))}</dt><dd>${escapeHTML(textPair(connection.minimumTest))}</dd></div>
+          <div><dt>${escapeHTML(t("connectionLimit"))}</dt><dd>${escapeHTML(textPair(connection.failureBoundary))}</dd></div>
+        </dl>
+      </article>`;
+    }).join("");
+  }
+
+  function renderCycle(item) {
+    const record = item.cycleResearch;
+    const section = $("current-cycle");
+    const tocLink = $("toc-cycle");
+    if (!record) {
+      section.hidden = true;
+      tocLink.hidden = true;
+      return;
+    }
+    const cycle = cycles.find(entry => entry.id === record.cycleId);
+    section.hidden = false;
+    tocLink.hidden = false;
+    setText("cycle-intro", lang === "en" ? cycle?.selectionReasonEn : cycle?.selectionReason);
+    $("cycle-role").innerHTML = `<span>${escapeHTML(record.cycleId)} · ${escapeHTML(record.reviewedOn)}</span><strong>${escapeHTML(textPair(record.role))}</strong>`;
+    setText("cycle-definition", textPair(record.updatedDefinition));
+    setText("cycle-boundary", textPair(record.knownBoundary));
+    setText("cycle-bottleneck", textPair(record.bottleneck));
+    setText("cycle-minimum", textPair(record.minimumAdvance));
+    $("cycle-hypotheses").innerHTML = cycleHypothesesHTML(record.hypotheses);
+    setText("cycle-test", textPair(record.decisiveTest));
+    $("cycle-connections").innerHTML = cycleConnectionsHTML(item);
+    setText("cycle-unresolved", textPair(record.unresolved));
+    const logURL = new URL("research-log.html", location.href);
+    logURL.searchParams.set("cycle", record.cycleId);
+    logURL.searchParams.set("lang", lang);
+    logURL.searchParams.set("from", item.id);
+    $("cycle-log-link").href = logURL.href;
+  }
+
   function attemptsColumn(title, items) {
     return `<section class="prior-column"><h3>${escapeHTML(title)}</h3><div class="prior-list">${items.map((item, index) => {
       const source = sources[item.sourceId];
@@ -388,18 +447,19 @@
 
     $("lab-breadcrumb").innerHTML = `<span>${escapeHTML(label(discipline))}</span><i>→</i><span>${escapeHTML(subfield(problem))}</span><i>→</i><strong>${escapeHTML(problem.id)}</strong>`;
     setText("solution-title", question(problem));
-    setText("solution-deck", localized(problem, "generalExplanation"));
+    setText("solution-deck", problem.cycleResearch ? textPair(problem.cycleResearch.updatedDefinition) : localized(problem, "generalExplanation"));
     setText("solution-id", problem.id);
     setText("central-question", localized(lab, "centralQuestion"));
     setText("decision-rule", localized(problem, "resolutionCriterion"));
     $("solution-tags").innerHTML = metadataHTML(problem);
-    setText("current-state", localized(problem, "currentKnowledge"));
-    setText("gap-text", localized(lab, "diagnosis"));
+    setText("current-state", problem.cycleResearch ? textPair(problem.cycleResearch.knownBoundary) : localized(problem, "currentKnowledge"));
+    setText("gap-text", problem.cycleResearch ? textPair(problem.cycleResearch.bottleneck) : localized(lab, "diagnosis"));
     $("technical-axes").innerHTML = `<h3>${escapeHTML(t("axis"))}</h3><ol>${problem.technicalTopics.map((item, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><p>${escapeHTML(textPair(item))}</p></li>`).join("")}</ol>`;
 
     setText("minimum-advance", lang === "en" ? deep.minimumAdvanceEn : deep.minimumAdvance);
     $("logic-chain").innerHTML = logicChainHTML(deep.logicChain);
     $("hypotheses-table").innerHTML = hypothesesHTML(deep.hypotheses);
+    renderCycle(problem);
 
     $("recommended-proposal").innerHTML = proposalHTML(lab.tracks[0], 0, true);
     $("alternative-proposals").innerHTML = lab.tracks.slice(1).map((track, index) => proposalHTML(track, index + 1, false)).join("");

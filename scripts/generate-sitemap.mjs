@@ -8,11 +8,12 @@ const baseURL = "https://eljja.github.io/UnsolvedProblems/";
 const lastModified = process.env.SITEMAP_LASTMOD || new Date().toISOString().slice(0, 10);
 const sandbox = { window: {} };
 
-for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js"]) {
+for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js"]) {
   vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }
 
 const problems = sandbox.window.PROBLEMS || [];
+const cycles = sandbox.window.RESEARCH_CYCLES || [];
 const escapeXML = value => String(value)
   .replaceAll("&", "&amp;")
   .replaceAll("<", "&lt;")
@@ -41,6 +42,13 @@ entries.push(entry(atlasEn, atlasKo, atlasEn));
 for (const problem of problems) {
   const korean = `${baseURL}solve.html?id=${encodeURIComponent(problem.id)}&lang=ko`;
   const english = `${baseURL}solve.html?id=${encodeURIComponent(problem.id)}&lang=en`;
+  entries.push(entry(korean, korean, english));
+  entries.push(entry(english, korean, english));
+}
+
+for (const cycle of cycles) {
+  const korean = `${baseURL}research-log.html?cycle=${encodeURIComponent(cycle.id)}&lang=ko`;
+  const english = `${baseURL}research-log.html?cycle=${encodeURIComponent(cycle.id)}&lang=en`;
   entries.push(entry(korean, korean, english));
   entries.push(entry(english, korean, english));
 }

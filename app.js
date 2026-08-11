@@ -5,6 +5,7 @@
   const meta = window.CATALOG_META;
   const sources = window.CATALOG_SOURCES;
   const prizes = window.CATALOG_PRIZES || {};
+  const researchConnections = window.RESEARCH_CONNECTIONS || [];
   const PAGE_SIZE = 36;
   const disciplineOrder = Object.keys(meta.disciplines);
   let visibleCount = PAGE_SIZE;
@@ -14,7 +15,7 @@
       pageTitle: "Unsolved Problems — 미해결 문제 지도",
       pageDescription: "13개 학문 분야의 미해결 문제를 한국어와 영어로 탐색하는 공개 연구 지도",
       skipCatalog: "카탈로그로 건너뛰기", brandHome: "Unsolved Problems 홈", mainNav: "주요 메뉴", languageSelect: "언어 선택",
-      navMap: "지도", navTaxonomy: "분류법", navCatalog: "난제", navSources: "출처",
+      navMap: "지도", navTaxonomy: "분류법", navCatalog: "난제", navResearch: "연구 기록", navSources: "출처",
       heroTitle: "<span>인류가 아직 모르는 것을</span><em>분류하고 탐색하다.</em>",
       heroLede: "수학에서 사회 복잡계까지. 난제를 학문명만으로 나열하지 않고, 무엇이 부족한지—이론, 실험, 측정, 확장, 혹은 법칙이 정한 경계인지—여러 축으로 함께 봅니다.",
       heroPosterAlt: "13개 학문 분야와 744개 연구 질문을 표현한 Unsolved Problems 연구 지도",
@@ -54,7 +55,7 @@
       pageTitle: "Unsolved Problems — Open Research Atlas",
       pageDescription: "A bilingual atlas of unsolved problems across 13 academic disciplines.",
       skipCatalog: "Skip to catalog", brandHome: "Unsolved Problems home", mainNav: "Main navigation", languageSelect: "Choose language",
-      navMap: "Map", navTaxonomy: "Taxonomy", navCatalog: "Problems", navSources: "Sources",
+      navMap: "Map", navTaxonomy: "Taxonomy", navCatalog: "Problems", navResearch: "Research log", navSources: "Sources",
       heroTitle: "<span>Map and explore</span><em>what humanity does not yet know.</em>",
       heroLede: "From mathematics to complex social systems. Explore not only disciplines, but what each problem lacks—new theory, experiments, measurement, scale, systems engineering, or a boundary set by established laws.",
       heroPosterAlt: "Unsolved Problems research atlas representing 744 research questions across 13 disciplines",
@@ -126,6 +127,7 @@
   const whyOpen = item => state.lang === "en" ? (item.whyOpenEn || item.whyOpen) : item.whyOpen;
   const solvedWhen = item => state.lang === "en" ? (item.solvedWhenEn || item.solvedWhen) : item.solvedWhen;
   const localized = (item, key) => state.lang === "en" ? (item[`${key}En`] || item[key]) : item[key];
+  const paired = item => state.lang === "en" ? (item?.textEn || item?.text || "") : (item?.text || "");
   const locale = () => state.lang === "en" ? "en-US" : "ko-KR";
   const number = value => Number(value).toLocaleString(locale());
 
@@ -173,6 +175,8 @@
     document.querySelectorAll("[data-i18n-placeholder]").forEach(node => { node.setAttribute("placeholder", t(node.dataset.i18nPlaceholder)); });
     document.querySelectorAll("[data-i18n-aria]").forEach(node => { node.setAttribute("aria-label", t(node.dataset.i18nAria)); });
     document.querySelectorAll("[data-i18n-alt]").forEach(node => { node.setAttribute("alt", t(node.dataset.i18nAlt)); });
+    const researchLogLink = document.querySelector('[data-i18n="navResearch"]');
+    if (researchLogLink) researchLogLink.setAttribute("href", `research-log.html${state.lang === "en" ? "?lang=en" : ""}`);
     els.languageSwitch.querySelectorAll("button[data-lang]").forEach(button => {
       button.setAttribute("aria-pressed", String(button.dataset.lang === state.lang));
     });
@@ -276,6 +280,28 @@
         }),
         ...(problem.themes || []).flatMap(key => [meta.themes[key]?.label, meta.themes[key]?.labelEn]),
         ...(problem.technicalTopics || []).flatMap(item => [item.text, item.textEn]),
+        ...(problem.cycleResearch ? [
+          problem.cycleResearch.role?.text, problem.cycleResearch.role?.textEn,
+          problem.cycleResearch.updatedDefinition?.text, problem.cycleResearch.updatedDefinition?.textEn,
+          problem.cycleResearch.knownBoundary?.text, problem.cycleResearch.knownBoundary?.textEn,
+          problem.cycleResearch.bottleneck?.text, problem.cycleResearch.bottleneck?.textEn,
+          problem.cycleResearch.minimumAdvance?.text, problem.cycleResearch.minimumAdvance?.textEn,
+          problem.cycleResearch.decisiveTest?.text, problem.cycleResearch.decisiveTest?.textEn,
+          problem.cycleResearch.unresolved?.text, problem.cycleResearch.unresolved?.textEn,
+          ...(problem.cycleResearch.hypotheses || []).flatMap(item => [
+            item.claim?.text, item.claim?.textEn,
+            item.prediction?.text, item.prediction?.textEn,
+            item.reject?.text, item.reject?.textEn
+          ])
+        ] : []),
+        ...(problem.researchConnections || []).flatMap(connectionId => {
+          const connection = researchConnections.find(item => item.id === connectionId);
+          return connection ? [
+            connection.type?.text, connection.type?.textEn,
+            connection.sharedBottleneck?.text, connection.sharedBottleneck?.textEn,
+            connection.mapping?.text, connection.mapping?.textEn
+          ] : [];
+        }),
         ...(problem.importantAttempts || []).flatMap(item => [item.title, item.titleEn, item.description, item.descriptionEn, item.technicalDetail, item.technicalDetailEn]),
         ...(problem.recentAttempts || []).flatMap(item => [item.title, item.titleEn, item.description, item.descriptionEn, item.technicalDetail, item.technicalDetailEn])
       ].filter(Boolean).join(" "));
@@ -543,12 +569,12 @@
         <section class="dialog-section research-overview">
           <h3>${escapeHTML(t("overviewTitle"))}</h3>
           <div class="explanation-prose">
-            <p class="explanation-opening">${escapeHTML(localized(problem, "generalExplanation"))}</p>
-            <p class="explanation-known">${escapeHTML(localized(problem, "currentKnowledge"))}</p>
+            <p class="explanation-opening">${escapeHTML(problem.cycleResearch ? paired(problem.cycleResearch.updatedDefinition) : localized(problem, "generalExplanation"))}</p>
+            <p class="explanation-known">${escapeHTML(problem.cycleResearch ? paired(problem.cycleResearch.knownBoundary) : localized(problem, "currentKnowledge"))}</p>
             <p class="explanation-detail">${escapeHTML(localized(problem, "specialistExplanation"))}</p>
             <p class="explanation-resolution">${escapeHTML(localized(problem, "resolutionCriterion"))}</p>
           </div>
-          <div class="research-meta"><span>${escapeHTML(t("contentReviewed"))}: ${escapeHTML(problem.researchContextReviewedOn)}</span><span>${linkedSources.length} ${escapeHTML(t("evidenceSources"))}</span></div>
+          <div class="research-meta"><span>${escapeHTML(t("contentReviewed"))}: ${escapeHTML(problem.cycleResearch?.reviewedOn || problem.researchContextReviewedOn)}</span><span>${linkedSources.length} ${escapeHTML(t("evidenceSources"))}</span></div>
         </section>
         <a class="solution-lab-link" href="${escapeHTML(solutionURL(problem))}">
           <span><small>RESEARCH ATTEMPT</small><strong>${escapeHTML(t("solutionLabLink"))}</strong><em>${escapeHTML(t("solutionLabHint"))}</em></span>

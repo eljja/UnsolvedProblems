@@ -8,11 +8,11 @@ const failures = [];
 const assert = (condition, message) => { if (!condition) failures.push(message); };
 
 const sandbox = { window: {} };
-for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js"]) {
+for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js"]) {
   vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }
 
-const { PROBLEMS, CATALOG_META: meta, CATALOG_SOURCES: sources, CATALOG_PRIZES: prizes } = sandbox.window;
+const { PROBLEMS, CATALOG_META: meta, CATALOG_SOURCES: sources, CATALOG_PRIZES: prizes, RESEARCH_CYCLES: cycles, RESEARCH_CONNECTIONS: connections } = sandbox.window;
 assert(Array.isArray(PROBLEMS), "PROBLEMS must be an array");
 assert(PROBLEMS.length > 0, "catalog must contain at least one problem");
 assert(new Set(PROBLEMS.map(item => item.id)).size === PROBLEMS.length, "problem IDs must be unique");
@@ -114,6 +114,19 @@ for (const problem of PROBLEMS) {
     assert(deep?.synthesis?.[field]?.text?.length > 30 && deep?.synthesis?.[field]?.textEn?.length > 70, `${problem.id}: synthesis missing bilingual ${field}`);
   }
   assert(/^\d{4}-\d{2}-\d{2}$/.test(deep?.reviewedOn), `${problem.id}: missing deep research-program review date`);
+  if (problem.cycleResearch) {
+    const record = problem.cycleResearch;
+    assert(cycles.some(cycle => cycle.id === record.cycleId), `${problem.id}: unknown research cycle ${record.cycleId}`);
+    for (const key of ["role", "updatedDefinition", "knownBoundary", "bottleneck", "minimumAdvance", "decisiveTest", "unresolved"]) {
+      assert(record[key]?.text?.length > 10 && record[key]?.textEn?.length > 25, `${problem.id}: cycle research missing bilingual ${key}`);
+    }
+    assert(record.hypotheses?.length === 3, `${problem.id}: cycle research requires 3 competing hypotheses`);
+    for (const hypothesis of record.hypotheses || []) {
+      for (const key of ["claim", "prediction", "reject"]) assert(hypothesis[key]?.text?.length > 15 && hypothesis[key]?.textEn?.length > 30, `${problem.id}: cycle hypothesis missing bilingual ${key}`);
+    }
+    assert(record.sourceIds?.length >= 3, `${problem.id}: cycle research requires at least 3 evidence sources`);
+    assert(problem.researchConnections?.length > 0, `${problem.id}: cycle research requires structural connections`);
+  }
   for (const phrase of ["개별 논문 3편", "단일 논문 목록", "대표 연구축을 요약", "exhaustive paper bibliography", "ranking of three individual papers"]) {
     assert(![problem.overview, problem.overviewEn, ...problem.importantAttempts.map(item => item.description), ...problem.recentAttempts.map(item => item.description)].some(text => text?.includes(phrase)), `${problem.id}: contains editorial boilerplate: ${phrase}`);
   }
@@ -205,6 +218,24 @@ for (const theme of Object.keys(meta.themes)) {
   assert(PROBLEMS.some(item => item.themes.includes(theme)), `${theme}: theme has no catalog entries`);
 }
 
+assert(Array.isArray(cycles) && cycles.length > 0, "research platform requires at least one research cycle");
+assert(Array.isArray(connections) && connections.length > 0, "research platform requires structural problem connections");
+for (const cycle of cycles || []) {
+  assert(/^RC-\d{4}-\d{2}$/.test(cycle.id), `${cycle.id}: invalid research cycle ID`);
+  assert(cycle.problemIds?.length > 1, `${cycle.id}: cycle must connect multiple problems`);
+  assert(cycle.verifiedFindings?.length >= 3, `${cycle.id}: cycle requires verified findings`);
+  assert(cycle.log?.length >= 3, `${cycle.id}: cycle requires an auditable record`);
+  for (const problemId of cycle.problemIds || []) assert(PROBLEMS.some(problem => problem.id === problemId), `${cycle.id}: unknown problem ${problemId}`);
+  for (const key of ["name", "thesis", "design", "adjudication", "primaryMetrics", "successRule", "stopRule", "status"]) assert(cycle.sharedProgram?.[key]?.text?.length > 5 && cycle.sharedProgram?.[key]?.textEn?.length > 10, `${cycle.id}: shared program missing bilingual ${key}`);
+}
+for (const connection of connections || []) {
+  assert(/^CONN-[A-Z]+-\d{3}$/.test(connection.id), `${connection.id}: invalid connection ID`);
+  assert(connection.problemIds?.length >= 2, `${connection.id}: connection requires at least two problems`);
+  for (const problemId of connection.problemIds || []) assert(PROBLEMS.some(problem => problem.id === problemId), `${connection.id}: unknown problem ${problemId}`);
+  for (const key of ["type", "sharedBottleneck", "mapping", "failureBoundary", "minimumTest"]) assert(connection[key]?.text?.length > 5 && connection[key]?.textEn?.length > 10, `${connection.id}: missing bilingual ${key}`);
+  assert(connection.sourceIds?.every(id => sources[id]), `${connection.id}: unknown evidence source`);
+}
+
 const boundaryCount = PROBLEMS.filter(item => item.nature === "boundary").length;
 assert(boundaryCount > 0, "catalog must preserve clearly labeled boundary examples");
 assert(PROBLEMS.filter(item => item.feasibility === "impossible").every(item => item.nature === "boundary"), "theoretically impossible entries must be boundaries");
@@ -215,11 +246,13 @@ const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const css = fs.readFileSync(path.join(root, "styles.css"), "utf8");
 const solveHtml = fs.readFileSync(path.join(root, "solve.html"), "utf8");
 const solveCss = fs.readFileSync(path.join(root, "solve.css"), "utf8");
+const logHtml = fs.readFileSync(path.join(root, "research-log.html"), "utf8");
+const logCss = fs.readFileSync(path.join(root, "research-log.css"), "utf8");
 const robots = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 const license = fs.readFileSync(path.join(root, "LICENSE"), "utf8");
 const packageMetadata = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"));
-const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "solve.html", "solve.js"]
+const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "solve.html", "solve.js", "research-log.html", "research-log.js"]
   .map(file => fs.readFileSync(path.join(root, file), "utf8"))
   .join("\n");
 for (const phrase of [
@@ -246,11 +279,11 @@ for (const phrase of [
 ]) {
   assert(!publicCopy.includes(phrase), `public copy contains process-oriented wording: ${phrase}`);
 }
-for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "app.js", "assets/mark.svg", "assets/og-744.png"]) {
+for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "research-cycle-data.js", "app.js", "assets/mark.svg", "assets/og-744.png"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing asset ${asset}`);
   assert(html.includes(asset), `index.html does not reference ${asset}`);
 }
-for (const asset of ["styles.css", "solve.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "solve.js", "assets/mark.svg"]) {
+for (const asset of ["styles.css", "solve.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "solve.js", "assets/mark.svg"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing research page asset ${asset}`);
   assert(solveHtml.includes(asset), `solve.html does not reference ${asset}`);
 }
@@ -262,16 +295,23 @@ assert(html.includes('data-i18n="selectionTitle"'), "evidence section must expos
 assert(html.includes('data-i18n="selectionText"'), "evidence section must explain academic inclusion criteria");
 assert(css.includes("word-break: keep-all"), "hero title must prevent character-by-character Korean wrapping");
 assert(css.includes("@media (max-width: 900px)"), "site must include a tablet hero breakpoint");
-for (const id of ["back-to-atlas", "solution-language-switch", "solution-title", "central-question", "starting-point", "research-logic", "minimum-advance", "logic-chain", "hypothesis-matrix", "hypotheses-table", "proposals", "recommended-proposal", "alternative-proposals", "roadmap", "work-program", "synthesis-card", "work-package-list", "uncertainty-table", "decision-tree", "requirements", "prior-work", "evidence", "problem-pagination"]) {
+for (const id of ["back-to-atlas", "solution-language-switch", "solution-title", "central-question", "starting-point", "research-logic", "minimum-advance", "logic-chain", "hypothesis-matrix", "hypotheses-table", "current-cycle", "cycle-hypotheses", "cycle-connections", "proposals", "recommended-proposal", "alternative-proposals", "roadmap", "work-program", "synthesis-card", "work-package-list", "uncertainty-table", "decision-tree", "requirements", "prior-work", "evidence", "problem-pagination"]) {
   assert(solveHtml.includes(`id="${id}"`), `solve.html missing #${id}`);
 }
 assert(fs.readFileSync(path.join(root, "app.js"), "utf8").includes("solve.html"), "main problem details must link to a separate research-attempt page");
 assert(solveCss.includes("@media (max-width: 800px)"), "research-attempt page must include a mobile/tablet layout");
+for (const asset of ["styles.css", "research-log.css", "research-cycle-data.js", "research-log.js", "assets/mark.svg"]) {
+  assert(fs.existsSync(path.join(root, asset)), `missing research-log asset ${asset}`);
+  assert(logHtml.includes(asset), `research-log.html does not reference ${asset}`);
+}
+for (const id of ["log-language-switch", "cycle-title", "finding-list", "program-grid", "problem-chain", "connection-map", "cycle-record", "log-sources"]) assert(logHtml.includes(`id="${id}"`), `research-log.html missing #${id}`);
+assert(logCss.includes("@media (max-width: 800px)"), "research log must include a mobile/tablet layout");
 
 const verificationTag = '<meta name="google-site-verification" content="tQU4ms4HtuSSnlNO14YJO8OMyy59mqlFixqXl3Lhlbw">';
 assert(html.includes(verificationTag), "index.html must contain the exact Google site-verification tag");
 assert(solveHtml.includes(verificationTag), "research pages must preserve the Google site-verification tag");
-for (const document of [{ name: "index.html", content: html }, { name: "solve.html", content: solveHtml }]) {
+assert(logHtml.includes(verificationTag), "research log must preserve the Google site-verification tag");
+for (const document of [{ name: "index.html", content: html }, { name: "solve.html", content: solveHtml }, { name: "research-log.html", content: logHtml }]) {
   assert(document.content.includes('rel="sitemap"'), `${document.name} must advertise sitemap.xml`);
   assert(document.content.includes('type="application/ld+json"'), `${document.name} requires structured data`);
 }
@@ -295,7 +335,7 @@ assert(robots.includes("https://eljja.github.io/UnsolvedProblems/sitemap.xml"), 
 assert(sitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>'), "sitemap.xml must start with a UTF-8 XML declaration");
 assert(sitemap.includes('xmlns:xhtml="http://www.w3.org/1999/xhtml"'), "sitemap.xml must declare the XHTML namespace for hreflang alternates");
 const sitemapLocations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
-assert(sitemapLocations.length === PROBLEMS.length * 2 + 2, "sitemap.xml must contain both languages for the atlas and every problem");
+assert(sitemapLocations.length === PROBLEMS.length * 2 + cycles.length * 2 + 2, "sitemap.xml must contain both languages for the atlas, every problem, and every research cycle");
 assert(new Set(sitemapLocations).size === sitemapLocations.length, "sitemap.xml locations must be unique");
 assert(!sitemapLocations.some(location => location.includes("&lang=")), "sitemap.xml query separators must be XML escaped");
 for (const problem of PROBLEMS) {
@@ -304,12 +344,18 @@ for (const problem of PROBLEMS) {
     assert(sitemapLocations.includes(expected), `${problem.id}: sitemap missing ${language} research page`);
   }
 }
+for (const cycle of cycles) {
+  for (const language of ["ko", "en"]) {
+    const expected = `https://eljja.github.io/UnsolvedProblems/research-log.html?cycle=${cycle.id}&amp;lang=${language}`;
+    assert(sitemapLocations.includes(expected), `${cycle.id}: sitemap missing ${language} research log`);
+  }
+}
 const solveScript = fs.readFileSync(path.join(root, "solve.js"), "utf8");
 assert(solveScript.includes("updateDiscoveryMetadata"), "solve.js must update canonical, social, and structured metadata for each problem");
 assert(solveScript.includes("setCanonical"), "solve.js must inject one problem-specific canonical URL after resolving the problem");
 const appScript = fs.readFileSync(path.join(root, "app.js"), "utf8");
 assert(appScript.includes('href="${escapeHTML(solutionURL(problem))}"'), "problem cards must expose crawlable links to research pages");
-for (const asset of ["robots.txt", "sitemap.xml", "scripts/generate-sitemap.mjs"]) {
+for (const asset of ["robots.txt", "sitemap.xml", "scripts/generate-sitemap.mjs", "research-cycle-data.js", "research-log.html", "research-log.js", "research-log.css"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing search-discovery asset ${asset}`);
 }
 

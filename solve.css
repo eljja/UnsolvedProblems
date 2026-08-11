@@ -156,6 +156,51 @@
 .hypothesis-table td, .uncertainty-table td, .uncertainty-table tbody th { color: #4c6067; font-size: .73rem; line-height: 1.68; word-break: keep-all; }
 .hypothesis-table td:last-child { background: rgba(161,73,43,.045); }
 
+.cycle-section { position: relative; }
+.cycle-section::before { content: ""; position: absolute; inset: 35px -26px; z-index: -1; border-radius: 28px; background: color-mix(in srgb, var(--discipline-accent) 7%, transparent); }
+.cycle-heading { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: end; }
+.cycle-log-link { min-height: 38px; padding: 9px 14px; border: 1px solid color-mix(in srgb, var(--discipline-accent) 55%, var(--line)); border-radius: 999px; color: var(--ink); background: rgba(255,253,247,.72); font-size: .7rem; font-weight: 850; white-space: nowrap; }
+.cycle-log-link:hover { background: var(--white); box-shadow: 0 8px 24px rgba(11,29,38,.08); }
+.cycle-role { margin-bottom: 17px; padding: 19px 22px; display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; color: #eef6f1; border-radius: 14px; background: color-mix(in srgb, var(--discipline-accent) 38%, var(--navy)); }
+.cycle-role span { color: var(--amber-soft); font-family: Georgia, serif; font-size: .66rem; letter-spacing: .06em; }
+.cycle-role strong { font-size: .9rem; line-height: 1.5; }
+.cycle-definition-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cycle-definition-grid article { padding: 23px 25px; border: 1px solid var(--line); border-radius: 15px; background: rgba(255,253,247,.72); }
+.cycle-definition-grid article.cycle-bottleneck { border-color: color-mix(in srgb, var(--discipline-accent) 48%, var(--line)); background: color-mix(in srgb, var(--discipline-accent) 10%, var(--white)); }
+.cycle-definition-grid h3 { margin: 0 0 9px; color: #805918; font-size: .66rem; letter-spacing: .06em; }
+.cycle-definition-grid p { margin: 0; color: #40555d; font-size: .8rem; line-height: 1.74; word-break: keep-all; }
+.cycle-subsection { margin-top: 37px; }
+.cycle-subsection > h3 { margin: 0 0 15px; font-size: 1.15rem; }
+.cycle-hypotheses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
+.cycle-hypothesis { overflow: hidden; border: 1px solid var(--line); border-radius: 15px; background: rgba(255,253,247,.72); }
+.cycle-hypothesis header { min-height: 96px; padding: 19px 20px; display: grid; grid-template-columns: 29px 1fr; gap: 10px; border-bottom: 1px solid var(--line); background: rgba(234,231,221,.5); }
+.cycle-hypothesis header span { color: #966419; font-family: Georgia, serif; font-size: .68rem; }
+.cycle-hypothesis header strong { font-size: .79rem; line-height: 1.55; }
+.cycle-hypothesis > div { padding: 16px 19px; }
+.cycle-hypothesis > div + div { border-top: 1px solid rgba(16,35,44,.1); }
+.cycle-hypothesis b { color: #805918; font-size: .61rem; letter-spacing: .04em; }
+.cycle-hypothesis p { margin: 6px 0 0; color: #52656c; font-size: .71rem; line-height: 1.62; }
+.cycle-hypothesis .cycle-reject { background: rgba(161,73,43,.045); }
+.cycle-test-card { margin-top: 17px; padding: 26px 29px; color: #f8f3e7; border-radius: 17px; background: var(--navy); box-shadow: 0 17px 46px rgba(11,29,38,.13); }
+.cycle-test-card span { color: var(--amber); font-size: .64rem; font-weight: 900; letter-spacing: .08em; }
+.cycle-test-card p { margin: 10px 0 0; font-family: Georgia, "Noto Serif KR", serif; font-size: 1rem; line-height: 1.72; word-break: keep-all; }
+.cycle-connections { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cycle-connection { padding: 21px 22px; border: 1px solid var(--line); border-radius: 15px; background: rgba(255,253,247,.7); }
+.cycle-connection header { display: flex; justify-content: space-between; gap: 12px; color: #805918; font-size: .62rem; font-weight: 850; }
+.cycle-connection header em { color: #738187; font-style: normal; }
+.cycle-connection a { margin-top: 15px; display: block; }
+.cycle-connection a small { display: block; color: #8b671f; font-size: .59rem; }
+.cycle-connection a strong { display: block; margin-top: 5px; color: var(--ink); font-size: .83rem; line-height: 1.48; }
+.cycle-connection > p { margin: 14px 0; color: #485d64; font-size: .74rem; line-height: 1.65; }
+.cycle-connection dl { margin: 0; }
+.cycle-connection dl > div { padding-top: 11px; border-top: 1px solid rgba(16,35,44,.1); }
+.cycle-connection dl > div + div { margin-top: 11px; }
+.cycle-connection dt { color: #805918; font-size: .59rem; font-weight: 850; }
+.cycle-connection dd { margin: 4px 0 0; color: #637278; font-size: .67rem; line-height: 1.55; }
+.cycle-unresolved { margin-top: 17px; padding: 19px 22px; display: grid; grid-template-columns: 170px 1fr; gap: 20px; border: 1px solid rgba(161,73,43,.2); border-radius: 13px; background: rgba(161,73,43,.055); }
+.cycle-unresolved strong { color: #965035; font-size: .65rem; }
+.cycle-unresolved p { margin: 0; color: #596a70; font-size: .73rem; line-height: 1.63; }
+
 .proposal-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 430px); align-items: end; gap: 42px; }
 .proposal-heading .proposal-note { margin: 0 0 3px; padding-left: 17px; border-left: 2px solid var(--amber); color: #596b71; font-size: .76rem; line-height: 1.65; }
 .proposal-card { border: 1px solid var(--line); border-radius: 20px; background: rgba(255, 253, 247, .72); box-shadow: 0 13px 38px rgba(11,29,38,.06); }
@@ -305,7 +350,9 @@
   .decision-card { min-height: 330px; }
   .lab-layout { padding-top: 30px; padding-bottom: 70px; }
   .lab-section { padding: 62px 0; }
-  .starting-grid, .logic-chain, .proposal-heading, .synthesis-notes, .work-package-list, .readiness-grid, .risk-panel, .prior-columns { grid-template-columns: 1fr; }
+  .starting-grid, .logic-chain, .cycle-heading, .cycle-definition-grid, .cycle-hypotheses, .cycle-connections, .proposal-heading, .synthesis-notes, .work-package-list, .readiness-grid, .risk-panel, .prior-columns { grid-template-columns: 1fr; }
+  .cycle-log-link { justify-self: start; }
+  .cycle-unresolved { grid-template-columns: 1fr; gap: 7px; }
   .proposal-heading { gap: 20px; }
   .proposal-heading .proposal-note { max-width: none; }
   .featured .proposal-body, .featured .proposal-foot, .alternative-grid { grid-template-columns: 1fr; }
