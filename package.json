@@ -2,6 +2,7 @@
   "name": "unsolved-problems-atlas",
   "version": "1.0.0",
   "private": true,
+  "license": "Apache-2.0",
   "description": "A bilingual evidence-led atlas of 744 research questions across 13 disciplines, including verified research prizes.",
   "scripts": {
     "sitemap": "node scripts/generate-sitemap.mjs",

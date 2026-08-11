@@ -14,6 +14,7 @@
 - 별도 연구 페이지: [`solve.html`](./solve.html)
 - 검색 색인: [`sitemap.xml`](./sitemap.xml), [`robots.txt`](./robots.txt)
 - 배포: GitHub Actions를 통한 GitHub Pages
+- 라이선스: [Apache License 2.0](./LICENSE)
 
 ## 현재 범위
 
@@ -83,3 +84,7 @@ npm test
 ## 기여 원칙
 
 새 난제를 추가할 때는 질문형 문장, 세부분야, 중요도, 해결 방식, 문제 성격, 가능성, 검토일, 선정 근거, 관련 출처, 열린 이유와 해결 기준을 함께 기록해 주세요. 상금이 있으면 주관기관의 공식 페이지, 상태, 금액의 성격, 지급·참가 조건도 기록해야 합니다. `research-context.js`가 확장 맥락과 여섯 개 연구축을, `solution-context.js`가 검증 제안과 연구 관문을, `deep-solution-context.js`가 최소 진전 기준·병목 사슬·경쟁 가설·작업 패키지·불확실성 예산·판정 트리를 생성합니다. 특정 문제에 더 적합한 접근은 근거와 함께 명시적으로 보강할 수 있습니다.
+
+## 라이선스
+
+이 저장소의 소스 코드와 프로젝트 저작물은 [Apache License 2.0](./LICENSE)에 따라 제공됩니다.

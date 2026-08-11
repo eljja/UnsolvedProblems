@@ -217,6 +217,8 @@ const solveHtml = fs.readFileSync(path.join(root, "solve.html"), "utf8");
 const solveCss = fs.readFileSync(path.join(root, "solve.css"), "utf8");
 const robots = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
+const license = fs.readFileSync(path.join(root, "LICENSE"), "utf8");
+const packageMetadata = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"));
 const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "solve.html", "solve.js"]
   .map(file => fs.readFileSync(path.join(root, file), "utf8"))
   .join("\n");
@@ -286,6 +288,9 @@ if (indexStructuredDataMatch) {
   }
 }
 assert(robots.includes("User-agent: *") && robots.includes("Allow: /"), "robots.txt must permit crawling");
+assert(license.includes("Apache License") && license.includes("Version 2.0, January 2004"), "LICENSE must contain the Apache License 2.0 text");
+assert(packageMetadata.license === "Apache-2.0", "package.json must declare the Apache-2.0 SPDX identifier");
+assert(fs.readFileSync(path.join(root, "README.md"), "utf8").includes("[Apache License 2.0](./LICENSE)"), "README must link to the repository license");
 assert(robots.includes("https://eljja.github.io/UnsolvedProblems/sitemap.xml"), "robots.txt must advertise the absolute sitemap URL");
 assert(sitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>'), "sitemap.xml must start with a UTF-8 XML declaration");
 assert(sitemap.includes('xmlns:xhtml="http://www.w3.org/1999/xhtml"'), "sitemap.xml must declare the XHTML namespace for hreflang alternates");
