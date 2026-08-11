@@ -8,7 +8,7 @@ const failures = [];
 const assert = (condition, message) => { if (!condition) failures.push(message); };
 
 const sandbox = { window: {} };
-for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js"]) {
+for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js"]) {
   vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }
 
@@ -93,6 +93,27 @@ for (const problem of PROBLEMS) {
   }
   assert(lab?.safetyNote?.length > 35 && lab?.safetyNoteEn?.length > 70, `${problem.id}: requires a bilingual safety boundary`);
   assert(/^\d{4}-\d{2}-\d{2}$/.test(lab?.reviewedOn), `${problem.id}: missing research design review date`);
+  const deep = lab?.deepDive;
+  assert(Boolean(deep), `${problem.id}: missing deep research program`);
+  assert(deep?.minimumAdvance?.length > 70 && deep?.minimumAdvanceEn?.length > 150, `${problem.id}: requires a bilingual minimum-advance criterion`);
+  for (const [key, count, fields] of [
+    ["logicChain", 4, ["title", "claim", "failure"]],
+    ["hypotheses", 3, ["title", "claim", "prediction", "test", "reject"]],
+    ["workPackages", 4, ["title", "objective", "method", "deliverable", "gate"]],
+    ["uncertaintyBudget", 4, ["category", "source", "control", "threshold"]],
+    ["decisionTree", 4, ["condition", "action", "meaning"]]
+  ]) {
+    assert(deep?.[key]?.length === count, `${problem.id}: ${key} requires ${count} entries`);
+    for (const entry of deep?.[key] || []) {
+      for (const field of fields) {
+        assert(entry[field]?.text?.length > 3 && entry[field]?.textEn?.length > 8, `${problem.id}: ${key} missing bilingual ${field}`);
+      }
+    }
+  }
+  for (const field of ["candidate", "why", "noveltyCheck"]) {
+    assert(deep?.synthesis?.[field]?.text?.length > 30 && deep?.synthesis?.[field]?.textEn?.length > 70, `${problem.id}: synthesis missing bilingual ${field}`);
+  }
+  assert(/^\d{4}-\d{2}-\d{2}$/.test(deep?.reviewedOn), `${problem.id}: missing deep research-program review date`);
   for (const phrase of ["개별 논문 3편", "단일 논문 목록", "대표 연구축을 요약", "exhaustive paper bibliography", "ranking of three individual papers"]) {
     assert(![problem.overview, problem.overviewEn, ...problem.importantAttempts.map(item => item.description), ...problem.recentAttempts.map(item => item.description)].some(text => text?.includes(phrase)), `${problem.id}: contains editorial boilerplate: ${phrase}`);
   }
@@ -125,6 +146,19 @@ for (let index = 0; index < 3; index += 1) {
     const fullProposal = PROBLEMS.map(problem => ["thesis", "departure", "design", "firstTest", "success", "stopRule"].map(key => problem.solutionLab.tracks[index][key][languageKey]).join("\n"));
     assert(new Set(fullProposal).size === PROBLEMS.length, `${languageKey} proposal ${index + 1} must be problem-specific as a complete research path`);
   }
+}
+for (const languageKey of ["text", "textEn"]) {
+  const deepPrograms = PROBLEMS.map(problem => {
+    const deep = problem.solutionLab.deepDive;
+    return [
+      languageKey === "text" ? deep.minimumAdvance : deep.minimumAdvanceEn,
+      ...deep.logicChain.flatMap(item => [item.claim[languageKey], item.failure[languageKey]]),
+      ...deep.hypotheses.flatMap(item => [item.claim[languageKey], item.prediction[languageKey], item.test[languageKey], item.reject[languageKey]]),
+      ...deep.workPackages.flatMap(item => [item.objective[languageKey], item.method[languageKey], item.gate[languageKey]]),
+      deep.synthesis.candidate[languageKey], deep.synthesis.why[languageKey]
+    ].join("\n");
+  });
+  assert(new Set(deepPrograms).size === PROBLEMS.length, `${languageKey}: complete deep research programs must be problem-specific`);
 }
 
 const firstFacetBySubfield = new Map();
@@ -183,7 +217,7 @@ const solveHtml = fs.readFileSync(path.join(root, "solve.html"), "utf8");
 const solveCss = fs.readFileSync(path.join(root, "solve.css"), "utf8");
 const robots = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
-const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js", "research-context.js", "solution-context.js", "solve.html", "solve.js"]
+const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "solve.html", "solve.js"]
   .map(file => fs.readFileSync(path.join(root, file), "utf8"))
   .join("\n");
 for (const phrase of [
@@ -214,7 +248,7 @@ for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations
   assert(fs.existsSync(path.join(root, asset)), `missing asset ${asset}`);
   assert(html.includes(asset), `index.html does not reference ${asset}`);
 }
-for (const asset of ["styles.css", "solve.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "solve.js", "assets/mark.svg"]) {
+for (const asset of ["styles.css", "solve.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "solve.js", "assets/mark.svg"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing research page asset ${asset}`);
   assert(solveHtml.includes(asset), `solve.html does not reference ${asset}`);
 }
@@ -226,7 +260,7 @@ assert(html.includes('data-i18n="selectionTitle"'), "evidence section must expos
 assert(html.includes('data-i18n="selectionText"'), "evidence section must explain academic inclusion criteria");
 assert(css.includes("word-break: keep-all"), "hero title must prevent character-by-character Korean wrapping");
 assert(css.includes("@media (max-width: 900px)"), "site must include a tablet hero breakpoint");
-for (const id of ["back-to-atlas", "solution-language-switch", "solution-title", "central-question", "starting-point", "proposals", "recommended-proposal", "alternative-proposals", "roadmap", "requirements", "prior-work", "evidence", "problem-pagination"]) {
+for (const id of ["back-to-atlas", "solution-language-switch", "solution-title", "central-question", "starting-point", "research-logic", "minimum-advance", "logic-chain", "hypothesis-matrix", "hypotheses-table", "proposals", "recommended-proposal", "alternative-proposals", "roadmap", "work-program", "synthesis-card", "work-package-list", "uncertainty-table", "decision-tree", "requirements", "prior-work", "evidence", "problem-pagination"]) {
   assert(solveHtml.includes(`id="${id}"`), `solve.html missing #${id}`);
 }
 assert(fs.readFileSync(path.join(root, "app.js"), "utf8").includes("solve.html"), "main problem details must link to a separate research-attempt page");

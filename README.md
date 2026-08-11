@@ -10,6 +10,7 @@
 - 공식 상금·연구경진 데이터: [`prize-data.js`](./prize-data.js)
 - 확장 설명·대표 시도·최근 연구 흐름: [`research-context.js`](./research-context.js)
 - 문제별 해결 시도 설계: [`solution-context.js`](./solution-context.js)
+- 문제별 가설 경쟁·불확실성 예산·실행 프로그램: [`deep-solution-context.js`](./deep-solution-context.js)
 - 별도 연구 페이지: [`solve.html`](./solve.html)
 - 검색 색인: [`sitemap.xml`](./sitemap.xml), [`robots.txt`](./robots.txt)
 - 배포: GitHub Actions를 통한 GitHub Pages
@@ -81,4 +82,4 @@ npm test
 
 ## 기여 원칙
 
-새 난제를 추가할 때는 질문형 문장, 세부분야, 중요도, 해결 방식, 문제 성격, 가능성, 검토일, 선정 근거, 관련 출처, 열린 이유와 해결 기준을 함께 기록해 주세요. 상금이 있으면 주관기관의 공식 페이지, 상태, 금액의 성격, 지급·참가 조건도 기록해야 합니다. `research-context.js`가 확장 맥락과 여섯 개 연구축을, `solution-context.js`가 검증 제안과 연구 관문을 생성합니다. 특정 문제에 더 적합한 접근은 근거와 함께 명시적으로 보강할 수 있습니다.
+새 난제를 추가할 때는 질문형 문장, 세부분야, 중요도, 해결 방식, 문제 성격, 가능성, 검토일, 선정 근거, 관련 출처, 열린 이유와 해결 기준을 함께 기록해 주세요. 상금이 있으면 주관기관의 공식 페이지, 상태, 금액의 성격, 지급·참가 조건도 기록해야 합니다. `research-context.js`가 확장 맥락과 여섯 개 연구축을, `solution-context.js`가 검증 제안과 연구 관문을, `deep-solution-context.js`가 최소 진전 기준·병목 사슬·경쟁 가설·작업 패키지·불확실성 예산·판정 트리를 생성합니다. 특정 문제에 더 적합한 접근은 근거와 함께 명시적으로 보강할 수 있습니다.
