@@ -1,0 +1,321 @@
+{
+  "benchmarkId": "IUCR-QPA-DIAGNOSTIC-TRANSFER-0.1",
+  "generatedOn": "2026-08-12",
+  "source": {
+    "primaryArticleDoi": "10.1107/S160057672100371X",
+    "rawDatasetDoi": "10.25917/nvsw-0044",
+    "summaryArchiveSha256": "07758e77d67a71b116518da13791538ed4cd573f42ae8f356881b6326cfd0c40",
+    "extractedFilesVerified": 8
+  },
+  "denominators": {
+    "samples": 2,
+    "refinementTypes": 4,
+    "highAngleLimits": 7,
+    "nominalStepSizes": 8,
+    "nominalMaximumIntensities": 13,
+    "rows": 5824,
+    "randomizedStartRefinementsRepresented": 1164800,
+    "acquisitionConditions": 1456
+  },
+  "truthWeightPercent": {
+    "1a": {
+      "corundum": 1.15,
+      "fluorite": 94.81,
+      "zincite": 4.04
+    },
+    "1e": {
+      "corundum": 55.12,
+      "fluorite": 29.62,
+      "zincite": 15.25
+    }
+  },
+  "errorGatePercentagePoints": 5,
+  "split": {
+    "developmentSample": "1a",
+    "holdoutSample": "1e",
+    "rule": "Use all 2,912 sample-1a refinement summaries to select diagnostic thresholds. Open all 2,912 sample-1e summaries once. The split is a composition-transfer test within one published experiment, not an independent laboratory replication.",
+    "reason": "Sample 1a contains two minor phases and is the stricter development case for count support and model complexity; sample 1e has roughly balanced phases and tests whether the resulting rule transports rather than merely fitting the trace-phase geometry."
+  },
+  "bySample": {
+    "1a": {
+      "cases": 2912,
+      "unsafeCases": 245,
+      "unsafeFraction": 0.084134615,
+      "maximumAbsoluteError": 54.542572057,
+      "q95MaximumAbsoluteError": 7.36013321,
+      "formalBandAllPhaseCoverage": 0.28228022,
+      "combinedBandAllPhaseCoverage": 0.302541209
+    },
+    "1e": {
+      "cases": 2912,
+      "unsafeCases": 1241,
+      "unsafeFraction": 0.426167582,
+      "maximumAbsoluteError": 29.371188603,
+      "q95MaximumAbsoluteError": 15.204186464,
+      "formalBandAllPhaseCoverage": 0.122596154,
+      "combinedBandAllPhaseCoverage": 0.124656593
+    }
+  },
+  "byNominalStep": {
+    "0.01": {
+      "cases": 728,
+      "unsafeCases": 1,
+      "unsafeFraction": 0.001373626,
+      "maximumAbsoluteError": 5.243824574,
+      "q95MaximumAbsoluteError": 3.048075245,
+      "formalBandAllPhaseCoverage": 0.063186813,
+      "combinedBandAllPhaseCoverage": 0.067307692
+    },
+    "0.02": {
+      "cases": 728,
+      "unsafeCases": 1,
+      "unsafeFraction": 0.001373626,
+      "maximumAbsoluteError": 7.412493209,
+      "q95MaximumAbsoluteError": 2.942799541,
+      "formalBandAllPhaseCoverage": 0.108516484,
+      "combinedBandAllPhaseCoverage": 0.111263736
+    },
+    "0.04": {
+      "cases": 728,
+      "unsafeCases": 1,
+      "unsafeFraction": 0.001373626,
+      "maximumAbsoluteError": 5.837737499,
+      "q95MaximumAbsoluteError": 3.166636822,
+      "formalBandAllPhaseCoverage": 0.123626374,
+      "combinedBandAllPhaseCoverage": 0.130494505
+    },
+    "0.08": {
+      "cases": 728,
+      "unsafeCases": 28,
+      "unsafeFraction": 0.038461538,
+      "maximumAbsoluteError": 11.737543158,
+      "q95MaximumAbsoluteError": 4.100517876,
+      "formalBandAllPhaseCoverage": 0.135989011,
+      "combinedBandAllPhaseCoverage": 0.137362637
+    },
+    "0.16": {
+      "cases": 728,
+      "unsafeCases": 333,
+      "unsafeFraction": 0.457417582,
+      "maximumAbsoluteError": 12.790111768,
+      "q95MaximumAbsoluteError": 11.380709604,
+      "formalBandAllPhaseCoverage": 0.292582418,
+      "combinedBandAllPhaseCoverage": 0.324175824
+    },
+    "0.2": {
+      "cases": 728,
+      "unsafeCases": 321,
+      "unsafeFraction": 0.440934066,
+      "maximumAbsoluteError": 12.088892966,
+      "q95MaximumAbsoluteError": 7.979489545,
+      "formalBandAllPhaseCoverage": 0.343406593,
+      "combinedBandAllPhaseCoverage": 0.373626374
+    },
+    "0.25": {
+      "cases": 728,
+      "unsafeCases": 311,
+      "unsafeFraction": 0.427197802,
+      "maximumAbsoluteError": 18.697764246,
+      "q95MaximumAbsoluteError": 8.531288984,
+      "formalBandAllPhaseCoverage": 0.273351648,
+      "combinedBandAllPhaseCoverage": 0.277472527
+    },
+    "0.32": {
+      "cases": 728,
+      "unsafeCases": 490,
+      "unsafeFraction": 0.673076923,
+      "maximumAbsoluteError": 54.542572057,
+      "q95MaximumAbsoluteError": 27.064775662,
+      "formalBandAllPhaseCoverage": 0.278846154,
+      "combinedBandAllPhaseCoverage": 0.287087912
+    }
+  },
+  "byRefinementType": {
+    "1": {
+      "cases": 1456,
+      "unsafeCases": 364,
+      "unsafeFraction": 0.25,
+      "maximumAbsoluteError": 28.137507348,
+      "q95MaximumAbsoluteError": 12.730915491,
+      "formalBandAllPhaseCoverage": 0.146291209,
+      "combinedBandAllPhaseCoverage": 0.146291209
+    },
+    "2": {
+      "cases": 1456,
+      "unsafeCases": 360,
+      "unsafeFraction": 0.247252747,
+      "maximumAbsoluteError": 34.74773021,
+      "q95MaximumAbsoluteError": 12.989434888,
+      "formalBandAllPhaseCoverage": 0.12293956,
+      "combinedBandAllPhaseCoverage": 0.126373626
+    },
+    "3": {
+      "cases": 1456,
+      "unsafeCases": 360,
+      "unsafeFraction": 0.247252747,
+      "maximumAbsoluteError": 34.553090721,
+      "q95MaximumAbsoluteError": 13.14106711,
+      "formalBandAllPhaseCoverage": 0.196428571,
+      "combinedBandAllPhaseCoverage": 0.212225275
+    },
+    "4": {
+      "cases": 1456,
+      "unsafeCases": 402,
+      "unsafeFraction": 0.276098901,
+      "maximumAbsoluteError": 54.542572057,
+      "q95MaximumAbsoluteError": 19.088010342,
+      "formalBandAllPhaseCoverage": 0.344093407,
+      "combinedBandAllPhaseCoverage": 0.369505495
+    }
+  },
+  "rowSelectors": {
+    "rwp": {
+      "name": "Rwp",
+      "thresholdSelectedOnDevelopment": 8.043046005815,
+      "boundary": "accept score strictly below threshold",
+      "development": {
+        "cases": 2912,
+        "unsafeCases": 245,
+        "acceptedCases": 329,
+        "acceptedFraction": 0.112980769,
+        "unsafeAcceptedCases": 0,
+        "unsafeAcceptedFraction": 0,
+        "safeRetention": 0.12335958,
+        "maximumAcceptedAbsoluteError": 0.994791923
+      },
+      "holdout": {
+        "cases": 2912,
+        "unsafeCases": 1241,
+        "acceptedCases": 484,
+        "acceptedFraction": 0.166208791,
+        "unsafeAcceptedCases": 0,
+        "unsafeAcceptedFraction": 0,
+        "safeRetention": 0.289646918,
+        "maximumAcceptedAbsoluteError": 4.347002028
+      }
+    },
+    "formalUncertainty": {
+      "name": "maximum reported phase esd mean",
+      "thresholdSelectedOnDevelopment": 0.17098682507,
+      "boundary": "accept score strictly below threshold",
+      "development": {
+        "cases": 2912,
+        "unsafeCases": 245,
+        "acceptedCases": 826,
+        "acceptedFraction": 0.283653846,
+        "unsafeAcceptedCases": 0,
+        "unsafeAcceptedFraction": 0,
+        "safeRetention": 0.309711286,
+        "maximumAcceptedAbsoluteError": 4.870386279
+      },
+      "holdout": {
+        "cases": 2912,
+        "unsafeCases": 1241,
+        "acceptedCases": 1258,
+        "acceptedFraction": 0.432005495,
+        "unsafeAcceptedCases": 378,
+        "unsafeAcceptedFraction": 0.300476948,
+        "safeRetention": 0.52663076,
+        "maximumAcceptedAbsoluteError": 28.6980834
+      }
+    },
+    "literatureAcquisitionGate": {
+      "name": "literature-fixed acquisition support",
+      "rule": "nominal step <= 0.04 degrees, HAL >= 70 degrees, nominal maximum intensity >= 20,000 counts",
+      "development": {
+        "cases": 2912,
+        "unsafeCases": 245,
+        "acceptedCases": 360,
+        "acceptedFraction": 0.123626374,
+        "unsafeAcceptedCases": 0,
+        "unsafeAcceptedFraction": 0,
+        "safeRetention": 0.134983127,
+        "maximumAcceptedAbsoluteError": 0.675069488
+      },
+      "holdout": {
+        "cases": 2912,
+        "unsafeCases": 1241,
+        "acceptedCases": 360,
+        "acceptedFraction": 0.123626374,
+        "unsafeAcceptedCases": 0,
+        "unsafeAcceptedFraction": 0,
+        "safeRetention": 0.215439856,
+        "maximumAcceptedAbsoluteError": 3.519357618
+      }
+    }
+  },
+  "crossModelConditions": {
+    "development": {
+      "conditions": 728,
+      "unsafeConditions": 52,
+      "unsafeFraction": 0.071428571,
+      "maximumAbsoluteMedianError": 34.650410466,
+      "rawModelEnvelopeAllPhaseCoverage": 0.034340659,
+      "expandedModelEnvelopeAllPhaseCoverage": 0.556318681
+    },
+    "holdout": {
+      "conditions": 728,
+      "unsafeConditions": 313,
+      "unsafeFraction": 0.429945055,
+      "maximumAbsoluteMedianError": 28.802448288,
+      "rawModelEnvelopeAllPhaseCoverage": 0.020604396,
+      "expandedModelEnvelopeAllPhaseCoverage": 0.236263736
+    },
+    "spreadSelector": {
+      "thresholdSelectedOnDevelopment": 0.528593089885,
+      "boundary": "accept maximum phase range across four models strictly below threshold",
+      "development": {
+        "conditions": 728,
+        "unsafeConditions": 52,
+        "acceptedConditions": 202,
+        "acceptedFraction": 0.277472527,
+        "unsafeAcceptedConditions": 0,
+        "safeRetention": 0.298816568,
+        "maximumAcceptedAbsoluteError": 2.474760745
+      },
+      "holdout": {
+        "conditions": 728,
+        "unsafeConditions": 313,
+        "acceptedConditions": 120,
+        "acceptedFraction": 0.164835165,
+        "unsafeAcceptedConditions": 0,
+        "safeRetention": 0.289156627,
+        "maximumAcceptedAbsoluteError": 3.527855368
+      }
+    },
+    "literatureAcquisitionGate": {
+      "development": {
+        "conditions": 728,
+        "unsafeConditions": 52,
+        "acceptedConditions": 90,
+        "acceptedFraction": 0.123626374,
+        "unsafeAcceptedConditions": 0,
+        "safeRetention": 0.133136095,
+        "maximumAcceptedAbsoluteError": 0.631399818
+      },
+      "holdout": {
+        "conditions": 728,
+        "unsafeConditions": 313,
+        "acceptedConditions": 90,
+        "acceptedFraction": 0.123626374,
+        "unsafeAcceptedConditions": 0,
+        "safeRetention": 0.21686747,
+        "maximumAcceptedAbsoluteError": 2.461418559
+      }
+    }
+  },
+  "decision": {
+    "rwpTransfersSafely": true,
+    "formalUncertaintyTransfersSafely": false,
+    "modelSpreadTransfersSafely": true,
+    "literatureAcquisitionGateTransfersSafely": true,
+    "stableSurrogateRungQualified": false,
+    "whyNotQualified": "One experiment with no independent preparation, instrument, implementation, or physical-repeat split cannot qualify the stable-surrogate rung even if a within-dataset holdout gate passes."
+  },
+  "interpretation": [
+    "The weighed compositions are independent of the fitted scale factors, but both samples were measured and analysed within one published workflow.",
+    "Formal esds and randomized-start spread omit specimen, acquisition, and shared-model error; their diagnostic-band inclusion is not a 95% new-specimen coverage guarantee.",
+    "Cross-model agreement among four nested TOPAS refinements can miss common-mode crystallographic bias.",
+    "The next decisive test must repeat the accepted acquisition gate across independently prepared aliquots, a second instrument, and an independent implementation before transfer to VO2."
+  ]
+}

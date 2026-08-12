@@ -1,0 +1,32 @@
+{
+  "manifestId": "IUCR-QPA-SUMMARY-SOURCE-0.1",
+  "reviewedOn": "2026-08-12",
+  "licence": "CC BY 4.0 as stated in the Curtin dataset readme",
+  "researchPeriod": "Diffraction collected 2019-12-19 to 2020-05-25; refinements and analysis completed in 2020; article manuscript v1 submitted 2020-08-25 and v4 revised 2021-03-26; journal article published 2021.",
+  "serverTimestampCaveat": "The public directory displayed 2026-07-30/31 modification times during review. Those are repository-serving timestamps and are not treated as dates of the scientific results.",
+  "archive": {
+    "url": "https://scripts.iucr.org/cgi-bin/sendsupfiles?cnor=vb5009&file=vb5009sup1.zip&mime=application/x-zip",
+    "bytes": 59631807,
+    "sha256": "07758e77d67a71b116518da13791538ed4cd573f42ae8f356881b6326cfd0c40"
+  },
+  "files": [
+    { "name": "output2R_1a_1_summarised.csv", "bytes": 15036653, "sha256": "8a514eac8fa63a434a870220f969d7743c693530beab541fcc5f277ed420e94e" },
+    { "name": "output2R_1a_2_summarised.csv", "bytes": 17354891, "sha256": "2e77c6ad6b9bc988bcc1d9d854a43fa0f3b5a59173ffdf29dbb00743187e3666" },
+    { "name": "output2R_1a_3_summarised.csv", "bytes": 19635613, "sha256": "8966bc8804681559a9780a00019eb9e9a0489f46941852da9f3737a1b3fb73e1" },
+    { "name": "output2R_1a_4_summarised.csv", "bytes": 20865127, "sha256": "d0c7b94514936db05a96c747a347532dd62557437bc7594f342ce38e5d93404e" },
+    { "name": "output2R_1e_1_summarised.csv", "bytes": 15269223, "sha256": "7a0e068970270864d3d488b6b6d145c8965996a15aeb2e0534b673e567c05408" },
+    { "name": "output2R_1e_2_summarised.csv", "bytes": 17410116, "sha256": "a59ac912264507c259fc20c36a7bb45f0d731e026b329638223184408f5dc43d" },
+    { "name": "output2R_1e_3_summarised.csv", "bytes": 19729537, "sha256": "78b5e8c3055ca101d0b54e44f312ade5ba8fe91d640e0eb77791a00fc3aa1893" },
+    { "name": "output2R_1e_4_summarised.csv", "bytes": 20957238, "sha256": "3ead4f524748871fc6ef61a16985dc3c6781b8952d6b7fed73eb436772f3d051" }
+  ],
+  "lineage": {
+    "officialProjectTruth": "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/values",
+    "originalRoundRobinArticle": "https://doi.org/10.1107/S0021889801007476",
+    "primaryRobustnessArticle": "https://doi.org/10.1107/S160057672100371X",
+    "rawDatasetRecord": "https://doi.org/10.25917/nvsw-0044",
+    "rawDatasetDirectory": "https://ddfe.curtin.edu.au/NVSW-0044/",
+    "summaryArchive": "https://doi.org/10.1107/S160057672100371X/vb5009sup1.zip",
+    "supplementPdf": "https://doi.org/10.1107/S160057672100371X/vb5009sup3.pdf"
+  },
+  "redistribution": "The large source archive and CSV files are not copied into this repository. Reproduction requires downloading the official archive, verifying the hashes above, extracting it, and passing the directory with the eight CSV files to the analysis script."
+}

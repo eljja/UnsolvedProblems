@@ -1,0 +1,56 @@
+{
+  "auditId": "IUCR-QPA-DIAGNOSTIC-PYTHON-0.1",
+  "generatedOn": "2026-08-12",
+  "implementation": "Independent Python standard-library CSV parser, hashlib source verification, statistics.median model aggregation, and direct threshold replay; no JavaScript module imported.",
+  "computed": {
+    "rows": 5824,
+    "refinementsRepresented": 1164800,
+    "developmentUnsafeRows": 245,
+    "holdoutUnsafeRows": 1241,
+    "rwpThreshold": 8.043046005815,
+    "formalThreshold": 0.17098682507,
+    "modelSpreadThreshold": 0.528593089885,
+    "rwpHoldout": {
+      "cases": 2912,
+      "acceptedCases": 484,
+      "unsafeAcceptedCases": 0,
+      "safeRetention": 0.289646918,
+      "maximumAcceptedAbsoluteError": 4.347002028
+    },
+    "formalHoldout": {
+      "cases": 2912,
+      "acceptedCases": 1258,
+      "unsafeAcceptedCases": 378,
+      "safeRetention": 0.52663076,
+      "maximumAcceptedAbsoluteError": 28.6980834
+    },
+    "acquisitionHoldout": {
+      "cases": 2912,
+      "acceptedCases": 360,
+      "unsafeAcceptedCases": 0,
+      "safeRetention": 0.215439856,
+      "maximumAcceptedAbsoluteError": 3.519357618
+    },
+    "modelSpreadHoldout": {
+      "acceptedConditions": 120,
+      "unsafeAcceptedConditions": 0,
+      "maximumAcceptedAbsoluteError": 3.527855368
+    },
+    "formalBandHoldoutCoverage": 0.122596154,
+    "combinedBandHoldoutCoverage": 0.124656593
+  },
+  "comparisonsWithJavaScript": {
+    "denominator": true,
+    "refinementsRepresented": true,
+    "unsafeCounts": true,
+    "rwpThreshold": true,
+    "formalThreshold": true,
+    "spreadThreshold": true,
+    "rwpHoldout": true,
+    "formalHoldout": true,
+    "acquisitionHoldout": true,
+    "modelSpreadHoldout": true,
+    "diagnosticBands": true
+  },
+  "allComparisonsPass": true
+}

@@ -1,0 +1,52 @@
+{
+  "benchmarkId": "IUCR-QPA-DIAGNOSTIC-TRANSFER-0.1",
+  "reviewedOn": "2026-08-12",
+  "status": "sealed-secondary-analysis-before-computation",
+  "purpose": "Test whether residual fit, reported refinement uncertainty, cross-model disagreement, or a literature-fixed acquisition gate can prevent absolute phase-fraction errors above five percentage points when transferred between two physical IUCr QARR mixtures.",
+  "sourceContract": {
+    "primaryArticleDoi": "10.1107/S160057672100371X",
+    "authorManuscript": "https://arxiv.org/abs/2008.11046v4",
+    "summaryArchive": "https://scripts.iucr.org/cgi-bin/sendsupfiles?cnor=vb5009&file=vb5009sup1.zip&mime=application/x-zip",
+    "rawDatasetDoi": "10.25917/nvsw-0044",
+    "weighedTruth": "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/values",
+    "summaryArchiveSha256": "07758e77d67a71b116518da13791538ed4cd573f42ae8f356881b6326cfd0c40"
+  },
+  "truthWeightPercent": {
+    "1a": { "corundum": 1.15, "fluorite": 94.81, "zincite": 4.04 },
+    "1e": { "corundum": 55.12, "fluorite": 29.62, "zincite": 15.25 }
+  },
+  "split": {
+    "developmentSample": "1a",
+    "holdoutSample": "1e",
+    "rule": "Use all 2,912 sample-1a refinement summaries to select diagnostic thresholds. Open all 2,912 sample-1e summaries once. The split is a composition-transfer test within one published experiment, not an independent laboratory replication.",
+    "reason": "Sample 1a contains two minor phases and is the stricter development case for count support and model complexity; sample 1e has roughly balanced phases and tests whether the resulting rule transports rather than merely fitting the trace-phase geometry."
+  },
+  "design": {
+    "conditions": "Two mixtures by four refinement types by seven high-angle limits by eight nominal step sizes by thirteen nominal maximum intensities; every published row summarises 200 randomized-start refinements.",
+    "primaryError": "Maximum, over corundum, fluorite, and zincite, of absolute estimated-minus-weighed weight percentage.",
+    "unsafeGatePercentagePoints": 5,
+    "selectors": {
+      "rwp": "Lower is treated as better. On development rows, set the threshold to the smallest Rwp among unsafe rows and accept only rows strictly below it.",
+      "formalUncertainty": "Use the largest reported phase weight-fraction esd mean. Set and apply the threshold exactly as for Rwp.",
+      "crossModelSpread": "For each acquisition condition, take the median phase estimate across the four refinement types and the largest phase range across those types. Set the spread threshold on unsafe development conditions and transfer it unchanged.",
+      "literatureAcquisitionGate": "Accept nominal step size at most 0.04 degrees 2theta, high-angle limit at least 70 degrees 2theta, and nominal maximum intensity at least 20,000 counts. This gate is fixed from the article recommendations, not tuned to the summaries."
+    },
+    "diagnosticBands": "Report condition-wise inclusion of weighed truth in estimate plus or minus 1.96 times the reported esd, and in a wider band using sqrt(esd^2 + randomized-start sd^2). These are diagnostic bands across a factorial grid, not frequentist coverage claims for new specimens.",
+    "crossModelEnvelope": "For each phase and acquisition condition, report whether the weighed truth falls inside the min-max envelope of the four refinement types, both raw and expanded by the two-component diagnostic band.",
+    "decisionRule": "A selector is safe on holdout only if it accepts no row or condition whose maximum phase error exceeds five percentage points. Utility is the accepted fraction among all and among safe cases; a zero-acceptance selector is not useful progress."
+  },
+  "causalChain": [
+    "Published physical mixtures and frozen gravimetric compositions",
+    "Data support and scale-factor/parameter correlation",
+    "Residual, formal uncertainty, model disagreement, or acquisition support as a transportable diagnostic",
+    "Holdout unsafe acceptance and retained safe fraction",
+    "Qualification of the stable-surrogate rung before any claim about operando VO2 phase fraction"
+  ],
+  "interpretationLimits": [
+    "The summaries reuse one instrument, two specimens, one software family, and one analyst-designed model hierarchy; they do not identify interlaboratory or specimen-preparation variance.",
+    "The four refinement types share crystallographic assumptions and therefore are not independent implementations. Agreement can be common-mode bias.",
+    "The 200 repeats vary starting values, not physical acquisitions. Their spread cannot estimate specimen or instrument repeatability.",
+    "A passed stable-mixture gate does not certify VO2 volume fraction, texture correction, thermal-history transport, or cross-probe agreement.",
+    "This is a post-publication secondary analysis with a sealed development-holdout rule, not a prospective preregistration relative to data collection or publication."
+  ]
+}
