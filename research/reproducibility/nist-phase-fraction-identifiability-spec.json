@@ -1,0 +1,52 @@
+{
+  "benchmarkId": "NIST-VO2-PHASE-FRACTION-ID-0.1",
+  "reviewedOn": "2026-08-12",
+  "purpose": "Test numerical identifiability of a known synthetic fraction between observed low/high endpoint profiles before any claim about physical phase fraction.",
+  "endpointRule": "Use compositions 92-97 at 23 C and 68 C only when strict all-five majority assigns phase 0 and 2 respectively. Do not use intermediate labels to choose endpoints.",
+  "split": {
+    "developmentCompositions": [
+      92,
+      94,
+      96
+    ],
+    "holdoutCompositions": [
+      93,
+      95,
+      97
+    ],
+    "rule": "alternating ordered eligible compositions, fixed before nuisance results"
+  },
+  "fractionGrid": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "estimator": "Nonnegative least squares for low endpoint, high endpoint, constant background, and linear background; fraction is high/(low+high).",
+  "scenarios": {
+    "clean": "Exact linear mixtures in the same-composition endpoint basis.",
+    "affineBackground": "Scale 0.93 or 1.07 plus constant and linear background at +/-1% of profile range; included in estimator.",
+    "peakShift": "Shift only the high-endpoint contribution by +/-1 or +/-2 bins (0.005 or 0.010 degree 2theta); not included in estimator.",
+    "shiftAwareRemediation": "Exploratory post-failure remedy: search a frozen -2 to +2 bin high-endpoint shift grid and choose minimum residual before estimating fraction.",
+    "textureLikeWarp": "Apply opposite eight-block intensity warps to low and high contributions at +/-2% or +/-5%; a stress test, not a calibrated texture model.",
+    "empiricalDiscrepancy": "Add +/-25% or +/-50% of an intermediate-profile residual after projection onto its same-composition endpoints. This orthogonal lack-of-fit control should raise residual without biasing fraction.",
+    "transferredTemplates": "Generate clean mixtures from holdout endpoints but fit with the nearest development-composition endpoint pair.",
+    "interpolatedTemplateRemediation": "Exploratory post-failure remedy: linearly interpolate bracketing development endpoints for holdout compositions 93 and 95, then separately test a frozen -2 to +2 bin shift grid for both endpoint phases; refuse composition 97 because it lies outside development support."
+  },
+  "gates": {
+    "sameCompositionCleanAndAffineMaxAbsoluteError": 0.02,
+    "oneAndTwoBinShiftMaxAbsoluteError": 0.05,
+    "twoPercentTextureLikeWarpMaxAbsoluteError": 0.05,
+    "neighboringCompositionTransferMaxAbsoluteError": 0.05
+  },
+  "interpretationLimits": [
+    "Synthetic fraction is known by construction between two measured curves; it is not a certified crystallographic phase fraction.",
+    "The public dataset has no physical replicate, independent structure measurement, or texture measurement.",
+    "Passing a scenario establishes numerical recoverability under that perturbation only. Failing identifies a confounding direction for the physical pilot."
+  ]
+}

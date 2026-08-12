@@ -1,0 +1,1427 @@
+{
+  "benchmarkId": "NIST-VO2-PHASE-FRACTION-ID-0.1",
+  "generatedOn": "2026-08-12",
+  "source": {
+    "datasetDoi": "10.18434/mds2-2301",
+    "rawProfilesSha256": "3b47bf36b2abaef376730226e2616a353ba07571c46e71bce464cf9e9bfbe348",
+    "labelsSha256": "0056a45f7d45694368597fe7804569339745214530584dae10652873fed38cd2"
+  },
+  "denominators": {
+    "eligibleCompositions": [
+      92,
+      93,
+      94,
+      95,
+      96,
+      97
+    ],
+    "endpointProfiles": 12,
+    "anglePointsPerProfile": 3841,
+    "fractions": 9,
+    "totalCases": 2277
+  },
+  "endpoints": {
+    "92": {
+      "lowMeasurementId": 8,
+      "lowTemperatureC": 23,
+      "lowLabels": [
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "highMeasurementId": 316,
+      "highTemperatureC": 68,
+      "highLabels": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "93": {
+      "lowMeasurementId": 7,
+      "lowTemperatureC": 23,
+      "lowLabels": [
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "highMeasurementId": 315,
+      "highTemperatureC": 68,
+      "highLabels": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "94": {
+      "lowMeasurementId": 6,
+      "lowTemperatureC": 23,
+      "lowLabels": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "highMeasurementId": 314,
+      "highTemperatureC": 68,
+      "highLabels": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "95": {
+      "lowMeasurementId": 5,
+      "lowTemperatureC": 23,
+      "lowLabels": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "highMeasurementId": 313,
+      "highTemperatureC": 68,
+      "highLabels": [
+        2,
+        2,
+        1,
+        2,
+        2
+      ]
+    },
+    "96": {
+      "lowMeasurementId": 4,
+      "lowTemperatureC": 23,
+      "lowLabels": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "highMeasurementId": 312,
+      "highTemperatureC": 68,
+      "highLabels": [
+        2,
+        2,
+        1,
+        2,
+        2
+      ]
+    },
+    "97": {
+      "lowMeasurementId": 3,
+      "lowTemperatureC": 23,
+      "lowLabels": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "highMeasurementId": 311,
+      "highTemperatureC": 68,
+      "highLabels": [
+        2,
+        2,
+        1,
+        2,
+        2
+      ]
+    }
+  },
+  "scenarioResults": {
+    "clean": {
+      "cases": 54,
+      "rmse": 0,
+      "medianAbsoluteError": 0,
+      "q95AbsoluteError": 0,
+      "maximumAbsoluteError": 0,
+      "fractionWithin005": 1,
+      "medianNormalizedResidual": 0,
+      "q95NormalizedResidual": 0,
+      "worstCases": [
+        {
+          "scenario": "clean",
+          "composition": 96,
+          "fraction": 0.9,
+          "estimatedFraction": 0.9,
+          "absoluteError": 0,
+          "normalizedResidual": 0
+        },
+        {
+          "scenario": "clean",
+          "composition": 93,
+          "fraction": 0.7,
+          "estimatedFraction": 0.7,
+          "absoluteError": 0,
+          "normalizedResidual": 0
+        },
+        {
+          "scenario": "clean",
+          "composition": 94,
+          "fraction": 0.2,
+          "estimatedFraction": 0.2,
+          "absoluteError": 0,
+          "normalizedResidual": 0
+        },
+        {
+          "scenario": "clean",
+          "composition": 93,
+          "fraction": 0.8,
+          "estimatedFraction": 0.8,
+          "absoluteError": 0,
+          "normalizedResidual": 0
+        },
+        {
+          "scenario": "clean",
+          "composition": 95,
+          "fraction": 0.1,
+          "estimatedFraction": 0.1,
+          "absoluteError": 0,
+          "normalizedResidual": 0
+        }
+      ]
+    },
+    "affineBackground": {
+      "cases": 216,
+      "rmse": 0,
+      "medianAbsoluteError": 0,
+      "q95AbsoluteError": 0,
+      "maximumAbsoluteError": 0,
+      "fractionWithin005": 1,
+      "medianNormalizedResidual": 0,
+      "q95NormalizedResidual": 0,
+      "worstCases": [
+        {
+          "scenario": "affineBackground",
+          "composition": 93,
+          "fraction": 0.1,
+          "estimatedFraction": 0.1,
+          "absoluteError": 0,
+          "normalizedResidual": 0,
+          "direction": -1,
+          "profileScale": 0.93
+        },
+        {
+          "scenario": "affineBackground",
+          "composition": 93,
+          "fraction": 0.9,
+          "estimatedFraction": 0.9,
+          "absoluteError": 0,
+          "normalizedResidual": 0,
+          "direction": -1,
+          "profileScale": 0.93
+        },
+        {
+          "scenario": "affineBackground",
+          "composition": 94,
+          "fraction": 0.3,
+          "estimatedFraction": 0.3,
+          "absoluteError": 0,
+          "normalizedResidual": 0,
+          "direction": 1,
+          "profileScale": 0.93
+        },
+        {
+          "scenario": "affineBackground",
+          "composition": 95,
+          "fraction": 0.1,
+          "estimatedFraction": 0.1,
+          "absoluteError": 0,
+          "normalizedResidual": 0,
+          "direction": -1,
+          "profileScale": 1.07
+        },
+        {
+          "scenario": "affineBackground",
+          "composition": 93,
+          "fraction": 0.8,
+          "estimatedFraction": 0.8,
+          "absoluteError": 0,
+          "normalizedResidual": 0,
+          "direction": -1,
+          "profileScale": 0.93
+        }
+      ]
+    },
+    "peakShift2Bin": {
+      "cases": 108,
+      "rmse": 0.087196,
+      "medianAbsoluteError": 0.076978,
+      "q95AbsoluteError": 0.135832,
+      "maximumAbsoluteError": 0.179876,
+      "fractionWithin005": 0.240741,
+      "medianNormalizedResidual": 0.032055,
+      "q95NormalizedResidual": 0.058792,
+      "worstCases": [
+        {
+          "scenario": "peakShift2Bin",
+          "composition": 92,
+          "fraction": 0.9,
+          "estimatedFraction": 0.720124,
+          "absoluteError": 0.179876,
+          "normalizedResidual": 0.058779,
+          "bins": 2,
+          "twoThetaShiftDegrees": 0.01
+        },
+        {
+          "scenario": "peakShift2Bin",
+          "composition": 92,
+          "fraction": 0.8,
+          "estimatedFraction": 0.632795,
+          "absoluteError": 0.167205,
+          "normalizedResidual": 0.05199,
+          "bins": 2,
+          "twoThetaShiftDegrees": 0.01
+        },
+        {
+          "scenario": "peakShift2Bin",
+          "composition": 92,
+          "fraction": 0.7,
+          "estimatedFraction": 0.54744,
+          "absoluteError": 0.15256,
+          "normalizedResidual": 0.045262,
+          "bins": 2,
+          "twoThetaShiftDegrees": 0.01
+        },
+        {
+          "scenario": "peakShift2Bin",
+          "composition": 93,
+          "fraction": 0.9,
+          "estimatedFraction": 0.748751,
+          "absoluteError": 0.151249,
+          "normalizedResidual": 0.058345,
+          "bins": 2,
+          "twoThetaShiftDegrees": 0.01
+        },
+        {
+          "scenario": "peakShift2Bin",
+          "composition": 93,
+          "fraction": 0.8,
+          "estimatedFraction": 0.65669,
+          "absoluteError": 0.14331,
+          "normalizedResidual": 0.051629,
+          "bins": 2,
+          "twoThetaShiftDegrees": 0.01
+        }
+      ]
+    },
+    "peakShiftAware2Bin": {
+      "cases": 108,
+      "rmse": 0,
+      "medianAbsoluteError": 0,
+      "q95AbsoluteError": 0,
+      "maximumAbsoluteError": 0,
+      "fractionWithin005": 1,
+      "medianNormalizedResidual": 0,
+      "q95NormalizedResidual": 0,
+      "worstCases": [
+        {
+          "scenario": "peakShiftAware2Bin",
+          "composition": 94,
+          "fraction": 0.8,
+          "estimatedFraction": 0.8,
+          "absoluteError": 0,
+          "normalizedResidual": 0,
+          "selectedShiftBins": 2,
+          "generatedShiftBins": 2,
+          "twoThetaShiftDegrees": 0.01
+        },
+        {
+          "scenario": "peakShiftAware2Bin",
+          "composition": 93,
+          "fraction": 0.5,
+          "estimatedFraction": 0.5,
+          "absoluteError": 0,
+          "normalizedResidual": 0,
+          "selectedShiftBins": -2,
+          "generatedShiftBins": -2,
+          "twoThetaShiftDegrees": -0.01
+        },
+        {
+          "scenario": "peakShiftAware2Bin",
+          "composition": 94,
+          "fraction": 0.2,
+          "estimatedFraction": 0.2,
+          "absoluteError": 0,
+          "normalizedResidual": 0,
+          "selectedShiftBins": 2,
+          "generatedShiftBins": 2,
+          "twoThetaShiftDegrees": 0.01
+        },
+        {
+          "scenario": "peakShiftAware2Bin",
+          "composition": 94,
+          "fraction": 0.7,
+          "estimatedFraction": 0.7,
+          "absoluteError": 0,
+          "normalizedResidual": 0,
+          "selectedShiftBins": 2,
+          "generatedShiftBins": 2,
+          "twoThetaShiftDegrees": 0.01
+        },
+        {
+          "scenario": "peakShiftAware2Bin",
+          "composition": 92,
+          "fraction": 0.1,
+          "estimatedFraction": 0.1,
+          "absoluteError": 0,
+          "normalizedResidual": 0,
+          "selectedShiftBins": 2,
+          "generatedShiftBins": 2,
+          "twoThetaShiftDegrees": 0.01
+        }
+      ]
+    },
+    "peakShift1Bin": {
+      "cases": 108,
+      "rmse": 0.03411,
+      "medianAbsoluteError": 0.029774,
+      "q95AbsoluteError": 0.054691,
+      "maximumAbsoluteError": 0.07298,
+      "fractionWithin005": 0.898148,
+      "medianNormalizedResidual": 0.021287,
+      "q95NormalizedResidual": 0.039096,
+      "worstCases": [
+        {
+          "scenario": "peakShift1Bin",
+          "composition": 92,
+          "fraction": 0.9,
+          "estimatedFraction": 0.82702,
+          "absoluteError": 0.07298,
+          "normalizedResidual": 0.039246,
+          "bins": 1,
+          "twoThetaShiftDegrees": 0.005
+        },
+        {
+          "scenario": "peakShift1Bin",
+          "composition": 92,
+          "fraction": 0.8,
+          "estimatedFraction": 0.732086,
+          "absoluteError": 0.067914,
+          "normalizedResidual": 0.034712,
+          "bins": 1,
+          "twoThetaShiftDegrees": 0.005
+        },
+        {
+          "scenario": "peakShift1Bin",
+          "composition": 92,
+          "fraction": 0.7,
+          "estimatedFraction": 0.637935,
+          "absoluteError": 0.062065,
+          "normalizedResidual": 0.03022,
+          "bins": 1,
+          "twoThetaShiftDegrees": 0.005
+        },
+        {
+          "scenario": "peakShift1Bin",
+          "composition": 93,
+          "fraction": 0.9,
+          "estimatedFraction": 0.84091,
+          "absoluteError": 0.05909,
+          "normalizedResidual": 0.038795,
+          "bins": 1,
+          "twoThetaShiftDegrees": 0.005
+        },
+        {
+          "scenario": "peakShift1Bin",
+          "composition": 93,
+          "fraction": 0.8,
+          "estimatedFraction": 0.743759,
+          "absoluteError": 0.056241,
+          "normalizedResidual": 0.034329,
+          "bins": 1,
+          "twoThetaShiftDegrees": 0.005
+        }
+      ]
+    },
+    "peakShiftAware1Bin": {
+      "cases": 108,
+      "rmse": 0,
+      "medianAbsoluteError": 0,
+      "q95AbsoluteError": 0,
+      "maximumAbsoluteError": 0,
+      "fractionWithin005": 1,
+      "medianNormalizedResidual": 0,
+      "q95NormalizedResidual": 0,
+      "worstCases": [
+        {
+          "scenario": "peakShiftAware1Bin",
+          "composition": 93,
+          "fraction": 0.9,
+          "estimatedFraction": 0.9,
+          "absoluteError": 0,
+          "normalizedResidual": 0,
+          "selectedShiftBins": -1,
+          "generatedShiftBins": -1,
+          "twoThetaShiftDegrees": -0.005
+        },
+        {
+          "scenario": "peakShiftAware1Bin",
+          "composition": 94,
+          "fraction": 0.9,
+          "estimatedFraction": 0.9,
+          "absoluteError": 0,
+          "normalizedResidual": 0,
+          "selectedShiftBins": -1,
+          "generatedShiftBins": -1,
+          "twoThetaShiftDegrees": -0.005
+        },
+        {
+          "scenario": "peakShiftAware1Bin",
+          "composition": 92,
+          "fraction": 0.3,
+          "estimatedFraction": 0.3,
+          "absoluteError": 0,
+          "normalizedResidual": 0,
+          "selectedShiftBins": 1,
+          "generatedShiftBins": 1,
+          "twoThetaShiftDegrees": 0.005
+        },
+        {
+          "scenario": "peakShiftAware1Bin",
+          "composition": 92,
+          "fraction": 0.6,
+          "estimatedFraction": 0.6,
+          "absoluteError": 0,
+          "normalizedResidual": 0,
+          "selectedShiftBins": -1,
+          "generatedShiftBins": -1,
+          "twoThetaShiftDegrees": -0.005
+        },
+        {
+          "scenario": "peakShiftAware1Bin",
+          "composition": 92,
+          "fraction": 0.8,
+          "estimatedFraction": 0.8,
+          "absoluteError": 0,
+          "normalizedResidual": 0,
+          "selectedShiftBins": 1,
+          "generatedShiftBins": 1,
+          "twoThetaShiftDegrees": 0.005
+        }
+      ]
+    },
+    "textureLikeWarp2Percent": {
+      "cases": 108,
+      "rmse": 0.004709,
+      "medianAbsoluteError": 0.003994,
+      "q95AbsoluteError": 0.00811,
+      "maximumAbsoluteError": 0.009563,
+      "fractionWithin005": 1,
+      "medianNormalizedResidual": 0.008153,
+      "q95NormalizedResidual": 0.015551,
+      "worstCases": [
+        {
+          "scenario": "textureLikeWarp2Percent",
+          "composition": 95,
+          "fraction": 0.1,
+          "estimatedFraction": 0.090437,
+          "absoluteError": 0.009563,
+          "normalizedResidual": 0.015573,
+          "amplitude": 0.02,
+          "direction": -1
+        },
+        {
+          "scenario": "textureLikeWarp2Percent",
+          "composition": 92,
+          "fraction": 0.9,
+          "estimatedFraction": 0.909326,
+          "absoluteError": 0.009326,
+          "normalizedResidual": 0.015153,
+          "amplitude": 0.02,
+          "direction": 1
+        },
+        {
+          "scenario": "textureLikeWarp2Percent",
+          "composition": 95,
+          "fraction": 0.1,
+          "estimatedFraction": 0.10896,
+          "absoluteError": 0.00896,
+          "normalizedResidual": 0.015515,
+          "amplitude": 0.02,
+          "direction": 1
+        },
+        {
+          "scenario": "textureLikeWarp2Percent",
+          "composition": 92,
+          "fraction": 0.9,
+          "estimatedFraction": 0.891263,
+          "absoluteError": 0.008737,
+          "normalizedResidual": 0.015094,
+          "amplitude": 0.02,
+          "direction": -1
+        },
+        {
+          "scenario": "textureLikeWarp2Percent",
+          "composition": 92,
+          "fraction": 0.1,
+          "estimatedFraction": 0.091326,
+          "absoluteError": 0.008674,
+          "normalizedResidual": 0.015583,
+          "amplitude": 0.02,
+          "direction": -1
+        }
+      ]
+    },
+    "textureLikeWarp5Percent": {
+      "cases": 108,
+      "rmse": 0.011819,
+      "medianAbsoluteError": 0.010221,
+      "q95AbsoluteError": 0.020538,
+      "maximumAbsoluteError": 0.02518,
+      "fractionWithin005": 1,
+      "medianNormalizedResidual": 0.020352,
+      "q95NormalizedResidual": 0.03886,
+      "worstCases": [
+        {
+          "scenario": "textureLikeWarp5Percent",
+          "composition": 95,
+          "fraction": 0.1,
+          "estimatedFraction": 0.07482,
+          "absoluteError": 0.02518,
+          "normalizedResidual": 0.039016,
+          "amplitude": 0.05,
+          "direction": -1
+        },
+        {
+          "scenario": "textureLikeWarp5Percent",
+          "composition": 92,
+          "fraction": 0.9,
+          "estimatedFraction": 0.924554,
+          "absoluteError": 0.024554,
+          "normalizedResidual": 0.037969,
+          "amplitude": 0.05,
+          "direction": 1
+        },
+        {
+          "scenario": "textureLikeWarp5Percent",
+          "composition": 92,
+          "fraction": 0.1,
+          "estimatedFraction": 0.077192,
+          "absoluteError": 0.022808,
+          "normalizedResidual": 0.039043,
+          "amplitude": 0.05,
+          "direction": -1
+        },
+        {
+          "scenario": "textureLikeWarp5Percent",
+          "composition": 95,
+          "fraction": 0.1,
+          "estimatedFraction": 0.121388,
+          "absoluteError": 0.021388,
+          "normalizedResidual": 0.038654,
+          "amplitude": 0.05,
+          "direction": 1
+        },
+        {
+          "scenario": "textureLikeWarp5Percent",
+          "composition": 93,
+          "fraction": 0.9,
+          "estimatedFraction": 0.921033,
+          "absoluteError": 0.021033,
+          "normalizedResidual": 0.038279,
+          "amplitude": 0.05,
+          "direction": 1
+        }
+      ]
+    },
+    "empiricalDiscrepancy25Percent": {
+      "cases": 648,
+      "rmse": 0,
+      "medianAbsoluteError": 0,
+      "q95AbsoluteError": 0,
+      "maximumAbsoluteError": 0,
+      "fractionWithin005": 1,
+      "medianNormalizedResidual": 0.031181,
+      "q95NormalizedResidual": 0.034832,
+      "worstCases": [
+        {
+          "scenario": "empiricalDiscrepancy25Percent",
+          "composition": 93,
+          "fraction": 0.8,
+          "estimatedFraction": 0.8,
+          "absoluteError": 0,
+          "normalizedResidual": 0.029651,
+          "sourceTemperatureC": 55,
+          "amplitude": 0.25,
+          "direction": -1
+        },
+        {
+          "scenario": "empiricalDiscrepancy25Percent",
+          "composition": 96,
+          "fraction": 0.9,
+          "estimatedFraction": 0.9,
+          "absoluteError": 0,
+          "normalizedResidual": 0.033379,
+          "sourceTemperatureC": 36,
+          "amplitude": 0.25,
+          "direction": 1
+        },
+        {
+          "scenario": "empiricalDiscrepancy25Percent",
+          "composition": 93,
+          "fraction": 0.9,
+          "estimatedFraction": 0.9,
+          "absoluteError": 0,
+          "normalizedResidual": 0.029785,
+          "sourceTemperatureC": 62,
+          "amplitude": 0.25,
+          "direction": -1
+        },
+        {
+          "scenario": "empiricalDiscrepancy25Percent",
+          "composition": 95,
+          "fraction": 0.1,
+          "estimatedFraction": 0.1,
+          "absoluteError": 0,
+          "normalizedResidual": 0.031048,
+          "sourceTemperatureC": 50,
+          "amplitude": 0.25,
+          "direction": 1
+        },
+        {
+          "scenario": "empiricalDiscrepancy25Percent",
+          "composition": 93,
+          "fraction": 0.9,
+          "estimatedFraction": 0.9,
+          "absoluteError": 0,
+          "normalizedResidual": 0.029785,
+          "sourceTemperatureC": 55,
+          "amplitude": 0.25,
+          "direction": -1
+        }
+      ]
+    },
+    "empiricalDiscrepancy50Percent": {
+      "cases": 648,
+      "rmse": 0,
+      "medianAbsoluteError": 0,
+      "q95AbsoluteError": 0,
+      "maximumAbsoluteError": 0,
+      "fractionWithin005": 1,
+      "medianNormalizedResidual": 0.062271,
+      "q95NormalizedResidual": 0.069537,
+      "worstCases": [
+        {
+          "scenario": "empiricalDiscrepancy50Percent",
+          "composition": 93,
+          "fraction": 0.9,
+          "estimatedFraction": 0.9,
+          "absoluteError": 0,
+          "normalizedResidual": 0.059492,
+          "sourceTemperatureC": 45,
+          "amplitude": 0.5,
+          "direction": -1
+        },
+        {
+          "scenario": "empiricalDiscrepancy50Percent",
+          "composition": 94,
+          "fraction": 0.2,
+          "estimatedFraction": 0.2,
+          "absoluteError": 0,
+          "normalizedResidual": 0.060301,
+          "sourceTemperatureC": 45,
+          "amplitude": 0.5,
+          "direction": -1
+        },
+        {
+          "scenario": "empiricalDiscrepancy50Percent",
+          "composition": 93,
+          "fraction": 0.1,
+          "estimatedFraction": 0.1,
+          "absoluteError": 0,
+          "normalizedResidual": 0.05724,
+          "sourceTemperatureC": 36,
+          "amplitude": 0.5,
+          "direction": -1
+        },
+        {
+          "scenario": "empiricalDiscrepancy50Percent",
+          "composition": 93,
+          "fraction": 0.2,
+          "estimatedFraction": 0.2,
+          "absoluteError": 0,
+          "normalizedResidual": 0.057534,
+          "sourceTemperatureC": 30,
+          "amplitude": 0.5,
+          "direction": -1
+        },
+        {
+          "scenario": "empiricalDiscrepancy50Percent",
+          "composition": 93,
+          "fraction": 0.6,
+          "estimatedFraction": 0.6,
+          "absoluteError": 0,
+          "normalizedResidual": 0.058677,
+          "sourceTemperatureC": 55,
+          "amplitude": 0.5,
+          "direction": -1
+        }
+      ]
+    },
+    "transferredTemplates": {
+      "cases": 27,
+      "rmse": 0.094848,
+      "medianAbsoluteError": 0.071468,
+      "q95AbsoluteError": 0.164362,
+      "maximumAbsoluteError": 0.206121,
+      "fractionWithin005": 0.333333,
+      "medianNormalizedResidual": 0.057214,
+      "q95NormalizedResidual": 0.066781,
+      "worstCases": [
+        {
+          "scenario": "transferredTemplates",
+          "composition": 93,
+          "fraction": 0.9,
+          "estimatedFraction": 0.693879,
+          "absoluteError": 0.206121,
+          "normalizedResidual": 0.062364,
+          "templateComposition": 92
+        },
+        {
+          "scenario": "transferredTemplates",
+          "composition": 93,
+          "fraction": 0.1,
+          "estimatedFraction": 0.267723,
+          "absoluteError": 0.167723,
+          "normalizedResidual": 0.063892,
+          "templateComposition": 92
+        },
+        {
+          "scenario": "transferredTemplates",
+          "composition": 95,
+          "fraction": 0.9,
+          "estimatedFraction": 0.74348,
+          "absoluteError": 0.15652,
+          "normalizedResidual": 0.064983,
+          "templateComposition": 94
+        },
+        {
+          "scenario": "transferredTemplates",
+          "composition": 93,
+          "fraction": 0.8,
+          "estimatedFraction": 0.645124,
+          "absoluteError": 0.154876,
+          "normalizedResidual": 0.057214,
+          "templateComposition": 92
+        },
+        {
+          "scenario": "transferredTemplates",
+          "composition": 93,
+          "fraction": 0.2,
+          "estimatedFraction": 0.325861,
+          "absoluteError": 0.125861,
+          "normalizedResidual": 0.058774,
+          "templateComposition": 92
+        }
+      ]
+    },
+    "interpolatedTemplates": {
+      "cases": 18,
+      "rmse": 0.064244,
+      "medianAbsoluteError": 0.048188,
+      "q95AbsoluteError": 0.115821,
+      "maximumAbsoluteError": 0.140102,
+      "fractionWithin005": 0.5,
+      "medianNormalizedResidual": 0.049368,
+      "q95NormalizedResidual": 0.058312,
+      "worstCases": [
+        {
+          "scenario": "interpolatedTemplates",
+          "composition": 93,
+          "fraction": 0.1,
+          "estimatedFraction": 0.240102,
+          "absoluteError": 0.140102,
+          "normalizedResidual": 0.056677,
+          "bracketCompositions": [
+            92,
+            94
+          ],
+          "interpolationWeight": 0.5
+        },
+        {
+          "scenario": "interpolatedTemplates",
+          "composition": 93,
+          "fraction": 0.2,
+          "estimatedFraction": 0.311537,
+          "absoluteError": 0.111537,
+          "normalizedResidual": 0.052014,
+          "bracketCompositions": [
+            92,
+            94
+          ],
+          "interpolationWeight": 0.5
+        },
+        {
+          "scenario": "interpolatedTemplates",
+          "composition": 93,
+          "fraction": 0.9,
+          "estimatedFraction": 0.80105,
+          "absoluteError": 0.09895,
+          "normalizedResidual": 0.058184,
+          "bracketCompositions": [
+            92,
+            94
+          ],
+          "interpolationWeight": 0.5
+        },
+        {
+          "scenario": "interpolatedTemplates",
+          "composition": 93,
+          "fraction": 0.3,
+          "estimatedFraction": 0.382589,
+          "absoluteError": 0.082589,
+          "normalizedResidual": 0.048378,
+          "bracketCompositions": [
+            92,
+            94
+          ],
+          "interpolationWeight": 0.5
+        },
+        {
+          "scenario": "interpolatedTemplates",
+          "composition": 95,
+          "fraction": 0.1,
+          "estimatedFraction": 0.174107,
+          "absoluteError": 0.074107,
+          "normalizedResidual": 0.057282,
+          "bracketCompositions": [
+            94,
+            96
+          ],
+          "interpolationWeight": 0.5
+        }
+      ]
+    },
+    "interpolatedDualShiftTemplates": {
+      "cases": 18,
+      "rmse": 0.065289,
+      "medianAbsoluteError": 0.048769,
+      "q95AbsoluteError": 0.118092,
+      "maximumAbsoluteError": 0.143806,
+      "fractionWithin005": 0.5,
+      "medianNormalizedResidual": 0.049368,
+      "q95NormalizedResidual": 0.058233,
+      "worstCases": [
+        {
+          "scenario": "interpolatedDualShiftTemplates",
+          "composition": 93,
+          "fraction": 0.1,
+          "estimatedFraction": 0.243806,
+          "absoluteError": 0.143806,
+          "normalizedResidual": 0.056605,
+          "selectedLowShiftBins": 0,
+          "selectedHighShiftBins": 1,
+          "bracketCompositions": [
+            92,
+            94
+          ],
+          "interpolationWeight": 0.5
+        },
+        {
+          "scenario": "interpolatedDualShiftTemplates",
+          "composition": 93,
+          "fraction": 0.2,
+          "estimatedFraction": 0.313555,
+          "absoluteError": 0.113555,
+          "normalizedResidual": 0.051985,
+          "selectedLowShiftBins": 0,
+          "selectedHighShiftBins": 1,
+          "bracketCompositions": [
+            92,
+            94
+          ],
+          "interpolationWeight": 0.5
+        },
+        {
+          "scenario": "interpolatedDualShiftTemplates",
+          "composition": 93,
+          "fraction": 0.9,
+          "estimatedFraction": 0.796619,
+          "absoluteError": 0.103381,
+          "normalizedResidual": 0.058105,
+          "selectedLowShiftBins": -2,
+          "selectedHighShiftBins": 0,
+          "bracketCompositions": [
+            92,
+            94
+          ],
+          "interpolationWeight": 0.5
+        },
+        {
+          "scenario": "interpolatedDualShiftTemplates",
+          "composition": 93,
+          "fraction": 0.3,
+          "estimatedFraction": 0.382589,
+          "absoluteError": 0.082589,
+          "normalizedResidual": 0.048378,
+          "selectedLowShiftBins": 0,
+          "selectedHighShiftBins": 0,
+          "bracketCompositions": [
+            92,
+            94
+          ],
+          "interpolationWeight": 0.5
+        },
+        {
+          "scenario": "interpolatedDualShiftTemplates",
+          "composition": 95,
+          "fraction": 0.1,
+          "estimatedFraction": 0.174107,
+          "absoluteError": 0.074107,
+          "normalizedResidual": 0.057282,
+          "selectedLowShiftBins": 0,
+          "selectedHighShiftBins": 0,
+          "bracketCompositions": [
+            94,
+            96
+          ],
+          "interpolationWeight": 0.5
+        }
+      ]
+    }
+  },
+  "observedTrajectories": {
+    "92": {
+      "rows": [
+        {
+          "temperatureC": 23,
+          "measurementId": 8,
+          "strictMajorityPhase": 0,
+          "estimatedSyntheticFraction": 0,
+          "normalizedResidual": 0
+        },
+        {
+          "temperatureC": 30,
+          "measurementId": 52,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.433207,
+          "normalizedResidual": 0.06508
+        },
+        {
+          "temperatureC": 36,
+          "measurementId": 96,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.483706,
+          "normalizedResidual": 0.063014
+        },
+        {
+          "temperatureC": 45,
+          "measurementId": 140,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.608274,
+          "normalizedResidual": 0.063756
+        },
+        {
+          "temperatureC": 50,
+          "measurementId": 184,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.640841,
+          "normalizedResidual": 0.066417
+        },
+        {
+          "temperatureC": 55,
+          "measurementId": 228,
+          "strictMajorityPhase": 2,
+          "estimatedSyntheticFraction": 0.714214,
+          "normalizedResidual": 0.070698
+        },
+        {
+          "temperatureC": 62,
+          "measurementId": 272,
+          "strictMajorityPhase": 2,
+          "estimatedSyntheticFraction": 0.72751,
+          "normalizedResidual": 0.070586
+        },
+        {
+          "temperatureC": 68,
+          "measurementId": 316,
+          "strictMajorityPhase": 2,
+          "estimatedSyntheticFraction": 1,
+          "normalizedResidual": 0
+        }
+      ],
+      "monotonicDecreaseCount": 0,
+      "decreasesLargerThan005": [],
+      "maximumNormalizedResidual": 0.070698
+    },
+    "93": {
+      "rows": [
+        {
+          "temperatureC": 23,
+          "measurementId": 7,
+          "strictMajorityPhase": 0,
+          "estimatedSyntheticFraction": 0,
+          "normalizedResidual": 0
+        },
+        {
+          "temperatureC": 30,
+          "measurementId": 51,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.289851,
+          "normalizedResidual": 0.065849
+        },
+        {
+          "temperatureC": 36,
+          "measurementId": 95,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.350895,
+          "normalizedResidual": 0.063629
+        },
+        {
+          "temperatureC": 45,
+          "measurementId": 139,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.585061,
+          "normalizedResidual": 0.064178
+        },
+        {
+          "temperatureC": 50,
+          "measurementId": 183,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.642588,
+          "normalizedResidual": 0.064762
+        },
+        {
+          "temperatureC": 55,
+          "measurementId": 227,
+          "strictMajorityPhase": 2,
+          "estimatedSyntheticFraction": 0.716316,
+          "normalizedResidual": 0.065944
+        },
+        {
+          "temperatureC": 62,
+          "measurementId": 271,
+          "strictMajorityPhase": 2,
+          "estimatedSyntheticFraction": 0.786323,
+          "normalizedResidual": 0.069782
+        },
+        {
+          "temperatureC": 68,
+          "measurementId": 315,
+          "strictMajorityPhase": 2,
+          "estimatedSyntheticFraction": 1,
+          "normalizedResidual": 0
+        }
+      ],
+      "monotonicDecreaseCount": 0,
+      "decreasesLargerThan005": [],
+      "maximumNormalizedResidual": 0.069782
+    },
+    "94": {
+      "rows": [
+        {
+          "temperatureC": 23,
+          "measurementId": 6,
+          "strictMajorityPhase": 0,
+          "estimatedSyntheticFraction": 0,
+          "normalizedResidual": 0
+        },
+        {
+          "temperatureC": 30,
+          "measurementId": 50,
+          "strictMajorityPhase": 0,
+          "estimatedSyntheticFraction": 0.225093,
+          "normalizedResidual": 0.068729
+        },
+        {
+          "temperatureC": 36,
+          "measurementId": 94,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.301737,
+          "normalizedResidual": 0.066542
+        },
+        {
+          "temperatureC": 45,
+          "measurementId": 138,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.496095,
+          "normalizedResidual": 0.065748
+        },
+        {
+          "temperatureC": 50,
+          "measurementId": 182,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.626902,
+          "normalizedResidual": 0.063528
+        },
+        {
+          "temperatureC": 55,
+          "measurementId": 226,
+          "strictMajorityPhase": 2,
+          "estimatedSyntheticFraction": 0.740296,
+          "normalizedResidual": 0.071034
+        },
+        {
+          "temperatureC": 62,
+          "measurementId": 270,
+          "strictMajorityPhase": 2,
+          "estimatedSyntheticFraction": 0.818544,
+          "normalizedResidual": 0.071353
+        },
+        {
+          "temperatureC": 68,
+          "measurementId": 314,
+          "strictMajorityPhase": 2,
+          "estimatedSyntheticFraction": 1,
+          "normalizedResidual": 0
+        }
+      ],
+      "monotonicDecreaseCount": 0,
+      "decreasesLargerThan005": [],
+      "maximumNormalizedResidual": 0.071353
+    },
+    "95": {
+      "rows": [
+        {
+          "temperatureC": 23,
+          "measurementId": 5,
+          "strictMajorityPhase": 0,
+          "estimatedSyntheticFraction": 0,
+          "normalizedResidual": 0
+        },
+        {
+          "temperatureC": 30,
+          "measurementId": 49,
+          "strictMajorityPhase": 0,
+          "estimatedSyntheticFraction": 0.197169,
+          "normalizedResidual": 0.06791
+        },
+        {
+          "temperatureC": 36,
+          "measurementId": 93,
+          "strictMajorityPhase": 0,
+          "estimatedSyntheticFraction": 0.198222,
+          "normalizedResidual": 0.068409
+        },
+        {
+          "temperatureC": 45,
+          "measurementId": 137,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.449463,
+          "normalizedResidual": 0.064834
+        },
+        {
+          "temperatureC": 50,
+          "measurementId": 181,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.571529,
+          "normalizedResidual": 0.066609
+        },
+        {
+          "temperatureC": 55,
+          "measurementId": 225,
+          "strictMajorityPhase": 2,
+          "estimatedSyntheticFraction": 0.689345,
+          "normalizedResidual": 0.06854
+        },
+        {
+          "temperatureC": 62,
+          "measurementId": 269,
+          "strictMajorityPhase": 2,
+          "estimatedSyntheticFraction": 0.756979,
+          "normalizedResidual": 0.067756
+        },
+        {
+          "temperatureC": 68,
+          "measurementId": 313,
+          "strictMajorityPhase": 2,
+          "estimatedSyntheticFraction": 1,
+          "normalizedResidual": 0
+        }
+      ],
+      "monotonicDecreaseCount": 0,
+      "decreasesLargerThan005": [],
+      "maximumNormalizedResidual": 0.06854
+    },
+    "96": {
+      "rows": [
+        {
+          "temperatureC": 23,
+          "measurementId": 4,
+          "strictMajorityPhase": 0,
+          "estimatedSyntheticFraction": 0,
+          "normalizedResidual": 0
+        },
+        {
+          "temperatureC": 30,
+          "measurementId": 48,
+          "strictMajorityPhase": 0,
+          "estimatedSyntheticFraction": 0.131351,
+          "normalizedResidual": 0.071915
+        },
+        {
+          "temperatureC": 36,
+          "measurementId": 92,
+          "strictMajorityPhase": 0,
+          "estimatedSyntheticFraction": 0.155094,
+          "normalizedResidual": 0.070538
+        },
+        {
+          "temperatureC": 45,
+          "measurementId": 136,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.335902,
+          "normalizedResidual": 0.067082
+        },
+        {
+          "temperatureC": 50,
+          "measurementId": 180,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.490052,
+          "normalizedResidual": 0.065767
+        },
+        {
+          "temperatureC": 55,
+          "measurementId": 224,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.694668,
+          "normalizedResidual": 0.064713
+        },
+        {
+          "temperatureC": 62,
+          "measurementId": 268,
+          "strictMajorityPhase": 2,
+          "estimatedSyntheticFraction": 0.788979,
+          "normalizedResidual": 0.068104
+        },
+        {
+          "temperatureC": 68,
+          "measurementId": 312,
+          "strictMajorityPhase": 2,
+          "estimatedSyntheticFraction": 1,
+          "normalizedResidual": 0
+        }
+      ],
+      "monotonicDecreaseCount": 0,
+      "decreasesLargerThan005": [],
+      "maximumNormalizedResidual": 0.071915
+    },
+    "97": {
+      "rows": [
+        {
+          "temperatureC": 23,
+          "measurementId": 3,
+          "strictMajorityPhase": 0,
+          "estimatedSyntheticFraction": 0,
+          "normalizedResidual": 0
+        },
+        {
+          "temperatureC": 30,
+          "measurementId": 47,
+          "strictMajorityPhase": 0,
+          "estimatedSyntheticFraction": 0.122546,
+          "normalizedResidual": 0.072315
+        },
+        {
+          "temperatureC": 36,
+          "measurementId": 91,
+          "strictMajorityPhase": 0,
+          "estimatedSyntheticFraction": 0.095013,
+          "normalizedResidual": 0.069525
+        },
+        {
+          "temperatureC": 45,
+          "measurementId": 135,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.228039,
+          "normalizedResidual": 0.068862
+        },
+        {
+          "temperatureC": 50,
+          "measurementId": 179,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.410012,
+          "normalizedResidual": 0.06625
+        },
+        {
+          "temperatureC": 55,
+          "measurementId": 223,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.698239,
+          "normalizedResidual": 0.066963
+        },
+        {
+          "temperatureC": 62,
+          "measurementId": 267,
+          "strictMajorityPhase": 1,
+          "estimatedSyntheticFraction": 0.827963,
+          "normalizedResidual": 0.066437
+        },
+        {
+          "temperatureC": 68,
+          "measurementId": 311,
+          "strictMajorityPhase": 2,
+          "estimatedSyntheticFraction": 1,
+          "normalizedResidual": 0
+        }
+      ],
+      "monotonicDecreaseCount": 1,
+      "decreasesLargerThan005": [],
+      "maximumNormalizedResidual": 0.072315
+    }
+  },
+  "trajectorySummary": {
+    "compositions": 6,
+    "compositionsWithAnyDecrease": 1,
+    "compositionsWithDecreaseLargerThan005": 0,
+    "maximumObservedNormalizedResidual": 0.072315,
+    "labelFractionRanges": {
+      "0": {
+        "observations": 13,
+        "minimum": 0,
+        "q25": 0,
+        "median": 0.095013,
+        "q75": 0.155094,
+        "maximum": 0.225093
+      },
+      "1": {
+        "observations": 20,
+        "minimum": 0.228039,
+        "q25": 0.395233,
+        "median": 0.493073,
+        "q75": 0.630387,
+        "maximum": 0.827963
+      },
+      "2": {
+        "observations": 15,
+        "minimum": 0.689345,
+        "q25": 0.733903,
+        "median": 0.788979,
+        "q75": 1,
+        "maximum": 1
+      }
+    },
+    "fixedFractionThresholdSeparatesPhase1And2": false
+  },
+  "gates": {
+    "sameCompositionCleanAndAffinePass": true,
+    "oneAndTwoBinShiftPass": false,
+    "exploratoryShiftAwareRemediationPass": true,
+    "twoPercentTextureLikeWarpPass": true,
+    "neighboringCompositionTransferPass": false,
+    "exploratoryWithinSupportInterpolationPass": false,
+    "exploratoryInterpolationWithDualShiftPass": false,
+    "outOfSupportComposition97Refused": true
+  },
+  "decision": "Do not use transferred endpoint templates or an unqualified two-endpoint model for physical phase fraction. The post-failure shift-grid and within-support interpolation remedies remain exploratory candidates for preregistration in blinded physical mixtures; refuse out-of-support extrapolation and require an independent structural holdout.",
+  "limitations": [
+    "Synthetic fraction is known by construction between two measured curves; it is not a certified crystallographic phase fraction.",
+    "The public dataset has no physical replicate, independent structure measurement, or texture measurement.",
+    "Passing a scenario establishes numerical recoverability under that perturbation only. Failing identifies a confounding direction for the physical pilot."
+  ]
+}

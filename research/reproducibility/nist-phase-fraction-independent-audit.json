@@ -1,0 +1,70 @@
+{
+  "auditId": "NIST-VO2-PHASE-FRACTION-PYTHON-0.1",
+  "generatedOn": "2026-08-12",
+  "implementation": "Python NumPy loadtxt, lstsq, and SVD; no JavaScript modules imported",
+  "source": {
+    "rawProfilesSha256": "3b47bf36b2abaef376730226e2616a353ba07571c46e71bce464cf9e9bfbe348",
+    "spectra": 352,
+    "columns": 3841
+  },
+  "independentReplay": {
+    "cleanMaximumAbsoluteError": 2.220446049250313e-15,
+    "oneBinShiftMaximumAbsoluteError": 0.07298041181459647,
+    "twoBinShiftMaximumAbsoluteError": 0.17987619765500096,
+    "nearestCompositionTransferMaximumAbsoluteError": 0.20612147010817228,
+    "comparisonsWithJavaScript": {
+      "cleanMaximumErrorMatches": true,
+      "oneBinMaximumErrorMatches": true,
+      "twoBinMaximumErrorMatches": true,
+      "nearestTransferMaximumErrorMatches": true
+    },
+    "allComparisonsPass": true
+  },
+  "localTangentAudit": {
+    "byComposition": {
+      "92": {
+        "targetVsHighShiftAbsCosine": 0.041003059413482645,
+        "targetVsLowShiftAbsCosine": 0.03523210166440621,
+        "targetVsCompositionAbsCosine": 0.014277901673716505,
+        "fourDirectionConditionNumber": 1.0718972165087042
+      },
+      "93": {
+        "targetVsHighShiftAbsCosine": 0.020956917507148884,
+        "targetVsLowShiftAbsCosine": 0.018716268843862446,
+        "targetVsCompositionAbsCosine": 0.18282645571060363,
+        "fourDirectionConditionNumber": 1.2113666847783706
+      },
+      "94": {
+        "targetVsHighShiftAbsCosine": 0.021619545823821515,
+        "targetVsLowShiftAbsCosine": 0.018906498707857534,
+        "targetVsCompositionAbsCosine": 0.17800362066188133,
+        "fourDirectionConditionNumber": 1.2013967699568682
+      },
+      "95": {
+        "targetVsHighShiftAbsCosine": 0.037469457080559744,
+        "targetVsLowShiftAbsCosine": 0.03735969655093446,
+        "targetVsCompositionAbsCosine": 0.11166715215715482,
+        "fourDirectionConditionNumber": 1.1373220903067913
+      },
+      "96": {
+        "targetVsHighShiftAbsCosine": 0.043638350572158174,
+        "targetVsLowShiftAbsCosine": 0.04132381717248145,
+        "targetVsCompositionAbsCosine": 0.03961176370180871,
+        "fourDirectionConditionNumber": 1.1176672900971691
+      },
+      "97": {
+        "targetVsHighShiftAbsCosine": 0.04215293992471294,
+        "targetVsLowShiftAbsCosine": 0.039226852176529624,
+        "targetVsCompositionAbsCosine": 0.017176550415323448,
+        "fourDirectionConditionNumber": 1.0791259636383188
+      }
+    },
+    "summary": {
+      "maximumTargetVsHighShiftAbsCosine": 0.043638350572158174,
+      "maximumTargetVsLowShiftAbsCosine": 0.04132381717248145,
+      "maximumTargetVsCompositionAbsCosine": 0.18282645571060363,
+      "maximumFourDirectionConditionNumber": 1.2113666847783706
+    }
+  },
+  "interpretation": "Tangent metrics are exploratory local diagnostics after the RC16 failure. They quantify alignment, not physical phase-fraction validity, and must be frozen before a blinded physical test."
+}
