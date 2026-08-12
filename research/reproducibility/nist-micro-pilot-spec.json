@@ -1,0 +1,52 @@
+{
+  "benchmarkId": "NIST-VO2-NESTED-MICRO-PILOT-0.1",
+  "reviewedOn": "2026-08-12",
+  "sourceDataset": "NIST-MDS2-2301",
+  "labelSplit": {
+    "selection": ["HL1", "HL2", "composition", "temperature"],
+    "independentRetrospectiveAdjudication": ["HL3", "HL4", "HL5"],
+    "rule": "HL3-HL5 majority mode is never read by the selection function"
+  },
+  "candidateBudgets": [24, 32],
+  "allocation": "Equal numbers of development-frontier and development-interior control coordinates; the 24-coordinate set must be nested inside the 32-coordinate set.",
+  "physicalDesigns": [
+    {
+      "id": "one-preparation",
+      "preparationsPerCoordinate": 1,
+      "conditionsPerPreparation": 2,
+      "technicalRepeatsPerCondition": 2
+    },
+    {
+      "id": "two-preparation",
+      "preparationsPerCoordinate": 2,
+      "conditionsPerPreparation": 2,
+      "technicalRepeatsPerCondition": 2
+    }
+  ],
+  "continuousModel": "Y_i,p,c,r = mu_i + A_i,p + beta_c + (A beta)_i,p,c + epsilon_i,p,c,r, where coordinate effects are fixed for the deliberately selected pilot, preparation and preparation-by-condition terms are pooled random components, and beta is the prespecified two-condition contrast.",
+  "primaryContinuousAdjudicands": [
+    "calibrated peak-position shift",
+    "preregistered quantitative phase fraction",
+    "aligned full-profile distance to an external reference pattern"
+  ],
+  "binaryEndpointRole": "Phase-adjudication discordance is descriptive in the micro-pilot and confirmatory only after enough independent control coordinates are acquired.",
+  "controlGate": {
+    "targetUpperRate": 0.1,
+    "confidence": 0.95,
+    "method": "one-sided exact binomial upper bound when zero control failures are observed"
+  },
+  "branchRules": {
+    "stop": [
+      "preparation identifiers or raw-frame parentage are missing",
+      "the two nominal preparations are not independent",
+      "external reference calibration fails before phase analysis",
+      "the preregistered reduction cannot be run without outcome-dependent choices"
+    ],
+    "redesign": [
+      "preparation variance cannot be separated from coordinate or residual variation",
+      "condition effects reverse across preparations without a modeled interaction",
+      "continuous control variation overlaps the prespecified minimum phase-change signal"
+    ],
+    "expand": "Expand only after the nested model is identifiable, raw-to-result lineage is complete, and a blinded second reduction reproduces the continuous variance ordering."
+  }
+}

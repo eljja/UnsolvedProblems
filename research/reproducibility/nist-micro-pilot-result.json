@@ -1,0 +1,590 @@
+{
+  "benchmarkId": "NIST-VO2-NESTED-MICRO-PILOT-0.1",
+  "generatedOn": "2026-08-12",
+  "grid": {
+    "points": 192,
+    "temperatures": 8,
+    "compositions": 24,
+    "developmentFrontierCandidates": 65,
+    "developmentInteriorCandidates": 127
+  },
+  "dataSeparation": {
+    "selectionInputs": [
+      "HL1",
+      "HL2",
+      "composition",
+      "temperature"
+    ],
+    "heldOutLabels": [
+      "HL3",
+      "HL4",
+      "HL5"
+    ],
+    "selectionFunctionReadsHeldOutLabels": false
+  },
+  "budgets": [
+    {
+      "budget": 24,
+      "frontierCoordinates": [
+        {
+          "measurementId": 8,
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 23,
+          "developmentLabels": [
+            1,
+            0
+          ]
+        },
+        {
+          "measurementId": 50,
+          "vanadiumAtomicPercent": 94,
+          "temperatureC": 30,
+          "developmentLabels": [
+            1,
+            0
+          ]
+        },
+        {
+          "measurementId": 99,
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 36,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        },
+        {
+          "measurementId": 140,
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 45,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        },
+        {
+          "measurementId": 184,
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 50,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        },
+        {
+          "measurementId": 227,
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 55,
+          "developmentLabels": [
+            2,
+            2
+          ]
+        },
+        {
+          "measurementId": 265,
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 62,
+          "developmentLabels": [
+            1,
+            1
+          ]
+        },
+        {
+          "measurementId": 309,
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 68,
+          "developmentLabels": [
+            2,
+            2
+          ]
+        },
+        {
+          "measurementId": 142,
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 45,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        },
+        {
+          "measurementId": 185,
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 50,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        },
+        {
+          "measurementId": 141,
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 45,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        },
+        {
+          "measurementId": 139,
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 45,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        }
+      ],
+      "controlCoordinates": [
+        {
+          "measurementId": 24,
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 23,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 68,
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 30,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 112,
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 36,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 156,
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 45,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 200,
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 50,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 244,
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 55,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 288,
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 62,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 332,
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 68,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 331,
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 68,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 330,
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 68,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 287,
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 62,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 329,
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 68,
+          "developmentLabel": 2
+        }
+      ],
+      "retrospectiveAdjudication": {
+        "frontierTrueBoundaryCount": 5,
+        "frontierTrueBoundaryRate": 0.416667,
+        "controlTrueInteriorCount": 12,
+        "controlTrueInteriorRate": 1,
+        "adjudicatedPhaseCounts": {
+          "0": 2,
+          "1": 10,
+          "2": 12
+        }
+      },
+      "coverage": {
+        "temperatureLevels": 8,
+        "allTemperatureLevelsCovered": true,
+        "maximumNormalizedGridDistance": 0.375
+      },
+      "binaryControlGate": {
+        "independentControlCoordinates": 12,
+        "upperRateIfZeroFailures": 0.220922,
+        "canEstablishRateBelowPointOneWithZeroFailures": false
+      },
+      "physicalDesigns": [
+        {
+          "id": "one-preparation",
+          "acquisitions": 96,
+          "preparationVarianceIdentifiable": false,
+          "conditionMainContrastIdentifiable": true,
+          "generalizedConditionVarianceIdentifiable": false,
+          "approximateDegreesOfFreedom": {
+            "preparation": 0,
+            "preparationByCondition": 24,
+            "technicalResidual": 48
+          },
+          "bestCaseVarianceRelativeStandardError": {
+            "preparation": null,
+            "preparationByCondition": 0.288675,
+            "technicalResidual": 0.204124
+          }
+        },
+        {
+          "id": "two-preparation",
+          "acquisitions": 192,
+          "preparationVarianceIdentifiable": true,
+          "conditionMainContrastIdentifiable": true,
+          "generalizedConditionVarianceIdentifiable": false,
+          "approximateDegreesOfFreedom": {
+            "preparation": 24,
+            "preparationByCondition": 48,
+            "technicalResidual": 96
+          },
+          "bestCaseVarianceRelativeStandardError": {
+            "preparation": 0.288675,
+            "preparationByCondition": 0.204124,
+            "technicalResidual": 0.144338
+          }
+        }
+      ]
+    },
+    {
+      "budget": 32,
+      "frontierCoordinates": [
+        {
+          "measurementId": 8,
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 23,
+          "developmentLabels": [
+            1,
+            0
+          ]
+        },
+        {
+          "measurementId": 50,
+          "vanadiumAtomicPercent": 94,
+          "temperatureC": 30,
+          "developmentLabels": [
+            1,
+            0
+          ]
+        },
+        {
+          "measurementId": 99,
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 36,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        },
+        {
+          "measurementId": 140,
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 45,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        },
+        {
+          "measurementId": 184,
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 50,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        },
+        {
+          "measurementId": 227,
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 55,
+          "developmentLabels": [
+            2,
+            2
+          ]
+        },
+        {
+          "measurementId": 265,
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 62,
+          "developmentLabels": [
+            1,
+            1
+          ]
+        },
+        {
+          "measurementId": 309,
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 68,
+          "developmentLabels": [
+            2,
+            2
+          ]
+        },
+        {
+          "measurementId": 142,
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 45,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        },
+        {
+          "measurementId": 185,
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 50,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        },
+        {
+          "measurementId": 141,
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 45,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        },
+        {
+          "measurementId": 139,
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 45,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        },
+        {
+          "measurementId": 143,
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 45,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        },
+        {
+          "measurementId": 183,
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 50,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        },
+        {
+          "measurementId": 186,
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 50,
+          "developmentLabels": [
+            1,
+            2
+          ]
+        },
+        {
+          "measurementId": 9,
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 23,
+          "developmentLabels": [
+            1,
+            0
+          ]
+        }
+      ],
+      "controlCoordinates": [
+        {
+          "measurementId": 24,
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 23,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 68,
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 30,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 112,
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 36,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 156,
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 45,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 200,
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 50,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 244,
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 55,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 288,
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 62,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 332,
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 68,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 331,
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 68,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 330,
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 68,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 287,
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 62,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 329,
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 68,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 286,
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 62,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 243,
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 55,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 328,
+          "vanadiumAtomicPercent": 79,
+          "temperatureC": 68,
+          "developmentLabel": 2
+        },
+        {
+          "measurementId": 285,
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 62,
+          "developmentLabel": 2
+        }
+      ],
+      "retrospectiveAdjudication": {
+        "frontierTrueBoundaryCount": 8,
+        "frontierTrueBoundaryRate": 0.5,
+        "controlTrueInteriorCount": 16,
+        "controlTrueInteriorRate": 1,
+        "adjudicatedPhaseCounts": {
+          "0": 3,
+          "1": 13,
+          "2": 16
+        }
+      },
+      "coverage": {
+        "temperatureLevels": 8,
+        "allTemperatureLevelsCovered": true,
+        "maximumNormalizedGridDistance": 0.356174
+      },
+      "binaryControlGate": {
+        "independentControlCoordinates": 16,
+        "upperRateIfZeroFailures": 0.17075,
+        "canEstablishRateBelowPointOneWithZeroFailures": false
+      },
+      "physicalDesigns": [
+        {
+          "id": "one-preparation",
+          "acquisitions": 128,
+          "preparationVarianceIdentifiable": false,
+          "conditionMainContrastIdentifiable": true,
+          "generalizedConditionVarianceIdentifiable": false,
+          "approximateDegreesOfFreedom": {
+            "preparation": 0,
+            "preparationByCondition": 32,
+            "technicalResidual": 64
+          },
+          "bestCaseVarianceRelativeStandardError": {
+            "preparation": null,
+            "preparationByCondition": 0.25,
+            "technicalResidual": 0.176777
+          }
+        },
+        {
+          "id": "two-preparation",
+          "acquisitions": 256,
+          "preparationVarianceIdentifiable": true,
+          "conditionMainContrastIdentifiable": true,
+          "generalizedConditionVarianceIdentifiable": false,
+          "approximateDegreesOfFreedom": {
+            "preparation": 32,
+            "preparationByCondition": 64,
+            "technicalResidual": 128
+          },
+          "bestCaseVarianceRelativeStandardError": {
+            "preparation": 0.25,
+            "preparationByCondition": 0.176777,
+            "technicalResidual": 0.125
+          }
+        }
+      ]
+    }
+  ],
+  "exactControlGate": {
+    "targetUpperRate": 0.1,
+    "confidence": 0.95,
+    "minimumIndependentControlsWithZeroFailures": 29,
+    "implication": "Neither micro-pilot can confirm a control discordance rate below 0.10; that binary gate belongs to the expanded study."
+  },
+  "findings": {
+    "twentyFourIsNestedInThirtyTwo": true,
+    "onePreparationCannotIdentifyPreparationVariance": true,
+    "twoPreparationsRestorePreparationContrast": true,
+    "thirtyTwoTwoPreparationAcquisitions": true,
+    "allTemperaturesCovered": true,
+    "binaryGateDeferred": true
+  },
+  "decision": "Use the nested 32-coordinate, two-preparation design (16 development-frontier and 16 interior controls; 256 acquisitions) as a variance-identification pilot. Treat the 24-coordinate/192-acquisition prefix as an operational checkpoint only. The former 98-coordinate one-preparation/392-acquisition plan cannot estimate preparation variance. Use continuous diffraction observables for the micro-pilot and defer the binary 0.10 control-rate claim until at least 29 independent controls are available even if no failures occur."
+}

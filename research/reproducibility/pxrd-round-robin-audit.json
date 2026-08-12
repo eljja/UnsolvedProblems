@@ -1,0 +1,70 @@
+{
+  "auditId": "DIFFRACTION-MULTIFACILITY-LINEAGE-AUDIT-0.1",
+  "reviewedOn": "2026-08-12",
+  "question": "Can a public diffraction round-robin currently separate specimen preparation, facility, acquisition and reduction effects from raw data?",
+  "requiredFields": [
+    "same specimen or traceable aliquots",
+    "at least two facilities",
+    "raw detector frames or native acquisition files",
+    "independent preparation identifiers",
+    "facility and instrument configuration",
+    "reduction implementation and parameters",
+    "parent-child lineage from acquisition to reported result"
+  ],
+  "candidates": [
+    {
+      "id": "IUCR-QARR-2001",
+      "technique": "powder X-ray, neutron and synchrotron diffraction quantitative phase analysis",
+      "sameMaterial": true,
+      "multiFacility": true,
+      "publicProcessedPatterns": true,
+      "publicParticipantRawAcquisitionsLocated": false,
+      "independentPreparationsIdentifiable": false,
+      "reductionLineageComplete": false,
+      "admissibleForFullVarianceDecomposition": false,
+      "evidence": "The paper reports participant-collected diffraction and 123 analyses for mandatory sample 1g, while the official public data kit exposes organizer-supplied standard patterns in multiple converted formats. No public archive of participant acquisitions with preparation and reduction parentage was located on the official project pages reviewed.",
+      "sourceIds": ["iucr_qarr_outcomes_2001", "iucr_qarr_data_kit_1998"]
+    },
+    {
+      "id": "ICDD-CORUNDUM-2004",
+      "technique": "powder X-ray diffraction",
+      "sameMaterial": true,
+      "multiFacility": true,
+      "publicProcessedPatterns": false,
+      "publicParticipantRawAcquisitionsLocated": false,
+      "independentPreparationsIdentifiable": false,
+      "reductionLineageComplete": false,
+      "admissibleForFullVarianceDecomposition": false,
+      "evidence": "The article analyzes 27 corundum patterns from six investigators and multiple laboratories and lists instrument-level differences. The official article page has no supporting-data section or download for the 27 profiles, and preparation lineage is not reported at the level needed for variance components.",
+      "sourceIds": ["iucr_pxrd_round_robin_2004"]
+    },
+    {
+      "id": "ROWLES-QPA-2021",
+      "technique": "powder X-ray diffraction quantitative phase analysis",
+      "sameMaterial": true,
+      "multiFacility": false,
+      "publicProcessedPatterns": true,
+      "publicParticipantRawAcquisitionsLocated": true,
+      "independentPreparationsIdentifiable": false,
+      "reductionLineageComplete": true,
+      "admissibleForFullVarianceDecomposition": false,
+      "evidence": "The official article links 234 diffraction files, inputs and refinement outputs for data-quality and model-parameter sensitivity. It is a strong same-source pipeline benchmark, not a multi-facility, independently prepared physical-repeat design.",
+      "sourceIds": ["iucr_qpa_robustness_2021"]
+    },
+    {
+      "id": "NANED-3DED-2026",
+      "technique": "three-dimensional electron diffraction",
+      "sameMaterial": true,
+      "multiFacility": true,
+      "publicProcessedPatterns": true,
+      "publicParticipantRawAcquisitionsLocated": false,
+      "independentPreparationsIdentifiable": false,
+      "reductionLineageComplete": false,
+      "admissibleForFullVarianceDecomposition": false,
+      "evidence": "Seven laboratories measured three samples from the same batches with five microscope types, three voltages, multiple detectors and three reduction programs. Public supplements provide reference and refined CIFs plus tables, but no raw-frame archive or preparation-to-reduction parent graph was listed on the article page.",
+      "sourceIds": ["iucr_3ded_round_robin_2026"]
+    }
+  ],
+  "finding": "No reviewed candidate jointly satisfies same-specimen multi-facility acquisition, public raw frames, repeated identifiable preparations and complete reduction lineage. This is a statement about the official pages and repositories reviewed, not proof that no such dataset exists elsewhere.",
+  "decision": "Do not estimate preparation, facility and reduction variance from these candidates. Use them to define failure modes and metadata requirements; run a prospective balanced nested pilot for the NIST VO2 boundary problem."
+}
