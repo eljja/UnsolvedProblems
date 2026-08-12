@@ -1,0 +1,313 @@
+{
+  "benchmarkId": "NIST-VO2-GRAPH-SENSITIVITY-0.1",
+  "generatedOn": "2026-08-12",
+  "denominators": {
+    "coordinates": 192,
+    "edges": 352,
+    "boundaryEdges": 36,
+    "nonBoundaryEdges": 316
+  },
+  "fullAuc": 0.755362,
+  "axisResults": {
+    "composition": {
+      "edges": 184,
+      "boundaryEdges": 13,
+      "auc": 0.704903
+    },
+    "temperature": {
+      "edges": 168,
+      "boundaryEdges": 23,
+      "auc": 0.791004
+    }
+  },
+  "deletionSensitivity": {
+    "coordinate": {
+      "validReplicates": 192,
+      "minimum": 0.745972,
+      "q025": 0.749649,
+      "median": 0.754056,
+      "q975": 0.765036,
+      "maximum": 0.775852,
+      "mostNegative": [
+        {
+          "measurementId": 137,
+          "composition": 95,
+          "temperature": 45,
+          "auc": 0.745972,
+          "deltaFromFull": -0.00939
+        },
+        {
+          "measurementId": 178,
+          "composition": 98,
+          "temperature": 50,
+          "auc": 0.746909,
+          "deltaFromFull": -0.008453
+        },
+        {
+          "measurementId": 93,
+          "composition": 95,
+          "temperature": 36,
+          "auc": 0.747096,
+          "deltaFromFull": -0.008266
+        },
+        {
+          "measurementId": 136,
+          "composition": 96,
+          "temperature": 45,
+          "auc": 0.747752,
+          "deltaFromFull": -0.00761
+        },
+        {
+          "measurementId": 179,
+          "composition": 97,
+          "temperature": 50,
+          "auc": 0.748595,
+          "deltaFromFull": -0.006767
+        }
+      ]
+    },
+    "temperature": {
+      "validReplicates": 8,
+      "minimum": 0.706184,
+      "q025": 0.709348,
+      "median": 0.752592,
+      "q975": 0.786362,
+      "maximum": 0.787547,
+      "estimates": [
+        {
+          "temperatureC": 23,
+          "auc": 0.761939,
+          "deltaFromFull": 0.006577
+        },
+        {
+          "temperatureC": 30,
+          "auc": 0.787547,
+          "deltaFromFull": 0.032185
+        },
+        {
+          "temperatureC": 36,
+          "auc": 0.780774,
+          "deltaFromFull": 0.025411
+        },
+        {
+          "temperatureC": 45,
+          "auc": 0.750282,
+          "deltaFromFull": -0.00508
+        },
+        {
+          "temperatureC": 50,
+          "auc": 0.706184,
+          "deltaFromFull": -0.049178
+        },
+        {
+          "temperatureC": 55,
+          "auc": 0.724264,
+          "deltaFromFull": -0.031099
+        },
+        {
+          "temperatureC": 62,
+          "auc": 0.74741,
+          "deltaFromFull": -0.007952
+        },
+        {
+          "temperatureC": 68,
+          "auc": 0.754902,
+          "deltaFromFull": -0.00046
+        }
+      ]
+    },
+    "composition": {
+      "validReplicates": 24,
+      "minimum": 0.736159,
+      "q025": 0.736159,
+      "median": 0.761964,
+      "q975": 0.774526,
+      "maximum": 0.776106,
+      "estimates": [
+        {
+          "vanadiumAtomicPercent": 75,
+          "auc": 0.743171,
+          "deltaFromFull": -0.012191
+        },
+        {
+          "vanadiumAtomicPercent": 76,
+          "auc": 0.736159,
+          "deltaFromFull": -0.019204
+        },
+        {
+          "vanadiumAtomicPercent": 77,
+          "auc": 0.736159,
+          "deltaFromFull": -0.019204
+        },
+        {
+          "vanadiumAtomicPercent": 78,
+          "auc": 0.736159,
+          "deltaFromFull": -0.019204
+        },
+        {
+          "vanadiumAtomicPercent": 79,
+          "auc": 0.736159,
+          "deltaFromFull": -0.019204
+        },
+        {
+          "vanadiumAtomicPercent": 80,
+          "auc": 0.736159,
+          "deltaFromFull": -0.019204
+        },
+        {
+          "vanadiumAtomicPercent": 81,
+          "auc": 0.736917,
+          "deltaFromFull": -0.018445
+        },
+        {
+          "vanadiumAtomicPercent": 82,
+          "auc": 0.744315,
+          "deltaFromFull": -0.011047
+        },
+        {
+          "vanadiumAtomicPercent": 83,
+          "auc": 0.768325,
+          "deltaFromFull": 0.012963
+        },
+        {
+          "vanadiumAtomicPercent": 84,
+          "auc": 0.764407,
+          "deltaFromFull": 0.009045
+        },
+        {
+          "vanadiumAtomicPercent": 85,
+          "auc": 0.762512,
+          "deltaFromFull": 0.00715
+        },
+        {
+          "vanadiumAtomicPercent": 86,
+          "auc": 0.761416,
+          "deltaFromFull": 0.006054
+        },
+        {
+          "vanadiumAtomicPercent": 87,
+          "auc": 0.765404,
+          "deltaFromFull": 0.010042
+        },
+        {
+          "vanadiumAtomicPercent": 88,
+          "auc": 0.765254,
+          "deltaFromFull": 0.009892
+        },
+        {
+          "vanadiumAtomicPercent": 89,
+          "auc": 0.758292,
+          "deltaFromFull": 0.00293
+        },
+        {
+          "vanadiumAtomicPercent": 90,
+          "auc": 0.762695,
+          "deltaFromFull": 0.007332
+        },
+        {
+          "vanadiumAtomicPercent": 92,
+          "auc": 0.757781,
+          "deltaFromFull": 0.002418
+        },
+        {
+          "vanadiumAtomicPercent": 93,
+          "auc": 0.773359,
+          "deltaFromFull": 0.017996
+        },
+        {
+          "vanadiumAtomicPercent": 94,
+          "auc": 0.764836,
+          "deltaFromFull": 0.009474
+        },
+        {
+          "vanadiumAtomicPercent": 95,
+          "auc": 0.75958,
+          "deltaFromFull": 0.004218
+        },
+        {
+          "vanadiumAtomicPercent": 96,
+          "auc": 0.767887,
+          "deltaFromFull": 0.012525
+        },
+        {
+          "vanadiumAtomicPercent": 97,
+          "auc": 0.76936,
+          "deltaFromFull": 0.013998
+        },
+        {
+          "vanadiumAtomicPercent": 98,
+          "auc": 0.776106,
+          "deltaFromFull": 0.020743
+        },
+        {
+          "vanadiumAtomicPercent": 99,
+          "auc": 0.768023,
+          "deltaFromFull": 0.012661
+        }
+      ]
+    }
+  },
+  "multiplierSensitivity": {
+    "vertex": {
+      "validReplicates": 5000,
+      "minimum": 0.469718,
+      "q025": 0.616828,
+      "median": 0.759608,
+      "q975": 0.877562,
+      "maximum": 0.948019
+    },
+    "spatialBlocks": {
+      "2x4": {
+        "blockHeight": 2,
+        "blockWidth": 4,
+        "availableBlocks": 147,
+        "blocksDrawnPerReplicate": 24,
+        "validReplicates": 5000,
+        "minimum": 0.404119,
+        "q025": 0.555257,
+        "median": 0.754081,
+        "q975": 0.90484,
+        "maximum": 0.979845
+      },
+      "2x6": {
+        "blockHeight": 2,
+        "blockWidth": 6,
+        "availableBlocks": 133,
+        "blocksDrawnPerReplicate": 16,
+        "validReplicates": 5000,
+        "minimum": 0.335677,
+        "q025": 0.530209,
+        "median": 0.743383,
+        "q975": 0.911984,
+        "maximum": 0.978549
+      },
+      "3x4": {
+        "blockHeight": 3,
+        "blockWidth": 4,
+        "availableBlocks": 126,
+        "blocksDrawnPerReplicate": 16,
+        "validReplicates": 5000,
+        "minimum": 0.396856,
+        "q025": 0.555223,
+        "median": 0.764513,
+        "q975": 0.923638,
+        "maximum": 0.989517
+      }
+    }
+  },
+  "gates": {
+    "fullAucAboveChance": true,
+    "everyLeaveOneTemperatureAucAboveChance": true,
+    "everyLeaveOneCompositionAucAboveChance": true,
+    "bothEdgeAxesAucAboveChance": true,
+    "vertexMultiplierLowerSensitivityQuantileAboveChance": true,
+    "everySpatialBlockLowerSensitivityQuantileAboveChance": true
+  },
+  "allRetentionGatesPass": true,
+  "decision": "Retain centered cosine distance as a preregistered primary ranking observable for the 192-acquisition checkpoint, while estimating physical variance only from new repeats.",
+  "limitations": [
+    "Multiplier percentile ranges are dependency-aware sensitivity intervals, not confidence intervals with guaranteed frequentist coverage, because the composition-temperature grid is a fixed designed domain rather than an iid sample.",
+    "Deletion and multiplier analyses address shared-coordinate and coarse spatial concentration; they do not create new instruments, preparations, facilities, or reduction pipelines.",
+    "The observable was selected on HL1-HL2 and evaluated on HL3-HL5 from the same physical profiles. Label adjudication is separated, but physical-data independence is not."
+  ]
+}

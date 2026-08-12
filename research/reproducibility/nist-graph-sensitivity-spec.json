@@ -1,0 +1,45 @@
+{
+  "benchmarkId": "NIST-VO2-GRAPH-SENSITIVITY-0.1",
+  "reviewedOn": "2026-08-12",
+  "selectedObservable": "centeredCosine",
+  "selectionHistory": "Selected using HL1-HL2 in RC13 before opening majority HL3-HL5 adjudication.",
+  "adjudicationLabels": [
+    "HL3",
+    "HL4",
+    "HL5"
+  ],
+  "perturbations": {
+    "leaveOneCoordinateOut": "Remove every edge incident to one coordinate, once per each of 192 coordinates.",
+    "leaveOneTemperatureOut": "Remove every edge incident to one of eight temperature rows.",
+    "leaveOneCompositionOut": "Remove every edge incident to one of 24 composition columns.",
+    "vertexMultiplier": "Multinomially resample 192 coordinates and weight each original edge by the product of endpoint multiplicities.",
+    "spatialBlockMultiplier": "Sample enough overlapping h-by-w coordinate blocks to cover 192 node slots and weight each original edge by endpoint multiplicity product."
+  },
+  "bootstrap": {
+    "replicates": 5000,
+    "seed": "RC14-NIST-GRAPH-20260812",
+    "spatialBlockShapes": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        4
+      ]
+    ]
+  },
+  "retentionGate": {
+    "fullAucAboveChance": true,
+    "everyLeaveOneTemperatureAucAboveChance": true,
+    "everyLeaveOneCompositionAucAboveChance": true,
+    "bothEdgeAxesAucAboveChance": true,
+    "vertexMultiplierLowerSensitivityQuantileAboveChance": true,
+    "everySpatialBlockLowerSensitivityQuantileAboveChance": true
+  },
+  "interpretationLimit": "Multiplier percentile ranges are dependency-aware sensitivity intervals, not confidence intervals with guaranteed frequentist coverage, because the composition-temperature grid is a fixed designed domain rather than an iid sample."
+}

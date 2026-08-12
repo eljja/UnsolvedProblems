@@ -1,0 +1,79 @@
+{
+  "auditId": "NIST-VO2-GEOMETRY-REFERENCE-AUDIT-0.1",
+  "reviewedOn": "2026-08-12",
+  "primarySource": {
+    "title": "An Open Combinatorial Diffraction Dataset Including Consensus Human and Machine Learning Labels with Quantified Uncertainty for Training New Machine Learning Models",
+    "publishedOn": "2021-06-09",
+    "doi": "10.1007/s40192-021-00213-8",
+    "officialPdfUrl": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=931195",
+    "officialPdfSha256": "b75156962afc1532ea38a3d1b77d00940881be07c2668aaa22b40664bc3f2560",
+    "pages": 8,
+    "procedurePageInPdf": 3
+  },
+  "originalAcquisition": {
+    "instrument": "Bruker D8 Discover powder diffractometer",
+    "positioning": "movable XYZ stage",
+    "detector": "two-dimensional detector",
+    "source": "Cu K-alpha micro-source",
+    "nominalBeamMicrometers": 500,
+    "sampleMount": "composition-spread thin-film strip mounted to a hotplate with silver paste",
+    "temperaturesK": [296, 303, 309, 318, 323, 328, 335, 341],
+    "sequence": "All compositions measured isothermally before temperature ramping to avoid hysteresis.",
+    "equilibrationMinutes": 10,
+    "nominalCompositionStepAtomicPercent": 1,
+    "fixedIncidentAngleDegrees": 14,
+    "twoThetaRangeDegrees": [18, 37.2],
+    "integrationMinutesPerPattern": 10
+  },
+  "currentOfficialReferenceCandidates": [
+    {
+      "id": "NIST-SRM-1976c",
+      "role": "powder-diffraction line-position and instrument-response candidate",
+      "form": "sintered alumina disc",
+      "relevance": "Its certified Cu K-alpha response begins at 22 degrees two-theta, overlapping part of the 18-37.2 degree survey window.",
+      "restriction": "A disc measured in its certified powder-diffraction use does not automatically reproduce the fixed-14-degree thin-film geometry."
+    },
+    {
+      "id": "NIST-SRM-2000",
+      "role": "thin single-crystal HRXRD angle and alignment candidate",
+      "form": "Si(100) block with SiGe epitaxial layer",
+      "relevance": "Provides certified reflection/transmission quantities and surface-to-crystal-plane alignment for HRXRD.",
+      "restriction": "Its certified HRXRD geometries are not the original fixed-incidence combinatorial survey geometry."
+    },
+    {
+      "id": "NIST-SRM-640f",
+      "role": "powder line-position and line-shape candidate",
+      "form": "silicon powder",
+      "relevance": "Provides a traceable powder-diffraction angular and profile reference.",
+      "restriction": "Powder form and mounting differ from the thin-film hotplate measurement and require a separate compatibility scan."
+    }
+  ],
+  "bridgeDesign": {
+    "traceableAnchor": "Measure a selected SRM only in the geometry and use prescribed by its current certificate.",
+    "sameGeometryTransferMonitor": "Measure a sealed stable transfer artifact in the exact specimen geometry, incident angle, detector window, exposure, and mounting used for VO2 acquisitions.",
+    "bridgeScan": "At session start and checkpoint, acquire the traceable anchor and transfer monitor without intervening alignment changes beyond a recorded configuration transition; estimate the transition uncertainty separately.",
+    "identifiableComponents": [
+      "traceable-anchor certificate uncertainty",
+      "configuration-transition uncertainty",
+      "same-geometry within-session drift",
+      "specimen preparation",
+      "preparation-by-condition interaction",
+      "technical residual",
+      "reduction difference"
+    ]
+  },
+  "decision": "Do not preregister SRM 640f, 1976c, or 2000 as geometry-compatible merely because it is an X-ray diffraction standard. Preserve the 24 calibration-frame budget as roles: sixteen same-geometry transfer-monitor frames and eight traceable-anchor frames. Select the actual artifacts only after certificate, angular-window, mounting, detector, and configuration-transition compatibility are documented for the chosen instrument.",
+  "failureConditions": [
+    "No certified reflection lies in a usable detector window for the selected anchor configuration.",
+    "The transfer artifact changes under the session temperature or exposure history.",
+    "Changing between anchor and specimen geometry introduces an unrecorded alignment step.",
+    "The bridge uncertainty is as large as the frontier-control contrast.",
+    "Calibration choices are changed after specimen outcomes are inspected."
+  ],
+  "sources": [
+    "https://www.nist.gov/publications/open-combinatorial-diffraction-dataset-including-consensus-human-and-machine-learning",
+    "https://www.nist.gov/programs-projects/powder-diffraction-srms",
+    "https://tsapps.nist.gov/srmext/certificates/2000.pdf",
+    "https://tsapps.nist.gov/srmext/certificates/documents/Annual_SRM_Product_List.pdf"
+  ]
+}

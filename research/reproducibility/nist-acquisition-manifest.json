@@ -24,7 +24,10 @@
   "currentReferenceMaterials": {
     "source": "https://www.nist.gov/programs-projects/powder-diffraction-srms",
     "reviewedOn": "2026-08-12",
-    "caveat": "Use SRM 640f and 1976c only when their geometry and certified use match the chosen instrument configuration; otherwise preregister an instrument-compatible traceable reference before acquisition."
+    "referenceSelectionStatus": "unresolved by design",
+    "geometryAudit": "research/reproducibility/nist-geometry-reference-audit.json",
+    "originalDatasetGeometry": "Bruker D8 Discover, Cu K-alpha, 500 micrometer beam, two-dimensional detector, fixed 14 degree incident angle, 18-37.2 degree two-theta window, ten-minute integration.",
+    "caveat": "No SRM is assumed compatible by technique name alone. A traceable anchor must be used in its certificate-prescribed geometry and connected to a stable transfer monitor measured in the exact specimen geometry; configuration-transition uncertainty is estimated separately."
   },
   "lineageSchema": {
     "requiredIdentifiers": [
@@ -992,43 +995,59 @@
           "calibrationId": "P1-C1-CAL-1",
           "sessionId": "P1-C1",
           "afterSampleRunOrder": 0,
-          "referenceMaterial": "NIST SRM 640f",
-          "purpose": "line position and line shape"
+          "referenceRole": "same-geometry transfer monitor",
+          "referenceMaterial": "sealed stable artifact to be selected after geometry audit",
+          "purpose": "start-session drift in specimen geometry"
         },
         {
           "calibrationId": "P1-C1-CAL-2",
           "sessionId": "P1-C1",
           "afterSampleRunOrder": 0,
-          "referenceMaterial": "NIST SRM 1976c",
-          "purpose": "instrument response"
+          "referenceRole": "traceable anchor",
+          "referenceMaterial": "certificate-compatible NIST SRM to be selected",
+          "candidateMaterials": [
+            "SRM 1976c",
+            "SRM 2000",
+            "SRM 640f"
+          ],
+          "purpose": "start-session traceable angular and response anchor"
         },
         {
           "calibrationId": "P1-C1-CAL-3",
           "sessionId": "P1-C1",
           "afterSampleRunOrder": 24,
-          "referenceMaterial": "NIST SRM 640f",
-          "purpose": "mid-prefix angular drift"
+          "referenceRole": "same-geometry transfer monitor",
+          "referenceMaterial": "sealed stable artifact to be selected after geometry audit",
+          "purpose": "mid-prefix drift in specimen geometry"
         },
         {
           "calibrationId": "P1-C1-CAL-4",
           "sessionId": "P1-C1",
           "afterSampleRunOrder": 48,
-          "referenceMaterial": "NIST SRM 640f",
-          "purpose": "checkpoint angular drift"
+          "referenceRole": "same-geometry transfer monitor",
+          "referenceMaterial": "sealed stable artifact to be selected after geometry audit",
+          "purpose": "checkpoint drift in specimen geometry"
         },
         {
           "calibrationId": "P1-C1-CAL-5",
           "sessionId": "P1-C1",
           "afterSampleRunOrder": 48,
-          "referenceMaterial": "NIST SRM 1976c",
-          "purpose": "checkpoint response drift"
+          "referenceRole": "traceable anchor",
+          "referenceMaterial": "certificate-compatible NIST SRM to be selected",
+          "candidateMaterials": [
+            "SRM 1976c",
+            "SRM 2000",
+            "SRM 640f"
+          ],
+          "purpose": "checkpoint traceable angular and response anchor"
         },
         {
           "calibrationId": "P1-C1-CAL-6",
           "sessionId": "P1-C1",
           "afterSampleRunOrder": 64,
-          "referenceMaterial": "NIST SRM 640f",
-          "purpose": "end-session angular drift"
+          "referenceRole": "same-geometry transfer monitor",
+          "referenceMaterial": "sealed stable artifact to be selected after geometry audit",
+          "purpose": "end-session drift in specimen geometry"
         }
       ]
     },
@@ -1747,43 +1766,59 @@
           "calibrationId": "P1-C2-CAL-1",
           "sessionId": "P1-C2",
           "afterSampleRunOrder": 0,
-          "referenceMaterial": "NIST SRM 640f",
-          "purpose": "line position and line shape"
+          "referenceRole": "same-geometry transfer monitor",
+          "referenceMaterial": "sealed stable artifact to be selected after geometry audit",
+          "purpose": "start-session drift in specimen geometry"
         },
         {
           "calibrationId": "P1-C2-CAL-2",
           "sessionId": "P1-C2",
           "afterSampleRunOrder": 0,
-          "referenceMaterial": "NIST SRM 1976c",
-          "purpose": "instrument response"
+          "referenceRole": "traceable anchor",
+          "referenceMaterial": "certificate-compatible NIST SRM to be selected",
+          "candidateMaterials": [
+            "SRM 1976c",
+            "SRM 2000",
+            "SRM 640f"
+          ],
+          "purpose": "start-session traceable angular and response anchor"
         },
         {
           "calibrationId": "P1-C2-CAL-3",
           "sessionId": "P1-C2",
           "afterSampleRunOrder": 24,
-          "referenceMaterial": "NIST SRM 640f",
-          "purpose": "mid-prefix angular drift"
+          "referenceRole": "same-geometry transfer monitor",
+          "referenceMaterial": "sealed stable artifact to be selected after geometry audit",
+          "purpose": "mid-prefix drift in specimen geometry"
         },
         {
           "calibrationId": "P1-C2-CAL-4",
           "sessionId": "P1-C2",
           "afterSampleRunOrder": 48,
-          "referenceMaterial": "NIST SRM 640f",
-          "purpose": "checkpoint angular drift"
+          "referenceRole": "same-geometry transfer monitor",
+          "referenceMaterial": "sealed stable artifact to be selected after geometry audit",
+          "purpose": "checkpoint drift in specimen geometry"
         },
         {
           "calibrationId": "P1-C2-CAL-5",
           "sessionId": "P1-C2",
           "afterSampleRunOrder": 48,
-          "referenceMaterial": "NIST SRM 1976c",
-          "purpose": "checkpoint response drift"
+          "referenceRole": "traceable anchor",
+          "referenceMaterial": "certificate-compatible NIST SRM to be selected",
+          "candidateMaterials": [
+            "SRM 1976c",
+            "SRM 2000",
+            "SRM 640f"
+          ],
+          "purpose": "checkpoint traceable angular and response anchor"
         },
         {
           "calibrationId": "P1-C2-CAL-6",
           "sessionId": "P1-C2",
           "afterSampleRunOrder": 64,
-          "referenceMaterial": "NIST SRM 640f",
-          "purpose": "end-session angular drift"
+          "referenceRole": "same-geometry transfer monitor",
+          "referenceMaterial": "sealed stable artifact to be selected after geometry audit",
+          "purpose": "end-session drift in specimen geometry"
         }
       ]
     },
@@ -2502,43 +2537,59 @@
           "calibrationId": "P2-C1-CAL-1",
           "sessionId": "P2-C1",
           "afterSampleRunOrder": 0,
-          "referenceMaterial": "NIST SRM 640f",
-          "purpose": "line position and line shape"
+          "referenceRole": "same-geometry transfer monitor",
+          "referenceMaterial": "sealed stable artifact to be selected after geometry audit",
+          "purpose": "start-session drift in specimen geometry"
         },
         {
           "calibrationId": "P2-C1-CAL-2",
           "sessionId": "P2-C1",
           "afterSampleRunOrder": 0,
-          "referenceMaterial": "NIST SRM 1976c",
-          "purpose": "instrument response"
+          "referenceRole": "traceable anchor",
+          "referenceMaterial": "certificate-compatible NIST SRM to be selected",
+          "candidateMaterials": [
+            "SRM 1976c",
+            "SRM 2000",
+            "SRM 640f"
+          ],
+          "purpose": "start-session traceable angular and response anchor"
         },
         {
           "calibrationId": "P2-C1-CAL-3",
           "sessionId": "P2-C1",
           "afterSampleRunOrder": 24,
-          "referenceMaterial": "NIST SRM 640f",
-          "purpose": "mid-prefix angular drift"
+          "referenceRole": "same-geometry transfer monitor",
+          "referenceMaterial": "sealed stable artifact to be selected after geometry audit",
+          "purpose": "mid-prefix drift in specimen geometry"
         },
         {
           "calibrationId": "P2-C1-CAL-4",
           "sessionId": "P2-C1",
           "afterSampleRunOrder": 48,
-          "referenceMaterial": "NIST SRM 640f",
-          "purpose": "checkpoint angular drift"
+          "referenceRole": "same-geometry transfer monitor",
+          "referenceMaterial": "sealed stable artifact to be selected after geometry audit",
+          "purpose": "checkpoint drift in specimen geometry"
         },
         {
           "calibrationId": "P2-C1-CAL-5",
           "sessionId": "P2-C1",
           "afterSampleRunOrder": 48,
-          "referenceMaterial": "NIST SRM 1976c",
-          "purpose": "checkpoint response drift"
+          "referenceRole": "traceable anchor",
+          "referenceMaterial": "certificate-compatible NIST SRM to be selected",
+          "candidateMaterials": [
+            "SRM 1976c",
+            "SRM 2000",
+            "SRM 640f"
+          ],
+          "purpose": "checkpoint traceable angular and response anchor"
         },
         {
           "calibrationId": "P2-C1-CAL-6",
           "sessionId": "P2-C1",
           "afterSampleRunOrder": 64,
-          "referenceMaterial": "NIST SRM 640f",
-          "purpose": "end-session angular drift"
+          "referenceRole": "same-geometry transfer monitor",
+          "referenceMaterial": "sealed stable artifact to be selected after geometry audit",
+          "purpose": "end-session drift in specimen geometry"
         }
       ]
     },
@@ -3257,43 +3308,59 @@
           "calibrationId": "P2-C2-CAL-1",
           "sessionId": "P2-C2",
           "afterSampleRunOrder": 0,
-          "referenceMaterial": "NIST SRM 640f",
-          "purpose": "line position and line shape"
+          "referenceRole": "same-geometry transfer monitor",
+          "referenceMaterial": "sealed stable artifact to be selected after geometry audit",
+          "purpose": "start-session drift in specimen geometry"
         },
         {
           "calibrationId": "P2-C2-CAL-2",
           "sessionId": "P2-C2",
           "afterSampleRunOrder": 0,
-          "referenceMaterial": "NIST SRM 1976c",
-          "purpose": "instrument response"
+          "referenceRole": "traceable anchor",
+          "referenceMaterial": "certificate-compatible NIST SRM to be selected",
+          "candidateMaterials": [
+            "SRM 1976c",
+            "SRM 2000",
+            "SRM 640f"
+          ],
+          "purpose": "start-session traceable angular and response anchor"
         },
         {
           "calibrationId": "P2-C2-CAL-3",
           "sessionId": "P2-C2",
           "afterSampleRunOrder": 24,
-          "referenceMaterial": "NIST SRM 640f",
-          "purpose": "mid-prefix angular drift"
+          "referenceRole": "same-geometry transfer monitor",
+          "referenceMaterial": "sealed stable artifact to be selected after geometry audit",
+          "purpose": "mid-prefix drift in specimen geometry"
         },
         {
           "calibrationId": "P2-C2-CAL-4",
           "sessionId": "P2-C2",
           "afterSampleRunOrder": 48,
-          "referenceMaterial": "NIST SRM 640f",
-          "purpose": "checkpoint angular drift"
+          "referenceRole": "same-geometry transfer monitor",
+          "referenceMaterial": "sealed stable artifact to be selected after geometry audit",
+          "purpose": "checkpoint drift in specimen geometry"
         },
         {
           "calibrationId": "P2-C2-CAL-5",
           "sessionId": "P2-C2",
           "afterSampleRunOrder": 48,
-          "referenceMaterial": "NIST SRM 1976c",
-          "purpose": "checkpoint response drift"
+          "referenceRole": "traceable anchor",
+          "referenceMaterial": "certificate-compatible NIST SRM to be selected",
+          "candidateMaterials": [
+            "SRM 1976c",
+            "SRM 2000",
+            "SRM 640f"
+          ],
+          "purpose": "checkpoint traceable angular and response anchor"
         },
         {
           "calibrationId": "P2-C2-CAL-6",
           "sessionId": "P2-C2",
           "afterSampleRunOrder": 64,
-          "referenceMaterial": "NIST SRM 640f",
-          "purpose": "end-session angular drift"
+          "referenceRole": "same-geometry transfer monitor",
+          "referenceMaterial": "sealed stable artifact to be selected after geometry audit",
+          "purpose": "end-session drift in specimen geometry"
         }
       ]
     }

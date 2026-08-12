@@ -1,0 +1,56 @@
+{
+  "auditId": "NIST-VO2-INDEPENDENT-SOURCE-AUDIT-0.1",
+  "reviewedOn": "2026-08-12",
+  "implementation": "Python standard library only: zipfile, ElementTree, hashlib, and json; independent of artifact-tool and the JavaScript raw-profile auditor.",
+  "sourceDirectoryCommitted": false,
+  "hashes": {
+    "Human Labels.xlsx": "0056a45f7d45694368597fe7804569339745214530584dae10652873fed38cd2",
+    "composition-temperature.txt": "6fcc4e862ea866286436a8624b2b82241ce80a08cc87eb0bb878f56ce6fdd027",
+    "VO2-Nb2O3-XRD-Combiview.txt": "3b47bf36b2abaef376730226e2616a353ba07571c46e71bce464cf9e9bfbe348",
+    "Readme.txt": "79664bb816f830b98254f13bd699fe4266097471b3a4eb8093cdf3725b475110"
+  },
+  "hashMismatches": [],
+  "workbook": {
+    "sheetRowsIncludingHeader": 193,
+    "columns": 9,
+    "header": [
+      null,
+      "V",
+      "V",
+      "temp",
+      "HL3",
+      "HL2",
+      "HL4",
+      "HL1",
+      "HL5"
+    ],
+    "headerMatches": true,
+    "recordsCompared": 192,
+    "recordCountMatches": true,
+    "cellValueMismatchRows": 0,
+    "mismatches": []
+  },
+  "compositionTemperature": {
+    "rows": 352,
+    "labelRowsMapped": 192,
+    "mappingMismatchRows": 0,
+    "mismatches": []
+  },
+  "rawProfiles": {
+    "rowsIncludingAngleAxis": 353,
+    "spectra": 352,
+    "columns": 3841,
+    "rectangular": true,
+    "twoThetaStartDegrees": 18.0,
+    "twoThetaEndDegrees": 37.2,
+    "nominalStepDegrees": 0.005,
+    "stepMismatchCount": 0
+  },
+  "findings": {
+    "allOfficialHashesMatch": true,
+    "workbookExtractionReproduced": true,
+    "labelRowsMapToCompositionRows": true,
+    "rawProfileMatrixReproduced": true
+  },
+  "decision": "Accept the current values-only label extraction and raw-row mapping only while all four file hashes match. Any future hash change invalidates this audit until the independent parser is rerun and the difference is adjudicated."
+}

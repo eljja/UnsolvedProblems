@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/nist-instrument-preregistration.schema.json",
+  "title": "NIST VO2 nested diffraction instrument preregistration",
+  "description": "Fields that must be sealed before generating live blind codes or acquiring the 192-frame checkpoint. Technique name or SRM number alone is not evidence of geometry compatibility.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "preregistrationId",
+    "sealedAt",
+    "custodian",
+    "specimenGeometry",
+    "fixedConditions",
+    "traceableAnchor",
+    "sameGeometryTransferMonitor",
+    "configurationBridge",
+    "uncertaintyBudget",
+    "checkpointGates"
+  ],
+  "properties": {
+    "preregistrationId": { "type": "string", "minLength": 1 },
+    "sealedAt": { "type": "string", "format": "date-time" },
+    "custodian": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["independentOfMeasurement", "privateRandomizationSeedCommitted"],
+      "properties": {
+        "independentOfMeasurement": { "const": true },
+        "privateRandomizationSeedCommitted": { "const": false }
+      }
+    },
+    "specimenGeometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["instrumentId", "facilityId", "source", "wavelengthNm", "beamSizeMicrometers", "incidentAngleDegrees", "detectorTwoThetaDegrees", "integrationSeconds", "mount", "temperatureProgram", "configurationHash"],
+      "properties": {
+        "instrumentId": { "type": "string", "minLength": 1 },
+        "facilityId": { "type": "string", "minLength": 1 },
+        "source": { "type": "string", "minLength": 1 },
+        "wavelengthNm": { "type": "number", "exclusiveMinimum": 0 },
+        "beamSizeMicrometers": { "type": "number", "exclusiveMinimum": 0 },
+        "incidentAngleDegrees": { "type": "number", "minimum": 0, "maximum": 90 },
+        "detectorTwoThetaDegrees": {
+          "type": "array",
+          "prefixItems": [{ "type": "number" }, { "type": "number" }],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "integrationSeconds": { "type": "number", "exclusiveMinimum": 0 },
+        "mount": { "type": "string", "minLength": 1 },
+        "temperatureProgram": { "type": "array", "minItems": 1, "items": { "type": "number" } },
+        "configurationHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "fixedConditions": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["conditionId", "singlePrespecifiedDifference", "allOtherSettingsIdentical"],
+        "properties": {
+          "conditionId": { "type": "string", "minLength": 1 },
+          "singlePrespecifiedDifference": { "type": "string", "minLength": 1 },
+          "allOtherSettingsIdentical": { "const": true }
+        }
+      }
+    },
+    "traceableAnchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["materialId", "certificateUrl", "certificateRevision", "certificateSha256", "certifiedIntendedUse", "certifiedQuantities", "scanGeometry", "usableReflections", "geometryCompatibilityArgument"],
+      "properties": {
+        "materialId": { "type": "string", "minLength": 1 },
+        "certificateUrl": { "type": "string", "format": "uri" },
+        "certificateRevision": { "type": "string", "minLength": 1 },
+        "certificateSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "certifiedIntendedUse": { "type": "string", "minLength": 1 },
+        "certifiedQuantities": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "value", "unit", "expandedUncertainty", "coverageFactor"],
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "value": { "type": "number" },
+              "unit": { "type": "string", "minLength": 1 },
+              "expandedUncertainty": { "type": "number", "minimum": 0 },
+              "coverageFactor": { "type": "number", "exclusiveMinimum": 0 }
+            }
+          }
+        },
+        "scanGeometry": { "type": "string", "minLength": 1 },
+        "usableReflections": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "geometryCompatibilityArgument": { "type": "string", "minLength": 80 }
+      }
+    },
+    "sameGeometryTransferMonitor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifactId", "sameMountAsSpecimen", "sameGeometryAsSpecimen", "stabilityProtocol", "acceptanceTolerance", "toleranceUnit"],
+      "properties": {
+        "artifactId": { "type": "string", "minLength": 1 },
+        "sameMountAsSpecimen": { "const": true },
+        "sameGeometryAsSpecimen": { "const": true },
+        "stabilityProtocol": { "type": "string", "minLength": 80 },
+        "acceptanceTolerance": { "type": "number", "exclusiveMinimum": 0 },
+        "toleranceUnit": { "type": "string", "minLength": 1 }
+      }
+    },
+    "configurationBridge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["abaCycles", "independentRealignments", "transitionEstimator", "maximumAllowedStandardUncertainty", "unit", "failureAction"],
+      "properties": {
+        "abaCycles": { "type": "integer", "minimum": 6 },
+        "independentRealignments": { "const": true },
+        "transitionEstimator": { "type": "string", "minLength": 1 },
+        "maximumAllowedStandardUncertainty": { "type": "number", "exclusiveMinimum": 0 },
+        "unit": { "type": "string", "minLength": 1 },
+        "failureAction": { "const": "stop-before-specimen-acquisition" }
+      }
+    },
+    "uncertaintyBudget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["certificate", "configurationTransition", "withinSessionDrift", "preparation", "preparationByCondition", "technicalResidual", "reduction", "maximumCombinedStandardUncertainty", "unit"],
+      "properties": {
+        "certificate": { "type": "number", "minimum": 0 },
+        "configurationTransition": { "type": "number", "minimum": 0 },
+        "withinSessionDrift": { "type": "number", "minimum": 0 },
+        "preparation": { "type": "number", "minimum": 0 },
+        "preparationByCondition": { "type": "number", "minimum": 0 },
+        "technicalResidual": { "type": "number", "minimum": 0 },
+        "reduction": { "type": "number", "minimum": 0 },
+        "maximumCombinedStandardUncertainty": { "type": "number", "exclusiveMinimum": 0 },
+        "unit": { "type": "string", "minLength": 1 }
+      }
+    },
+    "checkpointGates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["uniqueParentGraph", "noBlindLeakage", "anchorWithinCertificateUse", "transferMonitorStable", "bridgeWithinBudget", "independentReductionSameDirection", "unlockAction"],
+      "properties": {
+        "uniqueParentGraph": { "const": true },
+        "noBlindLeakage": { "const": true },
+        "anchorWithinCertificateUse": { "const": true },
+        "transferMonitorStable": { "const": true },
+        "bridgeWithinBudget": { "const": true },
+        "independentReductionSameDirection": { "const": true },
+        "unlockAction": { "const": "acquire-final-64-specimen-frames" }
+      }
+    }
+  }
+}

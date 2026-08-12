@@ -34,12 +34,12 @@ for (const preparation of ["P1", "P2"]) for (const condition of ["C1", "C2"]) {
   const extension = scheduleSegment(coordinates.filter(row => row.stage === "extension-32"), sessionId, "extension-32");
   const sampleRows = [...checkpoint, ...extension].map((row, index) => ({ runOrder: index + 1, preparationId: preparation, instrumentConditionId: condition, blindedSampleCode: `RC13-${sessionId}-${String(index + 1).padStart(2, "0")}`, ...row }));
   const calibrationRows = [
-    { afterSampleRunOrder: 0, referenceMaterial: "NIST SRM 640f", purpose: "line position and line shape" },
-    { afterSampleRunOrder: 0, referenceMaterial: "NIST SRM 1976c", purpose: "instrument response" },
-    { afterSampleRunOrder: 24, referenceMaterial: "NIST SRM 640f", purpose: "mid-prefix angular drift" },
-    { afterSampleRunOrder: 48, referenceMaterial: "NIST SRM 640f", purpose: "checkpoint angular drift" },
-    { afterSampleRunOrder: 48, referenceMaterial: "NIST SRM 1976c", purpose: "checkpoint response drift" },
-    { afterSampleRunOrder: 64, referenceMaterial: "NIST SRM 640f", purpose: "end-session angular drift" }
+    { afterSampleRunOrder: 0, referenceRole: "same-geometry transfer monitor", referenceMaterial: "sealed stable artifact to be selected after geometry audit", purpose: "start-session drift in specimen geometry" },
+    { afterSampleRunOrder: 0, referenceRole: "traceable anchor", referenceMaterial: "certificate-compatible NIST SRM to be selected", candidateMaterials: ["SRM 1976c", "SRM 2000", "SRM 640f"], purpose: "start-session traceable angular and response anchor" },
+    { afterSampleRunOrder: 24, referenceRole: "same-geometry transfer monitor", referenceMaterial: "sealed stable artifact to be selected after geometry audit", purpose: "mid-prefix drift in specimen geometry" },
+    { afterSampleRunOrder: 48, referenceRole: "same-geometry transfer monitor", referenceMaterial: "sealed stable artifact to be selected after geometry audit", purpose: "checkpoint drift in specimen geometry" },
+    { afterSampleRunOrder: 48, referenceRole: "traceable anchor", referenceMaterial: "certificate-compatible NIST SRM to be selected", candidateMaterials: ["SRM 1976c", "SRM 2000", "SRM 640f"], purpose: "checkpoint traceable angular and response anchor" },
+    { afterSampleRunOrder: 64, referenceRole: "same-geometry transfer monitor", referenceMaterial: "sealed stable artifact to be selected after geometry audit", purpose: "end-session drift in specimen geometry" }
   ].map((row, index) => ({ calibrationId: `${sessionId}-CAL-${index + 1}`, sessionId, ...row }));
   sessions.push({ sessionId, preparationId: preparation, instrumentConditionId: condition, sampleAcquisitions: sampleRows, calibrationAcquisitions: calibrationRows });
 }
@@ -56,7 +56,10 @@ const manifest = {
   currentReferenceMaterials: {
     source: "https://www.nist.gov/programs-projects/powder-diffraction-srms",
     reviewedOn: "2026-08-12",
-    caveat: "Use SRM 640f and 1976c only when their geometry and certified use match the chosen instrument configuration; otherwise preregister an instrument-compatible traceable reference before acquisition."
+    referenceSelectionStatus: "unresolved by design",
+    geometryAudit: "research/reproducibility/nist-geometry-reference-audit.json",
+    originalDatasetGeometry: "Bruker D8 Discover, Cu K-alpha, 500 micrometer beam, two-dimensional detector, fixed 14 degree incident angle, 18-37.2 degree two-theta window, ten-minute integration.",
+    caveat: "No SRM is assumed compatible by technique name alone. A traceable anchor must be used in its certificate-prescribed geometry and connected to a stable transfer monitor measured in the exact specimen geometry; configuration-transition uncertainty is estimated separately."
   },
   lineageSchema: {
     requiredIdentifiers: ["specimen_id", "aliquot_id", "preparation_id", "coordinate_id", "facility_id", "instrument_config_id", "session_id", "raw_frame_id", "calibration_id", "reduction_id", "refinement_id", "parent_ids"],
