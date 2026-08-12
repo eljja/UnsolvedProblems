@@ -280,20 +280,20 @@
         }),
         ...(problem.themes || []).flatMap(key => [meta.themes[key]?.label, meta.themes[key]?.labelEn]),
         ...(problem.technicalTopics || []).flatMap(item => [item.text, item.textEn]),
-        ...(problem.cycleResearch ? [
-          problem.cycleResearch.role?.text, problem.cycleResearch.role?.textEn,
-          problem.cycleResearch.updatedDefinition?.text, problem.cycleResearch.updatedDefinition?.textEn,
-          problem.cycleResearch.knownBoundary?.text, problem.cycleResearch.knownBoundary?.textEn,
-          problem.cycleResearch.bottleneck?.text, problem.cycleResearch.bottleneck?.textEn,
-          problem.cycleResearch.minimumAdvance?.text, problem.cycleResearch.minimumAdvance?.textEn,
-          problem.cycleResearch.decisiveTest?.text, problem.cycleResearch.decisiveTest?.textEn,
-          problem.cycleResearch.unresolved?.text, problem.cycleResearch.unresolved?.textEn,
-          ...(problem.cycleResearch.hypotheses || []).flatMap(item => [
+        ...(problem.researchHistory || (problem.cycleResearch ? [problem.cycleResearch] : [])).flatMap(record => [
+          record.role?.text, record.role?.textEn,
+          record.updatedDefinition?.text, record.updatedDefinition?.textEn,
+          record.knownBoundary?.text, record.knownBoundary?.textEn,
+          record.bottleneck?.text, record.bottleneck?.textEn,
+          record.minimumAdvance?.text, record.minimumAdvance?.textEn,
+          record.decisiveTest?.text, record.decisiveTest?.textEn,
+          record.unresolved?.text, record.unresolved?.textEn,
+          ...(record.hypotheses || []).flatMap(item => [
             item.claim?.text, item.claim?.textEn,
             item.prediction?.text, item.prediction?.textEn,
             item.reject?.text, item.reject?.textEn
           ])
-        ] : []),
+        ]),
         ...(problem.researchConnections || []).flatMap(connectionId => {
           const connection = researchConnections.find(item => item.id === connectionId);
           return connection ? [

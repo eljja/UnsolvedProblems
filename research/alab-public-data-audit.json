@@ -1,0 +1,120 @@
+{
+  "auditId": "ALAB-PUBLIC-DATA-2026-08-12",
+  "study": "An autonomous laboratory for the accelerated synthesis of inorganic materials",
+  "doi": "10.1038/s41586-023-06734-w",
+  "reviewedOn": "2026-08-12",
+  "scope": "Public article, corrected article text, Supplementary Information, Supplementary Data description, and linked public code repositories",
+  "statusVocabulary": {
+    "available": "Machine- or human-readable records are publicly accessible for the stated unit.",
+    "partial": "Only a subset, aggregate, figure, or derived record is public.",
+    "notLocated": "The audit did not locate a public record at the stated unit; this does not prove that the record does not exist privately."
+  },
+  "reportedCampaign": {
+    "targets": 57,
+    "experiments": 353,
+    "confirmedTargets": 36,
+    "xrdInconclusiveTargets": 4,
+    "uniquePairwiseReactions": 88,
+    "recipeTargetRate": 0.3
+  },
+  "components": [
+    {
+      "id": "target-registry",
+      "unit": "target",
+      "expectedCount": 57,
+      "status": "available",
+      "publicFields": ["target formula", "Materials Project identifier", "structure prototype", "space group"],
+      "location": "Supplementary Table 1, pages 23–25",
+      "limitation": "The table is a target registry, not an experiment ledger."
+    },
+    {
+      "id": "experiment-ledger",
+      "unit": "attempt",
+      "expectedCount": 353,
+      "status": "notLocated",
+      "publicFields": [],
+      "location": "The article reports 353 attempts in aggregate.",
+      "limitation": "No public table was located with one stable identifier per attempt and its target, precursor set, process, observation, adjudication, and policy decision."
+    },
+    {
+      "id": "ordered-recipe-outcomes",
+      "unit": "attempt",
+      "expectedCount": 353,
+      "status": "partial",
+      "publicFields": ["target-level order of plotted attempts", "whether plotted attempt produced target"],
+      "location": "Article Figure 2 and aggregate 30% recipe target rate",
+      "limitation": "Plot markers are not a lossless table and do not expose full recipe, intermediate-phase, uncertainty, or decision-provenance fields."
+    },
+    {
+      "id": "pairwise-reaction-table",
+      "unit": "learned pairwise reaction",
+      "expectedCount": 88,
+      "status": "available",
+      "publicFields": ["reactants", "products or inert call", "onset-temperature interval"],
+      "location": "Supplementary Table 2, pages 26–28",
+      "limitation": "The table is a many-to-one derivative of attempts and cannot reconstruct which observation caused each update."
+    },
+    {
+      "id": "successful-refined-xrd",
+      "unit": "selected successful sample",
+      "expectedCount": null,
+      "status": "partial",
+      "publicFields": ["refined XRD pattern", "refinement structure files"],
+      "location": "Supplementary Data ZIP",
+      "limitation": "The archive description covers successful syntheses and does not constitute raw, uniformly adjudicated data for all 353 attempts."
+    },
+    {
+      "id": "failed-attempt-raw-xrd",
+      "unit": "failed or inconclusive attempt",
+      "expectedCount": null,
+      "status": "notLocated",
+      "publicFields": [],
+      "location": "No complete failed-attempt archive was located in the public supplements.",
+      "limitation": "Without raw negative observations, phase-label errors and alternative failure taxonomies cannot be independently replayed."
+    },
+    {
+      "id": "target-failure-taxonomy",
+      "unit": "unobtained target",
+      "expectedCount": 17,
+      "status": "partial",
+      "publicFields": ["sluggish kinetics", "precursor volatility", "amorphization", "computational inaccuracy"],
+      "location": "Article Figure 4 and Supplementary Notes 7–8",
+      "limitation": "Target-level post-hoc categories do not label every failed recipe and can mix physical failure with measurement or model failure."
+    },
+    {
+      "id": "policy-decision-provenance",
+      "unit": "decision step",
+      "expectedCount": null,
+      "status": "notLocated",
+      "publicFields": [],
+      "location": "ARROWS code documents the policy class and file format.",
+      "limitation": "The campaign's candidate set, rejected alternatives, scores, model versions, random state, and action probability at each step were not located."
+    },
+    {
+      "id": "workflow-and-exception-provenance",
+      "unit": "attempt and task event",
+      "expectedCount": 353,
+      "status": "partial",
+      "publicFields": ["workflow description", "aggregate station exception rates"],
+      "location": "Methods, Supplementary Note 9, Supplementary Figure 6, and AlabOS documentation",
+      "limitation": "Per-attempt deviations, instrument calibration state, exceptions, and recovery actions were not located."
+    },
+    {
+      "id": "independent-adjudication-record",
+      "unit": "sample",
+      "expectedCount": 353,
+      "status": "partial",
+      "publicFields": ["manual confirmation for 36 targets", "four target-level XRD-inconclusive calls"],
+      "location": "Corrected article and Supplementary Data",
+      "limitation": "A complete attempt-level confusion matrix between autonomous and independent calls is not public."
+    }
+  ],
+  "conclusion": "The public record supports target-level outcome claims and exposes important derived reaction knowledge, but it is insufficient for deterministic replay or unbiased re-estimation of the 353-step search policy.",
+  "sources": [
+    "https://www.nature.com/articles/s41586-023-06734-w",
+    "https://www.nature.com/articles/s41586-025-09992-y",
+    "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-023-06734-w/MediaObjects/41586_2023_6734_MOESM1_ESM.pdf",
+    "https://github.com/njszym/ARROWS",
+    "https://pubs.rsc.org/en/content/articlehtml/2024/dd/d4dd00129j"
+  ]
+}

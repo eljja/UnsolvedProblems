@@ -347,8 +347,10 @@
     </article>`).join("");
   }
 
-  function cycleConnectionsHTML(item) {
-    const linked = connections.filter(connection => (item.researchConnections || []).includes(connection.id));
+  function cycleConnectionsHTML(item, cycleId) {
+    const cycle = cycles.find(entry => entry.id === cycleId);
+    const allowed = new Set(cycle?.connectionIds || []);
+    const linked = connections.filter(connection => (item.researchConnections || []).includes(connection.id) && (!allowed.size || allowed.has(connection.id)));
     return linked.map(connection => {
       const other = connection.problemIds.map(id => problems.find(problemItem => problemItem.id === id)).find(problemItem => problemItem && problemItem.id !== item.id);
       return `<article class="cycle-connection">
@@ -383,7 +385,7 @@
     setText("cycle-minimum", textPair(record.minimumAdvance));
     $("cycle-hypotheses").innerHTML = cycleHypothesesHTML(record.hypotheses);
     setText("cycle-test", textPair(record.decisiveTest));
-    $("cycle-connections").innerHTML = cycleConnectionsHTML(item);
+    $("cycle-connections").innerHTML = cycleConnectionsHTML(item, record.cycleId);
     setText("cycle-unresolved", textPair(record.unresolved));
     const logURL = new URL("research-log.html", location.href);
     logURL.searchParams.set("cycle", record.cycleId);

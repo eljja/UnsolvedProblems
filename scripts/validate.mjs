@@ -13,6 +13,9 @@ for (const file of ["data.js", "expansion-data.js", "translations.js", "priority
 }
 
 const { PROBLEMS, CATALOG_META: meta, CATALOG_SOURCES: sources, CATALOG_PRIZES: prizes, RESEARCH_CYCLES: cycles, RESEARCH_CONNECTIONS: connections } = sandbox.window;
+const audit = JSON.parse(fs.readFileSync(path.join(root, "research/alab-public-data-audit.json"), "utf8"));
+const ledgerSchema = JSON.parse(fs.readFileSync(path.join(root, "research/complete-ledger.schema.json"), "utf8"));
+const replayBenchmark = JSON.parse(fs.readFileSync(path.join(root, "research/alab-replay-benchmark.json"), "utf8"));
 assert(Array.isArray(PROBLEMS), "PROBLEMS must be an array");
 assert(PROBLEMS.length > 0, "catalog must contain at least one problem");
 assert(new Set(PROBLEMS.map(item => item.id)).size === PROBLEMS.length, "problem IDs must be unique");
@@ -114,17 +117,21 @@ for (const problem of PROBLEMS) {
     assert(deep?.synthesis?.[field]?.text?.length > 30 && deep?.synthesis?.[field]?.textEn?.length > 70, `${problem.id}: synthesis missing bilingual ${field}`);
   }
   assert(/^\d{4}-\d{2}-\d{2}$/.test(deep?.reviewedOn), `${problem.id}: missing deep research-program review date`);
-  if (problem.cycleResearch) {
-    const record = problem.cycleResearch;
-    assert(cycles.some(cycle => cycle.id === record.cycleId), `${problem.id}: unknown research cycle ${record.cycleId}`);
-    for (const key of ["role", "updatedDefinition", "knownBoundary", "bottleneck", "minimumAdvance", "decisiveTest", "unresolved"]) {
-      assert(record[key]?.text?.length > 10 && record[key]?.textEn?.length > 25, `${problem.id}: cycle research missing bilingual ${key}`);
+  const history = problem.researchHistory || [];
+  if (history.length) {
+    assert(problem.cycleResearch === history.at(-1), `${problem.id}: current cycle record must be the latest history entry`);
+    assert(new Set(history.map(record => record.cycleId)).size === history.length, `${problem.id}: research history must contain unique cycle IDs`);
+    for (const record of history) {
+      assert(cycles.some(cycle => cycle.id === record.cycleId), `${problem.id}: unknown research cycle ${record.cycleId}`);
+      for (const key of ["role", "updatedDefinition", "knownBoundary", "bottleneck", "minimumAdvance", "decisiveTest", "unresolved"]) {
+        assert(record[key]?.text?.length > 10 && record[key]?.textEn?.length > 25, `${problem.id}/${record.cycleId}: cycle research missing bilingual ${key}`);
+      }
+      assert(record.hypotheses?.length === 3, `${problem.id}/${record.cycleId}: cycle research requires 3 competing hypotheses`);
+      for (const hypothesis of record.hypotheses || []) {
+        for (const key of ["claim", "prediction", "reject"]) assert(hypothesis[key]?.text?.length > 15 && hypothesis[key]?.textEn?.length > 30, `${problem.id}/${record.cycleId}: cycle hypothesis missing bilingual ${key}`);
+      }
+      assert(record.sourceIds?.length >= 3, `${problem.id}/${record.cycleId}: cycle research requires at least 3 evidence sources`);
     }
-    assert(record.hypotheses?.length === 3, `${problem.id}: cycle research requires 3 competing hypotheses`);
-    for (const hypothesis of record.hypotheses || []) {
-      for (const key of ["claim", "prediction", "reject"]) assert(hypothesis[key]?.text?.length > 15 && hypothesis[key]?.textEn?.length > 30, `${problem.id}: cycle hypothesis missing bilingual ${key}`);
-    }
-    assert(record.sourceIds?.length >= 3, `${problem.id}: cycle research requires at least 3 evidence sources`);
     assert(problem.researchConnections?.length > 0, `${problem.id}: cycle research requires structural connections`);
   }
   for (const phrase of ["개별 논문 3편", "단일 논문 목록", "대표 연구축을 요약", "exhaustive paper bibliography", "ranking of three individual papers"]) {
@@ -192,6 +199,8 @@ for (const [sourceId, source] of Object.entries(sources)) {
   assert(Boolean(meta.disciplines[source.discipline]), `${sourceId}: source has unknown discipline`);
   assert(/^https:\/\//.test(source.url), `${sourceId}: source must use HTTPS`);
   assert(source.evidenceLabel?.length > 4 && source.evidenceLabelEn?.length > 4, `${sourceId}: source requires a bilingual evidence classification`);
+  if (source.publishedOn) assert(/^\d{4}-\d{2}-\d{2}$/.test(source.publishedOn), `${sourceId}: publication date must use YYYY-MM-DD`);
+  if (source.resultPeriod || source.resultPeriodEn) assert(source.resultPeriod?.length > 10 && source.resultPeriodEn?.length > 15, `${sourceId}: evidence period requires bilingual context`);
   assert(/^\d{4}-\d{2}-\d{2}$/.test(source.reviewedOn), `${sourceId}: source requires a review date`);
 }
 
@@ -223,10 +232,22 @@ assert(Array.isArray(connections) && connections.length > 0, "research platform 
 for (const cycle of cycles || []) {
   assert(/^RC-\d{4}-\d{2}$/.test(cycle.id), `${cycle.id}: invalid research cycle ID`);
   assert(cycle.problemIds?.length > 1, `${cycle.id}: cycle must connect multiple problems`);
+  assert(cycle.connectionIds?.length > 0, `${cycle.id}: cycle must identify its structural connections`);
   assert(cycle.verifiedFindings?.length >= 3, `${cycle.id}: cycle requires verified findings`);
   assert(cycle.log?.length >= 3, `${cycle.id}: cycle requires an auditable record`);
-  for (const problemId of cycle.problemIds || []) assert(PROBLEMS.some(problem => problem.id === problemId), `${cycle.id}: unknown problem ${problemId}`);
+  for (const problemId of cycle.problemIds || []) {
+    const problem = PROBLEMS.find(item => item.id === problemId);
+    assert(Boolean(problem), `${cycle.id}: unknown problem ${problemId}`);
+    assert(problem?.researchHistory?.some(record => record.cycleId === cycle.id), `${cycle.id}/${problemId}: missing historical problem record`);
+  }
+  for (const connectionId of cycle.connectionIds || []) assert(connections.some(connection => connection.id === connectionId), `${cycle.id}: unknown connection ${connectionId}`);
   for (const key of ["name", "thesis", "design", "adjudication", "primaryMetrics", "successRule", "stopRule", "status"]) assert(cycle.sharedProgram?.[key]?.text?.length > 5 && cycle.sharedProgram?.[key]?.textEn?.length > 10, `${cycle.id}: shared program missing bilingual ${key}`);
+  for (const sourceId of cycle.sourceIds || []) assert(Boolean(sources[sourceId]), `${cycle.id}: unknown cycle source ${sourceId}`);
+  for (const artifact of cycle.artifacts || []) {
+    assert(artifact.title?.text?.length > 5 && artifact.title?.textEn?.length > 10, `${cycle.id}: artifact requires a bilingual title`);
+    assert(artifact.description?.text?.length > 20 && artifact.description?.textEn?.length > 40, `${cycle.id}: artifact requires a bilingual description`);
+    assert(!/^https?:/.test(artifact.url) && fs.existsSync(path.join(root, artifact.url)), `${cycle.id}: missing local artifact ${artifact.url}`);
+  }
 }
 for (const connection of connections || []) {
   assert(/^CONN-[A-Z]+-\d{3}$/.test(connection.id), `${connection.id}: invalid connection ID`);
@@ -235,6 +256,24 @@ for (const connection of connections || []) {
   for (const key of ["type", "sharedBottleneck", "mapping", "failureBoundary", "minimumTest"]) assert(connection[key]?.text?.length > 5 && connection[key]?.textEn?.length > 10, `${connection.id}: missing bilingual ${key}`);
   assert(connection.sourceIds?.every(id => sources[id]), `${connection.id}: unknown evidence source`);
 }
+
+assert(audit.auditId === "ALAB-PUBLIC-DATA-2026-08-12", "A-Lab audit must expose its stable audit ID");
+assert(audit.reportedCampaign?.experiments === 353 && audit.reportedCampaign?.targets === 57, "A-Lab audit must preserve the reported campaign denominator");
+assert(audit.components?.length === 10, "A-Lab audit requires ten explicitly adjudicated public-data components");
+assert(new Set(audit.components.map(item => item.id)).size === audit.components.length, "A-Lab audit component IDs must be unique");
+for (const component of audit.components || []) {
+  assert(["available", "partial", "notLocated"].includes(component.status), `${component.id}: invalid public-data status`);
+  assert(component.location?.length > 10 && component.limitation?.length > 20, `${component.id}: audit item requires location and limitation`);
+}
+assert(ledgerSchema.$schema === "https://json-schema.org/draft/2020-12/schema", "complete ledger must use JSON Schema 2020-12");
+for (const field of ["campaignId", "experimentId", "target", "policyDecision", "recipe", "execution", "observation", "adjudication", "outcome", "provenance"]) {
+  assert(ledgerSchema.required?.includes(field) && ledgerSchema.properties?.[field], `complete ledger missing required ${field}`);
+}
+assert(replayBenchmark.status === "prospective-unexecuted", "replay benchmark must not imply execution");
+assert(replayBenchmark.policies?.length === 4, "replay benchmark requires four frozen policies");
+assert(new Set(replayBenchmark.policies.map(item => item.id)).size === 4, "replay policy IDs must be unique");
+assert(replayBenchmark.replayFidelityGate?.selectedActionAgreement === 0.9, "replay benchmark must freeze 90% action agreement");
+assert(replayBenchmark.replayFidelityGate?.topFiveRankKendallTau === 0.8, "replay benchmark must freeze Kendall tau at 0.8");
 
 const boundaryCount = PROBLEMS.filter(item => item.nature === "boundary").length;
 assert(boundaryCount > 0, "catalog must preserve clearly labeled boundary examples");
@@ -304,7 +343,7 @@ for (const asset of ["styles.css", "research-log.css", "research-cycle-data.js",
   assert(fs.existsSync(path.join(root, asset)), `missing research-log asset ${asset}`);
   assert(logHtml.includes(asset), `research-log.html does not reference ${asset}`);
 }
-for (const id of ["log-language-switch", "cycle-title", "finding-list", "program-grid", "problem-chain", "connection-map", "cycle-record", "log-sources"]) assert(logHtml.includes(`id="${id}"`), `research-log.html missing #${id}`);
+for (const id of ["log-language-switch", "cycle-title", "cycle-index", "finding-list", "program-grid", "artifacts", "artifact-grid", "problem-chain", "connection-map", "cycle-record", "log-sources"]) assert(logHtml.includes(`id="${id}"`), `research-log.html missing #${id}`);
 assert(logCss.includes("@media (max-width: 800px)"), "research log must include a mobile/tablet layout");
 
 const verificationTag = '<meta name="google-site-verification" content="tQU4ms4HtuSSnlNO14YJO8OMyy59mqlFixqXl3Lhlbw">';
@@ -355,7 +394,7 @@ assert(solveScript.includes("updateDiscoveryMetadata"), "solve.js must update ca
 assert(solveScript.includes("setCanonical"), "solve.js must inject one problem-specific canonical URL after resolving the problem");
 const appScript = fs.readFileSync(path.join(root, "app.js"), "utf8");
 assert(appScript.includes('href="${escapeHTML(solutionURL(problem))}"'), "problem cards must expose crawlable links to research pages");
-for (const asset of ["robots.txt", "sitemap.xml", "scripts/generate-sitemap.mjs", "research-cycle-data.js", "research-log.html", "research-log.js", "research-log.css"]) {
+for (const asset of ["robots.txt", "sitemap.xml", "scripts/generate-sitemap.mjs", "research-cycle-data.js", "research-log.html", "research-log.js", "research-log.css", "research/alab-public-data-audit.json", "research/complete-ledger.schema.json", "research/alab-replay-benchmark.json"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing search-discovery asset ${asset}`);
 }
 

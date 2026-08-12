@@ -1,0 +1,59 @@
+{
+  "benchmarkId": "ALAB-REPLAY-0.1",
+  "status": "prospective-unexecuted",
+  "frozenOn": "2026-08-12",
+  "scope": "Compare search policies only after a complete attempt ledger is available; do not infer missing campaign actions from the published Figure 2.",
+  "eligibility": {
+    "campaigns": "Closed-loop inorganic solid-state synthesis campaigns with stable attempt IDs and complete candidate-set snapshots.",
+    "minimumAttempts": 30,
+    "requiredLedgerCoverage": 1,
+    "requiredIndependentAdjudicationCoverage": 1,
+    "allowedOutcomeStates": ["success", "failure", "inconclusive", "execution-error"]
+  },
+  "policies": [
+    {
+      "id": "R0",
+      "name": "uniform-eligible",
+      "definition": "Uniformly sample one currently eligible recipe–temperature action; the candidate-set snapshot fixes the denominator."
+    },
+    {
+      "id": "R1",
+      "name": "thermodynamic-greedy",
+      "definition": "Choose the eligible action with the largest preregistered target-forming driving-force score without using observed intermediates."
+    },
+    {
+      "id": "R2",
+      "name": "pairwise-path-avoidance",
+      "definition": "Exclude actions predicted to repeat an observed detrimental intermediate path, then maximize the same driving-force score."
+    },
+    {
+      "id": "R3",
+      "name": "failure-calibrated-information-gain",
+      "definition": "Choose the action with maximum expected information gain over target success and failure mode after family-wise probability calibration."
+    }
+  ],
+  "primaryEndpoints": [
+    "independently confirmed targets per executed experiment",
+    "experiments to first independently confirmed target",
+    "repeated intermediate-path rate",
+    "family-wise Brier score and nominal 90% interval coverage",
+    "automated-versus-independent adjudication disagreement"
+  ],
+  "replayFidelityGate": {
+    "selectedActionAgreement": 0.9,
+    "topFiveRankKendallTau": 0.8,
+    "rule": "If either threshold fails, report only a partial reconstruction and do not claim a causal policy comparison."
+  },
+  "advanceRule": "R2 or R3 must improve independently confirmed targets per experiment by at least 30% over both R0 and R1, with a bootstrap 95% interval excluding zero and the direction repeated in a held-out chemical family.",
+  "stopRules": [
+    "Stop policy comparison if any attempt lacks a candidate-set snapshot, raw observation checksum, or final adjudication state.",
+    "Stop causal interpretation when deterministic action reconstruction fails the replay-fidelity gate and action probabilities are absent.",
+    "Stop scale-up when independent-adjudication disagreement exceeds 10% or nominal 90% interval coverage falls below 85% in any family."
+  ],
+  "uncertaintyBudget": [
+    { "category": "measurement", "control": "blind independent refinement plus orthogonal assay", "gate": "adjudication disagreement <= 10%" },
+    { "category": "policy reconstruction", "control": "candidate-set hashes, code commit, scores, random seed, selection probability", "gate": "action agreement >= 90% and Kendall tau >= 0.8" },
+    { "category": "sampling", "control": "chemical-family holdout and bootstrap by target rather than attempt", "gate": "95% interval for policy difference excludes zero" },
+    { "category": "distribution shift", "control": "report calibration separately for every held-out family", "gate": "nominal 90% coverage >= 85% per family" }
+  ]
+}

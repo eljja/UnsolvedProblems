@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/complete-ledger.schema.json",
+  "title": "Prospective autonomous materials synthesis ledger",
+  "description": "A minimum event record for replaying a closed-loop synthesis campaign without merging physical outcomes, measurement calls, and policy decisions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "campaignId", "experimentId", "target", "policyDecision", "recipe", "execution", "observation", "adjudication", "outcome", "provenance"],
+  "properties": {
+    "schemaVersion": { "const": "0.1.0" },
+    "campaignId": { "type": "string", "minLength": 1 },
+    "experimentId": { "type": "string", "minLength": 1 },
+    "parentExperimentIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formula", "structureReference", "successThreshold"],
+      "properties": {
+        "formula": { "type": "string", "minLength": 1 },
+        "materialIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "structureReference": { "type": "string", "format": "uri-reference" },
+        "successThreshold": {
+          "type": "object",
+          "required": ["targetPhaseWeightFraction", "adjudicationRuleVersion"],
+          "properties": {
+            "targetPhaseWeightFraction": { "type": "number", "minimum": 0, "maximum": 1 },
+            "adjudicationRuleVersion": { "type": "string" }
+          }
+        }
+      }
+    },
+    "policyDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policyName", "policyVersion", "codeCommit", "candidateSetHash", "selectedActionId", "eligibleActionCount", "scores", "decisionTimestamp"],
+      "properties": {
+        "policyName": { "type": "string" },
+        "policyVersion": { "type": "string" },
+        "codeCommit": { "type": "string" },
+        "modelArtifactHash": { "type": ["string", "null"] },
+        "randomSeed": { "type": ["integer", "null"] },
+        "candidateSetHash": { "type": "string" },
+        "selectedActionId": { "type": "string" },
+        "eligibleActionCount": { "type": "integer", "minimum": 1 },
+        "selectionProbability": { "type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 1 },
+        "scores": {
+          "type": "object",
+          "additionalProperties": { "type": "number" },
+          "minProperties": 1
+        },
+        "rejectedActionIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "decisionTimestamp": { "type": "string", "format": "date-time" }
+      }
+    },
+    "recipe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["precursors", "mixing", "heatingProfile", "atmosphere", "vessel", "cooling"],
+      "properties": {
+        "precursors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["formula", "amountMg", "batchId", "purityFraction"],
+            "properties": {
+              "formula": { "type": "string" },
+              "amountMg": { "type": "number", "exclusiveMinimum": 0 },
+              "batchId": { "type": "string" },
+              "purityFraction": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+              "supplier": { "type": ["string", "null"] }
+            }
+          }
+        },
+        "mixing": { "type": "object", "required": ["method", "durationSeconds"], "properties": { "method": { "type": "string" }, "durationSeconds": { "type": "number", "minimum": 0 }, "mediaBatchId": { "type": ["string", "null"] } } },
+        "heatingProfile": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["setpointC", "rampCPerMinute", "dwellSeconds"], "properties": { "setpointC": { "type": "number" }, "rampCPerMinute": { "type": "number", "exclusiveMinimum": 0 }, "dwellSeconds": { "type": "number", "minimum": 0 } } } },
+        "atmosphere": { "type": "object", "required": ["composition", "pressurePa"], "properties": { "composition": { "type": "string" }, "pressurePa": { "type": ["number", "null"], "exclusiveMinimum": 0 } } },
+        "vessel": { "type": "object", "required": ["material", "vesselId"], "properties": { "material": { "type": "string" }, "vesselId": { "type": "string" } } },
+        "cooling": { "type": "object", "required": ["method"], "properties": { "method": { "type": "string" }, "rateCPerMinute": { "type": ["number", "null"], "exclusiveMinimum": 0 } } },
+        "regrindingEvents": { "type": "array", "items": { "type": "object", "required": ["afterStep", "method"], "properties": { "afterStep": { "type": "integer", "minimum": 0 }, "method": { "type": "string" } } } }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["siteId", "instrumentIds", "startedAt", "completedAt", "deviations", "exceptions"],
+      "properties": {
+        "siteId": { "type": "string" },
+        "instrumentIds": { "type": "array", "minItems": 1, "items": { "type": "string" }, "uniqueItems": true },
+        "startedAt": { "type": "string", "format": "date-time" },
+        "completedAt": { "type": "string", "format": "date-time" },
+        "deviations": { "type": "array", "items": { "type": "string" } },
+        "exceptions": { "type": "array", "items": { "type": "object", "required": ["code", "recovery"], "properties": { "code": { "type": "string" }, "recovery": { "type": "string" } } } }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rawXrd", "calibrationId", "phaseCalls", "intermediatePhases"],
+      "properties": {
+        "rawXrd": { "type": "object", "required": ["uri", "sha256"], "properties": { "uri": { "type": "string", "format": "uri-reference" }, "sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" } } },
+        "calibrationId": { "type": "string" },
+        "phaseCalls": { "type": "array", "items": { "type": "object", "required": ["phase", "weightFraction", "standardUncertainty"], "properties": { "phase": { "type": "string" }, "weightFraction": { "type": "number", "minimum": 0, "maximum": 1 }, "standardUncertainty": { "type": "number", "minimum": 0 } } } },
+        "intermediatePhases": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "orthogonalMeasurements": { "type": "array", "items": { "type": "object", "required": ["method", "rawDataUri", "result"], "properties": { "method": { "type": "string" }, "rawDataUri": { "type": "string", "format": "uri-reference" }, "result": { "type": "string" } } } }
+      }
+    },
+    "adjudication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["automatedCall", "independentCall", "finalCall", "blinded", "ruleVersion", "disagreementReason"],
+      "properties": {
+        "automatedCall": { "enum": ["success", "failure", "inconclusive"] },
+        "independentCall": { "enum": ["success", "failure", "inconclusive"] },
+        "finalCall": { "enum": ["success", "failure", "inconclusive"] },
+        "blinded": { "type": "boolean" },
+        "ruleVersion": { "type": "string" },
+        "disagreementReason": { "type": ["string", "null"] }
+      }
+    },
+    "outcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "failureModes", "censored"],
+      "properties": {
+        "status": { "enum": ["success", "failure", "inconclusive", "execution-error"] },
+        "failureModes": { "type": "array", "items": { "enum": ["kinetic-trap", "volatility", "amorphization", "thermodynamic-model-error", "measurement-ambiguity", "execution-error", "unknown"] }, "uniqueItems": true },
+        "censored": { "type": "boolean" }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["createdAt", "recordSoftwareVersion", "license", "supersedes"],
+      "properties": {
+        "createdAt": { "type": "string", "format": "date-time" },
+        "recordSoftwareVersion": { "type": "string" },
+        "license": { "type": "string" },
+        "supersedes": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

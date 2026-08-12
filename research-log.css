@@ -11,6 +11,9 @@
 .next-card { min-height: 310px; padding: 31px; display: flex; flex-direction: column; justify-content: flex-end; color: #f8f3e7; border-radius: 24px; background: linear-gradient(145deg, rgba(255,255,255,.06), transparent 42%), var(--navy); box-shadow: 0 28px 70px rgba(11,29,38,.18); }
 .next-card span { color: var(--amber); font-size: .65rem; font-weight: 900; letter-spacing: .08em; }
 .next-card p { margin: 13px 0 0; font-family: Georgia, "Noto Serif KR", serif; font-size: 1.12rem; line-height: 1.67; }
+.cycle-index { margin-top: 22px; padding-top: 17px; display: flex; flex-wrap: wrap; gap: 7px; border-top: 1px solid rgba(255,255,255,.16); }
+.cycle-index a { padding: 7px 9px; color: #d4dfe0; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; font-family: Georgia, serif; font-size: .62rem; font-weight: 800; }
+.cycle-index a[aria-current="page"] { color: var(--navy); border-color: var(--amber); background: var(--amber); }
 .log-layout { width: var(--log-shell); margin: auto; padding: 45px 0 120px; display: grid; grid-template-columns: 190px minmax(0, 1040px); justify-content: space-between; gap: 55px; border-top: 1px solid var(--line); }
 .log-toc { position: sticky; top: 25px; height: max-content; display: grid; gap: 2px; padding: 18px 0; }
 .log-toc > span { margin-bottom: 12px; color: #8c5b13; font-size: .65rem; font-weight: 900; letter-spacing: .1em; }
@@ -37,6 +40,13 @@
 .program-grid article:first-child h3 { color: var(--amber); }
 .program-grid p { margin: 0; color: #4a5e65; font-size: .8rem; line-height: 1.72; word-break: keep-all; }
 .program-grid article:first-child p { color: #d0dbdc; }
+.artifact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
+.artifact-grid a { min-height: 210px; padding: 24px; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,253,247,.72); }
+.artifact-grid a:hover { border-color: rgba(16,35,44,.35); background: var(--white); box-shadow: 0 12px 36px rgba(11,29,38,.07); }
+.artifact-grid span { color: #8c611d; font-family: Georgia, serif; font-size: .63rem; font-weight: 800; }
+.artifact-grid strong { margin: 15px 0 10px; font-size: .94rem; line-height: 1.45; }
+.artifact-grid p { margin: 0; color: #586a70; font-size: .71rem; line-height: 1.65; }
+.artifact-grid i { margin-top: auto; padding-top: 17px; color: #805818; font-size: .64rem; font-style: normal; font-weight: 850; }
 .problem-chain { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .problem-chain a { padding: 23px 24px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,253,247,.7); }
 .problem-chain a:hover { border-color: rgba(16,35,44,.35); background: var(--white); box-shadow: 0 12px 36px rgba(11,29,38,.07); }
@@ -69,7 +79,7 @@
 .log-footer { width: var(--log-shell); min-height: 120px; margin: auto; display: grid; grid-template-columns: 1fr 1.3fr 1fr; align-items: center; gap: 25px; border-top: 1px solid var(--line); }
 .log-footer p { margin: 0; color: #68777c; font-size: .71rem; text-align: center; }
 .log-footer > a:last-child { justify-self: end; color: #795517; font-size: .71rem; font-weight: 850; }
-@media (max-width: 1050px) { .log-header { grid-template-columns: 1fr auto; } .log-header > span { display: none; } .log-layout { grid-template-columns: 1fr; } .log-toc { position: static; display: flex; flex-wrap: wrap; gap: 5px; border-bottom: 1px solid var(--line); } .log-toc > span { width: 100%; } .log-toc a { padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; } }
-@media (max-width: 800px) { .log-page { --log-shell: min(100% - 30px, 680px); } .log-header { min-height: 68px; } .log-header .brand span { display: none; } .log-back { font-size: .67rem; } .log-header .language-switch button { min-height: 29px; padding: 0 8px; font-size: .64rem; } .log-hero { min-height: auto; padding: 52px 0 62px; grid-template-columns: 1fr; gap: 35px; } .next-card { min-height: 250px; } .log-layout { padding-top: 30px; padding-bottom: 70px; } .log-section { padding: 60px 0; } .program-grid, .problem-chain { grid-template-columns: 1fr; } .program-grid article:first-child { grid-column: auto; } .connection-nodes { grid-template-columns: 1fr; } .connection-nodes i { transform: rotate(90deg); justify-self: start; } .log-footer { grid-template-columns: 1fr auto; padding: 35px 0; } .log-footer p { grid-column: 1 / -1; grid-row: 2; text-align: left; } }
+@media (max-width: 1050px) { .log-header { grid-template-columns: 1fr auto; } .log-header > span { display: none; } .log-layout { grid-template-columns: 1fr; } .log-toc { position: static; display: flex; flex-wrap: wrap; gap: 5px; border-bottom: 1px solid var(--line); } .log-toc > span { width: 100%; } .log-toc a { padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; } .artifact-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 800px) { .log-page { --log-shell: min(100% - 30px, 680px); } .log-header { min-height: 68px; } .log-header .brand span { display: none; } .log-back { font-size: .67rem; } .log-header .language-switch button { min-height: 29px; padding: 0 8px; font-size: .64rem; } .log-hero { min-height: auto; padding: 52px 0 62px; grid-template-columns: 1fr; gap: 35px; } .next-card { min-height: 250px; } .log-layout { padding-top: 30px; padding-bottom: 70px; } .log-section { padding: 60px 0; } .program-grid, .problem-chain, .artifact-grid { grid-template-columns: 1fr; } .program-grid article:first-child { grid-column: auto; } .artifact-grid a { min-height: 180px; } .connection-nodes { grid-template-columns: 1fr; } .connection-nodes i { transform: rotate(90deg); justify-self: start; } .log-footer { grid-template-columns: 1fr auto; padding: 35px 0; } .log-footer p { grid-column: 1 / -1; grid-row: 2; text-align: left; } }
 @media (max-width: 520px) { .log-header .brand img { width: 30px; height: 30px; } .log-back { max-width: 128px; line-height: 1.15; } .log-hero h1 { font-size: 2.35rem; } .next-card { padding: 25px; } .finding-list article { grid-template-columns: 33px 1fr; } .log-sources a { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
