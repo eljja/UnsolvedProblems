@@ -1,0 +1,45 @@
+{
+  "simulationId": "OPE-IDENTIFICATION-0.1",
+  "frozenOn": "2026-08-12",
+  "license": "Apache-2.0",
+  "purpose": "Test policy-value identification, estimator robustness, and interval coverage before applying off-policy evaluation to an autonomous materials campaign.",
+  "sampling": {
+    "replications": 400,
+    "campaignsPerReplication": 30,
+    "roundsPerCampaign": 20,
+    "observationsPerReplication": 600,
+    "baseSeed": 20260812,
+    "truthQuadraturePointsPerAxis": 800
+  },
+  "dataGeneratingProcess": {
+    "context": "x1 and x2 are independent Uniform(-1,1); family is Bernoulli(0.5).",
+    "potentialMeanAction0": "0.42 + 0.10*x1 - 0.06*x2 + 0.07*family + 0.05*x1*x2",
+    "treatmentEffectAction1": "0.02 + 0.12*x2 - 0.10*family + 0.05*x1^2",
+    "outcome": "Bernoulli(potentialMeanAction0 + action*treatmentEffectAction1)",
+    "targetPolicy": "Choose action 1 when x2 + 0.4*x1 - 0.2*family > 0; otherwise choose action 0.",
+    "behaviorPolicy": "A clipped logistic policy depending on x1, x2, family, and the previous visible outcome; the exact action propensity is logged.",
+    "outcomeDependentObservation": "When enabled, q=0.25+0.50*outcome+0.15*I(x1>0), producing success-enriched missing-not-at-random records."
+  },
+  "estimators": [
+    { "id": "DM", "definition": "Weighted least-squares outcome model evaluated under the target policy." },
+    { "id": "IPW", "definition": "Inverse action-propensity policy value; when declared, also inverse-weights the outcome-observation probability." },
+    { "id": "DR", "definition": "Outcome-model target prediction plus inverse-weighted observed residual." }
+  ],
+  "scenarios": [
+    { "id": "well_specified", "overlap": "moderate", "outcomeModel": "correct", "actionPropensity": "logged", "censoring": "none", "responsePropensity": "not-needed" },
+    { "id": "outcome_misspecified", "overlap": "moderate", "outcomeModel": "intercept-and-action-only", "actionPropensity": "logged", "censoring": "none", "responsePropensity": "not-needed" },
+    { "id": "propensity_misspecified", "overlap": "moderate", "outcomeModel": "correct", "actionPropensity": "fixed-action1-0.8", "censoring": "none", "responsePropensity": "not-needed" },
+    { "id": "both_misspecified", "overlap": "moderate", "outcomeModel": "fixed-zero-adversarial", "actionPropensity": "fixed-action1-0.8", "censoring": "none", "responsePropensity": "not-needed" },
+    { "id": "mnar_ignored", "overlap": "moderate", "outcomeModel": "correct", "actionPropensity": "logged", "censoring": "outcome-dependent", "responsePropensity": "ignored" },
+    { "id": "mnar_corrected_oracle", "overlap": "moderate", "outcomeModel": "correct", "actionPropensity": "logged", "censoring": "outcome-dependent", "responsePropensity": "known-oracle" },
+    { "id": "weak_overlap", "overlap": "weak", "outcomeModel": "correct", "actionPropensity": "logged", "censoring": "none", "responsePropensity": "not-needed" },
+    { "id": "zero_support", "overlap": "violated-for-x2-above-0.65", "outcomeModel": "correct", "actionPropensity": "logged", "censoring": "none", "responsePropensity": "not-needed", "causalEligibility": false }
+  ],
+  "gates": {
+    "minimumTargetActionPropensity": 0.01,
+    "minimumMeanEffectiveSampleSize": 100,
+    "acceptableAbsoluteBias": 0.02,
+    "acceptableCoverage95": [0.9, 0.98],
+    "rule": "A point estimate is not causally eligible if target-action support is zero. Synthetic estimator success does not authorize claims about a real campaign."
+  }
+}

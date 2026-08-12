@@ -28,9 +28,10 @@
   <script defer src="priority-data.js?v=20260812-cycle2"></script>
   <script defer src="prize-data.js?v=20260812-cycle2"></script>
   <script defer src="research-context.js?v=20260812-cycle2"></script>
-  <script defer src="research-cycle-data.js?v=20260812-cycle3"></script>
-  <script defer src="research-cycle-03-data.js?v=20260812-cycle3"></script>
-  <script defer src="research-log.js?v=20260812-cycle3"></script>
+  <script defer src="research-cycle-data.js?v=20260812-cycle4"></script>
+  <script defer src="research-cycle-03-data.js?v=20260812-cycle4"></script>
+  <script defer src="research-cycle-04-data.js?v=20260812-cycle4"></script>
+  <script defer src="research-log.js?v=20260812-cycle4"></script>
   <script id="cycle-structured-data" type="application/ld+json">{}</script>
 </head>
 <body class="log-page">
@@ -63,6 +64,7 @@
         <span id="toc-title">이 기록에서</span>
         <a href="#verified" id="toc-verified">확인된 사실</a>
         <a href="#program" id="toc-program">공동 시험</a>
+        <a href="#results" id="toc-results" hidden>결과 행렬</a>
         <a href="#artifacts" id="toc-artifacts" hidden>재현 자료</a>
         <a href="#problems" id="toc-problems">선정 문제</a>
         <a href="#connections" id="toc-connections">구조적 연결</a>
@@ -79,6 +81,11 @@
         <section class="log-section" id="program">
           <div class="section-head"><p class="eyebrow">02 · PROSPECTIVE PROGRAM</p><h2 id="program-title"></h2><p id="program-thesis"></p></div>
           <div class="program-grid" id="program-grid"></div>
+        </section>
+
+        <section class="log-section" id="results" hidden>
+          <div class="section-head"><p class="eyebrow">DECISION MATRIX</p><h2 id="results-title"></h2><p id="results-note"></p></div>
+          <div class="result-matrix-wrap"><table class="result-matrix" id="result-matrix"></table></div>
         </section>
 
         <section class="log-section" id="artifacts" hidden>

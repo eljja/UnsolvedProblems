@@ -8,7 +8,7 @@ const failures = [];
 const assert = (condition, message) => { if (!condition) failures.push(message); };
 
 const sandbox = { window: {} };
-for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js"]) {
+for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js"]) {
   vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }
 
@@ -19,6 +19,8 @@ const replayBenchmark = JSON.parse(fs.readFileSync(path.join(root, "research/ala
 const arrowsAudit = JSON.parse(fs.readFileSync(path.join(root, "research/replay/arrows-ybco-field-audit.json"), "utf8"));
 const replayFixture = JSON.parse(fs.readFileSync(path.join(root, "research/replay/synthetic-replay-fixture.json"), "utf8"));
 const replayVerification = JSON.parse(fs.readFileSync(path.join(root, "research/replay/verification-result.json"), "utf8"));
+const opeSpec = JSON.parse(fs.readFileSync(path.join(root, "research/ope/simulation-spec.json"), "utf8"));
+const opeResult = JSON.parse(fs.readFileSync(path.join(root, "research/ope/simulation-result.json"), "utf8"));
 assert(Array.isArray(PROBLEMS), "PROBLEMS must be an array");
 assert(PROBLEMS.length > 0, "catalog must contain at least one problem");
 assert(new Set(PROBLEMS.map(item => item.id)).size === PROBLEMS.length, "problem IDs must be unique");
@@ -251,6 +253,11 @@ for (const cycle of cycles || []) {
     assert(artifact.description?.text?.length > 20 && artifact.description?.textEn?.length > 40, `${cycle.id}: artifact requires a bilingual description`);
     assert(!/^https?:/.test(artifact.url) && fs.existsSync(path.join(root, artifact.url)), `${cycle.id}: missing local artifact ${artifact.url}`);
   }
+  if (cycle.resultMatrix) {
+    assert(cycle.resultMatrix.title?.text?.length > 5 && cycle.resultMatrix.title?.textEn?.length > 10, `${cycle.id}: result matrix requires a bilingual title`);
+    assert(cycle.resultMatrix.columns?.length >= 3 && cycle.resultMatrix.rows?.length >= 2, `${cycle.id}: result matrix requires columns and rows`);
+    for (const row of cycle.resultMatrix.rows || []) assert(row.values?.length === cycle.resultMatrix.columns.length - 1, `${cycle.id}: result row width mismatch`);
+  }
 }
 for (const connection of connections || []) {
   assert(/^CONN-[A-Z]+-\d{3}$/.test(connection.id), `${connection.id}: invalid connection ID`);
@@ -286,6 +293,13 @@ assert(replayVerification.selectionComparisons === 24 && replayVerification.sele
 assert(replayVerification.fullRankingAgreement === 1 && replayVerification.goldenRankingAgreement === 1, "independent replay must agree on complete and golden rankings");
 assert(replayVerification.ablations?.removeDetrimentalPathHistory?.changedSelections === 3, "R2 ablation must preserve three changed selections");
 assert(replayVerification.ablations?.removeSelectionProbability?.causalReplayEligible === false, "null propensities cannot imply causal eligibility");
+assert(opeSpec.simulationId === "OPE-IDENTIFICATION-0.1" && opeSpec.scenarios?.length === 8, "OPE specification must preserve eight frozen scenarios");
+assert(opeSpec.sampling?.replications === 400 && opeSpec.sampling?.observationsPerReplication === 600, "OPE specification must preserve simulation denominators");
+assert(opeResult.simulationId === opeSpec.simulationId && opeResult.scenarios?.length === 8, "OPE result must match its frozen specification");
+assert(opeResult.truth?.targetPolicyValue === 0.4793, "OPE result must preserve the quadrature truth value");
+assert(Object.values(opeResult.preregisteredFindings || {}).every(Boolean), "every preregistered OPE finding must be adjudicated true");
+assert(opeResult.scenarios.find(item => item.scenarioId === "weak_overlap")?.benchmarkEligible === false, "weak overlap must fail the precision benchmark gate");
+assert(opeResult.scenarios.find(item => item.scenarioId === "zero_support")?.causalEligible === false, "zero support must refuse causal point identification");
 
 const boundaryCount = PROBLEMS.filter(item => item.nature === "boundary").length;
 assert(boundaryCount > 0, "catalog must preserve clearly labeled boundary examples");
@@ -303,7 +317,7 @@ const robots = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 const license = fs.readFileSync(path.join(root, "LICENSE"), "utf8");
 const packageMetadata = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"));
-const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "solve.html", "solve.js", "research-log.html", "research-log.js"]
+const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "solve.html", "solve.js", "research-log.html", "research-log.js"]
   .map(file => fs.readFileSync(path.join(root, file), "utf8"))
   .join("\n");
 for (const phrase of [
@@ -330,11 +344,11 @@ for (const phrase of [
 ]) {
   assert(!publicCopy.includes(phrase), `public copy contains process-oriented wording: ${phrase}`);
 }
-for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "app.js", "assets/mark.svg", "assets/og-744.png"]) {
+for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "app.js", "assets/mark.svg", "assets/og-744.png"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing asset ${asset}`);
   assert(html.includes(asset), `index.html does not reference ${asset}`);
 }
-for (const asset of ["styles.css", "solve.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "solve.js", "assets/mark.svg"]) {
+for (const asset of ["styles.css", "solve.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "solve.js", "assets/mark.svg"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing research page asset ${asset}`);
   assert(solveHtml.includes(asset), `solve.html does not reference ${asset}`);
 }
@@ -351,12 +365,13 @@ for (const id of ["back-to-atlas", "solution-language-switch", "solution-title",
 }
 assert(fs.readFileSync(path.join(root, "app.js"), "utf8").includes("solve.html"), "main problem details must link to a separate research-attempt page");
 assert(solveCss.includes("@media (max-width: 800px)"), "research-attempt page must include a mobile/tablet layout");
-for (const asset of ["styles.css", "research-log.css", "research-cycle-data.js", "research-cycle-03-data.js", "research-log.js", "assets/mark.svg"]) {
+for (const asset of ["styles.css", "research-log.css", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-log.js", "assets/mark.svg"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing research-log asset ${asset}`);
   assert(logHtml.includes(asset), `research-log.html does not reference ${asset}`);
 }
-for (const id of ["log-language-switch", "cycle-title", "cycle-index", "finding-list", "program-grid", "artifacts", "artifact-grid", "problem-chain", "connection-map", "cycle-record", "log-sources"]) assert(logHtml.includes(`id="${id}"`), `research-log.html missing #${id}`);
+for (const id of ["log-language-switch", "cycle-title", "cycle-index", "finding-list", "program-grid", "results", "result-matrix", "artifacts", "artifact-grid", "problem-chain", "connection-map", "cycle-record", "log-sources"]) assert(logHtml.includes(`id="${id}"`), `research-log.html missing #${id}`);
 assert(logCss.includes("@media (max-width: 800px)"), "research log must include a mobile/tablet layout");
+assert(logCss.includes(".result-matrix-wrap { overflow-x: auto"), "research result matrix must scroll on narrow screens");
 
 const verificationTag = '<meta name="google-site-verification" content="tQU4ms4HtuSSnlNO14YJO8OMyy59mqlFixqXl3Lhlbw">';
 assert(html.includes(verificationTag), "index.html must contain the exact Google site-verification tag");

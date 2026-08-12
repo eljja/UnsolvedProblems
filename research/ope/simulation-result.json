@@ -1,0 +1,375 @@
+{
+  "resultId": "OPE-IDENTIFICATION-RESULT-2026-08-12",
+  "simulationId": "OPE-IDENTIFICATION-0.1",
+  "generatedOn": "2026-08-12",
+  "truth": {
+    "targetPolicyValue": 0.4793,
+    "method": "800x800 midpoint quadrature for each of two families"
+  },
+  "design": {
+    "replications": 400,
+    "campaignsPerReplication": 30,
+    "roundsPerCampaign": 20,
+    "observationsPerReplication": 600,
+    "baseSeed": 20260812,
+    "truthQuadraturePointsPerAxis": 800
+  },
+  "intervalMethod": "Campaign-clustered influence-function standard errors with a normal 95% interval; ridge 1e-8 stabilizes outcome-model normal equations.",
+  "scenarios": [
+    {
+      "scenarioId": "well_specified",
+      "causalEligible": true,
+      "precisionEligible": true,
+      "benchmarkEligible": true,
+      "eligibilityReason": "Target actions retain logged support and mean effective sample size exceeds the frozen precision gate.",
+      "meanObservedFraction": 1,
+      "minimumTargetActionPropensity": 0.19185,
+      "meanZeroSupportFraction": 0,
+      "meanEffectiveSampleSize": 260.180848,
+      "estimators": {
+        "DM": {
+          "meanEstimate": 0.481201,
+          "bias": 0.001901,
+          "rmse": 0.029051,
+          "empiricalSd": 0.028989,
+          "meanStandardError": 0.027922,
+          "coverage95": 0.9325,
+          "meanIntervalWidth95": 0.109454,
+          "diagnosticOnly": false
+        },
+        "IPW": {
+          "meanEstimate": 0.482931,
+          "bias": 0.003631,
+          "rmse": 0.038268,
+          "empiricalSd": 0.038095,
+          "meanStandardError": 0.038435,
+          "coverage95": 0.9425,
+          "meanIntervalWidth95": 0.150663,
+          "diagnosticOnly": false
+        },
+        "DR": {
+          "meanEstimate": 0.482381,
+          "bias": 0.003081,
+          "rmse": 0.031625,
+          "empiricalSd": 0.031475,
+          "meanStandardError": 0.030675,
+          "coverage95": 0.9325,
+          "meanIntervalWidth95": 0.120245,
+          "diagnosticOnly": false
+        }
+      }
+    },
+    {
+      "scenarioId": "outcome_misspecified",
+      "causalEligible": true,
+      "precisionEligible": true,
+      "benchmarkEligible": true,
+      "eligibilityReason": "Target actions retain logged support and mean effective sample size exceeds the frozen precision gate.",
+      "meanObservedFraction": 1,
+      "minimumTargetActionPropensity": 0.191479,
+      "meanZeroSupportFraction": 0,
+      "meanEffectiveSampleSize": 260.23742,
+      "estimators": {
+        "DM": {
+          "meanEstimate": 0.440636,
+          "bias": -0.038664,
+          "rmse": 0.04459,
+          "empiricalSd": 0.022211,
+          "meanStandardError": 0.020422,
+          "coverage95": 0.5275,
+          "meanIntervalWidth95": 0.080053,
+          "diagnosticOnly": false
+        },
+        "IPW": {
+          "meanEstimate": 0.477057,
+          "bias": -0.002243,
+          "rmse": 0.038286,
+          "empiricalSd": 0.03822,
+          "meanStandardError": 0.037903,
+          "coverage95": 0.95,
+          "meanIntervalWidth95": 0.148581,
+          "diagnosticOnly": false
+        },
+        "DR": {
+          "meanEstimate": 0.476896,
+          "bias": -0.002404,
+          "rmse": 0.031767,
+          "empiricalSd": 0.031675,
+          "meanStandardError": 0.030874,
+          "coverage95": 0.9475,
+          "meanIntervalWidth95": 0.121027,
+          "diagnosticOnly": false
+        }
+      }
+    },
+    {
+      "scenarioId": "propensity_misspecified",
+      "causalEligible": true,
+      "precisionEligible": true,
+      "benchmarkEligible": true,
+      "eligibilityReason": "Target actions retain logged support and mean effective sample size exceeds the frozen precision gate.",
+      "meanObservedFraction": 1,
+      "minimumTargetActionPropensity": 0.191839,
+      "meanZeroSupportFraction": 0,
+      "meanEffectiveSampleSize": 210.52518,
+      "estimators": {
+        "DM": {
+          "meanEstimate": 0.478114,
+          "bias": -0.001186,
+          "rmse": 0.028945,
+          "empiricalSd": 0.028921,
+          "meanStandardError": 0.027904,
+          "coverage95": 0.93,
+          "meanIntervalWidth95": 0.109385,
+          "diagnosticOnly": false
+        },
+        "IPW": {
+          "meanEstimate": 0.697453,
+          "bias": 0.218153,
+          "rmse": 0.226198,
+          "empiricalSd": 0.059787,
+          "meanStandardError": 0.062606,
+          "coverage95": 0.0525,
+          "meanIntervalWidth95": 0.245416,
+          "diagnosticOnly": false
+        },
+        "DR": {
+          "meanEstimate": 0.477025,
+          "bias": -0.002275,
+          "rmse": 0.033994,
+          "empiricalSd": 0.033917,
+          "meanStandardError": 0.050784,
+          "coverage95": 0.99,
+          "meanIntervalWidth95": 0.199074,
+          "diagnosticOnly": false
+        }
+      }
+    },
+    {
+      "scenarioId": "both_misspecified",
+      "causalEligible": true,
+      "precisionEligible": true,
+      "benchmarkEligible": true,
+      "eligibilityReason": "Target actions retain logged support and mean effective sample size exceeds the frozen precision gate.",
+      "meanObservedFraction": 1,
+      "minimumTargetActionPropensity": 0.191899,
+      "meanZeroSupportFraction": 0,
+      "meanEffectiveSampleSize": 209.522029,
+      "estimators": {
+        "DM": {
+          "meanEstimate": 0,
+          "bias": -0.4793,
+          "rmse": 0.4793,
+          "empiricalSd": 0,
+          "meanStandardError": 0,
+          "coverage95": 0,
+          "meanIntervalWidth95": 0,
+          "diagnosticOnly": false
+        },
+        "IPW": {
+          "meanEstimate": 0.698292,
+          "bias": 0.218992,
+          "rmse": 0.228191,
+          "empiricalSd": 0.06414,
+          "meanStandardError": 0.061424,
+          "coverage95": 0.0525,
+          "meanIntervalWidth95": 0.240782,
+          "diagnosticOnly": false
+        },
+        "DR": {
+          "meanEstimate": 0.698292,
+          "bias": 0.218992,
+          "rmse": 0.228191,
+          "empiricalSd": 0.06414,
+          "meanStandardError": 0.061424,
+          "coverage95": 0.0525,
+          "meanIntervalWidth95": 0.240782,
+          "diagnosticOnly": false
+        }
+      }
+    },
+    {
+      "scenarioId": "mnar_ignored",
+      "causalEligible": true,
+      "precisionEligible": true,
+      "benchmarkEligible": true,
+      "eligibilityReason": "Target actions retain logged support and mean effective sample size exceeds the frozen precision gate.",
+      "meanObservedFraction": 0.544262,
+      "minimumTargetActionPropensity": 0.191882,
+      "meanZeroSupportFraction": 0,
+      "meanEffectiveSampleSize": 145.902393,
+      "estimators": {
+        "DM": {
+          "meanEstimate": 0.702155,
+          "bias": 0.222855,
+          "rmse": 0.225502,
+          "empiricalSd": 0.034449,
+          "meanStandardError": 0.034414,
+          "coverage95": 0,
+          "meanIntervalWidth95": 0.134901,
+          "diagnosticOnly": false
+        },
+        "IPW": {
+          "meanEstimate": 0.400282,
+          "bias": -0.079018,
+          "rmse": 0.086907,
+          "empiricalSd": 0.036179,
+          "meanStandardError": 0.035819,
+          "coverage95": 0.405,
+          "meanIntervalWidth95": 0.140409,
+          "diagnosticOnly": false
+        },
+        "DR": {
+          "meanEstimate": 0.702835,
+          "bias": 0.223535,
+          "rmse": 0.226451,
+          "empiricalSd": 0.036223,
+          "meanStandardError": 0.020953,
+          "coverage95": 0,
+          "meanIntervalWidth95": 0.082136,
+          "diagnosticOnly": false
+        }
+      }
+    },
+    {
+      "scenarioId": "mnar_corrected_oracle",
+      "causalEligible": true,
+      "precisionEligible": true,
+      "benchmarkEligible": true,
+      "eligibilityReason": "Target actions retain logged support and mean effective sample size exceeds the frozen precision gate.",
+      "meanObservedFraction": 0.546296,
+      "minimumTargetActionPropensity": 0.191888,
+      "meanZeroSupportFraction": 0,
+      "meanEffectiveSampleSize": 113.980041,
+      "estimators": {
+        "DM": {
+          "meanEstimate": 0.48724,
+          "bias": 0.00794,
+          "rmse": 0.04567,
+          "empiricalSd": 0.044975,
+          "meanStandardError": 0.04159,
+          "coverage95": 0.9125,
+          "meanIntervalWidth95": 0.163033,
+          "diagnosticOnly": false
+        },
+        "IPW": {
+          "meanEstimate": 0.479083,
+          "bias": -0.000217,
+          "rmse": 0.043955,
+          "empiricalSd": 0.043955,
+          "meanStandardError": 0.042844,
+          "coverage95": 0.9325,
+          "meanIntervalWidth95": 0.167949,
+          "diagnosticOnly": false
+        },
+        "DR": {
+          "meanEstimate": 0.486909,
+          "bias": 0.007609,
+          "rmse": 0.047496,
+          "empiricalSd": 0.046882,
+          "meanStandardError": 0.044291,
+          "coverage95": 0.9225,
+          "meanIntervalWidth95": 0.173623,
+          "diagnosticOnly": false
+        }
+      }
+    },
+    {
+      "scenarioId": "weak_overlap",
+      "causalEligible": true,
+      "precisionEligible": false,
+      "benchmarkEligible": false,
+      "eligibilityReason": "Target actions retain support, but mean effective sample size is below the frozen precision gate; estimates remain diagnostic.",
+      "meanObservedFraction": 1,
+      "minimumTargetActionPropensity": 0.012137,
+      "meanZeroSupportFraction": 0,
+      "meanEffectiveSampleSize": 89.242168,
+      "estimators": {
+        "DM": {
+          "meanEstimate": 0.478062,
+          "bias": -0.001238,
+          "rmse": 0.031331,
+          "empiricalSd": 0.031307,
+          "meanStandardError": 0.032569,
+          "coverage95": 0.95,
+          "meanIntervalWidth95": 0.12767,
+          "diagnosticOnly": true
+        },
+        "IPW": {
+          "meanEstimate": 0.475725,
+          "bias": -0.003575,
+          "rmse": 0.076284,
+          "empiricalSd": 0.0762,
+          "meanStandardError": 0.071455,
+          "coverage95": 0.9,
+          "meanIntervalWidth95": 0.280103,
+          "diagnosticOnly": true
+        },
+        "DR": {
+          "meanEstimate": 0.473965,
+          "bias": -0.005335,
+          "rmse": 0.05623,
+          "empiricalSd": 0.055976,
+          "meanStandardError": 0.05449,
+          "coverage95": 0.945,
+          "meanIntervalWidth95": 0.213601,
+          "diagnosticOnly": true
+        }
+      }
+    },
+    {
+      "scenarioId": "zero_support",
+      "causalEligible": false,
+      "precisionEligible": true,
+      "benchmarkEligible": false,
+      "eligibilityReason": "At least one target action has zero or below-gate behavior-policy support; point identification is refused regardless of model fit.",
+      "meanObservedFraction": 1,
+      "minimumTargetActionPropensity": 0,
+      "meanZeroSupportFraction": 0.174871,
+      "meanEffectiveSampleSize": 215.994209,
+      "estimators": {
+        "DM": {
+          "meanEstimate": 0.480977,
+          "bias": 0.001677,
+          "rmse": 0.033239,
+          "empiricalSd": 0.033196,
+          "meanStandardError": 0.032847,
+          "coverage95": 0.935,
+          "meanIntervalWidth95": 0.128762,
+          "diagnosticOnly": true
+        },
+        "IPW": {
+          "meanEstimate": 0.395252,
+          "bias": -0.084048,
+          "rmse": 0.091906,
+          "empiricalSd": 0.037183,
+          "meanStandardError": 0.035316,
+          "coverage95": 0.38,
+          "meanIntervalWidth95": 0.138439,
+          "diagnosticOnly": true
+        },
+        "DR": {
+          "meanEstimate": 0.481642,
+          "bias": 0.002342,
+          "rmse": 0.035225,
+          "empiricalSd": 0.035147,
+          "meanStandardError": 0.027534,
+          "coverage95": 0.88,
+          "meanIntervalWidth95": 0.107935,
+          "diagnosticOnly": true
+        }
+      }
+    }
+  ],
+  "preregisteredFindings": {
+    "doubleRobustnessOutcomeMisspecified": true,
+    "doubleRobustnessPropensityMisspecified": true,
+    "bothMisspecifiedFailsBiasGate": true,
+    "mnarCorrectionRestoresBiasGate": true,
+    "mnarIgnoringFailsBiasGate": true,
+    "weakOverlapReducesEss": true,
+    "weakOverlapFailsPrecisionGate": true,
+    "zeroSupportRejected": true
+  },
+  "interpretationBoundary": "This experiment tests estimator logic under a fully known synthetic data-generating process. It does not estimate any ARROWS or A-Lab policy value and does not validate transport to real chemistry."
+}

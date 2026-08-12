@@ -40,6 +40,14 @@
 .program-grid article:first-child h3 { color: var(--amber); }
 .program-grid p { margin: 0; color: #4a5e65; font-size: .8rem; line-height: 1.72; word-break: keep-all; }
 .program-grid article:first-child p { color: #d0dbdc; }
+.result-matrix-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,253,247,.72); }
+.result-matrix { width: 100%; min-width: 720px; border-collapse: collapse; }
+.result-matrix th, .result-matrix td { padding: 15px 17px; border-bottom: 1px solid var(--line); color: #4d6168; font-size: .72rem; line-height: 1.45; text-align: right; white-space: nowrap; }
+.result-matrix thead th { color: #f5ead4; background: var(--navy); font-size: .62rem; letter-spacing: .035em; }
+.result-matrix th:first-child { text-align: left; }
+.result-matrix tbody th { color: var(--ink); font-weight: 800; }
+.result-matrix tbody tr:last-child th, .result-matrix tbody tr:last-child td { border-bottom: 0; }
+.result-matrix tbody tr:nth-child(even) { background: rgba(16,35,44,.025); }
 .artifact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
 .artifact-grid a { min-height: 210px; padding: 24px; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,253,247,.72); }
 .artifact-grid a:hover { border-color: rgba(16,35,44,.35); background: var(--white); box-shadow: 0 12px 36px rgba(11,29,38,.07); }
