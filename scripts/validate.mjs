@@ -8,7 +8,7 @@ const failures = [];
 const assert = (condition, message) => { if (!condition) failures.push(message); };
 
 const sandbox = { window: {} };
-for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-05-data.js", "research-cycle-06-data.js", "research-cycle-07-data.js", "research-cycle-08-data.js", "research-cycle-09-data.js"]) {
+for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-05-data.js", "research-cycle-06-data.js", "research-cycle-07-data.js", "research-cycle-08-data.js", "research-cycle-09-data.js", "research-cycle-10-data.js"]) {
   vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }
 
@@ -41,6 +41,11 @@ const plosFollowupAudit = JSON.parse(fs.readFileSync(path.join(root, "research/e
 const nistLabelAudit = JSON.parse(fs.readFileSync(path.join(root, "research/external-audit/nist-vo2-2020/audit-result.json"), "utf8"));
 const nistAcquisitionSpec = JSON.parse(fs.readFileSync(path.join(root, "research/active-boundary/nist-label-acquisition-spec.json"), "utf8"));
 const nistAcquisitionResult = JSON.parse(fs.readFileSync(path.join(root, "research/active-boundary/nist-label-acquisition-result.json"), "utf8"));
+const scatteringSource = JSON.parse(fs.readFileSync(path.join(root, "research/reproducibility/scattering-round-robin-source.json"), "utf8"));
+const scatteringSpec = JSON.parse(fs.readFileSync(path.join(root, "research/reproducibility/scattering-spec.json"), "utf8"));
+const scatteringResult = JSON.parse(fs.readFileSync(path.join(root, "research/reproducibility/scattering-result.json"), "utf8"));
+const twoPhaseDesignAudit = JSON.parse(fs.readFileSync(path.join(root, "research/external-audit/two-phase-design-2017/audit-result.json"), "utf8"));
+const repeatDataAudit = JSON.parse(fs.readFileSync(path.join(root, "research/external-audit/repeat-data-availability-2026/audit-result.json"), "utf8"));
 assert(Array.isArray(PROBLEMS), "PROBLEMS must be an array");
 assert(PROBLEMS.length > 0, "catalog must contain at least one problem");
 assert(new Set(PROBLEMS.map(item => item.id)).size === PROBLEMS.length, "problem IDs must be unique");
@@ -359,6 +364,21 @@ assert(nistAcquisitionResult.strategies.every(item => item.runs === 400), "NIST 
 assert(nistAcquisitionResult.pareto.find(item => item.strategy === "space-fill-8-frontier-8")?.dominatedBy.includes("space-fill-12-frontier-4"), "NIST hybrid policy must dominate the aggressive frontier policy");
 assert(nistAcquisitionResult.strategies.find(item => item.strategy === "space-fill-12-frontier-4")?.minimumBoundaryAccuracy === 0.55102, "NIST hybrid policy must preserve its minimum boundary accuracy");
 assert(Object.values(nistAcquisitionResult.findings || {}).every(Boolean), "every NIST acquisition finding must be true");
+assert(scatteringSpec.benchmarkId === "SCATTERING-REPRODUCIBILITY-SEAL-0.1" && scatteringResult.benchmarkId === scatteringSpec.benchmarkId, "scattering reproducibility artifacts must share a stable ID");
+assert(scatteringSource.reportedCampaign.totalProfiles === 247 && scatteringSource.reportedCampaign.saxsProfiles === 171 && scatteringSource.reportedCampaign.sansProfiles === 76, "round-robin profile denominators must remain intact");
+assert(scatteringSource.saxs.length === 10 && scatteringSource.sans.length === 10, "round-robin supplement transcription must preserve ten SAXS and ten SANS estimator rows");
+assert(scatteringResult.adjudication.secWins === 9 && scatteringResult.adjudication.secExceptions[0] === "Urate oxidase/Guinier", "SEC must retain its nine-of-ten conditional result and named exception");
+assert(scatteringResult.adjudication.combinedBestOrTied === 7 && scatteringResult.adjudication.combinedFailures.length === 3, "pooled-mode adjudication must retain its three failures");
+assert(Object.values(scatteringResult.findings || {}).every(Boolean), "every scattering reproducibility finding must be true");
+assert(twoPhaseDesignAudit.auditId === "COSET-TWO-PHASE-PUBLIC-SUFFICIENCY-2017-0.1", "two-phase design audit must expose its stable ID");
+assert(twoPhaseDesignAudit.publishedDesign.initialRandomSample === 10000 && twoPhaseDesignAudit.publishedDesign.randomNonrespondentSubsample === 500, "two-phase design denominators must remain intact");
+assert(twoPhaseDesignAudit.publishedDesign.approximateComplementaryRespondents === 313, "two-phase design must preserve its approximate 313 complementary respondents");
+assert(twoPhaseDesignAudit.targetDesignAudit.targetGammaCalibrationFromPublicAggregatesPossible === false, "published two-phase aggregates cannot identify target Gamma");
+assert(Object.values(twoPhaseDesignAudit.findings || {}).every(Boolean), "every two-phase design audit finding must be true");
+assert(repeatDataAudit.auditId === "PHYSICAL-REPEAT-PUBLIC-DATA-AVAILABILITY-2026-0.1", "repeat-data audit must expose its stable ID");
+assert(repeatDataAudit.opxrd.canonicalSameSpecimenRepeatKeyDocumented === false, "opXRD canonical same-specimen repeat key must remain unverified");
+assert(repeatDataAudit.stanfordSpinGlass.reportedScansPerCapillary === 30 && repeatDataAudit.stanfordSpinGlass.publicFileCount === 1, "Stanford repeated-acquisition/public-file contrast must remain intact");
+assert(Object.values(repeatDataAudit.findings || {}).every(Boolean), "every repeat-data availability finding must be true");
 
 const boundaryCount = PROBLEMS.filter(item => item.nature === "boundary").length;
 assert(boundaryCount > 0, "catalog must preserve clearly labeled boundary examples");
@@ -376,7 +396,7 @@ const robots = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 const license = fs.readFileSync(path.join(root, "LICENSE"), "utf8");
 const packageMetadata = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"));
-const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "solve.html", "solve.js", "research-log.html", "research-log.js"]
+const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-05-data.js", "research-cycle-06-data.js", "research-cycle-07-data.js", "research-cycle-08-data.js", "research-cycle-09-data.js", "research-cycle-10-data.js", "solve.html", "solve.js", "research-log.html", "research-log.js"]
   .map(file => fs.readFileSync(path.join(root, file), "utf8"))
   .join("\n");
 for (const phrase of [
@@ -403,11 +423,11 @@ for (const phrase of [
 ]) {
   assert(!publicCopy.includes(phrase), `public copy contains process-oriented wording: ${phrase}`);
 }
-for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "app.js", "assets/mark.svg", "assets/og-744.png"]) {
+for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-10-data.js", "app.js", "assets/mark.svg", "assets/og-744.png"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing asset ${asset}`);
   assert(html.includes(asset), `index.html does not reference ${asset}`);
 }
-for (const asset of ["styles.css", "solve.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "solve.js", "assets/mark.svg"]) {
+for (const asset of ["styles.css", "solve.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-10-data.js", "solve.js", "assets/mark.svg"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing research page asset ${asset}`);
   assert(solveHtml.includes(asset), `solve.html does not reference ${asset}`);
 }
@@ -424,7 +444,7 @@ for (const id of ["back-to-atlas", "solution-language-switch", "solution-title",
 }
 assert(fs.readFileSync(path.join(root, "app.js"), "utf8").includes("solve.html"), "main problem details must link to a separate research-attempt page");
 assert(solveCss.includes("@media (max-width: 800px)"), "research-attempt page must include a mobile/tablet layout");
-for (const asset of ["styles.css", "research-log.css", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-log.js", "assets/mark.svg"]) {
+for (const asset of ["styles.css", "research-log.css", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-10-data.js", "research-log.js", "assets/mark.svg"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing research-log asset ${asset}`);
   assert(logHtml.includes(asset), `research-log.html does not reference ${asset}`);
 }

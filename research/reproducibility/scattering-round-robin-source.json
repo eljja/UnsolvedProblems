@@ -1,0 +1,60 @@
+{
+  "datasetId": "SAS-ROUND-ROBIN-RG-2022-0.1",
+  "reviewedOn": "2026-08-12",
+  "source": {
+    "articleDoi": "10.1107/S2059798322009184",
+    "supplementUrl": "https://journals.iucr.org/d/issues/2022/11/00/cb5140/cb5140sup1.pdf",
+    "nistPage": "https://www.nist.gov/publications/round-robin-approach-provides-detailed-assessment-biomolecular-small-angle-scattering",
+    "sasbdbProject": "https://www.sasbdb.org/project/1742/",
+    "publishedOn": "2022-10-20",
+    "license": "CC BY 4.0"
+  },
+  "reportedCampaign": {
+    "proteins": 5,
+    "saxsInstruments": 12,
+    "sansInstruments": 4,
+    "saxsProfiles": 171,
+    "sansProfiles": 76,
+    "totalProfiles": 247,
+    "saxsProfileClasses": {
+      "secSaxs": 44,
+      "batchSaxsH2O": 118,
+      "batchSaxsD2O": 9
+    },
+    "sansProfileClasses": {
+      "secSans": 10,
+      "batchSansH2O": 36,
+      "batchSansD2O": 30
+    }
+  },
+  "transcription": {
+    "tables": ["S5", "S7"],
+    "quantity": "radius of gyration Rg in angstrom",
+    "statistics": ["reported range", "reported standard deviation"],
+    "note": "Values are transcribed from the peer-reviewed supplement. No individual profile values are reconstructed from ranges or standard deviations."
+  },
+  "saxs": [
+    {"protein":"RNase A","metric":"Guinier","batch":{"min":15.25,"max":16.00,"sigma":0.26},"sec":{"min":14.94,"max":15.19,"sigma":0.09},"combined":{"min":15.00,"max":15.33,"sigma":0.11}},
+    {"protein":"RNase A","metric":"P(r)","batch":{"min":15.01,"max":15.90,"sigma":0.29},"sec":{"min":14.99,"max":15.15,"sigma":0.08},"combined":{"min":14.95,"max":15.17,"sigma":0.06}},
+    {"protein":"Lysozyme","metric":"Guinier","batch":{"min":14.46,"max":16.86,"sigma":0.81},"sec":{"min":14.08,"max":15.52,"sigma":0.45},"combined":{"min":14.08,"max":15.27,"sigma":0.39}},
+    {"protein":"Lysozyme","metric":"P(r)","batch":{"min":14.36,"max":17.09,"sigma":0.81},"sec":{"min":14.16,"max":15.39,"sigma":0.38},"combined":{"min":14.21,"max":15.28,"sigma":0.38}},
+    {"protein":"Xylanase","metric":"Guinier","batch":{"min":16.54,"max":18.15,"sigma":0.45},"sec":{"min":15.98,"max":16.65,"sigma":0.22},"combined":{"min":15.98,"max":16.21,"sigma":0.10}},
+    {"protein":"Xylanase","metric":"P(r)","batch":{"min":16.60,"max":18.43,"sigma":0.60},"sec":{"min":15.80,"max":16.91,"sigma":0.43},"combined":{"min":15.72,"max":15.93,"sigma":0.09}},
+    {"protein":"Urate oxidase","metric":"Guinier","batch":{"min":32.77,"max":33.33,"sigma":0.53},"sec":{"min":30.84,"max":33.03,"sigma":0.66},"combined":{"min":30.95,"max":33.03,"sigma":0.53}},
+    {"protein":"Urate oxidase","metric":"P(r)","batch":{"min":30.77,"max":33.86,"sigma":0.81},"sec":{"min":30.11,"max":32.03,"sigma":0.51},"combined":{"min":31.51,"max":31.87,"sigma":0.13}},
+    {"protein":"Xylose isomerase","metric":"Guinier","batch":{"min":32.71,"max":33.74,"sigma":0.31},"sec":{"min":32.76,"max":33.46,"sigma":0.22},"combined":{"min":32.76,"max":33.77,"sigma":0.25}},
+    {"protein":"Xylose isomerase","metric":"P(r)","batch":{"min":32.65,"max":32.82,"sigma":0.34},"sec":{"min":32.67,"max":32.93,"sigma":0.08},"combined":{"min":32.67,"max":33.08,"sigma":0.09}}
+  ],
+  "sans": [
+    {"protein":"RNase A","metric":"Guinier","d2o":{"min":13.56,"max":14.99,"sigma":0.52},"h2o":{"min":14.51,"max":15.55,"sigma":0.39}},
+    {"protein":"RNase A","metric":"P(r)","d2o":{"min":13.65,"max":14.98,"sigma":0.45},"h2o":{"min":14.65,"max":15.60,"sigma":0.40}},
+    {"protein":"Lysozyme","metric":"Guinier","d2o":{"min":13.14,"max":13.90,"sigma":0.33},"h2o":{"min":13.46,"max":15.80,"sigma":0.68}},
+    {"protein":"Lysozyme","metric":"P(r)","d2o":{"min":13.26,"max":13.81,"sigma":0.25},"h2o":{"min":13.43,"max":15.59,"sigma":0.69}},
+    {"protein":"Xylanase","metric":"Guinier","d2o":{"min":14.70,"max":16.71,"sigma":0.77},"h2o":{"min":16.39,"max":17.43,"sigma":0.42}},
+    {"protein":"Xylanase","metric":"P(r)","d2o":{"min":14.44,"max":17.14,"sigma":1.00},"h2o":{"min":16.39,"max":17.43,"sigma":0.38}},
+    {"protein":"Urate oxidase","metric":"Guinier","d2o":{"min":31.21,"max":35.60,"sigma":1.90},"h2o":{"min":30.55,"max":32.92,"sigma":1.00}},
+    {"protein":"Urate oxidase","metric":"P(r)","d2o":{"min":30.56,"max":30.86,"sigma":0.42},"h2o":{"min":31.52,"max":34.66,"sigma":1.34}},
+    {"protein":"Xylose isomerase","metric":"Guinier","d2o":{"min":29.58,"max":31.64,"sigma":0.69},"h2o":{"min":30.88,"max":34.13,"sigma":0.99}},
+    {"protein":"Xylose isomerase","metric":"P(r)","d2o":{"min":30.37,"max":32.23,"sigma":0.68},"h2o":{"min":32.08,"max":33.91,"sigma":0.59}}
+  ]
+}

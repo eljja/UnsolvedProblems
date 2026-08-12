@@ -1,0 +1,723 @@
+{
+  "benchmarkId": "SCATTERING-REPRODUCIBILITY-SEAL-0.1",
+  "generatedOn": "2026-08-12",
+  "denominators": {
+    "proteins": 5,
+    "saxsInstruments": 12,
+    "sansInstruments": 4,
+    "saxsProfiles": 171,
+    "sansProfiles": 76,
+    "totalProfiles": 247,
+    "saxsProfileClasses": {
+      "secSaxs": 44,
+      "batchSaxsH2O": 118,
+      "batchSaxsD2O": 9
+    },
+    "sansProfileClasses": {
+      "secSans": 10,
+      "batchSansH2O": 36,
+      "batchSansD2O": 30
+    }
+  },
+  "saxs": [
+    {
+      "protein": "RNase A",
+      "metric": "Guinier",
+      "batch": {
+        "range": [
+          15.25,
+          16
+        ],
+        "sigma": 0.26,
+        "midpointProxy": 15.625,
+        "relativeSigmaPercent": 1.664,
+        "reproducibilityLimitAngstrom": 0.720683,
+        "relativeReproducibilityLimitPercent": 4.612373
+      },
+      "sec": {
+        "range": [
+          14.94,
+          15.19
+        ],
+        "sigma": 0.09,
+        "midpointProxy": 15.065,
+        "relativeSigmaPercent": 0.597411,
+        "reproducibilityLimitAngstrom": 0.249467,
+        "relativeReproducibilityLimitPercent": 1.655939
+      },
+      "combined": {
+        "range": [
+          15,
+          15.33
+        ],
+        "sigma": 0.11,
+        "midpointProxy": 15.165,
+        "relativeSigmaPercent": 0.725354,
+        "reproducibilityLimitAngstrom": 0.304904,
+        "relativeReproducibilityLimitPercent": 2.01058
+      },
+      "secToBatchSigmaRatio": 0.346154,
+      "secHasLowerSigma": true,
+      "combinedNoWorseThanBestMode": false
+    },
+    {
+      "protein": "RNase A",
+      "metric": "P(r)",
+      "batch": {
+        "range": [
+          15.01,
+          15.9
+        ],
+        "sigma": 0.29,
+        "midpointProxy": 15.455,
+        "relativeSigmaPercent": 1.876415,
+        "reproducibilityLimitAngstrom": 0.803839,
+        "relativeReproducibilityLimitPercent": 5.201158
+      },
+      "sec": {
+        "range": [
+          14.99,
+          15.15
+        ],
+        "sigma": 0.08,
+        "midpointProxy": 15.07,
+        "relativeSigmaPercent": 0.530856,
+        "reproducibilityLimitAngstrom": 0.221749,
+        "relativeReproducibilityLimitPercent": 1.471458
+      },
+      "combined": {
+        "range": [
+          14.95,
+          15.17
+        ],
+        "sigma": 0.06,
+        "midpointProxy": 15.06,
+        "relativeSigmaPercent": 0.398406,
+        "reproducibilityLimitAngstrom": 0.166312,
+        "relativeReproducibilityLimitPercent": 1.104326
+      },
+      "secToBatchSigmaRatio": 0.275862,
+      "secHasLowerSigma": true,
+      "combinedNoWorseThanBestMode": true
+    },
+    {
+      "protein": "Lysozyme",
+      "metric": "Guinier",
+      "batch": {
+        "range": [
+          14.46,
+          16.86
+        ],
+        "sigma": 0.81,
+        "midpointProxy": 15.66,
+        "relativeSigmaPercent": 5.172414,
+        "reproducibilityLimitAngstrom": 2.245205,
+        "relativeReproducibilityLimitPercent": 14.3372
+      },
+      "sec": {
+        "range": [
+          14.08,
+          15.52
+        ],
+        "sigma": 0.45,
+        "midpointProxy": 14.8,
+        "relativeSigmaPercent": 3.040541,
+        "reproducibilityLimitAngstrom": 1.247336,
+        "relativeReproducibilityLimitPercent": 8.427948
+      },
+      "combined": {
+        "range": [
+          14.08,
+          15.27
+        ],
+        "sigma": 0.39,
+        "midpointProxy": 14.675,
+        "relativeSigmaPercent": 2.657581,
+        "reproducibilityLimitAngstrom": 1.081025,
+        "relativeReproducibilityLimitPercent": 7.366438
+      },
+      "secToBatchSigmaRatio": 0.555556,
+      "secHasLowerSigma": true,
+      "combinedNoWorseThanBestMode": true
+    },
+    {
+      "protein": "Lysozyme",
+      "metric": "P(r)",
+      "batch": {
+        "range": [
+          14.36,
+          17.09
+        ],
+        "sigma": 0.81,
+        "midpointProxy": 15.725,
+        "relativeSigmaPercent": 5.151033,
+        "reproducibilityLimitAngstrom": 2.245205,
+        "relativeReproducibilityLimitPercent": 14.277936
+      },
+      "sec": {
+        "range": [
+          14.16,
+          15.39
+        ],
+        "sigma": 0.38,
+        "midpointProxy": 14.775,
+        "relativeSigmaPercent": 2.571912,
+        "reproducibilityLimitAngstrom": 1.053306,
+        "relativeReproducibilityLimitPercent": 7.128976
+      },
+      "combined": {
+        "range": [
+          14.21,
+          15.28
+        ],
+        "sigma": 0.38,
+        "midpointProxy": 14.745,
+        "relativeSigmaPercent": 2.577145,
+        "reproducibilityLimitAngstrom": 1.053306,
+        "relativeReproducibilityLimitPercent": 7.143481
+      },
+      "secToBatchSigmaRatio": 0.469136,
+      "secHasLowerSigma": true,
+      "combinedNoWorseThanBestMode": true
+    },
+    {
+      "protein": "Xylanase",
+      "metric": "Guinier",
+      "batch": {
+        "range": [
+          16.54,
+          18.15
+        ],
+        "sigma": 0.45,
+        "midpointProxy": 17.345,
+        "relativeSigmaPercent": 2.594408,
+        "reproducibilityLimitAngstrom": 1.247336,
+        "relativeReproducibilityLimitPercent": 7.191331
+      },
+      "sec": {
+        "range": [
+          15.98,
+          16.65
+        ],
+        "sigma": 0.22,
+        "midpointProxy": 16.315,
+        "relativeSigmaPercent": 1.348452,
+        "reproducibilityLimitAngstrom": 0.609809,
+        "relativeReproducibilityLimitPercent": 3.737719
+      },
+      "combined": {
+        "range": [
+          15.98,
+          16.21
+        ],
+        "sigma": 0.1,
+        "midpointProxy": 16.095,
+        "relativeSigmaPercent": 0.621311,
+        "reproducibilityLimitAngstrom": 0.277186,
+        "relativeReproducibilityLimitPercent": 1.722186
+      },
+      "secToBatchSigmaRatio": 0.488889,
+      "secHasLowerSigma": true,
+      "combinedNoWorseThanBestMode": true
+    },
+    {
+      "protein": "Xylanase",
+      "metric": "P(r)",
+      "batch": {
+        "range": [
+          16.6,
+          18.43
+        ],
+        "sigma": 0.6,
+        "midpointProxy": 17.515,
+        "relativeSigmaPercent": 3.425635,
+        "reproducibilityLimitAngstrom": 1.663115,
+        "relativeReproducibilityLimitPercent": 9.495376
+      },
+      "sec": {
+        "range": [
+          15.8,
+          16.91
+        ],
+        "sigma": 0.43,
+        "midpointProxy": 16.355,
+        "relativeSigmaPercent": 2.629165,
+        "reproducibilityLimitAngstrom": 1.191899,
+        "relativeReproducibilityLimitPercent": 7.287675
+      },
+      "combined": {
+        "range": [
+          15.72,
+          15.93
+        ],
+        "sigma": 0.09,
+        "midpointProxy": 15.825,
+        "relativeSigmaPercent": 0.56872,
+        "reproducibilityLimitAngstrom": 0.249467,
+        "relativeReproducibilityLimitPercent": 1.576412
+      },
+      "secToBatchSigmaRatio": 0.716667,
+      "secHasLowerSigma": true,
+      "combinedNoWorseThanBestMode": true
+    },
+    {
+      "protein": "Urate oxidase",
+      "metric": "Guinier",
+      "batch": {
+        "range": [
+          32.77,
+          33.33
+        ],
+        "sigma": 0.53,
+        "midpointProxy": 33.05,
+        "relativeSigmaPercent": 1.603631,
+        "reproducibilityLimitAngstrom": 1.469085,
+        "relativeReproducibilityLimitPercent": 4.445038
+      },
+      "sec": {
+        "range": [
+          30.84,
+          33.03
+        ],
+        "sigma": 0.66,
+        "midpointProxy": 31.935,
+        "relativeSigmaPercent": 2.066698,
+        "reproducibilityLimitAngstrom": 1.829427,
+        "relativeReproducibilityLimitPercent": 5.728595
+      },
+      "combined": {
+        "range": [
+          30.95,
+          33.03
+        ],
+        "sigma": 0.53,
+        "midpointProxy": 31.99,
+        "relativeSigmaPercent": 1.656768,
+        "reproducibilityLimitAngstrom": 1.469085,
+        "relativeReproducibilityLimitPercent": 4.592326
+      },
+      "secToBatchSigmaRatio": 1.245283,
+      "secHasLowerSigma": false,
+      "combinedNoWorseThanBestMode": true
+    },
+    {
+      "protein": "Urate oxidase",
+      "metric": "P(r)",
+      "batch": {
+        "range": [
+          30.77,
+          33.86
+        ],
+        "sigma": 0.81,
+        "midpointProxy": 32.315,
+        "relativeSigmaPercent": 2.506576,
+        "reproducibilityLimitAngstrom": 2.245205,
+        "relativeReproducibilityLimitPercent": 6.947874
+      },
+      "sec": {
+        "range": [
+          30.11,
+          32.03
+        ],
+        "sigma": 0.51,
+        "midpointProxy": 31.07,
+        "relativeSigmaPercent": 1.641455,
+        "reproducibilityLimitAngstrom": 1.413648,
+        "relativeReproducibilityLimitPercent": 4.549881
+      },
+      "combined": {
+        "range": [
+          31.51,
+          31.87
+        ],
+        "sigma": 0.13,
+        "midpointProxy": 31.69,
+        "relativeSigmaPercent": 0.410224,
+        "reproducibilityLimitAngstrom": 0.360342,
+        "relativeReproducibilityLimitPercent": 1.137083
+      },
+      "secToBatchSigmaRatio": 0.62963,
+      "secHasLowerSigma": true,
+      "combinedNoWorseThanBestMode": true
+    },
+    {
+      "protein": "Xylose isomerase",
+      "metric": "Guinier",
+      "batch": {
+        "range": [
+          32.71,
+          33.74
+        ],
+        "sigma": 0.31,
+        "midpointProxy": 33.225,
+        "relativeSigmaPercent": 0.933032,
+        "reproducibilityLimitAngstrom": 0.859276,
+        "relativeReproducibilityLimitPercent": 2.586234
+      },
+      "sec": {
+        "range": [
+          32.76,
+          33.46
+        ],
+        "sigma": 0.22,
+        "midpointProxy": 33.11,
+        "relativeSigmaPercent": 0.664452,
+        "reproducibilityLimitAngstrom": 0.609809,
+        "relativeReproducibilityLimitPercent": 1.841766
+      },
+      "combined": {
+        "range": [
+          32.76,
+          33.77
+        ],
+        "sigma": 0.25,
+        "midpointProxy": 33.265,
+        "relativeSigmaPercent": 0.751541,
+        "reproducibilityLimitAngstrom": 0.692965,
+        "relativeReproducibilityLimitPercent": 2.083164
+      },
+      "secToBatchSigmaRatio": 0.709677,
+      "secHasLowerSigma": true,
+      "combinedNoWorseThanBestMode": false
+    },
+    {
+      "protein": "Xylose isomerase",
+      "metric": "P(r)",
+      "batch": {
+        "range": [
+          32.65,
+          32.82
+        ],
+        "sigma": 0.34,
+        "midpointProxy": 32.735,
+        "relativeSigmaPercent": 1.038644,
+        "reproducibilityLimitAngstrom": 0.942432,
+        "relativeReproducibilityLimitPercent": 2.878973
+      },
+      "sec": {
+        "range": [
+          32.67,
+          32.93
+        ],
+        "sigma": 0.08,
+        "midpointProxy": 32.8,
+        "relativeSigmaPercent": 0.243902,
+        "reproducibilityLimitAngstrom": 0.221749,
+        "relativeReproducibilityLimitPercent": 0.676063
+      },
+      "combined": {
+        "range": [
+          32.67,
+          33.08
+        ],
+        "sigma": 0.09,
+        "midpointProxy": 32.875,
+        "relativeSigmaPercent": 0.273764,
+        "reproducibilityLimitAngstrom": 0.249467,
+        "relativeReproducibilityLimitPercent": 0.758836
+      },
+      "secToBatchSigmaRatio": 0.235294,
+      "secHasLowerSigma": true,
+      "combinedNoWorseThanBestMode": false
+    }
+  ],
+  "sans": [
+    {
+      "protein": "RNase A",
+      "metric": "Guinier",
+      "d2o": {
+        "range": [
+          13.56,
+          14.99
+        ],
+        "sigma": 0.52,
+        "midpointProxy": 14.275,
+        "relativeSigmaPercent": 3.642732,
+        "reproducibilityLimitAngstrom": 1.441366,
+        "relativeReproducibilityLimitPercent": 10.097138
+      },
+      "h2o": {
+        "range": [
+          14.51,
+          15.55
+        ],
+        "sigma": 0.39,
+        "midpointProxy": 15.03,
+        "relativeSigmaPercent": 2.59481,
+        "reproducibilityLimitAngstrom": 1.081025,
+        "relativeReproducibilityLimitPercent": 7.192447
+      },
+      "lowerSigmaSolvent": "H2O"
+    },
+    {
+      "protein": "RNase A",
+      "metric": "P(r)",
+      "d2o": {
+        "range": [
+          13.65,
+          14.98
+        ],
+        "sigma": 0.45,
+        "midpointProxy": 14.315,
+        "relativeSigmaPercent": 3.143556,
+        "reproducibilityLimitAngstrom": 1.247336,
+        "relativeReproducibilityLimitPercent": 8.713492
+      },
+      "h2o": {
+        "range": [
+          14.65,
+          15.6
+        ],
+        "sigma": 0.4,
+        "midpointProxy": 15.125,
+        "relativeSigmaPercent": 2.644628,
+        "reproducibilityLimitAngstrom": 1.108743,
+        "relativeReproducibilityLimitPercent": 7.330535
+      },
+      "lowerSigmaSolvent": "H2O"
+    },
+    {
+      "protein": "Lysozyme",
+      "metric": "Guinier",
+      "d2o": {
+        "range": [
+          13.14,
+          13.9
+        ],
+        "sigma": 0.33,
+        "midpointProxy": 13.52,
+        "relativeSigmaPercent": 2.440828,
+        "reproducibilityLimitAngstrom": 0.914713,
+        "relativeReproducibilityLimitPercent": 6.765631
+      },
+      "h2o": {
+        "range": [
+          13.46,
+          15.8
+        ],
+        "sigma": 0.68,
+        "midpointProxy": 14.63,
+        "relativeSigmaPercent": 4.647984,
+        "reproducibilityLimitAngstrom": 1.884864,
+        "relativeReproducibilityLimitPercent": 12.883553
+      },
+      "lowerSigmaSolvent": "D2O"
+    },
+    {
+      "protein": "Lysozyme",
+      "metric": "P(r)",
+      "d2o": {
+        "range": [
+          13.26,
+          13.81
+        ],
+        "sigma": 0.25,
+        "midpointProxy": 13.535,
+        "relativeSigmaPercent": 1.847063,
+        "reproducibilityLimitAngstrom": 0.692965,
+        "relativeReproducibilityLimitPercent": 5.119798
+      },
+      "h2o": {
+        "range": [
+          13.43,
+          15.59
+        ],
+        "sigma": 0.69,
+        "midpointProxy": 14.51,
+        "relativeSigmaPercent": 4.755341,
+        "reproducibilityLimitAngstrom": 1.912582,
+        "relativeReproducibilityLimitPercent": 13.181133
+      },
+      "lowerSigmaSolvent": "D2O"
+    },
+    {
+      "protein": "Xylanase",
+      "metric": "Guinier",
+      "d2o": {
+        "range": [
+          14.7,
+          16.71
+        ],
+        "sigma": 0.77,
+        "midpointProxy": 15.705,
+        "relativeSigmaPercent": 4.902897,
+        "reproducibilityLimitAngstrom": 2.134331,
+        "relativeReproducibilityLimitPercent": 13.590138
+      },
+      "h2o": {
+        "range": [
+          16.39,
+          17.43
+        ],
+        "sigma": 0.42,
+        "midpointProxy": 16.91,
+        "relativeSigmaPercent": 2.483737,
+        "reproducibilityLimitAngstrom": 1.164181,
+        "relativeReproducibilityLimitPercent": 6.884569
+      },
+      "lowerSigmaSolvent": "H2O"
+    },
+    {
+      "protein": "Xylanase",
+      "metric": "P(r)",
+      "d2o": {
+        "range": [
+          14.44,
+          17.14
+        ],
+        "sigma": 1,
+        "midpointProxy": 15.79,
+        "relativeSigmaPercent": 6.333122,
+        "reproducibilityLimitAngstrom": 2.771859,
+        "relativeReproducibilityLimitPercent": 17.554519
+      },
+      "h2o": {
+        "range": [
+          16.39,
+          17.43
+        ],
+        "sigma": 0.38,
+        "midpointProxy": 16.91,
+        "relativeSigmaPercent": 2.247191,
+        "reproducibilityLimitAngstrom": 1.053306,
+        "relativeReproducibilityLimitPercent": 6.228896
+      },
+      "lowerSigmaSolvent": "H2O"
+    },
+    {
+      "protein": "Urate oxidase",
+      "metric": "Guinier",
+      "d2o": {
+        "range": [
+          31.21,
+          35.6
+        ],
+        "sigma": 1.9,
+        "midpointProxy": 33.405,
+        "relativeSigmaPercent": 5.687771,
+        "reproducibilityLimitAngstrom": 5.266531,
+        "relativeReproducibilityLimitPercent": 15.765698
+      },
+      "h2o": {
+        "range": [
+          30.55,
+          32.92
+        ],
+        "sigma": 1,
+        "midpointProxy": 31.735,
+        "relativeSigmaPercent": 3.151095,
+        "reproducibilityLimitAngstrom": 2.771859,
+        "relativeReproducibilityLimitPercent": 8.73439
+      },
+      "lowerSigmaSolvent": "H2O"
+    },
+    {
+      "protein": "Urate oxidase",
+      "metric": "P(r)",
+      "d2o": {
+        "range": [
+          30.56,
+          30.86
+        ],
+        "sigma": 0.42,
+        "midpointProxy": 30.71,
+        "relativeSigmaPercent": 1.367633,
+        "reproducibilityLimitAngstrom": 1.164181,
+        "relativeReproducibilityLimitPercent": 3.790884
+      },
+      "h2o": {
+        "range": [
+          31.52,
+          34.66
+        ],
+        "sigma": 1.34,
+        "midpointProxy": 33.09,
+        "relativeSigmaPercent": 4.049562,
+        "reproducibilityLimitAngstrom": 3.714291,
+        "relativeReproducibilityLimitPercent": 11.224813
+      },
+      "lowerSigmaSolvent": "D2O"
+    },
+    {
+      "protein": "Xylose isomerase",
+      "metric": "Guinier",
+      "d2o": {
+        "range": [
+          29.58,
+          31.64
+        ],
+        "sigma": 0.69,
+        "midpointProxy": 30.61,
+        "relativeSigmaPercent": 2.254165,
+        "reproducibilityLimitAngstrom": 1.912582,
+        "relativeReproducibilityLimitPercent": 6.248227
+      },
+      "h2o": {
+        "range": [
+          30.88,
+          34.13
+        ],
+        "sigma": 0.99,
+        "midpointProxy": 32.505,
+        "relativeSigmaPercent": 3.045685,
+        "reproducibilityLimitAngstrom": 2.74414,
+        "relativeReproducibilityLimitPercent": 8.442209
+      },
+      "lowerSigmaSolvent": "D2O"
+    },
+    {
+      "protein": "Xylose isomerase",
+      "metric": "P(r)",
+      "d2o": {
+        "range": [
+          30.37,
+          32.23
+        ],
+        "sigma": 0.68,
+        "midpointProxy": 31.3,
+        "relativeSigmaPercent": 2.172524,
+        "reproducibilityLimitAngstrom": 1.884864,
+        "relativeReproducibilityLimitPercent": 6.021929
+      },
+      "h2o": {
+        "range": [
+          32.08,
+          33.91
+        ],
+        "sigma": 0.59,
+        "midpointProxy": 32.995,
+        "relativeSigmaPercent": 1.78815,
+        "reproducibilityLimitAngstrom": 1.635397,
+        "relativeReproducibilityLimitPercent": 4.956498
+      },
+      "lowerSigmaSolvent": "H2O"
+    }
+  ],
+  "adjudication": {
+    "secWins": 9,
+    "secLosses": 1,
+    "secExceptions": [
+      "Urate oxidase/Guinier"
+    ],
+    "combinedBestOrTied": 7,
+    "combinedFailures": [
+      "RNase A/Guinier",
+      "Xylose isomerase/Guinier",
+      "Xylose isomerase/P(r)"
+    ],
+    "medianSaxsRelativeReproducibilityLimitPercent": 4.497459,
+    "medianSansRelativeReproducibilityLimitPercent": 7.886372,
+    "maximumSaxsRelativeReproducibilityLimitPercent": 14.3372,
+    "maximumSansRelativeReproducibilityLimitPercent": 17.554519
+  },
+  "findings": {
+    "campaignDenominatorsReconcile": true,
+    "universalSecReductionRejected": true,
+    "selectiveSecReductionSurvives": true,
+    "combinedAlwaysBestRejected": true,
+    "reproducibilityFloorDependsOnProteinModeMetricAndSolvent": true,
+    "aggregateTablesCannotDecomposeInstrumentPreparationAndReductionVariance": true,
+    "numericTransferToNistVo2Rejected": true
+  },
+  "decision": "Use mode- and target-specific reproducibility limits as a minimum resolvable-effect gate. SEC-SAXS lowers reported sigma in 9/10 comparisons but reverses for urate-oxidase Guinier Rg; combined profiles are best or tied in only 7/10 comparisons. Retain the exceptions and require raw coordinate-level repeats before applying any numerical threshold to the NIST Nb-VO2 grid."
+}

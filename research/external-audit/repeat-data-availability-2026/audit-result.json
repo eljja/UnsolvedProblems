@@ -1,0 +1,42 @@
+{
+  "auditId": "PHYSICAL-REPEAT-PUBLIC-DATA-AVAILABILITY-2026-0.1",
+  "reviewedOn": "2026-08-12",
+  "opxrd": {
+    "datasetDoi": "10.5281/zenodo.15298026",
+    "publishedOn": "2025-04-28",
+    "file": "opxrd.zip",
+    "bytes": 1400997733,
+    "md5": "e8e9800a8ecd2b7f01a764fdf77d5c53",
+    "license": "CC BY 4.0",
+    "softwareRepository": "https://github.com/aimat-lab/opXRD",
+    "auditedCommit": "4f6ac334e5f1b1407be0e3264580ff5882c8e478",
+    "documentedPatternCount": 92552,
+    "documentedLabeledCount": 2179,
+    "canonicalSameSpecimenRepeatKeyDocumented": false,
+    "processorRemovesSourceFilename": true,
+    "processorAddsContributorAndInstitution": true,
+    "decision": "The collection is suitable for experimental-distribution and sim-to-real studies, but the documented public interface does not expose a canonical same-specimen, same-condition repeat key. Do not infer physical replicates from filename similarity or institution grouping."
+  },
+  "stanfordSpinGlass": {
+    "articleDoi": "10.1021/acscentsci.6c00194",
+    "articlePublishedOn": "2026-06-24",
+    "dataDoi": "10.25740/xb532rx3275",
+    "dataPublishedOn": "2026-06-23",
+    "repositoryLicense": "CC BY-NC-ND 4.0",
+    "reportedScansPerCapillary": 30,
+    "reportedPositionsPerSample": 3,
+    "reportedScansPerPosition": 10,
+    "publicFileCount": 1,
+    "publicFile": "Fig2C_xpdf_data.txt",
+    "publicFileBytes": 303510,
+    "publicFileColumns": ["r and G(r) for (BA)2CrCl4", "r and G(r) for (AgCr)Cr2 mosaic"],
+    "rawIndividualScansPubliclyLocated": false,
+    "decision": "The article establishes a strong repeated-scan acquisition design, but the linked public record exposes one derived pair-distribution file rather than the 30 individual scans. It cannot estimate within-position or between-position variance."
+  },
+  "findings": {
+    "largePublicPatternCollectionsDoNotAutomaticallyEncodeReplicateIdentity": true,
+    "reportedRepeatAcquisitionDoesNotGuaranteePublicationOfIndividualRepeats": true,
+    "neitherCandidateCanSealCoordinateLevelPhysicalNoiseForTheNistVo2Grid": true,
+    "theSasRoundRobinIsTheBestLocatedAggregatePhysicalReproducibilityControl": true
+  }
+}

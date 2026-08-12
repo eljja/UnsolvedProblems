@@ -1,0 +1,36 @@
+{
+  "auditId": "COSET-TWO-PHASE-PUBLIC-SUFFICIENCY-2017-0.1",
+  "reviewedOn": "2026-08-12",
+  "publishedDesign": {
+    "initialRandomSample": 10000,
+    "initialResponseRate": 0.236,
+    "approximateInitialRespondents": 2360,
+    "randomNonrespondentSubsample": 500,
+    "complementaryResponseRate": 0.626,
+    "approximateComplementaryRespondents": 313,
+    "administrativeDataFrame": 9358,
+    "postalUndeliverableExcluded": 406,
+    "refusalsExcluded": 236,
+    "stratifiers": ["gender", "age", "employment status", "geographical area"]
+  },
+  "targetDesignAudit": {
+    "initialProbabilityFrameReported": true,
+    "randomNonrespondentSubsampleReported": true,
+    "secondStageSampleSizeReported": true,
+    "secondStageResponseRateReported": true,
+    "administrativeVariablesForWholeAnalysisFrameReported": true,
+    "participantLevelInvitationIndicatorPubliclyLocated": false,
+    "participantLevelInvitationProbabilityPubliclyLocated": false,
+    "sameSurveyOutcomeForSecondStageNonrespondentsPubliclyLocated": false,
+    "stratumByOutcomeResponseTablesPubliclyLocated": false,
+    "targetGammaCalibrationFromPublicAggregatesPossible": false
+  },
+  "findings": {
+    "publishedDesignContainsTheRequiredTwoPhaseSamplingSkeleton": true,
+    "secondStageResponseRemainsIncomplete": true,
+    "administrativeVariablesProvideAnIndependentBiasAudit": true,
+    "publishedAggregatesDoNotIdentifyOutcomeSpecificSecondStageGamma": true,
+    "publicMicrodataWereNotLocated": true
+  },
+  "decision": "Use this study as a positive design control: it reports the initial frame, random nonrespondent subsample, incomplete second-stage response, and administrative comparison frame. Do not claim outcome-specific Gamma calibration without participant-level invitation, response, and same-outcome tables."
+}

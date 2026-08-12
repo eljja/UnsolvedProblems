@@ -1,0 +1,24 @@
+{
+  "benchmarkId": "SCATTERING-REPRODUCIBILITY-SEAL-0.1",
+  "reviewedOn": "2026-08-12",
+  "input": "research/reproducibility/scattering-round-robin-source.json",
+  "model": {
+    "midpointProxy": "(reported range minimum + maximum) / 2",
+    "relativeSigmaPercent": "100 * reported sigma / midpoint proxy",
+    "twoMeasurementReproducibilityLimit": "1.96 * sqrt(2) * reported sigma",
+    "interpretation": "Approximate 95% difference threshold for two independent measurements under a normal, homoscedastic model. This is a diagnostic seal, not a reconstructed raw-data confidence interval."
+  },
+  "hypotheses": {
+    "universalSecReduction": "SEC-SAXS has lower reported sigma than batch-SAXS for every protein and both Rg estimators.",
+    "selectiveSecReduction": "SEC-SAXS has lower sigma in at least eight of ten protein-estimator comparisons and all exceptions are explicitly retained.",
+    "combinedAlwaysBest": "The combined SAXS profile class has sigma no larger than the better of batch and SEC in every comparison.",
+    "numericTransferToNistVo2": "The resulting thresholds can be transferred numerically to the NIST Nb-VO2 XRD grid."
+  },
+  "gates": {
+    "minimumSecWins": 8,
+    "requiredComparisons": 10,
+    "universalClaimAllowsExceptions": 0,
+    "combinedClaimAllowsFailures": 0,
+    "numericTransferRequiresSameTechniqueSpecimenAndCoordinateRepeats": true
+  }
+}
