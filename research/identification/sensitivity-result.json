@@ -1,0 +1,239 @@
+{
+  "simulationId": "PARTIAL-ID-MNAR-SUPPORT-0.1",
+  "generatedOn": "2026-08-12",
+  "observedDistribution": {
+    "responseRate": 0.6,
+    "positiveRateAmongObserved": 0.7,
+    "positiveAndObserved": 0.42,
+    "negativeAndObserved": 0.18,
+    "missing": 0.4
+  },
+  "indistinguishableWorlds": [
+    {
+      "id": "low-hidden-success",
+      "positiveRateAmongMissing": 0.1,
+      "observedJoint": {
+        "positiveAndObserved": 0.42,
+        "negativeAndObserved": 0.18,
+        "missing": 0.4
+      },
+      "supportedMean": 0.46,
+      "selectionOddsRatio": 21,
+      "fullPolicyValue": 0.482733
+    },
+    {
+      "id": "high-hidden-success",
+      "positiveRateAmongMissing": 0.9,
+      "observedJoint": {
+        "positiveAndObserved": 0.42,
+        "negativeAndObserved": 0.18,
+        "missing": 0.4
+      },
+      "supportedMean": 0.78,
+      "selectionOddsRatio": 0.259259,
+      "fullPolicyValue": 0.746775
+    }
+  ],
+  "zeroSupportTruth": {
+    "regionalPositiveRate": 0.59,
+    "targetWeight": 0.174871,
+    "policyContribution": 0.103174
+  },
+  "sensitivity": [
+    {
+      "gamma": 1,
+      "supportedLower": 0.7,
+      "supportedUpper": 0.7,
+      "supportedWidth": 0,
+      "fullPolicyLowerWithoutZeroSupportTrial": 0.57759,
+      "fullPolicyUpperWithoutZeroSupportTrial": 0.752461,
+      "fullPolicyWidthWithoutZeroSupportTrial": 0.174871,
+      "minimaxMidpoint": 0.665026,
+      "minimaxWorstCaseError": 0.087435,
+      "containsWorlds": {
+        "low-hidden-success": false,
+        "high-hidden-success": false
+      }
+    },
+    {
+      "gamma": 2,
+      "supportedLower": 0.635385,
+      "supportedUpper": 0.749412,
+      "supportedWidth": 0.114027,
+      "fullPolicyLowerWithoutZeroSupportTrial": 0.524274,
+      "fullPolicyUpperWithoutZeroSupportTrial": 0.793232,
+      "fullPolicyWidthWithoutZeroSupportTrial": 0.268958,
+      "minimaxMidpoint": 0.658753,
+      "minimaxWorstCaseError": 0.134479,
+      "containsWorlds": {
+        "low-hidden-success": false,
+        "high-hidden-success": false
+      }
+    },
+    {
+      "gamma": 4,
+      "supportedLower": 0.567368,
+      "supportedUpper": 0.78129,
+      "supportedWidth": 0.213922,
+      "fullPolicyLowerWithoutZeroSupportTrial": 0.468152,
+      "fullPolicyUpperWithoutZeroSupportTrial": 0.819536,
+      "fullPolicyWidthWithoutZeroSupportTrial": 0.351384,
+      "minimaxMidpoint": 0.643844,
+      "minimaxWorstCaseError": 0.175692,
+      "containsWorlds": {
+        "low-hidden-success": false,
+        "high-hidden-success": true
+      }
+    },
+    {
+      "gamma": 8,
+      "supportedLower": 0.510323,
+      "supportedUpper": 0.799661,
+      "supportedWidth": 0.289338,
+      "fullPolicyLowerWithoutZeroSupportTrial": 0.421082,
+      "fullPolicyUpperWithoutZeroSupportTrial": 0.834694,
+      "fullPolicyWidthWithoutZeroSupportTrial": 0.413613,
+      "minimaxMidpoint": 0.627888,
+      "minimaxWorstCaseError": 0.206806,
+      "containsWorlds": {
+        "low-hidden-success": false,
+        "high-hidden-success": true
+      }
+    },
+    {
+      "gamma": 16,
+      "supportedLower": 0.470909,
+      "supportedUpper": 0.809565,
+      "supportedWidth": 0.338656,
+      "fullPolicyLowerWithoutZeroSupportTrial": 0.388561,
+      "fullPolicyUpperWithoutZeroSupportTrial": 0.842867,
+      "fullPolicyWidthWithoutZeroSupportTrial": 0.454306,
+      "minimaxMidpoint": 0.615714,
+      "minimaxWorstCaseError": 0.227153,
+      "containsWorlds": {
+        "low-hidden-success": false,
+        "high-hidden-success": true
+      }
+    },
+    {
+      "gamma": 25,
+      "supportedLower": 0.454146,
+      "supportedUpper": 0.813258,
+      "supportedWidth": 0.359112,
+      "fullPolicyLowerWithoutZeroSupportTrial": 0.374729,
+      "fullPolicyUpperWithoutZeroSupportTrial": 0.845914,
+      "fullPolicyWidthWithoutZeroSupportTrial": 0.471185,
+      "minimaxMidpoint": 0.610322,
+      "minimaxWorstCaseError": 0.235592,
+      "containsWorlds": {
+        "low-hidden-success": true,
+        "high-hidden-success": true
+      }
+    },
+    {
+      "gamma": "unbounded",
+      "supportedLower": 0.42,
+      "supportedUpper": 0.82,
+      "supportedWidth": 0.4,
+      "fullPolicyLowerWithoutZeroSupportTrial": 0.346554,
+      "fullPolicyUpperWithoutZeroSupportTrial": 0.851477,
+      "fullPolicyWidthWithoutZeroSupportTrial": 0.504923,
+      "minimaxMidpoint": 0.599015,
+      "minimaxWorstCaseError": 0.252461,
+      "containsWorlds": {
+        "low-hidden-success": true,
+        "high-hidden-success": true
+      }
+    }
+  ],
+  "randomizedTrials": [
+    {
+      "sampleSize": 0,
+      "allocation": [
+        0,
+        0
+      ],
+      "meanRegionalLower": 0,
+      "meanRegionalUpper": 1,
+      "meanRegionalWidth": 1,
+      "meanPolicyContributionWidth": 0.174871,
+      "coverage": 1,
+      "passesWidthGate": false
+    },
+    {
+      "sampleSize": 10,
+      "allocation": [
+        5,
+        5
+      ],
+      "meanRegionalLower": 0.154333,
+      "meanRegionalUpper": 0.918467,
+      "meanRegionalWidth": 0.764133,
+      "meanPolicyContributionWidth": 0.133625,
+      "widthReductionFromNoData": 0.041246,
+      "reductionPerRandomizedObservation": 0.004125,
+      "coverage": 0.9999,
+      "passesWidthGate": false
+    },
+    {
+      "sampleSize": 30,
+      "allocation": [
+        15,
+        15
+      ],
+      "meanRegionalLower": 0.309857,
+      "meanRegionalUpper": 0.823586,
+      "meanRegionalWidth": 0.513728,
+      "meanPolicyContributionWidth": 0.089836,
+      "widthReductionFromNoData": 0.085035,
+      "reductionPerRandomizedObservation": 0.002834,
+      "coverage": 0.9999,
+      "passesWidthGate": false
+    },
+    {
+      "sampleSize": 100,
+      "allocation": [
+        50,
+        50
+      ],
+      "meanRegionalLower": 0.436268,
+      "meanRegionalUpper": 0.729894,
+      "meanRegionalWidth": 0.293627,
+      "meanPolicyContributionWidth": 0.051347,
+      "widthReductionFromNoData": 0.123524,
+      "reductionPerRandomizedObservation": 0.001235,
+      "coverage": 0.9997,
+      "passesWidthGate": false
+    },
+    {
+      "sampleSize": 120,
+      "allocation": [
+        60,
+        60
+      ],
+      "meanRegionalLower": 0.449724,
+      "meanRegionalUpper": 0.71798,
+      "meanRegionalWidth": 0.268255,
+      "meanPolicyContributionWidth": 0.04691,
+      "widthReductionFromNoData": 0.127961,
+      "reductionPerRandomizedObservation": 0.001066,
+      "coverage": 0.9986,
+      "passesWidthGate": true
+    }
+  ],
+  "informationValueComparison": {
+    "referenceGamma": 25,
+    "perfectMissingnessAuditWidthReduction": 0.296314,
+    "tenRunZeroSupportPilotExpectedWidthReduction": 0.041246,
+    "reductionRatioAuditToTenRunPilot": 7.18406,
+    "nextAction": "missingness-audit-first",
+    "rationale": "At Gamma 25, externally identifying the response mechanism removes more policy-value ambiguity than ten randomized observations in the zero-support region; retain the ten-run trial as a calibration pilot, not as a point-identification claim."
+  },
+  "preregisteredFindings": {
+    "observedDistributionDoesNotIdentifyFullMean": true,
+    "gammaOneCollapsesToObservedMean": true,
+    "gamma25ContainsBothWorlds": true,
+    "tenRunsShrinkButFailWidthGate": true,
+    "missingnessAuditDominatesTenRunPilot": true
+  }
+}

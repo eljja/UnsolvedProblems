@@ -1,0 +1,51 @@
+{
+  "simulationId": "PARTIAL-ID-MNAR-SUPPORT-0.1",
+  "reviewedOn": "2026-08-12",
+  "estimand": "Mean binary outcome under the target policy",
+  "outcomeRange": [0, 1],
+  "supportedRegion": {
+    "targetWeight": 0.825129,
+    "responseRate": 0.6,
+    "positiveRateAmongObserved": 0.7,
+    "indistinguishableWorlds": [
+      {
+        "id": "low-hidden-success",
+        "positiveRateAmongMissing": 0.1
+      },
+      {
+        "id": "high-hidden-success",
+        "positiveRateAmongMissing": 0.9
+      }
+    ],
+    "selectionOddsGamma": [1, 2, 4, 8, 16, 25, "unbounded"]
+  },
+  "zeroSupportRegion": {
+    "targetWeight": 0.174871,
+    "strata": [
+      {
+        "id": "A",
+        "weightWithinRegion": 0.6,
+        "truePositiveRate": 0.75
+      },
+      {
+        "id": "B",
+        "weightWithinRegion": 0.4,
+        "truePositiveRate": 0.35
+      }
+    ],
+    "randomizedSampleSizes": [0, 10, 30, 100, 120],
+    "allocation": "equal-by-stratum",
+    "replications": 10000,
+    "seed": 20260812,
+    "confidenceLevel": 0.95,
+    "interval": "Bonferroni-adjusted two-sided Clopper-Pearson by stratum"
+  },
+  "decisionGates": {
+    "maximumZeroSupportContributionWidth": 0.05,
+    "minimumFamilywiseCoverage": 0.95,
+    "pointIdentificationRequires": [
+      "selectionOddsGamma equals 1 or is externally identified",
+      "zero-support target actions receive independent randomized observations"
+    ]
+  }
+}

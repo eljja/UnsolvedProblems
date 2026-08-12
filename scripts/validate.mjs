@@ -8,7 +8,7 @@ const failures = [];
 const assert = (condition, message) => { if (!condition) failures.push(message); };
 
 const sandbox = { window: {} };
-for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js"]) {
+for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-05-data.js"]) {
   vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }
 
@@ -21,6 +21,8 @@ const replayFixture = JSON.parse(fs.readFileSync(path.join(root, "research/repla
 const replayVerification = JSON.parse(fs.readFileSync(path.join(root, "research/replay/verification-result.json"), "utf8"));
 const opeSpec = JSON.parse(fs.readFileSync(path.join(root, "research/ope/simulation-spec.json"), "utf8"));
 const opeResult = JSON.parse(fs.readFileSync(path.join(root, "research/ope/simulation-result.json"), "utf8"));
+const identificationSpec = JSON.parse(fs.readFileSync(path.join(root, "research/identification/sensitivity-spec.json"), "utf8"));
+const identificationResult = JSON.parse(fs.readFileSync(path.join(root, "research/identification/sensitivity-result.json"), "utf8"));
 assert(Array.isArray(PROBLEMS), "PROBLEMS must be an array");
 assert(PROBLEMS.length > 0, "catalog must contain at least one problem");
 assert(new Set(PROBLEMS.map(item => item.id)).size === PROBLEMS.length, "problem IDs must be unique");
@@ -300,6 +302,11 @@ assert(opeResult.truth?.targetPolicyValue === 0.4793, "OPE result must preserve 
 assert(Object.values(opeResult.preregisteredFindings || {}).every(Boolean), "every preregistered OPE finding must be adjudicated true");
 assert(opeResult.scenarios.find(item => item.scenarioId === "weak_overlap")?.benchmarkEligible === false, "weak overlap must fail the precision benchmark gate");
 assert(opeResult.scenarios.find(item => item.scenarioId === "zero_support")?.causalEligible === false, "zero support must refuse causal point identification");
+assert(identificationSpec.simulationId === "PARTIAL-ID-MNAR-SUPPORT-0.1", "partial-identification specification must preserve its stable ID");
+assert(identificationResult.simulationId === identificationSpec.simulationId, "partial-identification result must match its specification");
+assert(JSON.stringify(identificationResult.indistinguishableWorlds[0].observedJoint) === JSON.stringify(identificationResult.indistinguishableWorlds[1].observedJoint), "MNAR worlds must preserve the same observed distribution");
+assert(Object.values(identificationResult.preregisteredFindings || {}).every(Boolean), "every preregistered partial-identification finding must be true");
+assert(identificationResult.randomizedTrials.find(item => item.sampleSize === 10)?.passesWidthGate === false, "ten-run zero-support pilot must retain its failed width gate");
 
 const boundaryCount = PROBLEMS.filter(item => item.nature === "boundary").length;
 assert(boundaryCount > 0, "catalog must preserve clearly labeled boundary examples");
