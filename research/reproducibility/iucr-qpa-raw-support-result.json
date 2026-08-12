@@ -1,0 +1,279 @@
+{
+  "benchmarkId": "IUCR-QPA-RAW-SUPPORT-0.1",
+  "generatedOn": "2026-08-12",
+  "source": {
+    "rawManifestId": "IUCR-QPA-RAW-LINEAGE-0.1",
+    "summaryManifestId": "IUCR-QPA-SUMMARY-SOURCE-0.1",
+    "rawFiles": 208,
+    "rawBytes": 12685811,
+    "topasLineageFiles": 9
+  },
+  "denominators": {
+    "rawFiles": 208,
+    "rawHalConditions": 1456,
+    "joinedConditions": 1456,
+    "joinedRefinementRows": 5824
+  },
+  "joinAudit": {
+    "everyConditionHasFourRefinementChildren": true,
+    "uniqueRawHashes": 208,
+    "development": {
+      "conditions": 728,
+      "unsafe": 103,
+      "allUnsafe": 40,
+      "discordant": 63,
+      "safe": 625,
+      "safeRowsInsideDiscordantConditions": 167
+    },
+    "holdout": {
+      "conditions": 728,
+      "unsafe": 351,
+      "allUnsafe": 268,
+      "discordant": 83,
+      "safe": 377,
+      "safeRowsInsideDiscordantConditions": 163
+    }
+  },
+  "observedRawFeatures": {
+    "development": {
+      "actualStepRatioMedian": 0.982418736,
+      "observedToNominalMaximumMedian": 0.697,
+      "observedToNominalMaximumRange": [
+        0.045,
+        1.01
+      ],
+      "phaseSupportMedian": 2.445048235,
+      "netIntegratedCountsMedian": 4080.829
+    },
+    "holdout": {
+      "actualStepRatioMedian": 0.980721876,
+      "observedToNominalMaximumMedian": 0.7322,
+      "observedToNominalMaximumRange": [
+        0.26,
+        0.993146
+      ],
+      "phaseSupportMedian": 41.585099608,
+      "netIntegratedCountsMedian": 11682.407
+    },
+    "nominalObservedGateDisagreement": {
+      "development": {
+        "nominalOnly": 15,
+        "observedOnly": 0,
+        "bothAccept": 75,
+        "bothReject": 638
+      },
+      "holdout": {
+        "nominalOnly": 15,
+        "observedOnly": 0,
+        "bothAccept": 75,
+        "bothReject": 638
+      }
+    }
+  },
+  "selectors": {
+    "nominalArticleGate": {
+      "rule": "nominal step <= 0.04 degrees, HAL >= 70 degrees, nominal maximum >= 20,000",
+      "development": {
+        "conditions": 728,
+        "unsafeConditions": 103,
+        "acceptedConditions": 90,
+        "acceptedFraction": 0.123626374,
+        "unsafeAccepted": 0,
+        "unsafeAcceptedFraction": 0,
+        "safeRetention": 0.144,
+        "maximumAcceptedError": 0.675069488
+      },
+      "holdout": {
+        "conditions": 728,
+        "unsafeConditions": 351,
+        "acceptedConditions": 90,
+        "acceptedFraction": 0.123626374,
+        "unsafeAccepted": 0,
+        "unsafeAcceptedFraction": 0,
+        "safeRetention": 0.23872679,
+        "maximumAcceptedError": 3.519357618
+      }
+    },
+    "observedArticleGate": {
+      "rule": "actual median step <= 0.04 degrees, HAL >= 70 degrees, observed maximum >= 20,000",
+      "development": {
+        "conditions": 728,
+        "unsafeConditions": 103,
+        "acceptedConditions": 75,
+        "acceptedFraction": 0.103021978,
+        "unsafeAccepted": 0,
+        "unsafeAcceptedFraction": 0,
+        "safeRetention": 0.12,
+        "maximumAcceptedError": 0.675069488
+      },
+      "holdout": {
+        "conditions": 728,
+        "unsafeConditions": 351,
+        "acceptedConditions": 75,
+        "acceptedFraction": 0.103021978,
+        "unsafeAccepted": 0,
+        "unsafeAcceptedFraction": 0,
+        "safeRetention": 0.198938992,
+        "maximumAcceptedError": 3.519357618
+      }
+    },
+    "netCountGate": {
+      "threshold": 185175.729301,
+      "development": {
+        "conditions": 728,
+        "unsafeConditions": 103,
+        "acceptedConditions": 91,
+        "acceptedFraction": 0.125,
+        "unsafeAccepted": 0,
+        "unsafeAcceptedFraction": 0,
+        "safeRetention": 0.1456,
+        "maximumAcceptedError": 4.857540121
+      },
+      "holdout": {
+        "conditions": 728,
+        "unsafeConditions": 351,
+        "acceptedConditions": 152,
+        "acceptedFraction": 0.208791209,
+        "unsafeAccepted": 72,
+        "unsafeAcceptedFraction": 0.473684211,
+        "safeRetention": 0.212201592,
+        "maximumAcceptedError": 28.945916694
+      }
+    },
+    "phaseSupportGate": {
+      "threshold": 2.527451803,
+      "development": {
+        "conditions": 728,
+        "unsafeConditions": 103,
+        "acceptedConditions": 354,
+        "acceptedFraction": 0.486263736,
+        "unsafeAccepted": 0,
+        "unsafeAcceptedFraction": 0,
+        "safeRetention": 0.5664,
+        "maximumAcceptedError": 4.870386279
+      },
+      "holdout": {
+        "conditions": 728,
+        "unsafeConditions": 351,
+        "acceptedConditions": 612,
+        "acceptedFraction": 0.840659341,
+        "unsafeAccepted": 284,
+        "unsafeAcceptedFraction": 0.464052288,
+        "safeRetention": 0.870026525,
+        "maximumAcceptedError": 26.718557302
+      }
+    }
+  },
+  "rowSelectors": {
+    "rc18RwpGate": {
+      "threshold": 8.043046005815,
+      "development": {
+        "rows": 2912,
+        "unsafeRows": 245,
+        "acceptedRows": 329,
+        "acceptedFraction": 0.112980769,
+        "unsafeAccepted": 0,
+        "unsafeAcceptedFraction": 0,
+        "safeRetention": 0.12335958,
+        "maximumAcceptedError": 0.994791923
+      },
+      "holdout": {
+        "rows": 2912,
+        "unsafeRows": 1241,
+        "acceptedRows": 484,
+        "acceptedFraction": 0.166208791,
+        "unsafeAccepted": 0,
+        "unsafeAcceptedFraction": 0,
+        "safeRetention": 0.289646918,
+        "maximumAcceptedError": 4.347002028
+      }
+    },
+    "phaseSupportConditionGate": {
+      "development": {
+        "rows": 2912,
+        "unsafeRows": 245,
+        "acceptedRows": 1416,
+        "acceptedFraction": 0.486263736,
+        "unsafeAccepted": 0,
+        "unsafeAcceptedFraction": 0,
+        "safeRetention": 0.530933633,
+        "maximumAcceptedError": 4.870386279
+      },
+      "holdout": {
+        "rows": 2912,
+        "unsafeRows": 1241,
+        "acceptedRows": 2448,
+        "acceptedFraction": 0.840659341,
+        "unsafeAccepted": 1008,
+        "unsafeAcceptedFraction": 0.411764706,
+        "safeRetention": 0.861759425,
+        "maximumAcceptedError": 26.718557302
+      }
+    },
+    "twoStageGate": {
+      "development": {
+        "rows": 2912,
+        "unsafeRows": 245,
+        "acceptedRows": 276,
+        "acceptedFraction": 0.09478022,
+        "unsafeAccepted": 0,
+        "unsafeAcceptedFraction": 0,
+        "safeRetention": 0.103487064,
+        "maximumAcceptedError": 0.994791923
+      },
+      "holdout": {
+        "rows": 2912,
+        "unsafeRows": 1241,
+        "acceptedRows": 410,
+        "acceptedFraction": 0.140796703,
+        "unsafeAccepted": 0,
+        "unsafeAcceptedFraction": 0,
+        "safeRetention": 0.245362059,
+        "maximumAcceptedError": 4.347002028
+      }
+    }
+  },
+  "stagePartition": {
+    "1a": {
+      "counts": {
+        "bothPass": 276,
+        "rawPassRwpFail": 1140,
+        "rawFailRwpPass": 53,
+        "bothFail": 1443
+      },
+      "unsafeCounts": {
+        "bothPass": 0,
+        "rawPassRwpFail": 0,
+        "rawFailRwpPass": 0,
+        "bothFail": 245
+      }
+    },
+    "1e": {
+      "counts": {
+        "bothPass": 410,
+        "rawPassRwpFail": 2038,
+        "rawFailRwpPass": 74,
+        "bothFail": 390
+      },
+      "unsafeCounts": {
+        "bothPass": 0,
+        "rawPassRwpFail": 1008,
+        "rawFailRwpPass": 0,
+        "bothFail": 233
+      }
+    }
+  },
+  "decision": {
+    "H1_observedGateImprovesNominal": false,
+    "H2_sameProfileModelChoiceFailure": true,
+    "H3_phaseSupportBeatsNetCounts": false,
+    "H4_twoStagesDiagnoseDistinctFailure": true,
+    "stableMixtureRungQualified": false
+  },
+  "interpretation": [
+    "Raw lineage is now complete from 208 official XY profiles through eight TOPAS input families to 5,824 published summary rows.",
+    "A raw-only gate acts on an acquisition block, so discordant refinement types within the same block expose a structural limit: measurement support cannot identify model-choice error.",
+    "Phase-window support uses known phase identities and cannot be transferred to unknown-phase discovery without a separate detection stage.",
+    "All thresholds remain within one instrument and preparation lineage; independent physical replication is still required before qualifying the stable-mixture rung."
+  ]
+}

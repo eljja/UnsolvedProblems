@@ -1,0 +1,99 @@
+{
+  "pilotId": "QPA-PILOT-2026-INDEPENDENT-TRANSFER",
+  "protocolVersion": "0.1.0",
+  "status": "design-complete-not-executed",
+  "reviewedOn": "2026-08-12",
+  "objective": "Test whether acquisition support, model-specific residual fit, and error-source-independent elemental composition can jointly bound quantitative phase error across preparation, instrument, institution, and reduction-implementation shifts.",
+  "compositionStrata": [
+    { "label": "trace-skewed", "referencePattern": "QARR 1a", "targetWeightPercent": { "corundum": 1.15, "fluorite": 94.81, "zincite": 4.04 } },
+    { "label": "moderately-skewed", "referencePattern": "QARR 1e", "targetWeightPercent": { "corundum": 55.12, "fluorite": 29.62, "zincite": 15.25 } },
+    { "label": "balanced", "referencePattern": "QARR 1g", "targetWeightPercent": { "corundum": 31.37, "fluorite": 34.42, "zincite": 34.21 } }
+  ],
+  "factorialDesign": {
+    "independentPreparationsPerComposition": 2,
+    "institutionsPerPreparation": 2,
+    "reductionImplementationsPerAcquisition": 2,
+    "independentElementalAssaysPerPreparation": 2,
+    "minimumSpecimens": 6,
+    "minimumDiffractionAcquisitions": 12,
+    "minimumReductionResults": 24,
+    "minimumIndependentAssays": 12,
+    "unitRule": "Randomized starting values and repeated software runs are computational repeats and never increase the physical preparation, acquisition, or assay denominator."
+  },
+  "blinding": {
+    "coordinator": "A coordinator who performs neither diffraction reduction nor elemental analysis creates random blind specimen and aliquot IDs.",
+    "commitment": "Before material leaves the preparation site, publish SHA-256(canonical truth-key JSON plus a secret salt). Keep the truth key and salt offline with the coordinator.",
+    "analystVisibility": "Diffraction and elemental-analysis teams see only blind IDs, handling requirements, and method parameters. They do not see target composition, weighing ledgers, the other team's outputs, or the alternative reduction.",
+    "freezeBeforeRelease": [
+      "Every expected raw file and calibration/mask hash is present.",
+      "Both reduction implementations have frozen outputs and exclusion logs.",
+      "Independent assay outputs and uncertainty budgets are frozen.",
+      "The analysis environment and decision code hashes are published.",
+      "Missingness and protocol deviations are signed without composition knowledge."
+    ],
+    "release": "Reveal the salt and truth-key JSON only after every freeze condition is met; verify the public commitment before joining truth to results."
+  },
+  "acquisitionContract": {
+    "primaryGrid": { "maximumStepDegrees2Theta": 0.04, "minimumHighAngleLimitDegrees2Theta": 70, "minimumTargetMaximumCounts": 20000 },
+    "requiredLineage": ["preparation_id", "batch_id", "aliquot_id", "institution_id", "instrument_id", "operator_id", "raw_frame_sha256", "calibration_sha256", "mask_sha256", "environment_record_sha256"],
+    "prohibitedChangesAfterTruthRelease": ["background family", "peak-shape family", "phase list", "mask", "exclusion range", "preferred-orientation correction", "Rwp normalization", "outlier rule"]
+  },
+  "reductionContract": {
+    "implementationA": "TOPAS Rietveld reduction whose model family is frozen from the RC18 lineage.",
+    "implementationB": "A separately maintained implementation using an independent codebase and analyst; a reference-pattern or direct-derivation route is preferred over a second wrapper around the same TOPAS model.",
+    "sharedInputsAllowed": ["raw diffraction frame", "phase identities", "wavelength calibration"],
+    "sharedInputsForbidden": ["fitted scale factors", "background coefficients", "refined structural parameters", "manual exclusion decisions", "post-release truth values"],
+    "reportedMetrics": ["phase fractions", "formal uncertainties", "Rwp and Rexp", "parameter-correlation summary", "raw-support metrics", "mass-balance residual", "all exclusions"]
+  },
+  "independentTruthContract": {
+    "gravimetricTruth": "Calibrated balance readings, purity and moisture corrections, transfer losses, and weighing uncertainty are recorded before aliquoting.",
+    "elementalAssay": "XRF or an independently validated digestion plus ICP route measures Al, Ca, Zn and relevant impurities on sibling aliquots. The assay team does not use diffraction-derived phase fractions.",
+    "massBalance": "Convert elemental results to a phase-composition constraint only with a frozen stoichiometric and impurity model; report unassigned mass rather than renormalizing it away.",
+    "independenceFailure": "If the assay calibration uses the same prepared mixtures as truth standards or imports diffraction fractions, it cannot adjudicate diffraction accuracy."
+  },
+  "primaryDecisions": {
+    "maximumPhaseError": "No accepted reduction may exceed five weight-percentage points against gravimetric truth.",
+    "unsafeAcceptance": "Zero across the full blind holdout.",
+    "safeRetention": "At least 0.50 of reductions that are truly within five points must be accepted.",
+    "externalTruthInclusion": "At least 0.90 of composition-by-preparation blocks must have an uncertainty set containing both gravimetric and compatible elemental constraints.",
+    "implementationAgreement": "The two reductions must agree in error direction and differ by no more than their frozen combined uncertainty; otherwise the block is unresolved, not averaged.",
+    "varianceIdentification": "Preparation, institution/instrument, and reduction components must each be estimable from the crossed design; missing cells stop component claims."
+  },
+  "secondaryDecisions": {
+    "rc18RawRwpThreshold": "Evaluate Rwp < 8.043046005815 unchanged as a transport test; failure does not authorize post-hoc rescaling.",
+    "rawSupportGate": "Evaluate the RC19 raw phase-support threshold unchanged and report its composition dependence.",
+    "nominalAcquisitionGate": "Evaluate step <= 0.04 degrees, HAL >= 70 degrees, and target maximum >= 20,000 counts as a fixed acquisition rule.",
+    "futureNormalization": "If raw Rwp does not transport between instruments, a new cycle may compare predeclared Rwp/Rexp or instrument-calibrated residuals using only a newly designated development block."
+  },
+  "stopConditions": [
+    "Any truth-key or weighing-ledger disclosure before output freeze.",
+    "Any missing preparation, institution, implementation, or assay cell that destroys the crossed variance decomposition.",
+    "A raw frame, calibration, mask, code, environment, or output without a verifiable hash.",
+    "Any primary unsafe acceptance.",
+    "Safe retention below 0.50 or external-truth inclusion below 0.90.",
+    "Unresolved mass exceeding the frozen impurity and transfer-loss budget.",
+    "A result that depends on exclusions or model changes made after truth release."
+  ],
+  "uncertaintyBudget": {
+    "weighing": ["balance calibration", "purity", "moisture", "transfer loss"],
+    "preparation": ["mixing heterogeneity", "particle-size segregation", "aliquot representativeness", "packing and preferred orientation"],
+    "instrument": ["wavelength and zero offset", "resolution function", "counting statistics", "sample displacement", "detector nonlinearity"],
+    "reduction": ["background and peak-shape family", "structure and microabsorption assumptions", "parameter correlation", "implementation and analyst decisions"],
+    "independentAssay": ["sampling and digestion", "matrix correction", "calibration traceability", "stoichiometric conversion", "unassigned impurities"],
+    "transport": ["composition stratum", "preparation batch", "institution", "instrument", "implementation"]
+  },
+  "safetyAndEnvironment": [
+    "Handle Al2O3, ZnO and CaF2 powders in a ventilated enclosure with respiratory, eye and skin protection appropriate to the local safety data sheets; prevent inhalation and uncontrolled dust release.",
+    "Use interlocked X-ray instrumentation under institutional radiation procedures; no interlock bypass is part of the protocol.",
+    "Minimize prepared mass, retain spill and waste records, and dispose of fluoride-containing material through the institution's hazardous-waste route.",
+    "No human or animal subjects and no security-sensitive synthesis are involved."
+  ],
+  "advanceRule": "Qualify the stable-mixture rung only after all primary decisions pass on the blinded crossed holdout and the commitment, lineage, independent assay, and variance-decomposition audits pass. Composition transfer in the historical single-instrument dataset alone is insufficient.",
+  "nextBranchOnFailure": {
+    "acquisitionGateFails": "Increase information selectively at the weakest phase window or change geometry; do not increase every scan uniformly.",
+    "reductionsDisagree": "Localize disagreement to background, peak shape, structure, microabsorption, or exclusion decisions with sealed ablations.",
+    "elementalAndGravimetricTruthDisagree": "Suspend diffraction adjudication and audit purity, moisture, transfer loss, digestion, matrix correction, and unassigned mass.",
+    "rwpDoesNotTransport": "Reject universal raw Rwp and test a predeclared instrument-normalized residual on a new development block.",
+    "allPrimaryGatesPass": "Move to a VO2-specific transfer rung with texture, thermal history, and cross-probe structural/electronic separation treated as new factors."
+  }
+}

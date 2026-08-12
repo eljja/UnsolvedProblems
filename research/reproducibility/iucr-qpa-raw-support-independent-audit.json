@@ -1,0 +1,104 @@
+{
+  "auditId": "IUCR-QPA-RAW-SUPPORT-INDEPENDENT-AUDIT-0.1",
+  "generatedOn": "2026-08-12",
+  "implementation": "Python standard library; does not import or execute the JavaScript analysis",
+  "denominators": {
+    "rawFiles": 208,
+    "rawHalConditions": 1456,
+    "joinedConditions": 1456,
+    "joinedRows": 5824
+  },
+  "conditionLabels": {
+    "developmentUnsafe": 103,
+    "developmentDiscordant": 63,
+    "holdoutUnsafe": 351,
+    "holdoutDiscordant": 83
+  },
+  "thresholds": {
+    "netIntegratedCounts": 185175.729301,
+    "phaseSupportScore": 2.527451803,
+    "rwp": 8.043046005815
+  },
+  "holdoutConditionSelectors": {
+    "nominalArticleGate": {
+      "acceptedConditions": 90,
+      "unsafeAccepted": 0,
+      "safeRetention": 0.23872679,
+      "maximumAcceptedError": 3.519357618
+    },
+    "observedArticleGate": {
+      "acceptedConditions": 75,
+      "unsafeAccepted": 0,
+      "safeRetention": 0.198938992,
+      "maximumAcceptedError": 3.519357618
+    },
+    "netCountGate": {
+      "acceptedConditions": 152,
+      "unsafeAccepted": 72,
+      "safeRetention": 0.212201592,
+      "maximumAcceptedError": 28.945916694
+    },
+    "phaseSupportGate": {
+      "acceptedConditions": 612,
+      "unsafeAccepted": 284,
+      "safeRetention": 0.870026525,
+      "maximumAcceptedError": 26.718557302
+    }
+  },
+  "holdoutRowSelectors": {
+    "rc18RwpGate": {
+      "acceptedRows": 484,
+      "unsafeAccepted": 0,
+      "safeRetention": 0.289646918,
+      "maximumAcceptedError": 4.347002028
+    },
+    "phaseSupportConditionGate": {
+      "acceptedRows": 2448,
+      "unsafeAccepted": 1008,
+      "safeRetention": 0.861759425,
+      "maximumAcceptedError": 26.718557302
+    },
+    "twoStageGate": {
+      "acceptedRows": 410,
+      "unsafeAccepted": 0,
+      "safeRetention": 0.245362059,
+      "maximumAcceptedError": 4.347002028
+    }
+  },
+  "stagePartition": {
+    "1a": {
+      "counts": {
+        "bothPass": 276,
+        "rawPassRwpFail": 1140,
+        "rawFailRwpPass": 53,
+        "bothFail": 1443
+      },
+      "unsafeCounts": {
+        "bothPass": 0,
+        "rawPassRwpFail": 0,
+        "rawFailRwpPass": 0,
+        "bothFail": 245
+      }
+    },
+    "1e": {
+      "counts": {
+        "bothPass": 410,
+        "rawPassRwpFail": 2038,
+        "rawFailRwpPass": 74,
+        "bothFail": 390
+      },
+      "unsafeCounts": {
+        "bothPass": 0,
+        "rawPassRwpFail": 1008,
+        "rawFailRwpPass": 0,
+        "bothFail": 233
+      }
+    }
+  },
+  "decisions": {
+    "H1": false,
+    "H2": true,
+    "H3": false,
+    "H4": true
+  }
+}

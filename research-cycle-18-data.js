@@ -17,7 +17,7 @@
     curtin_qpa_dataset_2020: {
       discipline: "materials", title: "A study on the robustness of quantitative phase analysis of X-ray diffraction data by the Rietveld method - no zero error", url: "https://doi.org/10.25917/nvsw-0044",
       evidenceLabel: "Curtin 공식 원자료·입력·정련결과 저장소", evidenceLabelEn: "Official Curtin repository of raw patterns, inputs, and refinement outputs", publishedOn: "2020-11-01",
-      resultPeriod: "2019-12-19–2020-05-25 수집, 234 회절파일과 1,164,800회 정련을 구성하는 공개자료", resultPeriodEn: "Collected 2019-12-19 to 2020-05-25; public data underlying 234 diffraction files and 1,164,800 refinements", reviewedOn: REVIEWED_ON
+      resultPeriod: "2019-12-19–2020-05-25 수집, 208 회절파일과 1,164,800회 정련을 구성하는 공개자료", resultPeriodEn: "Collected 2019-12-19 to 2020-05-25; public data underlying 208 diffraction files and 1,164,800 refinements", reviewedOn: REVIEWED_ON
     },
     rowles_qpa_author_manuscript_2021: {
       discipline: "materials", title: "Author manuscript: The effect of data quality and model parameters on quantitative phase analysis", url: "https://arxiv.org/abs/2008.11046v4",

@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/iucr-qpa-independent-pilot.schema.json",
+  "title": "Independent quantitative-phase-analysis pilot manifest",
+  "type": "object",
+  "required": ["pilotId", "protocolVersion", "blindCommitment", "specimens", "acquisitions", "reductions", "independentAssays", "decisionFreeze"],
+  "properties": {
+    "pilotId": { "type": "string", "pattern": "^QPA-PILOT-[0-9]{4}-[A-Z0-9-]+$" },
+    "protocolVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "blindCommitment": {
+      "type": "object",
+      "required": ["algorithm", "commitmentSha256", "heldBy", "releaseConditions"],
+      "properties": {
+        "algorithm": { "const": "SHA-256 of canonical UTF-8 truth-key JSON plus a secret salt" },
+        "commitmentSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "heldBy": { "type": "string", "minLength": 3 },
+        "releaseConditions": { "type": "array", "minItems": 3, "items": { "type": "string", "minLength": 8 } }
+      },
+      "additionalProperties": false
+    },
+    "specimens": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["blindSpecimenId", "compositionStratum", "preparationId", "operatorId", "batchId", "aliquotIds", "weighingLedgerHash"],
+        "properties": {
+          "blindSpecimenId": { "type": "string", "pattern": "^BSP-[A-Z0-9]{6,12}$" },
+          "compositionStratum": { "enum": ["trace-skewed", "moderately-skewed", "balanced"] },
+          "preparationId": { "type": "string" },
+          "operatorId": { "type": "string" },
+          "batchId": { "type": "string" },
+          "aliquotIds": { "type": "array", "minItems": 2, "uniqueItems": true, "items": { "type": "string" } },
+          "weighingLedgerHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "homogenizationProtocol": { "type": "string" },
+          "containerAndStorage": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "acquisitions": {
+      "type": "array",
+      "minItems": 12,
+      "items": {
+        "type": "object",
+        "required": ["acquisitionId", "blindSpecimenId", "aliquotId", "institutionId", "instrumentId", "operatorId", "rawFrameSha256", "calibrationSha256", "maskSha256", "nominalStepDegrees2Theta", "highAngleLimitDegrees2Theta", "targetMaximumCounts"],
+        "properties": {
+          "acquisitionId": { "type": "string" },
+          "blindSpecimenId": { "type": "string" },
+          "aliquotId": { "type": "string" },
+          "institutionId": { "type": "string" },
+          "instrumentId": { "type": "string" },
+          "operatorId": { "type": "string" },
+          "rawFrameSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "calibrationSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "maskSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "nominalStepDegrees2Theta": { "type": "number", "exclusiveMinimum": 0 },
+          "highAngleLimitDegrees2Theta": { "type": "number", "minimum": 70 },
+          "targetMaximumCounts": { "type": "integer", "minimum": 20000 },
+          "observedMaximumCounts": { "type": "number", "minimum": 0 },
+          "environmentRecordSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "reductions": {
+      "type": "array",
+      "minItems": 24,
+      "items": {
+        "type": "object",
+        "required": ["reductionId", "acquisitionId", "implementationFamily", "analystId", "codeSha256", "environmentSha256", "inputManifestSha256", "outputSha256", "phaseFractionsWeightPercent", "rwp", "formalUncertainty"],
+        "properties": {
+          "reductionId": { "type": "string" },
+          "acquisitionId": { "type": "string" },
+          "implementationFamily": { "enum": ["TOPAS-Rietveld", "independent-Rietveld-or-reference-pattern"] },
+          "analystId": { "type": "string" },
+          "codeSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "environmentSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "inputManifestSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "outputSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "phaseFractionsWeightPercent": {
+            "type": "object",
+            "required": ["corundum", "fluorite", "zincite"],
+            "properties": {
+              "corundum": { "type": "number", "minimum": 0, "maximum": 100 },
+              "fluorite": { "type": "number", "minimum": 0, "maximum": 100 },
+              "zincite": { "type": "number", "minimum": 0, "maximum": 100 }
+            },
+            "additionalProperties": false
+          },
+          "rwp": { "type": "number", "minimum": 0 },
+          "formalUncertainty": { "type": "object" },
+          "exclusions": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "independentAssays": {
+      "type": "array",
+      "minItems": 12,
+      "items": {
+        "type": "object",
+        "required": ["assayId", "aliquotId", "assayFamily", "laboratoryId", "operatorId", "methodFileSha256", "rawResultSha256", "reportedElements", "measurementUncertainty"],
+        "properties": {
+          "assayId": { "type": "string" },
+          "aliquotId": { "type": "string" },
+          "assayFamily": { "enum": ["XRF", "ICP-OES", "ICP-MS", "validated-independent-method"] },
+          "laboratoryId": { "type": "string" },
+          "operatorId": { "type": "string" },
+          "methodFileSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "rawResultSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "reportedElements": { "type": "object", "minProperties": 3 },
+          "measurementUncertainty": { "type": "object", "minProperties": 3 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "decisionFreeze": {
+      "type": "object",
+      "required": ["analysisPlanSha256", "softwareEnvironmentSha256", "primaryGates", "freezeTimestamp", "truthReleaseTimestamp"],
+      "properties": {
+        "analysisPlanSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "softwareEnvironmentSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "primaryGates": { "type": "array", "minItems": 4, "items": { "type": "string" } },
+        "freezeTimestamp": { "type": "string", "format": "date-time" },
+        "truthReleaseTimestamp": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,93 @@
+{
+  "benchmarkId": "IUCR-QPA-RAW-SUPPORT-0.1",
+  "reviewedOn": "2026-08-12",
+  "status": "sealed-before-raw-support-computation",
+  "purpose": "Determine whether quantities computed directly from the 208 official diffraction profiles can replace nominal acquisition labels or refinement-internal confidence as a transportable refusal rule for quantitative phase analysis.",
+  "sourceContract": {
+    "datasetDoi": "10.25917/nvsw-0044",
+    "datasetDirectory": "https://ddfe.curtin.edu.au/NVSW-0044/",
+    "rawDirectory": "https://ddfe.curtin.edu.au/NVSW-0044/diffraction_data/",
+    "datasetReadme": "https://ddfe.curtin.edu.au/NVSW-0044/readme.txt",
+    "rawReadme": "https://ddfe.curtin.edu.au/NVSW-0044/diffraction_data/readme.txt",
+    "summaryManifest": "research/reproducibility/iucr-qpa-summary-source-manifest.json",
+    "truthSource": "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/values"
+  },
+  "expectedRawGrid": {
+    "samples": ["1a", "1e"],
+    "nominalMaximumIntensities": [100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000],
+    "nominalStepSizesDegrees2Theta": [0.01, 0.02, 0.04, 0.08, 0.16, 0.2, 0.25, 0.32],
+    "highAngleLimitsDegrees2Theta": [40, 50, 70, 90, 110, 130, 150],
+    "refinementTypes": [1, 2, 3, 4],
+    "rawFiles": 208,
+    "rawAcquisitionHalConditions": 1456,
+    "joinedRefinementRows": 5824
+  },
+  "split": {
+    "developmentSample": "1a",
+    "holdoutSample": "1e",
+    "rule": "Raw-feature thresholds are selected once using acquisition conditions from sample 1a and transferred unchanged to sample 1e. The four refinement types sharing one raw profile are kept in the same condition block.",
+    "conditionUnsafe": "An acquisition condition is unsafe when at least one of its four refinement types has maximum phase-fraction absolute error above five weight-percentage points.",
+    "rowUnsafe": "A refinement row is unsafe when its maximum phase-fraction absolute error exceeds five weight-percentage points."
+  },
+  "rawFeatureContract": {
+    "angleRange": "Use every observed point from 15 degrees 2theta through the requested high-angle limit, inclusive; never interpolate a profile to a different step grid.",
+    "actualStep": "Median adjacent 2theta difference in the truncated profile.",
+    "observedMaximum": "Largest observed count in the truncated profile.",
+    "integratedCounts": "Trapezoidal integral of non-negative observed counts over 2theta.",
+    "background": "Twentieth percentile of counts in the truncated profile.",
+    "netIntegratedCounts": "Trapezoidal integral of max(count minus the frozen background estimate, zero).",
+    "phaseWindows": {
+      "fluorite111": { "centerDegrees2Theta": 28.25, "signalHalfWidth": 0.3, "backgroundInnerHalfWidth": 0.6, "backgroundOuterHalfWidth": 1.0 },
+      "zincite100": { "centerDegrees2Theta": 31.77, "signalHalfWidth": 0.3, "backgroundInnerHalfWidth": 0.6, "backgroundOuterHalfWidth": 1.0 },
+      "corundum113": { "centerDegrees2Theta": 43.35, "signalHalfWidth": 0.3, "backgroundInnerHalfWidth": 0.6, "backgroundOuterHalfWidth": 1.0 }
+    },
+    "windowSignalToNoise": "For each frozen phase window, subtract the median sideband count from every signal-bin count, sum the residual, and divide by sqrt(sum observed signal counts plus the same background expectation). The phase-support score is the minimum of the three non-negative window values. If the high-angle limit excludes a window or no signal bin exists, the score is zero.",
+    "profileConcentration": "For positive background-subtracted counts p_i normalized to sum one, report exp(-sum p_i log p_i), the effective number of intensity-bearing bins; this is descriptive and is not used to select a gate."
+  },
+  "frozenSelectors": {
+    "nominalArticleGate": "Accept nominal step size at most 0.04 degrees, high-angle limit at least 70 degrees, and nominal maximum intensity at least 20,000 counts.",
+    "observedArticleGate": "Accept actual median step at most 0.04 degrees, high-angle limit at least 70 degrees, and observed profile maximum at least 20,000 counts.",
+    "netCountGate": "On development conditions, set the threshold to the largest net-integrated-count value among unsafe conditions and accept strictly above it. If no condition is accepted, record a zero-utility refusal rather than changing the rule.",
+    "phaseSupportGate": "Set and transfer a threshold exactly as for netCountGate using the frozen minimum phase-window signal-to-noise score.",
+    "rc18RwpGate": "At row level accept Rwp strictly below the already frozen RC18 threshold 8.043046005815; do not refit it.",
+    "twoStageGate": "Accept a row only when its raw acquisition condition passes phaseSupportGate and its Rwp passes rc18RwpGate."
+  },
+  "competingHypotheses": [
+    {
+      "id": "H1",
+      "claim": "An observed-count version of the article acquisition gate transports at least as safely as the nominal gate while retaining more safe holdout conditions.",
+      "prediction": "ObservedArticleGate has zero unsafe holdout acceptance and strictly higher safe-condition retention than nominalArticleGate.",
+      "rejectWhen": "It accepts any unsafe holdout condition or fails to improve safe-condition retention."
+    },
+    {
+      "id": "H2",
+      "claim": "No raw-profile-only gate can adjudicate errors caused by refinement choices applied to the same profile.",
+      "prediction": "Some acquisition blocks contain both safe and unsafe refinement types, so a raw-only decision must either accept an unsafe row or discard safe rows from the same block.",
+      "rejectWhen": "Every acquisition block is uniformly safe or unsafe across all four refinement types."
+    },
+    {
+      "id": "H3",
+      "claim": "The weakest phase-specific peak-support score transports better than global net counts because quantitative phase failure is controlled by the least visible phase rather than the brightest part of the pattern.",
+      "prediction": "At zero unsafe holdout-condition acceptance, phaseSupportGate retains a larger fraction of safe conditions than netCountGate.",
+      "rejectWhen": "PhaseSupportGate accepts an unsafe condition or does not improve safe-condition retention."
+    },
+    {
+      "id": "H4",
+      "claim": "Acquisition support and refinement residual diagnose distinct failure modes rather than duplicating one another.",
+      "prediction": "The frozen twoStageGate has zero unsafe holdout-row acceptance, while both exclusive rejection groups—raw support fails but Rwp passes, and raw support passes but Rwp fails—are non-empty.",
+      "rejectWhen": "It accepts an unsafe holdout row or either exclusive rejection group is empty, showing that one stage adds no distinct diagnostic partition."
+    }
+  ],
+  "decisionRules": {
+    "safety": "Zero accepted holdout conditions or rows above five percentage points, according to the selector's declared unit.",
+    "utility": "Report acceptance among all units and retention among truly safe units; zero acceptance is not progress.",
+    "promotion": "Raw lineage and a safe composition holdout are necessary but not sufficient for the stable-mixture rung. Promotion still requires independent preparation, instrument, reduction implementation, and an error-source-independent compositional measurement."
+  },
+  "interpretationLimits": [
+    "The phase windows are frozen from known isolated reflections of the three identified phases; they do not solve unknown-phase detection and use phase identity, though not the weighed fractions.",
+    "Both samples were measured on one instrument and originate from one preparation lineage. Composition transfer is not laboratory or preparation transfer.",
+    "The four refinement types share TOPAS, structures, peak models, and raw profiles. Their disagreement underestimates error-source diversity.",
+    "Thresholds selected on sample 1a are secondary-analysis thresholds, not prospective experimental preregistration.",
+    "A raw support metric can identify information scarcity but cannot prove the crystallographic model is complete or physically correct."
+  ]
+}
