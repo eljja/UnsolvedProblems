@@ -8,7 +8,7 @@ const failures = [];
 const assert = (condition, message) => { if (!condition) failures.push(message); };
 
 const sandbox = { window: {} };
-for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-05-data.js", "research-cycle-06-data.js", "research-cycle-07-data.js", "research-cycle-08-data.js", "research-cycle-09-data.js", "research-cycle-10-data.js"]) {
+for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-05-data.js", "research-cycle-06-data.js", "research-cycle-07-data.js", "research-cycle-08-data.js", "research-cycle-09-data.js", "research-cycle-10-data.js", "research-cycle-11-data.js"]) {
   vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }
 
@@ -46,6 +46,12 @@ const scatteringSpec = JSON.parse(fs.readFileSync(path.join(root, "research/repr
 const scatteringResult = JSON.parse(fs.readFileSync(path.join(root, "research/reproducibility/scattering-result.json"), "utf8"));
 const twoPhaseDesignAudit = JSON.parse(fs.readFileSync(path.join(root, "research/external-audit/two-phase-design-2017/audit-result.json"), "utf8"));
 const repeatDataAudit = JSON.parse(fs.readFileSync(path.join(root, "research/external-audit/repeat-data-availability-2026/audit-result.json"), "utf8"));
+const sasbdbRawManifest = JSON.parse(fs.readFileSync(path.join(root, "research/reproducibility/sasbdb-raw-source-manifest.json"), "utf8"));
+const sasbdbFilterInput = JSON.parse(fs.readFileSync(path.join(root, "research/reproducibility/sasbdb-filter-input.json"), "utf8"));
+const sasbdbFilterSpec = JSON.parse(fs.readFileSync(path.join(root, "research/reproducibility/sasbdb-filter-spec.json"), "utf8"));
+const sasbdbFilterResult = JSON.parse(fs.readFileSync(path.join(root, "research/reproducibility/sasbdb-filter-result.json"), "utf8"));
+const nistRepeatPowerSpec = JSON.parse(fs.readFileSync(path.join(root, "research/reproducibility/nist-repeat-power-spec.json"), "utf8"));
+const nistRepeatPowerResult = JSON.parse(fs.readFileSync(path.join(root, "research/reproducibility/nist-repeat-power-result.json"), "utf8"));
 assert(Array.isArray(PROBLEMS), "PROBLEMS must be an array");
 assert(PROBLEMS.length > 0, "catalog must contain at least one problem");
 assert(new Set(PROBLEMS.map(item => item.id)).size === PROBLEMS.length, "problem IDs must be unique");
@@ -379,6 +385,21 @@ assert(repeatDataAudit.auditId === "PHYSICAL-REPEAT-PUBLIC-DATA-AVAILABILITY-202
 assert(repeatDataAudit.opxrd.canonicalSameSpecimenRepeatKeyDocumented === false, "opXRD canonical same-specimen repeat key must remain unverified");
 assert(repeatDataAudit.stanfordSpinGlass.reportedScansPerCapillary === 30 && repeatDataAudit.stanfordSpinGlass.publicFileCount === 1, "Stanford repeated-acquisition/public-file contrast must remain intact");
 assert(Object.values(repeatDataAudit.findings || {}).every(Boolean), "every repeat-data availability finding must be true");
+assert(sasbdbRawManifest.auditId === "SASBDB-ROUND-ROBIN-RAW-LINEAGE-0.1", "SASBDB raw-lineage audit must expose its stable ID");
+assert(sasbdbRawManifest.totals.consensusInputProfiles === 48 && sasbdbRawManifest.totals.physicalInstruments === 12, "SASBDB raw-lineage denominators must remain intact");
+assert(sasbdbRawManifest.totals.secOnly === 15 && sasbdbRawManifest.totals.batchOnly === 14 && sasbdbRawManifest.totals.mergedSecBatch === 19, "SASBDB acquisition-mode partition must remain intact");
+assert(sasbdbRawManifest.totals.singleModeInstrumentConfigurations === 8 && sasbdbRawManifest.designAudit.varianceComponentsSeparatelyIdentifiable === false, "SASBDB audit must retain its incomplete-crossing refusal");
+assert(Object.values(sasbdbRawManifest.findings || {}).every(Boolean), "every SASBDB raw-lineage finding must be true");
+assert(sasbdbFilterInput.datasetId === "SASBDB-ROUND-ROBIN-FILTER-SNAPSHOT-0.1" && sasbdbFilterInput.proteins.reduce((sum, protein) => sum + protein.rows.length, 0) === 497, "SASBDB filter snapshot must retain 497 common q points");
+assert(sasbdbFilterSpec.benchmarkId === "SASBDB-FILTER-SENSITIVITY-SEAL-0.1" && sasbdbFilterResult.benchmarkId === sasbdbFilterSpec.benchmarkId, "SASBDB filter artifacts must share a stable ID");
+assert(sasbdbFilterResult.adjudication.universalGuinierPipelineInvariancePasses === false, "universal low-q pipeline invariance must remain rejected");
+assert(sasbdbFilterResult.adjudication.proteinsBelowOnePercentGuinierP95.join("|") === "RNase A|Xylose isomerase|Xylanase", "sub-one-percent Guinier set must remain intact");
+assert(sasbdbFilterResult.adjudication.guinierExceptions.join("|") === "Urate oxidase|Lysozyme", "Guinier filter exceptions must remain intact");
+assert(Object.values(sasbdbFilterResult.findings || {}).every(Boolean), "every SASBDB filter-sensitivity finding must be true");
+assert(nistRepeatPowerSpec.benchmarkId === "NIST-VO2-PHYSICAL-REPEAT-POWER-0.1" && nistRepeatPowerResult.benchmarkId === nistRepeatPowerSpec.benchmarkId, "NIST repeat-power artifacts must share a stable ID");
+assert(nistRepeatPowerResult.design.totalAcquisitions === 1176 && nistRepeatPowerResult.stagedDecision.pilotAcquisitions === 392, "NIST full and pilot acquisition denominators must remain intact");
+assert(nistRepeatPowerResult.primaryScenario.approximatePower === 0.825486 && nistRepeatPowerResult.primaryScenario.maximumIccRetaining80PercentPower === 0.647577, "NIST primary power and ICC boundary must remain intact");
+assert(Object.values(nistRepeatPowerResult.findings || {}).every(Boolean), "every NIST repeat-power finding must be true");
 
 const boundaryCount = PROBLEMS.filter(item => item.nature === "boundary").length;
 assert(boundaryCount > 0, "catalog must preserve clearly labeled boundary examples");
@@ -396,7 +417,7 @@ const robots = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 const license = fs.readFileSync(path.join(root, "LICENSE"), "utf8");
 const packageMetadata = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"));
-const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-05-data.js", "research-cycle-06-data.js", "research-cycle-07-data.js", "research-cycle-08-data.js", "research-cycle-09-data.js", "research-cycle-10-data.js", "solve.html", "solve.js", "research-log.html", "research-log.js"]
+const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-05-data.js", "research-cycle-06-data.js", "research-cycle-07-data.js", "research-cycle-08-data.js", "research-cycle-09-data.js", "research-cycle-10-data.js", "research-cycle-11-data.js", "solve.html", "solve.js", "research-log.html", "research-log.js"]
   .map(file => fs.readFileSync(path.join(root, file), "utf8"))
   .join("\n");
 for (const phrase of [
@@ -423,11 +444,11 @@ for (const phrase of [
 ]) {
   assert(!publicCopy.includes(phrase), `public copy contains process-oriented wording: ${phrase}`);
 }
-for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-10-data.js", "app.js", "assets/mark.svg", "assets/og-744.png"]) {
+for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-10-data.js", "research-cycle-11-data.js", "app.js", "assets/mark.svg", "assets/og-744.png"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing asset ${asset}`);
   assert(html.includes(asset), `index.html does not reference ${asset}`);
 }
-for (const asset of ["styles.css", "solve.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-10-data.js", "solve.js", "assets/mark.svg"]) {
+for (const asset of ["styles.css", "solve.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-10-data.js", "research-cycle-11-data.js", "solve.js", "assets/mark.svg"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing research page asset ${asset}`);
   assert(solveHtml.includes(asset), `solve.html does not reference ${asset}`);
 }
@@ -444,7 +465,7 @@ for (const id of ["back-to-atlas", "solution-language-switch", "solution-title",
 }
 assert(fs.readFileSync(path.join(root, "app.js"), "utf8").includes("solve.html"), "main problem details must link to a separate research-attempt page");
 assert(solveCss.includes("@media (max-width: 800px)"), "research-attempt page must include a mobile/tablet layout");
-for (const asset of ["styles.css", "research-log.css", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-10-data.js", "research-log.js", "assets/mark.svg"]) {
+for (const asset of ["styles.css", "research-log.css", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-10-data.js", "research-cycle-11-data.js", "research-log.js", "assets/mark.svg"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing research-log asset ${asset}`);
   assert(logHtml.includes(asset), `research-log.html does not reference ${asset}`);
 }

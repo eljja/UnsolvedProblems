@@ -18,6 +18,8 @@
     "research:audit-nist-labels": "node scripts/audit-nist-vo2-labels.mjs --write",
     "research:nist-label-acquisition": "node scripts/run-nist-label-acquisition.mjs --write",
     "research:scattering-reproducibility": "node scripts/run-scattering-reproducibility.mjs --write",
-    "test": "node scripts/validate.mjs && node scripts/verify-replay.mjs && node scripts/verify-ope.mjs && node scripts/verify-identification-sensitivity.mjs && node scripts/verify-audit-smoothness.mjs && node scripts/verify-two-phase-active.mjs && node scripts/verify-finite-hybrid.mjs && node scripts/verify-external-audits.mjs && node scripts/verify-reproducibility-cycle.mjs"
+    "research:sasbdb-filter": "node scripts/run-sasbdb-filter-sensitivity.mjs --write",
+    "research:nist-repeat-power": "node scripts/run-nist-repeat-power.mjs --write",
+    "test": "node scripts/validate.mjs && node scripts/verify-replay.mjs && node scripts/verify-ope.mjs && node scripts/verify-identification-sensitivity.mjs && node scripts/verify-audit-smoothness.mjs && node scripts/verify-two-phase-active.mjs && node scripts/verify-finite-hybrid.mjs && node scripts/verify-external-audits.mjs && node scripts/verify-reproducibility-cycle.mjs && node scripts/verify-raw-repeat-cycle.mjs"
   }
 }

@@ -1,0 +1,175 @@
+{
+  "benchmarkId": "SASBDB-FILTER-SENSITIVITY-SEAL-0.1",
+  "generatedOn": "2026-08-12",
+  "sourceDatasetId": "SASBDB-ROUND-ROBIN-FILTER-SNAPSHOT-0.1",
+  "denominators": {
+    "proteins": 5,
+    "structuralQPoints": 497,
+    "officialConsensusVariantsPerProtein": 4
+  },
+  "proteins": [
+    {
+      "id": "SASDPP4",
+      "protein": "RNase A",
+      "consensusRgAngstrom": 15,
+      "sourceArchiveSha256": "ff4b70588c0644d9df585d2efc1621a349f589f2b7cfa510b6046e220ee28763",
+      "guinier": {
+        "name": "qRg<=1.3",
+        "points": 17,
+        "qMin": 0.005,
+        "qMax": 0.085,
+        "pipelineRangeMedianPercent": 0.239003,
+        "pipelineRangeP95Percent": 0.389652,
+        "jointVsNoFilterP95Percent": 0.319357,
+        "fractionWithAlternativeBeyondPointwise95": 0.529412,
+        "maximumDepartureZP95": 4.199645
+      },
+      "structural": {
+        "name": "q<=0.3 A^-1",
+        "points": 60,
+        "qMin": 0.005,
+        "qMax": 0.3,
+        "pipelineRangeMedianPercent": 0.48342,
+        "pipelineRangeP95Percent": 1.880885,
+        "jointVsNoFilterP95Percent": 1.397898,
+        "fractionWithAlternativeBeyondPointwise95": 0.683333,
+        "maximumDepartureZP95": 5.799976
+      }
+    },
+    {
+      "id": "SASDPQ4",
+      "protein": "Urate oxidase",
+      "consensusRgAngstrom": 32,
+      "sourceArchiveSha256": "cd30ce9187b44c91dec7b5120834e68cb08e6863ab4670c04affeb10071f8fda",
+      "guinier": {
+        "name": "qRg<=1.3",
+        "points": 18,
+        "qMin": 0.006,
+        "qMax": 0.04,
+        "pipelineRangeMedianPercent": 2.919738,
+        "pipelineRangeP95Percent": 3.638338,
+        "jointVsNoFilterP95Percent": 0.492061,
+        "fractionWithAlternativeBeyondPointwise95": 1,
+        "maximumDepartureZP95": 51.596287
+      },
+      "structural": {
+        "name": "q<=0.3 A^-1",
+        "points": 148,
+        "qMin": 0.006,
+        "qMax": 0.3,
+        "pipelineRangeMedianPercent": 4.608961,
+        "pipelineRangeP95Percent": 26.283574,
+        "jointVsNoFilterP95Percent": 23.740547,
+        "fractionWithAlternativeBeyondPointwise95": 0.932432,
+        "maximumDepartureZP95": 39.352989
+      }
+    },
+    {
+      "id": "SASDPR4",
+      "protein": "Xylose isomerase",
+      "consensusRgAngstrom": 33,
+      "sourceArchiveSha256": "317baf16dc627becf56ba6ce631f0c94be7e39971cf40252eb7847a3fbbbd1ff",
+      "guinier": {
+        "name": "qRg<=1.3",
+        "points": 34,
+        "qMin": 0.006,
+        "qMax": 0.039,
+        "pipelineRangeMedianPercent": 0.53505,
+        "pipelineRangeP95Percent": 0.812078,
+        "jointVsNoFilterP95Percent": 0.519683,
+        "fractionWithAlternativeBeyondPointwise95": 0.647059,
+        "maximumDepartureZP95": 4.730387
+      },
+      "structural": {
+        "name": "q<=0.3 A^-1",
+        "points": 170,
+        "qMin": 0.006,
+        "qMax": 0.3,
+        "pipelineRangeMedianPercent": 6.780835,
+        "pipelineRangeP95Percent": 36.376517,
+        "jointVsNoFilterP95Percent": 25.465822,
+        "fractionWithAlternativeBeyondPointwise95": 0.911765,
+        "maximumDepartureZP95": 44.656313
+      }
+    },
+    {
+      "id": "SASDPS4",
+      "protein": "Xylanase",
+      "consensusRgAngstrom": 16,
+      "sourceArchiveSha256": "c4bebf280ba0caf538dd1a57b1d83faf5749d874c387b63b1da95ed0f5ecdf1a",
+      "guinier": {
+        "name": "qRg<=1.3",
+        "points": 15,
+        "qMin": 0.01,
+        "qMax": 0.08,
+        "pipelineRangeMedianPercent": 0.392757,
+        "pipelineRangeP95Percent": 0.75588,
+        "jointVsNoFilterP95Percent": 0.75588,
+        "fractionWithAlternativeBeyondPointwise95": 0.866667,
+        "maximumDepartureZP95": 9.178234
+      },
+      "structural": {
+        "name": "q<=0.3 A^-1",
+        "points": 59,
+        "qMin": 0.01,
+        "qMax": 0.3,
+        "pipelineRangeMedianPercent": 2.016029,
+        "pipelineRangeP95Percent": 19.340225,
+        "jointVsNoFilterP95Percent": 17.832882,
+        "fractionWithAlternativeBeyondPointwise95": 0.915254,
+        "maximumDepartureZP95": 14.631961
+      }
+    },
+    {
+      "id": "SASDPT4",
+      "protein": "Lysozyme",
+      "consensusRgAngstrom": 15,
+      "sourceArchiveSha256": "b2ff9fc29d262551d327588e285fa20d28f3cd3e54fbf856a2df350096ac241d",
+      "guinier": {
+        "name": "qRg<=1.3",
+        "points": 17,
+        "qMin": 0.005,
+        "qMax": 0.085,
+        "pipelineRangeMedianPercent": 1.194144,
+        "pipelineRangeP95Percent": 1.974903,
+        "jointVsNoFilterP95Percent": 0.976133,
+        "fractionWithAlternativeBeyondPointwise95": 0.941176,
+        "maximumDepartureZP95": 17.613661
+      },
+      "structural": {
+        "name": "q<=0.3 A^-1",
+        "points": 60,
+        "qMin": 0.005,
+        "qMax": 0.3,
+        "pipelineRangeMedianPercent": 2.162157,
+        "pipelineRangeP95Percent": 17.339486,
+        "jointVsNoFilterP95Percent": 16.766858,
+        "fractionWithAlternativeBeyondPointwise95": 0.966667,
+        "maximumDepartureZP95": 17.897324
+      }
+    }
+  ],
+  "adjudication": {
+    "universalGuinierPipelineInvariancePasses": false,
+    "proteinsBelowOnePercentGuinierP95": [
+      "RNase A",
+      "Xylose isomerase",
+      "Xylanase"
+    ],
+    "guinierExceptions": [
+      "Urate oxidase",
+      "Lysozyme"
+    ],
+    "largestGuinierP95RangePercent": 3.638338,
+    "largestStructuralP95RangePercent": 36.376517
+  },
+  "findings": {
+    "snapshotContains497CommonStructuralQPoints": true,
+    "universalPipelineInvarianceIsRejected": true,
+    "threeProteinsRemainBelowOnePercentInGuinierRegion": true,
+    "everyProteinHasMajorityPointwiseDeparturesBeyondNominal95": true,
+    "pipelineEnvelopeIsNotAConfidenceInterval": true,
+    "numericalTransferToPXrdIsRefused": true
+  },
+  "decision": "Treat the four official datcombine settings as an analysis-choice envelope. Seal the filter policy before adjudication, retain Urate oxidase and Lysozyme as low-q counterexamples to universal pipeline invariance, and do not interpret the envelope as independent physical repeatability or transfer its percentages to pXRD."
+}

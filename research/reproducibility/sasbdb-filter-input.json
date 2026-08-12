@@ -1,0 +1,4054 @@
+{
+  "datasetId": "SASBDB-ROUND-ROBIN-FILTER-SNAPSHOT-0.1",
+  "reviewedOn": "2026-08-12",
+  "sourceAuditId": "SASBDB-ROUND-ROBIN-RAW-LINEAGE-0.1",
+  "restriction": "Contains q <= 0.3 A^-1 values from the four consensus variants distributed in the official archives. It is a sensitivity snapshot, not a new consensus curve or independent experiment.",
+  "proteins": [
+    {
+      "id": "SASDPP4",
+      "protein": "RNase A",
+      "consensusRgAngstrom": 15,
+      "sourceArchiveSha256": "ff4b70588c0644d9df585d2efc1621a349f589f2b7cfa510b6046e220ee28763",
+      "variantFiles": {
+        "noFilter": "SASDPP4/inner/SASDPP4-SAXS RNaseA/Datcombine inputs and outputs/Filters disabled/RNaseA-NoF.dat",
+        "outlier": "SASDPP4/inner/SASDPP4-SAXS RNaseA/Datcombine inputs and outputs/Outlier filter/RNaseA-O.dat",
+        "error": "SASDPP4/inner/SASDPP4-SAXS RNaseA/Datcombine inputs and outputs/Error filter/RNaseA-E.dat",
+        "outlierError": "SASDPP4/inner/SASDPP4-SAXS RNaseA/Datcombine inputs and outputs/Outlier-error filters/RNaseA-OE.dat"
+      },
+      "rows": [
+        {
+          "q": 0.005,
+          "noFilter": 1.059957,
+          "outlier": 1.059957,
+          "error": 1.059957,
+          "outlierError": 1.059957,
+          "outlierErrorSigma": 0.02930525
+        },
+        {
+          "q": 0.01,
+          "noFilter": 1.054423,
+          "outlier": 1.054744,
+          "error": 1.054439,
+          "outlierError": 1.053573,
+          "outlierErrorSigma": 0.002172624
+        },
+        {
+          "q": 0.015,
+          "noFilter": 1.046082,
+          "outlier": 1.045413,
+          "error": 1.045877,
+          "outlierError": 1.044806,
+          "outlierErrorSigma": 0.001320159
+        },
+        {
+          "q": 0.02,
+          "noFilter": 1.031184,
+          "outlier": 1.029333,
+          "error": 1.031199,
+          "outlierError": 1.028737,
+          "outlierErrorSigma": 0.001656678
+        },
+        {
+          "q": 0.025,
+          "noFilter": 1.016116,
+          "outlier": 1.015447,
+          "error": 1.014993,
+          "outlierError": 1.013931,
+          "outlierErrorSigma": 0.0009134951
+        },
+        {
+          "q": 0.03,
+          "noFilter": 0.9935503,
+          "outlier": 0.9972925,
+          "error": 0.9958121,
+          "outlierError": 0.9948027,
+          "outlierErrorSigma": 0.001052759
+        },
+        {
+          "q": 0.035,
+          "noFilter": 0.9678549,
+          "outlier": 0.9660275,
+          "error": 0.9686821,
+          "outlierError": 0.9668466,
+          "outlierErrorSigma": 0.0008962874
+        },
+        {
+          "q": 0.04,
+          "noFilter": 0.9414185,
+          "outlier": 0.9395351,
+          "error": 0.9427118,
+          "outlierError": 0.9392823,
+          "outlierErrorSigma": 0.0009870533
+        },
+        {
+          "q": 0.045,
+          "noFilter": 0.9101144,
+          "outlier": 0.9115717,
+          "error": 0.9119228,
+          "outlierError": 0.9106041,
+          "outlierErrorSigma": 0.0007619044
+        },
+        {
+          "q": 0.05,
+          "noFilter": 0.8796363,
+          "outlier": 0.8802403,
+          "error": 0.8797516,
+          "outlierError": 0.8778937,
+          "outlierErrorSigma": 0.0009418517
+        },
+        {
+          "q": 0.055,
+          "noFilter": 0.8450221,
+          "outlier": 0.8446729,
+          "error": 0.8449951,
+          "outlierError": 0.8439853,
+          "outlierErrorSigma": 0.0005768024
+        },
+        {
+          "q": 0.06,
+          "noFilter": 0.8092928,
+          "outlier": 0.8089916,
+          "error": 0.8095054,
+          "outlierError": 0.8085094,
+          "outlierErrorSigma": 0.0005468114
+        },
+        {
+          "q": 0.065,
+          "noFilter": 0.7699751,
+          "outlier": 0.7710289,
+          "error": 0.7707888,
+          "outlierError": 0.7712782,
+          "outlierErrorSigma": 0.0007873123
+        },
+        {
+          "q": 0.07,
+          "noFilter": 0.7324713,
+          "outlier": 0.7339414,
+          "error": 0.7325169,
+          "outlierError": 0.7315194,
+          "outlierErrorSigma": 0.000508452
+        },
+        {
+          "q": 0.075,
+          "noFilter": 0.6940237,
+          "outlier": 0.6930118,
+          "error": 0.6948115,
+          "outlierError": 0.6923758,
+          "outlierErrorSigma": 0.0006176686
+        },
+        {
+          "q": 0.08,
+          "noFilter": 0.6534872,
+          "outlier": 0.6521191,
+          "error": 0.6539664,
+          "outlierError": 0.6515073,
+          "outlierErrorSigma": 0.0008457922
+        },
+        {
+          "q": 0.085,
+          "noFilter": 0.613495,
+          "outlier": 0.6133136,
+          "error": 0.6138495,
+          "outlierError": 0.611144,
+          "outlierErrorSigma": 0.0006665949
+        },
+        {
+          "q": 0.09,
+          "noFilter": 0.5744179,
+          "outlier": 0.5750552,
+          "error": 0.5747487,
+          "outlierError": 0.5739011,
+          "outlierErrorSigma": 0.000448873
+        },
+        {
+          "q": 0.095,
+          "noFilter": 0.5351663,
+          "outlier": 0.5341285,
+          "error": 0.5353181,
+          "outlierError": 0.5329938,
+          "outlierErrorSigma": 0.0004425246
+        },
+        {
+          "q": 0.1,
+          "noFilter": 0.4973894,
+          "outlier": 0.497151,
+          "error": 0.4970556,
+          "outlierError": 0.4950887,
+          "outlierErrorSigma": 0.0004959724
+        },
+        {
+          "q": 0.105,
+          "noFilter": 0.4600536,
+          "outlier": 0.4612124,
+          "error": 0.4600519,
+          "outlierError": 0.4590914,
+          "outlierErrorSigma": 0.0004144091
+        },
+        {
+          "q": 0.11,
+          "noFilter": 0.4243964,
+          "outlier": 0.4234887,
+          "error": 0.4245827,
+          "outlierError": 0.4224261,
+          "outlierErrorSigma": 0.0005289986
+        },
+        {
+          "q": 0.115,
+          "noFilter": 0.389576,
+          "outlier": 0.389646,
+          "error": 0.3898591,
+          "outlierError": 0.3894571,
+          "outlierErrorSigma": 0.0002452816
+        },
+        {
+          "q": 0.12,
+          "noFilter": 0.3564724,
+          "outlier": 0.3557522,
+          "error": 0.3557276,
+          "outlierError": 0.3559246,
+          "outlierErrorSigma": 0.0002366097
+        },
+        {
+          "q": 0.125,
+          "noFilter": 0.324913,
+          "outlier": 0.3241208,
+          "error": 0.3240616,
+          "outlierError": 0.3238678,
+          "outlierErrorSigma": 0.0003067964
+        },
+        {
+          "q": 0.13,
+          "noFilter": 0.2962149,
+          "outlier": 0.2947247,
+          "error": 0.2946288,
+          "outlierError": 0.2943093,
+          "outlierErrorSigma": 0.0002213196
+        },
+        {
+          "q": 0.135,
+          "noFilter": 0.2676164,
+          "outlier": 0.2674732,
+          "error": 0.2670492,
+          "outlierError": 0.2667535,
+          "outlierErrorSigma": 0.0002147135
+        },
+        {
+          "q": 0.14,
+          "noFilter": 0.2423179,
+          "outlier": 0.2419824,
+          "error": 0.2414629,
+          "outlierError": 0.2411893,
+          "outlierErrorSigma": 0.0002173789
+        },
+        {
+          "q": 0.145,
+          "noFilter": 0.217549,
+          "outlier": 0.2170482,
+          "error": 0.2169624,
+          "outlierError": 0.2167095,
+          "outlierErrorSigma": 0.0002122134
+        },
+        {
+          "q": 0.15,
+          "noFilter": 0.195729,
+          "outlier": 0.1952984,
+          "error": 0.1948261,
+          "outlierError": 0.1945663,
+          "outlierErrorSigma": 0.0002111796
+        },
+        {
+          "q": 0.155,
+          "noFilter": 0.1753587,
+          "outlier": 0.1742041,
+          "error": 0.174438,
+          "outlierError": 0.1742217,
+          "outlierErrorSigma": 0.0002015835
+        },
+        {
+          "q": 0.16,
+          "noFilter": 0.1572092,
+          "outlier": 0.1563341,
+          "error": 0.1563437,
+          "outlierError": 0.1557386,
+          "outlierErrorSigma": 0.0001935676
+        },
+        {
+          "q": 0.165,
+          "noFilter": 0.1404907,
+          "outlier": 0.1401162,
+          "error": 0.1396067,
+          "outlierError": 0.1394201,
+          "outlierErrorSigma": 0.0001874933
+        },
+        {
+          "q": 0.17,
+          "noFilter": 0.1251349,
+          "outlier": 0.1250862,
+          "error": 0.1247363,
+          "outlierError": 0.1245106,
+          "outlierErrorSigma": 0.0001625654
+        },
+        {
+          "q": 0.175,
+          "noFilter": 0.1115604,
+          "outlier": 0.111544,
+          "error": 0.111617,
+          "outlierError": 0.1112313,
+          "outlierErrorSigma": 0.0001780218
+        },
+        {
+          "q": 0.18,
+          "noFilter": 0.09965413,
+          "outlier": 0.09945375,
+          "error": 0.09970553,
+          "outlierError": 0.09911468,
+          "outlierErrorSigma": 0.000173491
+        },
+        {
+          "q": 0.185,
+          "noFilter": 0.08920781,
+          "outlier": 0.08859314,
+          "error": 0.08888266,
+          "outlierError": 0.08868468,
+          "outlierErrorSigma": 0.0001483992
+        },
+        {
+          "q": 0.19,
+          "noFilter": 0.07953745,
+          "outlier": 0.07987637,
+          "error": 0.07998038,
+          "outlierError": 0.0797918,
+          "outlierErrorSigma": 0.0001447517
+        },
+        {
+          "q": 0.195,
+          "noFilter": 0.07178411,
+          "outlier": 0.07170168,
+          "error": 0.07177281,
+          "outlierError": 0.0718009,
+          "outlierErrorSigma": 0.0001825794
+        },
+        {
+          "q": 0.2,
+          "noFilter": 0.06493692,
+          "outlier": 0.06483335,
+          "error": 0.06490952,
+          "outlierError": 0.0649584,
+          "outlierErrorSigma": 0.0001841967
+        },
+        {
+          "q": 0.205,
+          "noFilter": 0.05864076,
+          "outlier": 0.05920293,
+          "error": 0.05849451,
+          "outlierError": 0.05826165,
+          "outlierErrorSigma": 0.0001253672
+        },
+        {
+          "q": 0.21,
+          "noFilter": 0.05318252,
+          "outlier": 0.05365434,
+          "error": 0.05357037,
+          "outlierError": 0.05334599,
+          "outlierErrorSigma": 0.0001145956
+        },
+        {
+          "q": 0.215,
+          "noFilter": 0.04865461,
+          "outlier": 0.04891817,
+          "error": 0.0488153,
+          "outlierError": 0.04859912,
+          "outlierErrorSigma": 0.0001123298
+        },
+        {
+          "q": 0.22,
+          "noFilter": 0.04484584,
+          "outlier": 0.04508446,
+          "error": 0.0448904,
+          "outlierError": 0.04468098,
+          "outlierErrorSigma": 0.0001108494
+        },
+        {
+          "q": 0.225,
+          "noFilter": 0.04158978,
+          "outlier": 0.04190832,
+          "error": 0.04157633,
+          "outlierError": 0.04137262,
+          "outlierErrorSigma": 0.0001095677
+        },
+        {
+          "q": 0.23,
+          "noFilter": 0.03874466,
+          "outlier": 0.03889072,
+          "error": 0.03888328,
+          "outlierError": 0.03868421,
+          "outlierErrorSigma": 0.0001082918
+        },
+        {
+          "q": 0.235,
+          "noFilter": 0.03615187,
+          "outlier": 0.03643002,
+          "error": 0.03647369,
+          "outlierError": 0.03627877,
+          "outlierErrorSigma": 0.0001071002
+        },
+        {
+          "q": 0.24,
+          "noFilter": 0.0340362,
+          "outlier": 0.03449295,
+          "error": 0.03440909,
+          "outlierError": 0.03445252,
+          "outlierErrorSigma": 0.0001018224
+        },
+        {
+          "q": 0.245,
+          "noFilter": 0.03204522,
+          "outlier": 0.03238382,
+          "error": 0.03261249,
+          "outlierError": 0.03223823,
+          "outlierErrorSigma": 0.0001263226
+        },
+        {
+          "q": 0.25,
+          "noFilter": 0.03077314,
+          "outlier": 0.03046243,
+          "error": 0.03073295,
+          "outlierError": 0.03031731,
+          "outlierErrorSigma": 0.0001054173
+        },
+        {
+          "q": 0.255,
+          "noFilter": 0.02927974,
+          "outlier": 0.02914882,
+          "error": 0.02884782,
+          "outlierError": 0.02866604,
+          "outlierErrorSigma": 0.0001123228
+        },
+        {
+          "q": 0.26,
+          "noFilter": 0.02772602,
+          "outlier": 0.02766852,
+          "error": 0.02772469,
+          "outlierError": 0.02754485,
+          "outlierErrorSigma": 0.0001074223
+        },
+        {
+          "q": 0.265,
+          "noFilter": 0.0258045,
+          "outlier": 0.02624411,
+          "error": 0.02651472,
+          "outlierError": 0.02633696,
+          "outlierErrorSigma": 0.0001048145
+        },
+        {
+          "q": 0.27,
+          "noFilter": 0.02500233,
+          "outlier": 0.02500831,
+          "error": 0.02508464,
+          "outlierError": 0.02490934,
+          "outlierErrorSigma": 0.000102059
+        },
+        {
+          "q": 0.275,
+          "noFilter": 0.02390523,
+          "outlier": 0.0239749,
+          "error": 0.02410622,
+          "outlierError": 0.02393261,
+          "outlierErrorSigma": 0.0001008422
+        },
+        {
+          "q": 0.28,
+          "noFilter": 0.02275796,
+          "outlier": 0.02277964,
+          "error": 0.02280044,
+          "outlierError": 0.02262907,
+          "outlierErrorSigma": 0.00009989501
+        },
+        {
+          "q": 0.285,
+          "noFilter": 0.02140847,
+          "outlier": 0.02154494,
+          "error": 0.02181583,
+          "outlierError": 0.02164616,
+          "outlierErrorSigma": 0.00009892856
+        },
+        {
+          "q": 0.29,
+          "noFilter": 0.02044414,
+          "outlier": 0.02052454,
+          "error": 0.02060591,
+          "outlierError": 0.02043833,
+          "outlierErrorSigma": 0.0001025088
+        },
+        {
+          "q": 0.295,
+          "noFilter": 0.01959036,
+          "outlier": 0.01922541,
+          "error": 0.01948682,
+          "outlierError": 0.01932004,
+          "outlierErrorSigma": 0.00009098941
+        },
+        {
+          "q": 0.3,
+          "noFilter": 0.01847264,
+          "outlier": 0.01851985,
+          "error": 0.01856671,
+          "outlierError": 0.01835963,
+          "outlierErrorSigma": 0.00009645499
+        }
+      ]
+    },
+    {
+      "id": "SASDPQ4",
+      "protein": "Urate oxidase",
+      "consensusRgAngstrom": 32,
+      "sourceArchiveSha256": "cd30ce9187b44c91dec7b5120834e68cb08e6863ab4670c04affeb10071f8fda",
+      "variantFiles": {
+        "noFilter": "SASDPQ4/inner/SASDPQ4-SAXS urate oxidase/Datcombine inputs and outputs/Filters disabled/UOX-NoF.dat",
+        "outlier": "SASDPQ4/inner/SASDPQ4-SAXS urate oxidase/Datcombine inputs and outputs/Outlier filter/UOX-O.dat",
+        "error": "SASDPQ4/inner/SASDPQ4-SAXS urate oxidase/Datcombine inputs and outputs/Error filter/UOX-E.dat",
+        "outlierError": "SASDPQ4/inner/SASDPQ4-SAXS urate oxidase/Datcombine inputs and outputs/Outlier-error filters/UOX-OE.dat"
+      },
+      "rows": [
+        {
+          "q": 0.006,
+          "noFilter": 1.102358,
+          "outlier": 1.077491,
+          "error": 1.100212,
+          "outlierError": 1.107736,
+          "outlierErrorSigma": 0.01195857
+        },
+        {
+          "q": 0.008,
+          "noFilter": 1.102599,
+          "outlier": 1.07579,
+          "error": 1.097043,
+          "outlierError": 1.105115,
+          "outlierErrorSigma": 0.003347194
+        },
+        {
+          "q": 0.01,
+          "noFilter": 1.093075,
+          "outlier": 1.057752,
+          "error": 1.079505,
+          "outlierError": 1.0901,
+          "outlierErrorSigma": 0.001448805
+        },
+        {
+          "q": 0.012,
+          "noFilter": 1.073296,
+          "outlier": 1.042199,
+          "error": 1.049188,
+          "outlierError": 1.068963,
+          "outlierErrorSigma": 0.000965928
+        },
+        {
+          "q": 0.014,
+          "noFilter": 1.049328,
+          "outlier": 1.019825,
+          "error": 1.032317,
+          "outlierError": 1.051776,
+          "outlierErrorSigma": 0.0008547876
+        },
+        {
+          "q": 0.016,
+          "noFilter": 1.030258,
+          "outlier": 1.004682,
+          "error": 1.012468,
+          "outlierError": 1.031555,
+          "outlierErrorSigma": 0.0007235468
+        },
+        {
+          "q": 0.018,
+          "noFilter": 1.006128,
+          "outlier": 0.9826819,
+          "error": 0.9874453,
+          "outlierError": 1.006063,
+          "outlierErrorSigma": 0.0007114902
+        },
+        {
+          "q": 0.02,
+          "noFilter": 0.9829445,
+          "outlier": 0.9552817,
+          "error": 0.9647827,
+          "outlierError": 0.9829755,
+          "outlierErrorSigma": 0.0007024446
+        },
+        {
+          "q": 0.022,
+          "noFilter": 0.9540516,
+          "outlier": 0.9401777,
+          "error": 0.9372758,
+          "outlierError": 0.9549529,
+          "outlierErrorSigma": 0.0006868001
+        },
+        {
+          "q": 0.024,
+          "noFilter": 0.9262102,
+          "outlier": 0.8956282,
+          "error": 0.9097122,
+          "outlierError": 0.9268725,
+          "outlierErrorSigma": 0.0006680497
+        },
+        {
+          "q": 0.026,
+          "noFilter": 0.8921578,
+          "outlier": 0.8624989,
+          "error": 0.8762818,
+          "outlierError": 0.8928154,
+          "outlierErrorSigma": 0.0005828772
+        },
+        {
+          "q": 0.028,
+          "noFilter": 0.8612121,
+          "outlier": 0.8356137,
+          "error": 0.8432066,
+          "outlierError": 0.8591201,
+          "outlierErrorSigma": 0.0005664379
+        },
+        {
+          "q": 0.03,
+          "noFilter": 0.8285687,
+          "outlier": 0.7989044,
+          "error": 0.8108347,
+          "outlierError": 0.8261414,
+          "outlierErrorSigma": 0.000532471
+        },
+        {
+          "q": 0.032,
+          "noFilter": 0.7944619,
+          "outlier": 0.7680021,
+          "error": 0.7776666,
+          "outlierError": 0.7923514,
+          "outlierErrorSigma": 0.0005029467
+        },
+        {
+          "q": 0.034,
+          "noFilter": 0.7595094,
+          "outlier": 0.7321466,
+          "error": 0.7431191,
+          "outlierError": 0.7571562,
+          "outlierErrorSigma": 0.0004854069
+        },
+        {
+          "q": 0.036,
+          "noFilter": 0.7198283,
+          "outlier": 0.7040242,
+          "error": 0.7051764,
+          "outlierError": 0.7185022,
+          "outlierErrorSigma": 0.0004531383
+        },
+        {
+          "q": 0.038,
+          "noFilter": 0.6842932,
+          "outlier": 0.6647219,
+          "error": 0.6682716,
+          "outlierError": 0.6809055,
+          "outlierErrorSigma": 0.0004734775
+        },
+        {
+          "q": 0.04,
+          "noFilter": 0.6449621,
+          "outlier": 0.6300624,
+          "error": 0.6330948,
+          "outlierError": 0.6450693,
+          "outlierErrorSigma": 0.0004605074
+        },
+        {
+          "q": 0.042,
+          "noFilter": 0.6092847,
+          "outlier": 0.5931964,
+          "error": 0.598008,
+          "outlierError": 0.6093247,
+          "outlierErrorSigma": 0.0004469241
+        },
+        {
+          "q": 0.044,
+          "noFilter": 0.5729219,
+          "outlier": 0.5539654,
+          "error": 0.5626708,
+          "outlierError": 0.573325,
+          "outlierErrorSigma": 0.0004490143
+        },
+        {
+          "q": 0.046,
+          "noFilter": 0.5365512,
+          "outlier": 0.523899,
+          "error": 0.5279954,
+          "outlierError": 0.5379995,
+          "outlierErrorSigma": 0.0004514517
+        },
+        {
+          "q": 0.048,
+          "noFilter": 0.5004743,
+          "outlier": 0.4925227,
+          "error": 0.4914488,
+          "outlierError": 0.5007678,
+          "outlierErrorSigma": 0.0004027193
+        },
+        {
+          "q": 0.05,
+          "noFilter": 0.4647467,
+          "outlier": 0.4491959,
+          "error": 0.4546775,
+          "outlierError": 0.4633071,
+          "outlierErrorSigma": 0.0004047809
+        },
+        {
+          "q": 0.052,
+          "noFilter": 0.4291269,
+          "outlier": 0.4168378,
+          "error": 0.421764,
+          "outlierError": 0.4297766,
+          "outlierErrorSigma": 0.0003940893
+        },
+        {
+          "q": 0.054,
+          "noFilter": 0.3954771,
+          "outlier": 0.3852308,
+          "error": 0.3894813,
+          "outlierError": 0.3968886,
+          "outlierErrorSigma": 0.0003828225
+        },
+        {
+          "q": 0.056,
+          "noFilter": 0.363149,
+          "outlier": 0.3522769,
+          "error": 0.3580491,
+          "outlierError": 0.3648671,
+          "outlierErrorSigma": 0.0003669938
+        },
+        {
+          "q": 0.058,
+          "noFilter": 0.3321527,
+          "outlier": 0.321005,
+          "error": 0.3259069,
+          "outlierError": 0.3321223,
+          "outlierErrorSigma": 0.0003302847
+        },
+        {
+          "q": 0.06,
+          "noFilter": 0.3022714,
+          "outlier": 0.2924177,
+          "error": 0.2952636,
+          "outlierError": 0.3009046,
+          "outlierErrorSigma": 0.0003414002
+        },
+        {
+          "q": 0.062,
+          "noFilter": 0.273509,
+          "outlier": 0.2679455,
+          "error": 0.2682356,
+          "outlierError": 0.2733698,
+          "outlierErrorSigma": 0.0003313059
+        },
+        {
+          "q": 0.064,
+          "noFilter": 0.2467976,
+          "outlier": 0.2409119,
+          "error": 0.2421394,
+          "outlierError": 0.2467844,
+          "outlierErrorSigma": 0.0003220222
+        },
+        {
+          "q": 0.066,
+          "noFilter": 0.2209475,
+          "outlier": 0.214168,
+          "error": 0.2170326,
+          "outlierError": 0.2212069,
+          "outlierErrorSigma": 0.0002678557
+        },
+        {
+          "q": 0.068,
+          "noFilter": 0.1957391,
+          "outlier": 0.1891471,
+          "error": 0.192179,
+          "outlierError": 0.1958874,
+          "outlierErrorSigma": 0.0001718611
+        },
+        {
+          "q": 0.07,
+          "noFilter": 0.173355,
+          "outlier": 0.1696772,
+          "error": 0.1696434,
+          "outlierError": 0.1729293,
+          "outlierErrorSigma": 0.0001965892
+        },
+        {
+          "q": 0.072,
+          "noFilter": 0.1523546,
+          "outlier": 0.1508827,
+          "error": 0.1501647,
+          "outlierError": 0.1530854,
+          "outlierErrorSigma": 0.0001861864
+        },
+        {
+          "q": 0.074,
+          "noFilter": 0.1337731,
+          "outlier": 0.1308569,
+          "error": 0.1313587,
+          "outlierError": 0.1339268,
+          "outlierErrorSigma": 0.0001756752
+        },
+        {
+          "q": 0.076,
+          "noFilter": 0.1160157,
+          "outlier": 0.1133996,
+          "error": 0.1147784,
+          "outlierError": 0.1170357,
+          "outlierErrorSigma": 0.0001663728
+        },
+        {
+          "q": 0.078,
+          "noFilter": 0.0994214,
+          "outlier": 0.09739467,
+          "error": 0.09823987,
+          "outlierError": 0.1001871,
+          "outlierErrorSigma": 0.0001493461
+        },
+        {
+          "q": 0.08,
+          "noFilter": 0.08510848,
+          "outlier": 0.08291965,
+          "error": 0.08323697,
+          "outlierError": 0.08490296,
+          "outlierErrorSigma": 0.0001585272
+        },
+        {
+          "q": 0.082,
+          "noFilter": 0.07086595,
+          "outlier": 0.0697736,
+          "error": 0.07061621,
+          "outlierError": 0.07204559,
+          "outlierErrorSigma": 0.0001545887
+        },
+        {
+          "q": 0.084,
+          "noFilter": 0.05928841,
+          "outlier": 0.05921694,
+          "error": 0.05928125,
+          "outlierError": 0.06049813,
+          "outlierErrorSigma": 0.0001491736
+        },
+        {
+          "q": 0.086,
+          "noFilter": 0.04945181,
+          "outlier": 0.04851512,
+          "error": 0.04908164,
+          "outlierError": 0.05026223,
+          "outlierErrorSigma": 0.0000793737
+        },
+        {
+          "q": 0.088,
+          "noFilter": 0.04054998,
+          "outlier": 0.03964534,
+          "error": 0.03999171,
+          "outlierError": 0.04110227,
+          "outlierErrorSigma": 0.0000963123
+        },
+        {
+          "q": 0.09,
+          "noFilter": 0.03234619,
+          "outlier": 0.03205366,
+          "error": 0.03233841,
+          "outlierError": 0.03312429,
+          "outlierErrorSigma": 0.00006653895
+        },
+        {
+          "q": 0.092,
+          "noFilter": 0.02545844,
+          "outlier": 0.02496504,
+          "error": 0.02525095,
+          "outlierError": 0.02595583,
+          "outlierErrorSigma": 0.00006855633
+        },
+        {
+          "q": 0.094,
+          "noFilter": 0.01993273,
+          "outlier": 0.01945966,
+          "error": 0.01955876,
+          "outlierError": 0.02046495,
+          "outlierErrorSigma": 0.0000869749
+        },
+        {
+          "q": 0.096,
+          "noFilter": 0.01486123,
+          "outlier": 0.01504639,
+          "error": 0.01511276,
+          "outlierError": 0.0157298,
+          "outlierErrorSigma": 0.00006653875
+        },
+        {
+          "q": 0.098,
+          "noFilter": 0.01121132,
+          "outlier": 0.011441,
+          "error": 0.01149359,
+          "outlierError": 0.01191377,
+          "outlierErrorSigma": 0.00006484161
+        },
+        {
+          "q": 0.1,
+          "noFilter": 0.008109641,
+          "outlier": 0.008129805,
+          "error": 0.008329201,
+          "outlierError": 0.008701035,
+          "outlierErrorSigma": 0.0000590832
+        },
+        {
+          "q": 0.102,
+          "noFilter": 0.005694411,
+          "outlier": 0.005962375,
+          "error": 0.00586863,
+          "outlierError": 0.006147132,
+          "outlierErrorSigma": 0.00008131455
+        },
+        {
+          "q": 0.104,
+          "noFilter": 0.004098533,
+          "outlier": 0.004422874,
+          "error": 0.004202285,
+          "outlierError": 0.004332149,
+          "outlierErrorSigma": 0.00008462685
+        },
+        {
+          "q": 0.106,
+          "noFilter": 0.003050211,
+          "outlier": 0.003216411,
+          "error": 0.003034061,
+          "outlierError": 0.003097279,
+          "outlierErrorSigma": 0.00004444961
+        },
+        {
+          "q": 0.108,
+          "noFilter": 0.002553279,
+          "outlier": 0.002441766,
+          "error": 0.002382758,
+          "outlierError": 0.002435857,
+          "outlierErrorSigma": 0.00004564527
+        },
+        {
+          "q": 0.11,
+          "noFilter": 0.002317224,
+          "outlier": 0.002177168,
+          "error": 0.0021157,
+          "outlierError": 0.002164163,
+          "outlierErrorSigma": 0.00004455236
+        },
+        {
+          "q": 0.112,
+          "noFilter": 0.002182334,
+          "outlier": 0.002208404,
+          "error": 0.002087166,
+          "outlierError": 0.002005118,
+          "outlierErrorSigma": 0.00005176365
+        },
+        {
+          "q": 0.114,
+          "noFilter": 0.00250184,
+          "outlier": 0.002738367,
+          "error": 0.002442783,
+          "outlierError": 0.002296675,
+          "outlierErrorSigma": 0.00004689273
+        },
+        {
+          "q": 0.116,
+          "noFilter": 0.003001683,
+          "outlier": 0.003210444,
+          "error": 0.003056989,
+          "outlierError": 0.002946417,
+          "outlierErrorSigma": 0.0000503473
+        },
+        {
+          "q": 0.118,
+          "noFilter": 0.003652562,
+          "outlier": 0.003599949,
+          "error": 0.003770415,
+          "outlierError": 0.00361181,
+          "outlierErrorSigma": 0.00005126702
+        },
+        {
+          "q": 0.12,
+          "noFilter": 0.004492348,
+          "outlier": 0.004658342,
+          "error": 0.004387211,
+          "outlierError": 0.004266716,
+          "outlierErrorSigma": 0.00005107836
+        },
+        {
+          "q": 0.122,
+          "noFilter": 0.005401567,
+          "outlier": 0.00566898,
+          "error": 0.005319635,
+          "outlierError": 0.005188934,
+          "outlierErrorSigma": 0.0000465672
+        },
+        {
+          "q": 0.124,
+          "noFilter": 0.006319387,
+          "outlier": 0.006259497,
+          "error": 0.006244347,
+          "outlierError": 0.006175717,
+          "outlierErrorSigma": 0.00004983176
+        },
+        {
+          "q": 0.126,
+          "noFilter": 0.00691456,
+          "outlier": 0.007221768,
+          "error": 0.007073968,
+          "outlierError": 0.006999857,
+          "outlierErrorSigma": 0.00005088789
+        },
+        {
+          "q": 0.128,
+          "noFilter": 0.007829484,
+          "outlier": 0.008364783,
+          "error": 0.008064863,
+          "outlierError": 0.007932005,
+          "outlierErrorSigma": 0.00004627945
+        },
+        {
+          "q": 0.13,
+          "noFilter": 0.008916261,
+          "outlier": 0.008710271,
+          "error": 0.008770441,
+          "outlierError": 0.00867837,
+          "outlierErrorSigma": 0.00005074843
+        },
+        {
+          "q": 0.132,
+          "noFilter": 0.009562929,
+          "outlier": 0.009385612,
+          "error": 0.009530758,
+          "outlierError": 0.009432632,
+          "outlierErrorSigma": 0.00005067368
+        },
+        {
+          "q": 0.134,
+          "noFilter": 0.01006699,
+          "outlier": 0.0101673,
+          "error": 0.01022527,
+          "outlierError": 0.01015667,
+          "outlierErrorSigma": 0.00004946083
+        },
+        {
+          "q": 0.136,
+          "noFilter": 0.01085175,
+          "outlier": 0.0106124,
+          "error": 0.01072203,
+          "outlierError": 0.010672,
+          "outlierErrorSigma": 0.00004586313
+        },
+        {
+          "q": 0.138,
+          "noFilter": 0.01124346,
+          "outlier": 0.01118379,
+          "error": 0.01114418,
+          "outlierError": 0.01115927,
+          "outlierErrorSigma": 0.00005015709
+        },
+        {
+          "q": 0.14,
+          "noFilter": 0.01143939,
+          "outlier": 0.01157564,
+          "error": 0.01147042,
+          "outlierError": 0.01146424,
+          "outlierErrorSigma": 0.00005000018
+        },
+        {
+          "q": 0.142,
+          "noFilter": 0.0115399,
+          "outlier": 0.01153295,
+          "error": 0.0117549,
+          "outlierError": 0.01177097,
+          "outlierErrorSigma": 0.00004426083
+        },
+        {
+          "q": 0.144,
+          "noFilter": 0.01204369,
+          "outlier": 0.01200244,
+          "error": 0.01198299,
+          "outlierError": 0.01202573,
+          "outlierErrorSigma": 0.00004970046
+        },
+        {
+          "q": 0.146,
+          "noFilter": 0.01181367,
+          "outlier": 0.01172328,
+          "error": 0.01197877,
+          "outlierError": 0.01198205,
+          "outlierErrorSigma": 0.00005001423
+        },
+        {
+          "q": 0.148,
+          "noFilter": 0.01179499,
+          "outlier": 0.01185013,
+          "error": 0.0118278,
+          "outlierError": 0.0118502,
+          "outlierErrorSigma": 0.00005123387
+        },
+        {
+          "q": 0.15,
+          "noFilter": 0.01174018,
+          "outlier": 0.01162083,
+          "error": 0.01174531,
+          "outlierError": 0.01176326,
+          "outlierErrorSigma": 0.00004656551
+        },
+        {
+          "q": 0.152,
+          "noFilter": 0.01138211,
+          "outlier": 0.01129669,
+          "error": 0.01153899,
+          "outlierError": 0.01154409,
+          "outlierErrorSigma": 0.0000527087
+        },
+        {
+          "q": 0.154,
+          "noFilter": 0.01128133,
+          "outlier": 0.01110233,
+          "error": 0.01122075,
+          "outlierError": 0.01147978,
+          "outlierErrorSigma": 0.00005627868
+        },
+        {
+          "q": 0.156,
+          "noFilter": 0.01065638,
+          "outlier": 0.01075204,
+          "error": 0.01084715,
+          "outlierError": 0.01087959,
+          "outlierErrorSigma": 0.0000470406
+        },
+        {
+          "q": 0.158,
+          "noFilter": 0.01040722,
+          "outlier": 0.01015986,
+          "error": 0.01045371,
+          "outlierError": 0.01050729,
+          "outlierErrorSigma": 0.00005125407
+        },
+        {
+          "q": 0.16,
+          "noFilter": 0.009938993,
+          "outlier": 0.009906503,
+          "error": 0.009927185,
+          "outlierError": 0.009960705,
+          "outlierErrorSigma": 0.00005019984
+        },
+        {
+          "q": 0.162,
+          "noFilter": 0.009714852,
+          "outlier": 0.009355426,
+          "error": 0.009548548,
+          "outlierError": 0.009790699,
+          "outlierErrorSigma": 0.00005276192
+        },
+        {
+          "q": 0.164,
+          "noFilter": 0.009036061,
+          "outlier": 0.008940685,
+          "error": 0.009021959,
+          "outlierError": 0.00905142,
+          "outlierErrorSigma": 0.00004614993
+        },
+        {
+          "q": 0.166,
+          "noFilter": 0.008223616,
+          "outlier": 0.008441061,
+          "error": 0.008527699,
+          "outlierError": 0.008611057,
+          "outlierErrorSigma": 0.00005077184
+        },
+        {
+          "q": 0.168,
+          "noFilter": 0.007745922,
+          "outlier": 0.007953029,
+          "error": 0.008077464,
+          "outlierError": 0.008115331,
+          "outlierErrorSigma": 0.00004883891
+        },
+        {
+          "q": 0.17,
+          "noFilter": 0.007534172,
+          "outlier": 0.007506834,
+          "error": 0.007550903,
+          "outlierError": 0.007584325,
+          "outlierErrorSigma": 0.0000444205
+        },
+        {
+          "q": 0.172,
+          "noFilter": 0.007054495,
+          "outlier": 0.006905295,
+          "error": 0.006927798,
+          "outlierError": 0.007051202,
+          "outlierErrorSigma": 0.00004105221
+        },
+        {
+          "q": 0.174,
+          "noFilter": 0.006397194,
+          "outlier": 0.006490226,
+          "error": 0.006479545,
+          "outlierError": 0.006674193,
+          "outlierErrorSigma": 0.00004864379
+        },
+        {
+          "q": 0.176,
+          "noFilter": 0.006125523,
+          "outlier": 0.00608994,
+          "error": 0.006078934,
+          "outlierError": 0.006256478,
+          "outlierErrorSigma": 0.00004900803
+        },
+        {
+          "q": 0.178,
+          "noFilter": 0.005633972,
+          "outlier": 0.005533918,
+          "error": 0.005574533,
+          "outlierError": 0.005592312,
+          "outlierErrorSigma": 0.0000423677
+        },
+        {
+          "q": 0.18,
+          "noFilter": 0.005089525,
+          "outlier": 0.005149081,
+          "error": 0.005277952,
+          "outlierError": 0.005375749,
+          "outlierErrorSigma": 0.00003948085
+        },
+        {
+          "q": 0.182,
+          "noFilter": 0.004665404,
+          "outlier": 0.004840228,
+          "error": 0.004795318,
+          "outlierError": 0.004983174,
+          "outlierErrorSigma": 0.00004874706
+        },
+        {
+          "q": 0.184,
+          "noFilter": 0.004168997,
+          "outlier": 0.004337581,
+          "error": 0.004446397,
+          "outlierError": 0.004412002,
+          "outlierErrorSigma": 0.0000455445
+        },
+        {
+          "q": 0.186,
+          "noFilter": 0.00389563,
+          "outlier": 0.003926615,
+          "error": 0.004176541,
+          "outlierError": 0.004150402,
+          "outlierErrorSigma": 0.00004032568
+        },
+        {
+          "q": 0.188,
+          "noFilter": 0.003926749,
+          "outlier": 0.003999406,
+          "error": 0.003906177,
+          "outlierError": 0.00413233,
+          "outlierErrorSigma": 0.00004817129
+        },
+        {
+          "q": 0.19,
+          "noFilter": 0.003700197,
+          "outlier": 0.003646915,
+          "error": 0.003644677,
+          "outlierError": 0.003818594,
+          "outlierErrorSigma": 0.00004779328
+        },
+        {
+          "q": 0.192,
+          "noFilter": 0.003316016,
+          "outlier": 0.00338149,
+          "error": 0.003499758,
+          "outlierError": 0.003569161,
+          "outlierErrorSigma": 0.0000360549
+        },
+        {
+          "q": 0.194,
+          "noFilter": 0.003201651,
+          "outlier": 0.003070109,
+          "error": 0.003249692,
+          "outlierError": 0.003421896,
+          "outlierErrorSigma": 0.00004449914
+        },
+        {
+          "q": 0.196,
+          "noFilter": 0.002949238,
+          "outlier": 0.002998868,
+          "error": 0.003084925,
+          "outlierError": 0.003244372,
+          "outlierErrorSigma": 0.0000472842
+        },
+        {
+          "q": 0.198,
+          "noFilter": 0.002816615,
+          "outlier": 0.002904124,
+          "error": 0.002994677,
+          "outlierError": 0.003164286,
+          "outlierErrorSigma": 0.00004804097
+        },
+        {
+          "q": 0.2,
+          "noFilter": 0.00254409,
+          "outlier": 0.002639202,
+          "error": 0.00284253,
+          "outlierError": 0.002901755,
+          "outlierErrorSigma": 0.0000364119
+        },
+        {
+          "q": 0.202,
+          "noFilter": 0.002379355,
+          "outlier": 0.002658545,
+          "error": 0.002697394,
+          "outlierError": 0.002805307,
+          "outlierErrorSigma": 0.00004785086
+        },
+        {
+          "q": 0.204,
+          "noFilter": 0.002418643,
+          "outlier": 0.002610424,
+          "error": 0.002645794,
+          "outlierError": 0.002753706,
+          "outlierErrorSigma": 0.00004578101
+        },
+        {
+          "q": 0.206,
+          "noFilter": 0.002276163,
+          "outlier": 0.002487051,
+          "error": 0.002553027,
+          "outlierError": 0.00268513,
+          "outlierErrorSigma": 0.00004694217
+        },
+        {
+          "q": 0.208,
+          "noFilter": 0.002382317,
+          "outlier": 0.002468505,
+          "error": 0.002424917,
+          "outlierError": 0.002548712,
+          "outlierErrorSigma": 0.00004668525
+        },
+        {
+          "q": 0.21,
+          "noFilter": 0.002303674,
+          "outlier": 0.002353752,
+          "error": 0.002392001,
+          "outlierError": 0.002443895,
+          "outlierErrorSigma": 0.00003734561
+        },
+        {
+          "q": 0.212,
+          "noFilter": 0.0021187,
+          "outlier": 0.002418907,
+          "error": 0.002412535,
+          "outlierError": 0.002516666,
+          "outlierErrorSigma": 0.00004524563
+        },
+        {
+          "q": 0.214,
+          "noFilter": 0.002243543,
+          "outlier": 0.002443754,
+          "error": 0.002386922,
+          "outlierError": 0.002523049,
+          "outlierErrorSigma": 0.00004581801
+        },
+        {
+          "q": 0.216,
+          "noFilter": 0.002292248,
+          "outlier": 0.002339251,
+          "error": 0.002327526,
+          "outlierError": 0.002488004,
+          "outlierErrorSigma": 0.00004391194
+        },
+        {
+          "q": 0.218,
+          "noFilter": 0.001919442,
+          "outlier": 0.00214173,
+          "error": 0.00221315,
+          "outlierError": 0.002351784,
+          "outlierErrorSigma": 0.00004520659
+        },
+        {
+          "q": 0.22,
+          "noFilter": 0.00182907,
+          "outlier": 0.00218309,
+          "error": 0.002122991,
+          "outlierError": 0.002227385,
+          "outlierErrorSigma": 0.00004421284
+        },
+        {
+          "q": 0.222,
+          "noFilter": 0.002109109,
+          "outlier": 0.002093953,
+          "error": 0.002122588,
+          "outlierError": 0.002182417,
+          "outlierErrorSigma": 0.00004497281
+        },
+        {
+          "q": 0.224,
+          "noFilter": 0.001893572,
+          "outlier": 0.002027425,
+          "error": 0.002041217,
+          "outlierError": 0.002218854,
+          "outlierErrorSigma": 0.0000446595
+        },
+        {
+          "q": 0.226,
+          "noFilter": 0.002083974,
+          "outlier": 0.002060172,
+          "error": 0.0020799,
+          "outlierError": 0.002162074,
+          "outlierErrorSigma": 0.00004288533
+        },
+        {
+          "q": 0.228,
+          "noFilter": 0.001910787,
+          "outlier": 0.001785803,
+          "error": 0.001921414,
+          "outlierError": 0.001861999,
+          "outlierErrorSigma": 0.00003646933
+        },
+        {
+          "q": 0.23,
+          "noFilter": 0.001743489,
+          "outlier": 0.001746232,
+          "error": 0.001900076,
+          "outlierError": 0.002029077,
+          "outlierErrorSigma": 0.00004401187
+        },
+        {
+          "q": 0.232,
+          "noFilter": 0.001832442,
+          "outlier": 0.001884503,
+          "error": 0.001828369,
+          "outlierError": 0.00196357,
+          "outlierErrorSigma": 0.00004410489
+        },
+        {
+          "q": 0.234,
+          "noFilter": 0.001559364,
+          "outlier": 0.001607141,
+          "error": 0.001764239,
+          "outlierError": 0.001901778,
+          "outlierErrorSigma": 0.00004421378
+        },
+        {
+          "q": 0.236,
+          "noFilter": 0.001406313,
+          "outlier": 0.001607958,
+          "error": 0.001637583,
+          "outlierError": 0.001726692,
+          "outlierErrorSigma": 0.00004236413
+        },
+        {
+          "q": 0.238,
+          "noFilter": 0.001383315,
+          "outlier": 0.001658909,
+          "error": 0.00159082,
+          "outlierError": 0.001711206,
+          "outlierErrorSigma": 0.00004291187
+        },
+        {
+          "q": 0.24,
+          "noFilter": 0.001530545,
+          "outlier": 0.001449732,
+          "error": 0.001534539,
+          "outlierError": 0.001552273,
+          "outlierErrorSigma": 0.00004004072
+        },
+        {
+          "q": 0.242,
+          "noFilter": 0.001506761,
+          "outlier": 0.001533657,
+          "error": 0.001484834,
+          "outlierError": 0.001581685,
+          "outlierErrorSigma": 0.00004320939
+        },
+        {
+          "q": 0.244,
+          "noFilter": 0.001124636,
+          "outlier": 0.001395399,
+          "error": 0.001404317,
+          "outlierError": 0.001481646,
+          "outlierErrorSigma": 0.00004287972
+        },
+        {
+          "q": 0.246,
+          "noFilter": 0.001451731,
+          "outlier": 0.001317483,
+          "error": 0.001303615,
+          "outlierError": 0.001411755,
+          "outlierErrorSigma": 0.00004034407
+        },
+        {
+          "q": 0.248,
+          "noFilter": 0.001123851,
+          "outlier": 0.001134052,
+          "error": 0.001254009,
+          "outlierError": 0.00136402,
+          "outlierErrorSigma": 0.00004349607
+        },
+        {
+          "q": 0.25,
+          "noFilter": 0.0009304478,
+          "outlier": 0.001061381,
+          "error": 0.001118734,
+          "outlierError": 0.001214057,
+          "outlierErrorSigma": 0.00004400436
+        },
+        {
+          "q": 0.252,
+          "noFilter": 0.001082446,
+          "outlier": 0.001148833,
+          "error": 0.001140449,
+          "outlierError": 0.001178968,
+          "outlierErrorSigma": 0.0000443916
+        },
+        {
+          "q": 0.254,
+          "noFilter": 0.001168365,
+          "outlier": 0.00109573,
+          "error": 0.001102083,
+          "outlierError": 0.001182075,
+          "outlierErrorSigma": 0.00004326592
+        },
+        {
+          "q": 0.256,
+          "noFilter": 0.0008736841,
+          "outlier": 0.0009895707,
+          "error": 0.0009906909,
+          "outlierError": 0.00105475,
+          "outlierErrorSigma": 0.00004419825
+        },
+        {
+          "q": 0.258,
+          "noFilter": 0.0008855977,
+          "outlier": 0.0009068055,
+          "error": 0.0009257973,
+          "outlierError": 0.0008957299,
+          "outlierErrorSigma": 0.000041233
+        },
+        {
+          "q": 0.26,
+          "noFilter": 0.001195608,
+          "outlier": 0.00104237,
+          "error": 0.001038117,
+          "outlierError": 0.001070061,
+          "outlierErrorSigma": 0.0000450033
+        },
+        {
+          "q": 0.262,
+          "noFilter": 0.0008495871,
+          "outlier": 0.001048914,
+          "error": 0.001016439,
+          "outlierError": 0.0009951378,
+          "outlierErrorSigma": 0.00003728531
+        },
+        {
+          "q": 0.264,
+          "noFilter": 0.0008077084,
+          "outlier": 0.0009885381,
+          "error": 0.0009798002,
+          "outlierError": 0.001042292,
+          "outlierErrorSigma": 0.00004261124
+        },
+        {
+          "q": 0.266,
+          "noFilter": 0.0007677296,
+          "outlier": 0.0009774176,
+          "error": 0.001060752,
+          "outlierError": 0.001053103,
+          "outlierErrorSigma": 0.00004380573
+        },
+        {
+          "q": 0.268,
+          "noFilter": 0.0009678928,
+          "outlier": 0.001003477,
+          "error": 0.0009798335,
+          "outlierError": 0.0009984443,
+          "outlierErrorSigma": 0.00004197625
+        },
+        {
+          "q": 0.27,
+          "noFilter": 0.001265552,
+          "outlier": 0.000980853,
+          "error": 0.001004518,
+          "outlierError": 0.001077238,
+          "outlierErrorSigma": 0.00004194734
+        },
+        {
+          "q": 0.272,
+          "noFilter": 0.0008214076,
+          "outlier": 0.0009439345,
+          "error": 0.001033005,
+          "outlierError": 0.001109703,
+          "outlierErrorSigma": 0.0000410008
+        },
+        {
+          "q": 0.274,
+          "noFilter": 0.001065753,
+          "outlier": 0.001010379,
+          "error": 0.001080861,
+          "outlierError": 0.0009931905,
+          "outlierErrorSigma": 0.00004006797
+        },
+        {
+          "q": 0.276,
+          "noFilter": 0.001043293,
+          "outlier": 0.000910537,
+          "error": 0.00104524,
+          "outlierError": 0.001028484,
+          "outlierErrorSigma": 0.00003609994
+        },
+        {
+          "q": 0.278,
+          "noFilter": 0.001152762,
+          "outlier": 0.001173503,
+          "error": 0.00110764,
+          "outlierError": 0.00120279,
+          "outlierErrorSigma": 0.00003984213
+        },
+        {
+          "q": 0.28,
+          "noFilter": 0.001129791,
+          "outlier": 0.001111102,
+          "error": 0.001098601,
+          "outlierError": 0.001124227,
+          "outlierErrorSigma": 0.00004272691
+        },
+        {
+          "q": 0.282,
+          "noFilter": 0.000797526,
+          "outlier": 0.001172529,
+          "error": 0.001159047,
+          "outlierError": 0.00117635,
+          "outlierErrorSigma": 0.00004260988
+        },
+        {
+          "q": 0.284,
+          "noFilter": 0.0009566283,
+          "outlier": 0.001205104,
+          "error": 0.001230729,
+          "outlierError": 0.001271288,
+          "outlierErrorSigma": 0.00003896877
+        },
+        {
+          "q": 0.286,
+          "noFilter": 0.0010591,
+          "outlier": 0.001289081,
+          "error": 0.001231692,
+          "outlierError": 0.001331587,
+          "outlierErrorSigma": 0.00004081528
+        },
+        {
+          "q": 0.288,
+          "noFilter": 0.001033093,
+          "outlier": 0.00120349,
+          "error": 0.001283725,
+          "outlierError": 0.001218223,
+          "outlierErrorSigma": 0.00003870654
+        },
+        {
+          "q": 0.29,
+          "noFilter": 0.001146006,
+          "outlier": 0.001179349,
+          "error": 0.001233201,
+          "outlierError": 0.001313181,
+          "outlierErrorSigma": 0.00004144059
+        },
+        {
+          "q": 0.292,
+          "noFilter": 0.0009503332,
+          "outlier": 0.001242862,
+          "error": 0.00125099,
+          "outlierError": 0.001291902,
+          "outlierErrorSigma": 0.00004197817
+        },
+        {
+          "q": 0.294,
+          "noFilter": 0.001350338,
+          "outlier": 0.001063762,
+          "error": 0.001362423,
+          "outlierError": 0.001447246,
+          "outlierErrorSigma": 0.00004207552
+        },
+        {
+          "q": 0.296,
+          "noFilter": 0.00115199,
+          "outlier": 0.001301949,
+          "error": 0.001361211,
+          "outlierError": 0.001384242,
+          "outlierErrorSigma": 0.0000417442
+        },
+        {
+          "q": 0.298,
+          "noFilter": 0.001418719,
+          "outlier": 0.001314197,
+          "error": 0.001388947,
+          "outlierError": 0.001421931,
+          "outlierErrorSigma": 0.00003664834
+        },
+        {
+          "q": 0.3,
+          "noFilter": 0.001271891,
+          "outlier": 0.001307455,
+          "error": 0.001395786,
+          "outlierError": 0.001513154,
+          "outlierErrorSigma": 0.00004227835
+        }
+      ]
+    },
+    {
+      "id": "SASDPR4",
+      "protein": "Xylose isomerase",
+      "consensusRgAngstrom": 33,
+      "sourceArchiveSha256": "317baf16dc627becf56ba6ce631f0c94be7e39971cf40252eb7847a3fbbbd1ff",
+      "variantFiles": {
+        "noFilter": "SASDPR4/inner/SASDPR4-SAXS xylose isomerase/Datcombine inputs and outputs/Filters disabled/XI-NoF.dat",
+        "outlier": "SASDPR4/inner/SASDPR4-SAXS xylose isomerase/Datcombine inputs and outputs/Outlier filter/XI-O.dat",
+        "error": "SASDPR4/inner/SASDPR4-SAXS xylose isomerase/Datcombine inputs and outputs/Error filter/XI-E.dat",
+        "outlierError": "SASDPR4/inner/SASDPR4-SAXS xylose isomerase/Datcombine inputs and outputs/Outlier-error filters/XI-OE.dat"
+      },
+      "rows": [
+        {
+          "q": 0.006,
+          "noFilter": 1.045033,
+          "outlier": 1.041031,
+          "error": 1.05048,
+          "outlierError": 1.044085,
+          "outlierErrorSigma": 0.01171016
+        },
+        {
+          "q": 0.007,
+          "noFilter": 1.031758,
+          "outlier": 1.034895,
+          "error": 1.029654,
+          "outlierError": 1.034318,
+          "outlierErrorSigma": 0.006476203
+        },
+        {
+          "q": 0.008,
+          "noFilter": 1.033658,
+          "outlier": 1.037854,
+          "error": 1.036427,
+          "outlierError": 1.038776,
+          "outlierErrorSigma": 0.003323526
+        },
+        {
+          "q": 0.009,
+          "noFilter": 1.029456,
+          "outlier": 1.024866,
+          "error": 1.021879,
+          "outlierError": 1.024181,
+          "outlierErrorSigma": 0.002559661
+        },
+        {
+          "q": 0.01,
+          "noFilter": 1.016113,
+          "outlier": 1.016024,
+          "error": 1.023551,
+          "outlierError": 1.017959,
+          "outlierErrorSigma": 0.00327432
+        },
+        {
+          "q": 0.011,
+          "noFilter": 1.006265,
+          "outlier": 1.011731,
+          "error": 1.011611,
+          "outlierError": 1.011611,
+          "outlierErrorSigma": 0.002341938
+        },
+        {
+          "q": 0.012,
+          "noFilter": 0.9994996,
+          "outlier": 0.9992638,
+          "error": 1.009503,
+          "outlierError": 1.005158,
+          "outlierErrorSigma": 0.002010237
+        },
+        {
+          "q": 0.013,
+          "noFilter": 0.9944502,
+          "outlier": 0.9926133,
+          "error": 0.9980446,
+          "outlierError": 0.9980446,
+          "outlierErrorSigma": 0.002009836
+        },
+        {
+          "q": 0.014,
+          "noFilter": 0.9868296,
+          "outlier": 0.9828573,
+          "error": 0.9898693,
+          "outlierError": 0.9866966,
+          "outlierErrorSigma": 0.0013658
+        },
+        {
+          "q": 0.015,
+          "noFilter": 0.9758176,
+          "outlier": 0.973323,
+          "error": 0.976552,
+          "outlierError": 0.9740058,
+          "outlierErrorSigma": 0.002140883
+        },
+        {
+          "q": 0.016,
+          "noFilter": 0.9631123,
+          "outlier": 0.9629768,
+          "error": 0.9671822,
+          "outlierError": 0.9649386,
+          "outlierErrorSigma": 0.001516001
+        },
+        {
+          "q": 0.017,
+          "noFilter": 0.9500715,
+          "outlier": 0.9498316,
+          "error": 0.9535848,
+          "outlierError": 0.9532658,
+          "outlierErrorSigma": 0.001501528
+        },
+        {
+          "q": 0.018,
+          "noFilter": 0.940117,
+          "outlier": 0.9399207,
+          "error": 0.9422572,
+          "outlierError": 0.9428852,
+          "outlierErrorSigma": 0.001068404
+        },
+        {
+          "q": 0.019,
+          "noFilter": 0.9266706,
+          "outlier": 0.9273739,
+          "error": 0.929055,
+          "outlierError": 0.9261134,
+          "outlierErrorSigma": 0.001742653
+        },
+        {
+          "q": 0.02,
+          "noFilter": 0.9132889,
+          "outlier": 0.9117123,
+          "error": 0.9171041,
+          "outlierError": 0.9130937,
+          "outlierErrorSigma": 0.0009408803
+        },
+        {
+          "q": 0.021,
+          "noFilter": 0.9027294,
+          "outlier": 0.9034121,
+          "error": 0.9022069,
+          "outlierError": 0.9044826,
+          "outlierErrorSigma": 0.00135707
+        },
+        {
+          "q": 0.022,
+          "noFilter": 0.8881054,
+          "outlier": 0.8901001,
+          "error": 0.8901818,
+          "outlierError": 0.8876846,
+          "outlierErrorSigma": 0.001159689
+        },
+        {
+          "q": 0.023,
+          "noFilter": 0.8723158,
+          "outlier": 0.8751756,
+          "error": 0.8764304,
+          "outlierError": 0.8757278,
+          "outlierErrorSigma": 0.0009624798
+        },
+        {
+          "q": 0.024,
+          "noFilter": 0.8540951,
+          "outlier": 0.8561997,
+          "error": 0.8593316,
+          "outlierError": 0.857378,
+          "outlierErrorSigma": 0.001432332
+        },
+        {
+          "q": 0.025,
+          "noFilter": 0.8404672,
+          "outlier": 0.8410223,
+          "error": 0.8453167,
+          "outlierError": 0.843451,
+          "outlierErrorSigma": 0.0006983302
+        },
+        {
+          "q": 0.026,
+          "noFilter": 0.8269336,
+          "outlier": 0.8282035,
+          "error": 0.8297598,
+          "outlierError": 0.82843,
+          "outlierErrorSigma": 0.0008561799
+        },
+        {
+          "q": 0.027,
+          "noFilter": 0.8120295,
+          "outlier": 0.8121566,
+          "error": 0.8163758,
+          "outlierError": 0.8131523,
+          "outlierErrorSigma": 0.001084327
+        },
+        {
+          "q": 0.028,
+          "noFilter": 0.7956781,
+          "outlier": 0.7973513,
+          "error": 0.7995501,
+          "outlierError": 0.7979547,
+          "outlierErrorSigma": 0.001392144
+        },
+        {
+          "q": 0.029,
+          "noFilter": 0.7812081,
+          "outlier": 0.7798653,
+          "error": 0.7850924,
+          "outlierError": 0.7841603,
+          "outlierErrorSigma": 0.000820752
+        },
+        {
+          "q": 0.03,
+          "noFilter": 0.7631593,
+          "outlier": 0.764031,
+          "error": 0.7669121,
+          "outlierError": 0.7639307,
+          "outlierErrorSigma": 0.001191737
+        },
+        {
+          "q": 0.031,
+          "noFilter": 0.7452322,
+          "outlier": 0.746934,
+          "error": 0.7499129,
+          "outlierError": 0.7483073,
+          "outlierErrorSigma": 0.000529694
+        },
+        {
+          "q": 0.032,
+          "noFilter": 0.727744,
+          "outlier": 0.7285984,
+          "error": 0.7317307,
+          "outlierError": 0.7301607,
+          "outlierErrorSigma": 0.0005418919
+        },
+        {
+          "q": 0.033,
+          "noFilter": 0.7102616,
+          "outlier": 0.7107382,
+          "error": 0.7145197,
+          "outlierError": 0.7120353,
+          "outlierErrorSigma": 0.0008042137
+        },
+        {
+          "q": 0.034,
+          "noFilter": 0.6930727,
+          "outlier": 0.6957757,
+          "error": 0.6967529,
+          "outlierError": 0.6949584,
+          "outlierErrorSigma": 0.0008814138
+        },
+        {
+          "q": 0.035,
+          "noFilter": 0.6738134,
+          "outlier": 0.6756303,
+          "error": 0.6789678,
+          "outlierError": 0.6753866,
+          "outlierErrorSigma": 0.0008097421
+        },
+        {
+          "q": 0.036,
+          "noFilter": 0.6567987,
+          "outlier": 0.6571792,
+          "error": 0.6592382,
+          "outlierError": 0.6576239,
+          "outlierErrorSigma": 0.0008418773
+        },
+        {
+          "q": 0.037,
+          "noFilter": 0.6372701,
+          "outlier": 0.641645,
+          "error": 0.6376899,
+          "outlierError": 0.6398234,
+          "outlierErrorSigma": 0.0009314206
+        },
+        {
+          "q": 0.038,
+          "noFilter": 0.6228836,
+          "outlier": 0.6239215,
+          "error": 0.6228473,
+          "outlierError": 0.6232299,
+          "outlierErrorSigma": 0.0008134557
+        },
+        {
+          "q": 0.039,
+          "noFilter": 0.6047928,
+          "outlier": 0.6055965,
+          "error": 0.6075933,
+          "outlierError": 0.6043487,
+          "outlierErrorSigma": 0.0008413483
+        },
+        {
+          "q": 0.04,
+          "noFilter": 0.5863164,
+          "outlier": 0.5837468,
+          "error": 0.5877311,
+          "outlierError": 0.5838802,
+          "outlierErrorSigma": 0.0008212011
+        },
+        {
+          "q": 0.041,
+          "noFilter": 0.5670378,
+          "outlier": 0.5686735,
+          "error": 0.5671267,
+          "outlierError": 0.5694511,
+          "outlierErrorSigma": 0.0009008319
+        },
+        {
+          "q": 0.042,
+          "noFilter": 0.5506852,
+          "outlier": 0.5509445,
+          "error": 0.5527018,
+          "outlierError": 0.5520814,
+          "outlierErrorSigma": 0.0008642397
+        },
+        {
+          "q": 0.043,
+          "noFilter": 0.5333112,
+          "outlier": 0.5342358,
+          "error": 0.534692,
+          "outlierError": 0.5332341,
+          "outlierErrorSigma": 0.0009762715
+        },
+        {
+          "q": 0.044,
+          "noFilter": 0.5162114,
+          "outlier": 0.515817,
+          "error": 0.5150027,
+          "outlierError": 0.5165345,
+          "outlierErrorSigma": 0.0005310553
+        },
+        {
+          "q": 0.045,
+          "noFilter": 0.4955541,
+          "outlier": 0.4952887,
+          "error": 0.497622,
+          "outlierError": 0.4979472,
+          "outlierErrorSigma": 0.0004965707
+        },
+        {
+          "q": 0.046,
+          "noFilter": 0.4805283,
+          "outlier": 0.4802448,
+          "error": 0.4813998,
+          "outlierError": 0.4800455,
+          "outlierErrorSigma": 0.000619804
+        },
+        {
+          "q": 0.047,
+          "noFilter": 0.460944,
+          "outlier": 0.4616427,
+          "error": 0.4615316,
+          "outlierError": 0.4626898,
+          "outlierErrorSigma": 0.0006486245
+        },
+        {
+          "q": 0.048,
+          "noFilter": 0.4440165,
+          "outlier": 0.4440906,
+          "error": 0.4450443,
+          "outlierError": 0.4451733,
+          "outlierErrorSigma": 0.0007181293
+        },
+        {
+          "q": 0.049,
+          "noFilter": 0.4274106,
+          "outlier": 0.4273982,
+          "error": 0.4286322,
+          "outlierError": 0.4251828,
+          "outlierErrorSigma": 0.0005426535
+        },
+        {
+          "q": 0.05,
+          "noFilter": 0.4063694,
+          "outlier": 0.4075628,
+          "error": 0.4060071,
+          "outlierError": 0.4088699,
+          "outlierErrorSigma": 0.0005990956
+        },
+        {
+          "q": 0.052,
+          "noFilter": 0.3784684,
+          "outlier": 0.3806929,
+          "error": 0.3787714,
+          "outlierError": 0.3795357,
+          "outlierErrorSigma": 0.0004999491
+        },
+        {
+          "q": 0.054,
+          "noFilter": 0.3469402,
+          "outlier": 0.3498408,
+          "error": 0.3476429,
+          "outlierError": 0.3486208,
+          "outlierErrorSigma": 0.0004505268
+        },
+        {
+          "q": 0.056,
+          "noFilter": 0.3179641,
+          "outlier": 0.31801,
+          "error": 0.3179768,
+          "outlierError": 0.3193318,
+          "outlierErrorSigma": 0.0003214569
+        },
+        {
+          "q": 0.058,
+          "noFilter": 0.2882631,
+          "outlier": 0.2887536,
+          "error": 0.2883439,
+          "outlierError": 0.2877903,
+          "outlierErrorSigma": 0.0002855739
+        },
+        {
+          "q": 0.06,
+          "noFilter": 0.2621798,
+          "outlier": 0.2614542,
+          "error": 0.2605461,
+          "outlierError": 0.2605461,
+          "outlierErrorSigma": 0.0002834499
+        },
+        {
+          "q": 0.062,
+          "noFilter": 0.2350061,
+          "outlier": 0.2349583,
+          "error": 0.2355709,
+          "outlierError": 0.2355709,
+          "outlierErrorSigma": 0.0001487383
+        },
+        {
+          "q": 0.064,
+          "noFilter": 0.2105518,
+          "outlier": 0.2104756,
+          "error": 0.211886,
+          "outlierError": 0.211886,
+          "outlierErrorSigma": 0.0001409793
+        },
+        {
+          "q": 0.066,
+          "noFilter": 0.1879533,
+          "outlier": 0.1891739,
+          "error": 0.1862646,
+          "outlierError": 0.1849871,
+          "outlierErrorSigma": 0.00005991481
+        },
+        {
+          "q": 0.068,
+          "noFilter": 0.1661152,
+          "outlier": 0.1672348,
+          "error": 0.1675644,
+          "outlierError": 0.1669919,
+          "outlierErrorSigma": 0.00006695322
+        },
+        {
+          "q": 0.07,
+          "noFilter": 0.1478139,
+          "outlier": 0.147971,
+          "error": 0.1498418,
+          "outlierError": 0.148825,
+          "outlierErrorSigma": 0.00005332357
+        },
+        {
+          "q": 0.072,
+          "noFilter": 0.1315836,
+          "outlier": 0.1301406,
+          "error": 0.1309456,
+          "outlierError": 0.130064,
+          "outlierErrorSigma": 0.00004847802
+        },
+        {
+          "q": 0.074,
+          "noFilter": 0.1134623,
+          "outlier": 0.1132768,
+          "error": 0.1137201,
+          "outlierError": 0.1129618,
+          "outlierErrorSigma": 0.00004509683
+        },
+        {
+          "q": 0.076,
+          "noFilter": 0.09816569,
+          "outlier": 0.09837631,
+          "error": 0.0977694,
+          "outlierError": 0.09712531,
+          "outlierErrorSigma": 0.00004159168
+        },
+        {
+          "q": 0.078,
+          "noFilter": 0.08356986,
+          "outlier": 0.08472087,
+          "error": 0.08424178,
+          "outlierError": 0.08369451,
+          "outlierErrorSigma": 0.00003813449
+        },
+        {
+          "q": 0.08,
+          "noFilter": 0.07213053,
+          "outlier": 0.07218319,
+          "error": 0.07218468,
+          "outlierError": 0.07172372,
+          "outlierErrorSigma": 0.00003584592
+        },
+        {
+          "q": 0.082,
+          "noFilter": 0.06186404,
+          "outlier": 0.06127982,
+          "error": 0.06073525,
+          "outlierError": 0.06115777,
+          "outlierErrorSigma": 0.00005796607
+        },
+        {
+          "q": 0.084,
+          "noFilter": 0.05130382,
+          "outlier": 0.05152501,
+          "error": 0.05135645,
+          "outlierError": 0.05150208,
+          "outlierErrorSigma": 0.00005618183
+        },
+        {
+          "q": 0.086,
+          "noFilter": 0.04319673,
+          "outlier": 0.04357577,
+          "error": 0.04332161,
+          "outlierError": 0.0433534,
+          "outlierErrorSigma": 0.000045893
+        },
+        {
+          "q": 0.088,
+          "noFilter": 0.03597288,
+          "outlier": 0.03589752,
+          "error": 0.03596242,
+          "outlierError": 0.03574973,
+          "outlierErrorSigma": 0.00003736541
+        },
+        {
+          "q": 0.09,
+          "noFilter": 0.02903627,
+          "outlier": 0.02923487,
+          "error": 0.02942362,
+          "outlierError": 0.02926111,
+          "outlierErrorSigma": 0.00003449203
+        },
+        {
+          "q": 0.092,
+          "noFilter": 0.02442092,
+          "outlier": 0.02393685,
+          "error": 0.0238079,
+          "outlierError": 0.02384145,
+          "outlierErrorSigma": 0.00002642783
+        },
+        {
+          "q": 0.094,
+          "noFilter": 0.01989303,
+          "outlier": 0.01929045,
+          "error": 0.01915523,
+          "outlierError": 0.01910153,
+          "outlierErrorSigma": 0.00002354469
+        },
+        {
+          "q": 0.096,
+          "noFilter": 0.01570808,
+          "outlier": 0.01519369,
+          "error": 0.01524546,
+          "outlierError": 0.01509655,
+          "outlierErrorSigma": 0.00002361396
+        },
+        {
+          "q": 0.098,
+          "noFilter": 0.01270436,
+          "outlier": 0.01278653,
+          "error": 0.01220998,
+          "outlierError": 0.01216558,
+          "outlierErrorSigma": 0.00002345096
+        },
+        {
+          "q": 0.1,
+          "noFilter": 0.01019226,
+          "outlier": 0.01017534,
+          "error": 0.009727646,
+          "outlierError": 0.009758436,
+          "outlierErrorSigma": 0.00001495666
+        },
+        {
+          "q": 0.102,
+          "noFilter": 0.008148329,
+          "outlier": 0.008015704,
+          "error": 0.007892419,
+          "outlierError": 0.007953027,
+          "outlierErrorSigma": 0.00001451101
+        },
+        {
+          "q": 0.104,
+          "noFilter": 0.006763221,
+          "outlier": 0.00671898,
+          "error": 0.006406515,
+          "outlierError": 0.00646795,
+          "outlierErrorSigma": 0.00001238456
+        },
+        {
+          "q": 0.106,
+          "noFilter": 0.005740873,
+          "outlier": 0.005651943,
+          "error": 0.005312138,
+          "outlierError": 0.005374182,
+          "outlierErrorSigma": 0.00001203627
+        },
+        {
+          "q": 0.108,
+          "noFilter": 0.005315196,
+          "outlier": 0.0049104,
+          "error": 0.004522622,
+          "outlierError": 0.004585106,
+          "outlierErrorSigma": 0.00001120689
+        },
+        {
+          "q": 0.11,
+          "noFilter": 0.004463416,
+          "outlier": 0.004532996,
+          "error": 0.004029677,
+          "outlierError": 0.004092435,
+          "outlierErrorSigma": 0.00001151532
+        },
+        {
+          "q": 0.112,
+          "noFilter": 0.00433803,
+          "outlier": 0.004113221,
+          "error": 0.003782994,
+          "outlierError": 0.00384589,
+          "outlierErrorSigma": 0.00001139399
+        },
+        {
+          "q": 0.114,
+          "noFilter": 0.004209054,
+          "outlier": 0.00410859,
+          "error": 0.0037389,
+          "outlierError": 0.003801821,
+          "outlierErrorSigma": 0.00001133252
+        },
+        {
+          "q": 0.116,
+          "noFilter": 0.004334111,
+          "outlier": 0.004234518,
+          "error": 0.003801503,
+          "outlierError": 0.003864388,
+          "outlierErrorSigma": 0.00001084351
+        },
+        {
+          "q": 0.118,
+          "noFilter": 0.004583317,
+          "outlier": 0.00450458,
+          "error": 0.004002789,
+          "outlierError": 0.004065562,
+          "outlierErrorSigma": 0.0000113168
+        },
+        {
+          "q": 0.12,
+          "noFilter": 0.004934542,
+          "outlier": 0.004666261,
+          "error": 0.004251975,
+          "outlierError": 0.00431461,
+          "outlierErrorSigma": 0.00001135593
+        },
+        {
+          "q": 0.122,
+          "noFilter": 0.00517867,
+          "outlier": 0.004923369,
+          "error": 0.004572084,
+          "outlierError": 0.004634541,
+          "outlierErrorSigma": 0.00001138907
+        },
+        {
+          "q": 0.124,
+          "noFilter": 0.005601373,
+          "outlier": 0.005316439,
+          "error": 0.004888842,
+          "outlierError": 0.004951122,
+          "outlierErrorSigma": 0.000010949
+        },
+        {
+          "q": 0.126,
+          "noFilter": 0.005709697,
+          "outlier": 0.005570557,
+          "error": 0.005207165,
+          "outlierError": 0.005269268,
+          "outlierErrorSigma": 0.00001146911
+        },
+        {
+          "q": 0.128,
+          "noFilter": 0.005834934,
+          "outlier": 0.005898557,
+          "error": 0.005515643,
+          "outlierError": 0.005577574,
+          "outlierErrorSigma": 0.00001149901
+        },
+        {
+          "q": 0.13,
+          "noFilter": 0.006396836,
+          "outlier": 0.006185606,
+          "error": 0.005775438,
+          "outlierError": 0.005837224,
+          "outlierErrorSigma": 0.00001153267
+        },
+        {
+          "q": 0.132,
+          "noFilter": 0.006288145,
+          "outlier": 0.006424531,
+          "error": 0.005978737,
+          "outlierError": 0.00604041,
+          "outlierErrorSigma": 0.00001153551
+        },
+        {
+          "q": 0.134,
+          "noFilter": 0.006653126,
+          "outlier": 0.006448595,
+          "error": 0.006186166,
+          "outlierError": 0.006247723,
+          "outlierErrorSigma": 0.00001103845
+        },
+        {
+          "q": 0.136,
+          "noFilter": 0.006721367,
+          "outlier": 0.006596338,
+          "error": 0.006311828,
+          "outlierError": 0.006373316,
+          "outlierErrorSigma": 0.00001152369
+        },
+        {
+          "q": 0.138,
+          "noFilter": 0.006796544,
+          "outlier": 0.006700454,
+          "error": 0.006346861,
+          "outlierError": 0.006408329,
+          "outlierErrorSigma": 0.00001148345
+        },
+        {
+          "q": 0.14,
+          "noFilter": 0.006514674,
+          "outlier": 0.006668175,
+          "error": 0.006391648,
+          "outlierError": 0.006453091,
+          "outlierErrorSigma": 0.00001146039
+        },
+        {
+          "q": 0.142,
+          "noFilter": 0.006752486,
+          "outlier": 0.006575618,
+          "error": 0.006346147,
+          "outlierError": 0.006407615,
+          "outlierErrorSigma": 0.00001090607
+        },
+        {
+          "q": 0.144,
+          "noFilter": 0.006616011,
+          "outlier": 0.006523021,
+          "error": 0.00625431,
+          "outlierError": 0.006315829,
+          "outlierErrorSigma": 0.0000113346
+        },
+        {
+          "q": 0.146,
+          "noFilter": 0.006521648,
+          "outlier": 0.006289843,
+          "error": 0.006112446,
+          "outlierError": 0.006174045,
+          "outlierErrorSigma": 0.00001158061
+        },
+        {
+          "q": 0.148,
+          "noFilter": 0.006309951,
+          "outlier": 0.006208634,
+          "error": 0.005928035,
+          "outlierError": 0.005989736,
+          "outlierErrorSigma": 0.00001204452
+        },
+        {
+          "q": 0.15,
+          "noFilter": 0.005865876,
+          "outlier": 0.005881268,
+          "error": 0.005699142,
+          "outlierError": 0.005760971,
+          "outlierErrorSigma": 0.00001179498
+        },
+        {
+          "q": 0.152,
+          "noFilter": 0.005829091,
+          "outlier": 0.005625614,
+          "error": 0.005436443,
+          "outlierError": 0.005498418,
+          "outlierErrorSigma": 0.00001238224
+        },
+        {
+          "q": 0.154,
+          "noFilter": 0.005379606,
+          "outlier": 0.005357116,
+          "error": 0.005170948,
+          "outlierError": 0.005233071,
+          "outlierErrorSigma": 0.00001178659
+        },
+        {
+          "q": 0.156,
+          "noFilter": 0.005374505,
+          "outlier": 0.00511745,
+          "error": 0.004871726,
+          "outlierError": 0.004934016,
+          "outlierErrorSigma": 0.00001144739
+        },
+        {
+          "q": 0.158,
+          "noFilter": 0.004881472,
+          "outlier": 0.004734754,
+          "error": 0.004574048,
+          "outlierError": 0.004636503,
+          "outlierErrorSigma": 0.00001122878
+        },
+        {
+          "q": 0.16,
+          "noFilter": 0.004465508,
+          "outlier": 0.00440741,
+          "error": 0.004235854,
+          "outlierError": 0.004298497,
+          "outlierErrorSigma": 0.00001056912
+        },
+        {
+          "q": 0.162,
+          "noFilter": 0.004056684,
+          "outlier": 0.004057533,
+          "error": 0.00388297,
+          "outlierError": 0.00394581,
+          "outlierErrorSigma": 0.00001084031
+        },
+        {
+          "q": 0.164,
+          "noFilter": 0.003962104,
+          "outlier": 0.003747901,
+          "error": 0.003566965,
+          "outlierError": 0.003629981,
+          "outlierErrorSigma": 0.0000106929
+        },
+        {
+          "q": 0.166,
+          "noFilter": 0.003561029,
+          "outlier": 0.003479757,
+          "error": 0.003251366,
+          "outlierError": 0.003314558,
+          "outlierErrorSigma": 0.00001052135
+        },
+        {
+          "q": 0.168,
+          "noFilter": 0.003010873,
+          "outlier": 0.003097374,
+          "error": 0.002932601,
+          "outlierError": 0.00299597,
+          "outlierErrorSigma": 0.00000993168
+        },
+        {
+          "q": 0.17,
+          "noFilter": 0.002883224,
+          "outlier": 0.002816495,
+          "error": 0.002610317,
+          "outlierError": 0.002673865,
+          "outlierErrorSigma": 0.00001024201
+        },
+        {
+          "q": 0.172,
+          "noFilter": 0.00246637,
+          "outlier": 0.002509887,
+          "error": 0.002337364,
+          "outlierError": 0.002401065,
+          "outlierErrorSigma": 0.00001009746
+        },
+        {
+          "q": 0.174,
+          "noFilter": 0.002332565,
+          "outlier": 0.002267558,
+          "error": 0.002103976,
+          "outlierError": 0.002167806,
+          "outlierErrorSigma": 0.000009951198
+        },
+        {
+          "q": 0.176,
+          "noFilter": 0.002120068,
+          "outlier": 0.002017163,
+          "error": 0.001848119,
+          "outlierError": 0.001912092,
+          "outlierErrorSigma": 0.000009344916
+        },
+        {
+          "q": 0.178,
+          "noFilter": 0.00180467,
+          "outlier": 0.001742133,
+          "error": 0.001640928,
+          "outlierError": 0.00166024,
+          "outlierErrorSigma": 0.000008657969
+        },
+        {
+          "q": 0.18,
+          "noFilter": 0.002071279,
+          "outlier": 0.001616566,
+          "error": 0.001422898,
+          "outlierError": 0.001487108,
+          "outlierErrorSigma": 0.000009492141
+        },
+        {
+          "q": 0.182,
+          "noFilter": 0.001273384,
+          "outlier": 0.001434776,
+          "error": 0.001248535,
+          "outlierError": 0.001312841,
+          "outlierErrorSigma": 0.000009427351
+        },
+        {
+          "q": 0.184,
+          "noFilter": 0.001213257,
+          "outlier": 0.001274244,
+          "error": 0.001108361,
+          "outlierError": 0.001172746,
+          "outlierErrorSigma": 0.000009347077
+        },
+        {
+          "q": 0.186,
+          "noFilter": 0.001281685,
+          "outlier": 0.001149041,
+          "error": 0.0009657865,
+          "outlierError": 0.001030251,
+          "outlierErrorSigma": 0.000008887675
+        },
+        {
+          "q": 0.188,
+          "noFilter": 0.001038868,
+          "outlier": 0.001047382,
+          "error": 0.0008661347,
+          "outlierError": 0.0009306543,
+          "outlierErrorSigma": 0.000009211438
+        },
+        {
+          "q": 0.19,
+          "noFilter": 0.001024543,
+          "outlier": 0.0009305333,
+          "error": 0.0007610235,
+          "outlierError": 0.0008256016,
+          "outlierErrorSigma": 0.000009172033
+        },
+        {
+          "q": 0.192,
+          "noFilter": 0.000592218,
+          "outlier": 0.0008940423,
+          "error": 0.0007324617,
+          "outlierError": 0.0007877828,
+          "outlierErrorSigma": 0.000007949791
+        },
+        {
+          "q": 0.194,
+          "noFilter": 0.0008253982,
+          "outlier": 0.0008496164,
+          "error": 0.0006755276,
+          "outlierError": 0.0007401533,
+          "outlierErrorSigma": 0.000008671568
+        },
+        {
+          "q": 0.196,
+          "noFilter": 0.0007792725,
+          "outlier": 0.0008111268,
+          "error": 0.0006468475,
+          "outlierError": 0.0007114892,
+          "outlierErrorSigma": 0.000009010771
+        },
+        {
+          "q": 0.198,
+          "noFilter": 0.0007220767,
+          "outlier": 0.0007951157,
+          "error": 0.0006431879,
+          "outlierError": 0.0007078317,
+          "outlierErrorSigma": 0.00000898293
+        },
+        {
+          "q": 0.2,
+          "noFilter": 0.001145598,
+          "outlier": 0.0008279396,
+          "error": 0.0006715076,
+          "outlierError": 0.0006914613,
+          "outlierErrorSigma": 0.000007784067
+        },
+        {
+          "q": 0.202,
+          "noFilter": 0.0008694415,
+          "outlier": 0.0008440224,
+          "error": 0.0006529275,
+          "outlierError": 0.0007175658,
+          "outlierErrorSigma": 0.000008532392
+        },
+        {
+          "q": 0.204,
+          "noFilter": 0.0008642645,
+          "outlier": 0.0008659202,
+          "error": 0.0006692134,
+          "outlierError": 0.0007338427,
+          "outlierErrorSigma": 0.000008885701
+        },
+        {
+          "q": 0.206,
+          "noFilter": 0.0009316442,
+          "outlier": 0.0008821959,
+          "error": 0.0007237321,
+          "outlierError": 0.0007790555,
+          "outlierErrorSigma": 0.000007842686
+        },
+        {
+          "q": 0.208,
+          "noFilter": 0.0008402838,
+          "outlier": 0.0009093097,
+          "error": 0.0007443291,
+          "outlierError": 0.0008089166,
+          "outlierErrorSigma": 0.000008837977
+        },
+        {
+          "q": 0.21,
+          "noFilter": 0.0006881341,
+          "outlier": 0.0009683016,
+          "error": 0.0007843733,
+          "outlierError": 0.0008489384,
+          "outlierErrorSigma": 0.000008823955
+        },
+        {
+          "q": 0.212,
+          "noFilter": 0.0008804787,
+          "outlier": 0.001018744,
+          "error": 0.0008437028,
+          "outlierError": 0.0009082349,
+          "outlierErrorSigma": 0.000008421031
+        },
+        {
+          "q": 0.214,
+          "noFilter": 0.0009256446,
+          "outlier": 0.001054962,
+          "error": 0.0009153819,
+          "outlierError": 0.0009510733,
+          "outlierErrorSigma": 0.000007685983
+        },
+        {
+          "q": 0.216,
+          "noFilter": 0.000862603,
+          "outlier": 0.001094861,
+          "error": 0.0009423161,
+          "outlierError": 0.001006793,
+          "outlierErrorSigma": 0.000008759658
+        },
+        {
+          "q": 0.218,
+          "noFilter": 0.001397362,
+          "outlier": 0.00113925,
+          "error": 0.0009640612,
+          "outlierError": 0.001028526,
+          "outlierErrorSigma": 0.000008739012
+        },
+        {
+          "q": 0.22,
+          "noFilter": 0.001337332,
+          "outlier": 0.001196901,
+          "error": 0.001051874,
+          "outlierError": 0.001089171,
+          "outlierErrorSigma": 0.000007420502
+        },
+        {
+          "q": 0.222,
+          "noFilter": 0.001107837,
+          "outlier": 0.001222658,
+          "error": 0.001068084,
+          "outlierError": 0.001132491,
+          "outlierErrorSigma": 0.000008692879
+        },
+        {
+          "q": 0.224,
+          "noFilter": 0.001345094,
+          "outlier": 0.001251596,
+          "error": 0.001100473,
+          "outlierError": 0.001164862,
+          "outlierErrorSigma": 0.000008674813
+        },
+        {
+          "q": 0.226,
+          "noFilter": 0.00125452,
+          "outlier": 0.001288643,
+          "error": 0.001117195,
+          "outlierError": 0.001181575,
+          "outlierErrorSigma": 0.000008661889
+        },
+        {
+          "q": 0.228,
+          "noFilter": 0.001230156,
+          "outlier": 0.001294696,
+          "error": 0.001174424,
+          "outlierError": 0.001227027,
+          "outlierErrorSigma": 0.000006833009
+        },
+        {
+          "q": 0.23,
+          "noFilter": 0.001121153,
+          "outlier": 0.001320807,
+          "error": 0.001170396,
+          "outlierError": 0.001234746,
+          "outlierErrorSigma": 0.000008605957
+        },
+        {
+          "q": 0.232,
+          "noFilter": 0.001266841,
+          "outlier": 0.001325925,
+          "error": 0.001159264,
+          "outlierError": 0.00122362,
+          "outlierErrorSigma": 0.000008577417
+        },
+        {
+          "q": 0.234,
+          "noFilter": 0.001393783,
+          "outlier": 0.00127488,
+          "error": 0.001188491,
+          "outlierError": 0.001227424,
+          "outlierErrorSigma": 0.000007313113
+        },
+        {
+          "q": 0.236,
+          "noFilter": 0.001279714,
+          "outlier": 0.001321603,
+          "error": 0.001165946,
+          "outlierError": 0.001230299,
+          "outlierErrorSigma": 0.000008524588
+        },
+        {
+          "q": 0.238,
+          "noFilter": 0.001391145,
+          "outlier": 0.001319269,
+          "error": 0.001151084,
+          "outlierError": 0.001215445,
+          "outlierErrorSigma": 0.000008126951
+        },
+        {
+          "q": 0.24,
+          "noFilter": 0.001139669,
+          "outlier": 0.001293268,
+          "error": 0.001127042,
+          "outlierError": 0.001191416,
+          "outlierErrorSigma": 0.000008455733
+        },
+        {
+          "q": 0.242,
+          "noFilter": 0.001198271,
+          "outlier": 0.001222824,
+          "error": 0.001133254,
+          "outlierError": 0.0011702,
+          "outlierErrorSigma": 0.000007181975
+        },
+        {
+          "q": 0.244,
+          "noFilter": 0.001274431,
+          "outlier": 0.00120774,
+          "error": 0.00109249,
+          "outlierError": 0.001156884,
+          "outlierErrorSigma": 0.00000838889
+        },
+        {
+          "q": 0.246,
+          "noFilter": 0.001040609,
+          "outlier": 0.001212919,
+          "error": 0.001038558,
+          "outlierError": 0.001102981,
+          "outlierErrorSigma": 0.000008016178
+        },
+        {
+          "q": 0.248,
+          "noFilter": 0.0007702664,
+          "outlier": 0.001175356,
+          "error": 0.001036415,
+          "outlierError": 0.001080263,
+          "outlierErrorSigma": 0.000007334031
+        },
+        {
+          "q": 0.25,
+          "noFilter": 0.001154818,
+          "outlier": 0.00111638,
+          "error": 0.001007845,
+          "outlierError": 0.001050305,
+          "outlierErrorSigma": 0.000008633106
+        },
+        {
+          "q": 0.252,
+          "noFilter": 0.001139857,
+          "outlier": 0.001095129,
+          "error": 0.0009324004,
+          "outlierError": 0.0009968831,
+          "outlierErrorSigma": 0.000009187858
+        },
+        {
+          "q": 0.254,
+          "noFilter": 0.001006826,
+          "outlier": 0.00104733,
+          "error": 0.0009200896,
+          "outlierError": 0.0009614594,
+          "outlierErrorSigma": 0.000008605631
+        },
+        {
+          "q": 0.256,
+          "noFilter": 0.0008034353,
+          "outlier": 0.0009756317,
+          "error": 0.0008820667,
+          "outlierError": 0.0009163908,
+          "outlierErrorSigma": 0.000007490372
+        },
+        {
+          "q": 0.258,
+          "noFilter": 0.001113739,
+          "outlier": 0.0009729348,
+          "error": 0.0008430167,
+          "outlierError": 0.0008853081,
+          "outlierErrorSigma": 0.000008573944
+        },
+        {
+          "q": 0.26,
+          "noFilter": 0.0006721811,
+          "outlier": 0.0008555803,
+          "error": 0.0007985605,
+          "outlierError": 0.0008631178,
+          "outlierErrorSigma": 0.000008545524
+        },
+        {
+          "q": 0.262,
+          "noFilter": 0.0008002227,
+          "outlier": 0.0008928334,
+          "error": 0.0007617504,
+          "outlierError": 0.0008162597,
+          "outlierErrorSigma": 0.000008994314
+        },
+        {
+          "q": 0.264,
+          "noFilter": 0.0008338815,
+          "outlier": 0.0008318159,
+          "error": 0.000707175,
+          "outlierError": 0.0007717831,
+          "outlierErrorSigma": 0.000008025538
+        },
+        {
+          "q": 0.266,
+          "noFilter": 0.0009462228,
+          "outlier": 0.0008168125,
+          "error": 0.0006836013,
+          "outlierError": 0.0007482226,
+          "outlierErrorSigma": 0.000008285707
+        },
+        {
+          "q": 0.268,
+          "noFilter": 0.000751514,
+          "outlier": 0.0007863698,
+          "error": 0.0006515148,
+          "outlierError": 0.0007161539,
+          "outlierErrorSigma": 0.000008172854
+        },
+        {
+          "q": 0.27,
+          "noFilter": 0.0005016592,
+          "outlier": 0.0007747401,
+          "error": 0.0006492211,
+          "outlierError": 0.000699048,
+          "outlierErrorSigma": 0.000007867592
+        },
+        {
+          "q": 0.272,
+          "noFilter": 0.0006346915,
+          "outlier": 0.0007141802,
+          "error": 0.0006189009,
+          "outlierError": 0.0006835581,
+          "outlierErrorSigma": 0.000007717429
+        },
+        {
+          "q": 0.274,
+          "noFilter": 0.0007226149,
+          "outlier": 0.0007586099,
+          "error": 0.0005956612,
+          "outlierError": 0.0006603314,
+          "outlierErrorSigma": 0.000008028218
+        },
+        {
+          "q": 0.276,
+          "noFilter": 0.0008685129,
+          "outlier": 0.000720415,
+          "error": 0.0005979616,
+          "outlierError": 0.0006388981,
+          "outlierErrorSigma": 0.00000724514
+        },
+        {
+          "q": 0.278,
+          "noFilter": 0.0006953559,
+          "outlier": 0.0007125703,
+          "error": 0.0005881407,
+          "outlierError": 0.0006528151,
+          "outlierErrorSigma": 0.000007972252
+        },
+        {
+          "q": 0.28,
+          "noFilter": 0.0004072718,
+          "outlier": 0.0006853248,
+          "error": 0.0005698184,
+          "outlierError": 0.000634503,
+          "outlierErrorSigma": 0.000007598451
+        },
+        {
+          "q": 0.282,
+          "noFilter": 0.000539514,
+          "outlier": 0.0006941762,
+          "error": 0.0005823416,
+          "outlierError": 0.0006470193,
+          "outlierErrorSigma": 0.000007909581
+        },
+        {
+          "q": 0.284,
+          "noFilter": 0.0005445251,
+          "outlier": 0.0007267403,
+          "error": 0.0006067741,
+          "outlierError": 0.0006620788,
+          "outlierErrorSigma": 0.000007181709
+        },
+        {
+          "q": 0.286,
+          "noFilter": 0.0004194478,
+          "outlier": 0.0006970348,
+          "error": 0.000596648,
+          "outlierError": 0.0006613177,
+          "outlierErrorSigma": 0.000007861148
+        },
+        {
+          "q": 0.288,
+          "noFilter": 0.0007298564,
+          "outlier": 0.0007305222,
+          "error": 0.0006053287,
+          "outlierError": 0.0006699935,
+          "outlierErrorSigma": 0.000007536284
+        },
+        {
+          "q": 0.29,
+          "noFilter": 0.0007739462,
+          "outlier": 0.0007395329,
+          "error": 0.000643082,
+          "outlierError": 0.0006825864,
+          "outlierErrorSigma": 0.000007243325
+        },
+        {
+          "q": 0.292,
+          "noFilter": 0.0007609903,
+          "outlier": 0.0007867497,
+          "error": 0.0006204434,
+          "outlierError": 0.0006850998,
+          "outlierErrorSigma": 0.00000845939
+        },
+        {
+          "q": 0.294,
+          "noFilter": 0.0007646188,
+          "outlier": 0.0007807458,
+          "error": 0.0006519794,
+          "outlierError": 0.0007166183,
+          "outlierErrorSigma": 0.00000855535
+        },
+        {
+          "q": 0.296,
+          "noFilter": 0.0006919925,
+          "outlier": 0.0008562499,
+          "error": 0.0006737823,
+          "outlierError": 0.000738409,
+          "outlierErrorSigma": 0.000008620703
+        },
+        {
+          "q": 0.298,
+          "noFilter": 0.0007028882,
+          "outlier": 0.0007679721,
+          "error": 0.0007166702,
+          "outlierError": 0.0007567729,
+          "outlierErrorSigma": 0.000007217128
+        },
+        {
+          "q": 0.3,
+          "noFilter": 0.000791325,
+          "outlier": 0.0008352379,
+          "error": 0.0007321595,
+          "outlierError": 0.0007967537,
+          "outlierErrorSigma": 0.000007032676
+        }
+      ]
+    },
+    {
+      "id": "SASDPS4",
+      "protein": "Xylanase",
+      "consensusRgAngstrom": 16,
+      "sourceArchiveSha256": "c4bebf280ba0caf538dd1a57b1d83faf5749d874c387b63b1da95ed0f5ecdf1a",
+      "variantFiles": {
+        "noFilter": "SASDPS4/inner/SASDPS4-SAXS xylanase/Datcombine inputs and outputs/Filters disabled/Xyl-NoF.dat",
+        "outlier": "SASDPS4/inner/SASDPS4-SAXS xylanase/Datcombine inputs and outputs/Outlier filter/Xyl-O.dat",
+        "error": "SASDPS4/inner/SASDPS4-SAXS xylanase/Datcombine inputs and outputs/Error filter/Xyl-E.dat",
+        "outlierError": "SASDPS4/inner/SASDPS4-SAXS xylanase/Datcombine inputs and outputs/Outlier-error filters/Xyl-OE.dat"
+      },
+      "rows": [
+        {
+          "q": 0.01,
+          "noFilter": 1.086863,
+          "outlier": 1.088279,
+          "error": 1.088019,
+          "outlierError": 1.088019,
+          "outlierErrorSigma": 0.001676716
+        },
+        {
+          "q": 0.015,
+          "noFilter": 1.065832,
+          "outlier": 1.066816,
+          "error": 1.074257,
+          "outlierError": 1.074257,
+          "outlierErrorSigma": 0.001051121
+        },
+        {
+          "q": 0.02,
+          "noFilter": 1.054773,
+          "outlier": 1.059816,
+          "error": 1.059886,
+          "outlierError": 1.059886,
+          "outlierErrorSigma": 0.0009002066
+        },
+        {
+          "q": 0.025,
+          "noFilter": 1.032179,
+          "outlier": 1.033097,
+          "error": 1.03837,
+          "outlierError": 1.03837,
+          "outlierErrorSigma": 0.0008431051
+        },
+        {
+          "q": 0.03,
+          "noFilter": 1.012682,
+          "outlier": 1.013576,
+          "error": 1.014499,
+          "outlierError": 1.014499,
+          "outlierErrorSigma": 0.0007186387
+        },
+        {
+          "q": 0.035,
+          "noFilter": 0.9827456,
+          "outlier": 0.9856224,
+          "error": 0.9855013,
+          "outlierError": 0.9855013,
+          "outlierErrorSigma": 0.0006710887
+        },
+        {
+          "q": 0.04,
+          "noFilter": 0.9512534,
+          "outlier": 0.9520055,
+          "error": 0.9560749,
+          "outlierError": 0.9560749,
+          "outlierErrorSigma": 0.0006599183
+        },
+        {
+          "q": 0.045,
+          "noFilter": 0.9191554,
+          "outlier": 0.9198501,
+          "error": 0.9210846,
+          "outlierError": 0.9210846,
+          "outlierErrorSigma": 0.0006654617
+        },
+        {
+          "q": 0.05,
+          "noFilter": 0.881219,
+          "outlier": 0.8818345,
+          "error": 0.8845002,
+          "outlierError": 0.8845002,
+          "outlierErrorSigma": 0.0006312713
+        },
+        {
+          "q": 0.055,
+          "noFilter": 0.8423905,
+          "outlier": 0.8456137,
+          "error": 0.8453303,
+          "outlierError": 0.8453303,
+          "outlierErrorSigma": 0.000601867
+        },
+        {
+          "q": 0.06,
+          "noFilter": 0.7986775,
+          "outlier": 0.8042125,
+          "error": 0.8044355,
+          "outlierError": 0.8044355,
+          "outlierErrorSigma": 0.0005735501
+        },
+        {
+          "q": 0.065,
+          "noFilter": 0.7588035,
+          "outlier": 0.7591681,
+          "error": 0.7624505,
+          "outlierError": 0.7624505,
+          "outlierErrorSigma": 0.0005520395
+        },
+        {
+          "q": 0.07,
+          "noFilter": 0.71809,
+          "outlier": 0.7179306,
+          "error": 0.7172945,
+          "outlierError": 0.7172945,
+          "outlierErrorSigma": 0.0005319435
+        },
+        {
+          "q": 0.075,
+          "noFilter": 0.6713109,
+          "outlier": 0.6715031,
+          "error": 0.6739529,
+          "outlierError": 0.6739529,
+          "outlierErrorSigma": 0.0005136053
+        },
+        {
+          "q": 0.08,
+          "noFilter": 0.6242347,
+          "outlier": 0.6263661,
+          "error": 0.6288907,
+          "outlierError": 0.6288907,
+          "outlierErrorSigma": 0.0005285361
+        },
+        {
+          "q": 0.085,
+          "noFilter": 0.5813342,
+          "outlier": 0.582531,
+          "error": 0.5842954,
+          "outlierError": 0.5842954,
+          "outlierErrorSigma": 0.0005299988
+        },
+        {
+          "q": 0.09,
+          "noFilter": 0.5401676,
+          "outlier": 0.5405911,
+          "error": 0.5407051,
+          "outlierError": 0.5407051,
+          "outlierErrorSigma": 0.0004909166
+        },
+        {
+          "q": 0.095,
+          "noFilter": 0.4971274,
+          "outlier": 0.497203,
+          "error": 0.4965009,
+          "outlierError": 0.4965009,
+          "outlierErrorSigma": 0.0004975951
+        },
+        {
+          "q": 0.1,
+          "noFilter": 0.4557709,
+          "outlier": 0.4555228,
+          "error": 0.4535125,
+          "outlierError": 0.4535125,
+          "outlierErrorSigma": 0.0004651428
+        },
+        {
+          "q": 0.105,
+          "noFilter": 0.4144009,
+          "outlier": 0.4128045,
+          "error": 0.4127312,
+          "outlierError": 0.4127312,
+          "outlierErrorSigma": 0.0004452323
+        },
+        {
+          "q": 0.11,
+          "noFilter": 0.3736344,
+          "outlier": 0.3721871,
+          "error": 0.3722014,
+          "outlierError": 0.3722014,
+          "outlierErrorSigma": 0.0004312612
+        },
+        {
+          "q": 0.115,
+          "noFilter": 0.3362721,
+          "outlier": 0.3369505,
+          "error": 0.3352865,
+          "outlierError": 0.3352865,
+          "outlierErrorSigma": 0.0004190154
+        },
+        {
+          "q": 0.12,
+          "noFilter": 0.3031919,
+          "outlier": 0.3004424,
+          "error": 0.2989026,
+          "outlierError": 0.2989026,
+          "outlierErrorSigma": 0.0004060861
+        },
+        {
+          "q": 0.125,
+          "noFilter": 0.2641876,
+          "outlier": 0.2644078,
+          "error": 0.2645166,
+          "outlierError": 0.2645166,
+          "outlierErrorSigma": 0.0003927285
+        },
+        {
+          "q": 0.13,
+          "noFilter": 0.2347713,
+          "outlier": 0.2336708,
+          "error": 0.2335888,
+          "outlierError": 0.2335888,
+          "outlierErrorSigma": 0.0003841514
+        },
+        {
+          "q": 0.135,
+          "noFilter": 0.2074566,
+          "outlier": 0.2067057,
+          "error": 0.2033197,
+          "outlierError": 0.2033197,
+          "outlierErrorSigma": 0.0003751614
+        },
+        {
+          "q": 0.14,
+          "noFilter": 0.1796111,
+          "outlier": 0.176923,
+          "error": 0.1769111,
+          "outlierError": 0.1769111,
+          "outlierErrorSigma": 0.0003937356
+        },
+        {
+          "q": 0.145,
+          "noFilter": 0.1538178,
+          "outlier": 0.1529475,
+          "error": 0.151738,
+          "outlierError": 0.151738,
+          "outlierErrorSigma": 0.000383774
+        },
+        {
+          "q": 0.15,
+          "noFilter": 0.1304889,
+          "outlier": 0.1290537,
+          "error": 0.1296964,
+          "outlierError": 0.1296964,
+          "outlierErrorSigma": 0.0003632976
+        },
+        {
+          "q": 0.155,
+          "noFilter": 0.1129603,
+          "outlier": 0.1120175,
+          "error": 0.1090723,
+          "outlierError": 0.1090723,
+          "outlierErrorSigma": 0.0003530865
+        },
+        {
+          "q": 0.16,
+          "noFilter": 0.09335653,
+          "outlier": 0.0910295,
+          "error": 0.09038572,
+          "outlierError": 0.09038572,
+          "outlierErrorSigma": 0.0002787901
+        },
+        {
+          "q": 0.165,
+          "noFilter": 0.07849323,
+          "outlier": 0.07747882,
+          "error": 0.07523106,
+          "outlierError": 0.07523106,
+          "outlierErrorSigma": 0.000289064
+        },
+        {
+          "q": 0.17,
+          "noFilter": 0.06396603,
+          "outlier": 0.06264004,
+          "error": 0.06142871,
+          "outlierError": 0.06142871,
+          "outlierErrorSigma": 0.0001955118
+        },
+        {
+          "q": 0.175,
+          "noFilter": 0.05235775,
+          "outlier": 0.05098527,
+          "error": 0.05027642,
+          "outlierError": 0.05027642,
+          "outlierErrorSigma": 0.0001903936
+        },
+        {
+          "q": 0.18,
+          "noFilter": 0.03959497,
+          "outlier": 0.04026132,
+          "error": 0.04038017,
+          "outlierError": 0.04038017,
+          "outlierErrorSigma": 0.0001861179
+        },
+        {
+          "q": 0.185,
+          "noFilter": 0.0336198,
+          "outlier": 0.03250818,
+          "error": 0.03232561,
+          "outlierError": 0.03232561,
+          "outlierErrorSigma": 0.0001372626
+        },
+        {
+          "q": 0.19,
+          "noFilter": 0.02519261,
+          "outlier": 0.02691068,
+          "error": 0.02563527,
+          "outlierError": 0.02563527,
+          "outlierErrorSigma": 0.0001309456
+        },
+        {
+          "q": 0.195,
+          "noFilter": 0.02025246,
+          "outlier": 0.01970131,
+          "error": 0.02024696,
+          "outlierError": 0.02024696,
+          "outlierErrorSigma": 0.000129981
+        },
+        {
+          "q": 0.2,
+          "noFilter": 0.01566765,
+          "outlier": 0.01541459,
+          "error": 0.01591775,
+          "outlierError": 0.01591775,
+          "outlierErrorSigma": 0.0001409753
+        },
+        {
+          "q": 0.205,
+          "noFilter": 0.01094943,
+          "outlier": 0.01273903,
+          "error": 0.01293194,
+          "outlierError": 0.01293194,
+          "outlierErrorSigma": 0.0001363128
+        },
+        {
+          "q": 0.21,
+          "noFilter": 0.01066084,
+          "outlier": 0.01031155,
+          "error": 0.01059676,
+          "outlierError": 0.01059676,
+          "outlierErrorSigma": 0.0001326769
+        },
+        {
+          "q": 0.215,
+          "noFilter": 0.006621838,
+          "outlier": 0.008337828,
+          "error": 0.008968233,
+          "outlierError": 0.008968233,
+          "outlierErrorSigma": 0.0001330205
+        },
+        {
+          "q": 0.22,
+          "noFilter": 0.006680807,
+          "outlier": 0.008663812,
+          "error": 0.008298758,
+          "outlierError": 0.008298758,
+          "outlierErrorSigma": 0.0001282943
+        },
+        {
+          "q": 0.225,
+          "noFilter": 0.00677393,
+          "outlier": 0.008284287,
+          "error": 0.008166625,
+          "outlierError": 0.008166625,
+          "outlierErrorSigma": 0.0001269897
+        },
+        {
+          "q": 0.23,
+          "noFilter": 0.007431212,
+          "outlier": 0.008688638,
+          "error": 0.00817916,
+          "outlierError": 0.00817916,
+          "outlierErrorSigma": 0.0001260691
+        },
+        {
+          "q": 0.235,
+          "noFilter": 0.007906401,
+          "outlier": 0.009068369,
+          "error": 0.008669938,
+          "outlierError": 0.008669938,
+          "outlierErrorSigma": 0.0001259733
+        },
+        {
+          "q": 0.24,
+          "noFilter": 0.007721544,
+          "outlier": 0.009083392,
+          "error": 0.009376144,
+          "outlierError": 0.009376144,
+          "outlierErrorSigma": 0.0001241646
+        },
+        {
+          "q": 0.245,
+          "noFilter": 0.01094473,
+          "outlier": 0.0107233,
+          "error": 0.0101637,
+          "outlierError": 0.0101637,
+          "outlierErrorSigma": 0.000122504
+        },
+        {
+          "q": 0.25,
+          "noFilter": 0.01033156,
+          "outlier": 0.01155514,
+          "error": 0.01096855,
+          "outlierError": 0.01096855,
+          "outlierErrorSigma": 0.0001213919
+        },
+        {
+          "q": 0.255,
+          "noFilter": 0.01123225,
+          "outlier": 0.01093231,
+          "error": 0.01176884,
+          "outlierError": 0.01176884,
+          "outlierErrorSigma": 0.0001258543
+        },
+        {
+          "q": 0.26,
+          "noFilter": 0.01257016,
+          "outlier": 0.01280234,
+          "error": 0.012414,
+          "outlierError": 0.012414,
+          "outlierErrorSigma": 0.0001317624
+        },
+        {
+          "q": 0.265,
+          "noFilter": 0.0108402,
+          "outlier": 0.01338299,
+          "error": 0.01307298,
+          "outlierError": 0.01307298,
+          "outlierErrorSigma": 0.0001278978
+        },
+        {
+          "q": 0.27,
+          "noFilter": 0.01457705,
+          "outlier": 0.01419246,
+          "error": 0.01374793,
+          "outlierError": 0.01374793,
+          "outlierErrorSigma": 0.0001262761
+        },
+        {
+          "q": 0.275,
+          "noFilter": 0.015469,
+          "outlier": 0.0141572,
+          "error": 0.01397249,
+          "outlierError": 0.01397249,
+          "outlierErrorSigma": 0.000126425
+        },
+        {
+          "q": 0.28,
+          "noFilter": 0.01469248,
+          "outlier": 0.01512812,
+          "error": 0.01431628,
+          "outlierError": 0.01431628,
+          "outlierErrorSigma": 0.0001262145
+        },
+        {
+          "q": 0.285,
+          "noFilter": 0.01247062,
+          "outlier": 0.01486105,
+          "error": 0.01441996,
+          "outlierError": 0.01441996,
+          "outlierErrorSigma": 0.0001263741
+        },
+        {
+          "q": 0.29,
+          "noFilter": 0.01469916,
+          "outlier": 0.01498058,
+          "error": 0.01432533,
+          "outlierError": 0.01432533,
+          "outlierErrorSigma": 0.0001229428
+        },
+        {
+          "q": 0.295,
+          "noFilter": 0.01316484,
+          "outlier": 0.01441242,
+          "error": 0.01424645,
+          "outlierError": 0.01424645,
+          "outlierErrorSigma": 0.000118028
+        },
+        {
+          "q": 0.3,
+          "noFilter": 0.01370372,
+          "outlier": 0.01450413,
+          "error": 0.01395498,
+          "outlierError": 0.01395498,
+          "outlierErrorSigma": 0.0001176999
+        }
+      ]
+    },
+    {
+      "id": "SASDPT4",
+      "protein": "Lysozyme",
+      "consensusRgAngstrom": 15,
+      "sourceArchiveSha256": "b2ff9fc29d262551d327588e285fa20d28f3cd3e54fbf856a2df350096ac241d",
+      "variantFiles": {
+        "noFilter": "SASDPT4/inner/SASDPT4-SAXS Lysozyme/Datcombine inputs and outputs/Filters disabled/Lys-NoF.dat",
+        "outlier": "SASDPT4/inner/SASDPT4-SAXS Lysozyme/Datcombine inputs and outputs/Outlier filter/Lys-O.dat",
+        "error": "SASDPT4/inner/SASDPT4-SAXS Lysozyme/Datcombine inputs and outputs/Error filter/Lys-E.dat",
+        "outlierError": "SASDPT4/inner/SASDPT4-SAXS Lysozyme/Datcombine inputs and outputs/Outlier-error filters/Lys-OE.dat"
+      },
+      "rows": [
+        {
+          "q": 0.005,
+          "noFilter": 1.094313,
+          "outlier": 1.094313,
+          "error": 1.094313,
+          "outlierError": 1.094313,
+          "outlierErrorSigma": 0.1424047
+        },
+        {
+          "q": 0.01,
+          "noFilter": 1.051098,
+          "outlier": 1.06357,
+          "error": 1.059662,
+          "outlierError": 1.050956,
+          "outlierErrorSigma": 0.006019149
+        },
+        {
+          "q": 0.015,
+          "noFilter": 1.044712,
+          "outlier": 1.06018,
+          "error": 1.050136,
+          "outlierError": 1.044258,
+          "outlierErrorSigma": 0.003474175
+        },
+        {
+          "q": 0.02,
+          "noFilter": 1.035325,
+          "outlier": 1.042478,
+          "error": 1.034594,
+          "outlierError": 1.032419,
+          "outlierErrorSigma": 0.002525452
+        },
+        {
+          "q": 0.025,
+          "noFilter": 1.016401,
+          "outlier": 1.030679,
+          "error": 1.011002,
+          "outlierError": 1.012309,
+          "outlierErrorSigma": 0.001757649
+        },
+        {
+          "q": 0.03,
+          "noFilter": 0.9971443,
+          "outlier": 1.004079,
+          "error": 0.9882136,
+          "outlierError": 0.9882879,
+          "outlierErrorSigma": 0.001779063
+        },
+        {
+          "q": 0.035,
+          "noFilter": 0.9731981,
+          "outlier": 0.9792645,
+          "error": 0.9656453,
+          "outlierError": 0.9656453,
+          "outlierErrorSigma": 0.0008868301
+        },
+        {
+          "q": 0.04,
+          "noFilter": 0.9481437,
+          "outlier": 0.9530863,
+          "error": 0.9407765,
+          "outlierError": 0.9407765,
+          "outlierErrorSigma": 0.001099245
+        },
+        {
+          "q": 0.045,
+          "noFilter": 0.9239352,
+          "outlier": 0.9314916,
+          "error": 0.9118103,
+          "outlierError": 0.9118103,
+          "outlierErrorSigma": 0.0007387979
+        },
+        {
+          "q": 0.05,
+          "noFilter": 0.8905064,
+          "outlier": 0.8945578,
+          "error": 0.8827279,
+          "outlierError": 0.8827279,
+          "outlierErrorSigma": 0.0009249399
+        },
+        {
+          "q": 0.055,
+          "noFilter": 0.8581656,
+          "outlier": 0.8622647,
+          "error": 0.8567755,
+          "outlierError": 0.8567755,
+          "outlierErrorSigma": 0.0007847488
+        },
+        {
+          "q": 0.06,
+          "noFilter": 0.8228707,
+          "outlier": 0.8234613,
+          "error": 0.8162117,
+          "outlierError": 0.8162117,
+          "outlierErrorSigma": 0.0006520277
+        },
+        {
+          "q": 0.065,
+          "noFilter": 0.7837878,
+          "outlier": 0.7897211,
+          "error": 0.7799957,
+          "outlierError": 0.7799957,
+          "outlierErrorSigma": 0.0007811042
+        },
+        {
+          "q": 0.07,
+          "noFilter": 0.7476771,
+          "outlier": 0.7506151,
+          "error": 0.7464139,
+          "outlierError": 0.7464139,
+          "outlierErrorSigma": 0.0007492914
+        },
+        {
+          "q": 0.075,
+          "noFilter": 0.7074671,
+          "outlier": 0.7105433,
+          "error": 0.710213,
+          "outlierError": 0.710213,
+          "outlierErrorSigma": 0.0007095812
+        },
+        {
+          "q": 0.08,
+          "noFilter": 0.6703497,
+          "outlier": 0.6728271,
+          "error": 0.6712278,
+          "outlierError": 0.6712278,
+          "outlierErrorSigma": 0.0005749881
+        },
+        {
+          "q": 0.085,
+          "noFilter": 0.6309686,
+          "outlier": 0.6332593,
+          "error": 0.6265122,
+          "outlierError": 0.6265122,
+          "outlierErrorSigma": 0.0005176081
+        },
+        {
+          "q": 0.09,
+          "noFilter": 0.5928445,
+          "outlier": 0.5938719,
+          "error": 0.592611,
+          "outlierError": 0.592611,
+          "outlierErrorSigma": 0.0007539496
+        },
+        {
+          "q": 0.095,
+          "noFilter": 0.5538948,
+          "outlier": 0.5530695,
+          "error": 0.5585478,
+          "outlierError": 0.5585478,
+          "outlierErrorSigma": 0.0005211013
+        },
+        {
+          "q": 0.1,
+          "noFilter": 0.514915,
+          "outlier": 0.5122416,
+          "error": 0.5141261,
+          "outlierError": 0.5141261,
+          "outlierErrorSigma": 0.000601383
+        },
+        {
+          "q": 0.105,
+          "noFilter": 0.4790132,
+          "outlier": 0.4793512,
+          "error": 0.4850841,
+          "outlierError": 0.4850841,
+          "outlierErrorSigma": 0.0005434838
+        },
+        {
+          "q": 0.11,
+          "noFilter": 0.4431971,
+          "outlier": 0.4435949,
+          "error": 0.4487937,
+          "outlierError": 0.4487937,
+          "outlierErrorSigma": 0.0004498239
+        },
+        {
+          "q": 0.115,
+          "noFilter": 0.4061086,
+          "outlier": 0.4065378,
+          "error": 0.4143104,
+          "outlierError": 0.4143104,
+          "outlierErrorSigma": 0.0005301479
+        },
+        {
+          "q": 0.12,
+          "noFilter": 0.371747,
+          "outlier": 0.3722358,
+          "error": 0.3809259,
+          "outlierError": 0.3809259,
+          "outlierErrorSigma": 0.0004842473
+        },
+        {
+          "q": 0.125,
+          "noFilter": 0.3393868,
+          "outlier": 0.3382984,
+          "error": 0.3485631,
+          "outlierError": 0.3485631,
+          "outlierErrorSigma": 0.0005753221
+        },
+        {
+          "q": 0.13,
+          "noFilter": 0.311303,
+          "outlier": 0.3118643,
+          "error": 0.3181601,
+          "outlierError": 0.3181601,
+          "outlierErrorSigma": 0.0003915608
+        },
+        {
+          "q": 0.135,
+          "noFilter": 0.2821923,
+          "outlier": 0.2827952,
+          "error": 0.2887973,
+          "outlierError": 0.2887973,
+          "outlierErrorSigma": 0.0004448639
+        },
+        {
+          "q": 0.14,
+          "noFilter": 0.2557673,
+          "outlier": 0.256407,
+          "error": 0.2617899,
+          "outlierError": 0.2617899,
+          "outlierErrorSigma": 0.0004124853
+        },
+        {
+          "q": 0.145,
+          "noFilter": 0.2294108,
+          "outlier": 0.2300781,
+          "error": 0.2351098,
+          "outlierError": 0.2351098,
+          "outlierErrorSigma": 0.0004640981
+        },
+        {
+          "q": 0.15,
+          "noFilter": 0.2073893,
+          "outlier": 0.2067505,
+          "error": 0.2107627,
+          "outlierError": 0.2107627,
+          "outlierErrorSigma": 0.0003452828
+        },
+        {
+          "q": 0.155,
+          "noFilter": 0.1843587,
+          "outlier": 0.185091,
+          "error": 0.1886283,
+          "outlierError": 0.1884628,
+          "outlierErrorSigma": 0.0003940452
+        },
+        {
+          "q": 0.16,
+          "noFilter": 0.16482,
+          "outlier": 0.1655806,
+          "error": 0.1687695,
+          "outlierError": 0.1687695,
+          "outlierErrorSigma": 0.0003033905
+        },
+        {
+          "q": 0.165,
+          "noFilter": 0.146653,
+          "outlier": 0.1474409,
+          "error": 0.1497116,
+          "outlierError": 0.1496267,
+          "outlierErrorSigma": 0.0003736013
+        },
+        {
+          "q": 0.17,
+          "noFilter": 0.1281998,
+          "outlier": 0.1290149,
+          "error": 0.1322017,
+          "outlierError": 0.1322017,
+          "outlierErrorSigma": 0.0003509453
+        },
+        {
+          "q": 0.175,
+          "noFilter": 0.1137028,
+          "outlier": 0.1149907,
+          "error": 0.1164413,
+          "outlierError": 0.1164247,
+          "outlierErrorSigma": 0.0003427989
+        },
+        {
+          "q": 0.18,
+          "noFilter": 0.101057,
+          "outlier": 0.1025539,
+          "error": 0.1023726,
+          "outlierError": 0.1023726,
+          "outlierErrorSigma": 0.0003271077
+        },
+        {
+          "q": 0.185,
+          "noFilter": 0.08876742,
+          "outlier": 0.09007074,
+          "error": 0.09019018,
+          "outlierError": 0.09022698,
+          "outlierErrorSigma": 0.0003138852
+        },
+        {
+          "q": 0.19,
+          "noFilter": 0.07945237,
+          "outlier": 0.07816437,
+          "error": 0.07875271,
+          "outlierError": 0.07875271,
+          "outlierErrorSigma": 0.0003189643
+        },
+        {
+          "q": 0.195,
+          "noFilter": 0.06968655,
+          "outlier": 0.06821047,
+          "error": 0.06854052,
+          "outlierError": 0.06862073,
+          "outlierErrorSigma": 0.000316604
+        },
+        {
+          "q": 0.2,
+          "noFilter": 0.0611651,
+          "outlier": 0.06042173,
+          "error": 0.0605586,
+          "outlierError": 0.0605586,
+          "outlierErrorSigma": 0.0002574363
+        },
+        {
+          "q": 0.205,
+          "noFilter": 0.05480893,
+          "outlier": 0.05311845,
+          "error": 0.05277296,
+          "outlierError": 0.05286742,
+          "outlierErrorSigma": 0.0002644081
+        },
+        {
+          "q": 0.21,
+          "noFilter": 0.04652914,
+          "outlier": 0.04776578,
+          "error": 0.04606687,
+          "outlierError": 0.04606687,
+          "outlierErrorSigma": 0.0002604027
+        },
+        {
+          "q": 0.215,
+          "noFilter": 0.04269064,
+          "outlier": 0.04012234,
+          "error": 0.04071261,
+          "outlierError": 0.04115247,
+          "outlierErrorSigma": 0.000348051
+        },
+        {
+          "q": 0.22,
+          "noFilter": 0.03775172,
+          "outlier": 0.03642117,
+          "error": 0.03629352,
+          "outlierError": 0.03629352,
+          "outlierErrorSigma": 0.0002743383
+        },
+        {
+          "q": 0.225,
+          "noFilter": 0.03407603,
+          "outlier": 0.03503157,
+          "error": 0.03174501,
+          "outlierError": 0.03197475,
+          "outlierErrorSigma": 0.0002783913
+        },
+        {
+          "q": 0.23,
+          "noFilter": 0.03051281,
+          "outlier": 0.03037511,
+          "error": 0.02846418,
+          "outlierError": 0.02811096,
+          "outlierErrorSigma": 0.0002414894
+        },
+        {
+          "q": 0.235,
+          "noFilter": 0.02928321,
+          "outlier": 0.02609404,
+          "error": 0.0259476,
+          "outlierError": 0.02646441,
+          "outlierErrorSigma": 0.0002805203
+        },
+        {
+          "q": 0.24,
+          "noFilter": 0.02533358,
+          "outlier": 0.0258153,
+          "error": 0.02342319,
+          "outlierError": 0.02368211,
+          "outlierErrorSigma": 0.0002626864
+        },
+        {
+          "q": 0.245,
+          "noFilter": 0.02516051,
+          "outlier": 0.02464662,
+          "error": 0.02172895,
+          "outlierError": 0.02211779,
+          "outlierErrorSigma": 0.0002670119
+        },
+        {
+          "q": 0.25,
+          "noFilter": 0.02397731,
+          "outlier": 0.02351348,
+          "error": 0.02096078,
+          "outlierError": 0.02096078,
+          "outlierErrorSigma": 0.0002387059
+        },
+        {
+          "q": 0.255,
+          "noFilter": 0.02356332,
+          "outlier": 0.02039529,
+          "error": 0.0199375,
+          "outlierError": 0.0199375,
+          "outlierErrorSigma": 0.0002812369
+        },
+        {
+          "q": 0.26,
+          "noFilter": 0.02257912,
+          "outlier": 0.01986826,
+          "error": 0.01897722,
+          "outlierError": 0.01894477,
+          "outlierErrorSigma": 0.0002311613
+        },
+        {
+          "q": 0.265,
+          "noFilter": 0.02218439,
+          "outlier": 0.01898059,
+          "error": 0.01920143,
+          "outlierError": 0.01920143,
+          "outlierErrorSigma": 0.000265002
+        },
+        {
+          "q": 0.27,
+          "noFilter": 0.02230022,
+          "outlier": 0.02205934,
+          "error": 0.01889509,
+          "outlierError": 0.01886381,
+          "outlierErrorSigma": 0.000217734
+        },
+        {
+          "q": 0.275,
+          "noFilter": 0.02461161,
+          "outlier": 0.02277172,
+          "error": 0.01857851,
+          "outlierError": 0.0190354,
+          "outlierErrorSigma": 0.0002803541
+        },
+        {
+          "q": 0.28,
+          "noFilter": 0.02167032,
+          "outlier": 0.02207032,
+          "error": 0.01869306,
+          "outlierError": 0.01869306,
+          "outlierErrorSigma": 0.0002405289
+        },
+        {
+          "q": 0.285,
+          "noFilter": 0.0226747,
+          "outlier": 0.02088147,
+          "error": 0.01963772,
+          "outlierError": 0.01960784,
+          "outlierErrorSigma": 0.0002374979
+        },
+        {
+          "q": 0.29,
+          "noFilter": 0.02233712,
+          "outlier": 0.02273796,
+          "error": 0.01919564,
+          "outlierError": 0.01919564,
+          "outlierErrorSigma": 0.0002131825
+        },
+        {
+          "q": 0.295,
+          "noFilter": 0.02204439,
+          "outlier": 0.02014986,
+          "error": 0.01953419,
+          "outlierError": 0.019494,
+          "outlierErrorSigma": 0.0002888068
+        },
+        {
+          "q": 0.3,
+          "noFilter": 0.02370336,
+          "outlier": 0.0241011,
+          "error": 0.02005881,
+          "outlierError": 0.02005881,
+          "outlierErrorSigma": 0.0002267733
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,434 @@
+{
+  "benchmarkId": "NIST-VO2-PHYSICAL-REPEAT-POWER-0.1",
+  "generatedOn": "2026-08-12",
+  "design": {
+    "boundaryCoordinatesPerGroup": 49,
+    "matchedControlCoordinatesPerGroup": 49,
+    "independentPreparationsPerCoordinate": 2,
+    "measurementConditionsPerPreparation": 2,
+    "technicalRepeatsPerCondition": 3,
+    "repeatsPerCoordinate": 12,
+    "totalCoordinates": 98,
+    "totalAcquisitions": 1176
+  },
+  "primaryScenario": {
+    "controlDiscordance": 0.05,
+    "boundaryDiscordance": 0.2,
+    "planningIcc": 0.6,
+    "designEffect": 7.6,
+    "effectiveSampleSizePerGroup": 77.368421,
+    "approximatePower": 0.825486,
+    "maximumIccRetaining80PercentPower": 0.647577
+  },
+  "scenarios": [
+    {
+      "controlDiscordance": 0.05,
+      "boundaryDiscordance": 0.1,
+      "difference": 0.05,
+      "icc": 0,
+      "designEffect": 1,
+      "effectiveSampleSizePerGroup": 588,
+      "standardError": 0.015292,
+      "approximatePower": 0.904857,
+      "passesTarget": true
+    },
+    {
+      "controlDiscordance": 0.05,
+      "boundaryDiscordance": 0.1,
+      "difference": 0.05,
+      "icc": 0.3,
+      "designEffect": 4.3,
+      "effectiveSampleSizePerGroup": 136.744186,
+      "standardError": 0.03171,
+      "approximatePower": 0.350997,
+      "passesTarget": false
+    },
+    {
+      "controlDiscordance": 0.05,
+      "boundaryDiscordance": 0.1,
+      "difference": 0.05,
+      "icc": 0.6,
+      "designEffect": 7.6,
+      "effectiveSampleSizePerGroup": 77.368421,
+      "standardError": 0.042157,
+      "approximatePower": 0.220316,
+      "passesTarget": false
+    },
+    {
+      "controlDiscordance": 0.05,
+      "boundaryDiscordance": 0.1,
+      "difference": 0.05,
+      "icc": 0.9,
+      "designEffect": 10.9,
+      "effectiveSampleSizePerGroup": 53.944954,
+      "standardError": 0.050487,
+      "approximatePower": 0.16771,
+      "passesTarget": false
+    },
+    {
+      "controlDiscordance": 0.05,
+      "boundaryDiscordance": 0.15,
+      "difference": 0.1,
+      "icc": 0,
+      "designEffect": 1,
+      "effectiveSampleSizePerGroup": 588,
+      "standardError": 0.017252,
+      "approximatePower": 0.999938,
+      "passesTarget": true
+    },
+    {
+      "controlDiscordance": 0.05,
+      "boundaryDiscordance": 0.15,
+      "difference": 0.1,
+      "icc": 0.3,
+      "designEffect": 4.3,
+      "effectiveSampleSizePerGroup": 136.744186,
+      "standardError": 0.035774,
+      "approximatePower": 0.798249,
+      "passesTarget": false
+    },
+    {
+      "controlDiscordance": 0.05,
+      "boundaryDiscordance": 0.15,
+      "difference": 0.1,
+      "icc": 0.6,
+      "designEffect": 7.6,
+      "effectiveSampleSizePerGroup": 77.368421,
+      "standardError": 0.047559,
+      "approximatePower": 0.556747,
+      "passesTarget": false
+    },
+    {
+      "controlDiscordance": 0.05,
+      "boundaryDiscordance": 0.15,
+      "difference": 0.1,
+      "icc": 0.9,
+      "designEffect": 10.9,
+      "effectiveSampleSizePerGroup": 53.944954,
+      "standardError": 0.056957,
+      "approximatePower": 0.419185,
+      "passesTarget": false
+    },
+    {
+      "controlDiscordance": 0.05,
+      "boundaryDiscordance": 0.2,
+      "difference": 0.15,
+      "icc": 0,
+      "designEffect": 1,
+      "effectiveSampleSizePerGroup": 588,
+      "standardError": 0.018785,
+      "approximatePower": 1,
+      "passesTarget": true
+    },
+    {
+      "controlDiscordance": 0.05,
+      "boundaryDiscordance": 0.2,
+      "difference": 0.15,
+      "icc": 0.3,
+      "designEffect": 4.3,
+      "effectiveSampleSizePerGroup": 136.744186,
+      "standardError": 0.038954,
+      "approximatePower": 0.970668,
+      "passesTarget": true
+    },
+    {
+      "controlDiscordance": 0.05,
+      "boundaryDiscordance": 0.2,
+      "difference": 0.15,
+      "icc": 0.6,
+      "designEffect": 7.6,
+      "effectiveSampleSizePerGroup": 77.368421,
+      "standardError": 0.051788,
+      "approximatePower": 0.825486,
+      "passesTarget": true
+    },
+    {
+      "controlDiscordance": 0.05,
+      "boundaryDiscordance": 0.2,
+      "difference": 0.15,
+      "icc": 0.9,
+      "designEffect": 10.9,
+      "effectiveSampleSizePerGroup": 53.944954,
+      "standardError": 0.06202,
+      "approximatePower": 0.676745,
+      "passesTarget": false
+    },
+    {
+      "controlDiscordance": 0.05,
+      "boundaryDiscordance": 0.25,
+      "difference": 0.2,
+      "icc": 0,
+      "designEffect": 1,
+      "effectiveSampleSizePerGroup": 588,
+      "standardError": 0.019991,
+      "approximatePower": 1,
+      "passesTarget": true
+    },
+    {
+      "controlDiscordance": 0.05,
+      "boundaryDiscordance": 0.25,
+      "difference": 0.2,
+      "icc": 0.3,
+      "designEffect": 4.3,
+      "effectiveSampleSizePerGroup": 136.744186,
+      "standardError": 0.041455,
+      "approximatePower": 0.997912,
+      "passesTarget": true
+    },
+    {
+      "controlDiscordance": 0.05,
+      "boundaryDiscordance": 0.25,
+      "difference": 0.2,
+      "icc": 0.6,
+      "designEffect": 7.6,
+      "effectiveSampleSizePerGroup": 77.368421,
+      "standardError": 0.055113,
+      "approximatePower": 0.952437,
+      "passesTarget": true
+    },
+    {
+      "controlDiscordance": 0.05,
+      "boundaryDiscordance": 0.25,
+      "difference": 0.2,
+      "icc": 0.9,
+      "designEffect": 10.9,
+      "effectiveSampleSizePerGroup": 53.944954,
+      "standardError": 0.066002,
+      "approximatePower": 0.857744,
+      "passesTarget": true
+    },
+    {
+      "controlDiscordance": 0.1,
+      "boundaryDiscordance": 0.15,
+      "difference": 0.05,
+      "icc": 0,
+      "designEffect": 1,
+      "effectiveSampleSizePerGroup": 588,
+      "standardError": 0.019233,
+      "approximatePower": 0.738842,
+      "passesTarget": false
+    },
+    {
+      "controlDiscordance": 0.1,
+      "boundaryDiscordance": 0.15,
+      "difference": 0.05,
+      "icc": 0.3,
+      "designEffect": 4.3,
+      "effectiveSampleSizePerGroup": 136.744186,
+      "standardError": 0.039882,
+      "approximatePower": 0.240668,
+      "passesTarget": false
+    },
+    {
+      "controlDiscordance": 0.1,
+      "boundaryDiscordance": 0.15,
+      "difference": 0.05,
+      "icc": 0.6,
+      "designEffect": 7.6,
+      "effectiveSampleSizePerGroup": 77.368421,
+      "standardError": 0.053021,
+      "approximatePower": 0.156439,
+      "passesTarget": false
+    },
+    {
+      "controlDiscordance": 0.1,
+      "boundaryDiscordance": 0.15,
+      "difference": 0.05,
+      "icc": 0.9,
+      "designEffect": 10.9,
+      "effectiveSampleSizePerGroup": 53.944954,
+      "standardError": 0.063497,
+      "approximatePower": 0.123496,
+      "passesTarget": false
+    },
+    {
+      "controlDiscordance": 0.1,
+      "boundaryDiscordance": 0.2,
+      "difference": 0.1,
+      "icc": 0,
+      "designEffect": 1,
+      "effectiveSampleSizePerGroup": 588,
+      "standardError": 0.02062,
+      "approximatePower": 0.998072,
+      "passesTarget": true
+    },
+    {
+      "controlDiscordance": 0.1,
+      "boundaryDiscordance": 0.2,
+      "difference": 0.1,
+      "icc": 0.3,
+      "designEffect": 4.3,
+      "effectiveSampleSizePerGroup": 136.744186,
+      "standardError": 0.042758,
+      "approximatePower": 0.647586,
+      "passesTarget": false
+    },
+    {
+      "controlDiscordance": 0.1,
+      "boundaryDiscordance": 0.2,
+      "difference": 0.1,
+      "icc": 0.6,
+      "designEffect": 7.6,
+      "effectiveSampleSizePerGroup": 77.368421,
+      "standardError": 0.056844,
+      "approximatePower": 0.420536,
+      "passesTarget": false
+    },
+    {
+      "controlDiscordance": 0.1,
+      "boundaryDiscordance": 0.2,
+      "difference": 0.1,
+      "icc": 0.9,
+      "designEffect": 10.9,
+      "effectiveSampleSizePerGroup": 53.944954,
+      "standardError": 0.068076,
+      "approximatePower": 0.312009,
+      "passesTarget": false
+    },
+    {
+      "controlDiscordance": 0.1,
+      "boundaryDiscordance": 0.25,
+      "difference": 0.15,
+      "icc": 0,
+      "designEffect": 1,
+      "effectiveSampleSizePerGroup": 588,
+      "standardError": 0.021724,
+      "approximatePower": 1,
+      "passesTarget": true
+    },
+    {
+      "controlDiscordance": 0.1,
+      "boundaryDiscordance": 0.25,
+      "difference": 0.15,
+      "icc": 0.3,
+      "designEffect": 4.3,
+      "effectiveSampleSizePerGroup": 136.744186,
+      "standardError": 0.045048,
+      "approximatePower": 0.914626,
+      "passesTarget": true
+    },
+    {
+      "controlDiscordance": 0.1,
+      "boundaryDiscordance": 0.25,
+      "difference": 0.15,
+      "icc": 0.6,
+      "designEffect": 7.6,
+      "effectiveSampleSizePerGroup": 77.368421,
+      "standardError": 0.059889,
+      "approximatePower": 0.707009,
+      "passesTarget": false
+    },
+    {
+      "controlDiscordance": 0.1,
+      "boundaryDiscordance": 0.25,
+      "difference": 0.15,
+      "icc": 0.9,
+      "designEffect": 10.9,
+      "effectiveSampleSizePerGroup": 53.944954,
+      "standardError": 0.071723,
+      "approximatePower": 0.552307,
+      "passesTarget": false
+    }
+  ],
+  "repeatEfficiency": [
+    {
+      "icc": 0,
+      "repeatsPerCoordinate": 4,
+      "acquisitionsPerGroup": 196,
+      "effectiveSampleSizePerGroup": 196,
+      "approximatePrimaryPower": 0.995977
+    },
+    {
+      "icc": 0,
+      "repeatsPerCoordinate": 6,
+      "acquisitionsPerGroup": 294,
+      "effectiveSampleSizePerGroup": 294,
+      "approximatePrimaryPower": 0.999886
+    },
+    {
+      "icc": 0,
+      "repeatsPerCoordinate": 12,
+      "acquisitionsPerGroup": 588,
+      "effectiveSampleSizePerGroup": 588,
+      "approximatePrimaryPower": 1
+    },
+    {
+      "icc": 0.3,
+      "repeatsPerCoordinate": 4,
+      "acquisitionsPerGroup": 196,
+      "effectiveSampleSizePerGroup": 103.157895,
+      "approximatePrimaryPower": 0.916905
+    },
+    {
+      "icc": 0.3,
+      "repeatsPerCoordinate": 6,
+      "acquisitionsPerGroup": 294,
+      "effectiveSampleSizePerGroup": 117.6,
+      "approximatePrimaryPower": 0.946411
+    },
+    {
+      "icc": 0.3,
+      "repeatsPerCoordinate": 12,
+      "acquisitionsPerGroup": 588,
+      "effectiveSampleSizePerGroup": 136.744186,
+      "approximatePrimaryPower": 0.970668
+    },
+    {
+      "icc": 0.6,
+      "repeatsPerCoordinate": 4,
+      "acquisitionsPerGroup": 196,
+      "effectiveSampleSizePerGroup": 70,
+      "approximatePrimaryPower": 0.786723
+    },
+    {
+      "icc": 0.6,
+      "repeatsPerCoordinate": 6,
+      "acquisitionsPerGroup": 294,
+      "effectiveSampleSizePerGroup": 73.5,
+      "approximatePrimaryPower": 0.805969
+    },
+    {
+      "icc": 0.6,
+      "repeatsPerCoordinate": 12,
+      "acquisitionsPerGroup": 588,
+      "effectiveSampleSizePerGroup": 77.368421,
+      "approximatePrimaryPower": 0.825486
+    },
+    {
+      "icc": 0.9,
+      "repeatsPerCoordinate": 4,
+      "acquisitionsPerGroup": 196,
+      "effectiveSampleSizePerGroup": 52.972973,
+      "approximatePrimaryPower": 0.668847
+    },
+    {
+      "icc": 0.9,
+      "repeatsPerCoordinate": 6,
+      "acquisitionsPerGroup": 294,
+      "effectiveSampleSizePerGroup": 53.454545,
+      "approximatePrimaryPower": 0.672779
+    },
+    {
+      "icc": 0.9,
+      "repeatsPerCoordinate": 12,
+      "acquisitionsPerGroup": 588,
+      "effectiveSampleSizePerGroup": 53.944954,
+      "approximatePrimaryPower": 0.676745
+    }
+  ],
+  "stagedDecision": {
+    "pilotAcquisitions": 392,
+    "remainingAcquisitionsAfterPilot": 784,
+    "allocationRule": "Estimate preparation, measurement-condition and residual components in the 392-acquisition pilot. Add preparations when preparation variance dominates, add measurement conditions when condition variance dominates, and add coordinates rather than technical repeats when coordinate ICC is above the 80%-power boundary.",
+    "refusalRule": "The pilot upper confidence bound for control discordance exceeds 0.10, or the lower confidence bound for the boundary-control difference is non-positive, or estimated ICC exceeds the value that leaves primary-scenario power at 0.80."
+  },
+  "findings": {
+    "acquisitionTotalReconciles": true,
+    "pilotUsesOneThirdOfAcquisitionBudget": true,
+    "primaryScenarioPassesAtIcc06": true,
+    "primaryScenarioFailsAtIcc09": true,
+    "highIccMakesAdditionalTechnicalRepeatsInefficient": true,
+    "powerGridIsPlanningOnly": true
+  },
+  "decision": "Run the 392-acquisition crossed pilot before spending the full 1,176-acquisition budget. The primary 0.20-versus-0.05 discordance contrast has at least 80% approximate power only below the sealed ICC boundary; above it, more technical repeats add little independent information, so acquire more coordinates or stop the transfer claim."
+}
