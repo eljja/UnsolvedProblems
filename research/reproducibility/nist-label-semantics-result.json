@@ -1,0 +1,404 @@
+{
+  "auditId": "NIST-VO2-LABEL-SEMANTICS-0.1",
+  "generatedOn": "2026-08-12",
+  "labelCounts": {
+    "HL1": {
+      "0": 19,
+      "1": 48,
+      "2": 125
+    },
+    "HL2": {
+      "0": 22,
+      "1": 33,
+      "2": 137
+    },
+    "HL3": {
+      "0": 29,
+      "1": 8,
+      "2": 155
+    },
+    "HL4": {
+      "0": 16,
+      "1": 68,
+      "2": 108
+    },
+    "HL5": {
+      "0": 26,
+      "1": 56,
+      "2": 110
+    }
+  },
+  "lowMixedUseCandidate": {
+    "labeler": "HL3",
+    "mixedPhaseAssignments": 8,
+    "status": "exploratory semantic signature; anonymous identity not recoverable from the released workbook or paper"
+  },
+  "panels": {
+    "legacySealedHL3HL5": {
+      "members": [
+        "HL3",
+        "HL4",
+        "HL5"
+      ],
+      "adjudicationMethod": "legacyLowestValueTieBreak",
+      "adjudicatedNodes": 192,
+      "excludedTies": 0,
+      "edges": 352,
+      "boundaryEdges": 36,
+      "nonBoundaryEdges": 316,
+      "auc": 0.755362,
+      "phaseCounts": {
+        "0": 26,
+        "1": 52,
+        "2": 114
+      }
+    },
+    "sealedHL3HL5Strict": {
+      "members": [
+        "HL3",
+        "HL4",
+        "HL5"
+      ],
+      "adjudicationMethod": "strictMajority",
+      "adjudicatedNodes": 191,
+      "excludedTies": 1,
+      "edges": 349,
+      "boundaryEdges": 34,
+      "nonBoundaryEdges": 315,
+      "auc": 0.752381,
+      "phaseCounts": {
+        "0": 25,
+        "1": 52,
+        "2": 114
+      }
+    },
+    "allFive": {
+      "members": [
+        "HL1",
+        "HL2",
+        "HL3",
+        "HL4",
+        "HL5"
+      ],
+      "adjudicationMethod": "strictMajority",
+      "adjudicatedNodes": 191,
+      "excludedTies": 1,
+      "edges": 349,
+      "boundaryEdges": 33,
+      "nonBoundaryEdges": 316,
+      "auc": 0.801975,
+      "phaseCounts": {
+        "0": 22,
+        "1": 47,
+        "2": 122
+      }
+    },
+    "excludeLowMixedUseCandidate": {
+      "members": [
+        "HL1",
+        "HL2",
+        "HL4",
+        "HL5"
+      ],
+      "adjudicationMethod": "strictMajority",
+      "adjudicatedNodes": 176,
+      "excludedTies": 16,
+      "edges": 302,
+      "boundaryEdges": 13,
+      "nonBoundaryEdges": 289,
+      "auc": 0.849082,
+      "phaseCounts": {
+        "0": 18,
+        "1": 44,
+        "2": 114
+      }
+    },
+    "sealedWithoutLowMixedUseCandidate": {
+      "members": [
+        "HL4",
+        "HL5"
+      ],
+      "adjudicationMethod": "strictMajority",
+      "adjudicatedNodes": 172,
+      "excludedTies": 20,
+      "edges": 290,
+      "boundaryEdges": 11,
+      "nonBoundaryEdges": 279,
+      "auc": 0.802216,
+      "phaseCounts": {
+        "0": 16,
+        "1": 52,
+        "2": 104
+      }
+    },
+    "leaveOutHL1": {
+      "members": [
+        "HL2",
+        "HL3",
+        "HL4",
+        "HL5"
+      ],
+      "adjudicationMethod": "strictMajority",
+      "adjudicatedNodes": 167,
+      "excludedTies": 25,
+      "edges": 275,
+      "boundaryEdges": 7,
+      "nonBoundaryEdges": 268,
+      "auc": 0.851279,
+      "phaseCounts": {
+        "0": 21,
+        "1": 32,
+        "2": 114
+      }
+    },
+    "leaveOutHL2": {
+      "members": [
+        "HL1",
+        "HL3",
+        "HL4",
+        "HL5"
+      ],
+      "adjudicationMethod": "strictMajority",
+      "adjudicatedNodes": 177,
+      "excludedTies": 15,
+      "edges": 302,
+      "boundaryEdges": 12,
+      "nonBoundaryEdges": 290,
+      "auc": 0.803448,
+      "phaseCounts": {
+        "0": 19,
+        "1": 44,
+        "2": 114
+      }
+    },
+    "leaveOutHL3": {
+      "members": [
+        "HL1",
+        "HL2",
+        "HL4",
+        "HL5"
+      ],
+      "adjudicationMethod": "strictMajority",
+      "adjudicatedNodes": 176,
+      "excludedTies": 16,
+      "edges": 302,
+      "boundaryEdges": 13,
+      "nonBoundaryEdges": 289,
+      "auc": 0.849082,
+      "phaseCounts": {
+        "0": 18,
+        "1": 44,
+        "2": 114
+      }
+    },
+    "leaveOutHL4": {
+      "members": [
+        "HL1",
+        "HL2",
+        "HL3",
+        "HL5"
+      ],
+      "adjudicationMethod": "strictMajority",
+      "adjudicatedNodes": 173,
+      "excludedTies": 19,
+      "edges": 295,
+      "boundaryEdges": 14,
+      "nonBoundaryEdges": 281,
+      "auc": 0.860702,
+      "phaseCounts": {
+        "0": 22,
+        "1": 29,
+        "2": 122
+      }
+    },
+    "leaveOutHL5": {
+      "members": [
+        "HL1",
+        "HL2",
+        "HL3",
+        "HL4"
+      ],
+      "adjudicationMethod": "strictMajority",
+      "adjudicatedNodes": 172,
+      "excludedTies": 20,
+      "edges": 294,
+      "boundaryEdges": 13,
+      "nonBoundaryEdges": 281,
+      "auc": 0.875445,
+      "phaseCounts": {
+        "0": 18,
+        "1": 32,
+        "2": 122
+      }
+    }
+  },
+  "comparisonsWithSealedPanel": {
+    "sealedHL3HL5Strict": {
+      "comparableNodes": 191,
+      "phaseAgreement": 1,
+      "boundaryIntersection": 34,
+      "boundaryUnion": 36,
+      "boundaryJaccard": 0.944444,
+      "aucDeltaFromSealed": -0.002981
+    },
+    "allFive": {
+      "comparableNodes": 191,
+      "phaseAgreement": 0.942408,
+      "boundaryIntersection": 16,
+      "boundaryUnion": 53,
+      "boundaryJaccard": 0.301887,
+      "aucDeltaFromSealed": 0.046613
+    },
+    "excludeLowMixedUseCandidate": {
+      "comparableNodes": 176,
+      "phaseAgreement": 0.982955,
+      "boundaryIntersection": 8,
+      "boundaryUnion": 41,
+      "boundaryJaccard": 0.195122,
+      "aucDeltaFromSealed": 0.09372
+    },
+    "sealedWithoutLowMixedUseCandidate": {
+      "comparableNodes": 172,
+      "phaseAgreement": 1,
+      "boundaryIntersection": 11,
+      "boundaryUnion": 36,
+      "boundaryJaccard": 0.305556,
+      "aucDeltaFromSealed": 0.046854
+    },
+    "leaveOutHL1": {
+      "comparableNodes": 167,
+      "phaseAgreement": 1,
+      "boundaryIntersection": 7,
+      "boundaryUnion": 36,
+      "boundaryJaccard": 0.194444,
+      "aucDeltaFromSealed": 0.095917
+    },
+    "leaveOutHL2": {
+      "comparableNodes": 177,
+      "phaseAgreement": 1,
+      "boundaryIntersection": 12,
+      "boundaryUnion": 36,
+      "boundaryJaccard": 0.333333,
+      "aucDeltaFromSealed": 0.048086
+    },
+    "leaveOutHL3": {
+      "comparableNodes": 176,
+      "phaseAgreement": 0.982955,
+      "boundaryIntersection": 8,
+      "boundaryUnion": 41,
+      "boundaryJaccard": 0.195122,
+      "aucDeltaFromSealed": 0.09372
+    },
+    "leaveOutHL4": {
+      "comparableNodes": 173,
+      "phaseAgreement": 0.953757,
+      "boundaryIntersection": 7,
+      "boundaryUnion": 43,
+      "boundaryJaccard": 0.162791,
+      "aucDeltaFromSealed": 0.10534
+    },
+    "leaveOutHL5": {
+      "comparableNodes": 172,
+      "phaseAgreement": 0.936047,
+      "boundaryIntersection": 1,
+      "boundaryUnion": 48,
+      "boundaryJaccard": 0.020833,
+      "aucDeltaFromSealed": 0.120083
+    }
+  },
+  "sealedPanelTransitionResults": {
+    "0-1": {
+      "boundaryEdges": 14,
+      "shareOfBoundaryEdges": 0.388889,
+      "nonBoundaryEdges": 316,
+      "auc": 0.894439
+    },
+    "1-2": {
+      "boundaryEdges": 22,
+      "shareOfBoundaryEdges": 0.611111,
+      "nonBoundaryEdges": 316,
+      "auc": 0.666858
+    }
+  },
+  "sealedPanelTemperatureResults": {
+    "23": {
+      "incidentBoundaryEdges": 6,
+      "incidentBoundaryShare": 0.166667,
+      "incidentPositiveAucAgainstAllNonBoundaries": 0.708333,
+      "mannWhitneyNumeratorShare": 0.15629,
+      "aucAfterDeletingIncidentEdges": 0.761939,
+      "deltaAfterDeletion": 0.006577
+    },
+    "30": {
+      "incidentBoundaryEdges": 9,
+      "incidentBoundaryShare": 0.25,
+      "incidentPositiveAucAgainstAllNonBoundaries": 0.644515,
+      "mannWhitneyNumeratorShare": 0.213313,
+      "aucAfterDeletingIncidentEdges": 0.787547,
+      "deltaAfterDeletion": 0.032185
+    },
+    "36": {
+      "incidentBoundaryEdges": 8,
+      "incidentBoundaryShare": 0.222222,
+      "incidentPositiveAucAgainstAllNonBoundaries": 0.667326,
+      "mannWhitneyNumeratorShare": 0.196323,
+      "aucAfterDeletingIncidentEdges": 0.780774,
+      "deltaAfterDeletion": 0.025411
+    },
+    "45": {
+      "incidentBoundaryEdges": 8,
+      "incidentBoundaryShare": 0.222222,
+      "incidentPositiveAucAgainstAllNonBoundaries": 0.780063,
+      "mannWhitneyNumeratorShare": 0.229489,
+      "aucAfterDeletingIncidentEdges": 0.750282,
+      "deltaAfterDeletion": -0.00508
+    },
+    "50": {
+      "incidentBoundaryEdges": 10,
+      "incidentBoundaryShare": 0.277778,
+      "incidentPositiveAucAgainstAllNonBoundaries": 0.880063,
+      "mannWhitneyNumeratorShare": 0.323636,
+      "aucAfterDeletingIncidentEdges": 0.706184,
+      "deltaAfterDeletion": -0.049178
+    },
+    "55": {
+      "incidentBoundaryEdges": 9,
+      "incidentBoundaryShare": 0.25,
+      "incidentPositiveAucAgainstAllNonBoundaries": 0.861814,
+      "mannWhitneyNumeratorShare": 0.285232,
+      "aucAfterDeletingIncidentEdges": 0.724264,
+      "deltaAfterDeletion": -0.031099
+    },
+    "62": {
+      "incidentBoundaryEdges": 6,
+      "incidentBoundaryShare": 0.166667,
+      "incidentPositiveAucAgainstAllNonBoundaries": 0.773207,
+      "mannWhitneyNumeratorShare": 0.170604,
+      "aucAfterDeletingIncidentEdges": 0.74741,
+      "deltaAfterDeletion": -0.007952
+    },
+    "68": {
+      "incidentBoundaryEdges": 3,
+      "incidentBoundaryShare": 0.083333,
+      "incidentPositiveAucAgainstAllNonBoundaries": 0.726793,
+      "mannWhitneyNumeratorShare": 0.080182,
+      "aucAfterDeletingIncidentEdges": 0.754902,
+      "deltaAfterDeletion": -0.00046
+    }
+  },
+  "findings": {
+    "lowMixedUseCandidate": "HL3",
+    "candidateIdentityWithPaperExcludedLabelerIsProven": false,
+    "legacyLowestValueTieBreakAffectedNodes": 1,
+    "semanticsDominanceFlag": true,
+    "transitionDominanceFlag": false,
+    "fiftyDegreeDominanceFlag": false,
+    "fixedObservableAboveChanceForEveryPanel": true
+  },
+  "decision": "Retain centered cosine as a ranking observable across annotation semantics, but stop calling any label panel physical truth and retire the legacy lowest-value tie break from future adjudication. The new physical pilot must judge phase change with an independently specified structural or phase-fraction model and report annotation-ontology sensitivity separately.",
+  "limitations": [
+    "This is a retrospective robustness audit on one 192-profile physical dataset, not an independent replication.",
+    "The low-mixed-use candidate was identified after inspecting label frequencies; its exclusion cannot serve as a preregistered confirmatory test.",
+    "AUC tests ranking only. It neither fixes an operating threshold nor establishes a physical detection limit or phase identity."
+  ]
+}

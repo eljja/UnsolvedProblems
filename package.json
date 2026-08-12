@@ -25,6 +25,8 @@
     "research:nist-raw-profiles": "node scripts/audit-nist-raw-profiles.mjs",
     "research:nist-graph-sensitivity": "node scripts/run-nist-graph-sensitivity.mjs",
     "research:nist-independent-source": "python scripts/independent_audit_nist_sources.py",
-    "test": "node scripts/validate.mjs && node scripts/verify-replay.mjs && node scripts/verify-ope.mjs && node scripts/verify-identification-sensitivity.mjs && node scripts/verify-audit-smoothness.mjs && node scripts/verify-two-phase-active.mjs && node scripts/verify-finite-hybrid.mjs && node scripts/verify-external-audits.mjs && node scripts/verify-reproducibility-cycle.mjs && node scripts/verify-raw-repeat-cycle.mjs && node scripts/verify-nested-pilot-cycle.mjs && node scripts/verify-raw-manifest-cycle.mjs && node scripts/verify-graph-geometry-cycle.mjs"
+    "research:nist-metadata-snapshot": "node scripts/fetch-nist-metadata-snapshot.mjs --write",
+    "research:nist-label-semantics": "node scripts/run-nist-label-semantics.mjs",
+    "test": "node scripts/validate.mjs && node scripts/verify-replay.mjs && node scripts/verify-ope.mjs && node scripts/verify-identification-sensitivity.mjs && node scripts/verify-audit-smoothness.mjs && node scripts/verify-two-phase-active.mjs && node scripts/verify-finite-hybrid.mjs && node scripts/verify-external-audits.mjs && node scripts/verify-reproducibility-cycle.mjs && node scripts/verify-raw-repeat-cycle.mjs && node scripts/verify-nested-pilot-cycle.mjs && node scripts/verify-raw-manifest-cycle.mjs && node scripts/verify-graph-geometry-cycle.mjs && node scripts/verify-semantic-lineage-cycle.mjs"
   }
 }

@@ -1,0 +1,90 @@
+{
+  "auditId": "NIST-MDS2-2301-METADATA-SNAPSHOT-0.1",
+  "retrievedAtUtc": "2026-08-12T04:00:01.723Z",
+  "request": {
+    "url": "https://data.nist.gov/rmm/records/mds2-2301",
+    "accept": "application/json"
+  },
+  "response": {
+    "status": 200,
+    "contentType": "application/json",
+    "date": "Wed, 12 Aug 2026 03:59:52 GMT",
+    "etag": null,
+    "lastModified": null,
+    "byteLength": 16664,
+    "sha256": "db5dea4c8c5e39606e6c7036714384034e185c43d7e5035903a934f30be39646"
+  },
+  "record": {
+    "id": "ark:/88434/mds2-2301",
+    "ediid": "ark:/88434/mds2-2301",
+    "doi": "doi:10.18434/mds2-2301",
+    "title": "Dataset: An Open Combinatorial Diffraction Dataset Including Consensus Human and Machine Learning Labels with Quantified Uncertainty for Training New Machine Learning Models ",
+    "version": "1.0.2",
+    "issued": "2020-10-23T14:49:00.0",
+    "modified": "2020-09-22 00:00:00",
+    "annotated": "2022-01-07T21:34:55.422086",
+    "status": "available",
+    "landingPage": "https://data.nist.gov/od/id/mds2-2301",
+    "license": "https://www.nist.gov/open/license",
+    "publisher": "National Institute of Standards and Technology"
+  },
+  "canonicalRecord": {
+    "byteLength": 16583,
+    "sha256": "8d1ae3f4adad41e3b4eee740827c194e9b3fb4a6b49a94cb61f52e46b6747cee",
+    "scope": "ResultData[0], recursively key-sorted; excludes request-specific Metrics.ElapsedTime"
+  },
+  "files": [
+    {
+      "role": "humanLabels",
+      "filepath": "Human Labels.xlsx",
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sizeBytes": 17183,
+      "downloadUrl": "https://data.nist.gov/od/ds/mds2-2301/Human%20Labels.xlsx",
+      "checksumSidecarUrl": "https://data.nist.gov/od/ds/mds2-2301/Human%20Labels.xlsx.sha256",
+      "officialSha256": "0056a45f7d45694368597fe7804569339745214530584dae10652873fed38cd2",
+      "expectedUrlMatchesMetadata": true,
+      "expectedSha256MatchesSidecar": true
+    },
+    {
+      "role": "compositionTemperature",
+      "filepath": "VO2 - Nb2O3 Composition and temp Combiview.txt",
+      "mediaType": "text/plain",
+      "sizeBytes": 2472,
+      "downloadUrl": "https://data.nist.gov/od/ds/mds2-2301/VO2%20-%20Nb2O3%20Composition%20and%20temp%20Combiview.txt",
+      "checksumSidecarUrl": "https://data.nist.gov/od/ds/mds2-2301/VO2%20-%20Nb2O3%20Composition%20and%20temp%20Combiview.txt.sha256",
+      "officialSha256": "6fcc4e862ea866286436a8624b2b82241ce80a08cc87eb0bb878f56ce6fdd027",
+      "expectedUrlMatchesMetadata": true,
+      "expectedSha256MatchesSidecar": true
+    },
+    {
+      "role": "rawXrd",
+      "filepath": "VO2 -Nb2O3 XRD Combiview.txt",
+      "mediaType": "text/plain",
+      "sizeBytes": 13396322,
+      "downloadUrl": "https://data.nist.gov/od/ds/mds2-2301/VO2%20-Nb2O3%20XRD%20Combiview.txt",
+      "checksumSidecarUrl": "https://data.nist.gov/od/ds/mds2-2301/VO2%20-Nb2O3%20XRD%20Combiview.txt.sha256",
+      "officialSha256": "3b47bf36b2abaef376730226e2616a353ba07571c46e71bce464cf9e9bfbe348",
+      "expectedUrlMatchesMetadata": true,
+      "expectedSha256MatchesSidecar": true
+    },
+    {
+      "role": "readme",
+      "filepath": "Readme.txt",
+      "mediaType": "text/plain",
+      "sizeBytes": 7255,
+      "downloadUrl": "https://data.nist.gov/od/ds/mds2-2301/Readme.txt",
+      "checksumSidecarUrl": "https://data.nist.gov/od/ds/mds2-2301/Readme.txt.sha256",
+      "officialSha256": "79664bb816f830b98254f13bd699fe4266097471b3a4eb8093cdf3725b475110",
+      "expectedUrlMatchesMetadata": true,
+      "expectedSha256MatchesSidecar": true
+    }
+  ],
+  "gates": {
+    "recordIdentityMatches": true,
+    "allFourFilesPresent": true,
+    "allUrlsMatch": true,
+    "allChecksumsMatch": true
+  },
+  "note": "The API supplies file identity, URL, type, and size; the linked official .sha256 sidecars supply byte checksums. The raw response hash seals this retrieval, while the canonical record hash excludes request-specific Metrics.ElapsedTime and is the stable change-detection key.",
+  "allGatesPass": true
+}

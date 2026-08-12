@@ -1,0 +1,15 @@
+{
+  "auditId": "NIST-VO2-LABEL-SEMANTICS-0.1",
+  "reviewedOn": "2026-08-12",
+  "fixedObservable": "centered cosine distance selected on HL1-HL2 during RC13",
+  "questions": {
+    "semanticsDominance": "Flag if excluding the low-mixed-use candidate changes AUC by at least 0.10 or boundary-edge Jaccard falls below 0.50 relative to the sealed HL3-HL5 panel.",
+    "transitionDominance": "Flag if one transition type supplies more than 70% of boundary edges while every other observed transition type has AUC at most 0.55.",
+    "fiftyDegreeDominance": "Flag if deleting the 50 C row changes AUC by at least 0.10 or positives incident to 50 C contribute more than 50% of the full Mann-Whitney numerator."
+  },
+  "interpretation": [
+    "The paper reports that one anonymous labeler disallowed multiple phases and presents an analysis excluding that label set, but the released HL numbering is not mapped to the paper's labeler order.",
+    "The labeler with the fewest mixed-phase assignments is therefore an exploratory semantic signature, not a proven identity match.",
+    "No panel in this audit is physical ground truth. Panels test whether the fixed raw-profile ranking survives alternative annotation ontologies."
+  ]
+}

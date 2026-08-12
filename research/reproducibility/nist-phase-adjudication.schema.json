@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/nist-phase-adjudication.schema.json",
+  "title": "NIST VO2 physical-phase adjudication preregistration",
+  "description": "Required semantic and independence contract for judging a new physical pilot. Human consensus is an annotation sensitivity analysis, not physical ground truth.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocolVersion", "ontology", "continuousEstimand", "annotationSensitivity", "independence", "decisionRules"],
+  "properties": {
+    "protocolVersion": { "type": "string", "minLength": 1 },
+    "ontology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lowPhaseDefinition", "highPhaseDefinition", "mixedPhaseAllowed", "mixedPhaseDefinition", "unresolvedAction"],
+      "properties": {
+        "lowPhaseDefinition": { "type": "string", "minLength": 20 },
+        "highPhaseDefinition": { "type": "string", "minLength": 20 },
+        "mixedPhaseAllowed": { "const": true },
+        "mixedPhaseDefinition": { "type": "string", "minLength": 20 },
+        "unresolvedAction": { "const": "abstain-with-reason-code" }
+      }
+    },
+    "continuousEstimand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["quantity", "forwardModel", "identifiabilityCheck", "detectionLimitSource", "uncertaintyMethod"],
+      "properties": {
+        "quantity": { "enum": ["low/high phase fractions", "registered structural-order parameter"] },
+        "forwardModel": { "type": "string", "minLength": 30 },
+        "identifiabilityCheck": { "type": "string", "minLength": 30 },
+        "detectionLimitSource": { "enum": ["instrument-only preliminary study", "independent physical holdout"] },
+        "uncertaintyMethod": { "type": "string", "minLength": 30 }
+      }
+    },
+    "annotationSensitivity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixedObservable", "confirmatoryPanels", "exploratoryPanels", "tieRule", "reportedMetrics"],
+      "properties": {
+        "fixedObservable": { "const": "centered cosine distance" },
+        "confirmatoryPanels": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": { "enum": ["all-five-strict-majority", "all-leave-one-labeler-out-strict-majorities", "physical-adjudicator-only"] }
+        },
+        "exploratoryPanels": { "type": "array", "items": { "enum": ["exclude-low-mixed-use-candidate", "legacy-HL3-HL5-lowest-value-tie-break"] } },
+        "tieRule": { "const": "exclude-from-panel-specific-binary-adjudication" },
+        "reportedMetrics": { "type": "array", "minItems": 3, "uniqueItems": true, "items": { "enum": ["eligible nodes", "eligible edges", "boundary count", "boundary Jaccard", "AUC", "transition-specific AUC", "temperature influence"] } }
+      }
+    },
+    "independence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["developmentAcquisitionIds", "validationAcquisitionIds", "physicalHoldout", "reductionImplementations", "blindUntilLocked"],
+      "properties": {
+        "developmentAcquisitionIds": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "validationAcquisitionIds": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "physicalHoldout": { "const": true },
+        "reductionImplementations": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["implementationId", "team", "codeHash"],
+            "properties": {
+              "implementationId": { "type": "string" },
+              "team": { "type": "string" },
+              "codeHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+            }
+          }
+        },
+        "blindUntilLocked": { "const": true }
+      }
+    },
+    "decisionRules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rankingClaim", "physicalClaim", "success", "reject", "stop"],
+      "properties": {
+        "rankingClaim": { "const": "The fixed observable ranks registered physical change; it does not identify phase by itself." },
+        "physicalClaim": { "type": "string", "minLength": 40 },
+        "success": { "type": "string", "minLength": 40 },
+        "reject": { "type": "string", "minLength": 40 },
+        "stop": { "type": "string", "minLength": 40 }
+      }
+    }
+  }
+}
