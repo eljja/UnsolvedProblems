@@ -1,0 +1,4 @@
+node_modules/
+research/external-audit/**/node_modules/
+research/external-audit/**/*.xlsx
+research/external-audit/**/*.download

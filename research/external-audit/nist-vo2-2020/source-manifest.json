@@ -1,0 +1,10 @@
+{
+  "dataset": "An Open Combinatorial Diffraction Dataset Including Consensus Human and Machine Learning Labels with Quantified Uncertainty",
+  "datasetDoi": "10.18434/mds2-2301",
+  "landingPage": "https://data.nist.gov/od/id/mds2-2301",
+  "articleDoi": "10.1007/s40192-021-00213-8",
+  "humanLabelsUrl": "https://data.nist.gov/od/ds/mds2-2301/Human%20Labels.xlsx",
+  "humanLabelsSha256": "6fcc4e862ea866286436a8624b2b82241ce80a08cc87eb0bb878f56ce6fdd027",
+  "license": "NIST public-domain/open data terms",
+  "canonicalExtraction": "human-labels.json is a values-only extraction of the public Human Labels.xlsx workbook. The original workbook is not republished."
+}

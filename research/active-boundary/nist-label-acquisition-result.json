@@ -1,0 +1,91 @@
+{
+  "benchmarkId": "NIST-VO2-LABEL-ACQUISITION-0.1",
+  "generatedOn": "2026-08-12",
+  "dataSplit": {
+    "developmentOracle": [
+      "HL1",
+      "HL2"
+    ],
+    "independentAdjudication": [
+      "HL3",
+      "HL4",
+      "HL5"
+    ],
+    "adjudicationRule": "three-label majority mode"
+  },
+  "grid": {
+    "points": 192,
+    "boundaryPoints": 49,
+    "phaseCounts": {
+      "0": 26,
+      "1": 52,
+      "2": 114
+    }
+  },
+  "strategies": [
+    {
+      "strategy": "space-fill-16",
+      "runs": 400,
+      "meanAccuracy": 0.774479,
+      "minimumAccuracy": 0.75,
+      "meanBoundaryAccuracy": 0.50898,
+      "minimumBoundaryAccuracy": 0.489796,
+      "meanMacroRecall": 0.665833,
+      "minimumMacroRecall": 0.602564,
+      "meanMaximumUnqueriedDistance": 0.25,
+      "maximumUnqueriedDistance": 0.25,
+      "meanDevelopmentDisagreementAcquisitionRate": 0.0625
+    },
+    {
+      "strategy": "space-fill-8-frontier-8",
+      "runs": 400,
+      "meanAccuracy": 0.784297,
+      "minimumAccuracy": 0.744792,
+      "meanBoundaryAccuracy": 0.52949,
+      "minimumBoundaryAccuracy": 0.469388,
+      "meanMacroRecall": 0.687336,
+      "minimumMacroRecall": 0.641026,
+      "meanMaximumUnqueriedDistance": 0.443606,
+      "maximumUnqueriedDistance": 0.488889,
+      "meanDevelopmentDisagreementAcquisitionRate": 0.171719
+    },
+    {
+      "strategy": "space-fill-12-frontier-4",
+      "runs": 400,
+      "meanAccuracy": 0.820352,
+      "minimumAccuracy": 0.8125,
+      "meanBoundaryAccuracy": 0.561276,
+      "minimumBoundaryAccuracy": 0.55102,
+      "meanMacroRecall": 0.741059,
+      "minimumMacroRecall": 0.718511,
+      "meanMaximumUnqueriedDistance": 0.320156,
+      "maximumUnqueriedDistance": 0.320156,
+      "meanDevelopmentDisagreementAcquisitionRate": 0.0625
+    }
+  ],
+  "pareto": [
+    {
+      "strategy": "space-fill-16",
+      "dominatedBy": []
+    },
+    {
+      "strategy": "space-fill-8-frontier-8",
+      "dominatedBy": [
+        "space-fill-12-frontier-4"
+      ]
+    },
+    {
+      "strategy": "space-fill-12-frontier-4",
+      "dominatedBy": []
+    }
+  ],
+  "findings": {
+    "developmentAndAdjudicationLabelsAreDisjoint": true,
+    "adaptivePoliciesDoNotUniformlyDominateSpaceFilling": true,
+    "hybridRetainsMaximumGapGate": true,
+    "aggressiveFrontierHasLargestCoverageRisk": true,
+    "hybridMeetsEveryMinimumRunGate": true,
+    "physicalRepeatabilityRemainsUntested": true
+  },
+  "decision": "Use space-fill-12-frontier-4 as the preferred annotation-acquisition baseline for this grid: it passes every minimum-run accuracy gate and Pareto-dominates the aggressive 8+8 policy, while space-fill-16 retains the smallest global gap. The dataset supports annotation-noise research only; obtain replicate spectra before transferring the policy to physical experiment selection."
+}

@@ -1,0 +1,2508 @@
+{
+  "datasetId": "NIST-MDS2-2301",
+  "sourceFile": "Human Labels.xlsx",
+  "extraction": "Values-only canonical extraction; original workbook retained unmodified",
+  "labelCode": {
+    "0": "low-temperature phase",
+    "1": "two-phase region",
+    "2": "high-temperature phase"
+  },
+  "records": [
+    {
+      "measurementId": 1,
+      "vanadiumFraction": 0.99,
+      "vanadiumAtomicPercent": 99,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 0,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 2,
+      "vanadiumFraction": 0.98,
+      "vanadiumAtomicPercent": 98,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 0,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 3,
+      "vanadiumFraction": 0.97,
+      "vanadiumAtomicPercent": 97,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 0,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 4,
+      "vanadiumFraction": 0.96,
+      "vanadiumAtomicPercent": 96,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 0,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 5,
+      "vanadiumFraction": 0.95,
+      "vanadiumAtomicPercent": 95,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 1,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 6,
+      "vanadiumFraction": 0.94,
+      "vanadiumAtomicPercent": 94,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 1,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 7,
+      "vanadiumFraction": 0.93,
+      "vanadiumAtomicPercent": 93,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 8,
+      "vanadiumFraction": 0.92,
+      "vanadiumAtomicPercent": 92,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 9,
+      "vanadiumFraction": 0.9,
+      "vanadiumAtomicPercent": 90,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 2,
+        "HL2": 0,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 10,
+      "vanadiumFraction": 0.89,
+      "vanadiumAtomicPercent": 89,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 11,
+      "vanadiumFraction": 0.88,
+      "vanadiumAtomicPercent": 88,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 12,
+      "vanadiumFraction": 0.87,
+      "vanadiumAtomicPercent": 87,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 13,
+      "vanadiumFraction": 0.86,
+      "vanadiumAtomicPercent": 86,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 14,
+      "vanadiumFraction": 0.85,
+      "vanadiumAtomicPercent": 85,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 15,
+      "vanadiumFraction": 0.84,
+      "vanadiumAtomicPercent": 84,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 16,
+      "vanadiumFraction": 0.83,
+      "vanadiumAtomicPercent": 83,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 17,
+      "vanadiumFraction": 0.82,
+      "vanadiumAtomicPercent": 82,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 18,
+      "vanadiumFraction": 0.81,
+      "vanadiumAtomicPercent": 81,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 19,
+      "vanadiumFraction": 0.8,
+      "vanadiumAtomicPercent": 80,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 20,
+      "vanadiumFraction": 0.79,
+      "vanadiumAtomicPercent": 79,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 21,
+      "vanadiumFraction": 0.78,
+      "vanadiumAtomicPercent": 78,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 22,
+      "vanadiumFraction": 0.77,
+      "vanadiumAtomicPercent": 77,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 23,
+      "vanadiumFraction": 0.76,
+      "vanadiumAtomicPercent": 76,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 24,
+      "vanadiumFraction": 0.75,
+      "vanadiumAtomicPercent": 75,
+      "temperatureC": 23,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 45,
+      "vanadiumFraction": 0.99,
+      "vanadiumAtomicPercent": 99,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 0,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 46,
+      "vanadiumFraction": 0.98,
+      "vanadiumAtomicPercent": 98,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 0,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 47,
+      "vanadiumFraction": 0.97,
+      "vanadiumAtomicPercent": 97,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 0,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 48,
+      "vanadiumFraction": 0.96,
+      "vanadiumAtomicPercent": 96,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 0,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 49,
+      "vanadiumFraction": 0.95,
+      "vanadiumAtomicPercent": 95,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 0,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 50,
+      "vanadiumFraction": 0.94,
+      "vanadiumAtomicPercent": 94,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 51,
+      "vanadiumFraction": 0.93,
+      "vanadiumAtomicPercent": 93,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 0,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 52,
+      "vanadiumFraction": 0.92,
+      "vanadiumAtomicPercent": 92,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 53,
+      "vanadiumFraction": 0.9,
+      "vanadiumAtomicPercent": 90,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 54,
+      "vanadiumFraction": 0.89,
+      "vanadiumAtomicPercent": 89,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 55,
+      "vanadiumFraction": 0.88,
+      "vanadiumAtomicPercent": 88,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 56,
+      "vanadiumFraction": 0.87,
+      "vanadiumAtomicPercent": 87,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 57,
+      "vanadiumFraction": 0.86,
+      "vanadiumAtomicPercent": 86,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 58,
+      "vanadiumFraction": 0.85,
+      "vanadiumAtomicPercent": 85,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 59,
+      "vanadiumFraction": 0.84,
+      "vanadiumAtomicPercent": 84,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 60,
+      "vanadiumFraction": 0.83,
+      "vanadiumAtomicPercent": 83,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 61,
+      "vanadiumFraction": 0.82,
+      "vanadiumAtomicPercent": 82,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 62,
+      "vanadiumFraction": 0.81,
+      "vanadiumAtomicPercent": 81,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 63,
+      "vanadiumFraction": 0.8,
+      "vanadiumAtomicPercent": 80,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 64,
+      "vanadiumFraction": 0.79,
+      "vanadiumAtomicPercent": 79,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 65,
+      "vanadiumFraction": 0.78,
+      "vanadiumAtomicPercent": 78,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 66,
+      "vanadiumFraction": 0.77,
+      "vanadiumAtomicPercent": 77,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 67,
+      "vanadiumFraction": 0.76,
+      "vanadiumAtomicPercent": 76,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 68,
+      "vanadiumFraction": 0.75,
+      "vanadiumAtomicPercent": 75,
+      "temperatureC": 30,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 89,
+      "vanadiumFraction": 0.99,
+      "vanadiumAtomicPercent": 99,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 0,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 90,
+      "vanadiumFraction": 0.98,
+      "vanadiumAtomicPercent": 98,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 0,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 91,
+      "vanadiumFraction": 0.97,
+      "vanadiumAtomicPercent": 97,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 0,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 92,
+      "vanadiumFraction": 0.96,
+      "vanadiumAtomicPercent": 96,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 0,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 93,
+      "vanadiumFraction": 0.95,
+      "vanadiumAtomicPercent": 95,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 0,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 94,
+      "vanadiumFraction": 0.94,
+      "vanadiumAtomicPercent": 94,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 0,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 95,
+      "vanadiumFraction": 0.93,
+      "vanadiumAtomicPercent": 93,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 96,
+      "vanadiumFraction": 0.92,
+      "vanadiumAtomicPercent": 92,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 97,
+      "vanadiumFraction": 0.9,
+      "vanadiumAtomicPercent": 90,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 98,
+      "vanadiumFraction": 0.89,
+      "vanadiumAtomicPercent": 89,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 99,
+      "vanadiumFraction": 0.88,
+      "vanadiumAtomicPercent": 88,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 100,
+      "vanadiumFraction": 0.87,
+      "vanadiumAtomicPercent": 87,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 101,
+      "vanadiumFraction": 0.86,
+      "vanadiumAtomicPercent": 86,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 102,
+      "vanadiumFraction": 0.85,
+      "vanadiumAtomicPercent": 85,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 103,
+      "vanadiumFraction": 0.84,
+      "vanadiumAtomicPercent": 84,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 104,
+      "vanadiumFraction": 0.83,
+      "vanadiumAtomicPercent": 83,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 105,
+      "vanadiumFraction": 0.82,
+      "vanadiumAtomicPercent": 82,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 106,
+      "vanadiumFraction": 0.81,
+      "vanadiumAtomicPercent": 81,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 107,
+      "vanadiumFraction": 0.8,
+      "vanadiumAtomicPercent": 80,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 108,
+      "vanadiumFraction": 0.79,
+      "vanadiumAtomicPercent": 79,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 109,
+      "vanadiumFraction": 0.78,
+      "vanadiumAtomicPercent": 78,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 110,
+      "vanadiumFraction": 0.77,
+      "vanadiumAtomicPercent": 77,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 111,
+      "vanadiumFraction": 0.76,
+      "vanadiumAtomicPercent": 76,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 112,
+      "vanadiumFraction": 0.75,
+      "vanadiumAtomicPercent": 75,
+      "temperatureC": 36,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 133,
+      "vanadiumFraction": 0.99,
+      "vanadiumAtomicPercent": 99,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 0,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 134,
+      "vanadiumFraction": 0.98,
+      "vanadiumAtomicPercent": 98,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 0,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 135,
+      "vanadiumFraction": 0.97,
+      "vanadiumAtomicPercent": 97,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 0,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 136,
+      "vanadiumFraction": 0.96,
+      "vanadiumAtomicPercent": 96,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 0,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 137,
+      "vanadiumFraction": 0.95,
+      "vanadiumAtomicPercent": 95,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 138,
+      "vanadiumFraction": 0.94,
+      "vanadiumAtomicPercent": 94,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 139,
+      "vanadiumFraction": 0.93,
+      "vanadiumAtomicPercent": 93,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 140,
+      "vanadiumFraction": 0.92,
+      "vanadiumAtomicPercent": 92,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 141,
+      "vanadiumFraction": 0.9,
+      "vanadiumAtomicPercent": 90,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 142,
+      "vanadiumFraction": 0.89,
+      "vanadiumAtomicPercent": 89,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 143,
+      "vanadiumFraction": 0.88,
+      "vanadiumAtomicPercent": 88,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 144,
+      "vanadiumFraction": 0.87,
+      "vanadiumAtomicPercent": 87,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 145,
+      "vanadiumFraction": 0.86,
+      "vanadiumAtomicPercent": 86,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 146,
+      "vanadiumFraction": 0.85,
+      "vanadiumAtomicPercent": 85,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 147,
+      "vanadiumFraction": 0.84,
+      "vanadiumAtomicPercent": 84,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 148,
+      "vanadiumFraction": 0.83,
+      "vanadiumAtomicPercent": 83,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 149,
+      "vanadiumFraction": 0.82,
+      "vanadiumAtomicPercent": 82,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 150,
+      "vanadiumFraction": 0.81,
+      "vanadiumAtomicPercent": 81,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 151,
+      "vanadiumFraction": 0.8,
+      "vanadiumAtomicPercent": 80,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 152,
+      "vanadiumFraction": 0.79,
+      "vanadiumAtomicPercent": 79,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 153,
+      "vanadiumFraction": 0.78,
+      "vanadiumAtomicPercent": 78,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 154,
+      "vanadiumFraction": 0.77,
+      "vanadiumAtomicPercent": 77,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 155,
+      "vanadiumFraction": 0.76,
+      "vanadiumAtomicPercent": 76,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 156,
+      "vanadiumFraction": 0.75,
+      "vanadiumAtomicPercent": 75,
+      "temperatureC": 45,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 177,
+      "vanadiumFraction": 0.99,
+      "vanadiumAtomicPercent": 99,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 0,
+        "HL2": 0,
+        "HL4": 0,
+        "HL1": 0,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 178,
+      "vanadiumFraction": 0.98,
+      "vanadiumAtomicPercent": 98,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 0,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 0
+      }
+    },
+    {
+      "measurementId": 179,
+      "vanadiumFraction": 0.97,
+      "vanadiumAtomicPercent": 97,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 0,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 180,
+      "vanadiumFraction": 0.96,
+      "vanadiumAtomicPercent": 96,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 181,
+      "vanadiumFraction": 0.95,
+      "vanadiumAtomicPercent": 95,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 182,
+      "vanadiumFraction": 0.94,
+      "vanadiumAtomicPercent": 94,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 183,
+      "vanadiumFraction": 0.93,
+      "vanadiumAtomicPercent": 93,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 184,
+      "vanadiumFraction": 0.92,
+      "vanadiumAtomicPercent": 92,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 185,
+      "vanadiumFraction": 0.9,
+      "vanadiumAtomicPercent": 90,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 186,
+      "vanadiumFraction": 0.89,
+      "vanadiumAtomicPercent": 89,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 187,
+      "vanadiumFraction": 0.88,
+      "vanadiumAtomicPercent": 88,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 188,
+      "vanadiumFraction": 0.87,
+      "vanadiumAtomicPercent": 87,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 189,
+      "vanadiumFraction": 0.86,
+      "vanadiumAtomicPercent": 86,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 190,
+      "vanadiumFraction": 0.85,
+      "vanadiumAtomicPercent": 85,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 191,
+      "vanadiumFraction": 0.84,
+      "vanadiumAtomicPercent": 84,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 192,
+      "vanadiumFraction": 0.83,
+      "vanadiumAtomicPercent": 83,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 193,
+      "vanadiumFraction": 0.82,
+      "vanadiumAtomicPercent": 82,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 194,
+      "vanadiumFraction": 0.81,
+      "vanadiumAtomicPercent": 81,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 195,
+      "vanadiumFraction": 0.8,
+      "vanadiumAtomicPercent": 80,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 196,
+      "vanadiumFraction": 0.79,
+      "vanadiumAtomicPercent": 79,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 197,
+      "vanadiumFraction": 0.78,
+      "vanadiumAtomicPercent": 78,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 198,
+      "vanadiumFraction": 0.77,
+      "vanadiumAtomicPercent": 77,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 199,
+      "vanadiumFraction": 0.76,
+      "vanadiumAtomicPercent": 76,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 200,
+      "vanadiumFraction": 0.75,
+      "vanadiumAtomicPercent": 75,
+      "temperatureC": 50,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 221,
+      "vanadiumFraction": 0.99,
+      "vanadiumAtomicPercent": 99,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 0,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 222,
+      "vanadiumFraction": 0.98,
+      "vanadiumAtomicPercent": 98,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 223,
+      "vanadiumFraction": 0.97,
+      "vanadiumAtomicPercent": 97,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 224,
+      "vanadiumFraction": 0.96,
+      "vanadiumAtomicPercent": 96,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 225,
+      "vanadiumFraction": 0.95,
+      "vanadiumAtomicPercent": 95,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 226,
+      "vanadiumFraction": 0.94,
+      "vanadiumAtomicPercent": 94,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 227,
+      "vanadiumFraction": 0.93,
+      "vanadiumAtomicPercent": 93,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 228,
+      "vanadiumFraction": 0.92,
+      "vanadiumAtomicPercent": 92,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 229,
+      "vanadiumFraction": 0.9,
+      "vanadiumAtomicPercent": 90,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 230,
+      "vanadiumFraction": 0.89,
+      "vanadiumAtomicPercent": 89,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 231,
+      "vanadiumFraction": 0.88,
+      "vanadiumAtomicPercent": 88,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 232,
+      "vanadiumFraction": 0.87,
+      "vanadiumAtomicPercent": 87,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 233,
+      "vanadiumFraction": 0.86,
+      "vanadiumAtomicPercent": 86,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 234,
+      "vanadiumFraction": 0.85,
+      "vanadiumAtomicPercent": 85,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 235,
+      "vanadiumFraction": 0.84,
+      "vanadiumAtomicPercent": 84,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 236,
+      "vanadiumFraction": 0.83,
+      "vanadiumAtomicPercent": 83,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 237,
+      "vanadiumFraction": 0.82,
+      "vanadiumAtomicPercent": 82,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 238,
+      "vanadiumFraction": 0.81,
+      "vanadiumAtomicPercent": 81,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 239,
+      "vanadiumFraction": 0.8,
+      "vanadiumAtomicPercent": 80,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 240,
+      "vanadiumFraction": 0.79,
+      "vanadiumAtomicPercent": 79,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 241,
+      "vanadiumFraction": 0.78,
+      "vanadiumAtomicPercent": 78,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 242,
+      "vanadiumFraction": 0.77,
+      "vanadiumAtomicPercent": 77,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 243,
+      "vanadiumFraction": 0.76,
+      "vanadiumAtomicPercent": 76,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 244,
+      "vanadiumFraction": 0.75,
+      "vanadiumAtomicPercent": 75,
+      "temperatureC": 55,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 265,
+      "vanadiumFraction": 0.99,
+      "vanadiumAtomicPercent": 99,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 1,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 266,
+      "vanadiumFraction": 0.98,
+      "vanadiumAtomicPercent": 98,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 1,
+        "HL2": 1,
+        "HL4": 1,
+        "HL1": 1,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 267,
+      "vanadiumFraction": 0.97,
+      "vanadiumAtomicPercent": 97,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 1,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 268,
+      "vanadiumFraction": 0.96,
+      "vanadiumAtomicPercent": 96,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 269,
+      "vanadiumFraction": 0.95,
+      "vanadiumAtomicPercent": 95,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 270,
+      "vanadiumFraction": 0.94,
+      "vanadiumAtomicPercent": 94,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 271,
+      "vanadiumFraction": 0.93,
+      "vanadiumAtomicPercent": 93,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 272,
+      "vanadiumFraction": 0.92,
+      "vanadiumAtomicPercent": 92,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 273,
+      "vanadiumFraction": 0.9,
+      "vanadiumAtomicPercent": 90,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 274,
+      "vanadiumFraction": 0.89,
+      "vanadiumAtomicPercent": 89,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 275,
+      "vanadiumFraction": 0.88,
+      "vanadiumAtomicPercent": 88,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 276,
+      "vanadiumFraction": 0.87,
+      "vanadiumAtomicPercent": 87,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 277,
+      "vanadiumFraction": 0.86,
+      "vanadiumAtomicPercent": 86,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 278,
+      "vanadiumFraction": 0.85,
+      "vanadiumAtomicPercent": 85,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 279,
+      "vanadiumFraction": 0.84,
+      "vanadiumAtomicPercent": 84,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 280,
+      "vanadiumFraction": 0.83,
+      "vanadiumAtomicPercent": 83,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 281,
+      "vanadiumFraction": 0.82,
+      "vanadiumAtomicPercent": 82,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 282,
+      "vanadiumFraction": 0.81,
+      "vanadiumAtomicPercent": 81,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 283,
+      "vanadiumFraction": 0.8,
+      "vanadiumAtomicPercent": 80,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 284,
+      "vanadiumFraction": 0.79,
+      "vanadiumAtomicPercent": 79,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 285,
+      "vanadiumFraction": 0.78,
+      "vanadiumAtomicPercent": 78,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 286,
+      "vanadiumFraction": 0.77,
+      "vanadiumAtomicPercent": 77,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 287,
+      "vanadiumFraction": 0.76,
+      "vanadiumAtomicPercent": 76,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 288,
+      "vanadiumFraction": 0.75,
+      "vanadiumAtomicPercent": 75,
+      "temperatureC": 62,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 309,
+      "vanadiumFraction": 0.99,
+      "vanadiumAtomicPercent": 99,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 1,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 310,
+      "vanadiumFraction": 0.98,
+      "vanadiumAtomicPercent": 98,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 1,
+        "HL2": 2,
+        "HL4": 1,
+        "HL1": 2,
+        "HL5": 1
+      }
+    },
+    {
+      "measurementId": 311,
+      "vanadiumFraction": 0.97,
+      "vanadiumAtomicPercent": 97,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 1,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 312,
+      "vanadiumFraction": 0.96,
+      "vanadiumAtomicPercent": 96,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 1,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 313,
+      "vanadiumFraction": 0.95,
+      "vanadiumAtomicPercent": 95,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 1,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 314,
+      "vanadiumFraction": 0.94,
+      "vanadiumAtomicPercent": 94,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 315,
+      "vanadiumFraction": 0.93,
+      "vanadiumAtomicPercent": 93,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 316,
+      "vanadiumFraction": 0.92,
+      "vanadiumAtomicPercent": 92,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 317,
+      "vanadiumFraction": 0.9,
+      "vanadiumAtomicPercent": 90,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 318,
+      "vanadiumFraction": 0.89,
+      "vanadiumAtomicPercent": 89,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 319,
+      "vanadiumFraction": 0.88,
+      "vanadiumAtomicPercent": 88,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 320,
+      "vanadiumFraction": 0.87,
+      "vanadiumAtomicPercent": 87,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 321,
+      "vanadiumFraction": 0.86,
+      "vanadiumAtomicPercent": 86,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 322,
+      "vanadiumFraction": 0.85,
+      "vanadiumAtomicPercent": 85,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 323,
+      "vanadiumFraction": 0.84,
+      "vanadiumAtomicPercent": 84,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 324,
+      "vanadiumFraction": 0.83,
+      "vanadiumAtomicPercent": 83,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 325,
+      "vanadiumFraction": 0.82,
+      "vanadiumAtomicPercent": 82,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 326,
+      "vanadiumFraction": 0.81,
+      "vanadiumAtomicPercent": 81,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 327,
+      "vanadiumFraction": 0.8,
+      "vanadiumAtomicPercent": 80,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 328,
+      "vanadiumFraction": 0.79,
+      "vanadiumAtomicPercent": 79,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 329,
+      "vanadiumFraction": 0.78,
+      "vanadiumAtomicPercent": 78,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 330,
+      "vanadiumFraction": 0.77,
+      "vanadiumAtomicPercent": 77,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 331,
+      "vanadiumFraction": 0.76,
+      "vanadiumAtomicPercent": 76,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    },
+    {
+      "measurementId": 332,
+      "vanadiumFraction": 0.75,
+      "vanadiumAtomicPercent": 75,
+      "temperatureC": 68,
+      "labels": {
+        "HL3": 2,
+        "HL2": 2,
+        "HL4": 2,
+        "HL1": 2,
+        "HL5": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "auditId": "NIST-VO2-LABEL-GRID-0.1",
+  "reviewedOn": "2026-08-12",
+  "source": {
+    "datasetDoi": "10.18434/mds2-2301",
+    "landingPage": "https://data.nist.gov/od/id/mds2-2301",
+    "articleDoi": "10.1007/s40192-021-00213-8",
+    "license": "NIST public-domain/open data terms",
+    "humanLabelsSha256": "6fcc4e862ea866286436a8624b2b82241ce80a08cc87eb0bb878f56ce6fdd027"
+  },
+  "grid": {
+    "records": 192,
+    "temperaturesC": [
+      23,
+      30,
+      36,
+      45,
+      50,
+      55,
+      62,
+      68
+    ],
+    "temperatureLevels": 8,
+    "vanadiumAtomicPercent": [
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99
+    ],
+    "compositionLevels": 24,
+    "completeRectangularGrid": true,
+    "humanLabelers": 5
+  },
+  "uncertainty": {
+    "unanimousPoints": 119,
+    "nonUnanimousPoints": 73,
+    "maximumEntropy": 1.05492,
+    "medianEntropy": 0,
+    "developmentLabelDisagreementPoints": 17,
+    "independentAdjudicationPhaseCounts": {
+      "0": 26,
+      "1": 52,
+      "2": 114
+    },
+    "independentAdjudicationBoundaryPoints": 49
+  },
+  "targetDesignAudit": {
+    "twoDimensionalCompositionTemperatureGridPresent": true,
+    "multipleIndependentHumanLabelsPresent": true,
+    "rawDiffractionPubliclyAvailable": true,
+    "repeatedPhysicalMeasurementsAtSameCoordinatePresent": false,
+    "heteroscedasticAnnotationNoiseEstimable": true,
+    "developmentAdjudicationSplitPossible": true,
+    "faithfulDirectImplementationOfOneDimensionalTrackAndStopPossible": false,
+    "reason": "The grid supports a real two-dimensional boundary-label benchmark with point-specific human disagreement. It contains one ten-minute diffraction spectrum per coordinate, not physical replicate spectra. A label-acquisition policy can be tested with HL1-HL2 for development and HL3-HL5 for adjudication, but instrumental repeatability and a direct 1-D piecewise-constant Track-and-Stop comparison remain outside scope."
+  },
+  "findings": {
+    "publishedHumanSubsetReconciled": true,
+    "annotationNoiseIsSpatiallyHeterogeneous": true,
+    "independentAdjudicationHasMultiplePhasesAndBoundaries": true,
+    "datasetSupportsIndependentLabelAdjudication": true,
+    "datasetDoesNotMeasurePhysicalRepeatability": true
+  },
+  "decision": "Use the NIST grid for an independently adjudicated two-dimensional annotation-acquisition benchmark. Describe its heteroscedasticity as expert-label disagreement, not instrument or synthesis noise, and refuse claims about physical repeatability."
+}

@@ -1,0 +1,137 @@
+{
+  "auditId": "PLOS-FOLLOWUP-PUBLIC-DATA-2019-0.1",
+  "reviewedOn": "2026-08-12",
+  "source": {
+    "articleDoi": "10.1371/journal.pone.0213822",
+    "repositoryUrl": "https://plos.figshare.com/articles/dataset/7858442",
+    "fileId": 14631221,
+    "fileName": "pone.0213822.s003.xlsx",
+    "expectedMd5": "ec7a4933158f1c03dc90dfccbe787a3f",
+    "license": "CC BY 4.0"
+  },
+  "workbook": {
+    "sheets": 1,
+    "records": 728,
+    "variables": 28,
+    "uniquePatientIds": 728,
+    "duplicateFlagCounts": {
+      "0": 726,
+      "1": 2
+    },
+    "randomizedGroupCounts": {
+      "1": 183,
+      "2": 187,
+      "3": 358
+    },
+    "studyFlagCounts": {
+      "1": 728
+    },
+    "deathStatusCounts": {
+      "0": 572,
+      "1": 151,
+      "3": 5
+    }
+  },
+  "fieldCoverage": {
+    "randomizedContactStrategy": 728,
+    "correctCallAttempts": 728,
+    "wrongCallAttempts": 728,
+    "informationSource": 728,
+    "deathStatus": 728,
+    "deathDate": 151,
+    "lastKnownAliveDate": 582,
+    "healthStatus": 639
+  },
+  "groups": [
+    {
+      "group": 1,
+      "records": 183,
+      "contactOutcomeObserved": 183,
+      "mortalityRecorded": 39,
+      "survivalStatusIndependentlyAvailable": 183,
+      "meanCorrectCalls": 1.606557
+    },
+    {
+      "group": 2,
+      "records": 187,
+      "contactOutcomeObserved": 187,
+      "mortalityRecorded": 35,
+      "survivalStatusIndependentlyAvailable": 187,
+      "meanCorrectCalls": 1.069519
+    },
+    {
+      "group": 3,
+      "records": 358,
+      "contactOutcomeObserved": 358,
+      "mortalityRecorded": 77,
+      "survivalStatusIndependentlyAvailable": 358,
+      "meanCorrectCalls": 1.759777
+    }
+  ],
+  "externalMortalityCalibration": [
+    {
+      "label": "all",
+      "dead": 151,
+      "deadHealthObserved": 71,
+      "deadHealthResponseRate": 0.470199,
+      "alive": 572,
+      "aliveHealthObserved": 566,
+      "aliveHealthResponseRate": 0.98951,
+      "aliveToDeadResponseOddsRatio": 106.29108,
+      "simultaneous95UpperGamma": 499.530168
+    },
+    {
+      "label": "group-1",
+      "dead": 39,
+      "deadHealthObserved": 39,
+      "deadHealthResponseRate": 1,
+      "alive": 143,
+      "aliveHealthObserved": 143,
+      "aliveHealthResponseRate": 1,
+      "aliveToDeadResponseOddsRatio": "unbounded",
+      "simultaneous95UpperGamma": "unbounded"
+    },
+    {
+      "label": "group-2",
+      "dead": 35,
+      "deadHealthObserved": 32,
+      "deadHealthResponseRate": 0.914286,
+      "alive": 150,
+      "aliveHealthObserved": 150,
+      "aliveHealthResponseRate": 1,
+      "aliveToDeadResponseOddsRatio": "unbounded",
+      "simultaneous95UpperGamma": "unbounded"
+    },
+    {
+      "label": "group-3",
+      "dead": 77,
+      "deadHealthObserved": 0,
+      "deadHealthResponseRate": 0,
+      "alive": 279,
+      "aliveHealthObserved": 273,
+      "aliveHealthResponseRate": 0.978495,
+      "aliveToDeadResponseOddsRatio": "unbounded",
+      "simultaneous95UpperGamma": "unbounded"
+    }
+  ],
+  "targetDesignAudit": {
+    "initialNonrespondentFramePresent": false,
+    "probabilitySubsampleIndicatorPresent": false,
+    "invitationProbabilityPresent": false,
+    "postInvitationResponseIndicatorReconstructable": true,
+    "independentMortalityOutcomePresent": true,
+    "independentOutcomeForHealthStatusPresent": false,
+    "developmentValidationCohortIndicatorReconstructable": true,
+    "patientLevelGammaCalibrationForMortalityPossible": true,
+    "reason": "The workbook starts with the 728 included vascular patients and randomizes contact strategy or validation cohort. It does not expose an initial nonrespondent frame, probability invitation indicator, or invitation probability for a second-phase subsample. Nearly complete independent mortality can calibrate how availability of self-reported health differs by death status, but it cannot reveal missing health status itself among contact failures."
+  },
+  "findings": {
+    "publishedDenominatorReconciled": true,
+    "randomizedGroupsReconciled": true,
+    "independentMortalityCanAuditContactCompleteness": true,
+    "mortalityRevealsOutcomeDependentHealthAvailability": true,
+    "workbookCannotIdentifySecondPhaseGammaForHealthStatus": true,
+    "datasetIsAUsefulExternalControlButNotTheRequiredTwoPhaseCalibrationSet": true
+  },
+  "decision": "Use independent mortality to quantify outcome-dependent availability of self-reported health and to benchmark randomized contact burden and development-versus-validation separation. Do not transfer that mortality-specific Gamma to health status itself or claim a probability-subsampled nonrespondent rescue design."
+}

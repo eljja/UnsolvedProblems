@@ -1,0 +1,29 @@
+{
+  "benchmarkId": "NIST-VO2-LABEL-ACQUISITION-0.1",
+  "reviewedOn": "2026-08-12",
+  "datasetId": "NIST-MDS2-2301",
+  "datasetDoi": "10.18434/mds2-2301",
+  "grid": { "temperatureLevels": 8, "compositionLevels": 24, "points": 192 },
+  "labelSplit": {
+    "developmentOracle": ["HL1", "HL2"],
+    "independentAdjudication": ["HL3", "HL4", "HL5"],
+    "adjudicationRule": "three-label majority mode"
+  },
+  "budget": 16,
+  "replicates": 400,
+  "seed": 20260812,
+  "strategies": [
+    { "id": "space-fill-16", "exploration": 16, "adaptive": 0 },
+    { "id": "space-fill-8-frontier-8", "exploration": 8, "adaptive": 8 },
+    { "id": "space-fill-12-frontier-4", "exploration": 12, "adaptive": 4 }
+  ],
+  "prediction": "distance-weighted three-nearest-neighbor vote over queried development labels in normalized composition-temperature coordinates",
+  "metrics": ["independent adjudication accuracy", "boundary-point accuracy", "macro recall", "maximum unqueried distance", "development-disagreement acquisition rate"],
+  "gates": {
+    "minimumAccuracy": 0.7,
+    "minimumBoundaryAccuracy": 0.5,
+    "minimumMacroRecall": 0.5,
+    "maximumGapRatioToSpaceFill": 1.5
+  },
+  "scopeRestriction": "This is an annotation-acquisition benchmark over one measured XRD spectrum per coordinate. It does not estimate instrumental repeatability, synthesis noise, or implement the one-dimensional Track-and-Stop algorithm of Lazzaro and Pike-Burke."
+}

@@ -8,7 +8,7 @@ const failures = [];
 const assert = (condition, message) => { if (!condition) failures.push(message); };
 
 const sandbox = { window: {} };
-for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-05-data.js", "research-cycle-06-data.js", "research-cycle-07-data.js", "research-cycle-08-data.js"]) {
+for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-05-data.js", "research-cycle-06-data.js", "research-cycle-07-data.js", "research-cycle-08-data.js", "research-cycle-09-data.js"]) {
   vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }
 
@@ -37,6 +37,10 @@ const finiteSpec = JSON.parse(fs.readFileSync(path.join(root, "research/two-phas
 const finiteResult = JSON.parse(fs.readFileSync(path.join(root, "research/two-phase/finite-result.json"), "utf8"));
 const hybridSpec = JSON.parse(fs.readFileSync(path.join(root, "research/active-boundary/hybrid-spec.json"), "utf8"));
 const hybridResult = JSON.parse(fs.readFileSync(path.join(root, "research/active-boundary/hybrid-result.json"), "utf8"));
+const plosFollowupAudit = JSON.parse(fs.readFileSync(path.join(root, "research/external-audit/plos-followup-2019/audit-result.json"), "utf8"));
+const nistLabelAudit = JSON.parse(fs.readFileSync(path.join(root, "research/external-audit/nist-vo2-2020/audit-result.json"), "utf8"));
+const nistAcquisitionSpec = JSON.parse(fs.readFileSync(path.join(root, "research/active-boundary/nist-label-acquisition-spec.json"), "utf8"));
+const nistAcquisitionResult = JSON.parse(fs.readFileSync(path.join(root, "research/active-boundary/nist-label-acquisition-result.json"), "utf8"));
 assert(Array.isArray(PROBLEMS), "PROBLEMS must be an array");
 assert(PROBLEMS.length > 0, "catalog must contain at least one problem");
 assert(new Set(PROBLEMS.map(item => item.id)).size === PROBLEMS.length, "problem IDs must be unique");
@@ -340,6 +344,21 @@ assert(finiteResult.worlds.every(world => world.samples.every(sample => sample.p
 assert(hybridSpec.benchmarkId === "ACTIVE-PHASE-BOUNDARY-HYBRID-0.1" && hybridResult.benchmarkId === hybridSpec.benchmarkId, "hybrid boundary artifacts must share a stable ID");
 assert(Object.values(hybridResult.findings || {}).every(Boolean), "every hybrid-boundary finding must be true");
 assert(hybridResult.pareto.find(item => item.strategy === "hybrid-12-refine-4")?.dominatedBy.length === 0, "hybrid policy must retain its sealed non-dominance result");
+assert(plosFollowupAudit.auditId === "PLOS-FOLLOWUP-PUBLIC-DATA-2019-0.1", "PLOS follow-up audit must expose its stable ID");
+assert(plosFollowupAudit.workbook.records === 728 && plosFollowupAudit.workbook.uniquePatientIds === 728, "PLOS audit must preserve the published 728-patient denominator");
+assert(plosFollowupAudit.externalMortalityCalibration.find(item => item.label === "all")?.simultaneous95UpperGamma === 499.530168, "PLOS audit must preserve the pooled mortality-specific Gamma bound");
+assert(plosFollowupAudit.externalMortalityCalibration.find(item => item.label === "group-3")?.deadHealthObserved === 0, "PLOS audit must preserve the validation-stratum zero-support cell");
+assert(Object.values(plosFollowupAudit.findings || {}).every(Boolean), "every PLOS public-data audit finding must be true");
+assert(nistLabelAudit.auditId === "NIST-VO2-LABEL-GRID-0.1", "NIST label audit must expose its stable ID");
+assert(nistLabelAudit.grid.records === 192 && nistLabelAudit.grid.completeRectangularGrid === true, "NIST audit must preserve the complete 192-point grid");
+assert(nistLabelAudit.uncertainty.nonUnanimousPoints === 73 && nistLabelAudit.uncertainty.independentAdjudicationBoundaryPoints === 49, "NIST audit must preserve disagreement and boundary denominators");
+assert(nistLabelAudit.targetDesignAudit.repeatedPhysicalMeasurementsAtSameCoordinatePresent === false, "NIST audit must refuse a physical-repeatability claim");
+assert(Object.values(nistLabelAudit.findings || {}).every(Boolean), "every NIST label-grid finding must be true");
+assert(nistAcquisitionSpec.benchmarkId === "NIST-VO2-LABEL-ACQUISITION-0.1" && nistAcquisitionResult.benchmarkId === nistAcquisitionSpec.benchmarkId, "NIST acquisition artifacts must share a stable ID");
+assert(nistAcquisitionResult.strategies.every(item => item.runs === 400), "NIST acquisition benchmark must preserve 400 adjudications per strategy");
+assert(nistAcquisitionResult.pareto.find(item => item.strategy === "space-fill-8-frontier-8")?.dominatedBy.includes("space-fill-12-frontier-4"), "NIST hybrid policy must dominate the aggressive frontier policy");
+assert(nistAcquisitionResult.strategies.find(item => item.strategy === "space-fill-12-frontier-4")?.minimumBoundaryAccuracy === 0.55102, "NIST hybrid policy must preserve its minimum boundary accuracy");
+assert(Object.values(nistAcquisitionResult.findings || {}).every(Boolean), "every NIST acquisition finding must be true");
 
 const boundaryCount = PROBLEMS.filter(item => item.nature === "boundary").length;
 assert(boundaryCount > 0, "catalog must preserve clearly labeled boundary examples");
