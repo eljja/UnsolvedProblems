@@ -1,0 +1,52 @@
+{
+  "auditId": "NIST-VO2-DRIFT-ENVELOPE-PYTHON-0.1",
+  "generatedOn": "2026-08-12",
+  "implementation": "Independent Python NumPy loadtxt, pinv/lstsq, interpolation, and residual replay; no JavaScript module imported.",
+  "source": {
+    "rawProfilesSha256": "3b47bf36b2abaef376730226e2616a353ba07571c46e71bce464cf9e9bfbe348",
+    "columns": 3841
+  },
+  "denominators": {
+    "totalCases": 48114,
+    "fractions": 99,
+    "shiftMagnitudes": 41
+  },
+  "globalSafeShiftPrefixDegrees": 0.0032500000000000003,
+  "safeShiftPrefixDegreesByComposition": {
+    "92": 0.0032500000000000003,
+    "93": 0.004,
+    "94": 0.0045000000000000005,
+    "95": 0.0045000000000000005,
+    "96": 0.005,
+    "97": 0.00525
+  },
+  "residualRefusalThreshold": 0.012291693422769291,
+  "developmentRefusal": {
+    "cases": 24057,
+    "unsafeCases": 6681,
+    "acceptedCases": 10595,
+    "unsafeAcceptedCases": 0,
+    "safeRefusedCases": 6781,
+    "maximumAcceptedAbsoluteError": 0.049504587891557456
+  },
+  "holdoutRefusal": {
+    "cases": 24057,
+    "unsafeCases": 5785,
+    "acceptedCases": 10654,
+    "unsafeAcceptedCases": 0,
+    "safeRefusedCases": 7618,
+    "maximumAcceptedAbsoluteError": 0.0465307318721897
+  },
+  "activeBoundaryCases": 0,
+  "comparisonsWithJavaScript": {
+    "totalCasesMatch": true,
+    "globalSafeShiftMatches": true,
+    "compositionSafeShiftsMatch": true,
+    "residualThresholdMatches": true,
+    "developmentRefusalMatches": true,
+    "holdoutRefusalMatches": true,
+    "activeBoundaryCountMatches": true
+  },
+  "allComparisonsPass": true,
+  "interpretation": "This replay independently checks the numerical envelope and refusal rule. Agreement does not validate a physical VO2 phase-fraction measurand."
+}

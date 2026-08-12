@@ -1,0 +1,520 @@
+{
+  "benchmarkId": "NIST-VO2-DRIFT-ENVELOPE-0.1",
+  "generatedOn": "2026-08-12",
+  "source": {
+    "datasetDoi": "10.18434/mds2-2301",
+    "rawProfilesSha256": "3b47bf36b2abaef376730226e2616a353ba07571c46e71bce464cf9e9bfbe348",
+    "labelsSha256": "0056a45f7d45694368597fe7804569339745214530584dae10652873fed38cd2"
+  },
+  "denominators": {
+    "compositions": 6,
+    "endpointProfiles": 12,
+    "anglePointsPerProfile": 3841,
+    "fractions": 99,
+    "shiftMagnitudes": 41,
+    "totalCases": 48114
+  },
+  "globalSafeShiftPrefixDegrees": 0.00325,
+  "byComposition": {
+    "92": {
+      "safeShiftPrefixDegrees": 0.00325,
+      "fullGridMaximumAbsoluteError": 0.189536209,
+      "worstFraction": 0.99,
+      "worstSignedShiftDegrees": 0.01,
+      "activeBoundaryCases": 0
+    },
+    "93": {
+      "safeShiftPrefixDegrees": 0.004,
+      "fullGridMaximumAbsoluteError": 0.156244108,
+      "worstFraction": 0.99,
+      "worstSignedShiftDegrees": 0.01,
+      "activeBoundaryCases": 0
+    },
+    "94": {
+      "safeShiftPrefixDegrees": 0.0045,
+      "fullGridMaximumAbsoluteError": 0.136687669,
+      "worstFraction": 0.99,
+      "worstSignedShiftDegrees": 0.01,
+      "activeBoundaryCases": 0
+    },
+    "95": {
+      "safeShiftPrefixDegrees": 0.0045,
+      "fullGridMaximumAbsoluteError": 0.133045195,
+      "worstFraction": 0.96,
+      "worstSignedShiftDegrees": 0.01,
+      "activeBoundaryCases": 0
+    },
+    "96": {
+      "safeShiftPrefixDegrees": 0.005,
+      "fullGridMaximumAbsoluteError": 0.110224411,
+      "worstFraction": 0.95,
+      "worstSignedShiftDegrees": 0.01,
+      "activeBoundaryCases": 0
+    },
+    "97": {
+      "safeShiftPrefixDegrees": 0.00525,
+      "fullGridMaximumAbsoluteError": 0.104855011,
+      "worstFraction": 0.99,
+      "worstSignedShiftDegrees": 0.01,
+      "activeBoundaryCases": 0
+    }
+  },
+  "byShift": [
+    {
+      "shiftMagnitudeDegrees": 0,
+      "cases": 594,
+      "maximumAbsoluteError": 0,
+      "q95AbsoluteError": 0,
+      "fractionWithin005": 1,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0,
+      "maximumAbsoluteEvenBias": 0
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00025,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.003698058,
+      "q95AbsoluteError": 0.002703829,
+      "fractionWithin005": 1,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.000924613,
+      "maximumAbsoluteEvenBias": 0.002773445
+    },
+    {
+      "shiftMagnitudeDegrees": 0.0005,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.007410842,
+      "q95AbsoluteError": 0.005415476,
+      "fractionWithin005": 1,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.001851053,
+      "maximumAbsoluteEvenBias": 0.005559789
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00075,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.011138439,
+      "q95AbsoluteError": 0.008134978,
+      "fractionWithin005": 1,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.002779313,
+      "maximumAbsoluteEvenBias": 0.008359126
+    },
+    {
+      "shiftMagnitudeDegrees": 0.001,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.014880938,
+      "q95AbsoluteError": 0.01086237,
+      "fractionWithin005": 1,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.003709388,
+      "maximumAbsoluteEvenBias": 0.01117155
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00125,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.018638429,
+      "q95AbsoluteError": 0.013597688,
+      "fractionWithin005": 1,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.004641271,
+      "maximumAbsoluteEvenBias": 0.013997158
+    },
+    {
+      "shiftMagnitudeDegrees": 0.0015,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.022411002,
+      "q95AbsoluteError": 0.016340969,
+      "fractionWithin005": 1,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.005574955,
+      "maximumAbsoluteEvenBias": 0.016836047
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00175,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.026198748,
+      "q95AbsoluteError": 0.01909225,
+      "fractionWithin005": 1,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.006510434,
+      "maximumAbsoluteEvenBias": 0.019688314
+    },
+    {
+      "shiftMagnitudeDegrees": 0.002,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.030001759,
+      "q95AbsoluteError": 0.021851567,
+      "fractionWithin005": 1,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.0074477,
+      "maximumAbsoluteEvenBias": 0.022554059
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00225,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.033820126,
+      "q95AbsoluteError": 0.02462152,
+      "fractionWithin005": 1,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.008386746,
+      "maximumAbsoluteEvenBias": 0.02543338
+    },
+    {
+      "shiftMagnitudeDegrees": 0.0025,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.037653945,
+      "q95AbsoluteError": 0.027403127,
+      "fractionWithin005": 1,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.009327565,
+      "maximumAbsoluteEvenBias": 0.02832638
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00275,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.041503307,
+      "q95AbsoluteError": 0.030194086,
+      "fractionWithin005": 1,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.010270148,
+      "maximumAbsoluteEvenBias": 0.031233159
+    },
+    {
+      "shiftMagnitudeDegrees": 0.003,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.045368309,
+      "q95AbsoluteError": 0.032994448,
+      "fractionWithin005": 1,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.011214488,
+      "maximumAbsoluteEvenBias": 0.034153821
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00325,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.049249045,
+      "q95AbsoluteError": 0.035804261,
+      "fractionWithin005": 1,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.012160575,
+      "maximumAbsoluteEvenBias": 0.03708847
+    },
+    {
+      "shiftMagnitudeDegrees": 0.0035,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.053145612,
+      "q95AbsoluteError": 0.038623575,
+      "fractionWithin005": 0.990740741,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.013108401,
+      "maximumAbsoluteEvenBias": 0.040037212
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00375,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.057058107,
+      "q95AbsoluteError": 0.041452442,
+      "fractionWithin005": 0.982323232,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.014057956,
+      "maximumAbsoluteEvenBias": 0.043000151
+    },
+    {
+      "shiftMagnitudeDegrees": 0.004,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.060986628,
+      "q95AbsoluteError": 0.04429091,
+      "fractionWithin005": 0.976430976,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.015009231,
+      "maximumAbsoluteEvenBias": 0.045977397
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00425,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.064931273,
+      "q95AbsoluteError": 0.047139032,
+      "fractionWithin005": 0.963804714,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.015962216,
+      "maximumAbsoluteEvenBias": 0.048969057
+    },
+    {
+      "shiftMagnitudeDegrees": 0.0045,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.068892143,
+      "q95AbsoluteError": 0.050007479,
+      "fractionWithin005": 0.949494949,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.016916902,
+      "maximumAbsoluteEvenBias": 0.051975241
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00475,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.072869336,
+      "q95AbsoluteError": 0.052888609,
+      "fractionWithin005": 0.915824916,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.017873277,
+      "maximumAbsoluteEvenBias": 0.05499606
+    },
+    {
+      "shiftMagnitudeDegrees": 0.005,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.076862955,
+      "q95AbsoluteError": 0.055780999,
+      "fractionWithin005": 0.885521886,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.01883133,
+      "maximumAbsoluteEvenBias": 0.058031625
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00525,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.082138788,
+      "q95AbsoluteError": 0.059850601,
+      "fractionWithin005": 0.849326599,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.019582928,
+      "maximumAbsoluteEvenBias": 0.06255586
+    },
+    {
+      "shiftMagnitudeDegrees": 0.0055,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.087450013,
+      "q95AbsoluteError": 0.063891483,
+      "fractionWithin005": 0.819023569,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.020336174,
+      "maximumAbsoluteEvenBias": 0.067113839
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00575,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.092796988,
+      "q95AbsoluteError": 0.067897887,
+      "fractionWithin005": 0.728956229,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.021091041,
+      "maximumAbsoluteEvenBias": 0.071705947
+    },
+    {
+      "shiftMagnitudeDegrees": 0.006,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.098180075,
+      "q95AbsoluteError": 0.071923307,
+      "fractionWithin005": 0.677609428,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.021847501,
+      "maximumAbsoluteEvenBias": 0.076332574
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00625,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.10359964,
+      "q95AbsoluteError": 0.076011587,
+      "fractionWithin005": 0.625420875,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.022605524,
+      "maximumAbsoluteEvenBias": 0.080994116
+    },
+    {
+      "shiftMagnitudeDegrees": 0.0065,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.109056056,
+      "q95AbsoluteError": 0.080126816,
+      "fractionWithin005": 0.593434343,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.02336508,
+      "maximumAbsoluteEvenBias": 0.085690976
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00675,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.1145497,
+      "q95AbsoluteError": 0.08426408,
+      "fractionWithin005": 0.568181818,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.024126138,
+      "maximumAbsoluteEvenBias": 0.090423562
+    },
+    {
+      "shiftMagnitudeDegrees": 0.007,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.120080954,
+      "q95AbsoluteError": 0.088460654,
+      "fractionWithin005": 0.529461279,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.024888664,
+      "maximumAbsoluteEvenBias": 0.09519229
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00725,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.125650206,
+      "q95AbsoluteError": 0.092701146,
+      "fractionWithin005": 0.500841751,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.025652623,
+      "maximumAbsoluteEvenBias": 0.099997582
+    },
+    {
+      "shiftMagnitudeDegrees": 0.0075,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.131257848,
+      "q95AbsoluteError": 0.096967201,
+      "fractionWithin005": 0.47979798,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.026417982,
+      "maximumAbsoluteEvenBias": 0.104839867
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00775,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.13690428,
+      "q95AbsoluteError": 0.101211187,
+      "fractionWithin005": 0.457912458,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.027184701,
+      "maximumAbsoluteEvenBias": 0.109719578
+    },
+    {
+      "shiftMagnitudeDegrees": 0.008,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.142589904,
+      "q95AbsoluteError": 0.105416802,
+      "fractionWithin005": 0.43013468,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.027952744,
+      "maximumAbsoluteEvenBias": 0.11463716
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00825,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.148315131,
+      "q95AbsoluteError": 0.10964289,
+      "fractionWithin005": 0.39983165,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.02872207,
+      "maximumAbsoluteEvenBias": 0.119593061
+    },
+    {
+      "shiftMagnitudeDegrees": 0.0085,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.154080375,
+      "q95AbsoluteError": 0.113889608,
+      "fractionWithin005": 0.378787879,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.029492638,
+      "maximumAbsoluteEvenBias": 0.124587737
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00875,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.159886058,
+      "q95AbsoluteError": 0.118162325,
+      "fractionWithin005": 0.361952862,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.030264404,
+      "maximumAbsoluteEvenBias": 0.129621654
+    },
+    {
+      "shiftMagnitudeDegrees": 0.009,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.165732607,
+      "q95AbsoluteError": 0.122503332,
+      "fractionWithin005": 0.324915825,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.031099253,
+      "maximumAbsoluteEvenBias": 0.134695282
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00925,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.171620454,
+      "q95AbsoluteError": 0.1268681,
+      "fractionWithin005": 0.304713805,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.0320839,
+      "maximumAbsoluteEvenBias": 0.139809101
+    },
+    {
+      "shiftMagnitudeDegrees": 0.0095,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.177550039,
+      "q95AbsoluteError": 0.131256829,
+      "fractionWithin005": 0.285353535,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.033075515,
+      "maximumAbsoluteEvenBias": 0.144963597
+    },
+    {
+      "shiftMagnitudeDegrees": 0.00975,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.183521807,
+      "q95AbsoluteError": 0.135669721,
+      "fractionWithin005": 0.269360269,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.034074147,
+      "maximumAbsoluteEvenBias": 0.150159267
+    },
+    {
+      "shiftMagnitudeDegrees": 0.01,
+      "cases": 1188,
+      "maximumAbsoluteError": 0.189536209,
+      "q95AbsoluteError": 0.140106982,
+      "fractionWithin005": 0.257575758,
+      "activeBoundaryCases": 0,
+      "maximumAbsoluteOddBias": 0.035079844,
+      "maximumAbsoluteEvenBias": 0.155396613
+    }
+  ],
+  "residualRefusal": {
+    "thresholdSelectedOnDevelopment": 0.012291693423,
+    "thresholdRule": "On development compositions, find the smallest normalized residual among cases whose absolute fraction error exceeds 0.05. Refuse cases at or above that threshold; do not optimize on holdouts.",
+    "development": {
+      "cases": 24057,
+      "unsafeCases": 6681,
+      "acceptedCases": 10595,
+      "refusedCases": 13462,
+      "acceptedCoverage": 0.440412354,
+      "unsafeAcceptedCases": 0,
+      "unsafeMissRate": 0,
+      "safeRefusedCases": 6781,
+      "safeRefusalRate": 0.390250921,
+      "maximumAcceptedAbsoluteError": 0.049504588
+    },
+    "holdout": {
+      "cases": 24057,
+      "unsafeCases": 5785,
+      "acceptedCases": 10654,
+      "refusedCases": 13403,
+      "acceptedCoverage": 0.442864863,
+      "unsafeAcceptedCases": 0,
+      "unsafeMissRate": 0,
+      "safeRefusedCases": 7618,
+      "safeRefusalRate": 0.416922067,
+      "maximumAcceptedAbsoluteError": 0.046530732
+    }
+  },
+  "activeSet": {
+    "boundaryCases": 0,
+    "fractionOfCases": 0,
+    "note": "A boundary case has at least one endpoint coefficient fixed to zero by the nonnegative fit."
+  },
+  "gates": {
+    "continuousEnvelopeComputed": true,
+    "nonzeroSafeDriftPrefix": true,
+    "residualRefusalHasZeroUnsafeDevelopmentAcceptances": true,
+    "residualRefusalHasZeroUnsafeHoldoutAcceptances": true
+  },
+  "decision": "Treat the global safe shift prefix as a frozen synthetic planning bound for total unmodeled relative drift, not as an instrument specification or physical phase-fraction validation. Qualify instrument line position separately, monitor endpoint-mixture-endpoint drift, and refuse rather than repair estimates outside the bound until a metrological surrogate and target-system holdout pass.",
+  "limitations": [
+    "The envelope bounds the synthetic mixing coefficient between observed endpoint profiles, not certified physical phase fraction.",
+    "Relative peak drift combines specimen and instrument effects; an SRM line-position check can qualify the instrument contribution but cannot remove specimen-induced lattice change.",
+    "A grid boundary is not a universal material constant. It is a planning bound for the frozen NIST VO2 profiles and model.",
+    "Residual refusal may detect model failure without repairing the estimate; its holdout sensitivity and retained coverage must both be reported."
+  ]
+}

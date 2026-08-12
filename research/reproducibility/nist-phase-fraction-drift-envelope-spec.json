@@ -1,0 +1,50 @@
+{
+  "benchmarkId": "NIST-VO2-DRIFT-ENVELOPE-0.1",
+  "reviewedOn": "2026-08-12",
+  "purpose": "Resolve the RC16 one-bin failure into a continuous envelope for unmodeled relative peak drift, active-set changes, curvature, and residual-based refusal before a physical pilot.",
+  "sourceContract": {
+    "datasetDoi": "10.18434/mds2-2301",
+    "rawProfilesSha256": "3b47bf36b2abaef376730226e2616a353ba07571c46e71bce464cf9e9bfbe348",
+    "labelsSha256": "0056a45f7d45694368597fe7804569339745214530584dae10652873fed38cd2"
+  },
+  "endpointRule": "Reuse the RC16 strict-all-five-majority endpoints at 23 C and 68 C for compositions 92-97 at.% V.",
+  "split": {
+    "developmentCompositions": [
+      92,
+      94,
+      96
+    ],
+    "holdoutCompositions": [
+      93,
+      95,
+      97
+    ],
+    "rule": "Freeze the alternating composition split from RC16. Choose the residual refusal threshold on development compositions only and open holdout compositions once."
+  },
+  "design": {
+    "fractionGrid": {
+      "minimum": 0.01,
+      "maximum": 0.99,
+      "step": 0.01,
+      "values": 99
+    },
+    "shiftGrid": {
+      "minimumDegrees": 0,
+      "maximumDegrees": 0.01,
+      "stepDegrees": 0.00025,
+      "magnitudes": 41,
+      "directions": "both signs except one zero case"
+    },
+    "generator": "(1-f) times the observed low endpoint plus f times a linearly interpolated relative shift of the observed high endpoint.",
+    "estimator": "Fixed same-composition low/high endpoints with nonnegative endpoint coefficients plus constant and linear background.",
+    "errorGate": 0.05,
+    "residualRefusalRule": "On development compositions, find the smallest normalized residual among cases whose absolute fraction error exceeds 0.05. Refuse cases at or above that threshold; do not optimize on holdouts.",
+    "safeDriftRule": "Largest shift-grid prefix for which every composition, fraction, and direction remains within absolute fraction error 0.05."
+  },
+  "interpretationLimits": [
+    "The envelope bounds the synthetic mixing coefficient between observed endpoint profiles, not certified physical phase fraction.",
+    "Relative peak drift combines specimen and instrument effects; an SRM line-position check can qualify the instrument contribution but cannot remove specimen-induced lattice change.",
+    "A grid boundary is not a universal material constant. It is a planning bound for the frozen NIST VO2 profiles and model.",
+    "Residual refusal may detect model failure without repairing the estimate; its holdout sensitivity and retained coverage must both be reported."
+  ]
+}

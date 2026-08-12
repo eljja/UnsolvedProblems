@@ -1,0 +1,174 @@
+{
+  "protocolId": "VO2-PHASE-FRACTION-PHYSICAL-PILOT-0.1",
+  "status": "preregistered-design-not-executed",
+  "reviewedOn": "2026-08-12",
+  "question": "Can a phase-fraction pipeline calibrated on traceable line-position and stable gravimetric controls retain its stated error and coverage when transferred to an operando VO2 transition?",
+  "measurandLadder": [
+    {
+      "level": "instrument",
+      "measurand": "powder-diffractometer line position and profile breadth",
+      "reference": "NIST SRM 640g certified lattice parameter and instrument-profile purpose",
+      "claimAllowed": "instrument line-position qualification only",
+      "claimForbidden": "VO2 phase-fraction accuracy"
+    },
+    {
+      "level": "stable-surrogate",
+      "measurand": "gravimetric crystalline mass fraction in stable, well-characterized powder mixtures",
+      "reference": "NIST SRM 676a as a certified QPA internal standard; a second or third phase is admitted only with documented purity and weighing uncertainty",
+      "claimAllowed": "pipeline accuracy and interval coverage under the surrogate's texture, absorption, and particle statistics",
+      "claimForbidden": "automatic transport to VO2 or crystallographic volume fraction"
+    },
+    {
+      "level": "target-system",
+      "measurand": "structural phase fraction along a composition-temperature VO2 trajectory",
+      "reference": "same-specimen operando XRD with independently weighted calorimetric, Raman or imaging observations",
+      "claimAllowed": "VO2 fraction only after the observation models, weighting volumes, holdout error, and interval coverage pass",
+      "claimForbidden": "treating resistance, optical transmission, calorimetric enthalpy, or a second X-ray reduction as direct ground truth without a transfer model"
+    }
+  ],
+  "whyKnownFractionVO2MixingIsNotTheFirstControl": "A mathematical blend of low- and high-temperature endpoint profiles has an exact coefficient, but a same-composition physical blend of stable monoclinic and rutile VO2 at one measurement condition is not guaranteed to exist. Stabilization, quenching, particle size, strain, oxygen stoichiometry, and dopants can change the endpoint profiles themselves. The first physical truth standard must therefore be a stable gravimetric surrogate, followed by an explicitly modeled transfer to operando VO2.",
+  "frozenComputationalBound": {
+    "sourceArtifact": "nist-phase-fraction-drift-envelope-result.json",
+    "totalUnmodeledRelativeShiftStopDegrees": 0.00325,
+    "meaning": "Every synthetic coefficient case on the frozen 0.01-0.99 fraction grid remains within absolute error 0.05 only through this shift-grid prefix.",
+    "notMeaning": "This is not a universal instrument tolerance, a certified angular uncertainty, or proof of physical phase-fraction accuracy.",
+    "provisionalInstrumentAllocationDegrees": 0.001625,
+    "allocationRule": "Reserve no more than half of the synthetic shift budget for qualified instrument drift until specimen-induced shift and calibration covariance are measured. Replace this provisional allocation after the six-cycle pilot variance decomposition."
+  },
+  "rolesAndBlindKeys": {
+    "referenceCustodian": "purchases, verifies certificates, assigns reference and surrogate mixture keys, and keeps gravimetric truth inaccessible to measurement and reduction teams",
+    "specimenTeam": "prepares stable surrogate mixtures and target specimens; records mass, purity, particle-size treatment, thickness, composition, thermal and atmosphere history",
+    "measurementTeam": "runs the frozen acquisition order and records raw frames, calibrants, environmental metadata, rejected frames, and instrument events without mixture truth",
+    "reductionTeamA": "runs the frozen whole-pattern model and publishes code and environment hashes before truth release",
+    "reductionTeamB": "uses an independently implemented reduction with separately chosen initialization and diagnostics; sees neither Team A outputs nor truth before sealing",
+    "adjudicationTeam": "opens keys, checks predeclared gates, reconciles weighting functions across methods, and records pass, reject, refuse, or redesign",
+    "keyReleaseOrder": [
+      "source and certificate hashes",
+      "acquisition manifest and all rejected-frame reasons",
+      "reduction A and B code hashes",
+      "development surrogate keys",
+      "revised-but-frozen model hash",
+      "holdout surrogate and VO2 keys"
+    ]
+  },
+  "experimentalSequence": [
+    {
+      "workPackage": "WP0-reference-and-lineage",
+      "purpose": "make the physical denominator and certificates auditable before measurement",
+      "inputs": "current SRM certificates, balance calibration, material lots, container and specimen identifiers",
+      "method": "hash certificates and manifests; record certified versus information-only values separately; prohibit undocumented phase-purity assumptions",
+      "deliverable": "immutable reference ledger and specimen allocation table",
+      "pass": "every material, mass reading, preparation step, and exclusion has a timestamped parent identifier",
+      "fail": "missing certificate revision, untraceable lot, changed key, or post hoc exclusion",
+      "next": "replace the material or restart before opening any diffraction result"
+    },
+    {
+      "workPackage": "WP1-instrument-qualification",
+      "purpose": "separate line-position and profile drift attributable to the instrument from target-specimen evolution",
+      "inputs": "NIST SRM 640g, raw two-dimensional frames where available, environmental and geometry metadata",
+      "method": "measure SRM 640g before and after each acquisition block and fit the certified lattice parameter with a frozen instrument-profile model",
+      "deliverable": "pre/post line-position residuals, covariance, profile-breadth diagnostics and a drift control chart",
+      "pass": "all instrument-only relative drift remains below the preregistered allocation and the control chart has no unresolved excursion",
+      "fail": "absolute drift above 0.00325 degrees, missing pre/post reference, profile-shape change not represented by the model, or certificate mismatch",
+      "next": "repair or recalibrate; reacquire the full affected block rather than correcting only selected specimens"
+    },
+    {
+      "workPackage": "WP2-stable-surrogate-development",
+      "purpose": "test fraction accuracy where a gravimetric truth and stable phases are available",
+      "inputs": "certified SRM 676a and only additional phases whose purity, absorption and weighing uncertainties are documented",
+      "method": "prepare randomized development mixtures spanning 0.1, 0.3, 0.5, 0.7 and 0.9 target fractions; acquire rotations or replicate packings sufficient to expose texture and grain-sampling variation",
+      "deliverable": "raw frames, truth-blind estimates, 95 percent intervals and full uncertainty budgets from two reductions",
+      "pass": "maximum absolute error at most 0.05, interval coverage at least 0.90, and no direction reversal between reductions",
+      "fail": "bias correlated with fraction, packing, orientation or absorption; undercoverage; or undocumented analyst intervention",
+      "next": "modify the observation model on development mixtures only, reseal code, and preserve the failed model and residuals"
+    },
+    {
+      "workPackage": "WP3-stable-surrogate-holdout",
+      "purpose": "test whether development choices generalize to new preparations and operators",
+      "inputs": "independently prepared holdout mixtures, a new randomized acquisition order, and sealed reduction code",
+      "method": "repeat the full pipeline without parameter or exclusion changes; open keys only after both reductions finish",
+      "deliverable": "one-shot holdout error, coverage, refusal and inter-reduction agreement report",
+      "pass": "the same error and coverage gates pass and every refused result was triggered by a predeclared diagnostic",
+      "fail": "any unsafe accepted estimate, post-key code change, or refusal rule that removes only large-error samples after truth release",
+      "next": "do not enter the target-system stage; revise the surrogate model and create a new untouched holdout"
+    },
+    {
+      "workPackage": "WP4-vo2-endpoint-mixture-endpoint-pilot",
+      "purpose": "measure specimen-induced endpoint drift and reversibility under the actual thermal environment",
+      "inputs": "VO2 compositions 92-97 at percent V, thermal-stage metadata, atmosphere and stoichiometry controls",
+      "method": "run six endpoint-mixture-endpoint cycles per composition as a variance-estimation pilot, not as a power-justified final sample size; preserve every raw frame and thermal path",
+      "deliverable": "composition-specific drift distributions, hysteresis, nonreturn rate, texture diagnostics and a revised repeat-count calculation",
+      "pass": "the total unmodeled relative shift stays within 0.00325 degrees or is absorbed by a model already frozen on development cycles; return endpoints remain statistically compatible after accounting for thermal lag",
+      "fail": "irreversible endpoint change, oxidation or stoichiometry drift, phase-path dependence not represented by the model, or nonidentifiable fraction and shift",
+      "next": "change specimen environment or model; do not reinterpret irreversible change as phase fraction"
+    },
+    {
+      "workPackage": "WP5-vo2-independent-adjudication",
+      "purpose": "distinguish structural fraction from electronic, optical and thermal proxies",
+      "inputs": "same-specimen XRD, DSC or calorimetric signal where feasible, Raman or spatial imaging, and electrical response",
+      "method": "write a forward observation model for each probe including depth, area, orientation, temperature and percolation weighting before comparing results",
+      "deliverable": "cross-probe prediction table and residuals in each probe's native units",
+      "pass": "one latent fraction trajectory predicts sealed holdout observations within their uncertainty without probe-specific retuning, while structural and electronic transitions are allowed to separate if the data require it",
+      "fail": "agreement exists only after arbitrary rescaling, different probes sample incompatible volumes without correction, or resistance is treated as linearly proportional to fraction",
+      "next": "report probe-dependent transition observables and reject a single-fraction interpretation"
+    }
+  ],
+  "competingHypotheses": [
+    {
+      "id": "H-METROLOGY-TRANSPORT",
+      "claim": "A line-qualified instrument and a surrogate QPA pipeline meeting error and coverage gates transport to operando VO2 after explicit texture, absorption and thermal-shift terms are added.",
+      "divergentPrediction": "Surrogate holdouts pass, VO2 endpoint-mixture-endpoint drift stays within the frozen envelope or the preregistered nuisance model, and two reductions plus an independently weighted probe preserve trajectory direction.",
+      "decisiveTest": "WP3 through WP5 with sealed code and keys.",
+      "reject": "surrogate gates pass but VO2 cross-probe residuals or coverage fail under the frozen transfer model.",
+      "stop": "no defensible mapping exists between surrogate mass fraction and VO2 structural volume fraction."
+    },
+    {
+      "id": "H-RESIDUAL-REFUSAL",
+      "claim": "A normalized-residual threshold can safely refuse drift-corrupted estimates without repairing them.",
+      "divergentPrediction": "The RC17 development threshold accepts no estimate with absolute error above 0.05 in the sealed surrogate and VO2 holdouts while retaining useful coverage.",
+      "decisiveTest": "Freeze threshold 0.012291693423 from development compositions; measure unsafe acceptance, safe refusal and retained coverage on physical holdouts.",
+      "reject": "one unsafe holdout estimate is accepted or retained coverage is too low for the intended decision.",
+      "stop": "residual scale changes with acquisition conditions and no calibration transfer restores comparability."
+    },
+    {
+      "id": "H-SINGLE-LATENT-FRACTION",
+      "claim": "One latent structural phase-fraction trajectory explains XRD, calorimetric, optical and electrical observations after fixed probe weighting functions.",
+      "divergentPrediction": "A model frozen on development temperatures predicts all holdout probes without temperature-axis shifts or probe-specific retuning.",
+      "decisiveTest": "same-specimen, same-cycle cross-probe holdout with explicit spatial and depth kernels.",
+      "reject": "electronic or optical change systematically precedes the structural trajectory beyond combined uncertainty, or percolation produces non-monotone residual structure.",
+      "stop": "probes cannot be registered to a common specimen state or sampling volume."
+    }
+  ],
+  "uncertaintyBudget": [
+    "balance calibration, buoyancy and gravimetric allocation",
+    "certified and non-certified phase purity of every reference component",
+    "mixing homogeneity, packing, particle statistics and preferred orientation",
+    "absorption, microabsorption, thickness and illuminated volume",
+    "instrument line position, profile breadth, geometry, detector conversion and masking",
+    "thermal calibration, lag, gradients, heating rate, hysteresis and dwell time",
+    "VO2 composition, oxygen stoichiometry, strain, grain size and irreversible cycling",
+    "background, peak shift, width, texture and phase-model discrepancy",
+    "optimizer, active constraints, initialization, software version and analyst choices",
+    "finite replicate and specimen sampling",
+    "cross-probe depth, area, polarization, enthalpy and percolation weighting",
+    "transport from stable surrogate mass fraction to target structural volume fraction"
+  ],
+  "safetyAndEthics": [
+    "Use institutional X-ray radiation controls, interlocks and trained operators.",
+    "Treat vanadium-containing and fine powder materials under the applicable chemical hygiene, inhalation and waste procedures.",
+    "Use rated thermal stages, shielding and electrical isolation; stop on oxidation, pressure or temperature excursions.",
+    "Do not reveal blind keys to improve a result, omit failed acquisitions, or relabel exclusions after truth release.",
+    "Report reference-material limitations and non-certified values without implying NIST endorsement of the experimental design."
+  ],
+  "sources": [
+    "https://doi.org/10.6028/NIST.SP.260-245",
+    "https://tsapps.nist.gov/srmext/certificates/640g.pdf",
+    "https://doi.org/10.1107/S0108767311014565",
+    "https://tsapps.nist.gov/srmext/certificates/676a.pdf",
+    "https://doi.org/10.1107/S0021889801007476",
+    "https://doi.org/10.1107/S1600576721008712",
+    "https://doi.org/10.1107/S1600576725004935",
+    "https://doi.org/10.1557/jmr.2020.250",
+    "https://arxiv.org/abs/1512.08921"
+  ]
+}
