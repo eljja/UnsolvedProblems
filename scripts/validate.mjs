@@ -8,7 +8,7 @@ const failures = [];
 const assert = (condition, message) => { if (!condition) failures.push(message); };
 
 const sandbox = { window: {} };
-for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-05-data.js", "research-cycle-06-data.js"]) {
+for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-05-data.js", "research-cycle-06-data.js", "research-cycle-07-data.js"]) {
   vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }
 
@@ -29,6 +29,10 @@ const auditResult = JSON.parse(fs.readFileSync(path.join(root, "research/audit/c
 const auditFixture = JSON.parse(fs.readFileSync(path.join(root, "research/audit/synthetic-audit-fixture.json"), "utf8"));
 const smoothSpec = JSON.parse(fs.readFileSync(path.join(root, "research/smoothness/sealed-family-spec.json"), "utf8"));
 const smoothResult = JSON.parse(fs.readFileSync(path.join(root, "research/smoothness/sealed-family-result.json"), "utf8"));
+const twoPhaseSpec = JSON.parse(fs.readFileSync(path.join(root, "research/two-phase/rescue-spec.json"), "utf8"));
+const twoPhaseResult = JSON.parse(fs.readFileSync(path.join(root, "research/two-phase/rescue-result.json"), "utf8"));
+const activeSpec = JSON.parse(fs.readFileSync(path.join(root, "research/active-boundary/benchmark-spec.json"), "utf8"));
+const activeResult = JSON.parse(fs.readFileSync(path.join(root, "research/active-boundary/benchmark-result.json"), "utf8"));
 assert(Array.isArray(PROBLEMS), "PROBLEMS must be an array");
 assert(PROBLEMS.length > 0, "catalog must contain at least one problem");
 assert(new Set(PROBLEMS.map(item => item.id)).size === PROBLEMS.length, "problem IDs must be unique");
@@ -321,6 +325,11 @@ assert(auditResult.fixture.mutationDetection?.length === 7 && auditResult.fixtur
 assert(smoothSpec.benchmarkId === "CHEMICAL-SMOOTHNESS-SEAL-0.1" && smoothResult.benchmarkId === smoothSpec.benchmarkId, "smoothness artifacts must share a stable ID");
 assert(Object.values(smoothResult.findings || {}).every(Boolean), "every sealed smoothness finding must be true");
 assert(smoothResult.scenarios.find(item => item.worldId === "hidden-phase-boundary" && item.safetyFactor === 2)?.passesGate === false, "doubled-L hidden phase boundary must retain its failed transfer gate");
+assert(twoPhaseSpec.studyId === "TWO-PHASE-MNAR-RESCUE-0.1" && twoPhaseResult.studyId === twoPhaseSpec.studyId, "two-phase rescue artifacts must share a stable ID");
+assert(Object.values(twoPhaseResult.findings || {}).every(Boolean), "every two-phase rescue finding must be true");
+assert(twoPhaseResult.scenarios.filter(item => item.responseOddsRatio === 4).every(item => !item.naivePassesBiasGate), "outcome-dependent rescue must fail the naive bias gate in every first-stage world");
+assert(activeSpec.benchmarkId === "ACTIVE-PHASE-BOUNDARY-0.1" && activeResult.benchmarkId === activeSpec.benchmarkId, "active-boundary artifacts must share a stable ID");
+assert(Object.values(activeResult.findings || {}).every(Boolean), "every active-boundary finding must be true");
 
 const boundaryCount = PROBLEMS.filter(item => item.nature === "boundary").length;
 assert(boundaryCount > 0, "catalog must preserve clearly labeled boundary examples");

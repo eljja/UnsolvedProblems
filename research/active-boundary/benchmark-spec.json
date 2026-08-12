@@ -1,0 +1,19 @@
+{
+  "benchmarkId": "ACTIVE-PHASE-BOUNDARY-0.1",
+  "reviewedOn": "2026-08-12",
+  "domain": [0.6, 1],
+  "budget": 16,
+  "jumpMagnitude": 0.35,
+  "detectionThreshold": 0.05,
+  "persistentStepBoundaries": { "minimum": 0.65, "maximum": 0.95, "count": 31 },
+  "transientPockets": { "minimumCenter": 0.65, "maximumCenter": 0.95, "count": 31, "width": 0.02 },
+  "strategies": [
+    { "id": "uniform-16", "description": "Sixteen equally spaced sealed measurements" },
+    { "id": "explore-8-refine-8", "description": "Eight uniform exploration points followed by midpoint refinement of a detected transition, otherwise largest-gap exploration" }
+  ],
+  "gates": {
+    "minimumDetectionRate": 0.95,
+    "activeMustReduceMeanBoundaryBracket": true,
+    "activeMustNotIncreaseWorstGap": true
+  }
+}

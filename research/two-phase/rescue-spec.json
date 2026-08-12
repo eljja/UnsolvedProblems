@@ -1,0 +1,19 @@
+{
+  "studyId": "TWO-PHASE-MNAR-RESCUE-0.1",
+  "reviewedOn": "2026-08-12",
+  "initialObservedDistribution": { "responseRate": 0.6, "positiveRateAmongObserved": 0.7 },
+  "firstStageSelectionOddsGamma": [1, 4, 16],
+  "invitation": { "sampling": "uniform-within-missing-IDs", "knownProbability": 0.25 },
+  "rescueResponse": {
+    "failureResponseProbability": 0.4,
+    "trueOutcomeOddsRatio": [1, 4],
+    "assumedSensitivityGamma": [1, 2, 4, 8]
+  },
+  "outcomeRange": [0, 1],
+  "decisionGates": {
+    "truthMustBeContained": true,
+    "maximumPopulationWidth": 0.12,
+    "naiveAbsoluteBiasTolerance": 0.02
+  },
+  "interpretation": "Known randomized invitation identifies who was offered rescue, not outcomes among invited nonresponders. Second-stage sensitivity bounds are therefore applied within the invited missing-ID sample."
+}

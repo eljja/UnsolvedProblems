@@ -11,7 +11,7 @@
 - 확장 설명·대표 시도·최근 연구 흐름: [`research-context.js`](./research-context.js)
 - 문제별 해결 시도 설계: [`solution-context.js`](./solution-context.js)
 - 문제별 가설 경쟁·불확실성 예산·실행 프로그램: [`deep-solution-context.js`](./deep-solution-context.js)
-- 반복 연구 사이클·난제 간 구조적 연결: [`research-cycle-data.js`](./research-cycle-data.js), [`research-cycle-03-data.js`](./research-cycle-03-data.js), [`research-cycle-04-data.js`](./research-cycle-04-data.js), [`research-cycle-05-data.js`](./research-cycle-05-data.js), [`research-cycle-06-data.js`](./research-cycle-06-data.js)
+- 반복 연구 사이클·난제 간 구조적 연결: [`research-cycle-data.js`](./research-cycle-data.js), [`research-cycle-03-data.js`](./research-cycle-03-data.js), [`research-cycle-04-data.js`](./research-cycle-04-data.js), [`research-cycle-05-data.js`](./research-cycle-05-data.js), [`research-cycle-06-data.js`](./research-cycle-06-data.js), [`research-cycle-07-data.js`](./research-cycle-07-data.js)
 - 자율 합성 공개 데이터 감사: [`research/alab-public-data-audit.json`](./research/alab-public-data-audit.json)
 - 완전 원장·재생성 기준선: [`research/complete-ledger.schema.json`](./research/complete-ledger.schema.json), [`research/alab-replay-benchmark.json`](./research/alab-replay-benchmark.json)
 - ARROWS 필드 감사·독립 재생 시험: [`research/replay/arrows-ybco-field-audit.json`](./research/replay/arrows-ybco-field-audit.json), [`research/replay/synthetic-replay-fixture.json`](./research/replay/synthetic-replay-fixture.json), [`research/replay/verification-result.json`](./research/replay/verification-result.json)
@@ -19,6 +19,8 @@
 - MNAR 부분식별·무지지 정보가치 시험: [`research/identification/sensitivity-spec.json`](./research/identification/sensitivity-spec.json), [`research/identification/sensitivity-result.json`](./research/identification/sensitivity-result.json), [`scripts/run-identification-sensitivity.mjs`](./scripts/run-identification-sensitivity.mjs)
 - 완전성 감사·누락 복구 시험: [`research/audit/completeness-audit.schema.json`](./research/audit/completeness-audit.schema.json), [`research/audit/calibration-result.json`](./research/audit/calibration-result.json), [`scripts/run-audit-calibration.mjs`](./scripts/run-audit-calibration.mjs)
 - 무지지 평활성 봉인 시험: [`research/smoothness/sealed-family-spec.json`](./research/smoothness/sealed-family-spec.json), [`research/smoothness/sealed-family-result.json`](./research/smoothness/sealed-family-result.json), [`scripts/run-smoothness-seal.mjs`](./scripts/run-smoothness-seal.mjs)
+- 2단계 MNAR 복구 시험: [`research/two-phase/rescue-spec.json`](./research/two-phase/rescue-spec.json), [`research/two-phase/rescue-result.json`](./research/two-phase/rescue-result.json), [`scripts/run-two-phase-rescue.mjs`](./scripts/run-two-phase-rescue.mjs)
+- 능동 상경계 동일예산 시험: [`research/active-boundary/benchmark-spec.json`](./research/active-boundary/benchmark-spec.json), [`research/active-boundary/benchmark-result.json`](./research/active-boundary/benchmark-result.json), [`scripts/run-active-boundary.mjs`](./scripts/run-active-boundary.mjs)
 - 별도 연구 페이지: [`solve.html`](./solve.html)
 - 연구 사이클 기록: [`research-log.html`](./research-log.html)
 - 검색 색인: [`sitemap.xml`](./sitemap.xml), [`robots.txt`](./robots.txt)
@@ -33,12 +35,12 @@
 - 31개 불가능·현실 경계 사례
 - 163개 핵심 난제와 130개 로드맵 우선과제
 - 16개 상금 연계 항목(현재 상금·경진 16개)
-- 10개 상금 프로그램과 111개 기관·로드맵·원 연구 출처
-- 6개 누적 연구 사이클, 7개 심층 연구 문제의 23개 사이클 기록과 9개 구조적 연결
+- 10개 상금 프로그램과 115개 기관·로드맵·원 연구 출처
+- 7개 누적 연구 사이클, 7개 심층 연구 문제의 27개 사이클 기록과 10개 구조적 연결
 
-상금 정보는 2026년 8월 5일, 출처 연결·확장 설명·연구 맥락은 2026년 8월 7일 기준으로 검토했습니다. 여섯 심층 연구 사이클과 연결된 원 연구·보충자료·저자 공개 코드는 2026년 8월 12일 기준으로 다시 확인했습니다. 각 항목은 검증 가능한 질문, 현재까지 축적된 지식, 기술적 병목, 해결 판정 기준과 관련 출처를 함께 기록합니다.
+상금 정보는 2026년 8월 5일, 출처 연결·확장 설명·연구 맥락은 2026년 8월 7일 기준으로 검토했습니다. 일곱 심층 연구 사이클과 연결된 원 연구·보충자료·저자 공개 코드는 2026년 8월 12일 기준으로 다시 확인했습니다. 각 항목은 검증 가능한 질문, 현재까지 축적된 지식, 기술적 병목, 해결 판정 기준과 관련 출처를 함께 기록합니다.
 
-Google 소유권 확인 메타 태그, canonical URL, 한국어·영문 `hreflang`, 문제별 구조화 데이터와 1,502개 현지화 URL의 사이트맵을 제공합니다. 사이트맵은 `npm run sitemap`으로 현재 카탈로그에서 다시 생성할 수 있습니다.
+Google 소유권 확인 메타 태그, canonical URL, 한국어·영문 `hreflang`, 문제별 구조화 데이터와 1,504개 현지화 URL의 사이트맵을 제공합니다. 사이트맵은 `npm run sitemap`으로 현재 카탈로그에서 다시 생성할 수 있습니다.
 
 상금은 **증명·반례 상금**, **성능 목표형 연구경진 총상금**, **계산 도전 상금**, **현재 지급을 보증할 수 없는 역사적 제안**을 구분해 기록합니다. 진행 중인 경진이라도 신규 참가 접수가 끝났을 수 있으며, 총상금은 한 문제에 지급되는 금액과 다를 수 있으므로 상세 규정을 반드시 확인해야 합니다.
 

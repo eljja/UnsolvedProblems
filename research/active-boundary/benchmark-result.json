@@ -1,0 +1,52 @@
+{
+  "benchmarkId": "ACTIVE-PHASE-BOUNDARY-0.1",
+  "generatedOn": "2026-08-12",
+  "persistentStep": [
+    {
+      "strategy": "uniform-16",
+      "worlds": 31,
+      "detectionRate": 1,
+      "meanBoundaryBracket": 0.026667,
+      "maximumBoundaryBracket": 0.026667,
+      "meanWorstGap": 0.026667,
+      "maximumWorstGap": 0.026667
+    },
+    {
+      "strategy": "explore-8-refine-8",
+      "worlds": 31,
+      "detectionRate": 1,
+      "meanBoundaryBracket": 0.000223,
+      "maximumBoundaryBracket": 0.000223,
+      "meanWorstGap": 0.057143,
+      "maximumWorstGap": 0.057143
+    }
+  ],
+  "transientPocket": [
+    {
+      "strategy": "uniform-16",
+      "worlds": 31,
+      "detectionRate": 0.709677,
+      "meanBoundaryBracket": null,
+      "maximumBoundaryBracket": null,
+      "meanWorstGap": 0.026667,
+      "maximumWorstGap": 0.026667
+    },
+    {
+      "strategy": "explore-8-refine-8",
+      "worlds": 31,
+      "detectionRate": 0.677419,
+      "meanBoundaryBracket": null,
+      "maximumBoundaryBracket": null,
+      "meanWorstGap": 0.047005,
+      "maximumWorstGap": 0.057143
+    }
+  ],
+  "findings": {
+    "activeImprovesPersistentBoundaryLocalization": true,
+    "activeIncreasesGlobalWorstGap": true,
+    "activeDoesNotDominateUniform": true,
+    "pocketDetectionRemainsBelowGate": true,
+    "sameBudgetRequiresExplorationRefinementTradeoff": true
+  },
+  "decision": "The explore-refine policy localizes a persistent step more sharply but increases the largest untested gap and does not reliably find narrow transient pockets. Reserve an explicit exploration quota and report localization and global worst-gap metrics together; do not claim universal information gain from active sampling."
+}

@@ -1,0 +1,296 @@
+{
+  "studyId": "TWO-PHASE-MNAR-RESCUE-0.1",
+  "generatedOn": "2026-08-12",
+  "scenarios": [
+    {
+      "firstGamma": 1,
+      "responseOddsRatio": 1,
+      "truePopulationMean": 0.7,
+      "trueMissingPositiveRate": 0.7,
+      "successResponseProbability": 0.4,
+      "failureResponseProbability": 0.4,
+      "rescueResponseRate": 0.4,
+      "rescueObservedPositiveRate": 0.7,
+      "naivePopulationMean": 0.7,
+      "naiveBias": 0,
+      "naivePassesBiasGate": true,
+      "sensitivity": [
+        {
+          "assumedGamma": 1,
+          "populationLower": 0.7,
+          "populationUpper": 0.7,
+          "populationWidth": 0,
+          "containsTruth": true,
+          "passesWidthGate": true
+        },
+        {
+          "assumedGamma": 2,
+          "populationLower": 0.661231,
+          "populationUpper": 0.729647,
+          "populationWidth": 0.068416,
+          "containsTruth": true,
+          "passesWidthGate": true
+        },
+        {
+          "assumedGamma": 4,
+          "populationLower": 0.620421,
+          "populationUpper": 0.748774,
+          "populationWidth": 0.128353,
+          "containsTruth": true,
+          "passesWidthGate": false
+        },
+        {
+          "assumedGamma": 8,
+          "populationLower": 0.586194,
+          "populationUpper": 0.759797,
+          "populationWidth": 0.173603,
+          "containsTruth": true,
+          "passesWidthGate": false
+        }
+      ]
+    },
+    {
+      "firstGamma": 1,
+      "responseOddsRatio": 4,
+      "truePopulationMean": 0.7,
+      "trueMissingPositiveRate": 0.7,
+      "successResponseProbability": 0.727273,
+      "failureResponseProbability": 0.4,
+      "rescueResponseRate": 0.629091,
+      "rescueObservedPositiveRate": 0.809249,
+      "naivePopulationMean": 0.743699,
+      "naiveBias": 0.043699,
+      "naivePassesBiasGate": false,
+      "sensitivity": [
+        {
+          "assumedGamma": 1,
+          "populationLower": 0.743699,
+          "populationUpper": 0.743699,
+          "populationWidth": 0,
+          "containsTruth": false,
+          "passesWidthGate": true
+        },
+        {
+          "assumedGamma": 2,
+          "populationLower": 0.724466,
+          "populationUpper": 0.756358,
+          "populationWidth": 0.031892,
+          "containsTruth": false,
+          "passesWidthGate": true
+        },
+        {
+          "assumedGamma": 4,
+          "populationLower": 0.7,
+          "populationUpper": 0.763744,
+          "populationWidth": 0.063744,
+          "containsTruth": true,
+          "passesWidthGate": true
+        },
+        {
+          "assumedGamma": 8,
+          "populationLower": 0.67505,
+          "populationUpper": 0.767754,
+          "populationWidth": 0.092704,
+          "containsTruth": true,
+          "passesWidthGate": true
+        }
+      ]
+    },
+    {
+      "firstGamma": 4,
+      "responseOddsRatio": 1,
+      "truePopulationMean": 0.567368,
+      "trueMissingPositiveRate": 0.368421,
+      "successResponseProbability": 0.4,
+      "failureResponseProbability": 0.4,
+      "rescueResponseRate": 0.4,
+      "rescueObservedPositiveRate": 0.368421,
+      "naivePopulationMean": 0.567368,
+      "naiveBias": 0,
+      "naivePassesBiasGate": true,
+      "sensitivity": [
+        {
+          "assumedGamma": 1,
+          "populationLower": 0.567368,
+          "populationUpper": 0.567368,
+          "populationWidth": 0,
+          "containsTruth": true,
+          "passesWidthGate": true
+        },
+        {
+          "assumedGamma": 2,
+          "populationLower": 0.533141,
+          "populationUpper": 0.608178,
+          "populationWidth": 0.075037,
+          "containsTruth": true,
+          "passesWidthGate": true
+        },
+        {
+          "assumedGamma": 4,
+          "populationLower": 0.509493,
+          "populationUpper": 0.646947,
+          "populationWidth": 0.137455,
+          "containsTruth": true,
+          "passesWidthGate": false
+        },
+        {
+          "assumedGamma": 8,
+          "populationLower": 0.495258,
+          "populationUpper": 0.676594,
+          "populationWidth": 0.181336,
+          "containsTruth": true,
+          "passesWidthGate": false
+        }
+      ]
+    },
+    {
+      "firstGamma": 4,
+      "responseOddsRatio": 4,
+      "truePopulationMean": 0.567368,
+      "trueMissingPositiveRate": 0.368421,
+      "successResponseProbability": 0.727273,
+      "failureResponseProbability": 0.4,
+      "rescueResponseRate": 0.520574,
+      "rescueObservedPositiveRate": 0.514706,
+      "naivePopulationMean": 0.625882,
+      "naiveBias": 0.058514,
+      "naivePassesBiasGate": false,
+      "sensitivity": [
+        {
+          "assumedGamma": 1,
+          "populationLower": 0.625882,
+          "populationUpper": 0.625882,
+          "populationWidth": 0,
+          "containsTruth": false,
+          "passesWidthGate": true
+        },
+        {
+          "assumedGamma": 2,
+          "populationLower": 0.593632,
+          "populationUpper": 0.657506,
+          "populationWidth": 0.063874,
+          "containsTruth": false,
+          "passesWidthGate": true
+        },
+        {
+          "assumedGamma": 4,
+          "populationLower": 0.567368,
+          "populationUpper": 0.682367,
+          "populationWidth": 0.114998,
+          "containsTruth": true,
+          "passesWidthGate": true
+        },
+        {
+          "assumedGamma": 8,
+          "populationLower": 0.549625,
+          "populationUpper": 0.698729,
+          "populationWidth": 0.149104,
+          "containsTruth": true,
+          "passesWidthGate": false
+        }
+      ]
+    },
+    {
+      "firstGamma": 16,
+      "responseOddsRatio": 1,
+      "truePopulationMean": 0.470909,
+      "trueMissingPositiveRate": 0.127273,
+      "successResponseProbability": 0.4,
+      "failureResponseProbability": 0.4,
+      "rescueResponseRate": 0.4,
+      "rescueObservedPositiveRate": 0.127273,
+      "naivePopulationMean": 0.470909,
+      "naiveBias": 0,
+      "naivePassesBiasGate": true,
+      "sensitivity": [
+        {
+          "assumedGamma": 1,
+          "populationLower": 0.470909,
+          "populationUpper": 0.470909,
+          "populationWidth": 0,
+          "containsTruth": true,
+          "passesWidthGate": true
+        },
+        {
+          "assumedGamma": 2,
+          "populationLower": 0.456674,
+          "populationUpper": 0.494557,
+          "populationWidth": 0.037883,
+          "containsTruth": true,
+          "passesWidthGate": true
+        },
+        {
+          "assumedGamma": 4,
+          "populationLower": 0.448806,
+          "populationUpper": 0.528785,
+          "populationWidth": 0.079979,
+          "containsTruth": true,
+          "passesWidthGate": true
+        },
+        {
+          "assumedGamma": 8,
+          "populationLower": 0.44466,
+          "populationUpper": 0.569594,
+          "populationWidth": 0.124934,
+          "containsTruth": true,
+          "passesWidthGate": false
+        }
+      ]
+    },
+    {
+      "firstGamma": 16,
+      "responseOddsRatio": 4,
+      "truePopulationMean": 0.470909,
+      "trueMissingPositiveRate": 0.127273,
+      "successResponseProbability": 0.727273,
+      "failureResponseProbability": 0.4,
+      "rescueResponseRate": 0.441653,
+      "rescueObservedPositiveRate": 0.209581,
+      "naivePopulationMean": 0.503832,
+      "naiveBias": 0.032923,
+      "naivePassesBiasGate": false,
+      "sensitivity": [
+        {
+          "assumedGamma": 1,
+          "populationLower": 0.503832,
+          "populationUpper": 0.503832,
+          "populationWidth": 0,
+          "containsTruth": false,
+          "passesWidthGate": true
+        },
+        {
+          "assumedGamma": 2,
+          "populationLower": 0.483168,
+          "populationUpper": 0.534419,
+          "populationWidth": 0.051251,
+          "containsTruth": false,
+          "passesWidthGate": true
+        },
+        {
+          "assumedGamma": 4,
+          "populationLower": 0.470909,
+          "populationUpper": 0.571979,
+          "populationWidth": 0.10107,
+          "containsTruth": true,
+          "passesWidthGate": true
+        },
+        {
+          "assumedGamma": 8,
+          "populationLower": 0.46419,
+          "populationUpper": 0.608808,
+          "populationWidth": 0.144619,
+          "containsTruth": true,
+          "passesWidthGate": false
+        }
+      ]
+    }
+  ],
+  "findings": {
+    "randomizedInvitationDoesNotPreventSecondStageBias": true,
+    "correctSecondStageGammaContainsTruth": true,
+    "underspecifiedGammaCanMissTruth": true,
+    "gammaFourBoundsPassWidthGate": true,
+    "invitationProbabilityDoesNotAlterIdentificationBounds": true
+  },
+  "decision": "Record invitation probabilities for design weighting, but model or bound rescue response separately. A randomized invitation does not justify treating successful rescues as representative when response depends on the missing outcome."
+}
