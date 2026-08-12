@@ -1,0 +1,3307 @@
+{
+  "manifestId": "NIST-VO2-NESTED-ACQUISITION-MANIFEST-0.1",
+  "generatedOn": "2026-08-12",
+  "design": {
+    "coordinates": 32,
+    "preparations": 2,
+    "fixedInstrumentConditions": 2,
+    "technicalRepeats": 2,
+    "sampleAcquisitions": 256,
+    "calibrationAcquisitions": 24,
+    "totalFrames": 280,
+    "checkpointSampleAcquisitions": 192,
+    "extensionSampleAcquisitions": 64
+  },
+  "blinding": {
+    "publicScheduleIsDryRunTemplate": true,
+    "actualRunRequirement": "A custodian must regenerate blinded sample codes and within-stage order using an uncommitted private seed. Measurement operators receive neither stratum nor HL1-HL5 labels; adjudicators receive raw_frame_id and calibration parentage only after the 192-frame checkpoint is sealed.",
+    "leakageAudit": {
+      "operatorRowsContainStratum": false,
+      "operatorRowsContainHumanLabels": false,
+      "stageOrderRevealsCheckpointMembership": true
+    }
+  },
+  "currentReferenceMaterials": {
+    "source": "https://www.nist.gov/programs-projects/powder-diffraction-srms",
+    "reviewedOn": "2026-08-12",
+    "caveat": "Use SRM 640f and 1976c only when their geometry and certified use match the chosen instrument configuration; otherwise preregister an instrument-compatible traceable reference before acquisition."
+  },
+  "lineageSchema": {
+    "requiredIdentifiers": [
+      "specimen_id",
+      "aliquot_id",
+      "preparation_id",
+      "coordinate_id",
+      "facility_id",
+      "instrument_config_id",
+      "session_id",
+      "raw_frame_id",
+      "calibration_id",
+      "reduction_id",
+      "refinement_id",
+      "parent_ids"
+    ],
+    "rawFrameSeal": [
+      "content_sha256",
+      "byte_count",
+      "media_type",
+      "acquired_at",
+      "operator_blind_code"
+    ],
+    "valueBlindGate": "Before intensities are read, every raw frame must have exactly one preparation, coordinate, session, instrument configuration, and applicable calibration parent."
+  },
+  "analysisMapping": [
+    {
+      "measurementId": 8,
+      "vanadiumAtomicPercent": 92,
+      "temperatureC": 23,
+      "stratum": "frontier",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 50,
+      "vanadiumAtomicPercent": 94,
+      "temperatureC": 30,
+      "stratum": "frontier",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 99,
+      "vanadiumAtomicPercent": 88,
+      "temperatureC": 36,
+      "stratum": "frontier",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 140,
+      "vanadiumAtomicPercent": 92,
+      "temperatureC": 45,
+      "stratum": "frontier",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 184,
+      "vanadiumAtomicPercent": 92,
+      "temperatureC": 50,
+      "stratum": "frontier",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 227,
+      "vanadiumAtomicPercent": 93,
+      "temperatureC": 55,
+      "stratum": "frontier",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 265,
+      "vanadiumAtomicPercent": 99,
+      "temperatureC": 62,
+      "stratum": "frontier",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 309,
+      "vanadiumAtomicPercent": 99,
+      "temperatureC": 68,
+      "stratum": "frontier",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 142,
+      "vanadiumAtomicPercent": 89,
+      "temperatureC": 45,
+      "stratum": "frontier",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 185,
+      "vanadiumAtomicPercent": 90,
+      "temperatureC": 50,
+      "stratum": "frontier",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 141,
+      "vanadiumAtomicPercent": 90,
+      "temperatureC": 45,
+      "stratum": "frontier",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 139,
+      "vanadiumAtomicPercent": 93,
+      "temperatureC": 45,
+      "stratum": "frontier",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 143,
+      "vanadiumAtomicPercent": 88,
+      "temperatureC": 45,
+      "stratum": "frontier",
+      "stage": "extension-32"
+    },
+    {
+      "measurementId": 183,
+      "vanadiumAtomicPercent": 93,
+      "temperatureC": 50,
+      "stratum": "frontier",
+      "stage": "extension-32"
+    },
+    {
+      "measurementId": 186,
+      "vanadiumAtomicPercent": 89,
+      "temperatureC": 50,
+      "stratum": "frontier",
+      "stage": "extension-32"
+    },
+    {
+      "measurementId": 9,
+      "vanadiumAtomicPercent": 90,
+      "temperatureC": 23,
+      "stratum": "frontier",
+      "stage": "extension-32"
+    },
+    {
+      "measurementId": 24,
+      "vanadiumAtomicPercent": 75,
+      "temperatureC": 23,
+      "stratum": "control",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 68,
+      "vanadiumAtomicPercent": 75,
+      "temperatureC": 30,
+      "stratum": "control",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 112,
+      "vanadiumAtomicPercent": 75,
+      "temperatureC": 36,
+      "stratum": "control",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 156,
+      "vanadiumAtomicPercent": 75,
+      "temperatureC": 45,
+      "stratum": "control",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 200,
+      "vanadiumAtomicPercent": 75,
+      "temperatureC": 50,
+      "stratum": "control",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 244,
+      "vanadiumAtomicPercent": 75,
+      "temperatureC": 55,
+      "stratum": "control",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 288,
+      "vanadiumAtomicPercent": 75,
+      "temperatureC": 62,
+      "stratum": "control",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 332,
+      "vanadiumAtomicPercent": 75,
+      "temperatureC": 68,
+      "stratum": "control",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 331,
+      "vanadiumAtomicPercent": 76,
+      "temperatureC": 68,
+      "stratum": "control",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 330,
+      "vanadiumAtomicPercent": 77,
+      "temperatureC": 68,
+      "stratum": "control",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 287,
+      "vanadiumAtomicPercent": 76,
+      "temperatureC": 62,
+      "stratum": "control",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 329,
+      "vanadiumAtomicPercent": 78,
+      "temperatureC": 68,
+      "stratum": "control",
+      "stage": "checkpoint-24"
+    },
+    {
+      "measurementId": 286,
+      "vanadiumAtomicPercent": 77,
+      "temperatureC": 62,
+      "stratum": "control",
+      "stage": "extension-32"
+    },
+    {
+      "measurementId": 243,
+      "vanadiumAtomicPercent": 76,
+      "temperatureC": 55,
+      "stratum": "control",
+      "stage": "extension-32"
+    },
+    {
+      "measurementId": 328,
+      "vanadiumAtomicPercent": 79,
+      "temperatureC": 68,
+      "stratum": "control",
+      "stage": "extension-32"
+    },
+    {
+      "measurementId": 285,
+      "vanadiumAtomicPercent": 78,
+      "temperatureC": 62,
+      "stratum": "control",
+      "stage": "extension-32"
+    }
+  ],
+  "operatorSessions": [
+    {
+      "sessionId": "P1-C1",
+      "preparationId": "P1",
+      "instrumentConditionId": "C1",
+      "sampleAcquisitions": [
+        {
+          "runOrder": 1,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-01",
+          "coordinateId": "NIST-184",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 2,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-02",
+          "coordinateId": "NIST-200",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 3,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-03",
+          "coordinateId": "NIST-287",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 4,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-04",
+          "coordinateId": "NIST-244",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 55,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 5,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-05",
+          "coordinateId": "NIST-099",
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 36,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 6,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-06",
+          "coordinateId": "NIST-008",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 23,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 7,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-07",
+          "coordinateId": "NIST-142",
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 8,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-08",
+          "coordinateId": "NIST-329",
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 9,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-09",
+          "coordinateId": "NIST-050",
+          "vanadiumAtomicPercent": 94,
+          "temperatureC": 30,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 10,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-10",
+          "coordinateId": "NIST-244",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 55,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 11,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-11",
+          "coordinateId": "NIST-331",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 12,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-12",
+          "coordinateId": "NIST-156",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 13,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-13",
+          "coordinateId": "NIST-265",
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 14,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-14",
+          "coordinateId": "NIST-139",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 15,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-15",
+          "coordinateId": "NIST-141",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 16,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-16",
+          "coordinateId": "NIST-200",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 17,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-17",
+          "coordinateId": "NIST-332",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 18,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-18",
+          "coordinateId": "NIST-265",
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 19,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-19",
+          "coordinateId": "NIST-184",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 20,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-20",
+          "coordinateId": "NIST-141",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 21,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-21",
+          "coordinateId": "NIST-156",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 22,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-22",
+          "coordinateId": "NIST-227",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 55,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 23,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-23",
+          "coordinateId": "NIST-332",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 24,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-24",
+          "coordinateId": "NIST-068",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 30,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 25,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-25",
+          "coordinateId": "NIST-008",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 23,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 26,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-26",
+          "coordinateId": "NIST-140",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 27,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-27",
+          "coordinateId": "NIST-024",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 23,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 28,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-28",
+          "coordinateId": "NIST-185",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 29,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-29",
+          "coordinateId": "NIST-288",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 30,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-30",
+          "coordinateId": "NIST-140",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 31,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-31",
+          "coordinateId": "NIST-050",
+          "vanadiumAtomicPercent": 94,
+          "temperatureC": 30,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 32,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-32",
+          "coordinateId": "NIST-139",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 33,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-33",
+          "coordinateId": "NIST-331",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 34,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-34",
+          "coordinateId": "NIST-227",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 55,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 35,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-35",
+          "coordinateId": "NIST-068",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 30,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 36,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-36",
+          "coordinateId": "NIST-099",
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 36,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 37,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-37",
+          "coordinateId": "NIST-288",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 38,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-38",
+          "coordinateId": "NIST-112",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 36,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 39,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-39",
+          "coordinateId": "NIST-330",
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 40,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-40",
+          "coordinateId": "NIST-112",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 36,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 41,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-41",
+          "coordinateId": "NIST-330",
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 42,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-42",
+          "coordinateId": "NIST-142",
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 43,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-43",
+          "coordinateId": "NIST-024",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 23,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 44,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-44",
+          "coordinateId": "NIST-185",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 45,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-45",
+          "coordinateId": "NIST-309",
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 46,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-46",
+          "coordinateId": "NIST-287",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 47,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-47",
+          "coordinateId": "NIST-309",
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 48,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-48",
+          "coordinateId": "NIST-329",
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 49,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-49",
+          "coordinateId": "NIST-183",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 50,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-50",
+          "coordinateId": "NIST-285",
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 51,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-51",
+          "coordinateId": "NIST-243",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 55,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 52,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-52",
+          "coordinateId": "NIST-186",
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 53,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-53",
+          "coordinateId": "NIST-328",
+          "vanadiumAtomicPercent": 79,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 54,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-54",
+          "coordinateId": "NIST-286",
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 55,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-55",
+          "coordinateId": "NIST-009",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 23,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 56,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-56",
+          "coordinateId": "NIST-328",
+          "vanadiumAtomicPercent": 79,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 57,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-57",
+          "coordinateId": "NIST-009",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 23,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 58,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-58",
+          "coordinateId": "NIST-186",
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 59,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-59",
+          "coordinateId": "NIST-285",
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 60,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-60",
+          "coordinateId": "NIST-143",
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 61,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-61",
+          "coordinateId": "NIST-243",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 55,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 62,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-62",
+          "coordinateId": "NIST-183",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 63,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-63",
+          "coordinateId": "NIST-286",
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 64,
+          "preparationId": "P1",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P1-C1-64",
+          "coordinateId": "NIST-143",
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        }
+      ],
+      "calibrationAcquisitions": [
+        {
+          "calibrationId": "P1-C1-CAL-1",
+          "sessionId": "P1-C1",
+          "afterSampleRunOrder": 0,
+          "referenceMaterial": "NIST SRM 640f",
+          "purpose": "line position and line shape"
+        },
+        {
+          "calibrationId": "P1-C1-CAL-2",
+          "sessionId": "P1-C1",
+          "afterSampleRunOrder": 0,
+          "referenceMaterial": "NIST SRM 1976c",
+          "purpose": "instrument response"
+        },
+        {
+          "calibrationId": "P1-C1-CAL-3",
+          "sessionId": "P1-C1",
+          "afterSampleRunOrder": 24,
+          "referenceMaterial": "NIST SRM 640f",
+          "purpose": "mid-prefix angular drift"
+        },
+        {
+          "calibrationId": "P1-C1-CAL-4",
+          "sessionId": "P1-C1",
+          "afterSampleRunOrder": 48,
+          "referenceMaterial": "NIST SRM 640f",
+          "purpose": "checkpoint angular drift"
+        },
+        {
+          "calibrationId": "P1-C1-CAL-5",
+          "sessionId": "P1-C1",
+          "afterSampleRunOrder": 48,
+          "referenceMaterial": "NIST SRM 1976c",
+          "purpose": "checkpoint response drift"
+        },
+        {
+          "calibrationId": "P1-C1-CAL-6",
+          "sessionId": "P1-C1",
+          "afterSampleRunOrder": 64,
+          "referenceMaterial": "NIST SRM 640f",
+          "purpose": "end-session angular drift"
+        }
+      ]
+    },
+    {
+      "sessionId": "P1-C2",
+      "preparationId": "P1",
+      "instrumentConditionId": "C2",
+      "sampleAcquisitions": [
+        {
+          "runOrder": 1,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-01",
+          "coordinateId": "NIST-024",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 23,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 2,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-02",
+          "coordinateId": "NIST-288",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 3,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-03",
+          "coordinateId": "NIST-185",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 4,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-04",
+          "coordinateId": "NIST-112",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 36,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 5,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-05",
+          "coordinateId": "NIST-332",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 6,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-06",
+          "coordinateId": "NIST-024",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 23,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 7,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-07",
+          "coordinateId": "NIST-142",
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 8,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-08",
+          "coordinateId": "NIST-139",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 9,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-09",
+          "coordinateId": "NIST-244",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 55,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 10,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-10",
+          "coordinateId": "NIST-112",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 36,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 11,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-11",
+          "coordinateId": "NIST-008",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 23,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 12,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-12",
+          "coordinateId": "NIST-227",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 55,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 13,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-13",
+          "coordinateId": "NIST-184",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 14,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-14",
+          "coordinateId": "NIST-309",
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 15,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-15",
+          "coordinateId": "NIST-200",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 16,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-16",
+          "coordinateId": "NIST-140",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 17,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-17",
+          "coordinateId": "NIST-244",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 55,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 18,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-18",
+          "coordinateId": "NIST-099",
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 36,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 19,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-19",
+          "coordinateId": "NIST-200",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 20,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-20",
+          "coordinateId": "NIST-050",
+          "vanadiumAtomicPercent": 94,
+          "temperatureC": 30,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 21,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-21",
+          "coordinateId": "NIST-265",
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 22,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-22",
+          "coordinateId": "NIST-331",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 23,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-23",
+          "coordinateId": "NIST-330",
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 24,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-24",
+          "coordinateId": "NIST-331",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 25,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-25",
+          "coordinateId": "NIST-139",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 26,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-26",
+          "coordinateId": "NIST-288",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 27,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-27",
+          "coordinateId": "NIST-141",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 28,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-28",
+          "coordinateId": "NIST-332",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 29,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-29",
+          "coordinateId": "NIST-329",
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 30,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-30",
+          "coordinateId": "NIST-330",
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 31,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-31",
+          "coordinateId": "NIST-068",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 30,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 32,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-32",
+          "coordinateId": "NIST-287",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 33,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-33",
+          "coordinateId": "NIST-156",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 34,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-34",
+          "coordinateId": "NIST-287",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 35,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-35",
+          "coordinateId": "NIST-185",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 36,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-36",
+          "coordinateId": "NIST-309",
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 37,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-37",
+          "coordinateId": "NIST-141",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 38,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-38",
+          "coordinateId": "NIST-227",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 55,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 39,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-39",
+          "coordinateId": "NIST-329",
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 40,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-40",
+          "coordinateId": "NIST-008",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 23,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 41,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-41",
+          "coordinateId": "NIST-156",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 42,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-42",
+          "coordinateId": "NIST-142",
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 43,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-43",
+          "coordinateId": "NIST-068",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 30,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 44,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-44",
+          "coordinateId": "NIST-184",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 45,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-45",
+          "coordinateId": "NIST-099",
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 36,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 46,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-46",
+          "coordinateId": "NIST-140",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 47,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-47",
+          "coordinateId": "NIST-050",
+          "vanadiumAtomicPercent": 94,
+          "temperatureC": 30,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 48,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-48",
+          "coordinateId": "NIST-265",
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 49,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-49",
+          "coordinateId": "NIST-143",
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 50,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-50",
+          "coordinateId": "NIST-183",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 51,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-51",
+          "coordinateId": "NIST-286",
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 52,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-52",
+          "coordinateId": "NIST-186",
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 53,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-53",
+          "coordinateId": "NIST-328",
+          "vanadiumAtomicPercent": 79,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 54,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-54",
+          "coordinateId": "NIST-243",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 55,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 55,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-55",
+          "coordinateId": "NIST-009",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 23,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 56,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-56",
+          "coordinateId": "NIST-143",
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 57,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-57",
+          "coordinateId": "NIST-009",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 23,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 58,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-58",
+          "coordinateId": "NIST-285",
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 59,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-59",
+          "coordinateId": "NIST-183",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 60,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-60",
+          "coordinateId": "NIST-243",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 55,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 61,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-61",
+          "coordinateId": "NIST-285",
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 62,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-62",
+          "coordinateId": "NIST-328",
+          "vanadiumAtomicPercent": 79,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 63,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-63",
+          "coordinateId": "NIST-186",
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 64,
+          "preparationId": "P1",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P1-C2-64",
+          "coordinateId": "NIST-286",
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        }
+      ],
+      "calibrationAcquisitions": [
+        {
+          "calibrationId": "P1-C2-CAL-1",
+          "sessionId": "P1-C2",
+          "afterSampleRunOrder": 0,
+          "referenceMaterial": "NIST SRM 640f",
+          "purpose": "line position and line shape"
+        },
+        {
+          "calibrationId": "P1-C2-CAL-2",
+          "sessionId": "P1-C2",
+          "afterSampleRunOrder": 0,
+          "referenceMaterial": "NIST SRM 1976c",
+          "purpose": "instrument response"
+        },
+        {
+          "calibrationId": "P1-C2-CAL-3",
+          "sessionId": "P1-C2",
+          "afterSampleRunOrder": 24,
+          "referenceMaterial": "NIST SRM 640f",
+          "purpose": "mid-prefix angular drift"
+        },
+        {
+          "calibrationId": "P1-C2-CAL-4",
+          "sessionId": "P1-C2",
+          "afterSampleRunOrder": 48,
+          "referenceMaterial": "NIST SRM 640f",
+          "purpose": "checkpoint angular drift"
+        },
+        {
+          "calibrationId": "P1-C2-CAL-5",
+          "sessionId": "P1-C2",
+          "afterSampleRunOrder": 48,
+          "referenceMaterial": "NIST SRM 1976c",
+          "purpose": "checkpoint response drift"
+        },
+        {
+          "calibrationId": "P1-C2-CAL-6",
+          "sessionId": "P1-C2",
+          "afterSampleRunOrder": 64,
+          "referenceMaterial": "NIST SRM 640f",
+          "purpose": "end-session angular drift"
+        }
+      ]
+    },
+    {
+      "sessionId": "P2-C1",
+      "preparationId": "P2",
+      "instrumentConditionId": "C1",
+      "sampleAcquisitions": [
+        {
+          "runOrder": 1,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-01",
+          "coordinateId": "NIST-184",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 2,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-02",
+          "coordinateId": "NIST-112",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 36,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 3,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-03",
+          "coordinateId": "NIST-141",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 4,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-04",
+          "coordinateId": "NIST-200",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 5,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-05",
+          "coordinateId": "NIST-099",
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 36,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 6,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-06",
+          "coordinateId": "NIST-156",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 7,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-07",
+          "coordinateId": "NIST-287",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 8,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-08",
+          "coordinateId": "NIST-024",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 23,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 9,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-09",
+          "coordinateId": "NIST-008",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 23,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 10,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-10",
+          "coordinateId": "NIST-265",
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 11,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-11",
+          "coordinateId": "NIST-139",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 12,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-12",
+          "coordinateId": "NIST-265",
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 13,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-13",
+          "coordinateId": "NIST-244",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 55,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 14,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-14",
+          "coordinateId": "NIST-024",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 23,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 15,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-15",
+          "coordinateId": "NIST-185",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 16,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-16",
+          "coordinateId": "NIST-008",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 23,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 17,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-17",
+          "coordinateId": "NIST-309",
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 18,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-18",
+          "coordinateId": "NIST-142",
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 19,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-19",
+          "coordinateId": "NIST-068",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 30,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 20,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-20",
+          "coordinateId": "NIST-050",
+          "vanadiumAtomicPercent": 94,
+          "temperatureC": 30,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 21,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-21",
+          "coordinateId": "NIST-156",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 22,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-22",
+          "coordinateId": "NIST-329",
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 23,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-23",
+          "coordinateId": "NIST-184",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 24,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-24",
+          "coordinateId": "NIST-332",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 25,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-25",
+          "coordinateId": "NIST-331",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 26,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-26",
+          "coordinateId": "NIST-227",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 55,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 27,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-27",
+          "coordinateId": "NIST-141",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 28,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-28",
+          "coordinateId": "NIST-142",
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 29,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-29",
+          "coordinateId": "NIST-050",
+          "vanadiumAtomicPercent": 94,
+          "temperatureC": 30,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 30,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-30",
+          "coordinateId": "NIST-244",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 55,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 31,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-31",
+          "coordinateId": "NIST-068",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 30,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 32,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-32",
+          "coordinateId": "NIST-332",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 33,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-33",
+          "coordinateId": "NIST-140",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 34,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-34",
+          "coordinateId": "NIST-099",
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 36,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 35,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-35",
+          "coordinateId": "NIST-288",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 36,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-36",
+          "coordinateId": "NIST-330",
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 37,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-37",
+          "coordinateId": "NIST-288",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 38,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-38",
+          "coordinateId": "NIST-140",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 39,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-39",
+          "coordinateId": "NIST-329",
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 40,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-40",
+          "coordinateId": "NIST-185",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 41,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-41",
+          "coordinateId": "NIST-112",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 36,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 42,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-42",
+          "coordinateId": "NIST-200",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 43,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-43",
+          "coordinateId": "NIST-287",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 44,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-44",
+          "coordinateId": "NIST-331",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 45,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-45",
+          "coordinateId": "NIST-309",
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 46,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-46",
+          "coordinateId": "NIST-139",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 47,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-47",
+          "coordinateId": "NIST-330",
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 48,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-48",
+          "coordinateId": "NIST-227",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 55,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 49,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-49",
+          "coordinateId": "NIST-286",
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 50,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-50",
+          "coordinateId": "NIST-009",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 23,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 51,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-51",
+          "coordinateId": "NIST-183",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 52,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-52",
+          "coordinateId": "NIST-009",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 23,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 53,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-53",
+          "coordinateId": "NIST-328",
+          "vanadiumAtomicPercent": 79,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 54,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-54",
+          "coordinateId": "NIST-186",
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 55,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-55",
+          "coordinateId": "NIST-143",
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 56,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-56",
+          "coordinateId": "NIST-285",
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 57,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-57",
+          "coordinateId": "NIST-183",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 58,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-58",
+          "coordinateId": "NIST-186",
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 59,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-59",
+          "coordinateId": "NIST-328",
+          "vanadiumAtomicPercent": 79,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 60,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-60",
+          "coordinateId": "NIST-243",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 55,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 61,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-61",
+          "coordinateId": "NIST-285",
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 62,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-62",
+          "coordinateId": "NIST-286",
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 63,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-63",
+          "coordinateId": "NIST-143",
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 64,
+          "preparationId": "P2",
+          "instrumentConditionId": "C1",
+          "blindedSampleCode": "RC13-P2-C1-64",
+          "coordinateId": "NIST-243",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 55,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        }
+      ],
+      "calibrationAcquisitions": [
+        {
+          "calibrationId": "P2-C1-CAL-1",
+          "sessionId": "P2-C1",
+          "afterSampleRunOrder": 0,
+          "referenceMaterial": "NIST SRM 640f",
+          "purpose": "line position and line shape"
+        },
+        {
+          "calibrationId": "P2-C1-CAL-2",
+          "sessionId": "P2-C1",
+          "afterSampleRunOrder": 0,
+          "referenceMaterial": "NIST SRM 1976c",
+          "purpose": "instrument response"
+        },
+        {
+          "calibrationId": "P2-C1-CAL-3",
+          "sessionId": "P2-C1",
+          "afterSampleRunOrder": 24,
+          "referenceMaterial": "NIST SRM 640f",
+          "purpose": "mid-prefix angular drift"
+        },
+        {
+          "calibrationId": "P2-C1-CAL-4",
+          "sessionId": "P2-C1",
+          "afterSampleRunOrder": 48,
+          "referenceMaterial": "NIST SRM 640f",
+          "purpose": "checkpoint angular drift"
+        },
+        {
+          "calibrationId": "P2-C1-CAL-5",
+          "sessionId": "P2-C1",
+          "afterSampleRunOrder": 48,
+          "referenceMaterial": "NIST SRM 1976c",
+          "purpose": "checkpoint response drift"
+        },
+        {
+          "calibrationId": "P2-C1-CAL-6",
+          "sessionId": "P2-C1",
+          "afterSampleRunOrder": 64,
+          "referenceMaterial": "NIST SRM 640f",
+          "purpose": "end-session angular drift"
+        }
+      ]
+    },
+    {
+      "sessionId": "P2-C2",
+      "preparationId": "P2",
+      "instrumentConditionId": "C2",
+      "sampleAcquisitions": [
+        {
+          "runOrder": 1,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-01",
+          "coordinateId": "NIST-185",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 2,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-02",
+          "coordinateId": "NIST-331",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 3,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-03",
+          "coordinateId": "NIST-244",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 55,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 4,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-04",
+          "coordinateId": "NIST-287",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 5,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-05",
+          "coordinateId": "NIST-050",
+          "vanadiumAtomicPercent": 94,
+          "temperatureC": 30,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 6,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-06",
+          "coordinateId": "NIST-330",
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 7,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-07",
+          "coordinateId": "NIST-139",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 8,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-08",
+          "coordinateId": "NIST-227",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 55,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 9,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-09",
+          "coordinateId": "NIST-142",
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 10,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-10",
+          "coordinateId": "NIST-185",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 11,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-11",
+          "coordinateId": "NIST-288",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 12,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-12",
+          "coordinateId": "NIST-142",
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 13,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-13",
+          "coordinateId": "NIST-244",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 55,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 14,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-14",
+          "coordinateId": "NIST-140",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 15,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-15",
+          "coordinateId": "NIST-200",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 16,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-16",
+          "coordinateId": "NIST-265",
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 17,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-17",
+          "coordinateId": "NIST-156",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 18,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-18",
+          "coordinateId": "NIST-227",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 55,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 19,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-19",
+          "coordinateId": "NIST-139",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 20,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-20",
+          "coordinateId": "NIST-331",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 21,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-21",
+          "coordinateId": "NIST-068",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 30,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 22,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-22",
+          "coordinateId": "NIST-330",
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 23,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-23",
+          "coordinateId": "NIST-309",
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 24,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-24",
+          "coordinateId": "NIST-050",
+          "vanadiumAtomicPercent": 94,
+          "temperatureC": 30,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 25,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-25",
+          "coordinateId": "NIST-200",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 26,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-26",
+          "coordinateId": "NIST-008",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 23,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 27,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-27",
+          "coordinateId": "NIST-099",
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 36,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 28,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-28",
+          "coordinateId": "NIST-265",
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 29,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-29",
+          "coordinateId": "NIST-184",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 30,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-30",
+          "coordinateId": "NIST-068",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 30,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 31,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-31",
+          "coordinateId": "NIST-332",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 32,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-32",
+          "coordinateId": "NIST-309",
+          "vanadiumAtomicPercent": 99,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 33,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-33",
+          "coordinateId": "NIST-024",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 23,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 34,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-34",
+          "coordinateId": "NIST-141",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 35,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-35",
+          "coordinateId": "NIST-099",
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 36,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 36,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-36",
+          "coordinateId": "NIST-288",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 37,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-37",
+          "coordinateId": "NIST-024",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 23,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 38,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-38",
+          "coordinateId": "NIST-156",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 39,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-39",
+          "coordinateId": "NIST-184",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 40,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-40",
+          "coordinateId": "NIST-329",
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 41,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-41",
+          "coordinateId": "NIST-141",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 42,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-42",
+          "coordinateId": "NIST-140",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 43,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-43",
+          "coordinateId": "NIST-329",
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 44,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-44",
+          "coordinateId": "NIST-112",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 36,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 45,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-45",
+          "coordinateId": "NIST-332",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 46,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-46",
+          "coordinateId": "NIST-112",
+          "vanadiumAtomicPercent": 75,
+          "temperatureC": 36,
+          "technicalRepeat": 1,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 47,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-47",
+          "coordinateId": "NIST-287",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 48,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-48",
+          "coordinateId": "NIST-008",
+          "vanadiumAtomicPercent": 92,
+          "temperatureC": 23,
+          "technicalRepeat": 2,
+          "stage": "checkpoint-24"
+        },
+        {
+          "runOrder": 49,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-49",
+          "coordinateId": "NIST-286",
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 50,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-50",
+          "coordinateId": "NIST-243",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 55,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 51,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-51",
+          "coordinateId": "NIST-143",
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 45,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 52,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-52",
+          "coordinateId": "NIST-286",
+          "vanadiumAtomicPercent": 77,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 53,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-53",
+          "coordinateId": "NIST-186",
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 54,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-54",
+          "coordinateId": "NIST-143",
+          "vanadiumAtomicPercent": 88,
+          "temperatureC": 45,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 55,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-55",
+          "coordinateId": "NIST-328",
+          "vanadiumAtomicPercent": 79,
+          "temperatureC": 68,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 56,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-56",
+          "coordinateId": "NIST-009",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 23,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 57,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-57",
+          "coordinateId": "NIST-285",
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 62,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 58,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-58",
+          "coordinateId": "NIST-186",
+          "vanadiumAtomicPercent": 89,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 59,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-59",
+          "coordinateId": "NIST-243",
+          "vanadiumAtomicPercent": 76,
+          "temperatureC": 55,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 60,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-60",
+          "coordinateId": "NIST-285",
+          "vanadiumAtomicPercent": 78,
+          "temperatureC": 62,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 61,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-61",
+          "coordinateId": "NIST-183",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 50,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 62,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-62",
+          "coordinateId": "NIST-009",
+          "vanadiumAtomicPercent": 90,
+          "temperatureC": 23,
+          "technicalRepeat": 2,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 63,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-63",
+          "coordinateId": "NIST-328",
+          "vanadiumAtomicPercent": 79,
+          "temperatureC": 68,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        },
+        {
+          "runOrder": 64,
+          "preparationId": "P2",
+          "instrumentConditionId": "C2",
+          "blindedSampleCode": "RC13-P2-C2-64",
+          "coordinateId": "NIST-183",
+          "vanadiumAtomicPercent": 93,
+          "temperatureC": 50,
+          "technicalRepeat": 1,
+          "stage": "extension-32"
+        }
+      ],
+      "calibrationAcquisitions": [
+        {
+          "calibrationId": "P2-C2-CAL-1",
+          "sessionId": "P2-C2",
+          "afterSampleRunOrder": 0,
+          "referenceMaterial": "NIST SRM 640f",
+          "purpose": "line position and line shape"
+        },
+        {
+          "calibrationId": "P2-C2-CAL-2",
+          "sessionId": "P2-C2",
+          "afterSampleRunOrder": 0,
+          "referenceMaterial": "NIST SRM 1976c",
+          "purpose": "instrument response"
+        },
+        {
+          "calibrationId": "P2-C2-CAL-3",
+          "sessionId": "P2-C2",
+          "afterSampleRunOrder": 24,
+          "referenceMaterial": "NIST SRM 640f",
+          "purpose": "mid-prefix angular drift"
+        },
+        {
+          "calibrationId": "P2-C2-CAL-4",
+          "sessionId": "P2-C2",
+          "afterSampleRunOrder": 48,
+          "referenceMaterial": "NIST SRM 640f",
+          "purpose": "checkpoint angular drift"
+        },
+        {
+          "calibrationId": "P2-C2-CAL-5",
+          "sessionId": "P2-C2",
+          "afterSampleRunOrder": 48,
+          "referenceMaterial": "NIST SRM 1976c",
+          "purpose": "checkpoint response drift"
+        },
+        {
+          "calibrationId": "P2-C2-CAL-6",
+          "sessionId": "P2-C2",
+          "afterSampleRunOrder": 64,
+          "referenceMaterial": "NIST SRM 640f",
+          "purpose": "end-session angular drift"
+        }
+      ]
+    }
+  ],
+  "stopRules": [
+    "Stop before analysis if any preparation, frame, calibration, or parent identifier is missing or duplicated.",
+    "Stop at 192 sample acquisitions if either external reference drifts beyond its certificate-compatible preregistered tolerance or if a second reduction cannot reconstruct the same parent graph.",
+    "Do not estimate preparation variance if P1 and P2 are not independently prepared.",
+    "Do not use the published dry-run codes for a live blinded acquisition."
+  ]
+}

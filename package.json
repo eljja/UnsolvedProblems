@@ -21,6 +21,8 @@
     "research:sasbdb-filter": "node scripts/run-sasbdb-filter-sensitivity.mjs --write",
     "research:nist-repeat-power": "node scripts/run-nist-repeat-power.mjs --write",
     "research:nist-micro-pilot": "node scripts/run-nist-micro-pilot.mjs --write",
-    "test": "node scripts/validate.mjs && node scripts/verify-replay.mjs && node scripts/verify-ope.mjs && node scripts/verify-identification-sensitivity.mjs && node scripts/verify-audit-smoothness.mjs && node scripts/verify-two-phase-active.mjs && node scripts/verify-finite-hybrid.mjs && node scripts/verify-external-audits.mjs && node scripts/verify-reproducibility-cycle.mjs && node scripts/verify-raw-repeat-cycle.mjs && node scripts/verify-nested-pilot-cycle.mjs"
+    "research:nist-acquisition-manifest": "node scripts/generate-nist-acquisition-manifest.mjs --write",
+    "research:nist-raw-profiles": "node scripts/audit-nist-raw-profiles.mjs",
+    "test": "node scripts/validate.mjs && node scripts/verify-replay.mjs && node scripts/verify-ope.mjs && node scripts/verify-identification-sensitivity.mjs && node scripts/verify-audit-smoothness.mjs && node scripts/verify-two-phase-active.mjs && node scripts/verify-finite-hybrid.mjs && node scripts/verify-external-audits.mjs && node scripts/verify-reproducibility-cycle.mjs && node scripts/verify-raw-repeat-cycle.mjs && node scripts/verify-nested-pilot-cycle.mjs && node scripts/verify-raw-manifest-cycle.mjs"
   }
 }

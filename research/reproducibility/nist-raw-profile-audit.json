@@ -1,0 +1,128 @@
+{
+  "auditId": "NIST-VO2-RAW-PROFILE-AUDIT-0.1",
+  "reviewedOn": "2026-08-12",
+  "source": {
+    "datasetDoi": "10.18434/mds2-2301",
+    "rawProfileUrl": "https://data.nist.gov/od/ds/mds2-2301/VO2%20-Nb2O3%20XRD%20Combiview.txt",
+    "rawProfileSha256": "3b47bf36b2abaef376730226e2616a353ba07571c46e71bce464cf9e9bfbe348",
+    "rawFileRepublished": false
+  },
+  "shape": {
+    "spectra": 352,
+    "labeledSpectra": 192,
+    "twoThetaPoints": 3841,
+    "twoThetaStartDegrees": 18,
+    "twoThetaEndDegrees": 37.2,
+    "nominalStepDegrees": 0.005,
+    "nearestNeighborEdges": 352
+  },
+  "protocol": {
+    "developmentLabels": [
+      "HL1",
+      "HL2"
+    ],
+    "sealedAdjudicationLabels": [
+      "HL3",
+      "HL4",
+      "HL5"
+    ],
+    "metrics": {
+      "cosine": "One minus cosine similarity of unmodified intensity vectors.",
+      "centeredCosine": "One minus Pearson-equivalent centered cosine similarity.",
+      "derivativeCosine": "One minus cosine similarity after fixed five-point smoothing and first differencing."
+    },
+    "selection": "Choose both metric and threshold using development labels only; report the frozen pair on majority HL3-HL5 edge transitions."
+  },
+  "metrics": {
+    "cosine": {
+      "development": {
+        "edges": 302,
+        "boundaryEdges": 17,
+        "auc": 0.80805,
+        "selectedThreshold": 0.003173215,
+        "balancedAccuracyAtSelection": 0.746852
+      },
+      "sealedAdjudication": {
+        "edges": 352,
+        "boundaryEdges": 36,
+        "auc": 0.586322,
+        "truePositive": 16,
+        "falsePositive": 109,
+        "trueNegative": 207,
+        "falseNegative": 20,
+        "sensitivity": 0.444444,
+        "specificity": 0.655063,
+        "balancedAccuracy": 0.549754
+      }
+    },
+    "centeredCosine": {
+      "development": {
+        "edges": 302,
+        "boundaryEdges": 17,
+        "auc": 0.882353,
+        "selectedThreshold": 0.057025463,
+        "balancedAccuracyAtSelection": 0.852116
+      },
+      "sealedAdjudication": {
+        "edges": 352,
+        "boundaryEdges": 36,
+        "auc": 0.755362,
+        "truePositive": 12,
+        "falsePositive": 44,
+        "trueNegative": 272,
+        "falseNegative": 24,
+        "sensitivity": 0.333333,
+        "specificity": 0.860759,
+        "balancedAccuracy": 0.597046
+      }
+    },
+    "derivativeCosine": {
+      "development": {
+        "edges": 302,
+        "boundaryEdges": 17,
+        "auc": 0.695356,
+        "selectedThreshold": 0.866916138,
+        "balancedAccuracyAtSelection": 0.69515
+      },
+      "sealedAdjudication": {
+        "edges": 352,
+        "boundaryEdges": 36,
+        "auc": 0.70385,
+        "truePositive": 30,
+        "falsePositive": 191,
+        "trueNegative": 125,
+        "falseNegative": 6,
+        "sensitivity": 0.833333,
+        "specificity": 0.39557,
+        "balancedAccuracy": 0.614451
+      }
+    }
+  },
+  "selectedMetric": "centeredCosine",
+  "selectedResult": {
+    "development": {
+      "edges": 302,
+      "boundaryEdges": 17,
+      "auc": 0.882353,
+      "selectedThreshold": 0.057025463,
+      "balancedAccuracyAtSelection": 0.852116
+    },
+    "sealedAdjudication": {
+      "edges": 352,
+      "boundaryEdges": 36,
+      "auc": 0.755362,
+      "truePositive": 12,
+      "falsePositive": 44,
+      "trueNegative": 272,
+      "falseNegative": 24,
+      "sensitivity": 0.333333,
+      "specificity": 0.860759,
+      "balancedAccuracy": 0.597046
+    }
+  },
+  "interpretation": {
+    "supported": "The public single-acquisition profiles can rank prespecified full-profile observables against independently adjudicated phase-transition edges.",
+    "notSupported": "The dataset cannot estimate technical, preparation, facility, or reduction variance and therefore cannot define a physical minimum detectable phase-change signal.",
+    "dependenceWarning": "Edges share coordinates. Edge-level confusion counts are descriptive and must not be treated as independent binomial trials."
+  }
+}

@@ -48,7 +48,7 @@ const result = {
     landingPage: "https://data.nist.gov/od/id/mds2-2301",
     articleDoi: "10.1007/s40192-021-00213-8",
     license: "NIST public-domain/open data terms",
-    humanLabelsSha256: "6fcc4e862ea866286436a8624b2b82241ce80a08cc87eb0bb878f56ce6fdd027"
+    humanLabelsSha256: "0056a45f7d45694368597fe7804569339745214530584dae10652873fed38cd2"
   },
   grid: {
     records: enriched.length,

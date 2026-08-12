@@ -4,7 +4,19 @@
   "landingPage": "https://data.nist.gov/od/id/mds2-2301",
   "articleDoi": "10.1007/s40192-021-00213-8",
   "humanLabelsUrl": "https://data.nist.gov/od/ds/mds2-2301/Human%20Labels.xlsx",
-  "humanLabelsSha256": "6fcc4e862ea866286436a8624b2b82241ce80a08cc87eb0bb878f56ce6fdd027",
+  "humanLabelsSha256": "0056a45f7d45694368597fe7804569339745214530584dae10652873fed38cd2",
+  "compositionTemperatureUrl": "https://data.nist.gov/od/ds/mds2-2301/VO2%20-%20Nb2O3%20Composition%20and%20temp%20Combiview.txt",
+  "compositionTemperatureSha256": "6fcc4e862ea866286436a8624b2b82241ce80a08cc87eb0bb878f56ce6fdd027",
+  "rawXrdUrl": "https://data.nist.gov/od/ds/mds2-2301/VO2%20-Nb2O3%20XRD%20Combiview.txt",
+  "rawXrdSha256": "3b47bf36b2abaef376730226e2616a353ba07571c46e71bce464cf9e9bfbe348",
+  "readmeUrl": "https://data.nist.gov/od/ds/mds2-2301/Readme.txt",
+  "readmeSha256": "79664bb816f830b98254f13bd699fe4266097471b3a4eb8093cdf3725b475110",
+  "metadataApi": "https://data.nist.gov/rmm/records/mds2-2301",
   "license": "NIST public-domain/open data terms",
-  "canonicalExtraction": "human-labels.json is a values-only extraction of the public Human Labels.xlsx workbook. The original workbook is not republished."
+  "canonicalExtraction": "human-labels.json is a values-only extraction of the public Human Labels.xlsx workbook. The original workbook and 13.4 MB raw profile file are not republished; their official URLs, byte-level hashes, and derived audits are retained.",
+  "correction": {
+    "reviewedOn": "2026-08-12",
+    "previousValue": "6fcc4e862ea866286436a8624b2b82241ce80a08cc87eb0bb878f56ce6fdd027",
+    "finding": "The previous humanLabelsSha256 value belongs to the composition-temperature text file, not Human Labels.xlsx. The workbook hash was independently downloaded and reconciled with the official NIST metadata API."
+  }
 }
