@@ -1,0 +1,32 @@
+{
+  "verificationId": "REPLAY-VERIFICATION-2026-08-12",
+  "fixtureId": "SYNTHETIC-REPLAY-0.1",
+  "implementations": ["reference-declarative", "audit-insertion"],
+  "stateCount": 6,
+  "policyCount": 4,
+  "selectionComparisons": 24,
+  "selectionAgreement": 1,
+  "fullRankingAgreement": 1,
+  "meanKendallTau": 1,
+  "goldenRankingAgreement": 1,
+  "schema": {
+    "validCompleteRecords": 6,
+    "invalidWithoutRawXrdChecksum": 6,
+    "invalidWithoutIndependentCall": 6
+  },
+  "ablations": {
+    "removeDetrimentalPathHistory": {
+      "policy": "R2",
+      "changedSelections": 3,
+      "totalStates": 6,
+      "changeRate": 0.5,
+      "changedStateIds": ["S2", "S4", "S5"]
+    },
+    "removeSelectionProbability": {
+      "schemaValid": true,
+      "causalReplayEligible": false,
+      "reason": "The schema permits null for deterministic or unavailable propensities, but causal off-policy evaluation is not identified without logged propensities or exact deterministic reconstruction."
+    }
+  },
+  "interpretationBoundary": "Agreement validates the fixture, ledger checks, and two replay implementations. It does not estimate ARROWS performance or establish superiority of any search policy."
+}

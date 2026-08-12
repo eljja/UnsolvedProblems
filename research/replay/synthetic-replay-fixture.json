@@ -1,0 +1,73 @@
+{
+  "fixtureId": "SYNTHETIC-REPLAY-0.1",
+  "license": "Apache-2.0",
+  "purpose": "Original, non-chemical fixture for testing whether policy decisions can be reconstructed from a complete prospective ledger.",
+  "policies": {
+    "R0": "ascending randomPriority, then actionId",
+    "R1": "descending drivingForce, then actionId",
+    "R2": "exclude observed detrimental paths when at least one action remains, then descending drivingForce; append excluded actions for a complete ranking",
+    "R3": "descending calibratedInformationGain, then actionId"
+  },
+  "states": [
+    {
+      "stateId": "S1",
+      "observedDetrimentalPaths": [],
+      "actions": [
+        { "actionId": "A", "path": "P-A", "drivingForce": 42, "calibratedInformationGain": 0.61, "randomPriority": 0.4 },
+        { "actionId": "B", "path": "P-B", "drivingForce": 70, "calibratedInformationGain": 0.35, "randomPriority": 0.1 },
+        { "actionId": "C", "path": "P-C", "drivingForce": 58, "calibratedInformationGain": 0.82, "randomPriority": 0.7 }
+      ],
+      "goldenRankings": { "R0": ["B", "A", "C"], "R1": ["B", "C", "A"], "R2": ["B", "C", "A"], "R3": ["C", "A", "B"] }
+    },
+    {
+      "stateId": "S2",
+      "observedDetrimentalPaths": ["P-B"],
+      "actions": [
+        { "actionId": "A", "path": "P-D", "drivingForce": 50, "calibratedInformationGain": 0.45, "randomPriority": 0.8 },
+        { "actionId": "B", "path": "P-B", "drivingForce": 82, "calibratedInformationGain": 0.22, "randomPriority": 0.2 },
+        { "actionId": "C", "path": "P-E", "drivingForce": 66, "calibratedInformationGain": 0.76, "randomPriority": 0.5 }
+      ],
+      "goldenRankings": { "R0": ["B", "C", "A"], "R1": ["B", "C", "A"], "R2": ["C", "A", "B"], "R3": ["C", "A", "B"] }
+    },
+    {
+      "stateId": "S3",
+      "observedDetrimentalPaths": ["P-F"],
+      "actions": [
+        { "actionId": "A", "path": "P-F", "drivingForce": 45, "calibratedInformationGain": 0.9, "randomPriority": 0.3 },
+        { "actionId": "B", "path": "P-G", "drivingForce": 63, "calibratedInformationGain": 0.55, "randomPriority": 0.1 },
+        { "actionId": "C", "path": "P-H", "drivingForce": 57, "calibratedInformationGain": 0.7, "randomPriority": 0.6 }
+      ],
+      "goldenRankings": { "R0": ["B", "A", "C"], "R1": ["B", "C", "A"], "R2": ["B", "C", "A"], "R3": ["A", "C", "B"] }
+    },
+    {
+      "stateId": "S4",
+      "observedDetrimentalPaths": ["P-J"],
+      "actions": [
+        { "actionId": "A", "path": "P-J", "drivingForce": 88, "calibratedInformationGain": 0.3, "randomPriority": 0.9 },
+        { "actionId": "B", "path": "P-K", "drivingForce": 62, "calibratedInformationGain": 0.87, "randomPriority": 0.4 },
+        { "actionId": "C", "path": "P-L", "drivingForce": 74, "calibratedInformationGain": 0.63, "randomPriority": 0.2 }
+      ],
+      "goldenRankings": { "R0": ["C", "B", "A"], "R1": ["A", "C", "B"], "R2": ["C", "B", "A"], "R3": ["B", "C", "A"] }
+    },
+    {
+      "stateId": "S5",
+      "observedDetrimentalPaths": ["P-M", "P-N"],
+      "actions": [
+        { "actionId": "A", "path": "P-M", "drivingForce": 80, "calibratedInformationGain": 0.48, "randomPriority": 0.5 },
+        { "actionId": "B", "path": "P-N", "drivingForce": 72, "calibratedInformationGain": 0.69, "randomPriority": 0.3 },
+        { "actionId": "C", "path": "P-O", "drivingForce": 54, "calibratedInformationGain": 0.78, "randomPriority": 0.1 }
+      ],
+      "goldenRankings": { "R0": ["C", "B", "A"], "R1": ["A", "B", "C"], "R2": ["C", "A", "B"], "R3": ["C", "B", "A"] }
+    },
+    {
+      "stateId": "S6",
+      "observedDetrimentalPaths": ["P-Q", "P-R", "P-S"],
+      "actions": [
+        { "actionId": "A", "path": "P-Q", "drivingForce": 68, "calibratedInformationGain": 0.73, "randomPriority": 0.6 },
+        { "actionId": "B", "path": "P-R", "drivingForce": 76, "calibratedInformationGain": 0.41, "randomPriority": 0.2 },
+        { "actionId": "C", "path": "P-S", "drivingForce": 59, "calibratedInformationGain": 0.88, "randomPriority": 0.4 }
+      ],
+      "goldenRankings": { "R0": ["B", "C", "A"], "R1": ["B", "A", "C"], "R2": ["B", "A", "C"], "R3": ["C", "A", "B"] }
+    }
+  ]
+}

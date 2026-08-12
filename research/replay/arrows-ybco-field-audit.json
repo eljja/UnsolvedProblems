@@ -1,0 +1,52 @@
+{
+  "auditId": "ARROWS-YBCO-FIELD-AUDIT-2026-08-12",
+  "auditedOn": "2026-08-12",
+  "source": {
+    "repository": "https://github.com/njszym/ARROWS",
+    "commit": "cb630e944315c8ac19f5b9a3c9d8984be93258a6",
+    "file": "Examples/YBCO/Exp.json",
+    "sha256": "61a9efa9e2adab31a453de80ed2a0457b53705b5c75807036c04e9bc0547f0e9",
+    "bytes": 52463427,
+    "licenseBoundary": "No LICENSE or COPYING file was present at the audited repository commit. This artifact reports aggregate field counts only and does not redistribute source data or code."
+  },
+  "scope": "Structural audit of the public YBCO example for prospective policy replay and causal off-policy evaluation.",
+  "counts": {
+    "precursorSets": 47,
+    "temperatureObservations": 200,
+    "precursorSetsWithFourTemperatures": 35,
+    "precursorSetsWithFiveTemperatures": 12,
+    "experimentallyVerifiedTrue": 149,
+    "experimentallyVerifiedFalse": 51,
+    "rawXrdPresent": 149,
+    "rawXrdAbsent": 51,
+    "sourceFieldPresent": 50,
+    "sourceFieldAbsent": 150,
+    "distinctProductLabels": 19,
+    "targetLabelPresent": 93,
+    "targetMajorityAboveFiftyPercent": 42,
+    "targetOnlyProduct": 10
+  },
+  "numericChecks": {
+    "xrdPointCountMinimum": 8284,
+    "xrdPointCountMaximum": 9001,
+    "xrdAxisLengthMismatches": 0,
+    "productWeightSumMinimumPercent": 98.5,
+    "productWeightSumMaximumPercent": 102,
+    "productWeightSumMeanPercent": 100.076
+  },
+  "fieldCoverage": {
+    "routeOutcomeGrid": "present",
+    "rawXrdForVerifiedRows": "present",
+    "stableAttemptId": "absent",
+    "attemptChronology": "absent",
+    "candidateSetSnapshot": "absent",
+    "policyNameAndVersion": "absent",
+    "selectionScores": "absent",
+    "selectionProbability": "absent",
+    "randomSeed": "absent",
+    "executionDeviationLog": "absent",
+    "independentAdjudication": "absent"
+  },
+  "adjudicationBoundary": "Experimentally Verified is a dataset field, not a record of blinded independent outcome adjudication. Rows marked false are not counted as independently executed failures.",
+  "conclusion": "The example supports retrospective route-outcome and measurement-field analyses. It does not support chronological policy replay or causal comparison of search policies without an additional event ledger or prospectively logged campaign."
+}

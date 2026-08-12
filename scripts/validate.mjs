@@ -8,7 +8,7 @@ const failures = [];
 const assert = (condition, message) => { if (!condition) failures.push(message); };
 
 const sandbox = { window: {} };
-for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js"]) {
+for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js"]) {
   vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }
 
@@ -16,6 +16,9 @@ const { PROBLEMS, CATALOG_META: meta, CATALOG_SOURCES: sources, CATALOG_PRIZES: 
 const audit = JSON.parse(fs.readFileSync(path.join(root, "research/alab-public-data-audit.json"), "utf8"));
 const ledgerSchema = JSON.parse(fs.readFileSync(path.join(root, "research/complete-ledger.schema.json"), "utf8"));
 const replayBenchmark = JSON.parse(fs.readFileSync(path.join(root, "research/alab-replay-benchmark.json"), "utf8"));
+const arrowsAudit = JSON.parse(fs.readFileSync(path.join(root, "research/replay/arrows-ybco-field-audit.json"), "utf8"));
+const replayFixture = JSON.parse(fs.readFileSync(path.join(root, "research/replay/synthetic-replay-fixture.json"), "utf8"));
+const replayVerification = JSON.parse(fs.readFileSync(path.join(root, "research/replay/verification-result.json"), "utf8"));
 assert(Array.isArray(PROBLEMS), "PROBLEMS must be an array");
 assert(PROBLEMS.length > 0, "catalog must contain at least one problem");
 assert(new Set(PROBLEMS.map(item => item.id)).size === PROBLEMS.length, "problem IDs must be unique");
@@ -274,6 +277,15 @@ assert(replayBenchmark.policies?.length === 4, "replay benchmark requires four f
 assert(new Set(replayBenchmark.policies.map(item => item.id)).size === 4, "replay policy IDs must be unique");
 assert(replayBenchmark.replayFidelityGate?.selectedActionAgreement === 0.9, "replay benchmark must freeze 90% action agreement");
 assert(replayBenchmark.replayFidelityGate?.topFiveRankKendallTau === 0.8, "replay benchmark must freeze Kendall tau at 0.8");
+assert(arrowsAudit.auditId === "ARROWS-YBCO-FIELD-AUDIT-2026-08-12", "ARROWS audit must expose its stable audit ID");
+assert(arrowsAudit.counts?.precursorSets === 47 && arrowsAudit.counts?.temperatureObservations === 200, "ARROWS audit must preserve public-file denominators");
+assert(arrowsAudit.counts?.experimentallyVerifiedTrue === 149 && arrowsAudit.counts?.rawXrdPresent === 149, "ARROWS audit must preserve verified/XRD field coverage");
+assert(arrowsAudit.fieldCoverage?.candidateSetSnapshot === "absent" && arrowsAudit.fieldCoverage?.selectionProbability === "absent", "ARROWS audit must record causal-replay gaps");
+assert(replayFixture.license === "Apache-2.0" && replayFixture.states?.length === 6, "synthetic replay fixture must remain licensed and frozen at six states");
+assert(replayVerification.selectionComparisons === 24 && replayVerification.selectionAgreement === 1, "independent replay must preserve 24/24 selected-action agreement");
+assert(replayVerification.fullRankingAgreement === 1 && replayVerification.goldenRankingAgreement === 1, "independent replay must agree on complete and golden rankings");
+assert(replayVerification.ablations?.removeDetrimentalPathHistory?.changedSelections === 3, "R2 ablation must preserve three changed selections");
+assert(replayVerification.ablations?.removeSelectionProbability?.causalReplayEligible === false, "null propensities cannot imply causal eligibility");
 
 const boundaryCount = PROBLEMS.filter(item => item.nature === "boundary").length;
 assert(boundaryCount > 0, "catalog must preserve clearly labeled boundary examples");
@@ -291,7 +303,7 @@ const robots = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 const license = fs.readFileSync(path.join(root, "LICENSE"), "utf8");
 const packageMetadata = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"));
-const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "solve.html", "solve.js", "research-log.html", "research-log.js"]
+const publicCopy = ["index.html", "app.js", "README.md", "priority-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "solve.html", "solve.js", "research-log.html", "research-log.js"]
   .map(file => fs.readFileSync(path.join(root, file), "utf8"))
   .join("\n");
 for (const phrase of [
@@ -318,11 +330,11 @@ for (const phrase of [
 ]) {
   assert(!publicCopy.includes(phrase), `public copy contains process-oriented wording: ${phrase}`);
 }
-for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "research-cycle-data.js", "app.js", "assets/mark.svg", "assets/og-744.png"]) {
+for (const asset of ["styles.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "app.js", "assets/mark.svg", "assets/og-744.png"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing asset ${asset}`);
   assert(html.includes(asset), `index.html does not reference ${asset}`);
 }
-for (const asset of ["styles.css", "solve.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "solve.js", "assets/mark.svg"]) {
+for (const asset of ["styles.css", "solve.css", "data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "solve.js", "assets/mark.svg"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing research page asset ${asset}`);
   assert(solveHtml.includes(asset), `solve.html does not reference ${asset}`);
 }
@@ -339,7 +351,7 @@ for (const id of ["back-to-atlas", "solution-language-switch", "solution-title",
 }
 assert(fs.readFileSync(path.join(root, "app.js"), "utf8").includes("solve.html"), "main problem details must link to a separate research-attempt page");
 assert(solveCss.includes("@media (max-width: 800px)"), "research-attempt page must include a mobile/tablet layout");
-for (const asset of ["styles.css", "research-log.css", "research-cycle-data.js", "research-log.js", "assets/mark.svg"]) {
+for (const asset of ["styles.css", "research-log.css", "research-cycle-data.js", "research-cycle-03-data.js", "research-log.js", "assets/mark.svg"]) {
   assert(fs.existsSync(path.join(root, asset)), `missing research-log asset ${asset}`);
   assert(logHtml.includes(asset), `research-log.html does not reference ${asset}`);
 }
