@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/audit/completeness-audit.schema.json",
+  "title": "Prospective campaign completeness audit",
+  "description": "A campaign-level manifest that retains every planned experiment and separates execution, raw observation, adjudication, and release transitions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "campaignId", "sealedAt", "expectedExperimentCount", "records", "manifest", "campaignDigest"],
+  "properties": {
+    "schemaVersion": { "const": "0.1.0" },
+    "campaignId": { "type": "string", "minLength": 1 },
+    "sealedAt": { "type": "string", "format": "date-time" },
+    "expectedExperimentCount": { "type": "integer", "minimum": 1 },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["experimentId", "registeredAt", "targetHash", "stages", "outcome", "recordDigest"],
+        "properties": {
+          "experimentId": { "type": "string", "minLength": 1 },
+          "registeredAt": { "type": "string", "format": "date-time" },
+          "targetHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "stages": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["decision", "execution", "rawObservation", "adjudication", "release"],
+            "properties": {
+              "decision": { "$ref": "#/$defs/stage" },
+              "execution": { "$ref": "#/$defs/stage" },
+              "rawObservation": { "$ref": "#/$defs/stage" },
+              "adjudication": { "$ref": "#/$defs/stage" },
+              "release": { "$ref": "#/$defs/stage" }
+            }
+          },
+          "outcome": { "type": ["string", "null"], "enum": ["success", "failure", "inconclusive", null] },
+          "recordDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    },
+    "manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["execution", "rawObservation", "adjudication", "release"],
+      "properties": {
+        "execution": { "$ref": "#/$defs/countMap" },
+        "rawObservation": { "$ref": "#/$defs/countMap" },
+        "adjudication": { "$ref": "#/$defs/countMap" },
+        "release": { "$ref": "#/$defs/countMap" }
+      }
+    },
+    "campaignDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  },
+  "$defs": {
+    "stage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "occurredAt", "artifactHash", "reasonCode", "reasonRecordedAt", "outcomeKnownWhenReasonRecorded"],
+      "properties": {
+        "status": { "enum": ["recorded", "completed", "failed", "not-run", "present", "absent", "not-applicable", "released", "withheld"] },
+        "occurredAt": { "type": ["string", "null"], "format": "date-time" },
+        "artifactHash": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+        "reasonCode": { "type": ["string", "null"] },
+        "reasonRecordedAt": { "type": ["string", "null"], "format": "date-time" },
+        "outcomeKnownWhenReasonRecorded": { "type": ["boolean", "null"] }
+      }
+    },
+    "countMap": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0 },
+      "minProperties": 1
+    }
+  }
+}

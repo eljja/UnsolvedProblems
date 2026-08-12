@@ -9,6 +9,8 @@
     "replay": "node scripts/verify-replay.mjs",
     "research:ope": "node scripts/run-ope-simulation.mjs --write",
     "research:identify": "node scripts/run-identification-sensitivity.mjs --write",
-    "test": "node scripts/validate.mjs && node scripts/verify-replay.mjs && node scripts/verify-ope.mjs && node scripts/verify-identification-sensitivity.mjs"
+    "research:audit": "node scripts/run-audit-calibration.mjs --write",
+    "research:smoothness": "node scripts/run-smoothness-seal.mjs --write",
+    "test": "node scripts/validate.mjs && node scripts/verify-replay.mjs && node scripts/verify-ope.mjs && node scripts/verify-identification-sensitivity.mjs && node scripts/verify-audit-smoothness.mjs"
   }
 }

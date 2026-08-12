@@ -1,0 +1,18 @@
+{
+  "calibrationId": "MNAR-AUDIT-RESCUE-0.1",
+  "reviewedOn": "2026-08-12",
+  "observedDistribution": {
+    "responseRate": 0.6,
+    "positiveRateAmongObserved": 0.7
+  },
+  "trueSelectionOddsGamma": [1, 4, 16],
+  "randomRescueSampleSizes": [0, 20, 50, 100],
+  "evaluation": "Exact enumeration of every binomial rescue-sample outcome",
+  "confidenceLevel": 0.95,
+  "decisionGates": {
+    "maximumMeanPopulationWidth": 0.08,
+    "minimumCoverage": 0.95,
+    "minimumFiniteGammaUpperRate": 0.95
+  },
+  "interpretation": "Stage counts alone identify the missing fraction but not outcome-dependent selection. Rescue samples are drawn uniformly from missing planned IDs and adjudicated independently."
+}

@@ -1,0 +1,18 @@
+{
+  "benchmarkId": "CHEMICAL-SMOOTHNESS-SEAL-0.1",
+  "reviewedOn": "2026-08-12",
+  "feature": "Normalized composition-process coordinate",
+  "developmentGrid": { "minimum": 0, "maximum": 0.6, "step": 0.05 },
+  "sealedAdjudicationGrid": { "minimum": 0.625, "maximum": 1, "step": 0.025 },
+  "worlds": [
+    { "id": "globally-smooth", "function": "0.25 + 0.45*x" },
+    { "id": "hidden-phase-boundary", "function": "0.25 + 0.45*x + 0.35*I(x>=0.72), clipped to [0,1]" }
+  ],
+  "lipschitzSafetyFactors": [1, 2],
+  "comparison": {
+    "tenRunRandomizedRegionalWidth": 0.764133,
+    "minimumCoverage": 0.95,
+    "maximumMeanWidth": 0.764133
+  },
+  "separationRule": "The Lipschitz constant is fitted only on the development grid; coverage and width are computed only after the sealed grid is revealed."
+}

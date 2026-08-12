@@ -1,0 +1,257 @@
+{
+  "calibrationId": "MNAR-AUDIT-RESCUE-0.1",
+  "generatedOn": "2026-08-12",
+  "fixture": {
+    "campaignId": "SYNTHETIC-COMPLETENESS-0.1",
+    "records": 8,
+    "manifest": {
+      "execution": {
+        "completed": 6,
+        "not-run": 1,
+        "failed": 1
+      },
+      "rawObservation": {
+        "present": 5,
+        "absent": 3
+      },
+      "adjudication": {
+        "recorded": 5,
+        "not-applicable": 3
+      },
+      "release": {
+        "released": 4,
+        "withheld": 4
+      }
+    },
+    "valid": true,
+    "mutationDetection": [
+      {
+        "id": "duplicate-id",
+        "detected": true,
+        "errorCodes": [
+          "duplicate-experiment-id",
+          "record-digest-mismatch"
+        ]
+      },
+      {
+        "id": "missing-planned-record",
+        "detected": true,
+        "errorCodes": [
+          "expected-count-mismatch",
+          "manifest-mismatch",
+          "campaign-digest-mismatch"
+        ]
+      },
+      {
+        "id": "late-registration",
+        "detected": true,
+        "errorCodes": [
+          "late-registration:decision",
+          "late-registration:execution",
+          "late-registration:rawObservation",
+          "record-digest-mismatch"
+        ]
+      },
+      {
+        "id": "outcome-aware-missing-reason",
+        "detected": true,
+        "errorCodes": [
+          "outcome-aware-reason:rawObservation",
+          "record-digest-mismatch"
+        ]
+      },
+      {
+        "id": "release-without-adjudication",
+        "detected": true,
+        "errorCodes": [
+          "missing-reason:adjudication",
+          "outcome-aware-reason:adjudication",
+          "release-without-adjudication",
+          "outcome-without-adjudication",
+          "record-digest-mismatch",
+          "manifest-mismatch"
+        ]
+      },
+      {
+        "id": "tampered-record",
+        "detected": true,
+        "errorCodes": [
+          "record-digest-mismatch"
+        ]
+      },
+      {
+        "id": "false-manifest",
+        "detected": true,
+        "errorCodes": [
+          "manifest-mismatch"
+        ]
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "gamma": 1,
+      "sampleSize": 0,
+      "trueMean": 0.7,
+      "missingPositiveRate": 0.7,
+      "meanLower": 0.42,
+      "meanUpper": 0.82,
+      "meanWidth": 0.4,
+      "coverage": 1,
+      "finiteGammaUpperRate": 0,
+      "medianFiniteGammaUpper": null,
+      "passesGate": false
+    },
+    {
+      "gamma": 1,
+      "sampleSize": 20,
+      "trueMean": 0.7,
+      "missingPositiveRate": 0.7,
+      "meanLower": 0.604935,
+      "meanUpper": 0.770111,
+      "meanWidth": 0.165176,
+      "coverage": 0.975218,
+      "finiteGammaUpperRate": 1,
+      "medianFiniteGammaUpper": 4.521921,
+      "passesGate": false
+    },
+    {
+      "gamma": 1,
+      "sampleSize": 50,
+      "trueMean": 0.7,
+      "missingPositiveRate": 0.7,
+      "meanLower": 0.642135,
+      "meanUpper": 0.747954,
+      "meanWidth": 0.105818,
+      "coverage": 0.969471,
+      "finiteGammaUpperRate": 1,
+      "medianFiniteGammaUpper": 2.409876,
+      "passesGate": false
+    },
+    {
+      "gamma": 1,
+      "sampleSize": 100,
+      "trueMean": 0.7,
+      "missingPositiveRate": 0.7,
+      "meanLower": 0.660281,
+      "meanUpper": 0.734825,
+      "meanWidth": 0.074543,
+      "coverage": 0.962549,
+      "finiteGammaUpperRate": 1,
+      "medianFiniteGammaUpper": 1.844773,
+      "passesGate": true
+    },
+    {
+      "gamma": 4,
+      "sampleSize": 0,
+      "trueMean": 0.567368,
+      "missingPositiveRate": 0.368421,
+      "meanLower": 0.42,
+      "meanUpper": 0.82,
+      "meanWidth": 0.4,
+      "coverage": 1,
+      "finiteGammaUpperRate": 0,
+      "medianFiniteGammaUpper": null,
+      "passesGate": false
+    },
+    {
+      "gamma": 4,
+      "sampleSize": 20,
+      "trueMean": 0.567368,
+      "missingPositiveRate": 0.368421,
+      "meanLower": 0.489115,
+      "meanUpper": 0.661933,
+      "meanWidth": 0.172819,
+      "coverage": 0.982277,
+      "finiteGammaUpperRate": 0.999898,
+      "medianFiniteGammaUpper": 12.82712,
+      "passesGate": false
+    },
+    {
+      "gamma": 4,
+      "sampleSize": 50,
+      "trueMean": 0.567368,
+      "missingPositiveRate": 0.368421,
+      "meanLower": 0.515136,
+      "meanUpper": 0.626092,
+      "meanWidth": 0.110956,
+      "coverage": 0.961107,
+      "finiteGammaUpperRate": 1,
+      "medianFiniteGammaUpper": 7.848911,
+      "passesGate": false
+    },
+    {
+      "gamma": 4,
+      "sampleSize": 100,
+      "trueMean": 0.567368,
+      "missingPositiveRate": 0.368421,
+      "meanLower": 0.529848,
+      "meanUpper": 0.608098,
+      "meanWidth": 0.078249,
+      "coverage": 0.951665,
+      "finiteGammaUpperRate": 1,
+      "medianFiniteGammaUpper": 6.13407,
+      "passesGate": true
+    },
+    {
+      "gamma": 16,
+      "sampleSize": 0,
+      "trueMean": 0.470909,
+      "missingPositiveRate": 0.127273,
+      "meanLower": 0.42,
+      "meanUpper": 0.82,
+      "meanWidth": 0.4,
+      "coverage": 1,
+      "finiteGammaUpperRate": 0,
+      "medianFiniteGammaUpper": null,
+      "passesGate": false
+    },
+    {
+      "gamma": 16,
+      "sampleSize": 20,
+      "trueMean": 0.470909,
+      "missingPositiveRate": 0.127273,
+      "meanLower": 0.431789,
+      "meanUpper": 0.558257,
+      "meanWidth": 0.126469,
+      "coverage": 0.990772,
+      "finiteGammaUpperRate": 0.934299,
+      "medianFiniteGammaUpper": 70.42205,
+      "passesGate": false
+    },
+    {
+      "gamma": 16,
+      "sampleSize": 50,
+      "trueMean": 0.470909,
+      "missingPositiveRate": 0.127273,
+      "meanLower": 0.440838,
+      "meanUpper": 0.520076,
+      "meanWidth": 0.079238,
+      "coverage": 0.970024,
+      "finiteGammaUpperRate": 0.998894,
+      "medianFiniteGammaUpper": 49.134998,
+      "passesGate": true
+    },
+    {
+      "gamma": 16,
+      "sampleSize": 100,
+      "trueMean": 0.470909,
+      "missingPositiveRate": 0.127273,
+      "meanLower": 0.447907,
+      "meanUpper": 0.503258,
+      "meanWidth": 0.055351,
+      "coverage": 0.963187,
+      "finiteGammaUpperRate": 0.999999,
+      "medianFiniteGammaUpper": 30.49674,
+      "passesGate": true
+    }
+  ],
+  "findings": {
+    "stageCountsAloneLeaveLogicalWidth": true,
+    "randomRescuePreservesCoverage": true,
+    "oneHundredPassesAllScenarios": true,
+    "twentyFailsAtLeastOneScenario": true,
+    "allIntegrityMutationsDetected": true
+  },
+  "decision": "Use the prospective manifest to prove denominators and detect selective release, but use an independently randomized rescue sample to constrain outcome-dependent selection. Under this design, 100 rescued missing outcomes pass the frozen width, coverage, and finite-Gamma gates in all three worlds."
+}

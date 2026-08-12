@@ -1,0 +1,59 @@
+{
+  "benchmarkId": "CHEMICAL-SMOOTHNESS-SEAL-0.1",
+  "generatedOn": "2026-08-12",
+  "developmentPoints": 13,
+  "adjudicationPoints": 16,
+  "scenarios": [
+    {
+      "worldId": "globally-smooth",
+      "safetyFactor": 1,
+      "fittedLipschitz": 0.45,
+      "usedLipschitz": 0.45,
+      "coverage": 1,
+      "meanWidth": 0.19125,
+      "widthRatioToTenRunRandomized": 0.250284,
+      "maximumMiss": 0,
+      "passesGate": true
+    },
+    {
+      "worldId": "globally-smooth",
+      "safetyFactor": 2,
+      "fittedLipschitz": 0.45,
+      "usedLipschitz": 0.9,
+      "coverage": 1,
+      "meanWidth": 0.3825,
+      "widthRatioToTenRunRandomized": 0.500567,
+      "maximumMiss": 0,
+      "passesGate": true
+    },
+    {
+      "worldId": "hidden-phase-boundary",
+      "safetyFactor": 1,
+      "fittedLipschitz": 0.45,
+      "usedLipschitz": 0.45,
+      "coverage": 0.25,
+      "meanWidth": 0.19125,
+      "widthRatioToTenRunRandomized": 0.250284,
+      "maximumMiss": 0.35,
+      "passesGate": false
+    },
+    {
+      "worldId": "hidden-phase-boundary",
+      "safetyFactor": 2,
+      "fittedLipschitz": 0.45,
+      "usedLipschitz": 0.9,
+      "coverage": 0.25,
+      "meanWidth": 0.3825,
+      "widthRatioToTenRunRandomized": 0.500567,
+      "maximumMiss": 0.29375,
+      "passesGate": false
+    }
+  ],
+  "findings": {
+    "developmentWorldsAreIndistinguishable": true,
+    "smoothWorldBeatsTenRunWidthAndCovers": true,
+    "doubledConstantStillMissesPhaseBoundary": true,
+    "narrowBoundsDoNotCertifyTransfer": true
+  },
+  "decision": "Do not use development-fit chemical smoothness for policy adjudication until a sealed external family attains at least 95% coverage. The same narrow interval is valid in the globally smooth world and invalid across an unseen phase boundary."
+}

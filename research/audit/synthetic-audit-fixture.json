@@ -1,0 +1,420 @@
+{
+  "schemaVersion": "0.1.0",
+  "campaignId": "SYNTHETIC-COMPLETENESS-0.1",
+  "sealedAt": "2026-08-01T00:00:00Z",
+  "expectedExperimentCount": 8,
+  "records": [
+    {
+      "experimentId": "AUD-001",
+      "registeredAt": "2026-07-01T00:00:00Z",
+      "targetHash": "79335ea6b1203dc79e64b6564a2b59cc4e39a7eaed47e051983c83a37081bff8",
+      "stages": {
+        "decision": {
+          "status": "recorded",
+          "occurredAt": "2026-07-01T00:05:00Z",
+          "artifactHash": "e4efd492b357c9c21889cc5c2f7ffe3eb333f6cc7f4c15026426ee20ff0f7f2d",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "execution": {
+          "status": "completed",
+          "occurredAt": "2026-07-01T02:00:00Z",
+          "artifactHash": "14efd0ff3f65b795d9e3f5743d3648798d2635e55545a6d7da38c4e49d4893c1",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "rawObservation": {
+          "status": "present",
+          "occurredAt": "2026-07-01T02:15:00Z",
+          "artifactHash": "cae0d346d041a497666d1356a0ffb60a860621f8d69b4d414ca707bfc4494634",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "adjudication": {
+          "status": "recorded",
+          "occurredAt": "2026-07-01T04:00:00Z",
+          "artifactHash": "5c0340ea0cd64ef4e0f8d02693f349c55ae40923fb42aec945bb4c958e856f53",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "release": {
+          "status": "released",
+          "occurredAt": "2026-07-01T05:00:00Z",
+          "artifactHash": "920e0f210ebd4b6d9b79020527b33a7df4e0663d96fdbc5476f768ea472a8f8a",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        }
+      },
+      "outcome": "success",
+      "recordDigest": "69fccb530cdb6893cef2ce1fc69d9a3e312a33d3b99700d6a1ffd19c46bef455"
+    },
+    {
+      "experimentId": "AUD-002",
+      "registeredAt": "2026-07-02T00:00:00Z",
+      "targetHash": "8e29584b7564690bbc6e86fb1f0161a222143471f2fedfafbdc1e6e2ad1163d0",
+      "stages": {
+        "decision": {
+          "status": "recorded",
+          "occurredAt": "2026-07-02T00:05:00Z",
+          "artifactHash": "705e55965921ab4bd211f8e1f0364e82c05f912d3e4867ce206c89e4dd139664",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "execution": {
+          "status": "completed",
+          "occurredAt": "2026-07-02T02:00:00Z",
+          "artifactHash": "5278b279798fccb849cf5b5981da61ff7edddb25206c732857c6c464dc59f5bb",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "rawObservation": {
+          "status": "present",
+          "occurredAt": "2026-07-02T02:15:00Z",
+          "artifactHash": "85e364c101bf82f9e93fd41834a386484c94f9b85807711e9845466a71b01a40",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "adjudication": {
+          "status": "recorded",
+          "occurredAt": "2026-07-02T04:00:00Z",
+          "artifactHash": "91b8d9308ce490a38b5bc1648ff61da34f2b0d676217b24f601c36a313a2c16f",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "release": {
+          "status": "released",
+          "occurredAt": "2026-07-02T05:00:00Z",
+          "artifactHash": "43d4e18fe723f3a6e3a2cd91e823e6a32e02a07e8b19cde0fb3a315361453d42",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        }
+      },
+      "outcome": "failure",
+      "recordDigest": "94ecb252cd8c13321e60c2db0319b60044a668645057a802cf512303cfd26a7c"
+    },
+    {
+      "experimentId": "AUD-003",
+      "registeredAt": "2026-07-03T00:00:00Z",
+      "targetHash": "082cf22fb6df4fe806d7303d6e2958dfb49ab97f2ef62fe08557b080f543410f",
+      "stages": {
+        "decision": {
+          "status": "recorded",
+          "occurredAt": "2026-07-03T00:05:00Z",
+          "artifactHash": "b7963e4cdf69a460bb003af5a903756a05073907eb3bda30d0f5a561125dbe30",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "execution": {
+          "status": "not-run",
+          "occurredAt": null,
+          "artifactHash": null,
+          "reasonCode": "capacity-hold",
+          "reasonRecordedAt": "2026-07-03T00:30:00Z",
+          "outcomeKnownWhenReasonRecorded": false
+        },
+        "rawObservation": {
+          "status": "absent",
+          "occurredAt": null,
+          "artifactHash": null,
+          "reasonCode": "execution-not-completed",
+          "reasonRecordedAt": "2026-07-03T02:05:00Z",
+          "outcomeKnownWhenReasonRecorded": false
+        },
+        "adjudication": {
+          "status": "not-applicable",
+          "occurredAt": null,
+          "artifactHash": null,
+          "reasonCode": "raw-unavailable",
+          "reasonRecordedAt": "2026-07-03T02:10:00Z",
+          "outcomeKnownWhenReasonRecorded": false
+        },
+        "release": {
+          "status": "withheld",
+          "occurredAt": null,
+          "artifactHash": null,
+          "reasonCode": "incomplete-record",
+          "reasonRecordedAt": "2026-07-03T03:00:00Z",
+          "outcomeKnownWhenReasonRecorded": false
+        }
+      },
+      "outcome": null,
+      "recordDigest": "d09f06eb396542ecd5cdac72fecc30e6edbd9aab9beb18f4bea121631e8de6de"
+    },
+    {
+      "experimentId": "AUD-004",
+      "registeredAt": "2026-07-04T00:00:00Z",
+      "targetHash": "5ef02e880a809f09b146041d5f4629a41e8fe79123f85ef989adbe48885f2556",
+      "stages": {
+        "decision": {
+          "status": "recorded",
+          "occurredAt": "2026-07-04T00:05:00Z",
+          "artifactHash": "a7e2532e3d9b0291c6d517f88d60b1b2e4d06473e202631f1f04e2c9a5277737",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "execution": {
+          "status": "failed",
+          "occurredAt": "2026-07-04T02:00:00Z",
+          "artifactHash": null,
+          "reasonCode": "equipment-interlock",
+          "reasonRecordedAt": "2026-07-04T00:30:00Z",
+          "outcomeKnownWhenReasonRecorded": false
+        },
+        "rawObservation": {
+          "status": "absent",
+          "occurredAt": null,
+          "artifactHash": null,
+          "reasonCode": "execution-not-completed",
+          "reasonRecordedAt": "2026-07-04T02:05:00Z",
+          "outcomeKnownWhenReasonRecorded": false
+        },
+        "adjudication": {
+          "status": "not-applicable",
+          "occurredAt": null,
+          "artifactHash": null,
+          "reasonCode": "raw-unavailable",
+          "reasonRecordedAt": "2026-07-04T02:10:00Z",
+          "outcomeKnownWhenReasonRecorded": false
+        },
+        "release": {
+          "status": "withheld",
+          "occurredAt": null,
+          "artifactHash": null,
+          "reasonCode": "incomplete-record",
+          "reasonRecordedAt": "2026-07-04T03:00:00Z",
+          "outcomeKnownWhenReasonRecorded": false
+        }
+      },
+      "outcome": null,
+      "recordDigest": "7205e4b84e6934108dc2fb95d147858a244e7a9178f7dfe9efef206093ce4598"
+    },
+    {
+      "experimentId": "AUD-005",
+      "registeredAt": "2026-07-05T00:00:00Z",
+      "targetHash": "e204514ff12acf7ed4ac19c4026120dc966144c089d3b8d19ced6e515afe9d02",
+      "stages": {
+        "decision": {
+          "status": "recorded",
+          "occurredAt": "2026-07-05T00:05:00Z",
+          "artifactHash": "aed5b462c898dbca58874c7c1d03e05f3b2406bf8a97ba027a792f73b7b11ead",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "execution": {
+          "status": "completed",
+          "occurredAt": "2026-07-05T02:00:00Z",
+          "artifactHash": "87fe57e1ecaf1259705a4daea326c1052f60775dbad4a0d96e6d2972c475aa83",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "rawObservation": {
+          "status": "absent",
+          "occurredAt": null,
+          "artifactHash": null,
+          "reasonCode": "raw-file-loss",
+          "reasonRecordedAt": "2026-07-05T02:05:00Z",
+          "outcomeKnownWhenReasonRecorded": false
+        },
+        "adjudication": {
+          "status": "not-applicable",
+          "occurredAt": null,
+          "artifactHash": null,
+          "reasonCode": "raw-unavailable",
+          "reasonRecordedAt": "2026-07-05T02:10:00Z",
+          "outcomeKnownWhenReasonRecorded": false
+        },
+        "release": {
+          "status": "withheld",
+          "occurredAt": null,
+          "artifactHash": null,
+          "reasonCode": "incomplete-record",
+          "reasonRecordedAt": "2026-07-05T03:00:00Z",
+          "outcomeKnownWhenReasonRecorded": false
+        }
+      },
+      "outcome": null,
+      "recordDigest": "efe25e6612b3b4e821f66d720d4422b227fcf08f22ef4928a5a8aa553de189ad"
+    },
+    {
+      "experimentId": "AUD-006",
+      "registeredAt": "2026-07-06T00:00:00Z",
+      "targetHash": "5aa80f9c0985f9935d8106f238b1eb63e011d405e87bdc6535a0b078ddeeb7a0",
+      "stages": {
+        "decision": {
+          "status": "recorded",
+          "occurredAt": "2026-07-06T00:05:00Z",
+          "artifactHash": "75a468542d56fded5e48ef574da1ebcf1ccff9b49265cef8c72e7b7697fc044d",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "execution": {
+          "status": "completed",
+          "occurredAt": "2026-07-06T02:00:00Z",
+          "artifactHash": "2f480af863c50152d6d133de2c03b974a190b8e5cbd7f0898a029d42566b321e",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "rawObservation": {
+          "status": "present",
+          "occurredAt": "2026-07-06T02:15:00Z",
+          "artifactHash": "d6964ecf66725d00a84df36120ec07939da0715376cb792a43e055b45a34955f",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "adjudication": {
+          "status": "recorded",
+          "occurredAt": "2026-07-06T04:00:00Z",
+          "artifactHash": "63929d2cc271ff01bba48787cd49c19b3f0f7c35fd150cbb22438a1d33529253",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "release": {
+          "status": "withheld",
+          "occurredAt": null,
+          "artifactHash": null,
+          "reasonCode": "inconclusive-review",
+          "reasonRecordedAt": "2026-07-06T03:00:00Z",
+          "outcomeKnownWhenReasonRecorded": false
+        }
+      },
+      "outcome": "inconclusive",
+      "recordDigest": "fe2f803095a650033f5970c5ea0aab20affb4d3e5704eb7a22809c469c874553"
+    },
+    {
+      "experimentId": "AUD-007",
+      "registeredAt": "2026-07-07T00:00:00Z",
+      "targetHash": "23ad2c55a53d0feeb4679fc9e9a90cb383fe1adadec47b6e151d0c3c520c899c",
+      "stages": {
+        "decision": {
+          "status": "recorded",
+          "occurredAt": "2026-07-07T00:05:00Z",
+          "artifactHash": "9cbc26dccc7c00657e2e29125027b1dc8886e8dfa42464a5f9be3e57176950d0",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "execution": {
+          "status": "completed",
+          "occurredAt": "2026-07-07T02:00:00Z",
+          "artifactHash": "980f5436d653b12aa367c8a9903e2aecf9057a17312bda3d5401b2152c2373e4",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "rawObservation": {
+          "status": "present",
+          "occurredAt": "2026-07-07T02:15:00Z",
+          "artifactHash": "9c34755522275aefec52e67cf67e66602dd7048f56c3b42b04b7c97525de14e3",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "adjudication": {
+          "status": "recorded",
+          "occurredAt": "2026-07-07T04:00:00Z",
+          "artifactHash": "bfb07344f1c6ea2972bfd6ce03125973123933db1886e6a803de8bca5bee3d64",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "release": {
+          "status": "released",
+          "occurredAt": "2026-07-07T05:00:00Z",
+          "artifactHash": "3aa2b25cc5e0fbbb27b16c3ebe77c0936ac6120c48f62fb500e70cf07bb04524",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        }
+      },
+      "outcome": "success",
+      "recordDigest": "3383f132ee881db31d5446fa2c29d3022a88ab2714cbc6aeff1bef471d93e692"
+    },
+    {
+      "experimentId": "AUD-008",
+      "registeredAt": "2026-07-08T00:00:00Z",
+      "targetHash": "46554bb0d93bd2d99228255f5f8184da1cabfc83b99bf05dfff1de4aa54382eb",
+      "stages": {
+        "decision": {
+          "status": "recorded",
+          "occurredAt": "2026-07-08T00:05:00Z",
+          "artifactHash": "6caace37de126c8f18440d55409604b921e8f47dd368230fe7c63f18a506217f",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "execution": {
+          "status": "completed",
+          "occurredAt": "2026-07-08T02:00:00Z",
+          "artifactHash": "0c1973563c2888af4c05ed7f2be86578529d040b78ebe949bde4752903b03d0a",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "rawObservation": {
+          "status": "present",
+          "occurredAt": "2026-07-08T02:15:00Z",
+          "artifactHash": "0bf253b9cf817e0f7644b8bf44821f52171054a55c902a9a25c630d2c23d310c",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "adjudication": {
+          "status": "recorded",
+          "occurredAt": "2026-07-08T04:00:00Z",
+          "artifactHash": "e1f4ebe882185dab9eefdbc93bda46e4ce8f17cbe58213ff9c0c2de10453583f",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        },
+        "release": {
+          "status": "released",
+          "occurredAt": "2026-07-08T05:00:00Z",
+          "artifactHash": "cfba75c1277bbdb3b48bc917b9b37eb20e573d0d2fa50ee0eca04c36c02a315d",
+          "reasonCode": null,
+          "reasonRecordedAt": null,
+          "outcomeKnownWhenReasonRecorded": null
+        }
+      },
+      "outcome": "failure",
+      "recordDigest": "d0dd69a4b3640cae72b5fa0b0e94cfcd6e8bf5058064d81bc3a4b6fbc950427d"
+    }
+  ],
+  "manifest": {
+    "execution": {
+      "completed": 6,
+      "not-run": 1,
+      "failed": 1
+    },
+    "rawObservation": {
+      "present": 5,
+      "absent": 3
+    },
+    "adjudication": {
+      "recorded": 5,
+      "not-applicable": 3
+    },
+    "release": {
+      "released": 4,
+      "withheld": 4
+    }
+  },
+  "campaignDigest": "aa6f19bd78e87a95a908684aaa51b61f689aaf1fec5f736b467aafe0977807de"
+}

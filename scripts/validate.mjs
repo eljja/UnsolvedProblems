@@ -8,7 +8,7 @@ const failures = [];
 const assert = (condition, message) => { if (!condition) failures.push(message); };
 
 const sandbox = { window: {} };
-for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-05-data.js"]) {
+for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-05-data.js", "research-cycle-06-data.js"]) {
   vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }
 
@@ -23,6 +23,12 @@ const opeSpec = JSON.parse(fs.readFileSync(path.join(root, "research/ope/simulat
 const opeResult = JSON.parse(fs.readFileSync(path.join(root, "research/ope/simulation-result.json"), "utf8"));
 const identificationSpec = JSON.parse(fs.readFileSync(path.join(root, "research/identification/sensitivity-spec.json"), "utf8"));
 const identificationResult = JSON.parse(fs.readFileSync(path.join(root, "research/identification/sensitivity-result.json"), "utf8"));
+const auditSchema = JSON.parse(fs.readFileSync(path.join(root, "research/audit/completeness-audit.schema.json"), "utf8"));
+const auditSpec = JSON.parse(fs.readFileSync(path.join(root, "research/audit/calibration-spec.json"), "utf8"));
+const auditResult = JSON.parse(fs.readFileSync(path.join(root, "research/audit/calibration-result.json"), "utf8"));
+const auditFixture = JSON.parse(fs.readFileSync(path.join(root, "research/audit/synthetic-audit-fixture.json"), "utf8"));
+const smoothSpec = JSON.parse(fs.readFileSync(path.join(root, "research/smoothness/sealed-family-spec.json"), "utf8"));
+const smoothResult = JSON.parse(fs.readFileSync(path.join(root, "research/smoothness/sealed-family-result.json"), "utf8"));
 assert(Array.isArray(PROBLEMS), "PROBLEMS must be an array");
 assert(PROBLEMS.length > 0, "catalog must contain at least one problem");
 assert(new Set(PROBLEMS.map(item => item.id)).size === PROBLEMS.length, "problem IDs must be unique");
@@ -307,6 +313,14 @@ assert(identificationResult.simulationId === identificationSpec.simulationId, "p
 assert(JSON.stringify(identificationResult.indistinguishableWorlds[0].observedJoint) === JSON.stringify(identificationResult.indistinguishableWorlds[1].observedJoint), "MNAR worlds must preserve the same observed distribution");
 assert(Object.values(identificationResult.preregisteredFindings || {}).every(Boolean), "every preregistered partial-identification finding must be true");
 assert(identificationResult.randomizedTrials.find(item => item.sampleSize === 10)?.passesWidthGate === false, "ten-run zero-support pilot must retain its failed width gate");
+assert(auditSchema.properties?.records && auditSchema.properties?.manifest, "completeness audit schema must retain planned records and a stage manifest");
+assert(auditSpec.calibrationId === "MNAR-AUDIT-RESCUE-0.1" && auditResult.calibrationId === auditSpec.calibrationId, "audit calibration artifacts must share a stable ID");
+assert(auditFixture.expectedExperimentCount === 8 && auditResult.fixture.valid === true, "synthetic audit fixture must preserve eight valid planned records");
+assert(Object.values(auditResult.findings || {}).every(Boolean), "every audit calibration finding must be true");
+assert(auditResult.fixture.mutationDetection?.length === 7 && auditResult.fixture.mutationDetection.every(item => item.detected), "all seven ledger integrity mutations must be detected");
+assert(smoothSpec.benchmarkId === "CHEMICAL-SMOOTHNESS-SEAL-0.1" && smoothResult.benchmarkId === smoothSpec.benchmarkId, "smoothness artifacts must share a stable ID");
+assert(Object.values(smoothResult.findings || {}).every(Boolean), "every sealed smoothness finding must be true");
+assert(smoothResult.scenarios.find(item => item.worldId === "hidden-phase-boundary" && item.safetyFactor === 2)?.passesGate === false, "doubled-L hidden phase boundary must retain its failed transfer gate");
 
 const boundaryCount = PROBLEMS.filter(item => item.nature === "boundary").length;
 assert(boundaryCount > 0, "catalog must preserve clearly labeled boundary examples");
