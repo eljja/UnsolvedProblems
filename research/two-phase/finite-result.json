@@ -1,0 +1,175 @@
+{
+  "studyId": "TWO-PHASE-MNAR-FINITE-0.1",
+  "generatedOn": "2026-08-12",
+  "method": {
+    "samplingLaw": "Three-cell multinomial: success responder, failure responder, invited nonresponder",
+    "simultaneousConfidence": 0.95,
+    "marginalIntervals": "Two-sided Clopper-Pearson at 97.5% for each of two response cells; Bonferroni family coverage is at least 95%",
+    "propagation": "Monotone endpoint propagation through the Gamma-4 response-odds identification map"
+  },
+  "worlds": [
+    {
+      "firstGamma": 1,
+      "truePopulationMean": 0.7,
+      "trueMissingPositiveRate": 0.7,
+      "samples": [
+        {
+          "invitationCount": 100,
+          "multinomialCellProbabilities": [
+            0.509091,
+            0.12,
+            0.370909
+          ],
+          "enumeratedTables": 5151,
+          "probabilityTotal": 1,
+          "exactCoverage": 0.997985,
+          "expectedPopulationWidth": 0.165095,
+          "probabilityWidthAtMostGate": 0.005946,
+          "minimumRealizedWidth": 0.01715,
+          "maximumRealizedWidth": 0.4
+        },
+        {
+          "invitationCount": 250,
+          "multinomialCellProbabilities": [
+            0.509091,
+            0.12,
+            0.370909
+          ],
+          "enumeratedTables": 31626,
+          "probabilityTotal": 1,
+          "exactCoverage": 0.997391,
+          "expectedPopulationWidth": 0.129056,
+          "probabilityWidthAtMostGate": 0.187316,
+          "minimumRealizedWidth": 0.00695,
+          "maximumRealizedWidth": 0.4
+        },
+        {
+          "invitationCount": 500,
+          "multinomialCellProbabilities": [
+            0.509091,
+            0.12,
+            0.370909
+          ],
+          "enumeratedTables": 125751,
+          "probabilityTotal": 1,
+          "exactCoverage": 0.997103,
+          "expectedPopulationWidth": 0.110172,
+          "probabilityWidthAtMostGate": 0.922649,
+          "minimumRealizedWidth": 0.00349,
+          "maximumRealizedWidth": 0.4
+        }
+      ]
+    },
+    {
+      "firstGamma": 4,
+      "truePopulationMean": 0.567368,
+      "trueMissingPositiveRate": 0.368421,
+      "samples": [
+        {
+          "invitationCount": 100,
+          "multinomialCellProbabilities": [
+            0.267943,
+            0.252632,
+            0.479426
+          ],
+          "enumeratedTables": 5151,
+          "probabilityTotal": 1,
+          "exactCoverage": 0.996841,
+          "expectedPopulationWidth": 0.227177,
+          "probabilityWidthAtMostGate": 0,
+          "minimumRealizedWidth": 0.01715,
+          "maximumRealizedWidth": 0.4
+        },
+        {
+          "invitationCount": 250,
+          "multinomialCellProbabilities": [
+            0.267943,
+            0.252632,
+            0.479426
+          ],
+          "enumeratedTables": 31626,
+          "probabilityTotal": 1,
+          "exactCoverage": 0.996681,
+          "expectedPopulationWidth": 0.189335,
+          "probabilityWidthAtMostGate": 0,
+          "minimumRealizedWidth": 0.00695,
+          "maximumRealizedWidth": 0.4
+        },
+        {
+          "invitationCount": 500,
+          "multinomialCellProbabilities": [
+            0.267943,
+            0.252632,
+            0.479426
+          ],
+          "enumeratedTables": 125751,
+          "probabilityTotal": 1,
+          "exactCoverage": 0.99644,
+          "expectedPopulationWidth": 0.168658,
+          "probabilityWidthAtMostGate": 0,
+          "minimumRealizedWidth": 0.00349,
+          "maximumRealizedWidth": 0.4
+        }
+      ]
+    },
+    {
+      "firstGamma": 16,
+      "truePopulationMean": 0.470909,
+      "trueMissingPositiveRate": 0.127273,
+      "samples": [
+        {
+          "invitationCount": 100,
+          "multinomialCellProbabilities": [
+            0.092562,
+            0.349091,
+            0.558347
+          ],
+          "enumeratedTables": 5151,
+          "probabilityTotal": 1,
+          "exactCoverage": 0.996063,
+          "expectedPopulationWidth": 0.221162,
+          "probabilityWidthAtMostGate": 0.000051,
+          "minimumRealizedWidth": 0.01715,
+          "maximumRealizedWidth": 0.4
+        },
+        {
+          "invitationCount": 250,
+          "multinomialCellProbabilities": [
+            0.092562,
+            0.349091,
+            0.558347
+          ],
+          "enumeratedTables": 31626,
+          "probabilityTotal": 1,
+          "exactCoverage": 0.995479,
+          "expectedPopulationWidth": 0.180519,
+          "probabilityWidthAtMostGate": 0.000024,
+          "minimumRealizedWidth": 0.00695,
+          "maximumRealizedWidth": 0.4
+        },
+        {
+          "invitationCount": 500,
+          "multinomialCellProbabilities": [
+            0.092562,
+            0.349091,
+            0.558347
+          ],
+          "enumeratedTables": 125751,
+          "probabilityTotal": 1,
+          "exactCoverage": 0.995258,
+          "expectedPopulationWidth": 0.158229,
+          "probabilityWidthAtMostGate": 0.000046,
+          "minimumRealizedWidth": 0.00349,
+          "maximumRealizedWidth": 0.4
+        }
+      ]
+    }
+  ],
+  "findings": {
+    "allWorldsMeetCoverageGate": true,
+    "expectedWidthFallsWithSampleSize": true,
+    "finiteSamplingCanFailWidthGate": true,
+    "largerSamplesDoNotRemoveIdentificationWidth": true
+  },
+  "decision": "Use the simultaneous finite-sample interval for adjudication. More invitations shrink the sampling layer, but the Gamma-4 identification layer remains; sample-size expansion cannot substitute for an external constraint on outcome-dependent rescue response."
+}

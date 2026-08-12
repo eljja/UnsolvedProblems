@@ -1,0 +1,136 @@
+{
+  "benchmarkId": "ACTIVE-PHASE-BOUNDARY-HYBRID-0.1",
+  "generatedOn": "2026-08-12",
+  "design": {
+    "noise": "Deterministic common-random-number Gaussian field, sigma=0.03",
+    "worlds": {
+      "singleBoundaries": 31,
+      "multipleBoundaryPockets": 27,
+      "noChange": 1
+    },
+    "replicatesPerWorld": 200,
+    "totalRuns": 35400
+  },
+  "singleBoundary": [
+    {
+      "strategy": "uniform-16",
+      "runs": 6200,
+      "detectionRate": 1,
+      "allBoundariesLocalizedRate": 0.999839,
+      "falsePositiveRate": 0,
+      "meanLocalizedBoundaryBracket": 0.026667,
+      "maximumWorstGap": 0.026667
+    },
+    {
+      "strategy": "explore-8-refine-8",
+      "runs": 6200,
+      "detectionRate": 1,
+      "allBoundariesLocalizedRate": 0.998226,
+      "falsePositiveRate": 0,
+      "meanLocalizedBoundaryBracket": 0.000228,
+      "maximumWorstGap": 0.057143
+    },
+    {
+      "strategy": "hybrid-12-refine-4",
+      "runs": 6200,
+      "detectionRate": 1,
+      "allBoundariesLocalizedRate": 0.999677,
+      "falsePositiveRate": 0,
+      "meanLocalizedBoundaryBracket": 0.002304,
+      "maximumWorstGap": 0.036364
+    }
+  ],
+  "multipleBoundary": [
+    {
+      "strategy": "uniform-16",
+      "runs": 5400,
+      "detectionRate": 1,
+      "allBoundariesLocalizedRate": 0.999815,
+      "falsePositiveRate": 0,
+      "meanLocalizedBoundaryBracket": 0.026667,
+      "maximumWorstGap": 0.026667
+    },
+    {
+      "strategy": "explore-8-refine-8",
+      "runs": 5400,
+      "detectionRate": 1,
+      "allBoundariesLocalizedRate": 0.998519,
+      "falsePositiveRate": 0,
+      "meanLocalizedBoundaryBracket": 0.00358,
+      "maximumWorstGap": 0.057143
+    },
+    {
+      "strategy": "hybrid-12-refine-4",
+      "runs": 5400,
+      "detectionRate": 1,
+      "allBoundariesLocalizedRate": 0.99963,
+      "falsePositiveRate": 0,
+      "meanLocalizedBoundaryBracket": 0.009109,
+      "maximumWorstGap": 0.036364
+    }
+  ],
+  "noChange": [
+    {
+      "strategy": "uniform-16",
+      "runs": 200,
+      "detectionRate": 0.005,
+      "allBoundariesLocalizedRate": null,
+      "falsePositiveRate": 0.005,
+      "meanLocalizedBoundaryBracket": null,
+      "maximumWorstGap": 0.026667
+    },
+    {
+      "strategy": "explore-8-refine-8",
+      "runs": 200,
+      "detectionRate": 0.005,
+      "allBoundariesLocalizedRate": null,
+      "falsePositiveRate": 0.005,
+      "meanLocalizedBoundaryBracket": null,
+      "maximumWorstGap": 0.057143
+    },
+    {
+      "strategy": "hybrid-12-refine-4",
+      "runs": 200,
+      "detectionRate": 0.005,
+      "allBoundariesLocalizedRate": null,
+      "falsePositiveRate": 0.005,
+      "meanLocalizedBoundaryBracket": null,
+      "maximumWorstGap": 0.036364
+    }
+  ],
+  "pareto": [
+    {
+      "strategy": "uniform-16",
+      "meanLocalizedBoundaryBracket": 0.026667,
+      "maximumWorstGap": 0.026667,
+      "multipleLocalizedRate": 0.999815,
+      "falsePositiveRate": 0.005,
+      "dominatedBy": []
+    },
+    {
+      "strategy": "explore-8-refine-8",
+      "meanLocalizedBoundaryBracket": 0.000228,
+      "maximumWorstGap": 0.057143,
+      "multipleLocalizedRate": 0.998519,
+      "falsePositiveRate": 0.005,
+      "dominatedBy": []
+    },
+    {
+      "strategy": "hybrid-12-refine-4",
+      "meanLocalizedBoundaryBracket": 0.002304,
+      "maximumWorstGap": 0.036364,
+      "multipleLocalizedRate": 0.99963,
+      "falsePositiveRate": 0.005,
+      "dominatedBy": []
+    }
+  ],
+  "findings": {
+    "hybridIsParetoNonDominated": true,
+    "hybridImprovesLocalizationOverUniform": true,
+    "hybridRetainsGlobalGapGate": true,
+    "hybridMeetsSingleDetectionGate": true,
+    "hybridMeetsMultipleDetectionGate": true,
+    "hybridMeetsFalsePositiveGate": true
+  },
+  "decision": "The 12+4 hybrid is a Pareto non-dominated bridge policy in the sealed noisy one-dimensional worlds: it buys sharper single-boundary localization than uniform-16 while retaining a bounded global gap, multiple-boundary detection, and a no-change false-alarm control. This is a benchmark result, not evidence of universal or high-dimensional superiority."
+}

@@ -8,7 +8,7 @@ const failures = [];
 const assert = (condition, message) => { if (!condition) failures.push(message); };
 
 const sandbox = { window: {} };
-for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-05-data.js", "research-cycle-06-data.js", "research-cycle-07-data.js"]) {
+for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", "research-cycle-data.js", "research-cycle-03-data.js", "research-cycle-04-data.js", "research-cycle-05-data.js", "research-cycle-06-data.js", "research-cycle-07-data.js", "research-cycle-08-data.js"]) {
   vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }
 
@@ -33,6 +33,10 @@ const twoPhaseSpec = JSON.parse(fs.readFileSync(path.join(root, "research/two-ph
 const twoPhaseResult = JSON.parse(fs.readFileSync(path.join(root, "research/two-phase/rescue-result.json"), "utf8"));
 const activeSpec = JSON.parse(fs.readFileSync(path.join(root, "research/active-boundary/benchmark-spec.json"), "utf8"));
 const activeResult = JSON.parse(fs.readFileSync(path.join(root, "research/active-boundary/benchmark-result.json"), "utf8"));
+const finiteSpec = JSON.parse(fs.readFileSync(path.join(root, "research/two-phase/finite-spec.json"), "utf8"));
+const finiteResult = JSON.parse(fs.readFileSync(path.join(root, "research/two-phase/finite-result.json"), "utf8"));
+const hybridSpec = JSON.parse(fs.readFileSync(path.join(root, "research/active-boundary/hybrid-spec.json"), "utf8"));
+const hybridResult = JSON.parse(fs.readFileSync(path.join(root, "research/active-boundary/hybrid-result.json"), "utf8"));
 assert(Array.isArray(PROBLEMS), "PROBLEMS must be an array");
 assert(PROBLEMS.length > 0, "catalog must contain at least one problem");
 assert(new Set(PROBLEMS.map(item => item.id)).size === PROBLEMS.length, "problem IDs must be unique");
@@ -330,6 +334,12 @@ assert(Object.values(twoPhaseResult.findings || {}).every(Boolean), "every two-p
 assert(twoPhaseResult.scenarios.filter(item => item.responseOddsRatio === 4).every(item => !item.naivePassesBiasGate), "outcome-dependent rescue must fail the naive bias gate in every first-stage world");
 assert(activeSpec.benchmarkId === "ACTIVE-PHASE-BOUNDARY-0.1" && activeResult.benchmarkId === activeSpec.benchmarkId, "active-boundary artifacts must share a stable ID");
 assert(Object.values(activeResult.findings || {}).every(Boolean), "every active-boundary finding must be true");
+assert(finiteSpec.studyId === "TWO-PHASE-MNAR-FINITE-0.1" && finiteResult.studyId === finiteSpec.studyId, "finite rescue artifacts must share a stable ID");
+assert(Object.values(finiteResult.findings || {}).every(Boolean), "every finite-rescue finding must be true");
+assert(finiteResult.worlds.every(world => world.samples.every(sample => sample.probabilityTotal === 1 && sample.exactCoverage >= 0.95)), "finite rescue enumeration must preserve probability mass and coverage");
+assert(hybridSpec.benchmarkId === "ACTIVE-PHASE-BOUNDARY-HYBRID-0.1" && hybridResult.benchmarkId === hybridSpec.benchmarkId, "hybrid boundary artifacts must share a stable ID");
+assert(Object.values(hybridResult.findings || {}).every(Boolean), "every hybrid-boundary finding must be true");
+assert(hybridResult.pareto.find(item => item.strategy === "hybrid-12-refine-4")?.dominatedBy.length === 0, "hybrid policy must retain its sealed non-dominance result");
 
 const boundaryCount = PROBLEMS.filter(item => item.nature === "boundary").length;
 assert(boundaryCount > 0, "catalog must preserve clearly labeled boundary examples");

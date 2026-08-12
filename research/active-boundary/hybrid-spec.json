@@ -1,0 +1,25 @@
+{
+  "benchmarkId": "ACTIVE-PHASE-BOUNDARY-HYBRID-0.1",
+  "reviewedOn": "2026-08-12",
+  "domain": [0.6, 1],
+  "budget": 16,
+  "jumpMagnitude": 0.35,
+  "noiseStandardDeviation": 0.03,
+  "detectionThreshold": 0.1,
+  "replicatesPerWorld": 200,
+  "seed": 20260812,
+  "singleBoundaries": { "minimum": 0.65, "maximum": 0.95, "count": 31 },
+  "multipleBoundaries": { "minimumCenter": 0.67, "maximumCenter": 0.93, "count": 27, "pocketWidth": 0.08 },
+  "strategies": [
+    { "id": "uniform-16", "exploration": 16, "refinement": 0 },
+    { "id": "explore-8-refine-8", "exploration": 8, "refinement": 8 },
+    { "id": "hybrid-12-refine-4", "exploration": 12, "refinement": 4 }
+  ],
+  "gates": {
+    "minimumSingleBoundaryDetection": 0.95,
+    "minimumMultipleBoundaryDetection": 0.95,
+    "maximumNoChangeFalsePositiveRate": 0.02,
+    "maximumWorstGapRatioToUniform": 1.5
+  },
+  "interpretation": "The hybrid is evaluated as a cost-matched control, not presumed novel. Pareto adjudication retains localization, multiple-boundary recovery, false alarms, and global untested gap."
+}

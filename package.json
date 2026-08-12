@@ -13,6 +13,8 @@
     "research:smoothness": "node scripts/run-smoothness-seal.mjs --write",
     "research:two-phase": "node scripts/run-two-phase-rescue.mjs --write",
     "research:active-boundary": "node scripts/run-active-boundary.mjs --write",
-    "test": "node scripts/validate.mjs && node scripts/verify-replay.mjs && node scripts/verify-ope.mjs && node scripts/verify-identification-sensitivity.mjs && node scripts/verify-audit-smoothness.mjs && node scripts/verify-two-phase-active.mjs"
+    "research:two-phase-finite": "node scripts/run-two-phase-finite.mjs --write",
+    "research:active-boundary-hybrid": "node scripts/run-active-boundary-hybrid.mjs --write",
+    "test": "node scripts/validate.mjs && node scripts/verify-replay.mjs && node scripts/verify-ope.mjs && node scripts/verify-identification-sensitivity.mjs && node scripts/verify-audit-smoothness.mjs && node scripts/verify-two-phase-active.mjs && node scripts/verify-finite-hybrid.mjs"
   }
 }

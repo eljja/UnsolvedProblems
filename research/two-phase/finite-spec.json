@@ -1,0 +1,23 @@
+{
+  "studyId": "TWO-PHASE-MNAR-FINITE-0.1",
+  "reviewedOn": "2026-08-12",
+  "initialObservedDistribution": { "responseRate": 0.6, "positiveRateAmongObserved": 0.7 },
+  "firstStageSelectionOddsGamma": [1, 4, 16],
+  "invitationCounts": [100, 250, 500],
+  "rescueResponse": {
+    "failureResponseProbability": 0.4,
+    "trueOutcomeOddsRatio": 4,
+    "assumedSensitivityGamma": 4
+  },
+  "simultaneousInterval": {
+    "familyConfidence": 0.95,
+    "method": "Bonferroni combination of two-sided Clopper-Pearson intervals for success-responder and failure-responder multinomial cells",
+    "cellsUsed": ["success-responder", "failure-responder"]
+  },
+  "decisionGates": {
+    "minimumExactCoverage": 0.95,
+    "maximumExpectedPopulationWidth": 0.12,
+    "widthMustDecreaseWithInvitationCount": true
+  },
+  "interpretation": "Exact multinomial enumeration propagates finite rescue-sample uncertainty into the Gamma-4 partial-identification interval. Invitation count can reduce sampling uncertainty but cannot remove the limiting Gamma identification width."
+}
