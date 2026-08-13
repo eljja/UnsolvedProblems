@@ -1,0 +1,124 @@
+{
+  "manifestId": "IUCR-QARR-EXTERNAL-HOLDOUT-MANIFEST-0.1",
+  "reviewedOn": "2026-08-14",
+  "status": "source-lineage-fixed-before-holdout-computation",
+  "source": {
+    "currentDataPage": "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/data",
+    "currentWeighedValues": "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/values",
+    "archiveIndex": "https://web.archive.org/cdx/"
+  },
+  "transportRule": "Try the current official numerical response first. If automated access returns an HTTP refusal, replay the recorded IUCr response identified by the fixed Wayback timestamp, original URL, WARC digest, and CDX length. In either case parse exactly 7,251 numerical rows. Accept an archived printed angle only when it lies within 0.00002 degree of 5+0.02*i, write that nominal angle to three decimals, preserve the count, and hash the deterministic UTF-8/LF representation. The repository records hashes and does not redistribute the profiles.",
+  "currentSourceCrossCheck": "The current IUCr data page lists PRN files 1d-1h, the current search crawl reports 7,251 lines for accessible text responses, and the official collection contract fixes 5-150 degrees at 0.02-degree steps. Archive replay is transport evidence, not a substitute scientific source.",
+  "calibrationExclusion": "No file in this manifest may set, tune, or select a peak, background rule, response ratio, full-pattern preprocessing parameter, hypothesis, or safety threshold.",
+  "files": [
+    {
+      "name": "cpd-1d.prn",
+      "sample": "1d",
+      "role": "external-composition-holdout",
+      "officialUrl": "https://www.iucr.org/__data/iucr/powder/QARR/col/cpd-1d.prn",
+      "archive": {
+        "timestamp": "20090728004658",
+        "original": "http://www.iucr.org:80/__data/iucr/powder/QARR/col/cpd-1d.prn",
+        "warcDigest": "7GTEW6VARNCC2Q77AMMAPKIIJG7F2VVT",
+        "cdxLength": 28284
+      },
+      "transport": "Current official URL with the fixed Internet Archive replay as an HTTP-refusal fallback; local cache reuse does not change source provenance.",
+      "bytes": 137770,
+      "sha256": "89295da47efcdd8f12e3026c40aa66f1d4aaa8beaa8f51ada5f7075e10f3b1c1",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "stepDegrees2Theta": 0.02
+    },
+    {
+      "name": "cpd-1e.prn",
+      "sample": "1e",
+      "role": "external-composition-holdout",
+      "officialUrl": "https://www.iucr.org/__data/iucr/powder/QARR/col/cpd-1e.prn",
+      "archive": {
+        "timestamp": "20090728005511",
+        "original": "http://www.iucr.org:80/__data/iucr/powder/QARR/col/cpd-1e.prn",
+        "warcDigest": "33QA7RZO6SOEXV7V7DYAUSDV5AQ3FAOP",
+        "cdxLength": 28625
+      },
+      "transport": "Current official URL with the fixed Internet Archive replay as an HTTP-refusal fallback; local cache reuse does not change source provenance.",
+      "bytes": 137770,
+      "sha256": "a0d6e44ab2407feb305ed60596bcaa4280d2ecd1ce99ccdda836717e6a66c4ad",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "stepDegrees2Theta": 0.02
+    },
+    {
+      "name": "cpd-1f.prn",
+      "sample": "1f",
+      "role": "external-composition-holdout",
+      "officialUrl": "https://www.iucr.org/__data/iucr/powder/QARR/col/cpd-1f.prn",
+      "archive": {
+        "timestamp": "20090728004703",
+        "original": "http://www.iucr.org:80/__data/iucr/powder/QARR/col/cpd-1f.prn",
+        "warcDigest": "JU326JW3LBQYUCZQ4XWZWHHUMKAZPZUV",
+        "cdxLength": 28739
+      },
+      "transport": "Current official URL with the fixed Internet Archive replay as an HTTP-refusal fallback; local cache reuse does not change source provenance.",
+      "bytes": 137770,
+      "sha256": "4b013942aad23d24c1c85614e5466be7f3cd176888f28b08e9dab918caa4c7e2",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "stepDegrees2Theta": 0.02
+    },
+    {
+      "name": "cpd-1g.prn",
+      "sample": "1g",
+      "role": "external-composition-holdout",
+      "officialUrl": "https://www.iucr.org/__data/iucr/powder/QARR/col/cpd-1g.prn",
+      "archive": {
+        "timestamp": "20090728005517",
+        "original": "http://www.iucr.org:80/__data/iucr/powder/QARR/col/cpd-1g.prn",
+        "warcDigest": "Q3SS4IV25GPZE3RXB2K7U35Z565VXTWE",
+        "cdxLength": 28648
+      },
+      "transport": "Current official URL with the fixed Internet Archive replay as an HTTP-refusal fallback; local cache reuse does not change source provenance.",
+      "bytes": 137770,
+      "sha256": "fc5a503bfbb6da655c0204b5e20486d35824a10fdff676125c1c4237af34354b",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "stepDegrees2Theta": 0.02
+    },
+    {
+      "name": "cpd-1h.prn",
+      "sample": "1h",
+      "role": "external-composition-holdout",
+      "officialUrl": "https://www.iucr.org/__data/iucr/powder/QARR/col/cpd-1h.prn",
+      "archive": {
+        "timestamp": "20090728005522",
+        "original": "http://www.iucr.org:80/__data/iucr/powder/QARR/col/cpd-1h.prn",
+        "warcDigest": "FH44BVIT3S2K7DDHFDLE2RRHWLZLZ4PC",
+        "cdxLength": 28550
+      },
+      "transport": "Current official URL with the fixed Internet Archive replay as an HTTP-refusal fallback; local cache reuse does not change source provenance.",
+      "bytes": 137770,
+      "sha256": "31ca39459cf985c6a03d0b66b8ad7fab20f8bfa117d4bf6d12a7c5d60ba9108c",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "stepDegrees2Theta": 0.02
+    }
+  ],
+  "verified": {
+    "files": 5,
+    "samples": [
+      "1d",
+      "1e",
+      "1f",
+      "1g",
+      "1h"
+    ],
+    "uniqueHashes": 5,
+    "totalBytes": 688850,
+    "everyFileTwoColumnMonotone": true
+  },
+  "localCache": "Temporary analysis input only; holdout profiles are not redistributed by this repository."
+}

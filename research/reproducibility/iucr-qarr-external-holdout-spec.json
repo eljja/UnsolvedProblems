@@ -1,0 +1,92 @@
+{
+  "benchmarkId": "IUCR-QARR-EXTERNAL-COMPOSITION-0.1",
+  "reviewedOn": "2026-08-14",
+  "status": "sealed-before-external-holdout-computation",
+  "purpose": "Test whether the RC20 peak-RIR reduction transports without retraining from calibration mixtures 1a-1c to official compositions 1d-1h, and preregister a full-pattern empirical reference competitor that uses the same calibration and untouched holdouts.",
+  "sourceContract": {
+    "calibrationManifest": "research/reproducibility/iucr-qarr-reference-pattern-manifest.json",
+    "holdoutManifest": "research/reproducibility/iucr-qarr-external-holdout-manifest.json",
+    "rc20Specification": "research/reproducibility/iucr-qpa-independent-reduction-spec.json",
+    "weighedTruth": "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/values",
+    "officialDataPage": "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/data"
+  },
+  "phaseOrder": ["corundum", "fluorite", "zincite"],
+  "calibrationSamples": ["1a", "1b", "1c"],
+  "externalHoldoutSamples": ["1d", "1e", "1f", "1g", "1h"],
+  "truthWeightPercent": {
+    "1a": { "corundum": 1.15, "fluorite": 94.81, "zincite": 4.04 },
+    "1b": { "corundum": 94.31, "fluorite": 4.33, "zincite": 1.36 },
+    "1c": { "corundum": 5.04, "fluorite": 1.36, "zincite": 93.59 },
+    "1d": { "corundum": 13.53, "fluorite": 53.58, "zincite": 32.89 },
+    "1e": { "corundum": 55.12, "fluorite": 29.62, "zincite": 15.25 },
+    "1f": { "corundum": 27.06, "fluorite": 17.72, "zincite": 55.22 },
+    "1g": { "corundum": 31.37, "fluorite": 34.42, "zincite": 34.21 },
+    "1h": { "corundum": 35.12, "fluorite": 34.69, "zincite": 30.19 }
+  },
+  "xrfWeightPercentAsReported": {
+    "1d": { "corundum": 13.80, "fluorite": 52.99, "zincite": 32.98 },
+    "1e": { "corundum": 55.79, "fluorite": 29.39, "zincite": 15.34 },
+    "1f": { "corundum": 27.32, "fluorite": 17.44, "zincite": 54.88 },
+    "1g": { "corundum": 31.70, "fluorite": 33.86, "zincite": 34.01 },
+    "1h": { "corundum": 35.35, "fluorite": 34.26, "zincite": 30.03 }
+  },
+  "frozenPeakReduction": {
+    "contract": "Inherit response-ratio estimation, primary and secondary centers, signal and sideband widths, linear background, positive trapezoid area, refusal rule, and five-point unsafe definition verbatim from IUCR-QPA-INDEPENDENT-PEAK-RIR-0.1.",
+    "noRetuning": "Do not change any peak parameter or response ratio after loading 1d-1h, and do not use 1d-1h to select a gate."
+  },
+  "preregisteredFullPatternCompetitor": {
+    "status": "prospective-unexecuted-until-this-specification-is-committed-to-the-worktree",
+    "angleRangeDegrees2Theta": [20, 100],
+    "baseline": "Partition the full original 5-150 degree grid into consecutive 2-degree bins; take the fifth percentile count and median angle per bin; linearly interpolate these anchors over every point; subtract and clip at zero. Use the resulting 20-100 degree segment without resampling.",
+    "templates": "Use the baseline-subtracted pure corundum, fluorite, and zincite profiles as three fixed nonnegative columns on their common grid.",
+    "coefficientFit": "Solve unweighted nonnegative least squares by enumerating all seven nonempty active phase sets and ordinary least squares within each set; reject singular or negative active coefficients and choose minimum squared residual.",
+    "responseCalibration": "For each calibration mixture 1a-1c, fit coefficients c_sk. Against fluorite compute log[(c_sk/c_s,fluorite)/(W_sk/W_s,fluorite)] and take the median for each non-fluorite phase; set fluorite response to one.",
+    "weightEstimate": "For every target set u_k=c_k/r_k and normalize positive u values to 100 weight percent. Refuse if any phase coefficient or calibrated response is non-positive.",
+    "residual": "Report square root of residual sum of squares divided by target baseline-subtracted L2 norm. The residual is diagnostic and cannot alter the five-point truth gate."
+  },
+  "competingHypotheses": [
+    {
+      "id": "H1",
+      "claim": "The frozen RC20 primary peak-RIR transports to all five untouched compositions.",
+      "prediction": "All five 1d-1h profiles are estimable and maximum phase error is at most five weight-percentage points for every profile.",
+      "rejectWhen": "Any holdout is refused or exceeds five points."
+    },
+    {
+      "id": "H2",
+      "claim": "The preregistered full-pattern empirical reference reduction transports to all five untouched compositions.",
+      "prediction": "All five profiles are estimable and maximum phase error is at most five points for every profile.",
+      "rejectWhen": "Any holdout is refused or exceeds five points."
+    },
+    {
+      "id": "H3",
+      "claim": "Using the whole pattern materially reduces the peak method's worst holdout error without sacrificing estimability.",
+      "prediction": "The full-pattern maximum error is at least 20% lower than the primary-peak maximum error, with five of five profiles estimable.",
+      "rejectWhen": "The reduction is below 20%, a profile is refused, or the full-pattern worst error exceeds five points."
+    },
+    {
+      "id": "H4",
+      "claim": "Primary-secondary peak disagreement ranks external composition error strongly enough to prioritize method review.",
+      "prediction": "Across five holdouts, Spearman correlation between peak-family disagreement and primary maximum error is at least 0.8 without a negative tie ambiguity.",
+      "rejectWhen": "Correlation is below 0.8 or cannot be computed."
+    }
+  ],
+  "decisionRules": {
+    "primaryTruth": "Use official weighed values for the five-point gate; report the official XRF values separately as a different measurement principle and do not blend them into a tuned target.",
+    "safety": "One refused or unsafe composition rejects method-wide transport. Average error cannot rescue a failing composition.",
+    "comparison": "Report every phase estimate, phase error, refusal, residual, and method disagreement before any aggregate.",
+    "promotion": "Passing five historical profiles does not qualify physical independence or an arbitrary new instrument."
+  },
+  "uncertaintyBudget": [
+    "Each holdout is one historical profile, so counting variation and preparation variation are not separately estimated.",
+    "Archive replay may change transport bytes and some archived angles print up to 0.00001 degree below their nominal values; deterministic count-preserving nominal-grid normalization and current official grid cross-check protect numerical lineage but do not recreate collection metadata.",
+    "Peak background is vulnerable to local tails; full-pattern percentile background is vulnerable to broad amorphous or unresolved intensity.",
+    "Pure-reference patterns and mixtures may differ in packing, orientation, absorption, crystallinity, and incident intensity.",
+    "Weighed and XRF values have different error sources, but neither supplies a prospective two-institution repeat."
+  ],
+  "stopConditions": [
+    "Stop if any numerical file differs from 7,251 points or any printed angle lies more than 0.00002 degree from the 5+0.02*i nominal grid.",
+    "Stop and preserve the failure if a required phase area, coefficient, or response is non-positive.",
+    "Do not change preprocessing, calibration, truth, hypotheses, or gates after computing any 1d-1h estimate.",
+    "Do not call a historical same-instrument holdout an independent physical replication."
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "auditId": "IUCR-QARR-EXTERNAL-HOLDOUT-PYTHON-AUDIT-0.1",
+  "generatedOn": "2026-08-14",
+  "implementation": "Python standard library; does not import or execute the JavaScript holdout reduction",
+  "denominators": {
+    "calibrationProfiles": 6,
+    "holdoutProfiles": 5,
+    "pointsPerProfile": 7251,
+    "fullPatternFitPoints": 4001
+  },
+  "fullPatternResponseRatios": {
+    "corundum": 0.292218481,
+    "fluorite": 1.0,
+    "zincite": 0.493857262
+  },
+  "holdouts": [
+    {
+      "sample": "1d",
+      "primaryMaximumError": 0.546808,
+      "secondaryMaximumError": 2.754136,
+      "fullPatternMaximumError": 1.418257,
+      "peakAgreement": 3.073047,
+      "fullPatternResidual": 0.080646,
+      "primaryMaximumDifferenceFromXrf": 0.90891,
+      "fullPatternMaximumDifferenceFromXrf": 0.9707
+    },
+    {
+      "sample": "1e",
+      "primaryMaximumError": 0.79629,
+      "secondaryMaximumError": 1.433953,
+      "fullPatternMaximumError": 2.782992,
+      "peakAgreement": 1.488699,
+      "fullPatternResidual": 0.240803,
+      "primaryMaximumDifferenceFromXrf": 0.88629,
+      "fullPatternMaximumDifferenceFromXrf": 2.112992
+    },
+    {
+      "sample": "1f",
+      "primaryMaximumError": 0.612879,
+      "secondaryMaximumError": 7.593212,
+      "fullPatternMaximumError": 0.662741,
+      "peakAgreement": 8.144006,
+      "fullPatternResidual": 0.080341,
+      "primaryMaximumDifferenceFromXrf": 0.872879,
+      "fullPatternMaximumDifferenceFromXrf": 0.958952
+    },
+    {
+      "sample": "1g",
+      "primaryMaximumError": 0.525131,
+      "secondaryMaximumError": 4.508755,
+      "fullPatternMaximumError": 1.43966,
+      "peakAgreement": 5.019607,
+      "fullPatternResidual": 0.118989,
+      "primaryMaximumDifferenceFromXrf": 1.070852,
+      "fullPatternMaximumDifferenceFromXrf": 0.87966
+    },
+    {
+      "sample": "1h",
+      "primaryMaximumError": 0.925634,
+      "secondaryMaximumError": 3.577494,
+      "fullPatternMaximumError": 1.499761,
+      "peakAgreement": 4.503128,
+      "fullPatternResidual": 0.265564,
+      "primaryMaximumDifferenceFromXrf": 1.355634,
+      "fullPatternMaximumDifferenceFromXrf": 1.659761
+    }
+  ],
+  "aggregate": {
+    "peakMaximumError": 0.925634,
+    "fullPatternMaximumError": 2.782992,
+    "peakMaximumDifferenceFromXrf": 1.355634,
+    "fullPatternMaximumDifferenceFromXrf": 2.112992,
+    "worstErrorReduction": -2.006580062,
+    "peakAgreementErrorSpearman": -0.3
+  },
+  "decisions": {
+    "H1": true,
+    "H2": true,
+    "H3": false,
+    "H4": false
+  }
+}

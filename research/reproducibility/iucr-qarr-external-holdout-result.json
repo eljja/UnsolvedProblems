@@ -1,0 +1,527 @@
+{
+  "benchmarkId": "IUCR-QARR-EXTERNAL-COMPOSITION-0.1",
+  "generatedOn": "2026-08-14",
+  "source": {
+    "calibrationManifestId": "IUCR-QARR-REFERENCE-PATTERN-MANIFEST-0.1",
+    "holdoutManifestId": "IUCR-QARR-EXTERNAL-HOLDOUT-MANIFEST-0.1",
+    "rc20BenchmarkId": "IUCR-QPA-INDEPENDENT-PEAK-RIR-0.1"
+  },
+  "denominators": {
+    "calibrationProfiles": 6,
+    "calibrationMixtures": 3,
+    "pureTemplates": 3,
+    "externalHoldoutProfiles": 5,
+    "numericalPointsPerProfile": 7251,
+    "fullPatternFitPoints": 4001
+  },
+  "frozenPeakResponses": {
+    "primary": {
+      "corundum": 0.174393383,
+      "fluorite": 1,
+      "zincite": 0.860244342
+    },
+    "secondary": {
+      "corundum": 0.288197261,
+      "fluorite": 1,
+      "zincite": 0.410545202
+    }
+  },
+  "fullPatternCalibration": {
+    "responseRatios": {
+      "corundum": 0.292218481,
+      "fluorite": 1,
+      "zincite": 0.493857262
+    },
+    "fits": {
+      "1a": {
+        "active": [
+          "corundum",
+          "fluorite",
+          "zincite"
+        ],
+        "coefficients": {
+          "corundum": 0.003204221,
+          "fluorite": 0.998932968,
+          "zincite": 0.021021563
+        },
+        "normalizedResidual": 0.034329708
+      },
+      "1b": {
+        "active": [
+          "corundum",
+          "fluorite",
+          "zincite"
+        ],
+        "coefficients": {
+          "corundum": 0.862223373,
+          "fluorite": 0.101273261,
+          "zincite": 0.015642191
+        },
+        "normalizedResidual": 0.168347933
+      },
+      "1c": {
+        "active": [
+          "corundum",
+          "fluorite",
+          "zincite"
+        ],
+        "coefficients": {
+          "corundum": 0.027985954,
+          "fluorite": 0.025842874,
+          "zincite": 0.940084429
+        },
+        "normalizedResidual": 0.107011383
+      }
+    }
+  },
+  "externalHoldouts": [
+    {
+      "sample": "1d",
+      "name": "cpd-1d.prn",
+      "sha256": "89295da47efcdd8f12e3026c40aa66f1d4aaa8beaa8f51ada5f7075e10f3b1c1",
+      "primary": {
+        "corundum": 13.757898,
+        "fluorite": 53.89891,
+        "zincite": 32.343192
+      },
+      "secondary": {
+        "corundum": 14.415114,
+        "fluorite": 50.825864,
+        "zincite": 34.759022
+      },
+      "fullPattern": {
+        "corundum": 13.887557,
+        "fluorite": 52.161743,
+        "zincite": 33.9507
+      },
+      "primaryError": {
+        "byPhase": {
+          "corundum": 0.227898,
+          "fluorite": 0.31891,
+          "zincite": 0.546808
+        },
+        "signedByPhase": {
+          "corundum": 0.227898,
+          "fluorite": 0.31891,
+          "zincite": -0.546808
+        },
+        "maximum": 0.546808,
+        "unsafe": false
+      },
+      "secondaryError": {
+        "byPhase": {
+          "corundum": 0.885114,
+          "fluorite": 2.754136,
+          "zincite": 1.869022
+        },
+        "signedByPhase": {
+          "corundum": 0.885114,
+          "fluorite": -2.754136,
+          "zincite": 1.869022
+        },
+        "maximum": 2.754136,
+        "unsafe": false
+      },
+      "fullPatternError": {
+        "byPhase": {
+          "corundum": 0.357557,
+          "fluorite": 1.418257,
+          "zincite": 1.0607
+        },
+        "signedByPhase": {
+          "corundum": 0.357557,
+          "fluorite": -1.418257,
+          "zincite": 1.0607
+        },
+        "maximum": 1.418257,
+        "unsafe": false
+      },
+      "primarySecondaryAgreement": 3.073047,
+      "fullPatternFit": {
+        "active": [
+          "corundum",
+          "fluorite",
+          "zincite"
+        ],
+        "coefficients": {
+          "corundum": 0.055785598,
+          "fluorite": 0.717035505,
+          "zincite": 0.230482914
+        },
+        "normalizedResidual": 0.080646123
+      },
+      "xrfAsReported": {
+        "corundum": 13.8,
+        "fluorite": 52.99,
+        "zincite": 32.98
+      },
+      "primaryMaximumDifferenceFromXrf": 0.90891,
+      "fullPatternMaximumDifferenceFromXrf": 0.9707
+    },
+    {
+      "sample": "1e",
+      "name": "cpd-1e.prn",
+      "sha256": "a0d6e44ab2407feb305ed60596bcaa4280d2ecd1ce99ccdda836717e6a66c4ad",
+      "primary": {
+        "corundum": 55.871544,
+        "fluorite": 29.674746,
+        "zincite": 14.45371
+      },
+      "secondary": {
+        "corundum": 56.295064,
+        "fluorite": 28.186047,
+        "zincite": 15.518889
+      },
+      "fullPattern": {
+        "corundum": 57.902992,
+        "fluorite": 27.549754,
+        "zincite": 14.547253
+      },
+      "primaryError": {
+        "byPhase": {
+          "corundum": 0.751544,
+          "fluorite": 0.054746,
+          "zincite": 0.79629
+        },
+        "signedByPhase": {
+          "corundum": 0.751544,
+          "fluorite": 0.054746,
+          "zincite": -0.79629
+        },
+        "maximum": 0.79629,
+        "unsafe": false
+      },
+      "secondaryError": {
+        "byPhase": {
+          "corundum": 1.175064,
+          "fluorite": 1.433953,
+          "zincite": 0.268889
+        },
+        "signedByPhase": {
+          "corundum": 1.175064,
+          "fluorite": -1.433953,
+          "zincite": 0.268889
+        },
+        "maximum": 1.433953,
+        "unsafe": false
+      },
+      "fullPatternError": {
+        "byPhase": {
+          "corundum": 2.782992,
+          "fluorite": 2.070246,
+          "zincite": 0.702747
+        },
+        "signedByPhase": {
+          "corundum": 2.782992,
+          "fluorite": -2.070246,
+          "zincite": -0.702747
+        },
+        "maximum": 2.782992,
+        "unsafe": false
+      },
+      "primarySecondaryAgreement": 1.488699,
+      "fullPatternFit": {
+        "active": [
+          "corundum",
+          "fluorite",
+          "zincite"
+        ],
+        "coefficients": {
+          "corundum": 0.321201798,
+          "fluorite": 0.522982322,
+          "zincite": 0.136380327
+        },
+        "normalizedResidual": 0.240803026
+      },
+      "xrfAsReported": {
+        "corundum": 55.79,
+        "fluorite": 29.39,
+        "zincite": 15.34
+      },
+      "primaryMaximumDifferenceFromXrf": 0.88629,
+      "fullPatternMaximumDifferenceFromXrf": 2.112992
+    },
+    {
+      "sample": "1f",
+      "name": "cpd-1f.prn",
+      "sha256": "4b013942aad23d24c1c85614e5466be7f3cd176888f28b08e9dab918caa4c7e2",
+      "primary": {
+        "corundum": 26.447121,
+        "fluorite": 18.270794,
+        "zincite": 55.282085
+      },
+      "secondary": {
+        "corundum": 29.586453,
+        "fluorite": 10.126788,
+        "zincite": 60.286759
+      },
+      "fullPattern": {
+        "corundum": 27.103789,
+        "fluorite": 17.057259,
+        "zincite": 55.838952
+      },
+      "primaryError": {
+        "byPhase": {
+          "corundum": 0.612879,
+          "fluorite": 0.550794,
+          "zincite": 0.062085
+        },
+        "signedByPhase": {
+          "corundum": -0.612879,
+          "fluorite": 0.550794,
+          "zincite": 0.062085
+        },
+        "maximum": 0.612879,
+        "unsafe": false
+      },
+      "secondaryError": {
+        "byPhase": {
+          "corundum": 2.526453,
+          "fluorite": 7.593212,
+          "zincite": 5.066759
+        },
+        "signedByPhase": {
+          "corundum": 2.526453,
+          "fluorite": -7.593212,
+          "zincite": 5.066759
+        },
+        "maximum": 7.593212,
+        "unsafe": true
+      },
+      "fullPatternError": {
+        "byPhase": {
+          "corundum": 0.043789,
+          "fluorite": 0.662741,
+          "zincite": 0.618952
+        },
+        "signedByPhase": {
+          "corundum": 0.043789,
+          "fluorite": -0.662741,
+          "zincite": 0.618952
+        },
+        "maximum": 0.662741,
+        "unsafe": false
+      },
+      "primarySecondaryAgreement": 8.144006,
+      "fullPatternFit": {
+        "active": [
+          "corundum",
+          "fluorite",
+          "zincite"
+        ],
+        "coefficients": {
+          "corundum": 0.148811516,
+          "fluorite": 0.32048528,
+          "zincite": 0.518128578
+        },
+        "normalizedResidual": 0.080340885
+      },
+      "xrfAsReported": {
+        "corundum": 27.32,
+        "fluorite": 17.44,
+        "zincite": 54.88
+      },
+      "primaryMaximumDifferenceFromXrf": 0.872879,
+      "fullPatternMaximumDifferenceFromXrf": 0.958952
+    },
+    {
+      "sample": "1g",
+      "name": "cpd-1g.prn",
+      "sha256": "fc5a503bfbb6da655c0204b5e20486d35824a10fdff676125c1c4237af34354b",
+      "primary": {
+        "corundum": 31.38428,
+        "fluorite": 34.930852,
+        "zincite": 33.684869
+      },
+      "secondary": {
+        "corundum": 33.216371,
+        "fluorite": 29.911245,
+        "zincite": 36.872384
+      },
+      "fullPattern": {
+        "corundum": 32.370666,
+        "fluorite": 32.98034,
+        "zincite": 34.648994
+      },
+      "primaryError": {
+        "byPhase": {
+          "corundum": 0.01428,
+          "fluorite": 0.510852,
+          "zincite": 0.525131
+        },
+        "signedByPhase": {
+          "corundum": 0.01428,
+          "fluorite": 0.510852,
+          "zincite": -0.525131
+        },
+        "maximum": 0.525131,
+        "unsafe": false
+      },
+      "secondaryError": {
+        "byPhase": {
+          "corundum": 1.846371,
+          "fluorite": 4.508755,
+          "zincite": 2.662384
+        },
+        "signedByPhase": {
+          "corundum": 1.846371,
+          "fluorite": -4.508755,
+          "zincite": 2.662384
+        },
+        "maximum": 4.508755,
+        "unsafe": false
+      },
+      "fullPatternError": {
+        "byPhase": {
+          "corundum": 1.000666,
+          "fluorite": 1.43966,
+          "zincite": 0.438994
+        },
+        "signedByPhase": {
+          "corundum": 1.000666,
+          "fluorite": -1.43966,
+          "zincite": 0.438994
+        },
+        "maximum": 1.43966,
+        "unsafe": false
+      },
+      "primarySecondaryAgreement": 5.019607,
+      "fullPatternFit": {
+        "active": [
+          "corundum",
+          "fluorite",
+          "zincite"
+        ],
+        "coefficients": {
+          "corundum": 0.155675117,
+          "fluorite": 0.542768987,
+          "zincite": 0.281612527
+        },
+        "normalizedResidual": 0.118989247
+      },
+      "xrfAsReported": {
+        "corundum": 31.7,
+        "fluorite": 33.86,
+        "zincite": 34.01
+      },
+      "primaryMaximumDifferenceFromXrf": 1.070852,
+      "fullPatternMaximumDifferenceFromXrf": 0.87966
+    },
+    {
+      "sample": "1h",
+      "name": "cpd-1h.prn",
+      "sha256": "31ca39459cf985c6a03d0b66b8ad7fab20f8bfa117d4bf6d12a7c5d60ba9108c",
+      "primary": {
+        "corundum": 35.093476,
+        "fluorite": 35.615634,
+        "zincite": 29.29089
+      },
+      "secondary": {
+        "corundum": 37.080138,
+        "fluorite": 31.112506,
+        "zincite": 31.807355
+      },
+      "fullPattern": {
+        "corundum": 34.033265,
+        "fluorite": 34.276974,
+        "zincite": 31.689761
+      },
+      "primaryError": {
+        "byPhase": {
+          "corundum": 0.026524,
+          "fluorite": 0.925634,
+          "zincite": 0.89911
+        },
+        "signedByPhase": {
+          "corundum": -0.026524,
+          "fluorite": 0.925634,
+          "zincite": -0.89911
+        },
+        "maximum": 0.925634,
+        "unsafe": false
+      },
+      "secondaryError": {
+        "byPhase": {
+          "corundum": 1.960138,
+          "fluorite": 3.577494,
+          "zincite": 1.617355
+        },
+        "signedByPhase": {
+          "corundum": 1.960138,
+          "fluorite": -3.577494,
+          "zincite": 1.617355
+        },
+        "maximum": 3.577494,
+        "unsafe": false
+      },
+      "fullPatternError": {
+        "byPhase": {
+          "corundum": 1.086735,
+          "fluorite": 0.413026,
+          "zincite": 1.499761
+        },
+        "signedByPhase": {
+          "corundum": -1.086735,
+          "fluorite": -0.413026,
+          "zincite": 1.499761
+        },
+        "maximum": 1.499761,
+        "unsafe": false
+      },
+      "primarySecondaryAgreement": 4.503128,
+      "fullPatternFit": {
+        "active": [
+          "corundum",
+          "fluorite",
+          "zincite"
+        ],
+        "coefficients": {
+          "corundum": 0.158106986,
+          "fluorite": 0.544931921,
+          "zincite": 0.248805611
+        },
+        "normalizedResidual": 0.265563553
+      },
+      "xrfAsReported": {
+        "corundum": 35.35,
+        "fluorite": 34.26,
+        "zincite": 30.03
+      },
+      "primaryMaximumDifferenceFromXrf": 1.355634,
+      "fullPatternMaximumDifferenceFromXrf": 1.659761
+    }
+  ],
+  "aggregate": {
+    "peak": {
+      "estimable": 5,
+      "unsafe": 0,
+      "maximumError": 0.925634,
+      "medianError": 0.612879
+    },
+    "fullPattern": {
+      "estimable": 5,
+      "unsafe": 0,
+      "maximumError": 2.782992,
+      "medianError": 1.43966
+    },
+    "xrfCrossCheck": {
+      "peakMaximumDifference": 1.355634,
+      "fullPatternMaximumDifference": 2.112992
+    },
+    "worstErrorReduction": -2.006580062,
+    "peakAgreementErrorSpearman": -0.3
+  },
+  "decision": {
+    "H1_frozenPeakRirTransports": true,
+    "H2_fullPatternReferenceTransports": true,
+    "H3_fullPatternMateriallyImprovesWorstError": false,
+    "H4_peakDisagreementRanksError": false,
+    "independentPhysicalRungQualified": false
+  },
+  "interpretation": [
+    "The five composition holdouts never set or tune peak, baseline, response, residual, truth, hypothesis, or safety parameters.",
+    "The full-pattern method is a preregistered empirical reference combination, not Rietveld refinement and not direct derivation; it shares the CPD instrument and historical specimens with the peak method.",
+    "Official XRF measurements are reported as a separate measurement principle but are not blended with weighed truth or used to tune either estimator.",
+    "No historical same-instrument result qualifies the prospective two-institution physical rung."
+  ]
+}
