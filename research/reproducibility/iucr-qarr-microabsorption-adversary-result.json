@@ -1,0 +1,148 @@
+{
+  "benchmarkId": "IUCR-QARR-MICROABSORPTION-ADVERSARY-0.1",
+  "generatedOn": "2026-08-14",
+  "source": {
+    "targetManifestId": "IUCR-QARR-MICROABSORPTION-ADVERSARY-MANIFEST-0.1",
+    "inheritedReferenceManifestId": "IUCR-QARR-REFERENCE-PATTERN-MANIFEST-0.1",
+    "frozenDetectorOrigin": "IUCR-QARR-AMORPHOUS-HOLDOUT-0.1"
+  },
+  "denominators": {
+    "targetProfiles": 1,
+    "pureReferences": 3,
+    "priorKnownOnlyControls": 5,
+    "priorUnknownPositives": 2,
+    "pointsPerProfile": 7251,
+    "fitPoints": 4501
+  },
+  "frozenDetector": {
+    "absoluteScale": 0.993912948,
+    "massThresholdPercentagePoints": 10,
+    "residualThreshold": 0.336902813
+  },
+  "blindTargetBeforeChallengeDisclosure": {
+    "active": [
+      "corundum",
+      "magnetite",
+      "zircon"
+    ],
+    "coefficients": {
+      "corundum": 0.278545941,
+      "magnetite": 0.197514129,
+      "zircon": 0.246553683
+    },
+    "coefficientSum": 0.722613753,
+    "knownMass": 72.703928,
+    "missingMass": 27.296072,
+    "normalizedResidual": 0.380179283,
+    "alarmByMass": true,
+    "alarmByResidual": true,
+    "alarm": true,
+    "interpretedAsFalseUnknownAlarmAfterTruthJoin": true
+  },
+  "closedComposition": {
+    "closureNormalizedWeightProxy": {
+      "corundum": 38.547002,
+      "magnetite": 27.333292,
+      "zircon": 34.119705
+    },
+    "officialWeighedWeightPercent": {
+      "corundum": 50.46,
+      "magnetite": 19.64,
+      "zircon": 29.9
+    },
+    "signedErrorsPercentagePoints": {
+      "corundum": -11.912998,
+      "magnetite": 7.693292,
+      "zircon": 4.219705
+    },
+    "absoluteErrorsPercentagePoints": {
+      "corundum": 11.912998,
+      "magnetite": 7.693292,
+      "zircon": 4.219705
+    },
+    "maximumAbsoluteErrorPercentagePoints": 11.912998
+  },
+  "physicalAdjudication": {
+    "particleSizeMicrometres": {
+      "corundum": 28,
+      "magnetite": 36.2,
+      "zircon": 21.1
+    },
+    "cuKAlphaMassAbsorptionCoefficientCm2PerGram": {
+      "corundum": 31.4,
+      "magnetite": 224.6,
+      "zircon": 81.3
+    },
+    "xrfWeightPercentAsReported": {
+      "corundum": 50.4,
+      "magnetite": 19.6,
+      "zircon": 29.5
+    },
+    "xrfTotalWeightPercent": 99.5,
+    "xrfAbsoluteErrorsFromGravimetryPercentagePoints": {
+      "corundum": 0.06,
+      "magnetite": 0.04,
+      "zircon": 0.4
+    },
+    "publishedAuthorQpaWeightPercent": {
+      "method1": {
+        "corundum": 54.1,
+        "magnetite": 17,
+        "zircon": 28.9
+      },
+      "method2": {
+        "corundum": 54.5,
+        "magnetite": 16.4,
+        "zircon": 29.1
+      }
+    }
+  },
+  "residualByDominantPureReference": {
+    "corundum": {
+      "points": 1349,
+      "sse": 15299506.704,
+      "share": 0.351441075
+    },
+    "magnetite": {
+      "points": 926,
+      "sse": 4338722.333,
+      "share": 0.099663687
+    },
+    "zircon": {
+      "points": 2226,
+      "sse": 23895403.763,
+      "share": 0.548895239
+    }
+  },
+  "alarmFingerprintComparison": {
+    "omittedCrystallineBruciteRC22": {
+      "unknownComponent": true,
+      "massAlarm": true,
+      "residualAlarm": true
+    },
+    "omittedAmorphousSilicaRC23": {
+      "unknownComponent": true,
+      "massAlarm": true,
+      "residualAlarm": false
+    },
+    "completeDictionaryMicroabsorptionRC24": {
+      "unknownComponent": false,
+      "massAlarm": true,
+      "residualAlarm": true
+    }
+  },
+  "decisions": {
+    "H1_completeDictionaryQuantitativelySafe": false,
+    "H2_frozenGateSpecificAfterDictionaryTransport": false,
+    "H3_biasMatchesMicroabsorptionDirection": false,
+    "H4_residualWarnsOnUnsafeComposition": true,
+    "H5_xrfDistinguishesNuisanceFromMissingMass": true,
+    "independentPhysicalRungQualified": false
+  },
+  "interpretation": [
+    "The target contains every phase in the supplied dictionary; an alarm is false for unknown-component presence even when the composition is unsafe.",
+    "The phase dictionary changes from RC23, so the result rejects universal scalar-closure specificity but does not estimate within-dictionary specificity.",
+    "Bias direction is diagnostic evidence for attenuation only after official particle size and absorption contrast are disclosed; it is not a validated correction.",
+    "XRF and gravimetry adjudicate component completeness independently of diffraction, while sharing phase-to-element conversion assumptions."
+  ]
+}

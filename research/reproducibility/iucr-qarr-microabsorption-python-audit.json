@@ -1,0 +1,43 @@
+{
+  "auditId": "IUCR-QARR-MICROABSORPTION-PYTHON-AUDIT-0.1",
+  "generatedOn": "2026-08-14",
+  "implementation": "Python standard library; does not import or execute the JavaScript microabsorption reduction",
+  "denominators": {
+    "targetProfiles": 1,
+    "pureReferences": 3,
+    "fitPoints": 4501
+  },
+  "blindTarget": {
+    "coefficients": {
+      "corundum": 0.278545941,
+      "magnetite": 0.197514129,
+      "zircon": 0.246553683
+    },
+    "coefficientSum": 0.722613753,
+    "missingMass": 27.296072,
+    "normalizedResidual": 0.380179283,
+    "alarmByMass": true,
+    "alarmByResidual": true,
+    "alarm": true
+  },
+  "closedComposition": {
+    "corundum": 38.547002,
+    "magnetite": 27.333292,
+    "zircon": 34.119705
+  },
+  "signedErrorsPercentagePoints": {
+    "corundum": -11.912998,
+    "magnetite": 7.693292,
+    "zircon": 4.219705
+  },
+  "maximumAbsoluteErrorPercentagePoints": 11.912998,
+  "xrfTotalWeightPercent": 99.5,
+  "decisions": {
+    "H1_completeDictionaryQuantitativelySafe": false,
+    "H2_frozenGateSpecificAfterDictionaryTransport": false,
+    "H3_biasMatchesMicroabsorptionDirection": false,
+    "H4_residualWarnsOnUnsafeComposition": true,
+    "H5_xrfDistinguishesNuisanceFromMissingMass": true,
+    "independentPhysicalRungQualified": false
+  }
+}

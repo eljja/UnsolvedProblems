@@ -1,0 +1,107 @@
+{
+  "benchmarkId": "IUCR-QARR-MICROABSORPTION-ADVERSARY-0.1",
+  "sealedOn": "2026-08-14",
+  "status": "sealed-before-sample-4-numerical-computation",
+  "question": "When every crystalline phase is present in the reference dictionary, does the frozen RC23 absolute-closure and residual gate retain a deliberately microabsorbing mixture, or mistake phase-dependent attenuation for missing matter?",
+  "sourceRoles": {
+    "target": "cpd-4.prn",
+    "completeKnownDictionary": ["corundum.prn", "magnetit.prn", "zircon.prn"],
+    "frozenDetectorCalibration": ["cpd-1a.prn", "cpd-1b.prn", "cpd-1c.prn"],
+    "priorKnownOnlyControls": ["cpd-1d.prn", "cpd-1e.prn", "cpd-1f.prn", "cpd-1g.prn", "cpd-1h.prn"],
+    "priorUnknownPositives": ["cpd-2.prn", "cpd-3.prn"]
+  },
+  "scopeBoundary": {
+    "claim": "This is a phase-dictionary transport adversary for a scalar closure gate. It is not an estimate of within-dictionary specificity because Sample 4 has no matched calibration mixtures over corundum, magnetite, and zircon.",
+    "negativeTruth": "The official specimen contains only corundum, magnetite, and zircon, and all three pure reference profiles are supplied. An alarm is therefore a false unknown-component alarm relative to the complete official phase list, even when the composition estimate is biased.",
+    "physicalNuisance": "The official design deliberately combines coarse grains and large phase-dependent absorption contrast. Microabsorption changes phase response without adding a phase.",
+    "retrospectiveLimit": "The benchmark designer knows that Sample 4 is a microabsorption specimen. The numerical outputs and hypothesis decisions remain sealed from the runner until after this specification and source roles are fixed."
+  },
+  "knowledgeFirewall": {
+    "blindReduction": "Load the target and complete three-reference dictionary, then apply the frozen RC23 baseline, fit range, active-set solver, absolute scale, mass threshold, and residual threshold. This stage may not read weighed composition, XRF composition, published QPA results, particle sizes, absorption coefficients, or the Sample 4 challenge label.",
+    "directionalDiagnosis": "After alarm and coefficients are fixed, reveal only the preregistered direction expected for an absorption contrast: lower-absorbing corundum overestimated; higher-absorbing magnetite and zircon underestimated. Do not change the fit.",
+    "finalAdjudication": "Only after all target outputs and hashes are fixed may official gravimetry, XRF, particle size, absorption coefficients, participant summaries, and the microabsorption label be joined.",
+    "noRetuning": "Sample 4 may not change the detector scale, thresholds, baseline, angular range, nonnegative active-set rule, or alarm logic. The only permitted dictionary change is replacement by the three officially present pure profiles."
+  },
+  "frozenDetector": {
+    "originBenchmarkId": "IUCR-QARR-AMORPHOUS-HOLDOUT-0.1",
+    "absoluteCoefficientScale": 0.993912948,
+    "massAlarmThresholdPercentagePoints": 10,
+    "residualAlarmThreshold": 0.336902813,
+    "baseline": "On the original 5-150 degree grid, use non-overlapping 2-degree bins, fifth-count-percentile and median-angle anchors, linear interpolation, subtraction, and clipping at zero.",
+    "fitRangeDegrees2Theta": [10, 100],
+    "coefficientFit": "Enumerate every nonempty active set, solve ordinary least squares, reject singular or negative solutions, and retain minimum squared residual.",
+    "normalizedResidual": "sqrt(SSE/sum(target^2)) on the frozen fit range.",
+    "missingMass": "100 minus 100 times the unnormalized coefficient sum divided by 0.993912948; do not closure-normalize or clip before the alarm.",
+    "alarm": "Refuse when missing mass exceeds ten percentage points OR normalized residual exceeds 0.336902813."
+  },
+  "officialDesignHeldUntilAdjudication": {
+    "weighedWeightPercent": { "corundum": 50.46, "magnetite": 19.64, "zircon": 29.90 },
+    "xrfWeightPercentAsReported": { "corundum": 50.4, "magnetite": 19.6, "zircon": 29.5 },
+    "particleSizeMicrometres": { "corundum": 28.0, "magnetite": 36.2, "zircon": 21.1 },
+    "cuKAlphaMassAbsorptionCoefficientCm2PerGram": { "corundum": 31.4, "magnetite": 224.6, "zircon": 81.3 },
+    "publishedAuthorQpaWeightPercent": {
+      "method1": { "corundum": 54.1, "magnetite": 17.0, "zircon": 28.9 },
+      "method2": { "corundum": 54.5, "magnetite": 16.4, "zircon": 29.1 }
+    }
+  },
+  "competingHypotheses": [
+    {
+      "id": "H1",
+      "claim": "A complete pure-phase dictionary yields a quantitatively safe closed composition despite the specimen nuisance.",
+      "prediction": "Closure-normalized coefficients sum to 100 percent and every phase lies within five percentage points of official gravimetry.",
+      "reject": "Reject when any phase absolute error exceeds five points. A good residual cannot rescue quantitative failure."
+    },
+    {
+      "id": "H2",
+      "claim": "The frozen absolute-closure and residual gate is specific to omitted components after transport to a complete new dictionary.",
+      "prediction": "Sample 4 is retained: missing mass is at most ten points and normalized residual is at most 0.336902813.",
+      "reject": "Reject on an alarm from either path. Bound the rejection to dictionary transport because matched Sample 4 calibration mixtures do not exist."
+    },
+    {
+      "id": "H3",
+      "claim": "The coefficient bias has the physical direction expected from Cu K-alpha microabsorption rather than an arbitrary omitted phase.",
+      "prediction": "Closure-normalized corundum is above 50.46 percent, while magnetite is below 19.64 and zircon below 29.90 percent.",
+      "reject": "Reject if any of the three signed inequalities fails. The sign pattern alone does not quantify a correction."
+    },
+    {
+      "id": "H4",
+      "claim": "The frozen normalized residual warns whenever the closed composition is unsafe.",
+      "prediction": "If H1 fails, residual exceeds 0.336902813. If H1 passes, H4 is not adjudicable on this specimen.",
+      "reject": "Reject when any phase error exceeds five points while residual remains at or below the threshold."
+    },
+    {
+      "id": "H5",
+      "claim": "An independent elemental measurement distinguishes a fully enumerated attenuation nuisance from genuinely missing mass.",
+      "prediction": "Reported XRF totals at least 99 percent and every XRF phase value lies within one percentage point of gravimetry, despite any XRD alarm or bias.",
+      "reject": "Reject if the XRF total is below 99 percent or any phase differs from gravimetry by more than one point."
+    }
+  ],
+  "causalChain": [
+    "Complete official phase list and same-instrument pure references",
+    "Phase-dependent absorption multiplied by coarse particle size",
+    "Biased pure-to-mixture coefficient response without an omitted phase",
+    "Frozen missing-mass and residual adjudicands",
+    "Independent gravimetry and XRF decide whether an alarm means novelty or nuisance"
+  ],
+  "uncertaintyBudget": {
+    "dictionaryTransport": "Magnetite and zircon have no 1a-1h-style mixture calibration. Failure can reject universal scalar closure but cannot estimate a within-dictionary false-alarm rate.",
+    "model": "A linear combination of pure profiles permits phase-specific coefficients but does not explicitly model particle-size distributions, microabsorption, surface roughness, or packing.",
+    "truth": "Gravimetry is the primary composition key. XRF is an independent measurement principle but reports elemental-to-phase conversion and does not reproduce diffraction physics.",
+    "sampleSize": "One deliberately severe nuisance target cannot establish performance over a distribution of absorption contrasts.",
+    "instrument": "Target and pure profiles share the historical CPD instrument, so the test isolates specimen nuisance better than instrument transport but is not a modern physical replicate."
+  },
+  "stopConditions": [
+    "Stop if any profile fails its fixed archive identity, canonical 7,251-point grid, byte count, or SHA-256 contract.",
+    "Stop if the runner reads official Sample 4 truth or challenge metadata before target coefficients and alarms are fixed.",
+    "Stop if any RC23 detector parameter is changed after seeing Sample 4.",
+    "Stop universal-specificity claims because the phase dictionary changes and has no matched known-only calibration mixtures.",
+    "Stop correction claims: this cycle diagnoses bias direction but does not fit or validate a Brindley, voxel, or supervised correction.",
+    "Stop physical-independence claims because all diffraction profiles share one historical instrument and preparation lineage."
+  ],
+  "primarySources": [
+    "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/data",
+    "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/data/letter",
+    "https://doi.org/10.1107/S0021889802008798",
+    "https://doi.org/10.1107/S2053273324003292"
+  ]
+}

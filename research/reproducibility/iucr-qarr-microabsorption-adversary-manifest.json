@@ -1,0 +1,87 @@
+{
+  "manifestId": "IUCR-QARR-MICROABSORPTION-ADVERSARY-MANIFEST-0.1",
+  "reviewedOn": "2026-08-14",
+  "status": "source-lineage-fixed-after-spec-seal-before-sample-4-computation",
+  "source": {
+    "dataPage": "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/data",
+    "participantLetter": "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/data/letter",
+    "outcomes": "https://doi.org/10.1107/S0021889802008798",
+    "archiveIndex": "https://web.archive.org/cdx/"
+  },
+  "inheritedReference": {
+    "name": "corundum.prn",
+    "manifestId": "IUCR-QARR-REFERENCE-PATTERN-MANIFEST-0.1",
+    "sha256": "bd53b325233838ccf91070c43f239b1762e616cd6a3dffd6a7cde479a096ec80"
+  },
+  "transportRule": "Parse exactly 7,251 rows. Accept historical printed angle drift only within 0.00002 degree of 5+0.02*i, canonicalize the nominal angle to three decimals, preserve counts, and hash deterministic UTF-8/LF output.",
+  "calibrationExclusion": "Sample 4 and its truth may not set or change detector scale, thresholds, baseline, fit range, solver, or alarm logic. Only the complete official phase dictionary changes.",
+  "files": [
+    {
+      "name": "cpd-4.prn",
+      "sample": "4",
+      "role": "complete-dictionary-microabsorption-negative",
+      "officialUrl": "https://www.iucr.org/__data/iucr/powder/QARR/col/cpd-4.prn",
+      "archive": {
+        "timestamp": "20090728005526",
+        "original": "http://www.iucr.org:80/__data/iucr/powder/QARR/col/cpd-4.prn",
+        "warcDigest": "6RHPFKZMK47MWFB26XRJTL5CMXNMTIPU",
+        "cdxLength": 28518
+      },
+      "transportUsed": "fixed-wayback-fallback",
+      "transport": "Current official numerical response when available; otherwise the fixed archived IUCr response identified by timestamp, original URL, WARC digest, and CDX length.",
+      "bytes": 137770,
+      "sha256": "320aa28edbbc4e016f6f150345f4f5da08a322d65d604e6126de47c8189d9cba",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "stepDegrees2Theta": 0.02
+    },
+    {
+      "name": "magnetit.prn",
+      "sample": null,
+      "role": "pure-phase-reference",
+      "officialUrl": "https://www.iucr.org/__data/iucr/powder/QARR/col/magnetit.prn",
+      "archive": {
+        "timestamp": "20090728005542",
+        "original": "http://www.iucr.org:80/__data/iucr/powder/QARR/col/magnetit.prn",
+        "warcDigest": "ABROWWO7JMK6ROPIOT2H3BU2OHEMU6XN",
+        "cdxLength": 27142
+      },
+      "transportUsed": "fixed-wayback-fallback",
+      "transport": "Current official numerical response when available; otherwise the fixed archived IUCr response identified by timestamp, original URL, WARC digest, and CDX length.",
+      "bytes": 137770,
+      "sha256": "6fdf5d1d55dea9f49f23f8b32cae4c582ba205cab8c5c58f1316402a805f4991",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "stepDegrees2Theta": 0.02
+    },
+    {
+      "name": "zircon.prn",
+      "sample": null,
+      "role": "pure-phase-reference",
+      "officialUrl": "https://www.iucr.org/__data/iucr/powder/QARR/col/zircon.prn",
+      "archive": {
+        "timestamp": "20090728004739",
+        "original": "http://www.iucr.org:80/__data/iucr/powder/QARR/col/zircon.prn",
+        "warcDigest": "7SPSIJ77UFYPC6URU2SHMRWHTI3UUG7G",
+        "cdxLength": 28885
+      },
+      "transportUsed": "fixed-wayback-fallback",
+      "transport": "Current official numerical response when available; otherwise the fixed archived IUCr response identified by timestamp, original URL, WARC digest, and CDX length.",
+      "bytes": 137770,
+      "sha256": "769649b8d727847060fe34d2062a5fe0dda6f3f5fab76b5bca1a70d02713fc80",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "stepDegrees2Theta": 0.02
+    }
+  ],
+  "verified": {
+    "files": 3,
+    "uniqueHashes": 3,
+    "totalBytes": 413310,
+    "everyFileTwoColumnMonotone": true
+  },
+  "localCache": "Temporary analysis input only; the numerical profiles are not redistributed by this repository."
+}
