@@ -1,0 +1,80 @@
+{
+  "resultId": "RC34-CIRCL-INTEROP-RESULT-0.9",
+  "computedOn": "2026-08-14",
+  "passed": true,
+  "library": {
+    "module": "github.com/cloudflare/circl",
+    "moduleSum": "h1:pOXuDTCEYyzydgUpQ0CQz3LsinKjiSk6nNP5Lt5K64U=",
+    "oprfPackage": "github.com/cloudflare/circl/oprf",
+    "released": "2026-06-19",
+    "version": "v1.6.4"
+  },
+  "corpus": {
+    "seedCommitmentVerified": true,
+    "studyEvents": [
+      100,
+      110,
+      120,
+      130
+    ],
+    "totalEventsPerMode": 460,
+    "uniquePackages": 100
+  },
+  "metrics": [
+    {
+      "mode": "VOPRF",
+      "events": 460,
+      "repeatedEvents": 60,
+      "duplicateComparisons": 60,
+      "duplicateMatches": 60,
+      "differentPackageCollisions": 0,
+      "crossStudyOutputEqualities": 0,
+      "fullEvaluateMismatches": 0,
+      "mutatedProofAccepted": 0
+    },
+    {
+      "mode": "POPRF",
+      "events": 460,
+      "repeatedEvents": 60,
+      "duplicateComparisons": 60,
+      "duplicateMatches": 60,
+      "differentPackageCollisions": 0,
+      "crossStudyOutputEqualities": 0,
+      "fullEvaluateMismatches": 0,
+      "mutatedProofAccepted": 0
+    }
+  ],
+  "negativeControls": {
+    "deterministicReplay": "accepted with identical output by RFC 9497 primitive; delegated to resolver state",
+    "identityPublicKey": {
+      "error": "oprf: invalid public key",
+      "rejected": true
+    },
+    "invalidPoint": {
+      "error": "group: error unmarshaling",
+      "rejected": true
+    },
+    "mutatedProofs": "one mutation per study and mode"
+  },
+  "checks": {
+    "all_full_evaluations_match": true,
+    "cross_study_output_equalities_zero": true,
+    "different_package_collisions_zero": true,
+    "duplicate_recall_is_complete": true,
+    "four_preregistered_studies": true,
+    "identity_public_key_rejected": true,
+    "invalid_point_rejected": true,
+    "mutated_proofs_rejected": true,
+    "one_hundred_unique_packages": true,
+    "primitive_replay_is_deterministic": true,
+    "sealed_seed_commitment_matches": true
+  },
+  "qualification": {
+    "arbitraryInputInterop": "all 920 outputs and eight batch proofs separately adjudicated by the committed pure-Python audit",
+    "constantTime": "not audited here",
+    "externalLibrary": "maintained external implementation, not claimed production-safe by its authors",
+    "liveNetwork": "not exercised",
+    "physicalPackages": "n=0"
+  },
+  "conclusion": "CIRCL evaluates 460 synthetic events in each of VOPRF and POPRF mode. Study scope in private input or public info preserves local equality while changing outputs across studies. Primitive replay remains deterministic by design and must be consumed exactly once by the application resolver."
+}

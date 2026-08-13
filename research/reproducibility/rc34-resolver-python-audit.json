@@ -1,0 +1,33 @@
+{
+  "auditId": "INDEPENDENT-RC34-RESOLVER-AUDIT-0.9",
+  "computedOn": "2026-08-14",
+  "passed": true,
+  "checks": {
+    "capability_token_digest_and_mac_validate": true,
+    "capability_scope_is_one_named_dispute": true,
+    "capability_resolves_through_auditor_bridge": true,
+    "normal_race_has_one_open_and_ninety_nine_replays": true,
+    "both_runtimes_entered_normal_race": true,
+    "normal_claim_and_receipt_digests_recompute": true,
+    "normal_receipt_binds_claim_and_authorized_outcome": true,
+    "normal_release_follows_durable_receipt": true,
+    "crash_snapshot_contains_only_claim": true,
+    "recovery_uses_original_claim": true,
+    "recovery_opens_once_after_receipt": true,
+    "recovery_claim_and_receipt_digests_recompute": true,
+    "ledger_receipts_match_evidence": true,
+    "both_merkle_inclusion_proofs_verify": true,
+    "one_to_two_consistency_proof_verifies": true,
+    "published_summary_matches_evidence": true
+  },
+  "aggregateChecksPassed": 16,
+  "aggregateChecksTotal": 16,
+  "metrics": {
+    "normalAttempts": 100,
+    "normalOpened": 1,
+    "normalReplay": 99,
+    "crashReleasedBeforeRecovery": false,
+    "receiptLeaves": 2
+  },
+  "boundary": "This independently written Python audit adjudicates committed synthetic evidence from two runtimes on one host and one shared filesystem. It does not establish distributed linearizability, partition tolerance, institutional independence, secret-bearing capability protection, or physical custody."
+}

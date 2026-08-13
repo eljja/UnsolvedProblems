@@ -1,0 +1,145 @@
+{
+  "auditId": "INDEPENDENT-RC34-CIRCL-AUDIT-0.9",
+  "computedOn": "2026-08-14",
+  "passed": true,
+  "checks": {
+    "precommit_seed_matches_reveal": true,
+    "one_hundred_package_payloads_reconstruct": true,
+    "all_revealed_events_have_transcript_rows": true,
+    "official_vectors_validate_hash_to_group": true,
+    "all_batch_shapes_valid": true,
+    "all_inputs_and_info_match_sealed_design": true,
+    "all_blinded_input_relations_match": true,
+    "all_eight_dleq_proofs_verify": true,
+    "all_920_finalize_outputs_match": true,
+    "all_mutated_proofs_and_context_swaps_reject": true,
+    "duplicate_recall_complete": true,
+    "different_package_collisions_zero": true,
+    "cross_study_output_equalities_zero": true,
+    "circl_result_reported_pass": true
+  },
+  "batchResults": [
+    {
+      "mode": "VOPRF",
+      "studyId": "STUDY-00",
+      "events": 100,
+      "shapeValid": true,
+      "inputsAndInfoMatchSealedCorpus": true,
+      "allBlindedInputRelationsMatch": true,
+      "dleqProofValid": true,
+      "outputsMatch": true,
+      "mutatedProofRejected": true,
+      "wrongModeContextRejected": true
+    },
+    {
+      "mode": "VOPRF",
+      "studyId": "STUDY-10",
+      "events": 110,
+      "shapeValid": true,
+      "inputsAndInfoMatchSealedCorpus": true,
+      "allBlindedInputRelationsMatch": true,
+      "dleqProofValid": true,
+      "outputsMatch": true,
+      "mutatedProofRejected": true,
+      "wrongModeContextRejected": true
+    },
+    {
+      "mode": "VOPRF",
+      "studyId": "STUDY-20",
+      "events": 120,
+      "shapeValid": true,
+      "inputsAndInfoMatchSealedCorpus": true,
+      "allBlindedInputRelationsMatch": true,
+      "dleqProofValid": true,
+      "outputsMatch": true,
+      "mutatedProofRejected": true,
+      "wrongModeContextRejected": true
+    },
+    {
+      "mode": "VOPRF",
+      "studyId": "STUDY-30",
+      "events": 130,
+      "shapeValid": true,
+      "inputsAndInfoMatchSealedCorpus": true,
+      "allBlindedInputRelationsMatch": true,
+      "dleqProofValid": true,
+      "outputsMatch": true,
+      "mutatedProofRejected": true,
+      "wrongModeContextRejected": true
+    },
+    {
+      "mode": "POPRF",
+      "studyId": "STUDY-00",
+      "events": 100,
+      "shapeValid": true,
+      "inputsAndInfoMatchSealedCorpus": true,
+      "allBlindedInputRelationsMatch": true,
+      "dleqProofValid": true,
+      "outputsMatch": true,
+      "mutatedProofRejected": true,
+      "wrongModeContextRejected": true
+    },
+    {
+      "mode": "POPRF",
+      "studyId": "STUDY-10",
+      "events": 110,
+      "shapeValid": true,
+      "inputsAndInfoMatchSealedCorpus": true,
+      "allBlindedInputRelationsMatch": true,
+      "dleqProofValid": true,
+      "outputsMatch": true,
+      "mutatedProofRejected": true,
+      "wrongModeContextRejected": true
+    },
+    {
+      "mode": "POPRF",
+      "studyId": "STUDY-20",
+      "events": 120,
+      "shapeValid": true,
+      "inputsAndInfoMatchSealedCorpus": true,
+      "allBlindedInputRelationsMatch": true,
+      "dleqProofValid": true,
+      "outputsMatch": true,
+      "mutatedProofRejected": true,
+      "wrongModeContextRejected": true
+    },
+    {
+      "mode": "POPRF",
+      "studyId": "STUDY-30",
+      "events": 130,
+      "shapeValid": true,
+      "inputsAndInfoMatchSealedCorpus": true,
+      "allBlindedInputRelationsMatch": true,
+      "dleqProofValid": true,
+      "outputsMatch": true,
+      "mutatedProofRejected": true,
+      "wrongModeContextRejected": true
+    }
+  ],
+  "modeMetrics": [
+    {
+      "mode": "VOPRF",
+      "duplicateComparisons": 60,
+      "duplicateMatches": 60,
+      "differentPackageFalseCollisions": 0,
+      "crossStudyOutputEqualities": 0
+    },
+    {
+      "mode": "POPRF",
+      "duplicateComparisons": 60,
+      "duplicateMatches": 60,
+      "differentPackageFalseCollisions": 0,
+      "crossStudyOutputEqualities": 0
+    }
+  ],
+  "aggregateChecksPassed": 14,
+  "aggregateChecksTotal": 14,
+  "qualification": {
+    "externalImplementation": "Cloudflare CIRCL v1.6.4",
+    "independentArithmetic": "pure-Python P-256, XMD, simplified SWU, DLEQ, and Finalize path",
+    "constantTime": "unqualified pure-Python audit code",
+    "institutionalIndependence": "not established; both artifacts are maintained in this repository",
+    "physicalPackages": "n=0"
+  },
+  "conclusion": "A separately written Python path reconstructs all sealed inputs, verifies every blind relation and eight batched DLEQ proofs, and matches all 920 CIRCL outputs. Study scope changes every package output across studies in both modes; POPRF makes that scope public to the server while VOPRF keeps it in the private input."
+}

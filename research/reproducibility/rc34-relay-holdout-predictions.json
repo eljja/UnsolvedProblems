@@ -1,0 +1,3183 @@
+{
+  "predictionId": "RC34-RELAY-HOLDOUT-PREDICTIONS-0.9",
+  "computedOn": "2026-08-14",
+  "heldOutStudy": "STUDY-30",
+  "fitted": {
+    "unprotected": {
+      "offsets": {
+        "expectedDelayMs": 15,
+        "expectedSizeOffset": 72
+      },
+      "weights": {
+        "time": 0,
+        "size": 0.25,
+        "endpoint": 0,
+        "stableToken": 64
+      },
+      "correct": 330,
+      "total": 330,
+      "accuracy": 1,
+      "candidateModels": 144
+    },
+    "protected": {
+      "offsets": {
+        "expectedDelayMs": 176,
+        "expectedSizeOffset": 527.5
+      },
+      "weights": {
+        "time": 0.25,
+        "size": 0,
+        "endpoint": 0,
+        "stableToken": 0
+      },
+      "correct": 42,
+      "total": 330,
+      "accuracy": 0.12727272727272726,
+      "candidateModels": 144
+    },
+    "stable-token-ablation": {
+      "offsets": {
+        "expectedDelayMs": 176,
+        "expectedSizeOffset": 527.5
+      },
+      "weights": {
+        "time": 0.25,
+        "size": 0,
+        "endpoint": 0,
+        "stableToken": 64
+      },
+      "correct": 330,
+      "total": 330,
+      "accuracy": 1,
+      "candidateModels": 144
+    }
+  },
+  "predictions": {
+    "unprotected": [
+      {
+        "ingressRecordId": "IN-STUDY-30-000",
+        "predictedEgressRecordId": "OUT-STUDY-30-000",
+        "trueEventId": "STUDY-30-BASE-075",
+        "predictedEventId": "STUDY-30-BASE-075",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-001",
+        "predictedEgressRecordId": "OUT-STUDY-30-001",
+        "trueEventId": "STUDY-30-BASE-038",
+        "predictedEventId": "STUDY-30-BASE-038",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-002",
+        "predictedEgressRecordId": "OUT-STUDY-30-002",
+        "trueEventId": "STUDY-30-BASE-099",
+        "predictedEventId": "STUDY-30-BASE-099",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-003",
+        "predictedEgressRecordId": "OUT-STUDY-30-003",
+        "trueEventId": "STUDY-30-BASE-002",
+        "predictedEventId": "STUDY-30-BASE-002",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-004",
+        "predictedEgressRecordId": "OUT-STUDY-30-004",
+        "trueEventId": "STUDY-30-BASE-067",
+        "predictedEventId": "STUDY-30-BASE-067",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-005",
+        "predictedEgressRecordId": "OUT-STUDY-30-005",
+        "trueEventId": "STUDY-30-REPEAT-007",
+        "predictedEventId": "STUDY-30-REPEAT-007",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-006",
+        "predictedEgressRecordId": "OUT-STUDY-30-006",
+        "trueEventId": "STUDY-30-BASE-060",
+        "predictedEventId": "STUDY-30-BASE-060",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-007",
+        "predictedEgressRecordId": "OUT-STUDY-30-007",
+        "trueEventId": "STUDY-30-BASE-044",
+        "predictedEventId": "STUDY-30-BASE-044",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-008",
+        "predictedEgressRecordId": "OUT-STUDY-30-008",
+        "trueEventId": "STUDY-30-REPEAT-006",
+        "predictedEventId": "STUDY-30-REPEAT-006",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-009",
+        "predictedEgressRecordId": "OUT-STUDY-30-009",
+        "trueEventId": "STUDY-30-BASE-011",
+        "predictedEventId": "STUDY-30-BASE-011",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-010",
+        "predictedEgressRecordId": "OUT-STUDY-30-010",
+        "trueEventId": "STUDY-30-REPEAT-013",
+        "predictedEventId": "STUDY-30-REPEAT-013",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-011",
+        "predictedEgressRecordId": "OUT-STUDY-30-011",
+        "trueEventId": "STUDY-30-BASE-020",
+        "predictedEventId": "STUDY-30-BASE-020",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-012",
+        "predictedEgressRecordId": "OUT-STUDY-30-012",
+        "trueEventId": "STUDY-30-BASE-053",
+        "predictedEventId": "STUDY-30-BASE-053",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-013",
+        "predictedEgressRecordId": "OUT-STUDY-30-013",
+        "trueEventId": "STUDY-30-BASE-050",
+        "predictedEventId": "STUDY-30-BASE-050",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-014",
+        "predictedEgressRecordId": "OUT-STUDY-30-014",
+        "trueEventId": "STUDY-30-REPEAT-023",
+        "predictedEventId": "STUDY-30-REPEAT-023",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-015",
+        "predictedEgressRecordId": "OUT-STUDY-30-015",
+        "trueEventId": "STUDY-30-BASE-079",
+        "predictedEventId": "STUDY-30-BASE-079",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-016",
+        "predictedEgressRecordId": "OUT-STUDY-30-016",
+        "trueEventId": "STUDY-30-BASE-081",
+        "predictedEventId": "STUDY-30-BASE-081",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-017",
+        "predictedEgressRecordId": "OUT-STUDY-30-017",
+        "trueEventId": "STUDY-30-BASE-040",
+        "predictedEventId": "STUDY-30-BASE-040",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-018",
+        "predictedEgressRecordId": "OUT-STUDY-30-018",
+        "trueEventId": "STUDY-30-BASE-007",
+        "predictedEventId": "STUDY-30-BASE-007",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-019",
+        "predictedEgressRecordId": "OUT-STUDY-30-019",
+        "trueEventId": "STUDY-30-BASE-004",
+        "predictedEventId": "STUDY-30-BASE-004",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-020",
+        "predictedEgressRecordId": "OUT-STUDY-30-020",
+        "trueEventId": "STUDY-30-BASE-025",
+        "predictedEventId": "STUDY-30-BASE-025",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-021",
+        "predictedEgressRecordId": "OUT-STUDY-30-021",
+        "trueEventId": "STUDY-30-BASE-089",
+        "predictedEventId": "STUDY-30-BASE-089",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-022",
+        "predictedEgressRecordId": "OUT-STUDY-30-022",
+        "trueEventId": "STUDY-30-REPEAT-019",
+        "predictedEventId": "STUDY-30-REPEAT-019",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-023",
+        "predictedEgressRecordId": "OUT-STUDY-30-023",
+        "trueEventId": "STUDY-30-BASE-043",
+        "predictedEventId": "STUDY-30-BASE-043",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-024",
+        "predictedEgressRecordId": "OUT-STUDY-30-024",
+        "trueEventId": "STUDY-30-BASE-093",
+        "predictedEventId": "STUDY-30-BASE-093",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-025",
+        "predictedEgressRecordId": "OUT-STUDY-30-025",
+        "trueEventId": "STUDY-30-BASE-058",
+        "predictedEventId": "STUDY-30-BASE-058",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-026",
+        "predictedEgressRecordId": "OUT-STUDY-30-026",
+        "trueEventId": "STUDY-30-REPEAT-012",
+        "predictedEventId": "STUDY-30-REPEAT-012",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-027",
+        "predictedEgressRecordId": "OUT-STUDY-30-027",
+        "trueEventId": "STUDY-30-BASE-041",
+        "predictedEventId": "STUDY-30-BASE-041",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-028",
+        "predictedEgressRecordId": "OUT-STUDY-30-028",
+        "trueEventId": "STUDY-30-BASE-034",
+        "predictedEventId": "STUDY-30-BASE-034",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-029",
+        "predictedEgressRecordId": "OUT-STUDY-30-029",
+        "trueEventId": "STUDY-30-REPEAT-028",
+        "predictedEventId": "STUDY-30-REPEAT-028",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-030",
+        "predictedEgressRecordId": "OUT-STUDY-30-030",
+        "trueEventId": "STUDY-30-BASE-085",
+        "predictedEventId": "STUDY-30-BASE-085",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-031",
+        "predictedEgressRecordId": "OUT-STUDY-30-031",
+        "trueEventId": "STUDY-30-BASE-028",
+        "predictedEventId": "STUDY-30-BASE-028",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-032",
+        "predictedEgressRecordId": "OUT-STUDY-30-032",
+        "trueEventId": "STUDY-30-BASE-051",
+        "predictedEventId": "STUDY-30-BASE-051",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-033",
+        "predictedEgressRecordId": "OUT-STUDY-30-033",
+        "trueEventId": "STUDY-30-REPEAT-015",
+        "predictedEventId": "STUDY-30-REPEAT-015",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-034",
+        "predictedEgressRecordId": "OUT-STUDY-30-034",
+        "trueEventId": "STUDY-30-BASE-035",
+        "predictedEventId": "STUDY-30-BASE-035",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-035",
+        "predictedEgressRecordId": "OUT-STUDY-30-035",
+        "trueEventId": "STUDY-30-REPEAT-001",
+        "predictedEventId": "STUDY-30-REPEAT-001",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-036",
+        "predictedEgressRecordId": "OUT-STUDY-30-036",
+        "trueEventId": "STUDY-30-BASE-037",
+        "predictedEventId": "STUDY-30-BASE-037",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-037",
+        "predictedEgressRecordId": "OUT-STUDY-30-037",
+        "trueEventId": "STUDY-30-REPEAT-010",
+        "predictedEventId": "STUDY-30-REPEAT-010",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-038",
+        "predictedEgressRecordId": "OUT-STUDY-30-038",
+        "trueEventId": "STUDY-30-BASE-087",
+        "predictedEventId": "STUDY-30-BASE-087",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-039",
+        "predictedEgressRecordId": "OUT-STUDY-30-039",
+        "trueEventId": "STUDY-30-BASE-026",
+        "predictedEventId": "STUDY-30-BASE-026",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-040",
+        "predictedEgressRecordId": "OUT-STUDY-30-040",
+        "trueEventId": "STUDY-30-REPEAT-027",
+        "predictedEventId": "STUDY-30-REPEAT-027",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-041",
+        "predictedEgressRecordId": "OUT-STUDY-30-041",
+        "trueEventId": "STUDY-30-REPEAT-014",
+        "predictedEventId": "STUDY-30-REPEAT-014",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-042",
+        "predictedEgressRecordId": "OUT-STUDY-30-042",
+        "trueEventId": "STUDY-30-BASE-042",
+        "predictedEventId": "STUDY-30-BASE-042",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-043",
+        "predictedEgressRecordId": "OUT-STUDY-30-043",
+        "trueEventId": "STUDY-30-BASE-017",
+        "predictedEventId": "STUDY-30-BASE-017",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-044",
+        "predictedEgressRecordId": "OUT-STUDY-30-044",
+        "trueEventId": "STUDY-30-BASE-045",
+        "predictedEventId": "STUDY-30-BASE-045",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-045",
+        "predictedEgressRecordId": "OUT-STUDY-30-045",
+        "trueEventId": "STUDY-30-BASE-046",
+        "predictedEventId": "STUDY-30-BASE-046",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-046",
+        "predictedEgressRecordId": "OUT-STUDY-30-046",
+        "trueEventId": "STUDY-30-BASE-056",
+        "predictedEventId": "STUDY-30-BASE-056",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-047",
+        "predictedEgressRecordId": "OUT-STUDY-30-047",
+        "trueEventId": "STUDY-30-BASE-065",
+        "predictedEventId": "STUDY-30-BASE-065",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-048",
+        "predictedEgressRecordId": "OUT-STUDY-30-048",
+        "trueEventId": "STUDY-30-REPEAT-024",
+        "predictedEventId": "STUDY-30-REPEAT-024",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-049",
+        "predictedEgressRecordId": "OUT-STUDY-30-049",
+        "trueEventId": "STUDY-30-BASE-074",
+        "predictedEventId": "STUDY-30-BASE-074",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-050",
+        "predictedEgressRecordId": "OUT-STUDY-30-050",
+        "trueEventId": "STUDY-30-BASE-070",
+        "predictedEventId": "STUDY-30-BASE-070",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-051",
+        "predictedEgressRecordId": "OUT-STUDY-30-051",
+        "trueEventId": "STUDY-30-BASE-031",
+        "predictedEventId": "STUDY-30-BASE-031",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-052",
+        "predictedEgressRecordId": "OUT-STUDY-30-052",
+        "trueEventId": "STUDY-30-BASE-000",
+        "predictedEventId": "STUDY-30-BASE-000",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-053",
+        "predictedEgressRecordId": "OUT-STUDY-30-053",
+        "trueEventId": "STUDY-30-REPEAT-004",
+        "predictedEventId": "STUDY-30-REPEAT-004",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-054",
+        "predictedEgressRecordId": "OUT-STUDY-30-054",
+        "trueEventId": "STUDY-30-BASE-032",
+        "predictedEventId": "STUDY-30-BASE-032",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-055",
+        "predictedEgressRecordId": "OUT-STUDY-30-055",
+        "trueEventId": "STUDY-30-REPEAT-021",
+        "predictedEventId": "STUDY-30-REPEAT-021",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-056",
+        "predictedEgressRecordId": "OUT-STUDY-30-056",
+        "trueEventId": "STUDY-30-BASE-098",
+        "predictedEventId": "STUDY-30-BASE-098",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-057",
+        "predictedEgressRecordId": "OUT-STUDY-30-057",
+        "trueEventId": "STUDY-30-BASE-092",
+        "predictedEventId": "STUDY-30-BASE-092",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-058",
+        "predictedEgressRecordId": "OUT-STUDY-30-058",
+        "trueEventId": "STUDY-30-REPEAT-002",
+        "predictedEventId": "STUDY-30-REPEAT-002",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-059",
+        "predictedEgressRecordId": "OUT-STUDY-30-059",
+        "trueEventId": "STUDY-30-BASE-091",
+        "predictedEventId": "STUDY-30-BASE-091",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-060",
+        "predictedEgressRecordId": "OUT-STUDY-30-060",
+        "trueEventId": "STUDY-30-BASE-033",
+        "predictedEventId": "STUDY-30-BASE-033",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-061",
+        "predictedEgressRecordId": "OUT-STUDY-30-061",
+        "trueEventId": "STUDY-30-REPEAT-005",
+        "predictedEventId": "STUDY-30-REPEAT-005",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-062",
+        "predictedEgressRecordId": "OUT-STUDY-30-062",
+        "trueEventId": "STUDY-30-BASE-013",
+        "predictedEventId": "STUDY-30-BASE-013",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-063",
+        "predictedEgressRecordId": "OUT-STUDY-30-063",
+        "trueEventId": "STUDY-30-BASE-082",
+        "predictedEventId": "STUDY-30-BASE-082",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-064",
+        "predictedEgressRecordId": "OUT-STUDY-30-064",
+        "trueEventId": "STUDY-30-BASE-069",
+        "predictedEventId": "STUDY-30-BASE-069",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-065",
+        "predictedEgressRecordId": "OUT-STUDY-30-065",
+        "trueEventId": "STUDY-30-BASE-021",
+        "predictedEventId": "STUDY-30-BASE-021",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-066",
+        "predictedEgressRecordId": "OUT-STUDY-30-066",
+        "trueEventId": "STUDY-30-BASE-015",
+        "predictedEventId": "STUDY-30-BASE-015",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-067",
+        "predictedEgressRecordId": "OUT-STUDY-30-067",
+        "trueEventId": "STUDY-30-BASE-048",
+        "predictedEventId": "STUDY-30-BASE-048",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-068",
+        "predictedEgressRecordId": "OUT-STUDY-30-068",
+        "trueEventId": "STUDY-30-BASE-088",
+        "predictedEventId": "STUDY-30-BASE-088",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-069",
+        "predictedEgressRecordId": "OUT-STUDY-30-069",
+        "trueEventId": "STUDY-30-BASE-097",
+        "predictedEventId": "STUDY-30-BASE-097",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-070",
+        "predictedEgressRecordId": "OUT-STUDY-30-070",
+        "trueEventId": "STUDY-30-REPEAT-029",
+        "predictedEventId": "STUDY-30-REPEAT-029",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-071",
+        "predictedEgressRecordId": "OUT-STUDY-30-071",
+        "trueEventId": "STUDY-30-BASE-006",
+        "predictedEventId": "STUDY-30-BASE-006",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-072",
+        "predictedEgressRecordId": "OUT-STUDY-30-072",
+        "trueEventId": "STUDY-30-BASE-009",
+        "predictedEventId": "STUDY-30-BASE-009",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-073",
+        "predictedEgressRecordId": "OUT-STUDY-30-073",
+        "trueEventId": "STUDY-30-BASE-086",
+        "predictedEventId": "STUDY-30-BASE-086",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-074",
+        "predictedEgressRecordId": "OUT-STUDY-30-074",
+        "trueEventId": "STUDY-30-REPEAT-009",
+        "predictedEventId": "STUDY-30-REPEAT-009",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-075",
+        "predictedEgressRecordId": "OUT-STUDY-30-075",
+        "trueEventId": "STUDY-30-BASE-014",
+        "predictedEventId": "STUDY-30-BASE-014",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-076",
+        "predictedEgressRecordId": "OUT-STUDY-30-076",
+        "trueEventId": "STUDY-30-BASE-078",
+        "predictedEventId": "STUDY-30-BASE-078",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-077",
+        "predictedEgressRecordId": "OUT-STUDY-30-077",
+        "trueEventId": "STUDY-30-REPEAT-008",
+        "predictedEventId": "STUDY-30-REPEAT-008",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-078",
+        "predictedEgressRecordId": "OUT-STUDY-30-078",
+        "trueEventId": "STUDY-30-REPEAT-020",
+        "predictedEventId": "STUDY-30-REPEAT-020",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-079",
+        "predictedEgressRecordId": "OUT-STUDY-30-079",
+        "trueEventId": "STUDY-30-BASE-001",
+        "predictedEventId": "STUDY-30-BASE-001",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-080",
+        "predictedEgressRecordId": "OUT-STUDY-30-080",
+        "trueEventId": "STUDY-30-BASE-055",
+        "predictedEventId": "STUDY-30-BASE-055",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-081",
+        "predictedEgressRecordId": "OUT-STUDY-30-081",
+        "trueEventId": "STUDY-30-BASE-016",
+        "predictedEventId": "STUDY-30-BASE-016",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-082",
+        "predictedEgressRecordId": "OUT-STUDY-30-082",
+        "trueEventId": "STUDY-30-BASE-084",
+        "predictedEventId": "STUDY-30-BASE-084",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-083",
+        "predictedEgressRecordId": "OUT-STUDY-30-083",
+        "trueEventId": "STUDY-30-BASE-018",
+        "predictedEventId": "STUDY-30-BASE-018",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-084",
+        "predictedEgressRecordId": "OUT-STUDY-30-084",
+        "trueEventId": "STUDY-30-BASE-008",
+        "predictedEventId": "STUDY-30-BASE-008",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-085",
+        "predictedEgressRecordId": "OUT-STUDY-30-085",
+        "trueEventId": "STUDY-30-BASE-061",
+        "predictedEventId": "STUDY-30-BASE-061",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-086",
+        "predictedEgressRecordId": "OUT-STUDY-30-086",
+        "trueEventId": "STUDY-30-BASE-010",
+        "predictedEventId": "STUDY-30-BASE-010",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-087",
+        "predictedEgressRecordId": "OUT-STUDY-30-087",
+        "trueEventId": "STUDY-30-BASE-068",
+        "predictedEventId": "STUDY-30-BASE-068",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-088",
+        "predictedEgressRecordId": "OUT-STUDY-30-088",
+        "trueEventId": "STUDY-30-BASE-012",
+        "predictedEventId": "STUDY-30-BASE-012",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-089",
+        "predictedEgressRecordId": "OUT-STUDY-30-089",
+        "trueEventId": "STUDY-30-BASE-071",
+        "predictedEventId": "STUDY-30-BASE-071",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-090",
+        "predictedEgressRecordId": "OUT-STUDY-30-090",
+        "trueEventId": "STUDY-30-BASE-036",
+        "predictedEventId": "STUDY-30-BASE-036",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-091",
+        "predictedEgressRecordId": "OUT-STUDY-30-091",
+        "trueEventId": "STUDY-30-BASE-047",
+        "predictedEventId": "STUDY-30-BASE-047",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-092",
+        "predictedEgressRecordId": "OUT-STUDY-30-092",
+        "trueEventId": "STUDY-30-REPEAT-011",
+        "predictedEventId": "STUDY-30-REPEAT-011",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-093",
+        "predictedEgressRecordId": "OUT-STUDY-30-093",
+        "trueEventId": "STUDY-30-BASE-080",
+        "predictedEventId": "STUDY-30-BASE-080",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-094",
+        "predictedEgressRecordId": "OUT-STUDY-30-094",
+        "trueEventId": "STUDY-30-BASE-095",
+        "predictedEventId": "STUDY-30-BASE-095",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-095",
+        "predictedEgressRecordId": "OUT-STUDY-30-095",
+        "trueEventId": "STUDY-30-REPEAT-016",
+        "predictedEventId": "STUDY-30-REPEAT-016",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-096",
+        "predictedEgressRecordId": "OUT-STUDY-30-096",
+        "trueEventId": "STUDY-30-BASE-096",
+        "predictedEventId": "STUDY-30-BASE-096",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-097",
+        "predictedEgressRecordId": "OUT-STUDY-30-097",
+        "trueEventId": "STUDY-30-BASE-077",
+        "predictedEventId": "STUDY-30-BASE-077",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-098",
+        "predictedEgressRecordId": "OUT-STUDY-30-098",
+        "trueEventId": "STUDY-30-BASE-090",
+        "predictedEventId": "STUDY-30-BASE-090",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-099",
+        "predictedEgressRecordId": "OUT-STUDY-30-099",
+        "trueEventId": "STUDY-30-BASE-019",
+        "predictedEventId": "STUDY-30-BASE-019",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-100",
+        "predictedEgressRecordId": "OUT-STUDY-30-100",
+        "trueEventId": "STUDY-30-BASE-003",
+        "predictedEventId": "STUDY-30-BASE-003",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-101",
+        "predictedEgressRecordId": "OUT-STUDY-30-101",
+        "trueEventId": "STUDY-30-BASE-039",
+        "predictedEventId": "STUDY-30-BASE-039",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-102",
+        "predictedEgressRecordId": "OUT-STUDY-30-102",
+        "trueEventId": "STUDY-30-BASE-052",
+        "predictedEventId": "STUDY-30-BASE-052",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-103",
+        "predictedEgressRecordId": "OUT-STUDY-30-103",
+        "trueEventId": "STUDY-30-BASE-059",
+        "predictedEventId": "STUDY-30-BASE-059",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-104",
+        "predictedEgressRecordId": "OUT-STUDY-30-104",
+        "trueEventId": "STUDY-30-BASE-066",
+        "predictedEventId": "STUDY-30-BASE-066",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-105",
+        "predictedEgressRecordId": "OUT-STUDY-30-105",
+        "trueEventId": "STUDY-30-BASE-063",
+        "predictedEventId": "STUDY-30-BASE-063",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-106",
+        "predictedEgressRecordId": "OUT-STUDY-30-106",
+        "trueEventId": "STUDY-30-REPEAT-017",
+        "predictedEventId": "STUDY-30-REPEAT-017",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-107",
+        "predictedEgressRecordId": "OUT-STUDY-30-107",
+        "trueEventId": "STUDY-30-BASE-054",
+        "predictedEventId": "STUDY-30-BASE-054",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-108",
+        "predictedEgressRecordId": "OUT-STUDY-30-108",
+        "trueEventId": "STUDY-30-BASE-022",
+        "predictedEventId": "STUDY-30-BASE-022",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-109",
+        "predictedEgressRecordId": "OUT-STUDY-30-109",
+        "trueEventId": "STUDY-30-REPEAT-026",
+        "predictedEventId": "STUDY-30-REPEAT-026",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-110",
+        "predictedEgressRecordId": "OUT-STUDY-30-110",
+        "trueEventId": "STUDY-30-BASE-057",
+        "predictedEventId": "STUDY-30-BASE-057",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-111",
+        "predictedEgressRecordId": "OUT-STUDY-30-111",
+        "trueEventId": "STUDY-30-REPEAT-025",
+        "predictedEventId": "STUDY-30-REPEAT-025",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-112",
+        "predictedEgressRecordId": "OUT-STUDY-30-112",
+        "trueEventId": "STUDY-30-BASE-024",
+        "predictedEventId": "STUDY-30-BASE-024",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-113",
+        "predictedEgressRecordId": "OUT-STUDY-30-113",
+        "trueEventId": "STUDY-30-BASE-029",
+        "predictedEventId": "STUDY-30-BASE-029",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-114",
+        "predictedEgressRecordId": "OUT-STUDY-30-114",
+        "trueEventId": "STUDY-30-BASE-023",
+        "predictedEventId": "STUDY-30-BASE-023",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-115",
+        "predictedEgressRecordId": "OUT-STUDY-30-115",
+        "trueEventId": "STUDY-30-BASE-094",
+        "predictedEventId": "STUDY-30-BASE-094",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-116",
+        "predictedEgressRecordId": "OUT-STUDY-30-116",
+        "trueEventId": "STUDY-30-BASE-027",
+        "predictedEventId": "STUDY-30-BASE-027",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-117",
+        "predictedEgressRecordId": "OUT-STUDY-30-117",
+        "trueEventId": "STUDY-30-BASE-072",
+        "predictedEventId": "STUDY-30-BASE-072",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-118",
+        "predictedEgressRecordId": "OUT-STUDY-30-118",
+        "trueEventId": "STUDY-30-REPEAT-000",
+        "predictedEventId": "STUDY-30-REPEAT-000",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-119",
+        "predictedEgressRecordId": "OUT-STUDY-30-119",
+        "trueEventId": "STUDY-30-BASE-076",
+        "predictedEventId": "STUDY-30-BASE-076",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-120",
+        "predictedEgressRecordId": "OUT-STUDY-30-120",
+        "trueEventId": "STUDY-30-REPEAT-003",
+        "predictedEventId": "STUDY-30-REPEAT-003",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-121",
+        "predictedEgressRecordId": "OUT-STUDY-30-121",
+        "trueEventId": "STUDY-30-BASE-062",
+        "predictedEventId": "STUDY-30-BASE-062",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-122",
+        "predictedEgressRecordId": "OUT-STUDY-30-122",
+        "trueEventId": "STUDY-30-BASE-073",
+        "predictedEventId": "STUDY-30-BASE-073",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-123",
+        "predictedEgressRecordId": "OUT-STUDY-30-123",
+        "trueEventId": "STUDY-30-BASE-030",
+        "predictedEventId": "STUDY-30-BASE-030",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-124",
+        "predictedEgressRecordId": "OUT-STUDY-30-124",
+        "trueEventId": "STUDY-30-BASE-064",
+        "predictedEventId": "STUDY-30-BASE-064",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-125",
+        "predictedEgressRecordId": "OUT-STUDY-30-125",
+        "trueEventId": "STUDY-30-BASE-049",
+        "predictedEventId": "STUDY-30-BASE-049",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-126",
+        "predictedEgressRecordId": "OUT-STUDY-30-126",
+        "trueEventId": "STUDY-30-BASE-005",
+        "predictedEventId": "STUDY-30-BASE-005",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-127",
+        "predictedEgressRecordId": "OUT-STUDY-30-127",
+        "trueEventId": "STUDY-30-REPEAT-018",
+        "predictedEventId": "STUDY-30-REPEAT-018",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-128",
+        "predictedEgressRecordId": "OUT-STUDY-30-128",
+        "trueEventId": "STUDY-30-REPEAT-022",
+        "predictedEventId": "STUDY-30-REPEAT-022",
+        "correct": true,
+        "predictedBatchId": null
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-129",
+        "predictedEgressRecordId": "OUT-STUDY-30-129",
+        "trueEventId": "STUDY-30-BASE-083",
+        "predictedEventId": "STUDY-30-BASE-083",
+        "correct": true,
+        "predictedBatchId": null
+      }
+    ],
+    "protected": [
+      {
+        "ingressRecordId": "IN-STUDY-30-000",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-02",
+        "trueEventId": "STUDY-30-BASE-075",
+        "predictedEventId": "STUDY-30-BASE-075",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-001",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-00",
+        "trueEventId": "STUDY-30-BASE-038",
+        "predictedEventId": "STUDY-30-REPEAT-007",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-002",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-09",
+        "trueEventId": "STUDY-30-BASE-099",
+        "predictedEventId": "STUDY-30-BASE-044",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-003",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-08",
+        "trueEventId": "STUDY-30-BASE-002",
+        "predictedEventId": "STUDY-30-BASE-038",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-004",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-05",
+        "trueEventId": "STUDY-30-BASE-067",
+        "predictedEventId": "STUDY-30-BASE-011",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-005",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-01",
+        "trueEventId": "STUDY-30-REPEAT-007",
+        "predictedEventId": "STUDY-30-BASE-060",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-006",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-04",
+        "trueEventId": "STUDY-30-BASE-060",
+        "predictedEventId": "STUDY-30-BASE-099",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-007",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-03",
+        "trueEventId": "STUDY-30-BASE-044",
+        "predictedEventId": "STUDY-30-BASE-002",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-008",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-07",
+        "trueEventId": "STUDY-30-REPEAT-006",
+        "predictedEventId": "STUDY-30-REPEAT-006",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-009",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-06",
+        "trueEventId": "STUDY-30-BASE-011",
+        "predictedEventId": "STUDY-30-BASE-067",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-010",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-08",
+        "trueEventId": "STUDY-30-REPEAT-013",
+        "predictedEventId": "STUDY-30-BASE-050",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-011",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-00",
+        "trueEventId": "STUDY-30-BASE-020",
+        "predictedEventId": "STUDY-30-REPEAT-013",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-012",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-01",
+        "trueEventId": "STUDY-30-BASE-053",
+        "predictedEventId": "STUDY-30-BASE-079",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-013",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-07",
+        "trueEventId": "STUDY-30-BASE-050",
+        "predictedEventId": "STUDY-30-BASE-081",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-014",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-04",
+        "trueEventId": "STUDY-30-REPEAT-023",
+        "predictedEventId": "STUDY-30-BASE-007",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-015",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-03",
+        "trueEventId": "STUDY-30-BASE-079",
+        "predictedEventId": "STUDY-30-BASE-040",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-016",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-05",
+        "trueEventId": "STUDY-30-BASE-081",
+        "predictedEventId": "STUDY-30-REPEAT-023",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-017",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-06",
+        "trueEventId": "STUDY-30-BASE-040",
+        "predictedEventId": "STUDY-30-BASE-020",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-018",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-09",
+        "trueEventId": "STUDY-30-BASE-007",
+        "predictedEventId": "STUDY-30-BASE-004",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-019",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-02",
+        "trueEventId": "STUDY-30-BASE-004",
+        "predictedEventId": "STUDY-30-BASE-053",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-020",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-01",
+        "trueEventId": "STUDY-30-BASE-025",
+        "predictedEventId": "STUDY-30-BASE-058",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-021",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-04",
+        "trueEventId": "STUDY-30-BASE-089",
+        "predictedEventId": "STUDY-30-BASE-041",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-022",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-08",
+        "trueEventId": "STUDY-30-REPEAT-019",
+        "predictedEventId": "STUDY-30-REPEAT-012",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-023",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-00",
+        "trueEventId": "STUDY-30-BASE-043",
+        "predictedEventId": "STUDY-30-BASE-089",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-024",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-06",
+        "trueEventId": "STUDY-30-BASE-093",
+        "predictedEventId": "STUDY-30-BASE-043",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-025",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-07",
+        "trueEventId": "STUDY-30-BASE-058",
+        "predictedEventId": "STUDY-30-REPEAT-028",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-026",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-05",
+        "trueEventId": "STUDY-30-REPEAT-012",
+        "predictedEventId": "STUDY-30-BASE-025",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-027",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-02",
+        "trueEventId": "STUDY-30-BASE-041",
+        "predictedEventId": "STUDY-30-REPEAT-019",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-028",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-03",
+        "trueEventId": "STUDY-30-BASE-034",
+        "predictedEventId": "STUDY-30-BASE-093",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-029",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-09",
+        "trueEventId": "STUDY-30-REPEAT-028",
+        "predictedEventId": "STUDY-30-BASE-034",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-030",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-06",
+        "trueEventId": "STUDY-30-BASE-085",
+        "predictedEventId": "STUDY-30-BASE-051",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-031",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-03",
+        "trueEventId": "STUDY-30-BASE-028",
+        "predictedEventId": "STUDY-30-BASE-028",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-032",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-07",
+        "trueEventId": "STUDY-30-BASE-051",
+        "predictedEventId": "STUDY-30-BASE-037",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-033",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-05",
+        "trueEventId": "STUDY-30-REPEAT-015",
+        "predictedEventId": "STUDY-30-BASE-026",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-034",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-04",
+        "trueEventId": "STUDY-30-BASE-035",
+        "predictedEventId": "STUDY-30-BASE-087",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-035",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-00",
+        "trueEventId": "STUDY-30-REPEAT-001",
+        "predictedEventId": "STUDY-30-REPEAT-001",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-036",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-01",
+        "trueEventId": "STUDY-30-BASE-037",
+        "predictedEventId": "STUDY-30-REPEAT-015",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-037",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-02",
+        "trueEventId": "STUDY-30-REPEAT-010",
+        "predictedEventId": "STUDY-30-REPEAT-010",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-038",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-09",
+        "trueEventId": "STUDY-30-BASE-087",
+        "predictedEventId": "STUDY-30-BASE-085",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-039",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-08",
+        "trueEventId": "STUDY-30-BASE-026",
+        "predictedEventId": "STUDY-30-BASE-035",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-040",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-05",
+        "trueEventId": "STUDY-30-REPEAT-027",
+        "predictedEventId": "STUDY-30-BASE-017",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-041",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-04",
+        "trueEventId": "STUDY-30-REPEAT-014",
+        "predictedEventId": "STUDY-30-REPEAT-014",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-042",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-06",
+        "trueEventId": "STUDY-30-BASE-042",
+        "predictedEventId": "STUDY-30-REPEAT-027",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-043",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-03",
+        "trueEventId": "STUDY-30-BASE-017",
+        "predictedEventId": "STUDY-30-REPEAT-024",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-044",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-08",
+        "trueEventId": "STUDY-30-BASE-045",
+        "predictedEventId": "STUDY-30-BASE-074",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-045",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-00",
+        "trueEventId": "STUDY-30-BASE-046",
+        "predictedEventId": "STUDY-30-BASE-042",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-046",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-07",
+        "trueEventId": "STUDY-30-BASE-056",
+        "predictedEventId": "STUDY-30-BASE-045",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-047",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-01",
+        "trueEventId": "STUDY-30-BASE-065",
+        "predictedEventId": "STUDY-30-BASE-056",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-048",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-09",
+        "trueEventId": "STUDY-30-REPEAT-024",
+        "predictedEventId": "STUDY-30-BASE-065",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-049",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-02",
+        "trueEventId": "STUDY-30-BASE-074",
+        "predictedEventId": "STUDY-30-BASE-046",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-050",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-06",
+        "trueEventId": "STUDY-30-BASE-070",
+        "predictedEventId": "STUDY-30-BASE-070",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-051",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-05",
+        "trueEventId": "STUDY-30-BASE-031",
+        "predictedEventId": "STUDY-30-BASE-031",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-052",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-01",
+        "trueEventId": "STUDY-30-BASE-000",
+        "predictedEventId": "STUDY-30-REPEAT-021",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-053",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-02",
+        "trueEventId": "STUDY-30-REPEAT-004",
+        "predictedEventId": "STUDY-30-BASE-032",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-054",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-09",
+        "trueEventId": "STUDY-30-BASE-032",
+        "predictedEventId": "STUDY-30-REPEAT-002",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-055",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-08",
+        "trueEventId": "STUDY-30-REPEAT-021",
+        "predictedEventId": "STUDY-30-BASE-000",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-056",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-03",
+        "trueEventId": "STUDY-30-BASE-098",
+        "predictedEventId": "STUDY-30-BASE-091",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-057",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-00",
+        "trueEventId": "STUDY-30-BASE-092",
+        "predictedEventId": "STUDY-30-BASE-098",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-058",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-07",
+        "trueEventId": "STUDY-30-REPEAT-002",
+        "predictedEventId": "STUDY-30-BASE-092",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-059",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-04",
+        "trueEventId": "STUDY-30-BASE-091",
+        "predictedEventId": "STUDY-30-REPEAT-004",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-060",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-03",
+        "trueEventId": "STUDY-30-BASE-033",
+        "predictedEventId": "STUDY-30-BASE-097",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-061",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-01",
+        "trueEventId": "STUDY-30-REPEAT-005",
+        "predictedEventId": "STUDY-30-REPEAT-005",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-062",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-07",
+        "trueEventId": "STUDY-30-BASE-013",
+        "predictedEventId": "STUDY-30-BASE-088",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-063",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-04",
+        "trueEventId": "STUDY-30-BASE-082",
+        "predictedEventId": "STUDY-30-BASE-082",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-064",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-06",
+        "trueEventId": "STUDY-30-BASE-069",
+        "predictedEventId": "STUDY-30-BASE-033",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-065",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-05",
+        "trueEventId": "STUDY-30-BASE-021",
+        "predictedEventId": "STUDY-30-BASE-048",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-066",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-00",
+        "trueEventId": "STUDY-30-BASE-015",
+        "predictedEventId": "STUDY-30-BASE-013",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-067",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-09",
+        "trueEventId": "STUDY-30-BASE-048",
+        "predictedEventId": "STUDY-30-BASE-069",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-068",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-08",
+        "trueEventId": "STUDY-30-BASE-088",
+        "predictedEventId": "STUDY-30-BASE-021",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-069",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-02",
+        "trueEventId": "STUDY-30-BASE-097",
+        "predictedEventId": "STUDY-30-BASE-015",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-070",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-09",
+        "trueEventId": "STUDY-30-REPEAT-029",
+        "predictedEventId": "STUDY-30-BASE-001",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-071",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-03",
+        "trueEventId": "STUDY-30-BASE-006",
+        "predictedEventId": "STUDY-30-BASE-014",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-072",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-04",
+        "trueEventId": "STUDY-30-BASE-009",
+        "predictedEventId": "STUDY-30-BASE-006",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-073",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-08",
+        "trueEventId": "STUDY-30-BASE-086",
+        "predictedEventId": "STUDY-30-REPEAT-020",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-074",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-01",
+        "trueEventId": "STUDY-30-REPEAT-009",
+        "predictedEventId": "STUDY-30-BASE-009",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-075",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-00",
+        "trueEventId": "STUDY-30-BASE-014",
+        "predictedEventId": "STUDY-30-REPEAT-009",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-076",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-06",
+        "trueEventId": "STUDY-30-BASE-078",
+        "predictedEventId": "STUDY-30-BASE-078",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-077",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-07",
+        "trueEventId": "STUDY-30-REPEAT-008",
+        "predictedEventId": "STUDY-30-REPEAT-029",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-078",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-02",
+        "trueEventId": "STUDY-30-REPEAT-020",
+        "predictedEventId": "STUDY-30-REPEAT-008",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-079",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-05",
+        "trueEventId": "STUDY-30-BASE-001",
+        "predictedEventId": "STUDY-30-BASE-086",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-080",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-07",
+        "trueEventId": "STUDY-30-BASE-055",
+        "predictedEventId": "STUDY-30-BASE-061",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-081",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-04",
+        "trueEventId": "STUDY-30-BASE-016",
+        "predictedEventId": "STUDY-30-BASE-068",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-082",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-08",
+        "trueEventId": "STUDY-30-BASE-084",
+        "predictedEventId": "STUDY-30-BASE-055",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-083",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-06",
+        "trueEventId": "STUDY-30-BASE-018",
+        "predictedEventId": "STUDY-30-BASE-084",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-084",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-02",
+        "trueEventId": "STUDY-30-BASE-008",
+        "predictedEventId": "STUDY-30-BASE-012",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-085",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-03",
+        "trueEventId": "STUDY-30-BASE-061",
+        "predictedEventId": "STUDY-30-BASE-071",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-086",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-09",
+        "trueEventId": "STUDY-30-BASE-010",
+        "predictedEventId": "STUDY-30-BASE-018",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-087",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-01",
+        "trueEventId": "STUDY-30-BASE-068",
+        "predictedEventId": "STUDY-30-BASE-010",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-088",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-00",
+        "trueEventId": "STUDY-30-BASE-012",
+        "predictedEventId": "STUDY-30-BASE-008",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-089",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-05",
+        "trueEventId": "STUDY-30-BASE-071",
+        "predictedEventId": "STUDY-30-BASE-016",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-090",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-05",
+        "trueEventId": "STUDY-30-BASE-036",
+        "predictedEventId": "STUDY-30-BASE-036",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-091",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-06",
+        "trueEventId": "STUDY-30-BASE-047",
+        "predictedEventId": "STUDY-30-BASE-019",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-092",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-02",
+        "trueEventId": "STUDY-30-REPEAT-011",
+        "predictedEventId": "STUDY-30-REPEAT-011",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-093",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-09",
+        "trueEventId": "STUDY-30-BASE-080",
+        "predictedEventId": "STUDY-30-BASE-096",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-094",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-04",
+        "trueEventId": "STUDY-30-BASE-095",
+        "predictedEventId": "STUDY-30-BASE-077",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-095",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-08",
+        "trueEventId": "STUDY-30-REPEAT-016",
+        "predictedEventId": "STUDY-30-BASE-047",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-096",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-07",
+        "trueEventId": "STUDY-30-BASE-096",
+        "predictedEventId": "STUDY-30-BASE-080",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-097",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-01",
+        "trueEventId": "STUDY-30-BASE-077",
+        "predictedEventId": "STUDY-30-BASE-090",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-098",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-00",
+        "trueEventId": "STUDY-30-BASE-090",
+        "predictedEventId": "STUDY-30-BASE-095",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-099",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-03",
+        "trueEventId": "STUDY-30-BASE-019",
+        "predictedEventId": "STUDY-30-REPEAT-016",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-100",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-05",
+        "trueEventId": "STUDY-30-BASE-003",
+        "predictedEventId": "STUDY-30-BASE-066",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-101",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-06",
+        "trueEventId": "STUDY-30-BASE-039",
+        "predictedEventId": "STUDY-30-REPEAT-026",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-102",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-08",
+        "trueEventId": "STUDY-30-BASE-052",
+        "predictedEventId": "STUDY-30-BASE-063",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-103",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-04",
+        "trueEventId": "STUDY-30-BASE-059",
+        "predictedEventId": "STUDY-30-REPEAT-017",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-104",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-01",
+        "trueEventId": "STUDY-30-BASE-066",
+        "predictedEventId": "STUDY-30-BASE-003",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-105",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-09",
+        "trueEventId": "STUDY-30-BASE-063",
+        "predictedEventId": "STUDY-30-BASE-039",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-106",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-02",
+        "trueEventId": "STUDY-30-REPEAT-017",
+        "predictedEventId": "STUDY-30-BASE-054",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-107",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-00",
+        "trueEventId": "STUDY-30-BASE-054",
+        "predictedEventId": "STUDY-30-BASE-052",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-108",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-03",
+        "trueEventId": "STUDY-30-BASE-022",
+        "predictedEventId": "STUDY-30-BASE-059",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-109",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-07",
+        "trueEventId": "STUDY-30-REPEAT-026",
+        "predictedEventId": "STUDY-30-BASE-022",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-110",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-04",
+        "trueEventId": "STUDY-30-BASE-057",
+        "predictedEventId": "STUDY-30-BASE-027",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-111",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-05",
+        "trueEventId": "STUDY-30-REPEAT-025",
+        "predictedEventId": "STUDY-30-REPEAT-025",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-112",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-07",
+        "trueEventId": "STUDY-30-BASE-024",
+        "predictedEventId": "STUDY-30-BASE-094",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-113",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-06",
+        "trueEventId": "STUDY-30-BASE-029",
+        "predictedEventId": "STUDY-30-BASE-024",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-114",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-01",
+        "trueEventId": "STUDY-30-BASE-023",
+        "predictedEventId": "STUDY-30-BASE-029",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-115",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-00",
+        "trueEventId": "STUDY-30-BASE-094",
+        "predictedEventId": "STUDY-30-BASE-023",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-116",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-09",
+        "trueEventId": "STUDY-30-BASE-027",
+        "predictedEventId": "STUDY-30-BASE-072",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-117",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-08",
+        "trueEventId": "STUDY-30-BASE-072",
+        "predictedEventId": "STUDY-30-BASE-057",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-118",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-03",
+        "trueEventId": "STUDY-30-REPEAT-000",
+        "predictedEventId": "STUDY-30-BASE-076",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-119",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-02",
+        "trueEventId": "STUDY-30-BASE-076",
+        "predictedEventId": "STUDY-30-REPEAT-000",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-120",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-03",
+        "trueEventId": "STUDY-30-REPEAT-003",
+        "predictedEventId": "STUDY-30-REPEAT-022",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-121",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-00",
+        "trueEventId": "STUDY-30-BASE-062",
+        "predictedEventId": "STUDY-30-BASE-030",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-122",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-08",
+        "trueEventId": "STUDY-30-BASE-073",
+        "predictedEventId": "STUDY-30-BASE-083",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-123",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-02",
+        "trueEventId": "STUDY-30-BASE-030",
+        "predictedEventId": "STUDY-30-BASE-062",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-124",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-09",
+        "trueEventId": "STUDY-30-BASE-064",
+        "predictedEventId": "STUDY-30-BASE-049",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-125",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-06",
+        "trueEventId": "STUDY-30-BASE-049",
+        "predictedEventId": "STUDY-30-BASE-073",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-126",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-01",
+        "trueEventId": "STUDY-30-BASE-005",
+        "predictedEventId": "STUDY-30-BASE-005",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-127",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-05",
+        "trueEventId": "STUDY-30-REPEAT-018",
+        "predictedEventId": "STUDY-30-BASE-064",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-128",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-07",
+        "trueEventId": "STUDY-30-REPEAT-022",
+        "predictedEventId": "STUDY-30-REPEAT-018",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-129",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-04",
+        "trueEventId": "STUDY-30-BASE-083",
+        "predictedEventId": "STUDY-30-REPEAT-003",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B12"
+      }
+    ],
+    "stable-token-ablation": [
+      {
+        "ingressRecordId": "IN-STUDY-30-000",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-02",
+        "trueEventId": "STUDY-30-BASE-075",
+        "predictedEventId": "STUDY-30-BASE-075",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-001",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-08",
+        "trueEventId": "STUDY-30-BASE-038",
+        "predictedEventId": "STUDY-30-BASE-038",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-002",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-04",
+        "trueEventId": "STUDY-30-BASE-099",
+        "predictedEventId": "STUDY-30-BASE-099",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-003",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-03",
+        "trueEventId": "STUDY-30-BASE-002",
+        "predictedEventId": "STUDY-30-BASE-002",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-004",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-06",
+        "trueEventId": "STUDY-30-BASE-067",
+        "predictedEventId": "STUDY-30-BASE-067",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-005",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-00",
+        "trueEventId": "STUDY-30-REPEAT-007",
+        "predictedEventId": "STUDY-30-REPEAT-007",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-006",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-01",
+        "trueEventId": "STUDY-30-BASE-060",
+        "predictedEventId": "STUDY-30-BASE-060",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-007",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-09",
+        "trueEventId": "STUDY-30-BASE-044",
+        "predictedEventId": "STUDY-30-BASE-044",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-008",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-07",
+        "trueEventId": "STUDY-30-REPEAT-006",
+        "predictedEventId": "STUDY-30-REPEAT-006",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-009",
+        "predictedEgressRecordId": "OUT-STUDY-30-B00-05",
+        "trueEventId": "STUDY-30-BASE-011",
+        "predictedEventId": "STUDY-30-BASE-011",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B00"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-010",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-00",
+        "trueEventId": "STUDY-30-REPEAT-013",
+        "predictedEventId": "STUDY-30-REPEAT-013",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-011",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-06",
+        "trueEventId": "STUDY-30-BASE-020",
+        "predictedEventId": "STUDY-30-BASE-020",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-012",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-02",
+        "trueEventId": "STUDY-30-BASE-053",
+        "predictedEventId": "STUDY-30-BASE-053",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-013",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-08",
+        "trueEventId": "STUDY-30-BASE-050",
+        "predictedEventId": "STUDY-30-BASE-050",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-014",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-05",
+        "trueEventId": "STUDY-30-REPEAT-023",
+        "predictedEventId": "STUDY-30-REPEAT-023",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-015",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-01",
+        "trueEventId": "STUDY-30-BASE-079",
+        "predictedEventId": "STUDY-30-BASE-079",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-016",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-07",
+        "trueEventId": "STUDY-30-BASE-081",
+        "predictedEventId": "STUDY-30-BASE-081",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-017",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-03",
+        "trueEventId": "STUDY-30-BASE-040",
+        "predictedEventId": "STUDY-30-BASE-040",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-018",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-04",
+        "trueEventId": "STUDY-30-BASE-007",
+        "predictedEventId": "STUDY-30-BASE-007",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-019",
+        "predictedEgressRecordId": "OUT-STUDY-30-B01-09",
+        "trueEventId": "STUDY-30-BASE-004",
+        "predictedEventId": "STUDY-30-BASE-004",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B01"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-020",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-05",
+        "trueEventId": "STUDY-30-BASE-025",
+        "predictedEventId": "STUDY-30-BASE-025",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-021",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-00",
+        "trueEventId": "STUDY-30-BASE-089",
+        "predictedEventId": "STUDY-30-BASE-089",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-022",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-02",
+        "trueEventId": "STUDY-30-REPEAT-019",
+        "predictedEventId": "STUDY-30-REPEAT-019",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-023",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-06",
+        "trueEventId": "STUDY-30-BASE-043",
+        "predictedEventId": "STUDY-30-BASE-043",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-024",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-03",
+        "trueEventId": "STUDY-30-BASE-093",
+        "predictedEventId": "STUDY-30-BASE-093",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-025",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-01",
+        "trueEventId": "STUDY-30-BASE-058",
+        "predictedEventId": "STUDY-30-BASE-058",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-026",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-08",
+        "trueEventId": "STUDY-30-REPEAT-012",
+        "predictedEventId": "STUDY-30-REPEAT-012",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-027",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-04",
+        "trueEventId": "STUDY-30-BASE-041",
+        "predictedEventId": "STUDY-30-BASE-041",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-028",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-09",
+        "trueEventId": "STUDY-30-BASE-034",
+        "predictedEventId": "STUDY-30-BASE-034",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-029",
+        "predictedEgressRecordId": "OUT-STUDY-30-B02-07",
+        "trueEventId": "STUDY-30-REPEAT-028",
+        "predictedEventId": "STUDY-30-REPEAT-028",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B02"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-030",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-09",
+        "trueEventId": "STUDY-30-BASE-085",
+        "predictedEventId": "STUDY-30-BASE-085",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-031",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-03",
+        "trueEventId": "STUDY-30-BASE-028",
+        "predictedEventId": "STUDY-30-BASE-028",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-032",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-06",
+        "trueEventId": "STUDY-30-BASE-051",
+        "predictedEventId": "STUDY-30-BASE-051",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-033",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-01",
+        "trueEventId": "STUDY-30-REPEAT-015",
+        "predictedEventId": "STUDY-30-REPEAT-015",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-034",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-08",
+        "trueEventId": "STUDY-30-BASE-035",
+        "predictedEventId": "STUDY-30-BASE-035",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-035",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-00",
+        "trueEventId": "STUDY-30-REPEAT-001",
+        "predictedEventId": "STUDY-30-REPEAT-001",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-036",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-07",
+        "trueEventId": "STUDY-30-BASE-037",
+        "predictedEventId": "STUDY-30-BASE-037",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-037",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-02",
+        "trueEventId": "STUDY-30-REPEAT-010",
+        "predictedEventId": "STUDY-30-REPEAT-010",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-038",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-04",
+        "trueEventId": "STUDY-30-BASE-087",
+        "predictedEventId": "STUDY-30-BASE-087",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-039",
+        "predictedEgressRecordId": "OUT-STUDY-30-B03-05",
+        "trueEventId": "STUDY-30-BASE-026",
+        "predictedEventId": "STUDY-30-BASE-026",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B03"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-040",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-06",
+        "trueEventId": "STUDY-30-REPEAT-027",
+        "predictedEventId": "STUDY-30-REPEAT-027",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-041",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-04",
+        "trueEventId": "STUDY-30-REPEAT-014",
+        "predictedEventId": "STUDY-30-REPEAT-014",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-042",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-00",
+        "trueEventId": "STUDY-30-BASE-042",
+        "predictedEventId": "STUDY-30-BASE-042",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-043",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-05",
+        "trueEventId": "STUDY-30-BASE-017",
+        "predictedEventId": "STUDY-30-BASE-017",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-044",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-07",
+        "trueEventId": "STUDY-30-BASE-045",
+        "predictedEventId": "STUDY-30-BASE-045",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-045",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-02",
+        "trueEventId": "STUDY-30-BASE-046",
+        "predictedEventId": "STUDY-30-BASE-046",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-046",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-01",
+        "trueEventId": "STUDY-30-BASE-056",
+        "predictedEventId": "STUDY-30-BASE-056",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-047",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-09",
+        "trueEventId": "STUDY-30-BASE-065",
+        "predictedEventId": "STUDY-30-BASE-065",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-048",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-03",
+        "trueEventId": "STUDY-30-REPEAT-024",
+        "predictedEventId": "STUDY-30-REPEAT-024",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-049",
+        "predictedEgressRecordId": "OUT-STUDY-30-B04-08",
+        "trueEventId": "STUDY-30-BASE-074",
+        "predictedEventId": "STUDY-30-BASE-074",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B04"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-050",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-06",
+        "trueEventId": "STUDY-30-BASE-070",
+        "predictedEventId": "STUDY-30-BASE-070",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-051",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-05",
+        "trueEventId": "STUDY-30-BASE-031",
+        "predictedEventId": "STUDY-30-BASE-031",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-052",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-09",
+        "trueEventId": "STUDY-30-BASE-000",
+        "predictedEventId": "STUDY-30-REPEAT-002",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-053",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-04",
+        "trueEventId": "STUDY-30-REPEAT-004",
+        "predictedEventId": "STUDY-30-REPEAT-004",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-054",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-02",
+        "trueEventId": "STUDY-30-BASE-032",
+        "predictedEventId": "STUDY-30-BASE-032",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-055",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-01",
+        "trueEventId": "STUDY-30-REPEAT-021",
+        "predictedEventId": "STUDY-30-REPEAT-021",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-056",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-00",
+        "trueEventId": "STUDY-30-BASE-098",
+        "predictedEventId": "STUDY-30-BASE-098",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-057",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-07",
+        "trueEventId": "STUDY-30-BASE-092",
+        "predictedEventId": "STUDY-30-BASE-092",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-058",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-08",
+        "trueEventId": "STUDY-30-REPEAT-002",
+        "predictedEventId": "STUDY-30-BASE-000",
+        "correct": false,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-059",
+        "predictedEgressRecordId": "OUT-STUDY-30-B05-03",
+        "trueEventId": "STUDY-30-BASE-091",
+        "predictedEventId": "STUDY-30-BASE-091",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B05"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-060",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-06",
+        "trueEventId": "STUDY-30-BASE-033",
+        "predictedEventId": "STUDY-30-BASE-033",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-061",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-01",
+        "trueEventId": "STUDY-30-REPEAT-005",
+        "predictedEventId": "STUDY-30-REPEAT-005",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-062",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-00",
+        "trueEventId": "STUDY-30-BASE-013",
+        "predictedEventId": "STUDY-30-BASE-013",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-063",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-04",
+        "trueEventId": "STUDY-30-BASE-082",
+        "predictedEventId": "STUDY-30-BASE-082",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-064",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-09",
+        "trueEventId": "STUDY-30-BASE-069",
+        "predictedEventId": "STUDY-30-BASE-069",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-065",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-08",
+        "trueEventId": "STUDY-30-BASE-021",
+        "predictedEventId": "STUDY-30-BASE-021",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-066",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-02",
+        "trueEventId": "STUDY-30-BASE-015",
+        "predictedEventId": "STUDY-30-BASE-015",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-067",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-05",
+        "trueEventId": "STUDY-30-BASE-048",
+        "predictedEventId": "STUDY-30-BASE-048",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-068",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-07",
+        "trueEventId": "STUDY-30-BASE-088",
+        "predictedEventId": "STUDY-30-BASE-088",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-069",
+        "predictedEgressRecordId": "OUT-STUDY-30-B06-03",
+        "trueEventId": "STUDY-30-BASE-097",
+        "predictedEventId": "STUDY-30-BASE-097",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B06"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-070",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-07",
+        "trueEventId": "STUDY-30-REPEAT-029",
+        "predictedEventId": "STUDY-30-REPEAT-029",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-071",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-04",
+        "trueEventId": "STUDY-30-BASE-006",
+        "predictedEventId": "STUDY-30-BASE-006",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-072",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-01",
+        "trueEventId": "STUDY-30-BASE-009",
+        "predictedEventId": "STUDY-30-BASE-009",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-073",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-05",
+        "trueEventId": "STUDY-30-BASE-086",
+        "predictedEventId": "STUDY-30-BASE-086",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-074",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-00",
+        "trueEventId": "STUDY-30-REPEAT-009",
+        "predictedEventId": "STUDY-30-REPEAT-009",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-075",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-03",
+        "trueEventId": "STUDY-30-BASE-014",
+        "predictedEventId": "STUDY-30-BASE-014",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-076",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-06",
+        "trueEventId": "STUDY-30-BASE-078",
+        "predictedEventId": "STUDY-30-BASE-078",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-077",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-02",
+        "trueEventId": "STUDY-30-REPEAT-008",
+        "predictedEventId": "STUDY-30-REPEAT-008",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-078",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-08",
+        "trueEventId": "STUDY-30-REPEAT-020",
+        "predictedEventId": "STUDY-30-REPEAT-020",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-079",
+        "predictedEgressRecordId": "OUT-STUDY-30-B07-09",
+        "trueEventId": "STUDY-30-BASE-001",
+        "predictedEventId": "STUDY-30-BASE-001",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B07"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-080",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-08",
+        "trueEventId": "STUDY-30-BASE-055",
+        "predictedEventId": "STUDY-30-BASE-055",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-081",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-05",
+        "trueEventId": "STUDY-30-BASE-016",
+        "predictedEventId": "STUDY-30-BASE-016",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-082",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-06",
+        "trueEventId": "STUDY-30-BASE-084",
+        "predictedEventId": "STUDY-30-BASE-084",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-083",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-09",
+        "trueEventId": "STUDY-30-BASE-018",
+        "predictedEventId": "STUDY-30-BASE-018",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-084",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-00",
+        "trueEventId": "STUDY-30-BASE-008",
+        "predictedEventId": "STUDY-30-BASE-008",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-085",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-07",
+        "trueEventId": "STUDY-30-BASE-061",
+        "predictedEventId": "STUDY-30-BASE-061",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-086",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-01",
+        "trueEventId": "STUDY-30-BASE-010",
+        "predictedEventId": "STUDY-30-BASE-010",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-087",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-04",
+        "trueEventId": "STUDY-30-BASE-068",
+        "predictedEventId": "STUDY-30-BASE-068",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-088",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-02",
+        "trueEventId": "STUDY-30-BASE-012",
+        "predictedEventId": "STUDY-30-BASE-012",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-089",
+        "predictedEgressRecordId": "OUT-STUDY-30-B08-03",
+        "trueEventId": "STUDY-30-BASE-071",
+        "predictedEventId": "STUDY-30-BASE-071",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B08"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-090",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-05",
+        "trueEventId": "STUDY-30-BASE-036",
+        "predictedEventId": "STUDY-30-BASE-036",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-091",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-08",
+        "trueEventId": "STUDY-30-BASE-047",
+        "predictedEventId": "STUDY-30-BASE-047",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-092",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-02",
+        "trueEventId": "STUDY-30-REPEAT-011",
+        "predictedEventId": "STUDY-30-REPEAT-011",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-093",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-07",
+        "trueEventId": "STUDY-30-BASE-080",
+        "predictedEventId": "STUDY-30-BASE-080",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-094",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-00",
+        "trueEventId": "STUDY-30-BASE-095",
+        "predictedEventId": "STUDY-30-BASE-095",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-095",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-03",
+        "trueEventId": "STUDY-30-REPEAT-016",
+        "predictedEventId": "STUDY-30-REPEAT-016",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-096",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-09",
+        "trueEventId": "STUDY-30-BASE-096",
+        "predictedEventId": "STUDY-30-BASE-096",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-097",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-04",
+        "trueEventId": "STUDY-30-BASE-077",
+        "predictedEventId": "STUDY-30-BASE-077",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-098",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-01",
+        "trueEventId": "STUDY-30-BASE-090",
+        "predictedEventId": "STUDY-30-BASE-090",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-099",
+        "predictedEgressRecordId": "OUT-STUDY-30-B09-06",
+        "trueEventId": "STUDY-30-BASE-019",
+        "predictedEventId": "STUDY-30-BASE-019",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B09"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-100",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-01",
+        "trueEventId": "STUDY-30-BASE-003",
+        "predictedEventId": "STUDY-30-BASE-003",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-101",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-09",
+        "trueEventId": "STUDY-30-BASE-039",
+        "predictedEventId": "STUDY-30-BASE-039",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-102",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-00",
+        "trueEventId": "STUDY-30-BASE-052",
+        "predictedEventId": "STUDY-30-BASE-052",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-103",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-03",
+        "trueEventId": "STUDY-30-BASE-059",
+        "predictedEventId": "STUDY-30-BASE-059",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-104",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-05",
+        "trueEventId": "STUDY-30-BASE-066",
+        "predictedEventId": "STUDY-30-BASE-066",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-105",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-08",
+        "trueEventId": "STUDY-30-BASE-063",
+        "predictedEventId": "STUDY-30-BASE-063",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-106",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-04",
+        "trueEventId": "STUDY-30-REPEAT-017",
+        "predictedEventId": "STUDY-30-REPEAT-017",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-107",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-02",
+        "trueEventId": "STUDY-30-BASE-054",
+        "predictedEventId": "STUDY-30-BASE-054",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-108",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-07",
+        "trueEventId": "STUDY-30-BASE-022",
+        "predictedEventId": "STUDY-30-BASE-022",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-109",
+        "predictedEgressRecordId": "OUT-STUDY-30-B10-06",
+        "trueEventId": "STUDY-30-REPEAT-026",
+        "predictedEventId": "STUDY-30-REPEAT-026",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B10"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-110",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-08",
+        "trueEventId": "STUDY-30-BASE-057",
+        "predictedEventId": "STUDY-30-BASE-057",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-111",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-05",
+        "trueEventId": "STUDY-30-REPEAT-025",
+        "predictedEventId": "STUDY-30-REPEAT-025",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-112",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-06",
+        "trueEventId": "STUDY-30-BASE-024",
+        "predictedEventId": "STUDY-30-BASE-024",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-113",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-01",
+        "trueEventId": "STUDY-30-BASE-029",
+        "predictedEventId": "STUDY-30-BASE-029",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-114",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-00",
+        "trueEventId": "STUDY-30-BASE-023",
+        "predictedEventId": "STUDY-30-BASE-023",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-115",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-07",
+        "trueEventId": "STUDY-30-BASE-094",
+        "predictedEventId": "STUDY-30-BASE-094",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-116",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-04",
+        "trueEventId": "STUDY-30-BASE-027",
+        "predictedEventId": "STUDY-30-BASE-027",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-117",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-09",
+        "trueEventId": "STUDY-30-BASE-072",
+        "predictedEventId": "STUDY-30-BASE-072",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-118",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-02",
+        "trueEventId": "STUDY-30-REPEAT-000",
+        "predictedEventId": "STUDY-30-REPEAT-000",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-119",
+        "predictedEgressRecordId": "OUT-STUDY-30-B11-03",
+        "trueEventId": "STUDY-30-BASE-076",
+        "predictedEventId": "STUDY-30-BASE-076",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B11"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-120",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-04",
+        "trueEventId": "STUDY-30-REPEAT-003",
+        "predictedEventId": "STUDY-30-REPEAT-003",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-121",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-02",
+        "trueEventId": "STUDY-30-BASE-062",
+        "predictedEventId": "STUDY-30-BASE-062",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-122",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-06",
+        "trueEventId": "STUDY-30-BASE-073",
+        "predictedEventId": "STUDY-30-BASE-073",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-123",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-00",
+        "trueEventId": "STUDY-30-BASE-030",
+        "predictedEventId": "STUDY-30-BASE-030",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-124",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-05",
+        "trueEventId": "STUDY-30-BASE-064",
+        "predictedEventId": "STUDY-30-BASE-064",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-125",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-09",
+        "trueEventId": "STUDY-30-BASE-049",
+        "predictedEventId": "STUDY-30-BASE-049",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-126",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-01",
+        "trueEventId": "STUDY-30-BASE-005",
+        "predictedEventId": "STUDY-30-BASE-005",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-127",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-07",
+        "trueEventId": "STUDY-30-REPEAT-018",
+        "predictedEventId": "STUDY-30-REPEAT-018",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-128",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-03",
+        "trueEventId": "STUDY-30-REPEAT-022",
+        "predictedEventId": "STUDY-30-REPEAT-022",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B12"
+      },
+      {
+        "ingressRecordId": "IN-STUDY-30-129",
+        "predictedEgressRecordId": "OUT-STUDY-30-B12-08",
+        "trueEventId": "STUDY-30-BASE-083",
+        "predictedEventId": "STUDY-30-BASE-083",
+        "correct": true,
+        "predictedBatchId": "STUDY-30-B12"
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "auditId": "INDEPENDENT-RC34-RELAY-AUDIT-0.9",
+  "computedOn": "2026-08-14",
+  "passed": true,
+  "checks": {
+    "all_twelve_observed_traces_reconstruct": true,
+    "all_three_selected_models_maximize_development_accuracy": true,
+    "all_heldout_predictions_match": true,
+    "protected_score_matches": true,
+    "unprotected_score_matches": true,
+    "stable_token_score_matches": true,
+    "ten_thousand_null_draws_reproduce": true,
+    "null_p95_reproduces": true,
+    "protected_not_above_null_gate": true,
+    "two_positive_controls_above_null_gate": true,
+    "public_result_passes": true
+  },
+  "metrics": {
+    "unprotected": {
+      "correct": 130,
+      "total": 130,
+      "accuracy": 1.0
+    },
+    "protected": {
+      "correct": 15,
+      "total": 130,
+      "accuracy": 0.11538461538461539
+    },
+    "stable-token-ablation": {
+      "correct": 128,
+      "total": 130,
+      "accuracy": 0.9846153846153847
+    }
+  },
+  "nullModel": {
+    "simulations": 10000,
+    "meanAccuracy": 0.09991769230770652,
+    "p95Accuracy": 0.14615384615384616
+  },
+  "aggregateChecksPassed": 11,
+  "aggregateChecksTotal": 11,
+  "boundary": "This independent implementation reproduces the sealed offline trace simulator and frozen attack. It does not add live traffic, adaptive attackers, active tagging, or institutional independence."
+}

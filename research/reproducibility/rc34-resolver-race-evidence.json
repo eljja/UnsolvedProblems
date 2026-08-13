@@ -1,0 +1,615 @@
+{
+  "profile": "urn:unsolved-problems:rc34-resolver-race-evidence:1.0",
+  "synthetic": true,
+  "normal": {
+    "responses": [
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 0,
+        "status": "opened-one",
+        "receiptDigest": "302767f4ef341501f310a4ee55792db0345bf67c1e26c1566eac093b8e72474b",
+        "outcome": {
+          "receiptDigest": "302767f4ef341501f310a4ee55792db0345bf67c1e26c1566eac093b8e72474b",
+          "eventOutcomeBinding": "f40d0d513cb02da1484ebcc2630f874db2dc8c12118c2e84f892d573bb98e2cf",
+          "vendorCode": "VENDOR-GAMMA",
+          "outcomeClass": "genuine",
+          "releaseOrder": [
+            "claim",
+            "receipt",
+            "outcome"
+          ]
+        }
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 1,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 2,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 3,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 4,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 5,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 6,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 7,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 8,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 9,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 10,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 11,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 12,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 13,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 14,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 15,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 16,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 17,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 18,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 19,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 20,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 21,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 22,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 23,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 24,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 25,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 26,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 27,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 28,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 29,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 30,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 31,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 32,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 33,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 34,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 35,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 36,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 37,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 38,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 39,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 40,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 41,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 42,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 43,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 44,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 45,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 46,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 47,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 48,
+        "status": "replay"
+      },
+      {
+        "resolverId": "NODE-RESOLVER",
+        "attempt": 49,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 0,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 1,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 2,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 3,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 4,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 5,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 6,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 7,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 8,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 9,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 10,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 11,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 12,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 13,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 14,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 15,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 16,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 17,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 18,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 19,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 20,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 21,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 22,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 23,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 24,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 25,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 26,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 27,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 28,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 29,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 30,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 31,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 32,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 33,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 34,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 35,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 36,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 37,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 38,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 39,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 40,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 41,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 42,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 43,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 44,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 45,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 46,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 47,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 48,
+        "status": "replay"
+      },
+      {
+        "resolverId": "PYTHON-RESOLVER",
+        "attempt": 49,
+        "status": "replay"
+      }
+    ],
+    "claim": {
+      "capabilityDigest": "333e5d9a8f91cc458a2c8c46eeb3b18807ee858d34f7757f8ce002e445556213",
+      "capabilityId": "CAP-RC33-B2",
+      "auditRecordId": "AUDIT-B-2",
+      "disputeId": "DISPUTE-RC33-001",
+      "resolverId": "NODE-RESOLVER",
+      "state": "claimed",
+      "claimDigest": "7f6f1abd6027a18bc5c26a5ce10c8a2c6d1c1edace5bc0e90589f5a14025d651"
+    },
+    "receipt": {
+      "receiptId": "RECEIPT-9f4dc1c53296d1a88bc58313",
+      "claimDigest": "7f6f1abd6027a18bc5c26a5ce10c8a2c6d1c1edace5bc0e90589f5a14025d651",
+      "capabilityDigest": "333e5d9a8f91cc458a2c8c46eeb3b18807ee858d34f7757f8ce002e445556213",
+      "auditRecordId": "AUDIT-B-2",
+      "eventOutcomeBinding": "f40d0d513cb02da1484ebcc2630f874db2dc8c12118c2e84f892d573bb98e2cf",
+      "resolverId": "NODE-RESOLVER",
+      "state": "receipt-durable-before-release",
+      "receiptDigest": "302767f4ef341501f310a4ee55792db0345bf67c1e26c1566eac093b8e72474b"
+    },
+    "outcome": {
+      "receiptDigest": "302767f4ef341501f310a4ee55792db0345bf67c1e26c1566eac093b8e72474b",
+      "eventOutcomeBinding": "f40d0d513cb02da1484ebcc2630f874db2dc8c12118c2e84f892d573bb98e2cf",
+      "vendorCode": "VENDOR-GAMMA",
+      "outcomeClass": "genuine",
+      "releaseOrder": [
+        "claim",
+        "receipt",
+        "outcome"
+      ]
+    }
+  },
+  "crashRecovery": {
+    "beforeRecovery": {
+      "claimExists": true,
+      "receiptExists": false,
+      "outcomeExists": false
+    },
+    "responses": {
+      "crash": [
+        {
+          "resolverId": "NODE-CRASH-RESOLVER",
+          "attempt": 0,
+          "status": "claimed-then-crashed"
+        }
+      ],
+      "recovery": [
+        {
+          "resolverId": "PYTHON-RECOVERY-RESOLVER",
+          "attempt": 0,
+          "status": "recovered-opened-one",
+          "receiptDigest": "316985335d426587f9884db0b8f14d91b1fd53fdc294b46cdb57def788a1fe86",
+          "outcome": {
+            "receiptDigest": "316985335d426587f9884db0b8f14d91b1fd53fdc294b46cdb57def788a1fe86",
+            "eventOutcomeBinding": "f40d0d513cb02da1484ebcc2630f874db2dc8c12118c2e84f892d573bb98e2cf",
+            "vendorCode": "VENDOR-GAMMA",
+            "outcomeClass": "genuine",
+            "releaseOrder": [
+              "claim",
+              "receipt",
+              "outcome"
+            ]
+          }
+        }
+      ]
+    },
+    "claim": {
+      "capabilityDigest": "333e5d9a8f91cc458a2c8c46eeb3b18807ee858d34f7757f8ce002e445556213",
+      "capabilityId": "CAP-RC33-B2",
+      "auditRecordId": "AUDIT-B-2",
+      "disputeId": "DISPUTE-RC33-001",
+      "resolverId": "NODE-CRASH-RESOLVER",
+      "state": "claimed",
+      "claimDigest": "2c3aa24255560e072eebe7c552f35d262cfcfed4e2783bcaabb3dc8b00c52879"
+    },
+    "receipt": {
+      "receiptId": "RECEIPT-2c9b2e905df7d8c6bf9e3424",
+      "claimDigest": "2c3aa24255560e072eebe7c552f35d262cfcfed4e2783bcaabb3dc8b00c52879",
+      "capabilityDigest": "333e5d9a8f91cc458a2c8c46eeb3b18807ee858d34f7757f8ce002e445556213",
+      "auditRecordId": "AUDIT-B-2",
+      "eventOutcomeBinding": "f40d0d513cb02da1484ebcc2630f874db2dc8c12118c2e84f892d573bb98e2cf",
+      "resolverId": "PYTHON-RECOVERY-RESOLVER",
+      "state": "receipt-durable-before-release",
+      "receiptDigest": "316985335d426587f9884db0b8f14d91b1fd53fdc294b46cdb57def788a1fe86"
+    },
+    "outcome": {
+      "receiptDigest": "316985335d426587f9884db0b8f14d91b1fd53fdc294b46cdb57def788a1fe86",
+      "eventOutcomeBinding": "f40d0d513cb02da1484ebcc2630f874db2dc8c12118c2e84f892d573bb98e2cf",
+      "vendorCode": "VENDOR-GAMMA",
+      "outcomeClass": "genuine",
+      "releaseOrder": [
+        "claim",
+        "receipt",
+        "outcome"
+      ]
+    }
+  }
+}

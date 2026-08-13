@@ -1,0 +1,63 @@
+{
+  "profile": "urn:unsolved-problems:rc34-dual-runtime-resolver-race:1.0",
+  "synthetic": true,
+  "implementations": [
+    "Node.js exclusive-create resolver",
+    "Python exclusive-create resolver and crash recovery"
+  ],
+  "normalRace": {
+    "attempts": 100,
+    "opened": 1,
+    "replay": 99,
+    "winner": "NODE-RESOLVER",
+    "receiptDigest": "302767f4ef341501f310a4ee55792db0345bf67c1e26c1566eac093b8e72474b"
+  },
+  "crashRecovery": {
+    "crashExitCode": 86,
+    "stateBeforeRecovery": {
+      "claimExists": true,
+      "receiptExists": false,
+      "outcomeExists": false
+    },
+    "recoveryStatus": "recovered-opened-one",
+    "originalClaimant": "NODE-CRASH-RESOLVER",
+    "recoveryResolver": "PYTHON-RECOVERY-RESOLVER",
+    "receiptDigest": "316985335d426587f9884db0b8f14d91b1fd53fdc294b46cdb57def788a1fe86"
+  },
+  "transparencyLedger": {
+    "receiptCount": 2,
+    "latestRoot": "932b462b7aa7c0cbadc00fa45214e74122e3c7b61e6bb3031b7b69cfefe6f6ee",
+    "inclusionProofs": 2,
+    "consistencyProofs": 1
+  },
+  "checks": {
+    "normalProducedOneHundredResponses": true,
+    "normalOpenedExactlyOnce": true,
+    "normalRejectedNinetyNineReplays": true,
+    "claimDigestValid": true,
+    "receiptDigestValid": true,
+    "openedResponseMatchesDurableOutcome": true,
+    "authorizedOutcomeReleased": true,
+    "receiptPrecedesOutcomeByProtocol": true,
+    "crashOccurredAfterClaim": true,
+    "crashReleasedNothing": true,
+    "recoveryOpenedExactlyOnce": true,
+    "recoveryPreservedOriginalClaim": true,
+    "recoveryReceiptDigestValid": true,
+    "recoveryReleasedAuthorizedOutcome": true,
+    "twoReceiptsHaveValidInclusionProofs": true,
+    "ledgerExtensionIsConsistent": true
+  },
+  "passedChecks": 16,
+  "totalChecks": 16,
+  "qualification": {
+    "supported": "A shared-filesystem exclusive-create linearization point admitted exactly one opening across two runtimes, preserved a pre-release crash claim, and emitted inclusion-verifiable receipts.",
+    "notEstablished": [
+      "multi-host or multi-region linearizability",
+      "consensus safety under network partition",
+      "protection of the deliberately public synthetic bearer token or HMAC key",
+      "institutionally independent adjudication",
+      "physical custody or hardware security; physical sample size is zero"
+    ]
+  }
+}

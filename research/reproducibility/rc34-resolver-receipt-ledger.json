@@ -1,0 +1,72 @@
+{
+  "profile": "urn:unsolved-problems:rc34-receipt-transparency-ledger:1.0",
+  "synthetic": true,
+  "construction": "RFC 9162 domain-separated Merkle hashing over canonical JSON receipts",
+  "receipts": [
+    {
+      "receiptId": "RECEIPT-9f4dc1c53296d1a88bc58313",
+      "claimDigest": "7f6f1abd6027a18bc5c26a5ce10c8a2c6d1c1edace5bc0e90589f5a14025d651",
+      "capabilityDigest": "333e5d9a8f91cc458a2c8c46eeb3b18807ee858d34f7757f8ce002e445556213",
+      "auditRecordId": "AUDIT-B-2",
+      "eventOutcomeBinding": "f40d0d513cb02da1484ebcc2630f874db2dc8c12118c2e84f892d573bb98e2cf",
+      "resolverId": "NODE-RESOLVER",
+      "state": "receipt-durable-before-release",
+      "receiptDigest": "302767f4ef341501f310a4ee55792db0345bf67c1e26c1566eac093b8e72474b"
+    },
+    {
+      "receiptId": "RECEIPT-2c9b2e905df7d8c6bf9e3424",
+      "claimDigest": "2c3aa24255560e072eebe7c552f35d262cfcfed4e2783bcaabb3dc8b00c52879",
+      "capabilityDigest": "333e5d9a8f91cc458a2c8c46eeb3b18807ee858d34f7757f8ce002e445556213",
+      "auditRecordId": "AUDIT-B-2",
+      "eventOutcomeBinding": "f40d0d513cb02da1484ebcc2630f874db2dc8c12118c2e84f892d573bb98e2cf",
+      "resolverId": "PYTHON-RECOVERY-RESOLVER",
+      "state": "receipt-durable-before-release",
+      "receiptDigest": "316985335d426587f9884db0b8f14d91b1fd53fdc294b46cdb57def788a1fe86"
+    }
+  ],
+  "leaves": [
+    "3996b2db9ebcf84a47de9e331ad67cdae1b80612e5683a9fb083db43f206f4c0",
+    "8bf13fe1d715abf9c5dd7cab584338dace5af3a05d7ab519716caf10c6447d20"
+  ],
+  "treeHeads": [
+    {
+      "size": 1,
+      "rootHash": "3996b2db9ebcf84a47de9e331ad67cdae1b80612e5683a9fb083db43f206f4c0"
+    },
+    {
+      "size": 2,
+      "rootHash": "932b462b7aa7c0cbadc00fa45214e74122e3c7b61e6bb3031b7b69cfefe6f6ee"
+    }
+  ],
+  "inclusionProofs": [
+    {
+      "leafIndex": 0,
+      "treeSize": 2,
+      "auditPath": [
+        {
+          "side": "right",
+          "hash": "8bf13fe1d715abf9c5dd7cab584338dace5af3a05d7ab519716caf10c6447d20"
+        }
+      ],
+      "expectedRoot": "932b462b7aa7c0cbadc00fa45214e74122e3c7b61e6bb3031b7b69cfefe6f6ee"
+    },
+    {
+      "leafIndex": 1,
+      "treeSize": 2,
+      "auditPath": [
+        {
+          "side": "left",
+          "hash": "3996b2db9ebcf84a47de9e331ad67cdae1b80612e5683a9fb083db43f206f4c0"
+        }
+      ],
+      "expectedRoot": "932b462b7aa7c0cbadc00fa45214e74122e3c7b61e6bb3031b7b69cfefe6f6ee"
+    }
+  ],
+  "consistencyProof": {
+    "oldSize": 1,
+    "newSize": 2,
+    "oldRoot": "3996b2db9ebcf84a47de9e331ad67cdae1b80612e5683a9fb083db43f206f4c0",
+    "appendedSubtree": "8bf13fe1d715abf9c5dd7cab584338dace5af3a05d7ab519716caf10c6447d20",
+    "expectedNewRoot": "932b462b7aa7c0cbadc00fa45214e74122e3c7b61e6bb3031b7b69cfefe6f6ee"
+  }
+}

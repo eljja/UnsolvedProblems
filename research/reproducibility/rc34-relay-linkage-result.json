@@ -1,0 +1,79 @@
+{
+  "resultId": "RC34-RELAY-LINKAGE-RESULT-0.9",
+  "computedOn": "2026-08-14",
+  "passed": true,
+  "developmentStudies": [
+    "STUDY-00",
+    "STUDY-10",
+    "STUDY-20"
+  ],
+  "heldOutStudy": "STUDY-30",
+  "holdoutMetrics": {
+    "unprotected": {
+      "correct": 130,
+      "total": 130,
+      "accuracy": 1,
+      "frozenWeights": {
+        "time": 0,
+        "size": 0.25,
+        "endpoint": 0,
+        "stableToken": 64
+      },
+      "fittedOffsets": {
+        "expectedDelayMs": 15,
+        "expectedSizeOffset": 72
+      }
+    },
+    "protected": {
+      "correct": 15,
+      "total": 130,
+      "accuracy": 0.11538461538461539,
+      "frozenWeights": {
+        "time": 0.25,
+        "size": 0,
+        "endpoint": 0,
+        "stableToken": 0
+      },
+      "fittedOffsets": {
+        "expectedDelayMs": 176,
+        "expectedSizeOffset": 527.5
+      }
+    },
+    "stable-token-ablation": {
+      "correct": 128,
+      "total": 130,
+      "accuracy": 0.9846153846153847,
+      "frozenWeights": {
+        "time": 0.25,
+        "size": 0,
+        "endpoint": 0,
+        "stableToken": 64
+      },
+      "fittedOffsets": {
+        "expectedDelayMs": 176,
+        "expectedSizeOffset": 527.5
+      }
+    }
+  },
+  "nullModel": {
+    "simulations": 10000,
+    "meanAccuracy": 0.09991769230770652,
+    "p95Accuracy": 0.14615384615384616,
+    "protectedEmpiricalUpperTailP": 0.3241675832416758
+  },
+  "checks": {
+    "sealed_heldout_study_used_once": true,
+    "exactly_144_models_per_scenario": true,
+    "protected_accuracy_not_above_null_p95": true,
+    "unprotected_positive_control_above_null_p95": true,
+    "stable_token_ablation_above_null_p95": true,
+    "stable_token_ablation_worse_than_protected": true,
+    "fixed_payload_and_batch_delay_applied": true,
+    "protected_egress_has_no_stable_token": true
+  },
+  "interpretation": {
+    "verified": "Against this frozen matcher, fixed-size delayed shuffled batches reduce held-out matching to the within-batch chance envelope, while restoring the stable VOPRF token raises matching above it.",
+    "inference": "The positive-control separation supports treating stable equality and transport metadata as independent graph edges, not as a proof of anonymity against adaptive observers.",
+    "unverified": "Live network timing, packet loss, active tagging, cross-batch intersection attacks, endpoint compromise, and colluding relays remain untested."
+  }
+}
