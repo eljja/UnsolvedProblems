@@ -1,0 +1,115 @@
+{
+  "protocolId": "INTERVENTION-PILOT-0.2",
+  "fixedOn": "2026-08-14",
+  "status": "dry-run-contract-fixed-before-any-physical-outcomes",
+  "purpose": "Test whether preparation, blinding, lineage, measurement-repeat, and integrity gates can be executed without changing the RC26 80-percent negative-alarm and 90-percent positive-evidence thresholds. Three batches are not an efficacy test.",
+  "claimBoundary": {
+    "pilotClaim": "The dry run can establish only that the ledger and adjudication workflow detect designed violations. A later three-batch physical pilot can estimate operational variance and cost but cannot qualify intervention efficacy.",
+    "independentUnit": "One independently weighed and mixed preparation session is one batch-level experimental unit. Its specimens, aliquots, scans, and analysis views are nested observations.",
+    "lotScope": "The three pilot batches reuse source lots and therefore target preparation repeatability conditional on those lots. They cannot support unconditional material-lot or institution transport.",
+    "dictionaryScope": "Complete-dictionary and omitted-Bi2O3 analyses are two blinded views of the same raw acquisition, never two physical specimens or two independent outcomes.",
+    "confirmatoryBoundary": "The fifteen-batch RC26 certificate remains separate. Pilot outcomes may change operations or terminate the program, but may not tune the sealed 0.80 and 0.90 thresholds. Any substantive intervention change requires a new confirmatory protocol before additional outcomes."
+  },
+  "materialSystem": {
+    "name": "D1-D2 anchored barite-bismite-graphite mixture",
+    "nominalMassFractions": { "BaSO4": 0.3333333333, "Bi2O3": 0.3333333333, "graphite": 0.3333333334 },
+    "components": [
+      { "id": "BaSO4", "cas": "7727-43-7", "minimumPurityMassFraction": 0.99, "role": "barite phase and gravimetric anchor" },
+      { "id": "Bi2O3", "cas": "1304-76-3", "minimumPurityMassFraction": 0.99, "role": "bismite phase, high-absorption contrast, and sealed omitted-phase positive" },
+      { "id": "graphite", "cas": "7782-42-5", "minimumPurityMassFraction": 0.99, "role": "particle-size and preferred-orientation intervention handle" }
+    ],
+    "particleArms": {
+      "fine": "All graphite passes a 90-micrometre sieve.",
+      "mixed-coarse": "Thirty percent of graphite mass is retained above 90 micrometres and seventy percent passes 90 micrometres, matching the published D2 encoding."
+    },
+    "selectionReason": "Preselecting graphite size before mixing changes the intended particle-orientation handle without mechanically treating the complete mixture. This reduces, but does not eliminate, chemical and contamination confounding relative to whole-mixture milling.",
+    "notQualifiedBeyond": "This composition does not represent other phase chemistries, amorphous components, nanoparticles, reactive mixtures, or unknown phases with weak or overlapping reflections."
+  },
+  "physicalDesign": {
+    "pilotBatches": 3,
+    "specimensPerBatch": 2,
+    "aliquotsPerBatch": 4,
+    "technicalAcquisitionsPerAliquot": 2,
+    "analysisViewsPerAcquisition": 2,
+    "reportedIndependentN": 3,
+    "factorialCells": [
+      "mixed-coarse|stationary-flat-plate",
+      "mixed-coarse|rotating-capillary",
+      "fine|stationary-flat-plate",
+      "fine|rotating-capillary"
+    ],
+    "primaryContrast": {
+      "baseline": "mixed-coarse|stationary-flat-plate",
+      "intervention": "fine|rotating-capillary",
+      "negativeEndpoint": "One minus the complete-dictionary alarm under intervention divided by the baseline alarm; success threshold remains at least 0.80.",
+      "positiveEndpoint": "Omitted-Bi2O3 candidate evidence under intervention divided by baseline candidate evidence; success threshold remains at least 0.90.",
+      "conservativeNearThresholdRule": "A batch can pass only when the lower uncertainty bound clears the threshold. An interval crossing a threshold is unresolved and counts as non-success in confirmation."
+    },
+    "diagnosticContrasts": [
+      "fine|stationary-flat-plate versus mixed-coarse|stationary-flat-plate isolates the graphite-size branch conditional on flat-plate loading.",
+      "mixed-coarse|rotating-capillary versus mixed-coarse|stationary-flat-plate isolates the geometry branch conditional on mixed-coarse graphite.",
+      "The size-by-geometry interaction tests whether the combined intervention can be decomposed; no component receives an efficacy claim in the pilot."
+    ],
+    "omittedPhase": "Bi2O3",
+    "analysisViews": ["complete-dictionary", "omitted-Bi2O3"],
+    "randomizedAcquisitionSchedule": {
+      "PILOT-B01": ["mixed-coarse|stationary-flat-plate", "fine|rotating-capillary", "mixed-coarse|rotating-capillary", "fine|stationary-flat-plate"],
+      "PILOT-B02": ["fine|stationary-flat-plate", "mixed-coarse|rotating-capillary", "fine|rotating-capillary", "mixed-coarse|stationary-flat-plate"],
+      "PILOT-B03": ["mixed-coarse|rotating-capillary", "fine|stationary-flat-plate", "mixed-coarse|stationary-flat-plate", "fine|rotating-capillary"]
+    },
+    "scheduleBoundary": "The schedule is sealed for workflow testing, not claimed to be a fully balanced design. Technical repeat 2 follows repeat 1 within each randomized aliquot block so short-term repeatability is estimable without being counted as a new batch."
+  },
+  "lineageModel": {
+    "levels": ["source lot", "preparation batch", "physical specimen", "geometry aliquot", "raw acquisition", "analysis view", "endpoint adjudication"],
+    "oneToMany": [
+      "One source-lot tuple can feed multiple preparation batches.",
+      "One batch contains one fine and one mixed-coarse specimen.",
+      "One specimen is divided into stationary-flat-plate and rotating-capillary aliquots.",
+      "One aliquot has two technical acquisitions.",
+      "One raw acquisition receives a complete and an omitted-Bi2O3 analysis view."
+    ],
+    "forbiddenIndependenceClaims": [
+      "specimensPerBatch, aliquotsPerBatch, acquisitions, and analyses cannot replace batch n",
+      "a renamed or copied aliquot, acquisition, or raw hash is not a new unit",
+      "common source lots cannot support unconditional across-lot transport",
+      "analysis-view disagreement cannot be repaired by rerunning the same raw file until it passes"
+    ]
+  },
+  "blindingAndEmbargo": {
+    "manufacturing": "Preparation personnel know particle-size arms because they must construct them.",
+    "acquisition": "Instrument operators receive opaque aliquot codes and a sequence, not particle or dictionary labels.",
+    "analysis": "Analysts receive opaque acquisition codes and one of two sealed dictionary bundles. The omitted-phase identity is held by an adjudicator until all analysis outputs are hash-bound.",
+    "dryRun": "Committed fixtures use synthetic hashes and contain no physical measurements. Their demonstration codes must never be reused for a physical run.",
+    "physicalOutcomeEmbargo": "No endpoint estimate, pass flag, or integrity result may enter a dry-run ledger. In a physical pilot, outcome fields remain sealed until every expected raw hash and analysis output is present."
+  },
+  "measurementAndIntegrity": {
+    "gravimetry": "Record masses and calibrated-balance identity for every component; absolute deviation of any nominal phase fraction above one percentage point fails composition integrity.",
+    "particleSize": "Record sieve identifiers, sieve-integrity check, retained and passing masses, and microscopy or an independently calibrated particle-size measurement on reserved material.",
+    "diffraction": "Preserve raw frames or the earliest instrument output, acquisition geometry, wavelength, detector configuration, sample spinning, exposure history, instrument-resolution reference, and every later transformation.",
+    "transmission": "Measure or estimate absorption in the exact acquisition geometry; XRF cannot provide carbon closure and is not the sole composition truth.",
+    "phaseIntegrity": "Compare reserved input materials and prepared specimens using full-profile XRPD plus Raman or another orthogonal phase-sensitive method. Contamination, a new peak, polymorph change, or unexplained broadening quarantines the batch.",
+    "technicalRepeats": "Use two acquisitions per aliquot to estimate acquisition repeatability and threshold uncertainty. Average or model them within batch; never count them as independent batches."
+  },
+  "safetyAndAuthority": {
+    "executionGate": "The repository does not authorize laboratory work. Physical execution requires local EHS approval, current supplier SDS review, trained powder handling, registered and interlocked X-ray equipment, and an equipment-specific operating procedure.",
+    "powderControl": "Use micrometre-scale materials, closed transfer or local exhaust, minimum feasible mass, suitable eye and skin protection, and institutional respiratory-protection decisions. Do not use nanopowders or openly aerosolize, brush, blow, or dry-mill graphite.",
+    "radiation": "Never bypass diffractometer shielding or interlocks. Record tube, shutter, exposure, and instrument-registration information required by the jurisdiction.",
+    "waste": "Segregate powder and contaminated consumables according to supplier SDS and local chemical-waste rules; do not release bismuth-containing powder to the environment.",
+    "stop": "Stop on dust escape, damaged capillary, interlock or ventilation failure, unidentified contamination, unexpected heat or reaction, broken blinding, or a mismatch between physical labels and committed hashes."
+  },
+  "readinessGates": [
+    { "id": "G1-EHS", "pass": "Local EHS and radiation officers approve the exact materials, scale, enclosure, instrument, and waste route.", "currentStatus": "not-satisfied-by-repository" },
+    { "id": "G2-LINEAGE", "pass": "The valid dry-run ledger passes and every adversarial fixture is rejected for its intended reason.", "currentStatus": "testable-in-repository" },
+    { "id": "G3-BLINDING", "pass": "An independent dry run demonstrates offline arm-map custody, pre-outcome commitments, and one-time unblinding.", "currentStatus": "partly-testable-offline-key-custody-pending" },
+    { "id": "G4-INSTRUMENT", "pass": "Instrument-resolution, geometry, transmission, exposure, raw-data export, and Raman or orthogonal integrity procedures are fixed.", "currentStatus": "not-satisfied-without-institution" },
+    { "id": "G5-SUPPLY", "pass": "Supplier lots, purity certificates, sieve fractions, balance calibration, and reserved reference materials are available.", "currentStatus": "not-satisfied-without-institution" }
+  ],
+  "primarySources": [
+    "https://doi.org/10.1016/j.dib.2021.107043",
+    "https://doi.org/10.1107/S1600576722004708",
+    "https://doi.org/10.1107/S1600576725004728",
+    "https://www.nist.gov/document/astm-e3294-standard-guide-forensic-analysis-geological-materials-powder-x-ray",
+    "https://www.cdc.gov/niosh/npg/npgd0306.html",
+    "https://www.fishersci.com/store/msds?countryCode=US&language=en&partNumber=AC192620050&productDescription=BISMUTH+III+OXIDE+5KG&vendorId=VN00032119"
+  ]
+}

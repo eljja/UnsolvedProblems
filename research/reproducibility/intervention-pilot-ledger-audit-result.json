@@ -1,0 +1,31 @@
+{
+  "auditId": "INTERVENTION-PILOT-LEDGER-AUDIT-0.2",
+  "computedOn": "2026-08-14",
+  "status": "outcome-free-adversarial-dry-run-complete",
+  "denominators": { "fixtures": 12, "adversarialMutations": 11, "expectedFactorialCellsPerBatch": 4 },
+  "hierarchyCounts": { "sourceLotTuples": 1, "preparationBatches": 3, "physicalSpecimens": 6, "geometryAliquots": 12, "rawAcquisitions": 24, "analysisViews": 48, "reportedIndependentN": 3 },
+  "scheduleCoverage": { "PILOT-B01": 4, "PILOT-B02": 4, "PILOT-B03": 4 },
+  "validFixture": { "valid": true, "containsPhysicalOutcomes": false, "ledgerSha256": "1013cb030813a55d3e703fefb7cf183c3574393782c30d8b915e0a42bae1fb99" },
+  "fixtureResults": [
+    { "id": "F00-VALID", "expectedValid": true, "observedValid": true, "expectedCode": null, "observedCodes": [], "detectedAsSpecified": true },
+    { "id": "F01-RAW-REUSE", "expectedValid": false, "observedValid": false, "expectedCode": "E_RAW_HASH_REUSE", "observedCodes": ["E_RAW_HASH_REUSE"], "detectedAsSpecified": true },
+    { "id": "F02-ALIQUOT-ALIAS", "expectedValid": false, "observedValid": false, "expectedCode": "E_ALIQUOT_PARENT_CONFLICT", "observedCodes": ["E_ALIQUOT_PARENT_CONFLICT"], "detectedAsSpecified": true },
+    { "id": "F03-RERUN-AS-N", "expectedValid": false, "observedValid": false, "expectedCode": "E_INDEPENDENT_N", "observedCodes": ["E_INDEPENDENT_N"], "detectedAsSpecified": true },
+    { "id": "F04-MISSING-CELL", "expectedValid": false, "observedValid": false, "expectedCode": "E_FACTORIAL_CELL", "observedCodes": ["E_FACTORIAL_CELL", "E_RANDOMIZATION"], "detectedAsSpecified": true },
+    { "id": "F05-BLIND-LEAK", "expectedValid": false, "observedValid": false, "expectedCode": "E_BLIND_CODE_LEAK", "observedCodes": ["E_BLIND_CODE_LEAK"], "detectedAsSpecified": true },
+    { "id": "F06-OUTCOME-LEAK", "expectedValid": false, "observedValid": false, "expectedCode": "E_DRY_RUN_OUTCOME", "observedCodes": ["E_DRY_RUN_OUTCOME"], "detectedAsSpecified": true },
+    { "id": "F07-LOT-OVERCLAIM", "expectedValid": false, "observedValid": false, "expectedCode": "E_LOT_SCOPE", "observedCodes": ["E_LOT_SCOPE"], "detectedAsSpecified": true },
+    { "id": "F08-WRONG-OMISSION", "expectedValid": false, "observedValid": false, "expectedCode": "E_DICTIONARY_VIEW", "observedCodes": ["E_DICTIONARY_VIEW"], "detectedAsSpecified": true },
+    { "id": "F09-RANDOMIZATION", "expectedValid": false, "observedValid": false, "expectedCode": "E_RANDOMIZATION", "observedCodes": ["E_RANDOMIZATION"], "detectedAsSpecified": true },
+    { "id": "F10-INTEGRITY", "expectedValid": false, "observedValid": false, "expectedCode": "E_INTEGRITY_LOGIC", "observedCodes": ["E_INTEGRITY_LOGIC"], "detectedAsSpecified": true },
+    { "id": "F11-COMMITMENT", "expectedValid": false, "observedValid": false, "expectedCode": "E_COMMITMENT_REUSE", "observedCodes": ["E_COMMITMENT_REUSE"], "detectedAsSpecified": true }
+  ],
+  "oldSchemaAudit": { "oneDictionaryArmButBothEndpointsRequired": true, "omittedPhaseNotRequired": true, "noNestedPhysicalHierarchy": true, "noSourceLotScope": true, "noOutcomeEmbargoMode": true },
+  "decisions": { "H1_flatRecordSchemaSufficient": false, "H2_hierarchicalOutcomeFreeLedgerPasses": true, "H3_allPrecommittedMutationsDetected": true, "H4_analysisViewsIncreaseIndependentN": false, "H5_commonLotsQualifyUnconditionalTransport": false, "H6_physicalPilotReady": false, "H7_sieveAndRotationEfficacyQualified": false },
+  "readiness": { "G1-EHS": "not-satisfied-by-repository", "G2-LINEAGE": "passed-in-outcome-free-dry-run", "G3-BLINDING": "partial-offline-key-custody-not-demonstrated", "G4-INSTRUMENT": "not-satisfied-without-institution", "G5-SUPPLY": "not-satisfied-without-institution" },
+  "interpretation": {
+    "established": "The hierarchical dry-run ledger preserves n=3 while representing 6 specimens, 12 aliquots, 24 raw acquisitions, and 48 analysis views; every one of eleven sealed adversarial mutations is detected for its intended reason.",
+    "rejected": "The RC26 flat-record schema cannot faithfully express two analysis views of one acquisition, source-lot-conditional scope, or an outcome embargo, and therefore is retained only as historical design evidence.",
+    "notEstablished": "No powder was prepared or measured. Intervention efficacy, physical blinding, instrument readiness, safety approval, and transport beyond the common source lots remain untested."
+  }
+}

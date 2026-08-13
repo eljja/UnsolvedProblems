@@ -1,0 +1,19 @@
+{
+  "auditId": "INTERVENTION-PILOT-LEDGER-PYTHON-AUDIT-0.2",
+  "method": "Independent Python reconstruction of committed hierarchy counts, schema semantics, and every precommitted fixture-to-error-code mapping; it does not reuse the JavaScript validator.",
+  "checks": {
+    "protocol_is_outcome_free": true,
+    "hierarchy_counts": true,
+    "technical_rows_do_not_inflate_n": true,
+    "all_factorial_cells_are_scheduled": true,
+    "all_precommitted_mutations_are_detected": true,
+    "valid_fixture_passes_without_outcomes": true,
+    "flat_schema_requires_incompatible_semantics": true,
+    "flat_schema_lacks_required_omitted_phase": true,
+    "new_schema_separates_physical_and_analysis_levels": true,
+    "common_lot_scope_is_conditional": true,
+    "physical_readiness_and_efficacy_not_claimed": true
+  },
+  "passed": true,
+  "independenceBoundary": "This audit independently checks the digital contract only. It supplies no material, operator, instrument, safety, or efficacy evidence."
+}

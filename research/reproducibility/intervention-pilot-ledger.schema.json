@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/intervention-pilot-ledger.schema.json",
+  "title": "Intervention pilot hierarchical ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocolVersion", "mode", "sealedOn", "inferentialScope", "reportedIndependentN", "splitContract", "batches"],
+  "properties": {
+    "protocolVersion": { "const": "INTERVENTION-PILOT-0.2" },
+    "mode": { "enum": ["dry-run-no-physical-outcomes", "physical-pilot", "confirmatory"] },
+    "sealedOn": { "type": "string", "format": "date" },
+    "inferentialScope": { "enum": ["preparation-repeatability-conditional-on-source-lots", "unconditional-across-source-lots"] },
+    "reportedIndependentN": { "type": "integer", "minimum": 0 },
+    "splitContract": { "$ref": "#/$defs/splitContract" },
+    "batches": { "type": "array", "items": { "$ref": "#/$defs/batch" } }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "splitContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["developmentInstitutions", "adjudicationInstitutions", "forbiddenSharedKeys", "analysisRowsNeverEqualIndependentN"],
+      "properties": {
+        "developmentInstitutions": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+        "adjudicationInstitutions": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true, "minItems": 1 },
+        "forbiddenSharedKeys": { "const": ["preparationBatchId", "physicalSpecimenId", "aliquotId", "rawXrpdSha256"] },
+        "analysisRowsNeverEqualIndependentN": { "const": true }
+      }
+    },
+    "sourceLots": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["BaSO4", "Bi2O3", "graphiteFine", "graphiteCoarse"],
+      "properties": {
+        "BaSO4": { "type": "string", "minLength": 1 },
+        "Bi2O3": { "type": "string", "minLength": 1 },
+        "graphiteFine": { "type": "string", "minLength": 1 },
+        "graphiteCoarse": { "type": "string", "minLength": 1 }
+      }
+    },
+    "batch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["preparationBatchId", "institutionId", "preparationSessionId", "operatorPseudonym", "armMapCommitmentSha256", "sourceLots", "specimens", "aliquots", "acquisitions", "analyses", "endpointAdjudication"],
+      "properties": {
+        "preparationBatchId": { "type": "string", "minLength": 1 },
+        "institutionId": { "type": "string", "minLength": 1 },
+        "preparationSessionId": { "type": "string", "minLength": 1 },
+        "operatorPseudonym": { "type": "string", "minLength": 1 },
+        "armMapCommitmentSha256": { "$ref": "#/$defs/sha256" },
+        "sourceLots": { "$ref": "#/$defs/sourceLots" },
+        "specimens": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "$ref": "#/$defs/specimen" } },
+        "aliquots": { "type": "array", "minItems": 4, "maxItems": 4, "items": { "$ref": "#/$defs/aliquot" } },
+        "acquisitions": { "type": "array", "minItems": 8, "maxItems": 8, "items": { "$ref": "#/$defs/acquisition" } },
+        "analyses": { "type": "array", "minItems": 16, "maxItems": 16, "items": { "$ref": "#/$defs/analysis" } },
+        "endpointAdjudication": { "$ref": "#/$defs/endpointAdjudication" }
+      }
+    },
+    "specimen": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["physicalSpecimenId", "particleSizeArm", "gravimetrySha256", "particleSizeSha256", "integrityGate"],
+      "properties": {
+        "physicalSpecimenId": { "type": "string", "minLength": 1 },
+        "particleSizeArm": { "enum": ["fine", "mixed-coarse"] },
+        "gravimetrySha256": { "$ref": "#/$defs/sha256" },
+        "particleSizeSha256": { "$ref": "#/$defs/sha256" },
+        "integrityGate": { "$ref": "#/$defs/integrityGate" }
+      }
+    },
+    "integrityGate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["compositionErrorPercentagePoints", "phaseChanged", "contaminationDetected", "passed", "status"],
+      "properties": {
+        "compositionErrorPercentagePoints": { "type": ["number", "null"], "minimum": 0 },
+        "phaseChanged": { "type": ["boolean", "null"] },
+        "contaminationDetected": { "type": ["boolean", "null"] },
+        "passed": { "type": ["boolean", "null"] },
+        "status": { "enum": ["untested", "pass", "fail", "quarantined"] }
+      }
+    },
+    "aliquot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["aliquotId", "physicalSpecimenId", "geometryArm", "blindCode", "randomizedBlockOrder", "transmissionSha256"],
+      "properties": {
+        "aliquotId": { "type": "string", "minLength": 1 },
+        "physicalSpecimenId": { "type": "string", "minLength": 1 },
+        "geometryArm": { "enum": ["stationary-flat-plate", "rotating-capillary"] },
+        "blindCode": { "type": "string", "pattern": "^[A-Z0-9]{8}$" },
+        "randomizedBlockOrder": { "type": "integer", "minimum": 1, "maximum": 4 },
+        "transmissionSha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "acquisition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["acquisitionId", "aliquotId", "technicalRepeat", "sequenceOrder", "acquisitionSessionId", "rawXrpdSha256", "instrumentMetadataSha256"],
+      "properties": {
+        "acquisitionId": { "type": "string", "minLength": 1 },
+        "aliquotId": { "type": "string", "minLength": 1 },
+        "technicalRepeat": { "enum": [1, 2] },
+        "sequenceOrder": { "type": "integer", "minimum": 1, "maximum": 8 },
+        "acquisitionSessionId": { "type": "string", "minLength": 1 },
+        "rawXrpdSha256": { "$ref": "#/$defs/sha256" },
+        "instrumentMetadataSha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["analysisId", "acquisitionId", "dictionaryView", "omittedPhaseId", "analysisOutputSha256", "alarmEstimate", "candidateEvidenceEstimate", "sealedBeforeUnblinding"],
+      "properties": {
+        "analysisId": { "type": "string", "minLength": 1 },
+        "acquisitionId": { "type": "string", "minLength": 1 },
+        "dictionaryView": { "enum": ["complete-dictionary", "omitted-phase"] },
+        "omittedPhaseId": { "type": ["string", "null"] },
+        "analysisOutputSha256": { "$ref": "#/$defs/sha256" },
+        "alarmEstimate": { "type": ["number", "null"] },
+        "candidateEvidenceEstimate": { "type": ["number", "null"] },
+        "sealedBeforeUnblinding": { "type": "boolean" }
+      }
+    },
+    "endpointAdjudication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eligible", "negativeReductionEstimate", "negativeLowerBound", "positiveRetentionEstimate", "positiveLowerBound", "negativePassed", "positivePassed", "status"],
+      "properties": {
+        "eligible": { "type": "boolean" },
+        "negativeReductionEstimate": { "type": ["number", "null"] },
+        "negativeLowerBound": { "type": ["number", "null"] },
+        "positiveRetentionEstimate": { "type": ["number", "null"] },
+        "positiveLowerBound": { "type": ["number", "null"] },
+        "negativePassed": { "type": ["boolean", "null"] },
+        "positivePassed": { "type": ["boolean", "null"] },
+        "status": { "enum": ["sealed-no-outcomes", "pass", "fail", "unresolved", "quarantined"] }
+      }
+    }
+  }
+}

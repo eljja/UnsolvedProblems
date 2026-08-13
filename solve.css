@@ -350,6 +350,7 @@
   .decision-card { min-height: 330px; }
   .lab-layout { padding-top: 30px; padding-bottom: 70px; }
   .lab-section { padding: 62px 0; }
+  .cycle-section::before { inset: 35px 0; }
   .starting-grid, .logic-chain, .cycle-heading, .cycle-definition-grid, .cycle-hypotheses, .cycle-connections, .proposal-heading, .synthesis-notes, .work-package-list, .readiness-grid, .risk-panel, .prior-columns { grid-template-columns: 1fr; }
   .cycle-log-link { justify-self: start; }
   .cycle-unresolved { grid-template-columns: 1fr; gap: 7px; }

@@ -1,0 +1,20 @@
+{
+  "fixtureSetId": "INTERVENTION-PILOT-ADVERSARIAL-0.2",
+  "fixedOn": "2026-08-14",
+  "status": "mutations-fixed-before-any-physical-outcomes",
+  "baseFixture": "valid-dry-run-generated-from-intervention-pilot-protocol",
+  "tests": [
+    { "id": "F00-VALID", "mutation": "none", "expectedValid": true, "expectedCode": null, "scientificRisk": "A correct outcome-free hierarchy must not be rejected." },
+    { "id": "F01-RAW-REUSE", "mutation": "reuse-raw-hash-across-aliquots", "expectedValid": false, "expectedCode": "E_RAW_HASH_REUSE", "scientificRisk": "A copied acquisition masquerades as a new measurement." },
+    { "id": "F02-ALIQUOT-ALIAS", "mutation": "alias-one-aliquot-across-two-specimens", "expectedValid": false, "expectedCode": "E_ALIQUOT_PARENT_CONFLICT", "scientificRisk": "One physical aliquot is assigned two incompatible specimen parents." },
+    { "id": "F03-RERUN-AS-N", "mutation": "report-analysis-row-count-as-independent-n", "expectedValid": false, "expectedCode": "E_INDEPENDENT_N", "scientificRisk": "Technical and analytical repeats inflate the experimental-unit denominator." },
+    { "id": "F04-MISSING-CELL", "mutation": "remove-one-factorial-cell-and-descendants", "expectedValid": false, "expectedCode": "E_FACTORIAL_CELL", "scientificRisk": "The size-by-geometry contrast becomes unidentified." },
+    { "id": "F05-BLIND-LEAK", "mutation": "encode-arm-name-in-blind-code", "expectedValid": false, "expectedCode": "E_BLIND_CODE_LEAK", "scientificRisk": "The analysis operator can infer the intervention arm." },
+    { "id": "F06-OUTCOME-LEAK", "mutation": "insert-endpoint-estimate-in-dry-run", "expectedValid": false, "expectedCode": "E_DRY_RUN_OUTCOME", "scientificRisk": "A supposedly prospective contract has already seen an outcome." },
+    { "id": "F07-LOT-OVERCLAIM", "mutation": "claim-unconditional-lot-transport-with-common-lots", "expectedValid": false, "expectedCode": "E_LOT_SCOPE", "scientificRisk": "Common source lots are used to claim across-lot transport." },
+    { "id": "F08-WRONG-OMISSION", "mutation": "replace-sealed-omitted-phase", "expectedValid": false, "expectedCode": "E_DICTIONARY_VIEW", "scientificRisk": "The positive control changes after protocol sealing." },
+    { "id": "F09-RANDOMIZATION", "mutation": "duplicate-acquisition-sequence-order", "expectedValid": false, "expectedCode": "E_RANDOMIZATION", "scientificRisk": "Acquisition order cannot be reconstructed or was altered." },
+    { "id": "F10-INTEGRITY", "mutation": "mark-phase-change-as-integrity-pass", "expectedValid": false, "expectedCode": "E_INTEGRITY_LOGIC", "scientificRisk": "A changed material is counted as a successful nuisance correction." },
+    { "id": "F11-COMMITMENT", "mutation": "reuse-arm-map-commitment-across-batches", "expectedValid": false, "expectedCode": "E_COMMITMENT_REUSE", "scientificRisk": "A supposedly independent blinded mapping is copied across batches." }
+  ]
+}
