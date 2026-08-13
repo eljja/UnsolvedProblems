@@ -1,0 +1,29 @@
+{
+  "cycle": "RC-2026-37",
+  "amendment": "1.2",
+  "sealedOn": "2026-08-14",
+  "trigger": "After amendment 1.1, the JavaScript model uniquely qualified the atomic chain, but the independent Python audit matched only 30/32 exact trace checks.",
+  "modelResult": {
+    "artifact": "research/reproducibility/rc37-outbox-sink-model-result.json",
+    "sha256": "ac16bc662ad1a77a960fdd567d2833652e0434b1a3e07d2ee13ff0d4f462ea71",
+    "uniqueQualifier": "ATOMIC_OUTBOX_IDEMPOTENT_SINK"
+  },
+  "firstAudit": {
+    "artifact": "research/reproducibility/rc37-outbox-sink-model-python-audit-first-failure.json",
+    "sha256": "7eee9e8a6f6ba304f9f0fc0e4cd658da85a9fdeed224fd99071a294ff27f5c3e",
+    "score": "30/32",
+    "mismatches": [
+      "NON_IDEMPOTENT_SINK M4: both implementations found a five-step effect-count-2 delivered-state counterexample, but chose different tied traces.",
+      "NON_IDEMPOTENT_SINK M6: both implementations found a three-step state with no healthy completion, but chose different tied traces."
+    ],
+    "scientificVerdict": "State counts, transition counts, invariant pass/fail verdicts, and minimum trace lengths matched. Exact trace identity remained unqualified because Python iterated an unordered set."
+  },
+  "allowedChange": "Preserve the Python breadth-first discovery order and use it to break equal-length counterexample ties, matching the JavaScript Map insertion order.",
+  "forbiddenChanges": [
+    "No transition, state, invariant predicate, model result, counterexample length, or confirmation criterion changed.",
+    "Do not remove or overwrite the 30/32 audit."
+  ],
+  "codeHashBefore": "a46cbe6c1353bfbeccac6fd8ebecd27288f809a1d8be6873b1a66f93fbcdd0f6",
+  "resultStateAtSeal": "The amended Python audit had not been executed and the final audit artifact did not exist.",
+  "codeHashAfter": "c6275bbd72d61dbf2972d19fdec007d9fc44fda9f74b77f7aae82b3287357842"
+}

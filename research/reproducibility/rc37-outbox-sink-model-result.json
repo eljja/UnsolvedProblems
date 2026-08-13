@@ -1,0 +1,297 @@
+{
+  "cycle": "RC-2026-37",
+  "experiment": "finite receiver-outbox-relay-sink crash model",
+  "computedOn": "2026-08-14",
+  "stateEncoding": {
+    "ri": "receiver inbox durable",
+    "ro": "receiver outbox durable",
+    "od": "outbox marked delivered",
+    "si": "sink inbox durable",
+    "se": "sink effect count saturated at 2",
+    "vi": "volatile receiver intent",
+    "vr": "volatile relay intent after early mark",
+    "sm": "volatile sink marker intent",
+    "va": "volatile acknowledgement",
+    "cr": "at least one crash has occurred"
+  },
+  "protocols": [
+    {
+      "protocol": "DUAL_WRITE",
+      "states": 13,
+      "transitions": 20,
+      "invariants": {
+        "M1_no_crash_stable_receiver_orphan": {
+          "pass": false,
+          "counterexample": {
+            "state": {
+              "ri": 1,
+              "ro": 0,
+              "od": 0,
+              "si": 0,
+              "se": 0,
+              "vi": 0,
+              "vr": 0,
+              "sm": 0,
+              "va": 0,
+              "cr": 1
+            },
+            "trace": [
+              "ACCEPT_INBOX",
+              "CRASH_AND_RESTART"
+            ]
+          }
+        },
+        "M2_sink_effect_at_most_once": {
+          "pass": true,
+          "counterexample": null
+        },
+        "M3_sink_marker_matches_one_effect": {
+          "pass": true,
+          "counterexample": null
+        },
+        "M4_delivered_outbox_implies_sink_commit": {
+          "pass": true,
+          "counterexample": null
+        },
+        "M5_sink_commit_has_receiver_origin": {
+          "pass": true,
+          "counterexample": null
+        },
+        "M6_healed_completion_reachable": {
+          "pass": false,
+          "counterexample": {
+            "state": {
+              "ri": 1,
+              "ro": 0,
+              "od": 0,
+              "si": 0,
+              "se": 0,
+              "vi": 0,
+              "vr": 0,
+              "sm": 0,
+              "va": 0,
+              "cr": 1
+            },
+            "trace": [
+              "ACCEPT_INBOX",
+              "CRASH_AND_RESTART"
+            ]
+          }
+        }
+      },
+      "qualifies": false
+    },
+    {
+      "protocol": "EARLY_OUTBOX_ACK",
+      "states": 9,
+      "transitions": 11,
+      "invariants": {
+        "M1_no_crash_stable_receiver_orphan": {
+          "pass": true,
+          "counterexample": null
+        },
+        "M2_sink_effect_at_most_once": {
+          "pass": true,
+          "counterexample": null
+        },
+        "M3_sink_marker_matches_one_effect": {
+          "pass": true,
+          "counterexample": null
+        },
+        "M4_delivered_outbox_implies_sink_commit": {
+          "pass": false,
+          "counterexample": {
+            "state": {
+              "ri": 1,
+              "ro": 1,
+              "od": 1,
+              "si": 0,
+              "se": 0,
+              "vi": 0,
+              "vr": 1,
+              "sm": 0,
+              "va": 0,
+              "cr": 0
+            },
+            "trace": [
+              "ACCEPT_INBOX_AND_OUTBOX",
+              "MARK_OUTBOX_DELIVERED_EARLY"
+            ]
+          }
+        },
+        "M5_sink_commit_has_receiver_origin": {
+          "pass": true,
+          "counterexample": null
+        },
+        "M6_healed_completion_reachable": {
+          "pass": false,
+          "counterexample": {
+            "state": {
+              "ri": 1,
+              "ro": 1,
+              "od": 1,
+              "si": 0,
+              "se": 0,
+              "vi": 0,
+              "vr": 0,
+              "sm": 0,
+              "va": 0,
+              "cr": 1
+            },
+            "trace": [
+              "ACCEPT_INBOX_AND_OUTBOX",
+              "MARK_OUTBOX_DELIVERED_EARLY",
+              "CRASH_AND_RESTART"
+            ]
+          }
+        }
+      },
+      "qualifies": false
+    },
+    {
+      "protocol": "NON_IDEMPOTENT_SINK",
+      "states": 28,
+      "transitions": 56,
+      "invariants": {
+        "M1_no_crash_stable_receiver_orphan": {
+          "pass": true,
+          "counterexample": null
+        },
+        "M2_sink_effect_at_most_once": {
+          "pass": false,
+          "counterexample": {
+            "state": {
+              "ri": 1,
+              "ro": 1,
+              "od": 0,
+              "si": 0,
+              "se": 2,
+              "vi": 0,
+              "vr": 0,
+              "sm": 1,
+              "va": 0,
+              "cr": 0
+            },
+            "trace": [
+              "ACCEPT_INBOX_AND_OUTBOX",
+              "APPLY_SINK_EFFECT",
+              "APPLY_SINK_EFFECT"
+            ]
+          }
+        },
+        "M3_sink_marker_matches_one_effect": {
+          "pass": false,
+          "counterexample": {
+            "state": {
+              "ri": 1,
+              "ro": 1,
+              "od": 0,
+              "si": 0,
+              "se": 1,
+              "vi": 0,
+              "vr": 0,
+              "sm": 1,
+              "va": 0,
+              "cr": 0
+            },
+            "trace": [
+              "ACCEPT_INBOX_AND_OUTBOX",
+              "APPLY_SINK_EFFECT"
+            ]
+          }
+        },
+        "M4_delivered_outbox_implies_sink_commit": {
+          "pass": false,
+          "counterexample": {
+            "state": {
+              "ri": 1,
+              "ro": 1,
+              "od": 1,
+              "si": 1,
+              "se": 2,
+              "vi": 0,
+              "vr": 0,
+              "sm": 0,
+              "va": 0,
+              "cr": 0
+            },
+            "trace": [
+              "ACCEPT_INBOX_AND_OUTBOX",
+              "APPLY_SINK_EFFECT",
+              "APPLY_SINK_EFFECT",
+              "WRITE_SINK_MARKER",
+              "ACK_OUTBOX"
+            ]
+          }
+        },
+        "M5_sink_commit_has_receiver_origin": {
+          "pass": true,
+          "counterexample": null
+        },
+        "M6_healed_completion_reachable": {
+          "pass": false,
+          "counterexample": {
+            "state": {
+              "ri": 1,
+              "ro": 1,
+              "od": 0,
+              "si": 0,
+              "se": 2,
+              "vi": 0,
+              "vr": 0,
+              "sm": 1,
+              "va": 0,
+              "cr": 0
+            },
+            "trace": [
+              "ACCEPT_INBOX_AND_OUTBOX",
+              "APPLY_SINK_EFFECT",
+              "APPLY_SINK_EFFECT"
+            ]
+          }
+        }
+      },
+      "qualifies": false
+    },
+    {
+      "protocol": "ATOMIC_OUTBOX_IDEMPOTENT_SINK",
+      "states": 10,
+      "transitions": 16,
+      "invariants": {
+        "M1_no_crash_stable_receiver_orphan": {
+          "pass": true,
+          "counterexample": null
+        },
+        "M2_sink_effect_at_most_once": {
+          "pass": true,
+          "counterexample": null
+        },
+        "M3_sink_marker_matches_one_effect": {
+          "pass": true,
+          "counterexample": null
+        },
+        "M4_delivered_outbox_implies_sink_commit": {
+          "pass": true,
+          "counterexample": null
+        },
+        "M5_sink_commit_has_receiver_origin": {
+          "pass": true,
+          "counterexample": null
+        },
+        "M6_healed_completion_reachable": {
+          "pass": true,
+          "counterexample": null
+        }
+      },
+      "qualifies": true
+    }
+  ],
+  "gate": {
+    "expectedUniqueQualifier": "ATOMIC_OUTBOX_IDEMPOTENT_SINK",
+    "uniqueQualifier": [
+      "ATOMIC_OUTBOX_IDEMPOTENT_SINK"
+    ],
+    "pass": true
+  },
+  "boundary": "Finite saturated safety model plus healthy-suffix reachability; not an unbounded temporal proof, performance model, Byzantine model, or physical-host experiment."
+}

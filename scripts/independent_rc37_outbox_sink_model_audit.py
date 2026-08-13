@@ -57,6 +57,7 @@ def successors(protocol, state):
 
 def enumerate_graph(protocol):
     seen = {INITIAL}
+    order = [INITIAL]
     traces = {INITIAL: []}
     queue = deque([INITIAL])
     edges = []
@@ -66,9 +67,10 @@ def enumerate_graph(protocol):
             edges.append((state, action, target))
             if target not in seen:
                 seen.add(target)
+                order.append(target)
                 traces[target] = traces[state] + [action]
                 queue.append(target)
-    return seen, traces, edges
+    return seen, order, traces, edges
 
 
 def terminal(state):
@@ -97,7 +99,7 @@ def main():
     checks = []
     reconstructed = []
     for protocol in PROTOCOLS:
-        states, traces, edges = enumerate_graph(protocol)
+        states, order, traces, edges = enumerate_graph(protocol)
         values = [dict(zip(FIELDS, state)) for state in states]
         recoverability = {state for state in states if dict(zip(FIELDS, state))["ri"] and not healthy_completion(protocol, state)}
         predicates = {
@@ -110,7 +112,7 @@ def main():
         }
         failures = {}
         for name, predicate in predicates.items():
-            candidates = [(traces[state], state) for state in states if predicate(dict(zip(FIELDS, state)), state)]
+            candidates = [(traces[state], state) for state in order if predicate(dict(zip(FIELDS, state)), state)]
             failures[name] = min(candidates, key=lambda item: len(item[0])) if candidates else None
         item = next(entry for entry in reference["protocols"] if entry["protocol"] == protocol)
         checks.extend([
