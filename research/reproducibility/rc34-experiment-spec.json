@@ -1,0 +1,53 @@
+{
+  "specId": "RC34-EXTERNAL-OPRF-RELAY-RACE-SPEC-0.9",
+  "reviewedOn": "2026-08-14",
+  "precommit": "research/reproducibility/rc34-sealed-corpus-precommit.json",
+  "question": "Can study-scoped equality survive an external RFC 9497 implementation while transport metadata and concurrent one-time opening are adjudicated as separate, falsifiable layers?",
+  "causalChain": [
+    "one hundred arbitrary private package inputs and four declared study scopes",
+    "stable equality is needed locally but must not become a cross-study or cross-role join key",
+    "bind study scope inside VOPRF private input or POPRF public info, then replace event metadata with fixed-size delayed shuffled batches",
+    "independently verify proofs and outputs, score a held-out linkage attacker, and linearize capability consumption before outcome release",
+    "advance only when equality, unlinkability, interoperability, and exactly-once gates pass together"
+  ],
+  "competingHypotheses": [
+    {
+      "id": "RC34-H1",
+      "claim": "Putting study scope in VOPRF private input and putting the same scope in POPRF public info both preserve within-study duplicate equality and eliminate cross-study output equality.",
+      "prediction": "Both modes have recall 1, zero different-package collisions, and zero equal outputs for the same package across four studies; only POPRF exposes the study scope to the server.",
+      "rejectWhen": "Either mode misses a duplicate, collides different packages, or reuses an output across studies."
+    },
+    {
+      "id": "RC34-H2",
+      "claim": "External CIRCL transcripts and the repository's separately written P-256 verifier implement the same RFC 9497 relation on arbitrary batched inputs.",
+      "prediction": "Every batch proof and every Finalize output agrees in VOPRF and POPRF mode, while mutated proof, invalid point, identity key, and mode-context swap are rejected at the declared layer.",
+      "rejectWhen": "Any valid transcript differs or any declared malformed transcript is accepted; deterministic replay is recorded as an application-layer concern rather than mislabeled as an RFC error."
+    },
+    {
+      "id": "RC34-H3",
+      "claim": "Fixed-size delayed shuffled batching removes the features used by a frozen content-plus-timing matcher, but stable-token leakage reverses that result.",
+      "prediction": "Unprotected and stable-token ablation accuracy exceed the within-batch null gate; protected held-out accuracy does not.",
+      "rejectWhen": "Protected accuracy exceeds the null gate, or the two positive controls fail to distinguish the attack."
+    },
+    {
+      "id": "RC34-H4",
+      "claim": "Two resolver implementations sharing one linearization point can redeem a copied capability exactly once and never release an outcome before a durable receipt.",
+      "prediction": "One of one hundred concurrent attempts succeeds, all others report replay, and crash recovery creates the receipt before the only outcome.",
+      "rejectWhen": "Two attempts succeed, an outcome appears without a receipt, or recovery cannot distinguish an incomplete claim from a completed redemption."
+    }
+  ],
+  "sources": [
+    "https://www.rfc-editor.org/rfc/rfc9497.html",
+    "https://github.com/cloudflare/circl/tree/v1.6.4/oprf",
+    "https://www.rfc-editor.org/rfc/rfc9458.html",
+    "https://www.rfc-editor.org/rfc/rfc9162.html",
+    "https://www.cs.cmu.edu/~wing/publications/HerlihyWing90.pdf"
+  ],
+  "limits": [
+    "The external library describes itself as suitable for experimental deployment and carries no production guarantee.",
+    "The relay is an offline trace simulator, not a live network with adaptive observers.",
+    "Both resolvers run on one host and share one filesystem; this does not prove multi-region failure safety.",
+    "All packages are synthetic byte strings and physical n remains zero.",
+    "The independent verifier is separately implemented but remains in the same repository and is not institutionally independent."
+  ]
+}

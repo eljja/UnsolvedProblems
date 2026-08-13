@@ -1,0 +1,5 @@
+module unsolvedproblems/rc34-circl
+
+go 1.24.0
+
+require github.com/cloudflare/circl v1.6.4

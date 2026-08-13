@@ -1,0 +1,62 @@
+{
+  "precommitId": "RC34-SEALED-CORPUS-PRECOMMIT-0.9",
+  "sealedOn": "2026-08-14",
+  "status": "sealed-before-execution",
+  "seedCommitmentScheme": "SHA-256(UTF8('RC34-CORPUS-SEED-V1:' || lowercase-hex-32-byte-seed))",
+  "seedCommitment": "d49dd147dda39248ac2310005e4ddcc42bc608471fbfe196056de0d81c1896ed",
+  "seedDisclosed": false,
+  "corpus": {
+    "uniquePackages": 100,
+    "packageByteLengthRange": [1, 512],
+    "studyIds": ["STUDY-00", "STUDY-10", "STUDY-20", "STUDY-30"],
+    "repeatEventsByStudy": [0, 10, 20, 30],
+    "heldOutStudy": "STUDY-30"
+  },
+  "oprf": {
+    "externalImplementation": "github.com/cloudflare/circl/oprf@v1.6.4",
+    "suite": "P256-SHA256",
+    "voprfPrivateInput": "prefix-free('UP-RC34-VOPRF', studyId, packageBytes)",
+    "poprfPrivateInput": "packageBytes",
+    "poprfPublicInfo": "prefix-free('UP-RC34-POPRF', studyId)",
+    "developmentStudies": ["STUDY-00", "STUDY-10", "STUDY-20"],
+    "finalStudy": "STUDY-30"
+  },
+  "relay": {
+    "batchSize": 10,
+    "fixedPayloadBytes": 1024,
+    "fixedBatchDelayMilliseconds": 100,
+    "shuffleWithinBatch": true,
+    "removedFromProtectedEgress": ["sourceEndpoint", "originalPayloadSize", "stablePackageToken", "ingressOrder"],
+    "attackerFeatureWeights": {
+      "time": [0, 0.25, 1, 4],
+      "size": [0, 0.25, 1, 4],
+      "endpoint": [0, 1, 4],
+      "stableToken": [0, 8, 64]
+    },
+    "weightSelection": "maximize exact one-to-one match accuracy on STUDY-00, STUDY-10, and STUDY-20 only",
+    "finalEvaluation": "apply frozen weights once to STUDY-30",
+    "nullModel": "10000 independent within-batch label permutations on STUDY-30",
+    "chanceGate": "protected held-out accuracy must not exceed the preregistered 95th percentile of the within-batch null",
+    "negativeControls": ["unprotected trace", "protected trace with stable package token restored"]
+  },
+  "resolver": {
+    "implementations": ["Node.js exclusive-create resolver", "Python O_EXCL resolver"],
+    "attempts": 100,
+    "attemptSplit": [50, 50],
+    "sharedPrototypeStore": "same-host filesystem with atomic exclusive claim creation",
+    "successOrder": ["durable claim", "append-only receipt", "outcome release"],
+    "normalGate": "exactly one opened-one response, 99 replay responses, one claim, one receipt, and one outcome",
+    "crashGate": "a crash after claim produces no outcome; recovery appends one receipt before releasing one outcome",
+    "receiptProof": "RFC 9162-style domain-separated Merkle inclusion proof over the receipt ledger"
+  },
+  "globalPassGate": {
+    "localDuplicateRecall": 1,
+    "differentPackageFalseCollisions": 0,
+    "crossStudyOutputEqualities": 0,
+    "unexplainedExternalReferenceMismatches": 0,
+    "normalPairLinkedOutcomes": 0,
+    "authorizedOpenedOutcomes": 1,
+    "physicalObjects": 0
+  },
+  "interpretationBoundary": "The seal fixes a synthetic same-repository experiment. Git chronology can establish ordering after this file is pushed, but it is not an independent institutional preregistration or trusted timestamp."
+}
