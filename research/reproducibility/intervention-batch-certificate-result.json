@@ -1,0 +1,51 @@
+{
+  "benchmarkId": "INTERVENTION-BATCH-CERTIFICATE-0.1",
+  "computedOn": "2026-08-14",
+  "status": "exact-design-enumerated-before-physical-outcomes",
+  "denominators": { "searchedBatchCounts": 48, "candidateRules": 1320, "endpoints": 2 },
+  "threeBatchAudit": {
+    "n": 3,
+    "strictestCriticalValue": 3,
+    "endpointAlpha": 0.125,
+    "familywiseAlphaBound": 0.25,
+    "endpointPowerAtPointNine": 0.729,
+    "qualifies": false
+  },
+  "selectedDesign": {
+    "n": 15,
+    "k": 12,
+    "endpointAlpha": 0.017578125,
+    "familywiseAlphaBound": 0.03515625,
+    "endpointPowerAtPointNine": 0.944444369992,
+    "worstDependenceJointPowerLowerBound": 0.888888739985
+  },
+  "futilityOnlySequence": {
+    "checkpoints": [5, 10, 15],
+    "stopAt5WhenEitherSuccessCountAtMost": 1,
+    "stopAt10WhenEitherSuccessCountAtMost": 6,
+    "nullIndependentEndpointIllustration": {
+      "probabilityReach10": 0.66015625,
+      "probabilityReach15": 0.029541015625,
+      "expectedBatches": 8.448486328125
+    },
+    "alternativeIndependentEndpointIllustration": {
+      "probabilityReach10": 0.9990802116,
+      "probabilityReach15": 0.974573320302,
+      "expectedBatches": 14.86826765951
+    },
+    "guarantee": "Futility only removes paths that cannot reach the final critical value and does not increase fixed-final type-I error. Expected sample sizes are illustrations requiring independence of endpoint indicators."
+  },
+  "decisions": {
+    "H1_threeBatchesFinalQualificationAdequate": false,
+    "H2_minimumExactDesignFound": true,
+    "H3_endpointPowerTargetMet": true,
+    "H4_worstDependenceJointPowerTargetMet": true,
+    "H5_arbitraryShiftGuaranteeQualified": false,
+    "H6_analysisRerunsIncreaseEffectiveN": false
+  },
+  "interpretation": {
+    "established": "Three independent batches cannot qualify even one endpoint at alpha 0.025; the minimum sealed exact design is twelve successes among fifteen independent exchangeable batches for each endpoint.",
+    "assumptionBound": "The exact certificate is finite-sample only under the operational p<=0.5 null and independent exchangeable batches. It is not robust to arbitrary unknown institution shift.",
+    "nextPhysicalStep": "Use three batches only to debug preparation and integrity gates, then freeze the protocol before expanding to the fifteen-batch confirmatory sequence."
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/intervention-batch-ledger.schema.json",
+  "title": "Cause-selective intervention batch ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocolVersion", "sealedOn", "records", "splitContract"],
+  "properties": {
+    "protocolVersion": { "const": "INTERVENTION-BATCH-CERTIFICATE-0.1" },
+    "sealedOn": { "type": "string", "format": "date" },
+    "splitContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["developmentInstitutions", "adjudicationInstitutions", "forbiddenSharedKeys", "analysisRunCountNeverEqualsIndependentN"],
+      "properties": {
+        "developmentInstitutions": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+        "adjudicationInstitutions": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true, "minItems": 1 },
+        "forbiddenSharedKeys": { "const": ["preparationBatchId", "specimenId", "aliquotId", "rawXrpdSha256"] },
+        "analysisRunCountNeverEqualsIndependentN": { "const": true }
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/batchRecord" }
+    }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "batchRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["recordId", "institutionId", "preparationBatchId", "specimenId", "aliquotId", "dictionaryArm", "particleSizeArm", "geometryArm", "randomizedOrder", "causeKeyBlindedUntil", "rawXrpdSha256", "gravimetrySha256", "transmissionSha256", "integrityBeforeSha256", "integrityAfterSha256", "negativeEndpoint", "positiveEndpoint", "integrityGate", "adjudicationStatus"],
+      "properties": {
+        "recordId": { "type": "string", "minLength": 1 },
+        "institutionId": { "type": "string", "minLength": 1 },
+        "preparationBatchId": { "type": "string", "minLength": 1 },
+        "specimenId": { "type": "string", "minLength": 1 },
+        "aliquotId": { "type": "string", "minLength": 1 },
+        "dictionaryArm": { "enum": ["complete-negative", "omitted-phase-positive"] },
+        "omittedPhaseId": { "type": ["string", "null"] },
+        "particleSizeArm": { "enum": ["fine", "mixed-coarse"] },
+        "geometryArm": { "enum": ["stationary-flat-plate", "rotating-capillary"] },
+        "wavelengthArm": { "type": ["string", "null"] },
+        "randomizedOrder": { "type": "integer", "minimum": 1 },
+        "causeKeyBlindedUntil": { "type": "string", "format": "date-time" },
+        "rawXrpdSha256": { "$ref": "#/$defs/sha256" },
+        "gravimetrySha256": { "$ref": "#/$defs/sha256" },
+        "transmissionSha256": { "$ref": "#/$defs/sha256" },
+        "integrityBeforeSha256": { "$ref": "#/$defs/sha256" },
+        "integrityAfterSha256": { "$ref": "#/$defs/sha256" },
+        "negativeEndpoint": { "$ref": "#/$defs/endpoint" },
+        "positiveEndpoint": { "$ref": "#/$defs/endpoint" },
+        "integrityGate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["compositionChangePercentagePoints", "phaseChanged", "passed"],
+          "properties": {
+            "compositionChangePercentagePoints": { "type": "number", "minimum": 0 },
+            "phaseChanged": { "type": "boolean" },
+            "passed": { "type": "boolean" }
+          }
+        },
+        "adjudicationStatus": { "enum": ["sealed", "pass", "fail", "quarantined", "unresolved"] }
+      }
+    },
+    "endpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eligible", "estimate", "threshold", "passed", "analysisRunCount"],
+      "properties": {
+        "eligible": { "type": "boolean" },
+        "estimate": { "type": ["number", "null"] },
+        "threshold": { "type": "number" },
+        "passed": { "type": ["boolean", "null"] },
+        "analysisRunCount": { "type": "integer", "minimum": 1 }
+      }
+    }
+  }
+}

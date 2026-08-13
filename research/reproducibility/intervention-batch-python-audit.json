@@ -1,0 +1,16 @@
+{
+  "benchmarkId": "INTERVENTION-BATCH-CERTIFICATE-0.1",
+  "method": "Independent Python exact enumeration using math.comb over every n and k in the sealed search range.",
+  "checks": {
+    "threeBatchEndpointAlpha": true,
+    "threeBatchCannotQualify": true,
+    "minimumN": true,
+    "criticalK": true,
+    "endpointAlpha": true,
+    "endpointPower": true,
+    "jointPowerLowerBound": true,
+    "decisionVector": true
+  },
+  "passed": true,
+  "independenceBoundary": "Independent arithmetic does not supply independent physical batches, validate p<=0.5, or justify exchangeability under institution shift."
+}

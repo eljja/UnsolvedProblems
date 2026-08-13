@@ -1,0 +1,72 @@
+{
+  "benchmarkId": "INTERVENTION-BATCH-CERTIFICATE-0.1",
+  "fixedOn": "2026-08-14",
+  "status": "criteria-fixed-after-rc25-before-any-physical-outcomes",
+  "question": "How many independent preparation batches are required to certify both nuisance-alarm suppression and unknown-phase evidence retention without treating aliquots or analysis reruns as independent evidence?",
+  "claimBoundary": {
+    "unit": "One independently prepared batch contributes at most one binary result to each endpoint, regardless of aliquot, acquisition, or analysis-run count.",
+    "endpointNegative": "A batch passes N when the complete-dictionary negative shows at least 80-percent reduction of the sealed alarm after the cause-selective intervention, with gravimetry stable within one percentage point and no phase-integrity failure.",
+    "endpointPositive": "A batch passes P when the matched omitted-phase positive retains at least 90 percent of its sealed candidate evidence after the same intervention, with the same composition and integrity gates.",
+    "causalLimit": "The certificate tests repeatability of a prespecified positive-negative intervention rule. It does not by itself prove that particle size is the unique physical cause.",
+    "retrospectiveLimit": "RC25 motivated the thresholds. They are prospective only for new physical batches and must not be applied as if preregistered to the historical QARR or D1-D2 files."
+  },
+  "exactDesign": {
+    "null": "For each endpoint separately, an inadequate intervention succeeds on at most half of independent exchangeable future batches: p <= 0.5.",
+    "alternative": "For each endpoint separately, the target intervention succeeds with probability at least 0.9 on independent exchangeable future batches.",
+    "familywiseAlpha": 0.05,
+    "endpointAlpha": 0.025,
+    "targetEndpointPower": 0.9,
+    "targetWorstDependenceJointPowerLowerBound": 0.85,
+    "search": { "minimumBatches": 3, "maximumBatches": 50, "integerCriticalValue": true },
+    "decision": "At the final batch count n, certify only if both endpoint success counts are at least the common integer critical value k. Each endpoint uses an exact upper binomial tail under p=0.5; Bonferroni controls the two-endpoint familywise error.",
+    "jointPowerBound": "Without assuming endpoint independence, lower-bound the probability that both endpoints pass by max(0, power_N + power_P - 1)."
+  },
+  "threeBatchAudit": {
+    "bestPossibleRule": "With n=3, the smallest one-sided binomial tail is obtained by requiring all three successes.",
+    "qualification": "Three batches remain a feasibility pilot. They cannot make either endpoint significant at alpha 0.025 and cannot support a final causal or transport claim."
+  },
+  "futilityOnlySequence": {
+    "checkpoints": [5, 10, 15],
+    "rule": "Stop when either endpoint can no longer reach the final critical value even if every remaining batch succeeds. Never stop early for efficacy.",
+    "errorControl": "Removing only mathematically impossible success paths cannot increase the fixed-final type-I error.",
+    "reporting": "Every stopped path remains in the failure ledger with endpoint counts, integrity failures, and the exact reason continuation became futile."
+  },
+  "shiftLadder": {
+    "exchangeableBatches": "The exact binomial certificate applies only when batch outcomes are independent and exchangeable under the fixed protocol.",
+    "boundedDrift": "If institution or time drift is bounded by a prespecified model, report the resulting coverage or error gap and validate the bound on a held-out institution.",
+    "knownCovariateShift": "Weighted finite-sample methods require a known shift ratio or another sufficient invariance condition; estimated weights do not inherit the same unconditional exact guarantee.",
+    "unknownArbitraryShift": "Refuse a nontrivial finite-sample transport guarantee. Preserve the external institution as a new target population rather than pooling it as another file."
+  },
+  "causalChain": [
+    "Fixed protocol, independent batch IDs, blinded positive-negative cause keys, and prespecified endpoint thresholds",
+    "Aliquot and analysis replication cannot identify between-batch repeatability or external transport",
+    "A batch-level exact certificate links repeated intervention response to a bounded operational reliability claim",
+    "Two exact endpoint tails, phase-integrity gates, and an external-institution shift audit are independently adjudicated",
+    "Only joint endpoint passage plus intact lineage qualifies the intervention rule; novelty discovery remains a separate claim"
+  ],
+  "uncertaintyBudget": {
+    "sampling": "Binomial tails quantify independent between-batch success uncertainty, not within-profile point noise.",
+    "measurement": "Near-threshold alarm reduction and evidence retention require uncertainty intervals from acquisition repeats, but those repeats never increase n.",
+    "multiplicity": "Two endpoints receive alpha 0.025 each; adding a third confirmatory endpoint requires a newly allocated error budget.",
+    "model": "The p <= 0.5 null is an operational reliability boundary, not a theorem that an ineffective physical intervention must be a fair coin.",
+    "shift": "Exchangeability failure invalidates the binomial interpretation even when the arithmetic is correct.",
+    "integrity": "Milling-induced reaction, oxidation, amorphization, or composition change makes the batch a safety failure rather than a nuisance-correction success."
+  },
+  "stopConditions": [
+    "Stop and quarantine a batch on a raw-file hash mismatch, broken randomization key, or early cause-key disclosure.",
+    "Stop causal qualification if preparation batches share source powder in a way that makes their independence claim false.",
+    "Stop and count failure on composition movement above one percentage point or a phase-integrity change after intervention.",
+    "Stop exact-binomial claims when institution, time, operator, or precursor drift makes batches nonexchangeable under the sealed protocol.",
+    "Stop final certification if either endpoint misses the common critical value; success on one endpoint cannot compensate for failure on the other.",
+    "Stop arbitrary-shift coverage claims unless a shift class, invariance condition, or independently validated density ratio was fixed before target outcomes."
+  ],
+  "primarySources": [
+    "https://doi.org/10.1107/S0021889802008798",
+    "https://doi.org/10.1107/S1600576722004708",
+    "https://doi.org/10.1107/S1600576722009888",
+    "https://doi.org/10.1107/S160057672301021X",
+    "https://doi.org/10.1214/23-AOS2276",
+    "https://doi.org/10.1093/jrsssb/qkae009",
+    "https://doi.org/10.1093/jrsssb/qkaf008"
+  ]
+}
