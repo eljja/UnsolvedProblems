@@ -1,0 +1,61 @@
+{
+  "viewId": "RC32-OUTCOME-VIEW",
+  "role": "outcomeHolder",
+  "synthetic": true,
+  "records": [
+    {
+      "enrollmentId": "ENR-A-1",
+      "finalPackageCommitment": "101f47a45fcb86eccee66f3b722149215487487c9cb66622cdc581d15a098148",
+      "vendorCode": "VENDOR-GAMMA",
+      "outcomeClass": "genuine"
+    },
+    {
+      "enrollmentId": "ENR-A-2",
+      "finalPackageCommitment": "101f47a45fcb86eccee66f3b722149215487487c9cb66622cdc581d15a098148",
+      "vendorCode": "VENDOR-GAMMA",
+      "outcomeClass": "genuine"
+    },
+    {
+      "enrollmentId": "ENR-A-3",
+      "finalPackageCommitment": "0a7e298669ba317ff4029af33391598dd3f1d60208ea49058c06e8769c516491",
+      "vendorCode": "VENDOR-DELTA",
+      "outcomeClass": "substitution"
+    },
+    {
+      "enrollmentId": "ENR-B-1",
+      "finalPackageCommitment": "0f48844d5b7169e19eab1a16bab6e869e1c682dc7377ffc111d71e9121123cb2",
+      "vendorCode": "VENDOR-GAMMA",
+      "outcomeClass": "genuine"
+    },
+    {
+      "enrollmentId": "ENR-B-2",
+      "finalPackageCommitment": "0f48844d5b7169e19eab1a16bab6e869e1c682dc7377ffc111d71e9121123cb2",
+      "vendorCode": "VENDOR-GAMMA",
+      "outcomeClass": "genuine"
+    },
+    {
+      "enrollmentId": "ENR-B-3",
+      "finalPackageCommitment": "87441400a02becda6926c461c7c74cce4417a66b9f550fad147a7247003f07e6",
+      "vendorCode": "VENDOR-DELTA",
+      "outcomeClass": "substitution"
+    },
+    {
+      "enrollmentId": "ENR-C-1",
+      "finalPackageCommitment": "183af663b66d12f4fa6971ba9c2d051c1fe01b693ee0c8a1a8cff2001ef8828d",
+      "vendorCode": "VENDOR-GAMMA",
+      "outcomeClass": "genuine"
+    },
+    {
+      "enrollmentId": "ENR-C-2",
+      "finalPackageCommitment": "183af663b66d12f4fa6971ba9c2d051c1fe01b693ee0c8a1a8cff2001ef8828d",
+      "vendorCode": "VENDOR-GAMMA",
+      "outcomeClass": "genuine"
+    },
+    {
+      "enrollmentId": "ENR-C-3",
+      "finalPackageCommitment": "342c0df1f4ff5ea3c27f0f8d82cd6315a19691f62824060c963b9567d373d0a4",
+      "vendorCode": "VENDOR-DELTA",
+      "outcomeClass": "substitution"
+    }
+  ]
+}

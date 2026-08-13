@@ -1,0 +1,17 @@
+{
+  "profile": "urn:unsolved-problems:rfc3161-request-manifest:0.7",
+  "protocolId": "RFC3161-REQUEST-QUALIFICATION-0.7",
+  "payloadPath": "research/reproducibility/unseen-attestation-precommit.json",
+  "payloadBytes": 2406,
+  "payloadSha256": "6ba99770d84da69d19a1270430c04553c1c14cd94d087f9f3ee34fae1b1959d9",
+  "requestPath": "research/reproducibility/rc32-precommit.tsq",
+  "requestBytes": 77,
+  "requestSha256": "520256b63c50ff134e362006c32d8bc8d23212d2405867b9e321af085b275d8c",
+  "version": 1,
+  "messageImprintAlgorithmOid": "2.16.840.1.101.3.4.2.1",
+  "messageImprintHex": "6ba99770d84da69d19a1270430c04553c1c14cd94d087f9f3ee34fae1b1959d9",
+  "nonceDecimal": "122932822206191951380613195239283401625",
+  "certReq": true,
+  "requestedPolicy": null,
+  "qualification": "request-only"
+}

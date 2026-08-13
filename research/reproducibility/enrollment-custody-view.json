@@ -1,0 +1,79 @@
+{
+  "viewId": "RC32-CUSTODY-VIEW",
+  "role": "custodyObserver",
+  "synthetic": true,
+  "records": [
+    {
+      "enrollmentId": "ENR-A-1",
+      "studyId": "STUDY-A",
+      "syntheticRawPackageId": "SYNTHETIC-PACKAGE-X",
+      "custodyObservationId": "CUSTODY-A-1",
+      "observedAt": "2026-08-14T02:00:00Z",
+      "studyScopedCustodyToken": "236353bc962ad4806d1aa8338d637b83dbfa68db7e765053b282dd254d4825fb"
+    },
+    {
+      "enrollmentId": "ENR-A-2",
+      "studyId": "STUDY-A",
+      "syntheticRawPackageId": "SYNTHETIC-PACKAGE-X",
+      "custodyObservationId": "CUSTODY-A-2",
+      "observedAt": "2026-08-14T02:01:00Z",
+      "studyScopedCustodyToken": "236353bc962ad4806d1aa8338d637b83dbfa68db7e765053b282dd254d4825fb"
+    },
+    {
+      "enrollmentId": "ENR-A-3",
+      "studyId": "STUDY-A",
+      "syntheticRawPackageId": "SYNTHETIC-PACKAGE-Y",
+      "custodyObservationId": "CUSTODY-A-3",
+      "observedAt": "2026-08-14T02:02:00Z",
+      "studyScopedCustodyToken": "658cf8c1dab1a7cd7aaa41f41421c2fc0db2b3abc76eca5421beb3f0860bb37f"
+    },
+    {
+      "enrollmentId": "ENR-B-1",
+      "studyId": "STUDY-B",
+      "syntheticRawPackageId": "SYNTHETIC-PACKAGE-X",
+      "custodyObservationId": "CUSTODY-B-1",
+      "observedAt": "2026-08-14T02:03:00Z",
+      "studyScopedCustodyToken": "d7b96c767fe7dc20b0139c8d1010047401aa4950a6c8e9c222ff10a456bccc55"
+    },
+    {
+      "enrollmentId": "ENR-B-2",
+      "studyId": "STUDY-B",
+      "syntheticRawPackageId": "SYNTHETIC-PACKAGE-X",
+      "custodyObservationId": "CUSTODY-B-2",
+      "observedAt": "2026-08-14T02:04:00Z",
+      "studyScopedCustodyToken": "d7b96c767fe7dc20b0139c8d1010047401aa4950a6c8e9c222ff10a456bccc55"
+    },
+    {
+      "enrollmentId": "ENR-B-3",
+      "studyId": "STUDY-B",
+      "syntheticRawPackageId": "SYNTHETIC-PACKAGE-Y",
+      "custodyObservationId": "CUSTODY-B-3",
+      "observedAt": "2026-08-14T02:05:00Z",
+      "studyScopedCustodyToken": "b9a11f6d7789e9620d902bdb1088c69312d0be23458b661e6da7409099fbe2fe"
+    },
+    {
+      "enrollmentId": "ENR-C-1",
+      "studyId": "STUDY-C",
+      "syntheticRawPackageId": "SYNTHETIC-PACKAGE-X",
+      "custodyObservationId": "CUSTODY-C-1",
+      "observedAt": "2026-08-14T02:06:00Z",
+      "studyScopedCustodyToken": "87e6ca56fcd99da15b7ae2466dce0363b70adb109bc4f21c4741cf7b5e0b830d"
+    },
+    {
+      "enrollmentId": "ENR-C-2",
+      "studyId": "STUDY-C",
+      "syntheticRawPackageId": "SYNTHETIC-PACKAGE-X",
+      "custodyObservationId": "CUSTODY-C-2",
+      "observedAt": "2026-08-14T02:07:00Z",
+      "studyScopedCustodyToken": "87e6ca56fcd99da15b7ae2466dce0363b70adb109bc4f21c4741cf7b5e0b830d"
+    },
+    {
+      "enrollmentId": "ENR-C-3",
+      "studyId": "STUDY-C",
+      "syntheticRawPackageId": "SYNTHETIC-PACKAGE-Y",
+      "custodyObservationId": "CUSTODY-C-3",
+      "observedAt": "2026-08-14T02:08:00Z",
+      "studyScopedCustodyToken": "750b236ae287ef8e03d46125b1d73ba19c0f75dd2b41d9f7988f0255fbbcbdec"
+    }
+  ]
+}

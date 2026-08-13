@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/tsa-request-manifest.schema.json",
+  "title": "RC32 RFC 3161 request manifest",
+  "type": "object",
+  "required": ["profile", "protocolId", "payloadPath", "payloadBytes", "payloadSha256", "requestPath", "requestBytes", "requestSha256", "version", "messageImprintAlgorithmOid", "messageImprintHex", "nonceDecimal", "certReq", "requestedPolicy", "qualification"],
+  "properties": {
+    "profile": { "const": "urn:unsolved-problems:rfc3161-request-manifest:0.7" },
+    "protocolId": { "const": "RFC3161-REQUEST-QUALIFICATION-0.7" },
+    "payloadPath": { "const": "research/reproducibility/unseen-attestation-precommit.json" },
+    "payloadBytes": { "type": "integer", "minimum": 1 },
+    "payloadSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "requestPath": { "const": "research/reproducibility/rc32-precommit.tsq" },
+    "requestBytes": { "type": "integer", "minimum": 40 },
+    "requestSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "version": { "const": 1 },
+    "messageImprintAlgorithmOid": { "const": "2.16.840.1.101.3.4.2.1" },
+    "messageImprintHex": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "nonceDecimal": { "type": "string", "pattern": "^[0-9]+$" },
+    "certReq": { "const": true },
+    "requestedPolicy": { "type": "null" },
+    "qualification": { "const": "request-only" }
+  },
+  "additionalProperties": false
+}

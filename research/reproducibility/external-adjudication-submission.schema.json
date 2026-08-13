@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/external-adjudication-submission.schema.json",
+  "title": "RC32 external adjudicator prereveal submission",
+  "description": "Contract for an independently authored parser to disclose implementation provenance and commit at least twenty private-case predictions before truth reveal.",
+  "type": "object",
+  "required": ["profile", "teamId", "implementation", "independenceDisclosure", "protocolDigest", "privateCorpusDigest", "caseCount", "predictions", "predictionDigest", "signature", "timeEvidence", "submittedAt"],
+  "properties": {
+    "profile": { "const": "urn:unsolved-problems:external-adjudication-submission:0.7" },
+    "teamId": { "type": "string", "pattern": "^TEAM-[A-Z0-9-]+$" },
+    "implementation": {
+      "type": "object",
+      "required": ["language", "parserLibrary", "parserVersion", "sourceCommit", "repository"],
+      "properties": {
+        "language": { "type": "string", "minLength": 2 },
+        "parserLibrary": { "type": "string", "minLength": 2 },
+        "parserVersion": { "type": "string", "minLength": 1 },
+        "sourceCommit": { "type": "string", "pattern": "^[a-f0-9]{7,64}$" },
+        "repository": { "type": "string", "pattern": "^https://" }
+      },
+      "additionalProperties": false
+    },
+    "independenceDisclosure": {
+      "type": "object",
+      "required": ["currentRepositoryCodeUsed", "currentPredictionsUsed", "currentRevealUsed", "sharedAuthors", "sharedParserLibrary"],
+      "properties": {
+        "currentRepositoryCodeUsed": { "const": false },
+        "currentPredictionsUsed": { "const": false },
+        "currentRevealUsed": { "const": false },
+        "sharedAuthors": { "const": false },
+        "sharedParserLibrary": { "const": false }
+      },
+      "additionalProperties": false
+    },
+    "protocolDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "privateCorpusDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "caseCount": { "type": "integer", "minimum": 20 },
+    "predictions": {
+      "type": "array",
+      "minItems": 20,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["caseId", "verdict", "firstCode"],
+        "properties": {
+          "caseId": { "type": "string", "pattern": "^PRIVATE-[A-Z0-9-]+$" },
+          "verdict": { "enum": ["accept-contract", "reject-structure", "reject-semantic", "quarantine", "invalidate-adjudication", "accept-contract-indistinguishable"] },
+          "firstCode": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "predictionDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "signature": {
+      "type": "object",
+      "required": ["algorithm", "publicKeyId", "valueBase64"],
+      "properties": {
+        "algorithm": { "type": "string", "minLength": 3 },
+        "publicKeyId": { "type": "string", "minLength": 3 },
+        "valueBase64": { "type": "string", "minLength": 16 }
+      },
+      "additionalProperties": false
+    },
+    "timeEvidence": {
+      "type": "object",
+      "required": ["kind", "artifactDigest", "artifactUrl"],
+      "properties": {
+        "kind": { "enum": ["rfc3161", "append-only-log"] },
+        "artifactDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "artifactUrl": { "type": "string", "pattern": "^https://" }
+      },
+      "additionalProperties": false
+    },
+    "submittedAt": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}

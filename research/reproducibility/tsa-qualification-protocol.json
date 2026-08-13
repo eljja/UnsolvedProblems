@@ -1,0 +1,48 @@
+{
+  "protocolId": "RFC3161-REQUEST-QUALIFICATION-0.7",
+  "fixedOn": "2026-08-14",
+  "status": "request-generation-and-explicit-response-refusal",
+  "payload": "research/reproducibility/unseen-attestation-precommit.json",
+  "requestProfile": {
+    "version": 1,
+    "messageImprintAlgorithm": "2.16.840.1.101.3.4.2.1",
+    "messageImprintAlgorithmName": "sha-256",
+    "payloadEncoding": "exact-file-bytes",
+    "nonce": "deterministic synthetic 128-bit integer derived from payload digest and protocol ID",
+    "certReq": true,
+    "requestedPolicy": null
+  },
+  "qualificationGates": [
+    "DER request parses as TimeStampReq",
+    "version is 1",
+    "messageImprint algorithm is SHA-256",
+    "hashedMessage equals SHA-256 of the exact payload bytes",
+    "nonce equals the sealed request manifest",
+    "certReq is true",
+    "TimeStampResp status is granted or grantedWithMods",
+    "CMS SignedData eContentType is id-ct-TSTInfo",
+    "TSTInfo messageImprint equals the request",
+    "TSA certificate has timeStamping EKU and chains to an independently trusted root",
+    "CMS signature and signed attributes verify",
+    "genTime, policy, serial, accuracy, ordering, and nonce satisfy the frozen appraisal policy"
+  ],
+  "currentBoundary": {
+    "opensslAvailable": false,
+    "responseSupplied": false,
+    "requestDerQualified": true,
+    "responseSignatureQualified": false,
+    "trustedTimeQualified": false,
+    "reason": "The environment has no OpenSSL executable and no external TSA response or trust anchor. The CLI therefore verifies request construction and refuses trusted-time qualification."
+  },
+  "externalVerificationInterface": {
+    "command": "python scripts/tsa_qualification.py --response <response.tsr> --ca-file <tsa-root.pem>",
+    "backend": "openssl ts -verify when an OpenSSL executable, response, request, and explicit CA file are supplied",
+    "failureRule": "Missing backend, response, CA file, signature verification, imprint match, or nonce match yields unqualified rather than partial success."
+  },
+  "nonClaims": [
+    "The deterministic synthetic nonce is reproducible test data, not a production randomness source.",
+    "A valid TimeStampReq is not evidence that a TSA received it.",
+    "A Git commit time is not substituted for a TimeStampToken.",
+    "No external TSA, certificate chain, CMS signature, genTime, accuracy, or ordering property is verified in RC32."
+  ]
+}

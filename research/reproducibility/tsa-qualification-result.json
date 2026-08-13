@@ -1,0 +1,54 @@
+{
+  "resultId": "RFC3161-REQUEST-QUALIFICATION-RESULT-0.7",
+  "computedOn": "2026-08-14",
+  "protocolId": "RFC3161-REQUEST-QUALIFICATION-0.7",
+  "requestManifest": {
+    "profile": "urn:unsolved-problems:rfc3161-request-manifest:0.7",
+    "protocolId": "RFC3161-REQUEST-QUALIFICATION-0.7",
+    "payloadPath": "research/reproducibility/unseen-attestation-precommit.json",
+    "payloadBytes": 2406,
+    "payloadSha256": "6ba99770d84da69d19a1270430c04553c1c14cd94d087f9f3ee34fae1b1959d9",
+    "requestPath": "research/reproducibility/rc32-precommit.tsq",
+    "requestBytes": 77,
+    "requestSha256": "520256b63c50ff134e362006c32d8bc8d23212d2405867b9e321af085b275d8c",
+    "version": 1,
+    "messageImprintAlgorithmOid": "2.16.840.1.101.3.4.2.1",
+    "messageImprintHex": "6ba99770d84da69d19a1270430c04553c1c14cd94d087f9f3ee34fae1b1959d9",
+    "nonceDecimal": "122932822206191951380613195239283401625",
+    "certReq": true,
+    "requestedPolicy": null,
+    "qualification": "request-only"
+  },
+  "tests": {
+    "base_request_der_parses": true,
+    "sha256_algorithm_oid_matches": true,
+    "message_imprint_matches_exact_payload": true,
+    "deterministic_synthetic_nonce_matches_manifest": true,
+    "certreq_is_true": true,
+    "mutated_payload_is_rejected_by_imprint": true,
+    "wrong_nonce_is_rejected": true,
+    "corrupt_der_is_rejected": true
+  },
+  "testCount": 8,
+  "passedRequestTests": 8,
+  "environment": {
+    "opensslAvailableAtQualification": false,
+    "externalResponseSupplied": false,
+    "explicitCaFileSupplied": false
+  },
+  "responseVerification": {
+    "statusGranted": false,
+    "cmsSignatureVerified": false,
+    "tsaChainVerified": false,
+    "tstInfoImprintVerified": false,
+    "nonceVerifiedAgainstResponse": false,
+    "trustedTimeQualified": false,
+    "reason": "No external TimeStampResp, OpenSSL backend, or explicit CA trust anchor was available; request construction passes but trusted-time qualification is refused."
+  },
+  "hypotheses": {
+    "R1_valid_request_establishes_trusted_time": false,
+    "R2_git_or_local_generation_substitutes_for_tsa": false,
+    "R3_request_imprint_detects_payload_change": true
+  },
+  "nextGate": "Obtain a TimeStampResp from an authorized external TSA, retain the exact request bytes, verify it with an explicitly selected CA file and OpenSSL ts -verify, independently parse TSTInfo policy/imprint/nonce/genTime, and archive the response plus verification transcript before claiming trusted time."
+}

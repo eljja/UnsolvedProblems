@@ -1,0 +1,86 @@
+{
+  "packageId": "EXTERNAL-ADJUDICATION-COLLABORATION-PACKAGE-0.7",
+  "builtOn": "2026-08-14",
+  "purpose": "Inputs sufficient for an external team to author an independent parser and return a signed, externally time-anchored prereveal prediction submission on at least twenty privately generated cases.",
+  "includedFiles": [
+    {
+      "path": "research/reproducibility/attestation-evidence.schema.json",
+      "sha256": "e4e269b56be50af07a3eb89a4a4caa34904a3a3628e6d3ed432ef36655885b81",
+      "bytes": 3870
+    },
+    {
+      "path": "research/reproducibility/supply-chain-trace.schema.json",
+      "sha256": "4dda4902be3782d4d07cf9b6e0926c4f829449dba4a3dbe5b20103a44031c0ea",
+      "bytes": 2630
+    },
+    {
+      "path": "research/reproducibility/reference-value-registry.schema.json",
+      "sha256": "75966bce0a79f2fc2e1441b5f8fe49ed9cbbd2c099aad4324fabad3cbfbbfc31",
+      "bytes": 2983
+    },
+    {
+      "path": "research/reproducibility/revocation-snapshot.schema.json",
+      "sha256": "5caf0c9dedc69499fa12b525f2db1f0b5f454459c5b3e58f643f67aff710cb81",
+      "bytes": 1727
+    },
+    {
+      "path": "research/reproducibility/claim-denominator-ledger.schema.json",
+      "sha256": "20218e84639680f0afa9fe711817c3602ee29b6520e09957fd6729eea2d09aca",
+      "bytes": 3334
+    },
+    {
+      "path": "research/reproducibility/adjudication-timestamp.schema.json",
+      "sha256": "105a8275ec60fd483a3da112225f10d29e056d68fae9ab8ce8cdfe54de49cae5",
+      "bytes": 2080
+    },
+    {
+      "path": "research/reproducibility/physical-package-commitment.schema.json",
+      "sha256": "6ce10fa7aee5fa2cd60590100097b674919d5b82de87e1608d53fb50f0ec6a1c",
+      "bytes": 1378
+    },
+    {
+      "path": "research/reproducibility/unseen-attestation-protocol.json",
+      "sha256": "2a09f02530fb0d03f428029a92b947f07298c4df7c9175be68fdea984ead0d10",
+      "bytes": 4999
+    },
+    {
+      "path": "research/reproducibility/external-adjudication-submission.schema.json",
+      "sha256": "23e2c530c5ab57228faaf236aca6d646f97489c2ab9433ed6ca66f0c836d281d",
+      "bytes": 3613
+    }
+  ],
+  "excludedDevelopmentFiles": [
+    "scripts/adjudicate-unseen-attestation-js.mjs",
+    "scripts/adjudicate_unseen_attestation_python.py",
+    "research/reproducibility/unseen-attestation-js-predictions.json",
+    "research/reproducibility/unseen-attestation-python-predictions.json",
+    "research/reproducibility/unseen-attestation-reveal.json"
+  ],
+  "publicDevelopmentCorpus": {
+    "manifest": "research/reproducibility/unseen-attestation-corpus-manifest.json",
+    "corpus": "research/reproducibility/unseen-attestation-corpus.json.gz",
+    "use": "Parser-conformance development only; its reveal is public and it cannot serve as the private final audit."
+  },
+  "privateAuditRequirements": {
+    "minimumCases": 20,
+    "generatorIndependentFromCurrentFixtureAndReveal": true,
+    "outcomesUnavailableUntilAllSignedSubmissionsAreExternallyTimeAnchored": true,
+    "differentParserLibrary": true,
+    "differentAuthors": true,
+    "unexplainedMismatchMaximum": 0,
+    "requiredMismatchClasses": [
+      "profile-ambiguity",
+      "parser-or-implementation-error",
+      "threat-model-disagreement",
+      "reveal-error"
+    ]
+  },
+  "currentStatus": {
+    "externalTeamEnrolled": false,
+    "privateCasesReceived": 0,
+    "signedSubmissionReceived": false,
+    "externallyVerifiedTimeEvidenceReceived": false,
+    "reason": "The package freezes collaboration inputs; no external institution has participated in RC32."
+  },
+  "safetyAndDisclosure": "Private cases must remain synthetic or use legally authorized hardware. Do not include production keys, customer identifiers, exploit instructions, or uncoordinated vulnerability details."
+}

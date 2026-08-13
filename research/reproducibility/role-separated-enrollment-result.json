@@ -1,0 +1,58 @@
+{
+  "resultId": "ROLE-SEPARATED-PACKAGE-ENROLLMENT-RESULT-0.7",
+  "computedOn": "2026-08-14",
+  "protocolId": "ROLE-SEPARATED-PACKAGE-ENROLLMENT-0.7",
+  "records": 9,
+  "studies": 3,
+  "columns": 3,
+  "withinStudyChecks": [
+    {
+      "studyId": "STUDY-A",
+      "repeatMatches": true,
+      "differentPackageDiffers": true,
+      "duplicatePointerCorrect": true,
+      "scopeKeyMatchesStudy": true
+    },
+    {
+      "studyId": "STUDY-B",
+      "repeatMatches": true,
+      "differentPackageDiffers": true,
+      "duplicatePointerCorrect": true,
+      "scopeKeyMatchesStudy": true
+    },
+    {
+      "studyId": "STUDY-C",
+      "repeatMatches": true,
+      "differentPackageDiffers": true,
+      "duplicatePointerCorrect": true,
+      "scopeKeyMatchesStudy": true
+    }
+  ],
+  "crossStudyUnlinkable": true,
+  "forbiddenFields": {
+    "custodyHasVendorOrOutcome": false,
+    "pseudonymizerHasRawOrOutcome": false,
+    "outcomeHasRawTokenOrKeys": false
+  },
+  "viewDigests": {
+    "custody": "9e97ecd4fb1f2b41829796cb40c584dff617eae5a3692f911f3a8ad25956aa48",
+    "pseudonymizer": "a9c3f4212b64e36c368d62a1ab6db267699bb7dd66df6fa7c1cba01826d6c418",
+    "outcome": "97500c78c500a13bb6086ad4e554f5f27c87436d53103480f211683dcdd80800",
+    "publicLedger": "bcaca9cea4cecb32ed4f36a879e35bdc6017882d92fa09dc9c6731325077962b"
+  },
+  "hypotheses": {
+    "E1_sameStudyEqualityAndCrossStudyUnlinkability": true,
+    "E2_singleRoleFieldSeparation": true,
+    "E3_syntheticPassEstablishesRealPrivacyAndCustody": false
+  },
+  "qualification": {
+    "syntheticMatrix": "pass",
+    "productionPrivacy": "unqualified",
+    "physicalCustody": "unqualified",
+    "twoRoleCollusionResistance": "unqualified",
+    "voprf": "not-implemented"
+  },
+  "realPackages": 0,
+  "productionKeys": 0,
+  "conclusion": "The 3x3 synthetic matrix detects within-study repeats, separates different packages, prevents direct cross-study commitment equality, and keeps raw identity apart from vendor outcomes in every single role view. Public demo keys, synthetic custody, and enrollmentId joins leave real privacy and collusion resistance unqualified."
+}

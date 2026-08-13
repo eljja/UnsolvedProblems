@@ -1,0 +1,81 @@
+{
+  "profile": "urn:unsolved-problems:role-separated-enrollment-ledger:0.7",
+  "protocolId": "ROLE-SEPARATED-PACKAGE-ENROLLMENT-0.7",
+  "frozenAt": "2026-08-14T02:15:00Z",
+  "records": [
+    {
+      "enrollmentId": "ENR-A-1",
+      "studyId": "STUDY-A",
+      "packageCommitment": "101f47a45fcb86eccee66f3b722149215487487c9cb66622cdc581d15a098148",
+      "duplicateOf": null,
+      "scopeKeyId": "KEY-STUDY-A",
+      "custodyObservationDigest": "68b42370cbdcd78f3f494de33f8e26796d837e346f91bd377a1d96f7b15f312e"
+    },
+    {
+      "enrollmentId": "ENR-A-2",
+      "studyId": "STUDY-A",
+      "packageCommitment": "101f47a45fcb86eccee66f3b722149215487487c9cb66622cdc581d15a098148",
+      "duplicateOf": "ENR-A-1",
+      "scopeKeyId": "KEY-STUDY-A",
+      "custodyObservationDigest": "73c82b1ad2d8d4f788673dc578a6d81b809b595f2cc33b527b86f4b1ed94eb88"
+    },
+    {
+      "enrollmentId": "ENR-A-3",
+      "studyId": "STUDY-A",
+      "packageCommitment": "0a7e298669ba317ff4029af33391598dd3f1d60208ea49058c06e8769c516491",
+      "duplicateOf": null,
+      "scopeKeyId": "KEY-STUDY-A",
+      "custodyObservationDigest": "79be4d424b6f4a8a6a12aab088039f84619bc1a753988fe798f01b3a4e270450"
+    },
+    {
+      "enrollmentId": "ENR-B-1",
+      "studyId": "STUDY-B",
+      "packageCommitment": "0f48844d5b7169e19eab1a16bab6e869e1c682dc7377ffc111d71e9121123cb2",
+      "duplicateOf": null,
+      "scopeKeyId": "KEY-STUDY-B",
+      "custodyObservationDigest": "9e395bf0ee7507727740b3445e514f573da80fa3bc59f66c6692b10feb64709a"
+    },
+    {
+      "enrollmentId": "ENR-B-2",
+      "studyId": "STUDY-B",
+      "packageCommitment": "0f48844d5b7169e19eab1a16bab6e869e1c682dc7377ffc111d71e9121123cb2",
+      "duplicateOf": "ENR-B-1",
+      "scopeKeyId": "KEY-STUDY-B",
+      "custodyObservationDigest": "089848ec1156155030208f11e0cd3c250e3933b444efb87d7828f7ac770376f3"
+    },
+    {
+      "enrollmentId": "ENR-B-3",
+      "studyId": "STUDY-B",
+      "packageCommitment": "87441400a02becda6926c461c7c74cce4417a66b9f550fad147a7247003f07e6",
+      "duplicateOf": null,
+      "scopeKeyId": "KEY-STUDY-B",
+      "custodyObservationDigest": "ae0d2deeefb55d21506f87f00d7c5af0edf7f1262865bdf94aa6f6fc4fdc8a81"
+    },
+    {
+      "enrollmentId": "ENR-C-1",
+      "studyId": "STUDY-C",
+      "packageCommitment": "183af663b66d12f4fa6971ba9c2d051c1fe01b693ee0c8a1a8cff2001ef8828d",
+      "duplicateOf": null,
+      "scopeKeyId": "KEY-STUDY-C",
+      "custodyObservationDigest": "5e9efb82b593bb01491c5b8228c787aeb67d262c4c426cabb5eb08d902fc58b7"
+    },
+    {
+      "enrollmentId": "ENR-C-2",
+      "studyId": "STUDY-C",
+      "packageCommitment": "183af663b66d12f4fa6971ba9c2d051c1fe01b693ee0c8a1a8cff2001ef8828d",
+      "duplicateOf": "ENR-C-1",
+      "scopeKeyId": "KEY-STUDY-C",
+      "custodyObservationDigest": "6ec319110c18295880a656a91be73a88b6a0600e416c39cf576f5014f9749cea"
+    },
+    {
+      "enrollmentId": "ENR-C-3",
+      "studyId": "STUDY-C",
+      "packageCommitment": "342c0df1f4ff5ea3c27f0f8d82cd6315a19691f62824060c963b9567d373d0a4",
+      "duplicateOf": null,
+      "scopeKeyId": "KEY-STUDY-C",
+      "custodyObservationDigest": "cac84467ae3b77425936e6efa7f137de609c402a92e2043033af5def04ad210a"
+    }
+  ],
+  "ledgerDigest": "78641a39a13e7af88a03876a0577ed047ac45504058a8d275eb96f238c318a22",
+  "qualification": "synthetic-only"
+}

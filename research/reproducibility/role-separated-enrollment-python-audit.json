@@ -1,0 +1,44 @@
+{
+  "auditId": "INDEPENDENT-ROLE-SEPARATED-ENROLLMENT-AUDIT-0.7",
+  "computedOn": "2026-08-14",
+  "passed": true,
+  "checks": {
+    "nine_records_in_every_view": true,
+    "same_unique_enrollment_ids": true,
+    "same_study_repeat_detected_three_of_three": true,
+    "different_package_separated_three_of_three": true,
+    "same_package_unlinked_across_three_studies": true,
+    "duplicate_pointers_exact": true,
+    "single_role_fields_minimized": true,
+    "view_records_bind_by_commitment": true,
+    "custody_observation_digests_recomputed": true,
+    "public_ledger_digest_recomputed": true,
+    "generator_uses_hmac_sha256": true,
+    "generator_keys_explicitly_synthetic": true,
+    "real_privacy_not_claimed": true,
+    "physical_custody_not_claimed": true,
+    "voprf_not_claimed": true,
+    "two_role_collusion_remains": true,
+    "synthetic_hypotheses_bounded": true
+  },
+  "recomputed": {
+    "sameStudyRepeat": {
+      "STUDY-A": true,
+      "STUDY-B": true,
+      "STUDY-C": true
+    },
+    "differentPackage": {
+      "STUDY-A": true,
+      "STUDY-B": true,
+      "STUDY-C": true
+    },
+    "crossStudyUnlinkability": {
+      "SYNTHETIC-PACKAGE-X": true,
+      "SYNTHETIC-PACKAGE-Y": true
+    },
+    "singleRoleSeparation": true,
+    "pairCollusionCanJoinOnEnrollmentId": true
+  },
+  "independenceBoundary": "This Python audit does not execute JavaScript or use the synthetic HMAC keys. It recomputes equality relations, field minimization, cross-view bindings, custody digests, and the public ledger digest from committed views. It cannot independently prove the generator used secret production keys, physical custody, or cryptographic privacy.",
+  "conclusion": "The committed views satisfy the 3x3 synthetic equality matrix and single-role field separation. Shared enrollment IDs make two-role collusion joinable, while public demo keys and synthetic custody leave real privacy and provenance unqualified."
+}

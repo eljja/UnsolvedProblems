@@ -1,0 +1,65 @@
+{
+  "protocolId": "ROLE-SEPARATED-PACKAGE-ENROLLMENT-0.7",
+  "fixedOn": "2026-08-14",
+  "status": "synthetic-three-role-enrollment-qualification",
+  "purpose": "Test whether duplicate-package detection inside one study can coexist with cross-study unlinkability and outcome-blind role separation before any real package or vendor is enrolled.",
+  "roles": {
+    "custodyObserver": {
+      "sees": ["studyId", "syntheticRawPackageId", "custodyObservationId", "observationTime"],
+      "produces": ["studyScopedCustodyToken"],
+      "mustNotSee": ["vendorCode", "outcomeClass", "studyHmacKey", "finalPackageCommitment"]
+    },
+    "studyPseudonymizer": {
+      "sees": ["studyId", "studyScopedCustodyToken", "scopeKeyId"],
+      "produces": ["finalPackageCommitment"],
+      "mustNotSee": ["syntheticRawPackageId", "vendorCode", "outcomeClass", "custodyKey"]
+    },
+    "outcomeHolder": {
+      "sees": ["enrollmentId", "finalPackageCommitment", "vendorCode", "outcomeClass"],
+      "produces": ["sealedOutcomeRecord"],
+      "mustNotSee": ["syntheticRawPackageId", "studyScopedCustodyToken", "custodyKey", "studyHmacKey"]
+    }
+  },
+  "construction": {
+    "custodyToken": "HMAC-SHA-256(custodyKey, domainSeparator || studyId || normalizedPackageId)",
+    "packageCommitment": "HMAC-SHA-256(studyKey[studyId], domainSeparator || studyId || custodyToken)",
+    "keySeparation": "Each study has a distinct study key. The custody key and study keys belong to different roles. Published source contains synthetic demo keys only.",
+    "normalization": "Synthetic package identifiers are uppercase ASCII tokens. Real deployments need an authority-controlled, versioned normalization rule and collision audit.",
+    "strongerAlternative": "RFC 9497 VOPRF can reduce raw-input disclosure to the PRF service, but requires a different protocol, proof verification, and implementation audit; RC32 does not implement or claim VOPRF privacy."
+  },
+  "matrix": {
+    "studies": ["STUDY-A", "STUDY-B", "STUDY-C"],
+    "columns": ["PACKAGE-X-FIRST", "PACKAGE-X-REPEAT", "PACKAGE-Y-FIRST"],
+    "records": 9,
+    "expectedRelations": [
+      "Within each study, PACKAGE-X-FIRST equals PACKAGE-X-REPEAT.",
+      "Within each study, PACKAGE-Y-FIRST differs from both PACKAGE-X entries.",
+      "Across studies, every commitment for the same raw package differs.",
+      "No single role view contains both a raw package identifier and vendor or outcome truth."
+    ]
+  },
+  "decisionRules": {
+    "acceptSyntheticQualification": "All nine records obey within-study equality, within-study separation, cross-study unlinkability, view minimization, and exact view-to-public-ledger binding.",
+    "reject": ["missed within-study duplicate", "false duplicate between different packages", "cross-study commitment reuse", "raw identifier in pseudonymizer or outcome view", "vendor or outcome in custody or pseudonymizer view", "view digest mismatch"],
+    "stopBeforeHardware": ["one organization controls custody and outcome truth", "production key appears in repository", "normalization collision is unresolved", "custody observation is not independently witnessed", "role identifiers permit unauthorized join"]
+  },
+  "hypotheses": [
+    {
+      "id": "E1",
+      "claim": "A two-stage study-scoped HMAC detects repeats within a study while preventing direct commitment equality across studies.",
+      "rejectWhen": "Any same-study repeat differs, any different package collides, or the same raw package produces the same final commitment in two studies."
+    },
+    {
+      "id": "E2",
+      "claim": "Field-level role separation prevents any single role from joining raw identity to vendor outcome.",
+      "rejectWhen": "Any committed role view contains both a raw package identifier or custody token and vendor or outcome truth."
+    },
+    {
+      "id": "E3",
+      "claim": "Passing the synthetic equality matrix establishes real package privacy and custody.",
+      "rejectWhen": "The result uses public demo keys, synthetic identifiers, or no physical observation, so privacy and custody remain unqualified."
+    }
+  ],
+  "collusionBoundary": "Custody and outcome roles can join records through enrollmentId if they collude. The protocol limits single-role disclosure; it is not secure multiparty computation, anonymity, or protection against two-role collusion.",
+  "safety": "All identifiers, keys, vendors, outcomes, and observations are synthetic. No real serial, production key, customer record, package, or live supply-chain action is present."
+}
