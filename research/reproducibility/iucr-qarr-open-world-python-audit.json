@@ -1,0 +1,35 @@
+{
+  "auditId": "IUCR-QARR-OPEN-WORLD-PYTHON-AUDIT-0.1",
+  "generatedOn": "2026-08-14",
+  "implementation": "Python standard library; does not import or execute the JavaScript open-world reduction",
+  "blindCalibration": {
+    "s0": 0.993912948,
+    "massThreshold": 10,
+    "residualThreshold": 0.336902813,
+    "knownOnlyFalseAlarms": 0,
+    "targetKnownMass": 82.786998,
+    "targetMissingMass": 17.213002,
+    "targetResidual": 0.760565887,
+    "targetAlarm": true
+  },
+  "candidateAttribution": {
+    "fullSelected": "brucite",
+    "fullBruciteMass": 15.778303,
+    "fullBruciteResidualReduction": 0.957654955,
+    "maskedSelected": "brucite",
+    "maskedBruciteMass": 18.865031,
+    "maskedBruciteResidualReduction": 0.830204913
+  },
+  "closedPeakComposition": {
+    "corundum": 33.251045,
+    "fluorite": 35.462906,
+    "zincite": 31.286049
+  },
+  "decisions": {
+    "H1_closedThreePhaseSilentUnsafe": true,
+    "H2_blindClosureDetectsMissingMass": false,
+    "H3_candidateCompetitionIdentifiesBrucite": true,
+    "H4_attributionSurvivesDominantPeakMask": true,
+    "independentPhysicalRungQualified": false
+  }
+}

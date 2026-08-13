@@ -1,0 +1,75 @@
+{
+  "manifestId": "IUCR-QARR-OPEN-WORLD-MANIFEST-0.1",
+  "reviewedOn": "2026-08-14",
+  "status": "source-lineage-fixed-before-sample-2-computation",
+  "source": {
+    "currentDataPage": "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/data",
+    "sampleDescription": "https://www.iucr.org/__data/iucr/powder/QARR/samples.htm",
+    "archiveIndex": "https://web.archive.org/cdx/"
+  },
+  "transportRule": "Try the current official numerical response first, then the fixed archive record. Parse exactly 7,251 rows, tolerate archived angle printing drift only within 0.00002 degree, canonicalize the nominal angle, preserve counts, and hash deterministic UTF-8/LF output.",
+  "knowledgeFirewall": "The target and candidate hashes are fixed together, but detector calibration code may not load either candidate profile or official Sample 2 truth until its alarm is frozen.",
+  "files": [
+    {
+      "name": "cpd-2.prn",
+      "role": "open-world-target",
+      "officialUrl": "https://www.iucr.org/__data/iucr/powder/QARR/col/cpd-2.prn",
+      "archive": {
+        "timestamp": "20090728004708",
+        "original": "http://www.iucr.org:80/__data/iucr/powder/QARR/col/cpd-2.prn",
+        "warcDigest": "Q4X3VCV2QI6JL3NWHGXNIWFZMJQE5RFL",
+        "cdxLength": 28854
+      },
+      "transport": "Current official URL with the fixed Internet Archive replay as an HTTP-refusal fallback; local cache reuse does not change source provenance.",
+      "bytes": 137770,
+      "sha256": "0bfa3791f9c0e9146441b0a99a8190cf4c3fdda1e68feb3d882fa8a03a0096ac",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "stepDegrees2Theta": 0.02
+    },
+    {
+      "name": "brucite.prn",
+      "role": "candidate-phase-reference",
+      "officialUrl": "https://www.iucr.org/__data/iucr/powder/QARR/col/brucite.prn",
+      "archive": {
+        "timestamp": "20090728004638",
+        "original": "http://www.iucr.org:80/__data/iucr/powder/QARR/col/brucite.prn",
+        "warcDigest": "ALYCWLCRIKWV53MJTRQ6BZNMN3DVPLS2",
+        "cdxLength": 28132
+      },
+      "transport": "Current official URL with the fixed Internet Archive replay as an HTTP-refusal fallback; local cache reuse does not change source provenance.",
+      "bytes": 137770,
+      "sha256": "146366660a8ab80d8d1e5f9d460dcf657ebc9c4f06d8c347f65f9cb97934c9a8",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "stepDegrees2Theta": 0.02
+    },
+    {
+      "name": "silica.prn",
+      "role": "candidate-phase-decoy",
+      "officialUrl": "https://www.iucr.org/__data/iucr/powder/QARR/col/silica.prn",
+      "archive": {
+        "timestamp": "20090728005604",
+        "original": "http://www.iucr.org:80/__data/iucr/powder/QARR/col/silica.prn",
+        "warcDigest": "ZK7NLXMPZXH6TQ3RC6WQ5NFDUVR52WOB",
+        "cdxLength": 26797
+      },
+      "transport": "Current official URL with the fixed Internet Archive replay as an HTTP-refusal fallback; local cache reuse does not change source provenance.",
+      "bytes": 137770,
+      "sha256": "80f4ffa32da46db96d96e896116290ed79830d41da5da236d7a5a9cf3fd0c6e0",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "stepDegrees2Theta": 0.02
+    }
+  ],
+  "verified": {
+    "files": 3,
+    "uniqueHashes": 3,
+    "totalBytes": 413310,
+    "everyFileTwoColumnMonotone": true
+  },
+  "localCache": "Temporary analysis input only; numerical profiles are not redistributed by this repository."
+}

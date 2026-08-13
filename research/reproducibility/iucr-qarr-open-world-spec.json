@@ -1,0 +1,112 @@
+{
+  "benchmarkId": "IUCR-QARR-OPEN-WORLD-PHASE-0.1",
+  "sealedOn": "2026-08-14",
+  "status": "sealed-before-sample-2-numerical-computation",
+  "question": "Can a three-phase quantitative diffraction pipeline refuse a specimen containing an unmodelled fourth phase, estimate the missing mass without seeing that phase, and identify the phase from a small candidate library without reusing target truth?",
+  "sourceRoles": {
+    "calibration": ["cpd-1a.prn", "cpd-1b.prn", "cpd-1c.prn"],
+    "closedWorldValidation": ["cpd-1d.prn", "cpd-1e.prn", "cpd-1f.prn", "cpd-1g.prn", "cpd-1h.prn"],
+    "openWorldTarget": "cpd-2.prn",
+    "candidateLibrary": ["brucite.prn", "silica.prn"],
+    "knownPureReferences": ["corundum.prn", "fluorite.prn", "zincite.prn"]
+  },
+  "knowledgeFirewall": {
+    "blindDetection": "The three-phase closure and residual detectors may read only the known pure references, calibration mixtures 1a-1c, and the target numerical pattern. They may not read the Sample 2 phase list, candidate profiles, weighed values, XRF values, or published QPA results.",
+    "candidateAttribution": "After the blind refusal is frozen, fit each candidate profile under an identical one-candidate augmentation. Candidate identity is selected only by the preregistered residual rule; weighed and XRF values remain unavailable.",
+    "finalAdjudication": "Only after all estimates, alarms, candidate rankings, masks, code, and hashes are fixed may the official weighed, XRF, and published QPA values be joined for scoring.",
+    "retrospectiveLimit": "The benchmark designer knows from the official description that Sample 2 contains brucite. This is a reproducible counterfactual-blind replay, not a prospective unknown-sample discovery claim."
+  },
+  "knownPhases": ["corundum", "fluorite", "zincite"],
+  "candidatePhases": ["brucite", "silica"],
+  "officialTruthWeightPercent": {
+    "sample2": { "corundum": 21.27, "fluorite": 22.53, "zincite": 19.94, "brucite": 36.26 }
+  },
+  "officialXrfWeightPercentAsReported": {
+    "sample2": { "corundum": 20.9, "fluorite": 24.1, "zincite": 19.5, "brucite": 36.1 }
+  },
+  "publishedAuthorQpaWeightPercent": {
+    "method1": { "corundum": 21.4, "fluorite": 22.5, "zincite": 19.9, "brucite": 36.3 },
+    "method2": { "corundum": 21.4, "fluorite": 22.5, "zincite": 19.9, "brucite": 36.3 },
+    "method3": { "corundum": 21.7, "fluorite": 20.7, "zincite": 24.4, "brucite": 33.2 }
+  },
+  "numericalContract": {
+    "grid": "Exactly 7,251 two-column points from 5.000 to 150.000 degrees 2theta at 0.020-degree steps.",
+    "baseline": "On the original 5-150 degree grid, partition into non-overlapping 2-degree bins, take the fifth count percentile and median angle as anchors, linearly interpolate the anchors, subtract, and clip negative signal to zero.",
+    "fitRangeDegrees2Theta": [10, 100],
+    "dominantBrucite001MaskDegrees2Theta": [17.8, 19.4],
+    "resampling": "None",
+    "coefficientFit": "Enumerate every nonempty active set, solve ordinary least squares, reject singular or negative solutions, and retain the minimum squared-residual nonnegative solution.",
+    "normalizedResidual": "sqrt(sum((target-prediction)^2)/sum(target^2)) on exactly the active angle mask."
+  },
+  "closedThreePhaseEstimator": {
+    "peakComposition": "Apply the RC20 frozen primary peak windows, sideband background, and response ratios, then normalize the three known phases to 100 percent. This estimator has no unknown-phase output and no refusal rule.",
+    "wholePatternComposition": "Fit the three known pure profiles and convert coefficients through the RC21 frozen response ratios, then normalize the three known phases to 100 percent.",
+    "silentFailureGate": "A closed estimator fails safely only if it refuses before returning a composition. Returning three phases summing to 100 percent is silent failure when any known-phase absolute error exceeds five percentage points or an omitted phase exceeds five percent."
+  },
+  "blindOpenMassDetector": {
+    "absoluteScale": "Let s0 be the median sum of raw three-template NNLS coefficients across calibration mixtures 1a-1c. For any pattern, knownMass=100*sum(coefficients)/s0 and missingMass=100-knownMass. Do not clip or renormalize either quantity.",
+    "massAlarmThreshold": "On calibration 1a-1c only, compute absolute missing mass. Set threshold=max(10 percentage points, twice the largest calibration absolute missing mass).",
+    "residualAlarmThreshold": "On calibration 1a-1c only, set threshold to twice the largest three-template normalized residual.",
+    "alarm": "Refuse when missingMass exceeds the mass threshold OR normalized residual exceeds the residual threshold. Negative missing mass alone is not evidence of an omitted phase.",
+    "validation": "After thresholds are fixed, require zero false refusals on known-only 1d-1h and refusal of Sample 2. Quantitative missing mass within ten points of 36.26 is a stronger secondary gate."
+  },
+  "candidateAttribution": {
+    "models": ["known three phases plus brucite", "known three phases plus silica"],
+    "selection": "Fit each four-template model with the same baseline, range, and NNLS rule. Select the candidate with the lowest normalized residual; ties within 1e-9 are unresolved.",
+    "success": "Brucite must rank first, have a positive coefficient, reduce squared residual by at least 50 percent relative to the three-phase model, and reduce normalized residual below the blind residual-alarm threshold.",
+    "quantification": "For diagnostic reporting only, divide each raw four-template coefficient by s0 and multiply by 100 without closure normalization. This is not a calibrated brucite RIR and cannot independently qualify quantitative accuracy."
+  },
+  "orientationStress": {
+    "test": "Repeat the three-phase and both candidate fits after excluding 17.8-19.4 degrees 2theta, which contains the enhanced brucite 001 reflection.",
+    "survival": "Brucite must remain the selected candidate, retain at least 50 percent squared-residual reduction, and its diagnostic mass must change by no more than 20 percent relative to the unmasked estimate.",
+    "interpretation": "Failure localizes attribution or quantification to the preferred-orientation-dominated reflection; it does not refute the existence of brucite."
+  },
+  "competingHypotheses": [
+    {
+      "id": "H1",
+      "claim": "Closed three-phase normalization silently returns an unsafe answer on Sample 2.",
+      "prediction": "It returns a three-phase sum of 100 percent without refusal and has at least one known-phase error above five points while assigning zero to the 36.26-percent omitted phase.",
+      "reject": "Reject H1 if the frozen estimator refuses before output or every absolute phase error including omitted mass is at most five points."
+    },
+    {
+      "id": "H2",
+      "claim": "Absolute coefficient closure detects missing mass without a candidate phase profile.",
+      "prediction": "The calibration-only alarm has zero false refusals on 1d-1h, refuses Sample 2, and estimates missing mass within ten points of 36.26.",
+      "reject": "Reject H2 on any known-only false refusal, target acceptance, or missing-mass error above ten points."
+    },
+    {
+      "id": "H3",
+      "claim": "A small candidate competition identifies brucite rather than merely improving fit with any extra template.",
+      "prediction": "Brucite beats silica, has positive weight, halves squared residual, and returns residual below the blind alarm threshold.",
+      "reject": "Reject H3 if selection ties, silica wins, brucite weight is non-positive, residual reduction is below 50 percent, or final residual remains above threshold."
+    },
+    {
+      "id": "H4",
+      "claim": "Brucite attribution is not carried solely by its enhanced 001 reflection.",
+      "prediction": "After masking 17.8-19.4 degrees, brucite still wins and halves residual while its diagnostic mass changes by at most 20 percent.",
+      "reject": "Reject H4 if any survival condition fails."
+    }
+  ],
+  "uncertaintyBudget": {
+    "countingAndBaseline": "Compare calibration residual and closure envelopes to the target; no repeated counts are available for Sample 2.",
+    "model": "Pure-profile linearity, shared instrument response, peak overlap, and an incomplete candidate library are structural uncertainties.",
+    "preferredOrientation": "Brucite pure and mixture profiles may have different texture; the 001 mask measures but does not eliminate this uncertainty.",
+    "truth": "Weighed composition is primary. XRF is a separate cross-check with reported standard errors. Published QPA values are comparators, not truth.",
+    "transport": "All numerical files share a historical CPD instrument. No result qualifies another instrument, preparation, or prospective discovery."
+  },
+  "stopConditions": [
+    "Stop if any numerical input fails its fixed SHA-256, point-count, endpoint, or step contract.",
+    "Stop if Sample 2 or either candidate profile sets a detector threshold, baseline choice, fit range, mask, or success gate.",
+    "Stop if candidate identity or official truth is joined before blind alarm output is frozen.",
+    "Stop if a negative coefficient is clipped after fitting instead of rejecting that active-set solution.",
+    "Stop any physical-independence claim because the target and references share the historical instrument."
+  ],
+  "primarySources": [
+    "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/data",
+    "https://www.iucr.org/__data/iucr/powder/QARR/samples.htm",
+    "https://doi.org/10.1107/S0021889802008798",
+    "https://doi.org/10.1107/S002188980400038X",
+    "https://doi.org/10.1107/S160057672300331X",
+    "https://doi.org/10.1038/s41524-025-01627-0"
+  ]
+}

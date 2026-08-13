@@ -1,0 +1,251 @@
+{
+  "benchmarkId": "IUCR-QARR-OPEN-WORLD-PHASE-0.1",
+  "generatedOn": "2026-08-14",
+  "source": {
+    "referenceManifestId": "IUCR-QARR-REFERENCE-PATTERN-MANIFEST-0.1",
+    "holdoutManifestId": "IUCR-QARR-EXTERNAL-HOLDOUT-MANIFEST-0.1",
+    "openWorldManifestId": "IUCR-QARR-OPEN-WORLD-MANIFEST-0.1"
+  },
+  "denominators": {
+    "calibrationMixtures": 3,
+    "knownOnlyControls": 5,
+    "knownTemplates": 3,
+    "candidateTemplates": 2,
+    "targetPatterns": 1,
+    "pointsPerProfile": 7251,
+    "fullFitPoints": 4501,
+    "maskedFitPoints": 4420
+  },
+  "blindCalibration": {
+    "s0": 0.993912948,
+    "massAlarmThresholdPercentagePoints": 10,
+    "residualAlarmThreshold": 0.336902813,
+    "calibration": [
+      {
+        "sample": "1a",
+        "coefficientSum": 1.023151674,
+        "knownMass": 102.941779,
+        "missingMass": -2.941779,
+        "normalizedResidual": 0.034695258
+      },
+      {
+        "sample": "1b",
+        "coefficientSum": 0.979126348,
+        "knownMass": 98.512284,
+        "missingMass": 1.487716,
+        "normalizedResidual": 0.168451406
+      },
+      {
+        "sample": "1c",
+        "coefficientSum": 0.993912948,
+        "knownMass": 100,
+        "missingMass": 0,
+        "normalizedResidual": 0.107049759
+      }
+    ],
+    "knownOnlyControls": [
+      {
+        "sample": "1d",
+        "coefficientSum": 1.003297894,
+        "knownMass": 100.944242,
+        "missingMass": -0.944242,
+        "normalizedResidual": 0.080815701,
+        "alarm": false
+      },
+      {
+        "sample": "1e",
+        "coefficientSum": 0.980560196,
+        "knownMass": 98.656547,
+        "missingMass": 1.343453,
+        "normalizedResidual": 0.240873267,
+        "alarm": false
+      },
+      {
+        "sample": "1f",
+        "coefficientSum": 0.987421552,
+        "knownMass": 99.346885,
+        "missingMass": 0.653115,
+        "normalizedResidual": 0.080441171,
+        "alarm": false
+      },
+      {
+        "sample": "1g",
+        "coefficientSum": 0.980061998,
+        "knownMass": 98.606422,
+        "missingMass": 1.393578,
+        "normalizedResidual": 0.119111509,
+        "alarm": false
+      },
+      {
+        "sample": "1h",
+        "coefficientSum": 0.951833005,
+        "knownMass": 95.766235,
+        "missingMass": 4.233765,
+        "normalizedResidual": 0.265608817,
+        "alarm": false
+      }
+    ],
+    "targetBeforeCandidateDisclosure": {
+      "knownMass": 82.786998,
+      "missingMass": 17.213002,
+      "normalizedResidual": 0.760565887,
+      "alarm": true,
+      "active": [
+        "corundum",
+        "fluorite",
+        "zincite"
+      ],
+      "coefficients": {
+        "corundum": 0.153181636,
+        "fluorite": 0.456860928,
+        "zincite": 0.212788126
+      }
+    }
+  },
+  "closedThreePhase": {
+    "primaryPeakRir": {
+      "composition": {
+        "corundum": 33.251045,
+        "fluorite": 35.462906,
+        "zincite": 31.286049
+      },
+      "absoluteErrorsIncludingOmittedPhase": {
+        "corundum": 11.981045,
+        "fluorite": 12.932906,
+        "zincite": 11.346049,
+        "brucite": 36.26
+      }
+    },
+    "wholePattern": {
+      "composition": {
+        "corundum": 37.126578,
+        "fluorite": 32.357124,
+        "zincite": 30.516298
+      },
+      "absoluteErrorsIncludingOmittedPhase": {
+        "corundum": 15.856578,
+        "fluorite": 9.827124,
+        "zincite": 10.576298,
+        "brucite": 36.26
+      }
+    }
+  },
+  "candidateAttribution": {
+    "fullRange": {
+      "baseNormalizedResidual": 0.760565887,
+      "selected": "brucite",
+      "ranking": [
+        {
+          "candidate": "brucite",
+          "active": [
+            "corundum",
+            "fluorite",
+            "zincite",
+            "brucite"
+          ],
+          "coefficient": 0.156822592,
+          "diagnosticMass": 15.778303,
+          "normalizedResidual": 0.156508577,
+          "squaredResidualReduction": 0.957654955,
+          "residual": 38839184.727
+        },
+        {
+          "candidate": "silica",
+          "active": [
+            "corundum",
+            "fluorite",
+            "zincite",
+            "silica"
+          ],
+          "coefficient": 1.48227324,
+          "diagnosticMass": 149.135117,
+          "normalizedResidual": 0.753417079,
+          "squaredResidualReduction": 0.01871031,
+          "residual": 900046070.306
+        }
+      ]
+    },
+    "dominantBrucite001Masked": {
+      "baseNormalizedResidual": 0.376119265,
+      "selected": "brucite",
+      "ranking": [
+        {
+          "candidate": "brucite",
+          "active": [
+            "corundum",
+            "fluorite",
+            "zincite",
+            "brucite"
+          ],
+          "coefficient": 0.187501984,
+          "diagnosticMass": 18.865031,
+          "normalizedResidual": 0.154984455,
+          "squaredResidualReduction": 0.830204913,
+          "residual": 18658202.707
+        },
+        {
+          "candidate": "silica",
+          "active": [
+            "corundum",
+            "fluorite",
+            "zincite",
+            "silica"
+          ],
+          "coefficient": 0.262238302,
+          "diagnosticMass": 26.384434,
+          "normalizedResidual": 0.375280559,
+          "squaredResidualReduction": 0.004454816,
+          "residual": 109397062.844
+        }
+      ]
+    },
+    "diagnosticWarning": "Candidate mass uses the known-phase absolute scale and is not a brucite-calibrated RIR estimate."
+  },
+  "finalAdjudication": {
+    "officialWeighedTruth": {
+      "corundum": 21.27,
+      "fluorite": 22.53,
+      "zincite": 19.94,
+      "brucite": 36.26
+    },
+    "officialXrfAsReported": {
+      "corundum": 20.9,
+      "fluorite": 24.1,
+      "zincite": 19.5,
+      "brucite": 36.1
+    },
+    "publishedAuthorQpa": {
+      "method1": {
+        "corundum": 21.4,
+        "fluorite": 22.5,
+        "zincite": 19.9,
+        "brucite": 36.3
+      },
+      "method2": {
+        "corundum": 21.4,
+        "fluorite": 22.5,
+        "zincite": 19.9,
+        "brucite": 36.3
+      },
+      "method3": {
+        "corundum": 21.7,
+        "fluorite": 20.7,
+        "zincite": 24.4,
+        "brucite": 33.2
+      }
+    }
+  },
+  "decisions": {
+    "H1_closedThreePhaseSilentUnsafe": true,
+    "H2_blindClosureDetectsMissingMass": false,
+    "H3_candidateCompetitionIdentifiesBrucite": true,
+    "H4_attributionSurvivesDominantPeakMask": true,
+    "independentPhysicalRungQualified": false
+  },
+  "interpretation": [
+    "The blind detector uses neither candidate templates nor Sample 2 truth to set its scale or thresholds.",
+    "The candidate competition is a two-member attribution test, not unrestricted phase identification.",
+    "The masked test removes the preferred-orientation-enhanced brucite 001 region but cannot make pure and mixture texture identical.",
+    "All profiles share the historical CPD instrument, so this replay does not satisfy prospective physical independence."
+  ]
+}
