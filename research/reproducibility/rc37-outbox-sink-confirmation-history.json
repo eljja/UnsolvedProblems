@@ -1,0 +1,2013 @@
+{
+  "cycle": "RC-2026-37",
+  "history": [
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "receiver",
+      "pid": 29584,
+      "db": "research/reproducibility/rc37-chain-db/receiver-before-commit-receiver.sqlite",
+      "at": "2026-08-13T22:52:02.734Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "sink",
+      "pid": 49696,
+      "db": "research/reproducibility/rc37-chain-db/receiver-before-commit-sink.sqlite",
+      "at": "2026-08-13T22:52:02.882Z"
+    },
+    {
+      "type": "http",
+      "label": "receiver-delivery",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24037/deliveries/RC37-RX-BEFORE-001",
+      "fault": "before-commit",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:02.882Z",
+      "completedAt": "2026-08-13T22:52:02.903Z",
+      "response": null,
+      "error": "fetch failed"
+    },
+    {
+      "type": "process",
+      "action": "fault-exit",
+      "mode": "receiver",
+      "exitCode": 86,
+      "at": "2026-08-13T22:52:02.950Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "receiver",
+      "pid": 5376,
+      "db": "research/reproducibility/rc37-chain-db/receiver-before-commit-receiver.sqlite",
+      "at": "2026-08-13T22:52:03.096Z"
+    },
+    {
+      "type": "http",
+      "label": "receiver-delivery",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24037/deliveries/RC37-RX-BEFORE-001",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:03.096Z",
+      "completedAt": "2026-08-13T22:52:03.106Z",
+      "response": {
+        "status": 201,
+        "body": {
+          "deliveryId": "RC37-RX-BEFORE-001",
+          "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "e8d5aa6bf34d48519bff8db7130f74ccc189b84162c0e8c0887593a68718e635",
+          "status": "created"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "receiver-delivery",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24037/deliveries/RC37-RX-BEFORE-001",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:03.106Z",
+      "completedAt": "2026-08-13T22:52:03.109Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "deliveryId": "RC37-RX-BEFORE-001",
+          "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "42850b605bbe4afbbaf4ab676a7fcaa38ada67256e72c83b655db96f3002239b",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "relay",
+      "pid": 48228,
+      "sinkFault": "none",
+      "relayFault": "none",
+      "receiverAckFault": "none",
+      "exitCode": 0,
+      "output": {
+        "status": "delivered",
+        "event": {
+          "deliveryId": "RC37-RX-BEFORE-001",
+          "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        },
+        "sink": {
+          "status": 201,
+          "body": {
+            "effectId": 1,
+            "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "f57b84a878cabfe58d52e17a8d9473e9fced16ca4245ec14370369c32177571b",
+            "status": "created"
+          }
+        },
+        "receiver": {
+          "status": 201,
+          "body": {
+            "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "17c4b77ba3b0d86fc76f6c142abbcf44c353a624e31faa146e169bef02948c43",
+            "status": "delivered"
+          }
+        }
+      },
+      "stderr": null,
+      "at": "2026-08-13T22:52:03.277Z"
+    },
+    {
+      "type": "process",
+      "action": "stop",
+      "mode": "receiver",
+      "reason": "receiver-before-commit-complete",
+      "exitCode": null,
+      "signalCode": "SIGTERM",
+      "at": "2026-08-13T22:52:03.287Z"
+    },
+    {
+      "type": "process",
+      "action": "stop",
+      "mode": "sink",
+      "reason": "receiver-before-commit-complete",
+      "exitCode": null,
+      "signalCode": "SIGTERM",
+      "at": "2026-08-13T22:52:03.290Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "receiver",
+      "pid": 14060,
+      "db": "research/reproducibility/rc37-chain-db/receiver-after-commit-receiver.sqlite",
+      "at": "2026-08-13T22:52:03.439Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "sink",
+      "pid": 40148,
+      "db": "research/reproducibility/rc37-chain-db/receiver-after-commit-sink.sqlite",
+      "at": "2026-08-13T22:52:03.592Z"
+    },
+    {
+      "type": "http",
+      "label": "receiver-delivery",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24037/deliveries/RC37-RX-AFTER-001",
+      "fault": "after-commit",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:03.592Z",
+      "completedAt": "2026-08-13T22:52:03.600Z",
+      "response": null,
+      "error": "fetch failed"
+    },
+    {
+      "type": "process",
+      "action": "fault-exit",
+      "mode": "receiver",
+      "exitCode": 87,
+      "at": "2026-08-13T22:52:03.646Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "receiver",
+      "pid": 30176,
+      "db": "research/reproducibility/rc37-chain-db/receiver-after-commit-receiver.sqlite",
+      "at": "2026-08-13T22:52:03.776Z"
+    },
+    {
+      "type": "http",
+      "label": "receiver-delivery",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24037/deliveries/RC37-RX-AFTER-001",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:03.776Z",
+      "completedAt": "2026-08-13T22:52:03.780Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "deliveryId": "RC37-RX-AFTER-001",
+          "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "a3facfb10b87b150dcf2edd027460443f871830d4c4dfb6b46c274412e3ccf26",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "receiver-delivery",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24037/deliveries/RC37-RX-AFTER-001",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:03.780Z",
+      "completedAt": "2026-08-13T22:52:03.782Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "deliveryId": "RC37-RX-AFTER-001",
+          "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "a3facfb10b87b150dcf2edd027460443f871830d4c4dfb6b46c274412e3ccf26",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "relay",
+      "pid": 18316,
+      "sinkFault": "none",
+      "relayFault": "none",
+      "receiverAckFault": "none",
+      "exitCode": 0,
+      "output": {
+        "status": "delivered",
+        "event": {
+          "deliveryId": "RC37-RX-AFTER-001",
+          "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        },
+        "sink": {
+          "status": 201,
+          "body": {
+            "effectId": 1,
+            "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "6729435ac92950b48255e126409aa20b2a97620393ebeee0621af299568babcc",
+            "status": "created"
+          }
+        },
+        "receiver": {
+          "status": 201,
+          "body": {
+            "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "a4590e9150d2ed82a1b473a3ea7e8b85c7a53f6fbbf8de3ea3df0b9174c0bece",
+            "status": "delivered"
+          }
+        }
+      },
+      "stderr": null,
+      "at": "2026-08-13T22:52:03.950Z"
+    },
+    {
+      "type": "process",
+      "action": "stop",
+      "mode": "receiver",
+      "reason": "receiver-after-commit-complete",
+      "exitCode": null,
+      "signalCode": "SIGTERM",
+      "at": "2026-08-13T22:52:03.959Z"
+    },
+    {
+      "type": "process",
+      "action": "stop",
+      "mode": "sink",
+      "reason": "receiver-after-commit-complete",
+      "exitCode": null,
+      "signalCode": "SIGTERM",
+      "at": "2026-08-13T22:52:03.962Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "receiver",
+      "pid": 47772,
+      "db": "research/reproducibility/rc37-chain-db/sink-before-commit-receiver.sqlite",
+      "at": "2026-08-13T22:52:04.093Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "sink",
+      "pid": 49784,
+      "db": "research/reproducibility/rc37-chain-db/sink-before-commit-sink.sqlite",
+      "at": "2026-08-13T22:52:04.227Z"
+    },
+    {
+      "type": "http",
+      "label": "receiver-delivery",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24037/deliveries/RC37-SINK-BEFORE-001",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:04.227Z",
+      "completedAt": "2026-08-13T22:52:04.234Z",
+      "response": {
+        "status": 201,
+        "body": {
+          "deliveryId": "RC37-SINK-BEFORE-001",
+          "eventId": "RC37-5135861C59331D880D160833784C",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "6436d54e8a65c2ae5c9a171bb478191036234a94572c90a8533a61a439ef9e67",
+          "status": "created"
+        }
+      }
+    },
+    {
+      "type": "relay",
+      "pid": 13944,
+      "sinkFault": "before-commit",
+      "relayFault": "none",
+      "receiverAckFault": "none",
+      "exitCode": 102,
+      "output": {
+        "status": "sink-response-missing",
+        "event": {
+          "deliveryId": "RC37-SINK-BEFORE-001",
+          "eventId": "RC37-5135861C59331D880D160833784C",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        },
+        "error": "fetch failed"
+      },
+      "stderr": null,
+      "at": "2026-08-13T22:52:04.377Z"
+    },
+    {
+      "type": "process",
+      "action": "fault-exit",
+      "mode": "sink",
+      "exitCode": 96,
+      "at": "2026-08-13T22:52:04.377Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "sink",
+      "pid": 23944,
+      "db": "research/reproducibility/rc37-chain-db/sink-before-commit-sink.sqlite",
+      "at": "2026-08-13T22:52:04.510Z"
+    },
+    {
+      "type": "relay",
+      "pid": 29064,
+      "sinkFault": "none",
+      "relayFault": "none",
+      "receiverAckFault": "none",
+      "exitCode": 0,
+      "output": {
+        "status": "delivered",
+        "event": {
+          "deliveryId": "RC37-SINK-BEFORE-001",
+          "eventId": "RC37-5135861C59331D880D160833784C",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        },
+        "sink": {
+          "status": 201,
+          "body": {
+            "effectId": 1,
+            "eventId": "RC37-5135861C59331D880D160833784C",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "4f3f722557c7d2dec3bddcfd1242d1d1b975625f1da6fa9bc5855b5cdd5a846e",
+            "status": "created"
+          }
+        },
+        "receiver": {
+          "status": 201,
+          "body": {
+            "eventId": "RC37-5135861C59331D880D160833784C",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "816714a1cb8a033bee1652d8399cc83859a6cbf9acd697b4ed04fa7df9951441",
+            "status": "delivered"
+          }
+        }
+      },
+      "stderr": null,
+      "at": "2026-08-13T22:52:04.682Z"
+    },
+    {
+      "type": "process",
+      "action": "stop",
+      "mode": "receiver",
+      "reason": "sink-before-commit-complete",
+      "exitCode": null,
+      "signalCode": "SIGTERM",
+      "at": "2026-08-13T22:52:04.691Z"
+    },
+    {
+      "type": "process",
+      "action": "stop",
+      "mode": "sink",
+      "reason": "sink-before-commit-complete",
+      "exitCode": null,
+      "signalCode": "SIGTERM",
+      "at": "2026-08-13T22:52:04.694Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "receiver",
+      "pid": 37940,
+      "db": "research/reproducibility/rc37-chain-db/sink-after-commit-receiver.sqlite",
+      "at": "2026-08-13T22:52:04.827Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "sink",
+      "pid": 10840,
+      "db": "research/reproducibility/rc37-chain-db/sink-after-commit-sink.sqlite",
+      "at": "2026-08-13T22:52:04.968Z"
+    },
+    {
+      "type": "http",
+      "label": "receiver-delivery",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24037/deliveries/RC37-SINK-AFTER-001",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:04.968Z",
+      "completedAt": "2026-08-13T22:52:04.976Z",
+      "response": {
+        "status": 201,
+        "body": {
+          "deliveryId": "RC37-SINK-AFTER-001",
+          "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "89c6f0b1381ee9bd4b0a033d19e936534ef912dc9e332dfa4d7a680e2325def3",
+          "status": "created"
+        }
+      }
+    },
+    {
+      "type": "relay",
+      "pid": 43064,
+      "sinkFault": "after-commit",
+      "relayFault": "none",
+      "receiverAckFault": "none",
+      "exitCode": 102,
+      "output": {
+        "status": "sink-response-missing",
+        "event": {
+          "deliveryId": "RC37-SINK-AFTER-001",
+          "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        },
+        "error": "fetch failed"
+      },
+      "stderr": null,
+      "at": "2026-08-13T22:52:05.128Z"
+    },
+    {
+      "type": "process",
+      "action": "fault-exit",
+      "mode": "sink",
+      "exitCode": 97,
+      "at": "2026-08-13T22:52:05.128Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "sink",
+      "pid": 33008,
+      "db": "research/reproducibility/rc37-chain-db/sink-after-commit-sink.sqlite",
+      "at": "2026-08-13T22:52:05.260Z"
+    },
+    {
+      "type": "relay",
+      "pid": 27704,
+      "sinkFault": "none",
+      "relayFault": "none",
+      "receiverAckFault": "none",
+      "exitCode": 0,
+      "output": {
+        "status": "delivered",
+        "event": {
+          "deliveryId": "RC37-SINK-AFTER-001",
+          "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        },
+        "sink": {
+          "status": 200,
+          "body": {
+            "effectId": 1,
+            "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "7cf32bbab76f4260883dc5a1273205b06ef2359590e298f5b76f03a2825af383",
+            "status": "replay"
+          }
+        },
+        "receiver": {
+          "status": 201,
+          "body": {
+            "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "76736e78fad5936f7874b1e25f2ea85bd030bf2dbd97dc8ea0fbf2fb2054082e",
+            "status": "delivered"
+          }
+        }
+      },
+      "stderr": null,
+      "at": "2026-08-13T22:52:05.425Z"
+    },
+    {
+      "type": "process",
+      "action": "stop",
+      "mode": "receiver",
+      "reason": "sink-after-commit-complete",
+      "exitCode": null,
+      "signalCode": "SIGTERM",
+      "at": "2026-08-13T22:52:05.433Z"
+    },
+    {
+      "type": "process",
+      "action": "stop",
+      "mode": "sink",
+      "reason": "sink-after-commit-complete",
+      "exitCode": null,
+      "signalCode": "SIGTERM",
+      "at": "2026-08-13T22:52:05.436Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "receiver",
+      "pid": 31664,
+      "db": "research/reproducibility/rc37-chain-db/relay-after-sink-response-receiver.sqlite",
+      "at": "2026-08-13T22:52:05.576Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "sink",
+      "pid": 21136,
+      "db": "research/reproducibility/rc37-chain-db/relay-after-sink-response-sink.sqlite",
+      "at": "2026-08-13T22:52:05.710Z"
+    },
+    {
+      "type": "http",
+      "label": "receiver-delivery",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24037/deliveries/RC37-RELAY-CRASH-001",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:05.710Z",
+      "completedAt": "2026-08-13T22:52:05.717Z",
+      "response": {
+        "status": 201,
+        "body": {
+          "deliveryId": "RC37-RELAY-CRASH-001",
+          "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "b457c6fd2fb9193bf86f4504c795270b1ddd6a9e0db8d4a3fbea3189e610f5c1",
+          "status": "created"
+        }
+      }
+    },
+    {
+      "type": "relay",
+      "pid": 45620,
+      "sinkFault": "none",
+      "relayFault": "crash-after-sink-response",
+      "receiverAckFault": "none",
+      "exitCode": 103,
+      "output": {
+        "status": "crash-after-sink-response",
+        "event": {
+          "deliveryId": "RC37-RELAY-CRASH-001",
+          "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        },
+        "sink": {
+          "status": 201,
+          "body": {
+            "effectId": 1,
+            "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "77e525d9772b4d695570c1105f32bef646389bd42ac09cca9a906a588bc0104a",
+            "status": "created"
+          }
+        }
+      },
+      "stderr": null,
+      "at": "2026-08-13T22:52:05.862Z"
+    },
+    {
+      "type": "relay",
+      "pid": 47060,
+      "sinkFault": "none",
+      "relayFault": "none",
+      "receiverAckFault": "none",
+      "exitCode": 0,
+      "output": {
+        "status": "delivered",
+        "event": {
+          "deliveryId": "RC37-RELAY-CRASH-001",
+          "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        },
+        "sink": {
+          "status": 200,
+          "body": {
+            "effectId": 1,
+            "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "b783f4a0f2114a298c45c302e8f35577d7099f47b89a55229151566d804e95a3",
+            "status": "replay"
+          }
+        },
+        "receiver": {
+          "status": 201,
+          "body": {
+            "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "ae5f878be59ae5c80bb85775ac378021f2ac8e5ecfc79386fed8e36712b590b5",
+            "status": "delivered"
+          }
+        }
+      },
+      "stderr": null,
+      "at": "2026-08-13T22:52:06.031Z"
+    },
+    {
+      "type": "process",
+      "action": "stop",
+      "mode": "receiver",
+      "reason": "relay-after-sink-response-complete",
+      "exitCode": null,
+      "signalCode": "SIGTERM",
+      "at": "2026-08-13T22:52:06.040Z"
+    },
+    {
+      "type": "process",
+      "action": "stop",
+      "mode": "sink",
+      "reason": "relay-after-sink-response-complete",
+      "exitCode": null,
+      "signalCode": "SIGTERM",
+      "at": "2026-08-13T22:52:06.043Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "receiver",
+      "pid": 49032,
+      "db": "research/reproducibility/rc37-chain-db/receiver-ack-after-commit-receiver.sqlite",
+      "at": "2026-08-13T22:52:06.177Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "sink",
+      "pid": 2380,
+      "db": "research/reproducibility/rc37-chain-db/receiver-ack-after-commit-sink.sqlite",
+      "at": "2026-08-13T22:52:06.310Z"
+    },
+    {
+      "type": "http",
+      "label": "receiver-delivery",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24037/deliveries/RC37-ACK-LOSS-001",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:06.310Z",
+      "completedAt": "2026-08-13T22:52:06.317Z",
+      "response": {
+        "status": 201,
+        "body": {
+          "deliveryId": "RC37-ACK-LOSS-001",
+          "eventId": "RC37-DD1086A74FB1A49156ED7AE64EDA",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "99de4d84447c1b50c50877b30a17093c7fd78210aad67e8357067ba9e257f033",
+          "status": "created"
+        }
+      }
+    },
+    {
+      "type": "relay",
+      "pid": 20004,
+      "sinkFault": "none",
+      "relayFault": "none",
+      "receiverAckFault": "after-commit",
+      "exitCode": 105,
+      "output": {
+        "status": "receiver-ack-missing",
+        "event": {
+          "deliveryId": "RC37-ACK-LOSS-001",
+          "eventId": "RC37-DD1086A74FB1A49156ED7AE64EDA",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        },
+        "sink": {
+          "status": 201,
+          "body": {
+            "effectId": 1,
+            "eventId": "RC37-DD1086A74FB1A49156ED7AE64EDA",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "b46e655774bf4cc231512e90e2fd853abf776e95fca60146304e498813f88b64",
+            "status": "created"
+          }
+        },
+        "error": "fetch failed"
+      },
+      "stderr": null,
+      "at": "2026-08-13T22:52:06.471Z"
+    },
+    {
+      "type": "process",
+      "action": "fault-exit",
+      "mode": "receiver",
+      "exitCode": 89,
+      "at": "2026-08-13T22:52:06.471Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "receiver",
+      "pid": 44140,
+      "db": "research/reproducibility/rc37-chain-db/receiver-ack-after-commit-receiver.sqlite",
+      "at": "2026-08-13T22:52:06.602Z"
+    },
+    {
+      "type": "relay",
+      "pid": 35516,
+      "sinkFault": "none",
+      "relayFault": "none",
+      "receiverAckFault": "none",
+      "exitCode": 0,
+      "output": {
+        "status": "empty"
+      },
+      "stderr": null,
+      "at": "2026-08-13T22:52:06.738Z"
+    },
+    {
+      "type": "process",
+      "action": "stop",
+      "mode": "receiver",
+      "reason": "receiver-ack-after-commit-complete",
+      "exitCode": null,
+      "signalCode": "SIGTERM",
+      "at": "2026-08-13T22:52:06.745Z"
+    },
+    {
+      "type": "process",
+      "action": "stop",
+      "mode": "sink",
+      "reason": "receiver-ack-after-commit-complete",
+      "exitCode": null,
+      "signalCode": "SIGTERM",
+      "at": "2026-08-13T22:52:06.748Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "receiver",
+      "pid": 40940,
+      "db": "research/reproducibility/rc37-chain-db/duplicate-conflict-50-receiver.sqlite",
+      "at": "2026-08-13T22:52:06.877Z"
+    },
+    {
+      "type": "process",
+      "action": "start",
+      "mode": "sink",
+      "pid": 36992,
+      "db": "research/reproducibility/rc37-chain-db/duplicate-conflict-50-sink.sqlite",
+      "at": "2026-08-13T22:52:07.010Z"
+    },
+    {
+      "type": "http",
+      "label": "receiver-delivery",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24037/deliveries/RC37-DUPLICATE-001",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.010Z",
+      "completedAt": "2026-08-13T22:52:07.017Z",
+      "response": {
+        "status": 201,
+        "body": {
+          "deliveryId": "RC37-DUPLICATE-001",
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "b44f371656dbeaa437b1f3946cf82875e8114f5a3e3b14093d9797dac368adc0",
+          "status": "created"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.021Z",
+      "completedAt": "2026-08-13T22:52:07.038Z",
+      "response": {
+        "status": 201,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "e3db313ca1175e94c763883a42b1f92b2ef7f2ab632a5e6697482ee14e593b34",
+          "status": "created"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.022Z",
+      "completedAt": "2026-08-13T22:52:07.040Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.022Z",
+      "completedAt": "2026-08-13T22:52:07.045Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.022Z",
+      "completedAt": "2026-08-13T22:52:07.045Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.024Z",
+      "completedAt": "2026-08-13T22:52:07.053Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.024Z",
+      "completedAt": "2026-08-13T22:52:07.053Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.020Z",
+      "completedAt": "2026-08-13T22:52:07.069Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.021Z",
+      "completedAt": "2026-08-13T22:52:07.077Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.022Z",
+      "completedAt": "2026-08-13T22:52:07.094Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.020Z",
+      "completedAt": "2026-08-13T22:52:07.094Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.023Z",
+      "completedAt": "2026-08-13T22:52:07.094Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.021Z",
+      "completedAt": "2026-08-13T22:52:07.110Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.021Z",
+      "completedAt": "2026-08-13T22:52:07.127Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.020Z",
+      "completedAt": "2026-08-13T22:52:07.135Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.020Z",
+      "completedAt": "2026-08-13T22:52:07.144Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.021Z",
+      "completedAt": "2026-08-13T22:52:07.144Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.022Z",
+      "completedAt": "2026-08-13T22:52:07.161Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.021Z",
+      "completedAt": "2026-08-13T22:52:07.161Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.024Z",
+      "completedAt": "2026-08-13T22:52:07.169Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.022Z",
+      "completedAt": "2026-08-13T22:52:07.186Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.020Z",
+      "completedAt": "2026-08-13T22:52:07.202Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.024Z",
+      "completedAt": "2026-08-13T22:52:07.203Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.023Z",
+      "completedAt": "2026-08-13T22:52:07.219Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.022Z",
+      "completedAt": "2026-08-13T22:52:07.219Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.023Z",
+      "completedAt": "2026-08-13T22:52:07.220Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.021Z",
+      "completedAt": "2026-08-13T22:52:07.227Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.022Z",
+      "completedAt": "2026-08-13T22:52:07.244Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.022Z",
+      "completedAt": "2026-08-13T22:52:07.252Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.024Z",
+      "completedAt": "2026-08-13T22:52:07.261Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.024Z",
+      "completedAt": "2026-08-13T22:52:07.269Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.023Z",
+      "completedAt": "2026-08-13T22:52:07.277Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.022Z",
+      "completedAt": "2026-08-13T22:52:07.286Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.021Z",
+      "completedAt": "2026-08-13T22:52:07.294Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.024Z",
+      "completedAt": "2026-08-13T22:52:07.302Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.022Z",
+      "completedAt": "2026-08-13T22:52:07.311Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.023Z",
+      "completedAt": "2026-08-13T22:52:07.327Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.021Z",
+      "completedAt": "2026-08-13T22:52:07.336Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.022Z",
+      "completedAt": "2026-08-13T22:52:07.336Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.022Z",
+      "completedAt": "2026-08-13T22:52:07.344Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.024Z",
+      "completedAt": "2026-08-13T22:52:07.352Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.021Z",
+      "completedAt": "2026-08-13T22:52:07.361Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.022Z",
+      "completedAt": "2026-08-13T22:52:07.369Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.022Z",
+      "completedAt": "2026-08-13T22:52:07.378Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.020Z",
+      "completedAt": "2026-08-13T22:52:07.386Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.024Z",
+      "completedAt": "2026-08-13T22:52:07.403Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.021Z",
+      "completedAt": "2026-08-13T22:52:07.428Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.021Z",
+      "completedAt": "2026-08-13T22:52:07.436Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.021Z",
+      "completedAt": "2026-08-13T22:52:07.444Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.024Z",
+      "completedAt": "2026-08-13T22:52:07.503Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.021Z",
+      "completedAt": "2026-08-13T22:52:07.510Z",
+      "response": {
+        "status": 200,
+        "body": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "dfbca0096104deba2c4f76e499a9ba4d8e9bda98f3a89b59caf223ac790669f1",
+          "status": "replay"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "receiver-outbox-ack",
+      "method": "POST",
+      "url": "http://127.0.0.1:24037/outbox/RC37-01A4DF7C8BF342DA76C655323FA1/ack",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.511Z",
+      "completedAt": "2026-08-13T22:52:07.516Z",
+      "response": {
+        "status": 201,
+        "body": {
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "receipt": "b3c0aa6abaea5ca05e1d96dabaaa857883d7f8d22e35e6d7bf6d21a814d1a02b",
+          "status": "delivered"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-01A4DF7C8BF342DA76C655323FA1",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "ca9c189652d2d308ddecc8fbfddfcd5e5f6345b38e9a78a30c10f6d5be088d26"
+      },
+      "startedAt": "2026-08-13T22:52:07.516Z",
+      "completedAt": "2026-08-13T22:52:07.518Z",
+      "response": {
+        "status": 409,
+        "body": {
+          "error": "idempotency-conflict",
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/bad",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+      },
+      "startedAt": "2026-08-13T22:52:07.518Z",
+      "completedAt": "2026-08-13T22:52:07.519Z",
+      "response": {
+        "status": 400,
+        "body": {
+          "error": "invalid-event-id"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "label": "sink-event",
+      "method": "PUT",
+      "url": "http://127.0.0.1:24038/events/RC37-INVALID-001",
+      "fault": "none",
+      "body": {
+        "outcomeSha256": "not-a-digest"
+      },
+      "startedAt": "2026-08-13T22:52:07.519Z",
+      "completedAt": "2026-08-13T22:52:07.520Z",
+      "response": {
+        "status": 400,
+        "body": {
+          "error": "invalid-outcome-digest"
+        }
+      }
+    },
+    {
+      "type": "process",
+      "action": "stop",
+      "mode": "receiver",
+      "reason": "duplicate-conflict-50-complete",
+      "exitCode": null,
+      "signalCode": "SIGTERM",
+      "at": "2026-08-13T22:52:07.526Z"
+    },
+    {
+      "type": "process",
+      "action": "stop",
+      "mode": "sink",
+      "reason": "duplicate-conflict-50-complete",
+      "exitCode": null,
+      "signalCode": "SIGTERM",
+      "at": "2026-08-13T22:52:07.530Z"
+    }
+  ]
+}

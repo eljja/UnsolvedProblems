@@ -1,0 +1,1097 @@
+{
+  "cycle": "RC-2026-37",
+  "auditor": "independent Node SQLite, history, denominator, and HMAC reconstruction",
+  "computedOn": "2026-08-14",
+  "resultSha256": "72d1dc8e5ed4f234fb2583402583c7039bbcad41daeabb66a9cfc046bf99a672",
+  "historySha256": "984ea86ddf8bc43372d78cb2fc68d9d120f1725d27c82816c49a106545d7dc42",
+  "checks": [
+    {
+      "name": "receiver-before-commit-receiver-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "receiver-before-commit-sink-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "receiver-before-commit-end-to-end-row-chain",
+      "pass": true,
+      "evidence": {
+        "delivery": {
+          "deliveryId": "RC37-RX-BEFORE-001",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F"
+        },
+        "outbox": {
+          "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+          "deliveryId": "RC37-RX-BEFORE-001",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "status": "delivered"
+        },
+        "inbox": {
+          "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        },
+        "effect": {
+          "effectId": 1,
+          "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        }
+      }
+    },
+    {
+      "name": "receiver-after-commit-receiver-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "receiver-after-commit-sink-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "receiver-after-commit-end-to-end-row-chain",
+      "pass": true,
+      "evidence": {
+        "delivery": {
+          "deliveryId": "RC37-RX-AFTER-001",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9"
+        },
+        "outbox": {
+          "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+          "deliveryId": "RC37-RX-AFTER-001",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "status": "delivered"
+        },
+        "inbox": {
+          "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        },
+        "effect": {
+          "effectId": 1,
+          "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        }
+      }
+    },
+    {
+      "name": "sink-before-commit-receiver-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "sink-before-commit-sink-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "sink-before-commit-end-to-end-row-chain",
+      "pass": true,
+      "evidence": {
+        "delivery": {
+          "deliveryId": "RC37-SINK-BEFORE-001",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "eventId": "RC37-5135861C59331D880D160833784C"
+        },
+        "outbox": {
+          "eventId": "RC37-5135861C59331D880D160833784C",
+          "deliveryId": "RC37-SINK-BEFORE-001",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "status": "delivered"
+        },
+        "inbox": {
+          "eventId": "RC37-5135861C59331D880D160833784C",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        },
+        "effect": {
+          "effectId": 1,
+          "eventId": "RC37-5135861C59331D880D160833784C",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        }
+      }
+    },
+    {
+      "name": "sink-after-commit-receiver-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "sink-after-commit-sink-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "sink-after-commit-end-to-end-row-chain",
+      "pass": true,
+      "evidence": {
+        "delivery": {
+          "deliveryId": "RC37-SINK-AFTER-001",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "eventId": "RC37-F09CF6BC306A90C36768DBE8575E"
+        },
+        "outbox": {
+          "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+          "deliveryId": "RC37-SINK-AFTER-001",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "status": "delivered"
+        },
+        "inbox": {
+          "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        },
+        "effect": {
+          "effectId": 1,
+          "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        }
+      }
+    },
+    {
+      "name": "relay-after-sink-response-receiver-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "relay-after-sink-response-sink-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "relay-after-sink-response-end-to-end-row-chain",
+      "pass": true,
+      "evidence": {
+        "delivery": {
+          "deliveryId": "RC37-RELAY-CRASH-001",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "eventId": "RC37-98A243FFB533F5A69B1CF268B610"
+        },
+        "outbox": {
+          "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+          "deliveryId": "RC37-RELAY-CRASH-001",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "status": "delivered"
+        },
+        "inbox": {
+          "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        },
+        "effect": {
+          "effectId": 1,
+          "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        }
+      }
+    },
+    {
+      "name": "receiver-ack-after-commit-receiver-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "receiver-ack-after-commit-sink-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "receiver-ack-after-commit-end-to-end-row-chain",
+      "pass": true,
+      "evidence": {
+        "delivery": {
+          "deliveryId": "RC37-ACK-LOSS-001",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "eventId": "RC37-DD1086A74FB1A49156ED7AE64EDA"
+        },
+        "outbox": {
+          "eventId": "RC37-DD1086A74FB1A49156ED7AE64EDA",
+          "deliveryId": "RC37-ACK-LOSS-001",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "status": "delivered"
+        },
+        "inbox": {
+          "eventId": "RC37-DD1086A74FB1A49156ED7AE64EDA",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        },
+        "effect": {
+          "effectId": 1,
+          "eventId": "RC37-DD1086A74FB1A49156ED7AE64EDA",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        }
+      }
+    },
+    {
+      "name": "duplicate-conflict-50-receiver-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "duplicate-conflict-50-sink-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "duplicate-conflict-50-end-to-end-row-chain",
+      "pass": true,
+      "evidence": {
+        "delivery": {
+          "deliveryId": "RC37-DUPLICATE-001",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1"
+        },
+        "outbox": {
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "deliveryId": "RC37-DUPLICATE-001",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+          "status": "delivered"
+        },
+        "inbox": {
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        },
+        "effect": {
+          "effectId": 1,
+          "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1",
+          "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+        }
+      }
+    },
+    {
+      "name": "receiver-precommit-reconstructed",
+      "pass": true,
+      "evidence": {
+        "name": "receiver-before-commit",
+        "first": null,
+        "retry": {
+          "status": 201,
+          "body": {
+            "deliveryId": "RC37-RX-BEFORE-001",
+            "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "e8d5aa6bf34d48519bff8db7130f74ccc189b84162c0e8c0887593a68718e635",
+            "status": "created"
+          }
+        },
+        "replay": {
+          "status": 200,
+          "body": {
+            "deliveryId": "RC37-RX-BEFORE-001",
+            "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "42850b605bbe4afbbaf4ab676a7fcaa38ada67256e72c83b655db96f3002239b",
+            "status": "replay"
+          }
+        },
+        "relay": {
+          "type": "relay",
+          "pid": 48228,
+          "sinkFault": "none",
+          "relayFault": "none",
+          "receiverAckFault": "none",
+          "exitCode": 0,
+          "output": {
+            "status": "delivered",
+            "event": {
+              "deliveryId": "RC37-RX-BEFORE-001",
+              "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            },
+            "sink": {
+              "status": 201,
+              "body": {
+                "effectId": 1,
+                "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+                "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+                "receipt": "f57b84a878cabfe58d52e17a8d9473e9fced16ca4245ec14370369c32177571b",
+                "status": "created"
+              }
+            },
+            "receiver": {
+              "status": 201,
+              "body": {
+                "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+                "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+                "receipt": "17c4b77ba3b0d86fc76f6c142abbcf44c353a624e31faa146e169bef02948c43",
+                "status": "delivered"
+              }
+            }
+          },
+          "stderr": null,
+          "at": "2026-08-13T22:52:03.277Z"
+        },
+        "receiverState": {
+          "deliveries": [
+            {
+              "createdAt": "2026-08-13 22:52:03",
+              "deliveryId": "RC37-RX-BEFORE-001",
+              "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "mode": "receiver",
+          "outbox": [
+            {
+              "createdAt": "2026-08-13 22:52:03",
+              "deliveredAt": "2026-08-13 22:52:03",
+              "deliveryId": "RC37-RX-BEFORE-001",
+              "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+              "status": "delivered"
+            }
+          ]
+        },
+        "sinkState": {
+          "effects": [
+            {
+              "createdAt": "2026-08-13 22:52:03",
+              "effectId": 1,
+              "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "inbox": [
+            {
+              "createdAt": "2026-08-13 22:52:03",
+              "eventId": "RC37-8DB0E8D43057EC1AFE13DC98609F",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "mode": "sink"
+        },
+        "receiverDb": "research/reproducibility/rc37-chain-db/receiver-before-commit-receiver.sqlite",
+        "sinkDb": "research/reproducibility/rc37-chain-db/receiver-before-commit-sink.sqlite"
+      }
+    },
+    {
+      "name": "receiver-postcommit-reconstructed",
+      "pass": true,
+      "evidence": {
+        "name": "receiver-after-commit",
+        "first": null,
+        "retry": {
+          "status": 200,
+          "body": {
+            "deliveryId": "RC37-RX-AFTER-001",
+            "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "a3facfb10b87b150dcf2edd027460443f871830d4c4dfb6b46c274412e3ccf26",
+            "status": "replay"
+          }
+        },
+        "replay": {
+          "status": 200,
+          "body": {
+            "deliveryId": "RC37-RX-AFTER-001",
+            "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "a3facfb10b87b150dcf2edd027460443f871830d4c4dfb6b46c274412e3ccf26",
+            "status": "replay"
+          }
+        },
+        "relay": {
+          "type": "relay",
+          "pid": 18316,
+          "sinkFault": "none",
+          "relayFault": "none",
+          "receiverAckFault": "none",
+          "exitCode": 0,
+          "output": {
+            "status": "delivered",
+            "event": {
+              "deliveryId": "RC37-RX-AFTER-001",
+              "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            },
+            "sink": {
+              "status": 201,
+              "body": {
+                "effectId": 1,
+                "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+                "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+                "receipt": "6729435ac92950b48255e126409aa20b2a97620393ebeee0621af299568babcc",
+                "status": "created"
+              }
+            },
+            "receiver": {
+              "status": 201,
+              "body": {
+                "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+                "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+                "receipt": "a4590e9150d2ed82a1b473a3ea7e8b85c7a53f6fbbf8de3ea3df0b9174c0bece",
+                "status": "delivered"
+              }
+            }
+          },
+          "stderr": null,
+          "at": "2026-08-13T22:52:03.950Z"
+        },
+        "receiverState": {
+          "deliveries": [
+            {
+              "createdAt": "2026-08-13 22:52:03",
+              "deliveryId": "RC37-RX-AFTER-001",
+              "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "mode": "receiver",
+          "outbox": [
+            {
+              "createdAt": "2026-08-13 22:52:03",
+              "deliveredAt": "2026-08-13 22:52:03",
+              "deliveryId": "RC37-RX-AFTER-001",
+              "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+              "status": "delivered"
+            }
+          ]
+        },
+        "sinkState": {
+          "effects": [
+            {
+              "createdAt": "2026-08-13 22:52:03",
+              "effectId": 1,
+              "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "inbox": [
+            {
+              "createdAt": "2026-08-13 22:52:03",
+              "eventId": "RC37-F82CE33C0E766C2E8F936D4DEEC9",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "mode": "sink"
+        },
+        "receiverDb": "research/reproducibility/rc37-chain-db/receiver-after-commit-receiver.sqlite",
+        "sinkDb": "research/reproducibility/rc37-chain-db/receiver-after-commit-sink.sqlite"
+      }
+    },
+    {
+      "name": "sink-precommit-reconstructed",
+      "pass": true,
+      "evidence": {
+        "name": "sink-before-commit",
+        "delivery": {
+          "status": 201,
+          "body": {
+            "deliveryId": "RC37-SINK-BEFORE-001",
+            "eventId": "RC37-5135861C59331D880D160833784C",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "6436d54e8a65c2ae5c9a171bb478191036234a94572c90a8533a61a439ef9e67",
+            "status": "created"
+          }
+        },
+        "firstRelay": {
+          "type": "relay",
+          "pid": 13944,
+          "sinkFault": "before-commit",
+          "relayFault": "none",
+          "receiverAckFault": "none",
+          "exitCode": 102,
+          "output": {
+            "status": "sink-response-missing",
+            "event": {
+              "deliveryId": "RC37-SINK-BEFORE-001",
+              "eventId": "RC37-5135861C59331D880D160833784C",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            },
+            "error": "fetch failed"
+          },
+          "stderr": null,
+          "at": "2026-08-13T22:52:04.377Z"
+        },
+        "pendingAfterFault": {
+          "events": [
+            {
+              "deliveryId": "RC37-SINK-BEFORE-001",
+              "eventId": "RC37-5135861C59331D880D160833784C",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ]
+        },
+        "retryRelay": {
+          "type": "relay",
+          "pid": 29064,
+          "sinkFault": "none",
+          "relayFault": "none",
+          "receiverAckFault": "none",
+          "exitCode": 0,
+          "output": {
+            "status": "delivered",
+            "event": {
+              "deliveryId": "RC37-SINK-BEFORE-001",
+              "eventId": "RC37-5135861C59331D880D160833784C",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            },
+            "sink": {
+              "status": 201,
+              "body": {
+                "effectId": 1,
+                "eventId": "RC37-5135861C59331D880D160833784C",
+                "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+                "receipt": "4f3f722557c7d2dec3bddcfd1242d1d1b975625f1da6fa9bc5855b5cdd5a846e",
+                "status": "created"
+              }
+            },
+            "receiver": {
+              "status": 201,
+              "body": {
+                "eventId": "RC37-5135861C59331D880D160833784C",
+                "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+                "receipt": "816714a1cb8a033bee1652d8399cc83859a6cbf9acd697b4ed04fa7df9951441",
+                "status": "delivered"
+              }
+            }
+          },
+          "stderr": null,
+          "at": "2026-08-13T22:52:04.682Z"
+        },
+        "receiverState": {
+          "deliveries": [
+            {
+              "createdAt": "2026-08-13 22:52:04",
+              "deliveryId": "RC37-SINK-BEFORE-001",
+              "eventId": "RC37-5135861C59331D880D160833784C",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "mode": "receiver",
+          "outbox": [
+            {
+              "createdAt": "2026-08-13 22:52:04",
+              "deliveredAt": "2026-08-13 22:52:04",
+              "deliveryId": "RC37-SINK-BEFORE-001",
+              "eventId": "RC37-5135861C59331D880D160833784C",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+              "status": "delivered"
+            }
+          ]
+        },
+        "sinkState": {
+          "effects": [
+            {
+              "createdAt": "2026-08-13 22:52:04",
+              "effectId": 1,
+              "eventId": "RC37-5135861C59331D880D160833784C",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "inbox": [
+            {
+              "createdAt": "2026-08-13 22:52:04",
+              "eventId": "RC37-5135861C59331D880D160833784C",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "mode": "sink"
+        },
+        "receiverDb": "research/reproducibility/rc37-chain-db/sink-before-commit-receiver.sqlite",
+        "sinkDb": "research/reproducibility/rc37-chain-db/sink-before-commit-sink.sqlite"
+      }
+    },
+    {
+      "name": "sink-postcommit-reconstructed",
+      "pass": true,
+      "evidence": {
+        "name": "sink-after-commit",
+        "delivery": {
+          "status": 201,
+          "body": {
+            "deliveryId": "RC37-SINK-AFTER-001",
+            "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "89c6f0b1381ee9bd4b0a033d19e936534ef912dc9e332dfa4d7a680e2325def3",
+            "status": "created"
+          }
+        },
+        "firstRelay": {
+          "type": "relay",
+          "pid": 43064,
+          "sinkFault": "after-commit",
+          "relayFault": "none",
+          "receiverAckFault": "none",
+          "exitCode": 102,
+          "output": {
+            "status": "sink-response-missing",
+            "event": {
+              "deliveryId": "RC37-SINK-AFTER-001",
+              "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            },
+            "error": "fetch failed"
+          },
+          "stderr": null,
+          "at": "2026-08-13T22:52:05.128Z"
+        },
+        "pendingAfterFault": {
+          "events": [
+            {
+              "deliveryId": "RC37-SINK-AFTER-001",
+              "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ]
+        },
+        "retryRelay": {
+          "type": "relay",
+          "pid": 27704,
+          "sinkFault": "none",
+          "relayFault": "none",
+          "receiverAckFault": "none",
+          "exitCode": 0,
+          "output": {
+            "status": "delivered",
+            "event": {
+              "deliveryId": "RC37-SINK-AFTER-001",
+              "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            },
+            "sink": {
+              "status": 200,
+              "body": {
+                "effectId": 1,
+                "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+                "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+                "receipt": "7cf32bbab76f4260883dc5a1273205b06ef2359590e298f5b76f03a2825af383",
+                "status": "replay"
+              }
+            },
+            "receiver": {
+              "status": 201,
+              "body": {
+                "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+                "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+                "receipt": "76736e78fad5936f7874b1e25f2ea85bd030bf2dbd97dc8ea0fbf2fb2054082e",
+                "status": "delivered"
+              }
+            }
+          },
+          "stderr": null,
+          "at": "2026-08-13T22:52:05.425Z"
+        },
+        "receiverState": {
+          "deliveries": [
+            {
+              "createdAt": "2026-08-13 22:52:04",
+              "deliveryId": "RC37-SINK-AFTER-001",
+              "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "mode": "receiver",
+          "outbox": [
+            {
+              "createdAt": "2026-08-13 22:52:04",
+              "deliveredAt": "2026-08-13 22:52:05",
+              "deliveryId": "RC37-SINK-AFTER-001",
+              "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+              "status": "delivered"
+            }
+          ]
+        },
+        "sinkState": {
+          "effects": [
+            {
+              "createdAt": "2026-08-13 22:52:05",
+              "effectId": 1,
+              "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "inbox": [
+            {
+              "createdAt": "2026-08-13 22:52:05",
+              "eventId": "RC37-F09CF6BC306A90C36768DBE8575E",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "mode": "sink"
+        },
+        "receiverDb": "research/reproducibility/rc37-chain-db/sink-after-commit-receiver.sqlite",
+        "sinkDb": "research/reproducibility/rc37-chain-db/sink-after-commit-sink.sqlite"
+      }
+    },
+    {
+      "name": "relay-crash-reconstructed",
+      "pass": true,
+      "evidence": {
+        "name": "relay-after-sink-response",
+        "delivery": {
+          "status": 201,
+          "body": {
+            "deliveryId": "RC37-RELAY-CRASH-001",
+            "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "b457c6fd2fb9193bf86f4504c795270b1ddd6a9e0db8d4a3fbea3189e610f5c1",
+            "status": "created"
+          }
+        },
+        "firstRelay": {
+          "type": "relay",
+          "pid": 45620,
+          "sinkFault": "none",
+          "relayFault": "crash-after-sink-response",
+          "receiverAckFault": "none",
+          "exitCode": 103,
+          "output": {
+            "status": "crash-after-sink-response",
+            "event": {
+              "deliveryId": "RC37-RELAY-CRASH-001",
+              "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            },
+            "sink": {
+              "status": 201,
+              "body": {
+                "effectId": 1,
+                "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+                "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+                "receipt": "77e525d9772b4d695570c1105f32bef646389bd42ac09cca9a906a588bc0104a",
+                "status": "created"
+              }
+            }
+          },
+          "stderr": null,
+          "at": "2026-08-13T22:52:05.862Z"
+        },
+        "pendingAfterFault": {
+          "events": [
+            {
+              "deliveryId": "RC37-RELAY-CRASH-001",
+              "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ]
+        },
+        "sinkAfterFault": {
+          "effects": [
+            {
+              "createdAt": "2026-08-13 22:52:05",
+              "effectId": 1,
+              "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "inbox": [
+            {
+              "createdAt": "2026-08-13 22:52:05",
+              "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "mode": "sink"
+        },
+        "retryRelay": {
+          "type": "relay",
+          "pid": 47060,
+          "sinkFault": "none",
+          "relayFault": "none",
+          "receiverAckFault": "none",
+          "exitCode": 0,
+          "output": {
+            "status": "delivered",
+            "event": {
+              "deliveryId": "RC37-RELAY-CRASH-001",
+              "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            },
+            "sink": {
+              "status": 200,
+              "body": {
+                "effectId": 1,
+                "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+                "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+                "receipt": "b783f4a0f2114a298c45c302e8f35577d7099f47b89a55229151566d804e95a3",
+                "status": "replay"
+              }
+            },
+            "receiver": {
+              "status": 201,
+              "body": {
+                "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+                "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+                "receipt": "ae5f878be59ae5c80bb85775ac378021f2ac8e5ecfc79386fed8e36712b590b5",
+                "status": "delivered"
+              }
+            }
+          },
+          "stderr": null,
+          "at": "2026-08-13T22:52:06.031Z"
+        },
+        "receiverState": {
+          "deliveries": [
+            {
+              "createdAt": "2026-08-13 22:52:05",
+              "deliveryId": "RC37-RELAY-CRASH-001",
+              "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "mode": "receiver",
+          "outbox": [
+            {
+              "createdAt": "2026-08-13 22:52:05",
+              "deliveredAt": "2026-08-13 22:52:05",
+              "deliveryId": "RC37-RELAY-CRASH-001",
+              "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+              "status": "delivered"
+            }
+          ]
+        },
+        "sinkState": {
+          "effects": [
+            {
+              "createdAt": "2026-08-13 22:52:05",
+              "effectId": 1,
+              "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "inbox": [
+            {
+              "createdAt": "2026-08-13 22:52:05",
+              "eventId": "RC37-98A243FFB533F5A69B1CF268B610",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "mode": "sink"
+        },
+        "receiverDb": "research/reproducibility/rc37-chain-db/relay-after-sink-response-receiver.sqlite",
+        "sinkDb": "research/reproducibility/rc37-chain-db/relay-after-sink-response-sink.sqlite"
+      }
+    },
+    {
+      "name": "receiver-ack-loss-reconstructed",
+      "pass": true,
+      "evidence": {
+        "name": "receiver-ack-after-commit",
+        "delivery": {
+          "status": 201,
+          "body": {
+            "deliveryId": "RC37-ACK-LOSS-001",
+            "eventId": "RC37-DD1086A74FB1A49156ED7AE64EDA",
+            "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+            "receipt": "99de4d84447c1b50c50877b30a17093c7fd78210aad67e8357067ba9e257f033",
+            "status": "created"
+          }
+        },
+        "firstRelay": {
+          "type": "relay",
+          "pid": 20004,
+          "sinkFault": "none",
+          "relayFault": "none",
+          "receiverAckFault": "after-commit",
+          "exitCode": 105,
+          "output": {
+            "status": "receiver-ack-missing",
+            "event": {
+              "deliveryId": "RC37-ACK-LOSS-001",
+              "eventId": "RC37-DD1086A74FB1A49156ED7AE64EDA",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            },
+            "sink": {
+              "status": 201,
+              "body": {
+                "effectId": 1,
+                "eventId": "RC37-DD1086A74FB1A49156ED7AE64EDA",
+                "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+                "receipt": "b46e655774bf4cc231512e90e2fd853abf776e95fca60146304e498813f88b64",
+                "status": "created"
+              }
+            },
+            "error": "fetch failed"
+          },
+          "stderr": null,
+          "at": "2026-08-13T22:52:06.471Z"
+        },
+        "pendingAfterRestart": {
+          "events": []
+        },
+        "retryRelay": {
+          "type": "relay",
+          "pid": 35516,
+          "sinkFault": "none",
+          "relayFault": "none",
+          "receiverAckFault": "none",
+          "exitCode": 0,
+          "output": {
+            "status": "empty"
+          },
+          "stderr": null,
+          "at": "2026-08-13T22:52:06.738Z"
+        },
+        "receiverState": {
+          "deliveries": [
+            {
+              "createdAt": "2026-08-13 22:52:06",
+              "deliveryId": "RC37-ACK-LOSS-001",
+              "eventId": "RC37-DD1086A74FB1A49156ED7AE64EDA",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "mode": "receiver",
+          "outbox": [
+            {
+              "createdAt": "2026-08-13 22:52:06",
+              "deliveredAt": "2026-08-13 22:52:06",
+              "deliveryId": "RC37-ACK-LOSS-001",
+              "eventId": "RC37-DD1086A74FB1A49156ED7AE64EDA",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e",
+              "status": "delivered"
+            }
+          ]
+        },
+        "sinkState": {
+          "effects": [
+            {
+              "createdAt": "2026-08-13 22:52:06",
+              "effectId": 1,
+              "eventId": "RC37-DD1086A74FB1A49156ED7AE64EDA",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "inbox": [
+            {
+              "createdAt": "2026-08-13 22:52:06",
+              "eventId": "RC37-DD1086A74FB1A49156ED7AE64EDA",
+              "outcomeSha256": "552e315bba6ffc4ac876d0b62dca7316f169ee07ca160e043f73f4bbf143343e"
+            }
+          ],
+          "mode": "sink"
+        },
+        "receiverDb": "research/reproducibility/rc37-chain-db/receiver-ack-after-commit-receiver.sqlite",
+        "sinkDb": "research/reproducibility/rc37-chain-db/receiver-ack-after-commit-sink.sqlite"
+      }
+    },
+    {
+      "name": "fifty-duplicate-denominator",
+      "pass": true,
+      "evidence": {
+        "created": 1,
+        "replay": 49,
+        "missing": 0
+      }
+    },
+    {
+      "name": "conflict-invalid-controls",
+      "pass": true,
+      "evidence": {
+        "conflict": {
+          "status": 409,
+          "body": {
+            "error": "idempotency-conflict",
+            "eventId": "RC37-01A4DF7C8BF342DA76C655323FA1"
+          }
+        },
+        "invalidId": {
+          "status": 400,
+          "body": {
+            "error": "invalid-event-id"
+          }
+        },
+        "invalidDigest": {
+          "status": 400,
+          "body": {
+            "error": "invalid-outcome-digest"
+          }
+        }
+      }
+    },
+    {
+      "name": "all-synthetic-receipts-authenticate",
+      "pass": true,
+      "evidence": {
+        "verified": 72,
+        "failed": []
+      }
+    },
+    {
+      "name": "history-result-event-count",
+      "pass": true,
+      "evidence": {
+        "history": 113,
+        "result": 113
+      }
+    },
+    {
+      "name": "claim-boundary-explicit",
+      "pass": true,
+      "evidence": {
+        "qualifies": "A receiver-transaction outbox and a separate-process, separate-database idempotent sink effect row under the fixed crash, response-loss, conflict, invalid-input, and duplicate schedules on one physical host.",
+        "doesNotQualify": [
+          "a physical actuator, payment, email, or third-party API side effect",
+          "multiple physical hosts",
+          "a real network partition or packet-level fault injector",
+          "host, storage-device, or correlated power loss",
+          "Byzantine participants",
+          "unbounded liveness or exactly-once proof",
+          "production authentication, authorization, retention, or capacity guarantees"
+        ]
+      }
+    }
+  ],
+  "passed": 32,
+  "total": 32,
+  "qualifies": true
+}
