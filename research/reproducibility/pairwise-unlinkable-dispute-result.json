@@ -1,0 +1,82 @@
+{
+  "resultId": "PAIRWISE-UNLINKABLE-DISPUTE-RESULT-0.8",
+  "computedOn": "2026-08-14",
+  "protocolId": "PAIRWISE-UNLINKABLE-DISPUTE-ENROLLMENT-0.8",
+  "records": 9,
+  "globalEnrollmentIdPresent": false,
+  "independentRoleOrders": true,
+  "noCrossHopHandleReuse": true,
+  "forbiddenFields": {
+    "custody": false,
+    "pseudonymizer": false,
+    "outcome": false,
+    "auditor": false
+  },
+  "normalPairs": [
+    {
+      "pair": "custody+pseudonymizer",
+      "deterministicRawOutcomePaths": 0,
+      "uniqueOutcomeRecordsLinked": 0
+    },
+    {
+      "pair": "custody+outcome",
+      "deterministicRawOutcomePaths": 0,
+      "uniqueOutcomeRecordsLinked": 0
+    },
+    {
+      "pair": "pseudonymizer+outcome",
+      "deterministicRawOutcomePaths": 0,
+      "uniqueOutcomeRecordsLinked": 0
+    }
+  ],
+  "normalPairTotalLinkedOutcomeRecords": 0,
+  "threeOperationalRoleLinkedOutcomeRecords": 9,
+  "disputeTests": {
+    "validOpening": {
+      "opened": true,
+      "code": "opened-one",
+      "bridgeCount": 1
+    },
+    "openedPairRawOutcomePaths": 6,
+    "openedUniqueOutcomeRecords": 1,
+    "replay": {
+      "opened": false,
+      "code": "replay"
+    },
+    "wrongDispute": {
+      "opened": false,
+      "code": "wrong-dispute"
+    },
+    "expired": {
+      "opened": false,
+      "code": "expired"
+    },
+    "tampered": {
+      "opened": false,
+      "code": "bad-mac"
+    }
+  },
+  "hypotheses": {
+    "U1_pairwiseTransportHandlesPreventNormalTwoRoleRawOutcomeJoin": true,
+    "U2_scopedStatefulCapabilityOpensExactlyOneAndRejectsNegativeControls": true,
+    "U3_pairwiseHandleSeparationAndVoprfAreInterchangeablePrivacyClaims": false
+  },
+  "qualification": {
+    "syntheticMessageGraph": "pass",
+    "oneTimeCapabilityResolver": "pass-in-stateful-synthetic-fixture",
+    "twoRoleDeterministicJoinResistance": "pass-for-enumerated-fields-and-pairs",
+    "threeRoleCollusionResistance": "failed-as-expected",
+    "timingAndTrafficAnalysis": "untested",
+    "productionAnonymity": "unqualified",
+    "physicalCustody": "unqualified"
+  },
+  "viewDigests": {
+    "custody": "53366d96709a217304f7daf9ab464bd61bb10b6b8f6dddb8daf7c6491d2774cb",
+    "pseudonymizer": "409493714c1ce6230996218e6174df9a50e86e066f571a453d9f136f7848195e",
+    "outcome": "79fc6beccb1f34521fd3dff87c51eac9ec5baf8483faa711157f4cf4643a1af9",
+    "auditor": "e84995ff10cbc74fa913e76bd03dbf5381b6e645965953319da29ba48b455ec9",
+    "publicLedger": "4faadd1cebe90ae284f2fd357bef1617a147e6fdc9e0c78dfa1a0dd5e26b3dc9",
+    "capability": "137c67128a196923ff51b7a77bd24c6772c91f3294a23f870da1e080a50925a2"
+  },
+  "conclusion": "Removing the global enrollment ID and using independent hop handles reduces deterministic raw-to-outcome joins to zero for all three normal two-role unions in this nine-record synthetic graph. A stateful capability opens exactly one disputed bridge and rejects four negative controls. All three operational roles still reconstruct all nine links, and timing, public demo keys, physical custody, and real anonymity remain unqualified."
+}

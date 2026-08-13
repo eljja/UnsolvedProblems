@@ -1,0 +1,73 @@
+{
+  "resultId": "VOPRF-HMAC-ENROLLMENT-COMPARISON-0.8",
+  "computedOn": "2026-08-14",
+  "records": 9,
+  "inputMapping": {
+    "SYNTHETIC-PACKAGE-X": "RFC 9497 A.3.2 input 00",
+    "SYNTHETIC-PACKAGE-Y": "RFC 9497 A.3.2 input 5a repeated 17 times",
+    "boundary": "The comparison reuses two published vector outputs; it does not run a live VOPRF service on arbitrary package identifiers."
+  },
+  "hmacRelay": {
+    "construction": "HMAC-SHA-256(public synthetic key, studyId || normalized package ID), followed by a study-keyed final commitment",
+    "serverSeesUnblindedInput": true,
+    "proofOfConsistentServerKey": false,
+    "metrics": {
+      "sameStudyDuplicateRecall": 3,
+      "sameStudyDuplicateTrials": 3,
+      "differentPackageFalseCollisions": 0,
+      "differentPackageTrials": 3,
+      "crossStudyTokenCardinality": {
+        "SYNTHETIC-PACKAGE-X": 3,
+        "SYNTHETIC-PACKAGE-Y": 3
+      },
+      "crossStudyFinalCommitmentCardinality": {
+        "SYNTHETIC-PACKAGE-X": 3,
+        "SYNTHETIC-PACKAGE-Y": 3
+      }
+    }
+  },
+  "vectorBackedVoprf": {
+    "construction": "Published RFC 9497 P256-SHA256 VOPRF output, followed by the same study-keyed final commitment",
+    "protocolServerSeesUnblindedInput": false,
+    "proofOfConsistentServerKey": true,
+    "officialVectorsVerifiedByPython": 3,
+    "officialVectorsVerifiedByJavaScript": 3,
+    "metrics": {
+      "sameStudyDuplicateRecall": 3,
+      "sameStudyDuplicateTrials": 3,
+      "differentPackageFalseCollisions": 0,
+      "differentPackageTrials": 3,
+      "crossStudyTokenCardinality": {
+        "SYNTHETIC-PACKAGE-X": 1,
+        "SYNTHETIC-PACKAGE-Y": 1
+      },
+      "crossStudyFinalCommitmentCardinality": {
+        "SYNTHETIC-PACKAGE-X": 3,
+        "SYNTHETIC-PACKAGE-Y": 3
+      }
+    },
+    "stableClientOutputBoundary": "Standard VOPRF output is stable for the same private input and server key. In this fixture its cross-study token cardinality is one; study-scoped final commitments restore public separation but do not erase the stable client-side token."
+  },
+  "transportResult": {
+    "normalPairLinkedOutcomeRecords": 0,
+    "authorizedOpeningOutcomeRecords": 1,
+    "threeRoleLinkedOutcomeRecords": 9,
+    "interpretation": "These counts come from role-specific transport handles and are unchanged by choosing HMAC or a vector-backed VOPRF token."
+  },
+  "hypotheses": {
+    "C1_both_candidates_preserve_sameStudyDuplicateDetectionInThisFixture": true,
+    "C2_voprf_automatically_provides_crossStudyTokenUnlinkability": false,
+    "C3_transportMessageGraph_not_prf_choice_determines_enumerated_pairwise_rawOutcomeJoins": true
+  },
+  "qualification": {
+    "publishedVoprfTranscriptConformance": "pass-two-independent-repository-implementations",
+    "arbitraryInputVoprfEvaluation": "untested",
+    "liveVoprfInteroperability": "untested",
+    "hmacProductionKeyCustody": "unqualified-public-key",
+    "voprfProductionKeyCustody": "unqualified-public-vector-key",
+    "sideChannelsAndMaliciousRoles": "untested",
+    "physicalPackages": 0
+  },
+  "rowsDigest": "8f703e63032cbb631e917510ec56e4a07548ec3230a00b48cee8c6a5bbeeeaa6",
+  "conclusion": "HMAC and the vector-backed VOPRF candidate both recover three of three within-study repeats with zero different-package collisions after study-scoped commitment. VOPRF adds input blindness and a verifiable server-key transcript, but its same-input output remains stable across studies in this fixture. Pairwise raw-to-outcome unlinkability comes from the transport message graph, not from substituting one PRF primitive for another."
+}

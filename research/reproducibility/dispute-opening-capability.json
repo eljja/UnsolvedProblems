@@ -1,0 +1,13 @@
+{
+  "profile": "urn:unsolved-problems:dispute-opening-capability:0.8",
+  "synthetic": true,
+  "token": "eyJhdWRpdFJlY29yZElkIjoiQVVESVQtQi0yIiwiY2FwYWJpbGl0eUlkIjoiQ0FQLVJDMzMtQjIiLCJkaXNwdXRlSWQiOiJESVNQVVRFLVJDMzMtMDAxIiwiZXhwaXJlc0F0IjoiMjAyNi0wOC0xNVQwMDowMDowMFoiLCJtYXhpbXVtT3BlbmluZ3MiOjEsIm5vbmNlIjoiNmY4ZmM1OWU4YWMxMWM0MmIxOWUyY2M5OGU5ZjBlYzIifQ.0fe733820e429e734f477371c059be2e786345ea9dedcd763ff5eeae1171ae44",
+  "tokenDigest": "333e5d9a8f91cc458a2c8c46eeb3b18807ee858d34f7757f8ce002e445556213",
+  "publicClaims": {
+    "capabilityId": "CAP-RC33-B2",
+    "disputeId": "DISPUTE-RC33-001",
+    "expiresAt": "2026-08-15T00:00:00Z",
+    "maximumOpenings": 1
+  },
+  "warning": "The bearer token and synthetic key are public test data. Stateful replay rejection, not token copying resistance, enforces one redemption in this fixture."
+}

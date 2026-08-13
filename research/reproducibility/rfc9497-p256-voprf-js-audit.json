@@ -1,0 +1,44 @@
+{
+  "auditId": "INDEPENDENT-RFC9497-P256-VOPRF-JS-AUDIT-0.8",
+  "computedOn": "2026-08-14",
+  "passed": true,
+  "checks": {
+    "contextMatches": true,
+    "serverKeyMatches": true,
+    "threeVectors": true,
+    "proofsVerify": true,
+    "outputsMatch": true,
+    "wrongContextsReject": true,
+    "mutatedProofsReject": true,
+    "serverEvaluationsMatch": true,
+    "pythonAuditAgrees": true
+  },
+  "vectors": [
+    {
+      "id": "A.3.2.1",
+      "proofValid": true,
+      "outputMatches": true,
+      "wrongContextRejected": true,
+      "mutatedProofRejected": true,
+      "serverEvaluationMatches": true
+    },
+    {
+      "id": "A.3.2.2",
+      "proofValid": true,
+      "outputMatches": true,
+      "wrongContextRejected": true,
+      "mutatedProofRejected": true,
+      "serverEvaluationMatches": true
+    },
+    {
+      "id": "A.3.2.3",
+      "proofValid": true,
+      "outputMatches": true,
+      "wrongContextRejected": true,
+      "mutatedProofRejected": true,
+      "serverEvaluationMatches": true
+    }
+  ],
+  "independenceBoundary": "This JavaScript audit does not execute the Python verifier and implements P-256 point arithmetic, XMD expansion, hash-to-scalar, batched DLEQ verification, and finalization separately. Both implementations are reference code in one repository and are not constant-time or institutionally independent.",
+  "conclusion": "JavaScript independently agrees with Python on all three published RFC 9497 P256-SHA256 VOPRF transcripts and negative context/proof controls; live interoperability and production privacy remain untested."
+}

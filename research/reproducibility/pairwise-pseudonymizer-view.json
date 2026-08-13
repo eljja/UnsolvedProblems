@@ -1,0 +1,79 @@
+{
+  "viewId": "RC33-PSEUDONYMIZER-VIEW",
+  "role": "studyPseudonymizer",
+  "synthetic": true,
+  "records": [
+    {
+      "studyId": "STUDY-B",
+      "custodyToPseudonymizerHandle": "C2P-5fde689430ac670781cd582934e2ecdd",
+      "studyScopedCustodyToken": "9662ef183f4ca468ec88c29bdd217544de70b105ea47312a68f423961c04ebde",
+      "pseudonymizerToOutcomeHandle": "P2O-1b02db29a221a354dcad53f45726ab9d",
+      "finalPackageCommitment": "ec58e0dd65692c92b26b569773549360e583576de6c32b7e8352b202f7a24e80",
+      "eventOutcomeBinding": "71f77338e7693f69c2ecd5c5baf4906767bfca3f8b2c329ee17ed337d96402c1"
+    },
+    {
+      "studyId": "STUDY-A",
+      "custodyToPseudonymizerHandle": "C2P-59aa26f8eaaa3c4134a58c22e60163be",
+      "studyScopedCustodyToken": "fff55ecf56c3896bcec9f78a6322ae69be1c543193e54e33679f3a4a0f2e3624",
+      "pseudonymizerToOutcomeHandle": "P2O-60c1defb945499d675bc7dc3257d08d3",
+      "finalPackageCommitment": "57590e67d7e6db813fc415116d375689be061b55295800b255764cf90cc0e929",
+      "eventOutcomeBinding": "0d903632005ac5e506213292d38fb5b14fc41408fa3c1160b0aeb807a4511c4b"
+    },
+    {
+      "studyId": "STUDY-C",
+      "custodyToPseudonymizerHandle": "C2P-98d5945b0579ef2bb7fe2044d04c3b31",
+      "studyScopedCustodyToken": "5d62a869eaac688c0180c5fc20727d526979f223d324c20bbbf1029573f99058",
+      "pseudonymizerToOutcomeHandle": "P2O-8829fa24868b4f5c0cca2761bb595d45",
+      "finalPackageCommitment": "97052a6234c6416df90a1b0932c800605657ca8aef67dfa1ecab582c7cdf709f",
+      "eventOutcomeBinding": "1043e4552fd628547d36fa4bcc87e1538e14770a453f37b20c7449ba85f27232"
+    },
+    {
+      "studyId": "STUDY-B",
+      "custodyToPseudonymizerHandle": "C2P-ba57e31fc341d102d04c2b5174209256",
+      "studyScopedCustodyToken": "9ade80ec8ccbfac361c62cf1e8df9de9b994793a3a69aed8b289a7cc545ca7e0",
+      "pseudonymizerToOutcomeHandle": "P2O-fcf7c78477cb2c0ffdce7c03df32e801",
+      "finalPackageCommitment": "0bd8645ab7a799b632d45c452dc6d0658220a48de418eb1f184042d9863539af",
+      "eventOutcomeBinding": "d9c6123c57e9a9073ccdb6d7ba0021c789d59387a9d09591eba7dffd354d97a7"
+    },
+    {
+      "studyId": "STUDY-C",
+      "custodyToPseudonymizerHandle": "C2P-557e8e89142c59d88aadd7cc245c0185",
+      "studyScopedCustodyToken": "dae4cd1029055ecbf509228535e8c6cdc4117af090e4b98a756c6f958b8733ab",
+      "pseudonymizerToOutcomeHandle": "P2O-dafa32c752b1ca604dcb6f96e3a09ee6",
+      "finalPackageCommitment": "c2cb7359229f9ffbd48c2fcea37c8c9261aefd46b9a27ce4c40129a513ad4d02",
+      "eventOutcomeBinding": "616148ea7ef9b7ec22d7039972dd554c60330d2b23be19a5390c97468793011c"
+    },
+    {
+      "studyId": "STUDY-A",
+      "custodyToPseudonymizerHandle": "C2P-63f5d14b05d45551d7b9645958546520",
+      "studyScopedCustodyToken": "04bf0dd2c4e222393044cd75d5a0e620bc4e340340decd91739b158b04eaf790",
+      "pseudonymizerToOutcomeHandle": "P2O-1af1c9723e5f36308997009b5d6c1ed8",
+      "finalPackageCommitment": "fb84fe0b2d332906ae5b2bfc6a679857287520e034e55524d7efdb28928896fc",
+      "eventOutcomeBinding": "dd55b8f8f8de53e6dec94c61052edd95a619d0cc4e0775a538b21f9dfaaa2c66"
+    },
+    {
+      "studyId": "STUDY-B",
+      "custodyToPseudonymizerHandle": "C2P-479e827379b30a54811a37039c616db7",
+      "studyScopedCustodyToken": "9ade80ec8ccbfac361c62cf1e8df9de9b994793a3a69aed8b289a7cc545ca7e0",
+      "pseudonymizerToOutcomeHandle": "P2O-c883e8cec5267e00330ae6c07f4f4d99",
+      "finalPackageCommitment": "0bd8645ab7a799b632d45c452dc6d0658220a48de418eb1f184042d9863539af",
+      "eventOutcomeBinding": "f40d0d513cb02da1484ebcc2630f874db2dc8c12118c2e84f892d573bb98e2cf"
+    },
+    {
+      "studyId": "STUDY-A",
+      "custodyToPseudonymizerHandle": "C2P-ba6f340cb1745cd57e1fce88e02f5d1e",
+      "studyScopedCustodyToken": "fff55ecf56c3896bcec9f78a6322ae69be1c543193e54e33679f3a4a0f2e3624",
+      "pseudonymizerToOutcomeHandle": "P2O-3f39d2efa6414815e113abd21f0aed2d",
+      "finalPackageCommitment": "57590e67d7e6db813fc415116d375689be061b55295800b255764cf90cc0e929",
+      "eventOutcomeBinding": "4428ac87bc3b89abe531446e193c7520f3a0faccd6d6174222f5b1ea32e1da35"
+    },
+    {
+      "studyId": "STUDY-C",
+      "custodyToPseudonymizerHandle": "C2P-c3de72ceee1b0b5b6bd010fcfa121559",
+      "studyScopedCustodyToken": "5d62a869eaac688c0180c5fc20727d526979f223d324c20bbbf1029573f99058",
+      "pseudonymizerToOutcomeHandle": "P2O-aadeb12cef54ded501a226d967b814b1",
+      "finalPackageCommitment": "97052a6234c6416df90a1b0932c800605657ca8aef67dfa1ecab582c7cdf709f",
+      "eventOutcomeBinding": "5e3778272fa4c13d2cafe9e7461842f0aca22123874bd356b21c0f7ef88cb4de"
+    }
+  ]
+}

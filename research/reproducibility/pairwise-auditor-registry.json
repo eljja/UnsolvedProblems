@@ -1,0 +1,61 @@
+{
+  "viewId": "RC33-AUDITOR-REGISTRY",
+  "role": "independentAuditor",
+  "synthetic": true,
+  "records": [
+    {
+      "auditRecordId": "AUDIT-B-1",
+      "custodyToPseudonymizerHandle": "C2P-ba57e31fc341d102d04c2b5174209256",
+      "pseudonymizerToOutcomeHandle": "P2O-fcf7c78477cb2c0ffdce7c03df32e801",
+      "capabilityNonceDigest": "7b6956f11ceeaba24732fae95811e7b45a6bc20c555f1524019171db1c4f8bbe"
+    },
+    {
+      "auditRecordId": "AUDIT-C-3",
+      "custodyToPseudonymizerHandle": "C2P-557e8e89142c59d88aadd7cc245c0185",
+      "pseudonymizerToOutcomeHandle": "P2O-dafa32c752b1ca604dcb6f96e3a09ee6",
+      "capabilityNonceDigest": "929f5b63c7bf2832a4a703dc77bdb97ebb394f7467334e2e7c212236c0882fc5"
+    },
+    {
+      "auditRecordId": "AUDIT-A-2",
+      "custodyToPseudonymizerHandle": "C2P-ba6f340cb1745cd57e1fce88e02f5d1e",
+      "pseudonymizerToOutcomeHandle": "P2O-3f39d2efa6414815e113abd21f0aed2d",
+      "capabilityNonceDigest": "7cda42ca97db3abf72605568115857c5797b74db831d94a44dd767ea1dc85d76"
+    },
+    {
+      "auditRecordId": "AUDIT-C-1",
+      "custodyToPseudonymizerHandle": "C2P-c3de72ceee1b0b5b6bd010fcfa121559",
+      "pseudonymizerToOutcomeHandle": "P2O-aadeb12cef54ded501a226d967b814b1",
+      "capabilityNonceDigest": "71aff5464c610ca5e78ca084a3ef11af62e1edacdbd6533ff517073f0b725aa0"
+    },
+    {
+      "auditRecordId": "AUDIT-B-2",
+      "custodyToPseudonymizerHandle": "C2P-479e827379b30a54811a37039c616db7",
+      "pseudonymizerToOutcomeHandle": "P2O-c883e8cec5267e00330ae6c07f4f4d99",
+      "capabilityNonceDigest": "db125ab0528fd89ec7e732a8fcffe2c5490b1e45fcf8408c3601b14dcb3887f4"
+    },
+    {
+      "auditRecordId": "AUDIT-A-1",
+      "custodyToPseudonymizerHandle": "C2P-59aa26f8eaaa3c4134a58c22e60163be",
+      "pseudonymizerToOutcomeHandle": "P2O-60c1defb945499d675bc7dc3257d08d3",
+      "capabilityNonceDigest": "68436323fbeb982265ef66d58034b7db771c0771e57a5a4bea285a3868d28865"
+    },
+    {
+      "auditRecordId": "AUDIT-C-2",
+      "custodyToPseudonymizerHandle": "C2P-98d5945b0579ef2bb7fe2044d04c3b31",
+      "pseudonymizerToOutcomeHandle": "P2O-8829fa24868b4f5c0cca2761bb595d45",
+      "capabilityNonceDigest": "f6ad7ff0b7a3e8605717c6261f7fa57f08eeda063d68be33424325b616d2f9a0"
+    },
+    {
+      "auditRecordId": "AUDIT-B-3",
+      "custodyToPseudonymizerHandle": "C2P-5fde689430ac670781cd582934e2ecdd",
+      "pseudonymizerToOutcomeHandle": "P2O-1b02db29a221a354dcad53f45726ab9d",
+      "capabilityNonceDigest": "d57725bb02d46c21ea09065b3300e721fba5dbfbda4d5232727f2e783d0fcb71"
+    },
+    {
+      "auditRecordId": "AUDIT-A-3",
+      "custodyToPseudonymizerHandle": "C2P-63f5d14b05d45551d7b9645958546520",
+      "pseudonymizerToOutcomeHandle": "P2O-1af1c9723e5f36308997009b5d6c1ed8",
+      "capabilityNonceDigest": "cd5185092e24462d7ed3b181c519068ca646149da2128993f9c2922420fab743"
+    }
+  ]
+}

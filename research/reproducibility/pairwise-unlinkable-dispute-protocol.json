@@ -1,0 +1,73 @@
+{
+  "protocolId": "PAIRWISE-UNLINKABLE-DISPUTE-ENROLLMENT-0.8",
+  "fixedOn": "2026-08-14",
+  "status": "synthetic-message-graph-qualification",
+  "purpose": "Remove the global enrollment identifier that defeated RC32, test every two-role view for deterministic raw-to-outcome joins, and permit an independent auditor to open exactly one preregistered disputed record.",
+  "roles": {
+    "custodyObserver": {
+      "sees": ["studyId", "syntheticRawPackageId", "custodyObservationId", "custodyToPseudonymizerHandle", "studyScopedCustodyToken"],
+      "mustNotSee": ["pseudonymizerToOutcomeHandle", "vendorCode", "outcomeClass", "auditorRegistry"]
+    },
+    "studyPseudonymizer": {
+      "sees": ["studyId", "custodyToPseudonymizerHandle", "studyScopedCustodyToken", "pseudonymizerToOutcomeHandle", "finalPackageCommitment", "eventOutcomeBinding"],
+      "mustNotSee": ["syntheticRawPackageId", "custodyObservationId", "vendorCode", "outcomeClass", "auditorRegistry"]
+    },
+    "outcomeHolder": {
+      "sees": ["pseudonymizerToOutcomeHandle", "eventOutcomeBinding", "vendorCode", "outcomeClass"],
+      "mustNotSee": ["syntheticRawPackageId", "custodyObservationId", "custodyToPseudonymizerHandle", "studyScopedCustodyToken", "finalPackageCommitment", "auditorRegistry"]
+    },
+    "independentAuditor": {
+      "sees": ["auditRecordId", "custodyToPseudonymizerHandle", "pseudonymizerToOutcomeHandle", "capabilityNonceDigest"],
+      "mustNotSee": ["syntheticRawPackageId", "vendorCode", "outcomeClass", "studyScopedCustodyToken", "finalPackageCommitment"]
+    }
+  },
+  "messageGraph": {
+    "globalEnrollmentId": false,
+    "custodyToPseudonymizerHandle": "Fresh 128-bit synthetic routing handle unique to one enrollment event.",
+    "pseudonymizerToOutcomeHandle": "Independent fresh 128-bit synthetic routing handle unique to the same event but unequal to every custody handle.",
+    "recordOrder": "Each role view is independently shuffled; array position is not a permitted join key.",
+    "publicLedger": "Contains study-local commitments and duplicate pointers but neither routing handle nor raw or outcome truth. Stable duplicate commitments do not enter the outcome view; its binding is event-specific.",
+    "normalOperationRule": "No normal two-role union may contain a deterministic path from syntheticRawPackageId to outcomeClass.",
+    "threeRoleBoundary": "All three operational roles together can reconstruct every raw-to-outcome path; RC33 does not claim three-role collusion resistance."
+  },
+  "disputeCapability": {
+    "format": "base64url(canonical payload) || '.' || HMAC-SHA-256(auditor synthetic signing key, payload)",
+    "payload": ["capabilityId", "auditRecordId", "disputeId", "nonce", "expiresAt", "maximumOpenings"],
+    "authorization": "A valid capability authorizes the resolver to return the one registry bridge bound to its auditRecordId.",
+    "replayState": "The resolver stores the capability digest after redemption and rejects reuse.",
+    "oneTimeBoundary": "One-time use is a stateful resolver guarantee, not a property that prevents a copied bearer token from being presented first.",
+    "reject": ["bad MAC", "wrong disputeId", "expired token", "unknown auditRecordId", "maximumOpenings other than one", "replayed capability digest", "bridge opening more than one record"]
+  },
+  "matrix": {
+    "studies": ["STUDY-A", "STUDY-B", "STUDY-C"],
+    "columns": ["PACKAGE-X-FIRST", "PACKAGE-X-REPEAT", "PACKAGE-Y-FIRST"],
+    "records": 9,
+    "disputedRecord": { "studyId": "STUDY-B", "column": "PACKAGE-X-REPEAT", "auditRecordId": "AUDIT-B-2" }
+  },
+  "hypotheses": [
+    {
+      "id": "U1",
+      "claim": "Replacing a global enrollment ID with two independent hop handles reduces deterministic raw-to-outcome joins to zero in every two-role operational view.",
+      "rejectWhen": "Any custody-pseudonymizer, custody-outcome, or pseudonymizer-outcome union yields at least one deterministic raw-to-outcome path."
+    },
+    {
+      "id": "U2",
+      "claim": "A scoped auditor capability opens exactly one disputed bridge and rejects replay, tampering, wrong-dispute, expiry, and cross-record use.",
+      "rejectWhen": "The valid capability opens zero or multiple bridges, or any negative control opens a bridge."
+    },
+    {
+      "id": "U3",
+      "claim": "Pairwise handle separation and a VOPRF are interchangeable privacy claims.",
+      "rejectWhen": "VOPRF proof conformance leaves a stable transport join, or unlinkable transport handles provide no cryptographic input blindness."
+    }
+  ],
+  "qualificationBoundary": {
+    "syntheticMessageGraph": "testable",
+    "statefulOneTimeOpening": "testable",
+    "productionAnonymity": "unqualified",
+    "sideChannelResistance": "unqualified",
+    "organizationalNonCollusion": "assumed, not established",
+    "physicalCustody": "unqualified"
+  },
+  "safety": "All packages, identifiers, keys, vendors, outcomes, disputes, and observations are synthetic. The protocol contains no production secret, customer record, real hardware identifier, or live authorization."
+}

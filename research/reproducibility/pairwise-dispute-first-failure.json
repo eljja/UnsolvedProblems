@@ -1,0 +1,21 @@
+{
+  "failureId": "RC33-DISPUTE-OPENING-EQUIVALENCE-CLASS-FAILURE-0.8",
+  "observedOn": "2026-08-14",
+  "status": "reproduced-and-corrected",
+  "attempt": "The first RC33 message graph kept the study-stable finalPackageCommitment in both pseudonymizer and outcome views while adding a one-record auditor bridge.",
+  "expected": "A valid capability returns one custody-to-outcome bridge and exposes exactly one outcome record.",
+  "observed": {
+    "capabilityBridgesReturned": 1,
+    "deterministicRawOutcomePaths": 12,
+    "uniqueOutcomeRecordsExposed": 2,
+    "reason": "The authorized event bridge reached one outcome row, then the shared study-stable duplicate commitment connected it to the repeated outcome row for the same package."
+  },
+  "diagnosis": "Single-use authorization limits resolver calls but does not limit disclosure cardinality when the opened graph contains a stable equivalence-class identifier.",
+  "correction": "Keep the stable duplicate commitment only in the pseudonymizer and public denominator ledger. Give the outcome holder an event-specific binding derived from the event handle and stable commitment, so one bridge reaches one outcome event.",
+  "postCorrection": {
+    "normalTwoRoleUniqueOutcomeRecords": 0,
+    "authorizedOpeningUniqueOutcomeRecords": 1,
+    "threeOperationalRoleUniqueOutcomeRecords": 9
+  },
+  "remainingBoundary": "The corrected synthetic graph still assumes fields are complete, omits timing and traffic correlation, uses public demo keys, and fails against all-three-role collusion."
+}

@@ -17,8 +17,8 @@
     },
     rfc_voprf_9497_2023: {
       discipline: "computer", title: "RFC 9497: Oblivious Pseudorandom Functions (OPRFs) Using Prime-Order Groups", url: "https://www.rfc-editor.org/rfc/rfc9497.html",
-      evidenceLabel: "서버가 client 입력을 배우지 않고 PRF 출력을 제공하는 OPRF·VOPRF·POPRF IETF 표준", evidenceLabelEn: "IETF standard for OPRF, VOPRF, and POPRF evaluation without the server learning the client's input",
-      publishedOn: "2023-11-01", resultPeriod: "2023년 Standards Track RFC; base·verifiable·partially oblivious mode와 proof·domain separation을 정의", resultPeriodEn: "2023 Standards Track RFC defining base, verifiable, and partially oblivious modes plus proofs and domain separation", reviewedOn: REVIEWED_ON
+      evidenceLabel: "서버가 client 입력을 배우지 않고 PRF 출력을 제공하는 OPRF·VOPRF·POPRF CFRG/IRTF 합의 규격", evidenceLabelEn: "CFRG/IRTF consensus specification for OPRF, VOPRF, and POPRF evaluation without the server learning the client's input",
+      publishedOn: "2023-11-01", resultPeriod: "2023년 IRTF Informational RFC; base·verifiable·partially oblivious mode와 proof·domain separation을 정의", resultPeriodEn: "2023 IRTF Informational RFC defining base, verifiable, and partially oblivious modes plus proofs and domain separation", reviewedOn: REVIEWED_ON
     },
     nist_sp800_188_2023: {
       discipline: "computer", title: "NIST SP 800-188: De-Identifying Government Datasets — Techniques and Governance", url: "https://csrc.nist.gov/pubs/sp/800/188/final",

@@ -1,0 +1,40 @@
+{
+  "auditId": "INDEPENDENT-PAIRWISE-UNLINKABLE-AUDIT-0.8",
+  "computedOn": "2026-08-14",
+  "passed": true,
+  "checks": {
+    "protocol_and_artifact_versions_match": true,
+    "nine_records_in_every_view": true,
+    "global_enrollment_id_absent": true,
+    "role_orders_are_not_shared": true,
+    "hop_handle_namespaces_are_disjoint": true,
+    "single_role_forbidden_fields_absent": true,
+    "custody_pseudonymizer_pair_links_zero_outcomes": true,
+    "custody_outcome_pair_links_zero_outcomes": true,
+    "pseudonymizer_outcome_pair_links_zero_outcomes": true,
+    "all_three_roles_link_nine_outcomes": true,
+    "capability_mac_and_payload_validate": true,
+    "capability_digest_recomputes": true,
+    "capability_selects_one_registry_bridge": true,
+    "authorized_bridge_opens_one_outcome": true,
+    "tampered_capability_is_rejected": true,
+    "stateful_replay_is_rejected": true,
+    "wrong_dispute_and_expiry_are_rejected_in_result": true,
+    "public_ledger_digest_recomputes": true,
+    "production_claims_remain_bounded": true,
+    "three_role_collusion_not_claimed": true
+  },
+  "recomputed": {
+    "normalPairUniqueOutcomeRecords": {
+      "custody+pseudonymizer": 0,
+      "custody+outcome": 0,
+      "pseudonymizer+outcome": 0
+    },
+    "authorizedOpeningUniqueOutcomeRecords": 1,
+    "threeRoleUniqueOutcomeRecords": 9,
+    "globalEnrollmentIdPresent": false,
+    "hopHandleIntersection": 0
+  },
+  "independenceBoundary": "This Python audit does not execute the JavaScript generator. It reconstructs exact-value message-graph paths, field exclusions, handle namespaces, capability HMAC and payload, stateful replay logic, and ledger digest from committed artifacts. Public synthetic keys and enumerated JSON fields cannot establish production anonymity, resistance to traffic analysis, organizational non-collusion, or physical custody.",
+  "conclusion": "All enumerated two-role unions expose zero outcome records from raw custody identities, while the authorized bridge exposes one and all three operational roles expose nine. This is a bounded message-graph result, not an anonymity proof."
+}

@@ -1,0 +1,64 @@
+{
+  "resultId": "RFC9497-P256-VOPRF-CONFORMANCE-RESULT-0.8",
+  "computedOn": "2026-08-14",
+  "fixtureId": "RFC9497-P256-VOPRF-VECTORS-0.8",
+  "suite": "P256-SHA256",
+  "mode": "VOPRF",
+  "passed": true,
+  "checks": {
+    "context_string_matches_fixture": true,
+    "server_public_key_matches_private_scalar": true,
+    "three_published_vectors_present": true,
+    "all_batch_shapes_match": true,
+    "all_server_evaluations_match": true,
+    "all_dleq_proofs_verify": true,
+    "all_finalize_outputs_match": true,
+    "wrong_mode_context_rejected_for_all": true,
+    "mutated_proof_rejected_for_all": true,
+    "mutated_evaluation_rejected_for_all": true
+  },
+  "vectors": [
+    {
+      "id": "A.3.2.1",
+      "batchSize": 1,
+      "batchShapeMatches": true,
+      "publicEvaluationMatchesPrivateScalar": true,
+      "dleqProofValid": true,
+      "outputsMatch": true,
+      "wrongModeContextRejected": true,
+      "mutatedProofRejected": true,
+      "mutatedEvaluationRejected": true
+    },
+    {
+      "id": "A.3.2.2",
+      "batchSize": 1,
+      "batchShapeMatches": true,
+      "publicEvaluationMatchesPrivateScalar": true,
+      "dleqProofValid": true,
+      "outputsMatch": true,
+      "wrongModeContextRejected": true,
+      "mutatedProofRejected": true,
+      "mutatedEvaluationRejected": true
+    },
+    {
+      "id": "A.3.2.3",
+      "batchSize": 2,
+      "batchShapeMatches": true,
+      "publicEvaluationMatchesPrivateScalar": true,
+      "dleqProofValid": true,
+      "outputsMatch": true,
+      "wrongModeContextRejected": true,
+      "mutatedProofRejected": true,
+      "mutatedEvaluationRejected": true
+    }
+  ],
+  "testCount": 31,
+  "qualification": {
+    "publishedVectorConformance": "pass",
+    "liveServerInteroperability": "untested",
+    "constantTime": "unqualified-pure-python-reference-code",
+    "productionKeyProtection": "unqualified-public-vector-key",
+    "enrollmentPrivacy": "not-established-by-primitive-conformance"
+  },
+  "conclusion": "Pure-Python P-256 arithmetic verifies all three RFC 9497 A.3.2 VOPRF proofs and outputs, including the batch proof, and rejects wrong-mode, mutated-proof, and mutated-evaluation controls. This qualifies the reference transcript logic only; it does not qualify a live service, constant-time implementation, or enrollment privacy."
+}

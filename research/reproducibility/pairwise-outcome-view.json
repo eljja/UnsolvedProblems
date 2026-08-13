@@ -1,0 +1,61 @@
+{
+  "viewId": "RC33-OUTCOME-VIEW",
+  "role": "outcomeHolder",
+  "synthetic": true,
+  "records": [
+    {
+      "pseudonymizerToOutcomeHandle": "P2O-8829fa24868b4f5c0cca2761bb595d45",
+      "eventOutcomeBinding": "1043e4552fd628547d36fa4bcc87e1538e14770a453f37b20c7449ba85f27232",
+      "vendorCode": "VENDOR-GAMMA",
+      "outcomeClass": "genuine"
+    },
+    {
+      "pseudonymizerToOutcomeHandle": "P2O-1af1c9723e5f36308997009b5d6c1ed8",
+      "eventOutcomeBinding": "dd55b8f8f8de53e6dec94c61052edd95a619d0cc4e0775a538b21f9dfaaa2c66",
+      "vendorCode": "VENDOR-DELTA",
+      "outcomeClass": "substitution"
+    },
+    {
+      "pseudonymizerToOutcomeHandle": "P2O-1b02db29a221a354dcad53f45726ab9d",
+      "eventOutcomeBinding": "71f77338e7693f69c2ecd5c5baf4906767bfca3f8b2c329ee17ed337d96402c1",
+      "vendorCode": "VENDOR-DELTA",
+      "outcomeClass": "substitution"
+    },
+    {
+      "pseudonymizerToOutcomeHandle": "P2O-3f39d2efa6414815e113abd21f0aed2d",
+      "eventOutcomeBinding": "4428ac87bc3b89abe531446e193c7520f3a0faccd6d6174222f5b1ea32e1da35",
+      "vendorCode": "VENDOR-GAMMA",
+      "outcomeClass": "genuine"
+    },
+    {
+      "pseudonymizerToOutcomeHandle": "P2O-dafa32c752b1ca604dcb6f96e3a09ee6",
+      "eventOutcomeBinding": "616148ea7ef9b7ec22d7039972dd554c60330d2b23be19a5390c97468793011c",
+      "vendorCode": "VENDOR-DELTA",
+      "outcomeClass": "substitution"
+    },
+    {
+      "pseudonymizerToOutcomeHandle": "P2O-fcf7c78477cb2c0ffdce7c03df32e801",
+      "eventOutcomeBinding": "d9c6123c57e9a9073ccdb6d7ba0021c789d59387a9d09591eba7dffd354d97a7",
+      "vendorCode": "VENDOR-GAMMA",
+      "outcomeClass": "genuine"
+    },
+    {
+      "pseudonymizerToOutcomeHandle": "P2O-60c1defb945499d675bc7dc3257d08d3",
+      "eventOutcomeBinding": "0d903632005ac5e506213292d38fb5b14fc41408fa3c1160b0aeb807a4511c4b",
+      "vendorCode": "VENDOR-GAMMA",
+      "outcomeClass": "genuine"
+    },
+    {
+      "pseudonymizerToOutcomeHandle": "P2O-aadeb12cef54ded501a226d967b814b1",
+      "eventOutcomeBinding": "5e3778272fa4c13d2cafe9e7461842f0aca22123874bd356b21c0f7ef88cb4de",
+      "vendorCode": "VENDOR-GAMMA",
+      "outcomeClass": "genuine"
+    },
+    {
+      "pseudonymizerToOutcomeHandle": "P2O-c883e8cec5267e00330ae6c07f4f4d99",
+      "eventOutcomeBinding": "f40d0d513cb02da1484ebcc2630f874db2dc8c12118c2e84f892d573bb98e2cf",
+      "vendorCode": "VENDOR-GAMMA",
+      "outcomeClass": "genuine"
+    }
+  ]
+}

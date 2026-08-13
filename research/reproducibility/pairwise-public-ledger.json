@@ -1,0 +1,71 @@
+{
+  "profile": "urn:unsolved-problems:pairwise-unlinkable-ledger:0.8",
+  "protocolId": "PAIRWISE-UNLINKABLE-DISPUTE-ENROLLMENT-0.8",
+  "records": [
+    {
+      "ledgerEntryId": "LEDGER-A-1",
+      "studyId": "STUDY-A",
+      "finalPackageCommitment": "57590e67d7e6db813fc415116d375689be061b55295800b255764cf90cc0e929",
+      "duplicateOfLedgerEntryId": null,
+      "custodyObservationDigest": "6b9a5eeca137d681d5615a7ccd481b4689501cf2f2a2d8bb376ef623f9cfc7f5"
+    },
+    {
+      "ledgerEntryId": "LEDGER-A-2",
+      "studyId": "STUDY-A",
+      "finalPackageCommitment": "57590e67d7e6db813fc415116d375689be061b55295800b255764cf90cc0e929",
+      "duplicateOfLedgerEntryId": "LEDGER-A-1",
+      "custodyObservationDigest": "7961316a882d07e6583734caa54fc4ce120f2bf77c9c5c51007a1b7f9aaf65a5"
+    },
+    {
+      "ledgerEntryId": "LEDGER-A-3",
+      "studyId": "STUDY-A",
+      "finalPackageCommitment": "fb84fe0b2d332906ae5b2bfc6a679857287520e034e55524d7efdb28928896fc",
+      "duplicateOfLedgerEntryId": null,
+      "custodyObservationDigest": "558708ed6e6f8d2948f023f211d3f37436519c8d433ec919830be66951d25129"
+    },
+    {
+      "ledgerEntryId": "LEDGER-B-1",
+      "studyId": "STUDY-B",
+      "finalPackageCommitment": "0bd8645ab7a799b632d45c452dc6d0658220a48de418eb1f184042d9863539af",
+      "duplicateOfLedgerEntryId": null,
+      "custodyObservationDigest": "07722c5116b87fa604f25c2db4ae5db3d5628f374fb28361e18de18a7325df77"
+    },
+    {
+      "ledgerEntryId": "LEDGER-B-2",
+      "studyId": "STUDY-B",
+      "finalPackageCommitment": "0bd8645ab7a799b632d45c452dc6d0658220a48de418eb1f184042d9863539af",
+      "duplicateOfLedgerEntryId": "LEDGER-B-1",
+      "custodyObservationDigest": "9664720839f397248fdcf5f675c2e4e72d9607523537d085bc041592b1e8e966"
+    },
+    {
+      "ledgerEntryId": "LEDGER-B-3",
+      "studyId": "STUDY-B",
+      "finalPackageCommitment": "ec58e0dd65692c92b26b569773549360e583576de6c32b7e8352b202f7a24e80",
+      "duplicateOfLedgerEntryId": null,
+      "custodyObservationDigest": "7df0d6a8bbc093a772da76bf82aeeb32d1b9dda27b5d41dc45d6b82faf9509ce"
+    },
+    {
+      "ledgerEntryId": "LEDGER-C-1",
+      "studyId": "STUDY-C",
+      "finalPackageCommitment": "97052a6234c6416df90a1b0932c800605657ca8aef67dfa1ecab582c7cdf709f",
+      "duplicateOfLedgerEntryId": null,
+      "custodyObservationDigest": "2db75cb00ef50be025f1d0d8c0772d707fa14022141eca04d469cc3df361ffa0"
+    },
+    {
+      "ledgerEntryId": "LEDGER-C-2",
+      "studyId": "STUDY-C",
+      "finalPackageCommitment": "97052a6234c6416df90a1b0932c800605657ca8aef67dfa1ecab582c7cdf709f",
+      "duplicateOfLedgerEntryId": "LEDGER-C-1",
+      "custodyObservationDigest": "a538597358371740a8f4bbc38ce59f0175f2cd86bfca654d656f0123b1d6c310"
+    },
+    {
+      "ledgerEntryId": "LEDGER-C-3",
+      "studyId": "STUDY-C",
+      "finalPackageCommitment": "c2cb7359229f9ffbd48c2fcea37c8c9261aefd46b9a27ce4c40129a513ad4d02",
+      "duplicateOfLedgerEntryId": null,
+      "custodyObservationDigest": "f564540b0de16c7c88028f49c0f5e5b70b0da3865597bc541ac2892b7f9fdd7e"
+    }
+  ],
+  "ledgerDigest": "25a0152be30b9544abc3748566452688b480b4836427a6dcba2acf5f3a0e329a",
+  "qualification": "synthetic-message-graph-only"
+}
