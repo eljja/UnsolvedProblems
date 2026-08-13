@@ -1,0 +1,87 @@
+{
+  "protocolId": "SITE-LINEAGE-ATTESTATION-0.3",
+  "fixedOn": "2026-08-14",
+  "status": "synthetic-interface-test-before-any-site-or-physical-claim",
+  "researchQuestion": "Can sample identity, instrument export, analysis sealing, and offline unblinding be made auditable without mistaking a file digest or signal similarity for proof that a new physical acquisition occurred?",
+  "identityContract": {
+    "physicalSample": "A registered persistent sample identifier may be used only for a physical sample. Synthetic fixtures use local MOCK-SAMPLE identifiers and must not resemble an issued IGSN.",
+    "digitalObject": "Each raw export and derived analysis receives its own digital-object identifier and SHA-256 digest; neither identifier is a physical-sample identifier.",
+    "dualLabel": "The machine-readable code and adjacent human-readable identifier must encode the same local sample or aliquot ID.",
+    "parentage": [
+      "sample -> aliquot",
+      "aliquot -> acquisition",
+      "acquisition -> export",
+      "export -> analysis"
+    ]
+  },
+  "eventStateMachine": [
+    "planned",
+    "label-bound",
+    "acquisition-started",
+    "acquisition-stopped",
+    "export-registered",
+    "analysis-sealed",
+    "key-released"
+  ],
+  "roleSeparation": {
+    "preparer": "Binds the physical label and aliquot parent but cannot open the arm map after commitment.",
+    "acquisitionOperator": "Runs the instrument and records the device receipt but cannot alter the arm map or analysis output.",
+    "analyst": "Receives sealed exports and cannot access the arm map before every analysis is sealed.",
+    "independentCustodian": "Commits the salted arm map offline and releases the salt and map once after all required exports and analyses are sealed."
+  },
+  "commitment": {
+    "algorithm": "SHA-256",
+    "canonicalForm": "protocolId + newline + one-time random salt + newline + canonical JSON arm map",
+    "releaseGate": "All required exports and analysis digests must be registered before key release.",
+    "warning": "The repository uses a disclosed deterministic demonstration salt only for reproducibility. It is not a reusable secret and cannot qualify physical custody."
+  },
+  "exportManifest": {
+    "required": [
+      "acquisitionId",
+      "aliquotId",
+      "instrumentSessionId",
+      "deviceId",
+      "deviceMonotonicCounter",
+      "startedAt",
+      "stoppedAt",
+      "rawByteSha256",
+      "canonicalSignalSha256",
+      "signalFingerprint",
+      "metadataSha256",
+      "receiptClass"
+    ],
+    "receiptClasses": {
+      "synthetic-emulator": "Tests software interfaces only and can never establish a site or physical acquisition.",
+      "independent-witness": "A named institutional witness attests start, stop, label, and export; acceptance still depends on local policy.",
+      "device-signed": "A verified signature binds device identity, monotonic counter, acquisition interval, label, and export digest."
+    }
+  },
+  "threeEvidenceLayers": {
+    "byteIdentity": "A raw-byte digest detects exact byte reuse or alteration but changes under harmless re-encoding.",
+    "semanticContent": "A canonical numeric digest catches syntax-only re-encoding; a tolerant signal fingerprint may quarantine regridded or scaled near-copies but cannot prove copying.",
+    "physicalOccurrence": "Only acquisition-side evidence independent of file contents can support a claim that a new measurement occurred. Content-only evidence is insufficient in indistinguishable worlds."
+  },
+  "verdicts": {
+    "accept-interface": "The synthetic event and evidence contract is internally consistent; no physical claim follows.",
+    "reject": "A deterministic contract violation is present.",
+    "quarantine": "Content is suspicious but also compatible with a legitimate repeat; independent acquisition evidence is required.",
+    "unverified-physical": "The event chain is syntactically valid but lacks an accepted acquisition-side attestation."
+  },
+  "siteReadinessGates": [
+    { "id": "L1-IDENTITY", "criterion": "Physical labels and scanner output reconcile at the site; issued persistent IDs, if used, resolve to the same physical samples.", "repositoryStatus": "synthetic-only" },
+    { "id": "L2-EXPORT", "criterion": "A real instrument export contains complete time, counter, device, sample, and processing provenance fields.", "repositoryStatus": "synthetic-only" },
+    { "id": "L3-CUSTODY", "criterion": "An independent person or service holds and releases the one-time arm-map key after sealing.", "repositoryStatus": "synthetic-only" },
+    { "id": "L4-ATTESTATION", "criterion": "A device signature or institutional witness independently binds the acquisition event to the exported bytes.", "repositoryStatus": "not-demonstrated" },
+    { "id": "L5-PHYSICAL", "criterion": "Institutional EHS, radiation, ventilation, waste, instrument, and supply gates from INTERVENTION-PILOT-0.2 are satisfied.", "repositoryStatus": "not-demonstrated" }
+  ],
+  "independenceRule": "Development signals, deterministic salts, emulator receipts, and mutation fixtures must not be reused to adjudicate a physical pilot. A site qualification requires separately generated labels, exports, keys, receipts, and reviewers.",
+  "primarySources": [
+    "https://support.datacite.org/docs/igsn-ids",
+    "https://support.datacite.org/docs/displaying-igsn-ids",
+    "https://manual.nexusformat.org/classes/base_classes/NXprocess.html",
+    "https://www.iucr.org/__data/iucr/cif/dictionaries/cif_img_1.3.2.dic.pdf",
+    "https://csrc.nist.gov/pubs/fips/180-4/upd1/final",
+    "https://csrc.nist.gov/presentations/2025/semiconductor-traceability",
+    "https://www.darpa.mil/research/programs/supply-chain-hardware-integrity-for-electronics-defense"
+  ]
+}

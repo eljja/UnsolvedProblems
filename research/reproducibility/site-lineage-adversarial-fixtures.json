@@ -1,0 +1,26 @@
+{
+  "fixtureSetId": "SITE-LINEAGE-ADVERSARIAL-0.3",
+  "fixedOn": "2026-08-14",
+  "status": "sealed-synthetic-fixtures-before-site-evidence",
+  "tests": [
+    { "id": "S00", "mutation": "none", "expectedVerdict": "accept-interface", "expectedCode": null },
+    { "id": "S01", "mutation": "swap-label-parent", "expectedVerdict": "reject", "expectedCode": "E_LABEL_PARENT" },
+    { "id": "S02", "mutation": "remove-required-export", "expectedVerdict": "reject", "expectedCode": "E_EXPORT_COMPLETENESS" },
+    { "id": "S03", "mutation": "syntax-reencoded-copy", "expectedVerdict": "reject", "expectedCode": "E_CANONICAL_DUPLICATE" },
+    { "id": "S04", "mutation": "regridded-scaled-near-copy", "expectedVerdict": "quarantine", "expectedCode": "Q_SIMILARITY_AMBIGUOUS" },
+    { "id": "S05", "mutation": "legitimate-high-similarity-repeat", "expectedVerdict": "quarantine", "expectedCode": "Q_SIMILARITY_AMBIGUOUS" },
+    { "id": "S06", "mutation": "invert-event-order", "expectedVerdict": "reject", "expectedCode": "E_EVENT_ORDER" },
+    { "id": "S07", "mutation": "release-key-before-analysis-seal", "expectedVerdict": "reject", "expectedCode": "E_EARLY_UNBLIND" },
+    { "id": "S08", "mutation": "open-wrong-commitment", "expectedVerdict": "reject", "expectedCode": "E_COMMITMENT_OPEN" },
+    { "id": "S09", "mutation": "collapse-analyst-and-custodian", "expectedVerdict": "reject", "expectedCode": "E_ROLE_SEPARATION" },
+    { "id": "S10", "mutation": "reuse-device-counter", "expectedVerdict": "reject", "expectedCode": "E_DEVICE_COUNTER" },
+    { "id": "S11", "mutation": "break-event-chain", "expectedVerdict": "reject", "expectedCode": "E_EVENT_CHAIN" },
+    { "id": "S12", "mutation": "machine-human-label-mismatch", "expectedVerdict": "reject", "expectedCode": "E_LABEL_DUAL" },
+    { "id": "S13", "mutation": "claim-physical-with-emulator-receipt", "expectedVerdict": "reject", "expectedCode": "E_ATTESTATION_MISSING" }
+  ],
+  "interpretiveControl": {
+    "pairedFixtures": ["S04", "S05"],
+    "purpose": "A transformed copy and a legitimate technical repeat can both exceed the similarity threshold. The correct output is quarantine, not a copying verdict.",
+    "falsifies": "A tolerant content fingerprint uniquely identifies whether a new physical acquisition occurred."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "auditId": "SITE-LINEAGE-ATTESTATION-AUDIT-0.3",
+  "computedOn": "2026-08-14",
+  "status": "synthetic-interface-and-impossibility-control-complete",
+  "denominators": { "fixtures": 14, "adversarialFixtures": 13, "exactRejections": 11, "ambiguousControls": 2 },
+  "validFixture": {
+    "verdict": "accept-interface",
+    "physicalClaim": false,
+    "receiptClass": "synthetic-emulator",
+    "ledgerSha256": "83327c8df564e7b79a73f97113bf8b8a742e760d5389b3a6390c8cedb82711c0"
+  },
+  "fixtureResults": [
+    { "id": "S00", "expectedVerdict": "accept-interface", "observedVerdict": "accept-interface", "expectedCode": null, "observedCodes": [], "detectedAsSpecified": true },
+    { "id": "S01", "expectedVerdict": "reject", "observedVerdict": "reject", "expectedCode": "E_LABEL_PARENT", "observedCodes": ["E_LABEL_PARENT"], "detectedAsSpecified": true },
+    { "id": "S02", "expectedVerdict": "reject", "observedVerdict": "reject", "expectedCode": "E_EXPORT_COMPLETENESS", "observedCodes": ["E_EXPORT_COMPLETENESS"], "detectedAsSpecified": true },
+    { "id": "S03", "expectedVerdict": "reject", "observedVerdict": "reject", "expectedCode": "E_CANONICAL_DUPLICATE", "observedCodes": ["E_CANONICAL_DUPLICATE"], "detectedAsSpecified": true },
+    { "id": "S04", "expectedVerdict": "quarantine", "observedVerdict": "quarantine", "expectedCode": "Q_SIMILARITY_AMBIGUOUS", "observedCodes": ["Q_SIMILARITY_AMBIGUOUS"], "detectedAsSpecified": true },
+    { "id": "S05", "expectedVerdict": "quarantine", "observedVerdict": "quarantine", "expectedCode": "Q_SIMILARITY_AMBIGUOUS", "observedCodes": ["Q_SIMILARITY_AMBIGUOUS"], "detectedAsSpecified": true },
+    { "id": "S06", "expectedVerdict": "reject", "observedVerdict": "reject", "expectedCode": "E_EVENT_ORDER", "observedCodes": ["E_EVENT_ORDER"], "detectedAsSpecified": true },
+    { "id": "S07", "expectedVerdict": "reject", "observedVerdict": "reject", "expectedCode": "E_EARLY_UNBLIND", "observedCodes": ["E_EARLY_UNBLIND"], "detectedAsSpecified": true },
+    { "id": "S08", "expectedVerdict": "reject", "observedVerdict": "reject", "expectedCode": "E_COMMITMENT_OPEN", "observedCodes": ["E_COMMITMENT_OPEN"], "detectedAsSpecified": true },
+    { "id": "S09", "expectedVerdict": "reject", "observedVerdict": "reject", "expectedCode": "E_ROLE_SEPARATION", "observedCodes": ["E_ROLE_SEPARATION"], "detectedAsSpecified": true },
+    { "id": "S10", "expectedVerdict": "reject", "observedVerdict": "reject", "expectedCode": "E_DEVICE_COUNTER", "observedCodes": ["E_DEVICE_COUNTER"], "detectedAsSpecified": true },
+    { "id": "S11", "expectedVerdict": "reject", "observedVerdict": "reject", "expectedCode": "E_EVENT_CHAIN", "observedCodes": ["E_EVENT_CHAIN"], "detectedAsSpecified": true },
+    { "id": "S12", "expectedVerdict": "reject", "observedVerdict": "reject", "expectedCode": "E_LABEL_DUAL", "observedCodes": ["E_LABEL_DUAL"], "detectedAsSpecified": true },
+    { "id": "S13", "expectedVerdict": "reject", "observedVerdict": "reject", "expectedCode": "E_ATTESTATION_MISSING", "observedCodes": ["E_ATTESTATION_MISSING"], "detectedAsSpecified": true }
+  ],
+  "similarities": { "transformedCopy": 0.999998353, "legitimateRepeat": 0.999999865, "unrelatedSignals": -0.1179297, "quarantineThreshold": 0.999 },
+  "indistinguishableWorlds": {
+    "worldA": "A legitimate repeat is newly acquired and exports the same numeric array as a prior acquisition.",
+    "worldB": "A prior array is copied or re-encoded and supplied with forged acquisition metadata.",
+    "observationAvailableToContentOnlyRule": "The exported numeric arrays and claimed metadata are identical in both worlds.",
+    "consequence": "Every content-only decision rule receives the same input in both worlds and therefore cannot distinguish physical occurrence without an independent acquisition receipt or witness."
+  },
+  "decisions": {
+    "H1_byteDigestProvesNewAcquisition": false,
+    "H2_canonicalDigestDetectsSyntaxReencoding": true,
+    "H3_tolerantFingerprintUniquelyProvesCopying": false,
+    "H4_eventChainAndCommitmentDetectSealedViolations": true,
+    "H5_contentOnlyRuleDistinguishesPhysicalOccurrence": false,
+    "H6_emulatorReceiptQualifiesPhysicalSite": false,
+    "H7_responseFingerprintAloneProvesChipletProvenance": false,
+    "H8_independentAcquisitionRootRequired": true
+  },
+  "readiness": {
+    "L1-IDENTITY": "passed-in-synthetic-interface-only",
+    "L2-EXPORT": "passed-in-synthetic-interface-only",
+    "L3-CUSTODY": "passed-with-disclosed-demo-key-only",
+    "L4-ATTESTATION": "not-demonstrated",
+    "L5-PHYSICAL": "not-demonstrated"
+  },
+  "interpretation": {
+    "established": "The synthetic interface detects every sealed deterministic violation, separates exact canonical duplicates from ambiguous near-duplicates, and preserves the physical-occurrence impossibility boundary.",
+    "rejected": "Neither a byte digest nor a tolerant signal fingerprint establishes that a new measurement occurred; the same limitation applies to an unauthenticated chiplet response fingerprint.",
+    "notEstablished": "No barcode scanner, physical container, instrument export, offline custodian, signed device receipt, institutional witness, powder, or chiplet was tested."
+  }
+}

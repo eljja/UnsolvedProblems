@@ -1,0 +1,25 @@
+{
+  "auditId": "SITE-LINEAGE-PYTHON-AUDIT-0.3",
+  "computedOn": "2026-08-14",
+  "passed": true,
+  "checks": {
+    "protocol_is_synthetic_only": true,
+    "physical_and_digital_ids_are_separate": true,
+    "state_machine_seals_before_release": true,
+    "fixture_denominator_is_fixed": true,
+    "fixture_expectations_match": true,
+    "two_ambiguous_controls_are_quarantined": true,
+    "similarities_recomputed_independently": true,
+    "similarity_cannot_identify_copy": true,
+    "content_only_impossibility_preserved": true,
+    "physical_readiness_not_claimed": true,
+    "emulator_is_not_attestation": true
+  },
+  "independentlyRecomputedSimilarities": {
+    "transformedCopy": 0.999998353,
+    "legitimateRepeat": 0.999999865,
+    "unrelatedSignals": -0.117929702
+  },
+  "independenceBoundary": "This Python audit reimplements signal generation, interpolation, normalization, similarity, and cross-file semantic checks without importing the JavaScript validator. It uses no site, material, instrument, barcode, chiplet, or physical outcome.",
+  "conclusion": "Both transformed copies and legitimate repeats enter the same similarity quarantine. Physical occurrence remains undecidable from content alone."
+}
