@@ -1,0 +1,29 @@
+{
+  "benchmarkId": "QARR-INTERVENTION-IDENTIFIABILITY-0.1",
+  "retrievedOn": "2026-08-14",
+  "repository": "Mendeley Data",
+  "stableDoi": "https://doi.org/10.17632/js2nzwf5md.2",
+  "downloadUrl": "https://data.mendeley.com/public-api/zip/js2nzwf5md/download/2",
+  "license": "CC BY 4.0",
+  "archive": {
+    "bytes": 2256651,
+    "sha256": "13018b4d137bf567f4451991fc1a92d5d667cd53ea3b77729210f175e41354eb",
+    "memberCount": 80,
+    "uncompressedBytes": 8620656,
+    "inventorySha256": "7610262785de0b0ce0692a91432eb30a7dcb938078976649c37e2919f43163d3"
+  },
+  "inventory": {
+    "D1": { "xrpd": 10, "xrf": 10 },
+    "D2": { "xrpd": 10, "xrf": 10 },
+    "D3": { "xrpd": 10, "xrf": 10 },
+    "D4": { "xrpd": 10, "xrf": 10 }
+  },
+  "analysisSubset": {
+    "domains": ["D1", "D2"],
+    "pairedCompositionLabels": 10,
+    "pairedProfiles": { "xrpd": 10, "xrf": 10 },
+    "xrpdPoints": { "range": [7194, 7195], "comparison": "common 10.0001-119.9991 degree grid when one profile contains the extra 120.0144 endpoint" },
+    "xrfChannels": 2048
+  },
+  "lineageBoundary": "The archive fixes file identity and public availability. It does not provide randomized intervention order, independent specimen replicates, or participant-level QARR records."
+}

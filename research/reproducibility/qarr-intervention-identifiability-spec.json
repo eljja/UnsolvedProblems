@@ -1,0 +1,105 @@
+{
+  "benchmarkId": "QARR-INTERVENTION-IDENTIFIABILITY-0.1",
+  "fixedOn": "2026-08-14",
+  "status": "retrospective-source-audit-fixed-before-repository-computation",
+  "question": "Do published grinding, correction, and modality contrasts identify a cause-selective route that separates microabsorption or preferred orientation from a genuinely omitted phase?",
+  "scopeBoundary": {
+    "historicalAggregate": "QARR Table 16 is a retrospective aggregate natural experiment. The source reports several analyses from one participant and the authors, not public specimen-level paired records. It can establish the direction and scale of published changes but cannot identify a participant-independent causal effect.",
+    "openRawContrast": "Mendeley domains D1 and D2 share a simplex-centroid composition design and differ in graphite particle-size distribution and preferred orientation. They provide paired raw XRPD and XRF profiles, but no independent specimen replicates or randomized intervention order.",
+    "novelty": "No claim of a new scientific method is made. This cycle tests whether existing public evidence is sufficient to build the next preregistered intervention benchmark.",
+    "retrospectiveRule": "Thresholds summarize decision relevance after source inspection and are exploratory. They must not be reported as prospective confirmation."
+  },
+  "publishedAggregateInputs": {
+    "metric": "AKLDsum; lower is more accurate",
+    "uncertaintyRule": "The source's approximate 95-percent half-width is 2 * SD / sqrt(N). Difference bounds add the two group half-widths conservatively because covariance and paired records are unavailable.",
+    "table16": {
+      "brindley": {
+        "asReceived": { "mean": 0.25, "sd": 0.12, "n": 7 },
+        "ground": { "mean": 0.082, "sd": 0.018, "n": 10 }
+      },
+      "none": {
+        "asReceived": { "mean": 0.41, "sd": 0.05, "n": 10 },
+        "ground": { "mean": 0.109, "sd": 0.01, "n": 16 }
+      }
+    },
+    "participantCollectedTable15": {
+      "brindley": { "mean": 0.11, "sd": 0.03, "n": 24 },
+      "neutron": { "mean": 0.031, "sd": 0.013, "n": 5 },
+      "none": { "mean": 0.2, "sd": 0.06, "n": 34 }
+    },
+    "cpdSuppliedTable14": {
+      "brindley": { "mean": 0.33, "sd": 0.13, "n": 5 },
+      "none": { "mean": 0.63, "sd": 0.13, "n": 8 }
+    }
+  },
+  "rawDatasetContract": {
+    "stableDoi": "https://doi.org/10.17632/js2nzwf5md.2",
+    "downloadUrl": "https://data.mendeley.com/public-api/zip/js2nzwf5md/download/2",
+    "domains": {
+      "D1": "BaSO4 + Bi2O3 + graphite below 90 micrometres",
+      "D2": "same mixture design, with graphite containing 30 weight percent above 90 micrometres"
+    },
+    "pairedLabels": ["Ba", "Bi", "Ba Bi", "Gr", "Ba Gr", "Bi Gr", "Ba Bi Gr", "SA 1", "SA 2", "SA 3"],
+    "negativeControls": ["Ba", "Bi", "Ba Bi"],
+    "graphiteAffected": ["Gr", "Ba Gr", "Bi Gr", "Ba Bi Gr", "SA 1", "SA 2", "SA 3"],
+    "profileDistance": "Normalize nonnegative intensity to unit sum, then compute total variation as one half of the L1 distance. Preserve XRF and XRPD separately."
+  },
+  "decisionRules": [
+    {
+      "id": "H1",
+      "claim": "Grinding improves published Sample 4 accuracy in both correction strata.",
+      "pass": "Both conservative difference intervals for ground minus as-received AKLDsum lie wholly below zero.",
+      "boundary": "Direction within the published aggregate, not a randomized or participant-independent effect."
+    },
+    {
+      "id": "H2",
+      "claim": "Brindley correction adds a decision-relevant improvement after grinding.",
+      "pass": "Ground Brindley versus ground uncorrected improves mean AKLDsum by at least 0.05 absolute or 30 percent relative.",
+      "boundary": "An exploratory materiality threshold; failure does not prove the correction has zero effect."
+    },
+    {
+      "id": "H3",
+      "claim": "The published neutron result is sufficiently replicated to qualify wavelength or modality transport.",
+      "pass": "At least 20 independent neutron results are available with public specimen-level lineage.",
+      "boundary": "The published participant-collected neutron cell has only five results and incomplete lineage."
+    },
+    {
+      "id": "H4",
+      "claim": "The historical aggregate identifies a paired causal grinding effect.",
+      "pass": "Public records expose specimen or aliquot identifiers, intervention pairing, order, preparation, and analysis settings.",
+      "boundary": "The paper explicitly reports incomplete methodological returns and several results from one participant plus the authors."
+    },
+    {
+      "id": "H5",
+      "claim": "The open D1-D2 files support an executable same-design nuisance benchmark.",
+      "pass": "All ten composition labels have both XRPD and XRF profiles; the three graphite-free controls are byte-identical across domains; all seven graphite-containing pairs differ in XRPD.",
+      "boundary": "This validates data structure and intervention encoding, not causal uncertainty or external transport."
+    },
+    {
+      "id": "H6",
+      "claim": "The D1-D2 intervention perturbs diffraction profile shape more strongly than fluorescence profile shape.",
+      "pass": "Among seven graphite-containing pairs, median XRPD total variation divided by median XRF total variation exceeds two.",
+      "boundary": "Retrospective exploratory contrast; XRF cannot observe carbon directly and is not an independent truth label for preferred orientation."
+    }
+  ],
+  "causalChain": [
+    "Fixed mixture labels and allowed assumption that D1-D2 differ in graphite particle-size distribution",
+    "Microabsorption and preferred orientation distort phase response while leaving the phase list complete",
+    "A cause-selective particle-size intervention should move XRPD more than a chemistry-oriented modality",
+    "Paired XRPD and XRF profile distances plus gravimetric composition and replicate-level uncertainty",
+    "A future unknown-phase classifier is qualified only when the nuisance negative moves while a matched omitted-phase positive remains"
+  ],
+  "fastFailureTests": [
+    "Stop same-design interpretation if a paired label or modality is missing.",
+    "Stop causal-effect estimation because there are no independent D1-D2 specimen replicates or randomized orders.",
+    "Stop treating XRF as a truth label for graphite because the instrument does not observe carbon directly.",
+    "Stop wavelength claims because the QARR neutron cell has fewer than twenty results and no public specimen-level lineage.",
+    "Stop novelty claims because the analysis and thresholds are retrospective."
+  ],
+  "primarySources": [
+    "https://doi.org/10.1107/S0021889802008798",
+    "https://doi.org/10.1016/j.dib.2021.107043",
+    "https://doi.org/10.17632/js2nzwf5md.2",
+    "https://doi.org/10.1107/S1600576722004708"
+  ]
+}

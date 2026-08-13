@@ -1,0 +1,79 @@
+{
+  "benchmarkId": "QARR-INTERVENTION-IDENTIFIABILITY-0.1",
+  "computedOn": "2026-08-14",
+  "status": "retrospective-exploratory-audit",
+  "aggregate": {
+    "metric": "AKLDsum; lower is more accurate",
+    "uncertaintyRule": "The source's approximate 95-percent half-width is 2 * SD / sqrt(N). Difference bounds add the two group half-widths conservatively because covariance and paired records are unavailable.",
+    "strata": {
+      "brindley": {
+        "asReceived95HalfWidth": 0.090711474,
+        "ground95HalfWidth": 0.0113842,
+        "groundMinusAsReceived": -0.168,
+        "relativeReduction": 0.672,
+        "conservativeDifferenceInterval": [-0.270095673, -0.065904327]
+      },
+      "none": {
+        "asReceived95HalfWidth": 0.031622777,
+        "ground95HalfWidth": 0.005,
+        "groundMinusAsReceived": -0.301,
+        "relativeReduction": 0.734146341,
+        "conservativeDifferenceInterval": [-0.337622777, -0.264377223]
+      }
+    },
+    "correctionAfterGrinding": {
+      "absoluteImprovement": 0.027,
+      "relativeImprovement": 0.247706422
+    },
+    "differenceInDifferences": 0.133,
+    "participantCollected": {
+      "brindleyVersusNoneRelativeImprovement": 0.45,
+      "neutronVersusNoneRelativeImprovement": 0.845,
+      "neutronN": 5
+    },
+    "cpdSupplied": { "brindleyVersusNoneRelativeImprovement": 0.476190476 }
+  },
+  "raw": {
+    "archive": {
+      "bytes": 2256651,
+      "sha256": "13018b4d137bf567f4451991fc1a92d5d667cd53ea3b77729210f175e41354eb",
+      "memberCount": 80,
+      "uncompressedBytes": 8620656,
+      "inventorySha256": "7610262785de0b0ce0692a91432eb30a7dcb938078976649c37e2919f43163d3"
+    },
+    "pairs": [
+      { "label": "Ba", "graphiteAffected": false, "xrpd": { "points": 7194, "byteIdentical": true, "totalVariation": 0 }, "xrf": { "points": 2048, "byteIdentical": true, "totalVariation": 0 } },
+      { "label": "Bi", "graphiteAffected": false, "xrpd": { "points": 7194, "byteIdentical": true, "totalVariation": 0 }, "xrf": { "points": 2048, "byteIdentical": true, "totalVariation": 0 } },
+      { "label": "Ba Bi", "graphiteAffected": false, "xrpd": { "points": 7194, "byteIdentical": true, "totalVariation": 0 }, "xrf": { "points": 2048, "byteIdentical": true, "totalVariation": 0 } },
+      { "label": "Gr", "graphiteAffected": true, "xrpd": { "points": 7194, "byteIdentical": false, "totalVariation": 0.052074441 }, "xrf": { "points": 2048, "byteIdentical": false, "totalVariation": 0.024090912 } },
+      { "label": "Ba Gr", "graphiteAffected": true, "xrpd": { "points": 7194, "byteIdentical": false, "totalVariation": 0.052292878 }, "xrf": { "points": 2048, "byteIdentical": false, "totalVariation": 0.039803371 } },
+      { "label": "Bi Gr", "graphiteAffected": true, "xrpd": { "points": 7194, "byteIdentical": false, "totalVariation": 0.062934782 }, "xrf": { "points": 2048, "byteIdentical": false, "totalVariation": 0.013945449 } },
+      { "label": "Ba Bi Gr", "graphiteAffected": true, "xrpd": { "points": 7194, "byteIdentical": false, "totalVariation": 0.085014202 }, "xrf": { "points": 2048, "byteIdentical": false, "totalVariation": 0.018828566 } },
+      { "label": "SA 1", "graphiteAffected": true, "xrpd": { "points": 7195, "byteIdentical": false, "totalVariation": 0.168161995 }, "xrf": { "points": 2048, "byteIdentical": false, "totalVariation": 0.054071673 } },
+      { "label": "SA 2", "graphiteAffected": true, "xrpd": { "points": 7195, "byteIdentical": false, "totalVariation": 0.074621199 }, "xrf": { "points": 2048, "byteIdentical": false, "totalVariation": 0.023372358 } },
+      { "label": "SA 3", "graphiteAffected": true, "xrpd": { "points": 7195, "byteIdentical": false, "totalVariation": 0.081496362 }, "xrf": { "points": 2048, "byteIdentical": false, "totalVariation": 0.029503725 } }
+    ],
+    "summary": {
+      "graphiteFreeControls": 3,
+      "graphiteFreeControlsByteIdenticalBothModalities": 3,
+      "graphiteAffectedPairs": 7,
+      "graphiteAffectedXrpdPairsDifferent": 7,
+      "medianXrpdTotalVariation": 0.074621199,
+      "medianXrfTotalVariation": 0.024090912,
+      "medianDistanceRatio": 3.097483358
+    }
+  },
+  "decisions": {
+    "H1_grindingDirectionSupportedInPublishedAggregate": true,
+    "H2_materialBrindleyGainAfterGrinding": false,
+    "H3_neutronTransportQualified": false,
+    "H4_pairedCausalGrindingEffectIdentified": false,
+    "H5_openSameDesignBenchmarkExecutable": true,
+    "H6_xrpdShapeMoreSensitiveThanXrf": true
+  },
+  "interpretation": {
+    "established": "Published aggregate accuracy improves strongly after grinding in both correction strata, and the public D1-D2 archive encodes a complete paired raw-profile contrast.",
+    "inference": "Particle-size and orientation intervention is a more promising discriminator than adding Brindley correction after grinding, but the available records do not identify a replicate-level causal effect.",
+    "unverifiedProposal": "Cross D1-D2-style nuisance negatives with matched omitted-phase positives, new specimen replicates, randomized preparation order, and blinded independent adjudication."
+  }
+}

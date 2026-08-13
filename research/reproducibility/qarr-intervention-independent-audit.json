@@ -1,0 +1,17 @@
+{
+  "benchmarkId": "QARR-INTERVENTION-IDENTIFIABILITY-0.1",
+  "method": "Independent standard-library recomputation of published aggregate arithmetic and committed pair-summary decisions; raw archive identity remains governed by the SHA-256 manifest.",
+  "checks": {
+    "brindleyDifference": true,
+    "noneDifference": true,
+    "bothConservativeIntervalsBelowZero": true,
+    "sevenAffectedPairs": true,
+    "threeExactNegativeControls": true,
+    "medianXrpd": true,
+    "medianXrf": true,
+    "distanceRatio": true,
+    "decisionVector": true
+  },
+  "passed": true,
+  "independenceBoundary": "This audit does not create new physical replicates and does not convert retrospective thresholds into preregistration."
+}
