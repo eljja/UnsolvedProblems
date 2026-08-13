@@ -1,0 +1,236 @@
+{
+  "auditId": "RC36-INDEPENDENT-RECEIVER-MODEL-AUDIT-1.0",
+  "computedOn": "2026-08-14",
+  "checks": [
+    {
+      "name": "EFFECT_THEN_MARKER-graph",
+      "pass": true,
+      "actual": {
+        "protocol": "EFFECT_THEN_MARKER",
+        "reachableStates": 19,
+        "exploredTransitions": 22,
+        "maximumShortestPathDepth": 5,
+        "failures": {
+          "R1_AT_MOST_ONE_EFFECT": {
+            "trace": [
+              "APPLY_EFFECT C0",
+              "CRASH_AND_RESTART",
+              "APPLY_EFFECT C0"
+            ],
+            "traceLength": 3
+          },
+          "R2_MARKER_EFFECT_ATOMIC": {
+            "trace": [
+              "APPLY_EFFECT C0"
+            ],
+            "traceLength": 1
+          },
+          "R3_REPLAY_IMPLIES_EFFECT": {
+            "trace": [
+              "APPLY_EFFECT C0",
+              "CRASH_AND_RESTART",
+              "APPLY_EFFECT C0",
+              "WRITE_MARKER C0",
+              "RETRY_SAME C1"
+            ],
+            "traceLength": 5
+          },
+          "R4_CONFLICT_NEVER_MUTATES": null,
+          "R5_ONE_SUCCESSFUL_DELIVERY": {
+            "trace": [
+              "APPLY_EFFECT C0",
+              "CRASH_AND_RESTART",
+              "APPLY_EFFECT C0",
+              "WRITE_MARKER C0",
+              "RETRY_SAME C1"
+            ],
+            "traceLength": 5
+          }
+        }
+      }
+    },
+    {
+      "name": "EFFECT_THEN_MARKER-R1_AT_MOST_ONE_EFFECT",
+      "pass": true,
+      "actual": {
+        "trace": [
+          "APPLY_EFFECT C0",
+          "CRASH_AND_RESTART",
+          "APPLY_EFFECT C0"
+        ],
+        "traceLength": 3
+      }
+    },
+    {
+      "name": "EFFECT_THEN_MARKER-R2_MARKER_EFFECT_ATOMIC",
+      "pass": true,
+      "actual": {
+        "trace": [
+          "APPLY_EFFECT C0"
+        ],
+        "traceLength": 1
+      }
+    },
+    {
+      "name": "EFFECT_THEN_MARKER-R3_REPLAY_IMPLIES_EFFECT",
+      "pass": true,
+      "actual": {
+        "trace": [
+          "APPLY_EFFECT C0",
+          "CRASH_AND_RESTART",
+          "APPLY_EFFECT C0",
+          "WRITE_MARKER C0",
+          "RETRY_SAME C1"
+        ],
+        "traceLength": 5
+      }
+    },
+    {
+      "name": "EFFECT_THEN_MARKER-R4_CONFLICT_NEVER_MUTATES",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "EFFECT_THEN_MARKER-R5_ONE_SUCCESSFUL_DELIVERY",
+      "pass": true,
+      "actual": {
+        "trace": [
+          "APPLY_EFFECT C0",
+          "CRASH_AND_RESTART",
+          "APPLY_EFFECT C0",
+          "WRITE_MARKER C0",
+          "RETRY_SAME C1"
+        ],
+        "traceLength": 5
+      }
+    },
+    {
+      "name": "MARKER_THEN_EFFECT-graph",
+      "pass": true,
+      "actual": {
+        "protocol": "MARKER_THEN_EFFECT",
+        "reachableStates": 18,
+        "exploredTransitions": 22,
+        "maximumShortestPathDepth": 4,
+        "failures": {
+          "R1_AT_MOST_ONE_EFFECT": null,
+          "R2_MARKER_EFFECT_ATOMIC": {
+            "trace": [
+              "WRITE_MARKER C0"
+            ],
+            "traceLength": 1
+          },
+          "R3_REPLAY_IMPLIES_EFFECT": {
+            "trace": [
+              "WRITE_MARKER C0",
+              "CRASH_AND_RESTART",
+              "RETRY_SAME C0"
+            ],
+            "traceLength": 3
+          },
+          "R4_CONFLICT_NEVER_MUTATES": null,
+          "R5_ONE_SUCCESSFUL_DELIVERY": {
+            "trace": [
+              "WRITE_MARKER C0",
+              "CRASH_AND_RESTART",
+              "RETRY_SAME C0",
+              "RETRY_SAME C1"
+            ],
+            "traceLength": 4
+          }
+        }
+      }
+    },
+    {
+      "name": "MARKER_THEN_EFFECT-R1_AT_MOST_ONE_EFFECT",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "MARKER_THEN_EFFECT-R2_MARKER_EFFECT_ATOMIC",
+      "pass": true,
+      "actual": {
+        "trace": [
+          "WRITE_MARKER C0"
+        ],
+        "traceLength": 1
+      }
+    },
+    {
+      "name": "MARKER_THEN_EFFECT-R3_REPLAY_IMPLIES_EFFECT",
+      "pass": true,
+      "actual": {
+        "trace": [
+          "WRITE_MARKER C0",
+          "CRASH_AND_RESTART",
+          "RETRY_SAME C0"
+        ],
+        "traceLength": 3
+      }
+    },
+    {
+      "name": "MARKER_THEN_EFFECT-R4_CONFLICT_NEVER_MUTATES",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "MARKER_THEN_EFFECT-R5_ONE_SUCCESSFUL_DELIVERY",
+      "pass": true,
+      "actual": {
+        "trace": [
+          "WRITE_MARKER C0",
+          "CRASH_AND_RESTART",
+          "RETRY_SAME C0",
+          "RETRY_SAME C1"
+        ],
+        "traceLength": 4
+      }
+    },
+    {
+      "name": "ATOMIC_INBOX_EFFECT-graph",
+      "pass": true,
+      "actual": {
+        "protocol": "ATOMIC_INBOX_EFFECT",
+        "reachableStates": 7,
+        "exploredTransitions": 6,
+        "maximumShortestPathDepth": 2,
+        "failures": {
+          "R1_AT_MOST_ONE_EFFECT": null,
+          "R2_MARKER_EFFECT_ATOMIC": null,
+          "R3_REPLAY_IMPLIES_EFFECT": null,
+          "R4_CONFLICT_NEVER_MUTATES": null,
+          "R5_ONE_SUCCESSFUL_DELIVERY": null
+        }
+      }
+    },
+    {
+      "name": "ATOMIC_INBOX_EFFECT-R1_AT_MOST_ONE_EFFECT",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "ATOMIC_INBOX_EFFECT-R2_MARKER_EFFECT_ATOMIC",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "ATOMIC_INBOX_EFFECT-R3_REPLAY_IMPLIES_EFFECT",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "ATOMIC_INBOX_EFFECT-R4_CONFLICT_NEVER_MUTATES",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "ATOMIC_INBOX_EFFECT-R5_ONE_SUCCESSFUL_DELIVERY",
+      "pass": true,
+      "actual": null
+    }
+  ],
+  "passed": 18,
+  "total": 18,
+  "qualifies": true,
+  "boundary": "This independent Python enumerator checks the same finite abstraction. It does not prove atomicity for an effect outside the receiver database."
+}

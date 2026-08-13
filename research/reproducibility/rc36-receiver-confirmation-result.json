@@ -1,0 +1,298 @@
+{
+  "cycle": "RC-2026-36",
+  "experiment": "one-host-external-process-atomic-inbox-effect",
+  "computedOn": "2026-08-14",
+  "precommitId": "RC36-RECEIVER-DELIVERY-PRECOMMIT-1.0",
+  "implementation": {
+    "receiver": "Python ThreadingHTTPServer plus sqlite3",
+    "sender": "Node fetch coordinator",
+    "databaseMode": "SQLite rollback journal, synchronous FULL",
+    "receiverProcessesAtOnce": 1,
+    "receiverDatabaseFiles": 3,
+    "physicalHosts": 1,
+    "outcomeA": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb",
+    "outcomeB": "c1e8aee03af08a71a280a20aa5a409a81d5b83697e547417521e6f5a4717b83b"
+  },
+  "cases": [
+    {
+      "name": "before-commit-crash",
+      "fault": "before-commit",
+      "expectedExit": 86,
+      "deliveryId": "RC36-BEFORE-001",
+      "firstResponse": null,
+      "retry": {
+        "status": 201,
+        "body": {
+          "deliveryId": "RC36-BEFORE-001",
+          "effectId": 1,
+          "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb",
+          "receipt": "4ca457652002d6a20c59c34ed6c143568ec4ad658e62dccbc5b6409e9823db4c",
+          "status": "created"
+        }
+      },
+      "replay": {
+        "status": 200,
+        "body": {
+          "deliveryId": "RC36-BEFORE-001",
+          "effectId": 1,
+          "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb",
+          "receipt": "7a20f5d0a8a5af8c9a026940e9ab2d75d79533c76eb0a2f67c94b8395f1e80a2",
+          "status": "replay"
+        }
+      },
+      "conflict": {
+        "status": 409,
+        "body": {
+          "deliveryId": "RC36-BEFORE-001",
+          "error": "idempotency-conflict"
+        }
+      },
+      "snapshot": {
+        "deliveries": [
+          {
+            "createdAt": "2026-08-13 22:18:43",
+            "deliveryId": "RC36-BEFORE-001",
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+          }
+        ],
+        "effects": [
+          {
+            "createdAt": "2026-08-13 22:18:43",
+            "deliveryId": "RC36-BEFORE-001",
+            "effectId": 1,
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+          }
+        ]
+      },
+      "db": "research/reproducibility/rc36-receiver-db/before-commit-crash.sqlite"
+    },
+    {
+      "name": "after-commit-crash",
+      "fault": "after-commit",
+      "expectedExit": 87,
+      "deliveryId": "RC36-AFTER-001",
+      "firstResponse": null,
+      "retry": {
+        "status": 200,
+        "body": {
+          "deliveryId": "RC36-AFTER-001",
+          "effectId": 1,
+          "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb",
+          "receipt": "f1c47300ae487705c507759cd07df061078faa98c93327cd6a2810051ed74ac4",
+          "status": "replay"
+        }
+      },
+      "replay": {
+        "status": 200,
+        "body": {
+          "deliveryId": "RC36-AFTER-001",
+          "effectId": 1,
+          "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb",
+          "receipt": "f1c47300ae487705c507759cd07df061078faa98c93327cd6a2810051ed74ac4",
+          "status": "replay"
+        }
+      },
+      "conflict": {
+        "status": 409,
+        "body": {
+          "deliveryId": "RC36-AFTER-001",
+          "error": "idempotency-conflict"
+        }
+      },
+      "snapshot": {
+        "deliveries": [
+          {
+            "createdAt": "2026-08-13 22:18:43",
+            "deliveryId": "RC36-AFTER-001",
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+          }
+        ],
+        "effects": [
+          {
+            "createdAt": "2026-08-13 22:18:43",
+            "deliveryId": "RC36-AFTER-001",
+            "effectId": 1,
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+          }
+        ]
+      },
+      "db": "research/reproducibility/rc36-receiver-db/after-commit-crash.sqlite"
+    },
+    {
+      "name": "concurrent-100",
+      "deliveryId": "RC36-CONCURRENT-001",
+      "created": 1,
+      "replay": 99,
+      "responseReceipts": [
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "a15c2c161f58bc0c80972877dabadc710c19208ce9f002737b4d2f9c16f8a769",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd",
+        "ee1a78eaecd96a4f650d413f4140852c7ede5dd2ec88e3ead1948b51afa480bd"
+      ],
+      "snapshot": {
+        "deliveries": [
+          {
+            "createdAt": "2026-08-13 22:18:43",
+            "deliveryId": "RC36-CONCURRENT-001",
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+          }
+        ],
+        "effects": [
+          {
+            "createdAt": "2026-08-13 22:18:43",
+            "deliveryId": "RC36-CONCURRENT-001",
+            "effectId": 1,
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+          }
+        ]
+      },
+      "invalidId": {
+        "status": 400,
+        "body": {
+          "error": "invalid-delivery-id"
+        }
+      },
+      "invalidDigest": {
+        "status": 400,
+        "body": {
+          "error": "invalid-outcome-digest"
+        }
+      },
+      "finalState": {
+        "deliveries": [
+          {
+            "createdAt": "2026-08-13 22:18:43",
+            "deliveryId": "RC36-CONCURRENT-001",
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+          }
+        ],
+        "effects": [
+          {
+            "createdAt": "2026-08-13 22:18:43",
+            "deliveryId": "RC36-CONCURRENT-001",
+            "effectId": 1,
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+          }
+        ]
+      },
+      "db": "research/reproducibility/rc36-receiver-db/concurrent-100.sqlite"
+    }
+  ],
+  "criteria": {
+    "beforeCommitRetryCreatesOnce": true,
+    "afterCommitRetryReplaysOnce": true,
+    "conflictingPayloadRejected": true,
+    "concurrentOneCreate": true,
+    "malformedInputsNoEffect": true
+  },
+  "qualifies": true,
+  "boundary": {
+    "qualifies": "Atomic receiver-database insertion of a delivery marker and a modeled effect row under the fixed crashes, retries, conflicts, and concurrency on one host.",
+    "doesNotQualify": [
+      "an effect outside SQLite",
+      "physical actuation, payment, email, or remote service side effects",
+      "multiple physical hosts",
+      "a real network partition",
+      "host or storage-device loss",
+      "Byzantine clients or receivers",
+      "unbounded exactly-once delivery"
+    ]
+  },
+  "historyEvents": 120
+}

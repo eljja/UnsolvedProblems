@@ -1,0 +1,251 @@
+{
+  "resultId": "RC36-RECEIVER-STATE-MODEL-RESULT-1.0",
+  "computedOn": "2026-08-14",
+  "precommitId": "RC36-RECEIVER-DELIVERY-PRECOMMIT-1.0",
+  "modelKind": "finite receiver state machine with one delivery ID, one accepted digest, one conflicting digest, two clients, persistent marker and effect fields, and one crash that clears only an in-flight step",
+  "metrics": [
+    {
+      "protocol": "EFFECT_THEN_MARKER",
+      "reachableStates": 19,
+      "exploredTransitions": 22,
+      "maximumShortestPathDepth": 5,
+      "invariants": {
+        "R1_AT_MOST_ONE_EFFECT": {
+          "passed": false,
+          "minimalCounterexample": {
+            "trace": [
+              "APPLY_EFFECT C0",
+              "CRASH_AND_RESTART",
+              "APPLY_EFFECT C0"
+            ],
+            "traceLength": 3,
+            "state": {
+              "protocol": "EFFECT_THEN_MARKER",
+              "marker": false,
+              "markerDigest": null,
+              "effectRecord": true,
+              "effectDigest": "A",
+              "effectCount": 2,
+              "pending": {
+                "client": 0,
+                "phase": "effect-applied"
+              },
+              "clients": [
+                "idle",
+                "idle"
+              ],
+              "conflictRejected": false
+            }
+          }
+        },
+        "R2_MARKER_EFFECT_ATOMIC": {
+          "passed": false,
+          "minimalCounterexample": {
+            "trace": [
+              "APPLY_EFFECT C0"
+            ],
+            "traceLength": 1,
+            "state": {
+              "protocol": "EFFECT_THEN_MARKER",
+              "marker": false,
+              "markerDigest": null,
+              "effectRecord": true,
+              "effectDigest": "A",
+              "effectCount": 1,
+              "pending": {
+                "client": 0,
+                "phase": "effect-applied"
+              },
+              "clients": [
+                "idle",
+                "idle"
+              ],
+              "conflictRejected": false
+            }
+          }
+        },
+        "R3_REPLAY_IMPLIES_EFFECT": {
+          "passed": false,
+          "minimalCounterexample": {
+            "trace": [
+              "APPLY_EFFECT C0",
+              "CRASH_AND_RESTART",
+              "APPLY_EFFECT C0",
+              "WRITE_MARKER C0",
+              "RETRY_SAME C1"
+            ],
+            "traceLength": 5,
+            "state": {
+              "protocol": "EFFECT_THEN_MARKER",
+              "marker": true,
+              "markerDigest": "A",
+              "effectRecord": true,
+              "effectDigest": "A",
+              "effectCount": 2,
+              "pending": null,
+              "clients": [
+                "created",
+                "replay"
+              ],
+              "conflictRejected": false
+            }
+          }
+        },
+        "R4_CONFLICT_NEVER_MUTATES": {
+          "passed": true
+        },
+        "R5_ONE_SUCCESSFUL_DELIVERY": {
+          "passed": false,
+          "minimalCounterexample": {
+            "trace": [
+              "APPLY_EFFECT C0",
+              "CRASH_AND_RESTART",
+              "APPLY_EFFECT C0",
+              "WRITE_MARKER C0",
+              "RETRY_SAME C1"
+            ],
+            "traceLength": 5,
+            "state": {
+              "protocol": "EFFECT_THEN_MARKER",
+              "marker": true,
+              "markerDigest": "A",
+              "effectRecord": true,
+              "effectDigest": "A",
+              "effectCount": 2,
+              "pending": null,
+              "clients": [
+                "created",
+                "replay"
+              ],
+              "conflictRejected": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "protocol": "MARKER_THEN_EFFECT",
+      "reachableStates": 18,
+      "exploredTransitions": 22,
+      "maximumShortestPathDepth": 4,
+      "invariants": {
+        "R1_AT_MOST_ONE_EFFECT": {
+          "passed": true
+        },
+        "R2_MARKER_EFFECT_ATOMIC": {
+          "passed": false,
+          "minimalCounterexample": {
+            "trace": [
+              "WRITE_MARKER C0"
+            ],
+            "traceLength": 1,
+            "state": {
+              "protocol": "MARKER_THEN_EFFECT",
+              "marker": true,
+              "markerDigest": "A",
+              "effectRecord": false,
+              "effectDigest": null,
+              "effectCount": 0,
+              "pending": {
+                "client": 0,
+                "phase": "marker-written"
+              },
+              "clients": [
+                "idle",
+                "idle"
+              ],
+              "conflictRejected": false
+            }
+          }
+        },
+        "R3_REPLAY_IMPLIES_EFFECT": {
+          "passed": false,
+          "minimalCounterexample": {
+            "trace": [
+              "WRITE_MARKER C0",
+              "CRASH_AND_RESTART",
+              "RETRY_SAME C0"
+            ],
+            "traceLength": 3,
+            "state": {
+              "protocol": "MARKER_THEN_EFFECT",
+              "marker": true,
+              "markerDigest": "A",
+              "effectRecord": false,
+              "effectDigest": null,
+              "effectCount": 0,
+              "pending": null,
+              "clients": [
+                "replay",
+                "idle"
+              ],
+              "conflictRejected": false
+            }
+          }
+        },
+        "R4_CONFLICT_NEVER_MUTATES": {
+          "passed": true
+        },
+        "R5_ONE_SUCCESSFUL_DELIVERY": {
+          "passed": false,
+          "minimalCounterexample": {
+            "trace": [
+              "WRITE_MARKER C0",
+              "CRASH_AND_RESTART",
+              "RETRY_SAME C0",
+              "RETRY_SAME C1"
+            ],
+            "traceLength": 4,
+            "state": {
+              "protocol": "MARKER_THEN_EFFECT",
+              "marker": true,
+              "markerDigest": "A",
+              "effectRecord": false,
+              "effectDigest": null,
+              "effectCount": 0,
+              "pending": null,
+              "clients": [
+                "replay",
+                "replay"
+              ],
+              "conflictRejected": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "protocol": "ATOMIC_INBOX_EFFECT",
+      "reachableStates": 7,
+      "exploredTransitions": 6,
+      "maximumShortestPathDepth": 2,
+      "invariants": {
+        "R1_AT_MOST_ONE_EFFECT": {
+          "passed": true
+        },
+        "R2_MARKER_EFFECT_ATOMIC": {
+          "passed": true
+        },
+        "R3_REPLAY_IMPLIES_EFFECT": {
+          "passed": true
+        },
+        "R4_CONFLICT_NEVER_MUTATES": {
+          "passed": true
+        },
+        "R5_ONE_SUCCESSFUL_DELIVERY": {
+          "passed": true
+        }
+      }
+    }
+  ],
+  "aggregateDecision": {
+    "qualifyingProtocols": [
+      "ATOMIC_INBOX_EFFECT"
+    ],
+    "rejectedProtocols": [
+      "EFFECT_THEN_MARKER",
+      "MARKER_THEN_EFFECT"
+    ]
+  },
+  "qualification": "A passing bounded model applies only when the receiver's deduplication record and modeled effect share one atomic transaction. It is not a proof for external physical, network, email, payment, or machine-actuation effects."
+}

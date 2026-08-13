@@ -1,0 +1,290 @@
+{
+  "cycle": "RC-2026-36",
+  "auditor": "independent Node SQLite and history reconstruction",
+  "computedOn": "2026-08-14",
+  "resultSha256": "bdda7563b1c7a744515f4ea932e9162ee49b7b1829a8dd719618595f779c5917",
+  "historySha256": "43b2a9318cd897f83659e06e9c05209577718788a93e2da19d48b325f71f43ae",
+  "checks": [
+    {
+      "name": "before-commit-crash-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "before-commit-crash-one-delivery-one-effect",
+      "pass": true,
+      "evidence": {
+        "deliveries": [
+          {
+            "deliveryId": "RC36-BEFORE-001",
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+          }
+        ],
+        "effects": [
+          {
+            "effectId": 1,
+            "deliveryId": "RC36-BEFORE-001",
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+          }
+        ]
+      }
+    },
+    {
+      "name": "after-commit-crash-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "after-commit-crash-one-delivery-one-effect",
+      "pass": true,
+      "evidence": {
+        "deliveries": [
+          {
+            "deliveryId": "RC36-AFTER-001",
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+          }
+        ],
+        "effects": [
+          {
+            "effectId": 1,
+            "deliveryId": "RC36-AFTER-001",
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+          }
+        ]
+      }
+    },
+    {
+      "name": "concurrent-100-sqlite-integrity",
+      "pass": true,
+      "evidence": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    {
+      "name": "concurrent-100-one-delivery-one-effect",
+      "pass": true,
+      "evidence": {
+        "deliveries": [
+          {
+            "deliveryId": "RC36-CONCURRENT-001",
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+          }
+        ],
+        "effects": [
+          {
+            "effectId": 1,
+            "deliveryId": "RC36-CONCURRENT-001",
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+          }
+        ]
+      }
+    },
+    {
+      "name": "before-commit-rolled-back",
+      "pass": true,
+      "evidence": {
+        "name": "before-commit-crash",
+        "fault": "before-commit",
+        "expectedExit": 86,
+        "deliveryId": "RC36-BEFORE-001",
+        "firstResponse": null,
+        "retry": {
+          "status": 201,
+          "body": {
+            "deliveryId": "RC36-BEFORE-001",
+            "effectId": 1,
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb",
+            "receipt": "4ca457652002d6a20c59c34ed6c143568ec4ad658e62dccbc5b6409e9823db4c",
+            "status": "created"
+          }
+        },
+        "replay": {
+          "status": 200,
+          "body": {
+            "deliveryId": "RC36-BEFORE-001",
+            "effectId": 1,
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb",
+            "receipt": "7a20f5d0a8a5af8c9a026940e9ab2d75d79533c76eb0a2f67c94b8395f1e80a2",
+            "status": "replay"
+          }
+        },
+        "conflict": {
+          "status": 409,
+          "body": {
+            "deliveryId": "RC36-BEFORE-001",
+            "error": "idempotency-conflict"
+          }
+        },
+        "snapshot": {
+          "deliveries": [
+            {
+              "createdAt": "2026-08-13 22:18:43",
+              "deliveryId": "RC36-BEFORE-001",
+              "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+            }
+          ],
+          "effects": [
+            {
+              "createdAt": "2026-08-13 22:18:43",
+              "deliveryId": "RC36-BEFORE-001",
+              "effectId": 1,
+              "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+            }
+          ]
+        },
+        "db": "research/reproducibility/rc36-receiver-db/before-commit-crash.sqlite"
+      }
+    },
+    {
+      "name": "after-commit-survived",
+      "pass": true,
+      "evidence": {
+        "name": "after-commit-crash",
+        "fault": "after-commit",
+        "expectedExit": 87,
+        "deliveryId": "RC36-AFTER-001",
+        "firstResponse": null,
+        "retry": {
+          "status": 200,
+          "body": {
+            "deliveryId": "RC36-AFTER-001",
+            "effectId": 1,
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb",
+            "receipt": "f1c47300ae487705c507759cd07df061078faa98c93327cd6a2810051ed74ac4",
+            "status": "replay"
+          }
+        },
+        "replay": {
+          "status": 200,
+          "body": {
+            "deliveryId": "RC36-AFTER-001",
+            "effectId": 1,
+            "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb",
+            "receipt": "f1c47300ae487705c507759cd07df061078faa98c93327cd6a2810051ed74ac4",
+            "status": "replay"
+          }
+        },
+        "conflict": {
+          "status": 409,
+          "body": {
+            "deliveryId": "RC36-AFTER-001",
+            "error": "idempotency-conflict"
+          }
+        },
+        "snapshot": {
+          "deliveries": [
+            {
+              "createdAt": "2026-08-13 22:18:43",
+              "deliveryId": "RC36-AFTER-001",
+              "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+            }
+          ],
+          "effects": [
+            {
+              "createdAt": "2026-08-13 22:18:43",
+              "deliveryId": "RC36-AFTER-001",
+              "effectId": 1,
+              "outcomeSha256": "fff2554990eb40e6535d769efe199afc1622b49126d622139445083da8b68cfb"
+            }
+          ]
+        },
+        "db": "research/reproducibility/rc36-receiver-db/after-commit-crash.sqlite"
+      }
+    },
+    {
+      "name": "payload-conflicts-rejected",
+      "pass": true,
+      "evidence": {
+        "before": {
+          "status": 409,
+          "body": {
+            "deliveryId": "RC36-BEFORE-001",
+            "error": "idempotency-conflict"
+          }
+        },
+        "after": {
+          "status": 409,
+          "body": {
+            "deliveryId": "RC36-AFTER-001",
+            "error": "idempotency-conflict"
+          }
+        }
+      }
+    },
+    {
+      "name": "concurrency-one-created",
+      "pass": true,
+      "evidence": {
+        "created": 1,
+        "replay": 99
+      }
+    },
+    {
+      "name": "malformed-inputs-rejected",
+      "pass": true,
+      "evidence": {
+        "invalidId": {
+          "status": 400,
+          "body": {
+            "error": "invalid-delivery-id"
+          }
+        },
+        "invalidDigest": {
+          "status": 400,
+          "body": {
+            "error": "invalid-outcome-digest"
+          }
+        }
+      }
+    },
+    {
+      "name": "all-acknowledgements-authenticate",
+      "pass": true,
+      "evidence": {
+        "verified": 104
+      }
+    },
+    {
+      "name": "conflicts-never-return-receipt",
+      "pass": true,
+      "evidence": 2
+    },
+    {
+      "name": "history-result-event-count",
+      "pass": true,
+      "evidence": {
+        "history": 120,
+        "result": 120
+      }
+    },
+    {
+      "name": "claim-boundary-explicit",
+      "pass": true,
+      "evidence": {
+        "qualifies": "Atomic receiver-database insertion of a delivery marker and a modeled effect row under the fixed crashes, retries, conflicts, and concurrency on one host.",
+        "doesNotQualify": [
+          "an effect outside SQLite",
+          "physical actuation, payment, email, or remote service side effects",
+          "multiple physical hosts",
+          "a real network partition",
+          "host or storage-device loss",
+          "Byzantine clients or receivers",
+          "unbounded exactly-once delivery"
+        ]
+      }
+    }
+  ],
+  "passed": 15,
+  "total": 15,
+  "qualifies": true
+}
