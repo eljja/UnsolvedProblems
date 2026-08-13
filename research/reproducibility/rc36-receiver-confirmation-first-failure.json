@@ -1,0 +1,30 @@
+{
+  "cycle": "RC-2026-36",
+  "attemptedOn": "2026-08-14",
+  "precommitId": "RC36-RECEIVER-DELIVERY-PRECOMMIT-1.0",
+  "outcome": "non-qualifying-confirmation",
+  "criteria": {
+    "C1_beforeCommitRetryCreatesOnce": true,
+    "C2_afterCommitRetryReplaysOnce": true,
+    "C3_conflictingPayloadRejected": true,
+    "C4_concurrentOneCreateAndNinetyNineReplay": false,
+    "C5_malformedInputsNoEffect": true,
+    "C6_independentAudit": false
+  },
+  "concurrencyObservation": {
+    "requestsIssuedConcurrently": 100,
+    "createdResponses": 1,
+    "replayResponses": 26,
+    "connectionFailuresBeforeApplicationResponse": 73,
+    "deliveryRowsAfterRun": 1,
+    "effectRowsAfterRun": 1
+  },
+  "independentAudit": {
+    "passed": 14,
+    "total": 15,
+    "onlyFailedCheck": "concurrency-one-created"
+  },
+  "interpretation": "The atomic inbox-effect state remained unique, but the implementation failed the preregistered availability/response requirement because Python ThreadingHTTPServer inherited a small default listen backlog. This run does not qualify.",
+  "permittedCorrection": "Set an explicit request_queue_size of 128 and daemon_threads true in a dedicated RC36Server subclass. Do not change the one hundred simultaneous requests, C1-C6, SQLite transaction, receiver handler, client coordinator, timeouts, or auditor.",
+  "preservationRule": "Retain this non-qualifying record even if the amended confirmation later passes."
+}

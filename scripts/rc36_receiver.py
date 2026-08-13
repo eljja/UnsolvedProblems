@@ -113,6 +113,11 @@ class Receiver(BaseHTTPRequestHandler):
             connection.close()
 
 
+class RC36Server(ThreadingHTTPServer):
+    request_queue_size = 128
+    daemon_threads = True
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--db", required=True)
@@ -121,7 +126,7 @@ def main():
     db_path = str(Path(args.db).resolve())
     bootstrap = connect(db_path)
     bootstrap.close()
-    server = ThreadingHTTPServer(("127.0.0.1", args.port), Receiver)
+    server = RC36Server(("127.0.0.1", args.port), Receiver)
     server.db_path = db_path
     print(json.dumps({"ready": True, "port": args.port, "db": db_path}), flush=True)
     server.serve_forever()
@@ -129,4 +134,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

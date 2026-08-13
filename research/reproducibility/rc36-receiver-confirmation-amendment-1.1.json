@@ -1,0 +1,32 @@
+{
+  "amendmentId": "RC36-RECEIVER-CONFIRMATION-AMENDMENT-1.1",
+  "createdOn": "2026-08-14",
+  "status": "sealed-after-non-qualifying-confirmation-and-before-rerun",
+  "amends": "RC36-RECEIVER-DELIVERY-PRECOMMIT-1.0",
+  "failureRecord": "research/reproducibility/rc36-receiver-confirmation-first-failure.json",
+  "failedArtifacts": {
+    "historySha256": "389f7badc52404e9e854ce4539e413b2dbc5592d92047d20a5a8bc704f6b7745",
+    "resultSha256": "e54f86f1e11fb08b2a57ec2ee959d41a0df4ea76a481808c8039491f2aebd3bd",
+    "independentAuditSha256": "7c82f4388e0d31d577f0d3589c75f0ec19b1b89ffe2c2762d69d063eb2c3db19"
+  },
+  "failureClassification": "The receiver database preserved one delivery and one effect, but seventy-three of one hundred simultaneous TCP connections failed before an application response because the inherited HTTP server listen backlog was too small. C4 and therefore C6 failed; the run is non-qualifying.",
+  "onlyPermittedChange": "Use an RC36Server subclass with request_queue_size=128 and daemon_threads=true. This changes connection admission capacity only.",
+  "unchanged": [
+    "one hundred requests launched in one Promise.all",
+    "all three crash and concurrency cases",
+    "C1-C6 and every status-code/cardinality threshold",
+    "the Python request handler and SQLite BEGIN IMMEDIATE transaction",
+    "rollback journal and synchronous FULL",
+    "the Node coordinator, timeout behavior, outcome digests, and independent auditor",
+    "all claim boundaries"
+  ],
+  "amendedReceiver": {
+    "path": "scripts/rc36_receiver.py",
+    "sha256": "662320b48050875850888570f5e3671d5120448fe71cd02f907204658346fe9b"
+  },
+  "frozenUnchangedHashes": {
+    "coordinator": "ccad2204e0625f763d16fa3a53f661f39cd1787bf9b0263ef9772845162b4bde",
+    "independentAuditor": "87ed02bf18e04dacdaf79b5f71cd60a74dc4fec440a628de6ad4def0b2390f9d"
+  },
+  "rerunDecisionRule": "The rerun must pass the original C1-C6 without retries added around the one hundred concurrent requests. The first non-qualifying record remains part of the public research history."
+}
