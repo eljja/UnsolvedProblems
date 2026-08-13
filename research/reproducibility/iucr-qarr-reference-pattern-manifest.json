@@ -1,0 +1,95 @@
+{
+  "manifestId": "IUCR-QARR-REFERENCE-PATTERN-MANIFEST-0.1",
+  "reviewedOn": "2026-08-13",
+  "source": {
+    "dataKit": "https://www.iucr.org/__data/iucr/powder/QARR/data-kit.htm",
+    "weighedValues": "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/values",
+    "outcomesPaper": "https://doi.org/10.1107/S0021889801007476"
+  },
+  "officialCollectionContract": {
+    "geometry": "Flat-plate Bragg-Brentano reflection geometry on a Philips 3020 goniometer with PW3710 controller",
+    "source": "Copper long-fine-focus tube at 40 kV and 40 mA with curved graphite monochromator and proportional counter",
+    "scan": "5 to 150 degrees 2theta, 0.02-degree step, 3 seconds per step",
+    "webReleaseOfTruth": "1999-11-08",
+    "historicalCorrectionNotice": "The official kit states that Bruker/Siemens RAW and XDA conversions downloaded before 1998-01-27 must be replaced; this cycle uses the ASCII column PRN files."
+  },
+  "calibrationSelection": "Mixtures 1a, 1b, and 1c form the three phase-dominant simplex vertices: fluorite-, corundum-, and zincite-rich respectively. Mixtures 1d-1h are excluded from calibration rather than used after seeing Rowles outcomes.",
+  "byteLineage": "When Cloudflare prevents direct scripted transfer, the visible official two-column response is extracted through an interactive browser and normalized to UTF-8 with one LF-terminated line per data point. The hashes below bind that normalized numerical text, not the server's transport bytes.",
+  "files": [
+    {
+      "name": "corundum.prn",
+      "role": "pure-phase-reference",
+      "url": "https://www.iucr.org/__data/iucr/powder/QARR/col/corundum.prn",
+      "bytes": 137770,
+      "sha256": "bd53b325233838ccf91070c43f239b1762e616cd6a3dffd6a7cde479a096ec80",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "medianStepDegrees2Theta": 0.01999999999999602
+    },
+    {
+      "name": "fluorite.prn",
+      "role": "pure-phase-reference",
+      "url": "https://www.iucr.org/__data/iucr/powder/QARR/col/fluorite.prn",
+      "bytes": 137770,
+      "sha256": "8a6fcab3a659f6e721387907bf65b480da4ee8559e1c5c3d21e69f8445b0e08c",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "medianStepDegrees2Theta": 0.01999999999999602
+    },
+    {
+      "name": "zincite.prn",
+      "role": "pure-phase-reference",
+      "url": "https://www.iucr.org/__data/iucr/powder/QARR/col/zincite.prn",
+      "bytes": 137770,
+      "sha256": "fb682816b99f861251fb5386bf137439ea763973e07dfbd897f3783893c4ec7a",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "medianStepDegrees2Theta": 0.01999999999999602
+    },
+    {
+      "name": "cpd-1a.prn",
+      "role": "calibration-mixture",
+      "url": "https://www.iucr.org/__data/iucr/powder/QARR/col/cpd-1a.prn",
+      "bytes": 137770,
+      "sha256": "2244513a216d5326f1360e05f1b239c582548cdfb0aa6e3c960ff9d7c62bf284",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "medianStepDegrees2Theta": 0.01999999999999602
+    },
+    {
+      "name": "cpd-1b.prn",
+      "role": "calibration-mixture",
+      "url": "https://www.iucr.org/__data/iucr/powder/QARR/col/cpd-1b.prn",
+      "bytes": 137770,
+      "sha256": "4f44f682d0ba1ff234ebd294fc91eeb8e800e03da5d35393ca4fa53ead0e3f72",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "medianStepDegrees2Theta": 0.01999999999999602
+    },
+    {
+      "name": "cpd-1c.prn",
+      "role": "calibration-mixture",
+      "url": "https://www.iucr.org/__data/iucr/powder/QARR/col/cpd-1c.prn",
+      "bytes": 137770,
+      "sha256": "c9fcc2f078897e06d4bc6f0900d1ba3e5d181817e96ab247097cfa993dda642f",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "medianStepDegrees2Theta": 0.01999999999999602
+    }
+  ],
+  "verified": {
+    "files": 6,
+    "purePhaseReferences": 3,
+    "calibrationMixtures": 3,
+    "uniqueHashes": 6,
+    "totalBytes": 826620,
+    "everyFileTwoColumnMonotone": true
+  },
+  "localCache": "Temporary analysis input only; raw profiles are not redistributed by this repository."
+}

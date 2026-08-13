@@ -1,0 +1,104 @@
+{
+  "benchmarkId": "IUCR-QPA-INDEPENDENT-PEAK-RIR-0.1",
+  "reviewedOn": "2026-08-13",
+  "status": "sealed-before-independent-reduction-computation",
+  "purpose": "Test whether an empirical reference-intensity-ratio reduction, implemented without TOPAS, crystal structures, Rietveld scale factors, or fitted whole-pattern peak shapes, transports from the official CPD instrument to the 208 Rowles profiles and exposes errors complementary to the frozen Rwp gate.",
+  "sourceContract": {
+    "referenceManifest": "research/reproducibility/iucr-qarr-reference-pattern-manifest.json",
+    "rowlesRawManifest": "research/reproducibility/iucr-qpa-raw-source-manifest.json",
+    "rowlesSummaryManifest": "research/reproducibility/iucr-qpa-summary-source-manifest.json",
+    "weighedTruth": "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/values",
+    "qarrOutcomes": "https://doi.org/10.1107/S0021889801007476",
+    "rowlesStudy": "https://doi.org/10.1107/S160057672100371X"
+  },
+  "phaseOrder": ["corundum", "fluorite", "zincite"],
+  "truthWeightPercent": {
+    "1a": { "corundum": 1.15, "fluorite": 94.81, "zincite": 4.04 },
+    "1b": { "corundum": 94.31, "fluorite": 4.33, "zincite": 1.36 },
+    "1c": { "corundum": 5.04, "fluorite": 1.36, "zincite": 93.59 },
+    "1e": { "corundum": 55.12, "fluorite": 29.62, "zincite": 15.25 }
+  },
+  "calibration": {
+    "profiles": ["cpd-1a.prn", "cpd-1b.prn", "cpd-1c.prn"],
+    "selectionReason": "The three profiles are the phase-dominant simplex vertices and were fixed without using Rowles estimates or errors.",
+    "responseRatio": "For phase k against fluorite in each calibration mixture s, compute log[(A_sk/A_s,fluorite)/(W_sk/W_s,fluorite)]. The median across 1a, 1b, and 1c is log(r_k/r_fluorite); set r_fluorite=1.",
+    "weightEstimate": "For a target profile, set u_k=A_k/r_k and normalize positive u_k to 100 weight percent. Missing or non-positive phase area refuses the profile."
+  },
+  "peakAreaContract": {
+    "signalHalfWidthDegrees2Theta": 0.28,
+    "sidebandInnerHalfWidthDegrees2Theta": 0.45,
+    "sidebandOuterHalfWidthDegrees2Theta": 0.75,
+    "background": "Use the median count in each low and high sideband, then linearly interpolate between the two sideband medians across the signal window.",
+    "area": "Trapezoid-integrate max(observed count minus interpolated background, zero) over the observed signal points without resampling.",
+    "primaryCentersDegrees2Theta": {
+      "corundum": 25.58,
+      "fluorite": 28.28,
+      "zincite": 31.78
+    },
+    "secondaryCentersDegrees2Theta": {
+      "corundum": 43.36,
+      "fluorite": 46.98,
+      "zincite": 62.88
+    },
+    "independence": "Primary and secondary peak families are calibrated separately. No TOPAS result, crystal structure, Rwp, weighed Rowles composition, or target error enters either estimate."
+  },
+  "targetGrid": {
+    "samples": ["1a", "1e"],
+    "rawProfiles": 208,
+    "profilesPerSample": 104,
+    "adequateAcquisition": "Nominal maximum intensity at least 20,000 counts and nominal step at most 0.04 degrees; all Rowles files extend to approximately 150 degrees 2theta.",
+    "expectedAdequateProfilesPerSample": 18,
+    "unsafe": "Maximum absolute phase-fraction error above five weight-percentage points."
+  },
+  "frozenSelectors": {
+    "peakAgreement": "D is the maximum absolute phase-fraction difference between primary and secondary estimates.",
+    "developmentAgreementGate": "On adequate-acquisition Rowles 1a profiles only, find the smallest D among unsafe primary estimates and accept D strictly below it. If adequate 1a has no unsafe estimate, the gate is non-identifiable and may not be promoted.",
+    "rwpGate": "For comparison only, a TOPAS summary row passes when Rwp is strictly below the RC18-frozen threshold 8.043046005815. The threshold is not refitted."
+  },
+  "competingHypotheses": [
+    {
+      "id": "H1",
+      "claim": "A three-peak empirical RIR calibrated on the historical CPD instrument transports to adequate Rowles acquisitions.",
+      "prediction": "Across all 36 adequate Rowles profiles, the primary estimate has zero unsafe profiles and nonzero coverage in both compositions.",
+      "rejectWhen": "Any adequate profile has maximum phase error above five points or a phase area is non-positive."
+    },
+    {
+      "id": "H2",
+      "claim": "Independent primary and secondary peak families agree closely enough to provide a transportable error detector.",
+      "prediction": "The agreement gate selected only on 1a accepts zero unsafe 1e profiles and retains at least half of safe 1e profiles.",
+      "rejectWhen": "It accepts any unsafe 1e profile, retains below 0.50 of safe 1e profiles, or is non-identifiable on 1a."
+    },
+    {
+      "id": "H3",
+      "claim": "The CPD phase-response ratio is composition invariant within its calibration instrument.",
+      "prediction": "For both corundum/fluorite and zincite/fluorite, all three per-mixture response ratios lie within 20% of their median.",
+      "rejectWhen": "Any relative deviation exceeds 20%, indicating composition, overlap, orientation, or background dependence before cross-instrument transfer."
+    },
+    {
+      "id": "H4",
+      "claim": "The non-TOPAS peak reduction and TOPAS Rwp expose complementary failure modes on the same raw files.",
+      "prediction": "Among full-angle summary rows, at least one row passes Rwp while its independent profile is unsafe, and at least one row fails Rwp while its independent profile is safe.",
+      "rejectWhen": "Either exclusive diagnostic group is empty."
+    }
+  ],
+  "decisionRules": {
+    "primaryAccuracy": "Report every phase error and the maximum phase error; do not average away a failing minor phase.",
+    "safety": "A selector is safe only with zero accepted profiles above five points.",
+    "utility": "Report accepted fraction and safe-profile retention; zero acceptance is not progress.",
+    "promotion": "Passing this secondary benchmark does not qualify the independent physical rung because CPD and Rowles profiles are not a prospectively crossed preparation-by-institution experiment."
+  },
+  "uncertaintyBudget": [
+    "Poisson counting noise and coarse-grid sampling alter local integrated areas.",
+    "Linear sideband background can be biased by neighbouring peak tails.",
+    "Preferred orientation, microabsorption, crystallinity, and specimen packing change peak-specific response ratios.",
+    "The historical CPD and Rowles instruments differ in optics, resolution, alignment, and detector response.",
+    "The three calibration vertices are single physical profiles, so calibration uncertainty is descriptive rather than a preparation variance estimate.",
+    "Weighed values are treated as benchmark truth but do not replace independent elemental adjudication in the planned physical pilot."
+  ],
+  "stopConditions": [
+    "Stop a profile estimate if any required signal or sideband window has no observed point or yields non-positive net area.",
+    "Do not tune centers, widths, background, response ratios, or the five-point gate after inspecting Rowles truth errors.",
+    "Do not describe agreement between two peak families as independent physical replication; both use the same specimen and raw file.",
+    "Do not promote an Rwp or agreement refusal rule after any unsafe holdout acceptance."
+  ]
+}

@@ -1,0 +1,621 @@
+{
+  "benchmarkId": "IUCR-QPA-INDEPENDENT-PEAK-RIR-0.1",
+  "generatedOn": "2026-08-13",
+  "source": {
+    "referenceManifestId": "IUCR-QARR-REFERENCE-PATTERN-MANIFEST-0.1",
+    "rawManifestId": "IUCR-QPA-RAW-LINEAGE-0.1",
+    "summaryManifestId": "IUCR-QPA-SUMMARY-SOURCE-0.1"
+  },
+  "denominators": {
+    "referenceProfiles": 6,
+    "purePhaseReferences": 3,
+    "calibrationMixtures": 3,
+    "rowlesRawProfiles": 208,
+    "adequateProfiles": 36,
+    "fullAngleTopasRows": 832
+  },
+  "pureReferenceCrosstalk": {
+    "primary": {
+      "corundum": {
+        "areas": {
+          "corundum": 896.391,
+          "fluorite": 0.807333,
+          "zincite": 2.0605
+        },
+        "ownToOtherAreaRatio": 312.567327
+      },
+      "fluorite": {
+        "areas": {
+          "corundum": 2.866,
+          "fluorite": 1713.2465,
+          "zincite": 1.017667
+        },
+        "ownToOtherAreaRatio": 441.14149
+      },
+      "zincite": {
+        "areas": {
+          "corundum": 1.900667,
+          "fluorite": 1.687333,
+          "zincite": 2897.11
+        },
+        "ownToOtherAreaRatio": 807.444259
+      }
+    },
+    "secondary": {
+      "corundum": {
+        "areas": {
+          "corundum": 1536.35,
+          "fluorite": 1.153,
+          "zincite": 1.360833
+        },
+        "ownToOtherAreaRatio": 611.158258
+      },
+      "fluorite": {
+        "areas": {
+          "corundum": 0.4715,
+          "fluorite": 1933.3815,
+          "zincite": 0.621333
+        },
+        "ownToOtherAreaRatio": 1769.145798
+      },
+      "zincite": {
+        "areas": {
+          "corundum": 0.948833,
+          "fluorite": 0,
+          "zincite": 1466.4305
+        },
+        "ownToOtherAreaRatio": 1545.509046
+      }
+    }
+  },
+  "calibrations": {
+    "primary": {
+      "responseRatios": {
+        "corundum": 0.174393383,
+        "fluorite": 1,
+        "zincite": 0.860244342
+      },
+      "ratiosByMixture": {
+        "1a": {
+          "corundum": 0.292936428,
+          "fluorite": 1,
+          "zincite": 0.832480186
+        },
+        "1b": {
+          "corundum": 0.173097287,
+          "fluorite": 1,
+          "zincite": 0.860244342
+        },
+        "1c": {
+          "corundum": 0.174393383,
+          "fluorite": 1,
+          "zincite": 0.887083562
+        }
+      },
+      "calibrationEstimates": {
+        "1a": {
+          "estimate": {
+            "corundum": 1.919207,
+            "fluorite": 94.196482,
+            "zincite": 3.884311
+          },
+          "error": {
+            "byPhase": {
+              "corundum": 0.7692067226871386,
+              "fluorite": 0.6135176274715377,
+              "zincite": 0.1556890952156018
+            },
+            "maximum": 0.7692067226871386,
+            "unsafe": false
+          }
+        },
+        "1b": {
+          "estimate": {
+            "corundum": 94.269836,
+            "fluorite": 4.360564,
+            "zincite": 1.3696
+          },
+          "error": {
+            "byPhase": {
+              "corundum": 0.04016354673311184,
+              "fluorite": 0.030563823788095412,
+              "zincite": 0.00959972294499023
+            },
+            "maximum": 0.04016354673311184,
+            "unsafe": false
+          }
+        },
+        "1c": {
+          "estimate": {
+            "corundum": 4.897485,
+            "fluorite": 1.321544,
+            "zincite": 93.780971
+          },
+          "error": {
+            "byPhase": {
+              "corundum": 0.14251505237128193,
+              "fluorite": 0.03845644270336179,
+              "zincite": 0.19097149507463484
+            },
+            "maximum": 0.19097149507463484,
+            "unsafe": false
+          }
+        }
+      }
+    },
+    "secondary": {
+      "responseRatios": {
+        "corundum": 0.288197261,
+        "fluorite": 1,
+        "zincite": 0.410545202
+      },
+      "ratiosByMixture": {
+        "1a": {
+          "corundum": 0.251693855,
+          "fluorite": 1,
+          "zincite": 0.410545202
+        },
+        "1b": {
+          "corundum": 0.288197261,
+          "fluorite": 1,
+          "zincite": 0.409817368
+        },
+        "1c": {
+          "corundum": null,
+          "fluorite": 1,
+          "zincite": null
+        }
+      },
+      "calibrationEstimates": {
+        "1a": {
+          "estimate": {
+            "corundum": 1.005805,
+            "fluorite": 94.948302,
+            "zincite": 4.045893
+          },
+          "error": {
+            "byPhase": {
+              "corundum": 0.14419530404576464,
+              "fluorite": 0.13830204124005263,
+              "zincite": 0.00589326280571445
+            },
+            "maximum": 0.14419530404576464,
+            "unsafe": false
+          }
+        },
+        "1b": {
+          "estimate": {
+            "corundum": 94.312274,
+            "fluorite": 4.330104,
+            "zincite": 1.357622
+          },
+          "error": {
+            "byPhase": {
+              "corundum": 0.0022739370985505047,
+              "fluorite": 0.00010440194716032636,
+              "zincite": 0.002378339045715494
+            },
+            "maximum": 0.002378339045715494,
+            "unsafe": false
+          }
+        },
+        "1c": {
+          "estimate": null,
+          "error": {
+            "byPhase": {
+              "corundum": null,
+              "fluorite": null,
+              "zincite": null
+            },
+            "maximum": null,
+            "unsafe": true
+          }
+        }
+      }
+    }
+  },
+  "calibrationDeviation": {
+    "primary": {
+      "corundum": {
+        "maximumRelativeDeviation": 0.679745085,
+        "rows": [
+          {
+            "sample": "1a",
+            "ratio": 0.292936428,
+            "relativeDeviation": 0.679745085
+          },
+          {
+            "sample": "1b",
+            "ratio": 0.173097287,
+            "relativeDeviation": 0.007432025
+          },
+          {
+            "sample": "1c",
+            "ratio": 0.174393383,
+            "relativeDeviation": 0
+          }
+        ]
+      },
+      "zincite": {
+        "maximumRelativeDeviation": 0.032274732,
+        "rows": [
+          {
+            "sample": "1a",
+            "ratio": 0.832480186,
+            "relativeDeviation": 0.032274732
+          },
+          {
+            "sample": "1b",
+            "ratio": 0.860244342,
+            "relativeDeviation": 0
+          },
+          {
+            "sample": "1c",
+            "ratio": 0.887083562,
+            "relativeDeviation": 0.031199531
+          }
+        ]
+      }
+    },
+    "secondary": {
+      "corundum": {
+        "maximumRelativeDeviation": null,
+        "rows": [
+          {
+            "sample": "1a",
+            "ratio": 0.251693855,
+            "relativeDeviation": 0.126661183
+          },
+          {
+            "sample": "1b",
+            "ratio": 0.288197261,
+            "relativeDeviation": 0
+          },
+          {
+            "sample": "1c",
+            "ratio": null,
+            "relativeDeviation": null
+          }
+        ]
+      },
+      "zincite": {
+        "maximumRelativeDeviation": null,
+        "rows": [
+          {
+            "sample": "1a",
+            "ratio": 0.410545202,
+            "relativeDeviation": 0
+          },
+          {
+            "sample": "1b",
+            "ratio": 0.409817368,
+            "relativeDeviation": 0.001772847
+          },
+          {
+            "sample": "1c",
+            "ratio": null,
+            "relativeDeviation": null
+          }
+        ]
+      }
+    }
+  },
+  "targetPerformance": {
+    "all": {
+      "profiles": 208,
+      "refusedProfiles": 33,
+      "unsafePrimary": 80,
+      "unsafeSecondary": 89,
+      "maximumPrimaryError": null,
+      "medianPrimaryError": 2.783883,
+      "maximumSecondaryError": null,
+      "medianPeakAgreement": 2.845899
+    },
+    "adequate": {
+      "profiles": 36,
+      "refusedProfiles": 0,
+      "unsafePrimary": 0,
+      "unsafeSecondary": 0,
+      "maximumPrimaryError": 2.537271,
+      "medianPrimaryError": 1.769167,
+      "maximumSecondaryError": 2.105562,
+      "medianPeakAgreement": 1.730537
+    },
+    "adequateBySample": {
+      "1a": {
+        "profiles": 18,
+        "refusedProfiles": 0,
+        "unsafePrimary": 0,
+        "unsafeSecondary": 0,
+        "maximumPrimaryError": 2.537271,
+        "medianPrimaryError": 2.139656,
+        "maximumSecondaryError": 0.777743,
+        "medianPeakAgreement": 1.982157
+      },
+      "1e": {
+        "profiles": 18,
+        "refusedProfiles": 0,
+        "unsafePrimary": 0,
+        "unsafeSecondary": 0,
+        "maximumPrimaryError": 1.621758,
+        "medianPrimaryError": 1.500999,
+        "maximumSecondaryError": 2.105562,
+        "medianPeakAgreement": 1.365252
+      }
+    }
+  },
+  "agreementGate": {
+    "thresholdSelectedOnAdequate1a": null,
+    "development": {
+      "profiles": 18,
+      "acceptedProfiles": 0,
+      "unsafeAccepted": 0,
+      "safeRetention": 0,
+      "maximumAcceptedPrimaryError": null
+    },
+    "holdout": {
+      "profiles": 18,
+      "acceptedProfiles": 0,
+      "unsafeAccepted": 0,
+      "safeRetention": 0,
+      "maximumAcceptedPrimaryError": null
+    }
+  },
+  "diagnosticPartition": {
+    "counts": {
+      "bothPass": 112,
+      "peakUnsafeRwpPass": 0,
+      "peakSafeRwpFail": 400,
+      "bothFail": 320
+    },
+    "topasUnsafeCounts": {
+      "bothPass": 0,
+      "peakUnsafeRwpPass": 0,
+      "peakSafeRwpFail": 17,
+      "bothFail": 187
+    }
+  },
+  "worstAdequateProfiles": [
+    {
+      "name": "1a_0020000_0-020_n001.xy",
+      "sample": "1a",
+      "nominalMaximumIntensity": 20000,
+      "nominalStepSize": 0.02,
+      "primaryEstimate": {
+        "corundum": 3.687271,
+        "fluorite": 92.919475,
+        "zincite": 3.393254
+      },
+      "secondaryEstimate": {
+        "corundum": 1.600263,
+        "fluorite": 94.993873,
+        "zincite": 3.405864
+      },
+      "primaryMaximumError": 2.537271,
+      "secondaryMaximumError": 0.634136,
+      "peakAgreement": 2.087009
+    },
+    {
+      "name": "1a_1000000_0-020_n001.xy",
+      "sample": "1a",
+      "nominalMaximumIntensity": 1000000,
+      "nominalStepSize": 0.02,
+      "primaryEstimate": {
+        "corundum": 3.450749,
+        "fluorite": 93.237373,
+        "zincite": 3.311878
+      },
+      "secondaryEstimate": {
+        "corundum": 1.321514,
+        "fluorite": 95.239673,
+        "zincite": 3.438813
+      },
+      "primaryMaximumError": 2.300749,
+      "secondaryMaximumError": 0.601187,
+      "peakAgreement": 2.129235
+    },
+    {
+      "name": "1a_1000000_0-010_n001.xy",
+      "sample": "1a",
+      "nominalMaximumIntensity": 1000000,
+      "nominalStepSize": 0.01,
+      "primaryEstimate": {
+        "corundum": 3.445643,
+        "fluorite": 93.226552,
+        "zincite": 3.327805
+      },
+      "secondaryEstimate": {
+        "corundum": 1.304183,
+        "fluorite": 95.261035,
+        "zincite": 3.434782
+      },
+      "primaryMaximumError": 2.295643,
+      "secondaryMaximumError": 0.605218,
+      "peakAgreement": 2.14146
+    },
+    {
+      "name": "1a_0200000_0-010_n001.xy",
+      "sample": "1a",
+      "nominalMaximumIntensity": 200000,
+      "nominalStepSize": 0.01,
+      "primaryEstimate": {
+        "corundum": 3.402487,
+        "fluorite": 93.256823,
+        "zincite": 3.34069
+      },
+      "secondaryEstimate": {
+        "corundum": 1.32617,
+        "fluorite": 95.270182,
+        "zincite": 3.403648
+      },
+      "primaryMaximumError": 2.252487,
+      "secondaryMaximumError": 0.636352,
+      "peakAgreement": 2.076317
+    },
+    {
+      "name": "1a_1000000_0-040_n001.xy",
+      "sample": "1a",
+      "nominalMaximumIntensity": 1000000,
+      "nominalStepSize": 0.04,
+      "primaryEstimate": {
+        "corundum": 3.399737,
+        "fluorite": 93.252654,
+        "zincite": 3.347608
+      },
+      "secondaryEstimate": {
+        "corundum": 1.269102,
+        "fluorite": 95.311724,
+        "zincite": 3.419174
+      },
+      "primaryMaximumError": 2.249737,
+      "secondaryMaximumError": 0.620826,
+      "peakAgreement": 2.130635
+    },
+    {
+      "name": "1a_0020000_0-010_n001.xy",
+      "sample": "1a",
+      "nominalMaximumIntensity": 20000,
+      "nominalStepSize": 0.01,
+      "primaryEstimate": {
+        "corundum": 3.376637,
+        "fluorite": 93.249666,
+        "zincite": 3.373697
+      },
+      "secondaryEstimate": {
+        "corundum": 1.528085,
+        "fluorite": 95.08548,
+        "zincite": 3.386435
+      },
+      "primaryMaximumError": 2.226637,
+      "secondaryMaximumError": 0.653565,
+      "peakAgreement": 1.848552
+    },
+    {
+      "name": "1a_0100000_0-040_n001.xy",
+      "sample": "1a",
+      "nominalMaximumIntensity": 100000,
+      "nominalStepSize": 0.04,
+      "primaryEstimate": {
+        "corundum": 3.343313,
+        "fluorite": 93.23863,
+        "zincite": 3.418056
+      },
+      "secondaryEstimate": {
+        "corundum": 1.449556,
+        "fluorite": 95.228457,
+        "zincite": 3.321988
+      },
+      "primaryMaximumError": 2.193313,
+      "secondaryMaximumError": 0.718012,
+      "peakAgreement": 1.989826
+    },
+    {
+      "name": "1a_0200000_0-020_n001.xy",
+      "sample": "1a",
+      "nominalMaximumIntensity": 200000,
+      "nominalStepSize": 0.02,
+      "primaryEstimate": {
+        "corundum": 3.342979,
+        "fluorite": 93.321475,
+        "zincite": 3.335546
+      },
+      "secondaryEstimate": {
+        "corundum": 1.324406,
+        "fluorite": 95.288132,
+        "zincite": 3.387462
+      },
+      "primaryMaximumError": 2.192979,
+      "secondaryMaximumError": 0.652538,
+      "peakAgreement": 2.018573
+    },
+    {
+      "name": "1a_0100000_0-020_n001.xy",
+      "sample": "1a",
+      "nominalMaximumIntensity": 100000,
+      "nominalStepSize": 0.02,
+      "primaryEstimate": {
+        "corundum": 3.297116,
+        "fluorite": 93.353394,
+        "zincite": 3.34949
+      },
+      "secondaryEstimate": {
+        "corundum": 1.449608,
+        "fluorite": 95.1998,
+        "zincite": 3.350592
+      },
+      "primaryMaximumError": 2.147116,
+      "secondaryMaximumError": 0.689408,
+      "peakAgreement": 1.847509
+    },
+    {
+      "name": "1a_0500000_0-010_n001.xy",
+      "sample": "1a",
+      "nominalMaximumIntensity": 500000,
+      "nominalStepSize": 0.01,
+      "primaryEstimate": {
+        "corundum": 3.282195,
+        "fluorite": 93.356333,
+        "zincite": 3.361472
+      },
+      "secondaryEstimate": {
+        "corundum": 1.307708,
+        "fluorite": 95.264653,
+        "zincite": 3.427638
+      },
+      "primaryMaximumError": 2.132195,
+      "secondaryMaximumError": 0.612362,
+      "peakAgreement": 1.974487
+    },
+    {
+      "name": "1a_0200000_0-040_n001.xy",
+      "sample": "1a",
+      "nominalMaximumIntensity": 200000,
+      "nominalStepSize": 0.04,
+      "primaryEstimate": {
+        "corundum": 3.273191,
+        "fluorite": 93.373003,
+        "zincite": 3.353805
+      },
+      "secondaryEstimate": {
+        "corundum": 1.279098,
+        "fluorite": 95.302285,
+        "zincite": 3.418617
+      },
+      "primaryMaximumError": 2.123191,
+      "secondaryMaximumError": 0.621383,
+      "peakAgreement": 1.994093
+    },
+    {
+      "name": "1a_0050000_0-020_n001.xy",
+      "sample": "1a",
+      "nominalMaximumIntensity": 50000,
+      "nominalStepSize": 0.02,
+      "primaryEstimate": {
+        "corundum": 3.262161,
+        "fluorite": 93.437645,
+        "zincite": 3.300194
+      },
+      "secondaryEstimate": {
+        "corundum": 1.555874,
+        "fluorite": 95.043852,
+        "zincite": 3.400274
+      },
+      "primaryMaximumError": 2.112161,
+      "secondaryMaximumError": 0.639726,
+      "peakAgreement": 1.706287
+    }
+  ],
+  "decision": {
+    "H1_empiricalRirTransfers": true,
+    "H2_peakAgreementDetectsError": false,
+    "H3_responseRatioCompositionInvariant": false,
+    "H4_peakAndRwpComplementary": false,
+    "independentPhysicalRungQualified": false
+  },
+  "interpretation": [
+    "This is an independent software and estimator lineage but not independent physical replication: both methods ultimately analyse historical diffraction specimens.",
+    "Empirical peak ratios deliberately remove whole-pattern refinement and crystal-structure models, but inherit peak-specific orientation, overlap, absorption, crystallinity, background, and cross-instrument response.",
+    "A failed calibration-invariance or composition-transfer hypothesis narrows the next physical pilot toward reference-pattern and specimen-response controls rather than larger randomized-start refinement grids.",
+    "No threshold is recalibrated on 1e and no physical-rung promotion is possible in this cycle."
+  ]
+}

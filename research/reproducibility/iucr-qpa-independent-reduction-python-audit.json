@@ -1,0 +1,96 @@
+{
+  "auditId": "IUCR-QPA-INDEPENDENT-PEAK-RIR-PYTHON-AUDIT-0.1",
+  "generatedOn": "2026-08-13",
+  "implementation": "Python standard library; does not import or execute the JavaScript reduction",
+  "denominators": {
+    "referenceProfiles": 6,
+    "rowlesRawProfiles": 208,
+    "adequateProfiles": 36,
+    "fullAngleTopasRows": 832
+  },
+  "responseRatios": {
+    "primary": {
+      "fluorite": 1.0,
+      "corundum": 0.174393383,
+      "zincite": 0.860244342
+    },
+    "secondary": {
+      "fluorite": 1.0,
+      "corundum": 0.288197261,
+      "zincite": 0.410545202
+    }
+  },
+  "calibrationMaximumRelativeDeviation": {
+    "primary": {
+      "corundum": 0.679745079,
+      "zincite": 0.032274733
+    },
+    "secondary": {
+      "corundum": null,
+      "zincite": null
+    }
+  },
+  "targetPerformance": {
+    "all": {
+      "profiles": 208,
+      "refusedProfiles": 33,
+      "unsafePrimary": 80,
+      "unsafeSecondary": 89,
+      "maximumPrimaryError": null,
+      "medianPrimaryError": 2.783883,
+      "medianPeakAgreement": 2.845899
+    },
+    "adequate": {
+      "profiles": 36,
+      "refusedProfiles": 0,
+      "unsafePrimary": 0,
+      "unsafeSecondary": 0,
+      "maximumPrimaryError": 2.537271,
+      "medianPrimaryError": 1.769167,
+      "medianPeakAgreement": 1.730537
+    },
+    "adequate1a": {
+      "profiles": 18,
+      "refusedProfiles": 0,
+      "unsafePrimary": 0,
+      "unsafeSecondary": 0,
+      "maximumPrimaryError": 2.537271,
+      "medianPrimaryError": 2.139656,
+      "medianPeakAgreement": 1.982157
+    },
+    "adequate1e": {
+      "profiles": 18,
+      "refusedProfiles": 0,
+      "unsafePrimary": 0,
+      "unsafeSecondary": 0,
+      "maximumPrimaryError": 1.621758,
+      "medianPrimaryError": 1.500999,
+      "medianPeakAgreement": 1.365252
+    }
+  },
+  "agreementGate": {
+    "threshold": null,
+    "development": {
+      "acceptedProfiles": 0,
+      "unsafeAccepted": 0,
+      "safeRetention": 0.0
+    },
+    "holdout": {
+      "acceptedProfiles": 0,
+      "unsafeAccepted": 0,
+      "safeRetention": 0.0
+    }
+  },
+  "diagnosticPartition": {
+    "bothPass": 112,
+    "peakUnsafeRwpPass": 0,
+    "peakSafeRwpFail": 400,
+    "bothFail": 320
+  },
+  "decisions": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": false
+  }
+}
