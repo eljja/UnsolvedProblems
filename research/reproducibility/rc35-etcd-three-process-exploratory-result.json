@@ -1,0 +1,336 @@
+{
+  "cycle": "RC-2026-35",
+  "experiment": "same-host-three-process-etcd-staged-release",
+  "runPhase": "exploratory",
+  "startedAt": "2026-08-13T21:46:17.428Z",
+  "completedAt": "2026-08-13T21:46:34.963Z",
+  "implementation": {
+    "release": "v3.7.1",
+    "releasePublishedAt": "2026-07-23T19:37:53Z",
+    "releaseUrl": "https://github.com/etcd-io/etcd/releases/tag/v3.7.1",
+    "archiveSha256": "228d600d103e0f48715687c768de8dcaeacb19eef2006261160a9a677e36cc59",
+    "expectedArchiveSha256": "228d600d103e0f48715687c768de8dcaeacb19eef2006261160a9a677e36cc59",
+    "versionOutput": "etcdctl version: 3.7.1\nAPI version: 3.7",
+    "replicas": 3,
+    "processes": 3,
+    "dataDirectories": 3,
+    "physicalHosts": 1,
+    "transport": "three loopback client ports and three loopback peer ports"
+  },
+  "boundary": {
+    "qualifies": "real etcd compare-and-swap transactions, leader process termination, persisted per-process data directories, and one-member minority unavailability on one Windows host",
+    "doesNotQualify": [
+      "independent physical failure domains",
+      "real network partition or packet reordering",
+      "host, disk, rack, region, or institution failure",
+      "unbounded linearizability proof",
+      "exactly-once delivery of an outcome to an external recipient"
+    ]
+  },
+  "baselineStatus": [
+    {
+      "Endpoint": "http://127.0.0.1:23791",
+      "Status": {
+        "header": {
+          "cluster_id": 12498709550979703000,
+          "member_id": 16946582163584741000,
+          "revision": 1,
+          "raft_term": 2
+        },
+        "version": "3.7.1",
+        "dbSize": 24576,
+        "leader": 9287250458399318000,
+        "raftIndex": 11,
+        "raftTerm": 2,
+        "raftAppliedIndex": 11,
+        "dbSizeInUse": 24576,
+        "storageVersion": "3.7.0",
+        "dbSizeQuota": 2147483648,
+        "downgradeInfo": {}
+      }
+    },
+    {
+      "Endpoint": "http://127.0.0.1:23792",
+      "Status": {
+        "header": {
+          "cluster_id": 12498709550979703000,
+          "member_id": 1291515483693230300,
+          "revision": 1,
+          "raft_term": 2
+        },
+        "version": "3.7.1",
+        "dbSize": 24576,
+        "leader": 9287250458399318000,
+        "raftIndex": 11,
+        "raftTerm": 2,
+        "raftAppliedIndex": 11,
+        "dbSizeInUse": 24576,
+        "storageVersion": "3.7.0",
+        "dbSizeQuota": 2147483648,
+        "downgradeInfo": {}
+      }
+    },
+    {
+      "Endpoint": "http://127.0.0.1:23793",
+      "Status": {
+        "header": {
+          "cluster_id": 12498709550979703000,
+          "member_id": 9287250458399318000,
+          "revision": 1,
+          "raft_term": 2
+        },
+        "version": "3.7.1",
+        "dbSize": 24576,
+        "leader": 9287250458399318000,
+        "raftIndex": 11,
+        "raftTerm": 2,
+        "raftAppliedIndex": 11,
+        "dbSizeInUse": 24576,
+        "storageVersion": "3.7.0",
+        "dbSizeQuota": 2147483648,
+        "downgradeInfo": {}
+      }
+    }
+  ],
+  "cases": [
+    {
+      "terminateAt": "CLAIMED",
+      "prefix": "/rc35/case-claimed",
+      "initialLeader": "r2",
+      "killedLeader": "r2",
+      "claimWinners": 1,
+      "releaseCommitted": true,
+      "retryReexecuted": false,
+      "perReplica": [
+        {
+          "node": "r0",
+          "reads": {
+            "stage": {
+              "key": "/rc35/case-claimed/stage",
+              "value": "RELEASED",
+              "createRevision": 2,
+              "modRevision": 4,
+              "version": 3
+            },
+            "owner": {
+              "key": "/rc35/case-claimed/owner",
+              "value": "C0",
+              "createRevision": 2,
+              "modRevision": 2,
+              "version": 1
+            },
+            "receipt": {
+              "key": "/rc35/case-claimed/receipt",
+              "value": "sha256:rc35-fixed-receipt",
+              "createRevision": 3,
+              "modRevision": 3,
+              "version": 1
+            },
+            "outcome": {
+              "key": "/rc35/case-claimed/outcome",
+              "value": "sha256:rc35-fixed-outcome",
+              "createRevision": 4,
+              "modRevision": 4,
+              "version": 1
+            }
+          }
+        },
+        {
+          "node": "r1",
+          "reads": {
+            "stage": {
+              "key": "/rc35/case-claimed/stage",
+              "value": "RELEASED",
+              "createRevision": 2,
+              "modRevision": 4,
+              "version": 3
+            },
+            "owner": {
+              "key": "/rc35/case-claimed/owner",
+              "value": "C0",
+              "createRevision": 2,
+              "modRevision": 2,
+              "version": 1
+            },
+            "receipt": {
+              "key": "/rc35/case-claimed/receipt",
+              "value": "sha256:rc35-fixed-receipt",
+              "createRevision": 3,
+              "modRevision": 3,
+              "version": 1
+            },
+            "outcome": {
+              "key": "/rc35/case-claimed/outcome",
+              "value": "sha256:rc35-fixed-outcome",
+              "createRevision": 4,
+              "modRevision": 4,
+              "version": 1
+            }
+          }
+        },
+        {
+          "node": "r2",
+          "reads": {
+            "stage": {
+              "key": "/rc35/case-claimed/stage",
+              "value": "RELEASED",
+              "createRevision": 2,
+              "modRevision": 4,
+              "version": 3
+            },
+            "owner": {
+              "key": "/rc35/case-claimed/owner",
+              "value": "C0",
+              "createRevision": 2,
+              "modRevision": 2,
+              "version": 1
+            },
+            "receipt": {
+              "key": "/rc35/case-claimed/receipt",
+              "value": "sha256:rc35-fixed-receipt",
+              "createRevision": 3,
+              "modRevision": 3,
+              "version": 1
+            },
+            "outcome": {
+              "key": "/rc35/case-claimed/outcome",
+              "value": "sha256:rc35-fixed-outcome",
+              "createRevision": 4,
+              "modRevision": 4,
+              "version": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "terminateAt": "RECEIPTED",
+      "prefix": "/rc35/case-receipted",
+      "initialLeader": "r0",
+      "killedLeader": "r0",
+      "claimWinners": 1,
+      "releaseCommitted": true,
+      "retryReexecuted": false,
+      "perReplica": [
+        {
+          "node": "r0",
+          "reads": {
+            "stage": {
+              "key": "/rc35/case-receipted/stage",
+              "value": "RELEASED",
+              "createRevision": 5,
+              "modRevision": 7,
+              "version": 3
+            },
+            "owner": {
+              "key": "/rc35/case-receipted/owner",
+              "value": "C0",
+              "createRevision": 5,
+              "modRevision": 5,
+              "version": 1
+            },
+            "receipt": {
+              "key": "/rc35/case-receipted/receipt",
+              "value": "sha256:rc35-fixed-receipt",
+              "createRevision": 6,
+              "modRevision": 6,
+              "version": 1
+            },
+            "outcome": {
+              "key": "/rc35/case-receipted/outcome",
+              "value": "sha256:rc35-fixed-outcome",
+              "createRevision": 7,
+              "modRevision": 7,
+              "version": 1
+            }
+          }
+        },
+        {
+          "node": "r1",
+          "reads": {
+            "stage": {
+              "key": "/rc35/case-receipted/stage",
+              "value": "RELEASED",
+              "createRevision": 5,
+              "modRevision": 7,
+              "version": 3
+            },
+            "owner": {
+              "key": "/rc35/case-receipted/owner",
+              "value": "C0",
+              "createRevision": 5,
+              "modRevision": 5,
+              "version": 1
+            },
+            "receipt": {
+              "key": "/rc35/case-receipted/receipt",
+              "value": "sha256:rc35-fixed-receipt",
+              "createRevision": 6,
+              "modRevision": 6,
+              "version": 1
+            },
+            "outcome": {
+              "key": "/rc35/case-receipted/outcome",
+              "value": "sha256:rc35-fixed-outcome",
+              "createRevision": 7,
+              "modRevision": 7,
+              "version": 1
+            }
+          }
+        },
+        {
+          "node": "r2",
+          "reads": {
+            "stage": {
+              "key": "/rc35/case-receipted/stage",
+              "value": "RELEASED",
+              "createRevision": 5,
+              "modRevision": 7,
+              "version": 3
+            },
+            "owner": {
+              "key": "/rc35/case-receipted/owner",
+              "value": "C0",
+              "createRevision": 5,
+              "modRevision": 5,
+              "version": 1
+            },
+            "receipt": {
+              "key": "/rc35/case-receipted/receipt",
+              "value": "sha256:rc35-fixed-receipt",
+              "createRevision": 6,
+              "modRevision": 6,
+              "version": 1
+            },
+            "outcome": {
+              "key": "/rc35/case-receipted/outcome",
+              "value": "sha256:rc35-fixed-outcome",
+              "createRevision": 7,
+              "modRevision": 7,
+              "version": 1
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "minority": {
+    "survivor": "r0",
+    "stopped": [
+      "r1",
+      "r2"
+    ],
+    "attemptExitedSuccessfully": false,
+    "attemptTimedOut": true,
+    "transactionSucceeded": false,
+    "keyPresentAfterHeal": false
+  },
+  "criteria": {
+    "oneClaimWinnerPerCase": true,
+    "committedReleaseSurvivesLeaderTermination": true,
+    "lostResponseRetryDoesNotReexecute": true,
+    "minorityCannotCommit": true
+  },
+  "historyEvents": 49,
+  "qualifies": true
+}

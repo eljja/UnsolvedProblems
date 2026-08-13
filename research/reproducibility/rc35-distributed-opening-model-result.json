@@ -1,0 +1,430 @@
+{
+  "resultId": "RC35-DISTRIBUTED-OPENING-MODEL-RESULT-0.9",
+  "computedOn": "2026-08-14",
+  "precommitId": "RC35-DISTRIBUTED-OPENING-PRECOMMIT-0.9",
+  "modelKind": "finite abstract state machine, not an implementation of Raft or etcd",
+  "metrics": [
+    {
+      "protocol": "LOCAL_IMMEDIATE",
+      "reachableStates": 752,
+      "exploredTransitions": 5264,
+      "maximumShortestPathDepth": 5,
+      "invariants": {
+        "S1_AT_MOST_ONE_RELEASE": {
+          "passed": false,
+          "minimalCounterexample": {
+            "stateKey": "{\"alive\":[true,true,true],\"client\":[\"opened-one\",\"opened-one\"],\"leader\":-1,\"localReceipt\":[true,true,false],\"localStage\":[3,3,0],\"partition\":0,\"protocol\":\"LOCAL_IMMEDIATE\",\"releaseEvents\":2,\"releaseWithoutReceipt\":false}",
+            "state": {
+              "protocol": "LOCAL_IMMEDIATE",
+              "partition": 0,
+              "alive": [
+                true,
+                true,
+                true
+              ],
+              "leader": -1,
+              "client": [
+                "opened-one",
+                "opened-one"
+              ],
+              "releaseEvents": 2,
+              "releaseWithoutReceipt": false,
+              "localStage": [
+                3,
+                3,
+                0
+              ],
+              "localReceipt": [
+                true,
+                true,
+                false
+              ]
+            },
+            "trace": [
+              "OPEN C0 R0",
+              "OPEN C1 R1"
+            ],
+            "traceLength": 2
+          }
+        },
+        "S2_RECEIPT_BEFORE_RELEASE": {
+          "passed": true
+        },
+        "S3_RECEIPT_SURVIVES_ONE_CRASH": {
+          "passed": false,
+          "minimalCounterexample": {
+            "stateKey": "{\"alive\":[false,true,true],\"client\":[\"opened-one\",\"idle\"],\"leader\":-1,\"localReceipt\":[false,false,false],\"localStage\":[0,0,0],\"partition\":0,\"protocol\":\"LOCAL_IMMEDIATE\",\"releaseEvents\":1,\"releaseWithoutReceipt\":false}",
+            "state": {
+              "protocol": "LOCAL_IMMEDIATE",
+              "partition": 0,
+              "alive": [
+                false,
+                true,
+                true
+              ],
+              "leader": -1,
+              "client": [
+                "opened-one",
+                "idle"
+              ],
+              "releaseEvents": 1,
+              "releaseWithoutReceipt": false,
+              "localStage": [
+                0,
+                0,
+                0
+              ],
+              "localReceipt": [
+                false,
+                false,
+                false
+              ]
+            },
+            "trace": [
+              "OPEN C0 R0",
+              "CRASH_WITH_LOCAL_STORAGE_LOSS R0"
+            ],
+            "traceLength": 2
+          }
+        },
+        "S4_MINORITY_CANNOT_ADVANCE": {
+          "passed": true
+        },
+        "S5_LINEARIZABLE_ONE_USE_HISTORY": {
+          "passed": false,
+          "minimalCounterexample": {
+            "stateKey": "{\"alive\":[true,true,true],\"client\":[\"opened-one\",\"opened-one\"],\"leader\":-1,\"localReceipt\":[true,true,false],\"localStage\":[3,3,0],\"partition\":0,\"protocol\":\"LOCAL_IMMEDIATE\",\"releaseEvents\":2,\"releaseWithoutReceipt\":false}",
+            "state": {
+              "protocol": "LOCAL_IMMEDIATE",
+              "partition": 0,
+              "alive": [
+                true,
+                true,
+                true
+              ],
+              "leader": -1,
+              "client": [
+                "opened-one",
+                "opened-one"
+              ],
+              "releaseEvents": 2,
+              "releaseWithoutReceipt": false,
+              "localStage": [
+                3,
+                3,
+                0
+              ],
+              "localReceipt": [
+                true,
+                true,
+                false
+              ]
+            },
+            "trace": [
+              "OPEN C0 R0",
+              "OPEN C1 R1"
+            ],
+            "traceLength": 2
+          }
+        }
+      },
+      "boundedRecovery": {
+        "applicable": false
+      }
+    },
+    {
+      "protocol": "QUORUM_CLAIM_LOCAL_RECEIPT",
+      "reachableStates": 3620,
+      "exploredTransitions": 24071,
+      "maximumShortestPathDepth": 13,
+      "invariants": {
+        "S1_AT_MOST_ONE_RELEASE": {
+          "passed": false,
+          "minimalCounterexample": {
+            "stateKey": "{\"alive\":[true,true,true],\"claimed\":true,\"client\":[\"opened-one\",\"opened-one\"],\"leader\":1,\"localReceipt\":[true,true,false],\"localReleased\":[true,true,false],\"partition\":0,\"protocol\":\"QUORUM_CLAIM_LOCAL_RECEIPT\",\"releaseEvents\":2,\"releaseWithoutReceipt\":false}",
+            "state": {
+              "protocol": "QUORUM_CLAIM_LOCAL_RECEIPT",
+              "partition": 0,
+              "alive": [
+                true,
+                true,
+                true
+              ],
+              "leader": 1,
+              "client": [
+                "opened-one",
+                "opened-one"
+              ],
+              "releaseEvents": 2,
+              "releaseWithoutReceipt": false,
+              "claimed": true,
+              "localReceipt": [
+                true,
+                true,
+                false
+              ],
+              "localReleased": [
+                true,
+                true,
+                false
+              ]
+            },
+            "trace": [
+              "ELECT_LEADER R0",
+              "OPEN C0 R0",
+              "OPEN C1 R0",
+              "ADVANCE_RECEIPT R0",
+              "ADVANCE_RELEASE C0 R0",
+              "ELECT_LEADER R1",
+              "ADVANCE_RECEIPT R1",
+              "ADVANCE_RELEASE C1 R1"
+            ],
+            "traceLength": 8
+          }
+        },
+        "S2_RECEIPT_BEFORE_RELEASE": {
+          "passed": true
+        },
+        "S3_RECEIPT_SURVIVES_ONE_CRASH": {
+          "passed": false,
+          "minimalCounterexample": {
+            "stateKey": "{\"alive\":[false,true,true],\"claimed\":true,\"client\":[\"opened-one\",\"idle\"],\"leader\":-1,\"localReceipt\":[false,false,false],\"localReleased\":[false,false,false],\"partition\":0,\"protocol\":\"QUORUM_CLAIM_LOCAL_RECEIPT\",\"releaseEvents\":1,\"releaseWithoutReceipt\":false}",
+            "state": {
+              "protocol": "QUORUM_CLAIM_LOCAL_RECEIPT",
+              "partition": 0,
+              "alive": [
+                false,
+                true,
+                true
+              ],
+              "leader": -1,
+              "client": [
+                "opened-one",
+                "idle"
+              ],
+              "releaseEvents": 1,
+              "releaseWithoutReceipt": false,
+              "claimed": true,
+              "localReceipt": [
+                false,
+                false,
+                false
+              ],
+              "localReleased": [
+                false,
+                false,
+                false
+              ]
+            },
+            "trace": [
+              "ELECT_LEADER R0",
+              "OPEN C0 R0",
+              "ADVANCE_RECEIPT R0",
+              "ADVANCE_RELEASE C0 R0",
+              "CRASH_WITH_LOCAL_STORAGE_LOSS R0"
+            ],
+            "traceLength": 5
+          }
+        },
+        "S4_MINORITY_CANNOT_ADVANCE": {
+          "passed": true
+        },
+        "S5_LINEARIZABLE_ONE_USE_HISTORY": {
+          "passed": false,
+          "minimalCounterexample": {
+            "stateKey": "{\"alive\":[true,true,true],\"claimed\":true,\"client\":[\"opened-one\",\"opened-one\"],\"leader\":1,\"localReceipt\":[true,true,false],\"localReleased\":[true,true,false],\"partition\":0,\"protocol\":\"QUORUM_CLAIM_LOCAL_RECEIPT\",\"releaseEvents\":2,\"releaseWithoutReceipt\":false}",
+            "state": {
+              "protocol": "QUORUM_CLAIM_LOCAL_RECEIPT",
+              "partition": 0,
+              "alive": [
+                true,
+                true,
+                true
+              ],
+              "leader": 1,
+              "client": [
+                "opened-one",
+                "opened-one"
+              ],
+              "releaseEvents": 2,
+              "releaseWithoutReceipt": false,
+              "claimed": true,
+              "localReceipt": [
+                true,
+                true,
+                false
+              ],
+              "localReleased": [
+                true,
+                true,
+                false
+              ]
+            },
+            "trace": [
+              "ELECT_LEADER R0",
+              "OPEN C0 R0",
+              "OPEN C1 R0",
+              "ADVANCE_RECEIPT R0",
+              "ADVANCE_RELEASE C0 R0",
+              "ELECT_LEADER R1",
+              "ADVANCE_RECEIPT R1",
+              "ADVANCE_RELEASE C1 R1"
+            ],
+            "traceLength": 8
+          }
+        }
+      },
+      "boundedRecovery": {
+        "applicable": false
+      }
+    },
+    {
+      "protocol": "QUORUM_STAGED_RELEASE",
+      "reachableStates": 752,
+      "exploredTransitions": 4862,
+      "maximumShortestPathDepth": 8,
+      "invariants": {
+        "S1_AT_MOST_ONE_RELEASE": {
+          "passed": true
+        },
+        "S2_RECEIPT_BEFORE_RELEASE": {
+          "passed": true
+        },
+        "S3_RECEIPT_SURVIVES_ONE_CRASH": {
+          "passed": true
+        },
+        "S4_MINORITY_CANNOT_ADVANCE": {
+          "passed": true
+        },
+        "S5_LINEARIZABLE_ONE_USE_HISTORY": {
+          "passed": true
+        }
+      },
+      "boundedRecovery": {
+        "passed": true,
+        "examinedNonterminalStates": 470,
+        "failures": []
+      }
+    }
+  ],
+  "linearizabilityFixtures": [
+    {
+      "protocol": "LOCAL_IMMEDIATE",
+      "operations": [
+        {
+          "process": "C0",
+          "invocation": 0,
+          "completion": 1,
+          "result": "opened-one"
+        },
+        {
+          "process": "C1",
+          "invocation": 2,
+          "completion": 3,
+          "result": "opened-one"
+        }
+      ],
+      "expectedLinearizable": false,
+      "sourceTrace": [
+        "OPEN C0 R0",
+        "OPEN C1 R1"
+      ]
+    },
+    {
+      "protocol": "QUORUM_CLAIM_LOCAL_RECEIPT",
+      "operations": [
+        {
+          "process": "C0",
+          "invocation": 0,
+          "completion": 1,
+          "result": "opened-one"
+        },
+        {
+          "process": "C1",
+          "invocation": 2,
+          "completion": 3,
+          "result": "opened-one"
+        }
+      ],
+      "expectedLinearizable": false,
+      "sourceTrace": [
+        "ELECT_LEADER R0",
+        "OPEN C0 R0",
+        "OPEN C1 R0",
+        "ADVANCE_RECEIPT R0",
+        "ADVANCE_RELEASE C0 R0",
+        "ELECT_LEADER R1",
+        "ADVANCE_RECEIPT R1",
+        "ADVANCE_RELEASE C1 R1"
+      ]
+    },
+    {
+      "protocol": "QUORUM_STAGED_RELEASE",
+      "operations": [
+        {
+          "process": "C0",
+          "invocation": 0,
+          "completion": 1,
+          "result": "opened-one"
+        },
+        {
+          "process": "C1",
+          "invocation": 2,
+          "completion": 3,
+          "result": "replay"
+        }
+      ],
+      "expectedLinearizable": true
+    }
+  ],
+  "deliveryIndistinguishability": {
+    "serverObservationEqual": true,
+    "policies": [
+      {
+        "policy": "RESEND_OUTCOME",
+        "DELIVERED_ACK_LOST": {
+          "atMostOnceClientDelivery": false,
+          "eventualClientDelivery": true
+        },
+        "OUTCOME_LOST": {
+          "atMostOnceClientDelivery": true,
+          "eventualClientDelivery": true
+        },
+        "qualifiesExactlyOnceDelivery": false
+      },
+      {
+        "policy": "WITHHOLD_OUTCOME",
+        "DELIVERED_ACK_LOST": {
+          "atMostOnceClientDelivery": true,
+          "eventualClientDelivery": true
+        },
+        "OUTCOME_LOST": {
+          "atMostOnceClientDelivery": true,
+          "eventualClientDelivery": false
+        },
+        "qualifiesExactlyOnceDelivery": false
+      }
+    ],
+    "qualifyingPolicies": 0,
+    "conclusion": "Without a receiver acknowledgement or an idempotent receiver-side effect, the server cannot choose a fixed retry policy that guarantees both at-most-once client delivery after delivered-but-unacknowledged output and eventual delivery after output loss."
+  },
+  "aggregateDecision": {
+    "localImmediateQualified": false,
+    "quorumClaimLocalReceiptQualified": false,
+    "quorumStagedReleaseQualifiedWithinModel": true,
+    "exactlyOnceDeliveryQualified": false
+  },
+  "qualification": {
+    "supported": "The exhaustive finite abstraction distinguishes local and leader-local counterexamples from a majority-staged protocol with no reachable violation under the preregistered one-crash state space.",
+    "notEstablished": [
+      "Byzantine behavior",
+      "more than one permanent replica failure",
+      "clock or lease semantics",
+      "membership reconfiguration",
+      "storage corruption on a surviving majority",
+      "real network, process, disk, or institutional failure domains"
+    ],
+    "deliveryBoundary": "Exactly-once committed state transition is distinct from exactly-once outcome delivery.",
+    "externalSystems": "No etcd, Raft, TLA+, Jepsen, multi-host process, disk, or network implementation was executed."
+  }
+}

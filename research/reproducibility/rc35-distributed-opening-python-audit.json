@@ -1,0 +1,329 @@
+{
+  "auditId": "INDEPENDENT-RC35-DISTRIBUTED-OPENING-AUDIT-0.9",
+  "computedOn": "2026-08-14",
+  "passed": true,
+  "checks": {
+    "precommit_id_matches": true,
+    "all_three_transition_systems_match": true,
+    "local_two_step_counterexample_is_minimal": true,
+    "leader_local_eight_step_counterexample_is_minimal": true,
+    "staged_protocol_has_no_reachable_safety_failure": true,
+    "bounded_recovery_probe_matches": true,
+    "linearizability_fixtures_adjudicate": true,
+    "delivery_worlds_are_observationally_equal": true,
+    "no_fixed_delivery_policy_meets_both_criteria": true,
+    "public_boundary_excludes_real_distributed_execution": true
+  },
+  "aggregateChecksPassed": 10,
+  "aggregateChecksTotal": 10,
+  "recomputedMetrics": [
+    {
+      "protocol": "LOCAL_IMMEDIATE",
+      "reachableStates": 752,
+      "exploredTransitions": 5264,
+      "maximumShortestPathDepth": 5,
+      "invariants": {
+        "S1_AT_MOST_ONE_RELEASE": {
+          "passed": false,
+          "minimalCounterexample": {
+            "stateKey": "{\"alive\":[true,true,true],\"client\":[\"opened-one\",\"opened-one\"],\"leader\":-1,\"localReceipt\":[true,true,false],\"localStage\":[3,3,0],\"partition\":0,\"protocol\":\"LOCAL_IMMEDIATE\",\"releaseEvents\":2,\"releaseWithoutReceipt\":false}",
+            "state": {
+              "protocol": "LOCAL_IMMEDIATE",
+              "partition": 0,
+              "alive": [
+                true,
+                true,
+                true
+              ],
+              "leader": -1,
+              "client": [
+                "opened-one",
+                "opened-one"
+              ],
+              "releaseEvents": 2,
+              "releaseWithoutReceipt": false,
+              "localStage": [
+                3,
+                3,
+                0
+              ],
+              "localReceipt": [
+                true,
+                true,
+                false
+              ]
+            },
+            "trace": [
+              "OPEN C0 R0",
+              "OPEN C1 R1"
+            ],
+            "traceLength": 2
+          }
+        },
+        "S2_RECEIPT_BEFORE_RELEASE": {
+          "passed": true
+        },
+        "S3_RECEIPT_SURVIVES_ONE_CRASH": {
+          "passed": false,
+          "minimalCounterexample": {
+            "stateKey": "{\"alive\":[false,true,true],\"client\":[\"opened-one\",\"idle\"],\"leader\":-1,\"localReceipt\":[false,false,false],\"localStage\":[0,0,0],\"partition\":0,\"protocol\":\"LOCAL_IMMEDIATE\",\"releaseEvents\":1,\"releaseWithoutReceipt\":false}",
+            "state": {
+              "protocol": "LOCAL_IMMEDIATE",
+              "partition": 0,
+              "alive": [
+                false,
+                true,
+                true
+              ],
+              "leader": -1,
+              "client": [
+                "opened-one",
+                "idle"
+              ],
+              "releaseEvents": 1,
+              "releaseWithoutReceipt": false,
+              "localStage": [
+                0,
+                0,
+                0
+              ],
+              "localReceipt": [
+                false,
+                false,
+                false
+              ]
+            },
+            "trace": [
+              "OPEN C0 R0",
+              "CRASH_WITH_LOCAL_STORAGE_LOSS R0"
+            ],
+            "traceLength": 2
+          }
+        },
+        "S4_MINORITY_CANNOT_ADVANCE": {
+          "passed": true
+        },
+        "S5_LINEARIZABLE_ONE_USE_HISTORY": {
+          "passed": false,
+          "minimalCounterexample": {
+            "stateKey": "{\"alive\":[true,true,true],\"client\":[\"opened-one\",\"opened-one\"],\"leader\":-1,\"localReceipt\":[true,true,false],\"localStage\":[3,3,0],\"partition\":0,\"protocol\":\"LOCAL_IMMEDIATE\",\"releaseEvents\":2,\"releaseWithoutReceipt\":false}",
+            "state": {
+              "protocol": "LOCAL_IMMEDIATE",
+              "partition": 0,
+              "alive": [
+                true,
+                true,
+                true
+              ],
+              "leader": -1,
+              "client": [
+                "opened-one",
+                "opened-one"
+              ],
+              "releaseEvents": 2,
+              "releaseWithoutReceipt": false,
+              "localStage": [
+                3,
+                3,
+                0
+              ],
+              "localReceipt": [
+                true,
+                true,
+                false
+              ]
+            },
+            "trace": [
+              "OPEN C0 R0",
+              "OPEN C1 R1"
+            ],
+            "traceLength": 2
+          }
+        }
+      },
+      "boundedRecovery": {
+        "applicable": false
+      }
+    },
+    {
+      "protocol": "QUORUM_CLAIM_LOCAL_RECEIPT",
+      "reachableStates": 3620,
+      "exploredTransitions": 24071,
+      "maximumShortestPathDepth": 13,
+      "invariants": {
+        "S1_AT_MOST_ONE_RELEASE": {
+          "passed": false,
+          "minimalCounterexample": {
+            "stateKey": "{\"alive\":[true,true,true],\"claimed\":true,\"client\":[\"opened-one\",\"opened-one\"],\"leader\":1,\"localReceipt\":[true,true,false],\"localReleased\":[true,true,false],\"partition\":0,\"protocol\":\"QUORUM_CLAIM_LOCAL_RECEIPT\",\"releaseEvents\":2,\"releaseWithoutReceipt\":false}",
+            "state": {
+              "protocol": "QUORUM_CLAIM_LOCAL_RECEIPT",
+              "partition": 0,
+              "alive": [
+                true,
+                true,
+                true
+              ],
+              "leader": 1,
+              "client": [
+                "opened-one",
+                "opened-one"
+              ],
+              "releaseEvents": 2,
+              "releaseWithoutReceipt": false,
+              "claimed": true,
+              "localReceipt": [
+                true,
+                true,
+                false
+              ],
+              "localReleased": [
+                true,
+                true,
+                false
+              ]
+            },
+            "trace": [
+              "ELECT_LEADER R0",
+              "OPEN C0 R0",
+              "OPEN C1 R0",
+              "ADVANCE_RECEIPT R0",
+              "ADVANCE_RELEASE C0 R0",
+              "ELECT_LEADER R1",
+              "ADVANCE_RECEIPT R1",
+              "ADVANCE_RELEASE C1 R1"
+            ],
+            "traceLength": 8
+          }
+        },
+        "S2_RECEIPT_BEFORE_RELEASE": {
+          "passed": true
+        },
+        "S3_RECEIPT_SURVIVES_ONE_CRASH": {
+          "passed": false,
+          "minimalCounterexample": {
+            "stateKey": "{\"alive\":[false,true,true],\"claimed\":true,\"client\":[\"opened-one\",\"idle\"],\"leader\":-1,\"localReceipt\":[false,false,false],\"localReleased\":[false,false,false],\"partition\":0,\"protocol\":\"QUORUM_CLAIM_LOCAL_RECEIPT\",\"releaseEvents\":1,\"releaseWithoutReceipt\":false}",
+            "state": {
+              "protocol": "QUORUM_CLAIM_LOCAL_RECEIPT",
+              "partition": 0,
+              "alive": [
+                false,
+                true,
+                true
+              ],
+              "leader": -1,
+              "client": [
+                "opened-one",
+                "idle"
+              ],
+              "releaseEvents": 1,
+              "releaseWithoutReceipt": false,
+              "claimed": true,
+              "localReceipt": [
+                false,
+                false,
+                false
+              ],
+              "localReleased": [
+                false,
+                false,
+                false
+              ]
+            },
+            "trace": [
+              "ELECT_LEADER R0",
+              "OPEN C0 R0",
+              "ADVANCE_RECEIPT R0",
+              "ADVANCE_RELEASE C0 R0",
+              "CRASH_WITH_LOCAL_STORAGE_LOSS R0"
+            ],
+            "traceLength": 5
+          }
+        },
+        "S4_MINORITY_CANNOT_ADVANCE": {
+          "passed": true
+        },
+        "S5_LINEARIZABLE_ONE_USE_HISTORY": {
+          "passed": false,
+          "minimalCounterexample": {
+            "stateKey": "{\"alive\":[true,true,true],\"claimed\":true,\"client\":[\"opened-one\",\"opened-one\"],\"leader\":1,\"localReceipt\":[true,true,false],\"localReleased\":[true,true,false],\"partition\":0,\"protocol\":\"QUORUM_CLAIM_LOCAL_RECEIPT\",\"releaseEvents\":2,\"releaseWithoutReceipt\":false}",
+            "state": {
+              "protocol": "QUORUM_CLAIM_LOCAL_RECEIPT",
+              "partition": 0,
+              "alive": [
+                true,
+                true,
+                true
+              ],
+              "leader": 1,
+              "client": [
+                "opened-one",
+                "opened-one"
+              ],
+              "releaseEvents": 2,
+              "releaseWithoutReceipt": false,
+              "claimed": true,
+              "localReceipt": [
+                true,
+                true,
+                false
+              ],
+              "localReleased": [
+                true,
+                true,
+                false
+              ]
+            },
+            "trace": [
+              "ELECT_LEADER R0",
+              "OPEN C0 R0",
+              "OPEN C1 R0",
+              "ADVANCE_RECEIPT R0",
+              "ADVANCE_RELEASE C0 R0",
+              "ELECT_LEADER R1",
+              "ADVANCE_RECEIPT R1",
+              "ADVANCE_RELEASE C1 R1"
+            ],
+            "traceLength": 8
+          }
+        }
+      },
+      "boundedRecovery": {
+        "applicable": false
+      }
+    },
+    {
+      "protocol": "QUORUM_STAGED_RELEASE",
+      "reachableStates": 752,
+      "exploredTransitions": 4862,
+      "maximumShortestPathDepth": 8,
+      "invariants": {
+        "S1_AT_MOST_ONE_RELEASE": {
+          "passed": true
+        },
+        "S2_RECEIPT_BEFORE_RELEASE": {
+          "passed": true
+        },
+        "S3_RECEIPT_SURVIVES_ONE_CRASH": {
+          "passed": true
+        },
+        "S4_MINORITY_CANNOT_ADVANCE": {
+          "passed": true
+        },
+        "S5_LINEARIZABLE_ONE_USE_HISTORY": {
+          "passed": true
+        }
+      },
+      "boundedRecovery": {
+        "passed": true,
+        "examinedNonterminalStates": 470,
+        "failures": []
+      }
+    }
+  ],
+  "linearizabilityFixtureVerdicts": [
+    true,
+    true,
+    true
+  ],
+  "boundary": "This independently written Python enumerator matches the finite JavaScript abstraction. It is not an independent institution, a proof about unbounded executions, or evidence from etcd, Raft, TLA+, Jepsen, multiple hosts, disks, or networks."
+}

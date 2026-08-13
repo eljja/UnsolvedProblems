@@ -1,0 +1,66 @@
+{
+  "precommitId": "RC35-ETCD-CONFIRMATORY-PRECOMMIT-1.0",
+  "createdOn": "2026-08-14",
+  "status": "sealed-before-confirmatory-execution",
+  "purpose": "Test whether the staged-release invariant that survived the RC35 finite model also survives two fixed leader-termination points and loss of quorum in a real three-process etcd implementation on one host.",
+  "exploratoryRun": {
+    "role": "Used to correct etcdctl transaction framing and process-exit handling; it is not the confirmatory result.",
+    "historySha256": "a2b4db17b387d1651a219a17906f1eba6a26aad52f93b286e21412db7b245cf3",
+    "resultSha256": "93d8dab095c615d7bda897332f37e36cb58612d08614475d0ea3cfe0f744b078",
+    "independentAuditSha256": "24583960495f883e89062366d1a1dda7e8fe3bae4b99154a32c85019c8770c5e",
+    "auditOutcome": "14 of 14 reconstruction checks passed"
+  },
+  "frozenImplementation": {
+    "coordinator": "scripts/run-rc35-etcd-three-process.mjs",
+    "coordinatorSha256": "986d0cf54a36e047243ba5acbcfe6ed80eab01923415dd5ad7bd4e0db39c4edc",
+    "independentAuditor": "scripts/independent_rc35_etcd_history_audit.py",
+    "independentAuditorSha256": "f52d066a9bc2e4282aac965104af83605047bf2a0d64b64e7a6dbbdd889871f5",
+    "command": "node scripts/run-rc35-etcd-three-process.mjs --write --phase=confirmatory",
+    "auditCommand": "python scripts/independent_rc35_etcd_history_audit.py confirmatory"
+  },
+  "software": {
+    "etcdRelease": "v3.7.1",
+    "publishedAt": "2026-07-23T19:37:53Z",
+    "officialRelease": "https://github.com/etcd-io/etcd/releases/tag/v3.7.1",
+    "windowsAmd64ArchiveSha256": "228d600d103e0f48715687c768de8dcaeacb19eef2006261160a9a677e36cc59"
+  },
+  "fixedTopology": {
+    "physicalHosts": 1,
+    "processes": 3,
+    "persistentDataDirectories": 3,
+    "clientPorts": [23791, 23792, 23793],
+    "peerPorts": [23801, 23802, 23803],
+    "transport": "loopback TCP",
+    "freshStart": "The run directory is removed only after its absolute path is verified to be below .cache/rc35-etcd, then three new member directories are created."
+  },
+  "fixedProtocol": [
+    "Two clients concurrently compare version(stage)=0 and only the winning transaction writes CLAIMED plus owner.",
+    "A second compare-and-swap changes CLAIMED to RECEIPTED and writes the receipt digest in the same transaction.",
+    "A third compare-and-swap changes RECEIPTED to RELEASED and writes the outcome digest in the same transaction.",
+    "The coordinator discards the successful release response as a client observation, retries the same transition, and requires the retry to take the failure branch that returns RELEASED, receipt, and outcome.",
+    "The two cases differ only in whether the current leader is terminated immediately after CLAIMED or immediately after RECEIPTED.",
+    "After both recovery cases, two members are stopped and the remaining member attempts a new transaction; after healing, that key must be absent."
+  ],
+  "primaryCriteria": {
+    "C1": "Exactly one of two concurrent claim transactions succeeds in each leader-termination case.",
+    "C2": "The receipt and release transitions succeed after leader replacement at both termination points.",
+    "C3": "After the stopped leader restarts, all three individual linearizable reads return stage RELEASED at version 3, one receipt digest at version 1, and one outcome digest at version 1.",
+    "C4": "A retry after the deliberately unavailable success response does not execute the success branch and returns the committed stage, receipt, and outcome.",
+    "C5": "The single surviving minority cannot complete a write within the fixed timeout and the attempted key is absent after quorum is restored.",
+    "C6": "The independent Python auditor reconstructs transaction order and all five substantive criteria directly from the persisted command history and passes every fixed check."
+  },
+  "failureRule": "Any failed C1-C6 criterion makes the confirmatory run non-qualifying. No post-run threshold, event ordering, key version, or digest change is allowed.",
+  "stopRule": "Stop and retain the failure record if the official archive digest differs, the fresh cluster cannot become healthy within 30 seconds, a process cannot be terminated, a transaction violates stage order, or the minority attempt commits.",
+  "claimBoundary": {
+    "maySupport": "The concrete compare-and-swap construction tolerates the two tested leader process terminations and refuses the tested one-member minority write on one Windows host.",
+    "mayNotSupport": [
+      "three independent physical failure domains",
+      "a real network partition, delay distribution, packet duplication, or packet reordering",
+      "host or storage-device loss",
+      "Byzantine faults or membership reconfiguration",
+      "unbounded linearizability",
+      "exactly-once delivery to an external recipient"
+    ]
+  },
+  "nextRungIfQualified": "Run the same fixed history schema on three independent hosts with a controllable network partition and an external outcome sink that records delivery separately from committed state."
+}
