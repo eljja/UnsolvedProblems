@@ -1,0 +1,159 @@
+{
+  "precommitId": "RC35-DISTRIBUTED-OPENING-PRECOMMIT-0.9",
+  "createdOn": "2026-08-14",
+  "status": "sealed-before-result-execution",
+  "purpose": "Bound the smallest distributed-state assumptions that prevent duplicate dispute opening and unaudited outcome release before any multi-host deployment is claimed.",
+  "continuationFrom": {
+    "cycle": "RC-2026-34",
+    "result": "One shared-filesystem linearization point produced one opening and 99 replays across Node and Python, but did not test a network partition, leader replacement, or independent storage.",
+    "artifact": "research/reproducibility/rc34-resolver-race-result.json"
+  },
+  "factsFixedFromPrimarySources": [
+    {
+      "source": "https://raft.github.io/raft.pdf",
+      "publishedOn": "2014-05-20",
+      "fact": "Raft uses a replicated log and overlapping majorities; leader election, log replication, and safety are separate mechanisms."
+    },
+    {
+      "source": "https://etcd.io/docs/v3.6/learning/api/",
+      "reviewedOn": "2026-08-14",
+      "fact": "etcd v3.6 transactions atomically evaluate comparisons and apply one success or failure branch; default range reads are linearizable while serializable member-local reads may be stale."
+    },
+    {
+      "source": "https://etcd.io/docs/v3.4/op-guide/failures/",
+      "reviewedOn": "2026-08-14",
+      "fact": "A majority partition can progress and a minority partition cannot; committed writes survive leader replacement, while uncommitted writes may be lost."
+    },
+    {
+      "source": "https://www.cs.cmu.edu/~wing/publications/HerlihyWing90.pdf",
+      "publishedOn": "1990-07-01",
+      "fact": "A linearizable operation must appear atomic between invocation and response and respect real-time order."
+    },
+    {
+      "source": "https://www.microsoft.com/en-us/research/publication/reliable-messages-and-connection-establishment/",
+      "publishedOn": "1993-01-01",
+      "fact": "Reliable exactly-once delivery requires message identifiers and acknowledgements; crashes can lose messages and acknowledgements."
+    }
+  ],
+  "modelBoundary": {
+    "kind": "finite abstract state machine, not an implementation of Raft or etcd",
+    "replicas": ["R0", "R1", "R2"],
+    "clients": ["C0", "C1"],
+    "capabilities": 1,
+    "outcomes": 1,
+    "faults": "At most one permanent crash with loss of that replica's local-only state; arbitrary changes among all five partitions of three replicas; response loss before or after client delivery.",
+    "notModeled": [
+      "Byzantine behavior",
+      "more than one permanent replica failure",
+      "clock or lease semantics",
+      "membership reconfiguration",
+      "storage corruption on a surviving majority",
+      "real network, process, disk, or institutional failure domains"
+    ]
+  },
+  "partitions": [
+    [["R0", "R1", "R2"]],
+    [["R0"], ["R1", "R2"]],
+    [["R1"], ["R0", "R2"]],
+    [["R2"], ["R0", "R1"]],
+    [["R0"], ["R1"], ["R2"]]
+  ],
+  "protocols": [
+    {
+      "id": "LOCAL_IMMEDIATE",
+      "claim": "Each reachable replica independently changes its local stage from UNCLAIMED to RELEASED and emits the outcome.",
+      "receipt": "A receipt is local to the replica that emits the outcome.",
+      "replay": "Only the same replica can observe its previous claim."
+    },
+    {
+      "id": "QUORUM_CLAIM_LOCAL_RECEIPT",
+      "claim": "A majority-committed claim is never rolled back under the one-crash bound.",
+      "receipt": "The current leader records receipt and release state only on its own local storage before emitting the outcome.",
+      "recovery": "After leader storage loss, a replacement leader reconstructs a receipt from the committed claim and may emit the outcome."
+    },
+    {
+      "id": "QUORUM_STAGED_RELEASE",
+      "claim": "A majority component advances one replicated stage at a time through UNCLAIMED, CLAIMED, RECEIPTED, and RELEASED.",
+      "receipt": "RECEIPTED must be majority-committed before RELEASED can be proposed.",
+      "release": "Only the successful RECEIPTED-to-RELEASED compare-and-swap emits the outcome; later attempts return replay plus the committed receipt and never re-emit the outcome.",
+      "minority": "No stage-changing operation is enabled without two live mutually connected replicas."
+    }
+  ],
+  "transitionAlphabet": [
+    "SET_PARTITION",
+    "ELECT_LEADER",
+    "OPEN",
+    "ADVANCE_CLAIM",
+    "ADVANCE_RECEIPT",
+    "ADVANCE_RELEASE",
+    "CRASH_WITH_LOCAL_STORAGE_LOSS",
+    "RETRY"
+  ],
+  "exploration": {
+    "algorithm": "Breadth-first enumeration to a fixed point over canonical JSON states, retaining the first and therefore shortest trace to every state.",
+    "symmetry": "Replica and client names are not quotient-reduced; all named transitions are explored.",
+    "sampling": "none",
+    "counterexampleRule": "Report the shortest trace for each failed invariant and continue to the full reachable fixed point.",
+    "independentAudit": "A Python standard-library implementation must reconstruct the transition relation without importing or executing the JavaScript explorer and must match state counts, transition counts, invariant verdicts, minimal trace lengths, and linearizability verdicts."
+  },
+  "invariants": [
+    {
+      "id": "S1_AT_MOST_ONE_RELEASE",
+      "predicate": "outcomeReleaseEvents <= 1"
+    },
+    {
+      "id": "S2_RECEIPT_BEFORE_RELEASE",
+      "predicate": "Every outcome release is preceded by a receipt in the releasing protocol's required durability scope."
+    },
+    {
+      "id": "S3_RECEIPT_SURVIVES_ONE_CRASH",
+      "predicate": "After any outcome release and one replica crash, at least one live replica retains the receipt; QUORUM_STAGED_RELEASE strengthens this to a live majority before release."
+    },
+    {
+      "id": "S4_MINORITY_CANNOT_ADVANCE",
+      "predicate": "QUORUM_STAGED_RELEASE never changes committed stage from a component containing fewer than two live replicas."
+    },
+    {
+      "id": "S5_LINEARIZABLE_ONE_USE_HISTORY",
+      "predicate": "Every completed history admits a sequential order for one object whose first open returns opened-one and every later open returns replay, respecting real-time precedence."
+    }
+  ],
+  "livenessProbe": {
+    "scope": "Existential bounded recovery, not asynchronous liveness proof.",
+    "predicate": "From every reachable QUORUM_STAGED_RELEASE state with at least two live replicas, after healing to one connected component and electing a live leader, RELEASED or a terminal replay is reachable within three stage advances.",
+    "fairnessNotEstablished": "No claim is made under permanent partition, unfair scheduling, unbounded message delay, or repeated crashes."
+  },
+  "deliveryIndistinguishability": {
+    "worlds": [
+      "DELIVERED_ACK_LOST: the client receives the outcome but the server receives no acknowledgement",
+      "OUTCOME_LOST: the client does not receive the outcome and the server receives no acknowledgement"
+    ],
+    "serverObservation": "Both worlds leave the same committed RELEASED state and no acknowledgement.",
+    "retryPolicies": ["RESEND_OUTCOME", "WITHHOLD_OUTCOME"],
+    "criteria": [
+      "atMostOnceClientDelivery in DELIVERED_ACK_LOST",
+      "eventualClientDelivery in OUTCOME_LOST"
+    ],
+    "gate": "A policy qualifies exactly-once delivery only if both criteria hold in both indistinguishable worlds; otherwise restrict the claim to exactly-once state transition."
+  },
+  "preregisteredDecisions": [
+    {
+      "hypothesis": "A local compare-and-set is sufficient across partitions.",
+      "continueOnlyIf": "LOCAL_IMMEDIATE satisfies S1-S5 in its full reachable state space."
+    },
+    {
+      "hypothesis": "A majority claim plus leader-local receipt is sufficient across leader storage loss.",
+      "continueOnlyIf": "QUORUM_CLAIM_LOCAL_RECEIPT satisfies S1-S5 and retains a live receipt after every allowed crash."
+    },
+    {
+      "hypothesis": "Majority-committing claim, receipt, and release marker is sufficient for bounded one-use safety.",
+      "continueOnlyIf": "QUORUM_STAGED_RELEASE satisfies S1-S5 and the bounded recovery probe in every reachable state."
+    },
+    {
+      "hypothesis": "Exactly-once state transition implies exactly-once outcome delivery over a lossy response channel.",
+      "continueOnlyIf": "At least one fixed retry policy satisfies both delivery criteria in both indistinguishable worlds."
+    }
+  ],
+  "advanceRule": "Advance to a real three-member transactional store only if the abstract staged protocol has no reachable safety counterexample, the independent implementation matches every enumeration metric, and public wording distinguishes state-transition safety from delivery and liveness.",
+  "stopRule": "Stop if a local artifact is described as multi-host evidence, if absence of a bounded counterexample is called a proof of Raft or etcd correctness, if minority unavailability is hidden, or if response delivery is called exactly once without a receiver acknowledgement model."
+}
