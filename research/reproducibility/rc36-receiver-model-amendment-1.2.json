@@ -1,0 +1,54 @@
+{
+  "amendmentId": "RC36-RECEIVER-MODEL-AMENDMENT-1.2",
+  "createdOn": "2026-08-14",
+  "status": "sealed-after-first-terminating-result-and-before-final-rerun",
+  "amends": [
+    "RC36-RECEIVER-DELIVERY-PRECOMMIT-1.0",
+    "RC36-RECEIVER-MODEL-AMENDMENT-1.1"
+  ],
+  "trigger": "The first terminating run made the R4 implementation defect visible: R4_CONFLICT_NEVER_MUTATES required both markerDigest and effectDigest to equal A after any conflict. In a MARKER_THEN_EFFECT crash state, effectDigest is legitimately absent, so this test conflated non-mutation with the separate R2 marker-effect atomicity invariant.",
+  "observedRun11": {
+    "resultSha256": "b409735b01e2bd0940125b43176dc03e1b679da42cd28f911c6d00cdf2646230",
+    "independentAuditSha256": "f8adb12eaab1bd3074c340b8d9f4eb0975455383072e2c8699eed9f0acc161e7",
+    "auditAgreement": "18 of 18 checks passed because both frozen implementations encoded the same overly strong R4 predicate.",
+    "metrics": [
+      {
+        "protocol": "EFFECT_THEN_MARKER",
+        "reachableStates": 19,
+        "exploredTransitions": 22,
+        "failedInvariants": ["R1_AT_MOST_ONE_EFFECT", "R2_MARKER_EFFECT_ATOMIC", "R3_REPLAY_IMPLIES_EFFECT", "R5_ONE_SUCCESSFUL_DELIVERY"]
+      },
+      {
+        "protocol": "MARKER_THEN_EFFECT",
+        "reachableStates": 18,
+        "exploredTransitions": 22,
+        "failedInvariants": ["R2_MARKER_EFFECT_ATOMIC", "R3_REPLAY_IMPLIES_EFFECT", "R4_CONFLICT_NEVER_MUTATES", "R5_ONE_SUCCESSFUL_DELIVERY"]
+      },
+      {
+        "protocol": "ATOMIC_INBOX_EFFECT",
+        "reachableStates": 7,
+        "exploredTransitions": 6,
+        "failedInvariants": []
+      }
+    ],
+    "scientificUse": "Graph sizes and all invariants other than R4 remain informative, but this run is not the final hypothesis-level adjudication."
+  },
+  "onlyPermittedChange": "When conflictRejected is true, R4 fails only if an existing markerDigest or effectDigest is neither null nor A. Absence remains allowed under R4 and is independently adjudicated by R2 and R3.",
+  "unchanged": [
+    "all states and transitions",
+    "the effectCount saturation introduced by amendment 1.1",
+    "R1, R2, R3, and R5",
+    "all protocols, expected protocol-level decisions, confirmation cases, and claim boundaries"
+  ],
+  "amendedImplementations": {
+    "model": {
+      "path": "scripts/run-rc36-receiver-state-model.mjs",
+      "sha256": "e74154db6ec0dbcd120da7f885282c4db0a9f57f57ca9557e77b03a1905fdc76"
+    },
+    "modelAuditor": {
+      "path": "scripts/independent_rc36_receiver_model_audit.py",
+      "sha256": "8ec59965490c4b8cba4550e92cfd88ebb99ba220f421871369e95925faee0b34"
+    }
+  },
+  "rerunDecisionRule": "The final rerun must preserve all graph sizes, make R4 pass for all three protocols, leave the other 1.1 verdicts unchanged, qualify ATOMIC_INBOX_EFFECT alone, and pass every independent comparison."
+}

@@ -80,7 +80,7 @@ def failures(state):
         "R1_AT_MOST_ONE_EFFECT": state["effectCount"] > 1,
         "R2_MARKER_EFFECT_ATOMIC": state["marker"] != state["effectRecord"] or (state["marker"] and state["markerDigest"] != state["effectDigest"]),
         "R3_REPLAY_IMPLIES_EFFECT": "replay" in state["clients"] and state["effectCount"] != 1,
-        "R4_CONFLICT_NEVER_MUTATES": state["conflictRejected"] and (state["markerDigest"] != "A" or state["effectDigest"] != "A"),
+        "R4_CONFLICT_NEVER_MUTATES": state["conflictRejected"] and any(digest is not None and digest != "A" for digest in (state["markerDigest"], state["effectDigest"])),
         "R5_ONE_SUCCESSFUL_DELIVERY": all(value != "idle" for value in state["clients"]) and state["effectCount"] != 1,
     }
 

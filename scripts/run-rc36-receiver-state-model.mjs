@@ -95,7 +95,7 @@ function invariantFailures(state) {
     R1_AT_MOST_ONE_EFFECT: state.effectCount > 1,
     R2_MARKER_EFFECT_ATOMIC: state.marker !== state.effectRecord || (state.marker && state.markerDigest !== state.effectDigest),
     R3_REPLAY_IMPLIES_EFFECT: state.clients.some(value => value === "replay") && state.effectCount !== 1,
-    R4_CONFLICT_NEVER_MUTATES: state.conflictRejected && (state.markerDigest !== "A" || state.effectDigest !== "A"),
+    R4_CONFLICT_NEVER_MUTATES: state.conflictRejected && [state.markerDigest, state.effectDigest].some(digest => digest !== null && digest !== "A"),
     R5_ONE_SUCCESSFUL_DELIVERY: state.clients.every(value => value !== "idle") && state.effectCount !== 1
   };
 }
