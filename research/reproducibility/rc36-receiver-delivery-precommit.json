@@ -1,0 +1,138 @@
+{
+  "precommitId": "RC36-RECEIVER-DELIVERY-PRECOMMIT-1.0",
+  "createdOn": "2026-08-14",
+  "status": "sealed-before-any-model-or-confirmation-result",
+  "continuationFrom": {
+    "cycle": "RC-2026-35",
+    "result": "Quorum-staged sender state survived bounded enumeration and a one-host three-process etcd confirmation, while neither RESEND nor WITHHOLD guaranteed exactly-once recipient delivery under indistinguishable response-loss worlds.",
+    "artifacts": [
+      "research/reproducibility/rc35-distributed-opening-model-result.json",
+      "research/reproducibility/rc35-etcd-three-process-confirmatory-result.json"
+    ]
+  },
+  "factsFixedFromPrimarySources": [
+    {
+      "source": "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2",
+      "publishedOn": "2022-06-01",
+      "fact": "HTTP defines a method as idempotent when multiple identical requests have the same intended server effect as one request; the definition does not prohibit separate logging or other non-idempotent side effects for each request."
+    },
+    {
+      "source": "https://sqlite.org/atomiccommit.html",
+      "reviewedOn": "2026-08-14",
+      "fact": "SQLite atomic commit makes all changes within one transaction appear to occur together or not at all, including interruption by a process or operating-system crash, subject to the documented storage assumptions."
+    },
+    {
+      "source": "https://www.sqlite.org/transactional.html",
+      "reviewedOn": "2026-08-14",
+      "fact": "SQLite documents serializable ACID transactions and tests interrupted transactions with a dedicated crash and power-failure harness."
+    },
+    {
+      "source": "https://www.microsoft.com/en-us/research/publication/reliable-messages-and-connection-establishment/",
+      "publishedOn": "1993-01-01",
+      "fact": "Reliable messages require stable identifiers and acknowledgements, while crashes can separate message processing from acknowledgement observation."
+    }
+  ],
+  "researchQuestion": "Under which minimal ordering and atomicity assumptions can a receiver turn retries after an unknown response into exactly one durable modeled effect, and where does that claim stop when the real effect leaves the receiver database?",
+  "model": {
+    "kind": "finite receiver state machine with one delivery ID, one accepted digest, one conflicting digest, two clients, persistent marker and effect fields, and one crash that clears only an in-flight step",
+    "protocols": [
+      {
+        "id": "EFFECT_THEN_MARKER",
+        "claim": "Apply the durable effect first, then write the deduplication marker.",
+        "expectedFailure": "A crash after the effect but before the marker lets a retry apply the effect again."
+      },
+      {
+        "id": "MARKER_THEN_EFFECT",
+        "claim": "Write the deduplication marker first, then apply the durable effect.",
+        "expectedFailure": "A crash after the marker but before the effect makes a retry return replay even though no effect exists."
+      },
+      {
+        "id": "ATOMIC_INBOX_EFFECT",
+        "claim": "Write the delivery marker and modeled effect record in one atomic receiver transaction.",
+        "expectedBoundary": "Can qualify only when the entire adjudicated effect shares that transaction; external physical or remote effects remain outside the claim."
+      }
+    ],
+    "exploration": "Full breadth-first enumeration to a fixed point with deterministic transition order; no random sampling or depth cutoff.",
+    "invariants": {
+      "R1_AT_MOST_ONE_EFFECT": "The durable effect count never exceeds one.",
+      "R2_MARKER_EFFECT_ATOMIC": "The marker and modeled effect are both absent or both present with the same digest.",
+      "R3_REPLAY_IMPLIES_EFFECT": "A replay response is reachable only when exactly one effect exists.",
+      "R4_CONFLICT_NEVER_MUTATES": "A conflicting digest never replaces the accepted marker or effect digest.",
+      "R5_ONE_SUCCESSFUL_DELIVERY": "Once both clients terminate, exactly one modeled effect exists."
+    },
+    "successRule": "ATOMIC_INBOX_EFFECT alone must pass R1-R5; the other two protocols must retain their shortest discovered crash counterexamples. JavaScript and independently written Python enumerators must agree on graph sizes and minimal counterexample lengths."
+  },
+  "confirmation": {
+    "topology": {
+      "physicalHosts": 1,
+      "senderCoordinator": "one Node process",
+      "receiver": "one separately spawned Python HTTP process at a time",
+      "receiverStorage": "three fresh SQLite files, rollback journal mode, synchronous FULL",
+      "transport": "loopback HTTP",
+      "modeledEffect": "one row in the SQLite effects table, atomically committed with one deliveries row"
+    },
+    "fixedCases": [
+      {
+        "id": "before-commit-crash",
+        "schedule": "Insert delivery and effect inside BEGIN IMMEDIATE, terminate the receiver with exit 86 before COMMIT, restart on the same database, retry twice, then submit a conflicting digest."
+      },
+      {
+        "id": "after-commit-crash",
+        "schedule": "Commit delivery and effect, terminate the receiver with exit 87 before the HTTP response, restart on the same database, retry twice, then submit a conflicting digest."
+      },
+      {
+        "id": "concurrent-100",
+        "schedule": "Issue one hundred concurrent identical PUT requests from Node, then submit one invalid delivery ID and one invalid digest."
+      }
+    ],
+    "criteria": {
+      "C1": "After the before-commit crash, the first retry returns 201 created, the second returns 200 replay, and exactly one effect exists.",
+      "C2": "After the after-commit crash, both retries return 200 replay and exactly one effect exists.",
+      "C3": "Both accepted delivery IDs reject a different outcome digest with 409 and preserve the original digest.",
+      "C4": "Among one hundred concurrent identical requests, exactly one returns 201 and ninety-nine return 200, with one delivery row and one effect row.",
+      "C5": "Malformed delivery IDs and digests return 400 and create no additional effect.",
+      "C6": "An independent Node auditor opens every committed SQLite database read-only, passes PRAGMA integrity_check, reconstructs row cardinality and crash outcomes from persisted artifacts, and verifies every synthetic acknowledgement HMAC."
+    },
+    "stopRule": "Any failed C1-C6 criterion, database integrity failure, second effect row, accepted conflicting digest, or changed frozen script hash makes the confirmation non-qualifying."
+  },
+  "frozenImplementations": {
+    "model": {
+      "path": "scripts/run-rc36-receiver-state-model.mjs",
+      "sha256": "63b9a79466b7010171dc7da7df48b8ef35205be087f98ff79f9246c5128f76d2"
+    },
+    "modelAuditor": {
+      "path": "scripts/independent_rc36_receiver_model_audit.py",
+      "sha256": "87cd2c2fe57be961fd222f0778f23404329290dcc600586ee98ff7dca7bbe8ec"
+    },
+    "receiver": {
+      "path": "scripts/rc36_receiver.py",
+      "sha256": "0999b91e00a8e35022ab79585a6b7b3cd13ef14608c55a37f7d59cbfced043d9"
+    },
+    "coordinator": {
+      "path": "scripts/run-rc36-receiver-confirmation.mjs",
+      "sha256": "ccad2204e0625f763d16fa3a53f661f39cd1787bf9b0263ef9772845162b4bde"
+    },
+    "confirmationAuditor": {
+      "path": "scripts/independent-rc36-receiver-audit.mjs",
+      "sha256": "87ed02bf18e04dacdaf79b5f71cd60a74dc4fec440a628de6ad4def0b2390f9d"
+    }
+  },
+  "plannedCommandsAfterPrecommitPush": [
+    "node scripts/run-rc36-receiver-state-model.mjs --write",
+    "python scripts/independent_rc36_receiver_model_audit.py",
+    "node scripts/run-rc36-receiver-confirmation.mjs --write",
+    "node scripts/independent-rc36-receiver-audit.mjs"
+  ],
+  "claimBoundary": {
+    "maySupport": "Exactly one SQLite-modeled effect under the three fixed one-host crash, retry, conflict, malformed-input, and concurrency cases.",
+    "mayNotSupport": [
+      "exactly-once physical actuation, payment, email, or a remote service call",
+      "a side effect not transactionally co-located with the receiver marker",
+      "multiple physical hosts or independent storage failure domains",
+      "a real network partition, reordering, duplication proxy, or permanent outage",
+      "host or disk loss, Byzantine behavior, production authentication, or production keys",
+      "an unbounded proof of exactly-once delivery"
+    ]
+  },
+  "nextRungIfQualified": "Replace the SQLite effect row with a durable outbox and a separately hosted idempotent sink; inject message and acknowledgement loss independently, then move sender consensus, receiver inbox, and the sink onto distinct physical hosts."
+}
