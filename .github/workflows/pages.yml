@@ -22,7 +22,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm test
+      - name: Run npm test
+        shell: bash
+        run: |
+          set -o pipefail
+          npm test 2>&1 | tee /tmp/unsolved-problems-test.log || {
+            {
+              echo "### npm test failure"
+              echo '```text'
+              tail -n 120 /tmp/unsolved-problems-test.log
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+            last_error="$(grep -E 'Error:|Assertion|ERR_|failed|incomplete|changed' /tmp/unsolved-problems-test.log | tail -n 1 || true)"
+            echo "::error title=npm test failed::${last_error:-See workflow summary for the final 120 log lines.}"
+            exit 1
+          }
 
   deploy:
     environment:
