@@ -1,0 +1,901 @@
+{
+  "cycle": "RC-2026-35",
+  "runPhase": "confirmatory",
+  "startedAt": "2026-08-13T21:47:48.010Z",
+  "completedAt": "2026-08-13T21:48:06.498Z",
+  "history": [
+    {
+      "at": "2026-08-13T21:47:48.064Z",
+      "type": "process",
+      "action": "start",
+      "node": "r0",
+      "pid": 32444
+    },
+    {
+      "at": "2026-08-13T21:47:48.071Z",
+      "type": "process",
+      "action": "start",
+      "node": "r1",
+      "pid": 32612
+    },
+    {
+      "at": "2026-08-13T21:47:48.080Z",
+      "type": "process",
+      "action": "start",
+      "node": "r2",
+      "pid": 31360
+    },
+    {
+      "at": "2026-08-13T21:47:50.883Z",
+      "type": "txn",
+      "label": "CLAIMED:claim-c0",
+      "targetEndpoints": "http://127.0.0.1:23791",
+      "compare": [
+        "version(\"/rc35/case-claimed/stage\") = \"0\""
+      ],
+      "success": [
+        "put /rc35/case-claimed/stage CLAIMED",
+        "put /rc35/case-claimed/owner C0"
+      ],
+      "failure": [
+        "get /rc35/case-claimed/stage"
+      ],
+      "succeeded": true,
+      "result": {
+        "code": 0,
+        "stdout": "SUCCESS\n\nOK\n\nOK",
+        "stderr": "",
+        "timedOut": false
+      }
+    },
+    {
+      "at": "2026-08-13T21:47:50.886Z",
+      "type": "txn",
+      "label": "CLAIMED:claim-c1",
+      "targetEndpoints": "http://127.0.0.1:23792",
+      "compare": [
+        "version(\"/rc35/case-claimed/stage\") = \"0\""
+      ],
+      "success": [
+        "put /rc35/case-claimed/stage CLAIMED",
+        "put /rc35/case-claimed/owner C1"
+      ],
+      "failure": [
+        "get /rc35/case-claimed/stage"
+      ],
+      "succeeded": false,
+      "result": {
+        "code": 0,
+        "stdout": "FAILURE\n\n/rc35/case-claimed/stage\nCLAIMED",
+        "stderr": "",
+        "timedOut": false
+      }
+    },
+    {
+      "at": "2026-08-13T21:47:50.940Z",
+      "type": "process",
+      "action": "stop",
+      "node": "r0",
+      "reason": "leader-termination-after-CLAIMED",
+      "exitCode": null,
+      "signalCode": "SIGTERM"
+    },
+    {
+      "at": "2026-08-13T21:47:52.295Z",
+      "type": "txn",
+      "label": "CLAIMED:receipt",
+      "targetEndpoints": "http://127.0.0.1:23792,http://127.0.0.1:23793",
+      "compare": [
+        "value(\"/rc35/case-claimed/stage\") = \"CLAIMED\""
+      ],
+      "success": [
+        "put /rc35/case-claimed/stage RECEIPTED",
+        "put /rc35/case-claimed/receipt sha256:rc35-fixed-receipt"
+      ],
+      "failure": [
+        "get /rc35/case-claimed/stage"
+      ],
+      "succeeded": true,
+      "result": {
+        "code": 0,
+        "stdout": "SUCCESS\n\nOK\n\nOK",
+        "stderr": "",
+        "timedOut": false
+      }
+    },
+    {
+      "at": "2026-08-13T21:47:52.361Z",
+      "type": "txn",
+      "label": "CLAIMED:release-response-discarded",
+      "targetEndpoints": "http://127.0.0.1:23792,http://127.0.0.1:23793",
+      "compare": [
+        "value(\"/rc35/case-claimed/stage\") = \"RECEIPTED\""
+      ],
+      "success": [
+        "put /rc35/case-claimed/stage RELEASED",
+        "put /rc35/case-claimed/outcome sha256:rc35-fixed-outcome"
+      ],
+      "failure": [
+        "get /rc35/case-claimed/stage"
+      ],
+      "succeeded": true,
+      "result": {
+        "code": 0,
+        "stdout": "SUCCESS\n\nOK\n\nOK",
+        "stderr": "",
+        "timedOut": false
+      }
+    },
+    {
+      "at": "2026-08-13T21:47:52.361Z",
+      "type": "client-observation",
+      "label": "CLAIMED:discard-success-response",
+      "fact": "The coordinator deliberately treats the successful release response as unavailable before retry."
+    },
+    {
+      "at": "2026-08-13T21:47:52.441Z",
+      "type": "txn",
+      "label": "CLAIMED:retry-after-lost-response",
+      "targetEndpoints": "http://127.0.0.1:23792,http://127.0.0.1:23793",
+      "compare": [
+        "value(\"/rc35/case-claimed/stage\") = \"RECEIPTED\""
+      ],
+      "success": [
+        "put /rc35/case-claimed/stage RELEASED",
+        "put /rc35/case-claimed/outcome sha256:duplicate-would-differ"
+      ],
+      "failure": [
+        "get /rc35/case-claimed/stage",
+        "get /rc35/case-claimed/receipt",
+        "get /rc35/case-claimed/outcome"
+      ],
+      "succeeded": false,
+      "result": {
+        "code": 0,
+        "stdout": "FAILURE\n\n/rc35/case-claimed/stage\nRELEASED\n\n/rc35/case-claimed/receipt\nsha256:rc35-fixed-receipt\n\n/rc35/case-claimed/outcome\nsha256:rc35-fixed-outcome",
+        "stderr": "",
+        "timedOut": false
+      }
+    },
+    {
+      "at": "2026-08-13T21:47:52.446Z",
+      "type": "process",
+      "action": "start",
+      "node": "r0",
+      "pid": 34680
+    },
+    {
+      "at": "2026-08-13T21:47:53.557Z",
+      "type": "read",
+      "label": "CLAIMED:r0:stage",
+      "key": "/rc35/case-claimed/stage",
+      "targetEndpoints": "http://127.0.0.1:23791",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":16946582163584742333,\"revision\":4,\"raft_term\":3},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1jbGFpbWVkL3N0YWdl\",\"create_revision\":2,\"mod_revision\":4,\"version\":3,\"value\":\"UkVMRUFTRUQ=\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-claimed/stage",
+          "value": "RELEASED",
+          "createRevision": 2,
+          "modRevision": 4,
+          "version": 3
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:53.602Z",
+      "type": "read",
+      "label": "CLAIMED:r0:owner",
+      "key": "/rc35/case-claimed/owner",
+      "targetEndpoints": "http://127.0.0.1:23791",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":16946582163584742333,\"revision\":4,\"raft_term\":3},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1jbGFpbWVkL293bmVy\",\"create_revision\":2,\"mod_revision\":2,\"version\":1,\"value\":\"QzA=\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-claimed/owner",
+          "value": "C0",
+          "createRevision": 2,
+          "modRevision": 2,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:53.646Z",
+      "type": "read",
+      "label": "CLAIMED:r0:receipt",
+      "key": "/rc35/case-claimed/receipt",
+      "targetEndpoints": "http://127.0.0.1:23791",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":16946582163584742333,\"revision\":4,\"raft_term\":3},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1jbGFpbWVkL3JlY2VpcHQ=\",\"create_revision\":3,\"mod_revision\":3,\"version\":1,\"value\":\"c2hhMjU2OnJjMzUtZml4ZWQtcmVjZWlwdA==\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-claimed/receipt",
+          "value": "sha256:rc35-fixed-receipt",
+          "createRevision": 3,
+          "modRevision": 3,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:53.690Z",
+      "type": "read",
+      "label": "CLAIMED:r0:outcome",
+      "key": "/rc35/case-claimed/outcome",
+      "targetEndpoints": "http://127.0.0.1:23791",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":16946582163584742333,\"revision\":4,\"raft_term\":3},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1jbGFpbWVkL291dGNvbWU=\",\"create_revision\":4,\"mod_revision\":4,\"version\":1,\"value\":\"c2hhMjU2OnJjMzUtZml4ZWQtb3V0Y29tZQ==\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-claimed/outcome",
+          "value": "sha256:rc35-fixed-outcome",
+          "createRevision": 4,
+          "modRevision": 4,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:53.736Z",
+      "type": "read",
+      "label": "CLAIMED:r1:stage",
+      "key": "/rc35/case-claimed/stage",
+      "targetEndpoints": "http://127.0.0.1:23792",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":1291515483693230338,\"revision\":4,\"raft_term\":3},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1jbGFpbWVkL3N0YWdl\",\"create_revision\":2,\"mod_revision\":4,\"version\":3,\"value\":\"UkVMRUFTRUQ=\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-claimed/stage",
+          "value": "RELEASED",
+          "createRevision": 2,
+          "modRevision": 4,
+          "version": 3
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:53.782Z",
+      "type": "read",
+      "label": "CLAIMED:r1:owner",
+      "key": "/rc35/case-claimed/owner",
+      "targetEndpoints": "http://127.0.0.1:23792",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":1291515483693230338,\"revision\":4,\"raft_term\":3},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1jbGFpbWVkL293bmVy\",\"create_revision\":2,\"mod_revision\":2,\"version\":1,\"value\":\"QzA=\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-claimed/owner",
+          "value": "C0",
+          "createRevision": 2,
+          "modRevision": 2,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:53.830Z",
+      "type": "read",
+      "label": "CLAIMED:r1:receipt",
+      "key": "/rc35/case-claimed/receipt",
+      "targetEndpoints": "http://127.0.0.1:23792",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":1291515483693230338,\"revision\":4,\"raft_term\":3},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1jbGFpbWVkL3JlY2VpcHQ=\",\"create_revision\":3,\"mod_revision\":3,\"version\":1,\"value\":\"c2hhMjU2OnJjMzUtZml4ZWQtcmVjZWlwdA==\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-claimed/receipt",
+          "value": "sha256:rc35-fixed-receipt",
+          "createRevision": 3,
+          "modRevision": 3,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:53.875Z",
+      "type": "read",
+      "label": "CLAIMED:r1:outcome",
+      "key": "/rc35/case-claimed/outcome",
+      "targetEndpoints": "http://127.0.0.1:23792",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":1291515483693230338,\"revision\":4,\"raft_term\":3},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1jbGFpbWVkL291dGNvbWU=\",\"create_revision\":4,\"mod_revision\":4,\"version\":1,\"value\":\"c2hhMjU2OnJjMzUtZml4ZWQtb3V0Y29tZQ==\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-claimed/outcome",
+          "value": "sha256:rc35-fixed-outcome",
+          "createRevision": 4,
+          "modRevision": 4,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:53.921Z",
+      "type": "read",
+      "label": "CLAIMED:r2:stage",
+      "key": "/rc35/case-claimed/stage",
+      "targetEndpoints": "http://127.0.0.1:23793",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":9287250458399318542,\"revision\":4,\"raft_term\":3},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1jbGFpbWVkL3N0YWdl\",\"create_revision\":2,\"mod_revision\":4,\"version\":3,\"value\":\"UkVMRUFTRUQ=\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-claimed/stage",
+          "value": "RELEASED",
+          "createRevision": 2,
+          "modRevision": 4,
+          "version": 3
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:53.966Z",
+      "type": "read",
+      "label": "CLAIMED:r2:owner",
+      "key": "/rc35/case-claimed/owner",
+      "targetEndpoints": "http://127.0.0.1:23793",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":9287250458399318542,\"revision\":4,\"raft_term\":3},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1jbGFpbWVkL293bmVy\",\"create_revision\":2,\"mod_revision\":2,\"version\":1,\"value\":\"QzA=\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-claimed/owner",
+          "value": "C0",
+          "createRevision": 2,
+          "modRevision": 2,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:54.010Z",
+      "type": "read",
+      "label": "CLAIMED:r2:receipt",
+      "key": "/rc35/case-claimed/receipt",
+      "targetEndpoints": "http://127.0.0.1:23793",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":9287250458399318542,\"revision\":4,\"raft_term\":3},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1jbGFpbWVkL3JlY2VpcHQ=\",\"create_revision\":3,\"mod_revision\":3,\"version\":1,\"value\":\"c2hhMjU2OnJjMzUtZml4ZWQtcmVjZWlwdA==\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-claimed/receipt",
+          "value": "sha256:rc35-fixed-receipt",
+          "createRevision": 3,
+          "modRevision": 3,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:54.055Z",
+      "type": "read",
+      "label": "CLAIMED:r2:outcome",
+      "key": "/rc35/case-claimed/outcome",
+      "targetEndpoints": "http://127.0.0.1:23793",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":9287250458399318542,\"revision\":4,\"raft_term\":3},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1jbGFpbWVkL291dGNvbWU=\",\"create_revision\":4,\"mod_revision\":4,\"version\":1,\"value\":\"c2hhMjU2OnJjMzUtZml4ZWQtb3V0Y29tZQ==\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-claimed/outcome",
+          "value": "sha256:rc35-fixed-outcome",
+          "createRevision": 4,
+          "modRevision": 4,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:54.169Z",
+      "type": "txn",
+      "label": "RECEIPTED:claim-c1",
+      "targetEndpoints": "http://127.0.0.1:23792",
+      "compare": [
+        "version(\"/rc35/case-receipted/stage\") = \"0\""
+      ],
+      "success": [
+        "put /rc35/case-receipted/stage CLAIMED",
+        "put /rc35/case-receipted/owner C1"
+      ],
+      "failure": [
+        "get /rc35/case-receipted/stage"
+      ],
+      "succeeded": true,
+      "result": {
+        "code": 0,
+        "stdout": "SUCCESS\n\nOK\n\nOK",
+        "stderr": "",
+        "timedOut": false
+      }
+    },
+    {
+      "at": "2026-08-13T21:47:54.170Z",
+      "type": "txn",
+      "label": "RECEIPTED:claim-c0",
+      "targetEndpoints": "http://127.0.0.1:23791",
+      "compare": [
+        "version(\"/rc35/case-receipted/stage\") = \"0\""
+      ],
+      "success": [
+        "put /rc35/case-receipted/stage CLAIMED",
+        "put /rc35/case-receipted/owner C0"
+      ],
+      "failure": [
+        "get /rc35/case-receipted/stage"
+      ],
+      "succeeded": false,
+      "result": {
+        "code": 0,
+        "stdout": "FAILURE\n\n/rc35/case-receipted/stage\nCLAIMED",
+        "stderr": "",
+        "timedOut": false
+      }
+    },
+    {
+      "at": "2026-08-13T21:47:54.248Z",
+      "type": "txn",
+      "label": "RECEIPTED:receipt",
+      "targetEndpoints": "http://127.0.0.1:23791,http://127.0.0.1:23792,http://127.0.0.1:23793",
+      "compare": [
+        "value(\"/rc35/case-receipted/stage\") = \"CLAIMED\""
+      ],
+      "success": [
+        "put /rc35/case-receipted/stage RECEIPTED",
+        "put /rc35/case-receipted/receipt sha256:rc35-fixed-receipt"
+      ],
+      "failure": [
+        "get /rc35/case-receipted/stage"
+      ],
+      "succeeded": true,
+      "result": {
+        "code": 0,
+        "stdout": "SUCCESS\n\nOK\n\nOK",
+        "stderr": "",
+        "timedOut": false
+      }
+    },
+    {
+      "at": "2026-08-13T21:47:54.301Z",
+      "type": "process",
+      "action": "stop",
+      "node": "r1",
+      "reason": "leader-termination-after-RECEIPTED",
+      "exitCode": null,
+      "signalCode": "SIGTERM"
+    },
+    {
+      "at": "2026-08-13T21:47:55.361Z",
+      "type": "txn",
+      "label": "RECEIPTED:release-response-discarded",
+      "targetEndpoints": "http://127.0.0.1:23791,http://127.0.0.1:23793",
+      "compare": [
+        "value(\"/rc35/case-receipted/stage\") = \"RECEIPTED\""
+      ],
+      "success": [
+        "put /rc35/case-receipted/stage RELEASED",
+        "put /rc35/case-receipted/outcome sha256:rc35-fixed-outcome"
+      ],
+      "failure": [
+        "get /rc35/case-receipted/stage"
+      ],
+      "succeeded": true,
+      "result": {
+        "code": 0,
+        "stdout": "SUCCESS\n\nOK\n\nOK",
+        "stderr": "",
+        "timedOut": false
+      }
+    },
+    {
+      "at": "2026-08-13T21:47:55.361Z",
+      "type": "client-observation",
+      "label": "RECEIPTED:discard-success-response",
+      "fact": "The coordinator deliberately treats the successful release response as unavailable before retry."
+    },
+    {
+      "at": "2026-08-13T21:47:55.444Z",
+      "type": "txn",
+      "label": "RECEIPTED:retry-after-lost-response",
+      "targetEndpoints": "http://127.0.0.1:23791,http://127.0.0.1:23793",
+      "compare": [
+        "value(\"/rc35/case-receipted/stage\") = \"RECEIPTED\""
+      ],
+      "success": [
+        "put /rc35/case-receipted/stage RELEASED",
+        "put /rc35/case-receipted/outcome sha256:duplicate-would-differ"
+      ],
+      "failure": [
+        "get /rc35/case-receipted/stage",
+        "get /rc35/case-receipted/receipt",
+        "get /rc35/case-receipted/outcome"
+      ],
+      "succeeded": false,
+      "result": {
+        "code": 0,
+        "stdout": "FAILURE\n\n/rc35/case-receipted/stage\nRELEASED\n\n/rc35/case-receipted/receipt\nsha256:rc35-fixed-receipt\n\n/rc35/case-receipted/outcome\nsha256:rc35-fixed-outcome",
+        "stderr": "",
+        "timedOut": false
+      }
+    },
+    {
+      "at": "2026-08-13T21:47:55.476Z",
+      "type": "process",
+      "action": "start",
+      "node": "r1",
+      "pid": 12680
+    },
+    {
+      "at": "2026-08-13T21:47:56.570Z",
+      "type": "read",
+      "label": "RECEIPTED:r0:stage",
+      "key": "/rc35/case-receipted/stage",
+      "targetEndpoints": "http://127.0.0.1:23791",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":16946582163584742333,\"revision\":7,\"raft_term\":4},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1yZWNlaXB0ZWQvc3RhZ2U=\",\"create_revision\":5,\"mod_revision\":7,\"version\":3,\"value\":\"UkVMRUFTRUQ=\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-receipted/stage",
+          "value": "RELEASED",
+          "createRevision": 5,
+          "modRevision": 7,
+          "version": 3
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:56.615Z",
+      "type": "read",
+      "label": "RECEIPTED:r0:owner",
+      "key": "/rc35/case-receipted/owner",
+      "targetEndpoints": "http://127.0.0.1:23791",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":16946582163584742333,\"revision\":7,\"raft_term\":4},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1yZWNlaXB0ZWQvb3duZXI=\",\"create_revision\":5,\"mod_revision\":5,\"version\":1,\"value\":\"QzE=\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-receipted/owner",
+          "value": "C1",
+          "createRevision": 5,
+          "modRevision": 5,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:56.659Z",
+      "type": "read",
+      "label": "RECEIPTED:r0:receipt",
+      "key": "/rc35/case-receipted/receipt",
+      "targetEndpoints": "http://127.0.0.1:23791",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":16946582163584742333,\"revision\":7,\"raft_term\":4},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1yZWNlaXB0ZWQvcmVjZWlwdA==\",\"create_revision\":6,\"mod_revision\":6,\"version\":1,\"value\":\"c2hhMjU2OnJjMzUtZml4ZWQtcmVjZWlwdA==\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-receipted/receipt",
+          "value": "sha256:rc35-fixed-receipt",
+          "createRevision": 6,
+          "modRevision": 6,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:56.704Z",
+      "type": "read",
+      "label": "RECEIPTED:r0:outcome",
+      "key": "/rc35/case-receipted/outcome",
+      "targetEndpoints": "http://127.0.0.1:23791",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":16946582163584742333,\"revision\":7,\"raft_term\":4},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1yZWNlaXB0ZWQvb3V0Y29tZQ==\",\"create_revision\":7,\"mod_revision\":7,\"version\":1,\"value\":\"c2hhMjU2OnJjMzUtZml4ZWQtb3V0Y29tZQ==\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-receipted/outcome",
+          "value": "sha256:rc35-fixed-outcome",
+          "createRevision": 7,
+          "modRevision": 7,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:56.747Z",
+      "type": "read",
+      "label": "RECEIPTED:r1:stage",
+      "key": "/rc35/case-receipted/stage",
+      "targetEndpoints": "http://127.0.0.1:23792",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":1291515483693230338,\"revision\":7,\"raft_term\":4},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1yZWNlaXB0ZWQvc3RhZ2U=\",\"create_revision\":5,\"mod_revision\":7,\"version\":3,\"value\":\"UkVMRUFTRUQ=\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-receipted/stage",
+          "value": "RELEASED",
+          "createRevision": 5,
+          "modRevision": 7,
+          "version": 3
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:56.793Z",
+      "type": "read",
+      "label": "RECEIPTED:r1:owner",
+      "key": "/rc35/case-receipted/owner",
+      "targetEndpoints": "http://127.0.0.1:23792",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":1291515483693230338,\"revision\":7,\"raft_term\":4},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1yZWNlaXB0ZWQvb3duZXI=\",\"create_revision\":5,\"mod_revision\":5,\"version\":1,\"value\":\"QzE=\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-receipted/owner",
+          "value": "C1",
+          "createRevision": 5,
+          "modRevision": 5,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:56.837Z",
+      "type": "read",
+      "label": "RECEIPTED:r1:receipt",
+      "key": "/rc35/case-receipted/receipt",
+      "targetEndpoints": "http://127.0.0.1:23792",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":1291515483693230338,\"revision\":7,\"raft_term\":4},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1yZWNlaXB0ZWQvcmVjZWlwdA==\",\"create_revision\":6,\"mod_revision\":6,\"version\":1,\"value\":\"c2hhMjU2OnJjMzUtZml4ZWQtcmVjZWlwdA==\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-receipted/receipt",
+          "value": "sha256:rc35-fixed-receipt",
+          "createRevision": 6,
+          "modRevision": 6,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:56.882Z",
+      "type": "read",
+      "label": "RECEIPTED:r1:outcome",
+      "key": "/rc35/case-receipted/outcome",
+      "targetEndpoints": "http://127.0.0.1:23792",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":1291515483693230338,\"revision\":7,\"raft_term\":4},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1yZWNlaXB0ZWQvb3V0Y29tZQ==\",\"create_revision\":7,\"mod_revision\":7,\"version\":1,\"value\":\"c2hhMjU2OnJjMzUtZml4ZWQtb3V0Y29tZQ==\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-receipted/outcome",
+          "value": "sha256:rc35-fixed-outcome",
+          "createRevision": 7,
+          "modRevision": 7,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:56.927Z",
+      "type": "read",
+      "label": "RECEIPTED:r2:stage",
+      "key": "/rc35/case-receipted/stage",
+      "targetEndpoints": "http://127.0.0.1:23793",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":9287250458399318542,\"revision\":7,\"raft_term\":4},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1yZWNlaXB0ZWQvc3RhZ2U=\",\"create_revision\":5,\"mod_revision\":7,\"version\":3,\"value\":\"UkVMRUFTRUQ=\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-receipted/stage",
+          "value": "RELEASED",
+          "createRevision": 5,
+          "modRevision": 7,
+          "version": 3
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:56.970Z",
+      "type": "read",
+      "label": "RECEIPTED:r2:owner",
+      "key": "/rc35/case-receipted/owner",
+      "targetEndpoints": "http://127.0.0.1:23793",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":9287250458399318542,\"revision\":7,\"raft_term\":4},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1yZWNlaXB0ZWQvb3duZXI=\",\"create_revision\":5,\"mod_revision\":5,\"version\":1,\"value\":\"QzE=\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-receipted/owner",
+          "value": "C1",
+          "createRevision": 5,
+          "modRevision": 5,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:57.015Z",
+      "type": "read",
+      "label": "RECEIPTED:r2:receipt",
+      "key": "/rc35/case-receipted/receipt",
+      "targetEndpoints": "http://127.0.0.1:23793",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":9287250458399318542,\"revision\":7,\"raft_term\":4},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1yZWNlaXB0ZWQvcmVjZWlwdA==\",\"create_revision\":6,\"mod_revision\":6,\"version\":1,\"value\":\"c2hhMjU2OnJjMzUtZml4ZWQtcmVjZWlwdA==\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-receipted/receipt",
+          "value": "sha256:rc35-fixed-receipt",
+          "createRevision": 6,
+          "modRevision": 6,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:57.060Z",
+      "type": "read",
+      "label": "RECEIPTED:r2:outcome",
+      "key": "/rc35/case-receipted/outcome",
+      "targetEndpoints": "http://127.0.0.1:23793",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":9287250458399318542,\"revision\":7,\"raft_term\":4},\"kvs\":[{\"key\":\"L3JjMzUvY2FzZS1yZWNlaXB0ZWQvb3V0Y29tZQ==\",\"create_revision\":7,\"mod_revision\":7,\"version\":1,\"value\":\"c2hhMjU2OnJjMzUtZml4ZWQtb3V0Y29tZQ==\"}],\"count\":1}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": [
+        {
+          "key": "/rc35/case-receipted/outcome",
+          "value": "sha256:rc35-fixed-outcome",
+          "createRevision": 7,
+          "modRevision": 7,
+          "version": 1
+        }
+      ]
+    },
+    {
+      "at": "2026-08-13T21:47:57.110Z",
+      "type": "process",
+      "action": "stop",
+      "node": "r0",
+      "reason": "minority-unavailability-probe",
+      "exitCode": null,
+      "signalCode": "SIGTERM"
+    },
+    {
+      "at": "2026-08-13T21:47:57.113Z",
+      "type": "process",
+      "action": "stop",
+      "node": "r2",
+      "reason": "minority-unavailability-probe",
+      "exitCode": null,
+      "signalCode": "SIGTERM"
+    },
+    {
+      "at": "2026-08-13T21:48:05.341Z",
+      "type": "txn",
+      "label": "minority:write",
+      "targetEndpoints": "http://127.0.0.1:23792",
+      "compare": [
+        "version(\"/rc35/minority/forbidden-write\") = \"0\""
+      ],
+      "success": [
+        "put /rc35/minority/forbidden-write SHOULD_NOT_COMMIT"
+      ],
+      "failure": [],
+      "succeeded": false,
+      "result": {
+        "code": null,
+        "stdout": "",
+        "stderr": "",
+        "timedOut": true
+      }
+    },
+    {
+      "at": "2026-08-13T21:48:05.374Z",
+      "type": "process",
+      "action": "start",
+      "node": "r0",
+      "pid": 47320
+    },
+    {
+      "at": "2026-08-13T21:48:05.380Z",
+      "type": "process",
+      "action": "start",
+      "node": "r2",
+      "pid": 32752
+    },
+    {
+      "at": "2026-08-13T21:48:06.498Z",
+      "type": "read",
+      "label": "minority:post-heal-read",
+      "key": "/rc35/minority/forbidden-write",
+      "targetEndpoints": "http://127.0.0.1:23791,http://127.0.0.1:23792,http://127.0.0.1:23793",
+      "result": {
+        "code": 0,
+        "stdout": "{\"header\":{\"cluster_id\":12498709550979701792,\"member_id\":9287250458399318542,\"revision\":7,\"raft_term\":5}}",
+        "stderr": "",
+        "timedOut": false
+      },
+      "kvs": []
+    }
+  ]
+}
