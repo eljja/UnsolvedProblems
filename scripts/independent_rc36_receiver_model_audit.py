@@ -39,7 +39,7 @@ def successors(state):
             add(f"RETRY_CONFLICT C{client}", conflict)
         elif state["protocol"] == "EFFECT_THEN_MARKER":
             def effect_first(nxt, c=client):
-                nxt["effectCount"] += 1
+                nxt["effectCount"] = min(2, nxt["effectCount"] + 1)
                 nxt["effectRecord"] = True
                 nxt["effectDigest"] = "A"
                 nxt["pending"] = {"client": c, "phase": "effect-applied"}
@@ -64,7 +64,7 @@ def successors(state):
         add(f"WRITE_MARKER C{state['pending']['client']}", write_marker)
     if state["pending"] and state["pending"]["phase"] == "marker-written":
         def apply_effect(nxt):
-            nxt["effectCount"] += 1
+            nxt["effectCount"] = min(2, nxt["effectCount"] + 1)
             nxt["effectRecord"] = True
             nxt["effectDigest"] = "A"
             nxt["clients"][nxt["pending"]["client"]] = "created"
@@ -133,4 +133,3 @@ audit = {
 print(f"RC36 independent receiver model audit: {audit['passed']}/{audit['total']}")
 if not audit["qualifies"]:
     raise SystemExit(1)
-

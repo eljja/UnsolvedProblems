@@ -1,0 +1,13 @@
+{
+  "cycle": "RC-2026-36",
+  "attemptedOn": "2026-08-14",
+  "precommitId": "RC36-RECEIVER-DELIVERY-PRECOMMIT-1.0",
+  "command": "node scripts/run-rc36-receiver-state-model.mjs --write",
+  "outcome": "implementation-failure-no-scientific-verdict",
+  "observedFailure": "The EFFECT_THEN_MARKER transition incremented effectCount without a finite abstraction bound. Breadth-first exploration therefore generated an unbounded family of states until Node reached its approximately 4 GB heap limit.",
+  "whyThisInvalidatesTheRun": "The preregistration explicitly defined a finite receiver state machine and full fixed-point enumeration. An unbounded counter violates that model boundary, so the aborted run cannot adjudicate any protocol.",
+  "resultArtifactWritten": false,
+  "independentAuditRun": false,
+  "permittedCorrection": "Replace each effectCount increment with min(2, effectCount + 1). Values 0, 1, and 2 encode no effect, exactly one effect, and at least two effects; R1 depends only on that partition. No transition, invariant, protocol, threshold, or expected verdict may otherwise change.",
+  "preservationRule": "Retain this record alongside the amended preregistration and all later results."
+}

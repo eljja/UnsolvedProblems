@@ -46,7 +46,7 @@ function transitions(state) {
     }
     if (state.protocol === "EFFECT_THEN_MARKER") {
       add(output, state, `APPLY_EFFECT C${client}`, next => {
-        next.effectCount += 1;
+        next.effectCount = Math.min(2, next.effectCount + 1);
         next.effectRecord = true;
         next.effectDigest = "A";
         next.pending = { client, phase: "effect-applied" };
@@ -79,7 +79,7 @@ function transitions(state) {
   }
   if (state.pending?.phase === "marker-written") {
     add(output, state, `APPLY_EFFECT C${state.pending.client}`, next => {
-      next.effectCount += 1;
+      next.effectCount = Math.min(2, next.effectCount + 1);
       next.effectRecord = true;
       next.effectDigest = "A";
       next.clients[next.pending.client] = "created";
@@ -155,4 +155,3 @@ for (const metric of metrics) {
 }
 if (WRITE) fs.writeFileSync(path.join(REPRO, "rc36-receiver-state-model-result.json"), `${JSON.stringify(result, null, 2)}\n`);
 if (result.aggregateDecision.qualifyingProtocols.join("|") !== "ATOMIC_INBOX_EFFECT") process.exitCode = 1;
-

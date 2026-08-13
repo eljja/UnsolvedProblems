@@ -1,0 +1,34 @@
+{
+  "amendmentId": "RC36-RECEIVER-MODEL-AMENDMENT-1.1",
+  "createdOn": "2026-08-14",
+  "status": "sealed-after-implementation-failure-and-before-rerun",
+  "amends": "RC36-RECEIVER-DELIVERY-PRECOMMIT-1.0",
+  "failureRecord": "research/reproducibility/rc36-receiver-model-first-failure.json",
+  "reason": "The first execution contradicted the declared finite-model boundary because effectCount was unbounded. It produced no result artifact and no independent audit.",
+  "onlyPermittedChange": "Saturate effectCount at 2 in both enumerators, so 2 denotes two or more effects. R1 asks only whether the count exceeds one, making 0, 1, and 2-plus the coarsest sufficient finite partition.",
+  "unchanged": [
+    "all three protocol definitions",
+    "transition names and ordering",
+    "R1-R5 invariant definitions",
+    "breadth-first fixed-point exploration",
+    "all confirmation cases and C1-C6",
+    "expected rejection of EFFECT_THEN_MARKER and MARKER_THEN_EFFECT",
+    "expected qualification of ATOMIC_INBOX_EFFECT",
+    "all claim boundaries"
+  ],
+  "amendedImplementations": {
+    "model": {
+      "path": "scripts/run-rc36-receiver-state-model.mjs",
+      "sha256": "593d8ce7847a710cbbd538b3b562f4ecf5d4bd1fa346d30bf096eb0886bda494"
+    },
+    "modelAuditor": {
+      "path": "scripts/independent_rc36_receiver_model_audit.py",
+      "sha256": "2b6243c62ad74028f094a1b026a513094d4940e479b6f1f3f992c9ec03de9e16"
+    }
+  },
+  "rerunCommands": [
+    "node scripts/run-rc36-receiver-state-model.mjs --write",
+    "python scripts/independent_rc36_receiver_model_audit.py"
+  ],
+  "decisionRule": "The amended run is qualifying only if both frozen amended hashes match, both implementations terminate, they agree on every graph size and minimal counterexample length, ATOMIC_INBOX_EFFECT alone passes R1-R5, and the first failed attempt remains preserved."
+}
