@@ -1,0 +1,25 @@
+{
+  "fixtureSetId": "CHIPLET-ATTESTATION-ADVERSARIAL-0.4",
+  "fixedOn": "2026-08-14",
+  "status": "sealed-before-emulator-results",
+  "fixtures": [
+    { "id": "A00", "mutation": "none", "truth": "genuine", "expectedFullVerdict": "accept", "expectedFullCode": null },
+    { "id": "A01", "mutation": "stale-nonce", "truth": "replay", "expectedFullVerdict": "reject", "expectedFullCode": "E_NONCE_FRESHNESS" },
+    { "id": "A02", "mutation": "counter-replay", "truth": "replay", "expectedFullVerdict": "reject", "expectedFullCode": "E_COUNTER_REPLAY" },
+    { "id": "A03", "mutation": "substitute-package-id", "truth": "substitution", "expectedFullVerdict": "reject", "expectedFullCode": "E_PACKAGE_BINDING" },
+    { "id": "A04", "mutation": "substitute-chiplet-id", "truth": "substitution", "expectedFullVerdict": "reject", "expectedFullCode": "E_CHIPLET_BINDING" },
+    { "id": "A05", "mutation": "tamper-response", "truth": "tamper", "expectedFullVerdict": "reject", "expectedFullCode": "E_PHYSICAL_RESPONSE" },
+    { "id": "A06", "mutation": "genuine-environmental-drift", "truth": "genuine", "expectedFullVerdict": "quarantine", "expectedFullCode": "Q_RESPONSE_DRIFT" },
+    { "id": "A07", "mutation": "forge-trace-event", "truth": "trace-forgery", "expectedFullVerdict": "reject", "expectedFullCode": "E_TRACE_SIGNATURE" },
+    { "id": "A08", "mutation": "break-trace-link", "truth": "trace-forgery", "expectedFullVerdict": "reject", "expectedFullCode": "E_TRACE_LINK" },
+    { "id": "A09", "mutation": "mismatch-trace-head", "truth": "trace-forgery", "expectedFullVerdict": "reject", "expectedFullCode": "E_TRACE_HEAD_BINDING" },
+    { "id": "A10", "mutation": "known-root-compromise", "truth": "known-root-compromise", "expectedFullVerdict": "quarantine", "expectedFullCode": "Q_ROOT_REVOKED" },
+    { "id": "A11", "mutation": "unknown-endorsement", "truth": "unknown", "expectedFullVerdict": "quarantine", "expectedFullCode": "Q_ENDORSEMENT_UNKNOWN" },
+    { "id": "A12", "mutation": "silent-full-compromise", "truth": "silent-full-compromise", "expectedFullVerdict": "accept", "expectedFullCode": null }
+  ],
+  "indistinguishableControl": {
+    "fixtureId": "A12",
+    "rule": "The verifier receives the same valid trace, current nonce and counter, valid package response, and in-envelope physical response as in a genuine world.",
+    "interpretation": "Acceptance is a documented threat-model failure, not emulator success. The fixture is excluded from empirical error-rate claims unless an independent observable is added."
+  }
+}

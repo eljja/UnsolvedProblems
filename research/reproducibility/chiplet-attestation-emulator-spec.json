@@ -1,0 +1,78 @@
+{
+  "protocolId": "CHIPLET-ATTESTATION-EMULATOR-0.4",
+  "fixedOn": "2026-08-14",
+  "status": "synthetic-threat-model-and-sample-design-before-hardware",
+  "purpose": "Falsify the logic and denominator of a combined chiplet-attestation trial before any package, chiplet, PUF, or supply-chain partner is recruited.",
+  "ratsRoles": {
+    "attester": "A synthetic package-bound device creates claims about package identity, chiplet identity, fresh challenge, monotonic counter, trace head, and physical-response digest.",
+    "endorser": "A synthetic manufacturer enrollment record binds package and chiplet identities to a demonstration verification key and reference-response envelope.",
+    "referenceValueProvider": "A separately versioned registry supplies enrolled identity, counter floor, trace-head policy, revocation status, and physical-response bounds.",
+    "verifier": "An independent policy function appraises evidence, endorsements, reference values, freshness, and response distance.",
+    "relyingParty": "A release gate accepts, rejects, or quarantines the package from the verifier result. It never reads injected ground truth."
+  },
+  "evidenceLayers": {
+    "trace": "An append-only signed sequence links manufacture, package assembly, transfer, and receipt. A valid chain proves only consistency under its issuer keys.",
+    "cryptographicFreshness": "A package-bound response covers an externally supplied nonce, monotonic counter, package and chiplet IDs, trace head, and physical-response digest.",
+    "physicalResponse": "A normalized vector is compared with an enrollment reference under a fixed distance threshold and explicit temperature-ageing envelope.",
+    "revocationAndEndorsement": "Verifier policy treats revoked or unknown roots as quarantine, not as evidence of a counterfeit."
+  },
+  "frozenAblations": [
+    "trace-only",
+    "physical-only",
+    "crypto-plus-trace",
+    "full-combination"
+  ],
+  "verdicts": {
+    "accept": "All evidence required by the selected ablation passes its appraisal policy.",
+    "reject": "An observable deterministic contradiction is found.",
+    "quarantine": "Evidence is missing, a root is revoked or unknown, or genuine drift and attack remain unresolved.",
+    "indistinguishable": "The adversary supplies the same claims and evidence available in the genuine world; no verifier using this observation set can separate the worlds."
+  },
+  "threatFamilies": [
+    { "id": "replay", "observable": "The evidence carries a stale nonce or non-increasing counter.", "inScopeForRateClaim": true },
+    { "id": "substitution", "observable": "The package or chiplet binding disagrees with enrollment, or the response lies outside its envelope.", "inScopeForRateClaim": true },
+    { "id": "tamper", "observable": "A current package signs evidence but the physical response moves outside the enrolled envelope.", "inScopeForRateClaim": true },
+    { "id": "trace-forgery", "observable": "A custody event, issuer signature, or previous-event link is invalid.", "inScopeForRateClaim": true },
+    { "id": "known-root-compromise", "observable": "The root or endorsement is present on an independently supplied revocation list.", "inScopeForRateClaim": false },
+    { "id": "silent-full-compromise", "observable": "Trace, key, claims, and physical response are all duplicated within tolerance and no independent compromise signal exists.", "inScopeForRateClaim": false }
+  ],
+  "sampleDesign": {
+    "confidence": 0.95,
+    "targetUpperErrorRate": 0.01,
+    "zeroEventOneSidedExactUpper": "1 - alpha^(1/n), with alpha = 0.05",
+    "minimumPerClaimedClass": 299,
+    "balancedOperationalChoicePerClass": 306,
+    "balanceGrid": { "vendors": 3, "processFamilies": 2, "lotsPerVendorProcess": 3, "cells": 18, "unitsPerCellPerClass": 17 },
+    "claimedClasses": ["genuine", "replay", "substitution", "tamper", "trace-forgery"],
+    "totalBlindUnits": 1530,
+    "scope": "The one-percent bound is pooled within each claimed class. It is not a one-percent guarantee for any individual vendor-process-lot cell.",
+    "historicalDesignAudit": "The RC28 600-unit design allocated 300 adversarial units across four families, or 75 per family. Zero errors among 75 yields an exact one-sided 95% upper bound near 3.92%, not below 1%."
+  },
+  "independence": {
+    "development": "Synthetic keys, traces, fingerprints, mutation code, and thresholds in this repository.",
+    "finalAdjudication": "New package IDs, physical devices, nonces, keys, reference values, trace issuers, operators, and a verifier implementation at an institution excluded from development.",
+    "forbiddenReuse": ["demonstration keys", "synthetic fingerprints", "fixture IDs", "development nonces", "development threshold tuning cases"]
+  },
+  "uncertaintyBudget": {
+    "cryptographic": "Key compromise, enrollment substitution, nonce entropy, counter reset, signature implementation, and verifier trust-anchor errors.",
+    "physical": "Within-device repeat noise, between-device separation, temperature, voltage, ageing, package stress, sensor placement, and attacker emulation.",
+    "trace": "Issuer compromise, missing events, reordered events, cross-organization clock differences, and repository availability.",
+    "statistical": "Rare-event interval, family and stratum multiplicity, clustering by lot, selection bias, and development-adjudication leakage.",
+    "transport": "Vendor, process, package, lot, instrument, institution, and lifecycle shifts."
+  },
+  "safetyAndSecurity": {
+    "repositoryBoundary": "The emulator contains no operational instructions for extracting secrets, modifying real packages, bypassing readers, or attacking a live supply chain.",
+    "hardwareGate": "Real attack fixtures require written legal authority, supply-chain partner approval, laboratory safety review, controlled security handling, and a disclosure plan.",
+    "privacy": "Do not place people, customer identities, locations, or commercially sensitive lot histories in attestation nonces or public trace records."
+  },
+  "primarySources": [
+    "https://www.rfc-editor.org/rfc/rfc9334.html",
+    "https://www.rfc-editor.org/rfc/rfc9711.html",
+    "https://www.rfc-editor.org/rfc/rfc9943.html",
+    "https://csrc.nist.gov/pubs/ir/8536/2pd",
+    "https://www.uciexpress.org/specifications",
+    "https://doi.org/10.3390/s25154861",
+    "https://doi.org/10.1109/TCAD.2025.3607132",
+    "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm"
+  ]
+}

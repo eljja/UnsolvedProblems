@@ -1,0 +1,72 @@
+{
+  "auditId": "CHIPLET-ATTESTATION-EMULATOR-AUDIT-0.4",
+  "computedOn": "2026-08-14",
+  "status": "synthetic-ablation-and-denominator-audit-complete",
+  "denominators": { "fixtures": 13, "fullCombinationDeterministicRejects": 8, "fullCombinationQuarantines": 3, "indistinguishableControls": 1 },
+  "fixtureResults": [
+    { "id": "A00", "truth": "genuine", "expectedFullVerdict": "accept", "observedFullVerdict": "accept", "expectedFullCode": null, "observedFullCodes": [], "matched": true },
+    { "id": "A01", "truth": "replay", "expectedFullVerdict": "reject", "observedFullVerdict": "reject", "expectedFullCode": "E_NONCE_FRESHNESS", "observedFullCodes": ["E_NONCE_FRESHNESS"], "matched": true },
+    { "id": "A02", "truth": "replay", "expectedFullVerdict": "reject", "observedFullVerdict": "reject", "expectedFullCode": "E_COUNTER_REPLAY", "observedFullCodes": ["E_COUNTER_REPLAY"], "matched": true },
+    { "id": "A03", "truth": "substitution", "expectedFullVerdict": "reject", "observedFullVerdict": "reject", "expectedFullCode": "E_PACKAGE_BINDING", "observedFullCodes": ["E_PACKAGE_BINDING"], "matched": true },
+    { "id": "A04", "truth": "substitution", "expectedFullVerdict": "reject", "observedFullVerdict": "reject", "expectedFullCode": "E_CHIPLET_BINDING", "observedFullCodes": ["E_CHIPLET_BINDING"], "matched": true },
+    { "id": "A05", "truth": "tamper", "expectedFullVerdict": "reject", "observedFullVerdict": "reject", "expectedFullCode": "E_PHYSICAL_RESPONSE", "observedFullCodes": ["E_PHYSICAL_RESPONSE"], "matched": true },
+    { "id": "A06", "truth": "genuine", "expectedFullVerdict": "quarantine", "observedFullVerdict": "quarantine", "expectedFullCode": "Q_RESPONSE_DRIFT", "observedFullCodes": ["Q_RESPONSE_DRIFT"], "matched": true },
+    { "id": "A07", "truth": "trace-forgery", "expectedFullVerdict": "reject", "observedFullVerdict": "reject", "expectedFullCode": "E_TRACE_SIGNATURE", "observedFullCodes": ["E_TRACE_SIGNATURE"], "matched": true },
+    { "id": "A08", "truth": "trace-forgery", "expectedFullVerdict": "reject", "observedFullVerdict": "reject", "expectedFullCode": "E_TRACE_LINK", "observedFullCodes": ["E_TRACE_LINK", "E_TRACE_SIGNATURE"], "matched": true },
+    { "id": "A09", "truth": "trace-forgery", "expectedFullVerdict": "reject", "observedFullVerdict": "reject", "expectedFullCode": "E_TRACE_HEAD_BINDING", "observedFullCodes": ["E_TRACE_HEAD_BINDING"], "matched": true },
+    { "id": "A10", "truth": "known-root-compromise", "expectedFullVerdict": "quarantine", "observedFullVerdict": "quarantine", "expectedFullCode": "Q_ROOT_REVOKED", "observedFullCodes": ["Q_ROOT_REVOKED"], "matched": true },
+    { "id": "A11", "truth": "unknown", "expectedFullVerdict": "quarantine", "observedFullVerdict": "quarantine", "expectedFullCode": "Q_ENDORSEMENT_UNKNOWN", "observedFullCodes": ["Q_ENDORSEMENT_UNKNOWN"], "matched": true },
+    { "id": "A12", "truth": "silent-full-compromise", "expectedFullVerdict": "accept", "observedFullVerdict": "accept", "expectedFullCode": null, "observedFullCodes": [], "matched": true }
+  ],
+  "ablationVerdicts": {
+    "trace-only": { "A00": "accept", "A01": "accept", "A02": "accept", "A03": "accept", "A04": "accept", "A05": "accept", "A06": "accept", "A07": "reject", "A08": "reject", "A09": "accept", "A10": "accept", "A11": "accept", "A12": "accept" },
+    "physical-only": { "A00": "accept", "A01": "accept", "A02": "accept", "A03": "accept", "A04": "accept", "A05": "reject", "A06": "quarantine", "A07": "accept", "A08": "accept", "A09": "accept", "A10": "accept", "A11": "accept", "A12": "accept" },
+    "crypto-plus-trace": { "A00": "accept", "A01": "reject", "A02": "reject", "A03": "reject", "A04": "reject", "A05": "accept", "A06": "accept", "A07": "reject", "A08": "reject", "A09": "reject", "A10": "quarantine", "A11": "quarantine", "A12": "accept" },
+    "full-combination": { "A00": "accept", "A01": "reject", "A02": "reject", "A03": "reject", "A04": "reject", "A05": "reject", "A06": "quarantine", "A07": "reject", "A08": "reject", "A09": "reject", "A10": "quarantine", "A11": "quarantine", "A12": "accept" }
+  },
+  "responseDistanceControls": { "A00": 0.010648509, "A05": 0.310987826, "A06": 0.127403249 },
+  "ablationSummary": {
+    "trace-only": { "unsafeAcceptedFixtureIds": ["A01", "A02", "A03", "A04", "A05", "A09", "A12"], "rejectedFixtureIds": ["A07", "A08"], "quarantinedFixtureIds": [] },
+    "physical-only": { "unsafeAcceptedFixtureIds": ["A01", "A02", "A03", "A04", "A07", "A08", "A09", "A12"], "rejectedFixtureIds": ["A05"], "quarantinedFixtureIds": [] },
+    "crypto-plus-trace": { "unsafeAcceptedFixtureIds": ["A05", "A12"], "rejectedFixtureIds": ["A01", "A02", "A03", "A04", "A07", "A08", "A09"], "quarantinedFixtureIds": [] },
+    "full-combination": { "unsafeAcceptedFixtureIds": ["A12"], "rejectedFixtureIds": ["A01", "A02", "A03", "A04", "A05", "A07", "A08", "A09"], "quarantinedFixtureIds": [] }
+  },
+  "sampleDesignAudit": {
+    "exactFormula": "p_upper = 1 - 0.05^(1/n) for zero observed errors and a one-sided 95% bound",
+    "historical600": { "genuineN": 300, "totalAdversarialN": 300, "attackFamilies": 4, "perAttackFamilyN": 75, "pooledUpper": 0.009936082, "perFamilyUpper": 0.039155887 },
+    "minimumNForUpperAtMostOnePercent": 299,
+    "revisedBalanced": { "perClassN": 306, "classes": 5, "totalN": 1530, "pooledClassUpper": 0.009742209, "vendorProcessLotCellsPerClass": 18, "unitsPerCell": 17, "perCellUpper": 0.161566111 },
+    "independenceCondition": "Exact binomial bounds require independent Bernoulli units within the claimed population. Lot clustering or threshold tuning on blind units invalidates the simple bound.",
+    "transportBoundary": "A pooled class bound is not a vendor-, process-, lot-, temperature-, ageing-, or institution-specific guarantee."
+  },
+  "indistinguishableWorlds": {
+    "genuine": "A genuine enrolled package produces a valid trace, fresh signed claims, and an in-envelope physical response.",
+    "compromised": "An adversary controls every issuer and package key and reproduces the same trace, fresh signed claims, and in-envelope response without appearing on an independent revocation source.",
+    "verifierObservation": "Identical in both worlds.",
+    "consequence": "The full-combination verifier accepts A12. A new independent root or observable is required; adding more samples of the same evidence cannot identify the world."
+  },
+  "decisions": {
+    "H1_traceAloneSufficient": false,
+    "H2_physicalFingerprintAloneSufficient": false,
+    "H3_cryptoPlusTraceDetectsFreshnessAndBindingFixtures": true,
+    "H4_fullCombinationBlocksAllInScopeObservableFixtures": true,
+    "H5_fullCombinationProvesSilentFullCompromiseAbsent": false,
+    "H6_sixHundredUnitsBoundEachAttackFamilyBelowOnePercent": false,
+    "H7_revised1530BoundsEachPooledClaimedClassBelowOnePercentConditionalOnIndependence": true,
+    "H8_pooledClassBoundImpliesEachVendorProcessLotCellBelowOnePercent": false,
+    "H9_hardwarePerformanceEstablished": false
+  },
+  "readiness": {
+    "R1-PROTOCOL-LOGIC": "passed-in-synthetic-emulator",
+    "R2-SAMPLE-DENOMINATOR": "revised-and-mathematically-verified",
+    "R3-INDEPENDENT-IMPLEMENTATION": "passed-by-independent-python-audit",
+    "R4-HARDWARE-ROOT": "not-demonstrated",
+    "R5-PHYSICAL-RESPONSE": "not-demonstrated",
+    "R6-MULTI-VENDOR-TRANSPORT": "not-demonstrated"
+  },
+  "interpretation": {
+    "established": "The synthetic verifier separates evidence roles, detects all observable full-combination fixtures as specified, preserves quarantine, and corrects the class-specific sample denominator from 600 to 1,530 balanced units.",
+    "rejected": "Traceability alone, a physical fingerprint alone, the 600-unit family-specific one-percent claim, and detection of a silent compromise using identical evidence are rejected.",
+    "notEstablished": "No cryptographic implementation, secure key storage, chiplet, package, PUF, PDN sensor, vendor, lot, institution, or attacker was tested."
+  }
+}

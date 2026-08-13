@@ -1,0 +1,31 @@
+{
+  "auditId": "CHIPLET-ATTESTATION-PYTHON-AUDIT-0.4",
+  "computedOn": "2026-08-14",
+  "passed": true,
+  "checks": {
+    "synthetic_scope_is_explicit": true,
+    "rats_roles_are_separated": true,
+    "fixture_denominator_is_fixed": true,
+    "full_fixture_expectations_match": true,
+    "ablation_semantics_recomputed": true,
+    "response_distances_recomputed": true,
+    "accept_quarantine_reject_regions_hold": true,
+    "historical_overall_upper_recomputed": true,
+    "historical_family_upper_recomputed": true,
+    "minimum_sample_recomputed": true,
+    "revised_total_and_bound_recomputed": true,
+    "cell_bound_is_not_one_percent": true,
+    "silent_compromise_is_accepted": true,
+    "hardware_claim_is_refused": true
+  },
+  "independentlyRecomputed": {
+    "responseDistances": { "A00": 0.010648509, "A05": 0.310987826, "A06": 0.127403249 },
+    "zeroErrorUpperN75": 0.039155887,
+    "zeroErrorUpperN300": 0.009936082,
+    "zeroErrorUpperN306": 0.009742209,
+    "minimumNAtOnePercent": 299,
+    "revisedTotal": 1530
+  },
+  "independenceBoundary": "This audit derives the evidence-layer ablation matrix, response distances, and exact zero-error binomial denominator without importing or executing the JavaScript verifier. It contains no hardware data or security-performance evidence.",
+  "conclusion": "The 600-unit design supports only a pooled adversarial bound. The 1,530-unit revision supports a pooled bound within each claimed class under independent sampling, while A12 remains unidentifiable."
+}
