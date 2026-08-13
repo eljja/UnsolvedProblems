@@ -1,0 +1,149 @@
+{
+  "cycle": "RC-2026-37",
+  "precommitId": "RC37-OUTBOX-SINK-PRECOMMIT-V1",
+  "sealedOn": "2026-08-14",
+  "startingPoint": {
+    "commit": "3c6f781457d5dcc3d6dfc8f4c86de3d7972fe941",
+    "finding": "RC36 established exactly-one effect rows only when the receiver marker and modeled effect shared one SQLite transaction.",
+    "openBoundary": "No separate sink database, external process effect, multiple physical hosts, or physical actuator had been tested."
+  },
+  "primaryEvidence": [
+    {
+      "id": "debezium-outbox-router-2026",
+      "url": "https://debezium.io/documentation/reference/transformations/outbox-event-router.html",
+      "checkedOn": "2026-08-14",
+      "role": "Official outbox event router documentation identifies a unique event ID as a duplicate-removal key and separates aggregate ordering from event identity."
+    },
+    {
+      "id": "kafka-41-design-eos-2026",
+      "url": "https://kafka.apache.org/41/design/design/",
+      "checkedOn": "2026-08-14",
+      "role": "Official Kafka 4.1 design limits its native atomic processing boundary to Kafka topics and states that other destination systems must cooperate."
+    },
+    {
+      "id": "oasis-wsrm-11-2007",
+      "url": "https://docs.oasis-open.org/ws-rx/wsrm/200702/wsrm-1.1-spec-cd-05.html",
+      "published": "2007-02",
+      "checkedOn": "2026-08-14",
+      "role": "The OASIS specification defines ExactlyOnce as source retry plus destination duplicate filtering and distinguishes acceptance, acknowledgement, and application delivery."
+    },
+    {
+      "id": "helland-cidr-2007",
+      "url": "https://www.cidrdb.org/cidr2007/papers/cidr07p15.pdf",
+      "published": "2007-01",
+      "checkedOn": "2026-08-14",
+      "role": "Primary position paper motivates message-based state-machine patterns when global distributed transactions are unavailable or impractical."
+    },
+    {
+      "id": "sqlite-atomic-commit-2026",
+      "url": "https://sqlite.org/atomiccommit.html",
+      "checkedOn": "2026-08-14",
+      "role": "Official implementation description bounds all-or-none crash behavior to changes within one SQLite transaction."
+    }
+  ],
+  "question": "Can an atomic receiver inbox/outbox followed by an independently durable idempotent sink eliminate loss and duplication across every preregistered response-loss and process-crash cut, while preserving the boundary between a modeled sink row and a physical effect?",
+  "causalChain": [
+    "A delivery ID and outcome digest enter the receiver.",
+    "The receiver commits its inbox and durable outbox in one local transaction.",
+    "A relay retries the same event ID until it observes a sink acknowledgement.",
+    "The sink commits its inbox marker and modeled effect row in one different local transaction.",
+    "Only after that acknowledgement does the receiver mark the outbox delivered.",
+    "Independent database and history reconstruction adjudicates cardinality, identity, and recovery."
+  ],
+  "competingProtocols": [
+    {
+      "id": "P1",
+      "name": "DUAL_WRITE",
+      "claim": "Committing the receiver inbox before a separate outbox write is recoverable without another durable intent.",
+      "separatingPrediction": "A crash after inbox commitment cannot leave an accepted delivery with no replayable outbox event.",
+      "rejection": "A reachable crash-stable receiver inbox with no outbox, or no healthy path from that state to sink completion."
+    },
+    {
+      "id": "P2",
+      "name": "EARLY_OUTBOX_ACK",
+      "claim": "The relay may mark an outbox delivered before the sink commits because it still intends to send it.",
+      "separatingPrediction": "Every delivered outbox marker implies a matching sink inbox and exactly one sink effect across a crash.",
+      "rejection": "A delivered outbox can survive while the sink has no inbox or effect."
+    },
+    {
+      "id": "P3",
+      "name": "NON_IDEMPOTENT_SINK",
+      "claim": "At-least-once relay retries are sufficient even when the sink effect and duplicate marker are not atomic.",
+      "separatingPrediction": "Lost acknowledgements and crashes never make the sink effect count exceed one.",
+      "rejection": "Any reachable execution with two or more sink effects for one event ID."
+    },
+    {
+      "id": "P4",
+      "name": "ATOMIC_OUTBOX_IDEMPOTENT_SINK",
+      "claim": "Atomic receiver inbox/outbox plus retry and atomic sink inbox/effect preserve at-most-once safety and regain completion after a finite fault prefix.",
+      "separatingPrediction": "All reachable states satisfy M1-M5, and every accepted state has a healthy suffix to one delivered outbox and one sink effect.",
+      "rejection": "Any invariant violation or any accepted reachable state without a healthy completion path."
+    }
+  ],
+  "model": {
+    "finiteState": "Ten variables: receiver inbox, receiver outbox, delivered marker, sink inbox, sink effect count saturated at 2+, four volatile intents/acknowledgements, and whether a crash occurred.",
+    "enumeration": "Breadth-first fixed-point enumeration from the empty state for all four protocols.",
+    "invariants": {
+      "M1": "No crash-stable receiver inbox orphan without an outbox.",
+      "M2": "The sink effect count never exceeds one.",
+      "M3": "A sink inbox exists if and only if exactly one sink effect exists.",
+      "M4": "A delivered outbox implies a committed sink inbox and exactly one effect.",
+      "M5": "Every sink commit has a receiver inbox and outbox origin.",
+      "M6": "Every accepted reachable state has a fault-free path to the terminal one-effect state."
+    },
+    "independence": "A separate Python implementation must reproduce every state count, transition count, pass/fail verdict, and shortest counterexample trace.",
+    "stopRule": "Do not proceed to the process experiment unless P4 is the unique qualifier and the independent audit matches every registered model check."
+  },
+  "confirmation": {
+    "topology": "One physical Windows host; separate Python receiver process, Node relay process, Python sink process; one SQLite file per receiver and one different SQLite file per sink case.",
+    "databaseMode": "Rollback journal, synchronous FULL, foreign keys enabled.",
+    "faultCases": [
+      "Receiver process exit before inbox/outbox commit.",
+      "Receiver process exit after inbox/outbox commit but before HTTP response.",
+      "Sink process exit before inbox/effect commit.",
+      "Sink process exit after inbox/effect commit but before HTTP response.",
+      "Relay exit after a successful sink response but before outbox acknowledgement.",
+      "Receiver exit after delivered-marker commit but before acknowledgement response.",
+      "Fifty concurrent deliveries of one event ID to the sink.",
+      "Conflicting digest, malformed event ID, and malformed digest controls."
+    ],
+    "criteria": {
+      "C1": "Receiver precommit failure retries as created and later replays.",
+      "C2": "Receiver postcommit response loss retries as replay.",
+      "C3": "Sink precommit failure leaves the outbox pending; retry creates one sink effect.",
+      "C4": "Sink postcommit response loss leaves the outbox pending; retry is a sink replay with one effect.",
+      "C5": "Relay failure after the sink response leaves the outbox pending; retry is a sink replay with one effect.",
+      "C6": "Loss of the receiver's delivered acknowledgement leaves the committed outbox delivered and no pending event after restart.",
+      "C7": "Fifty concurrent sink attempts yield exactly one created response, forty-nine replays, and no missing response.",
+      "C8": "Conflicting and malformed inputs are rejected without another effect.",
+      "C9": "Every case has one digest-consistent delivery→outbox→sink inbox→sink effect row chain and both SQLite files pass integrity_check."
+    },
+    "independentAdjudication": "A separate Node program reads every SQLite file read-only, reconstructs case denominators and crash outcomes from history, and recomputes every synthetic HMAC receipt.",
+    "stopRules": [
+      "Preserve any failed first run and seal an amendment before changing a protocol, invariant, denominator, fault location, queue capacity, or code.",
+      "Connection failures count as missing responses, never as replays.",
+      "Do not call a sink database row a physical action.",
+      "Do not infer multi-host or partition tolerance from loopback processes.",
+      "Do not widen a deterministic finite fault matrix into an unbounded liveness claim."
+    ]
+  },
+  "uncertaintyBudget": {
+    "model": "Boolean control state and a 0/1/2+ effect count omit timing, capacity, retention, and unbounded histories.",
+    "implementation": "Receiver and sink share one Python codebase; the independent audit diversifies the checker but not the service implementation.",
+    "network": "Loopback HTTP and request-level response loss do not reproduce packet reordering, asymmetric partition, routing, TLS, or DNS failure.",
+    "storage": "Process exits exercise SQLite recovery but not disk loss, correlated power failure, filesystem corruption, or controller-cache behavior.",
+    "sampling": "Seven deterministic cases and fifty concurrent duplicates are a fixed test matrix, not an operational failure distribution.",
+    "physical": "Physical hosts = 1; physical or third-party side effects = 0."
+  },
+  "safetyEthicsSecurity": "Use synthetic digests, loopback endpoints, non-production keys, and modeled effect rows only. Do not connect the experiment to fabrication tools, payments, messaging accounts, personal data, or production credentials.",
+  "codeHashes": {
+    "scripts/run-rc37-outbox-sink-model.mjs": "cadaf21120763d931565752456dfd4c35777a5dfb3b0835dd12c1bd5c0e56dd3",
+    "scripts/independent_rc37_outbox_sink_model_audit.py": "a46cbe6c1353bfbeccac6fd8ebecd27288f809a1d8be6873b1a66f93fbcdd0f6",
+    "scripts/rc37_chain_service.py": "cf80e86c21444cfcfeec37b1c216a430de15884da0faa488c89bce40a8303972",
+    "scripts/rc37_relay.mjs": "9eadd39f3700e616ac904f12faabb3bd8f06e694c3fa412b3de6e802e024e934",
+    "scripts/run-rc37-outbox-sink-confirmation.mjs": "c6a107a662db8ed46cf4f8317741a5b025c55d82e67bc34364f3f6cbb8aaa374",
+    "scripts/independent-rc37-outbox-sink-audit.mjs": "48aff08bda1761094fdf64c3edecc6c09b2bea15b4c136458debe0291858834a"
+  },
+  "resultStateAtSeal": "No model result, confirmation database, confirmation history, or audit result existed when this document was sealed.",
+  "nextRungIfQualified": "Move receiver, relay or broker, and sink onto distinct physical hosts; inject asymmetric partitions and host loss; then replace the modeled sink effect with an independently instrumented hardware-in-the-loop counter whose idempotency record cannot share the actuator transaction."
+}
