@@ -1,0 +1,113 @@
+{
+  "benchmarkId": "IUCR-QARR-AMORPHOUS-HOLDOUT-0.1",
+  "sealedOn": "2026-08-14",
+  "status": "sealed-before-sample-3-numerical-computation",
+  "question": "Does the RC22 open-world gate transport from an omitted crystalline phase to an omitted amorphous phase, reverse the same two-candidate ranking from brucite to silica, and keep detection distinct from quantitative recovery?",
+  "sourceRoles": {
+    "calibration": ["cpd-1a.prn", "cpd-1b.prn", "cpd-1c.prn"],
+    "knownOnlyControls": ["cpd-1d.prn", "cpd-1e.prn", "cpd-1f.prn", "cpd-1g.prn", "cpd-1h.prn"],
+    "priorPositive": "cpd-2.prn",
+    "externalAmorphousTarget": "cpd-3.prn",
+    "candidateLibrary": ["brucite.prn", "silica.prn"],
+    "knownPureReferences": ["corundum.prn", "fluorite.prn", "zincite.prn"]
+  },
+  "knowledgeFirewall": {
+    "blindDetection": "Load the RC22 known templates, absolute scale, mass threshold, residual threshold, and numerical reduction unchanged. Before the Sample 3 alarm is fixed, code in this stage may not load either candidate profile, the Sample 3 phase description, weighed values, XRF values, published QPA values, or the target identity key.",
+    "candidateReversal": "After the blind alarm is frozen, expose only the same RC22 candidate library and fit brucite and silica under identical one-candidate augmentation. Candidate selection cannot read Sample 3 truth.",
+    "signalLocalization": "After candidate coefficients are frozen but before truth is joined, partition the squared-residual improvement into the preregistered 15-30 degree amorphous-halo interval and its complement without refitting either model.",
+    "finalAdjudication": "Only after alarm, closed compositions, candidate ranking, coefficients, diagnostic mass, localization, code, and hashes are fixed may official Sample 3 truth and comparator measurements be joined.",
+    "retrospectiveLimit": "The benchmark designer knows from the official description that Sample 3 contains amorphous silica. This is an external numerical holdout for the frozen RC22 gate and candidate competition, not a prospective unknown-material discovery."
+  },
+  "frozenRc22Detector": {
+    "benchmarkId": "IUCR-QARR-OPEN-WORLD-PHASE-0.1",
+    "absoluteCoefficientScale": 0.993912948,
+    "massAlarmThresholdPercentagePoints": 10,
+    "residualAlarmThreshold": 0.336902813,
+    "baseline": "On the original 5-150 degree grid, use non-overlapping 2-degree bins, fifth-count-percentile and median-angle anchors, linear interpolation, subtraction, and clipping at zero.",
+    "fitRangeDegrees2Theta": [10, 100],
+    "coefficientFit": "Enumerate every nonempty active set, solve ordinary least squares, reject singular or negative solutions, and retain minimum squared residual.",
+    "normalizedResidual": "sqrt(SSE/sum(target^2)) on the frozen fit range.",
+    "alarm": "Refuse when unnormalized missingMass exceeds ten percentage points OR normalized residual exceeds 0.336902813. Do not clip negative missing mass and do not normalize known phases before this decision.",
+    "noRetuning": "Sample 3 may not change the scale, thresholds, baseline, range, templates, candidate pool, active-set rule, tie rule, or gates."
+  },
+  "closedThreePhaseEstimators": {
+    "peakComposition": "Apply RC20 primary peak windows, sidebands, and response ratios, then normalize only corundum, fluorite, and zincite to 100 percent without refusal.",
+    "wholePatternComposition": "Apply the frozen RC22 three-template fit and RC21 response ratios, then normalize only the three crystalline phases to 100 percent without refusal.",
+    "silentFailureGate": "Silent unsafe failure occurs when an estimator returns a three-phase sum of 100 percent and any known-phase absolute error exceeds five points or omitted amorphous content exceeds five percent."
+  },
+  "candidateCompetition": {
+    "models": ["known three phases plus brucite", "known three phases plus silica"],
+    "selection": "Choose the lower normalized residual after identical four-template NNLS fits; ties within 1e-9 are unresolved.",
+    "identitySuccess": "Silica must rank first with a positive coefficient, cut squared residual by at least 50 percent, finish below the frozen residual threshold, and achieve at least twice the fractional squared-residual reduction of brucite.",
+    "diagnosticMass": "Divide the selected raw coefficient by the frozen RC22 absolute scale and multiply by 100 without closure normalization. This has not been calibrated as an amorphous-silica RIR."
+  },
+  "localizationContract": {
+    "haloDegrees2Theta": [15, 30],
+    "calculation": "Using the full-range frozen three-template and selected silica four-template predictions without refitting, compute baselineSSE-fourTemplateSSE pointwise. Report the signed improvement inside 15-30 degrees and outside it.",
+    "success": "At least 50 percent of the positive total squared-residual improvement must occur in 15-30 degrees, and improvement inside the halo must be positive.",
+    "interpretation": "This localizes model gain to the official amorphous-halo interval. It does not prove chemical identity independently of the candidate reference."
+  },
+  "officialTruthWeightPercent": {
+    "sample3": { "corundum": 30.79, "fluorite": 20.06, "zincite": 19.68, "amorphousSilica": 29.47 }
+  },
+  "officialXrfWeightPercentAsReported": {
+    "sample3": { "corundum": 31.1, "fluorite": 19.9, "zincite": 19.6, "amorphousSilica": 27.1 }
+  },
+  "publishedAuthorQpaWeightPercent": {
+    "method1": { "corundum": 30.7, "fluorite": 20.6, "zincite": 20.0, "amorphousSilica": 28.6 },
+    "method2": { "corundum": 30.8, "fluorite": 19.5, "zincite": 20.0, "amorphousSilica": 29.7 },
+    "method3": { "corundum": 29.8, "fluorite": 19.6, "zincite": 21.3, "amorphousSilica": 29.2 }
+  },
+  "competingHypotheses": [
+    {
+      "id": "H1",
+      "claim": "Closed three-crystalline-phase normalization silently hides amorphous silica.",
+      "prediction": "Both frozen closed estimators return three phases summing to 100 percent without refusal, while at least one absolute phase error including omitted amorphous content exceeds five points.",
+      "reject": "Reject if an estimator refuses before output or every known and omitted-phase error is at most five points."
+    },
+    {
+      "id": "H2",
+      "claim": "The RC22 blind open-world detector transports from omitted crystalline brucite to omitted amorphous silica without retuning.",
+      "prediction": "The unchanged gate retains its zero false alarms on 1d-1h and refuses Sample 3 by mass or residual.",
+      "reject": "Reject on any retuning, any known-only false alarm, or target acceptance. Missing-mass accuracy is scored separately in H4."
+    },
+    {
+      "id": "H3",
+      "claim": "The same small candidate library reverses correctly, distinguishing amorphous silica from brucite rather than rewarding any fourth template.",
+      "prediction": "Silica wins, is positive, halves squared residual, finishes below 0.336902813, and improves fractional squared residual at least twice as much as brucite.",
+      "reject": "Reject on a tie, brucite win, non-positive silica coefficient, less than 50 percent silica improvement, final residual at or above threshold, or improvement ratio below two."
+    },
+    {
+      "id": "H4",
+      "claim": "The frozen absolute coefficient scale quantifies the omitted amorphous fraction after correct attribution.",
+      "prediction": "Diagnostic silica mass lies within ten percentage points of the official 29.47 percent.",
+      "reject": "Reject when absolute error exceeds ten points; identity success cannot rescue quantitative failure."
+    },
+    {
+      "id": "H5",
+      "claim": "Silica-model improvement is physically localized to the documented amorphous halo rather than distributed as generic fit flexibility.",
+      "prediction": "The 15-30 degree interval contributes positively and accounts for at least half of total squared-residual improvement without refitting.",
+      "reject": "Reject if halo improvement is non-positive or its share of positive total improvement is below 0.5."
+    }
+  ],
+  "uncertaintyBudget": {
+    "background": "The frozen fifth-percentile baseline may remove part of a broad amorphous halo; H5 reports localization after exactly that preprocessing rather than selecting a new background after outcome.",
+    "model": "Pure amorphous silica and mixture halo may differ in density, moisture, packing, scattering scale, and background; one decoy cannot approximate database-scale open-set identification.",
+    "truth": "Weighed amounts are primary. XRF and three author QPA methods remain separate comparators and cannot tune the frozen reduction.",
+    "transport": "Sample 2 and 3 share instrument and preparation lineage. The test transports omitted-component morphology but not institution, instrument, or prospective synthesis campaign.",
+    "sampleSize": "This adds one amorphous positive to one crystalline positive and five known-only controls; it cannot estimate general sensitivity, specificity, or prevalence-calibrated risk."
+  },
+  "stopConditions": [
+    "Stop if cpd-3.prn fails its fixed archive identity, numerical grid, deterministic byte, or SHA-256 contract.",
+    "Stop if Sample 3 changes any RC22 detector or candidate parameter.",
+    "Stop if candidate profiles or target truth are loaded before the blind alarm is fixed.",
+    "Stop if localization refits either model or changes the 15-30 degree interval after observing residuals.",
+    "Stop quantitative qualification if the selected candidate mass misses truth by more than ten points even when identity succeeds.",
+    "Stop physical-independence claims because the target, references, and earlier positive share the historical CPD instrument."
+  ],
+  "primarySources": [
+    "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/data",
+    "https://www.iucr.org/__data/iucr/powder/QARR/samples.htm",
+    "https://doi.org/10.1107/S0021889802008798"
+  ]
+}

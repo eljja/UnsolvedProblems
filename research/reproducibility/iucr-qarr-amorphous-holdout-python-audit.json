@@ -1,0 +1,47 @@
+{
+  "auditId": "IUCR-QARR-AMORPHOUS-HOLDOUT-PYTHON-AUDIT-0.1",
+  "generatedOn": "2026-08-14",
+  "implementation": "Python standard library; does not import or execute the JavaScript amorphous-holdout reduction",
+  "denominators": {
+    "targetProfiles": 1,
+    "fitPoints": 4501,
+    "haloPoints": 751,
+    "candidateTemplates": 2
+  },
+  "blindTarget": {
+    "knownMass": 73.838604,
+    "missingMass": 26.161396,
+    "normalizedResidual": 0.204185155,
+    "alarm": true
+  },
+  "closedPrimaryComposition": {
+    "corundum": 43.54032,
+    "fluorite": 28.79405,
+    "zincite": 27.66563
+  },
+  "closedWholeComposition": {
+    "corundum": 46.154522,
+    "fluorite": 26.533022,
+    "zincite": 27.312456
+  },
+  "candidateReversal": {
+    "selected": "silica",
+    "silicaMass": 27.504037,
+    "silicaResidualReduction": 0.027001869,
+    "bruciteResidualReduction": 0.000563301,
+    "improvementRatio": 47.935052911
+  },
+  "localization": {
+    "haloImprovementSse": 326775.452,
+    "outsideImprovementSse": 256913.586,
+    "haloShare": 0.559845108
+  },
+  "decisions": {
+    "H1_closedThreePhaseSilentlyHidesAmorphous": true,
+    "H2_frozenBlindDetectorTransportsToAmorphous": true,
+    "H3_candidateLibraryReversesToSilica": false,
+    "H4_frozenScaleQuantifiesAmorphousMass": true,
+    "H5_gainLocalizesToOfficialHalo": true,
+    "independentPhysicalRungQualified": false
+  }
+}

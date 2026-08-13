@@ -1,0 +1,167 @@
+{
+  "benchmarkId": "IUCR-QARR-AMORPHOUS-HOLDOUT-0.1",
+  "generatedOn": "2026-08-14",
+  "source": {
+    "referenceManifestId": "IUCR-QARR-REFERENCE-PATTERN-MANIFEST-0.1",
+    "holdoutManifestId": "IUCR-QARR-EXTERNAL-HOLDOUT-MANIFEST-0.1",
+    "candidateManifestId": "IUCR-QARR-OPEN-WORLD-MANIFEST-0.1",
+    "targetManifestId": "IUCR-QARR-AMORPHOUS-HOLDOUT-MANIFEST-0.1",
+    "frozenBenchmarkId": "IUCR-QARR-OPEN-WORLD-PHASE-0.1"
+  },
+  "denominators": {
+    "calibrationMixtures": 3,
+    "knownOnlyControls": 5,
+    "priorCrystallinePositives": 1,
+    "externalAmorphousPositives": 1,
+    "knownTemplates": 3,
+    "candidateTemplates": 2,
+    "pointsPerProfile": 7251,
+    "fitPoints": 4501,
+    "haloPoints": 751
+  },
+  "frozenDetector": {
+    "absoluteScale": 0.993912948,
+    "massThresholdPercentagePoints": 10,
+    "residualThreshold": 0.336902813,
+    "knownOnlyFalseAlarms": 0
+  },
+  "blindTargetBeforeCandidateDisclosure": {
+    "active": [
+      "corundum",
+      "fluorite",
+      "zincite"
+    ],
+    "coefficients": {
+      "corundum": 0.18498202,
+      "fluorite": 0.363910253,
+      "zincite": 0.184999168
+    },
+    "knownMass": 73.838604,
+    "missingMass": 26.161396,
+    "normalizedResidual": 0.204185155,
+    "alarmByMass": true,
+    "alarmByResidual": false,
+    "alarm": true
+  },
+  "closedThreePhase": {
+    "primaryPeakRir": {
+      "composition": {
+        "corundum": 43.54032,
+        "fluorite": 28.79405,
+        "zincite": 27.66563
+      },
+      "absoluteErrorsIncludingOmittedPhase": {
+        "corundum": 12.75032,
+        "fluorite": 8.73405,
+        "zincite": 7.98563,
+        "amorphousSilica": 29.47
+      }
+    },
+    "wholePattern": {
+      "composition": {
+        "corundum": 46.154522,
+        "fluorite": 26.533022,
+        "zincite": 27.312456
+      },
+      "absoluteErrorsIncludingOmittedPhase": {
+        "corundum": 15.364522,
+        "fluorite": 6.473022,
+        "zincite": 7.632456,
+        "amorphousSilica": 29.47
+      }
+    }
+  },
+  "candidateReversal": {
+    "selected": "silica",
+    "ranking": [
+      {
+        "candidate": "silica",
+        "active": [
+          "corundum",
+          "fluorite",
+          "zincite",
+          "silica"
+        ],
+        "coefficient": 0.273366187,
+        "diagnosticMass": 27.504037,
+        "normalizedResidual": 0.2014096,
+        "squaredResidualReduction": 0.027001869,
+        "residual": 21032927.445
+      },
+      {
+        "candidate": "brucite",
+        "active": [
+          "corundum",
+          "fluorite",
+          "zincite",
+          "brucite"
+        ],
+        "coefficient": 0.000583895,
+        "diagnosticMass": 0.058747,
+        "normalizedResidual": 0.204127638,
+        "squaredResidualReduction": 0.000563301,
+        "residual": 21604439.818
+      }
+    ],
+    "silicaToBruciteImprovementRatio": 47.935052911
+  },
+  "signalLocalization": {
+    "intervalDegrees2Theta": [
+      15,
+      30
+    ],
+    "haloImprovementSse": 326775.452,
+    "outsideImprovementSse": 256913.586,
+    "totalImprovementSse": 583689.038,
+    "haloShare": 0.559845108
+  },
+  "finalAdjudication": {
+    "officialWeighedTruth": {
+      "corundum": 30.79,
+      "fluorite": 20.06,
+      "zincite": 19.68,
+      "amorphousSilica": 29.47
+    },
+    "officialXrfAsReported": {
+      "corundum": 31.1,
+      "fluorite": 19.9,
+      "zincite": 19.6,
+      "amorphousSilica": 27.1
+    },
+    "publishedAuthorQpa": {
+      "method1": {
+        "corundum": 30.7,
+        "fluorite": 20.6,
+        "zincite": 20,
+        "amorphousSilica": 28.6
+      },
+      "method2": {
+        "corundum": 30.8,
+        "fluorite": 19.5,
+        "zincite": 20,
+        "amorphousSilica": 29.7
+      },
+      "method3": {
+        "corundum": 29.8,
+        "fluorite": 19.6,
+        "zincite": 21.3,
+        "amorphousSilica": 29.2
+      }
+    },
+    "diagnosticSilicaMassAbsoluteError": 1.965963
+  },
+  "decisions": {
+    "H1_closedThreePhaseSilentlyHidesAmorphous": true,
+    "H2_frozenBlindDetectorTransportsToAmorphous": true,
+    "H3_candidateLibraryReversesToSilica": false,
+    "H4_frozenScaleQuantifiesAmorphousMass": true,
+    "H5_gainLocalizesToOfficialHalo": true,
+    "independentPhysicalRungQualified": false
+  },
+  "interpretation": [
+    "The RC22 detector, candidate pool, thresholds, and reduction are reused without Sample 3 tuning.",
+    "Sample 3 is an external positive for omitted-component morphology but shares the historical instrument and known phases.",
+    "Correct candidate reversal does not qualify mass unless H4 independently passes.",
+    "The 15-30 degree partition localizes fit improvement without refitting and cannot alone prove chemical identity."
+  ]
+}

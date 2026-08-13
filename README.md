@@ -11,7 +11,7 @@
 - 확장 설명·대표 시도·최근 연구 흐름: [`research-context.js`](./research-context.js)
 - 문제별 해결 시도 설계: [`solution-context.js`](./solution-context.js)
 - 문제별 가설 경쟁·불확실성 예산·실행 프로그램: [`deep-solution-context.js`](./deep-solution-context.js)
-- 반복 연구 사이클·난제 간 구조적 연결: [`research-cycle-data.js`](./research-cycle-data.js), [`research-cycle-03-data.js`](./research-cycle-03-data.js), [`research-cycle-04-data.js`](./research-cycle-04-data.js), [`research-cycle-05-data.js`](./research-cycle-05-data.js), [`research-cycle-06-data.js`](./research-cycle-06-data.js), [`research-cycle-07-data.js`](./research-cycle-07-data.js), [`research-cycle-08-data.js`](./research-cycle-08-data.js), [`research-cycle-09-data.js`](./research-cycle-09-data.js), [`research-cycle-10-data.js`](./research-cycle-10-data.js), [`research-cycle-11-data.js`](./research-cycle-11-data.js), [`research-cycle-12-data.js`](./research-cycle-12-data.js), [`research-cycle-13-data.js`](./research-cycle-13-data.js), [`research-cycle-14-data.js`](./research-cycle-14-data.js), [`research-cycle-15-data.js`](./research-cycle-15-data.js), [`research-cycle-16-data.js`](./research-cycle-16-data.js), [`research-cycle-17-data.js`](./research-cycle-17-data.js), [`research-cycle-18-data.js`](./research-cycle-18-data.js), [`research-cycle-19-data.js`](./research-cycle-19-data.js), [`research-cycle-20-data.js`](./research-cycle-20-data.js), [`research-cycle-21-data.js`](./research-cycle-21-data.js), [`research-cycle-22-data.js`](./research-cycle-22-data.js)
+- 반복 연구 사이클·난제 간 구조적 연결: [`research-cycle-data.js`](./research-cycle-data.js), [`research-cycle-03-data.js`](./research-cycle-03-data.js), [`research-cycle-04-data.js`](./research-cycle-04-data.js), [`research-cycle-05-data.js`](./research-cycle-05-data.js), [`research-cycle-06-data.js`](./research-cycle-06-data.js), [`research-cycle-07-data.js`](./research-cycle-07-data.js), [`research-cycle-08-data.js`](./research-cycle-08-data.js), [`research-cycle-09-data.js`](./research-cycle-09-data.js), [`research-cycle-10-data.js`](./research-cycle-10-data.js), [`research-cycle-11-data.js`](./research-cycle-11-data.js), [`research-cycle-12-data.js`](./research-cycle-12-data.js), [`research-cycle-13-data.js`](./research-cycle-13-data.js), [`research-cycle-14-data.js`](./research-cycle-14-data.js), [`research-cycle-15-data.js`](./research-cycle-15-data.js), [`research-cycle-16-data.js`](./research-cycle-16-data.js), [`research-cycle-17-data.js`](./research-cycle-17-data.js), [`research-cycle-18-data.js`](./research-cycle-18-data.js), [`research-cycle-19-data.js`](./research-cycle-19-data.js), [`research-cycle-20-data.js`](./research-cycle-20-data.js), [`research-cycle-21-data.js`](./research-cycle-21-data.js), [`research-cycle-22-data.js`](./research-cycle-22-data.js), [`research-cycle-23-data.js`](./research-cycle-23-data.js)
 - 자율 합성 공개 데이터 감사: [`research/alab-public-data-audit.json`](./research/alab-public-data-audit.json)
 - 완전 원장·재생성 기준선: [`research/complete-ledger.schema.json`](./research/complete-ledger.schema.json), [`research/alab-replay-benchmark.json`](./research/alab-replay-benchmark.json)
 - ARROWS 필드 감사·독립 재생 시험: [`research/replay/arrows-ybco-field-audit.json`](./research/replay/arrows-ybco-field-audit.json), [`research/replay/synthetic-replay-fixture.json`](./research/replay/synthetic-replay-fixture.json), [`research/replay/verification-result.json`](./research/replay/verification-result.json)
@@ -52,8 +52,8 @@
 - 31개 불가능·현실 경계 사례
 - 163개 핵심 난제와 130개 로드맵 우선과제
 - 16개 상금 연계 항목(현재 상금·경진 16개)
-- 10개 상금 프로그램과 165개 기관·로드맵·원 연구 출처
-- 22개 누적 연구 사이클, 8개 심층 연구 문제의 75개 사이클 기록과 25개 구조적 연결
+- 10개 상금 프로그램과 167개 기관·로드맵·원 연구 출처
+- 23개 누적 연구 사이클, 8개 심층 연구 문제의 78개 사이클 기록과 26개 구조적 연결
 
 상금 정보는 2026년 8월 5일, 출처 연결·확장 설명·연구 맥락은 2026년 8월 7일 기준으로 검토했습니다. 스물두 차례의 심층 연구 사이클과 연결된 원 연구·보충자료·공개 원곡선·공식 인증서·저자 공개 코드는 2026년 8월 14일 기준으로 다시 확인했습니다. 각 항목은 검증 가능한 질문, 현재까지 축적된 지식, 기술적 병목, 해결 판정 기준과 관련 출처를 함께 기록합니다.
 

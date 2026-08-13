@@ -1,0 +1,42 @@
+{
+  "manifestId": "IUCR-QARR-AMORPHOUS-HOLDOUT-MANIFEST-0.1",
+  "reviewedOn": "2026-08-14",
+  "status": "source-lineage-fixed-after-spec-seal-before-sample-3-computation",
+  "source": {
+    "dataPage": "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr/data",
+    "sampleDescription": "https://www.iucr.org/__data/iucr/powder/QARR/samples.htm",
+    "outcomes": "https://doi.org/10.1107/S0021889802008798",
+    "archiveIndex": "https://web.archive.org/cdx/"
+  },
+  "transportRule": "Parse exactly 7,251 rows. Accept historical printed angle drift only within 0.00002 degree of 5+0.02*i, canonicalize the nominal angle to three decimals, preserve counts, and hash deterministic UTF-8/LF output.",
+  "calibrationExclusion": "Sample 3 may not set or change detector scale, thresholds, baseline, fit range, templates, candidate pool, success gates, or the 15-30 degree localization interval.",
+  "files": [
+    {
+      "name": "cpd-3.prn",
+      "sample": "3",
+      "role": "external-amorphous-positive",
+      "officialUrl": "https://www.iucr.org/__data/iucr/powder/QARR/col/cpd-3.prn",
+      "archive": {
+        "timestamp": "20090728004713",
+        "original": "http://www.iucr.org:80/__data/iucr/powder/QARR/col/cpd-3.prn",
+        "warcDigest": "RRWIRTL2IH4COULSZIQA2LZ6GWUA6Z4W",
+        "cdxLength": 28554
+      },
+      "transportUsed": "fixed-wayback-fallback",
+      "transport": "Current official numerical response when available; otherwise the fixed archived IUCr response identified by timestamp, original URL, WARC digest, and CDX length.",
+      "bytes": 137770,
+      "sha256": "f86f9851124ccb85bb80aaeafb6c0b7329919eb22bb51bcc98fb3a4d6a89ffc3",
+      "points": 7251,
+      "angleStartDegrees2Theta": 5,
+      "angleEndDegrees2Theta": 150,
+      "stepDegrees2Theta": 0.02
+    }
+  ],
+  "verified": {
+    "files": 1,
+    "uniqueHashes": 1,
+    "totalBytes": 137770,
+    "everyFileTwoColumnMonotone": true
+  },
+  "localCache": "Temporary analysis input only; the numerical profile is not redistributed by this repository."
+}
