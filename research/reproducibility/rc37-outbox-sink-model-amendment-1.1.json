@@ -1,0 +1,29 @@
+{
+  "cycle": "RC-2026-37",
+  "amendment": "1.1",
+  "sealedOn": "2026-08-14",
+  "trigger": "The first terminating model run rejected all four protocols because M3 rejected the empty initial state, including the preregistered atomic chain.",
+  "firstRun": {
+    "artifact": "research/reproducibility/rc37-outbox-sink-model-first-failure.json",
+    "sha256": "8b64f512163ee6a8a903cb041e7990a177304c4745055cfb120991c7b261118b",
+    "states": {
+      "DUAL_WRITE": 13,
+      "EARLY_OUTBOX_ACK": 9,
+      "NON_IDEMPOTENT_SINK": 28,
+      "ATOMIC_OUTBOX_IDEMPOTENT_SINK": 10
+    },
+    "uniqueQualifiers": [],
+    "scientificVerdict": "No protocol verdict. The gate failed because the JavaScript encoding compared numeric si=0/1 to a Boolean using strict inequality."
+  },
+  "diagnosis": "M3 intended to test whether a sink marker exists exactly when the saturated effect count equals one. In JavaScript, 0 !== false and 1 !== true are both true, so the original expression rejected states solely because their representations had different types. The independent Python expression did not have this problem because Python equates 0 with False and 1 with True.",
+  "allowedChange": "Replace state.si !== (state.se === 1) with Boolean(state.si) !== (state.se === 1) in the JavaScript M3 predicate.",
+  "forbiddenChanges": [
+    "No protocol transition changed.",
+    "No state variable or saturation rule changed.",
+    "No invariant meaning, confirmation case, denominator, success gate, or stop rule changed.",
+    "No first-run state count, trace, or observation was deleted."
+  ],
+  "codeHashBefore": "cadaf21120763d931565752456dfd4c35777a5dfb3b0835dd12c1bd5c0e56dd3",
+  "codeHashAfter": "da80f99500eb4df8f5b65b4aa0cf171a80f459751c9ed55f7e19cb868dec0505",
+  "resultStateAtSeal": "The corrected model had not been executed and rc37-outbox-sink-model-result.json did not exist."
+}

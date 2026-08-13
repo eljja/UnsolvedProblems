@@ -98,7 +98,7 @@ function adjudicate(protocol) {
   const predicates = {
     M1_no_crash_stable_receiver_orphan: state => state.cr && state.ri && !state.ro,
     M2_sink_effect_at_most_once: state => state.se > 1,
-    M3_sink_marker_matches_one_effect: state => state.si !== (state.se === 1),
+    M3_sink_marker_matches_one_effect: state => Boolean(state.si) !== (state.se === 1),
     M4_delivered_outbox_implies_sink_commit: state => state.od && !(state.si && state.se === 1),
     M5_sink_commit_has_receiver_origin: state => state.si && !(state.ri && state.ro),
     M6_healed_completion_reachable: state => recoverabilityFailures.some(item => key(item) === key(state))
