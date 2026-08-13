@@ -1,0 +1,68 @@
+{
+  "protocolId": "UNSEEN-ATTESTATION-COMMIT-REVEAL-0.6",
+  "fixedOn": "2026-08-14",
+  "status": "pre-reveal-contract",
+  "parentCycle": "RC-2026-30",
+  "purpose": "Test whether two separately implemented adjudicators can classify previously unused boundary and composite bundles before expected outcomes enter the public Git history.",
+  "inputContract": {
+    "structuralSchemas": [
+      "research/reproducibility/attestation-evidence.schema.json",
+      "research/reproducibility/supply-chain-trace.schema.json",
+      "research/reproducibility/reference-value-registry.schema.json",
+      "research/reproducibility/revocation-snapshot.schema.json",
+      "research/reproducibility/claim-denominator-ledger.schema.json",
+      "research/reproducibility/adjudication-timestamp.schema.json",
+      "research/reproducibility/physical-package-commitment.schema.json"
+    ],
+    "caseCount": 28,
+    "caseIds": "C00-C27",
+    "oldFixtureCatalogueAllowedAsTraining": false,
+    "oldFixtureCatalogueHashMayBeUsedOnlyForOverlapAudit": true,
+    "corpusEncoding": "gzip-compressed UTF-8 JSON",
+    "canonicalDigestBoundary": "RFC 8785 JCS for JSON values representable without non-finite numbers or duplicate object keys"
+  },
+  "decisionOrder": [
+    "structural-schema",
+    "evidence-integrity-and-freshness",
+    "trace-order-and-receipt-time",
+    "reference-validity-and-authority",
+    "revocation-time-and-scope",
+    "policy-and-denominator-pre-reveal-commitment",
+    "physical-unit-acquisition-cluster-and-cell-denominator",
+    "timestamp-qualification-consistency",
+    "study-scoped-package-pseudonym-privacy",
+    "identical-observation-counter-world"
+  ],
+  "codeRegistry": {
+    "structure": "S_<DOCUMENT>_<JSON-SCHEMA-KEYWORD>",
+    "evidence": ["E_EVIDENCE_INTEGRITY", "E_EVIDENCE_AGE", "E_EVIDENCE_FUTURE", "E_COUNTER_FRESHNESS", "E_NONCE_FRESHNESS", "E_TARGET_BINDING"],
+    "trace": ["E_TRACE_LINK", "E_TRACE_TIME", "E_TRACE_HEAD", "E_TRACE_RECEIPT", "E_TRACE_RECEIPT_TIME"],
+    "reference": ["E_REFERENCE_DIGEST", "E_REFERENCE_VERSION", "E_REFERENCE_VALIDITY", "E_AUTHORITY_SCOPE"],
+    "revocation": ["E_REVOCATION_DIGEST", "E_REVOCATION_FUTURE", "E_REVOCATION_STALE", "Q_KEY_REVOKED", "Q_REFERENCE_REVOKED"],
+    "adjudication": ["A_POLICY_DIGEST", "A_POLICY_COMMITMENT", "A_TIMELINE_ORDER", "A_LEDGER_DIGEST", "A_UNIT_DUPLICATE", "A_INDEPENDENT_UNIT", "A_ACQUISITION_DUPLICATE", "A_CLUSTER_MAPPING", "A_CELL_BALANCE", "A_TIMESTAMP_QUALIFICATION"],
+    "privacy": ["Q_COMMITMENT_PRIVACY", "Q_COMMITMENT_SCOPE"],
+    "identifiability": ["I_COUNTERWORLD_COLLISION"]
+  },
+  "outputContract": {
+    "perCase": ["caseId", "verdict", "firstCode", "allCodes", "timestampQualification", "privacyQualification"],
+    "verdicts": ["accept-contract", "reject-structure", "reject-semantic", "quarantine", "invalidate-adjudication", "accept-contract-indistinguishable"],
+    "commitment": "Each implementation publishes the RFC8785-JCS SHA-256 digest of its complete ordered prediction array before the reveal file is committed.",
+    "comparison": "After reveal, classify every mismatch as profile-ambiguity, parser-or-implementation-error, threat-model-disagreement, or reveal-error. An unexplained mismatch fails the cycle."
+  },
+  "chronologyClaim": {
+    "gitAnchor": "A pushed pre-reveal commit proves only that the corpus and both output digests preceded the later reveal commit in this repository history.",
+    "trustedTime": "Only a successfully verified RFC 3161 token over the committed payload digest may be described as trusted time. RC31 does not mint such a token.",
+    "transparency": "A future append-only transparency service must provide inclusion and consistency evidence; a local digest file alone is not an external log."
+  },
+  "packagePseudonymClaim": {
+    "construction": "An authorized enrollment service computes HMAC-SHA-256 with a study-specific secret over studyId, a custody-observed normalized package identifier, and a domain separator.",
+    "use": "Equality inside one study can expose duplicate packages and reruns without publishing the raw identifier.",
+    "limits": "The enrollment authority can still link records, key compromise removes dictionary resistance, and no digest proves that the observed object was a genuine package. Cross-study linkage is forbidden by key and study separation."
+  },
+  "independenceBoundary": {
+    "javascript": "Reads the frozen corpus and implements schema and semantic decisions without importing Python code.",
+    "python": "Reads the same frozen corpus and independently implements schema and semantic decisions without executing JavaScript.",
+    "remainingDependence": "Both implementations are authored in one repository, use the same protocol text and corpus, and are not institutional or parser-library independent."
+  },
+  "safety": "All cases are synthetic documents. No production key, real package identifier, exploit, invasive measurement, vendor record, or live supply-chain action is included."
+}

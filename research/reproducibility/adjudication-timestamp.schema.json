@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/adjudication-timestamp.schema.json",
+  "title": "RC31 adjudication timestamp qualification record",
+  "description": "Separates a public Git ordering anchor from an RFC 3161 time-stamp token. A Git commit can establish repository order but is not a trusted time-stamp authority.",
+  "type": "object",
+  "required": ["profile", "payloadCanonicalization", "payloadDigestAlgorithm", "payloadDigest", "qualification", "gitAnchor", "rfc3161", "verifiedAt"],
+  "properties": {
+    "profile": { "const": "urn:unsolved-problems:adjudication-timestamp:0.6" },
+    "payloadCanonicalization": { "const": "RFC8785-JCS" },
+    "payloadDigestAlgorithm": { "const": "sha-256" },
+    "payloadDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "qualification": { "enum": ["git-anchor-only", "rfc3161-verified"] },
+    "gitAnchor": {
+      "type": "object",
+      "required": ["repository", "commit", "path"],
+      "properties": {
+        "repository": { "const": "eljja/UnsolvedProblems" },
+        "commit": { "type": "string", "pattern": "^[a-f0-9]{7,40}$" },
+        "path": { "type": "string", "pattern": "^[A-Za-z0-9._/-]+$" }
+      },
+      "additionalProperties": false
+    },
+    "rfc3161": {
+      "type": "object",
+      "required": ["policyOid", "messageImprint", "genTime", "serialNumber", "tokenBase64", "tsaCertificateChainDigest"],
+      "properties": {
+        "policyOid": { "type": ["string", "null"] },
+        "messageImprint": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+        "genTime": { "type": ["string", "null"], "format": "date-time" },
+        "serialNumber": { "type": ["string", "null"] },
+        "tokenBase64": { "type": ["string", "null"] },
+        "tsaCertificateChainDigest": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "verifiedAt": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,137 @@
+{
+  "corpusId": "UNSEEN-ATTESTATION-CORPUS-0.6",
+  "generatedOn": "2026-08-14",
+  "protocolId": "UNSEEN-ATTESTATION-COMMIT-REVEAL-0.6",
+  "cases": [
+    {
+      "caseId": "C00",
+      "bundleDigest": "a3abfc838bd319f8766300f0f68990e1884aa3d757dcaefc7d18645e2897e647"
+    },
+    {
+      "caseId": "C01",
+      "bundleDigest": "4cac713f3bd19f15ae6ce38a993725b9743903c418c34d47e1d0878d57727f46"
+    },
+    {
+      "caseId": "C02",
+      "bundleDigest": "d5806a2a37eaf9c70ca8600ec24d00b65f2afc0633c4effacdb322493399cdc4"
+    },
+    {
+      "caseId": "C03",
+      "bundleDigest": "aeda1e3aa9a5d4462fff3071aeebd88ffaf6c8c8dde7a2463859a1f325a15165"
+    },
+    {
+      "caseId": "C04",
+      "bundleDigest": "075afbab4002efa016e2026baffac1f8c7c40bb772734b83da28c26886026b99"
+    },
+    {
+      "caseId": "C05",
+      "bundleDigest": "7b885ec718efeddf7dba1b13bd774c3b5d6f3c6ad9ab00531e572eadf01dcc04"
+    },
+    {
+      "caseId": "C06",
+      "bundleDigest": "e9cd475985d8cb32e86d1e71c35fe9bbe6090242fbc9172e1b291afaa3b0148d"
+    },
+    {
+      "caseId": "C07",
+      "bundleDigest": "2f903327a6154a51b96046eb008d8f9ccb3c8b63c930d3d9f5fa31ccee83c80b"
+    },
+    {
+      "caseId": "C08",
+      "bundleDigest": "e23b3860272f6cd7c8cf82bcf8904dbebadb2265cc48c8757ba7ec17583f8293"
+    },
+    {
+      "caseId": "C09",
+      "bundleDigest": "efd71c6f5866133885dbec86529ba5cfa1db18aa8ca1acc22c8c34b9270f52a4"
+    },
+    {
+      "caseId": "C10",
+      "bundleDigest": "35fa70a20754e7955c62caf0714b73deb281d2fbbe7ba2caaf32babbceaa1969"
+    },
+    {
+      "caseId": "C11",
+      "bundleDigest": "ed00dbf7782708283ac31cd3f52e43cc5295691b8adb2e00be40ba355237b03a"
+    },
+    {
+      "caseId": "C12",
+      "bundleDigest": "4867454c2e1a3cf7a41e1d2781b35fe089fd4db08c047b2f8c0630794afcda51"
+    },
+    {
+      "caseId": "C13",
+      "bundleDigest": "c4d22f3b11667d4c6d30d370b1fe6e88f1923dcf1bded299b98aba93e2e43b70"
+    },
+    {
+      "caseId": "C14",
+      "bundleDigest": "0ac1befd5aa394e6d5f0ae6d04483395c61c63a7769958d2d034890b7399b4fc"
+    },
+    {
+      "caseId": "C15",
+      "bundleDigest": "1d75f908c7d35b34353c7d7c50b7f6e00b841a49955e266020e6f5d232f19ed4"
+    },
+    {
+      "caseId": "C16",
+      "bundleDigest": "9f90e679a3ae9252746f3fcb4af5219563503eefbbd21c453e5dc4be52094e13"
+    },
+    {
+      "caseId": "C17",
+      "bundleDigest": "71469c82ae42e91e5ccca5bf8f7d725de03deb521c9c6e8c05dc3b3bf1b6a351"
+    },
+    {
+      "caseId": "C18",
+      "bundleDigest": "806f1b82e0d3007cf5e1c15b811f05ee52188ac877e89d4bc2ae93f6e79cf10b"
+    },
+    {
+      "caseId": "C19",
+      "bundleDigest": "695bcbfc90846727b2740f831ab4327ae479b28ab93cbd8cf983c13638f6ae78"
+    },
+    {
+      "caseId": "C20",
+      "bundleDigest": "f7c0c310d081d2ff838f6cd34bc3814350427ea38f9ea7e07188b7ba1a96dc18"
+    },
+    {
+      "caseId": "C21",
+      "bundleDigest": "2cfa4594e7bf87c7f993ee1f7595aa31feebe8fa8d5e0533c8de3e06a579e7b0"
+    },
+    {
+      "caseId": "C22",
+      "bundleDigest": "5cedd93c204872f169e935bebf325422a670166fda1bc678c5d20082c3241b2a"
+    },
+    {
+      "caseId": "C23",
+      "bundleDigest": "983fed91a425336d8f1d3e9feb9146c412db56626f0bbc81411be5f1c5a1c208"
+    },
+    {
+      "caseId": "C24",
+      "bundleDigest": "90676777dc149e64a4c2af52586c3bdce44a42e32a252ac9df0c584e3762a633"
+    },
+    {
+      "caseId": "C25",
+      "bundleDigest": "ad7398d4c4a1c266badec1596d3c5ff09b2a598bd15fbed481c363e945cd9fb5"
+    },
+    {
+      "caseId": "C26",
+      "bundleDigest": "e7fbbea343fb2e545b273c2d4319fb78120e6f2e09879c4e30c8c7abcc538b38"
+    },
+    {
+      "caseId": "C27",
+      "bundleDigest": "e5ead38fd674fef3e97aec70e2686286831488d667e7311959a7cff8bb40f73e"
+    }
+  ],
+  "caseCount": 28,
+  "oldFixtureCatalogueUsedAsTraining": false,
+  "expectedOutcomesIncluded": false,
+  "serialization": "RFC8785-JCS-compatible canonical JSON subset; gzip mtime=0",
+  "uncompressedBytes": 13258709,
+  "compressedBytes": 2023378,
+  "compressedSha256": "27c838e1c8a8699b6127d0e5ce7229d27d2cea44286ab024f40d2b6803fe8b9e",
+  "protocolSha256": "2a09f02530fb0d03f428029a92b947f07298c4df7c9175be68fdea984ead0d10",
+  "structuralSchemaSha256": {
+    "research/reproducibility/attestation-evidence.schema.json": "e4e269b56be50af07a3eb89a4a4caa34904a3a3628e6d3ed432ef36655885b81",
+    "research/reproducibility/supply-chain-trace.schema.json": "4dda4902be3782d4d07cf9b6e0926c4f829449dba4a3dbe5b20103a44031c0ea",
+    "research/reproducibility/reference-value-registry.schema.json": "75966bce0a79f2fc2e1441b5f8fe49ed9cbbd2c099aad4324fabad3cbfbbfc31",
+    "research/reproducibility/revocation-snapshot.schema.json": "5caf0c9dedc69499fa12b525f2db1f0b5f454459c5b3e58f643f67aff710cb81",
+    "research/reproducibility/claim-denominator-ledger.schema.json": "20218e84639680f0afa9fe711817c3602ee29b6520e09957fd6729eea2d09aca",
+    "research/reproducibility/adjudication-timestamp.schema.json": "105a8275ec60fd483a3da112225f10d29e056d68fae9ab8ce8cdfe54de49cae5",
+    "research/reproducibility/physical-package-commitment.schema.json": "6ce10fa7aee5fa2cd60590100097b674919d5b82de87e1608d53fb50f0ec6a1c"
+  },
+  "safety": "Synthetic documents only; the study key is explicitly a public demo key and provides no real confidentiality."
+}

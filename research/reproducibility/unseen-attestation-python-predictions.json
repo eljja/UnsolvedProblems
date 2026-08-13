@@ -1,0 +1,284 @@
+{
+  "predictionSetId": "UNSEEN-ATTESTATION-PYTHON-PREDICTIONS-0.6",
+  "implementation": "python-independent-semantic-adjudicator",
+  "computedOn": "2026-08-14",
+  "protocolId": "UNSEEN-ATTESTATION-COMMIT-REVEAL-0.6",
+  "corpusSha256": "27c838e1c8a8699b6127d0e5ce7229d27d2cea44286ab024f40d2b6803fe8b9e",
+  "implementationSha256": "e2b4784e1e8bf1ce8372b13c5b698ad7c65c95d30531a64b9565e6e5499e57b4",
+  "expectedOutcomesRead": false,
+  "oldFixtureCatalogueRead": false,
+  "predictions": [
+    {
+      "caseId": "C00",
+      "verdict": "accept-contract",
+      "firstCode": null,
+      "allCodes": [],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C01",
+      "verdict": "reject-semantic",
+      "firstCode": "E_EVIDENCE_AGE",
+      "allCodes": [
+        "E_EVIDENCE_AGE"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C02",
+      "verdict": "reject-semantic",
+      "firstCode": "E_EVIDENCE_FUTURE",
+      "allCodes": [
+        "E_EVIDENCE_FUTURE"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C03",
+      "verdict": "reject-semantic",
+      "firstCode": "E_COUNTER_FRESHNESS",
+      "allCodes": [
+        "E_COUNTER_FRESHNESS"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C04",
+      "verdict": "accept-contract",
+      "firstCode": null,
+      "allCodes": [],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C05",
+      "verdict": "reject-semantic",
+      "firstCode": "E_TRACE_RECEIPT_TIME",
+      "allCodes": [
+        "E_TRACE_RECEIPT_TIME"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C06",
+      "verdict": "reject-semantic",
+      "firstCode": "E_TRACE_TIME",
+      "allCodes": [
+        "E_TRACE_TIME"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C07",
+      "verdict": "reject-semantic",
+      "firstCode": "E_TRACE_TIME",
+      "allCodes": [
+        "E_TRACE_TIME"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C08",
+      "verdict": "accept-contract",
+      "firstCode": null,
+      "allCodes": [],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C09",
+      "verdict": "reject-semantic",
+      "firstCode": "E_REFERENCE_VALIDITY",
+      "allCodes": [
+        "E_REFERENCE_VALIDITY"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C10",
+      "verdict": "accept-contract",
+      "firstCode": null,
+      "allCodes": [],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C11",
+      "verdict": "reject-semantic",
+      "firstCode": "E_REFERENCE_VALIDITY",
+      "allCodes": [
+        "E_REFERENCE_VALIDITY"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C12",
+      "verdict": "accept-contract",
+      "firstCode": null,
+      "allCodes": [],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C13",
+      "verdict": "reject-semantic",
+      "firstCode": "E_REVOCATION_FUTURE",
+      "allCodes": [
+        "E_REVOCATION_FUTURE"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C14",
+      "verdict": "reject-semantic",
+      "firstCode": "E_REVOCATION_STALE",
+      "allCodes": [
+        "E_REVOCATION_STALE"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C15",
+      "verdict": "quarantine",
+      "firstCode": "Q_REFERENCE_REVOKED",
+      "allCodes": [
+        "Q_REFERENCE_REVOKED"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C16",
+      "verdict": "accept-contract-indistinguishable",
+      "firstCode": "I_COUNTERWORLD_COLLISION",
+      "allCodes": [
+        "I_COUNTERWORLD_COLLISION"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C17",
+      "verdict": "invalidate-adjudication",
+      "firstCode": "A_TIMELINE_ORDER",
+      "allCodes": [
+        "A_TIMELINE_ORDER"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C18",
+      "verdict": "invalidate-adjudication",
+      "firstCode": "A_INDEPENDENT_UNIT",
+      "allCodes": [
+        "A_INDEPENDENT_UNIT"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C19",
+      "verdict": "invalidate-adjudication",
+      "firstCode": "A_ACQUISITION_DUPLICATE",
+      "allCodes": [
+        "A_ACQUISITION_DUPLICATE"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C20",
+      "verdict": "invalidate-adjudication",
+      "firstCode": "A_CLUSTER_MAPPING",
+      "allCodes": [
+        "A_CLUSTER_MAPPING"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C21",
+      "verdict": "accept-contract-indistinguishable",
+      "firstCode": "I_COUNTERWORLD_COLLISION",
+      "allCodes": [
+        "I_COUNTERWORLD_COLLISION"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C22",
+      "verdict": "invalidate-adjudication",
+      "firstCode": "A_POLICY_COMMITMENT",
+      "allCodes": [
+        "A_POLICY_COMMITMENT"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C23",
+      "verdict": "invalidate-adjudication",
+      "firstCode": "A_TIMESTAMP_QUALIFICATION",
+      "allCodes": [
+        "A_TIMESTAMP_QUALIFICATION"
+      ],
+      "timestampQualification": "rfc3161-verified",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C24",
+      "verdict": "quarantine",
+      "firstCode": "Q_COMMITMENT_PRIVACY",
+      "allCodes": [
+        "Q_COMMITMENT_PRIVACY"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C25",
+      "verdict": "reject-structure",
+      "firstCode": "S_PACKAGE_CONST",
+      "allCodes": [
+        "S_PACKAGE_CONST"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C26",
+      "verdict": "reject-structure",
+      "firstCode": "S_REGISTRY_ADDITIONALPROPERTIES",
+      "allCodes": [
+        "S_REGISTRY_ADDITIONALPROPERTIES"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    },
+    {
+      "caseId": "C27",
+      "verdict": "reject-structure",
+      "firstCode": "S_LEDGER_MINITEMS",
+      "allCodes": [
+        "S_LEDGER_MINITEMS"
+      ],
+      "timestampQualification": "git-anchor-only",
+      "privacyQualification": "synthetic-only"
+    }
+  ],
+  "predictionDigest": "891251b47e5d7f544cfbca0746d32a59b3ddfbae141d7e68742695277c4df7a1",
+  "limitations": "Custom Draft 2020-12 assertion subset and repository-local semantics; not an independent production parser or trusted timestamp verifier."
+}

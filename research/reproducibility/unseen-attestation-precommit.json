@@ -1,0 +1,47 @@
+{
+  "commitmentId": "UNSEEN-ATTESTATION-PRECOMMIT-0.6",
+  "phase": "pre-reveal",
+  "sealedOn": "2026-08-14",
+  "parentPublicCommit": "95d504c8d67bb35d2a32df7aff040b8fad1437e3",
+  "protocol": {
+    "path": "research/reproducibility/unseen-attestation-protocol.json",
+    "sha256": "2a09f02530fb0d03f428029a92b947f07298c4df7c9175be68fdea984ead0d10"
+  },
+  "corpus": {
+    "path": "research/reproducibility/unseen-attestation-corpus.json.gz",
+    "sha256": "27c838e1c8a8699b6127d0e5ce7229d27d2cea44286ab024f40d2b6803fe8b9e",
+    "manifestPath": "research/reproducibility/unseen-attestation-corpus-manifest.json",
+    "manifestSha256": "895613fb01178bc6623421143295409e085bd70fa8de491ead15e7519be650a4",
+    "caseCount": 28,
+    "expectedOutcomesIncluded": false
+  },
+  "schemas": {
+    "count": 7,
+    "orderedSetSha256": "c56ad09c814844596b2ca4c4d9cd92d2f6de02816a859a1922445bec2d54793b",
+    "files": [
+      "research/reproducibility/attestation-evidence.schema.json",
+      "research/reproducibility/supply-chain-trace.schema.json",
+      "research/reproducibility/reference-value-registry.schema.json",
+      "research/reproducibility/revocation-snapshot.schema.json",
+      "research/reproducibility/claim-denominator-ledger.schema.json",
+      "research/reproducibility/adjudication-timestamp.schema.json",
+      "research/reproducibility/physical-package-commitment.schema.json"
+    ]
+  },
+  "javascript": {
+    "path": "research/reproducibility/unseen-attestation-js-predictions.json",
+    "fileSha256": "03a0958d641c9c83a5b2cb7367a166e61f156d31693b04ee7251cc72b813be23",
+    "predictionDigest": "891251b47e5d7f544cfbca0746d32a59b3ddfbae141d7e68742695277c4df7a1",
+    "expectedOutcomesRead": false
+  },
+  "python": {
+    "path": "research/reproducibility/unseen-attestation-python-predictions.json",
+    "fileSha256": "1587d6987a1e89889d935c2c9e427ca3f7ec8d88aca4b0d43021de1153e52376",
+    "predictionDigest": "891251b47e5d7f544cfbca0746d32a59b3ddfbae141d7e68742695277c4df7a1",
+    "expectedOutcomesRead": false
+  },
+  "predictionsAgreeBeforeReveal": true,
+  "revealPathReserved": "research/reproducibility/unseen-attestation-reveal.json",
+  "chronologyBoundary": "The commit that first contains this file must not contain the reveal path. Its Git parent and descendant relation can prove repository ordering, but not RFC 3161 trusted time or independent authorship.",
+  "hardwareDevicesTested": 0
+}

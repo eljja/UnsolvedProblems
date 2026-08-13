@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/physical-package-commitment.schema.json",
+  "title": "RC31 study-scoped physical-package pseudonym",
+  "description": "A study-scoped equality token for detecting repeated packages without publishing a raw serial. HMAC reduces dictionary attacks only while the study key remains secret; it does not prove physical custody or anonymity.",
+  "type": "object",
+  "required": ["profile", "studyId", "scopeKeyId", "algorithm", "commitment", "enrollmentAuthority", "custodyObservationId", "createdAt", "privacyQualification"],
+  "properties": {
+    "profile": { "const": "urn:unsolved-problems:physical-package-commitment:0.6" },
+    "studyId": { "const": "RC31-HIDDEN-VENDOR-PILOT" },
+    "scopeKeyId": { "type": "string", "pattern": "^KEY-STUDY-[A-Z0-9-]+$" },
+    "algorithm": { "enum": ["hmac-sha-256", "sha-256-public-id"] },
+    "commitment": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "enrollmentAuthority": { "const": "ORG-INDEPENDENT-ENROLLMENT" },
+    "custodyObservationId": { "type": "string", "pattern": "^CUSTODY-[A-Z0-9-]+$" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "privacyQualification": { "enum": ["synthetic-only", "key-controlled-study-scope"] }
+  },
+  "additionalProperties": false
+}
