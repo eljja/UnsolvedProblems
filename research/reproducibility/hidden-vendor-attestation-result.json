@@ -1,0 +1,238 @@
+{
+  "auditId": "HIDDEN-VENDOR-ATTESTATION-RESULT-0.5",
+  "computedOn": "2026-08-14",
+  "status": "synthetic-contract-falsification-complete",
+  "schemas": {
+    "evidence": {
+      "file": "research/reproducibility/attestation-evidence.schema.json",
+      "schemaId": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/attestation-evidence.schema.json",
+      "draft": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "trace": {
+      "file": "research/reproducibility/supply-chain-trace.schema.json",
+      "schemaId": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/supply-chain-trace.schema.json",
+      "draft": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "registry": {
+      "file": "research/reproducibility/reference-value-registry.schema.json",
+      "schemaId": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/reference-value-registry.schema.json",
+      "draft": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "revocation": {
+      "file": "research/reproducibility/revocation-snapshot.schema.json",
+      "schemaId": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/revocation-snapshot.schema.json",
+      "draft": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "ledger": {
+      "file": "research/reproducibility/claim-denominator-ledger.schema.json",
+      "schemaId": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/claim-denominator-ledger.schema.json",
+      "draft": "https://json-schema.org/draft/2020-12/schema"
+    }
+  },
+  "baseBundle": {
+    "structuralErrors": 0,
+    "semanticVerdict": "accept-contract",
+    "evidenceProfile": "urn:unsolved-problems:chiplet-evidence:0.5",
+    "cmwMediaType": "application/cmw+json",
+    "referenceEnvironments": 12,
+    "ledgerUnits": 1530,
+    "ledgerClasses": 5,
+    "cellsPerClass": 18,
+    "unitsPerCellPerClass": 17,
+    "hardwareDevicesTested": 0
+  },
+  "fixtureResults": [
+    {
+      "id": "F00",
+      "mutation": "none",
+      "expected": "accept-contract",
+      "observed": "accept-contract",
+      "primaryCode": null,
+      "expectedCode": null,
+      "schemaErrorCount": 0,
+      "matched": true
+    },
+    {
+      "id": "F01",
+      "mutation": "remove-evidence-nonce",
+      "expected": "reject-structure",
+      "observed": "reject-structure",
+      "primaryCode": "S_EVIDENCE_REQUIRED",
+      "expectedCode": "S_EVIDENCE_REQUIRED",
+      "schemaErrorCount": 1,
+      "matched": true
+    },
+    {
+      "id": "F02",
+      "mutation": "add-unknown-evidence-claim",
+      "expected": "reject-structure",
+      "observed": "reject-structure",
+      "primaryCode": "S_EVIDENCE_ADDITIONAL",
+      "expectedCode": "S_EVIDENCE_ADDITIONAL",
+      "schemaErrorCount": 1,
+      "matched": true
+    },
+    {
+      "id": "F03",
+      "mutation": "stale-nonce-with-valid-shape",
+      "expected": "reject-semantic",
+      "observed": "reject-semantic",
+      "primaryCode": "E_NONCE_FRESHNESS",
+      "expectedCode": "E_NONCE_FRESHNESS",
+      "schemaErrorCount": 0,
+      "matched": true
+    },
+    {
+      "id": "F04",
+      "mutation": "trace-link-rewritten",
+      "expected": "reject-semantic",
+      "observed": "reject-semantic",
+      "primaryCode": "E_TRACE_LINK",
+      "expectedCode": "E_TRACE_LINK",
+      "schemaErrorCount": 0,
+      "matched": true
+    },
+    {
+      "id": "F05",
+      "mutation": "receipt-bound-to-other-statement",
+      "expected": "reject-semantic",
+      "observed": "reject-semantic",
+      "primaryCode": "E_TRACE_RECEIPT",
+      "expectedCode": "E_TRACE_RECEIPT",
+      "schemaErrorCount": 0,
+      "matched": true
+    },
+    {
+      "id": "F06",
+      "mutation": "reference-version-mismatch",
+      "expected": "reject-semantic",
+      "observed": "reject-semantic",
+      "primaryCode": "E_REFERENCE_VERSION",
+      "expectedCode": "E_REFERENCE_VERSION",
+      "schemaErrorCount": 0,
+      "matched": true
+    },
+    {
+      "id": "F07",
+      "mutation": "endorser-outside-competence",
+      "expected": "reject-semantic",
+      "observed": "reject-semantic",
+      "primaryCode": "E_AUTHORITY_SCOPE",
+      "expectedCode": "E_AUTHORITY_SCOPE",
+      "schemaErrorCount": 0,
+      "matched": true
+    },
+    {
+      "id": "F08",
+      "mutation": "revoked-attestation-key",
+      "expected": "quarantine",
+      "observed": "quarantine",
+      "primaryCode": "Q_REVOKED_KEY",
+      "expectedCode": "Q_REVOKED_KEY",
+      "schemaErrorCount": 0,
+      "matched": true
+    },
+    {
+      "id": "F09",
+      "mutation": "policy-rewritten-after-reveal-with-new-digest",
+      "expected": "invalidate-adjudication",
+      "observed": "invalidate-adjudication",
+      "primaryCode": "A_POLICY_POST_REVEAL",
+      "expectedCode": "A_POLICY_POST_REVEAL",
+      "schemaErrorCount": 0,
+      "matched": true
+    },
+    {
+      "id": "F10",
+      "mutation": "policy-content-changed-with-old-digest",
+      "expected": "invalidate-adjudication",
+      "observed": "invalidate-adjudication",
+      "primaryCode": "A_POLICY_DIGEST",
+      "expectedCode": "A_POLICY_DIGEST",
+      "schemaErrorCount": 0,
+      "matched": true
+    },
+    {
+      "id": "F11",
+      "mutation": "hidden-vendor-name-leaked-before-reveal",
+      "expected": "invalidate-adjudication",
+      "observed": "invalidate-adjudication",
+      "primaryCode": "A_HIDDEN_VENDOR_LEAK",
+      "expectedCode": "A_HIDDEN_VENDOR_LEAK",
+      "schemaErrorCount": 0,
+      "matched": true
+    },
+    {
+      "id": "F12",
+      "mutation": "duplicate-unit-row-count-preserved",
+      "expected": "invalidate-adjudication",
+      "observed": "invalidate-adjudication",
+      "primaryCode": "A_UNIT_DUPLICATE",
+      "expectedCode": "A_UNIT_DUPLICATE",
+      "schemaErrorCount": 0,
+      "matched": true
+    },
+    {
+      "id": "F13",
+      "mutation": "rerun-counted-as-new-physical-package",
+      "expected": "invalidate-adjudication",
+      "observed": "invalidate-adjudication",
+      "primaryCode": "A_INDEPENDENT_UNIT",
+      "expectedCode": "A_INDEPENDENT_UNIT",
+      "schemaErrorCount": 0,
+      "matched": true
+    },
+    {
+      "id": "F14",
+      "mutation": "class-cell-rebalanced-after-reveal",
+      "expected": "invalidate-adjudication",
+      "observed": "invalidate-adjudication",
+      "primaryCode": "A_CELL_BALANCE",
+      "expectedCode": "A_CELL_BALANCE",
+      "schemaErrorCount": 0,
+      "matched": true
+    },
+    {
+      "id": "F15",
+      "mutation": "ledger-content-changed-with-old-digest",
+      "expected": "invalidate-adjudication",
+      "observed": "invalidate-adjudication",
+      "primaryCode": "A_LEDGER_DIGEST",
+      "expectedCode": "A_LEDGER_DIGEST",
+      "schemaErrorCount": 0,
+      "matched": true
+    },
+    {
+      "id": "F16",
+      "mutation": "silent-full-compromise-identical-observations",
+      "expected": "accept-contract-indistinguishable",
+      "observed": "accept-contract-indistinguishable",
+      "primaryCode": "I_SILENT_COMPROMISE",
+      "expectedCode": "I_SILENT_COMPROMISE",
+      "schemaErrorCount": 0,
+      "matched": true
+    }
+  ],
+  "summary": {
+    "fixtures": 17,
+    "matched": 17,
+    "structuralRejects": 2,
+    "semanticRejects": 5,
+    "adjudicationInvalidations": 7,
+    "quarantines": 1,
+    "indistinguishableControls": 1,
+    "semanticallyInvalidButStructurallyValid": 13
+  },
+  "hypotheses": {
+    "W1_schemasAloneSuffice": false,
+    "W2_digestAloneProvesPreRevealFreeze": false,
+    "W3_rowCountAloneDefinesDenominator": false,
+    "W4_contractPassageEstablishesHardwarePerformance": false
+  },
+  "adjudicationBoundary": {
+    "established": "Five structural schemas, twelve cross-document semantic gates, seventeen sealed fixtures, a 1,530-row balanced denominator ledger, and pre-reveal chronology are internally executable.",
+    "rejected": "Schema-only adjudication, digest-only freeze claims, row-count-only denominators, and hardware-performance inference from contract passage are rejected.",
+    "unresolved": "Real parsers, production signatures, transparency receipts, physical sensors, vendor transport, clustered error rates, authorized adversaries, and independent institutional adjudication remain untested."
+  },
+  "nextGate": "Freeze a second implementation against the five schemas, then run three synthetic leave-one-vendor-out folds with the hidden vendor label and outcomes inaccessible until both policy and output commitments are timestamped. Hardware recruitment remains downstream of that adversarial audit."
+}

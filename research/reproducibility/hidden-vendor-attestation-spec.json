@@ -1,0 +1,116 @@
+{
+  "protocolId": "HIDDEN-VENDOR-ATTESTATION-0.5",
+  "fixedOn": "2026-08-14",
+  "status": "synthetic-wire-profile-and-outcome-free-adjudication-contract",
+  "purpose": "Turn RC29's conceptual 1,530-unit design into machine-checkable evidence, trace, reference, revocation, and denominator contracts before any hardware enrollment or hidden-vendor result exists.",
+  "standardsBoundary": {
+    "rfc9999": "The envelope uses the finalized RFC 9999 application/cmw+json media type and explicit conceptual-message indicator semantics.",
+    "rfc9711": "Evidence claim names and freshness semantics are EAT-compatible research choices, not a registered EAT profile.",
+    "rfc9943": "Trace statements, receipts, and transparency roles are SCITT-aligned, but no production transparency service or cryptographic receipt is implemented.",
+    "corim": "Reference and authority semantics are inspired by draft-ietf-rats-corim-11, which was an active Internet-Draft on the review date; the JSON registry is not CoRIM conformance.",
+    "hardwareAttestation": "Physical property, context, Measurement Unit, and Target Environment fields track draft-paka-rats-hardware-component-attestation-00, an early work in progress.",
+    "jsonSchema": "Five structural contracts use JSON Schema Draft 2020-12. Cross-document time ordering, digest equality, uniqueness, and statistical scope are semantic gates outside JSON Schema."
+  },
+  "schemas": [
+    "research/reproducibility/attestation-evidence.schema.json",
+    "research/reproducibility/supply-chain-trace.schema.json",
+    "research/reproducibility/reference-value-registry.schema.json",
+    "research/reproducibility/revocation-snapshot.schema.json",
+    "research/reproducibility/claim-denominator-ledger.schema.json"
+  ],
+  "sealedTimeline": {
+    "developmentClosedAt": "2026-08-14T00:00:00Z",
+    "policyFrozenAt": "2026-08-14T00:05:00Z",
+    "hiddenVendorCommittedAt": "2026-08-14T00:06:00Z",
+    "adjudicationLedgerFrozenAt": "2026-08-14T00:07:00Z",
+    "hiddenVendorRevealedAt": "2026-08-14T01:00:00Z",
+    "rule": "Every policy, reference, exclusion, denominator, and nuisance-correction digest must be fixed before hiddenVendorRevealedAt. Any later mutation invalidates performance adjudication rather than merely lowering confidence."
+  },
+  "frozenPolicy": {
+    "policyId": "POLICY-ATT-05",
+    "version": 5,
+    "referenceVersion": "REF-5",
+    "nonce": "A5A5A5A5A5A5A5A5A5A5A5A5A5A5A5A5",
+    "minimumCounter": 41,
+    "maximumEvidenceAgeSeconds": 120,
+    "acceptMaximumDistance": 0.08,
+    "quarantineMaximumDistance": 0.16,
+    "nuisanceCorrection": {
+      "model": "linear-temperature-voltage-age-v1",
+      "temperatureCoefficientPerC": 0.0004,
+      "voltageCoefficientPerV": -0.015,
+      "ageCoefficientPer1000Hours": 0.003,
+      "trainingLabelsAllowed": ["development-genuine-control"],
+      "attackLabelsForbidden": true
+    },
+    "unknownVendorAction": "quarantine",
+    "revokedAuthorityAction": "quarantine",
+    "unsupportedContextAction": "quarantine",
+    "silentFullCompromiseAction": "indistinguishable"
+  },
+  "hiddenVendorDesign": {
+    "developmentVendors": ["VENDOR-ALPHA", "VENDOR-BETA"],
+    "hiddenVendorCommitment": "sha256:3b3f790f9e564b2f345ccf17f5c8d46e75b9d072effa0d982ccca8bb6c36e73c",
+    "revealedVendor": "VENDOR-GAMMA",
+    "folds": 3,
+    "rule": "In each prospective hardware fold, one entire vendor and all its process-lot cells remain unavailable to threshold fitting, nuisance fitting, reference construction, and attack-family selection.",
+    "syntheticScope": "RC30 uses a single synthetic hidden-vendor bundle to falsify the contract. It does not estimate transport performance."
+  },
+  "semanticGates": [
+    "schema-conformance",
+    "cmw-media-type-and-indicator",
+    "fresh-nonce-and-increasing-counter",
+    "package-component-and-key-binding",
+    "trace-order-link-head-and-receipt-binding",
+    "reference-authority-competence-validity-and-version",
+    "revocation-freshness-sequence-and-object-scope",
+    "policy-digest-and-freeze-before-reveal",
+    "ledger-digest-unit-uniqueness-class-cell-balance",
+    "independent-unit-not-rerun-count",
+    "claim-population-and-exclusion-consistency",
+    "hidden-vendor-identity-not-disclosed-before-reveal"
+  ],
+  "hypotheses": [
+    {
+      "id": "W1",
+      "claim": "Five Draft 2020-12 schemas are sufficient to adjudicate the complete protocol.",
+      "prediction": "Every semantically invalid mutation must fail schema validation.",
+      "rejectWhen": "Any mutation passes all structural schemas but fails a cross-document semantic gate."
+    },
+    {
+      "id": "W2",
+      "claim": "A policy digest alone proves that policy was frozen before hidden-vendor reveal.",
+      "prediction": "A post-reveal policy with a self-consistent new digest must be accepted.",
+      "rejectWhen": "The chronology gate rejects a self-consistent policy whose frozenAt is at or after reveal."
+    },
+    {
+      "id": "W3",
+      "claim": "A 1,530-row ledger is a valid denominator whenever its row count is correct.",
+      "prediction": "Duplicating a unit or replacing one physical package with a rerun leaves the claim valid.",
+      "rejectWhen": "Unique physical-unit and cell-balance gates reject the row-count-preserving mutation."
+    },
+    {
+      "id": "W4",
+      "claim": "A structurally and semantically valid bundle proves hidden-vendor hardware performance.",
+      "prediction": "Contract passage is sufficient to claim a one-percent bound on VENDOR-GAMMA.",
+      "rejectWhen": "The adjudicator reports protocol-readiness only because no physical device or independent institution was tested."
+    }
+  ],
+  "independentAdjudication": {
+    "developmentArtifacts": "Schemas, generator, synthetic vendor identities, thresholds, mutation catalogue, and JavaScript semantic verifier in this repository.",
+    "independentAudit": "A Python implementation reconstructs chronology, digest, ledger, balance, and mutation outcomes without executing or importing the JavaScript runner.",
+    "futureHardwareAdjudication": "A separate institution must create its own parser and verifier from the frozen schemas, receive unseen vendors and units, and retain ground truth until all appraisal outputs are committed."
+  },
+  "securitySafetyPrivacy": {
+    "operationalBoundary": "No secret extraction, invasive package modification, live-supply-chain interference, bypass technique, production key, or customer record is included.",
+    "testAuthority": "Real adversarial fixtures require written ownership or authorization, controlled handling, safety review, partner approval, and coordinated disclosure.",
+    "dataMinimization": "Public records use synthetic vendor codes and package identifiers. Real lot, customer, location, personnel, and commercially sensitive provenance remain access-controlled.",
+    "parserRisk": "Implementations must bound CMW nesting, reject unknown critical fields, cap input size, and avoid automatic decoding of embedded content."
+  },
+  "nonClaims": [
+    "No EAT profile registration, CoRIM conformance, SCITT service operation, or production cryptographic protection is established.",
+    "No package, chiplet, PUF, PDN sensor, vendor, lot, fab, attacker, or independent institution is measured.",
+    "No false-accept, false-reject, transport, cell-specific, or hardware-security rate is estimated.",
+    "Passing a schema proves only constraints explicitly represented by that schema."
+  ]
+}

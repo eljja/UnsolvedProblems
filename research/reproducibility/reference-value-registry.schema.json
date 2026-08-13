@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/reference-value-registry.schema.json",
+  "title": "RC30 CoRIM-aligned reference-value registry profile",
+  "description": "A JSON research profile inspired by draft-ietf-rats-corim-11. CoRIM itself is CBOR/CDDL and remains an Internet-Draft, so this file does not claim CoRIM conformance.",
+  "type": "object",
+  "required": ["profile", "registryId", "version", "issuedAt", "authority", "validity", "environments", "policyDigest", "registryDigest"],
+  "properties": {
+    "profile": { "const": "urn:unsolved-problems:chiplet-reference-registry:0.5" },
+    "registryId": { "type": "string", "pattern": "^REG-[A-Z0-9-]+$" },
+    "version": { "type": "string", "pattern": "^REF-[0-9]+$" },
+    "issuedAt": { "type": "string", "format": "date-time" },
+    "authority": {
+      "type": "object",
+      "required": ["organizationId", "competence", "keyId"],
+      "properties": {
+        "organizationId": { "type": "string", "pattern": "^ORG-[A-Z0-9-]+$" },
+        "competence": { "const": "chiplet-physical-reference-provider" },
+        "keyId": { "type": "string", "pattern": "^KEY-[A-Z0-9-]+$" }
+      },
+      "additionalProperties": false
+    },
+    "validity": {
+      "type": "object",
+      "required": ["notBefore", "notAfter"],
+      "properties": {
+        "notBefore": { "type": "string", "format": "date-time" },
+        "notAfter": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "environments": {
+      "type": "array",
+      "minItems": 12,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["environmentId", "vendor", "processFamily", "lot", "measurement", "authorizedBy"],
+        "properties": {
+          "environmentId": { "type": "string", "pattern": "^ENV-[A-Z0-9-]+$" },
+          "vendor": { "enum": ["VENDOR-ALPHA", "VENDOR-BETA"] },
+          "processFamily": { "enum": ["P1", "P2"] },
+          "lot": { "type": "string", "pattern": "^LOT-[1-3]$" },
+          "measurement": {
+            "type": "object",
+            "required": ["kind", "acceptMaximum", "quarantineMaximum", "contextModel"],
+            "properties": {
+              "kind": { "const": "physical-response-distance" },
+              "acceptMaximum": { "type": "number", "minimum": 0, "maximum": 1 },
+              "quarantineMaximum": { "type": "number", "minimum": 0, "maximum": 1 },
+              "contextModel": { "const": "linear-temperature-voltage-age-v1" }
+            },
+            "additionalProperties": false
+          },
+          "authorizedBy": { "type": "string", "pattern": "^KEY-[A-Z0-9-]+$" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "policyDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "registryDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  },
+  "additionalProperties": false
+}

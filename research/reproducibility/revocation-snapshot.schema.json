@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/revocation-snapshot.schema.json",
+  "title": "RC30 independently supplied revocation snapshot",
+  "type": "object",
+  "required": ["profile", "snapshotId", "sequence", "issuedAt", "nextUpdate", "issuer", "revoked", "snapshotDigest"],
+  "properties": {
+    "profile": { "const": "urn:unsolved-problems:chiplet-revocation:0.5" },
+    "snapshotId": { "type": "string", "pattern": "^REV-[A-Z0-9-]+$" },
+    "sequence": { "type": "integer", "minimum": 1 },
+    "issuedAt": { "type": "string", "format": "date-time" },
+    "nextUpdate": { "type": "string", "format": "date-time" },
+    "issuer": {
+      "type": "object",
+      "required": ["organizationId", "keyId"],
+      "properties": {
+        "organizationId": { "const": "ORG-INDEPENDENT-REVOCATION" },
+        "keyId": { "const": "KEY-INDEPENDENT-REVOCATION-1" }
+      },
+      "additionalProperties": false
+    },
+    "revoked": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["objectType", "objectId", "reason", "effectiveAt"],
+        "properties": {
+          "objectType": { "enum": ["attestation-key", "endorser", "reference-registry"] },
+          "objectId": { "type": "string", "pattern": "^[A-Z0-9-]+$" },
+          "reason": { "enum": ["key-compromise", "authority-withdrawn", "superseded", "scope-violation"] },
+          "effectiveAt": { "type": "string", "format": "date-time" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "snapshotDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,120 @@
+{
+  "auditId": "INDEPENDENT-HIDDEN-VENDOR-ATTESTATION-AUDIT-0.5",
+  "computedOn": "2026-08-14",
+  "passed": true,
+  "checks": {
+    "five_distinct_draft_2020_12_schemas": true,
+    "schemas_close_unknown_fields": true,
+    "evidence_requires_nonce_counter_policy_and_trace": true,
+    "ledger_requires_exact_1530_rows": true,
+    "timeline_is_strictly_pre_reveal": true,
+    "base_denominator_reconstructed": true,
+    "base_independent_units_unique": true,
+    "row_preserving_duplicate_detected": true,
+    "rerun_as_new_unit_detected": true,
+    "post_reveal_rebalance_detected": true,
+    "fixture_denominator_and_contract_fixed": true,
+    "javascript_fixture_outcomes_reproduced": true,
+    "only_two_structural_failures": true,
+    "thirteen_semantic_failures_pass_structure": true,
+    "schema_only_hypothesis_rejected": true,
+    "digest_only_freeze_hypothesis_rejected": true,
+    "row_count_only_denominator_rejected": true,
+    "hardware_performance_not_claimed": true,
+    "silent_compromise_remains_indistinguishable": true,
+    "draft_boundaries_are_explicit": true
+  },
+  "independentlyRecomputed": {
+    "baseBalance": {
+      "total": 1530,
+      "classCounts": {
+        "genuine": 306,
+        "replay": 306,
+        "substitution": 306,
+        "tamper": 306,
+        "trace-forgery": 306
+      },
+      "cells": 90,
+      "cellMinimum": 17,
+      "cellMaximum": 17,
+      "unitUnique": true,
+      "physicalUnique": true
+    },
+    "duplicateUnitUnique": false,
+    "rerunPhysicalPackageUnique": false,
+    "rebalancedCellMinimum": 16,
+    "rebalancedCellMaximum": 18,
+    "fixtureOutcomes": {
+      "F00": {
+        "verdict": "accept-contract",
+        "code": null
+      },
+      "F01": {
+        "verdict": "reject-structure",
+        "code": "S_EVIDENCE_REQUIRED"
+      },
+      "F02": {
+        "verdict": "reject-structure",
+        "code": "S_EVIDENCE_ADDITIONAL"
+      },
+      "F03": {
+        "verdict": "reject-semantic",
+        "code": "E_NONCE_FRESHNESS"
+      },
+      "F04": {
+        "verdict": "reject-semantic",
+        "code": "E_TRACE_LINK"
+      },
+      "F05": {
+        "verdict": "reject-semantic",
+        "code": "E_TRACE_RECEIPT"
+      },
+      "F06": {
+        "verdict": "reject-semantic",
+        "code": "E_REFERENCE_VERSION"
+      },
+      "F07": {
+        "verdict": "reject-semantic",
+        "code": "E_AUTHORITY_SCOPE"
+      },
+      "F08": {
+        "verdict": "quarantine",
+        "code": "Q_REVOKED_KEY"
+      },
+      "F09": {
+        "verdict": "invalidate-adjudication",
+        "code": "A_POLICY_POST_REVEAL"
+      },
+      "F10": {
+        "verdict": "invalidate-adjudication",
+        "code": "A_POLICY_DIGEST"
+      },
+      "F11": {
+        "verdict": "invalidate-adjudication",
+        "code": "A_HIDDEN_VENDOR_LEAK"
+      },
+      "F12": {
+        "verdict": "invalidate-adjudication",
+        "code": "A_UNIT_DUPLICATE"
+      },
+      "F13": {
+        "verdict": "invalidate-adjudication",
+        "code": "A_INDEPENDENT_UNIT"
+      },
+      "F14": {
+        "verdict": "invalidate-adjudication",
+        "code": "A_CELL_BALANCE"
+      },
+      "F15": {
+        "verdict": "invalidate-adjudication",
+        "code": "A_LEDGER_DIGEST"
+      },
+      "F16": {
+        "verdict": "accept-contract-indistinguishable",
+        "code": "I_SILENT_COMPROMISE"
+      }
+    }
+  },
+  "independenceBoundary": "This Python audit does not import or execute the JavaScript generator. It reconstructs the 1,530-unit grid, row-count-preserving denominator attacks, chronology, schema contracts, and all seventeen adjudication outcomes from sealed specifications. It does not independently validate a production JSON Schema implementation or any hardware.",
+  "conclusion": "Structure alone misses thirteen invalid research bundles. Pre-reveal chronology, cross-document digests, physical-unit uniqueness, cell balance, authority scope, and explicit non-identifiability are necessary additional gates."
+}

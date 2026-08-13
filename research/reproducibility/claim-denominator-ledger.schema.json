@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/claim-denominator-ledger.schema.json",
+  "title": "RC30 frozen claim-denominator ledger",
+  "description": "The ledger binds each statistical claim to its population, independent unit, strata, exclusions, policy digest, reveal time, and exact method.",
+  "type": "object",
+  "required": ["profile", "ledgerId", "frozenAt", "hiddenVendorCommittedAt", "hiddenVendorRevealedAt", "policyDigest", "independentUnit", "classes", "balance", "exclusions", "units", "ledgerDigest"],
+  "properties": {
+    "profile": { "const": "urn:unsolved-problems:claim-denominator-ledger:0.5" },
+    "ledgerId": { "type": "string", "pattern": "^LEDGER-[A-Z0-9-]+$" },
+    "frozenAt": { "type": "string", "format": "date-time" },
+    "hiddenVendorCommittedAt": { "type": "string", "format": "date-time" },
+    "hiddenVendorRevealedAt": { "type": "string", "format": "date-time" },
+    "policyDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "independentUnit": { "const": "one-physical-package-measured-once-for-primary-adjudication" },
+    "classes": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": { "enum": ["genuine", "replay", "substitution", "tamper", "trace-forgery"] }
+    },
+    "balance": {
+      "type": "object",
+      "required": ["vendors", "processFamilies", "lotsPerVendorProcess", "cellsPerClass", "unitsPerCellPerClass", "unitsPerClass", "totalUnits"],
+      "properties": {
+        "vendors": { "const": 3 },
+        "processFamilies": { "const": 2 },
+        "lotsPerVendorProcess": { "const": 3 },
+        "cellsPerClass": { "const": 18 },
+        "unitsPerCellPerClass": { "const": 17 },
+        "unitsPerClass": { "const": 306 },
+        "totalUnits": { "const": 1530 }
+      },
+      "additionalProperties": false
+    },
+    "exclusions": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": { "enum": ["known-root-compromise", "silent-full-compromise"] }
+    },
+    "units": {
+      "type": "array",
+      "minItems": 1530,
+      "maxItems": 1530,
+      "items": {
+        "type": "object",
+        "required": ["unitId", "physicalPackageDigest", "acquisitionId", "class", "vendorCode", "processFamily", "lot", "clusterId", "primaryUse", "adjudication"],
+        "properties": {
+          "unitId": { "type": "string", "pattern": "^U-[A-Z0-9-]+$" },
+          "physicalPackageDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "acquisitionId": { "type": "string", "pattern": "^ACQ-[A-Z0-9-]+$" },
+          "class": { "enum": ["genuine", "replay", "substitution", "tamper", "trace-forgery"] },
+          "vendorCode": { "enum": ["V1", "V2", "HIDDEN-V3"] },
+          "processFamily": { "enum": ["P1", "P2"] },
+          "lot": { "type": "string", "pattern": "^LOT-[1-3]$" },
+          "clusterId": { "type": "string", "pattern": "^CL-[A-Z0-9-]+$" },
+          "primaryUse": { "const": "adjudication-only" },
+          "adjudication": { "enum": ["pending", "correct", "error", "quarantine"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "ledgerDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  },
+  "additionalProperties": false
+}

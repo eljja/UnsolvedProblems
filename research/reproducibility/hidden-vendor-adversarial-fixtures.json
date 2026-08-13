@@ -1,0 +1,26 @@
+{
+  "fixtureSetId": "HIDDEN-VENDOR-WIRE-FIXTURES-0.5",
+  "fixedOn": "2026-08-14",
+  "baseFixture": "F00",
+  "fixtures": [
+    { "id": "F00", "mutation": "none", "expected": "accept-contract", "layer": "all" },
+    { "id": "F01", "mutation": "remove-evidence-nonce", "expected": "reject-structure", "code": "S_EVIDENCE_REQUIRED", "layer": "schema" },
+    { "id": "F02", "mutation": "add-unknown-evidence-claim", "expected": "reject-structure", "code": "S_EVIDENCE_ADDITIONAL", "layer": "schema" },
+    { "id": "F03", "mutation": "stale-nonce-with-valid-shape", "expected": "reject-semantic", "code": "E_NONCE_FRESHNESS", "layer": "freshness" },
+    { "id": "F04", "mutation": "trace-link-rewritten", "expected": "reject-semantic", "code": "E_TRACE_LINK", "layer": "trace" },
+    { "id": "F05", "mutation": "receipt-bound-to-other-statement", "expected": "reject-semantic", "code": "E_TRACE_RECEIPT", "layer": "trace" },
+    { "id": "F06", "mutation": "reference-version-mismatch", "expected": "reject-semantic", "code": "E_REFERENCE_VERSION", "layer": "reference" },
+    { "id": "F07", "mutation": "endorser-outside-competence", "expected": "reject-semantic", "code": "E_AUTHORITY_SCOPE", "layer": "authority" },
+    { "id": "F08", "mutation": "revoked-attestation-key", "expected": "quarantine", "code": "Q_REVOKED_KEY", "layer": "revocation" },
+    { "id": "F09", "mutation": "policy-rewritten-after-reveal-with-new-digest", "expected": "invalidate-adjudication", "code": "A_POLICY_POST_REVEAL", "layer": "chronology" },
+    { "id": "F10", "mutation": "policy-content-changed-with-old-digest", "expected": "invalidate-adjudication", "code": "A_POLICY_DIGEST", "layer": "integrity" },
+    { "id": "F11", "mutation": "hidden-vendor-name-leaked-before-reveal", "expected": "invalidate-adjudication", "code": "A_HIDDEN_VENDOR_LEAK", "layer": "blinding" },
+    { "id": "F12", "mutation": "duplicate-unit-row-count-preserved", "expected": "invalidate-adjudication", "code": "A_UNIT_DUPLICATE", "layer": "denominator" },
+    { "id": "F13", "mutation": "rerun-counted-as-new-physical-package", "expected": "invalidate-adjudication", "code": "A_INDEPENDENT_UNIT", "layer": "denominator" },
+    { "id": "F14", "mutation": "class-cell-rebalanced-after-reveal", "expected": "invalidate-adjudication", "code": "A_CELL_BALANCE", "layer": "transport" },
+    { "id": "F15", "mutation": "ledger-content-changed-with-old-digest", "expected": "invalidate-adjudication", "code": "A_LEDGER_DIGEST", "layer": "integrity" },
+    { "id": "F16", "mutation": "silent-full-compromise-identical-observations", "expected": "accept-contract-indistinguishable", "code": "I_SILENT_COMPROMISE", "layer": "threat-model" }
+  ],
+  "interpretation": "F01-F02 test structural assertions. F03-F16 deliberately preserve JSON shape where possible and test semantic, chronological, statistical, or identifiability constraints that JSON Schema alone cannot establish.",
+  "securityBoundary": "Mutations operate only on synthetic JSON objects and contain no operational attack procedure."
+}
