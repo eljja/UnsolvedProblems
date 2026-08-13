@@ -1,0 +1,308 @@
+{
+  "resultId": "UNSEEN-ATTESTATION-COMMIT-REVEAL-RESULT-0.6",
+  "computedOn": "2026-08-14",
+  "status": "synthetic-precommit-reveal-complete",
+  "protocolId": "UNSEEN-ATTESTATION-COMMIT-REVEAL-0.6",
+  "preRevealCommit": "b2119ea8ec4e91e13cbed41d46aa165f98037373",
+  "caseCount": 28,
+  "matchedExpectedOutcomes": 28,
+  "javascriptPythonPredictionDigest": "891251b47e5d7f544cfbca0746d32a59b3ddfbae141d7e68742695277c4df7a1",
+  "implementationAgreementBeforeReveal": true,
+  "verdictCounts": {
+    "accept-contract": 5,
+    "reject-semantic": 10,
+    "quarantine": 2,
+    "accept-contract-indistinguishable": 2,
+    "invalidate-adjudication": 6,
+    "reject-structure": 3
+  },
+  "comparisons": [
+    {
+      "caseId": "C00",
+      "expectedVerdict": "accept-contract",
+      "observedVerdict": "accept-contract",
+      "expectedFirstCode": null,
+      "observedFirstCode": null,
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C01",
+      "expectedVerdict": "reject-semantic",
+      "observedVerdict": "reject-semantic",
+      "expectedFirstCode": "E_EVIDENCE_AGE",
+      "observedFirstCode": "E_EVIDENCE_AGE",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C02",
+      "expectedVerdict": "reject-semantic",
+      "observedVerdict": "reject-semantic",
+      "expectedFirstCode": "E_EVIDENCE_FUTURE",
+      "observedFirstCode": "E_EVIDENCE_FUTURE",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C03",
+      "expectedVerdict": "reject-semantic",
+      "observedVerdict": "reject-semantic",
+      "expectedFirstCode": "E_COUNTER_FRESHNESS",
+      "observedFirstCode": "E_COUNTER_FRESHNESS",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C04",
+      "expectedVerdict": "accept-contract",
+      "observedVerdict": "accept-contract",
+      "expectedFirstCode": null,
+      "observedFirstCode": null,
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C05",
+      "expectedVerdict": "reject-semantic",
+      "observedVerdict": "reject-semantic",
+      "expectedFirstCode": "E_TRACE_RECEIPT_TIME",
+      "observedFirstCode": "E_TRACE_RECEIPT_TIME",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C06",
+      "expectedVerdict": "reject-semantic",
+      "observedVerdict": "reject-semantic",
+      "expectedFirstCode": "E_TRACE_TIME",
+      "observedFirstCode": "E_TRACE_TIME",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C07",
+      "expectedVerdict": "reject-semantic",
+      "observedVerdict": "reject-semantic",
+      "expectedFirstCode": "E_TRACE_TIME",
+      "observedFirstCode": "E_TRACE_TIME",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C08",
+      "expectedVerdict": "accept-contract",
+      "observedVerdict": "accept-contract",
+      "expectedFirstCode": null,
+      "observedFirstCode": null,
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C09",
+      "expectedVerdict": "reject-semantic",
+      "observedVerdict": "reject-semantic",
+      "expectedFirstCode": "E_REFERENCE_VALIDITY",
+      "observedFirstCode": "E_REFERENCE_VALIDITY",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C10",
+      "expectedVerdict": "accept-contract",
+      "observedVerdict": "accept-contract",
+      "expectedFirstCode": null,
+      "observedFirstCode": null,
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C11",
+      "expectedVerdict": "reject-semantic",
+      "observedVerdict": "reject-semantic",
+      "expectedFirstCode": "E_REFERENCE_VALIDITY",
+      "observedFirstCode": "E_REFERENCE_VALIDITY",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C12",
+      "expectedVerdict": "accept-contract",
+      "observedVerdict": "accept-contract",
+      "expectedFirstCode": null,
+      "observedFirstCode": null,
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C13",
+      "expectedVerdict": "reject-semantic",
+      "observedVerdict": "reject-semantic",
+      "expectedFirstCode": "E_REVOCATION_FUTURE",
+      "observedFirstCode": "E_REVOCATION_FUTURE",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C14",
+      "expectedVerdict": "reject-semantic",
+      "observedVerdict": "reject-semantic",
+      "expectedFirstCode": "E_REVOCATION_STALE",
+      "observedFirstCode": "E_REVOCATION_STALE",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C15",
+      "expectedVerdict": "quarantine",
+      "observedVerdict": "quarantine",
+      "expectedFirstCode": "Q_REFERENCE_REVOKED",
+      "observedFirstCode": "Q_REFERENCE_REVOKED",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C16",
+      "expectedVerdict": "accept-contract-indistinguishable",
+      "observedVerdict": "accept-contract-indistinguishable",
+      "expectedFirstCode": "I_COUNTERWORLD_COLLISION",
+      "observedFirstCode": "I_COUNTERWORLD_COLLISION",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C17",
+      "expectedVerdict": "invalidate-adjudication",
+      "observedVerdict": "invalidate-adjudication",
+      "expectedFirstCode": "A_TIMELINE_ORDER",
+      "observedFirstCode": "A_TIMELINE_ORDER",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C18",
+      "expectedVerdict": "invalidate-adjudication",
+      "observedVerdict": "invalidate-adjudication",
+      "expectedFirstCode": "A_INDEPENDENT_UNIT",
+      "observedFirstCode": "A_INDEPENDENT_UNIT",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C19",
+      "expectedVerdict": "invalidate-adjudication",
+      "observedVerdict": "invalidate-adjudication",
+      "expectedFirstCode": "A_ACQUISITION_DUPLICATE",
+      "observedFirstCode": "A_ACQUISITION_DUPLICATE",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C20",
+      "expectedVerdict": "invalidate-adjudication",
+      "observedVerdict": "invalidate-adjudication",
+      "expectedFirstCode": "A_CLUSTER_MAPPING",
+      "observedFirstCode": "A_CLUSTER_MAPPING",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C21",
+      "expectedVerdict": "accept-contract-indistinguishable",
+      "observedVerdict": "accept-contract-indistinguishable",
+      "expectedFirstCode": "I_COUNTERWORLD_COLLISION",
+      "observedFirstCode": "I_COUNTERWORLD_COLLISION",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C22",
+      "expectedVerdict": "invalidate-adjudication",
+      "observedVerdict": "invalidate-adjudication",
+      "expectedFirstCode": "A_POLICY_COMMITMENT",
+      "observedFirstCode": "A_POLICY_COMMITMENT",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C23",
+      "expectedVerdict": "invalidate-adjudication",
+      "observedVerdict": "invalidate-adjudication",
+      "expectedFirstCode": "A_TIMESTAMP_QUALIFICATION",
+      "observedFirstCode": "A_TIMESTAMP_QUALIFICATION",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C24",
+      "expectedVerdict": "quarantine",
+      "observedVerdict": "quarantine",
+      "expectedFirstCode": "Q_COMMITMENT_PRIVACY",
+      "observedFirstCode": "Q_COMMITMENT_PRIVACY",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C25",
+      "expectedVerdict": "reject-structure",
+      "observedVerdict": "reject-structure",
+      "expectedFirstCode": "S_PACKAGE_CONST",
+      "observedFirstCode": "S_PACKAGE_CONST",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C26",
+      "expectedVerdict": "reject-structure",
+      "observedVerdict": "reject-structure",
+      "expectedFirstCode": "S_REGISTRY_ADDITIONALPROPERTIES",
+      "observedFirstCode": "S_REGISTRY_ADDITIONALPROPERTIES",
+      "matched": true,
+      "mismatchClass": null
+    },
+    {
+      "caseId": "C27",
+      "expectedVerdict": "reject-structure",
+      "observedVerdict": "reject-structure",
+      "expectedFirstCode": "S_LEDGER_MINITEMS",
+      "observedFirstCode": "S_LEDGER_MINITEMS",
+      "matched": true,
+      "mismatchClass": null
+    }
+  ],
+  "mismatchClassification": {
+    "profileAmbiguity": 0,
+    "parserOrImplementationError": 0,
+    "threatModelDisagreement": 0,
+    "revealError": 0,
+    "unexplained": 0
+  },
+  "chronology": {
+    "checked": true,
+    "preRevealCommitIsAncestor": true,
+    "revealAbsentAtPreRevealCommit": true
+  },
+  "timestampQualification": {
+    "gitAnchoredCases": 27,
+    "rfc3161VerifiedCases": 0,
+    "invalidRfc3161ClaimDetected": true,
+    "claim": "Git ancestry establishes repository ordering only; no trusted time-stamp token was minted or verified."
+  },
+  "packagePseudonymQualification": {
+    "construction": "HMAC-SHA-256 with a public synthetic demo key in the corpus generator",
+    "publicIdHashQuarantined": true,
+    "crossStudyScopeRejectedStructurally": true,
+    "realSecretKeyUsed": false,
+    "physicalCustodyVerified": false
+  },
+  "hypotheses": {
+    "boundarySemanticsAreUnambiguousAcrossTwoImplementations": true,
+    "gitCommitIsTrustedTimestamp": false,
+    "publicIdentifierHashIsPrivacyPreserving": false,
+    "balancedCellCountsDetectEnrollmentLabelSwap": false,
+    "sameRepositoryImplementationsEstablishInstitutionalIndependence": false
+  },
+  "established": "Twenty-eight previously unused synthetic bundles were frozen without expected labels; two separately implemented adjudicators committed the same ordered prediction digest before the reveal file entered Git history, and all twenty-eight verdict/first-code pairs matched the later reveal.",
+  "unresolved": "External parser authorship, production JSON Schema libraries, RFC 3161 token verification, append-only transparency receipts, secret-key enrollment, physical custody, real packages, hidden vendors, and hardware error rates remain untested.",
+  "nextGate": "Give the seven schemas, protocol, and an outcome-free corpus generator interface to an external team; require at least twenty privately generated cases, independent parser libraries, RFC 3161 or equivalent externally verifiable ordering, and signed prediction commitments before any reveal."
+}

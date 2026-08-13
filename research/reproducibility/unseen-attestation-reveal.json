@@ -1,0 +1,43 @@
+{
+  "revealId": "UNSEEN-ATTESTATION-REVEAL-0.6",
+  "revealedOn": "2026-08-14",
+  "protocolId": "UNSEEN-ATTESTATION-COMMIT-REVEAL-0.6",
+  "preRevealCommit": "b2119ea8ec4e91e13cbed41d46aa165f98037373",
+  "preRevealPredictionDigest": "891251b47e5d7f544cfbca0746d32a59b3ddfbae141d7e68742695277c4df7a1",
+  "cases": [
+    { "caseId": "C00", "change": "기준 bundle; evidence age가 허용 상한 120초와 정확히 같음", "expectedVerdict": "accept-contract", "expectedFirstCode": null, "boundary": "freshness upper boundary is inclusive" },
+    { "caseId": "C01", "change": "판정 시각을 1초 늦춰 evidence age를 121초로 만듦", "expectedVerdict": "reject-semantic", "expectedFirstCode": "E_EVIDENCE_AGE", "boundary": "freshness" },
+    { "caseId": "C02", "change": "evidence 발행 시각을 판정 시각보다 1초 뒤로 이동", "expectedVerdict": "reject-semantic", "expectedFirstCode": "E_EVIDENCE_FUTURE", "boundary": "future-dated evidence" },
+    { "caseId": "C03", "change": "counter를 허용 최솟값과 같게 설정하고 evidence binding을 다시 계산", "expectedVerdict": "reject-semantic", "expectedFirstCode": "E_COUNTER_FRESHNESS", "boundary": "strictly increasing counter" },
+    { "caseId": "C04", "change": "receipt 시각을 마지막 trace event 시각과 정확히 같게 설정", "expectedVerdict": "accept-contract", "expectedFirstCode": null, "boundary": "receipt lower boundary is inclusive" },
+    { "caseId": "C05", "change": "receipt를 마지막 trace event보다 1초 앞서 발행", "expectedVerdict": "reject-semantic", "expectedFirstCode": "E_TRACE_RECEIPT_TIME", "boundary": "receipt chronology" },
+    { "caseId": "C06", "change": "세 번째 trace event를 앞 event보다 이른 시각으로 이동하고 hash chain을 일관되게 재계산", "expectedVerdict": "reject-semantic", "expectedFirstCode": "E_TRACE_TIME", "boundary": "self-consistent hash chain with impossible chronology" },
+    { "caseId": "C07", "change": "연속 trace event 두 개의 시각을 같게 만들고 hash chain을 재계산", "expectedVerdict": "reject-semantic", "expectedFirstCode": "E_TRACE_TIME", "boundary": "strict event order" },
+    { "caseId": "C08", "change": "reference validity 시작을 evidence 발행 시각과 같게 설정", "expectedVerdict": "accept-contract", "expectedFirstCode": null, "boundary": "reference lower boundary is inclusive" },
+    { "caseId": "C09", "change": "reference validity 시작을 evidence보다 1초 뒤로 이동", "expectedVerdict": "reject-semantic", "expectedFirstCode": "E_REFERENCE_VALIDITY", "boundary": "reference not-yet-valid" },
+    { "caseId": "C10", "change": "reference validity 종료를 evidence 발행 시각과 같게 설정", "expectedVerdict": "accept-contract", "expectedFirstCode": null, "boundary": "reference upper boundary is inclusive" },
+    { "caseId": "C11", "change": "reference validity 종료를 evidence보다 1초 앞으로 이동", "expectedVerdict": "reject-semantic", "expectedFirstCode": "E_REFERENCE_VALIDITY", "boundary": "expired reference" },
+    { "caseId": "C12", "change": "revocation snapshot을 evidence 뒤지만 판정 전인 시각에 발행", "expectedVerdict": "accept-contract", "expectedFirstCode": null, "boundary": "appraisal-time revocation view" },
+    { "caseId": "C13", "change": "revocation snapshot 발행을 판정 시각보다 1초 뒤로 이동", "expectedVerdict": "reject-semantic", "expectedFirstCode": "E_REVOCATION_FUTURE", "boundary": "future revocation view" },
+    { "caseId": "C14", "change": "revocation nextUpdate를 판정 시각과 같게 설정", "expectedVerdict": "reject-semantic", "expectedFirstCode": "E_REVOCATION_STALE", "boundary": "revocation freshness upper boundary is exclusive" },
+    { "caseId": "C15", "change": "판정 전에 효력이 생긴 reference-registry 권한 철회를 추가", "expectedVerdict": "quarantine", "expectedFirstCode": "Q_REFERENCE_REVOKED", "boundary": "revocation object scope" },
+    { "caseId": "C16", "change": "서로 다른 두 세계가 동일 verifier observation을 내는 counter-world pair", "expectedVerdict": "accept-contract-indistinguishable", "expectedFirstCode": "I_COUNTERWORLD_COLLISION", "boundary": "finite-observation identifiability" },
+    { "caseId": "C17", "change": "hidden-vendor commitment 시각을 reveal 시각과 같게 설정하고 ledger digest를 재계산", "expectedVerdict": "invalidate-adjudication", "expectedFirstCode": "A_TIMELINE_ORDER", "boundary": "strict pre-reveal commitment" },
+    { "caseId": "C18", "change": "멀리 떨어진 두 ledger row가 같은 physical-package commitment를 공유하도록 변경", "expectedVerdict": "invalidate-adjudication", "expectedFirstCode": "A_INDEPENDENT_UNIT", "boundary": "physical-unit denominator" },
+    { "caseId": "C19", "change": "서로 다른 package row가 같은 acquisition ID를 공유하도록 변경", "expectedVerdict": "invalidate-adjudication", "expectedFirstCode": "A_ACQUISITION_DUPLICATE", "boundary": "acquisition denominator" },
+    { "caseId": "C20", "change": "한 row의 cluster ID를 vendor·process·lot과 불일치하게 변경", "expectedVerdict": "invalidate-adjudication", "expectedFirstCode": "A_CLUSTER_MAPPING", "boundary": "cluster mapping" },
+    { "caseId": "C21", "change": "두 vendor label과 cluster를 맞바꿔 모든 class·cell 총수를 보존하고 같은 요약 관측을 유지", "expectedVerdict": "accept-contract-indistinguishable", "expectedFirstCode": "I_COUNTERWORLD_COLLISION", "boundary": "enrollment-label identifiability" },
+    { "caseId": "C22", "change": "policy threshold와 모든 내부 digest를 일관되게 바꾸지만 외부 committed policy digest는 유지", "expectedVerdict": "invalidate-adjudication", "expectedFirstCode": "A_POLICY_COMMITMENT", "boundary": "external commitment versus self-consistent rewrite" },
+    { "caseId": "C23", "change": "RFC 3161 verified라고 표시하지만 token·message imprint·TSA chain을 비워 둠", "expectedVerdict": "invalidate-adjudication", "expectedFirstCode": "A_TIMESTAMP_QUALIFICATION", "boundary": "trusted-time claim evidence" },
+    { "caseId": "C24", "change": "study-secret HMAC 대신 공개 package ID의 무키 SHA-256을 사용", "expectedVerdict": "quarantine", "expectedFirstCode": "Q_COMMITMENT_PRIVACY", "boundary": "dictionary-resistant pseudonym" },
+    { "caseId": "C25", "change": "package commitment의 study scope를 다른 연구로 변경", "expectedVerdict": "reject-structure", "expectedFirstCode": "S_PACKAGE_CONST", "boundary": "closed study profile" },
+    { "caseId": "C26", "change": "reference environment에 등록되지 않은 critical field를 추가", "expectedVerdict": "reject-structure", "expectedFirstCode": "S_REGISTRY_ADDITIONALPROPERTIES", "boundary": "closed reference schema" },
+    { "caseId": "C27", "change": "ledger에서 한 row를 제거하고 선언된 총수는 그대로 둠", "expectedVerdict": "reject-structure", "expectedFirstCode": "S_LEDGER_MINITEMS", "boundary": "exact denominator cardinality" }
+  ],
+  "truthBoundary": "Expected outcomes were added only after the pre-reveal commit was pushed. They are protocol expectations for synthetic bundles, not empirical labels from hardware.",
+  "nonClaims": [
+    "Repository chronology is not an RFC 3161 trusted timestamp.",
+    "Two implementations by one authoring environment are not institutional independence.",
+    "No production parser library, TSA token, private enrollment key, real package, vendor, sensor, or attack was tested."
+  ]
+}
