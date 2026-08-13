@@ -372,8 +372,11 @@
 }
 
 @media (max-width: 520px) {
+  .lab-header { grid-template-columns: 30px minmax(0, 1fr); gap: 8px; }
+  .lab-header .brand { min-width: 0; }
   .lab-header .brand img { width: 30px; height: 30px; }
-  .back-link { max-width: 136px; line-height: 1.15; }
+  .lab-header-actions { min-width: 0; gap: 6px; }
+  .back-link { max-width: none; padding: 0 10px; line-height: 1.15; white-space: nowrap; }
   .lab-hero h1 { font-size: 2.15rem; }
   .lab-deck { font-size: .91rem; }
   .decision-card { min-height: 350px; padding: 29px 25px; border-radius: 20px; }
