@@ -1,0 +1,117 @@
+{
+  "cycle": "RC-2026-40",
+  "precommitId": "RC40-INTERVAL-FAULT-TREE-V1",
+  "sealedOn": "2026-08-20",
+  "selection": {
+    "problemIds": ["UP-605", "UP-602", "UP-315"],
+    "reason": "RC39 proved a 2f+1 exact-report boundary while explicitly excluding analogue uncertainty, missing reports, and structured common causes. With no HIL hardware available, the highest-information next step is to determine when uncertainty alone merges event counts, how omission changes the witness lower bound, and which independently verifiable safeguards block every modeled false-certificate cut set without confusing refusal with recovery."
+  },
+  "researchQuestion": "For physical event counts separated by one unit, what interval width and active-witness quorum uniquely identify count under f arbitrary reports and m omissions, and what minimum safeguard hitting set blocks structured common-cause paths to false acceptance?",
+  "factsAtSeal": [
+    "JCGM 106:2012 treats conformity as a decision under measurement uncertainty and explains that guard bands can limit incorrect-decision risk near tolerance boundaries.",
+    "JCGM's current publication list includes GUM-5:2026 examples and a 2026 amendment on nonlinearity, confirming that uncertainty propagation and decision rules remain active metrology work rather than a solved implementation detail.",
+    "Marzullo's 1990 primary study models continuous-valued sensor failures, modifies specifications to accommodate sensor uncertainty, and analyzes attainable accuracy under a hierarchy of failure models.",
+    "The NASA Fault Tree Handbook defines a minimal cut set as the smallest basic-event combination producing a top event and warns that common characteristics in a cut set reveal dependent or common-cause vulnerability.",
+    "NRC NUREG/CR-7007 distinguishes diversity across different technologies, different approaches within digital technology, and different architectures within one technology; merely counting nominally separate channels does not establish enough diversity.",
+    "RC39's official RATS, TPM, OPC UA, NIST, NASA, and NRC sources remain applicable to freshness, component binding, transport integrity, calibration, and common-cause boundaries.",
+    "No calibrated interval sensor, physical actuator, HIL device, independent power or clock domain, physical event, or empirical fault frequency is available in this workspace."
+  ],
+  "hypotheses": [
+    {
+      "code": "H1",
+      "claim": "When every healthy interval is narrower than the spacing between adjacent event counts, exact identification under at most f arbitrary interval reports and m missing reports is possible exactly when n is at least 2f+m+1.",
+      "separatingPrediction": "The complete n=1..6, f=0..2, m=0..2 grid at radius 0.25 will have zero observation collisions iff n>=2f+m+1; in particular n=3,f=1,m=1 will collide while n=4,f=1,m=1 will not.",
+      "rejectWhen": "Any grid cell differs from the formula, the three-witness omission case identifies, or the four-witness omission case collides."
+    },
+    {
+      "code": "H2",
+      "claim": "Witness count alone can recover exact event count even when a healthy measurement interval spans adjacent count values.",
+      "separatingPrediction": "With count spacing one, a radius strictly below one will isolate the generating count in the finite report library, while radius one will admit one visible interval containing at least two truths even with n=1,f=0,m=0.",
+      "rejectWhen": "The radius-one fault-free case remains identifiable or a radius below one collides in the same no-fault design."
+    },
+    {
+      "code": "H3",
+      "claim": "A minimum set of independently verifiable safeguards can block every structured minimal cut set leading to false exact-certificate acceptance.",
+      "separatingPrediction": "The frozen seven-cut, eight-safeguard incidence structure will have minimum hitting-set size five and exactly three minimum sets, each containing separate processing, epoch, identity, calibration, and one external physical veto modality.",
+      "rejectWhen": "The exact enumeration finds a smaller set, a different number of minimum sets, or a minimum set omits one of the four forced non-sensor controls or lacks an external physical veto."
+    },
+    {
+      "code": "H4",
+      "claim": "One outside-domain veto witness both detects a false operational consensus and recovers the exact physical event count.",
+      "separatingPrediction": "For truth one with operational reports [0,0,0] and outside report one, naive plurality returns the wrong zero while a safe veto policy returns inconclusive; exact recovery still requires its own active quorum.",
+      "rejectWhen": "The outside report makes majority recovery correct without additional assumptions or the veto policy accepts the operational zero."
+    },
+    {
+      "code": "H5",
+      "claim": "Missing physical evidence can be ignored without changing exact-identification guarantees.",
+      "separatingPrediction": "An all-missing allowed observation will be compatible with every truth; each additional allowed omission raises the necessary witness count by one in the narrow-interval bound.",
+      "rejectWhen": "An allowed all-missing observation identifies one truth or the grid is independent of m."
+    }
+  ],
+  "causalChain": {
+    "inputAndAllowedAssumptions": "Event counts {0,1,2}, unit count spacing, a finite interval library, arbitrary-report budget f, omission budget m, and an explicit structured fault tree.",
+    "bottleneck": "Healthy uncertainty may cover adjacent counts, missingness may erase the honest majority, and a shared fault can corrupt every operational channel or bind a correct value to the wrong event.",
+    "bridgeLemma": "For the frozen interval library with radius below count spacing, any alternative truth needs f arbitrary reports plus more honest support than the remaining n-f-m channels; singleton identification is therefore expected exactly at n>=2f+m+1.",
+    "independentAdjudicand": "Truth-set cardinality for each visible interval vector plus exact enumeration of safeguard subsets hitting every frozen minimal cut set.",
+    "finalCriterion": "Exact recovery requires singleton interval classes under the declared f,m budget; safe refusal requires every modeled false-acceptance cut set to be hit, and the two claims must never be merged."
+  },
+  "intervalModel": {
+    "truths": [0, 1, 2],
+    "reportCenters": [0, 1, 2],
+    "narrowRadius": 0.25,
+    "radiusSweep": [0.25, 0.75, 1, 1.25],
+    "grid": { "n": [1, 2, 3, 4, 5, 6], "f": [0, 1, 2], "m": [0, 1, 2], "cells": 54 },
+    "healthyReportRule": "Any library interval containing the true count is admissible.",
+    "arbitraryReportRule": "An arbitrary witness may emit any interval in the library.",
+    "missingReportRule": "A missing witness emits null and consumes the omission budget.",
+    "stopRule": "Stop without a scientific verdict if JavaScript and independent Python differ on any cell's world, observation, collision, or identification count, any radius-sweep result, or any minimum hitting set. Preserve the first outputs before amending code."
+  },
+  "structuredFaultTree": {
+    "topEvent": "accept a false exact physical-event certificate",
+    "minimalCutSetIds": ["M1", "M2", "M3", "M4", "M5", "M6", "M7"],
+    "safeguardIds": ["S_PROCESSOR", "S_EPOCH", "S_IDENTITY", "S_CALIBRATION", "W_MECHANICAL", "W_OPTICAL", "W_ENERGY", "S_RETENTION"],
+    "expectedMinimumSize": 5,
+    "expectedMinimumSets": [
+      ["S_PROCESSOR", "S_EPOCH", "S_IDENTITY", "S_CALIBRATION", "W_MECHANICAL"],
+      ["S_PROCESSOR", "S_EPOCH", "S_IDENTITY", "S_CALIBRATION", "W_OPTICAL"],
+      ["S_PROCESSOR", "S_EPOCH", "S_IDENTITY", "S_CALIBRATION", "W_ENERGY"]
+    ],
+    "semanticBoundary": "Hitting one basic event in each minimal cut set prevents the modeled top event through safe refusal. It does not estimate cut-set probabilities, prove safeguard effectiveness, or provide an exact-recovery quorum."
+  },
+  "criteria": [
+    "C1 narrow interval grid matches n>=2f+m+1",
+    "C2 n=3 tolerates f=1 with m=0",
+    "C3 n=3 fails with f=1 and m=1",
+    "C4 n=4 tolerates f=1 and m=1",
+    "C5 radii below count spacing identify without faults",
+    "C6 radius at count spacing collides without faults",
+    "C7 an all-missing allowed observation is ambiguous",
+    "C8 minimum safeguard hitting set has size five",
+    "C9 exactly three minimum safeguard sets exist",
+    "C10 every minimum set includes four forced non-sensor controls",
+    "C11 every minimum set includes one external physical veto",
+    "C12 every reported minimum set is inclusion-minimal",
+    "C13 an external veto refuses while naive plurality is wrong",
+    "C14 no physical result is claimed"
+  ],
+  "uncertaintyBudget": {
+    "measurement": "Interval radii are designed values, not calibrated coverage intervals. No distribution, coverage probability, bias, drift, hysteresis, latency, or environmental transfer is measured.",
+    "missingness": "Missing reports are bounded adversarially; the model does not estimate whether field missingness is random, condition-dependent, or attacker-induced.",
+    "faultTree": "The seven minimal cut sets are a prospective design grammar, not an empirical completeness claim or frequency model. Unknown common causes may remain outside the tree.",
+    "safeguards": "A coverage edge means a safeguard is designed to block one basic fault; effectiveness requires a future independent artifact and is not proven by enumeration.",
+    "externalValidity": "The n>=2f+m+1 result applies to scalar unit-spaced counts and the frozen interval library, not arbitrary continuous dynamics or correlated analogue errors.",
+    "decision": "The model separates safe refusal from exact recovery; an inconclusive veto is not counted as a recovered event count."
+  },
+  "safetyEthicsEnvironment": "No actuator is operated. Future physical work must retain RC39 energy limits, guarding, emergency stop, electrical isolation, lawful networking, independent calibration, non-human test subjects, and safe disposal requirements.",
+  "codeHashes": {
+    "scripts/run-rc40-interval-fault-tree-model.mjs": "85349b07be374c231642062de0a8a6a89ce59f25b02b56a6e87084e452b792d0",
+    "scripts/independent_rc40_interval_fault_tree_audit.py": "169f2c544890b1ab0abab04773e1df5ea17b3d997f9b5441044e7186b3a255ec",
+    "research/reproducibility/rc40-fault-domain-ledger.schema.json": "6635e7f5b2b9d71b73a32b36f84961f4e3aea07564fc3b50c97e3d05c8687fc4"
+  },
+  "resultStateAtSeal": "No RC40 interval/fault-tree result or independent Python audit exists. No physical sensor, actuator, event, calibration, or HIL run was created.",
+  "allowedAfterSeal": [
+    "Execute the frozen JavaScript model and independent Python audit and preserve outputs.",
+    "If an implementation defect blocks adjudication, preserve the failed artifact and add a numbered amendment before changing frozen code.",
+    "Add bilingual interpretation, official sources, structural connections, validation, site loaders, and deployment without changing frozen observations."
+  ]
+}

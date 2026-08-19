@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/rc40-fault-domain-ledger.schema.json",
+  "title": "RC40 structured fault-domain and safeguard ledger",
+  "description": "Records why a physical-event certificate can safely accept, refuse, or recover under interval uncertainty and structured common causes.",
+  "type": "object",
+  "required": ["ledgerId", "topEvent", "eventCountSpacing", "witnesses", "basicFaults", "minimalCutSets", "safeguards", "decisionPolicy", "independentAudit"],
+  "properties": {
+    "ledgerId": { "type": "string", "minLength": 1 },
+    "topEvent": { "const": "accept a false exact physical-event certificate" },
+    "eventCountSpacing": { "type": "number", "exclusiveMinimum": 0 },
+    "witnesses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "interval", "status", "powerDomain", "clockDomain", "processorDomain", "calibrationDomain", "physicalPrinciple", "eventIdentityDomain"],
+        "properties": {
+          "id": { "type": "string" },
+          "interval": { "type": ["array", "null"], "prefixItems": [{ "type": "number" }, { "type": "number" }], "items": false },
+          "status": { "enum": ["reported", "missing", "rejected"] },
+          "powerDomain": { "type": "string" },
+          "clockDomain": { "type": "string" },
+          "processorDomain": { "type": "string" },
+          "calibrationDomain": { "type": "string" },
+          "physicalPrinciple": { "type": "string" },
+          "eventIdentityDomain": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "basicFaults": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["id", "affectedDomains", "evidence"], "properties": { "id": { "type": "string" }, "affectedDomains": { "type": "array", "items": { "type": "string" } }, "evidence": { "type": "string", "minLength": 10 } }, "additionalProperties": false } },
+    "minimalCutSets": { "type": "array", "minItems": 1, "items": { "type": "array", "minItems": 1, "items": { "type": "string" }, "uniqueItems": true } },
+    "safeguards": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["id", "blocksBasicFaults", "verificationArtifact"], "properties": { "id": { "type": "string" }, "blocksBasicFaults": { "type": "array", "items": { "type": "string" } }, "verificationArtifact": { "type": "string", "minLength": 1 } }, "additionalProperties": false } },
+    "decisionPolicy": {
+      "type": "object",
+      "required": ["arbitraryFaultBudget", "missingBudget", "minimumActiveQuorum", "guardBand", "vetoRule", "recoveryRule", "outsideModelRule"],
+      "properties": {
+        "arbitraryFaultBudget": { "type": "integer", "minimum": 0 },
+        "missingBudget": { "type": "integer", "minimum": 0 },
+        "minimumActiveQuorum": { "type": "integer", "minimum": 1 },
+        "guardBand": { "type": "number", "exclusiveMinimum": 0 },
+        "vetoRule": { "type": "string", "minLength": 20 },
+        "recoveryRule": { "type": "string", "minLength": 20 },
+        "outsideModelRule": { "const": "inconclusive" }
+      },
+      "additionalProperties": false
+    },
+    "independentAudit": { "type": "object", "required": ["implementation", "blindTo", "rawArtifactHash"], "properties": { "implementation": { "type": "string" }, "blindTo": { "type": "array", "items": { "type": "string" } }, "rawArtifactHash": { "type": "string", "pattern": "^[0-9a-f]{64}$" } }, "additionalProperties": false }
+  },
+  "additionalProperties": false
+}
