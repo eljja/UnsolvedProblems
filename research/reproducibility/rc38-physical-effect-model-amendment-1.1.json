@@ -1,0 +1,40 @@
+{
+  "cycle": "RC-2026-38",
+  "amendment": "1.1",
+  "sealedOn": "2026-08-20",
+  "trigger": "The first terminating run exposed two transition-model defects: retryable protocols could execute a second physical action without first crossing a crash/retry transition, and the shared completion transition could accept a durable marker before any physical action occurred.",
+  "firstModelRun": {
+    "artifact": "research/reproducibility/rc38-physical-effect-model-first-failure.json",
+    "sha256": "b71ef0cf1321257c2eb5cf13e8c9a559830e1f4eb10c1076fc9a39a9da576ca7",
+    "scientificVerdict": "No protocol verdict. The graph admitted executions that the preregistered crash-window question does not permit."
+  },
+  "firstIndependentAudit": {
+    "artifact": "research/reproducibility/rc38-physical-effect-model-python-audit-first-failure.json",
+    "sha256": "a7461a1f26fef7fa09e0dd9f7f1facf6acb5ab5cd58debaa5ef7218d9c40ef6c",
+    "score": "80/80",
+    "interpretation": "The independent implementation reproduced the defective graph exactly; agreement between implementations did not validate the graph's scientific meaning."
+  },
+  "diagnosis": [
+    "PULSE_THEN_MARKER, QOS2_ONCE_HANDLER_RETRY, LATE_SENSOR_AFTER_PULSE, and ABSOLUTE_SETPOINT_RETRY allowed their second actuation whenever the saturated effect count was below two. The second actuation therefore did not require r=1, the modeled evidence of a retry after a fault.",
+    "commonFinish required only a live process and durable marker. MARKER_THEN_PULSE could consequently terminate with marker=1 and effectCount=0."
+  ],
+  "allowedChanges": [
+    "Require effectCount=0 for the first actuation or effectCount=1 and retryFlag=1 for the second actuation in each retryable protocol.",
+    "Require effectCount greater than zero before the shared COMPLETE transition.",
+    "Apply the identical two changes to the independently written Python transition relation."
+  ],
+  "forbiddenChanges": [
+    "No state variable, observation set, invariant, protocol list, expected qualifier, confirmation case, denominator, success gate, or stop rule may change.",
+    "The first model result and first independent audit must remain byte-exact and addressable by their sealed SHA-256 digests.",
+    "No final model result may be interpreted until both amended implementations have been sealed and the model has been rerun."
+  ],
+  "codeHashesBefore": {
+    "model": "a2cf481f83e574be0869b856820838a486f5b8f79f2131efba60b796c79323c",
+    "independentAudit": "9e8fd57b55ea51de879ee77c522aae5f23280ac972e8432cefa60b796c79323c"
+  },
+  "codeHashesAfter": {
+    "model": "320aa274ed02ad1d4fad5bc3600bf2c7fe4e2f34e440a3a1d3bbab3eef4a1839",
+    "independentAudit": "acdddfd8171b035df8f1675953f52d84eaa218a0f384f0c21c323a51ca1e8997"
+  },
+  "resultStateAtSeal": "The amended model and independent audit have not been executed. Their final result paths are absent."
+}

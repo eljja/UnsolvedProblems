@@ -26,7 +26,7 @@ def edge(items, action, value, **updates):
 
 
 def finish(value, items):
-    if value["v"] and value["m"]:
+    if value["v"] and value["m"] and value["e"] > 0:
         edge(items, "COMPLETE", value, v=0)
 
 
@@ -39,18 +39,18 @@ def transitions(protocol, value):
         finish(value, out)
         if v and m and e == 0: edge(out, "CRASH_RESTART", value, v=0, r=1)
     elif protocol == "PULSE_THEN_MARKER":
-        if v and not m and e < 2: edge(out, "PULSE", value, e=min(2, e + 1), x=1)
+        if v and not m and (e == 0 or (e == 1 and r == 1)): edge(out, "PULSE", value, e=min(2, e + 1), x=1)
         if v and not m and e > 0: edge(out, "WRITE_MARKER", value, m=1)
         finish(value, out)
         if v and not m and e > 0 and not r: edge(out, "CRASH_RETRY", value, r=1)
     elif protocol == "QOS2_ONCE_HANDLER_RETRY":
         if not q: edge(out, "DELIVER_APPLICATION_MESSAGE_ONCE", value, q=1, v=1)
-        if q and v and not m and e < 2: edge(out, "PULSE", value, e=min(2, e + 1), x=1)
+        if q and v and not m and (e == 0 or (e == 1 and r == 1)): edge(out, "PULSE", value, e=min(2, e + 1), x=1)
         if q and v and not m and e > 0: edge(out, "WRITE_MARKER", value, m=1)
         finish(value, out)
         if q and v and not m and e > 0 and not r: edge(out, "CRASH_RETRY_HANDLER", value, r=1)
     elif protocol == "LATE_SENSOR_AFTER_PULSE":
-        if v and not m and s == 0 and e < 2: edge(out, "PULSE", value, e=min(2, e + 1), x=1)
+        if v and not m and s == 0 and (e == 0 or (e == 1 and r == 1)): edge(out, "PULSE", value, e=min(2, e + 1), x=1)
         if v and s < e: edge(out, "RECORD_LATE_SENSOR", value, s=e)
         if v and not m and s > 0: edge(out, "WRITE_MARKER", value, m=1)
         finish(value, out)
@@ -66,7 +66,7 @@ def transitions(protocol, value):
         finish(value, out)
         if v and not m and a and not r: edge(out, "CRASH_REPLAY_ID", value, r=1)
     elif protocol == "ABSOLUTE_SETPOINT_RETRY":
-        if v and not m and e < 2: edge(out, "SET_ABSOLUTE_TARGET", value, e=min(2, e + 1), x=1)
+        if v and not m and (e == 0 or (e == 1 and r == 1)): edge(out, "SET_ABSOLUTE_TARGET", value, e=min(2, e + 1), x=1)
         if v and not m and x: edge(out, "WRITE_MARKER_FROM_READBACK", value, m=1)
         finish(value, out)
         if v and not m and x and not r: edge(out, "CRASH_RETRY_SETPOINT", value, r=1)

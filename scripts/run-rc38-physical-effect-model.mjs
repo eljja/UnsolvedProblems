@@ -15,7 +15,7 @@ const push = (items, action, before, after, fault = false) => {
 };
 
 const commonFinish = (current, items) => {
-  if (current.v && current.m) push(items, "COMPLETE", current, { ...current, v: 0 });
+  if (current.v && current.m && current.e > 0) push(items, "COMPLETE", current, { ...current, v: 0 });
 };
 
 const protocols = [
@@ -38,7 +38,7 @@ const protocols = [
     initial: state(),
     next(current) {
       const items = [];
-      if (current.v && !current.m && current.e < 2) push(items, "PULSE", current, { ...current, e: sat(current.e + 1), x: 1 });
+      if (current.v && !current.m && (current.e === 0 || (current.e === 1 && current.r === 1))) push(items, "PULSE", current, { ...current, e: sat(current.e + 1), x: 1 });
       if (current.v && !current.m && current.e > 0) push(items, "WRITE_MARKER", current, { ...current, m: 1 });
       commonFinish(current, items);
       if (current.v && !current.m && current.e > 0 && !current.r) push(items, "CRASH_RETRY", current, { ...current, r: 1 }, true);
@@ -52,7 +52,7 @@ const protocols = [
     next(current) {
       const items = [];
       if (!current.q) push(items, "DELIVER_APPLICATION_MESSAGE_ONCE", current, { ...current, q: 1, v: 1 });
-      if (current.q && current.v && !current.m && current.e < 2) push(items, "PULSE", current, { ...current, e: sat(current.e + 1), x: 1 });
+      if (current.q && current.v && !current.m && (current.e === 0 || (current.e === 1 && current.r === 1))) push(items, "PULSE", current, { ...current, e: sat(current.e + 1), x: 1 });
       if (current.q && current.v && !current.m && current.e > 0) push(items, "WRITE_MARKER", current, { ...current, m: 1 });
       commonFinish(current, items);
       if (current.q && current.v && !current.m && current.e > 0 && !current.r) push(items, "CRASH_RETRY_HANDLER", current, { ...current, r: 1 }, true);
@@ -65,7 +65,7 @@ const protocols = [
     initial: state(),
     next(current) {
       const items = [];
-      if (current.v && !current.m && current.s === 0 && current.e < 2) push(items, "PULSE", current, { ...current, e: sat(current.e + 1), x: 1 });
+      if (current.v && !current.m && current.s === 0 && (current.e === 0 || (current.e === 1 && current.r === 1))) push(items, "PULSE", current, { ...current, e: sat(current.e + 1), x: 1 });
       if (current.v && current.s < current.e) push(items, "RECORD_LATE_SENSOR", current, { ...current, s: current.e });
       if (current.v && !current.m && current.s > 0) push(items, "WRITE_MARKER", current, { ...current, m: 1 });
       commonFinish(current, items);
@@ -105,7 +105,7 @@ const protocols = [
     initial: state(),
     next(current) {
       const items = [];
-      if (current.v && !current.m && current.e < 2) push(items, "SET_ABSOLUTE_TARGET", current, { ...current, e: sat(current.e + 1), x: 1 });
+      if (current.v && !current.m && (current.e === 0 || (current.e === 1 && current.r === 1))) push(items, "SET_ABSOLUTE_TARGET", current, { ...current, e: sat(current.e + 1), x: 1 });
       if (current.v && !current.m && current.x) push(items, "WRITE_MARKER_FROM_READBACK", current, { ...current, m: 1 });
       commonFinish(current, items);
       if (current.v && !current.m && current.x && !current.r) push(items, "CRASH_RETRY_SETPOINT", current, { ...current, r: 1 }, true);

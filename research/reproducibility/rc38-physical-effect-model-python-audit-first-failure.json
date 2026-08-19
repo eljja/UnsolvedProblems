@@ -1,0 +1,898 @@
+{
+  "cycle": "RC-2026-38",
+  "auditor": "independent Python enumerator",
+  "computedOn": "2026-08-20",
+  "reconstructed": [
+    {
+      "protocol": "MARKER_THEN_PULSE",
+      "states": 6,
+      "transitions": 5,
+      "collision": true
+    },
+    {
+      "protocol": "PULSE_THEN_MARKER",
+      "states": 13,
+      "transitions": 13,
+      "collision": true
+    },
+    {
+      "protocol": "QOS2_ONCE_HANDLER_RETRY",
+      "states": 14,
+      "transitions": 14,
+      "collision": true
+    },
+    {
+      "protocol": "LATE_SENSOR_AFTER_PULSE",
+      "states": 17,
+      "transitions": 17,
+      "collision": true
+    },
+    {
+      "protocol": "COUPLED_EVENT_COUNTER",
+      "states": 7,
+      "transitions": 6,
+      "collision": false
+    },
+    {
+      "protocol": "ATOMIC_ACTUATOR_COMMAND_ID",
+      "states": 7,
+      "transitions": 6,
+      "collision": false
+    },
+    {
+      "protocol": "ABSOLUTE_SETPOINT_RETRY",
+      "states": 13,
+      "transitions": 13,
+      "collision": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "MARKER_THEN_PULSE-states",
+      "pass": true,
+      "observed": 6,
+      "expected": 6
+    },
+    {
+      "name": "MARKER_THEN_PULSE-transitions",
+      "pass": true,
+      "observed": 5,
+      "expected": 5
+    },
+    {
+      "name": "MARKER_THEN_PULSE-T1_stable_marker_matches_one_execution",
+      "pass": true,
+      "observed": {
+        "pass": false,
+        "traceLength": 2
+      },
+      "expected": {
+        "pass": false,
+        "traceLength": 2
+      }
+    },
+    {
+      "name": "MARKER_THEN_PULSE-T2_execution_at_most_once",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "MARKER_THEN_PULSE-T3_stable_marker_requires_target_state",
+      "pass": true,
+      "observed": {
+        "pass": false,
+        "traceLength": 2
+      },
+      "expected": {
+        "pass": false,
+        "traceLength": 2
+      }
+    },
+    {
+      "name": "MARKER_THEN_PULSE-T4_transport_delivery_at_most_once",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "MARKER_THEN_PULSE-T5_sensor_never_overstates_execution",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "MARKER_THEN_PULSE-T6_actuator_id_never_aliases_multiple_executions",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "MARKER_THEN_PULSE-T7_exact_healthy_completion_reachable",
+      "pass": true,
+      "observed": {
+        "pass": false,
+        "traceLength": 2
+      },
+      "expected": {
+        "pass": false,
+        "traceLength": 2
+      }
+    },
+    {
+      "name": "MARKER_THEN_PULSE-T8_target_state_healthy_completion_reachable",
+      "pass": true,
+      "observed": {
+        "pass": false,
+        "traceLength": 2
+      },
+      "expected": {
+        "pass": false,
+        "traceLength": 2
+      }
+    },
+    {
+      "name": "MARKER_THEN_PULSE-observation-collision",
+      "pass": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "PULSE_THEN_MARKER-states",
+      "pass": true,
+      "observed": 13,
+      "expected": 13
+    },
+    {
+      "name": "PULSE_THEN_MARKER-transitions",
+      "pass": true,
+      "observed": 13,
+      "expected": 13
+    },
+    {
+      "name": "PULSE_THEN_MARKER-T1_stable_marker_matches_one_execution",
+      "pass": true,
+      "observed": {
+        "pass": false,
+        "traceLength": 4
+      },
+      "expected": {
+        "pass": false,
+        "traceLength": 4
+      }
+    },
+    {
+      "name": "PULSE_THEN_MARKER-T2_execution_at_most_once",
+      "pass": true,
+      "observed": {
+        "pass": false,
+        "traceLength": 2
+      },
+      "expected": {
+        "pass": false,
+        "traceLength": 2
+      }
+    },
+    {
+      "name": "PULSE_THEN_MARKER-T3_stable_marker_requires_target_state",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "PULSE_THEN_MARKER-T4_transport_delivery_at_most_once",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "PULSE_THEN_MARKER-T5_sensor_never_overstates_execution",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "PULSE_THEN_MARKER-T6_actuator_id_never_aliases_multiple_executions",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "PULSE_THEN_MARKER-T7_exact_healthy_completion_reachable",
+      "pass": true,
+      "observed": {
+        "pass": false,
+        "traceLength": 2
+      },
+      "expected": {
+        "pass": false,
+        "traceLength": 2
+      }
+    },
+    {
+      "name": "PULSE_THEN_MARKER-T8_target_state_healthy_completion_reachable",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "PULSE_THEN_MARKER-observation-collision",
+      "pass": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "QOS2_ONCE_HANDLER_RETRY-states",
+      "pass": true,
+      "observed": 14,
+      "expected": 14
+    },
+    {
+      "name": "QOS2_ONCE_HANDLER_RETRY-transitions",
+      "pass": true,
+      "observed": 14,
+      "expected": 14
+    },
+    {
+      "name": "QOS2_ONCE_HANDLER_RETRY-T1_stable_marker_matches_one_execution",
+      "pass": true,
+      "observed": {
+        "pass": false,
+        "traceLength": 5
+      },
+      "expected": {
+        "pass": false,
+        "traceLength": 5
+      }
+    },
+    {
+      "name": "QOS2_ONCE_HANDLER_RETRY-T2_execution_at_most_once",
+      "pass": true,
+      "observed": {
+        "pass": false,
+        "traceLength": 3
+      },
+      "expected": {
+        "pass": false,
+        "traceLength": 3
+      }
+    },
+    {
+      "name": "QOS2_ONCE_HANDLER_RETRY-T3_stable_marker_requires_target_state",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "QOS2_ONCE_HANDLER_RETRY-T4_transport_delivery_at_most_once",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "QOS2_ONCE_HANDLER_RETRY-T5_sensor_never_overstates_execution",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "QOS2_ONCE_HANDLER_RETRY-T6_actuator_id_never_aliases_multiple_executions",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "QOS2_ONCE_HANDLER_RETRY-T7_exact_healthy_completion_reachable",
+      "pass": true,
+      "observed": {
+        "pass": false,
+        "traceLength": 3
+      },
+      "expected": {
+        "pass": false,
+        "traceLength": 3
+      }
+    },
+    {
+      "name": "QOS2_ONCE_HANDLER_RETRY-T8_target_state_healthy_completion_reachable",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "QOS2_ONCE_HANDLER_RETRY-observation-collision",
+      "pass": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "LATE_SENSOR_AFTER_PULSE-states",
+      "pass": true,
+      "observed": 17,
+      "expected": 17
+    },
+    {
+      "name": "LATE_SENSOR_AFTER_PULSE-transitions",
+      "pass": true,
+      "observed": 17,
+      "expected": 17
+    },
+    {
+      "name": "LATE_SENSOR_AFTER_PULSE-T1_stable_marker_matches_one_execution",
+      "pass": true,
+      "observed": {
+        "pass": false,
+        "traceLength": 5
+      },
+      "expected": {
+        "pass": false,
+        "traceLength": 5
+      }
+    },
+    {
+      "name": "LATE_SENSOR_AFTER_PULSE-T2_execution_at_most_once",
+      "pass": true,
+      "observed": {
+        "pass": false,
+        "traceLength": 2
+      },
+      "expected": {
+        "pass": false,
+        "traceLength": 2
+      }
+    },
+    {
+      "name": "LATE_SENSOR_AFTER_PULSE-T3_stable_marker_requires_target_state",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "LATE_SENSOR_AFTER_PULSE-T4_transport_delivery_at_most_once",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "LATE_SENSOR_AFTER_PULSE-T5_sensor_never_overstates_execution",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "LATE_SENSOR_AFTER_PULSE-T6_actuator_id_never_aliases_multiple_executions",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "LATE_SENSOR_AFTER_PULSE-T7_exact_healthy_completion_reachable",
+      "pass": true,
+      "observed": {
+        "pass": false,
+        "traceLength": 2
+      },
+      "expected": {
+        "pass": false,
+        "traceLength": 2
+      }
+    },
+    {
+      "name": "LATE_SENSOR_AFTER_PULSE-T8_target_state_healthy_completion_reachable",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "LATE_SENSOR_AFTER_PULSE-observation-collision",
+      "pass": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "COUPLED_EVENT_COUNTER-states",
+      "pass": true,
+      "observed": 7,
+      "expected": 7
+    },
+    {
+      "name": "COUPLED_EVENT_COUNTER-transitions",
+      "pass": true,
+      "observed": 6,
+      "expected": 6
+    },
+    {
+      "name": "COUPLED_EVENT_COUNTER-T1_stable_marker_matches_one_execution",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "COUPLED_EVENT_COUNTER-T2_execution_at_most_once",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "COUPLED_EVENT_COUNTER-T3_stable_marker_requires_target_state",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "COUPLED_EVENT_COUNTER-T4_transport_delivery_at_most_once",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "COUPLED_EVENT_COUNTER-T5_sensor_never_overstates_execution",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "COUPLED_EVENT_COUNTER-T6_actuator_id_never_aliases_multiple_executions",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "COUPLED_EVENT_COUNTER-T7_exact_healthy_completion_reachable",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "COUPLED_EVENT_COUNTER-T8_target_state_healthy_completion_reachable",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "COUPLED_EVENT_COUNTER-observation-collision",
+      "pass": true,
+      "observed": false,
+      "expected": false
+    },
+    {
+      "name": "ATOMIC_ACTUATOR_COMMAND_ID-states",
+      "pass": true,
+      "observed": 7,
+      "expected": 7
+    },
+    {
+      "name": "ATOMIC_ACTUATOR_COMMAND_ID-transitions",
+      "pass": true,
+      "observed": 6,
+      "expected": 6
+    },
+    {
+      "name": "ATOMIC_ACTUATOR_COMMAND_ID-T1_stable_marker_matches_one_execution",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "ATOMIC_ACTUATOR_COMMAND_ID-T2_execution_at_most_once",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "ATOMIC_ACTUATOR_COMMAND_ID-T3_stable_marker_requires_target_state",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "ATOMIC_ACTUATOR_COMMAND_ID-T4_transport_delivery_at_most_once",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "ATOMIC_ACTUATOR_COMMAND_ID-T5_sensor_never_overstates_execution",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "ATOMIC_ACTUATOR_COMMAND_ID-T6_actuator_id_never_aliases_multiple_executions",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "ATOMIC_ACTUATOR_COMMAND_ID-T7_exact_healthy_completion_reachable",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "ATOMIC_ACTUATOR_COMMAND_ID-T8_target_state_healthy_completion_reachable",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "ATOMIC_ACTUATOR_COMMAND_ID-observation-collision",
+      "pass": true,
+      "observed": false,
+      "expected": false
+    },
+    {
+      "name": "ABSOLUTE_SETPOINT_RETRY-states",
+      "pass": true,
+      "observed": 13,
+      "expected": 13
+    },
+    {
+      "name": "ABSOLUTE_SETPOINT_RETRY-transitions",
+      "pass": true,
+      "observed": 13,
+      "expected": 13
+    },
+    {
+      "name": "ABSOLUTE_SETPOINT_RETRY-T1_stable_marker_matches_one_execution",
+      "pass": true,
+      "observed": {
+        "pass": false,
+        "traceLength": 4
+      },
+      "expected": {
+        "pass": false,
+        "traceLength": 4
+      }
+    },
+    {
+      "name": "ABSOLUTE_SETPOINT_RETRY-T2_execution_at_most_once",
+      "pass": true,
+      "observed": {
+        "pass": false,
+        "traceLength": 2
+      },
+      "expected": {
+        "pass": false,
+        "traceLength": 2
+      }
+    },
+    {
+      "name": "ABSOLUTE_SETPOINT_RETRY-T3_stable_marker_requires_target_state",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "ABSOLUTE_SETPOINT_RETRY-T4_transport_delivery_at_most_once",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "ABSOLUTE_SETPOINT_RETRY-T5_sensor_never_overstates_execution",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "ABSOLUTE_SETPOINT_RETRY-T6_actuator_id_never_aliases_multiple_executions",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "ABSOLUTE_SETPOINT_RETRY-T7_exact_healthy_completion_reachable",
+      "pass": true,
+      "observed": {
+        "pass": false,
+        "traceLength": 2
+      },
+      "expected": {
+        "pass": false,
+        "traceLength": 2
+      }
+    },
+    {
+      "name": "ABSOLUTE_SETPOINT_RETRY-T8_target_state_healthy_completion_reachable",
+      "pass": true,
+      "observed": {
+        "pass": true,
+        "traceLength": null
+      },
+      "expected": {
+        "pass": true,
+        "traceLength": null
+      }
+    },
+    {
+      "name": "ABSOLUTE_SETPOINT_RETRY-observation-collision",
+      "pass": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "exact-qualifiers",
+      "pass": true,
+      "observed": [
+        "COUPLED_EVENT_COUNTER",
+        "ATOMIC_ACTUATOR_COMMAND_ID"
+      ],
+      "expected": [
+        "COUPLED_EVENT_COUNTER",
+        "ATOMIC_ACTUATOR_COMMAND_ID"
+      ]
+    },
+    {
+      "name": "target-state-qualifiers",
+      "pass": true,
+      "observed": [
+        "PULSE_THEN_MARKER",
+        "QOS2_ONCE_HANDLER_RETRY",
+        "LATE_SENSOR_AFTER_PULSE",
+        "COUPLED_EVENT_COUNTER",
+        "ATOMIC_ACTUATOR_COMMAND_ID",
+        "ABSOLUTE_SETPOINT_RETRY"
+      ],
+      "expected": [
+        "PULSE_THEN_MARKER",
+        "QOS2_ONCE_HANDLER_RETRY",
+        "LATE_SENSOR_AFTER_PULSE",
+        "COUPLED_EVENT_COUNTER",
+        "ATOMIC_ACTUATOR_COMMAND_ID",
+        "ABSOLUTE_SETPOINT_RETRY"
+      ]
+    },
+    {
+      "name": "minimum-universal-witness",
+      "pass": true,
+      "observed": [
+        [
+          "physically_coupled_event_counter"
+        ]
+      ],
+      "expected": [
+        [
+          "physically_coupled_event_counter"
+        ]
+      ]
+    }
+  ],
+  "passed": 80,
+  "total": 80,
+  "qualifies": true
+}
