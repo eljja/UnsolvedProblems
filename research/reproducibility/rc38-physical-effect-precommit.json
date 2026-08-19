@@ -1,0 +1,114 @@
+{
+  "cycle": "RC-2026-38",
+  "precommitId": "RC38-PHYSICAL-EFFECT-FRONTIER-V1",
+  "sealedOn": "2026-08-20",
+  "selection": {
+    "problemIds": ["UP-605", "UP-602", "UP-315"],
+    "reason": "RC37 qualified a receiver-outbox-to-idempotent-sink chain across separate processes and databases but observed zero effects outside a database and only one physical host. The next information boundary is whether sink ledgers determine a non-transactional physical action, and which additional observation or reformulation removes the ambiguity."
+  },
+  "researchQuestion": "Can any ordering of a durable sink marker and a non-transactional external action guarantee one execution after crashes, and if not, which independently adjudicable witness or weaker final-state criterion removes the smallest counterexample?",
+  "factsAtSeal": [
+    "OASIS MQTT 5.0 QoS 2 concerns delivery of one application message from one sender to one receiver; application processing and physical action are a separate boundary.",
+    "A 2026-08-01 arXiv preprint, revised 2026-08-13 and not treated as peer reviewed here, machine-checks an information bound for source-only recovery and an escape through an authoritative, complete, current sink acceptance record.",
+    "RIFL records completed RPC results durably and deduplicates retries at the operation's storage authority; it does not by itself make an action outside that authority atomic.",
+    "NIST HIL work supports measuring cyber and physical components together, while independent correlated measurements can improve detectability but still carry their own fault and observability assumptions.",
+    "No physical actuator, HIL device, second physical host, or packet-level partition injector is available in this workspace."
+  ],
+  "hypotheses": [
+    {
+      "code": "H1",
+      "claim": "A message delivered exactly once makes a non-idempotent handler effect execute exactly once.",
+      "separatingPrediction": "With q=1 fixed, a crash between the effect and the handler marker cannot produce e=2 after recovery.",
+      "rejectWhen": "Any reachable or injected schedule has one durable transport receipt and two durable external-effect records."
+    },
+    {
+      "code": "H2",
+      "claim": "An independently read effect counter is enough to reconcile after an ambiguous response.",
+      "separatingPrediction": "A current counter yields one effect, while a one-event stale or false-positive counter changes the verdict; therefore the guarantee is conditional on authority, completeness, freshness, and criterion alignment.",
+      "rejectWhen": "A counter satisfying the preregistered current-view premise still permits zero or two effects, or a stale/biased counter gives the same verdict as the current counter."
+    },
+    {
+      "code": "H3",
+      "claim": "A controller-owned command ID accepted atomically with its modeled effect can turn retries into replay.",
+      "separatingPrediction": "After response loss, the second identical command returns replay and the controller contains one modeled effect row.",
+      "rejectWhen": "The same ID and payload create two modeled effects, or an ID collision with a different payload is accepted."
+    },
+    {
+      "code": "H4",
+      "claim": "For an absolute setpoint, the attainable guarantee may be target-state convergence rather than exactly-one command execution.",
+      "separatingPrediction": "Two invocations after a crash can coexist with final target state x=1, so state convergence passes while transition-count exactness fails.",
+      "rejectWhen": "Retry changes the target state, or the final state fails to reach x=1 after a healthy suffix."
+    }
+  ],
+  "model": {
+    "protocols": [
+      "MARKER_THEN_PULSE",
+      "PULSE_THEN_MARKER",
+      "QOS2_ONCE_HANDLER_RETRY",
+      "LATE_SENSOR_AFTER_PULSE",
+      "COUPLED_EVENT_COUNTER",
+      "ATOMIC_ACTUATOR_COMMAND_ID",
+      "ABSOLUTE_SETPOINT_RETRY"
+    ],
+    "variables": ["sink marker m", "execution count e saturated at 2", "target state x", "sensor count s", "actuator acceptance a", "transport delivery q", "volatile activity v", "crash boundary r"],
+    "invariants": [
+      "T1 stable marker matches one execution",
+      "T2 execution count never exceeds one",
+      "T3 stable marker implies target state",
+      "T4 transport delivery count never exceeds one",
+      "T5 sensor count never exceeds execution count",
+      "T6 one actuator ID never aliases multiple executions",
+      "T7 exact completion is reachable after a healthy suffix",
+      "T8 target-state completion is reachable after a healthy suffix"
+    ],
+    "expectedExactTransitionQualifiers": ["COUPLED_EVENT_COUNTER", "ATOMIC_ACTUATOR_COMMAND_ID"],
+    "expectedMinimumUniversalWitness": ["physically_coupled_event_counter"],
+    "stopRule": "Stop without a scientific verdict if state counts, transition counts, invariant verdicts, shortest counterexample lengths, qualifiers, or the minimum witness differ between JavaScript and independent Python implementations. Preserve the first result before any amendment."
+  },
+  "softwareLoop": {
+    "cases": [
+      "marker-before-action",
+      "action-before-marker",
+      "qos2-once-handler-retry",
+      "authoritative-counter-reconcile",
+      "stale-counter-reconcile",
+      "false-positive-counter",
+      "absolute-setpoint-retry",
+      "controller-command-id"
+    ],
+    "criteria": [
+      "C1 marker-first leaves marker=1 and pulse=0",
+      "C2 action-first retry leaves pulse=2",
+      "C3 one transport receipt coexists with pulse=2",
+      "C4 a current counter reconciles to pulse=1",
+      "C5 a one-event stale counter yields pulse=2",
+      "C6 a one-event false-positive counter yields marker=1 and pulse=0",
+      "C7 absolute retry yields two invocations and target state 1",
+      "C8 controller command ID yields one modeled effect and replay",
+      "C9 all SQLite databases pass integrity_check",
+      "C10 the result remains explicitly one-host software-loop, not HIL"
+    ],
+    "independence": "The confirmation runner records process exits and raw artifacts; a separate Node program reopens every sink and controller SQLite database and recounts append-only logs without trusting summary counts.",
+    "stopRule": "Stop if a missing response is counted as success, a software file is called a physical sensor, an actuator SQLite row is called physical action, any case denominator is dropped, or a one-host result is called multi-host or HIL."
+  },
+  "uncertaintyBudget": {
+    "model": "Finite saturated counts and fixed crash grammar; no time, capacity, permanent partition, Byzantine behavior, or common-cause failure.",
+    "measurement": "Software-loop files have no calibrated sensor miss, false-positive, latency, drift, or physical coupling error distribution.",
+    "implementation": "One Windows host; process failure is injected, but host power, storage device, and real network failure are not.",
+    "externalValidity": "A controller transaction is only a modeled upper bound for a device that can atomically bind command acceptance to the relevant physical transition."
+  },
+  "codeHashes": {
+    "scripts/run-rc38-physical-effect-model.mjs": "a2cf481f83e574be0869b856820838a486f5b8f79f2131efba9e14cd8ea0c0fb",
+    "scripts/independent_rc38_physical_effect_model_audit.py": "9e8fd57b55ea51de879ee77c522aae5f23280ac972e8432cefa60b796c79323c",
+    "scripts/rc38-emulated-actuator.mjs": "9d5883f6adaf629a020b55888e7cb681a614e7b0b53c80a26fe6e77555db07d3",
+    "scripts/rc38-sink-worker.mjs": "8654df480494e0967c98794460bfda46872842477ebb97ef379d449465779d68",
+    "scripts/run-rc38-software-loop-confirmation.mjs": "a2429e51ba284142551d0e467cc00a73be55f1a1224a7e2454d8c534baf99422",
+    "scripts/independent-rc38-software-loop-audit.mjs": "db50ee3834ecd5d1ae4ee468d08033ba8ed97a8b82a7d2bb2c44f9d8cd94f5f8"
+  },
+  "resultStateAtSeal": "No RC38 model result, Python model audit, software-loop case directory, confirmation result, history, or independent confirmation audit exists.",
+  "allowedAfterSeal": [
+    "Execute the frozen programs and preserve their outputs.",
+    "If an implementation defect blocks adjudication, preserve the failed output and add a numbered amendment before changing code.",
+    "Add bilingual interpretation, sources, connection records, validation, and site loaders without changing frozen observations."
+  ]
+}
