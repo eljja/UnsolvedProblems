@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = relative => fs.readFileSync(path.join(root, relative));
 const readJson = relative => JSON.parse(read(relative).toString("utf8"));
-const sha = relative => crypto.createHash("sha256").update(read(relative)).digest("hex");
+const sha = relative => crypto.createHash("sha256").update(read(relative).toString("utf8").replace(/\r\n/g, "\n")).digest("hex");
 const assert = (condition, message) => { if (!condition) throw new Error(message); };
 
 const precommit = readJson("research/reproducibility/rc39-fault-bounded-witness-precommit.json");
