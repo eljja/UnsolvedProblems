@@ -1,3 +1,5 @@
 # Preserve the byte-exact, pre-amendment Python audit artifact sealed by its SHA-256 digest.
 research/reproducibility/rc37-outbox-sink-model-python-audit-first-failure.json -text -diff
 research/reproducibility/rc38-physical-effect-model-python-audit-first-failure.json -text -diff
+research/reproducibility/rc38-software-loop-result-first-failure.json -text -diff
+research/reproducibility/rc38-software-loop-history-first-failure.json -text -diff

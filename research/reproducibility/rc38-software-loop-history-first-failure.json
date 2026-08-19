@@ -1,0 +1,869 @@
+{
+  "cycle": "RC-2026-38",
+  "history": [
+    {
+      "ordinal": 1,
+      "case": "marker-before-action",
+      "event": "actuator-started",
+      "details": {
+        "ready": true,
+        "port": 12892,
+        "pid": 14400,
+        "dir": "D:\\Code\\UnsolvedProblems\\research\\reproducibility\\rc38-software-loop\\marker-before-action"
+      }
+    },
+    {
+      "ordinal": 2,
+      "case": "marker-before-action",
+      "event": "worker-exit",
+      "details": {
+        "protocol": "marker-first",
+        "fault": "after-marker",
+        "sensorOffset": 0,
+        "exitCode": 101,
+        "output": {
+          "protocol": "marker-first",
+          "eventId": "RC38-MARKER-FIRST-001",
+          "priorMarker": null,
+          "status": "crash-after-marker"
+        }
+      }
+    },
+    {
+      "ordinal": 3,
+      "case": "marker-before-action",
+      "event": "worker-exit",
+      "details": {
+        "protocol": "marker-first",
+        "fault": "none",
+        "sensorOffset": 0,
+        "exitCode": 0,
+        "output": {
+          "protocol": "marker-first",
+          "eventId": "RC38-MARKER-FIRST-001",
+          "priorMarker": {
+            "eventId": "RC38-MARKER-FIRST-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "execution-count"
+          },
+          "status": "marker-replay-skip",
+          "marker": {
+            "eventId": "RC38-MARKER-FIRST-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "execution-count"
+          }
+        }
+      }
+    },
+    {
+      "ordinal": 4,
+      "case": "marker-before-action",
+      "event": "final-snapshot",
+      "details": {
+        "actuator": {
+          "pulseCount": 0,
+          "pulses": [],
+          "absoluteInvocationCount": 0,
+          "absoluteState": {
+            "target": 0
+          },
+          "controllerEffects": []
+        },
+        "markers": [
+          {
+            "eventId": "RC38-MARKER-FIRST-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "execution-count"
+          }
+        ],
+        "receipts": [],
+        "integrity": "ok",
+        "files": [
+          "controller.sqlite",
+          "controller.sqlite-shm",
+          "controller.sqlite-wal",
+          "sink.sqlite",
+          "sink.sqlite-shm",
+          "sink.sqlite-wal"
+        ]
+      }
+    },
+    {
+      "ordinal": 5,
+      "case": "marker-before-action",
+      "event": "actuator-stopped",
+      "details": {
+        "exitCode": null,
+        "stderr": null
+      }
+    },
+    {
+      "ordinal": 6,
+      "case": "action-before-marker",
+      "event": "actuator-started",
+      "details": {
+        "ready": true,
+        "port": 12894,
+        "pid": 22624,
+        "dir": "D:\\Code\\UnsolvedProblems\\research\\reproducibility\\rc38-software-loop\\action-before-marker"
+      }
+    },
+    {
+      "ordinal": 7,
+      "case": "action-before-marker",
+      "event": "worker-exit",
+      "details": {
+        "protocol": "action-first",
+        "fault": "after-action",
+        "sensorOffset": 0,
+        "exitCode": 102,
+        "output": {
+          "protocol": "action-first",
+          "eventId": "RC38-ACTION-FIRST-001",
+          "priorMarker": null,
+          "action": {
+            "status": 201,
+            "body": {
+              "status": "executed",
+              "ordinal": 1
+            }
+          },
+          "status": "crash-after-action"
+        }
+      }
+    },
+    {
+      "ordinal": 8,
+      "case": "action-before-marker",
+      "event": "worker-exit",
+      "details": {
+        "protocol": "action-first",
+        "fault": "none",
+        "sensorOffset": 0,
+        "exitCode": 0,
+        "output": {
+          "protocol": "action-first",
+          "eventId": "RC38-ACTION-FIRST-001",
+          "priorMarker": null,
+          "action": {
+            "status": 201,
+            "body": {
+              "status": "executed",
+              "ordinal": 2
+            }
+          },
+          "status": "completed",
+          "marker": {
+            "eventId": "RC38-ACTION-FIRST-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "execution-count"
+          }
+        }
+      }
+    },
+    {
+      "ordinal": 9,
+      "case": "action-before-marker",
+      "event": "final-snapshot",
+      "details": {
+        "actuator": {
+          "pulseCount": 2,
+          "pulses": [
+            {
+              "eventId": "RC38-ACTION-FIRST-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "ordinal": 1
+            },
+            {
+              "eventId": "RC38-ACTION-FIRST-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "ordinal": 2
+            }
+          ],
+          "absoluteInvocationCount": 0,
+          "absoluteState": {
+            "target": 0
+          },
+          "controllerEffects": []
+        },
+        "markers": [
+          {
+            "eventId": "RC38-ACTION-FIRST-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "execution-count"
+          }
+        ],
+        "receipts": [],
+        "integrity": "ok",
+        "files": [
+          "controller.sqlite",
+          "controller.sqlite-shm",
+          "controller.sqlite-wal",
+          "pulse-effects.ndjson",
+          "sink.sqlite",
+          "sink.sqlite-shm",
+          "sink.sqlite-wal"
+        ]
+      }
+    },
+    {
+      "ordinal": 10,
+      "case": "action-before-marker",
+      "event": "actuator-stopped",
+      "details": {
+        "exitCode": null,
+        "stderr": null
+      }
+    },
+    {
+      "ordinal": 11,
+      "case": "qos2-once-handler-retry",
+      "event": "actuator-started",
+      "details": {
+        "ready": true,
+        "port": 12900,
+        "pid": 41388,
+        "dir": "D:\\Code\\UnsolvedProblems\\research\\reproducibility\\rc38-software-loop\\qos2-once-handler-retry"
+      }
+    },
+    {
+      "ordinal": 12,
+      "case": "qos2-once-handler-retry",
+      "event": "worker-exit",
+      "details": {
+        "protocol": "qos2-handler",
+        "fault": "after-action",
+        "sensorOffset": 0,
+        "exitCode": 103,
+        "output": {
+          "protocol": "qos2-handler",
+          "eventId": "RC38-QOS2-HANDLER-001",
+          "priorMarker": null,
+          "action": {
+            "status": 201,
+            "body": {
+              "status": "executed",
+              "ordinal": 1
+            }
+          },
+          "status": "crash-after-qos2-handler-action"
+        }
+      }
+    },
+    {
+      "ordinal": 13,
+      "case": "qos2-once-handler-retry",
+      "event": "worker-exit",
+      "details": {
+        "protocol": "qos2-handler",
+        "fault": "none",
+        "sensorOffset": 0,
+        "exitCode": 0,
+        "output": {
+          "protocol": "qos2-handler",
+          "eventId": "RC38-QOS2-HANDLER-001",
+          "priorMarker": null,
+          "action": {
+            "status": 201,
+            "body": {
+              "status": "executed",
+              "ordinal": 2
+            }
+          },
+          "status": "completed",
+          "marker": {
+            "eventId": "RC38-QOS2-HANDLER-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "execution-count"
+          }
+        }
+      }
+    },
+    {
+      "ordinal": 14,
+      "case": "qos2-once-handler-retry",
+      "event": "final-snapshot",
+      "details": {
+        "actuator": {
+          "pulseCount": 2,
+          "pulses": [
+            {
+              "eventId": "RC38-QOS2-HANDLER-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "ordinal": 1
+            },
+            {
+              "eventId": "RC38-QOS2-HANDLER-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "ordinal": 2
+            }
+          ],
+          "absoluteInvocationCount": 0,
+          "absoluteState": {
+            "target": 0
+          },
+          "controllerEffects": []
+        },
+        "markers": [
+          {
+            "eventId": "RC38-QOS2-HANDLER-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "execution-count"
+          }
+        ],
+        "receipts": [
+          {
+            "eventId": "RC38-QOS2-HANDLER-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb"
+          }
+        ],
+        "integrity": "ok",
+        "files": [
+          "controller.sqlite",
+          "controller.sqlite-shm",
+          "controller.sqlite-wal",
+          "pulse-effects.ndjson",
+          "sink.sqlite",
+          "sink.sqlite-shm",
+          "sink.sqlite-wal"
+        ]
+      }
+    },
+    {
+      "ordinal": 15,
+      "case": "qos2-once-handler-retry",
+      "event": "actuator-stopped",
+      "details": {
+        "exitCode": null,
+        "stderr": null
+      }
+    },
+    {
+      "ordinal": 16,
+      "case": "authoritative-counter-reconcile",
+      "event": "actuator-started",
+      "details": {
+        "ready": true,
+        "port": 12904,
+        "pid": 52620,
+        "dir": "D:\\Code\\UnsolvedProblems\\research\\reproducibility\\rc38-software-loop\\authoritative-counter-reconcile"
+      }
+    },
+    {
+      "ordinal": 17,
+      "case": "authoritative-counter-reconcile",
+      "event": "worker-exit",
+      "details": {
+        "protocol": "action-first",
+        "fault": "after-action",
+        "sensorOffset": 0,
+        "exitCode": 102,
+        "output": {
+          "protocol": "action-first",
+          "eventId": "RC38-COUNTER-CURRENT-001",
+          "priorMarker": null,
+          "action": {
+            "status": 201,
+            "body": {
+              "status": "executed",
+              "ordinal": 1
+            }
+          },
+          "status": "crash-after-action"
+        }
+      }
+    },
+    {
+      "ordinal": 18,
+      "case": "authoritative-counter-reconcile",
+      "event": "worker-exit",
+      "details": {
+        "protocol": "sensor-reconcile",
+        "fault": "none",
+        "sensorOffset": 0,
+        "exitCode": 0,
+        "output": {
+          "protocol": "sensor-reconcile",
+          "eventId": "RC38-COUNTER-CURRENT-001",
+          "priorMarker": null,
+          "rawPulseCount": 1,
+          "reportedPulseCount": 1,
+          "status": "completed",
+          "marker": {
+            "eventId": "RC38-COUNTER-CURRENT-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "sensor-reconciled-count"
+          }
+        }
+      }
+    },
+    {
+      "ordinal": 19,
+      "case": "authoritative-counter-reconcile",
+      "event": "final-snapshot",
+      "details": {
+        "actuator": {
+          "pulseCount": 1,
+          "pulses": [
+            {
+              "eventId": "RC38-COUNTER-CURRENT-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "ordinal": 1
+            }
+          ],
+          "absoluteInvocationCount": 0,
+          "absoluteState": {
+            "target": 0
+          },
+          "controllerEffects": []
+        },
+        "markers": [
+          {
+            "eventId": "RC38-COUNTER-CURRENT-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "sensor-reconciled-count"
+          }
+        ],
+        "receipts": [],
+        "integrity": "ok",
+        "files": [
+          "controller.sqlite",
+          "controller.sqlite-shm",
+          "controller.sqlite-wal",
+          "pulse-effects.ndjson",
+          "sink.sqlite",
+          "sink.sqlite-shm",
+          "sink.sqlite-wal"
+        ]
+      }
+    },
+    {
+      "ordinal": 20,
+      "case": "authoritative-counter-reconcile",
+      "event": "actuator-stopped",
+      "details": {
+        "exitCode": null,
+        "stderr": null
+      }
+    },
+    {
+      "ordinal": 21,
+      "case": "stale-counter-reconcile",
+      "event": "actuator-started",
+      "details": {
+        "ready": true,
+        "port": 12908,
+        "pid": 53088,
+        "dir": "D:\\Code\\UnsolvedProblems\\research\\reproducibility\\rc38-software-loop\\stale-counter-reconcile"
+      }
+    },
+    {
+      "ordinal": 22,
+      "case": "stale-counter-reconcile",
+      "event": "worker-exit",
+      "details": {
+        "protocol": "action-first",
+        "fault": "after-action",
+        "sensorOffset": 0,
+        "exitCode": 102,
+        "output": {
+          "protocol": "action-first",
+          "eventId": "RC38-COUNTER-STALE-001",
+          "priorMarker": null,
+          "action": {
+            "status": 201,
+            "body": {
+              "status": "executed",
+              "ordinal": 1
+            }
+          },
+          "status": "crash-after-action"
+        }
+      }
+    },
+    {
+      "ordinal": 23,
+      "case": "stale-counter-reconcile",
+      "event": "worker-exit",
+      "details": {
+        "protocol": "sensor-reconcile",
+        "fault": "none",
+        "sensorOffset": -1,
+        "exitCode": 0,
+        "output": {
+          "protocol": "sensor-reconcile",
+          "eventId": "RC38-COUNTER-STALE-001",
+          "priorMarker": null,
+          "rawPulseCount": 1,
+          "reportedPulseCount": 0,
+          "action": {
+            "status": 201,
+            "body": {
+              "status": "executed",
+              "ordinal": 2
+            }
+          },
+          "status": "completed",
+          "marker": {
+            "eventId": "RC38-COUNTER-STALE-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "sensor-reconciled-count"
+          }
+        }
+      }
+    },
+    {
+      "ordinal": 24,
+      "case": "stale-counter-reconcile",
+      "event": "final-snapshot",
+      "details": {
+        "actuator": {
+          "pulseCount": 2,
+          "pulses": [
+            {
+              "eventId": "RC38-COUNTER-STALE-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "ordinal": 1
+            },
+            {
+              "eventId": "RC38-COUNTER-STALE-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "ordinal": 2
+            }
+          ],
+          "absoluteInvocationCount": 0,
+          "absoluteState": {
+            "target": 0
+          },
+          "controllerEffects": []
+        },
+        "markers": [
+          {
+            "eventId": "RC38-COUNTER-STALE-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "sensor-reconciled-count"
+          }
+        ],
+        "receipts": [],
+        "integrity": "ok",
+        "files": [
+          "controller.sqlite",
+          "controller.sqlite-shm",
+          "controller.sqlite-wal",
+          "pulse-effects.ndjson",
+          "sink.sqlite",
+          "sink.sqlite-shm",
+          "sink.sqlite-wal"
+        ]
+      }
+    },
+    {
+      "ordinal": 25,
+      "case": "stale-counter-reconcile",
+      "event": "actuator-stopped",
+      "details": {
+        "exitCode": null,
+        "stderr": null
+      }
+    },
+    {
+      "ordinal": 26,
+      "case": "false-positive-counter",
+      "event": "actuator-started",
+      "details": {
+        "ready": true,
+        "port": 12913,
+        "pid": 20612,
+        "dir": "D:\\Code\\UnsolvedProblems\\research\\reproducibility\\rc38-software-loop\\false-positive-counter"
+      }
+    },
+    {
+      "ordinal": 27,
+      "case": "false-positive-counter",
+      "event": "worker-exit",
+      "details": {
+        "protocol": "sensor-reconcile",
+        "fault": "none",
+        "sensorOffset": 1,
+        "exitCode": 0,
+        "output": {
+          "protocol": "sensor-reconcile",
+          "eventId": "RC38-COUNTER-FALSE-001",
+          "priorMarker": null,
+          "rawPulseCount": 0,
+          "reportedPulseCount": 1,
+          "status": "completed",
+          "marker": {
+            "eventId": "RC38-COUNTER-FALSE-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "sensor-reconciled-count"
+          }
+        }
+      }
+    },
+    {
+      "ordinal": 28,
+      "case": "false-positive-counter",
+      "event": "final-snapshot",
+      "details": {
+        "actuator": {
+          "pulseCount": 0,
+          "pulses": [],
+          "absoluteInvocationCount": 0,
+          "absoluteState": {
+            "target": 0
+          },
+          "controllerEffects": []
+        },
+        "markers": [
+          {
+            "eventId": "RC38-COUNTER-FALSE-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "sensor-reconciled-count"
+          }
+        ],
+        "receipts": [],
+        "integrity": "ok",
+        "files": [
+          "controller.sqlite",
+          "controller.sqlite-shm",
+          "controller.sqlite-wal",
+          "sink.sqlite",
+          "sink.sqlite-shm",
+          "sink.sqlite-wal"
+        ]
+      }
+    },
+    {
+      "ordinal": 29,
+      "case": "false-positive-counter",
+      "event": "actuator-stopped",
+      "details": {
+        "exitCode": null,
+        "stderr": null
+      }
+    },
+    {
+      "ordinal": 30,
+      "case": "absolute-setpoint-retry",
+      "event": "actuator-started",
+      "details": {
+        "ready": true,
+        "port": 12917,
+        "pid": 29036,
+        "dir": "D:\\Code\\UnsolvedProblems\\research\\reproducibility\\rc38-software-loop\\absolute-setpoint-retry"
+      }
+    },
+    {
+      "ordinal": 31,
+      "case": "absolute-setpoint-retry",
+      "event": "worker-exit",
+      "details": {
+        "protocol": "absolute-setpoint",
+        "fault": "after-action",
+        "sensorOffset": 0,
+        "exitCode": 104,
+        "output": {
+          "protocol": "absolute-setpoint",
+          "eventId": "RC38-ABSOLUTE-001",
+          "priorMarker": null,
+          "action": {
+            "status": 500,
+            "body": {
+              "error": "EPERM: operation not permitted, fsync"
+            }
+          },
+          "status": "crash-after-absolute-set"
+        }
+      }
+    },
+    {
+      "ordinal": 32,
+      "case": "absolute-setpoint-retry",
+      "event": "worker-exit",
+      "details": {
+        "protocol": "absolute-setpoint",
+        "fault": "none",
+        "sensorOffset": 0,
+        "exitCode": 0,
+        "output": {
+          "protocol": "absolute-setpoint",
+          "eventId": "RC38-ABSOLUTE-001",
+          "priorMarker": null,
+          "action": {
+            "status": 500,
+            "body": {
+              "error": "EPERM: operation not permitted, fsync"
+            }
+          },
+          "status": "completed",
+          "marker": {
+            "eventId": "RC38-ABSOLUTE-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "target-state"
+          }
+        }
+      }
+    },
+    {
+      "ordinal": 33,
+      "case": "absolute-setpoint-retry",
+      "event": "final-snapshot",
+      "details": {
+        "actuator": {
+          "pulseCount": 0,
+          "pulses": [],
+          "absoluteInvocationCount": 2,
+          "absoluteState": {
+            "target": 0
+          },
+          "controllerEffects": []
+        },
+        "markers": [
+          {
+            "eventId": "RC38-ABSOLUTE-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "target-state"
+          }
+        ],
+        "receipts": [],
+        "integrity": "ok",
+        "files": [
+          "absolute-invocations.ndjson",
+          "absolute-state.json.tmp",
+          "controller.sqlite",
+          "controller.sqlite-shm",
+          "controller.sqlite-wal",
+          "sink.sqlite",
+          "sink.sqlite-shm",
+          "sink.sqlite-wal"
+        ]
+      }
+    },
+    {
+      "ordinal": 34,
+      "case": "absolute-setpoint-retry",
+      "event": "actuator-stopped",
+      "details": {
+        "exitCode": null,
+        "stderr": null
+      }
+    },
+    {
+      "ordinal": 35,
+      "case": "controller-command-id",
+      "event": "actuator-started",
+      "details": {
+        "ready": true,
+        "port": 12926,
+        "pid": 20016,
+        "dir": "D:\\Code\\UnsolvedProblems\\research\\reproducibility\\rc38-software-loop\\controller-command-id"
+      }
+    },
+    {
+      "ordinal": 36,
+      "case": "controller-command-id",
+      "event": "worker-exit",
+      "details": {
+        "protocol": "controller-dedup",
+        "fault": "after-action",
+        "sensorOffset": 0,
+        "exitCode": 105,
+        "output": {
+          "protocol": "controller-dedup",
+          "eventId": "RC38-CONTROLLER-ID-001",
+          "priorMarker": null,
+          "action": {
+            "status": 201,
+            "body": {
+              "eventId": "RC38-CONTROLLER-ID-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "effectOrdinal": 1,
+              "status": "created"
+            }
+          },
+          "status": "crash-after-controller-acceptance"
+        }
+      }
+    },
+    {
+      "ordinal": 37,
+      "case": "controller-command-id",
+      "event": "worker-exit",
+      "details": {
+        "protocol": "controller-dedup",
+        "fault": "none",
+        "sensorOffset": 0,
+        "exitCode": 0,
+        "output": {
+          "protocol": "controller-dedup",
+          "eventId": "RC38-CONTROLLER-ID-001",
+          "priorMarker": null,
+          "action": {
+            "status": 200,
+            "body": {
+              "eventId": "RC38-CONTROLLER-ID-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "effectOrdinal": 1,
+              "status": "replay"
+            }
+          },
+          "status": "completed",
+          "marker": {
+            "eventId": "RC38-CONTROLLER-ID-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "controller-acceptance"
+          }
+        }
+      }
+    },
+    {
+      "ordinal": 38,
+      "case": "controller-command-id",
+      "event": "final-snapshot",
+      "details": {
+        "actuator": {
+          "pulseCount": 0,
+          "pulses": [],
+          "absoluteInvocationCount": 0,
+          "absoluteState": {
+            "target": 0
+          },
+          "controllerEffects": [
+            {
+              "eventId": "RC38-CONTROLLER-ID-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "effectOrdinal": 1
+            }
+          ]
+        },
+        "markers": [
+          {
+            "eventId": "RC38-CONTROLLER-ID-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "controller-acceptance"
+          }
+        ],
+        "receipts": [],
+        "integrity": "ok",
+        "files": [
+          "controller.sqlite",
+          "controller.sqlite-shm",
+          "controller.sqlite-wal",
+          "sink.sqlite",
+          "sink.sqlite-shm",
+          "sink.sqlite-wal"
+        ]
+      }
+    },
+    {
+      "ordinal": 39,
+      "case": "controller-command-id",
+      "event": "actuator-stopped",
+      "details": {
+        "exitCode": null,
+        "stderr": null
+      }
+    }
+  ]
+}

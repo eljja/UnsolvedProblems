@@ -1,0 +1,31 @@
+{
+  "cycle": "RC-2026-38",
+  "amendment": "software-loop-1.1",
+  "sealedOn": "2026-08-20",
+  "trigger": "The first eight-case confirmation met nine of ten criteria. Both absolute-setpoint requests returned HTTP 500 because Windows rejected fsync on a read-only descriptor for the temporary state file, leaving target=0 and C7 false.",
+  "firstResult": {
+    "artifact": "research/reproducibility/rc38-software-loop-result-first-failure.json",
+    "sha256": "f799d3663879aa86cf0286c494b3ffeb6aa52e44d1621d2c9dd8611adf82b92a",
+    "qualifies": false,
+    "passingCriteria": 9,
+    "totalCriteria": 10,
+    "failedCriterion": "C7_absolute_command_converges_despite_two_invocations"
+  },
+  "firstHistory": {
+    "artifact": "research/reproducibility/rc38-software-loop-history-first-failure.json",
+    "sha256": "56a776829b8d182554bdb736f04fe9d2b54815b87aa33f666c75afddd8e1aa4d",
+    "events": 39
+  },
+  "rawArtifacts": "research/reproducibility/rc38-software-loop-first-failure/",
+  "scientificVerdict": "No verdict for the absolute-setpoint case. The server reported an implementation error rather than a successful physical-state surrogate transition. The other seven cases remain observations, but the preregistered confirmation gate did not pass.",
+  "diagnosis": "The implementation wrote the temporary state file, closed it, reopened it read-only, and called fsync. On this Windows runtime that operation returns EPERM. This is a file-descriptor mode defect, not a failure of the target-state convergence hypothesis.",
+  "allowedChange": "Open the temporary state file for writing, write the same JSON bytes through that descriptor, fsync that writable descriptor, close it, and perform the same atomic rename.",
+  "forbiddenChanges": [
+    "No case, event ID, fault cut, payload, criterion, denominator, database schema, protocol behavior, expected result, scope statement, or audit rule may change.",
+    "No failed result, history event, database, WAL, SHM, append-only log, or temporary file may be deleted from the preserved first-run directory.",
+    "The amendment does not add a directory fsync, physical actuator, HIL device, second host, power cut, or atomicity guarantee."
+  ],
+  "codeHashBefore": "9d5883f6adaf629a020b55888e7cb681a614e7b0b53c80a26fe6e77555db07d3",
+  "codeHashAfter": "99fdfb9ccbd449f1d9b339faa467e520e7ca9c538aad657bd0d0c79bb2a7a920",
+  "resultStateAtSeal": "The amended confirmation has not been executed. The final result, history, case directory, and independent audit paths are absent."
+}

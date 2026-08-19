@@ -54,9 +54,11 @@ const server = http.createServer(async (request, response) => {
       const ordinal = readLines(absoluteLog).length + 1;
       appendDurable(absoluteLog, { eventId: body.eventId, payloadSha256: body.payloadSha256, ordinal, target: 1 });
       const temp = `${absoluteState}.tmp`;
-      fs.writeFileSync(temp, `${JSON.stringify({ target: 1, eventId: body.eventId, payloadSha256: body.payloadSha256 })}\n`, "utf8");
-      const descriptor = fs.openSync(temp, "r");
-      try { fs.fsyncSync(descriptor); } finally { fs.closeSync(descriptor); }
+      const descriptor = fs.openSync(temp, "w");
+      try {
+        fs.writeSync(descriptor, `${JSON.stringify({ target: 1, eventId: body.eventId, payloadSha256: body.payloadSha256 })}\n`);
+        fs.fsyncSync(descriptor);
+      } finally { fs.closeSync(descriptor); }
       fs.renameSync(temp, absoluteState);
       return reply(response, 201, { status: "set", ordinal, target: 1 });
     }
