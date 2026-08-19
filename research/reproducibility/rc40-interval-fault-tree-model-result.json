@@ -1,0 +1,1524 @@
+{
+  "cycle": "RC-2026-40",
+  "model": "Interval event-count identifiability with arbitrary reports, omissions, structured common-cause cut sets, and veto-versus-recovery semantics",
+  "causalChain": [
+    "declare count spacing, interval uncertainty, arbitrary-report budget, and omission budget",
+    "enumerate every truth and verifier-visible interval vector allowed by those budgets",
+    "issue an exact count only for singleton observation classes",
+    "derive structured minimal cut sets for false-certificate acceptance",
+    "select safeguards hitting every cut set, then keep safe refusal separate from exact recovery"
+  ],
+  "intervalModel": {
+    "countDomain": [
+      0,
+      1,
+      2
+    ],
+    "reportCenters": [
+      0,
+      1,
+      2
+    ],
+    "narrowRadius": 0.25,
+    "spacing": 1,
+    "grid": {
+      "n": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "f": [
+        0,
+        1,
+        2
+      ],
+      "m": [
+        0,
+        1,
+        2
+      ],
+      "cells": 54
+    },
+    "bound": "For this finite interval library with radius below count spacing, exact identification holds iff n >= 2f + m + 1.",
+    "interpretation": "f counts arbitrary interval reports; m counts missing reports. The bound is worst-case identifiability, not a stochastic confidence statement."
+  },
+  "narrowGrid": [
+    {
+      "n": 1,
+      "f": 0,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 3,
+      "observationCount": 3,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 2,
+      "f": 0,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 3,
+      "observationCount": 3,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 3,
+      "f": 0,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 3,
+      "observationCount": 3,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 4,
+      "f": 0,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 3,
+      "observationCount": 3,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 5,
+      "f": 0,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 3,
+      "observationCount": 3,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 6,
+      "f": 0,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 3,
+      "observationCount": 3,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 1,
+      "f": 0,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 6,
+      "observationCount": 4,
+      "collisionCount": 1,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          null
+        ],
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 3
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 2,
+      "f": 0,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 9,
+      "observationCount": 9,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 3,
+      "f": 0,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 12,
+      "observationCount": 12,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 4,
+      "f": 0,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 15,
+      "observationCount": 15,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 5,
+      "f": 0,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 18,
+      "observationCount": 18,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 6,
+      "f": 0,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 21,
+      "observationCount": 21,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 1,
+      "f": 0,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 6,
+      "observationCount": 4,
+      "collisionCount": 1,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          null
+        ],
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 3
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 2,
+      "f": 0,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 12,
+      "observationCount": 10,
+      "collisionCount": 1,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          null,
+          null
+        ],
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 3
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 3,
+      "f": 0,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 21,
+      "observationCount": 21,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 4,
+      "f": 0,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 33,
+      "observationCount": 33,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 5,
+      "f": 0,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 48,
+      "observationCount": 48,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 6,
+      "f": 0,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 66,
+      "observationCount": 66,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 1,
+      "f": 1,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 12,
+      "observationCount": 3,
+      "collisionCount": 3,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ]
+        ],
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 4
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 2,
+      "f": 1,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 21,
+      "observationCount": 9,
+      "collisionCount": 6,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            0.75,
+            1.25
+          ]
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 3,
+      "f": 1,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 30,
+      "observationCount": 21,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 4,
+      "f": 1,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 39,
+      "observationCount": 27,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 5,
+      "f": 1,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 48,
+      "observationCount": 33,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 6,
+      "f": 1,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 57,
+      "observationCount": 39,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 1,
+      "f": 1,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 15,
+      "observationCount": 4,
+      "collisionCount": 4,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ]
+        ],
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 4
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 2,
+      "f": 1,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 45,
+      "observationCount": 15,
+      "collisionCount": 12,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            0.75,
+            1.25
+          ]
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 3,
+      "f": 1,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 93,
+      "observationCount": 48,
+      "collisionCount": 18,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            0.75,
+            1.25
+          ],
+          null
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 4,
+      "f": 1,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 159,
+      "observationCount": 111,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 5,
+      "f": 1,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 243,
+      "observationCount": 168,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 6,
+      "f": 1,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 345,
+      "observationCount": 237,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 1,
+      "f": 1,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 15,
+      "observationCount": 4,
+      "collisionCount": 4,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ]
+        ],
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 4
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 2,
+      "f": 1,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 48,
+      "observationCount": 16,
+      "collisionCount": 13,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            0.75,
+            1.25
+          ]
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 3,
+      "f": 1,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 129,
+      "observationCount": 57,
+      "collisionCount": 27,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            0.75,
+            1.25
+          ],
+          null
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 4,
+      "f": 1,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 285,
+      "observationCount": 165,
+      "collisionCount": 36,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            0.75,
+            1.25
+          ],
+          null,
+          null
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 5,
+      "f": 1,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 543,
+      "observationCount": 378,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 6,
+      "f": 1,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 930,
+      "observationCount": 642,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 1,
+      "f": 2,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 12,
+      "observationCount": 3,
+      "collisionCount": 3,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ]
+        ],
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 4
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 2,
+      "f": 2,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 48,
+      "observationCount": 9,
+      "collisionCount": 9,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            -0.25,
+            0.25
+          ]
+        ],
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 6
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 3,
+      "f": 2,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 111,
+      "observationCount": 27,
+      "collisionCount": 24,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            0.75,
+            1.25
+          ]
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 4
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 4,
+      "f": 2,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 201,
+      "observationCount": 81,
+      "collisionCount": 18,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            0.75,
+            1.25
+          ],
+          [
+            0.75,
+            1.25
+          ]
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 5,
+      "f": 2,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 318,
+      "observationCount": 153,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 6,
+      "f": 2,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 462,
+      "observationCount": 219,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 1,
+      "f": 2,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 15,
+      "observationCount": 4,
+      "collisionCount": 4,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ]
+        ],
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 4
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 2,
+      "f": 2,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 72,
+      "observationCount": 15,
+      "collisionCount": 15,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            -0.25,
+            0.25
+          ]
+        ],
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 6
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 3,
+      "f": 2,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 255,
+      "observationCount": 54,
+      "collisionCount": 51,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            0.75,
+            1.25
+          ]
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 4
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 4,
+      "f": 2,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 645,
+      "observationCount": 189,
+      "collisionCount": 114,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            0.75,
+            1.25
+          ],
+          [
+            0.75,
+            1.25
+          ]
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 5,
+      "f": 2,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 1323,
+      "observationCount": 558,
+      "collisionCount": 90,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            0.75,
+            1.25
+          ],
+          [
+            0.75,
+            1.25
+          ],
+          null
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 6,
+      "f": 2,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 2370,
+      "observationCount": 1137,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null,
+      "expectedByBound": true
+    },
+    {
+      "n": 1,
+      "f": 2,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 15,
+      "observationCount": 4,
+      "collisionCount": 4,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ]
+        ],
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 4
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 2,
+      "f": 2,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 75,
+      "observationCount": 16,
+      "collisionCount": 16,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            -0.25,
+            0.25
+          ]
+        ],
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 6
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 3,
+      "f": 2,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 291,
+      "observationCount": 63,
+      "collisionCount": 60,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            0.75,
+            1.25
+          ]
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 4
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 4,
+      "f": 2,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 933,
+      "observationCount": 243,
+      "collisionCount": 168,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            0.75,
+            1.25
+          ],
+          [
+            0.75,
+            1.25
+          ]
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 5,
+      "f": 2,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 2433,
+      "observationCount": 828,
+      "collisionCount": 330,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            0.75,
+            1.25
+          ],
+          [
+            0.75,
+            1.25
+          ],
+          null
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      },
+      "expectedByBound": false
+    },
+    {
+      "n": 6,
+      "f": 2,
+      "m": 2,
+      "radius": 0.25,
+      "worldCount": 5385,
+      "observationCount": 2352,
+      "collisionCount": 270,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            0.75,
+            1.25
+          ],
+          [
+            0.75,
+            1.25
+          ],
+          null,
+          null
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      },
+      "expectedByBound": false
+    }
+  ],
+  "radiusSweep": [
+    {
+      "n": 1,
+      "f": 0,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 3,
+      "observationCount": 3,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null
+    },
+    {
+      "n": 1,
+      "f": 0,
+      "m": 0,
+      "radius": 0.75,
+      "worldCount": 3,
+      "observationCount": 3,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null
+    },
+    {
+      "n": 1,
+      "f": 0,
+      "m": 0,
+      "radius": 1,
+      "worldCount": 7,
+      "observationCount": 3,
+      "collisionCount": 3,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -1,
+            1
+          ]
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      }
+    },
+    {
+      "n": 1,
+      "f": 0,
+      "m": 0,
+      "radius": 1.25,
+      "worldCount": 7,
+      "observationCount": 3,
+      "collisionCount": 3,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            2.25
+          ]
+        ],
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 3
+      }
+    }
+  ],
+  "decisiveCases": {
+    "threeOneFaultNoMissing": {
+      "n": 3,
+      "f": 1,
+      "m": 0,
+      "radius": 0.25,
+      "worldCount": 30,
+      "observationCount": 21,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null
+    },
+    "threeOneFaultOneMissing": {
+      "n": 3,
+      "f": 1,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 93,
+      "observationCount": 48,
+      "collisionCount": 18,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -0.25,
+            0.25
+          ],
+          [
+            0.75,
+            1.25
+          ],
+          null
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      }
+    },
+    "fourOneFaultOneMissing": {
+      "n": 4,
+      "f": 1,
+      "m": 1,
+      "radius": 0.25,
+      "worldCount": 159,
+      "observationCount": 111,
+      "collisionCount": 0,
+      "identifiesExactEventCount": true,
+      "shortestCollision": null
+    },
+    "oneBroadNoFault": {
+      "n": 1,
+      "f": 0,
+      "m": 0,
+      "radius": 1,
+      "worldCount": 7,
+      "observationCount": 3,
+      "collisionCount": 3,
+      "identifiesExactEventCount": false,
+      "shortestCollision": {
+        "observation": [
+          [
+            -1,
+            1
+          ]
+        ],
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      }
+    }
+  },
+  "faultTree": {
+    "topEvent": "accept a false exact physical-event certificate",
+    "minimalCutSets": [
+      {
+        "id": "M1",
+        "basicEvents": [
+          "shared_aggregator_corruption"
+        ],
+        "meaning": "one shared evidence processor can forge every operational report"
+      },
+      {
+        "id": "M2",
+        "basicEvents": [
+          "shared_epoch_replay"
+        ],
+        "meaning": "one shared epoch authority can make stale claims appear current"
+      },
+      {
+        "id": "M3",
+        "basicEvents": [
+          "package_event_misbinding"
+        ],
+        "meaning": "correct measurements can be attached to the wrong physical event or part"
+      },
+      {
+        "id": "M4",
+        "basicEvents": [
+          "shared_sensor_power_loss",
+          "fail_open_missing_policy"
+        ],
+        "meaning": "shared power loss becomes false acceptance only when missing evidence fails open"
+      },
+      {
+        "id": "M5",
+        "basicEvents": [
+          "common_calibration_bias",
+          "insufficient_guard_band"
+        ],
+        "meaning": "shared bias reaches a wrong decision when uncertainty is not guarded"
+      },
+      {
+        "id": "M6",
+        "basicEvents": [
+          "counter_reset",
+          "reset_undetected"
+        ],
+        "meaning": "reset becomes a false current count when no independent reset evidence exists"
+      },
+      {
+        "id": "M7",
+        "basicEvents": [
+          "optical_occlusion",
+          "electrical_emi",
+          "mechanical_jam"
+        ],
+        "meaning": "simultaneous modality-specific disturbances defeat the operational physical view"
+      }
+    ],
+    "safeguards": [
+      {
+        "id": "S_PROCESSOR",
+        "kind": "separation",
+        "covers": [
+          "shared_aggregator_corruption",
+          "fail_open_missing_policy",
+          "reset_undetected"
+        ]
+      },
+      {
+        "id": "S_EPOCH",
+        "kind": "freshness",
+        "covers": [
+          "shared_epoch_replay",
+          "reset_undetected"
+        ]
+      },
+      {
+        "id": "S_IDENTITY",
+        "kind": "binding",
+        "covers": [
+          "package_event_misbinding"
+        ]
+      },
+      {
+        "id": "S_CALIBRATION",
+        "kind": "metrology",
+        "covers": [
+          "common_calibration_bias",
+          "insufficient_guard_band"
+        ]
+      },
+      {
+        "id": "W_MECHANICAL",
+        "kind": "external-veto-witness",
+        "covers": [
+          "shared_sensor_power_loss",
+          "optical_occlusion",
+          "electrical_emi"
+        ]
+      },
+      {
+        "id": "W_OPTICAL",
+        "kind": "external-veto-witness",
+        "covers": [
+          "shared_sensor_power_loss",
+          "electrical_emi",
+          "mechanical_jam"
+        ]
+      },
+      {
+        "id": "W_ENERGY",
+        "kind": "external-veto-witness",
+        "covers": [
+          "shared_sensor_power_loss",
+          "optical_occlusion",
+          "mechanical_jam"
+        ]
+      },
+      {
+        "id": "S_RETENTION",
+        "kind": "retention",
+        "covers": [
+          "counter_reset"
+        ]
+      }
+    ],
+    "minimumSize": 5,
+    "minimumHittingSets": [
+      [
+        "S_PROCESSOR",
+        "S_EPOCH",
+        "S_IDENTITY",
+        "S_CALIBRATION",
+        "W_MECHANICAL"
+      ],
+      [
+        "S_PROCESSOR",
+        "S_EPOCH",
+        "S_IDENTITY",
+        "S_CALIBRATION",
+        "W_OPTICAL"
+      ],
+      [
+        "S_PROCESSOR",
+        "S_EPOCH",
+        "S_IDENTITY",
+        "S_CALIBRATION",
+        "W_ENERGY"
+      ]
+    ],
+    "inclusionMinimalHittingSets": [
+      [
+        "S_PROCESSOR",
+        "S_EPOCH",
+        "S_IDENTITY",
+        "S_CALIBRATION",
+        "W_MECHANICAL"
+      ],
+      [
+        "S_PROCESSOR",
+        "S_EPOCH",
+        "S_IDENTITY",
+        "S_CALIBRATION",
+        "W_OPTICAL"
+      ],
+      [
+        "S_PROCESSOR",
+        "S_EPOCH",
+        "S_IDENTITY",
+        "S_CALIBRATION",
+        "W_ENERGY"
+      ]
+    ],
+    "interpretation": "The hitting set blocks every modeled cut set from reaching false acceptance. It is a safe-refusal architecture, not an exact-recovery quorum."
+  },
+  "vetoCounterexample": {
+    "truth": 1,
+    "operationalReports": [
+      0,
+      0,
+      0
+    ],
+    "externalVetoReport": 1,
+    "naivePluralityVerdict": 0,
+    "vetoPolicyVerdict": "inconclusive",
+    "lesson": "A single outside-domain witness can veto a false operational consensus but cannot recover exact truth by majority when three corrupted reports remain."
+  },
+  "exactRecoveryRule": "After faults and omissions, exact recovery still requires an active independent narrow-interval quorum satisfying n_active >= 2f_active + m_active + 1; one veto witness only detects disagreement.",
+  "criteria": {
+    "C1_narrow_interval_grid_matches_bound": true,
+    "C2_three_tolerates_one_arbitrary_without_missing": true,
+    "C3_three_fails_with_one_arbitrary_and_one_missing": true,
+    "C4_four_tolerates_one_arbitrary_and_one_missing": true,
+    "C5_radius_below_count_spacing_identifies_without_fault": true,
+    "C6_radius_at_count_spacing_collides_without_fault": true,
+    "C7_all_missing_observation_is_ambiguous": true,
+    "C8_minimum_safeguard_hitting_set_has_five_members": true,
+    "C9_exactly_three_minimum_safeguard_sets_exist": true,
+    "C10_every_minimum_set_has_four_forced_controls": true,
+    "C11_every_minimum_set_has_one_external_physical_veto": true,
+    "C12_each_minimum_set_is_inclusion_minimal": true,
+    "C13_external_veto_refuses_but_naive_plurality_is_wrong": true,
+    "C14_no_physical_result_is_claimed": true
+  },
+  "qualifies": true,
+  "implementationBoundary": {
+    "actualHardwareInLoop": false,
+    "physicalSensors": 0,
+    "physicalEventsObserved": 0,
+    "calibratedIntervals": 0,
+    "claim": "Finite combinatorial evidence only; no physical uncertainty distribution, independence claim, cut-set frequency, or safety integrity level is measured."
+  }
+}
