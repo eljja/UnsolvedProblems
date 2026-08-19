@@ -1,0 +1,1093 @@
+{
+  "cycle": "RC-2026-39",
+  "model": "Finite event-count identifiability under coupling, freshness, retention, independent witness faults, and common-cause corruption",
+  "domain": {
+    "eventCount": [
+      0,
+      1,
+      2
+    ],
+    "witnessReports": [
+      0,
+      1,
+      2
+    ],
+    "independentFaultBudget": [
+      0,
+      1,
+      2
+    ],
+    "testedWitnessCounts": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "commonCauseSweep": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "causalChain": [
+    "declare the physical event and admissible fault set",
+    "bind each claim to that event, its generation epoch, and retained state",
+    "collect enough disjoint witnesses for the declared independent-fault budget",
+    "partition admissible worlds by the verifier-visible observation",
+    "accept exact count only when every observation class contains one event count"
+  ],
+  "architectures": [
+    {
+      "name": "SOURCE_MARKER",
+      "worldCount": 3,
+      "observationCount": 1,
+      "identifiesExactEventCount": false,
+      "collisionCount": 1,
+      "shortestCollision": {
+        "observation": {
+          "marker": 1
+        },
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 3
+      },
+      "observations": [
+        {
+          "observation": {
+            "marker": 1
+          },
+          "truths": [
+            0,
+            1,
+            2
+          ],
+          "worldCount": 3
+        }
+      ]
+    },
+    {
+      "name": "COMMAND_ACCEPTANCE_BEFORE_ACTION",
+      "worldCount": 2,
+      "observationCount": 1,
+      "identifiesExactEventCount": false,
+      "collisionCount": 1,
+      "shortestCollision": {
+        "observation": {
+          "accepted": 1
+        },
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      },
+      "observations": [
+        {
+          "observation": {
+            "accepted": 1
+          },
+          "truths": [
+            0,
+            1
+          ],
+          "worldCount": 2
+        }
+      ]
+    },
+    {
+      "name": "ONE_EVENT_BOUND_WITNESS_F0",
+      "worldCount": 3,
+      "observationCount": 3,
+      "identifiesExactEventCount": true,
+      "collisionCount": 0,
+      "shortestCollision": null,
+      "observations": [
+        {
+          "observation": {
+            "witness": [
+              0
+            ]
+          },
+          "truths": [
+            0
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              1
+            ]
+          },
+          "truths": [
+            1
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              2
+            ]
+          },
+          "truths": [
+            2
+          ],
+          "worldCount": 1
+        }
+      ]
+    },
+    {
+      "name": "ONE_EVENT_BOUND_WITNESS_F1",
+      "worldCount": 9,
+      "observationCount": 3,
+      "identifiesExactEventCount": false,
+      "collisionCount": 3,
+      "shortestCollision": {
+        "observation": {
+          "witness": [
+            0
+          ]
+        },
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 3
+      },
+      "observations": [
+        {
+          "observation": {
+            "witness": [
+              0
+            ]
+          },
+          "truths": [
+            0,
+            1,
+            2
+          ],
+          "worldCount": 3
+        },
+        {
+          "observation": {
+            "witness": [
+              1
+            ]
+          },
+          "truths": [
+            0,
+            1,
+            2
+          ],
+          "worldCount": 3
+        },
+        {
+          "observation": {
+            "witness": [
+              2
+            ]
+          },
+          "truths": [
+            0,
+            1,
+            2
+          ],
+          "worldCount": 3
+        }
+      ]
+    },
+    {
+      "name": "TWO_DIVERSE_WITNESSES_F1",
+      "worldCount": 15,
+      "observationCount": 9,
+      "identifiesExactEventCount": false,
+      "collisionCount": 6,
+      "shortestCollision": {
+        "observation": {
+          "witness": [
+            0,
+            1
+          ]
+        },
+        "truths": [
+          0,
+          1
+        ],
+        "worldCount": 2
+      },
+      "observations": [
+        {
+          "observation": {
+            "witness": [
+              0,
+              0
+            ]
+          },
+          "truths": [
+            0
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              0,
+              1
+            ]
+          },
+          "truths": [
+            0,
+            1
+          ],
+          "worldCount": 2
+        },
+        {
+          "observation": {
+            "witness": [
+              0,
+              2
+            ]
+          },
+          "truths": [
+            0,
+            2
+          ],
+          "worldCount": 2
+        },
+        {
+          "observation": {
+            "witness": [
+              1,
+              0
+            ]
+          },
+          "truths": [
+            0,
+            1
+          ],
+          "worldCount": 2
+        },
+        {
+          "observation": {
+            "witness": [
+              2,
+              0
+            ]
+          },
+          "truths": [
+            0,
+            2
+          ],
+          "worldCount": 2
+        },
+        {
+          "observation": {
+            "witness": [
+              1,
+              1
+            ]
+          },
+          "truths": [
+            1
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              1,
+              2
+            ]
+          },
+          "truths": [
+            1,
+            2
+          ],
+          "worldCount": 2
+        },
+        {
+          "observation": {
+            "witness": [
+              2,
+              1
+            ]
+          },
+          "truths": [
+            1,
+            2
+          ],
+          "worldCount": 2
+        },
+        {
+          "observation": {
+            "witness": [
+              2,
+              2
+            ]
+          },
+          "truths": [
+            2
+          ],
+          "worldCount": 1
+        }
+      ]
+    },
+    {
+      "name": "THREE_DIVERSE_WITNESSES_F1",
+      "worldCount": 21,
+      "observationCount": 21,
+      "identifiesExactEventCount": true,
+      "collisionCount": 0,
+      "shortestCollision": null,
+      "observations": [
+        {
+          "observation": {
+            "witness": [
+              0,
+              0,
+              0
+            ]
+          },
+          "truths": [
+            0
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              0,
+              0,
+              1
+            ]
+          },
+          "truths": [
+            0
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              0,
+              0,
+              2
+            ]
+          },
+          "truths": [
+            0
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              0,
+              1,
+              0
+            ]
+          },
+          "truths": [
+            0
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              0,
+              2,
+              0
+            ]
+          },
+          "truths": [
+            0
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              1,
+              0,
+              0
+            ]
+          },
+          "truths": [
+            0
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              2,
+              0,
+              0
+            ]
+          },
+          "truths": [
+            0
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              0,
+              1,
+              1
+            ]
+          },
+          "truths": [
+            1
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              1,
+              0,
+              1
+            ]
+          },
+          "truths": [
+            1
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              1,
+              1,
+              0
+            ]
+          },
+          "truths": [
+            1
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              1,
+              1,
+              1
+            ]
+          },
+          "truths": [
+            1
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              1,
+              1,
+              2
+            ]
+          },
+          "truths": [
+            1
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              1,
+              2,
+              1
+            ]
+          },
+          "truths": [
+            1
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              2,
+              1,
+              1
+            ]
+          },
+          "truths": [
+            1
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              0,
+              2,
+              2
+            ]
+          },
+          "truths": [
+            2
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              1,
+              2,
+              2
+            ]
+          },
+          "truths": [
+            2
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              2,
+              0,
+              2
+            ]
+          },
+          "truths": [
+            2
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              2,
+              1,
+              2
+            ]
+          },
+          "truths": [
+            2
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              2,
+              2,
+              0
+            ]
+          },
+          "truths": [
+            2
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              2,
+              2,
+              1
+            ]
+          },
+          "truths": [
+            2
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "witness": [
+              2,
+              2,
+              2
+            ]
+          },
+          "truths": [
+            2
+          ],
+          "worldCount": 1
+        }
+      ]
+    },
+    {
+      "name": "THREE_WITNESSES_COMMON_CAUSE",
+      "worldCount": 9,
+      "observationCount": 3,
+      "identifiesExactEventCount": false,
+      "collisionCount": 3,
+      "shortestCollision": {
+        "observation": {
+          "witness": [
+            0,
+            0,
+            0
+          ]
+        },
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 3
+      },
+      "observations": [
+        {
+          "observation": {
+            "witness": [
+              0,
+              0,
+              0
+            ]
+          },
+          "truths": [
+            0,
+            1,
+            2
+          ],
+          "worldCount": 3
+        },
+        {
+          "observation": {
+            "witness": [
+              1,
+              1,
+              1
+            ]
+          },
+          "truths": [
+            0,
+            1,
+            2
+          ],
+          "worldCount": 3
+        },
+        {
+          "observation": {
+            "witness": [
+              2,
+              2,
+              2
+            ]
+          },
+          "truths": [
+            0,
+            1,
+            2
+          ],
+          "worldCount": 3
+        }
+      ]
+    },
+    {
+      "name": "SIGNED_CURRENT_TOKEN_UNBOUND_CLAIM_TIME",
+      "worldCount": 9,
+      "observationCount": 3,
+      "identifiesExactEventCount": false,
+      "collisionCount": 3,
+      "shortestCollision": {
+        "observation": {
+          "tokenEpoch": "current",
+          "witness": [
+            0
+          ]
+        },
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 3
+      },
+      "observations": [
+        {
+          "observation": {
+            "tokenEpoch": "current",
+            "witness": [
+              0
+            ]
+          },
+          "truths": [
+            0,
+            1,
+            2
+          ],
+          "worldCount": 3
+        },
+        {
+          "observation": {
+            "tokenEpoch": "current",
+            "witness": [
+              1
+            ]
+          },
+          "truths": [
+            0,
+            1,
+            2
+          ],
+          "worldCount": 3
+        },
+        {
+          "observation": {
+            "tokenEpoch": "current",
+            "witness": [
+              2
+            ]
+          },
+          "truths": [
+            0,
+            1,
+            2
+          ],
+          "worldCount": 3
+        }
+      ]
+    },
+    {
+      "name": "EVENT_AND_EPOCH_BOUND_WITNESS_F0",
+      "worldCount": 3,
+      "observationCount": 3,
+      "identifiesExactEventCount": true,
+      "collisionCount": 0,
+      "shortestCollision": null,
+      "observations": [
+        {
+          "observation": {
+            "tokenEpoch": "current",
+            "measurementEpoch": "current",
+            "witness": [
+              0
+            ]
+          },
+          "truths": [
+            0
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "tokenEpoch": "current",
+            "measurementEpoch": "current",
+            "witness": [
+              1
+            ]
+          },
+          "truths": [
+            1
+          ],
+          "worldCount": 1
+        },
+        {
+          "observation": {
+            "tokenEpoch": "current",
+            "measurementEpoch": "current",
+            "witness": [
+              2
+            ]
+          },
+          "truths": [
+            2
+          ],
+          "worldCount": 1
+        }
+      ]
+    },
+    {
+      "name": "RESETTABLE_CURRENT_COUNTER",
+      "worldCount": 6,
+      "observationCount": 3,
+      "identifiesExactEventCount": false,
+      "collisionCount": 2,
+      "shortestCollision": {
+        "observation": {
+          "epoch": "current",
+          "witness": [
+            0
+          ]
+        },
+        "truths": [
+          0,
+          1,
+          2
+        ],
+        "worldCount": 3
+      },
+      "observations": [
+        {
+          "observation": {
+            "epoch": "current",
+            "witness": [
+              0
+            ]
+          },
+          "truths": [
+            0,
+            1,
+            2
+          ],
+          "worldCount": 3
+        },
+        {
+          "observation": {
+            "epoch": "current",
+            "witness": [
+              1
+            ]
+          },
+          "truths": [
+            1,
+            2
+          ],
+          "worldCount": 2
+        },
+        {
+          "observation": {
+            "epoch": "current",
+            "witness": [
+              2
+            ]
+          },
+          "truths": [
+            2
+          ],
+          "worldCount": 1
+        }
+      ]
+    }
+  ],
+  "thresholdGrid": [
+    {
+      "n": 1,
+      "f": 0,
+      "admissibleWorlds": 3,
+      "observationClasses": 3,
+      "collisionClasses": 0,
+      "identifiesExactEventCount": true,
+      "expectedByStrictMajority": true
+    },
+    {
+      "n": 2,
+      "f": 0,
+      "admissibleWorlds": 3,
+      "observationClasses": 3,
+      "collisionClasses": 0,
+      "identifiesExactEventCount": true,
+      "expectedByStrictMajority": true
+    },
+    {
+      "n": 3,
+      "f": 0,
+      "admissibleWorlds": 3,
+      "observationClasses": 3,
+      "collisionClasses": 0,
+      "identifiesExactEventCount": true,
+      "expectedByStrictMajority": true
+    },
+    {
+      "n": 4,
+      "f": 0,
+      "admissibleWorlds": 3,
+      "observationClasses": 3,
+      "collisionClasses": 0,
+      "identifiesExactEventCount": true,
+      "expectedByStrictMajority": true
+    },
+    {
+      "n": 5,
+      "f": 0,
+      "admissibleWorlds": 3,
+      "observationClasses": 3,
+      "collisionClasses": 0,
+      "identifiesExactEventCount": true,
+      "expectedByStrictMajority": true
+    },
+    {
+      "n": 1,
+      "f": 1,
+      "admissibleWorlds": 9,
+      "observationClasses": 3,
+      "collisionClasses": 3,
+      "identifiesExactEventCount": false,
+      "expectedByStrictMajority": false
+    },
+    {
+      "n": 2,
+      "f": 1,
+      "admissibleWorlds": 15,
+      "observationClasses": 9,
+      "collisionClasses": 6,
+      "identifiesExactEventCount": false,
+      "expectedByStrictMajority": false
+    },
+    {
+      "n": 3,
+      "f": 1,
+      "admissibleWorlds": 21,
+      "observationClasses": 21,
+      "collisionClasses": 0,
+      "identifiesExactEventCount": true,
+      "expectedByStrictMajority": true
+    },
+    {
+      "n": 4,
+      "f": 1,
+      "admissibleWorlds": 27,
+      "observationClasses": 27,
+      "collisionClasses": 0,
+      "identifiesExactEventCount": true,
+      "expectedByStrictMajority": true
+    },
+    {
+      "n": 5,
+      "f": 1,
+      "admissibleWorlds": 33,
+      "observationClasses": 33,
+      "collisionClasses": 0,
+      "identifiesExactEventCount": true,
+      "expectedByStrictMajority": true
+    },
+    {
+      "n": 1,
+      "f": 2,
+      "admissibleWorlds": 9,
+      "observationClasses": 3,
+      "collisionClasses": 3,
+      "identifiesExactEventCount": false,
+      "expectedByStrictMajority": false
+    },
+    {
+      "n": 2,
+      "f": 2,
+      "admissibleWorlds": 27,
+      "observationClasses": 9,
+      "collisionClasses": 9,
+      "identifiesExactEventCount": false,
+      "expectedByStrictMajority": false
+    },
+    {
+      "n": 3,
+      "f": 2,
+      "admissibleWorlds": 57,
+      "observationClasses": 27,
+      "collisionClasses": 24,
+      "identifiesExactEventCount": false,
+      "expectedByStrictMajority": false
+    },
+    {
+      "n": 4,
+      "f": 2,
+      "admissibleWorlds": 99,
+      "observationClasses": 81,
+      "collisionClasses": 18,
+      "identifiesExactEventCount": false,
+      "expectedByStrictMajority": false
+    },
+    {
+      "n": 5,
+      "f": 2,
+      "admissibleWorlds": 153,
+      "observationClasses": 153,
+      "collisionClasses": 0,
+      "identifiesExactEventCount": true,
+      "expectedByStrictMajority": true
+    }
+  ],
+  "thresholdLemma": {
+    "statement": "For scalar exact reports with at most f arbitrary independent witness faults, n >= 2f+1 is necessary and sufficient for strict-majority identification over this value domain.",
+    "caveat": "This is an identifiability result under event coupling, current measurement epochs, retained state, and disjoint failure domains; it is not a probability-of-failure estimate."
+  },
+  "commonCauseSweep": [
+    {
+      "n": 1,
+      "collisionClasses": 3,
+      "identifiesExactEventCount": false
+    },
+    {
+      "n": 2,
+      "collisionClasses": 3,
+      "identifiesExactEventCount": false
+    },
+    {
+      "n": 3,
+      "collisionClasses": 3,
+      "identifiesExactEventCount": false
+    },
+    {
+      "n": 4,
+      "collisionClasses": 3,
+      "identifiesExactEventCount": false
+    },
+    {
+      "n": 5,
+      "collisionClasses": 3,
+      "identifiesExactEventCount": false
+    },
+    {
+      "n": 6,
+      "collisionClasses": 3,
+      "identifiesExactEventCount": false
+    },
+    {
+      "n": 7,
+      "collisionClasses": 3,
+      "identifiesExactEventCount": false
+    }
+  ],
+  "symbolicCommonCauseCounterexample": {
+    "statement": "For every finite n and any two event counts e1 != e2, a common-cause channel allowed to overwrite all n reports with the same value v produces observation [v]^n in both worlds.",
+    "consequence": "Redundancy alone cannot identify event count under an unconstrained shared failure domain; one must exclude that fault or add evidence outside it."
+  },
+  "criteria": {
+    "C1_source_marker_collides": true,
+    "C2_acceptance_before_action_collides": true,
+    "C3_one_healthy_event_bound_witness_identifies": true,
+    "C4_one_witness_does_not_tolerate_one_arbitrary_fault": true,
+    "C5_two_witnesses_do_not_tolerate_one_arbitrary_fault": true,
+    "C6_three_witnesses_tolerate_one_arbitrary_fault": true,
+    "C7_nonce_fresh_token_does_not_freshen_old_claim": true,
+    "C8_event_and_epoch_bound_witness_identifies_without_sensor_fault": true,
+    "C9_resettable_counter_collides": true,
+    "C10_strict_majority_threshold_matches_grid": true,
+    "C11_common_cause_defeats_all_tested_redundancy": true,
+    "C12_common_cause_symbolic_counterexample_is_size_independent": true
+  },
+  "qualifies": true,
+  "minimumCertificates": {
+    "noWitnessFault": [
+      "event-bound claim",
+      "claim-generation freshness",
+      "non-reset retention",
+      "one authenticated witness"
+    ],
+    "atMostOneIndependentArbitraryWitnessFault": [
+      "event-bound claims",
+      "claim-generation freshness",
+      "non-reset retention",
+      "three witnesses in explicitly disjoint failure domains",
+      "strict-majority adjudication"
+    ],
+    "unconstrainedCommonCauseFault": null
+  },
+  "implementationBoundary": {
+    "actualHardwareInLoop": false,
+    "physicalEventsObserved": 0,
+    "physicalHosts": 1,
+    "claim": "The program proves only finite-model identifiability and counterexamples. It does not calibrate a sensor, establish independence, or validate physical coupling."
+  }
+}
