@@ -1,0 +1,399 @@
+{
+  "cycle": "RC-2026-38",
+  "auditor": "independent Node raw-artifact and SQLite audit",
+  "computedOn": "2026-08-20",
+  "summaries": {
+    "marker-before-action": {
+      "integrity": "ok",
+      "controllerIntegrity": "ok",
+      "markerCount": 1,
+      "receiptCount": 0,
+      "pulseCount": 0,
+      "absoluteInvocations": 0,
+      "controllerEffects": 0
+    },
+    "action-before-marker": {
+      "integrity": "ok",
+      "controllerIntegrity": "ok",
+      "markerCount": 1,
+      "receiptCount": 0,
+      "pulseCount": 2,
+      "absoluteInvocations": 0,
+      "controllerEffects": 0
+    },
+    "qos2-once-handler-retry": {
+      "integrity": "ok",
+      "controllerIntegrity": "ok",
+      "markerCount": 1,
+      "receiptCount": 1,
+      "pulseCount": 2,
+      "absoluteInvocations": 0,
+      "controllerEffects": 0
+    },
+    "authoritative-counter-reconcile": {
+      "integrity": "ok",
+      "controllerIntegrity": "ok",
+      "markerCount": 1,
+      "receiptCount": 0,
+      "pulseCount": 1,
+      "absoluteInvocations": 0,
+      "controllerEffects": 0
+    },
+    "stale-counter-reconcile": {
+      "integrity": "ok",
+      "controllerIntegrity": "ok",
+      "markerCount": 1,
+      "receiptCount": 0,
+      "pulseCount": 2,
+      "absoluteInvocations": 0,
+      "controllerEffects": 0
+    },
+    "false-positive-counter": {
+      "integrity": "ok",
+      "controllerIntegrity": "ok",
+      "markerCount": 1,
+      "receiptCount": 0,
+      "pulseCount": 0,
+      "absoluteInvocations": 0,
+      "controllerEffects": 0
+    },
+    "absolute-setpoint-retry": {
+      "integrity": "ok",
+      "controllerIntegrity": "ok",
+      "markerCount": 1,
+      "receiptCount": 0,
+      "pulseCount": 0,
+      "absoluteInvocations": 2,
+      "controllerEffects": 0
+    },
+    "controller-command-id": {
+      "integrity": "ok",
+      "controllerIntegrity": "ok",
+      "markerCount": 1,
+      "receiptCount": 0,
+      "pulseCount": 0,
+      "absoluteInvocations": 0,
+      "controllerEffects": 1
+    }
+  },
+  "checks": [
+    {
+      "name": "case-count",
+      "pass": true,
+      "observed": 8,
+      "expected": 8
+    },
+    {
+      "name": "history-count",
+      "pass": true,
+      "observed": 39,
+      "expected": 39
+    },
+    {
+      "name": "all-preregistered-criteria",
+      "pass": true,
+      "observed": {
+        "C1_marker_first_exposes_missed_effect": true,
+        "C2_action_first_exposes_duplicate": true,
+        "C3_qos2_message_once_does_not_make_handler_effect_once": true,
+        "C4_current_counter_reconciles_one_effect": true,
+        "C5_stale_counter_duplicates": true,
+        "C6_false_positive_counter_loses_effect": true,
+        "C7_absolute_command_converges_despite_two_invocations": true,
+        "C8_controller_command_id_replays_without_duplicate_modeled_effect": true,
+        "C9_all_sink_databases_integral": true,
+        "C10_scope_is_one_host_software_loop": true
+      },
+      "expected": "all true"
+    },
+    {
+      "name": "scope-host-count",
+      "pass": true,
+      "observed": {
+        "physicalHosts": 1,
+        "actualHardwareInLoop": false,
+        "processesPerCase": [
+          "orchestrator",
+          "sink worker",
+          "emulated actuator service"
+        ],
+        "durableBoundaries": [
+          "sink SQLite",
+          "append-only pulse/invocation logs",
+          "controller SQLite"
+        ]
+      },
+      "expected": {
+        "physicalHosts": 1,
+        "actualHardwareInLoop": false
+      }
+    },
+    {
+      "name": "marker-before-action-integrity",
+      "pass": true,
+      "observed": {
+        "integrity": "ok",
+        "controllerIntegrity": "ok",
+        "markerCount": 1,
+        "receiptCount": 0,
+        "pulseCount": 0,
+        "absoluteInvocations": 0,
+        "controllerEffects": 0
+      },
+      "expected": "both ok"
+    },
+    {
+      "name": "marker-before-action-payload-binding",
+      "pass": true,
+      "observed": "all durable rows checked",
+      "expected": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb"
+    },
+    {
+      "name": "action-before-marker-integrity",
+      "pass": true,
+      "observed": {
+        "integrity": "ok",
+        "controllerIntegrity": "ok",
+        "markerCount": 1,
+        "receiptCount": 0,
+        "pulseCount": 2,
+        "absoluteInvocations": 0,
+        "controllerEffects": 0
+      },
+      "expected": "both ok"
+    },
+    {
+      "name": "action-before-marker-payload-binding",
+      "pass": true,
+      "observed": "all durable rows checked",
+      "expected": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb"
+    },
+    {
+      "name": "qos2-once-handler-retry-integrity",
+      "pass": true,
+      "observed": {
+        "integrity": "ok",
+        "controllerIntegrity": "ok",
+        "markerCount": 1,
+        "receiptCount": 1,
+        "pulseCount": 2,
+        "absoluteInvocations": 0,
+        "controllerEffects": 0
+      },
+      "expected": "both ok"
+    },
+    {
+      "name": "qos2-once-handler-retry-payload-binding",
+      "pass": true,
+      "observed": "all durable rows checked",
+      "expected": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb"
+    },
+    {
+      "name": "authoritative-counter-reconcile-integrity",
+      "pass": true,
+      "observed": {
+        "integrity": "ok",
+        "controllerIntegrity": "ok",
+        "markerCount": 1,
+        "receiptCount": 0,
+        "pulseCount": 1,
+        "absoluteInvocations": 0,
+        "controllerEffects": 0
+      },
+      "expected": "both ok"
+    },
+    {
+      "name": "authoritative-counter-reconcile-payload-binding",
+      "pass": true,
+      "observed": "all durable rows checked",
+      "expected": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb"
+    },
+    {
+      "name": "stale-counter-reconcile-integrity",
+      "pass": true,
+      "observed": {
+        "integrity": "ok",
+        "controllerIntegrity": "ok",
+        "markerCount": 1,
+        "receiptCount": 0,
+        "pulseCount": 2,
+        "absoluteInvocations": 0,
+        "controllerEffects": 0
+      },
+      "expected": "both ok"
+    },
+    {
+      "name": "stale-counter-reconcile-payload-binding",
+      "pass": true,
+      "observed": "all durable rows checked",
+      "expected": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb"
+    },
+    {
+      "name": "false-positive-counter-integrity",
+      "pass": true,
+      "observed": {
+        "integrity": "ok",
+        "controllerIntegrity": "ok",
+        "markerCount": 1,
+        "receiptCount": 0,
+        "pulseCount": 0,
+        "absoluteInvocations": 0,
+        "controllerEffects": 0
+      },
+      "expected": "both ok"
+    },
+    {
+      "name": "false-positive-counter-payload-binding",
+      "pass": true,
+      "observed": "all durable rows checked",
+      "expected": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb"
+    },
+    {
+      "name": "absolute-setpoint-retry-integrity",
+      "pass": true,
+      "observed": {
+        "integrity": "ok",
+        "controllerIntegrity": "ok",
+        "markerCount": 1,
+        "receiptCount": 0,
+        "pulseCount": 0,
+        "absoluteInvocations": 2,
+        "controllerEffects": 0
+      },
+      "expected": "both ok"
+    },
+    {
+      "name": "absolute-setpoint-retry-payload-binding",
+      "pass": true,
+      "observed": "all durable rows checked",
+      "expected": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb"
+    },
+    {
+      "name": "controller-command-id-integrity",
+      "pass": true,
+      "observed": {
+        "integrity": "ok",
+        "controllerIntegrity": "ok",
+        "markerCount": 1,
+        "receiptCount": 0,
+        "pulseCount": 0,
+        "absoluteInvocations": 0,
+        "controllerEffects": 1
+      },
+      "expected": "both ok"
+    },
+    {
+      "name": "controller-command-id-payload-binding",
+      "pass": true,
+      "observed": "all durable rows checked",
+      "expected": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb"
+    },
+    {
+      "name": "marker-first-missed",
+      "pass": true,
+      "observed": {
+        "integrity": "ok",
+        "controllerIntegrity": "ok",
+        "markerCount": 1,
+        "receiptCount": 0,
+        "pulseCount": 0,
+        "absoluteInvocations": 0,
+        "controllerEffects": 0
+      },
+      "expected": {
+        "markerCount": 1,
+        "pulseCount": 0
+      }
+    },
+    {
+      "name": "action-first-duplicate",
+      "pass": true,
+      "observed": {
+        "integrity": "ok",
+        "controllerIntegrity": "ok",
+        "markerCount": 1,
+        "receiptCount": 0,
+        "pulseCount": 2,
+        "absoluteInvocations": 0,
+        "controllerEffects": 0
+      },
+      "expected": {
+        "markerCount": 1,
+        "pulseCount": 2
+      }
+    },
+    {
+      "name": "qos2-boundary",
+      "pass": true,
+      "observed": {
+        "integrity": "ok",
+        "controllerIntegrity": "ok",
+        "markerCount": 1,
+        "receiptCount": 1,
+        "pulseCount": 2,
+        "absoluteInvocations": 0,
+        "controllerEffects": 0
+      },
+      "expected": {
+        "receiptCount": 1,
+        "pulseCount": 2
+      }
+    },
+    {
+      "name": "counter-current",
+      "pass": true,
+      "observed": 1,
+      "expected": 1
+    },
+    {
+      "name": "counter-stale",
+      "pass": true,
+      "observed": 2,
+      "expected": 2
+    },
+    {
+      "name": "counter-false-positive",
+      "pass": true,
+      "observed": {
+        "integrity": "ok",
+        "controllerIntegrity": "ok",
+        "markerCount": 1,
+        "receiptCount": 0,
+        "pulseCount": 0,
+        "absoluteInvocations": 0,
+        "controllerEffects": 0
+      },
+      "expected": {
+        "markerCount": 1,
+        "pulseCount": 0
+      }
+    },
+    {
+      "name": "absolute-state-reformulation",
+      "pass": true,
+      "observed": {
+        "integrity": "ok",
+        "controllerIntegrity": "ok",
+        "markerCount": 1,
+        "receiptCount": 0,
+        "pulseCount": 0,
+        "absoluteInvocations": 2,
+        "controllerEffects": 0
+      },
+      "expected": {
+        "absoluteInvocations": 2,
+        "target": 1
+      }
+    },
+    {
+      "name": "controller-id-upper-bound",
+      "pass": true,
+      "observed": 1,
+      "expected": 1
+    }
+  ],
+  "passed": 28,
+  "total": 28,
+  "qualifies": true,
+  "resultSha256": "167b065438f1495945a8c996e30063b73d36cb8ca266b54f2eaac44d3fc537e4"
+}

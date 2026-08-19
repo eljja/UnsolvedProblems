@@ -1,0 +1,730 @@
+{
+  "cycle": "RC-2026-38",
+  "executedOn": "2026-08-20",
+  "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+  "implementation": {
+    "physicalHosts": 1,
+    "actualHardwareInLoop": false,
+    "processesPerCase": [
+      "orchestrator",
+      "sink worker",
+      "emulated actuator service"
+    ],
+    "durableBoundaries": [
+      "sink SQLite",
+      "append-only pulse/invocation logs",
+      "controller SQLite"
+    ]
+  },
+  "cases": [
+    {
+      "name": "marker-before-action",
+      "eventId": "RC38-MARKER-FIRST-001",
+      "attempts": [
+        {
+          "protocol": "marker-first",
+          "fault": "after-marker",
+          "result": {
+            "code": 101,
+            "output": {
+              "protocol": "marker-first",
+              "eventId": "RC38-MARKER-FIRST-001",
+              "priorMarker": null,
+              "status": "crash-after-marker"
+            },
+            "stderr": null
+          }
+        },
+        {
+          "protocol": "marker-first",
+          "result": {
+            "code": 0,
+            "output": {
+              "protocol": "marker-first",
+              "eventId": "RC38-MARKER-FIRST-001",
+              "priorMarker": {
+                "eventId": "RC38-MARKER-FIRST-001",
+                "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+                "criterion": "execution-count"
+              },
+              "status": "marker-replay-skip",
+              "marker": {
+                "eventId": "RC38-MARKER-FIRST-001",
+                "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+                "criterion": "execution-count"
+              }
+            },
+            "stderr": null
+          }
+        }
+      ],
+      "final": {
+        "actuator": {
+          "pulseCount": 0,
+          "pulses": [],
+          "absoluteInvocationCount": 0,
+          "absoluteState": {
+            "target": 0
+          },
+          "controllerEffects": []
+        },
+        "markers": [
+          {
+            "eventId": "RC38-MARKER-FIRST-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "execution-count"
+          }
+        ],
+        "receipts": [],
+        "integrity": "ok",
+        "files": [
+          "controller.sqlite",
+          "controller.sqlite-shm",
+          "controller.sqlite-wal",
+          "sink.sqlite",
+          "sink.sqlite-shm",
+          "sink.sqlite-wal"
+        ]
+      },
+      "caseDir": "research/reproducibility/rc38-software-loop/marker-before-action",
+      "sinkDb": "research/reproducibility/rc38-software-loop/marker-before-action/sink.sqlite"
+    },
+    {
+      "name": "action-before-marker",
+      "eventId": "RC38-ACTION-FIRST-001",
+      "attempts": [
+        {
+          "protocol": "action-first",
+          "fault": "after-action",
+          "result": {
+            "code": 102,
+            "output": {
+              "protocol": "action-first",
+              "eventId": "RC38-ACTION-FIRST-001",
+              "priorMarker": null,
+              "action": {
+                "status": 201,
+                "body": {
+                  "status": "executed",
+                  "ordinal": 1
+                }
+              },
+              "status": "crash-after-action"
+            },
+            "stderr": null
+          }
+        },
+        {
+          "protocol": "action-first",
+          "result": {
+            "code": 0,
+            "output": {
+              "protocol": "action-first",
+              "eventId": "RC38-ACTION-FIRST-001",
+              "priorMarker": null,
+              "action": {
+                "status": 201,
+                "body": {
+                  "status": "executed",
+                  "ordinal": 2
+                }
+              },
+              "status": "completed",
+              "marker": {
+                "eventId": "RC38-ACTION-FIRST-001",
+                "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+                "criterion": "execution-count"
+              }
+            },
+            "stderr": null
+          }
+        }
+      ],
+      "final": {
+        "actuator": {
+          "pulseCount": 2,
+          "pulses": [
+            {
+              "eventId": "RC38-ACTION-FIRST-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "ordinal": 1
+            },
+            {
+              "eventId": "RC38-ACTION-FIRST-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "ordinal": 2
+            }
+          ],
+          "absoluteInvocationCount": 0,
+          "absoluteState": {
+            "target": 0
+          },
+          "controllerEffects": []
+        },
+        "markers": [
+          {
+            "eventId": "RC38-ACTION-FIRST-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "execution-count"
+          }
+        ],
+        "receipts": [],
+        "integrity": "ok",
+        "files": [
+          "controller.sqlite",
+          "controller.sqlite-shm",
+          "controller.sqlite-wal",
+          "pulse-effects.ndjson",
+          "sink.sqlite",
+          "sink.sqlite-shm",
+          "sink.sqlite-wal"
+        ]
+      },
+      "caseDir": "research/reproducibility/rc38-software-loop/action-before-marker",
+      "sinkDb": "research/reproducibility/rc38-software-loop/action-before-marker/sink.sqlite"
+    },
+    {
+      "name": "qos2-once-handler-retry",
+      "eventId": "RC38-QOS2-HANDLER-001",
+      "attempts": [
+        {
+          "protocol": "qos2-handler",
+          "fault": "after-action",
+          "result": {
+            "code": 103,
+            "output": {
+              "protocol": "qos2-handler",
+              "eventId": "RC38-QOS2-HANDLER-001",
+              "priorMarker": null,
+              "action": {
+                "status": 201,
+                "body": {
+                  "status": "executed",
+                  "ordinal": 1
+                }
+              },
+              "status": "crash-after-qos2-handler-action"
+            },
+            "stderr": null
+          }
+        },
+        {
+          "protocol": "qos2-handler",
+          "result": {
+            "code": 0,
+            "output": {
+              "protocol": "qos2-handler",
+              "eventId": "RC38-QOS2-HANDLER-001",
+              "priorMarker": null,
+              "action": {
+                "status": 201,
+                "body": {
+                  "status": "executed",
+                  "ordinal": 2
+                }
+              },
+              "status": "completed",
+              "marker": {
+                "eventId": "RC38-QOS2-HANDLER-001",
+                "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+                "criterion": "execution-count"
+              }
+            },
+            "stderr": null
+          }
+        }
+      ],
+      "final": {
+        "actuator": {
+          "pulseCount": 2,
+          "pulses": [
+            {
+              "eventId": "RC38-QOS2-HANDLER-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "ordinal": 1
+            },
+            {
+              "eventId": "RC38-QOS2-HANDLER-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "ordinal": 2
+            }
+          ],
+          "absoluteInvocationCount": 0,
+          "absoluteState": {
+            "target": 0
+          },
+          "controllerEffects": []
+        },
+        "markers": [
+          {
+            "eventId": "RC38-QOS2-HANDLER-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "execution-count"
+          }
+        ],
+        "receipts": [
+          {
+            "eventId": "RC38-QOS2-HANDLER-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb"
+          }
+        ],
+        "integrity": "ok",
+        "files": [
+          "controller.sqlite",
+          "controller.sqlite-shm",
+          "controller.sqlite-wal",
+          "pulse-effects.ndjson",
+          "sink.sqlite",
+          "sink.sqlite-shm",
+          "sink.sqlite-wal"
+        ]
+      },
+      "caseDir": "research/reproducibility/rc38-software-loop/qos2-once-handler-retry",
+      "sinkDb": "research/reproducibility/rc38-software-loop/qos2-once-handler-retry/sink.sqlite"
+    },
+    {
+      "name": "authoritative-counter-reconcile",
+      "eventId": "RC38-COUNTER-CURRENT-001",
+      "attempts": [
+        {
+          "protocol": "action-first",
+          "fault": "after-action",
+          "result": {
+            "code": 102,
+            "output": {
+              "protocol": "action-first",
+              "eventId": "RC38-COUNTER-CURRENT-001",
+              "priorMarker": null,
+              "action": {
+                "status": 201,
+                "body": {
+                  "status": "executed",
+                  "ordinal": 1
+                }
+              },
+              "status": "crash-after-action"
+            },
+            "stderr": null
+          }
+        },
+        {
+          "protocol": "sensor-reconcile",
+          "result": {
+            "code": 0,
+            "output": {
+              "protocol": "sensor-reconcile",
+              "eventId": "RC38-COUNTER-CURRENT-001",
+              "priorMarker": null,
+              "rawPulseCount": 1,
+              "reportedPulseCount": 1,
+              "status": "completed",
+              "marker": {
+                "eventId": "RC38-COUNTER-CURRENT-001",
+                "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+                "criterion": "sensor-reconciled-count"
+              }
+            },
+            "stderr": null
+          }
+        }
+      ],
+      "final": {
+        "actuator": {
+          "pulseCount": 1,
+          "pulses": [
+            {
+              "eventId": "RC38-COUNTER-CURRENT-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "ordinal": 1
+            }
+          ],
+          "absoluteInvocationCount": 0,
+          "absoluteState": {
+            "target": 0
+          },
+          "controllerEffects": []
+        },
+        "markers": [
+          {
+            "eventId": "RC38-COUNTER-CURRENT-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "sensor-reconciled-count"
+          }
+        ],
+        "receipts": [],
+        "integrity": "ok",
+        "files": [
+          "controller.sqlite",
+          "controller.sqlite-shm",
+          "controller.sqlite-wal",
+          "pulse-effects.ndjson",
+          "sink.sqlite",
+          "sink.sqlite-shm",
+          "sink.sqlite-wal"
+        ]
+      },
+      "caseDir": "research/reproducibility/rc38-software-loop/authoritative-counter-reconcile",
+      "sinkDb": "research/reproducibility/rc38-software-loop/authoritative-counter-reconcile/sink.sqlite"
+    },
+    {
+      "name": "stale-counter-reconcile",
+      "eventId": "RC38-COUNTER-STALE-001",
+      "attempts": [
+        {
+          "protocol": "action-first",
+          "fault": "after-action",
+          "result": {
+            "code": 102,
+            "output": {
+              "protocol": "action-first",
+              "eventId": "RC38-COUNTER-STALE-001",
+              "priorMarker": null,
+              "action": {
+                "status": 201,
+                "body": {
+                  "status": "executed",
+                  "ordinal": 1
+                }
+              },
+              "status": "crash-after-action"
+            },
+            "stderr": null
+          }
+        },
+        {
+          "protocol": "sensor-reconcile",
+          "sensorOffset": -1,
+          "result": {
+            "code": 0,
+            "output": {
+              "protocol": "sensor-reconcile",
+              "eventId": "RC38-COUNTER-STALE-001",
+              "priorMarker": null,
+              "rawPulseCount": 1,
+              "reportedPulseCount": 0,
+              "action": {
+                "status": 201,
+                "body": {
+                  "status": "executed",
+                  "ordinal": 2
+                }
+              },
+              "status": "completed",
+              "marker": {
+                "eventId": "RC38-COUNTER-STALE-001",
+                "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+                "criterion": "sensor-reconciled-count"
+              }
+            },
+            "stderr": null
+          }
+        }
+      ],
+      "final": {
+        "actuator": {
+          "pulseCount": 2,
+          "pulses": [
+            {
+              "eventId": "RC38-COUNTER-STALE-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "ordinal": 1
+            },
+            {
+              "eventId": "RC38-COUNTER-STALE-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "ordinal": 2
+            }
+          ],
+          "absoluteInvocationCount": 0,
+          "absoluteState": {
+            "target": 0
+          },
+          "controllerEffects": []
+        },
+        "markers": [
+          {
+            "eventId": "RC38-COUNTER-STALE-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "sensor-reconciled-count"
+          }
+        ],
+        "receipts": [],
+        "integrity": "ok",
+        "files": [
+          "controller.sqlite",
+          "controller.sqlite-shm",
+          "controller.sqlite-wal",
+          "pulse-effects.ndjson",
+          "sink.sqlite",
+          "sink.sqlite-shm",
+          "sink.sqlite-wal"
+        ]
+      },
+      "caseDir": "research/reproducibility/rc38-software-loop/stale-counter-reconcile",
+      "sinkDb": "research/reproducibility/rc38-software-loop/stale-counter-reconcile/sink.sqlite"
+    },
+    {
+      "name": "false-positive-counter",
+      "eventId": "RC38-COUNTER-FALSE-001",
+      "attempts": [
+        {
+          "protocol": "sensor-reconcile",
+          "sensorOffset": 1,
+          "result": {
+            "code": 0,
+            "output": {
+              "protocol": "sensor-reconcile",
+              "eventId": "RC38-COUNTER-FALSE-001",
+              "priorMarker": null,
+              "rawPulseCount": 0,
+              "reportedPulseCount": 1,
+              "status": "completed",
+              "marker": {
+                "eventId": "RC38-COUNTER-FALSE-001",
+                "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+                "criterion": "sensor-reconciled-count"
+              }
+            },
+            "stderr": null
+          }
+        }
+      ],
+      "final": {
+        "actuator": {
+          "pulseCount": 0,
+          "pulses": [],
+          "absoluteInvocationCount": 0,
+          "absoluteState": {
+            "target": 0
+          },
+          "controllerEffects": []
+        },
+        "markers": [
+          {
+            "eventId": "RC38-COUNTER-FALSE-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "sensor-reconciled-count"
+          }
+        ],
+        "receipts": [],
+        "integrity": "ok",
+        "files": [
+          "controller.sqlite",
+          "controller.sqlite-shm",
+          "controller.sqlite-wal",
+          "sink.sqlite",
+          "sink.sqlite-shm",
+          "sink.sqlite-wal"
+        ]
+      },
+      "caseDir": "research/reproducibility/rc38-software-loop/false-positive-counter",
+      "sinkDb": "research/reproducibility/rc38-software-loop/false-positive-counter/sink.sqlite"
+    },
+    {
+      "name": "absolute-setpoint-retry",
+      "eventId": "RC38-ABSOLUTE-001",
+      "attempts": [
+        {
+          "protocol": "absolute-setpoint",
+          "fault": "after-action",
+          "result": {
+            "code": 104,
+            "output": {
+              "protocol": "absolute-setpoint",
+              "eventId": "RC38-ABSOLUTE-001",
+              "priorMarker": null,
+              "action": {
+                "status": 201,
+                "body": {
+                  "status": "set",
+                  "ordinal": 1,
+                  "target": 1
+                }
+              },
+              "status": "crash-after-absolute-set"
+            },
+            "stderr": null
+          }
+        },
+        {
+          "protocol": "absolute-setpoint",
+          "result": {
+            "code": 0,
+            "output": {
+              "protocol": "absolute-setpoint",
+              "eventId": "RC38-ABSOLUTE-001",
+              "priorMarker": null,
+              "action": {
+                "status": 201,
+                "body": {
+                  "status": "set",
+                  "ordinal": 2,
+                  "target": 1
+                }
+              },
+              "status": "completed",
+              "marker": {
+                "eventId": "RC38-ABSOLUTE-001",
+                "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+                "criterion": "target-state"
+              }
+            },
+            "stderr": null
+          }
+        }
+      ],
+      "final": {
+        "actuator": {
+          "pulseCount": 0,
+          "pulses": [],
+          "absoluteInvocationCount": 2,
+          "absoluteState": {
+            "target": 1,
+            "eventId": "RC38-ABSOLUTE-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb"
+          },
+          "controllerEffects": []
+        },
+        "markers": [
+          {
+            "eventId": "RC38-ABSOLUTE-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "target-state"
+          }
+        ],
+        "receipts": [],
+        "integrity": "ok",
+        "files": [
+          "absolute-invocations.ndjson",
+          "absolute-state.json",
+          "controller.sqlite",
+          "controller.sqlite-shm",
+          "controller.sqlite-wal",
+          "sink.sqlite",
+          "sink.sqlite-shm",
+          "sink.sqlite-wal"
+        ]
+      },
+      "caseDir": "research/reproducibility/rc38-software-loop/absolute-setpoint-retry",
+      "sinkDb": "research/reproducibility/rc38-software-loop/absolute-setpoint-retry/sink.sqlite"
+    },
+    {
+      "name": "controller-command-id",
+      "eventId": "RC38-CONTROLLER-ID-001",
+      "attempts": [
+        {
+          "protocol": "controller-dedup",
+          "fault": "after-action",
+          "result": {
+            "code": 105,
+            "output": {
+              "protocol": "controller-dedup",
+              "eventId": "RC38-CONTROLLER-ID-001",
+              "priorMarker": null,
+              "action": {
+                "status": 201,
+                "body": {
+                  "eventId": "RC38-CONTROLLER-ID-001",
+                  "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+                  "effectOrdinal": 1,
+                  "status": "created"
+                }
+              },
+              "status": "crash-after-controller-acceptance"
+            },
+            "stderr": null
+          }
+        },
+        {
+          "protocol": "controller-dedup",
+          "result": {
+            "code": 0,
+            "output": {
+              "protocol": "controller-dedup",
+              "eventId": "RC38-CONTROLLER-ID-001",
+              "priorMarker": null,
+              "action": {
+                "status": 200,
+                "body": {
+                  "eventId": "RC38-CONTROLLER-ID-001",
+                  "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+                  "effectOrdinal": 1,
+                  "status": "replay"
+                }
+              },
+              "status": "completed",
+              "marker": {
+                "eventId": "RC38-CONTROLLER-ID-001",
+                "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+                "criterion": "controller-acceptance"
+              }
+            },
+            "stderr": null
+          }
+        }
+      ],
+      "final": {
+        "actuator": {
+          "pulseCount": 0,
+          "pulses": [],
+          "absoluteInvocationCount": 0,
+          "absoluteState": {
+            "target": 0
+          },
+          "controllerEffects": [
+            {
+              "eventId": "RC38-CONTROLLER-ID-001",
+              "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+              "effectOrdinal": 1
+            }
+          ]
+        },
+        "markers": [
+          {
+            "eventId": "RC38-CONTROLLER-ID-001",
+            "payloadSha256": "609334e365b89c98bff6fd29c82e0c11ba20a85489705ec294d05e6e558539bb",
+            "criterion": "controller-acceptance"
+          }
+        ],
+        "receipts": [],
+        "integrity": "ok",
+        "files": [
+          "controller.sqlite",
+          "controller.sqlite-shm",
+          "controller.sqlite-wal",
+          "sink.sqlite",
+          "sink.sqlite-shm",
+          "sink.sqlite-wal"
+        ]
+      },
+      "caseDir": "research/reproducibility/rc38-software-loop/controller-command-id",
+      "sinkDb": "research/reproducibility/rc38-software-loop/controller-command-id/sink.sqlite"
+    }
+  ],
+  "criteria": {
+    "C1_marker_first_exposes_missed_effect": true,
+    "C2_action_first_exposes_duplicate": true,
+    "C3_qos2_message_once_does_not_make_handler_effect_once": true,
+    "C4_current_counter_reconciles_one_effect": true,
+    "C5_stale_counter_duplicates": true,
+    "C6_false_positive_counter_loses_effect": true,
+    "C7_absolute_command_converges_despite_two_invocations": true,
+    "C8_controller_command_id_replays_without_duplicate_modeled_effect": true,
+    "C9_all_sink_databases_integral": true,
+    "C10_scope_is_one_host_software_loop": true
+  },
+  "qualifies": true,
+  "historyEvents": 39,
+  "boundary": {
+    "qualifies": "A one-host software-loop confirmation of the action-marker ambiguity, message/effect separation, counter freshness dependence, state-convergence reformulation, and controller-owned command-ID upper bound under fixed crash cuts.",
+    "doesNotQualify": [
+      "a physical actuator or hardware-in-the-loop device",
+      "multiple physical hosts",
+      "a real asymmetric network partition",
+      "host or storage-device power loss",
+      "an atomicity proof between a physical transition and controller memory",
+      "sensor calibration, miss, false-positive, latency, or common-cause-failure rates",
+      "an unbounded exactly-once or liveness proof"
+    ]
+  }
+}
