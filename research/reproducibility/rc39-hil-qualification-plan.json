@@ -1,0 +1,43 @@
+{
+  "cycle": "RC-2026-39",
+  "status": "design-only-no-hardware-executed",
+  "purpose": "Qualify or reject a physical-event evidence certificate without reusing operational ledgers as the final adjudicator.",
+  "minimumRig": {
+    "physicalHosts": 3,
+    "roles": ["receiver-and-command-issuer", "actuator-controller", "ledger-blind-evidence-auditor"],
+    "physicalEvent": "One relay edge that produces a separately measurable shaft, optical, or electrical transition.",
+    "witnesses": [
+      { "id": "W1", "principle": "encoder-or-limit-switch", "requiredIsolation": ["separate input channel", "separate retained counter"] },
+      { "id": "W2", "principle": "current-or-voltage transient", "requiredIsolation": ["separate acquisition path", "independent clock"] },
+      { "id": "W3", "principle": "optical-or-acoustic transition", "requiredIsolation": ["separate power where feasible", "separate processor and storage"] }
+    ]
+  },
+  "calibrationBeforeFaultInjection": {
+    "required": true,
+    "blindTrialsPerClassMinimum": 100,
+    "classes": ["zero-event", "one-event", "two-event", "near-threshold-event", "power-cycle-without-event"],
+    "outputs": ["false-positive upper 95% bound", "miss upper 95% bound", "timing-error upper 95% bound", "cross-witness residual dependence", "environmental operating envelope"],
+    "gate": "Do not run the confirmation matrix if uncertainty intervals overlap the zero/one/two-event decision regions or if witness dependence is not bounded."
+  },
+  "faultMatrix": [
+    { "id": "F01", "cut": "before command persistence", "partition": "none", "witnessFault": "none", "expectedUse": "baseline zero-event completion check" },
+    { "id": "F02", "cut": "after command persistence before actuator acceptance", "partition": "issuer-to-controller asymmetric", "witnessFault": "none", "expectedUse": "acceptance ambiguity" },
+    { "id": "F03", "cut": "after acceptance before physical transition", "partition": "none", "witnessFault": "none", "expectedUse": "acceptance-is-not-action counterexample" },
+    { "id": "F04", "cut": "during physical transition before W1 retention", "partition": "none", "witnessFault": "W1 miss", "expectedUse": "single-witness failure" },
+    { "id": "F05", "cut": "after physical transition before response", "partition": "controller-to-issuer asymmetric", "witnessFault": "none", "expectedUse": "retry boundary" },
+    { "id": "F06", "cut": "after W1 retention before W2 retention", "partition": "none", "witnessFault": "W2 delay", "expectedUse": "non-atomic evidence window" },
+    { "id": "F07", "cut": "none", "partition": "evidence replay", "witnessFault": "prior-epoch authentic bundle", "expectedUse": "claim-generation freshness" },
+    { "id": "F08", "cut": "shared sensor power", "partition": "none", "witnessFault": "common-cause reset", "expectedUse": "redundancy failure boundary" },
+    { "id": "F09", "cut": "independent W1 reset", "partition": "none", "witnessFault": "one arbitrary witness", "expectedUse": "three-witness majority" },
+    { "id": "F10", "cut": "controller power during retry", "partition": "both asymmetric directions in separate runs", "witnessFault": "one delayed witness", "expectedUse": "combined worst-case holdout" }
+  ],
+  "independence": {
+    "development": "Controller and operational ledger may be used to construct the rig and inject faults.",
+    "adjudication": "A separate implementation receives only sealed witness bundles, calibration artifacts, epoch challenges, and the declared fault model.",
+    "holdout": "F10 timing and direction are selected after development thresholds are frozen but before the independent auditor receives any bundle.",
+    "antiLeakage": "Event labels and operational ledgers remain hidden until the auditor has committed certificate verdicts and raw hashes."
+  },
+  "success": "Every accepted certificate identifies one event count in all admissible worlds under the declared fault budget; all injected out-of-model common-cause cases are rejected or marked inconclusive rather than misclassified.",
+  "rejection": "One accepted certificate has a wrong event count, one stale or reset claim passes freshness/retention checks, or one claimed-independent witness pair shares an undeclared power, clock, processor, storage, calibration, or attack domain.",
+  "stop": "Stop on unsafe motion, unbounded calibration drift, unsealed raw data, auditor leakage, dropped fault rows, or any attempt to call emulated files physical measurements."
+}

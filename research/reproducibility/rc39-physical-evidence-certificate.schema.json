@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/rc39-physical-evidence-certificate.schema.json",
+  "title": "RC39 physical-event evidence certificate",
+  "description": "Device-neutral record required before a digital observation is treated as evidence of a physical event. Conformance is a documentation and audit property, not proof that a device is physically coupled.",
+  "type": "object",
+  "required": ["certificateId", "event", "adjudicand", "faultModel", "witnesses", "freshness", "retention", "uncertainty", "independentAdjudication", "verdict"],
+  "properties": {
+    "certificateId": { "type": "string", "minLength": 1 },
+    "event": {
+      "type": "object",
+      "required": ["physicalDefinition", "startBoundary", "completionBoundary", "couplingMechanism"],
+      "properties": {
+        "physicalDefinition": { "type": "string", "minLength": 20 },
+        "startBoundary": { "type": "string", "minLength": 10 },
+        "completionBoundary": { "type": "string", "minLength": 10 },
+        "couplingMechanism": { "type": "string", "minLength": 20 }
+      },
+      "additionalProperties": false
+    },
+    "adjudicand": { "enum": ["exact-event-count", "final-physical-state", "bounded-transition-window"] },
+    "faultModel": {
+      "type": "object",
+      "required": ["independentArbitraryWitnessFaults", "commonCauseFaultsExcluded", "exclusionEvidence", "powerLoss", "reset", "replay"],
+      "properties": {
+        "independentArbitraryWitnessFaults": { "type": "integer", "minimum": 0 },
+        "commonCauseFaultsExcluded": { "type": "boolean" },
+        "exclusionEvidence": { "type": "array", "items": { "type": "string", "minLength": 10 } },
+        "powerLoss": { "type": "string", "minLength": 10 },
+        "reset": { "type": "string", "minLength": 10 },
+        "replay": { "type": "string", "minLength": 10 }
+      },
+      "additionalProperties": false
+    },
+    "witnesses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "physicalPrinciple", "powerDomain", "clockDomain", "processorDomain", "storageDomain", "calibrationArtifact", "eventBindingArtifact"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "physicalPrinciple": { "type": "string", "minLength": 5 },
+          "powerDomain": { "type": "string", "minLength": 1 },
+          "clockDomain": { "type": "string", "minLength": 1 },
+          "processorDomain": { "type": "string", "minLength": 1 },
+          "storageDomain": { "type": "string", "minLength": 1 },
+          "calibrationArtifact": { "type": "string", "minLength": 1 },
+          "eventBindingArtifact": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "freshness": {
+      "type": "object",
+      "required": ["challenge", "tokenEpoch", "claimGenerationEpoch", "maximumClaimAgeMs", "clockOrEpochEvidence"],
+      "properties": {
+        "challenge": { "type": "string", "minLength": 1 },
+        "tokenEpoch": { "type": "string", "minLength": 1 },
+        "claimGenerationEpoch": { "type": "string", "minLength": 1 },
+        "maximumClaimAgeMs": { "type": "number", "exclusiveMinimum": 0 },
+        "clockOrEpochEvidence": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "retention": {
+      "type": "object",
+      "required": ["medium", "monotonicity", "resetAuthority", "rolloverRule", "powerCutEvidence"],
+      "properties": {
+        "medium": { "type": "string", "minLength": 1 },
+        "monotonicity": { "type": "string", "minLength": 10 },
+        "resetAuthority": { "type": "string", "minLength": 1 },
+        "rolloverRule": { "type": "string", "minLength": 1 },
+        "powerCutEvidence": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "uncertainty": {
+      "type": "object",
+      "required": ["falsePositiveUpper95", "missUpper95", "timingUpper95Ms", "calibrationScope", "decisionMargin"],
+      "properties": {
+        "falsePositiveUpper95": { "type": "number", "minimum": 0, "maximum": 1 },
+        "missUpper95": { "type": "number", "minimum": 0, "maximum": 1 },
+        "timingUpper95Ms": { "type": "number", "minimum": 0 },
+        "calibrationScope": { "type": "string", "minLength": 10 },
+        "decisionMargin": { "type": "string", "minLength": 10 }
+      },
+      "additionalProperties": false
+    },
+    "independentAdjudication": {
+      "type": "object",
+      "required": ["auditor", "blindTo", "implementation", "rawArtifactHash"],
+      "properties": {
+        "auditor": { "type": "string", "minLength": 1 },
+        "blindTo": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "implementation": { "type": "string", "minLength": 10 },
+        "rawArtifactHash": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "verdict": {
+      "type": "object",
+      "required": ["status", "eventCount", "failureBoundary"],
+      "properties": {
+        "status": { "enum": ["qualified-under-declared-fault-model", "rejected", "inconclusive"] },
+        "eventCount": { "type": ["integer", "null"], "minimum": 0 },
+        "failureBoundary": { "type": "string", "minLength": 20 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
+

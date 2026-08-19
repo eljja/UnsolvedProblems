@@ -1,0 +1,118 @@
+{
+  "cycle": "RC-2026-39",
+  "precommitId": "RC39-FAULT-BOUNDED-PHYSICAL-WITNESS-V1",
+  "sealedOn": "2026-08-20",
+  "selection": {
+    "problemIds": ["UP-605", "UP-602", "UP-315"],
+    "reason": "RC38 found one physically coupled counter to be sufficient only in a fault-free finite model and explicitly left actual sensors at n=0. The highest-value next step without hardware is to state exactly which coupling, freshness, retention, and failure-domain assumptions turn that witness into a certificate, and to derive the minimum redundancy under one arbitrary independent witness fault."
+  },
+  "researchQuestion": "Under which declared fault sets does an authenticated sensor bundle uniquely determine whether a physical event occurred zero, one, or two times, and what is the smallest counterexample when event coupling, claim freshness, retention, witness independence, or common-cause exclusion is removed?",
+  "factsAtSeal": [
+    "RFC 9334 separates claim-value generation from evidence generation and warns that a freshly signed evidence object may contain values generated much earlier; nonces and epoch IDs narrow recentness but do not create event coupling.",
+    "RFC 9684 requires a fresh nonce for TPM evidence yet places the relationship between each TPM and the measured component outside its scope; a root of trust for reporting does not alone prove physical sensor coupling.",
+    "RFC 9711 defines signed claims and freshness mechanisms but leaves verifier interpretation to the application profile and policy.",
+    "OPC UA Safety 1.05 uses monitoring numbers, timeouts, provider IDs, and integrity checks to detect transport corruption, repetition, sequence, loss, delay, insertion, and masquerade; the physical semantics of SafetyData remain application-defined.",
+    "The March 2026 TPM 2.0 Library specification provides current roots-of-trust primitives; a TPM counter or quote attests TPM-held state and becomes physical-event evidence only through a separately justified measurement-to-event path.",
+    "NASA's 2025 common-cause analysis states that redundancy improves reliability under independent failures but cannot lower total failure probability below a shared common-cause contribution.",
+    "NRC NUREG/CR-7313, completed December 2025 and published June 2026, identifies common-cause failure modeling and robust DI&C reliability estimates as current unresolved assessment challenges.",
+    "NIST metrological policy requires an unbroken calibration chain with each calibration contributing uncertainty and explicitly states that traceability alone does not guarantee fitness for purpose.",
+    "No physical actuator, calibrated sensor, HIL device, independent power or clock domain, second physical host, or hardware fault injector is available in this workspace."
+  ],
+  "hypotheses": [
+    {
+      "code": "H1",
+      "claim": "A signature over a current nonce makes the enclosed physical measurement current enough to identify event count.",
+      "separatingPrediction": "If claim-generation time is not event-bound, the same current token and reported value will be compatible with multiple current event counts; binding both token and measurement to the current event epoch removes this collision only when the sensor is otherwise healthy.",
+      "rejectWhen": "The unbound-claim model has no event-count collision, or the event-and-epoch-bound fault-free model retains one."
+    },
+    {
+      "code": "H2",
+      "claim": "Two diverse scalar witnesses are sufficient to identify event count with at most one arbitrary independent witness fault.",
+      "separatingPrediction": "A report pair such as [0,1] is compatible with truth zero and the second witness faulty or truth one and the first witness faulty; three reports have a unique strict majority when at most one is arbitrary.",
+      "rejectWhen": "Two witnesses identify every event count under one arbitrary fault, or three witnesses retain a collision under the same bounded and independent fault set."
+    },
+    {
+      "code": "H3",
+      "claim": "A current counter remains exact physical-event evidence even when reset or rollover is within the fault model.",
+      "separatingPrediction": "Reported zero is compatible with true counts zero, one, and two if an event-coupled counter may reset after the event; excluding reset and recording rollover are required certificate premises.",
+      "rejectWhen": "The resettable current-counter model uniquely identifies event count."
+    },
+    {
+      "code": "H4",
+      "claim": "Adding finite redundant witnesses can identify event count even if a common-cause channel may overwrite every witness coherently.",
+      "separatingPrediction": "For every finite n, any two truths can yield the identical vector [v]^n under a shared overwrite; the only escape is excluding that channel with evidence or adding a witness outside its failure domain.",
+      "rejectWhen": "Any tested n from one through seven identifies count under the declared common-cause channel, or the symbolic same-vector construction fails."
+    },
+    {
+      "code": "H5",
+      "claim": "Actuator command acceptance is sufficient evidence that the corresponding physical transition completed.",
+      "separatingPrediction": "Acceptance before the energy or motion boundary admits accepted=1 with event count zero and one; only an event-bound completion record can remove the pair.",
+      "rejectWhen": "The acceptance-before-action architecture contains one event count per observation class."
+    }
+  ],
+  "causalChain": {
+    "inputAndAllowedAssumptions": "Physical event definition, count domain {0,1,2}, authenticated claims, declared independent arbitrary-witness budget f, explicit exclusions for reset and common-cause faults.",
+    "bottleneck": "A verifier-visible value may be authentic yet stale, reset, generated before physical completion, or replicated across witnesses sharing one failure domain.",
+    "bridgeLemma": "When every healthy report is event-bound, current, retained, and witnesses have disjoint failure domains with at most f arbitrary faults, strict-majority identification is possible exactly when n is at least 2f+1 in the scalar exact-report model.",
+    "independentAdjudicand": "The set of admissible true event counts inside each verifier-visible observation class, recomputed by an independent Python implementation.",
+    "finalCriterion": "A certificate may state an exact event count only if every accepted observation class contains one truth and all coupling, freshness, retention, calibration, and failure-domain premises have independent artifacts."
+  },
+  "model": {
+    "eventCounts": [0, 1, 2],
+    "architectures": [
+      "SOURCE_MARKER",
+      "COMMAND_ACCEPTANCE_BEFORE_ACTION",
+      "ONE_EVENT_BOUND_WITNESS_F0",
+      "ONE_EVENT_BOUND_WITNESS_F1",
+      "TWO_DIVERSE_WITNESSES_F1",
+      "THREE_DIVERSE_WITNESSES_F1",
+      "THREE_WITNESSES_COMMON_CAUSE",
+      "SIGNED_CURRENT_TOKEN_UNBOUND_CLAIM_TIME",
+      "EVENT_AND_EPOCH_BOUND_WITNESS_F0",
+      "RESETTABLE_CURRENT_COUNTER"
+    ],
+    "thresholdGrid": { "witnessCounts": [1, 2, 3, 4, 5], "faultBudgets": [0, 1, 2], "expectedRule": "identifiable iff n >= 2f+1" },
+    "commonCauseSweep": [1, 2, 3, 4, 5, 6, 7],
+    "criteria": [
+      "C1 source marker collides",
+      "C2 command acceptance before action collides",
+      "C3 one healthy event-bound witness identifies",
+      "C4 one witness does not tolerate one arbitrary fault",
+      "C5 two witnesses do not tolerate one arbitrary fault",
+      "C6 three witnesses tolerate one arbitrary independent fault",
+      "C7 a fresh token does not freshen an old claim value",
+      "C8 binding event and measurement epoch identifies under zero sensor faults",
+      "C9 a resettable counter collides",
+      "C10 the strict-majority threshold matches every grid cell",
+      "C11 common cause defeats every tested redundancy size",
+      "C12 the common-cause counterexample is symbolic in n"
+    ],
+    "stopRule": "Stop without a scientific verdict if JavaScript and independent Python differ on architecture world counts, observation counts, collision counts, any threshold-grid cell, or common-cause sweep result. Preserve the first outputs before any code amendment."
+  },
+  "futurePhysicalQualification": {
+    "certificateSchema": "research/reproducibility/rc39-physical-evidence-certificate.schema.json",
+    "plan": "research/reproducibility/rc39-hil-qualification-plan.json",
+    "gate": "A physical claim requires three physical hosts, calibrated and sealed raw measurements, explicit failure-domain separation, every preregistered power-cut and partition row, and ledger-blind adjudication. The design artifacts themselves are not experimental evidence."
+  },
+  "uncertaintyBudget": {
+    "model": "Finite scalar reports and exact event counts; no analogue threshold, drift process, adaptive adversary, probabilistic dependence, unbounded count, clock skew distribution, or actuator dynamics.",
+    "measurement": "Physical false-positive, miss, latency, hysteresis, saturation, drift, calibration transfer, reset, rollover, and environmental sensitivity are all unmeasured at n=0.",
+    "independence": "Different labels or sensor principles do not prove disjoint power, clock, processor, storage, firmware, calibration, maintenance, environmental, or attack domains.",
+    "freshness": "A nonce bounds token production after a challenge; the model separately requires evidence that the claim value was generated from the relevant current physical event epoch.",
+    "externalValidity": "The 2f+1 threshold is an adversarial identifiability bound for scalar exact reports, not a complete safety-integrity or reliability calculation.",
+    "extrapolation": "Sweeping common cause to n=7 is a regression test; the general impossibility statement rests on an explicit same-vector construction for arbitrary finite n."
+  },
+  "safetyEthicsEnvironment": "The current cycle executes no actuator. Any future rig must use energy-limited motion, guarded travel, emergency stop, electrical isolation, permitted radio/network behavior, non-human test subjects, and disposal procedures for damaged components.",
+  "codeHashes": {
+    "scripts/run-rc39-fault-bounded-witness-model.mjs": "d105e13cf715779e1f354da7c5e94bc04eef132d0f0ef80cd6ce8e503ce30637",
+    "scripts/independent_rc39_fault_bounded_witness_audit.py": "47c930c2c540ca61720dbf6c7ae8898a82d535a98a56cc6c973254cd3335051b",
+    "research/reproducibility/rc39-physical-evidence-certificate.schema.json": "9713ab36ce386e3bc8a571be1f0ee2762aeb0488ecabc764ee006c639363d1b1",
+    "research/reproducibility/rc39-hil-qualification-plan.json": "c58439791e1317558cb2d38b2336a23710f27df43c6c8917f9eea7abc254b66a"
+  },
+  "resultStateAtSeal": "No RC39 model result or independent Python audit exists. No hardware was acquired, commanded, or observed.",
+  "allowedAfterSeal": [
+    "Execute the frozen JavaScript model and independent Python audit and preserve their outputs.",
+    "If an implementation defect blocks adjudication, preserve the failed artifact and add a numbered amendment before changing frozen code.",
+    "Add bilingual interpretation, official sources, structural connection records, site loaders, validation, and deployment without changing frozen model observations."
+  ]
+}
