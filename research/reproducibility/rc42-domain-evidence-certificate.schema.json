@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/rc42-domain-evidence-certificate.schema.json",
+  "title": "Empirical independent-domain evidence certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificateId", "dataset", "adjudicand", "roster", "observations", "calibrationLineage", "commonInputGraph", "reference", "partition", "missingness", "uncertaintyBudget", "independentAdjudication"],
+  "properties": {
+    "certificateId": {"type": "string", "minLength": 1},
+    "dataset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stableId", "version", "retrievedOn", "license", "artifactSha256"],
+      "properties": {
+        "stableId": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1},
+        "retrievedOn": {"type": "string", "format": "date"},
+        "license": {"type": "string", "minLength": 1},
+        "artifactSha256": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+      }
+    },
+    "adjudicand": {
+      "type": "object",
+      "required": ["truthStates", "targetFunction", "exactSuccessRule", "boundedOutputRule"],
+      "properties": {
+        "truthStates": {"type": "array", "minItems": 2, "items": {"type": ["string", "number"]}},
+        "targetFunction": {"type": "string", "minLength": 1},
+        "exactSuccessRule": {"const": "compatible truth set is a singleton under the frozen fault and omission budget"},
+        "boundedOutputRule": {"type": "string", "minLength": 1}
+      }
+    },
+    "roster": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["slotId", "eventId", "channelId", "domainId", "expectedBy", "expectedBeforeOutcome"],
+        "properties": {
+          "slotId": {"type": "string", "minLength": 1},
+          "eventId": {"type": "string", "minLength": 1},
+          "channelId": {"type": "string", "minLength": 1},
+          "domainId": {"type": "string", "minLength": 1},
+          "expectedBy": {"type": "string", "minLength": 1},
+          "expectedBeforeOutcome": {"const": true}
+        }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["slotId", "status", "value", "unit", "rawArtifactSha256", "observedOn"],
+        "properties": {
+          "slotId": {"type": "string", "minLength": 1},
+          "status": {"enum": ["observed", "authenticated-null"]},
+          "value": {"type": ["number", "string", "null"]},
+          "unit": {"type": ["string", "null"]},
+          "rawArtifactSha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+          "observedOn": {"type": ["string", "null"], "format": "date-time"}
+        }
+      }
+    },
+    "calibrationLineage": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["channelId", "standardId", "calibrationArtifactSha256", "validFrom", "validTo", "fitDataSeparatedFromHoldout"],
+        "properties": {
+          "channelId": {"type": "string"},
+          "standardId": {"type": "string"},
+          "calibrationArtifactSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "validFrom": {"type": "string", "format": "date-time"},
+          "validTo": {"type": "string", "format": "date-time"},
+          "fitDataSeparatedFromHoldout": {"type": "boolean"}
+        }
+      }
+    },
+    "commonInputGraph": {
+      "type": "object",
+      "required": ["nodes", "edges", "unresolvedPairs", "domainAssignmentRule"],
+      "properties": {
+        "nodes": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["id", "kind"]}},
+        "edges": {"type": "array", "items": {"type": "object", "required": ["from", "to", "failureMode", "evidence"]}},
+        "unresolvedPairs": {"type": "array", "items": {"type": "array", "minItems": 2, "maxItems": 3}},
+        "domainAssignmentRule": {"type": "string", "minLength": 1}
+      }
+    },
+    "reference": {
+      "type": "object",
+      "required": ["quantity", "principle", "artifactSha256", "notUsedForDevelopment", "independenceEvidence"],
+      "properties": {
+        "quantity": {"type": "string"},
+        "principle": {"type": "string"},
+        "artifactSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "notUsedForDevelopment": {"const": true},
+        "independenceEvidence": {"type": "string", "minLength": 1}
+      }
+    },
+    "partition": {
+      "type": "object",
+      "required": ["developmentIds", "holdoutIds", "frozenOn", "outcomesUnseenAtFreeze"],
+      "properties": {
+        "developmentIds": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "holdoutIds": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "frozenOn": {"type": "string", "format": "date-time"},
+        "outcomesUnseenAtFreeze": {"const": true}
+      }
+    },
+    "missingness": {
+      "type": "object",
+      "required": ["expectedSlots", "observedSlots", "authenticatedNullSlots", "deletedOrUnknownSlots", "mechanismAssumptions"],
+      "properties": {
+        "expectedSlots": {"type": "integer", "minimum": 1},
+        "observedSlots": {"type": "integer", "minimum": 0},
+        "authenticatedNullSlots": {"type": "integer", "minimum": 0},
+        "deletedOrUnknownSlots": {"const": 0},
+        "mechanismAssumptions": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "uncertaintyBudget": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "object", "required": ["source", "kind", "magnitude", "correlatedDomainIds", "propagation"]}
+    },
+    "independentAdjudication": {
+      "type": "object",
+      "required": ["implementation", "organizationOrReviewer", "inputArtifactSha256", "verdict", "completedOn"],
+      "properties": {
+        "implementation": {"type": "string"},
+        "organizationOrReviewer": {"type": "string"},
+        "inputArtifactSha256": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[a-f0-9]{64}$"}},
+        "verdict": {"enum": ["exact", "set-valued", "inconclusive", "rejected"]},
+        "completedOn": {"type": "string", "format": "date-time"}
+      }
+    }
+  }
+}
