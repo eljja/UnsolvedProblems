@@ -1,0 +1,49 @@
+{
+  "planId": "RC43-X16-INDEPENDENT-HOLDOUT-PLAN-0.1",
+  "cycleId": "RC-2026-43",
+  "sealedOn": "2026-08-21",
+  "developmentResult": "research/reproducibility/rc43-x16-layer-0001-result.json",
+  "frozenImplementations": {
+    "javascript": {
+      "path": "scripts/run-rc43-x16-range-audit.mjs",
+      "normalizedLfSha256": "8829660c801dc40884405828e2f4f5a8c18d93a53bfd68a4953f95848f87b5ea"
+    },
+    "python": {
+      "path": "scripts/independent_rc43_x16_range_audit.py",
+      "normalizedLfSha256": "3b3dab1e3f45797c9d7ee0d84de118738c8d5f129657d7cf6dc7b752c917481d"
+    }
+  },
+  "independenceBoundary": "Python independently implements HTTP range receipts, EOCD and ZIP64 parsing, local-header agreement, raw-Deflate XYPT extraction, four-column validation, AVI header scanning, counter comparison, and result comparison. Both implementations necessarily call the same installed 7-Zip 22.01 Deflate64 decoder; decoder diversity is not claimed.",
+  "executionOrder": [
+    {
+      "step": 1,
+      "command": "python scripts/independent_rc43_x16_range_audit.py --layer 1 --prior-upper-bound 43953299 --compare research/reproducibility/rc43-x16-layer-0001-result.json --write",
+      "gate": "All seven count, hash, stable-prefix, and native-counter comparisons must pass before any L0002 request."
+    },
+    {
+      "step": 2,
+      "command": "node scripts/run-rc43-x16-range-audit.mjs --layer=2 --holdout-audit --prior-upper-bound=<sealed L0001 Python cumulativeUpperBound> --write",
+      "gate": "Use the L0001-complete global transfer upper bound exactly; no parser or range rule changes are permitted."
+    },
+    {
+      "step": 3,
+      "command": "python scripts/independent_rc43_x16_range_audit.py --layer 2 --prior-upper-bound <sealed L0002 JavaScript cumulativeUpperBound> --compare research/reproducibility/rc43-x16-layer-0002-result.json --write",
+      "gate": "All seven comparisons must pass and the global cumulative transfer upper bound must remain at or below 134217728 bytes."
+    }
+  ],
+  "fixedHoldoutProcedure": {
+    "layer": 2,
+    "xypt": "CRC-verify the complete XYPT_L0002.csv, require every nonempty row to contain four finite numeric fields, and require fourth-column integer masks from 0 through 255.",
+    "avi": "From the L0002 local-header offset, request nested 4194304-byte and 8388608-byte archive segments, decode both as deliberately truncated Deflate64 ZIPs, discard 65536 emitted tail bytes, and require retained-prefix identity.",
+    "frameCount": "Require avih.dwTotalFrames, video strh.dwLength, and dmlh.dwTotalFrames to exist and agree. No preferred-counter rescue is allowed.",
+    "slotIdentity": "A count deficit remains set-valued unless a documented per-frame trigger key appears in the already frozen stable header. Image pixels may not be inspected in RC43.",
+    "verdicts": "Apply H1-H4 without modification. H5 passes only if Python and JavaScript reproduce both layers and no rule changes after L0002 inspection."
+  },
+  "stopRules": [
+    "Do not request L0002 if L0001 independent comparison fails.",
+    "Do not request a complete AVI or TIFF member.",
+    "Stop if either retained prefix disagrees, any native frame counter differs, or any XYPT row is skipped.",
+    "Stop before any request that would raise the conservative global transfer upper bound above 134217728 bytes.",
+    "Preserve every failed output or amendment before changing code."
+  ]
+}

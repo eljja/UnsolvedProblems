@@ -12,6 +12,7 @@ const shouldWrite = args.includes("--write");
 const inventoryOnly = args.includes("--inventory-only");
 const prefixOnly = args.includes("--prefix-only");
 const xyptReparseOnly = args.includes("--xypt-reparse-only");
+const holdoutAudit = args.includes("--holdout-audit");
 const maxBytes = 134_217_728;
 if (!Number.isInteger(layer) || layer < 1 || layer > 25) throw new Error("--layer must be an integer from 1 through 25");
 
@@ -477,6 +478,94 @@ async function runXyptReparseAudit() {
   console.log(JSON.stringify({ triggerCount, cameraMask2Rows, frameCount, triggerMinusFrame, countDirection, hypotheses: result.adjudication.hypotheses, transfer: result.transfer }, null, 2));
 }
 
+async function runHoldoutAudit() {
+  if (layer !== 2) throw new Error("--holdout-audit is frozen to layer 2");
+  const xyptReader = new RangeReader("https://data.nist.gov/od/ds/ark:/88434/mds2-2309/XYPT_L001-025.zip", 159_164_372, "XYPT_L001-025.zip");
+  const aviReader = new RangeReader("https://data.nist.gov/od/ds/ark:/88434/mds2-2309/MPMcameraAVI_L001-025.zip", 5_037_696_861, "MPMcameraAVI_L001-025.zip");
+  const [xyptDirectory, aviDirectory] = await Promise.all([readCentralDirectory(xyptReader), readCentralDirectory(aviReader)]);
+  const developmentInventory = JSON.parse(fs.readFileSync(path.join(root, "research", "reproducibility", "rc43-x16-layer-0001-inventory.json"), "utf8"));
+  if (xyptDirectory.centralDirectorySha256 !== developmentInventory.directories.xypt.centralDirectorySha256
+      || aviDirectory.centralDirectorySha256 !== developmentInventory.directories.avi.centralDirectorySha256) {
+    throw new Error("archive central directory changed between development and holdout");
+  }
+  const xyptEntry = findEntry(xyptDirectory.entries, "XYPT_L0002.csv");
+  const aviEntry = findEntry(aviDirectory.entries, "MPMcamera_L0002.avi");
+  const xyptExtract = await extractCompleteMember(xyptReader, xyptEntry);
+  const xypt = parseXypt(xyptExtract.bytes);
+  if (xypt.parseStatus !== "parsed-headerless-four-column-per-primary-format" && xypt.parseStatus !== "parsed") {
+    throw new Error(`holdout XYPT parser refused: ${xypt.parseStatus}`);
+  }
+  const aviLocal = await readLocalHeader(aviReader, aviEntry);
+  const segmentA = await aviReader.read(aviEntry.localHeaderOffset, aviEntry.localHeaderOffset + 4_194_303, "L0002 AVI member-relative segment A");
+  const segmentB = await aviReader.read(aviEntry.localHeaderOffset, aviEntry.localHeaderOffset + 8_388_607, "L0002 AVI member-relative segment B");
+  if (segmentA.length < aviLocal.dataOffset - aviEntry.localHeaderOffset || segmentB.length < aviLocal.dataOffset - aviEntry.localHeaderOffset) {
+    throw new Error("holdout member-relative segment does not contain the complete local header");
+  }
+  const decodedA = decodeTruncatedDeflate64(segmentA, "l0002-prefix-a");
+  const decodedB = decodeTruncatedDeflate64(segmentB, "l0002-prefix-b");
+  const discardBytes = 65_536;
+  if (decodedA.bytes.length <= discardBytes || decodedB.bytes.length <= discardBytes) throw new Error("holdout Deflate64 prefix emitted too few bytes");
+  const retainedA = decodedA.bytes.subarray(0, decodedA.bytes.length - discardBytes);
+  const retainedB = decodedB.bytes.subarray(0, decodedB.bytes.length - discardBytes);
+  if (retainedB.length < retainedA.length || !retainedB.subarray(0, retainedA.length).equals(retainedA)) throw new Error("holdout nested retained prefixes disagree");
+  const avi = scanAviHeader(retainedA);
+  const frameCounts = [...new Set(avi.counters.map((counter) => counter.value))];
+  if (frameCounts.length !== 1 || frameCounts.length === 0) throw new Error("holdout native AVI counters disagree or are absent");
+  const triggerCount = xypt.nonzeroTriggerRows;
+  const cameraMask2Rows = xypt.triggerValueCounts["2"] || 0;
+  const frameCount = frameCounts[0];
+  const triggerMinusFrame = triggerCount - frameCount;
+  const countDirection = triggerMinusFrame > 0 ? "fewer-frames-than-triggers" : triggerMinusFrame < 0 ? "more-frames-than-triggers" : "equal";
+  const prior = Number(args.find((arg) => arg.startsWith("--prior-upper-bound="))?.split("=")[1]);
+  if (!Number.isInteger(prior) || prior < 43_953_299) throw new Error("--prior-upper-bound must preserve all sealed development transfer");
+  const thisExecutionBytes = xyptReader.transferredBytes + aviReader.transferredBytes;
+  const cumulativeUpperBound = prior + thisExecutionBytes;
+  if (cumulativeUpperBound > maxBytes) throw new Error("global cumulative transfer ceiling exceeded on holdout");
+  const result = {
+    resultId: "RC43-X16-L0002-HOLDOUT-AUDIT-0.1", cycleId: "RC-2026-43", createdOn: new Date().toISOString(),
+    layer: 2, role: "holdout", precommit: "research/reproducibility/rc43-x16-trigger-frame-precommit.json",
+    procedureFrozenFrom: "RC43-X16-L0001-DEVELOPMENT-AUDIT-0.2",
+    xypt: { ...xypt, selected: summarizeEntry(xyptEntry), cameraMask2Rows, centralDirectorySha256: xyptDirectory.centralDirectorySha256 },
+    avi: {
+      ...avi, selected: summarizeEntry(aviEntry), discardBytes,
+      prefixA: { ...decodedA, bytes: undefined }, prefixB: { ...decodedB, bytes: undefined },
+      retainedABytes: retainedA.length, retainedASha256: sha256(retainedA), retainedBBytes: retainedB.length,
+      nestedRetainedPrefixAgreement: true, localDataOffset: aviLocal.dataOffset
+    },
+    adjudication: {
+      triggerCount, cameraMask2Rows, frameCount, triggerMinusFrame, countDirection,
+      nativeFrameCountersAgree: true, publicHeaderExposesPerFrameSlotKey: false,
+      tailOnlyLossEstablished: false, exactNullLedger: false,
+      compatibleMissingSlotPlacementsLowerBound: triggerMinusFrame > 0 ? triggerCount : triggerMinusFrame === 0 ? 1 : null,
+      qualification: "aggregate-count-reproduced-slot-placement-not-identifiable",
+      hypotheses: {
+        H1: triggerMinusFrame < 0 ? "supported-on-holdout" : "rejected-on-holdout",
+        H2: triggerMinusFrame >= 0 && triggerMinusFrame <= 20 ? "count-bound-supported-tail-placement-not-established" : "rejected-on-holdout",
+        H3: "rejected-on-holdout-header-has-no-per-frame-slot-key",
+        H4: "supported-for-stable-header-prefix-within-cumulative-budget",
+        H5: "pending-independent-holdout-reproduction"
+      }
+    },
+    transfer: {
+      maximumCumulativeBytes: maxBytes, conservativePriorUpperBound: prior, thisExecutionBytes, cumulativeUpperBound,
+      remainingConservativeBytes: maxBytes - cumulativeUpperBound,
+      receipts: { xypt: xyptReader.receipts, avi: aviReader.receipts }
+    },
+    boundaries: [
+      "The holdout procedure uses the same complete XYPT and nested 4 MiB/8 MiB Deflate64 prefix rules fixed on L0001.",
+      "Aggregate counts do not locate missing frames or prove end-only loss.",
+      "No L0002 image-content alignment or complete AVI/TIFF download was performed."
+    ]
+  };
+  const json = `${JSON.stringify(result, null, 2)}\n`;
+  if (shouldWrite) {
+    const output = path.join(root, "research", "reproducibility", "rc43-x16-layer-0002-result.json");
+    fs.writeFileSync(output, json, "utf8");
+    console.log(`Wrote ${path.relative(root, output)}`);
+  }
+  console.log(JSON.stringify({ triggerCount, cameraMask2Rows, frameCount, triggerMinusFrame, countDirection, hypotheses: result.adjudication.hypotheses, transfer: result.transfer }, null, 2));
+}
+
 async function main() {
   const archives = {
     xypt: new RangeReader("https://data.nist.gov/od/ds/ark:/88434/mds2-2309/XYPT_L001-025.zip", 159_164_372, "XYPT_L001-025.zip"),
@@ -575,6 +664,7 @@ async function main() {
   }, null, 2));
 }
 
-if (xyptReparseOnly) await runXyptReparseAudit();
+if (holdoutAudit) await runHoldoutAudit();
+else if (xyptReparseOnly) await runXyptReparseAudit();
 else if (prefixOnly) await runPrefixAudit();
 else await main();
