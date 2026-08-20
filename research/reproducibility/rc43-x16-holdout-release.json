@@ -1,0 +1,37 @@
+{
+  "releaseId": "RC43-X16-HOLDOUT-RELEASE-0.1",
+  "cycleId": "RC-2026-43",
+  "sealedOn": "2026-08-21",
+  "developmentLayer": 1,
+  "holdoutLayer": 2,
+  "releaseDecision": "release-L0002-for-frozen-audit",
+  "developmentAgreement": {
+    "javascriptResult": {
+      "path": "research/reproducibility/rc43-x16-layer-0001-result.json",
+      "sha256": "65a89e43591bb385173c190568b98af9aca4ebbdfdbdca5c5b238a76f195875a"
+    },
+    "pythonAudit": {
+      "path": "research/reproducibility/rc43-x16-layer-0001-python-audit.json",
+      "sha256": "6d303da67d7b8346bb5cb623cd3b8ef4baf8761914ec257970f99b6c0e58d288"
+    },
+    "sevenChecksPassed": true,
+    "triggerCount": 94736,
+    "frameCount": 94713,
+    "triggerMinusFrame": 23
+  },
+  "frozenImplementations": {
+    "javascriptNormalizedLfSha256": "8829660c801dc40884405828e2f4f5a8c18d93a53bfd68a4953f95848f87b5ea",
+    "pythonNormalizedLfSha256": "3b3dab1e3f45797c9d7ee0d84de118738c8d5f129657d7cf6dc7b752c917481d"
+  },
+  "transferBeforeHoldout": {
+    "conservativeCumulativeUpperBound": 65155387,
+    "maximumCumulativeBytes": 134217728,
+    "remainingConservativeBytes": 69062341
+  },
+  "holdoutCommand": "node scripts/run-rc43-x16-range-audit.mjs --layer=2 --holdout-audit --prior-upper-bound=65155387 --write",
+  "gates": [
+    "The L0002 JavaScript audit must use the already committed parser, ranges, 65536-byte tail discard, and verdict rules without modification.",
+    "The resulting L0002 artifact must be sealed before the independent Python implementation sees or compares the layer.",
+    "Aggregate count agreement cannot be reported as an identity-indexed missing-frame ledger."
+  ]
+}
