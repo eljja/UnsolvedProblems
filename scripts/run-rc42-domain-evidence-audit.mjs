@@ -105,7 +105,7 @@ const criteria = {
   residualsFinite: Object.values(calibrationResiduals).filter(value => typeof value === "number").every(Number.isFinite),
   maxResidualBelowOneCelsius: calibrationResiduals.maxAbsoluteCelsius < 1,
   noIndependentPairAsserted: commonInputGraphs["NIST-AMMT-X16-2019"].evidencedIndependentDomainPairs === 0,
-  partialAsCompleteWouldChangeVerdict: permissiveCounts.empiricalSeparatorCertificate > counts.empiricalSeparatorCertificate,
+  partialAsCompleteWouldChangeAnyQualification: Object.keys(counts).some(ruleId => permissiveCounts[ruleId] > counts[ruleId]),
   calibratedDoesNotMeanValidated: calibrationResiduals.forbiddenClaims.includes("independent validation")
 };
 
@@ -129,4 +129,3 @@ const result = {
 
 if (process.argv.includes("--write")) fs.writeFileSync(outputPath, `${JSON.stringify(result, null, 2)}\n`);
 console.log(JSON.stringify(result, null, 2));
-

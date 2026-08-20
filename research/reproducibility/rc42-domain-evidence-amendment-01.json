@@ -1,0 +1,28 @@
+{
+  "cycleId": "RC-2026-42",
+  "amendmentId": "RC42-AMENDMENT-01",
+  "recordedOn": "2026-08-20",
+  "trigger": "The first frozen execution passed 11 of 12 criteria. Candidate qualifications, hypotheses, and calibration statistics completed, but one meta-criterion returned false.",
+  "firstRun": {
+    "path": "research/reproducibility/rc42-domain-evidence-first-run.json",
+    "sha256": "e7bc10b4782a2b5000f3840c651542378d0bd54222335ccaf952a880ee68a15e",
+    "passedCriteria": 11,
+    "totalCriteria": 12
+  },
+  "diagnosis": "The preregistered ablation asks whether treating any partial field as complete changes qualification. The implementation compared only empiricalSeparatorCertificate. That rule remained at zero because independentReference was absent even under the permissive ablation, while missingnessAlignmentAudit changed from zero to one. The code therefore tested a narrower question than the preregistration.",
+  "change": {
+    "file": "scripts/run-rc42-domain-evidence-audit.mjs",
+    "beforeNormalizedSha256": "8740cb59ba0132ab8e617ca20d4519beefdefeb10b38011199320184db78bfb7",
+    "afterNormalizedSha256": "cfe940bd4a3f3650a550051e098ac2e1b61b515f8c436dd79d3e85a6c6e6511a",
+    "beforeCriterion": "permissiveCounts.empiricalSeparatorCertificate > counts.empiricalSeparatorCertificate",
+    "afterCriterion": "At least one of the four frozen qualification counts increases under the partial-as-complete counterfactual."
+  },
+  "unchanged": [
+    "source manifest and all candidate field scores",
+    "qualification rules and hypotheses",
+    "NIST calibration values and residual formulas",
+    "common-input graphs",
+    "independent Python implementation"
+  ],
+  "interpretation": "This amendment repairs fidelity to the frozen ablation. It does not turn a failed scientific hypothesis into a supported one."
+}
