@@ -1,0 +1,36 @@
+{
+  "evidenceId": "RC45-COUNTER-CONNECTION-EVIDENCE-0.1",
+  "cycleId": "RC-2026-45",
+  "connectionId": "CONN-EVIDENCE-018",
+  "reviewedOn": "2026-08-21",
+  "problemIds": ["UP-605", "UP-315"],
+  "connectionType": "direct monotone event identifier to interval-censored omission ledger",
+  "commonStructure": "Sensor registration and omission reconstruction both become an ordered-set difference when each expected trigger and each observed frame carries a comparable monotone identity. Counter gaps identify missing elements between observations; missing elements outside the observed interval remain endpoint-censored.",
+  "variableMapping": {
+    "XYPT trigger ordinal": "expected acquisition identity",
+    "decoded 32-bit camera counter": "observed acquisition identity",
+    "modulo counter difference minus one": "number of missing identities between two preserved frames",
+    "known count deficit minus internal gaps": "unallocated leading-or-trailing omissions",
+    "intersection over endpoint allocations": "required absolute missing slots",
+    "union over endpoint allocations": "possible absolute missing slots"
+  },
+  "holdsWhen": [
+    "The camera counter is enabled and survives recording and export without arithmetic transformation.",
+    "Every camera exposure increments the counter once and frames remain in counter order.",
+    "An endpoint anchor or zero endpoint residual links relative counter values to absolute trigger ordinals."
+  ],
+  "breaksWhen": [
+    "The marker is disabled, cropped, overwritten, or transformed by the acquisition/export path.",
+    "Counter reset, duplicated export frames, reordering, or unobserved camera events violate one-step acquisition semantics.",
+    "The public file begins after or ends before the XYPT trigger interval without an external anchor."
+  ],
+  "minimumValidation": "On a count-equal layer, a preregistered four-byte series must advance by one through every frame and two independent parsers must reproduce the exact bytes. The X16 L0002 test failed this validation: all 24 candidates had zero unit steps.",
+  "transferVerdict": "The structural connection is valid as an acquisition design and adjudication rule, but the released X16 AVI does not instantiate its required identifier. It can be transferred to future AMMT releases by enabling and preserving the counter, or to the historical build only if raw acquisition records are recovered.",
+  "surfaceSimilarityRisk": "Any four dark corner pixels can look stable. Stability alone is not counter evidence; only the sealed 95,503-step exact progression would have supported transfer.",
+  "sources": [
+    "research/reproducibility/rc45-in-frame-counter-prior-art.json",
+    "research/reproducibility/rc45-x16-layer-0002-python-counter.json",
+    "research/reproducibility/rc45-x16-layer-0002-javascript-counter.json",
+    "research/reproducibility/rc45-development-release.json"
+  ]
+}

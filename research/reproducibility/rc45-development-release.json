@@ -1,0 +1,18 @@
+{
+  "releaseId": "RC45-L0002-DEVELOPMENT-RELEASE-0.1",
+  "cycleId": "RC-2026-45",
+  "createdOn": "2026-08-21",
+  "precommit": "research/reproducibility/rc45-in-frame-counter-precommit.json",
+  "inputs": [
+    "research/reproducibility/rc45-x16-layer-0002-python-counter.json",
+    "research/reproducibility/rc45-x16-layer-0002-javascript-counter.json"
+  ],
+  "exactIndependentAgreement": true,
+  "passingCandidates": [],
+  "onlyPlaneReplicas": false,
+  "syntheticGatePassed": false,
+  "holdoutReleased": false,
+  "frozenCandidate": null,
+  "decision": "stop-before-l0001-acquisition",
+  "caveat": "Both parsers share one hash-bound FFmpeg decoder. Agreement is independent at byte selection and arithmetic, not at codec implementation."
+}

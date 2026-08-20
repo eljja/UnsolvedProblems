@@ -1,0 +1,56 @@
+{
+  "resultId": "RC45-X16-DIRECT-IDENTIFIER-ADJUDICATION-0.1",
+  "cycleId": "RC-2026-45",
+  "createdOn": "2026-08-21",
+  "problems": ["UP-605", "UP-315"],
+  "status": "direct-counter-rejected-natural-holdout-not-released",
+  "question": "Can a manufacturer-documented direct frame identity survive the X16 release and replace underidentified command-image inference?",
+  "confirmedFacts": [
+    "The EoSens 3CL documentation offers an optional 32-bit counter in the first four pixels and increments it for each new image.",
+    "Two independent stream parsers decoded the same 95,504 L0002 frames and produced the same 48-byte-per-frame boundary record SHA-256 3f44e7d04842b0c10af4791a68ba9d109e17ce9ea885483249a628d203176e14.",
+    "None of the 24 sealed boundary, plane, and byte-order candidates contained even one adjacent difference equal to one; the gate required all 95,503.",
+    "Candidate sequences contained at most 80 unique values and at least 95,348 zero differences, consistent with mostly dark image corners rather than a counter.",
+    "The preregistered release failed, no L0001 bytes were acquired, and no natural missing position was called."
+  ],
+  "hypotheses": {
+    "C0_counterAbsentOrUnrecoverable": "supported for the released AVI under every sealed native boundary interpretation",
+    "C1_exactCounterPreserved": "rejected by 0 of 95,503 required unit steps across all candidates",
+    "N1_allNaturalOmissionsInternal": "not tested because L0001 remained sealed",
+    "N2_endpointResidualExists": "not tested because L0001 remained sealed",
+    "N3_counterTransferInvalidOnNaturalLayer": "not tested; transfer stopped in development"
+  },
+  "causalChainAdjudication": [
+    {
+      "link": "camera capability to released marker",
+      "verdict": "failed",
+      "fastTest": "24 prespecified corner interpretations on L0002",
+      "evidence": "zero unit increments in every series"
+    },
+    {
+      "link": "released marker to independent identity ledger",
+      "verdict": "not entered",
+      "fastTest": "exact Python-JavaScript value agreement",
+      "evidence": "parsers agree on bytes, but no marker exists to interpret"
+    },
+    {
+      "link": "identity gaps to natural missing slots",
+      "verdict": "not entered",
+      "fastTest": "frozen parser on L0001 with endpoint envelope",
+      "evidence": "holdout release denied"
+    }
+  ],
+  "uncertaintyBudget": {
+    "measurement": "Both parsers share FFmpeg 7.1, so a common decoder transformation is not independently excluded.",
+    "model": "Only the documented first-four-pixel mechanism and four orientation boundaries were tested; undocumented packing elsewhere was outside the sealed search.",
+    "sampling": "Absence was demonstrated on L0002 and blocks transfer; it does not prove that every X16 layer or unreleased raw record lacks a counter.",
+    "endpoint": "Even a recovered relative counter would require a start/end anchor whenever internal gaps sum to less than the aggregate deficit.",
+    "extrapolation": "No statement is made about process defects, camera failure cause, radiometric values, or other builds."
+  },
+  "minimumAdvance": "The direct-key branch has been falsified in the actual released development layer without spending the 187,567,239-byte natural-holdout budget. This removes a tempting but unsupported path and preserves a precise acquisition requirement for future datasets.",
+  "nextDecisiveProgram": {
+    "historicalDirectEvidence": "Search NIST or author-held MotionBLITZ raw .dat, .exp sidecar, acquisition configuration, or trigger log for per-frame counters or high-performance ticks. Verify provenance before joining it to XYPT.",
+    "historicalInference": "Using XYPT only, select the closest toolpath-twin layer to L0001 before viewing its pixels. On that count-equal twin, preregister image-image multiscale and temporal descriptors, synthetic deletion gates, and an independent implementation before any L0001 release.",
+    "futureAcquisition": "Enable the camera counter, retain raw counter/tick fields, publish a trigger-frame ledger, and include endpoint anchors plus deliberate dropped-frame controls."
+  },
+  "safetyEthics": "The cycle reads public process data only, performs no actuation, handles no personal data, and makes no manufacturing quality or safety certification claim."
+}
