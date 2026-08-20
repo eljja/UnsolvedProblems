@@ -1,0 +1,137 @@
+{
+  "precommitId": "RC44-COMMAND-IMAGE-ALIGNMENT-PRECOMMIT-0.1",
+  "cycleId": "RC-2026-44",
+  "createdOn": "2026-08-21",
+  "status": "sealed-before-any-pixel-decoding-or-complete-avi-member-acquisition",
+  "problems": ["UP-605", "UP-315"],
+  "question": "Can command-derived dynamics and decoded melt-pool image dynamics reduce the RC43 count-only ambiguity to reproducible missing-trigger candidates without silently assuming that all losses occur at the tail?",
+  "inheritedEvidence": {
+    "developmentForThisCycle": "L0002 has 95,504 nonzero camera triggers and 95,504 AVI frames. RC43 inspected its command count and nested AVI container prefixes, but no pixel was decoded.",
+    "naturalHoldoutForThisCycle": "L0001 has 94,736 nonzero camera triggers and 94,713 AVI frames. Its deficit is 23. RC43 inspected its command count and nested AVI container prefixes, but no pixel was decoded and no missing position was identified.",
+    "importantQualification": "L0002 count equality does not authenticate ordinal trigger-frame pairing. It is a count-level negative control and a calibration substrate, not ground truth for natural identity."
+  },
+  "inspectedBeforeSeal": [
+    "All committed RC43 preregistration, amendments, range receipts, count results, independent audits, integrated result, and public research record.",
+    "The complete L0001 and L0002 XYPT command streams were processed during RC43 for counts and hashes; their layer-specific aggregate counts and first/last trigger indices are public in the committed results.",
+    "Nested 4 MiB and 8 MiB compressed AVI archive prefixes were decoded by 7-Zip during RC43 to establish stable container headers and aggregate frame counters. Those prefixes necessarily contain compressed video chunks, but no codec decoded a pixel and no image-derived feature was inspected.",
+    "Official and primary publications listed in rc44-command-image-prior-art.json."
+  ],
+  "notInspectedBeforeSeal": [
+    "Any decoded pixel, frame thumbnail, per-frame image statistic, or command-image alignment score from X16 L0001 or L0002.",
+    "Any complete X16 AVI member or full multi-gigabyte AVI archive.",
+    "Any synthetic-deletion recovery result or natural L0001 candidate location."
+  ],
+  "fixedRolesAndOrder": {
+    "development": "L0002 pixel sequence. Its count equality makes an unmodified zero-deficit control possible, but does not prove identity.",
+    "naturalHoldout": "L0001 pixel sequence. Its 23-frame deficit remains unopened at the pixel level until the complete synthetic suite, model parameters, implementations, and holdout release are hash-sealed.",
+    "order": [
+      "Acquire only the exact compressed L0002 AVI member range and the exact compressed L0002 XYPT member; verify local metadata, uncompressed size, CRC-32, and RC43 text hash.",
+      "Decode L0002 through a named, hash-recorded FFmpeg build and export only an 8 by 8 grayscale area-average frame stream plus per-frame checksums; preserve no claim of calibrated temperature.",
+      "Develop the command-to-image feature bridge and deletion aligner on the first 80 percent of L0002, with the final 20 percent reserved for the fixed synthetic test suite.",
+      "Implement the final frozen procedure independently in Python and JavaScript and seal normalized source hashes, parameters, decoder receipt, and all development results.",
+      "Release L0001 only if both implementations pass the fixed synthetic gate without threshold changes. Otherwise stop without inspecting L0001 pixels.",
+      "Apply the frozen procedure once to L0001 and report required and possible candidate sets, not merely the minimum-cost path."
+    ]
+  },
+  "fixedObservables": {
+    "commandAtCameraTrigger": [
+      "laser power P",
+      "first and second differences of X and Y over the 10 microsecond command grid",
+      "speed and acceleration magnitudes",
+      "sine and cosine of scan direction where speed is nonzero",
+      "turn-angle change",
+      "laser-on and power-transition indicators",
+      "causal moving sums of power and power divided by speed over 5, 25, and 125 camera-trigger slots"
+    ],
+    "imagePerFrame": [
+      "mean and standard deviation of the 8 by 8 grayscale area-average image",
+      "bright-pixel fractions above fixed grayscale levels 32, 64, 128, and 192",
+      "intensity-weighted centroid and second central moments on the 8 by 8 grid",
+      "first differences of all preceding features"
+    ],
+    "forbiddenInterpretation": "Grayscale values are codec outputs, not traceable radiance or temperature. Centroids and moments are registration signatures, not defect truth."
+  },
+  "bridgeModel": {
+    "standardization": "Median and 1.4826 times median absolute deviation estimated on L0002 indices 0 through floor(0.6N)-1; a zero scale is replaced by one and recorded.",
+    "regression": "Multivariate ridge regression from command observables to image observables. Candidate alpha is selected only from [0.01, 0.1, 1, 10, 100] on the contiguous 0.6N through 0.8N validation interval.",
+    "matchCost": "Huber loss of standardized prediction residuals, summed over image features. Huber delta is selected only from [1.0, 1.5, 2.0] on validation injections.",
+    "alignment": "Monotone banded dynamic programming with match, expected-slot deletion, observed-frame duplication, and one bounded affine clock-drift state. The band half-width is 64 slots for synthetic tests and 96 slots for the 23-deficit natural holdout.",
+    "penaltyGrid": "Deletion and duplication penalties are each selected only from [2, 4, 8, 16, 32] standardized loss units by validation-set recovery and false-discovery criteria. No penalty or feature may change after the synthetic test interval is opened.",
+    "ambiguityRule": "For the natural holdout, enumerate or perturb to retain every path whose total cost is within max(1e-6 times optimum cost, 2 log N) of the optimum. A slot is required only if every retained path deletes it; it is possible if at least one retained path deletes it. If exhaustive enumeration is infeasible, forward and backward dynamic-programming lower bounds must conservatively over-include the possible set and under-include the required set."
+  },
+  "fixedSyntheticSuite": {
+    "domain": "Only the final 20 percent of the untouched L0002 ordinal sequence; no bridge-model fitting or penalty selection uses this interval.",
+    "seed": "RC44-X16-SYNTHETIC-HOLDOUT-v1",
+    "positionGenerator": "For each trial, SHA-256(seed | case | trial | counter) is interpreted as an unsigned big-endian integer and reduced into the eligible interval, rejecting duplicates and the first or last 128 interval slots.",
+    "cases": [
+      "128 single-frame deletions",
+      "32 trials with 23 dispersed deletions",
+      "16 trials with one contiguous 23-frame deletion block",
+      "16 trials duplicating 23 dispersed frames without deletion",
+      "16 trials combining 23 dispersed deletions with a linear clock warp of plus or minus 12 slots across the interval",
+      "one unmodified zero-deficit control"
+    ],
+    "primaryDenominator": "All injected deletion identities in the single, dispersed, block, and deletion-plus-drift cases. Duplicate-only cases are negative controls for deletion calls.",
+    "recovery": "An injected deletion is recovered when exactly one called slot lies within plus or minus one expected-trigger slot. Additional calls are false discoveries.",
+    "gate": [
+      "Each implementation recovers at least 95 percent of injected deletion identities within plus or minus one slot.",
+      "Each implementation has deletion false-discovery rate at or below 1 percent over the primary denominator.",
+      "Both implementations return an empty deletion set on the unmodified control and no more than 1 percent deletion calls relative to inserted duplicates on duplicate-only controls.",
+      "The two implementations agree exactly on aggregate denominators and within 1e-9 on every reported rate; their per-trial called-slot sets have Jaccard similarity at least 0.99.",
+      "The selected ridge alpha, Huber delta, penalties, feature list, frame count, and test-seed receipt are identical."
+    ]
+  },
+  "competingNaturalHypotheses": [
+    {
+      "id": "N0",
+      "claim": "Image-command coupling is too weak or nonstationary to locate natural missing frames.",
+      "prediction": "The synthetic gate fails, or L0001 required slots are empty while the possible set remains broad or unstable.",
+      "adjudication": "Support N0 and stop all positional claims. Preserve count deficit 23 only."
+    },
+    {
+      "id": "N1",
+      "claim": "All 23 missing frames form a pure tail truncation.",
+      "prediction": "Every admissible L0001 path deletes exactly expected slots 94,714 through 94,736 in one-based trigger order.",
+      "adjudication": "Reject if any required interior deletion appears or if any retained path places a deletion outside the last 23 slots; otherwise report support conditional on the feature model, not authenticated identity."
+    },
+    {
+      "id": "N2",
+      "claim": "At least one frame was lost internally while acquisition continued.",
+      "prediction": "A required deletion lies before trigger slot 94,714 and subsequent command-image signatures realign after that slot.",
+      "adjudication": "Support only when both implementations identify the same required interior slot and it survives every preregistered tolerance perturbation."
+    },
+    {
+      "id": "N3",
+      "claim": "Count deficit 23 is accompanied by duplication or clock slip, so a deletion-only path is misspecified.",
+      "prediction": "Allowing duplicate or drift states reduces normalized cost by at least 2 log N and changes the required-deletion set.",
+      "adjudication": "Prefer the richer model only under this fixed information-gain threshold; otherwise retain the simpler deletion model."
+    }
+  ],
+  "naturalHoldoutSuccessAndLimits": {
+    "minimumAdvance": "A reproducible nonempty required set or a materially narrowed possible set, with exact slot indices and sensitivity envelope, is an advance beyond RC43 even if no singleton ledger exists.",
+    "positionalEvidence": "A natural slot is elevated only if both implementations call it required, all fixed tolerance perturbations retain it, and the local alignment margin exceeds 2 log N.",
+    "notResolution": "No dynamic alignment output authenticates a frame identity or cause. Solving the identity ledger would still require an independent timestamp, acquisition counter, raw camera log, or separately validated physical signature.",
+    "stop": "If the synthetic gate fails, if decoder outputs disagree, if L0002's unmodified control calls a deletion, or if L0001 acquisition would exceed budget, do not inspect or interpret L0001 pixels."
+  },
+  "acquisitionAndResourceBudget": {
+    "maximumNistResponseBodyBytes": 402653184,
+    "plannedUpperBound": "The two exact AVI member ranges total 351,554,769 bytes including local headers; the two exact XYPT member ranges total 12,320,688 bytes including local headers. Repeated or failed NIST range bodies count toward the maximum.",
+    "prohibited": "Do not download the 5,037,696,861-byte AVI ZIP or any TIFF archive in full. Do not request L0001 member bytes before the sealed development gate.",
+    "localStorageLimit": "At most 1.5 GiB of transient decoded AVI or feature data. Delete nothing committed by earlier cycles; cache files remain excluded from Git.",
+    "computeStop": "Stop a candidate configuration after 30 minutes or 16 GiB peak resident memory. Use banded rather than quadratic full-sequence dynamic programming."
+  },
+  "independence": {
+    "decoder": "The same hash-recorded FFmpeg binary may be a shared dependency, but both implementations independently parse the 8 by 8 byte stream, XYPT text, feature equations, injection schedule, dynamic program, and metrics. Decoder diversity is reported as absent unless a second codec implementation is actually used.",
+    "implementations": ["Python with NumPy only for numerical linear algebra", "JavaScript with no import from Python outputs beyond the sealed scalar configuration and source-byte manifests"],
+    "releaseSeal": "Normalized implementation hashes, exact commands, FFmpeg version and binary hash, L0002 input hashes, synthetic outputs, selected configuration, and gate verdict must be committed and pushed before requesting L0001 bytes."
+  },
+  "uncertaintyBudget": {
+    "measurement": "Lossy 8 by 8 spatial reduction, grayscale conversion, and codec implementation can change feature amplitudes; raw member and feature-stream hashes bind the exact observation.",
+    "model": "Ordinal pairing on count-equal L0002, ridge stationarity, Huber residual form, deletion penalty, and bounded clock drift are assumptions tested only by synthetic perturbations and sensitivity analysis.",
+    "sampling": "One equal-count layer calibrates and one adjacent deficit layer tests; no population loss rate or cross-build transfer is estimated.",
+    "implementation": "Two aligners reduce code-error risk but share official source bytes and initially one decoder.",
+    "extrapolation": "A candidate on L0001 does not establish defect location, camera failure mechanism, or performance on the other 248 layers."
+  },
+  "safetyEthicsEnvironment": "Only public NIST process data are read. No machine is actuated, no personal data are processed, and no defect or safety certification is inferred. Exact range acquisition and bounded feature extraction limit network, storage, and compute use.",
+  "priorArtBoundary": "Primary literature supports synchronized registration, scan-direction-aware image features, and outlier-dropping sequence alignment separately. The preregistered combination is treated as a proposed test, not claimed novel until a broader forward and citation search is complete."
+}

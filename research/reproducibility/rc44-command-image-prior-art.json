@@ -1,0 +1,87 @@
+{
+  "auditId": "RC44-COMMAND-IMAGE-PRIOR-ART-0.1",
+  "cycleId": "RC-2026-44",
+  "reviewedOn": "2026-08-21",
+  "scope": "Primary and official evidence available before RC44 pixel inspection for command-image registration, melt-pool sequence observables, and alignment with missing observations.",
+  "searchTerms": [
+    "AMMT melt pool camera dropped frame alignment",
+    "toolpath image sequence deletion detection additive manufacturing",
+    "dynamic time warping missing video frames",
+    "melt pool monitoring image data registration scan direction",
+    "site:nist.gov melt pool monitoring registration camera trigger XYPT"
+  ],
+  "sources": [
+    {
+      "id": "nist_mpm_registration_2020",
+      "kind": "primary-conference-paper-and-official-record",
+      "title": "Camera-Based Coaxial Melt Pool Monitoring Data Registration for Laser Powder Bed Fusion Additive Manufacturing",
+      "authors": "Yan Lu, Zhuo Yang, Ho Yeung, Jaehyuk Kim, Hyunbo Cho",
+      "eventDates": "2020-11-15/2020-11-18",
+      "officialPublicationDate": "2020-11-16",
+      "officialUrl": "https://www.nist.gov/publications/camera-based-coaxial-melt-pool-monitoring-data-registration-laser-powder-bed-fusion",
+      "paperUrl": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=930452",
+      "relevantFinding": "The open AMMT registration path embeds camera triggers in the xy2-100 command stream, calibrates fixed delays, and aligns each image frame to a laser-spot position. The preprocessing flow explicitly requires scanning for missing or corrupted frames before registration.",
+      "boundaryForRc44": "The method presumes that the corresponding frame is available after missing-frame preprocessing. It does not establish how to infer which trigger is absent when a released AVI exposes no per-frame trigger key."
+    },
+    {
+      "id": "nist_spatiotemporal_mpm_2022",
+      "kind": "primary-journal-paper-and-official-record",
+      "title": "Spatiotemporal Monitoring of Melt-Pool Variations in Metal-Based Additive Manufacturing",
+      "authors": "Siqi Zhang, Yan Lu, Paul Witherell, Soundar Kumara, Hui Yang",
+      "acceptedDate": "2022-06-22",
+      "onlinePublicationDate": "2022-06-30",
+      "officialPublicationDate": "2022-07-01",
+      "officialUrl": "https://www.nist.gov/publications/spatiotemporal-monitoring-melt-pool-variations-metal-based-additive-manufacturing",
+      "paperUrl": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=932381",
+      "doi": "10.1109/LRA.2022.3187540",
+      "relevantFinding": "Scan-direction knowledge is used to rotate and align melt-pool tails before tensor decomposition and additive-Gaussian-process monitoring. This confirms that direction-conditioned image dynamics can carry process-path structure.",
+      "boundaryForRc44": "The paper analyzes a stream already aligned to the scanning path; it does not test dropped-frame identity or distinguish deletion from clock slip."
+    },
+    {
+      "id": "nist_mpm_features_2022",
+      "kind": "primary-conference-paper-and-official-record",
+      "title": "Statistical and Spatio-temporal Data Features in Melt Pool Monitoring of Additive Manufacturing",
+      "authors": "Brandon Lane, Ho Yeung, Zhuo Yang",
+      "eventDates": "2022-05-21/2022-05-24",
+      "officialPublicationDate": "2022-05-23",
+      "officialUrl": "https://www.nist.gov/publications/statistical-and-spatio-temporal-data-features-melt-pool-monitoring-additive",
+      "paperUrl": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=934033",
+      "relevantFinding": "Registered image frames can be reduced to physics-motivated spatial and temporal features and superimposed on part coordinates.",
+      "boundaryForRc44": "Feature extraction and fusion rely on established temporal correspondence; they do not validate correspondence after frame loss."
+    },
+    {
+      "id": "drop_dtw_2021",
+      "kind": "primary-peer-reviewed-conference-paper",
+      "title": "Drop-DTW: Aligning Common Signal Between Sequences While Dropping Outliers",
+      "authors": "Mikita Dvornik, Isma Hadji, Konstantinos G. Derpanis, Animesh Garg, Allan D. Jepson",
+      "publicationYear": 2021,
+      "venue": "Advances in Neural Information Processing Systems 34",
+      "officialUrl": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/729c68884bd359ade15d5f163166738a-Abstract.html",
+      "paperUrl": "https://proceedings.neurips.cc/paper_files/paper/2021/file/729c68884bd359ade15d5f163166738a-Paper.pdf",
+      "relevantFinding": "A single dynamic program can align shared sequence signal while dropping interspersed outliers, providing a concrete alternative to standard DTW when observations are absent or extraneous.",
+      "boundaryForRc44": "Its experiments concern instructional video and audiovisual retrieval, not AMMT command-camera registration. Transfer to X16 requires a domain-specific observable and independent positive controls."
+    },
+    {
+      "id": "nist_ammt_x16_pdr_2020",
+      "kind": "official-public-data-record",
+      "title": "Overhang Part X16 In-Situ Process Monitoring Data",
+      "measurementDate": "2019-07-03",
+      "recordIssued": "2020-10-16",
+      "recordVersionReviewed": "1.1.1",
+      "latestReleaseHistoryEntry": "2026-01-07: added to additiveman collection",
+      "officialUrl": "https://data.nist.gov/od/id/mds2-2309",
+      "relevantFinding": "The public record supplies byte sizes, hashes, and URLs for separate XYPT, AVI, and TIFF archives spanning 250 layers.",
+      "boundaryForRc44": "The record authenticates archive-level objects but does not publish a trigger-to-frame identity ledger."
+    }
+  ],
+  "synthesis": {
+    "confirmedFacts": [
+      "NIST's registration workflow treats missing or corrupted frame detection as preprocessing rather than deriving missing identities from the AVI header.",
+      "Scan direction and temporal image features are physically motivated observables for registered melt-pool streams.",
+      "Outlier-dropping dynamic programming exists as a general sequence-alignment method."
+    ],
+    "inference": "Combining command-derived dynamics, low-resolution image dynamics, known synthetic deletions, and set-valued dynamic-programming adjudication is a testable bridge for X16's missing-identity gap.",
+    "unverifiedProposal": "The combined bridge may narrow L0001's 23 missing positions. No reviewed source located in this audit reports that exact X16 experiment, and no novelty claim is made.",
+    "searchBoundary": "This compact audit is sufficient to prevent presenting the ingredients as new. It is not a systematic review of all citation descendants, patents, theses, or proprietary AM monitoring systems."
+  }
+}
