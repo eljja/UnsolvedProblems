@@ -1,0 +1,132 @@
+{
+  "precommitId": "RC45-IN-FRAME-COUNTER-PRECOMMIT-0.1",
+  "cycleId": "RC-2026-45",
+  "createdOn": "2026-08-21",
+  "status": "sealed-before-any-rc45-full-resolution-pixel-decoding",
+  "problems": ["UP-605", "UP-315"],
+  "question": "Does the manufacturer-documented 32-bit in-frame counter survive in the released X16 AVI, and if so, can its gaps replace the failed image-similarity bridge with a direct, independently reproducible omission ledger?",
+  "inheritedEvidence": {
+    "L0002": "95,504 nonzero XYPT camera triggers and 95,504 authenticated AVI frames. RC44 decoded only 8 by 8 area averages; those averages cannot preserve four individual boundary pixels.",
+    "L0001": "94,736 nonzero XYPT camera triggers and 94,713 AVI frames, a deficit of 23. No L0001 member or pixel has been acquired locally.",
+    "RC44Result": "The sealed 8 by 8 command-image bridge recovered 105 of 1,232 synthetic deletions within plus or minus one slot with 91.48 percent false-discovery rate, so it did not release L0001."
+  },
+  "inspectedBeforeSeal": [
+    "All committed RC43 and RC44 preregistrations, amendments, acquisition receipts, results, independent audits, and public records.",
+    "Manufacturer documentation describing the optional EoSens 3CL 32-bit in-frame counter and NIST publications identifying the X16/X4 camera and trigger semantics.",
+    "L0002 archive-level hashes and FFmpeg container metadata: Lagarith, gbrp, 120 by 120, 95,504 frames. No RC45 full-resolution pixel or corner sample was decoded."
+  ],
+  "notInspectedBeforeSeal": [
+    "Any native-resolution L0002 pixel value, corner-byte series, inferred counter value, or counter-step statistic.",
+    "Any L0001 compressed member byte, decoded pixel, inferred counter value, or missing position."
+  ],
+  "fixedCausalChain": [
+    "Public X16 AVI plus documented EoSens counter capability",
+    "optional counter may be disabled, transformed, cropped, or spatially reoriented by export",
+    "a fixed four-pixel boundary series follows an exact 32-bit modulo increment",
+    "independent Python and JavaScript decoders reproduce the same values and step ledger",
+    "counter gaps delimit missing camera identities; absolute XYPT slots require endpoint anchoring"
+  ],
+  "fixedDevelopmentProcedure": {
+    "layer": 2,
+    "inputAviSha256": "54bc90814acf15304257ee4c9c56f029d50999ab38b9c27455137a12f884b53a",
+    "decoder": {
+      "name": "FFmpeg 7.1 Windows x86-64 binary already hash-bound in RC44",
+      "sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+      "nativeOutput": "gbrp; preserve all three 8-bit planes; do not convert to calibrated radiance or temperature"
+    },
+    "spatialCandidates": [
+      "top-left: x 0 through 3, y 0",
+      "top-right: x 116 through 119, y 0",
+      "bottom-left: x 0 through 3, y 119",
+      "bottom-right: x 116 through 119, y 119"
+    ],
+    "valueCandidates": "For each boundary and each native G, B, and R plane, interpret the four left-to-right bytes as both little-endian and big-endian unsigned 32-bit integers. This yields 24 prespecified series. No pixel permutation, offset, crop, arithmetic transform, or learned rule may be added after decoding.",
+    "metrics": [
+      "frame count and raw 48-byte-per-frame boundary-record SHA-256",
+      "first and last unsigned value",
+      "number and fraction of modulo-2^32 consecutive differences equal to 1",
+      "number of zero, reverse-or-wrap-inconsistent, and greater-than-one differences",
+      "maximum forward difference, number of unique values, and total missing count sum(diff minus 1) for forward differences"
+    ]
+  },
+  "developmentGate": {
+    "counterPositive": [
+      "At least one prespecified series has exactly 95,503 of 95,503 modulo differences equal to 1.",
+      "That series has 95,504 unique values and modulo span exactly 95,503.",
+      "Python and JavaScript agree exactly on boundary, byte order, per-frame values, every aggregate, and raw boundary-record SHA-256.",
+      "Additional passing color planes are permitted only when their complete value series is byte-for-byte identical; a decoder orientation alias is reported rather than counted as independent confirmation."
+    ],
+    "counterNegative": "If no prespecified series passes all positive conditions, do not acquire L0001. Preserve the best step fraction only as evidence about a possible transformed or disabled marker, not as an identifier.",
+    "stopOnDecoderDisagreement": "If the two implementations disagree on any extracted byte or metric, do not acquire L0001."
+  },
+  "fixedNaturalHoldoutProcedure": {
+    "release": "Acquire the exact L0001 XYPT and AVI ZIP-member ranges only after a committed development release states that every development-gate condition passed.",
+    "sameRule": "Apply only the L0002-passing boundary, plane-equivalence class, and byte order. No alternative candidate may be tried on L0001.",
+    "internalGapRule": "For consecutive decoded values c_j and c_(j+1), delta_j=(c_(j+1)-c_j) mod 2^32. A delta greater than 1 contributes delta minus 1 missing counter identities between the two observed frames.",
+    "validity": [
+      "Every delta must be between 1 and 24 inclusive.",
+      "The sum of delta minus 1 must not exceed the known aggregate deficit 23.",
+      "Python and JavaScript must agree exactly on every counter value, delta, gap value, and counter-relative missing position."
+    ],
+    "endpointEnvelope": "Let r be 23 minus the number of internal missing counter identities. Enumerate every k from 0 through r as a possible number of missing triggers before the first preserved frame; the remaining r minus k lie after the last. Shift every internal counter-relative gap by k. Report the intersection across k as required absolute slots and the union as possible absolute slots. Do not select k from image similarity.",
+    "success": "A nonempty required set or a possible set materially smaller than all 94,736 slots is a positional advance. Exact absolute identities require r=0 or an independent endpoint anchor.",
+    "failure": "If values are not a valid progression, gaps exceed 23, or implementations disagree, retain only the aggregate deficit and mark transfer from L0002 as rejected."
+  },
+  "competingHypotheses": [
+    {
+      "id": "C0",
+      "claim": "The in-frame counter is absent or not recoverable from the released AVI.",
+      "prediction": "No prespecified L0002 series is an exact unit-step progression.",
+      "adjudication": "Stop before L0001 and return to full-image spatiotemporal signatures or the unreleased raw acquisition record."
+    },
+    {
+      "id": "C1",
+      "claim": "A lossless direct frame counter is preserved and L0002 is internally complete.",
+      "prediction": "One boundary/order equivalence class advances by exactly one through all 95,504 frames.",
+      "adjudication": "Release the same frozen parser on L0001."
+    },
+    {
+      "id": "N1",
+      "claim": "All 23 L0001 omissions occur between preserved frames.",
+      "prediction": "Counter gaps contain exactly 23 missing identities, leaving endpoint residual r equal to zero.",
+      "adjudication": "Report the 23 absolute trigger slots conditional only on the documented trigger-to-frame semantics and independently verify the ledger."
+    },
+    {
+      "id": "N2",
+      "claim": "At least one omission is outside the preserved counter interval.",
+      "prediction": "Internal gaps sum to fewer than 23, leaving r greater than zero.",
+      "adjudication": "Report required and possible sets across every leading/trailing allocation; do not force a tail-only answer."
+    },
+    {
+      "id": "N3",
+      "claim": "Counter transfer is invalid because reset, reordering, duplication, or export transformation occurred.",
+      "prediction": "L0001 contains zero, backward, greater-than-24, or deficit-inconsistent steps under the frozen parser.",
+      "adjudication": "Reject positional interpretation and preserve the failure as a counterexample."
+    }
+  ],
+  "independence": {
+    "implementations": [
+      "Python standard-library stream parser that invokes the hash-bound FFmpeg binary",
+      "JavaScript standard-library stream parser that invokes the same hash-bound FFmpeg binary without importing Python output"
+    ],
+    "sharedDependency": "The codec implementation is shared and therefore decoder diversity is absent. Byte-for-byte implementation agreement detects parser and arithmetic errors but not a common FFmpeg decoding error.",
+    "holdoutSeparation": "Only the sealed development verdict file may release L0001. The natural parser consumes the frozen winning candidate and cannot search alternatives."
+  },
+  "resourceBudget": {
+    "L0002": "Use the already authenticated local AVI; boundary extraction writes at most 4.6 MiB per implementation.",
+    "L0001MaximumNistResponseBodyBytes": 200000000,
+    "exactPlannedL0001Bytes": 187567239,
+    "prohibited": "Do not download a full multi-gigabyte archive, TIFF archive, or any other layer. Do not acquire L0001 if the exact L0002 gate fails."
+  },
+  "uncertaintyBudget": {
+    "measurement": "Lagarith and FFmpeg are lossless at the decoded stream level, but earlier camera-to-recorder and recorder-to-AVI transformations may crop, reorder, or replace pixels.",
+    "model": "Counter interpretation assumes the documented firmware feature and modulo increment rule; spatial location and byte order are exhaustively limited to 24 prespecified candidates.",
+    "sampling": "One equal-count layer qualifies transfer to one adjacent deficit layer; behavior across the remaining 248 layers is not estimated.",
+    "implementation": "Two parsers share one decoder and the same released bytes, so common-mode codec error remains.",
+    "extrapolation": "An internal gap proves a missing camera counter identity between preserved frames, not the physical cause, defect state, or whether a commanded trigger reached every acquisition component.",
+    "endpoint": "Without an external start/end anchor, residual omissions can shift internal gaps within a finite envelope."
+  },
+  "minimumAdvance": "Demonstrating or decisively rejecting a direct counter in 95,504 released frames separates acquisition identity from the failed morphology bridge. If present, even a partial L0001 internal-gap ledger sharply narrows the omission space.",
+  "safetyEthicsEnvironment": "Only public NIST process data are read. No machine is actuated, no personal data are processed, and no manufacturing safety or defect certification is inferred. Exact member ranges and four-pixel extraction bound transfer and compute costs.",
+  "priorArt": "research/reproducibility/rc45-in-frame-counter-prior-art.json"
+}

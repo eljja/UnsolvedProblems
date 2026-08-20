@@ -1,0 +1,86 @@
+{
+  "auditId": "RC45-IN-FRAME-COUNTER-PRIOR-ART-0.1",
+  "cycleId": "RC-2026-45",
+  "reviewedOn": "2026-08-21",
+  "scope": "Primary and official evidence available before any RC45 full-resolution pixel decoding, focused on whether the X16 camera can carry a direct per-frame identifier and what that identifier can and cannot prove.",
+  "searchTerms": [
+    "Mikrotron EoSens 3CL in-frame counter first four pixels",
+    "AMMT coaxial melt pool camera trigger XYPT frame captured",
+    "NIST camera-based melt pool monitoring data registration timestamp trigger",
+    "Overhang Part X16 camera model AVI registration missing frames"
+  ],
+  "sources": [
+    {
+      "id": "mikrotron_eosens_3cl_reference_2020",
+      "kind": "manufacturer-reference-guide",
+      "title": "EoSens 3CL Reference Guide, version 1.3",
+      "publisher": "MIKROTRON GmbH",
+      "publicationYear": 2020,
+      "officialDocumentUrl": "https://ads-img.co.jp/mv/wp-content/uploads/2022/07/Mikrotron-Eosens-RG_3CL_en-v1.3.pdf",
+      "relevantFinding": "Section 3.10.1 states that the camera provides a 32-bit image counter that can replace the first four pixels of every image and is incremented by every new image.",
+      "boundary": "The feature is configurable. The guide does not establish that it was enabled during the NIST X16 acquisition, how an AVI exporter preserved pixel order, or that counter value zero corresponds to the first XYPT trigger of a layer."
+    },
+    {
+      "id": "mikrotron_eosens_3cl_manual_2010",
+      "kind": "manufacturer-camera-manual",
+      "title": "EoSens 3CL Camera Manual, revision 1.01",
+      "publisher": "MIKROTRON GmbH",
+      "publicationYear": 2010,
+      "documentUrl": "https://spegroup.ru/upload/wikifiles/941888.pdf",
+      "relevantFinding": "Section 6.9.1 documents command :u: value 1 enables the 32-bit in-frame counter, value 0 disables it, and value 2 resets it. The stated purpose is later identification and completeness checking in long high-rate sequences.",
+      "boundary": "The manual describes camera output before later recording, Lagarith encoding, and AVI export. It does not certify the released X16 files."
+    },
+    {
+      "id": "nist_x4_data_description_2020",
+      "kind": "primary-data-description",
+      "title": "Process Monitoring Dataset from the Additive Manufacturing Metrology Testbed (AMMT): Overhang Part X4",
+      "authors": "Brandon Lane, Ho Yeung, Zhuo Yang, Ramesh Raghavan, John Fox, Chul Kim, Jane Matsumoto, and Magnus Ahlfors",
+      "publicationDate": "2020-09-09",
+      "doi": "10.6028/jres.125.027",
+      "officialUrl": "https://nvlpubs.nist.gov/nistpubs/jres/125/jres.125.027.pdf",
+      "relevantFinding": "The X4 description used by the X16 user notes identifies the monitoring camera as a Mikrotron EoSens 3CL and states that a value of 2 in the XYPT trigger column indicates when a camera frame is captured.",
+      "boundary": "A digital trigger command is an expected acquisition event, not by itself proof that the released AVI contains the corresponding frame."
+    },
+    {
+      "id": "nist_mpm_registration_2020",
+      "kind": "primary-conference-paper-and-official-record",
+      "title": "Camera-Based Coaxial Melt Pool Monitoring Data Registration for Laser Powder Bed Fusion Additive Manufacturing",
+      "authors": "Yan Lu, Zhuo Yang, Ho Yeung, Jaehyuk Kim, and Hyunbo Cho",
+      "eventDates": "2020-11-15/2020-11-18",
+      "officialPublicationDate": "2020-11-16",
+      "officialUrl": "https://www.nist.gov/publications/camera-based-coaxial-melt-pool-monitoring-data-registration-laser-powder-bed-fusion",
+      "paperUrl": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=930452",
+      "relevantFinding": "The AMMT open-system method embeds camera-control triggers in a timestamped 100 kHz command matrix, removes calibrated delays, and registers each available frame to a laser position.",
+      "boundary": "The published matrix timestamps command rows. It does not expose an authenticated trigger identifier inside each released X16 AVI frame or adjudicate which trigger is missing after a frame-count deficit."
+    },
+    {
+      "id": "nist_x16_public_record",
+      "kind": "official-public-data-record",
+      "title": "Overhang Part X16 In-Situ Process Monitoring Data",
+      "measurementDate": "2019-07-03",
+      "recordIssued": "2020-10-16",
+      "recordVersionReviewed": "1.1.1",
+      "latestReleaseHistoryEntry": "2026-01-07: added to additiveman collection",
+      "officialUrl": "https://data.nist.gov/od/id/mds2-2309",
+      "relevantFinding": "The record authenticates separate XYPT, AVI, and TIFF archives for 250 layers. The X16 notes direct readers to the X4 data description for acquisition details.",
+      "boundary": "Archive hashes and layer names authenticate files but do not publish a trigger-to-frame ledger."
+    }
+  ],
+  "confirmedFacts": [
+    "The documented EoSens 3CL firmware can embed a monotonically incrementing 32-bit image counter in the first four pixels.",
+    "The feature is optional and therefore must be demonstrated in the actual released X16 bytes rather than assumed from the camera model.",
+    "The X16 AVI is losslessly compressed with Lagarith according to the locally authenticated container stream; lossless compression makes exact byte preservation testable but does not guarantee that an earlier exporter retained the counter.",
+    "XYPT trigger value 2 identifies an expected camera capture command at a 10 microsecond command-grid row."
+  ],
+  "reasonableInferences": [
+    "If one fixed four-pixel boundary sequence in every L0002 frame decodes as an exact modulo-2^32 progression and independent implementations agree, ordinary melt-pool texture is not a plausible explanation for the sequence.",
+    "Gaps in the same counter progression on L0001 would identify camera-frame identities missing between two preserved frames without relying on image morphology.",
+    "A counter gap fixes relative omission identities; mapping them to absolute XYPT trigger slots additionally requires an endpoint anchor or an explicit first-frame pairing assumption."
+  ],
+  "unverifiedProposals": [
+    "The in-frame counter was enabled in the 2019 X16 acquisition.",
+    "AVI orientation and planar color conversion preserve the four counter bytes at one of the preregistered boundary locations without value transformation.",
+    "Any L0001 count deficit is represented by internal counter gaps rather than solely by frames omitted before the first or after the last preserved frame."
+  ],
+  "noveltyBoundary": "This cycle does not claim invention of an in-frame counter or of counter-gap detection. Its contribution is a preregistered forensic test of a manufacturer-documented direct identifier in an official public dataset whose missing-frame positions were previously approached only through aggregate counts and image-command signatures."
+}
