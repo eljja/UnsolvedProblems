@@ -1,0 +1,302 @@
+{
+  "cycleId": "RC-2026-42",
+  "implementation": "Independent Python field qualification and calibration-residual recomputation; no JavaScript imports.",
+  "manifestNormalizedSha256": "a7c7386c3532b6636278b4fc85b7ba33deca0552b76b6bd60a44d3f45ae86528",
+  "candidateCount": 6,
+  "counts": {
+    "empiricalSeparatorCertificate": 0,
+    "singleDomainCalibrationSupport": 2,
+    "missingnessAlignmentAudit": 0,
+    "outcomeBlindNonresponseValidation": 0
+  },
+  "permissiveCounterfactualCounts": {
+    "empiricalSeparatorCertificate": 0,
+    "singleDomainCalibrationSupport": 4,
+    "missingnessAlignmentAudit": 1,
+    "outcomeBlindNonresponseValidation": 0
+  },
+  "qualifications": {
+    "empiricalSeparatorCertificate": [
+      {
+        "candidateId": "NIST-AMMT-X16-2019",
+        "qualified": false,
+        "failed": [
+          "explicitNullSlots",
+          "calibrationLineage",
+          "commonInputGraph",
+          "independentReference",
+          "blindPartition"
+        ]
+      },
+      {
+        "candidateId": "NIST-AMMT-X4-2019",
+        "qualified": false,
+        "failed": [
+          "explicitNullSlots",
+          "commonInputGraph",
+          "independentReference",
+          "blindPartition"
+        ]
+      },
+      {
+        "candidateId": "NIST-AMB2018-THERMOGRAPHY",
+        "qualified": false,
+        "failed": [
+          "explicitNullSlots",
+          "commonInputGraph",
+          "independentReference",
+          "blindPartition"
+        ]
+      },
+      {
+        "candidateId": "IUCR-QARR-2001",
+        "qualified": false,
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "explicitNullSlots",
+          "calibrationLineage",
+          "commonInputGraph",
+          "publicBytes"
+        ]
+      },
+      {
+        "candidateId": "SAS-ROUND-ROBIN-2022",
+        "qualified": false,
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "expectedRoster",
+          "explicitNullSlots",
+          "calibrationLineage",
+          "commonInputGraph",
+          "independentReference",
+          "blindPartition",
+          "publicBytes"
+        ]
+      },
+      {
+        "candidateId": "NSFG-2011-2015-PHASE2",
+        "qualified": false,
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "expectedRoster",
+          "explicitNullSlots",
+          "calibrationLineage",
+          "commonInputGraph",
+          "independentReference",
+          "publicBytes"
+        ]
+      }
+    ],
+    "singleDomainCalibrationSupport": [
+      {
+        "candidateId": "NIST-AMMT-X16-2019",
+        "qualified": false,
+        "failed": [
+          "calibrationLineage"
+        ]
+      },
+      {
+        "candidateId": "NIST-AMMT-X4-2019",
+        "qualified": true,
+        "failed": []
+      },
+      {
+        "candidateId": "NIST-AMB2018-THERMOGRAPHY",
+        "qualified": true,
+        "failed": []
+      },
+      {
+        "candidateId": "IUCR-QARR-2001",
+        "qualified": false,
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "calibrationLineage",
+          "publicBytes"
+        ]
+      },
+      {
+        "candidateId": "SAS-ROUND-ROBIN-2022",
+        "qualified": false,
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "calibrationLineage",
+          "publicBytes"
+        ]
+      },
+      {
+        "candidateId": "NSFG-2011-2015-PHASE2",
+        "qualified": false,
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "calibrationLineage",
+          "publicBytes"
+        ]
+      }
+    ],
+    "missingnessAlignmentAudit": [
+      {
+        "candidateId": "NIST-AMMT-X16-2019",
+        "qualified": false,
+        "failed": [
+          "explicitNullSlots"
+        ]
+      },
+      {
+        "candidateId": "NIST-AMMT-X4-2019",
+        "qualified": false,
+        "failed": [
+          "explicitNullSlots"
+        ]
+      },
+      {
+        "candidateId": "NIST-AMB2018-THERMOGRAPHY",
+        "qualified": false,
+        "failed": [
+          "explicitNullSlots"
+        ]
+      },
+      {
+        "candidateId": "IUCR-QARR-2001",
+        "qualified": false,
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "explicitNullSlots",
+          "publicBytes"
+        ]
+      },
+      {
+        "candidateId": "SAS-ROUND-ROBIN-2022",
+        "qualified": false,
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "expectedRoster",
+          "explicitNullSlots",
+          "publicBytes"
+        ]
+      },
+      {
+        "candidateId": "NSFG-2011-2015-PHASE2",
+        "qualified": false,
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "expectedRoster",
+          "explicitNullSlots",
+          "publicBytes"
+        ]
+      }
+    ],
+    "outcomeBlindNonresponseValidation": [
+      {
+        "candidateId": "NIST-AMMT-X16-2019",
+        "qualified": false,
+        "failed": [
+          "explicitNullSlots",
+          "independentReference",
+          "blindPartition"
+        ]
+      },
+      {
+        "candidateId": "NIST-AMMT-X4-2019",
+        "qualified": false,
+        "failed": [
+          "explicitNullSlots",
+          "independentReference",
+          "blindPartition"
+        ]
+      },
+      {
+        "candidateId": "NIST-AMB2018-THERMOGRAPHY",
+        "qualified": false,
+        "failed": [
+          "explicitNullSlots",
+          "independentReference",
+          "blindPartition"
+        ]
+      },
+      {
+        "candidateId": "IUCR-QARR-2001",
+        "qualified": false,
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "explicitNullSlots",
+          "publicBytes"
+        ]
+      },
+      {
+        "candidateId": "SAS-ROUND-ROBIN-2022",
+        "qualified": false,
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "expectedRoster",
+          "explicitNullSlots",
+          "independentReference",
+          "blindPartition",
+          "publicBytes"
+        ]
+      },
+      {
+        "candidateId": "NSFG-2011-2015-PHASE2",
+        "qualified": false,
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "expectedRoster",
+          "explicitNullSlots",
+          "independentReference",
+          "publicBytes"
+        ]
+      }
+    ]
+  },
+  "calibration": {
+    "points": 5,
+    "meanSignedCelsius": -0.04089840000001459,
+    "meanAbsoluteCelsius": 0.7051651999999649,
+    "rmsCelsius": 0.7449862327822953,
+    "maxAbsoluteCelsius": 0.9145539999999528,
+    "minSignedCelsius": -0.8504609999999957,
+    "maxSignedCelsius": 0.9145539999999528,
+    "residuals": [
+      0.9145539999999528,
+      -0.8504609999999957,
+      -0.775527000000011,
+      -0.23917099999994207,
+      0.746112999999923
+    ]
+  },
+  "jsChecks": {
+    "available": true,
+    "matching": {
+      "count:empiricalSeparatorCertificate": true,
+      "count:singleDomainCalibrationSupport": true,
+      "count:missingnessAlignmentAudit": true,
+      "count:outcomeBlindNonresponseValidation": true,
+      "permissive:empiricalSeparatorCertificate": true,
+      "permissive:singleDomainCalibrationSupport": true,
+      "permissive:missingnessAlignmentAudit": true,
+      "permissive:outcomeBlindNonresponseValidation": true,
+      "calibration:points": true,
+      "calibration:meanSignedCelsius": true,
+      "calibration:meanAbsoluteCelsius": true,
+      "calibration:rmsCelsius": true,
+      "calibration:maxAbsoluteCelsius": true,
+      "calibration:minSignedCelsius": true,
+      "calibration:maxSignedCelsius": true
+    }
+  },
+  "comparisonChecks": 15,
+  "passedComparisonChecks": 15,
+  "fieldComparisons": 165,
+  "allPassed": true
+}

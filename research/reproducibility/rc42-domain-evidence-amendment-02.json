@@ -1,0 +1,30 @@
+{
+  "cycleId": "RC-2026-42",
+  "amendmentId": "RC42-AMENDMENT-02",
+  "recordedOn": "2026-08-20",
+  "trigger": "A final source-date audit compared the X16 manifest entry with the current NIST NERDm machine-readable record.",
+  "correction": {
+    "candidateId": "NIST-AMMT-X16-2019",
+    "field": "releaseDate",
+    "before": "2021-03-25",
+    "after": "2020-10-16",
+    "evidence": "The NIST NERDm record for ark:/88434/mds2-2309 reports issued 2020-10-16; the experiment date remains 2019-07-03."
+  },
+  "sourceManifest": {
+    "path": "research/reproducibility/rc42-domain-evidence-source-manifest.json",
+    "beforeNormalizedSha256": "a7c7386c3532b6636278b4fc85b7ba33deca0552b76b6bd60a44d3f45ae86528",
+    "afterNormalizedSha256": "3f07797a224d1d8144493d6d5f6eeea3b74dc9979b20af4ca17be5ca9a280cbc"
+  },
+  "preservedResults": [
+    {"path":"research/reproducibility/rc42-domain-evidence-result-before-date-correction.json","sha256":"aed974fe8b179626c075195a397a69385463444544031f6d8a15ad477922abeb"},
+    {"path":"research/reproducibility/rc42-domain-evidence-python-audit-before-date-correction.json","sha256":"3582693101024421d69d8c0e9e4c33de8488a20cfbde6e042ca143ce0ad6dfe9"}
+  ],
+  "unchanged": [
+    "all nine candidate field scores",
+    "all qualification rules and hypotheses",
+    "calibration values and formulas",
+    "common-input graphs",
+    "JavaScript and Python code"
+  ],
+  "requiredAction": "Regenerate both result artifacts so they bind the corrected manifest hash; qualification counts and scientific verdicts must remain unchanged."
+}

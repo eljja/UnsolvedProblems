@@ -1,0 +1,664 @@
+{
+  "cycleId": "RC-2026-42",
+  "generatedOn": "2026-08-20T00:51:24.946Z",
+  "manifest": {
+    "id": "RC42-DOMAIN-EVIDENCE-SOURCE-MANIFEST-0.1",
+    "normalizedSha256": "a7c7386c3532b6636278b4fc85b7ba33deca0552b76b6bd60a44d3f45ae86528",
+    "candidates": 6
+  },
+  "counts": {
+    "empiricalSeparatorCertificate": 0,
+    "singleDomainCalibrationSupport": 2,
+    "missingnessAlignmentAudit": 0,
+    "outcomeBlindNonresponseValidation": 0
+  },
+  "permissiveCounterfactualCounts": {
+    "empiricalSeparatorCertificate": 0,
+    "singleDomainCalibrationSupport": 4,
+    "missingnessAlignmentAudit": 1,
+    "outcomeBlindNonresponseValidation": 0
+  },
+  "qualifications": {
+    "empiricalSeparatorCertificate": [
+      {
+        "candidateId": "NIST-AMMT-X16-2019",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 1,
+          "rawValues": 1,
+          "expectedRoster": 1,
+          "explicitNullSlots": 0.5,
+          "calibrationLineage": 0.5,
+          "commonInputGraph": 0.5,
+          "independentReference": 0,
+          "blindPartition": 0.5,
+          "publicBytes": 1
+        },
+        "failed": [
+          "explicitNullSlots",
+          "calibrationLineage",
+          "commonInputGraph",
+          "independentReference",
+          "blindPartition"
+        ]
+      },
+      {
+        "candidateId": "NIST-AMMT-X4-2019",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 1,
+          "rawValues": 1,
+          "expectedRoster": 1,
+          "explicitNullSlots": 0,
+          "calibrationLineage": 1,
+          "commonInputGraph": 0.5,
+          "independentReference": 0,
+          "blindPartition": 0.5,
+          "publicBytes": 1
+        },
+        "failed": [
+          "explicitNullSlots",
+          "commonInputGraph",
+          "independentReference",
+          "blindPartition"
+        ]
+      },
+      {
+        "candidateId": "NIST-AMB2018-THERMOGRAPHY",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 1,
+          "rawValues": 1,
+          "expectedRoster": 1,
+          "explicitNullSlots": 0,
+          "calibrationLineage": 1,
+          "commonInputGraph": 0.5,
+          "independentReference": 0,
+          "blindPartition": 0.5,
+          "publicBytes": 1
+        },
+        "failed": [
+          "explicitNullSlots",
+          "commonInputGraph",
+          "independentReference",
+          "blindPartition"
+        ]
+      },
+      {
+        "candidateId": "IUCR-QARR-2001",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 0.5,
+          "rawValues": 0,
+          "expectedRoster": 1,
+          "explicitNullSlots": 0.5,
+          "calibrationLineage": 0,
+          "commonInputGraph": 0.5,
+          "independentReference": 1,
+          "blindPartition": 1,
+          "publicBytes": 0.5
+        },
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "explicitNullSlots",
+          "calibrationLineage",
+          "commonInputGraph",
+          "publicBytes"
+        ]
+      },
+      {
+        "candidateId": "SAS-ROUND-ROBIN-2022",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 0.5,
+          "rawValues": 0.5,
+          "expectedRoster": 0.5,
+          "explicitNullSlots": 0,
+          "calibrationLineage": 0.5,
+          "commonInputGraph": 0.5,
+          "independentReference": 0.5,
+          "blindPartition": 0,
+          "publicBytes": 0.5
+        },
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "expectedRoster",
+          "explicitNullSlots",
+          "calibrationLineage",
+          "commonInputGraph",
+          "independentReference",
+          "blindPartition",
+          "publicBytes"
+        ]
+      },
+      {
+        "candidateId": "NSFG-2011-2015-PHASE2",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 0,
+          "rawValues": 0.5,
+          "expectedRoster": 0.5,
+          "explicitNullSlots": 0,
+          "calibrationLineage": 0.5,
+          "commonInputGraph": 0.5,
+          "independentReference": 0,
+          "blindPartition": 1,
+          "publicBytes": 0.5
+        },
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "expectedRoster",
+          "explicitNullSlots",
+          "calibrationLineage",
+          "commonInputGraph",
+          "independentReference",
+          "publicBytes"
+        ]
+      }
+    ],
+    "singleDomainCalibrationSupport": [
+      {
+        "candidateId": "NIST-AMMT-X16-2019",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 1,
+          "rawValues": 1,
+          "calibrationLineage": 0.5,
+          "publicBytes": 1
+        },
+        "failed": [
+          "calibrationLineage"
+        ]
+      },
+      {
+        "candidateId": "NIST-AMMT-X4-2019",
+        "qualified": true,
+        "fields": {
+          "channelIdentity": 1,
+          "rawValues": 1,
+          "calibrationLineage": 1,
+          "publicBytes": 1
+        },
+        "failed": []
+      },
+      {
+        "candidateId": "NIST-AMB2018-THERMOGRAPHY",
+        "qualified": true,
+        "fields": {
+          "channelIdentity": 1,
+          "rawValues": 1,
+          "calibrationLineage": 1,
+          "publicBytes": 1
+        },
+        "failed": []
+      },
+      {
+        "candidateId": "IUCR-QARR-2001",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 0.5,
+          "rawValues": 0,
+          "calibrationLineage": 0,
+          "publicBytes": 0.5
+        },
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "calibrationLineage",
+          "publicBytes"
+        ]
+      },
+      {
+        "candidateId": "SAS-ROUND-ROBIN-2022",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 0.5,
+          "rawValues": 0.5,
+          "calibrationLineage": 0.5,
+          "publicBytes": 0.5
+        },
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "calibrationLineage",
+          "publicBytes"
+        ]
+      },
+      {
+        "candidateId": "NSFG-2011-2015-PHASE2",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 0,
+          "rawValues": 0.5,
+          "calibrationLineage": 0.5,
+          "publicBytes": 0.5
+        },
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "calibrationLineage",
+          "publicBytes"
+        ]
+      }
+    ],
+    "missingnessAlignmentAudit": [
+      {
+        "candidateId": "NIST-AMMT-X16-2019",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 1,
+          "rawValues": 1,
+          "expectedRoster": 1,
+          "explicitNullSlots": 0.5,
+          "publicBytes": 1
+        },
+        "failed": [
+          "explicitNullSlots"
+        ]
+      },
+      {
+        "candidateId": "NIST-AMMT-X4-2019",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 1,
+          "rawValues": 1,
+          "expectedRoster": 1,
+          "explicitNullSlots": 0,
+          "publicBytes": 1
+        },
+        "failed": [
+          "explicitNullSlots"
+        ]
+      },
+      {
+        "candidateId": "NIST-AMB2018-THERMOGRAPHY",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 1,
+          "rawValues": 1,
+          "expectedRoster": 1,
+          "explicitNullSlots": 0,
+          "publicBytes": 1
+        },
+        "failed": [
+          "explicitNullSlots"
+        ]
+      },
+      {
+        "candidateId": "IUCR-QARR-2001",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 0.5,
+          "rawValues": 0,
+          "expectedRoster": 1,
+          "explicitNullSlots": 0.5,
+          "publicBytes": 0.5
+        },
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "explicitNullSlots",
+          "publicBytes"
+        ]
+      },
+      {
+        "candidateId": "SAS-ROUND-ROBIN-2022",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 0.5,
+          "rawValues": 0.5,
+          "expectedRoster": 0.5,
+          "explicitNullSlots": 0,
+          "publicBytes": 0.5
+        },
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "expectedRoster",
+          "explicitNullSlots",
+          "publicBytes"
+        ]
+      },
+      {
+        "candidateId": "NSFG-2011-2015-PHASE2",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 0,
+          "rawValues": 0.5,
+          "expectedRoster": 0.5,
+          "explicitNullSlots": 0,
+          "publicBytes": 0.5
+        },
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "expectedRoster",
+          "explicitNullSlots",
+          "publicBytes"
+        ]
+      }
+    ],
+    "outcomeBlindNonresponseValidation": [
+      {
+        "candidateId": "NIST-AMMT-X16-2019",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 1,
+          "rawValues": 1,
+          "expectedRoster": 1,
+          "explicitNullSlots": 0.5,
+          "independentReference": 0,
+          "blindPartition": 0.5,
+          "publicBytes": 1
+        },
+        "failed": [
+          "explicitNullSlots",
+          "independentReference",
+          "blindPartition"
+        ]
+      },
+      {
+        "candidateId": "NIST-AMMT-X4-2019",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 1,
+          "rawValues": 1,
+          "expectedRoster": 1,
+          "explicitNullSlots": 0,
+          "independentReference": 0,
+          "blindPartition": 0.5,
+          "publicBytes": 1
+        },
+        "failed": [
+          "explicitNullSlots",
+          "independentReference",
+          "blindPartition"
+        ]
+      },
+      {
+        "candidateId": "NIST-AMB2018-THERMOGRAPHY",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 1,
+          "rawValues": 1,
+          "expectedRoster": 1,
+          "explicitNullSlots": 0,
+          "independentReference": 0,
+          "blindPartition": 0.5,
+          "publicBytes": 1
+        },
+        "failed": [
+          "explicitNullSlots",
+          "independentReference",
+          "blindPartition"
+        ]
+      },
+      {
+        "candidateId": "IUCR-QARR-2001",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 0.5,
+          "rawValues": 0,
+          "expectedRoster": 1,
+          "explicitNullSlots": 0.5,
+          "independentReference": 1,
+          "blindPartition": 1,
+          "publicBytes": 0.5
+        },
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "explicitNullSlots",
+          "publicBytes"
+        ]
+      },
+      {
+        "candidateId": "SAS-ROUND-ROBIN-2022",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 0.5,
+          "rawValues": 0.5,
+          "expectedRoster": 0.5,
+          "explicitNullSlots": 0,
+          "independentReference": 0.5,
+          "blindPartition": 0,
+          "publicBytes": 0.5
+        },
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "expectedRoster",
+          "explicitNullSlots",
+          "independentReference",
+          "blindPartition",
+          "publicBytes"
+        ]
+      },
+      {
+        "candidateId": "NSFG-2011-2015-PHASE2",
+        "qualified": false,
+        "fields": {
+          "channelIdentity": 0,
+          "rawValues": 0.5,
+          "expectedRoster": 0.5,
+          "explicitNullSlots": 0,
+          "independentReference": 0,
+          "blindPartition": 1,
+          "publicBytes": 0.5
+        },
+        "failed": [
+          "channelIdentity",
+          "rawValues",
+          "expectedRoster",
+          "explicitNullSlots",
+          "independentReference",
+          "publicBytes"
+        ]
+      }
+    ]
+  },
+  "calibrationResiduals": {
+    "points": 5,
+    "meanSignedCelsius": -0.04089840000001459,
+    "meanAbsoluteCelsius": 0.7051651999999649,
+    "rmsCelsius": 0.7449862327822953,
+    "maxAbsoluteCelsius": 0.9145539999999528,
+    "minSignedCelsius": -0.8504609999999957,
+    "maxSignedCelsius": 0.9145539999999528,
+    "rows": [
+      {
+        "digitalLevel": 38.8,
+        "referenceCelsius": 1600,
+        "curveCelsius": 1600.914554,
+        "signedCelsius": 0.9145539999999528,
+        "absoluteCelsius": 0.9145539999999528
+      },
+      {
+        "digitalLevel": 57.4,
+        "referenceCelsius": 1700,
+        "curveCelsius": 1699.149539,
+        "signedCelsius": -0.8504609999999957,
+        "absoluteCelsius": 0.8504609999999957
+      },
+      {
+        "digitalLevel": 83.7,
+        "referenceCelsius": 1800,
+        "curveCelsius": 1799.224473,
+        "signedCelsius": -0.775527000000011,
+        "absoluteCelsius": 0.775527000000011
+      },
+      {
+        "digitalLevel": 119.8,
+        "referenceCelsius": 1900,
+        "curveCelsius": 1899.760829,
+        "signedCelsius": -0.23917099999994207,
+        "absoluteCelsius": 0.23917099999994207
+      },
+      {
+        "digitalLevel": 137.9,
+        "referenceCelsius": 1940,
+        "curveCelsius": 1940.746113,
+        "signedCelsius": 0.746112999999923,
+        "absoluteCelsius": 0.746112999999923
+      }
+    ],
+    "admissibleClaim": "Five published calibration-pair residuals for one Mikrotron camera chain.",
+    "forbiddenClaims": [
+      "independent validation",
+      "cross-domain independence",
+      "in-process true-temperature accuracy"
+    ]
+  },
+  "commonInputGraphs": {
+    "NIST-AMMT-X16-2019": {
+      "nodes": [
+        "XYPT command stream",
+        "AMMT controller and 10 us timebase",
+        "melt-pool camera",
+        "layer camera",
+        "DAQ channels 1-4",
+        "shared build and material",
+        "X4 camera calibration lineage"
+      ],
+      "knownSharedEdges": [
+        [
+          "XYPT command stream",
+          "AMMT controller and 10 us timebase"
+        ],
+        [
+          "AMMT controller and 10 us timebase",
+          "melt-pool camera"
+        ],
+        [
+          "AMMT controller and 10 us timebase",
+          "DAQ channels 1-4"
+        ],
+        [
+          "shared build and material",
+          "melt-pool camera"
+        ],
+        [
+          "shared build and material",
+          "layer camera"
+        ],
+        [
+          "shared build and material",
+          "DAQ channels 1-4"
+        ],
+        [
+          "X4 camera calibration lineage",
+          "melt-pool camera"
+        ]
+      ],
+      "unresolvedEdges": [
+        [
+          "melt-pool camera",
+          "layer camera",
+          "independent calibration standards not established"
+        ],
+        [
+          "melt-pool camera",
+          "DAQ channels 1-4",
+          "common power, processor, and clock faults not fully enumerated"
+        ],
+        [
+          "layer camera",
+          "DAQ channels 1-4",
+          "cross-system covariance not published"
+        ]
+      ],
+      "evidencedIndependentDomainPairs": 0,
+      "conservativeCommonCauseGroups": 1,
+      "interpretation": "The release supports a real common-input graph but no pairwise independence certificate. Four DAQ columns and two cameras are not six resilience domains."
+    },
+    "NSFG-2011-2015-PHASE2": {
+      "nodes": [
+        "week-10 nonrespondent roster",
+        "probability phase-2 selection",
+        "enhanced effort and incentive",
+        "later response outcome",
+        "public respondent file",
+        "restricted all-case paradata"
+      ],
+      "knownSharedEdges": [
+        [
+          "week-10 nonrespondent roster",
+          "probability phase-2 selection"
+        ],
+        [
+          "probability phase-2 selection",
+          "enhanced effort and incentive"
+        ],
+        [
+          "enhanced effort and incentive",
+          "later response outcome"
+        ],
+        [
+          "later response outcome",
+          "public respondent file"
+        ],
+        [
+          "week-10 nonrespondent roster",
+          "restricted all-case paradata"
+        ]
+      ],
+      "inaccessibleAdjudicationLinks": [
+        [
+          "probability phase-2 selection",
+          "public respondent file",
+          "selection flag and all-case roster not public"
+        ],
+        [
+          "restricted all-case paradata",
+          "later response outcome",
+          "record linkage requires RDC access"
+        ]
+      ],
+      "temporallyOutcomeBlindSelection": true,
+      "publicBoundReconstruction": false,
+      "interpretation": "The design is a valid candidate for double-sampling analysis, but the public bytes cannot adjudicate the narrowing."
+    }
+  },
+  "hypotheses": {
+    "H1": {
+      "verdict": "rejected",
+      "evidence": "0 fully qualified candidate(s)"
+    },
+    "H2": {
+      "verdict": "supported-limited",
+      "evidence": "2 calibration-support candidate(s); 5 X4 pairs"
+    },
+    "H3": {
+      "verdict": "rejected",
+      "evidence": "Dropped frames are documented, but stable authenticated null records are not published."
+    },
+    "H4": {
+      "verdict": "rejected",
+      "evidence": "0 public validation candidate(s)"
+    },
+    "H5": {
+      "verdict": "rejected",
+      "evidence": "Shared and unresolved common inputs prevent one-domain-per-channel assignment."
+    }
+  },
+  "criteria": {
+    "sixCandidatesAudited": true,
+    "noExactSeparatorCandidate": true,
+    "x4IsCalibrationSupport": true,
+    "x16NotNullLedger": true,
+    "nsfgSelectionOutcomeBlind": true,
+    "nsfgPublicNarrowingUnavailable": true,
+    "fiveCalibrationPairs": true,
+    "residualsFinite": true,
+    "maxResidualBelowOneCelsius": true,
+    "noIndependentPairAsserted": true,
+    "partialAsCompleteWouldChangeAnyQualification": true,
+    "calibratedDoesNotMeanValidated": true
+  },
+  "passedCriteria": 12,
+  "totalCriteria": 12,
+  "decision": "Do not promote RC41 to a real empirical separator certificate. Preserve NIST X4 as single-chain calibration evidence, use X16 to design an explicit slot ledger, and require restricted or newly released NSFG paradata before nonresponse narrowing."
+}

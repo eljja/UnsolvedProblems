@@ -43,7 +43,7 @@
       "officialRecord": "https://doi.org/10.18434/mds2-2309",
       "primaryDescription": "https://data.nist.gov/od/ds/ark:/88434/mds2-2309/OverhangX16_In-situData_UserNotes.pdf",
       "resultDate": "2019-07-03",
-      "releaseDate": "2021-03-25",
+      "releaseDate": "2020-10-16",
       "scores": {"channelIdentity":1,"rawValues":1,"expectedRoster":1,"explicitNullSlots":0.5,"calibrationLineage":0.5,"commonInputGraph":0.5,"independentReference":0,"blindPartition":0.5,"publicBytes":1},
       "observedStructure": {
         "nominallyIdenticalParts": 16,
