@@ -1,0 +1,237 @@
+{
+  "auditId": "RC43-X16-L0002-INDEPENDENT-PYTHON-AUDIT-0.1",
+  "cycleId": "RC-2026-43",
+  "createdOn": "2026-08-20T16:39:16.868876+00:00",
+  "layer": 2,
+  "implementation": "independent Python standard-library ZIP64, XYPT, and AVI parser with shared 7-Zip Deflate64 decoder",
+  "xypt": {
+    "textSha256": "576d1e19cc4aee87ab60dcde4376ce21faa3c42342a9a7653d9bf5af4a3a1c7c",
+    "bytes": 64749624,
+    "lineCount": 1486203,
+    "preview": [
+      "0.000000, 0.000000, 0.000000, 0.000000",
+      "0.000000, 0.000000, 0.000000, 0.000000",
+      "0.000000, 0.000000, 0.000000, 0.000000",
+      "0.000000, 0.000000, 0.000000, 0.000000",
+      "0.000000, 0.000000, 0.000000, 0.000000",
+      "0.000000, 0.000000, 0.000000, 0.000000",
+      "0.000000, 0.000000, 0.000000, 0.000000",
+      "0.000000, 0.000000, 0.000000, 0.000000"
+    ],
+    "parseStatus": "parsed-headerless-four-column-per-primary-format",
+    "triggerColumn": 3,
+    "numericDataRows": 1486203,
+    "nonzeroTriggerRows": 95504,
+    "triggerValueCounts": {
+      "0": 1390699,
+      "2": 95504
+    },
+    "firstNonzeroDataIndex": 28291,
+    "lastNonzeroDataIndex": 1458616,
+    "selected": {
+      "name": "XYPT_L0002.csv",
+      "method": 8,
+      "flags": 0,
+      "crc32": "3bb9c502",
+      "compressedSize": 5801886,
+      "uncompressedSize": 64749624,
+      "localHeaderOffset": 6518758
+    },
+    "cameraMask2Rows": 95504,
+    "centralDirectorySha256": "0967318be4ea6413c605bf0ca55e810952a280b07b11407262a2a73b69b92a5d"
+  },
+  "avi": {
+    "parseStatus": "parsed-prefix",
+    "prefixBytes": 4161399,
+    "prefixSha256": "bfb90b4a1ccdff12c4526b5fb2737e4a99663af956eddfeae45b7031fc9dad60",
+    "riffDeclaredBytes": 172605872,
+    "counters": [
+      {
+        "source": "avih.dwTotalFrames",
+        "value": 95504,
+        "offset": 24
+      },
+      {
+        "source": "strh.dwLength",
+        "value": 95504,
+        "offset": 100
+      },
+      {
+        "source": "dmlh.dwTotalFrames",
+        "value": 95504,
+        "offset": 4356
+      }
+    ],
+    "chunkSignatures": {
+      "LIST": 4,
+      "avih": 1,
+      "strh": 1,
+      "dmlh": 1,
+      "movi": 1
+    },
+    "selected": {
+      "name": "MPMcamera_L0002.avi",
+      "method": 9,
+      "flags": 0,
+      "crc32": "e85e3962",
+      "compressedSize": 170506288,
+      "uncompressedSize": 172605872,
+      "localHeaderOffset": 181048481
+    },
+    "discardBytes": 65536,
+    "prefixA": {
+      "decoderPath": "C:\\Program Files\\AMD\\CIM\\Bin64\\7z.exe",
+      "exitCode": 2,
+      "stderrTail": "\r\nERRORS:\r\nUnexpected end of archive\r\n\r\nERROR: Data Error : MPMcamera_L0002.avi\r\n",
+      "archiveBytes": 4194304,
+      "archivePrefixSha256": "f4bfe0a9e25b7178008f9e586f42f8ceb07c6d4fe9fc6a29456865cf04f8a3e6",
+      "decodedBytes": 4226935,
+      "decodedSha256": "6dc8f9757c97844121e49fababeb26d43c29d9a916564f3b16dd0c87c9708015"
+    },
+    "prefixB": {
+      "decoderPath": "C:\\Program Files\\AMD\\CIM\\Bin64\\7z.exe",
+      "exitCode": 2,
+      "stderrTail": "\r\nERRORS:\r\nUnexpected end of archive\r\n\r\nERROR: Data Error : MPMcamera_L0002.avi\r\n",
+      "archiveBytes": 8388608,
+      "archivePrefixSha256": "00ecbc19168818acd4ed383c9def06d4ba45c5fba3c2a00cba9dc8b16b21fe64",
+      "decodedBytes": 8445448,
+      "decodedSha256": "009f3c8d38cbb4c81f473c7efef529994fbef1b3e1a7e38465c911996107ef5f"
+    },
+    "retainedABytes": 4161399,
+    "retainedASha256": "bfb90b4a1ccdff12c4526b5fb2737e4a99663af956eddfeae45b7031fc9dad60",
+    "retainedBBytes": 8379912,
+    "nestedRetainedPrefixAgreement": true,
+    "localDataOffset": 181048530
+  },
+  "adjudication": {
+    "triggerCount": 95504,
+    "cameraMask2Rows": 95504,
+    "frameCount": 95504,
+    "triggerMinusFrame": 0,
+    "countDirection": "equal",
+    "exactNullLedger": false,
+    "qualification": "aggregate-count-reproduced-slot-placement-not-identifiable"
+  },
+  "comparisonToJavaScript": {
+    "path": "research/reproducibility/rc43-x16-layer-0002-result.json",
+    "checks": {
+      "triggerCount": true,
+      "cameraMask2Rows": true,
+      "frameCount": true,
+      "triggerMinusFrame": true,
+      "xyptSha256": true,
+      "aviRetainedSha256": true,
+      "nativeCounters": true
+    },
+    "passed": true
+  },
+  "transfer": {
+    "maximumCumulativeBytes": 134217728,
+    "conservativePriorUpperBound": 85640647,
+    "thisExecutionBytes": 20485260,
+    "cumulativeUpperBound": 106125907,
+    "remainingConservativeBytes": 28091821,
+    "receipts": {
+      "xypt": [
+        {
+          "purpose": "ZIP end records",
+          "start": 158115796,
+          "end": 159164371,
+          "bytes": 1048576,
+          "contentRange": "bytes 158115796-159164371/159164372",
+          "bodySha256": "47cb007ece04282b6d0013b831b423b2b91dcc71b2d7d99390fc71d710ff7ecc"
+        },
+        {
+          "purpose": "ZIP central directory",
+          "start": 159162850,
+          "end": 159164349,
+          "bytes": 1500,
+          "contentRange": "bytes 159162850-159164349/159164372",
+          "bodySha256": "0967318be4ea6413c605bf0ca55e810952a280b07b11407262a2a73b69b92a5d"
+        },
+        {
+          "purpose": "XYPT_L0002.csv local header",
+          "start": 6518758,
+          "end": 6518787,
+          "bytes": 30,
+          "contentRange": "bytes 6518758-6518787/159164372",
+          "bodySha256": "b4ebf44797408421102b18576129de2dd20dd643927eed714543ed70787b72a7"
+        },
+        {
+          "purpose": "XYPT_L0002.csv local name and extra",
+          "start": 6518788,
+          "end": 6518801,
+          "bytes": 14,
+          "contentRange": "bytes 6518788-6518801/159164372",
+          "bodySha256": "e1701bd1f0dbafd6178c7e8b49aed8e6bdadaec8cc40f89e107324f629a334e2"
+        },
+        {
+          "purpose": "XYPT_L0002.csv complete compressed member",
+          "start": 6518802,
+          "end": 12320687,
+          "bytes": 5801886,
+          "contentRange": "bytes 6518802-12320687/159164372",
+          "bodySha256": "fc218b570f0e5da4ec8036961f8dd6b349d304dc33a4816f284ce0f5e269718c"
+        }
+      ],
+      "avi": [
+        {
+          "purpose": "ZIP end records",
+          "start": 5036648285,
+          "end": 5037696860,
+          "bytes": 1048576,
+          "contentRange": "bytes 5036648285-5037696860/5037696861",
+          "bodySha256": "cbecc4549117f9fc986d2157eacbeb60cfa43c4bba50c6082511f41375501158"
+        },
+        {
+          "purpose": "ZIP64 EOCD record",
+          "start": 5037696763,
+          "end": 5037696818,
+          "bytes": 56,
+          "contentRange": "bytes 5037696763-5037696818/5037696861",
+          "bodySha256": "9606fbc7548fe21abd5bd8617c5fbd1d1c5ad4951b957053f3651ba594d2f270"
+        },
+        {
+          "purpose": "ZIP central directory",
+          "start": 5037695102,
+          "end": 5037696762,
+          "bytes": 1661,
+          "contentRange": "bytes 5037695102-5037696762/5037696861",
+          "bodySha256": "5394b84477940c8e0e16bae7513c2e40ea5021971f2aa13779d8c20df5e5e4ce"
+        },
+        {
+          "purpose": "MPMcamera_L0002.avi local header",
+          "start": 181048481,
+          "end": 181048510,
+          "bytes": 30,
+          "contentRange": "bytes 181048481-181048510/5037696861",
+          "bodySha256": "658cbaf20b5053bd9a26b1bbbd9cf6bd2fec410007f254d641d000c83f2602ab"
+        },
+        {
+          "purpose": "MPMcamera_L0002.avi local name and extra",
+          "start": 181048511,
+          "end": 181048529,
+          "bytes": 19,
+          "contentRange": "bytes 181048511-181048529/5037696861",
+          "bodySha256": "a71847179c0ac7a98861d37cabb41a0ad2739aa16c9a188880c986d91c843204"
+        },
+        {
+          "purpose": "L0002 AVI member-relative segment A",
+          "start": 181048481,
+          "end": 185242784,
+          "bytes": 4194304,
+          "contentRange": "bytes 181048481-185242784/5037696861",
+          "bodySha256": "f4bfe0a9e25b7178008f9e586f42f8ceb07c6d4fe9fc6a29456865cf04f8a3e6"
+        },
+        {
+          "purpose": "L0002 AVI member-relative segment B",
+          "start": 181048481,
+          "end": 189437088,
+          "bytes": 8388608,
+          "contentRange": "bytes 181048481-189437088/5037696861",
+          "bodySha256": "00ecbc19168818acd4ed383c9def06d4ba45c5fba3c2a00cba9dc8b16b21fe64"
+        }
+      ]
+    }
+  }
+}
