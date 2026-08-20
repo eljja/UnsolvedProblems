@@ -8,7 +8,7 @@ const failures = [];
 const assert = (condition, message) => { if (!condition) failures.push(message); };
 
 const sandbox = { window: {} };
-const researchCycleFiles = ["research-cycle-data.js", ...Array.from({ length: 41 }, (_, index) => `research-cycle-${String(index + 3).padStart(2, "0")}-data.js`)];
+const researchCycleFiles = ["research-cycle-data.js", ...Array.from({ length: 42 }, (_, index) => `research-cycle-${String(index + 3).padStart(2, "0")}-data.js`)];
 for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", ...researchCycleFiles]) {
   vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }

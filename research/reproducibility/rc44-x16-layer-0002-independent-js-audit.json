@@ -1,0 +1,934 @@
+{
+  "auditId": "RC44-X16-L0002-INDEPENDENT-JS-SINGLE-DELETION-0.1",
+  "cycleId": "RC-2026-44",
+  "createdOn": "2026-08-21",
+  "scope": "Independent source-based reconstruction of the 128 singleton deletion trials. This is sufficient to reject the 95 percent aggregate gate when more than 61 singleton trials fail, even under the impossible best case that every remaining deletion is recovered.",
+  "inputs": {
+    "xyptSha256": "576d1e19cc4aee87ab60dcde4376ce21faa3c42342a9a7653d9bf5af4a3a1c7c",
+    "raw8x8Sha256": "3cfbcde06f4daff854f8efc0f60df34d0bd56b836b93e8edfc749e78c6262dea",
+    "rows": 1486203,
+    "triggers": 95504,
+    "rawBytes": 6112256,
+    "selectedConfiguration": {
+      "ridgeAlpha": 1,
+      "huberDelta": 1
+    }
+  },
+  "singleton": {
+    "trials": 128,
+    "recoveredWithinOne": 1,
+    "failures": 127,
+    "recallWithinOne": 0.0078125
+  },
+  "comparisonToPython": {
+    "pythonRecoveredWithinOne": 1,
+    "sameTruthSchedule": false,
+    "sameCalledSlots": false,
+    "exactAggregateAgreement": false
+  },
+  "logicalGateBound": {
+    "allOtherDeletionTruths": 1104,
+    "maximumOverallRecallIfEveryOtherCasePerfect": 0.8969155844155844,
+    "canReach95Percent": false
+  },
+  "independence": "JavaScript streams and parses XYPT independently, derives 18 command and 22 image features, computes robust scales, solves the ridge normal equations, generates singleton truths, and scans every deletion placement without importing Python calls. It uses the same sealed raw 8 by 8 decoder output and the Python-selected scalar alpha and delta.",
+  "verdict": "inconclusive-disagreement",
+  "trials": [
+    {
+      "trial": 0,
+      "truth": 18841,
+      "call": 18838,
+      "recoveredWithinOne": false,
+      "cost": 5902.223339485161
+    },
+    {
+      "trial": 1,
+      "truth": 11828,
+      "call": 11890,
+      "recoveredWithinOne": false,
+      "cost": 5901.764298001324
+    },
+    {
+      "trial": 2,
+      "truth": 14710,
+      "call": 14699,
+      "recoveredWithinOne": false,
+      "cost": 5902.274209976941
+    },
+    {
+      "trial": 3,
+      "truth": 6432,
+      "call": 6378,
+      "recoveredWithinOne": false,
+      "cost": 5902.376602042408
+    },
+    {
+      "trial": 4,
+      "truth": 14841,
+      "call": 14997,
+      "recoveredWithinOne": false,
+      "cost": 5902.286965107628
+    },
+    {
+      "trial": 5,
+      "truth": 18535,
+      "call": 18499,
+      "recoveredWithinOne": false,
+      "cost": 5902.264888947201
+    },
+    {
+      "trial": 6,
+      "truth": 13266,
+      "call": 13132,
+      "recoveredWithinOne": false,
+      "cost": 5901.371975981574
+    },
+    {
+      "trial": 7,
+      "truth": 17079,
+      "call": 17210,
+      "recoveredWithinOne": false,
+      "cost": 5902.11773250649
+    },
+    {
+      "trial": 8,
+      "truth": 1381,
+      "call": 1199,
+      "recoveredWithinOne": false,
+      "cost": 5901.648844889107
+    },
+    {
+      "trial": 9,
+      "truth": 433,
+      "call": 424,
+      "recoveredWithinOne": false,
+      "cost": 5902.302312984185
+    },
+    {
+      "trial": 10,
+      "truth": 3782,
+      "call": 3794,
+      "recoveredWithinOne": false,
+      "cost": 5902.334565467072
+    },
+    {
+      "trial": 11,
+      "truth": 12595,
+      "call": 12610,
+      "recoveredWithinOne": false,
+      "cost": 5902.33030946309
+    },
+    {
+      "trial": 12,
+      "truth": 4747,
+      "call": 5042,
+      "recoveredWithinOne": false,
+      "cost": 5901.7573307386665
+    },
+    {
+      "trial": 13,
+      "truth": 6735,
+      "call": 6835,
+      "recoveredWithinOne": false,
+      "cost": 5902.114119293416
+    },
+    {
+      "trial": 14,
+      "truth": 14699,
+      "call": 14702,
+      "recoveredWithinOne": false,
+      "cost": 5902.162803825215
+    },
+    {
+      "trial": 15,
+      "truth": 5920,
+      "call": 5971,
+      "recoveredWithinOne": false,
+      "cost": 5891.891996889388
+    },
+    {
+      "trial": 16,
+      "truth": 15344,
+      "call": 15419,
+      "recoveredWithinOne": false,
+      "cost": 5901.82503109896
+    },
+    {
+      "trial": 17,
+      "truth": 13125,
+      "call": 13062,
+      "recoveredWithinOne": false,
+      "cost": 5902.375443589498
+    },
+    {
+      "trial": 18,
+      "truth": 5994,
+      "call": 5942,
+      "recoveredWithinOne": false,
+      "cost": 5902.39977020083
+    },
+    {
+      "trial": 19,
+      "truth": 11336,
+      "call": 11438,
+      "recoveredWithinOne": false,
+      "cost": 5901.980139953714
+    },
+    {
+      "trial": 20,
+      "truth": 2033,
+      "call": 2129,
+      "recoveredWithinOne": false,
+      "cost": 5902.11268546246
+    },
+    {
+      "trial": 21,
+      "truth": 15131,
+      "call": 15419,
+      "recoveredWithinOne": false,
+      "cost": 5901.8101205425055
+    },
+    {
+      "trial": 22,
+      "truth": 9110,
+      "call": 9178,
+      "recoveredWithinOne": false,
+      "cost": 5901.818911254079
+    },
+    {
+      "trial": 23,
+      "truth": 12576,
+      "call": 12587,
+      "recoveredWithinOne": false,
+      "cost": 5902.080676975381
+    },
+    {
+      "trial": 24,
+      "truth": 8958,
+      "call": 9015,
+      "recoveredWithinOne": false,
+      "cost": 5902.204259468741
+    },
+    {
+      "trial": 25,
+      "truth": 5999,
+      "call": 5939,
+      "recoveredWithinOne": false,
+      "cost": 5902.408969255614
+    },
+    {
+      "trial": 26,
+      "truth": 11303,
+      "call": 11290,
+      "recoveredWithinOne": false,
+      "cost": 5902.31242049428
+    },
+    {
+      "trial": 27,
+      "truth": 18742,
+      "call": 18842,
+      "recoveredWithinOne": false,
+      "cost": 5902.19954701096
+    },
+    {
+      "trial": 28,
+      "truth": 3216,
+      "call": 3222,
+      "recoveredWithinOne": false,
+      "cost": 5902.2654713385045
+    },
+    {
+      "trial": 29,
+      "truth": 1622,
+      "call": 1626,
+      "recoveredWithinOne": false,
+      "cost": 5901.881376259348
+    },
+    {
+      "trial": 30,
+      "truth": 5330,
+      "call": 5246,
+      "recoveredWithinOne": false,
+      "cost": 5902.355348880047
+    },
+    {
+      "trial": 31,
+      "truth": 13475,
+      "call": 13564,
+      "recoveredWithinOne": false,
+      "cost": 5901.839929934953
+    },
+    {
+      "trial": 32,
+      "truth": 3606,
+      "call": 3658,
+      "recoveredWithinOne": false,
+      "cost": 5902.309272929826
+    },
+    {
+      "trial": 33,
+      "truth": 8457,
+      "call": 8425,
+      "recoveredWithinOne": false,
+      "cost": 5902.420824495914
+    },
+    {
+      "trial": 34,
+      "truth": 8870,
+      "call": 8952,
+      "recoveredWithinOne": false,
+      "cost": 5902.0877223726475
+    },
+    {
+      "trial": 35,
+      "truth": 10438,
+      "call": 10591,
+      "recoveredWithinOne": false,
+      "cost": 5901.820714291451
+    },
+    {
+      "trial": 36,
+      "truth": 11368,
+      "call": 11438,
+      "recoveredWithinOne": false,
+      "cost": 5901.9920079742915
+    },
+    {
+      "trial": 37,
+      "truth": 1390,
+      "call": 1199,
+      "recoveredWithinOne": false,
+      "cost": 5901.660159616251
+    },
+    {
+      "trial": 38,
+      "truth": 15683,
+      "call": 15675,
+      "recoveredWithinOne": false,
+      "cost": 5902.402426154469
+    },
+    {
+      "trial": 39,
+      "truth": 11570,
+      "call": 11890,
+      "recoveredWithinOne": false,
+      "cost": 5901.685498039968
+    },
+    {
+      "trial": 40,
+      "truth": 15016,
+      "call": 14931,
+      "recoveredWithinOne": false,
+      "cost": 5902.355340321784
+    },
+    {
+      "trial": 41,
+      "truth": 17262,
+      "call": 17181,
+      "recoveredWithinOne": false,
+      "cost": 5902.387197597191
+    },
+    {
+      "trial": 42,
+      "truth": 7751,
+      "call": 7822,
+      "recoveredWithinOne": false,
+      "cost": 5902.16147197256
+    },
+    {
+      "trial": 43,
+      "truth": 8302,
+      "call": 8278,
+      "recoveredWithinOne": false,
+      "cost": 5902.386522292876
+    },
+    {
+      "trial": 44,
+      "truth": 4536,
+      "call": 4590,
+      "recoveredWithinOne": false,
+      "cost": 5902.309567242954
+    },
+    {
+      "trial": 45,
+      "truth": 12433,
+      "call": 12342,
+      "recoveredWithinOne": false,
+      "cost": 5902.368599060661
+    },
+    {
+      "trial": 46,
+      "truth": 15357,
+      "call": 15419,
+      "recoveredWithinOne": false,
+      "cost": 5901.8951370616405
+    },
+    {
+      "trial": 47,
+      "truth": 2709,
+      "call": 2860,
+      "recoveredWithinOne": false,
+      "cost": 5902.068521690252
+    },
+    {
+      "trial": 48,
+      "truth": 5819,
+      "call": 5921,
+      "recoveredWithinOne": false,
+      "cost": 5902.029022114668
+    },
+    {
+      "trial": 49,
+      "truth": 2870,
+      "call": 3090,
+      "recoveredWithinOne": false,
+      "cost": 5895.452912995566
+    },
+    {
+      "trial": 50,
+      "truth": 15599,
+      "call": 15599,
+      "recoveredWithinOne": true,
+      "cost": 5895.234786353033
+    },
+    {
+      "trial": 51,
+      "truth": 14645,
+      "call": 14702,
+      "recoveredWithinOne": false,
+      "cost": 5901.977336788563
+    },
+    {
+      "trial": 52,
+      "truth": 14230,
+      "call": 14194,
+      "recoveredWithinOne": false,
+      "cost": 5902.166335428921
+    },
+    {
+      "trial": 53,
+      "truth": 12519,
+      "call": 12635,
+      "recoveredWithinOne": false,
+      "cost": 5902.02382730056
+    },
+    {
+      "trial": 54,
+      "truth": 5652,
+      "call": 5771,
+      "recoveredWithinOne": false,
+      "cost": 5902.13285323015
+    },
+    {
+      "trial": 55,
+      "truth": 7870,
+      "call": 7897,
+      "recoveredWithinOne": false,
+      "cost": 5902.1647691971675
+    },
+    {
+      "trial": 56,
+      "truth": 4421,
+      "call": 4403,
+      "recoveredWithinOne": false,
+      "cost": 5902.409694631942
+    },
+    {
+      "trial": 57,
+      "truth": 17903,
+      "call": 17890,
+      "recoveredWithinOne": false,
+      "cost": 5902.361505667
+    },
+    {
+      "trial": 58,
+      "truth": 11007,
+      "call": 10986,
+      "recoveredWithinOne": false,
+      "cost": 5902.38316403345
+    },
+    {
+      "trial": 59,
+      "truth": 10351,
+      "call": 10375,
+      "recoveredWithinOne": false,
+      "cost": 5902.3485317949
+    },
+    {
+      "trial": 60,
+      "truth": 15617,
+      "call": 15620,
+      "recoveredWithinOne": false,
+      "cost": 5902.267128792596
+    },
+    {
+      "trial": 61,
+      "truth": 15166,
+      "call": 15419,
+      "recoveredWithinOne": false,
+      "cost": 5902.183607231603
+    },
+    {
+      "trial": 62,
+      "truth": 1398,
+      "call": 1199,
+      "recoveredWithinOne": false,
+      "cost": 5901.6687435812055
+    },
+    {
+      "trial": 63,
+      "truth": 16345,
+      "call": 16333,
+      "recoveredWithinOne": false,
+      "cost": 5902.060684235021
+    },
+    {
+      "trial": 64,
+      "truth": 12768,
+      "call": 12794,
+      "recoveredWithinOne": false,
+      "cost": 5901.90394602163
+    },
+    {
+      "trial": 65,
+      "truth": 15152,
+      "call": 15419,
+      "recoveredWithinOne": false,
+      "cost": 5901.795378144521
+    },
+    {
+      "trial": 66,
+      "truth": 8639,
+      "call": 8655,
+      "recoveredWithinOne": false,
+      "cost": 5902.34716604377
+    },
+    {
+      "trial": 67,
+      "truth": 15727,
+      "call": 15879,
+      "recoveredWithinOne": false,
+      "cost": 5901.886434193559
+    },
+    {
+      "trial": 68,
+      "truth": 18871,
+      "call": 18839,
+      "recoveredWithinOne": false,
+      "cost": 5902.29333047868
+    },
+    {
+      "trial": 69,
+      "truth": 1174,
+      "call": 1087,
+      "recoveredWithinOne": false,
+      "cost": 5902.248866266667
+    },
+    {
+      "trial": 70,
+      "truth": 17327,
+      "call": 17486,
+      "recoveredWithinOne": false,
+      "cost": 5901.8907364003835
+    },
+    {
+      "trial": 71,
+      "truth": 8892,
+      "call": 8952,
+      "recoveredWithinOne": false,
+      "cost": 5902.067563003979
+    },
+    {
+      "trial": 72,
+      "truth": 7785,
+      "call": 7830,
+      "recoveredWithinOne": false,
+      "cost": 5902.200659660697
+    },
+    {
+      "trial": 73,
+      "truth": 16952,
+      "call": 17210,
+      "recoveredWithinOne": false,
+      "cost": 5901.735257878988
+    },
+    {
+      "trial": 74,
+      "truth": 12973,
+      "call": 13020,
+      "recoveredWithinOne": false,
+      "cost": 5901.95317471398
+    },
+    {
+      "trial": 75,
+      "truth": 3325,
+      "call": 3456,
+      "recoveredWithinOne": false,
+      "cost": 5901.75083065748
+    },
+    {
+      "trial": 76,
+      "truth": 7362,
+      "call": 7168,
+      "recoveredWithinOne": false,
+      "cost": 5901.611772330245
+    },
+    {
+      "trial": 77,
+      "truth": 5580,
+      "call": 5489,
+      "recoveredWithinOne": false,
+      "cost": 5902.325638081671
+    },
+    {
+      "trial": 78,
+      "truth": 3444,
+      "call": 3517,
+      "recoveredWithinOne": false,
+      "cost": 5902.361125082954
+    },
+    {
+      "trial": 79,
+      "truth": 15827,
+      "call": 15879,
+      "recoveredWithinOne": false,
+      "cost": 5901.667184258369
+    },
+    {
+      "trial": 80,
+      "truth": 5747,
+      "call": 5770,
+      "recoveredWithinOne": false,
+      "cost": 5902.36417754966
+    },
+    {
+      "trial": 81,
+      "truth": 15671,
+      "call": 15625,
+      "recoveredWithinOne": false,
+      "cost": 5902.3785805672305
+    },
+    {
+      "trial": 82,
+      "truth": 16366,
+      "call": 16359,
+      "recoveredWithinOne": false,
+      "cost": 5902.406505653684
+    },
+    {
+      "trial": 83,
+      "truth": 2329,
+      "call": 2556,
+      "recoveredWithinOne": false,
+      "cost": 5902.363257209503
+    },
+    {
+      "trial": 84,
+      "truth": 18333,
+      "call": 18379,
+      "recoveredWithinOne": false,
+      "cost": 5902.282392334591
+    },
+    {
+      "trial": 85,
+      "truth": 16028,
+      "call": 16034,
+      "recoveredWithinOne": false,
+      "cost": 5902.388549214189
+    },
+    {
+      "trial": 86,
+      "truth": 16212,
+      "call": 16278,
+      "recoveredWithinOne": false,
+      "cost": 5902.288084780694
+    },
+    {
+      "trial": 87,
+      "truth": 16057,
+      "call": 16052,
+      "recoveredWithinOne": false,
+      "cost": 5902.118762520057
+    },
+    {
+      "trial": 88,
+      "truth": 14163,
+      "call": 14169,
+      "recoveredWithinOne": false,
+      "cost": 5902.335853621053
+    },
+    {
+      "trial": 89,
+      "truth": 2073,
+      "call": 2129,
+      "recoveredWithinOne": false,
+      "cost": 5902.090942531553
+    },
+    {
+      "trial": 90,
+      "truth": 6844,
+      "call": 6828,
+      "recoveredWithinOne": false,
+      "cost": 5902.018292009248
+    },
+    {
+      "trial": 91,
+      "truth": 10001,
+      "call": 10082,
+      "recoveredWithinOne": false,
+      "cost": 5902.275381126157
+    },
+    {
+      "trial": 92,
+      "truth": 1948,
+      "call": 1882,
+      "recoveredWithinOne": false,
+      "cost": 5902.178742410215
+    },
+    {
+      "trial": 93,
+      "truth": 16640,
+      "call": 17210,
+      "recoveredWithinOne": false,
+      "cost": 5902.099255311787
+    },
+    {
+      "trial": 94,
+      "truth": 1993,
+      "call": 2129,
+      "recoveredWithinOne": false,
+      "cost": 5902.025389007251
+    },
+    {
+      "trial": 95,
+      "truth": 16041,
+      "call": 16026,
+      "recoveredWithinOne": false,
+      "cost": 5902.339171628053
+    },
+    {
+      "trial": 96,
+      "truth": 4232,
+      "call": 4339,
+      "recoveredWithinOne": false,
+      "cost": 5901.780068293627
+    },
+    {
+      "trial": 97,
+      "truth": 2271,
+      "call": 2557,
+      "recoveredWithinOne": false,
+      "cost": 5901.997627569561
+    },
+    {
+      "trial": 98,
+      "truth": 9494,
+      "call": 9630,
+      "recoveredWithinOne": false,
+      "cost": 5902.392645967402
+    },
+    {
+      "trial": 99,
+      "truth": 383,
+      "call": 409,
+      "recoveredWithinOne": false,
+      "cost": 5901.787599446799
+    },
+    {
+      "trial": 100,
+      "truth": 15104,
+      "call": 15419,
+      "recoveredWithinOne": false,
+      "cost": 5901.860264679866
+    },
+    {
+      "trial": 101,
+      "truth": 3607,
+      "call": 3658,
+      "recoveredWithinOne": false,
+      "cost": 5902.4159293861885
+    },
+    {
+      "trial": 102,
+      "truth": 10028,
+      "call": 10082,
+      "recoveredWithinOne": false,
+      "cost": 5902.283675951374
+    },
+    {
+      "trial": 103,
+      "truth": 7628,
+      "call": 7595,
+      "recoveredWithinOne": false,
+      "cost": 5901.732077022487
+    },
+    {
+      "trial": 104,
+      "truth": 1666,
+      "call": 1626,
+      "recoveredWithinOne": false,
+      "cost": 5901.843433351759
+    },
+    {
+      "trial": 105,
+      "truth": 7466,
+      "call": 7168,
+      "recoveredWithinOne": false,
+      "cost": 5901.745527423094
+    },
+    {
+      "trial": 106,
+      "truth": 17585,
+      "call": 17633,
+      "recoveredWithinOne": false,
+      "cost": 5902.097833127802
+    },
+    {
+      "trial": 107,
+      "truth": 11221,
+      "call": 11270,
+      "recoveredWithinOne": false,
+      "cost": 5902.190884275738
+    },
+    {
+      "trial": 108,
+      "truth": 1873,
+      "call": 1944,
+      "recoveredWithinOne": false,
+      "cost": 5902.363256917977
+    },
+    {
+      "trial": 109,
+      "truth": 4888,
+      "call": 5042,
+      "recoveredWithinOne": false,
+      "cost": 5902.2832546024265
+    },
+    {
+      "trial": 110,
+      "truth": 441,
+      "call": 424,
+      "recoveredWithinOne": false,
+      "cost": 5902.300679479246
+    },
+    {
+      "trial": 111,
+      "truth": 9946,
+      "call": 9898,
+      "recoveredWithinOne": false,
+      "cost": 5902.364253710137
+    },
+    {
+      "trial": 112,
+      "truth": 1273,
+      "call": 1199,
+      "recoveredWithinOne": false,
+      "cost": 5901.528980711011
+    },
+    {
+      "trial": 113,
+      "truth": 9583,
+      "call": 9634,
+      "recoveredWithinOne": false,
+      "cost": 5902.008138954152
+    },
+    {
+      "trial": 114,
+      "truth": 12780,
+      "call": 12795,
+      "recoveredWithinOne": false,
+      "cost": 5902.009087083087
+    },
+    {
+      "trial": 115,
+      "truth": 3985,
+      "call": 3957,
+      "recoveredWithinOne": false,
+      "cost": 5902.341463042832
+    },
+    {
+      "trial": 116,
+      "truth": 3368,
+      "call": 3518,
+      "recoveredWithinOne": false,
+      "cost": 5901.835783339339
+    },
+    {
+      "trial": 117,
+      "truth": 206,
+      "call": 282,
+      "recoveredWithinOne": false,
+      "cost": 5902.310907133208
+    },
+    {
+      "trial": 118,
+      "truth": 1046,
+      "call": 1060,
+      "recoveredWithinOne": false,
+      "cost": 5902.092024258023
+    },
+    {
+      "trial": 119,
+      "truth": 2926,
+      "call": 3090,
+      "recoveredWithinOne": false,
+      "cost": 5902.234835847821
+    },
+    {
+      "trial": 120,
+      "truth": 1386,
+      "call": 1199,
+      "recoveredWithinOne": false,
+      "cost": 5901.638260265662
+    },
+    {
+      "trial": 121,
+      "truth": 6682,
+      "call": 6599,
+      "recoveredWithinOne": false,
+      "cost": 5902.258049298627
+    },
+    {
+      "trial": 122,
+      "truth": 15071,
+      "call": 15419,
+      "recoveredWithinOne": false,
+      "cost": 5901.783164394044
+    },
+    {
+      "trial": 123,
+      "truth": 10037,
+      "call": 10082,
+      "recoveredWithinOne": false,
+      "cost": 5902.278308076325
+    },
+    {
+      "trial": 124,
+      "truth": 10652,
+      "call": 10863,
+      "recoveredWithinOne": false,
+      "cost": 5902.137032976569
+    },
+    {
+      "trial": 125,
+      "truth": 8189,
+      "call": 8299,
+      "recoveredWithinOne": false,
+      "cost": 5902.220072477696
+    },
+    {
+      "trial": 126,
+      "truth": 15878,
+      "call": 15825,
+      "recoveredWithinOne": false,
+      "cost": 5902.397425256392
+    },
+    {
+      "trial": 127,
+      "truth": 12102,
+      "call": 12120,
+      "recoveredWithinOne": false,
+      "cost": 5901.911843831127
+    }
+  ]
+}

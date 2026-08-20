@@ -1,0 +1,75 @@
+{
+  "resultId": "RC44-X16-CYCLE-RESULT-0.1",
+  "cycleId": "RC-2026-44",
+  "adjudicatedOn": "2026-08-21",
+  "question": "Can a command-to-image dynamic bridge validated on count-equal L0002 identify the 23 missing trigger slots in natural L0001?",
+  "answer": "No under the preregistered bridge. Synthetic positional recovery fails so decisively that L0001 pixel acquisition remains sealed.",
+  "inputs": {
+    "development": "NIST X16 L0002: 95,504 triggers, 95,504 CRC-verified AVI frames, 18 command features, and 22 features from an 8 by 8 grayscale representation.",
+    "naturalHoldout": "NIST X16 L0001 remains pixel-uninspected in RC44; only RC43's aggregate deficit of 23 is inherited.",
+    "acquiredNistResponseBodyBytes": 176308267,
+    "maximumNistResponseBodyBytes": 402653184,
+    "decoder": "FFmpeg 7.1 essentials build, binary SHA-256 2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3"
+  },
+  "preregisteredResult": {
+    "ridgeAlpha": 1,
+    "huberDelta": 1,
+    "trainRows": 57302,
+    "validationRows": 19101,
+    "testRows": 19101,
+    "validationStandardizedMse": 5.2240101491381505,
+    "deletionTruths": 1232,
+    "recoveredWithinOne": 105,
+    "recallWithinOne": 0.08522727272727272,
+    "falseDiscoveries": 1127,
+    "falseDiscoveryRate": 0.9147727272727273,
+    "unmodifiedControlDeletionCalls": 0,
+    "gatePassed": false,
+    "breakdown": {
+      "single": {"truth": 128, "recoveredWithinOne": 1},
+      "dispersed23": {"truth": 736, "recoveredWithinOne": 26},
+      "contiguousBlock23": {"truth": 368, "recoveredWithinOne": 78}
+    }
+  },
+  "independentResult": {
+    "scope": "JavaScript independently reconstructs all 128 singleton cases from XYPT and raw feature bytes using the frozen scalar configuration.",
+    "recoveredWithinOne": 1,
+    "singletonRecall": 0.0078125,
+    "maximumOverallRecallIfAllOtherCasesPerfect": 0.8969155844155844,
+    "sameTruthSchedule": true,
+    "sameCalledSlots": 9,
+    "calledSlotsWithinOneOfEachOther": 12,
+    "medianAbsoluteCallDifference": 103.5,
+    "verdict": "Independent aggregate failure is confirmed; positional outputs are unstable."
+  },
+  "postGateDiagnostic": {
+    "status": "exploratory-not-preregistered-and-never-a-holdout-release-rule",
+    "model": "ExtraTreesRegressor with 64 trees on the identical blocked split and feature set",
+    "single": {"truth": 128, "recoveredWithinOne": 11, "recall": 0.0859375},
+    "dispersed23": {"truth": 736, "recoveredWithinOne": 45, "recall": 0.06114130434782609},
+    "interpretation": "Nonlinearity improves some local discrimination but does not approach a positional ledger. The bottleneck is not only ridge linearity."
+  },
+  "hypotheses": {
+    "N0_weakOrNonstationaryBridge": "supported",
+    "N1_pureTailTruncation": "not-tested-natural-holdout-sealed",
+    "N2_interiorDeletion": "not-tested-natural-holdout-sealed",
+    "N3_deletionPlusDuplicationOrClockSlip": "not-tested-after-fail-fast-stop"
+  },
+  "causalChain": {
+    "inputAndAllowedAssumptions": "CRC-verified equal-count L0002 bytes and an explicitly conditional ordinal pairing for synthetic perturbation.",
+    "bottleneck": "Command state predicts coarse image appearance weakly and repeated scan states leave adjacent event identities exchangeable.",
+    "bridgeClaim": "If the feature residual has unique temporal structure, a monotone path should recover injected deleted slots.",
+    "independentAdjudicand": "Within-one-slot recall and false-discovery rate on hash-generated deletions, plus a source-based JavaScript singleton audit.",
+    "resolutionBoundary": "The bridge fails the synthetic gate, so no natural L0001 path or missing slot may be interpreted."
+  },
+  "uncertainty": {
+    "measurement": "One FFmpeg decoder and 8 by 8 grayscale area reduction; no radiometric calibration or decoder diversity.",
+    "model": "Count-equal ordinal pairing, blocked ridge stationarity, Huber cost, and fixed-length deletion paths are assumptions.",
+    "sampling": "One layer supplies train, validation, and test blocks; no other layer or build is used for feature learning.",
+    "implementation": "Aggregate singleton failure agrees, but wrong called positions differ sharply between Python and JavaScript.",
+    "extrapolation": "Nothing in RC44 locates natural loss, proves tail concentration, identifies equipment cause, or estimates a population loss rate."
+  },
+  "smallestAdvance": "The current command-to-coarse-image representation is falsified as an identity bridge. It should not be scaled to L0001 or the remaining 248 layers.",
+  "nextDecisiveTest": "On L0002 only, preregister a multiscale discriminability ladder: full 120 by 120 local spatiotemporal descriptors, scan-segment boundary anchors, and window-level contrastive matching. Require cross-block singleton recovery and implementation-stable path margins before reconsidering L0001. In parallel, search the raw acquisition workflow for an external timestamp, camera counter, or trigger log, because an explicit key dominates any inferred signature.",
+  "status": "synthetic-gate-failed-natural-holdout-not-released"
+}

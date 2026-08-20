@@ -1,0 +1,129 @@
+{
+  "resultId": "RC44-X16-L0002-PYTHON-DEVELOPMENT-0.2",
+  "cycleId": "RC-2026-44",
+  "createdOn": "2026-08-21",
+  "layer": 2,
+  "role": "development",
+  "precommit": "research/reproducibility/rc44-command-image-alignment-precommit.json",
+  "amendments": [
+    "research/reproducibility/rc44-amendment-01.json",
+    "research/reproducibility/rc44-amendment-02.json",
+    "research/reproducibility/rc44-amendment-03.json"
+  ],
+  "inputs": {
+    "xypt": {
+      "path": ".cache/rc44-x16/l0002/extracted/XYPT_L0002.csv",
+      "sha256": "576d1e19cc4aee87ab60dcde4376ce21faa3c42342a9a7653d9bf5af4a3a1c7c",
+      "triggerRows": 95504
+    },
+    "avi": {
+      "path": ".cache/rc44-x16/l0002/extracted/MPMcamera_L0002.avi",
+      "sha256": "54bc90814acf15304257ee4c9c56f029d50999ab38b9c27455137a12f884b53a",
+      "frames": 95504
+    },
+    "raw8x8": {
+      "path": ".cache/rc44-x16/l0002/frames-8x8-gray.raw",
+      "bytes": 6112256,
+      "sha256": "3cfbcde06f4daff854f8efc0f60df34d0bd56b836b93e8edfc749e78c6262dea"
+    },
+    "ffmpeg": {
+      "path": ".cache/rc44-python/imageio_ffmpeg/binaries/ffmpeg-win-x86_64-v7.1.exe",
+      "sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3"
+    }
+  },
+  "features": {
+    "commandColumns": 18,
+    "imageColumns": 22,
+    "train": 57302,
+    "validation": 19101,
+    "test": 19101
+  },
+  "model": {
+    "alphaScores": [
+      {
+        "alpha": 0.01,
+        "validationStandardizedMse": 5.224037488490419
+      },
+      {
+        "alpha": 0.1,
+        "validationStandardizedMse": 5.224029953746973
+      },
+      {
+        "alpha": 1.0,
+        "validationStandardizedMse": 5.2240101491381505
+      },
+      {
+        "alpha": 10.0,
+        "validationStandardizedMse": 5.224432126609577
+      },
+      {
+        "alpha": 100.0,
+        "validationStandardizedMse": 5.224970340614873
+      }
+    ],
+    "selectedAlpha": 1.0,
+    "selectedHuberDelta": 1.0,
+    "validationCandidates": [
+      {
+        "delta": 1.0,
+        "totals": {
+          "truth": 200,
+          "calls": 200,
+          "recoveredWithinOne": 6,
+          "falseDiscoveries": 194
+        },
+        "recallWithinOne": 0.03,
+        "falseDiscoveryRate": 0.97
+      },
+      {
+        "delta": 1.5,
+        "totals": {
+          "truth": 200,
+          "calls": 200,
+          "recoveredWithinOne": 3,
+          "falseDiscoveries": 197
+        },
+        "recallWithinOne": 0.015,
+        "falseDiscoveryRate": 0.985
+      },
+      {
+        "delta": 2.0,
+        "totals": {
+          "truth": 200,
+          "calls": 200,
+          "recoveredWithinOne": 4,
+          "falseDiscoveries": 196
+        },
+        "recallWithinOne": 0.02,
+        "falseDiscoveryRate": 0.98
+      }
+    ],
+    "penaltyIdentification": "constant deletion penalties cancel because each observed length fixes the transition count"
+  },
+  "syntheticTest": {
+    "totals": {
+      "truth": 1232,
+      "calls": 1232,
+      "recoveredWithinOne": 105,
+      "falseDiscoveries": 1127
+    },
+    "recallWithinOne": 0.08522727272727272,
+    "falseDiscoveryRate": 0.9147727272727273
+  },
+  "unmodifiedControl": {
+    "deletionCalls": [],
+    "cost": 5898.8425920897
+  },
+  "gate": {
+    "recallAtLeast95Percent": false,
+    "fdrAtMost1Percent": false,
+    "unmodifiedEmpty": true,
+    "passed": false
+  },
+  "holdoutDecision": "stop-before-l0001-pixel-acquisition",
+  "boundaries": [
+    "The synthetic test assumes ordinal pairing in count-equal L0002; count equality does not authenticate that assumption.",
+    "No duplicate-only or affine-drift test is needed to release L0001 when the primary deletion gate already fails; omitted cases remain unadjudicated rather than counted as passes.",
+    "No L0001 member or pixel is inspected by this script."
+  ]
+}

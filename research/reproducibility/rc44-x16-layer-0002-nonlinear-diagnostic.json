@@ -1,0 +1,37 @@
+{
+  "resultId": "RC44-X16-L0002-POST-GATE-NONLINEAR-DIAGNOSTIC-0.1",
+  "cycleId": "RC-2026-44",
+  "createdOn": "2026-08-21",
+  "status": "exploratory-after-preregistered-gate-failure",
+  "question": "Was the failed bridge mainly a linear-ridge limitation, or does a nonlinear tree ensemble remain far below the location gate on the same blocked split?",
+  "model": {
+    "implementation": "scikit-learn ExtraTreesRegressor 1.3.0",
+    "nEstimators": 64,
+    "minSamplesLeaf": 2,
+    "maxFeatures": 1.0,
+    "randomState": 4402,
+    "trainRows": 57302,
+    "testRows": 19101
+  },
+  "single": {
+    "totals": {
+      "truth": 128,
+      "calls": 128,
+      "recoveredWithinOne": 11,
+      "falseDiscoveries": 117
+    },
+    "recallWithinOne": 0.0859375,
+    "falseDiscoveryRate": 0.9140625
+  },
+  "dispersed23": {
+    "totals": {
+      "truth": 736,
+      "calls": 736,
+      "recoveredWithinOne": 45,
+      "falseDiscoveries": 691
+    },
+    "recallWithinOne": 0.06114130434782609,
+    "falseDiscoveryRate": 0.938858695652174
+  },
+  "boundary": "This model and its seeds were chosen after the preregistered failure. Its result diagnoses model-class limitations only and cannot release or interpret L0001."
+}

@@ -1,0 +1,26 @@
+{
+  "releaseId": "RC44-X16-L0001-HOLDOUT-RELEASE-0.1",
+  "cycleId": "RC-2026-44",
+  "createdOn": "2026-08-21",
+  "developmentLayer": 2,
+  "naturalHoldoutLayer": 1,
+  "syntheticGatePassed": false,
+  "holdoutReleased": false,
+  "evidence": {
+    "pythonDeletionTruths": 1232,
+    "pythonRecoveredWithinOne": 105,
+    "pythonRecallWithinOne": 0.08522727272727272,
+    "pythonFalseDiscoveryRate": 0.9147727272727273,
+    "independentSingletonTruths": 128,
+    "independentSingletonRecoveredWithinOne": 1,
+    "maximumOverallRecallIfEveryOtherDeletionWereRecovered": 0.8969155844155844,
+    "requiredRecall": 0.95,
+    "requiredMaximumFalseDiscoveryRate": 0.01
+  },
+  "decision": "L0001 exact member ranges must not be requested. The preregistered command-image bridge is not sufficiently discriminative to interpret natural missing positions.",
+  "preservedFailures": [
+    "The original Python compact ledger overwrote per-trial slot arrays with scalar counts; amendment 03 and v0.2 preserve and correct it.",
+    "Python and JavaScript independently recover one singleton deletion each but on different trials, and agree on only 9 of 128 called slots.",
+    "The preregistered duplicate-only and affine-drift cases were not run because the primary deletion gate had already become logically impossible. They are unadjudicated, not successful."
+  ]
+}

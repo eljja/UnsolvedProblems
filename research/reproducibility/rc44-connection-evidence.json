@@ -1,0 +1,37 @@
+{
+  "connectionId": "CONN-EVIDENCE-017",
+  "cycleId": "RC-2026-44",
+  "problemIds": ["UP-605", "UP-315"],
+  "type": "observable discriminability to identity-indexed omission reconstruction",
+  "strength": "strong",
+  "commonStructure": "Both sensor registration and fault-tolerant reconstruction require an injective-enough signature from expected slots to observed records. A count deficit fixes an omission budget; a predictive feature bridge can locate omissions only when competing monotone paths have separated costs.",
+  "variableMapping": {
+    "XYPT camera-trigger slot": "expected witness identity",
+    "decoded 8 by 8 image feature vector": "observed witness signature",
+    "ridge or tree prediction residual": "cross-domain match cost",
+    "deleted dynamic-program path step": "null expected slot",
+    "cost margin between paths": "identification margin",
+    "required and possible deletion sets": "singleton or set-valued reconstruction"
+  },
+  "conditionsForTransfer": [
+    "Command observables predict image observables across an untouched time block.",
+    "A local feature window is distinctive enough that removing one record changes the unique minimum-cost path near the true slot.",
+    "Two numerical implementations select stable positions under fixed tolerances.",
+    "Synthetic faults reproduce the kinds of deletion, duplication, and drift expected in natural acquisition."
+  ],
+  "breakConditions": [
+    "Repeated raster motion and nearly stationary melt-pool appearance make many slots exchangeable.",
+    "An 8 by 8 grayscale reduction removes local texture or tail information needed to distinguish adjacent frames.",
+    "Count equality hides offsetting deletion and duplication, so the development ordinal pairing is not authenticated.",
+    "A model can correlate power with intensity while still failing event identity."
+  ],
+  "minimumValidation": "Recover known singleton deletions first. Missing 127 of 128 singleton cases already makes the aggregate 95 percent gate impossible even if all 1,104 remaining injected deletions were recovered.",
+  "evidence": {
+    "preregisteredPython": "105 of 1,232 deletion identities recovered within one slot; 91.48 percent false-discovery rate.",
+    "independentJavaScript": "1 of 128 singleton deletions recovered; the impossible best-case aggregate recall is 89.69 percent.",
+    "implementationStability": "The two implementations call the same singleton slot in 9 of 128 trials; median absolute call difference is 103.5 slots.",
+    "postGateNonlinearDiagnostic": "Extra Trees improves singleton recovery to 11 of 128 and dispersed recovery to 45 of 736, still far below the gate and not preregistered."
+  },
+  "transferableMethod": "Use a fail-fast discriminability screen before natural alignment: quantify cross-block prediction, injected singleton recovery, path-cost margins, and implementation stability. Escalate to natural candidate positions only after all four pass.",
+  "validationStatus": "The shared identifiability condition is confirmed by a negative result. Transfer of the current 8 by 8 command-image bridge is rejected; no natural slot is adjudicated."
+}
