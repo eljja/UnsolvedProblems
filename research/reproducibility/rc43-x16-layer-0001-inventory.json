@@ -1,0 +1,151 @@
+{
+  "inventoryId": "RC43-X16-L0001-INVENTORY-0.1",
+  "cycleId": "RC-2026-43",
+  "createdOn": "2026-08-20T16:14:09.910Z",
+  "layer": 1,
+  "role": "development",
+  "selected": {
+    "xypt": {
+      "name": "XYPT_L0001.csv",
+      "method": 8,
+      "flags": 0,
+      "crc32": "0af07559",
+      "compressedSize": 6518714,
+      "uncompressedSize": 72015733,
+      "localHeaderOffset": 0
+    },
+    "avi": {
+      "name": "MPMcamera_L0001.avi",
+      "method": 9,
+      "flags": 0,
+      "crc32": "d42f4023",
+      "compressedSize": 181048432,
+      "uncompressedSize": 183130242,
+      "localHeaderOffset": 0
+    },
+    "tiff": {
+      "name": "MPMcamera_L0001.tif",
+      "method": 9,
+      "flags": 0,
+      "crc32": "1ffd999f",
+      "compressedSize": 188080759,
+      "uncompressedSize": 1377878825,
+      "localHeaderOffset": 0
+    }
+  },
+  "directories": {
+    "xypt": {
+      "disk": 0,
+      "centralDirectoryDisk": 0,
+      "entriesOnDisk": 25,
+      "entries": 25,
+      "centralDirectorySize": 1500,
+      "centralDirectoryOffset": 159162850,
+      "commentLength": 0,
+      "usesZip64": false,
+      "centralDirectorySha256": "0967318be4ea6413c605bf0ca55e810952a280b07b11407262a2a73b69b92a5d",
+      "entryCount": 25
+    },
+    "avi": {
+      "usesZip64": true,
+      "disk": 0,
+      "centralDirectoryDisk": 0,
+      "entriesOnDisk": 25,
+      "entries": 25,
+      "centralDirectorySize": 1661,
+      "centralDirectoryOffset": 5037695102,
+      "zip64Offset": 5037696763,
+      "centralDirectorySha256": "5394b84477940c8e0e16bae7513c2e40ea5021971f2aa13779d8c20df5e5e4ce",
+      "entryCount": 25
+    },
+    "tiff": {
+      "usesZip64": true,
+      "disk": 0,
+      "centralDirectoryDisk": 0,
+      "entriesOnDisk": 25,
+      "entries": 25,
+      "centralDirectorySize": 1697,
+      "centralDirectoryOffset": 5740966428,
+      "zip64Offset": 5740968125,
+      "centralDirectorySha256": "b50cf87b56a25489874a0886a9d7495a80d9242779b224cd1f22edff2aceed92",
+      "entryCount": 25
+    }
+  },
+  "transfer": {
+    "maximumBytesPerLayer": 134217728,
+    "thisExecutionBytes": 3150698,
+    "receipts": {
+      "xypt": [
+        {
+          "purpose": "ZIP end records",
+          "start": 158115796,
+          "end": 159164371,
+          "bytes": 1048576,
+          "contentRange": "bytes 158115796-159164371/159164372",
+          "bodySha256": "47cb007ece04282b6d0013b831b423b2b91dcc71b2d7d99390fc71d710ff7ecc"
+        },
+        {
+          "purpose": "ZIP central directory",
+          "start": 159162850,
+          "end": 159164349,
+          "bytes": 1500,
+          "contentRange": "bytes 159162850-159164349/159164372",
+          "bodySha256": "0967318be4ea6413c605bf0ca55e810952a280b07b11407262a2a73b69b92a5d"
+        }
+      ],
+      "avi": [
+        {
+          "purpose": "ZIP end records",
+          "start": 5036648285,
+          "end": 5037696860,
+          "bytes": 1048576,
+          "contentRange": "bytes 5036648285-5037696860/5037696861",
+          "bodySha256": "cbecc4549117f9fc986d2157eacbeb60cfa43c4bba50c6082511f41375501158"
+        },
+        {
+          "purpose": "ZIP64 EOCD record",
+          "start": 5037696763,
+          "end": 5037696818,
+          "bytes": 56,
+          "contentRange": "bytes 5037696763-5037696818/5037696861",
+          "bodySha256": "9606fbc7548fe21abd5bd8617c5fbd1d1c5ad4951b957053f3651ba594d2f270"
+        },
+        {
+          "purpose": "ZIP central directory",
+          "start": 5037695102,
+          "end": 5037696762,
+          "bytes": 1661,
+          "contentRange": "bytes 5037695102-5037696762/5037696861",
+          "bodySha256": "5394b84477940c8e0e16bae7513c2e40ea5021971f2aa13779d8c20df5e5e4ce"
+        }
+      ],
+      "tiff": [
+        {
+          "purpose": "ZIP end records",
+          "start": 5739919647,
+          "end": 5740968222,
+          "bytes": 1048576,
+          "contentRange": "bytes 5739919647-5740968222/5740968223",
+          "bodySha256": "c3eb0a66bc4ea061f936f3b9cd9e6f2da4d2409acc7524d962ee8f8006992e31"
+        },
+        {
+          "purpose": "ZIP64 EOCD record",
+          "start": 5740968125,
+          "end": 5740968180,
+          "bytes": 56,
+          "contentRange": "bytes 5740968125-5740968180/5740968223",
+          "bodySha256": "ad7b5375ddbd81f3b4a27bda13d579541cc15dbc2712903391e57605dba04686"
+        },
+        {
+          "purpose": "ZIP central directory",
+          "start": 5740966428,
+          "end": 5740968124,
+          "bytes": 1697,
+          "contentRange": "bytes 5740966428-5740968124/5740968223",
+          "bodySha256": "b50cf87b56a25489874a0886a9d7495a80d9242779b224cd1f22edff2aceed92"
+        }
+      ]
+    }
+  },
+  "boundary": "No local member header or member body was requested by inventory-only execution."
+}
