@@ -11,6 +11,7 @@ const layer = Number(args.find((arg) => arg.startsWith("--layer="))?.split("=")[
 const shouldWrite = args.includes("--write");
 const inventoryOnly = args.includes("--inventory-only");
 const prefixOnly = args.includes("--prefix-only");
+const xyptReparseOnly = args.includes("--xypt-reparse-only");
 const maxBytes = 134_217_728;
 if (!Number.isInteger(layer) || layer < 1 || layer > 25) throw new Error("--layer must be an integer from 1 through 25");
 
@@ -235,10 +236,28 @@ const parseXypt = (bytes) => {
       && (normalized[3] === "t" || normalized[3].includes("trigger"));
   };
   const headerIndex = tokenized.findIndex((row) => row.some((value) => /trigger/i.test(value)) || isXyptHeader(row));
-  if (headerIndex < 0) return { textSha256: sha256(bytes), bytes: bytes.length, lineCount: lines.length, preview, parseStatus: "no-trigger-header" };
-  const header = tokenized[headerIndex];
-  const triggerColumn = header.findIndex((value) => /trigger/i.test(value) || normalizedToken(value) === "t");
-  const dataRows = tokenized.slice(headerIndex + 1).filter((row) => row.length > triggerColumn && Number.isFinite(Number(row[triggerColumn])));
+  let header = null;
+  let triggerColumn;
+  let dataRows;
+  let parseStatus;
+  if (headerIndex >= 0) {
+    header = tokenized[headerIndex];
+    triggerColumn = header.findIndex((value) => /trigger/i.test(value) || normalizedToken(value) === "t");
+    dataRows = tokenized.slice(headerIndex + 1).filter((row) => row.length > triggerColumn && Number.isFinite(Number(row[triggerColumn])));
+    parseStatus = "parsed";
+  } else {
+    const everyRowIsFourFiniteFields = tokenized.every((row) => row.length === 4 && row.every((value) => Number.isFinite(Number(value))));
+    if (!everyRowIsFourFiniteFields) {
+      return { textSha256: sha256(bytes), bytes: bytes.length, lineCount: lines.length, preview, parseStatus: "no-trigger-header-and-invalid-four-column-body" };
+    }
+    triggerColumn = 3;
+    dataRows = tokenized;
+    const invalidTrigger = dataRows.findIndex((row) => !Number.isInteger(Number(row[3])) || Number(row[3]) < 0 || Number(row[3]) > 255);
+    if (invalidTrigger >= 0) {
+      return { textSha256: sha256(bytes), bytes: bytes.length, lineCount: lines.length, preview, parseStatus: "invalid-trigger-mask", invalidTriggerRow: invalidTrigger };
+    }
+    parseStatus = "parsed-headerless-four-column-per-primary-format";
+  }
   const nonzeroTriggerRows = dataRows.filter((row) => Number(row[triggerColumn]) !== 0);
   const triggerValueCounts = {};
   for (const row of dataRows) {
@@ -247,7 +266,7 @@ const parseXypt = (bytes) => {
   }
   return {
     textSha256: sha256(bytes), bytes: bytes.length, lineCount: lines.length, preview,
-    parseStatus: "parsed", delimiter: delimiter === "," ? "comma" : "whitespace", headerIndex, header,
+    parseStatus, delimiter: delimiter === "," ? "comma" : "whitespace", headerIndex, header,
     triggerColumn, numericDataRows: dataRows.length, nonzeroTriggerRows: nonzeroTriggerRows.length, triggerValueCounts,
     firstNonzeroDataIndex: dataRows.findIndex((row) => Number(row[triggerColumn]) !== 0),
     lastNonzeroDataIndex: dataRows.findLastIndex((row) => Number(row[triggerColumn]) !== 0)
@@ -393,6 +412,71 @@ async function runPrefixAudit() {
   }, null, 2));
 }
 
+async function runXyptReparseAudit() {
+  if (layer !== 1) throw new Error("--xypt-reparse-only is authorized only for development layer 1");
+  const firstPath = path.join(root, "research", "reproducibility", "rc43-x16-layer-0001-first-prefix-result.json");
+  const first = JSON.parse(fs.readFileSync(firstPath, "utf8"));
+  const frameCounts = [...new Set(first.avi.counters.map((counter) => counter.value))];
+  if (frameCounts.length !== 1 || frameCounts[0] !== 94_713 || first.avi.nestedRetainedPrefixAgreement !== true) {
+    throw new Error("sealed first AVI result does not satisfy reparse prerequisites");
+  }
+  const reader = new RangeReader("https://data.nist.gov/od/ds/ark:/88434/mds2-2309/XYPT_L001-025.zip", 159_164_372, "XYPT_L001-025.zip");
+  const directory = await readCentralDirectory(reader);
+  const entry = findEntry(directory.entries, "XYPT_L0001.csv");
+  const extract = await extractCompleteMember(reader, entry);
+  const xypt = parseXypt(extract.bytes);
+  if (xypt.parseStatus !== "parsed-headerless-four-column-per-primary-format" && xypt.parseStatus !== "parsed") {
+    throw new Error(`XYPT reparse refused: ${xypt.parseStatus}`);
+  }
+  const triggerCount = xypt.nonzeroTriggerRows;
+  const cameraMask2Rows = xypt.triggerValueCounts["2"] || 0;
+  const frameCount = frameCounts[0];
+  const triggerMinusFrame = triggerCount - frameCount;
+  const countDirection = triggerMinusFrame > 0 ? "fewer-frames-than-triggers" : triggerMinusFrame < 0 ? "more-frames-than-triggers" : "equal";
+  const conservativePriorUpperBound = 36_384_465;
+  const cumulativeUpperBound = conservativePriorUpperBound + reader.transferredBytes;
+  if (cumulativeUpperBound > maxBytes) throw new Error("cumulative transfer ceiling exceeded");
+  const result = {
+    resultId: "RC43-X16-L0001-DEVELOPMENT-AUDIT-0.2", cycleId: "RC-2026-43", createdOn: new Date().toISOString(),
+    layer: 1, role: "development", precommit: "research/reproducibility/rc43-x16-trigger-frame-precommit.json",
+    amendments: ["rc43-x16-amendment-01.json", "rc43-x16-amendment-02.json", "rc43-x16-amendment-03.json", "rc43-x16-amendment-04.json"],
+    xypt: { ...xypt, selected: summarizeEntry(entry), cameraMask2Rows, centralDirectorySha256: directory.centralDirectorySha256 },
+    avi: first.avi,
+    adjudication: {
+      triggerCount, cameraMask2Rows, frameCount, triggerMinusFrame, countDirection,
+      nativeFrameCountersAgree: true, publicHeaderExposesPerFrameSlotKey: false,
+      tailOnlyLossEstablished: false, exactNullLedger: false,
+      compatibleMissingSlotPlacementsLowerBound: triggerMinusFrame > 0 ? triggerCount : triggerMinusFrame === 0 ? 1 : null,
+      qualification: "aggregate-count-reproduced-slot-placement-not-identifiable",
+      hypotheses: {
+        H1: triggerMinusFrame < 0 ? "supported-on-development" : "rejected-on-development",
+        H2: triggerMinusFrame >= 0 && triggerMinusFrame <= 20 ? "count-bound-supported-tail-placement-not-established" : "rejected-on-development",
+        H3: "rejected-on-development-header-has-no-per-frame-slot-key",
+        H4: "supported-for-stable-header-prefix-within-cumulative-budget",
+        H5: "untested-holdout-sealed"
+      }
+    },
+    transfer: {
+      maximumCumulativeBytes: maxBytes, conservativePriorUpperBound,
+      thisExecutionBytes: reader.transferredBytes, cumulativeUpperBound,
+      remainingConservativeBytes: maxBytes - cumulativeUpperBound,
+      receipts: { xypt: reader.receipts, avi: [] }
+    },
+    boundaries: [
+      "This result uses official column order to interpret a headerless numeric body; no row was skipped.",
+      "Aggregate counts do not locate a missing frame among trigger slots or prove the User Notes' end-loss wording.",
+      "The complete AVI and TIFF members were not downloaded and no image-content alignment was attempted."
+    ]
+  };
+  const json = `${JSON.stringify(result, null, 2)}\n`;
+  if (shouldWrite) {
+    const output = path.join(root, "research", "reproducibility", "rc43-x16-layer-0001-result.json");
+    fs.writeFileSync(output, json, "utf8");
+    console.log(`Wrote ${path.relative(root, output)}`);
+  }
+  console.log(JSON.stringify({ triggerCount, cameraMask2Rows, frameCount, triggerMinusFrame, countDirection, hypotheses: result.adjudication.hypotheses, transfer: result.transfer }, null, 2));
+}
+
 async function main() {
   const archives = {
     xypt: new RangeReader("https://data.nist.gov/od/ds/ark:/88434/mds2-2309/XYPT_L001-025.zip", 159_164_372, "XYPT_L001-025.zip"),
@@ -491,5 +575,6 @@ async function main() {
   }, null, 2));
 }
 
-if (prefixOnly) await runPrefixAudit();
+if (xyptReparseOnly) await runXyptReparseAudit();
+else if (prefixOnly) await runPrefixAudit();
 else await main();

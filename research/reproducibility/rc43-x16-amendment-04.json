@@ -1,0 +1,27 @@
+{
+  "amendmentId": "RC43-X16-AMENDMENT-04",
+  "cycleId": "RC-2026-43",
+  "recordedOn": "2026-08-21",
+  "trigger": "The first stable-prefix result decoded three agreeing AVI counters at 94713 frames, but the complete 72015733-byte XYPT_L0001.csv contains 1658275 nonempty numeric rows and no header row, so the header-dependent parser returned no trigger count.",
+  "sourceBasis": "The preregistered NIST X4 primary paper defines XYPT as four comma-separated ASCII columns ordered X position, Y position, Power, Trigger and names the files XYPT_L0XXX.csv. It also defines Trigger as an eight-channel decimal bit mask and states that value 2 fires the melt-pool camera.",
+  "authorizedParserChange": {
+    "headerlessRule": "If and only if every nonempty CSV row contains exactly four finite numeric fields, interpret columns 0-3 as X, Y, Power, Trigger in the primary-paper order.",
+    "triggerValidity": "Every fourth-column value must be an integer from 0 through 255. Any violation stops parsing; no row may be skipped.",
+    "counts": "Report all nonzero Trigger rows, value-2 rows, every distinct Trigger-mask count, total rows, first and last nonzero row, member SHA-256, size, and CRC-verified archive lineage.",
+    "network": "Re-read only the XYPT central directory, local header, and complete L0001 compressed member. Reuse the already sealed stable AVI header counters; do not request either AVI prefix again."
+  },
+  "transferAccounting": {
+    "conservativeUpperBoundBeforeThisAmendment": 36384465,
+    "maximumCumulativeBytes": 134217728,
+    "remainingBeforeAuthorizedRequests": 97833263
+  },
+  "notChanged": [
+    "The nonzero Trigger definition",
+    "Separate reporting of Trigger mask 2",
+    "The three-counter AVI agreement requirement",
+    "The per-frame slot-key and exact-null singleton requirements",
+    "L0002 holdout seal",
+    "All H1-H5 verdict rules and the ban on image-content rescue"
+  ],
+  "status": "must-be-committed-and-pushed-before-xypt-reparse"
+}
