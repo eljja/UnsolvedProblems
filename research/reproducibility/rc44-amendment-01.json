@@ -1,0 +1,14 @@
+{
+  "amendmentId": "RC44-AMENDMENT-01",
+  "cycleId": "RC-2026-44",
+  "createdOn": "2026-08-21",
+  "status": "sealed-before-any-pixel-decoding-or-complete-avi-member-acquisition",
+  "reason": "The preregistration's prose subtracted one 49-byte L0001 local header when summing the two exact AVI member ranges.",
+  "original": "The two exact AVI member ranges total 351,554,769 bytes including local headers.",
+  "corrected": "The exact L0001 range is 181,048,481 bytes and the exact L0002 range is 170,506,337 bytes, totaling 351,554,818 bytes including local headers.",
+  "impact": "The correction adds 49 bytes to the planned upper bound. It changes no hypothesis, layer role, feature, metric, threshold, acquisition order, or 402,653,184-byte NIST response-body ceiling.",
+  "evidence": [
+    "RC43 central-directory inventory: L0001 compressed size 181,048,432 and local data offset 49.",
+    "RC43 L0002 result: compressed size 170,506,288 and local data offset 181,048,530, 49 bytes after its local-header offset."
+  ]
+}
