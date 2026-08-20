@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import zlib from "node:zlib";
+import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -9,6 +10,7 @@ const args = process.argv.slice(2);
 const layer = Number(args.find((arg) => arg.startsWith("--layer="))?.split("=")[1] || "1");
 const shouldWrite = args.includes("--write");
 const inventoryOnly = args.includes("--inventory-only");
+const prefixOnly = args.includes("--prefix-only");
 const maxBytes = 134_217_728;
 if (!Number.isInteger(layer) || layer < 1 || layer > 25) throw new Error("--layer must be an integer from 1 through 25");
 
@@ -225,16 +227,28 @@ const parseXypt = (bytes) => {
   const preview = lines.slice(0, 8);
   const delimiter = preview.some((line) => line.includes(",")) ? "," : /\s+/;
   const tokenized = lines.map((line) => typeof delimiter === "string" ? line.split(delimiter).map((value) => value.trim()) : line.trim().split(delimiter));
-  const headerIndex = tokenized.findIndex((row) => row.some((value) => /trigger/i.test(value)));
+  const normalizedToken = (value) => value.toLowerCase().replace(/[^a-z]/g, "");
+  const isXyptHeader = (row) => {
+    const normalized = row.map(normalizedToken);
+    return normalized.length >= 4 && normalized[0].startsWith("x") && normalized[1].startsWith("y")
+      && (normalized[2].startsWith("p") || normalized[2].includes("power"))
+      && (normalized[3] === "t" || normalized[3].includes("trigger"));
+  };
+  const headerIndex = tokenized.findIndex((row) => row.some((value) => /trigger/i.test(value)) || isXyptHeader(row));
   if (headerIndex < 0) return { textSha256: sha256(bytes), bytes: bytes.length, lineCount: lines.length, preview, parseStatus: "no-trigger-header" };
   const header = tokenized[headerIndex];
-  const triggerColumn = header.findIndex((value) => /trigger/i.test(value));
+  const triggerColumn = header.findIndex((value) => /trigger/i.test(value) || normalizedToken(value) === "t");
   const dataRows = tokenized.slice(headerIndex + 1).filter((row) => row.length > triggerColumn && Number.isFinite(Number(row[triggerColumn])));
   const nonzeroTriggerRows = dataRows.filter((row) => Number(row[triggerColumn]) !== 0);
+  const triggerValueCounts = {};
+  for (const row of dataRows) {
+    const key = String(Number(row[triggerColumn]));
+    triggerValueCounts[key] = (triggerValueCounts[key] || 0) + 1;
+  }
   return {
     textSha256: sha256(bytes), bytes: bytes.length, lineCount: lines.length, preview,
     parseStatus: "parsed", delimiter: delimiter === "," ? "comma" : "whitespace", headerIndex, header,
-    triggerColumn, numericDataRows: dataRows.length, nonzeroTriggerRows: nonzeroTriggerRows.length,
+    triggerColumn, numericDataRows: dataRows.length, nonzeroTriggerRows: nonzeroTriggerRows.length, triggerValueCounts,
     firstNonzeroDataIndex: dataRows.findIndex((row) => Number(row[triggerColumn]) !== 0),
     lastNonzeroDataIndex: dataRows.findLastIndex((row) => Number(row[triggerColumn]) !== 0)
   };
@@ -267,6 +281,117 @@ const summarizeEntry = (entry) => ({
   name: entry.name, method: entry.method, flags: entry.flags, crc32: entry.crc32,
   compressedSize: entry.compressedSize, uncompressedSize: entry.uncompressedSize, localHeaderOffset: entry.localHeaderOffset
 });
+
+const sevenZipCandidates = [
+  "C:\\Program Files\\AMD\\CIM\\Bin64\\7z.exe",
+  "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\7z.exe",
+  "C:\\Program Files (x86)\\AllDup\\dep\\7z.exe"
+];
+
+const decodeTruncatedDeflate64 = (archiveBytes, label) => {
+  const sevenZip = sevenZipCandidates.find((candidate) => fs.existsSync(candidate));
+  if (!sevenZip) throw new Error("No pinned-capability 7z.exe was found for Deflate64 prefix decoding");
+  const cacheDirectory = path.join(root, ".cache", "rc43-x16", "prefix-decode");
+  fs.mkdirSync(cacheDirectory, { recursive: true });
+  const archivePath = path.join(cacheDirectory, `${label}.partial.zip`);
+  fs.writeFileSync(archivePath, archiveBytes);
+  const decoded = spawnSync(sevenZip, ["x", "-so", "-bso0", "-bsp0", "-bse2", archivePath], {
+    encoding: null, windowsHide: true, maxBuffer: 512 * 1024 * 1024
+  });
+  const stdout = Buffer.from(decoded.stdout || []);
+  const stderr = Buffer.from(decoded.stderr || []).toString("utf8");
+  if (decoded.status !== 2 || !/Unexpected end of archive/i.test(stderr)) {
+    throw new Error(`${label} truncated decode did not fail in the preregistered way: status=${decoded.status}, stderr=${stderr.slice(-500)}`);
+  }
+  return {
+    decoderPath: sevenZip, exitCode: decoded.status, stderrTail: stderr.slice(-300),
+    archiveBytes: archiveBytes.length, archivePrefixSha256: sha256(archiveBytes),
+    decodedBytes: stdout.length, decodedSha256: sha256(stdout), bytes: stdout
+  };
+};
+
+async function runPrefixAudit() {
+  if (layer !== 1) throw new Error("--prefix-only is authorized only for development layer 1 before holdout sealing");
+  const inventoryPath = path.join(root, "research", "reproducibility", "rc43-x16-layer-0001-inventory.json");
+  const inventory = JSON.parse(fs.readFileSync(inventoryPath, "utf8"));
+  if (inventory.selected.xypt.method !== 8 || inventory.selected.avi.method !== 9) throw new Error("sealed inventory methods changed");
+  const xyptReader = new RangeReader("https://data.nist.gov/od/ds/ark:/88434/mds2-2309/XYPT_L001-025.zip", 159_164_372, "XYPT_L001-025.zip");
+  const xyptDirectory = await readCentralDirectory(xyptReader);
+  if (xyptDirectory.centralDirectorySha256 !== inventory.directories.xypt.centralDirectorySha256) throw new Error("XYPT central directory changed after inventory seal");
+  const xyptEntry = findEntry(xyptDirectory.entries, "XYPT_L0001.csv");
+  const xyptExtract = await extractCompleteMember(xyptReader, xyptEntry);
+  const xypt = parseXypt(xyptExtract.bytes);
+
+  const aviReader = new RangeReader("https://data.nist.gov/od/ds/ark:/88434/mds2-2309/MPMcameraAVI_L001-025.zip", 5_037_696_861, "MPMcameraAVI_L001-025.zip");
+  const prefixABytes = await aviReader.read(0, 4_194_303, "L0001 AVI archive prefix A");
+  const prefixBBytes = await aviReader.read(0, 8_388_607, "L0001 AVI archive prefix B");
+  const decodedA = decodeTruncatedDeflate64(prefixABytes, "l0001-prefix-a");
+  const decodedB = decodeTruncatedDeflate64(prefixBBytes, "l0001-prefix-b");
+  const discardBytes = 65_536;
+  if (decodedA.bytes.length <= discardBytes || decodedB.bytes.length <= discardBytes) throw new Error("Deflate64 prefix emitted too few bytes for the fixed tail discard");
+  const retainedA = decodedA.bytes.subarray(0, decodedA.bytes.length - discardBytes);
+  const retainedB = decodedB.bytes.subarray(0, decodedB.bytes.length - discardBytes);
+  if (retainedB.length < retainedA.length || !retainedB.subarray(0, retainedA.length).equals(retainedA)) {
+    throw new Error("nested Deflate64 retained prefixes disagree");
+  }
+  const avi = scanAviHeader(retainedA);
+  const distinctFrameCounts = [...new Set(avi.counters.map((counter) => counter.value))];
+  const triggerCount = xypt.parseStatus === "parsed" ? xypt.nonzeroTriggerRows : null;
+  const cameraMask2Rows = xypt.parseStatus === "parsed" ? xypt.triggerValueCounts?.["2"] ?? null : null;
+  const frameCount = distinctFrameCounts.length === 1 ? distinctFrameCounts[0] : null;
+  const triggerMinusFrame = triggerCount !== null && frameCount !== null ? triggerCount - frameCount : null;
+  const thisExecutionBytes = xyptReader.transferredBytes + aviReader.transferredBytes;
+  const conservativePriorUpperBound = 16_232_719;
+  const cumulativeUpperBound = conservativePriorUpperBound + thisExecutionBytes;
+  if (cumulativeUpperBound > maxBytes) throw new Error(`cumulative transfer upper bound ${cumulativeUpperBound} exceeds ${maxBytes}`);
+  const countDirection = triggerMinusFrame === null ? "inconclusive" : triggerMinusFrame > 0 ? "fewer-frames-than-triggers" : triggerMinusFrame < 0 ? "more-frames-than-triggers" : "equal";
+  const result = {
+    resultId: "RC43-X16-L0001-PREFIX-AUDIT-0.1", cycleId: "RC-2026-43", createdOn: new Date().toISOString(),
+    layer: 1, role: "development", precommit: "research/reproducibility/rc43-x16-trigger-frame-precommit.json",
+    amendments: ["rc43-x16-amendment-01.json", "rc43-x16-amendment-02.json", "rc43-x16-amendment-03.json"],
+    xypt: { ...xypt, selected: summarizeEntry(xyptEntry), cameraMask2Rows },
+    avi: {
+      ...avi, selected: inventory.selected.avi, discardBytes,
+      prefixA: { ...decodedA, bytes: undefined }, prefixB: { ...decodedB, bytes: undefined },
+      retainedABytes: retainedA.length, retainedASha256: sha256(retainedA),
+      retainedBBytes: retainedB.length, nestedRetainedPrefixAgreement: true
+    },
+    adjudication: {
+      triggerCount, cameraMask2Rows, frameCount, triggerMinusFrame, countDirection,
+      nativeFrameCountersAgree: distinctFrameCounts.length === 1 && distinctFrameCounts.length > 0,
+      publicHeaderExposesPerFrameSlotKey: false, tailOnlyLossEstablished: false, exactNullLedger: false,
+      qualification: triggerCount !== null && frameCount !== null && distinctFrameCounts.length === 1
+        ? "aggregate-count-reproduced-slot-placement-not-identifiable" : "inconclusive-native-counts",
+      hypotheses: {
+        H1: triggerMinusFrame === null ? "inconclusive" : triggerMinusFrame < 0 ? "supported-on-development" : "rejected-on-development",
+        H2: triggerMinusFrame === null ? "inconclusive" : triggerMinusFrame >= 0 && triggerMinusFrame <= 20 ? "count-bound-supported-tail-placement-not-established" : "rejected-on-development",
+        H3: "rejected-on-development-header-has-no-per-frame-slot-key",
+        H4: "supported-for-stable-header-prefix-within-cumulative-budget",
+        H5: "untested-holdout-sealed"
+      }
+    },
+    transfer: {
+      maximumCumulativeBytes: maxBytes, conservativePriorUpperBound, thisExecutionBytes, cumulativeUpperBound,
+      remainingConservativeBytes: maxBytes - cumulativeUpperBound,
+      receipts: { xypt: xyptReader.receipts, avi: aviReader.receipts }
+    },
+    boundaries: [
+      "The complete AVI and TIFF members were not downloaded.",
+      "Aggregate AVI counters do not locate a dropped frame among nonzero XYPT trigger slots.",
+      "No image-content alignment, sensor-domain independence, process-temperature accuracy, or physical-event truth is claimed."
+    ]
+  };
+  const json = `${JSON.stringify(result, null, 2)}\n`;
+  if (shouldWrite) {
+    const output = path.join(root, "research", "reproducibility", "rc43-x16-layer-0001-result.json");
+    fs.writeFileSync(output, json, "utf8");
+    console.log(`Wrote ${path.relative(root, output)}`);
+  }
+  console.log(JSON.stringify({
+    triggerCount, cameraMask2Rows, frameCounters: avi.counters, triggerMinusFrame, countDirection,
+    qualification: result.adjudication.qualification, transfer: result.transfer
+  }, null, 2));
+}
 
 async function main() {
   const archives = {
@@ -366,4 +491,5 @@ async function main() {
   }, null, 2));
 }
 
-await main();
+if (prefixOnly) await runPrefixAudit();
+else await main();

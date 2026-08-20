@@ -1,0 +1,36 @@
+{
+  "amendmentId": "RC43-X16-AMENDMENT-03",
+  "cycleId": "RC-2026-43",
+  "recordedOn": "2026-08-21",
+  "trigger": "The sealed L0001 inventory shows that both MPMcamera_L0001.avi and MPMcamera_L0001.tif use Deflate64 method 9 and exceed the transfer ceiling as complete compressed members.",
+  "sourceClarification": {
+    "source": "Lane and Yeung, Journal of Research of NIST 125:125027, section 4.4 and figure 8",
+    "url": "https://doi.org/10.6028/jres.125.027",
+    "retrievedPdfSha256": "ddc20fcf22ab8ae6632c7c972ead43b73dcb9057a40a20197578dfdef0ab780f",
+    "fixedRule": "XYPT is a four-column comma-separated file with X, Y, Power, and Trigger. The Trigger value is a decimal bit mask; in this AMMT camera configuration, value 2 in T fires the melt-pool camera. Count every nonzero T row as preregistered, while separately reporting rows equal to 2 and rows containing other masks."
+  },
+  "authorizedDevelopmentRequest": {
+    "xypt": "Re-read and CRC-verify the complete L0001 XYPT member using its sealed central-directory entry.",
+    "aviPrefixA": "Request archive bytes 0 through 4194303.",
+    "aviPrefixB": "Request archive bytes 0 through 8388607.",
+    "decode": "Decode each deliberately truncated Deflate64 ZIP with 7-Zip 22.01 to stdout. Exit code 2 and an unexpected-end error are expected and are not integrity success.",
+    "stability": "Discard the final 65536 emitted bytes from each decode. Prefix A's retained bytes must equal the equally long prefix of B's retained bytes. Parse AVI counters only from that stable common prefix.",
+    "stop": "Stop if either decode emits at most 65536 bytes, the retained prefixes differ, the bytes do not begin with RIFF/AVI, native frame counters disagree, or cumulative transfer exceeds the original ceiling."
+  },
+  "transferAccounting": {
+    "conservativeUpperBoundBeforeThisAmendment": 16232719,
+    "derivation": "Three earlier XYPT+AVI directory passes, one successful L0001 XYPT extraction, two local headers with each unknown variable area charged at the ZIP maximum, and the sealed three-archive inventory. This deliberately overcounts unknown local-header extras.",
+    "maximumCumulativeBytes": 134217728,
+    "remainingBeforeAuthorizedRequests": 117985009
+  },
+  "notChanged": [
+    "L0001 development and L0002 untouched holdout roles",
+    "nonzero Trigger row count",
+    "native AVI counter agreement requirement",
+    "per-frame slot identity requirement and singleton exact-null rule",
+    "all H1-H5 success, rejection, and stop conditions",
+    "the prohibition on a complete AVI or TIFF member download"
+  ],
+  "scopeBoundary": "A stable AVI header can identify aggregate frame count but cannot by itself locate missing trigger slots. Image-content alignment remains a separately preregistered future branch and may not be introduced to rescue H3 in this development run.",
+  "status": "must-be-committed-and-pushed-before-any-nist-deflate64-prefix-request"
+}
