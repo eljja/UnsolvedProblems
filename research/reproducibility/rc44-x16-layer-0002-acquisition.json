@@ -1,0 +1,98 @@
+{
+  "acquisitionId": "RC44-X16-L0002-ACQUISITION-0.1",
+  "cycleId": "RC-2026-44",
+  "createdOn": "2026-08-20T17:13:38.341Z",
+  "layer": 2,
+  "role": "development",
+  "precommit": "research/reproducibility/rc44-command-image-alignment-precommit.json",
+  "amendments": [
+    "research/reproducibility/rc44-amendment-01.json"
+  ],
+  "xypt": {
+    "member": {
+      "name": "XYPT_L0002.csv",
+      "method": 8,
+      "crc32": "3bb9c502",
+      "compressedSize": 5801886,
+      "uncompressedSize": 64749624,
+      "localHeaderOffset": 6518758,
+      "localHeaderBytes": 44
+    },
+    "receipt": {
+      "purpose": "XYPT_L0002.csv exact local member range",
+      "start": 6518758,
+      "end": 12320687,
+      "bytes": 5801930,
+      "contentRange": "bytes 6518758-12320687/159164372",
+      "bodySha256": "346650f72498aa5bfe3b8fc1c6ca1a999706a7ae10881b7757428002c9c3cd53"
+    },
+    "extracted": {
+      "relativeCachePath": ".cache/rc44-x16/l0002/extracted/XYPT_L0002.csv",
+      "bytes": 64749624,
+      "sha256": "576d1e19cc4aee87ab60dcde4376ce21faa3c42342a9a7653d9bf5af4a3a1c7c",
+      "crc32": "3bb9c502"
+    },
+    "decoder": {
+      "path": "C:\\Program Files\\AMD\\CIM\\Bin64\\7z.exe",
+      "exitCode": 2,
+      "executableSha256": "ff84377242d6e6b8622e105f891f108d34dc843574dd106038d28dda68ea5c96",
+      "stdoutTail": "\r\n7-Zip 22.01 (x64) : Copyright (c) 1999-2022 Igor Pavlov : 2022-07-15\r\n\r\nScanning the drive for archives:\r\n1 file, 5801930 bytes (5666 KiB)\r\n\r\nExtracting archive: D:\\Code\\UnsolvedProblems\\.cache\\rc44-x16\\l0002\\xypt-member.partial.zip\r\n--\r\nPath = D:\\Code\\UnsolvedProblems\\.cache\\rc44-x16\\l0002\\xypt-member.partial.zip\r\nType = zip\r\nERRORS:\r\nUnexpected end of archive\r\nPhysical Size = 5801930\r\nCharacteristics = Local\r\n\r\n\r\n\r\nArchives with Errors: 1\r\n\r\nOpen Errors: 1\r\n\r\n",
+      "stderrTail": "\r\nERRORS:\r\nUnexpected end of archive\r\n\r\n"
+    }
+  },
+  "avi": {
+    "member": {
+      "name": "MPMcamera_L0002.avi",
+      "method": 9,
+      "crc32": "e85e3962",
+      "compressedSize": 170506288,
+      "uncompressedSize": 172605872,
+      "localHeaderOffset": 181048481,
+      "localHeaderBytes": 49
+    },
+    "receipt": {
+      "purpose": "MPMcamera_L0002.avi exact local member range",
+      "start": 181048481,
+      "end": 351554817,
+      "bytes": 170506337,
+      "contentRange": "bytes 181048481-351554817/5037696861",
+      "bodySha256": "a80adcf60262c0158d9c76e3065a39f7aa15308d15b1cc2a48acd210780e1d2d"
+    },
+    "extracted": {
+      "relativeCachePath": ".cache/rc44-x16/l0002/extracted/MPMcamera_L0002.avi",
+      "bytes": 172605872,
+      "sha256": "54bc90814acf15304257ee4c9c56f029d50999ab38b9c27455137a12f884b53a",
+      "crc32": "e85e3962"
+    },
+    "decoder": {
+      "path": "C:\\Program Files\\AMD\\CIM\\Bin64\\7z.exe",
+      "exitCode": 2,
+      "executableSha256": "ff84377242d6e6b8622e105f891f108d34dc843574dd106038d28dda68ea5c96",
+      "stdoutTail": "\r\n7-Zip 22.01 (x64) : Copyright (c) 1999-2022 Igor Pavlov : 2022-07-15\r\n\r\nScanning the drive for archives:\r\n1 file, 170506337 bytes (163 MiB)\r\n\r\nExtracting archive: D:\\Code\\UnsolvedProblems\\.cache\\rc44-x16\\l0002\\avi-member.partial.zip\r\n--\r\nPath = D:\\Code\\UnsolvedProblems\\.cache\\rc44-x16\\l0002\\avi-member.partial.zip\r\nType = zip\r\nERRORS:\r\nUnexpected end of archive\r\nPhysical Size = 170506337\r\nCharacteristics = Local\r\n\r\n\r\n\r\nArchives with Errors: 1\r\n\r\nOpen Errors: 1\r\n\r\n",
+      "stderrTail": "\r\nERRORS:\r\nUnexpected end of archive\r\n\r\n"
+    }
+  },
+  "transfer": {
+    "maximumNistResponseBodyBytes": 402653184,
+    "thisAcquisitionBytes": 176308267,
+    "receipts": [
+      {
+        "purpose": "XYPT_L0002.csv exact local member range",
+        "start": 6518758,
+        "end": 12320687,
+        "bytes": 5801930,
+        "contentRange": "bytes 6518758-12320687/159164372",
+        "bodySha256": "346650f72498aa5bfe3b8fc1c6ca1a999706a7ae10881b7757428002c9c3cd53"
+      },
+      {
+        "purpose": "MPMcamera_L0002.avi exact local member range",
+        "start": 181048481,
+        "end": 351554817,
+        "bytes": 170506337,
+        "contentRange": "bytes 181048481-351554817/5037696861",
+        "bodySha256": "a80adcf60262c0158d9c76e3065a39f7aa15308d15b1cc2a48acd210780e1d2d"
+      }
+    ]
+  },
+  "boundary": "The exact selected ZIP members were acquired; no full multi-gigabyte archive or TIFF member was downloaded. Acquisition alone makes no positional or physical claim."
+}

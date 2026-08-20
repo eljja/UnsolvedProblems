@@ -1,0 +1,22 @@
+{
+  "amendmentId": "RC44-AMENDMENT-02",
+  "cycleId": "RC-2026-44",
+  "createdOn": "2026-08-21",
+  "status": "sealed-after-feature-format-check-but-before-any-alignment-or-injection-result",
+  "reason": "The preregistration fixed the test seed and parameter grids but did not state a validation-injection denominator, tie rule, or an operational construction for affine clock warp.",
+  "inspectedAtSeal": [
+    "The complete L0002 members passed size, CRC-32, and SHA-256 checks.",
+    "FFmpeg decoded ten frames and then the complete L0002 sequence to 95,504 8 by 8 grayscale frames.",
+    "Only global range, mean, standard deviation, frame-mean quantiles, command-column ranges, trigger gaps, power counts, and simple zero-lag correlations were inspected. No deletion was injected and no alignment was run."
+  ],
+  "fixedValidationSuite": {
+    "domain": "The contiguous L0002 interval from floor(0.6N) through floor(0.8N)-1.",
+    "seed": "RC44-X16-SYNTHETIC-HOLDOUT-v1|validation",
+    "cases": ["16 single-frame deletions", "8 trials with 23 dispersed deletions"],
+    "positionGenerator": "The same SHA-256 rejection sampler and 128-slot edge guard as the preregistered test suite."
+  },
+  "selectionRule": "Select ridge alpha by the smallest mean squared standardized prediction error. Select Huber delta and deletion/duplication penalties lexicographically by highest within-one-slot deletion recall, lowest deletion false-discovery rate, lowest mean normalized alignment cost, then the numerically smallest delta, deletion penalty, and duplication penalty.",
+  "penaltyQualification": "When the observed length fixes the number of deletion or duplication transitions, a constant transition penalty cancels among same-count paths and is not identified by location recovery. Such ties must be reported and resolved only by the stated numerical tie rule, not interpreted as empirical penalty calibration.",
+  "clockWarpConstruction": "For the deletion-plus-drift cases, retain the post-deletion frame order and attach a synthetic observation coordinate j + s*(2j/(M-1)-1), where s is +12 for odd trials and -12 for even trials. The aligner searches endpoint drift s in the fixed grid [-12, -8, -4, 0, 4, 8, 12] and evaluates command prediction at the corresponding linearly interpolated expected coordinate. Pixel features are not resampled.",
+  "impact": "This amendment supplies missing operational detail. It does not change features, layer roles, test cases, primary thresholds, holdout rule, or natural-data decision criteria."
+}
