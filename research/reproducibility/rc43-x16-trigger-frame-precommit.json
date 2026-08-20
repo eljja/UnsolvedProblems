@@ -1,0 +1,133 @@
+{
+  "precommitId": "RC43-X16-TRIGGER-FRAME-PRECOMMIT-0.1",
+  "cycleId": "RC-2026-43",
+  "createdOn": "2026-08-20",
+  "status": "sealed-before-central-directory-or-member-inspection",
+  "scope": "Test whether one public NIST AMMT X16 layer can be converted from an aggregate statement about dropped frames into an identity-indexed trigger-to-frame ledger, then repeat the frozen adjudication on one untouched layer.",
+  "problems": ["UP-605", "UP-315"],
+  "inputsInspectedBeforeSeal": [
+    "NIST NERDm record mds2-2309 version 1.1.1, including component names, byte sizes, archive SHA-256 values, issue history, and download URLs.",
+    "NIST Overhang X16 User Notes pages 3-4, including the stated file naming convention, trigger/frame paragraph, and archive grouping.",
+    "HTTP HEAD metadata for the first XYPT, MPM AVI, and MPM TIFF archives.",
+    "A response-headers-only range probe against the final 65,536 bytes of XYPT_L001-025.zip; the 206 body was not consumed or stored."
+  ],
+  "notInspectedBeforeSeal": [
+    "ZIP central-directory entries or local-file headers from any X16 data archive.",
+    "Any XYPT command row, AVI header, frame index, TIFF IFD, pixel value, or layer-specific count.",
+    "Any result-derived choice of development or holdout layer."
+  ],
+  "officialSourceFingerprints": {
+    "nerdmRecord": {
+      "url": "https://data.nist.gov/od/id/mds2-2309",
+      "retrievedSha256": "96a6a708e6b6314e4bbecda3c24a2b7ac0c190492322d48d36042431e40e616b",
+      "recordVersion": "1.1.1",
+      "recordIssued": "2020-10-16T17:44:55",
+      "latestReleaseHistoryEntry": "2026-01-07: added to additiveman collection"
+    },
+    "userNotes": {
+      "url": "https://data.nist.gov/od/ds/ark:/88434/mds2-2309/OverhangX16_In-situData_UserNotes.pdf",
+      "sha256": "69392f928eb487cfde3671eb52ae425f1162970cd2ccd93a3a4c7774abe20319",
+      "bytes": 391168
+    },
+    "xyptArchive": {
+      "url": "https://data.nist.gov/od/ds/ark:/88434/mds2-2309/XYPT_L001-025.zip",
+      "officialBytes": 159164372,
+      "officialSha256": "7b2b863c843aeabe19f308a5886d57ae241cd386f38c95a7e7ce01e9bc34d007"
+    },
+    "aviArchive": {
+      "url": "https://data.nist.gov/od/ds/ark:/88434/mds2-2309/MPMcameraAVI_L001-025.zip",
+      "officialBytes": 5037696861,
+      "officialSha256": "233a766ffbdbd8e32b581ac859ca8936a4b76bf288f90d0de9a65d85361b088e"
+    },
+    "tiffArchive": {
+      "url": "https://data.nist.gov/od/ds/ark:/88434/mds2-2309/MPMcameraTIF_L001-025.zip",
+      "officialBytes": 5740968223,
+      "officialSha256": "fe3e8b00ed01ba9b99bb82e3a2940d1cf1fa63b602d7effc904217cc5014abf6"
+    }
+  },
+  "fixedLayerRoles": {
+    "development": 1,
+    "holdout": 2,
+    "rule": "Use L0001 to develop parsers and adjudication. Do not inspect L0002 member bytes or layer-specific counts until the L0001 result, parser version, and any amendments are committed and pushed. No substitution is allowed because a layer is inconvenient or contradicts a hypothesis."
+  },
+  "claimsUnderTest": [
+    {
+      "id": "H1",
+      "claim": "The User Notes sentence is literally correct: the number of nonzero XYPT triggers is lower than the number of associated MPM frames.",
+      "prediction": "frameCount - triggerCount is positive on L0001 and repeats in sign on L0002.",
+      "reject": "frameCount is less than or equal to triggerCount on either adjudicated layer."
+    },
+    {
+      "id": "H2",
+      "claim": "The intended dropped-frame model is correct: MPM has no more frames than nonzero XYPT triggers, the deficit is at most 20, and every absent frame is at the end.",
+      "prediction": "0 <= triggerCount - frameCount <= 20 and public bytes independently locate the deficit after the final present trigger.",
+      "reject": "The deficit is negative or exceeds 20, or the bytes cannot distinguish an end-only loss from an internal loss with the same count."
+    },
+    {
+      "id": "H3",
+      "claim": "The public XYPT and MPM members contain enough identity information to reconstruct authenticated null slots rather than only a count deficit.",
+      "prediction": "Every decoded frame carries a trigger identifier, timestamp, monotone acquisition counter, or another documented key that maps it to exactly one expected nonzero-trigger slot.",
+      "reject": "Frames expose only ordinal order or aggregate count, so two different missing-slot placements yield identical public observations."
+    },
+    {
+      "id": "H4",
+      "claim": "HTTP range access can adjudicate the layer without downloading either multi-gigabyte MPM archive.",
+      "prediction": "ZIP64 directories, the complete L0001 XYPT member, and sufficient AVI/TIFF header or index bytes are retrieved in at most 134217728 transferred bytes per layer.",
+      "reject": "A required member is deflated or indexed so that adjudication exceeds the fixed byte budget."
+    },
+    {
+      "id": "H5",
+      "claim": "The frozen L0001 procedure transfers without modification to untouched L0002.",
+      "prediction": "Two independent implementations reproduce both layer counts, range receipts, member hashes where complete extraction occurs, and the same qualification verdict.",
+      "reject": "Any parser, count rule, missingness rule, or byte budget must change after viewing L0002."
+    }
+  ],
+  "adjudicationChain": [
+    "Official archive size and SHA-256 plus fixed layer role",
+    "ZIP/ZIP64 central directory and local-header agreement",
+    "Complete XYPT member with stable member hash and documented trigger rule",
+    "MPM container header/index with independently reproduced frame count",
+    "Presence or absence of a per-frame slot key",
+    "Count deficit and all slot placements compatible with the public bytes",
+    "Exact null ledger only if every compatible placement is a singleton"
+  ],
+  "fixedCountingRules": {
+    "triggerCount": "Parse the complete XYPT text. Identify the trigger field from the documented header or X4 primary format; count rows whose trigger value is nonzero. Preserve the total row count and a SHA-256 of the extracted member.",
+    "frameCount": "Prefer container-native counts that can be cross-checked: AVI main header total frames, stream header length, OpenDML total frames, movi chunk/index count, or TIFF IFD count. Report every available count; disagreement is inconclusive and may not be resolved by choosing the preferred value.",
+    "slotIdentity": "An ordinal frame number is not a trigger identity. A slot is located only by a documented trigger ID, acquisition counter, timestamp with a one-to-one tolerance rule fixed on L0001, or a public integrity record that independently proves tail-only truncation.",
+    "nullLedger": "Return exact only when the set of missing-slot placements compatible with all public bytes has cardinality one; otherwise return set-valued or not-identifiable."
+  },
+  "transferBudget": {
+    "maximumBytesPerLayer": 134217728,
+    "countsTowardBudget": "All response bodies from XYPT and MPM ZIP range requests, including repeated ranges and failed overfetches.",
+    "doesNotCount": "The 80 kB NERDm JSON, 391 kB User Notes PDF, and response headers obtained before sealing.",
+    "stop": "Stop archive acquisition for the layer before the next request would exceed the budget. Do not fall back to a whole-archive download."
+  },
+  "independenceAndHoldout": {
+    "implementationA": "Node.js range/ZIP/container parser developed only on L0001.",
+    "implementationB": "Python parser that independently implements range receipts and count extraction without importing implementation A outputs.",
+    "holdoutSeal": "L0002 is not requested until implementation A, the L0001 result, and all amendments are committed and pushed.",
+    "forbidden": [
+      "Changing the trigger definition after seeing which count is closer to the frame count.",
+      "Assuming missing frames lie at the end solely because the User Notes say they are primarily missing there.",
+      "Treating a ZIP member ordinal, AVI frame ordinal, or TIFF IFD ordinal as an authenticated XYPT slot key.",
+      "Using L0002 to repair a parser without recording and sealing an amendment before reinspection."
+    ]
+  },
+  "successCriteria": [
+    "Both archive central directories and selected local headers agree on name, method, compressed size, uncompressed size, CRC-32, and offset.",
+    "The complete L0001 XYPT member is extracted and hash-bound within the transfer budget.",
+    "At least two independent container counters agree on the L0001 MPM frame count, or the result is explicitly inconclusive.",
+    "The possible missing-slot set is computed rather than replaced by an end-loss assumption.",
+    "Independent implementations agree on every recorded count and qualification verdict.",
+    "The frozen procedure is applied unchanged to L0002 after the development result is sealed."
+  ],
+  "stopRules": [
+    "Stop with not-identifiable if public MPM bytes lack a per-frame slot key and more than one missing-slot placement is compatible.",
+    "Stop with inconclusive if native frame counters disagree and the fixed byte budget cannot resolve them.",
+    "Stop with access-boundary if NIST range responses cease to be byte-stable or ignore requested ranges.",
+    "Stop before holdout if any development-result amendment remains unsealed.",
+    "Do not claim sensor-domain independence, process-temperature accuracy, or physical-event truth from a trigger-frame ledger."
+  ],
+  "safetyPrivacyEthics": "The cycle reads public machine-process files only, makes no hardware actuation, accesses no personal or restricted records, and limits network transfer by fixed budget."
+}
