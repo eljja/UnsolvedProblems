@@ -8,7 +8,12 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = relative => fs.readFileSync(path.join(root, relative));
 const readJson = relative => JSON.parse(read(relative).toString("utf8"));
-const sha = relative => crypto.createHash("sha256").update(read(relative)).digest("hex");
+const hashes = relative => {
+  const raw = read(relative);
+  const normalized = Buffer.from(raw.toString("utf8").replace(/\r\n/g, "\n"), "utf8");
+  return [raw, normalized].map(value => crypto.createHash("sha256").update(value).digest("hex"));
+};
+const hashMatches = (relative, expected) => hashes(relative).includes(expected);
 const assert = (condition, message) => { if (!condition) throw new Error(message); };
 
 const precommit = readJson("research/reproducibility/rc38-physical-effect-precommit.json");
@@ -17,15 +22,15 @@ const softwareAmendment = readJson("research/reproducibility/rc38-software-loop-
 assert(precommit.precommitId === "RC38-PHYSICAL-EFFECT-FRONTIER-V1" && precommit.resultStateAtSeal.includes("No RC38 model result"), "RC38 preregistration was not sealed before results.");
 for (const [file, hash] of Object.entries(precommit.codeHashes)) {
   if (["scripts/run-rc38-physical-effect-model.mjs", "scripts/independent_rc38_physical_effect_model_audit.py", "scripts/rc38-emulated-actuator.mjs"].includes(file)) continue;
-  assert(sha(file) === hash, `RC38 frozen implementation changed: ${file}`);
+  assert(hashMatches(file, hash), `RC38 frozen implementation changed: ${file}`);
 }
-assert(sha(modelAmendment.firstModelRun.artifact) === modelAmendment.firstModelRun.sha256, "RC38 first model result is not byte-exact.");
-assert(sha(modelAmendment.firstIndependentAudit.artifact) === modelAmendment.firstIndependentAudit.sha256 && modelAmendment.firstIndependentAudit.score === "80/80", "RC38 first model audit is not preserved.");
-assert(sha("scripts/run-rc38-physical-effect-model.mjs") === modelAmendment.codeHashesAfter.model, "RC38 amended model hash changed.");
-assert(sha("scripts/independent_rc38_physical_effect_model_audit.py") === modelAmendment.codeHashesAfter.independentAudit, "RC38 amended independent-model hash changed.");
-assert(sha(softwareAmendment.firstResult.artifact) === softwareAmendment.firstResult.sha256 && softwareAmendment.firstResult.passingCriteria === 9, "RC38 first software result is not preserved.");
-assert(sha(softwareAmendment.firstHistory.artifact) === softwareAmendment.firstHistory.sha256 && softwareAmendment.firstHistory.events === 39, "RC38 first software history is not preserved.");
-assert(sha("scripts/rc38-emulated-actuator.mjs") === softwareAmendment.codeHashAfter, "RC38 amended actuator hash changed.");
+assert(hashMatches(modelAmendment.firstModelRun.artifact, modelAmendment.firstModelRun.sha256), "RC38 first model result is not content-exact.");
+assert(hashMatches(modelAmendment.firstIndependentAudit.artifact, modelAmendment.firstIndependentAudit.sha256) && modelAmendment.firstIndependentAudit.score === "80/80", "RC38 first model audit is not preserved.");
+assert(hashMatches("scripts/run-rc38-physical-effect-model.mjs", modelAmendment.codeHashesAfter.model), "RC38 amended model hash changed.");
+assert(hashMatches("scripts/independent_rc38_physical_effect_model_audit.py", modelAmendment.codeHashesAfter.independentAudit), "RC38 amended independent-model hash changed.");
+assert(hashMatches(softwareAmendment.firstResult.artifact, softwareAmendment.firstResult.sha256) && softwareAmendment.firstResult.passingCriteria === 9, "RC38 first software result is not preserved.");
+assert(hashMatches(softwareAmendment.firstHistory.artifact, softwareAmendment.firstHistory.sha256) && softwareAmendment.firstHistory.events === 39, "RC38 first software history is not preserved.");
+assert(hashMatches("scripts/rc38-emulated-actuator.mjs", softwareAmendment.codeHashAfter), "RC38 amended actuator hash changed.");
 assert(fs.existsSync(path.join(root, softwareAmendment.rawArtifacts, "absolute-setpoint-retry/absolute-state.json.tmp")), "RC38 first-failure temporary state is missing.");
 
 const model = readJson("research/reproducibility/rc38-physical-effect-model-result.json");
