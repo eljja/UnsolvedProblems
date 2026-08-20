@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eljja.github.io/UnsolvedProblems/research/reproducibility/rc41-separator-certificate.schema.json",
+  "title": "RC41 pairwise domain-separator certificate",
+  "type": "object",
+  "required": [
+    "certificateId",
+    "adjudicand",
+    "truthStates",
+    "domains",
+    "pairwiseSeparators",
+    "corruptionBudget",
+    "omissionBudget",
+    "identityBinding",
+    "calibrationCovariance",
+    "missingnessMechanism",
+    "identifiedSet",
+    "decision",
+    "independentAudit"
+  ],
+  "properties": {
+    "certificateId": { "type": "string", "minLength": 1 },
+    "adjudicand": { "type": "string", "minLength": 1 },
+    "truthStates": { "type": "array", "minItems": 2, "uniqueItems": true },
+    "domains": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["domainId", "channelIds", "healthySupportByTruth", "calibrationAuthority", "powerDomain", "processorDomain", "retentionDomain", "separationEvidence"],
+        "properties": {
+          "domainId": { "type": "string" },
+          "channelIds": { "type": "array", "minItems": 1, "items": { "type": "string" }, "uniqueItems": true },
+          "healthySupportByTruth": { "type": "object", "minProperties": 2 },
+          "calibrationAuthority": { "type": "string" },
+          "powerDomain": { "type": "string" },
+          "processorDomain": { "type": "string" },
+          "retentionDomain": { "type": "string" },
+          "separationEvidence": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "pairwiseSeparators": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["leftTruth", "rightTruth", "separatingDomainIds", "requiredCount", "observedCount"],
+        "properties": {
+          "leftTruth": {},
+          "rightTruth": {},
+          "separatingDomainIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+          "requiredCount": { "type": "integer", "minimum": 1 },
+          "observedCount": { "type": "integer", "minimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "corruptionBudget": { "type": "integer", "minimum": 0 },
+    "omissionBudget": { "type": "integer", "minimum": 0 },
+    "identityBinding": {
+      "type": "object",
+      "required": ["domainSlotsAuthenticated", "missingSlotsRetained", "eventId", "measurementEpoch"],
+      "properties": {
+        "domainSlotsAuthenticated": { "const": true },
+        "missingSlotsRetained": { "const": true },
+        "eventId": { "type": "string" },
+        "measurementEpoch": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "calibrationCovariance": {
+      "type": "object",
+      "required": ["commonInputs", "covarianceArtifact", "unmodeledCommonInputPolicy"],
+      "properties": {
+        "commonInputs": { "type": "array", "items": { "type": "string" } },
+        "covarianceArtifact": { "type": "string" },
+        "unmodeledCommonInputPolicy": { "enum": ["refuse", "expand-identified-set"] }
+      },
+      "additionalProperties": false
+    },
+    "missingnessMechanism": {
+      "type": "object",
+      "required": ["declaredClass", "authenticatedPattern", "maximumOmissions", "ignorabilityClaim"],
+      "properties": {
+        "declaredClass": { "enum": ["fixed", "independent", "shared-cause", "adaptive", "unknown"] },
+        "authenticatedPattern": { "const": true },
+        "maximumOmissions": { "type": "integer", "minimum": 0 },
+        "ignorabilityClaim": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "identifiedSet": { "type": "array", "minItems": 1, "uniqueItems": true },
+    "decision": { "enum": ["exact", "set-valued", "above-threshold", "below-threshold", "inconclusive", "refuse"] },
+    "independentAudit": {
+      "type": "object",
+      "required": ["auditor", "developmentBlind", "artifactHash", "verdict"],
+      "properties": {
+        "auditor": { "type": "string" },
+        "developmentBlind": { "const": true },
+        "artifactHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "verdict": { "enum": ["pass", "fail", "inconclusive"] }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

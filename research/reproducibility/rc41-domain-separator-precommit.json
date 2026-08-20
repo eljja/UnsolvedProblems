@@ -1,0 +1,103 @@
+{
+  "cycle": "RC-2026-41",
+  "precommitId": "RC41-PAIRWISE-DOMAIN-SEPARATOR-V1",
+  "sealedOn": "2026-08-20",
+  "selection": {
+    "problemIds": ["UP-605", "UP-602", "UP-315", "UP-629"],
+    "reason": "RC40 established a homogeneous narrow-interval bound while leaving heterogeneous asymmetric supports, correlated calibration domains, loss of witness identity, and non-ignorable missingness unresolved. The highest-information next step is to replace raw witness count with a pairwise separator certificate and connect physical-report omissions to population partial identification without claiming that the two missingness processes are probabilistically identical."
+  },
+  "researchQuestion": "For heterogeneous sensor or inspection domains, what pairwise separation condition uniquely identifies a finite truth under g arbitrary domain corruptions and a authenticated indexed omissions, how does common calibration change the effective denominator, and what set-valued population conclusions remain when missing outcomes are not ignorable?",
+  "factsAtSeal": [
+    "JCGM 100:2008 requires significant input correlations and covariance terms to be included; common instruments, standards, reference data, and environmental influences can generate such correlations.",
+    "JCGM GUM-5:2026 gives current official examples in which the assigned input distributions and their dependence assumptions affect propagated uncertainty and coverage intervals.",
+    "Rubin's 1976 primary paper states conditions under which a missing-data process may be ignored; without the relevant missing-at-random and parameter-distinctness conditions, ignorability is not generally justified.",
+    "Fawzi, Tabuada, and Diggavi characterize secure state reconstruction under sparse sensor attacks through an observability/error-correction condition rather than raw sensor count alone.",
+    "Brooks and Iyengar's primary interval-sensor fusion work combines limited-accuracy reports with fault tolerance, establishing prior art for interval-valued Byzantine sensor fusion.",
+    "RC40's official JCGM, NASA, NRC, RATS, TPM, and calibration sources remain applicable to uncertainty, common cause, identity, freshness, and safe-refusal boundaries.",
+    "No calibrated heterogeneous sensor support, covariance experiment, authenticated omission trace, physical event, chiplet specimen, or audited human record is available in this workspace."
+  ],
+  "hypotheses": [
+    {
+      "code": "H1",
+      "claim": "With authenticated indexed omissions and independent calibration domains, exact identification is possible exactly when every truth pair is separated by at least 2g+a+1 domains.",
+      "separatingPrediction": "All 1,134 canonical binary profiles for n=1..6, every separator mask, g=0..2, and a=0..2 will identify exactly iff s(t,u)>=2g+a+1; a five-domain profile with minimum separator count three will collide at g=1,a=1, while minimum count four will identify.",
+      "rejectWhen": "Any canonical cell differs from the formula, the three-separator heterogeneous profile identifies, or the four-separator profile collides."
+    },
+    {
+      "code": "H2",
+      "claim": "Raw sensor count remains a valid resilience denominator when several channels share one calibration domain.",
+      "separatingPrediction": "Six exact raw channels treated as independent will pass g=1,a=1, but collapsing each correlated pair into three calibration domains will collide; one genuinely independent anchor will restore the four-domain boundary.",
+      "rejectWhen": "The three-domain model identifies, the raw six-channel model collides, or adding one independent anchor fails to restore identification."
+    },
+    {
+      "code": "H3",
+      "claim": "Dropping domain identities and retaining only the anonymous multiset of visible reports does not change identifiability.",
+      "separatingPrediction": "Four polarity-balanced domains will identify truths 0,1,2 when indexed but truths zero and one will have the same anonymous multiset even with no fault and no omission.",
+      "rejectWhen": "The indexed profile collides or the anonymous profile remains exact."
+    },
+    {
+      "code": "H4",
+      "claim": "Observed outcomes alone exactly identify a finite-population mean when the missing-outcome mechanism is unknown.",
+      "separatingPrediction": "For N=6 binary outcomes with k observed ones and m missing outcomes, compatible total successes will be every integer from k through k+m; every m>0 summary has nonzero identified width and the all-missing summary spans mean zero to one.",
+      "rejectWhen": "Any missing summary has zero width without an added assumption or the all-missing summary excludes a feasible mean."
+    },
+    {
+      "code": "H5",
+      "claim": "A threshold decision can sometimes be identified before every missing value is recovered if the entire identified interval lies on one side of the threshold.",
+      "separatingPrediction": "At threshold 0.5, exactly six of the 21 N=6 summaries with missing outcomes will support above or below despite a non-singleton mean interval; auditing one of two missing outcomes in the 3-one/1-zero case will shrink width by one and resolve above only when the revealed value is one.",
+      "rejectWhen": "No incomplete summary supports a bounded threshold decision, a one-unit audit does not reduce width by one, or both audit outcomes force the same decision."
+    }
+  ],
+  "causalChain": {
+    "inputAndAllowedAssumptions": "Finite truth states, domain-specific healthy supports, authenticated domain slots including nulls, at most g arbitrary calibration-domain corruptions, at most a omissions, and a declared population decision threshold.",
+    "bottleneck": "Only disjoint healthy supports distinguish a truth pair; common calibration reduces the number of independent separators, anonymous aggregation destroys support-to-domain binding, and unknown missing outcomes leave multiple complete populations compatible with one record.",
+    "bridgeLemma": "For indexed reports, a shared observation of truths t and u can cover at most 2g+a separating domains: g corrupted in the t world, g corrupted in the u world, and a commonly omitted. Therefore exact identification is equivalent to s(t,u)>=2g+a+1 for every pair.",
+    "independentAdjudicand": "Truth-set cardinality under exhaustive world enumeration, pairwise independent-domain separator counts, and finite-population success-count intervals without an ignorability assumption.",
+    "finalCriterion": "An exact physical or provenance certificate requires a singleton truth set and authenticated domain identity; a population threshold conclusion requires the full identified interval on one side of the threshold. Otherwise return a set or refuse."
+  },
+  "frozenDesign": {
+    "binarySweep": { "n": [1, 2, 3, 4, 5, 6], "separatorMasks": "all 2^n masks", "g": [0, 1, 2], "a": [0, 1, 2], "cells": 1134 },
+    "heterogeneousProfiles": ["HETEROGENEOUS_WEAK", "HETEROGENEOUS_STRONG", "POLARITY_INDEXED", "POLARITY_ANONYMOUS", "RAW_CHANNEL_NAIVE", "THREE_CORRELATED_DOMAINS", "THREE_DOMAINS_PLUS_ANCHOR"],
+    "population": { "N": 6, "threshold": 0.5, "summaries": 28, "missingSummaries": 21, "expectedIncompleteThresholdDecisions": 6 },
+    "expectedIndependentAuditChecks": 6966,
+    "stopRule": "Stop without a scientific verdict if JavaScript and independent Python differ on any observation count, collision count, separator count, profile verdict, population bound, criterion, or physical denominator. Preserve first outputs before amending frozen code."
+  },
+  "criteria": [
+    "C1 all canonical binary separator cells match s>=2g+a+1",
+    "C2 binary sweep contains 1,134 cells",
+    "C3 heterogeneous strong profile identifies",
+    "C4 heterogeneous weak profile collides",
+    "C5 weak profile minimum separator count is three",
+    "C6 indexed polarity profile identifies",
+    "C7 anonymous polarity profile collides without faults",
+    "C8 naive six raw channels identify",
+    "C9 three correlated calibration domains do not identify",
+    "C10 one independent anchor restores the domain boundary",
+    "C11 population identified width equals missing count",
+    "C12 unknown missing outcomes prevent exact mean when m>0",
+    "C13 all-missing population spans mean zero to one",
+    "C14 one audit reduces width and may resolve the threshold",
+    "C15 some bounded MNAR decisions do not require exact recovery",
+    "C16 no physical or population-effect result is claimed"
+  ],
+  "uncertaintyBudget": {
+    "measurement": "Healthy support sets are designed finite labels, not calibrated coverage regions. No bias, covariance magnitude, distribution, drift, hysteresis, or transfer error is measured.",
+    "domainStructure": "Calibration-domain membership is declared, not empirically proven. Unknown shared standards, firmware, power, processing, maintenance, or environment may collapse additional channels.",
+    "missingness": "The sensor model bounds authenticated indexed omissions adversarially. The population model makes no ignorability claim and identifies only finite binary totals; neither estimates a field missingness probability.",
+    "identity": "The anonymous counterexample is a designed polarity mapping. Real event, part, institution, and report-slot binding require cryptographic and physical artifacts.",
+    "externalValidity": "The pairwise theorem applies to finite truth states and frozen healthy-support sets. Dynamic trajectories, continuous unbounded states, adaptive support changes, and probabilistic safety risk are outside scope.",
+    "decision": "Set-valued or threshold conclusions are not relabelled exact recovery. Equality to the threshold remains inconclusive."
+  },
+  "safetyEthicsEnvironment": "No actuator, chiplet, person, or private dataset is used. Future physical work must preserve guarding, electrical isolation, energy limits, emergency stop, lawful networking, independent calibration, non-human test subjects, and safe disposal. Any future population audit requires lawful access, privacy protection, ethics review where applicable, and separation of research selection from adjudication.",
+  "codeHashes": {
+    "scripts/run-rc41-domain-separator-model.mjs": "aca4f3fb5090167d2f792f785d5e96f43b2e6246d7d4c3bedaa5c0fd2685bf4a",
+    "scripts/independent_rc41_domain_separator_audit.py": "fcb9aa8d74b33e29ff14674508ef8cdba66bc80ed472462bfba1e14522d7a23b",
+    "research/reproducibility/rc41-separator-certificate.schema.json": "1e25f3e4ff55c13a2e55efe3e5207a589aec50d1a8009e5a9ce3ff4a5218ba34"
+  },
+  "resultStateAtSeal": "No RC41 domain-separator model result or independent Python audit exists. No physical sensor, calibrated support, covariance experiment, authenticated omission trace, chiplet specimen, human record, or HIL run was created.",
+  "allowedAfterSeal": [
+    "Execute the frozen JavaScript model and independent Python audit and preserve outputs.",
+    "If an implementation defect blocks adjudication, preserve the failed artifact and add a numbered amendment before changing frozen code.",
+    "Add bilingual interpretation, primary sources, structural connections, validation, loaders, and deployment without changing frozen observations."
+  ]
+}
