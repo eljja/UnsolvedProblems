@@ -1,7 +1,7 @@
 {
   "cycleId": "RC-2026-42",
   "implementation": "Independent Python field qualification and calibration-residual recomputation; no JavaScript imports.",
-  "manifestNormalizedSha256": "a7c7386c3532b6636278b4fc85b7ba33deca0552b76b6bd60a44d3f45ae86528",
+  "manifestNormalizedSha256": "3f07797a224d1d8144493d6d5f6eeea3b74dc9979b20af4ca17be5ca9a280cbc",
   "candidateCount": 6,
   "counts": {
     "empiricalSeparatorCertificate": 0,

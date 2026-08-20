@@ -16,9 +16,10 @@
     "afterNormalizedSha256": "3f07797a224d1d8144493d6d5f6eeea3b74dc9979b20af4ca17be5ca9a280cbc"
   },
   "preservedResults": [
-    {"path":"research/reproducibility/rc42-domain-evidence-result-before-date-correction.json","sha256":"aed974fe8b179626c075195a397a69385463444544031f6d8a15ad477922abeb"},
-    {"path":"research/reproducibility/rc42-domain-evidence-python-audit-before-date-correction.json","sha256":"3582693101024421d69d8c0e9e4c33de8488a20cfbde6e042ca143ce0ad6dfe9"}
+    {"path":"research/reproducibility/rc42-domain-evidence-result-before-date-correction.json","normalizedSha256":"aed974fe8b179626c075195a397a69385463444544031f6d8a15ad477922abeb"},
+    {"path":"research/reproducibility/rc42-domain-evidence-python-audit-before-date-correction.json","normalizedSha256":"15bbf1d928864142a799f48a89747c4ba13b41155b789523a55cd6d115a476b3"}
   ],
+  "hashMode": "UTF-8 text with CRLF normalized to LF before SHA-256",
   "unchanged": [
     "all nine candidate field scores",
     "all qualification rules and hypotheses",

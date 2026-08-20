@@ -1,9 +1,9 @@
 {
   "cycleId": "RC-2026-42",
-  "generatedOn": "2026-08-20T00:51:24.946Z",
+  "generatedOn": "2026-08-20T00:55:56.350Z",
   "manifest": {
     "id": "RC42-DOMAIN-EVIDENCE-SOURCE-MANIFEST-0.1",
-    "normalizedSha256": "a7c7386c3532b6636278b4fc85b7ba33deca0552b76b6bd60a44d3f45ae86528",
+    "normalizedSha256": "3f07797a224d1d8144493d6d5f6eeea3b74dc9979b20af4ca17be5ca9a280cbc",
     "candidates": 6
   },
   "counts": {

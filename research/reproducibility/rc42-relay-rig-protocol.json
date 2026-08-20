@@ -1,0 +1,116 @@
+{
+  "protocolId": "RC42-FOUR-PRINCIPLE-RELAY-RIG-0.1",
+  "frozenOn": "2026-08-20",
+  "status": "design complete; no hardware events acquired",
+  "purpose": "Create the smallest prospective dataset that can test RC41's g=1, a=1 separator condition with real, identity-preserving omissions and independently adjudicated relay-event truth.",
+  "truthStates": [
+    {"id":"E0","definition":"No mechanical contact transition within the 20 ms adjudication window."},
+    {"id":"E1","definition":"Exactly one open-to-closed or closed-to-open mechanical contact transition within the window."},
+    {"id":"E2","definition":"Two or more mechanical contact transitions, including bounce, within the window."}
+  ],
+  "causalChain": [
+    "A precommitted coil-drive schedule and event roster define every expected trial and report slot.",
+    "Four measurement principles produce identity-indexed raw records through separately powered and stored acquisition chains.",
+    "Development trials estimate healthy supports for E0, E1, and E2 without using holdout video labels to alter thresholds.",
+    "A common-input graph collapses any channels that share a standard, supply, clock, processor, storage path, or environmental correction.",
+    "Every truth pair must retain at least four evidenced separator domains for g=1 and a=1.",
+    "A physically separate high-speed video chain adjudicates holdout truth; a singleton compatible set is required for an exact certificate."
+  ],
+  "measurementDomains": [
+    {
+      "domainId":"D-ELECTRICAL",
+      "principle":"galvanically isolated four-wire contact resistance",
+      "observable":"contact resistance and threshold-crossing sequence",
+      "calibration":"sealed resistor-substitution ladder measured before and after each block",
+      "separationTarget":"E0 has no state crossing; E1 has one; E2 has at least two after deglitching fixed on development data",
+      "isolation":"dedicated battery, ADC, oscillator, and removable storage"
+    },
+    {
+      "domainId":"D-INDUCTIVE",
+      "principle":"inductive armature displacement",
+      "observable":"position trajectory and direction changes",
+      "calibration":"gauge-block displacement series with a separate readout chain",
+      "separationTarget":"transition count from crossings of two fixed position bands",
+      "isolation":"dedicated supply, digitizer, oscillator, and storage"
+    },
+    {
+      "domainId":"D-ACOUSTIC",
+      "principle":"piezoelectric acoustic emission",
+      "observable":"impact impulses and inter-impact intervals",
+      "calibration":"mechanical impulse fixture plus local pulse-timing check; no electrical-contact labels",
+      "separationTarget":"zero, one, or repeated impact clusters under a frozen matched-filter threshold",
+      "isolation":"dedicated charge amplifier, battery, digitizer, oscillator, and storage"
+    },
+    {
+      "domainId":"D-OPTICAL",
+      "principle":"interrupted-beam optical flag on the armature",
+      "observable":"beam-state crossings and dwell time",
+      "calibration":"opaque calibration flag and independent translation-stage positions",
+      "separationTarget":"zero, one, or repeated beam crossings without reading electrical continuity",
+      "isolation":"dedicated light source, detector, battery, comparator, oscillator, and storage"
+    }
+  ],
+  "independentReference": {
+    "principle":"high-speed video of an armature fiducial and contact witness mark",
+    "minimumFrameRateHz":10000,
+    "requiredResolution":"At least five frames across the shortest development bounce interval; otherwise increase frame rate before holdout.",
+    "isolation":"separate power, clock, camera, operator, and storage; video is unavailable to support-calibration code until predictions are sealed",
+    "adjudication":"Two blinded reviewers label E0, E1, or E2 from frame sequences. Disagreement or insufficient temporal resolution is inconclusive, not majority truth.",
+    "forbiddenReuse":"Video-derived thresholds, timing corrections, or labels may not tune any of the four certificate domains after holdout begins."
+  },
+  "trialPlan": {
+    "development": {"trials":180,"allocation":{"E0":60,"E1":60,"E2":60},"use":"support estimation, threshold freezing, and minimum-separator table"},
+    "holdout": {"trials":90,"allocation":{"E0":30,"E1":30,"E2":30},"use":"final independent adjudication only"},
+    "ordering":"Block-randomized by truth-generating condition with event IDs and all five expected report slots committed before acquisition.",
+    "environmentalBlocks":["nominal voltage and room temperature","low coil voltage","high coil voltage","warm relay after repeated actuation"],
+    "minimumBlockRule":"Each truth state appears in every environmental block in development and holdout."
+  },
+  "faultAndOmissionChallenge": {
+    "budget":{"arbitraryDomains":1,"authenticatedOmissions":1,"requiredMinimumSeparatorsPerTruthPair":4},
+    "frozenInjections":[
+      "one-domain offset or gain substitution inside its development envelope",
+      "one-domain replay of a previous event with preserved domain identity",
+      "one expected report replaced by a signed null containing slot, domain, event, epoch, and reason",
+      "one common supply or clock perturbation; every affected channel must be collapsed before adjudication"
+    ],
+    "forbiddenInjection":"Never create a hazardous coil overvoltage, defeat protective enclosures, or inject faults into mains-powered equipment."
+  },
+  "slotLedger": {
+    "requiredFields":["eventId","slotId","domainId","expectedAt","status","rawArtifactSha256","localClockStart","localClockEnd","calibrationArtifactSha256","nullReason","signature"],
+    "invariant":"expected slots = observed slots + authenticated null slots; deleted or unknown slots = 0",
+    "identityRule":"Values may never be sorted or pooled without retaining domainId and eventId."
+  },
+  "uncertaintyBudget": [
+    {"source":"electrical threshold and resistor standard","kind":"measurement and calibration","requiredEstimate":"pre/post drift, quantization, thermal coefficient"},
+    {"source":"inductive scale and fixture alignment","kind":"measurement and model","requiredEstimate":"nonlinearity, hysteresis, mounting repeatability"},
+    {"source":"acoustic coupling and ambient vibration","kind":"measurement and environmental","requiredEstimate":"couplant repeatability, impulse-amplitude distribution, false-cluster rate"},
+    {"source":"optical flag geometry and ambient light","kind":"measurement and environmental","requiredEstimate":"beam-width uncertainty, flag alignment, detector saturation"},
+    {"source":"local clocks and synchronization","kind":"common-input risk","requiredEstimate":"per-chain drift and cross-clock alignment error; never assume a shared trigger proves independent timing"},
+    {"source":"video reference","kind":"adjudication","requiredEstimate":"frame interval, exposure blur, reviewer disagreement, unresolved transitions"},
+    {"source":"relay-to-relay variation","kind":"sampling and extrapolation","requiredEstimate":"repeat the full holdout on a second relay before any device-class claim"}
+  ],
+  "successCriteria": [
+    "All 270 planned trials satisfy the slot-ledger invariant or are excluded only by a predeclared whole-event rule.",
+    "Every E0/E1, E0/E2, and E1/E2 pair has at least four independently evidenced separator domains after common-input collapse.",
+    "The frozen compatible-set adjudicator returns the video label as a singleton for every resolved holdout trial under each g=1, a=1 challenge.",
+    "JavaScript and an independent implementation agree on every domain assignment, separator count, compatible set, and refusal.",
+    "A second relay reproduces the verdict before claims extend beyond the tested device."
+  ],
+  "rejectionAndStopRules": [
+    "One false exact holdout certificate rejects the current certificate design.",
+    "Any truth pair with fewer than four evidenced separators forces set-valued output and stops exact testing.",
+    "Any undeclared shared standard, power supply, clock, processor, or storage path collapses the affected channels and triggers recomputation.",
+    "Any missing record without its precommitted slot identity invalidates the event for omission-resilience testing.",
+    "Video resolution or reviewer disagreement that cannot distinguish E1 from E2 yields inconclusive reference truth.",
+    "Thermal rise, component damage, exposed conductors, or enclosure violation stops acquisition immediately."
+  ],
+  "deliverables": [
+    "precommitted event and slot roster",
+    "raw byte hashes and calibration lineage for five acquisition chains",
+    "common-input and covariance graph",
+    "development support table and frozen pairwise separator matrix",
+    "sealed holdout predictions",
+    "blinded video adjudication and independent software audit",
+    "complete failures and refusal records"
+  ]
+}

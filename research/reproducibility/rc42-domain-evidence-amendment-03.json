@@ -1,0 +1,19 @@
+{
+  "cycleId": "RC-2026-42",
+  "amendmentId": "RC42-AMENDMENT-03",
+  "recordedOn": "2026-08-20",
+  "trigger": "The preserved independent Python result used Windows CRLF in the working tree while Git stores normalized LF text.",
+  "diagnosis": "Amendment 02 recorded the working-tree byte hash for the Python artifact. That hash is not portable to a Linux checkout or GitHub Pages. The scientific content and parsed JSON are unchanged.",
+  "correction": {
+    "file": "research/reproducibility/rc42-domain-evidence-amendment-02.json",
+    "hashMode": "UTF-8 text with CRLF normalized to LF before SHA-256",
+    "preservedJsResultNormalizedSha256": "aed974fe8b179626c075195a397a69385463444544031f6d8a15ad477922abeb",
+    "preservedPythonResultNormalizedSha256": "15bbf1d928864142a799f48a89747c4ba13b41155b789523a55cd6d115a476b3"
+  },
+  "unchanged": [
+    "candidate field scores and source dates",
+    "qualification counts and calibration statistics",
+    "JavaScript and Python implementations",
+    "all scientific verdicts"
+  ]
+}
