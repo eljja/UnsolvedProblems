@@ -1,0 +1,31 @@
+{
+  "recordId": "RC43-X16-FIRST-RUN-0.1",
+  "cycleId": "RC-2026-43",
+  "recordedOn": "2026-08-20",
+  "precommit": "research/reproducibility/rc43-x16-trigger-frame-precommit.json",
+  "command": "node scripts/run-rc43-x16-range-audit.mjs --layer=1 --write",
+  "outcome": "stopped-before-member-extraction",
+  "attempts": [
+    {
+      "attempt": 1,
+      "exitCode": 1,
+      "error": "expected one XYPT_L0001.txt member, found 0",
+      "diagnosticVisibility": "The parser did not print the available member inventory."
+    },
+    {
+      "attempt": 2,
+      "exitCode": 1,
+      "error": "expected one XYPT_L0001.txt member, found 0; available central-directory members were XYPT_L0001.csv through XYPT_L0025.csv",
+      "diagnosticVisibility": "The error formatter was changed only to expose the already-read central-directory names."
+    }
+  ],
+  "dataBoundary": {
+    "centralDirectoriesRead": ["XYPT_L001-025.zip", "MPMcameraAVI_L001-025.zip"],
+    "localMemberHeadersRead": 0,
+    "xyptRowsRead": 0,
+    "aviHeaderBytesRead": 0,
+    "layerSpecificTriggerCountsRead": 0,
+    "layerSpecificFrameCountsRead": 0
+  },
+  "interpretation": "The official User Notes describe .txt names, whereas the current archive central directory uses .csv. This is a file-contract mismatch, not a scientific result. The frozen layer roles, trigger rule, frame rule, byte budget, and hypotheses remain unchanged."
+}

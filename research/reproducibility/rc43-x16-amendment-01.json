@@ -1,0 +1,17 @@
+{
+  "amendmentId": "RC43-X16-AMENDMENT-01",
+  "cycleId": "RC-2026-43",
+  "recordedOn": "2026-08-20",
+  "trigger": "The first development run found no XYPT_L0001.txt member. The official ZIP central directory instead lists XYPT_L0001.csv through XYPT_L0025.csv.",
+  "change": "Resolve the selected XYPT member as XYPT_L####.csv rather than XYPT_L####.txt. Preserve complete-member extraction, hashing, header-derived trigger-column selection, and every other adjudication rule.",
+  "notChanged": [
+    "L0001 development and L0002 holdout roles",
+    "nonzero-trigger definition",
+    "native AVI counter agreement rule",
+    "slot-identity and exact-null-ledger criteria",
+    "134217728-byte per-archive, per-layer budget",
+    "all five hypotheses and stop rules"
+  ],
+  "evidenceSeenBeforeAmendment": "Only the two archive central directories and the XYPT member-name mismatch. No local member header, XYPT row, AVI header, trigger count, or frame count was read.",
+  "status": "must-be-committed-and-pushed-before-development-rerun"
+}
