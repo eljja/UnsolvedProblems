@@ -1,0 +1,76 @@
+{
+  "cycleId": "RC-2026-42",
+  "sealedOn": "2026-08-20",
+  "title": "Public-domain evidence audit for real calibration domains, missing slots, and outcome-blind nonresponse follow-up",
+  "problemIds": ["UP-605", "UP-602", "UP-315", "UP-629"],
+  "frozenInputs": [
+    "research/reproducibility/rc42-domain-evidence-source-manifest.json",
+    "research/reproducibility/rc42-domain-evidence-precommit.json",
+    "scripts/run-rc42-domain-evidence-audit.mjs",
+    "scripts/independent_rc42_domain_evidence_audit.py"
+  ],
+  "frozenNormalizedSha256": {
+    "research/reproducibility/rc42-domain-evidence-source-manifest.json": "a7c7386c3532b6636278b4fc85b7ba33deca0552b76b6bd60a44d3f45ae86528",
+    "scripts/run-rc42-domain-evidence-audit.mjs": "8740cb59ba0132ab8e617ca20d4519beefdefeb10b38011199320184db78bfb7",
+    "scripts/independent_rc42_domain_evidence_audit.py": "41b3ec0c18c777770f08f7b1c844635d64938fa86f247ddc5e724d4196e75c78"
+  },
+  "adjudicands": [
+    "Count candidates satisfying every empirical-separator field at score 1.",
+    "Count candidates satisfying every single-domain calibration-support field at score 1.",
+    "Count candidates satisfying every missingness-alignment field at score 1.",
+    "Count public survey candidates satisfying every outcome-blind validation field at score 1.",
+    "Compute signed, absolute, mean, RMS, and maximum residuals for the five NIST X4 melt-pool-camera calibration pairs.",
+    "Construct a conservative common-input graph without converting unknown independence into independent domains."
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "claim": "At least one reviewed public candidate is sufficient for a real empirical separator certificate.",
+      "prediction": "At least one candidate scores 1 on all nine required fields.",
+      "reject": "No candidate scores 1 on all nine fields."
+    },
+    {
+      "id": "H2",
+      "claim": "The NIST AMMT releases provide real single-domain calibration evidence even if they do not establish independent domains.",
+      "prediction": "At least one candidate has public identity-indexed raw values, calibration lineage, and stable public bytes, and the five X4 calibration residuals are exactly reproducible.",
+      "reject": "No candidate qualifies or an independent implementation disagrees on any residual statistic."
+    },
+    {
+      "id": "H3",
+      "claim": "An expected command trigger plus an unlocated statement that frames were dropped is equivalent to an authenticated null-slot ledger.",
+      "prediction": "NIST X16 scores 1 for explicitNullSlots.",
+      "reject": "The reviewed release documents loss but does not bind every absent frame to an authenticated expected slot."
+    },
+    {
+      "id": "H4",
+      "claim": "The NSFG public release permits outcome-blind validation-subsample narrowing without restricted records.",
+      "prediction": "The public candidate scores 1 on every outcome-blind validation field.",
+      "reject": "Selection is temporally blind but sampled-case paradata, selection flags, or missing outcomes required for the bound are not public."
+    },
+    {
+      "id": "H5",
+      "claim": "Raw channels, instruments, laboratories, or signed reports can be used as the denominator of independent-domain resilience when shared inputs are only partly documented.",
+      "prediction": "Every observed channel can be assigned its own evidenced calibration and common-cause domain.",
+      "reject": "Any candidate contains shared or unknown standards, clocks, specimens, processors, control streams, preparation, or selection mechanisms that prevent that assignment."
+    }
+  ],
+  "decisionRules": {
+    "promoteEmpiricalSeparator": "Only if H1 is supported and the qualifying candidate has a pre-fixed blind partition and an independent reference.",
+    "promoteCalibrationSupport": "Only as evidence for the named single measurement chain; never as cross-domain independence or process accuracy.",
+    "promoteMissingnessAudit": "Only if every expected event has a stable identity and every absent observation remains as an explicit null with reason and epoch.",
+    "promoteNonresponseNarrowing": "Only if public records expose the outcome-blind subsample probabilities, selected and unselected rosters, later outcomes, and target-variable denominator.",
+    "stop": "Stop and issue a set-valued or design-only verdict if any required field is partial, restricted, inferred from file absence, or reused as its own independent reference."
+  },
+  "minimumDecisiveTests": [
+    "Programmatic field-by-field qualification of all six candidates under four frozen rules.",
+    "Independent recomputation of the five NIST calibration residuals from manifest values.",
+    "Ablation showing that treating each partial field as complete changes qualification and is therefore not allowed.",
+    "Conservative domain graph for NIST X16 and NSFG that labels unknown edges rather than assuming independence."
+  ],
+  "expectedOutputs": [
+    "research/reproducibility/rc42-domain-evidence-result.json",
+    "research/reproducibility/rc42-domain-evidence-python-audit.json",
+    "research/reproducibility/rc42-domain-evidence-certificate.schema.json"
+  ],
+  "safety": "The cycle uses public metadata and aggregate survey documentation only. It does not process respondent-level restricted data, identify people, operate machinery, or infer production safety from benchmark calibration residuals."
+}

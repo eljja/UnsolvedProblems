@@ -1,0 +1,138 @@
+{
+  "manifestId": "RC42-DOMAIN-EVIDENCE-SOURCE-MANIFEST-0.1",
+  "reviewedOn": "2026-08-20",
+  "scope": "Public primary or official records that could expose real measurement-domain independence or outcome-blind nonresponse validation for RC41's separator and partial-identification claims.",
+  "fieldScale": {
+    "0": "absent from the reviewed public release",
+    "0.5": "documented only in aggregate, indirectly reconstructable, or incomplete for adjudication",
+    "1": "record-level and publicly auditable"
+  },
+  "requiredFields": {
+    "channelIdentity": "Stable sensor, laboratory, instrument, or survey-case identity.",
+    "rawValues": "Record-level observations rather than only ranges or consensus summaries.",
+    "expectedRoster": "An outcome-independent list of expected events, channels, specimens, or sampled cases.",
+    "explicitNullSlots": "Missing observations remain located in that roster rather than disappearing from the file inventory.",
+    "calibrationLineage": "The reference, calibration file, or weighting lineage can be followed to each observation.",
+    "commonInputGraph": "Shared clock, standard, specimen, processor, frame, or selection mechanism can be represented explicitly.",
+    "independentReference": "A truth or reference quantity is measured by a principle not reused to develop the candidate method.",
+    "blindPartition": "A development and holdout split can be fixed without inspecting holdout outcomes.",
+    "publicBytes": "The adjudicating records are publicly downloadable under stable identifiers."
+  },
+  "qualificationRules": {
+    "empiricalSeparatorCertificate": {
+      "requires": ["channelIdentity", "rawValues", "expectedRoster", "explicitNullSlots", "calibrationLineage", "commonInputGraph", "independentReference", "blindPartition", "publicBytes"],
+      "minimumEach": 1
+    },
+    "singleDomainCalibrationSupport": {
+      "requires": ["channelIdentity", "rawValues", "calibrationLineage", "publicBytes"],
+      "minimumEach": 1
+    },
+    "missingnessAlignmentAudit": {
+      "requires": ["channelIdentity", "rawValues", "expectedRoster", "explicitNullSlots", "publicBytes"],
+      "minimumEach": 1
+    },
+    "outcomeBlindNonresponseValidation": {
+      "requires": ["channelIdentity", "rawValues", "expectedRoster", "explicitNullSlots", "independentReference", "blindPartition", "publicBytes"],
+      "minimumEach": 1
+    }
+  },
+  "candidates": [
+    {
+      "id": "NIST-AMMT-X16-2019",
+      "domain": "additive-manufacturing process monitoring",
+      "officialRecord": "https://doi.org/10.18434/mds2-2309",
+      "primaryDescription": "https://data.nist.gov/od/ds/ark:/88434/mds2-2309/OverhangX16_In-situData_UserNotes.pdf",
+      "resultDate": "2019-07-03",
+      "releaseDate": "2021-03-25",
+      "scores": {"channelIdentity":1,"rawValues":1,"expectedRoster":1,"explicitNullSlots":0.5,"calibrationLineage":0.5,"commonInputGraph":0.5,"independentReference":0,"blindPartition":0.5,"publicBytes":1},
+      "observedStructure": {
+        "nominallyIdenticalParts": 16,
+        "buildLayers": 250,
+        "meltPoolCamera": "Mikrotron EOSens 3CL",
+        "layerCamera": "Basler acA3800-10gm",
+        "daqChannels": 4,
+        "timeStepMicroseconds": 10,
+        "reportedTypicalDroppedFramesPerLayer": "fewer than 20 of more than 50,000",
+        "expectedFrameRule": "Each frame is intended to correspond to a nonzero trigger in the XYPT command file."
+      },
+      "boundary": "The command stream supplies an expected event roster and the notes acknowledge dropped frames, but the public documentation does not authenticate a null at every missing frame. Camera calibration is inherited from X4 and DAQ calibration is embedded in file headers; neither establishes independence among the cameras, DAQ channels, command stream, clock, or common build.",
+      "sourceEvidence": ["NIST X16 User Notes sections 3, 5.1-5.3, and 6", "NIST PDR NERDm record ark:/88434/mds2-2309"]
+    },
+    {
+      "id": "NIST-AMMT-X4-2019",
+      "domain": "additive-manufacturing process monitoring",
+      "officialRecord": "https://doi.org/10.18434/M32233",
+      "primaryDescription": "https://doi.org/10.6028/jres.125.027",
+      "resultDate": "2019-05-17",
+      "releaseDate": "2020-05-12",
+      "scores": {"channelIdentity":1,"rawValues":1,"expectedRoster":1,"explicitNullSlots":0,"calibrationLineage":1,"commonInputGraph":0.5,"independentReference":0,"blindPartition":0.5,"publicBytes":1},
+      "localCalibrationExtract": {
+        "archiveUrl": "https://data.nist.gov/od/ds/ark:/88434/mds2-2233/Melt%20Pool%20Camera%20Metadata.zip",
+        "archiveBytes": 407,
+        "archiveSha256": "fa2f22efeff4407545bfa4e7c064b82c9598366439f87ae56182687b83fe1683",
+        "member": "Melt Pool Camera Metadata/2019_MikrotronCal.csv",
+        "measuredPairs": [
+          {"digitalLevel":38.8,"referenceCelsius":1600,"curveCelsius":1600.914554},
+          {"digitalLevel":57.4,"referenceCelsius":1700,"curveCelsius":1699.149539},
+          {"digitalLevel":83.7,"referenceCelsius":1800,"curveCelsius":1799.224473},
+          {"digitalLevel":119.8,"referenceCelsius":1900,"curveCelsius":1899.760829},
+          {"digitalLevel":137.9,"referenceCelsius":1940,"curveCelsius":1940.746113}
+        ]
+      },
+      "boundary": "The release exposes real calibration pairs for one melt-pool camera and public raw monitoring streams. The five points are calibration residuals, not an independent holdout, and every stream remains inside one AMMT build and common timing/control chain.",
+      "sourceEvidence": ["NIST PDR NERDm record ark:/88434/mds2-2233", "Lane and Yeung, Journal of Research of NIST 125:125027"]
+    },
+    {
+      "id": "NIST-AMB2018-THERMOGRAPHY",
+      "domain": "additive-manufacturing thermography",
+      "officialRecord": "https://doi.org/10.18434/M31935",
+      "resultDate": "2018",
+      "releaseDate": "2018-09-14",
+      "scores": {"channelIdentity":1,"rawValues":1,"expectedRoster":1,"explicitNullSlots":0,"calibrationLineage":1,"commonInputGraph":0.5,"independentReference":0,"blindPartition":0.5,"publicBytes":1},
+      "observedStructure": {"parts":8,"builds":2,"framesPerSecond":1800,"layers":624,"measuredRegionPerBuild":1},
+      "boundary": "Timing, calibration, process information, and thermal records are public, but one thermal measurement chain per selected region cannot estimate cross-domain independence or provide a separate truth principle.",
+      "sourceEvidence": ["NIST PDR M31935 version 1.1"]
+    },
+    {
+      "id": "IUCR-QARR-2001",
+      "domain": "multi-laboratory quantitative phase diffraction",
+      "officialRecord": "https://doi.org/10.1107/S0021889801007476",
+      "primaryDescription": "https://www.iucr.org/resources/commissions/powder-diffraction/projects/qarr",
+      "resultDate": "1996-1999",
+      "releaseDate": "2001",
+      "scores": {"channelIdentity":0.5,"rawValues":0,"expectedRoster":1,"explicitNullSlots":0.5,"calibrationLineage":0,"commonInputGraph":0.5,"independentReference":1,"blindPartition":1,"publicBytes":0.5},
+      "observedStructure": {"mandatorySample1gAnalyses":123,"publicOrganizerReferencePatterns":true,"publicParticipantAcquisitionsLocated":false},
+      "boundary": "Known weighed compositions and a multi-laboratory roster make the result scientifically valuable, but the official public kit does not expose participant acquisition bytes, preparation identifiers, or reduction parentage needed to estimate empirical supports by laboratory domain.",
+      "sourceEvidence": ["IUCr QARR outcomes paper", "IUCr official QARR data kit", "repository audit DIFFRACTION-MULTIFACILITY-LINEAGE-AUDIT-0.1"]
+    },
+    {
+      "id": "SAS-ROUND-ROBIN-2022",
+      "domain": "multi-facility biomolecular small-angle scattering",
+      "officialRecord": "https://doi.org/10.1107/S2059798322009184",
+      "primaryDescription": "https://www.sasbdb.org/project/1742/",
+      "resultDate": "2017-2019 campaign",
+      "releaseDate": "2022-10-20",
+      "scores": {"channelIdentity":0.5,"rawValues":0.5,"expectedRoster":0.5,"explicitNullSlots":0,"calibrationLineage":0.5,"commonInputGraph":0.5,"independentReference":0.5,"blindPartition":0,"publicBytes":0.5},
+      "observedStructure": {"proteins":5,"saxsInstruments":12,"sansInstruments":4,"profiles":247,"publicConsensusRecords":15},
+      "boundary": "The paper and supplement report facility-level reproducibility and SASBDB publishes consensus profiles. The reviewed public project page does not preserve all 247 participant profiles as an identity-indexed roster with calibration lineage and explicit missing slots.",
+      "sourceEvidence": ["Acta Crystallographica D 78, 1315-1336", "SASBDB project 1742", "repository manifest SAS-ROUND-ROBIN-RG-2022-0.1"]
+    },
+    {
+      "id": "NSFG-2011-2015-PHASE2",
+      "domain": "survey nonresponse",
+      "officialRecord": "https://www.cdc.gov/nchs/data/nsfg/2011-2015_Nonresponse_Bias_Analysis_1.pdf",
+      "primaryDescription": "https://www.cdc.gov/nchs/nsfg/nsfg_special_supplementary_data.htm",
+      "resultDate": "2011-2015 fieldwork",
+      "releaseDate": "2017",
+      "scores": {"channelIdentity":0,"rawValues":0.5,"expectedRoster":0.5,"explicitNullSlots":0,"calibrationLineage":0.5,"commonInputGraph":0.5,"independentReference":0,"blindPartition":1,"publicBytes":0.5},
+      "observedStructure": {"phase2SelectionTime":"end of week 10","selection":"probability subsample of remaining nonrespondents","stratification":["interviewer","screener versus main status","expected response propensity"],"public2011to2013WeightedResponseRate":0.73},
+      "boundary": "Selection into intensive follow-up occurs before the later interview outcome and therefore meets temporal blinding. Public respondent files omit the all-sampled-case paradata and phase-selection roster; those records are restricted through the NCHS Research Data Center. The public release therefore cannot reconstruct assumption-free bounds narrowed by the follow-up sample.",
+      "sourceEvidence": ["NCHS Nonresponse Bias Analyses sections 5-6", "NCHS Special Supplementary Data Files access statement"]
+    }
+  ],
+  "calibrationAdjudicand": {
+    "candidateId": "NIST-AMMT-X4-2019",
+    "quantity": "curveCelsius - referenceCelsius over the five published measured calibration pairs",
+    "limitations": ["The same points may have influenced the calibration curve.", "One camera and one calibration chain provide no cross-domain covariance estimate.", "No process-temperature accuracy claim follows from calibration residuals alone."]
+  }
+}
