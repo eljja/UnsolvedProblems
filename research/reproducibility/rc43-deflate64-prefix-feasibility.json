@@ -1,0 +1,37 @@
+{
+  "testId": "RC43-DEFLATE64-PREFIX-FEASIBILITY-0.1",
+  "cycleId": "RC-2026-43",
+  "executedOn": "2026-08-20",
+  "purpose": "Determine on non-NIST bytes whether a deliberately truncated Deflate64 ZIP can yield a trustworthy decompressed prefix for container-header inspection without downloading the complete member.",
+  "decoder": {
+    "name": "7-Zip command-line decoder",
+    "version": "22.01 x64",
+    "codecReported": "Deflate64 decoder 40109",
+    "commandShape": "7z x -so -bso0 -bsp0 -bse2 partial.zip"
+  },
+  "syntheticFixture": {
+    "source": "research-cycle-42-data.js",
+    "sourceBytes": 73647,
+    "sourceSha256": "40953e7ab441c05a6e6244566a2420e284554a29e0f3e5a2a5912eb6ddedc48b",
+    "archiveMethod": "Deflate64",
+    "archiveBytes": 22646,
+    "archiveSha256": "7f8cf34ca903c8d4420b44b9475193500249a371c7fc27f2c3280c5a1e1d8b67",
+    "truncatedArchiveBytes": 11300,
+    "truncatedArchiveSha256": "6cecf6251ea7895636ded757a6eaef4c6ac998d07a1964d4060a30c815731b44"
+  },
+  "result": {
+    "decoderExitCode": 2,
+    "decoderError": "Unexpected end of archive; Data Error",
+    "emittedBytes": 31382,
+    "correctPrefixBytes": 31372,
+    "corruptTrailingBytes": 10,
+    "correctPrefixFractionOfEmission": 0.9996813459945192
+  },
+  "admissibleUse": "A truncated Deflate64 decode may be used only to read structures that end before a conservative discarded tail. On real data, decode two nested compressed-prefix lengths, discard at least 65536 emitted tail bytes, and require the retained prefixes and parsed counters to be byte-identical. Decoder error is expected and never treated as archive integrity success.",
+  "notEstablished": [
+    "That the NIST AVI header lies inside the decoded prefix",
+    "That two prefix lengths will produce stable retained bytes on the NIST member",
+    "Any NIST trigger count, frame count, frame identity, or missing-slot placement",
+    "Portability to a different Deflate64 decoder or 7-Zip version"
+  ]
+}

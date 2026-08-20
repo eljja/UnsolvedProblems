@@ -1,0 +1,21 @@
+{
+  "recordId": "RC43-X16-DEVELOPMENT-FAILURE-02",
+  "cycleId": "RC-2026-43",
+  "recordedOn": "2026-08-20",
+  "command": "node scripts/run-rc43-x16-range-audit.mjs --layer=1 --write",
+  "exitCode": 1,
+  "error": "MPMcamera_L0001.avi method 9 requires 181048432 bytes and exceeds budget",
+  "whatWasRead": [
+    "XYPT and AVI ZIP central directories",
+    "The complete compressed XYPT_L0001.csv member, followed by successful CRC verification in memory",
+    "The AVI local header and central metadata identifying Deflate64 method 9 and compressed size 181048432 bytes"
+  ],
+  "whatWasNotExposedByTheFailedProcess": [
+    "Parsed trigger count",
+    "Any decompressed AVI header or frame count",
+    "Any TIFF central directory or TIFF member byte",
+    "Any L0002 holdout byte or count"
+  ],
+  "scientificVerdict": "H4 is rejected for the direct AVI-member route under the fixed 134217728-byte budget. This run does not adjudicate H1-H3 or H5 because no MPM frame count was decoded.",
+  "failurePreservation": "No result file was emitted because the program stopped before constructing its result object. This record preserves the error and acquisition boundary rather than converting the failed attempt into a successful-looking result."
+}

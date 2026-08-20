@@ -1,0 +1,24 @@
+{
+  "amendmentId": "RC43-X16-AMENDMENT-02",
+  "cycleId": "RC-2026-43",
+  "recordedOn": "2026-08-20",
+  "trigger": "The selected L0001 AVI member uses Deflate64 method 9 and its 181048432 compressed bytes exceed the preregistered transfer budget.",
+  "change": "Before any further member extraction, add an inventory-only execution that reads the XYPT, AVI, and preregistered alternative TIFF central directories and records selected member metadata plus range receipts. Proceed to TIFF header/IFD random access if its ZIP member is stored. If both MPM alternatives are Deflate64, a later separately sealed amendment may authorize only a nested-prefix decode whose retained bytes agree after a conservative tail discard; do not increase the budget or download the complete AVI member.",
+  "syntheticFeasibilityEvidence": "A non-NIST Deflate64 fixture showed that truncating a 22646-byte archive at 11300 bytes caused 7-Zip 22.01 to emit 31382 bytes: the first 31372 exactly matched the original and only the final 10 differed. This supports testing a nested-prefix rule but is not authorization to inspect NIST compressed bytes before another amendment is sealed.",
+  "cumulativeAccounting": "The inventory will expose deterministic directory-range sizes and selected XYPT member size. Earlier repeated requests will be reconstructed conservatively and charged before any TIFF byte request; uncertainty in local-header extras is charged at its ZIP maximum rather than ignored.",
+  "notChanged": [
+    "L0001 development and L0002 holdout roles",
+    "trigger and frame-count definitions",
+    "per-frame slot-key requirement",
+    "exact-null-ledger singleton rule",
+    "134217728-byte transfer ceiling",
+    "holdout sealing and independent-implementation requirements"
+  ],
+  "forbidden": [
+    "Downloading the 181048432-byte compressed AVI member",
+    "Increasing the budget after observing the compression method",
+    "Using ZIP uncompressed byte size as a frame count",
+    "Inspecting L0002 before the L0001 result and amendments are pushed"
+  ],
+  "status": "must-be-committed-and-pushed-before-tiff-directory-inspection"
+}

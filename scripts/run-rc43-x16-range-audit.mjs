@@ -8,6 +8,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
 const layer = Number(args.find((arg) => arg.startsWith("--layer="))?.split("=")[1] || "1");
 const shouldWrite = args.includes("--write");
+const inventoryOnly = args.includes("--inventory-only");
 const maxBytes = 134_217_728;
 if (!Number.isInteger(layer) || layer < 1 || layer > 25) throw new Error("--layer must be an integer from 1 through 25");
 
@@ -270,11 +271,41 @@ const summarizeEntry = (entry) => ({
 async function main() {
   const archives = {
     xypt: new RangeReader("https://data.nist.gov/od/ds/ark:/88434/mds2-2309/XYPT_L001-025.zip", 159_164_372, "XYPT_L001-025.zip"),
-    avi: new RangeReader("https://data.nist.gov/od/ds/ark:/88434/mds2-2309/MPMcameraAVI_L001-025.zip", 5_037_696_861, "MPMcameraAVI_L001-025.zip")
+    avi: new RangeReader("https://data.nist.gov/od/ds/ark:/88434/mds2-2309/MPMcameraAVI_L001-025.zip", 5_037_696_861, "MPMcameraAVI_L001-025.zip"),
+    tiff: new RangeReader("https://data.nist.gov/od/ds/ark:/88434/mds2-2309/MPMcameraTIF_L001-025.zip", 5_740_968_223, "MPMcameraTIF_L001-025.zip")
   };
-  const [xyptDirectory, aviDirectory] = await Promise.all([readCentralDirectory(archives.xypt), readCentralDirectory(archives.avi)]);
+  const [xyptDirectory, aviDirectory, tiffDirectory] = await Promise.all([
+    readCentralDirectory(archives.xypt), readCentralDirectory(archives.avi), readCentralDirectory(archives.tiff)
+  ]);
   const xyptEntry = findEntry(xyptDirectory.entries, `XYPT_L${pad4(layer)}.csv`);
   const aviEntry = findEntry(aviDirectory.entries, `MPMcamera_L${pad4(layer)}.avi`);
+  const tiffEntry = findEntry(tiffDirectory.entries, `MPMcamera_L${pad4(layer)}.tif`);
+  if (inventoryOnly) {
+    const result = {
+      inventoryId: `RC43-X16-L${pad4(layer)}-INVENTORY-0.1`, cycleId: "RC-2026-43", createdOn: new Date().toISOString(),
+      layer, role: layer === 1 ? "development" : layer === 2 ? "holdout" : "outside-precommit",
+      selected: { xypt: summarizeEntry(xyptEntry), avi: summarizeEntry(aviEntry), tiff: summarizeEntry(tiffEntry) },
+      directories: {
+        xypt: { ...xyptDirectory.directory, centralDirectorySha256: xyptDirectory.centralDirectorySha256, entryCount: xyptDirectory.entries.length },
+        avi: { ...aviDirectory.directory, centralDirectorySha256: aviDirectory.centralDirectorySha256, entryCount: aviDirectory.entries.length },
+        tiff: { ...tiffDirectory.directory, centralDirectorySha256: tiffDirectory.centralDirectorySha256, entryCount: tiffDirectory.entries.length }
+      },
+      transfer: {
+        maximumBytesPerLayer: maxBytes,
+        thisExecutionBytes: archives.xypt.transferredBytes + archives.avi.transferredBytes + archives.tiff.transferredBytes,
+        receipts: { xypt: archives.xypt.receipts, avi: archives.avi.receipts, tiff: archives.tiff.receipts }
+      },
+      boundary: "No local member header or member body was requested by inventory-only execution."
+    };
+    const json = `${JSON.stringify(result, null, 2)}\n`;
+    if (shouldWrite) {
+      const output = path.join(root, "research", "reproducibility", `rc43-x16-layer-${pad4(layer)}-inventory.json`);
+      fs.writeFileSync(output, json, "utf8");
+      console.log(`Wrote ${path.relative(root, output)}`);
+    }
+    console.log(json);
+    return;
+  }
   const xyptExtract = await extractCompleteMember(archives.xypt, xyptEntry);
   const aviLocal = await readLocalHeader(archives.avi, aviEntry);
   let aviPrefix;
