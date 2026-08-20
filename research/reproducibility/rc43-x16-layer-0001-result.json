@@ -1,0 +1,192 @@
+{
+  "resultId": "RC43-X16-L0001-DEVELOPMENT-AUDIT-0.2",
+  "cycleId": "RC-2026-43",
+  "createdOn": "2026-08-20T16:24:34.368Z",
+  "layer": 1,
+  "role": "development",
+  "precommit": "research/reproducibility/rc43-x16-trigger-frame-precommit.json",
+  "amendments": [
+    "rc43-x16-amendment-01.json",
+    "rc43-x16-amendment-02.json",
+    "rc43-x16-amendment-03.json",
+    "rc43-x16-amendment-04.json"
+  ],
+  "xypt": {
+    "textSha256": "149443c27a88f4faa513fdee7ee9e523aee85a246aeae726c1cdaf164f82bf47",
+    "bytes": 72015733,
+    "lineCount": 1658275,
+    "preview": [
+      "0.000000, 0.000000, 0.000000, 0.000000",
+      "0.000000, 0.000000, 0.000000, 0.000000",
+      "0.000000, 0.000000, 0.000000, 0.000000",
+      "0.000000, 0.000000, 0.000000, 0.000000",
+      "0.000000, 0.000000, 0.000000, 0.000000",
+      "0.000000, 0.000000, 0.000000, 0.000000",
+      "0.000000, 0.000000, 0.000000, 0.000000",
+      "0.000000, 0.000000, 0.000000, 0.000000"
+    ],
+    "parseStatus": "parsed-headerless-four-column-per-primary-format",
+    "delimiter": "comma",
+    "headerIndex": -1,
+    "header": null,
+    "triggerColumn": 3,
+    "numericDataRows": 1658275,
+    "nonzeroTriggerRows": 94736,
+    "triggerValueCounts": {
+      "0": 1563539,
+      "2": 94736
+    },
+    "firstNonzeroDataIndex": 29403,
+    "lastNonzeroDataIndex": 1631650,
+    "selected": {
+      "name": "XYPT_L0001.csv",
+      "method": 8,
+      "flags": 0,
+      "crc32": "0af07559",
+      "compressedSize": 6518714,
+      "uncompressedSize": 72015733,
+      "localHeaderOffset": 0
+    },
+    "cameraMask2Rows": 94736,
+    "centralDirectorySha256": "0967318be4ea6413c605bf0ca55e810952a280b07b11407262a2a73b69b92a5d"
+  },
+  "avi": {
+    "parseStatus": "parsed-prefix",
+    "prefixSha256": "ddf31d55ac14151bbb1c58f21966cd9c76557ca6ed7bb0333698f0d80e43be6a",
+    "prefixBytes": 4162318,
+    "riffDeclaredBytes": 183130242,
+    "counters": [
+      {
+        "source": "avih.dwTotalFrames",
+        "value": 94713,
+        "offset": 24
+      },
+      {
+        "source": "strh.dwLength",
+        "value": 94713,
+        "offset": 100
+      },
+      {
+        "source": "dmlh.dwTotalFrames",
+        "value": 94713,
+        "offset": 4356
+      }
+    ],
+    "chunkSignatures": {
+      "LIST": 4,
+      "avih": 1,
+      "strh": 1,
+      "dmlh": 1,
+      "movi": 1
+    },
+    "selected": {
+      "name": "MPMcamera_L0001.avi",
+      "method": 9,
+      "flags": 0,
+      "crc32": "d42f4023",
+      "compressedSize": 181048432,
+      "uncompressedSize": 183130242,
+      "localHeaderOffset": 0
+    },
+    "discardBytes": 65536,
+    "prefixA": {
+      "decoderPath": "C:\\Program Files\\AMD\\CIM\\Bin64\\7z.exe",
+      "exitCode": 2,
+      "stderrTail": "\r\nERRORS:\r\nUnexpected end of archive\r\n\r\nERROR: Data Error : MPMcamera_L0001.avi\r\n",
+      "archiveBytes": 4194304,
+      "archivePrefixSha256": "4c686770748d02aef4f5ba0f8d924fce906aeb8e44351767955649f3f13bfe2d",
+      "decodedBytes": 4227854,
+      "decodedSha256": "dc2a5e50bbef8c1275476106b9a859ec137ebef5c6f1b19fdbf855338cefd062"
+    },
+    "prefixB": {
+      "decoderPath": "C:\\Program Files\\AMD\\CIM\\Bin64\\7z.exe",
+      "exitCode": 2,
+      "stderrTail": "\r\nERRORS:\r\nUnexpected end of archive\r\n\r\nERROR: Data Error : MPMcamera_L0001.avi\r\n",
+      "archiveBytes": 8388608,
+      "archivePrefixSha256": "b28a3d4025ec4399cbe435a75258fb0fe3cf3ba29499d6c441b531cca14dabb5",
+      "decodedBytes": 8447744,
+      "decodedSha256": "5b4edb8bd773a61674ac06dbdef289b694571880ff4beadbd97e7bd168298bc8"
+    },
+    "retainedABytes": 4162318,
+    "retainedASha256": "ddf31d55ac14151bbb1c58f21966cd9c76557ca6ed7bb0333698f0d80e43be6a",
+    "retainedBBytes": 8382208,
+    "nestedRetainedPrefixAgreement": true
+  },
+  "adjudication": {
+    "triggerCount": 94736,
+    "cameraMask2Rows": 94736,
+    "frameCount": 94713,
+    "triggerMinusFrame": 23,
+    "countDirection": "fewer-frames-than-triggers",
+    "nativeFrameCountersAgree": true,
+    "publicHeaderExposesPerFrameSlotKey": false,
+    "tailOnlyLossEstablished": false,
+    "exactNullLedger": false,
+    "compatibleMissingSlotPlacementsLowerBound": 94736,
+    "qualification": "aggregate-count-reproduced-slot-placement-not-identifiable",
+    "hypotheses": {
+      "H1": "rejected-on-development",
+      "H2": "rejected-on-development",
+      "H3": "rejected-on-development-header-has-no-per-frame-slot-key",
+      "H4": "supported-for-stable-header-prefix-within-cumulative-budget",
+      "H5": "untested-holdout-sealed"
+    }
+  },
+  "transfer": {
+    "maximumCumulativeBytes": 134217728,
+    "conservativePriorUpperBound": 36384465,
+    "thisExecutionBytes": 7568834,
+    "cumulativeUpperBound": 43953299,
+    "remainingConservativeBytes": 90264429,
+    "receipts": {
+      "xypt": [
+        {
+          "purpose": "ZIP end records",
+          "start": 158115796,
+          "end": 159164371,
+          "bytes": 1048576,
+          "contentRange": "bytes 158115796-159164371/159164372",
+          "bodySha256": "47cb007ece04282b6d0013b831b423b2b91dcc71b2d7d99390fc71d710ff7ecc"
+        },
+        {
+          "purpose": "ZIP central directory",
+          "start": 159162850,
+          "end": 159164349,
+          "bytes": 1500,
+          "contentRange": "bytes 159162850-159164349/159164372",
+          "bodySha256": "0967318be4ea6413c605bf0ca55e810952a280b07b11407262a2a73b69b92a5d"
+        },
+        {
+          "purpose": "XYPT_L0001.csv local header",
+          "start": 0,
+          "end": 29,
+          "bytes": 30,
+          "contentRange": "bytes 0-29/159164372",
+          "bodySha256": "1a9f4fa80b835a3c146f8a5d024f4911c763ed35605f16a87ed9703cec0f43a5"
+        },
+        {
+          "purpose": "XYPT_L0001.csv local name and extra",
+          "start": 30,
+          "end": 43,
+          "bytes": 14,
+          "contentRange": "bytes 30-43/159164372",
+          "bodySha256": "8837b53b7aa238bec3cd1083f809e70054e95fda1e41a49d4dccf344610e95df"
+        },
+        {
+          "purpose": "XYPT_L0001.csv complete compressed member",
+          "start": 44,
+          "end": 6518757,
+          "bytes": 6518714,
+          "contentRange": "bytes 44-6518757/159164372",
+          "bodySha256": "4bd4b8699daf6d28e221502277ac1eee82e6fca449b1e9c54c834e105aac3bed"
+        }
+      ],
+      "avi": []
+    }
+  },
+  "boundaries": [
+    "This result uses official column order to interpret a headerless numeric body; no row was skipped.",
+    "Aggregate counts do not locate a missing frame among trigger slots or prove the User Notes' end-loss wording.",
+    "The complete AVI and TIFF members were not downloaded and no image-content alignment was attempted."
+  ]
+}
