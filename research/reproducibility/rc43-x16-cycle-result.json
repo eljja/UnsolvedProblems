@@ -1,0 +1,61 @@
+{
+  "resultId": "RC43-X16-CYCLE-RESULT-0.1",
+  "cycleId": "RC-2026-43",
+  "adjudicatedOn": "2026-08-21",
+  "artifactHashMode": "SHA-256 after CRLF-to-LF normalization",
+  "question": "Can the public X16 command and AVI archives support an identity-indexed missing-frame ledger, or only an aggregate trigger-frame count comparison?",
+  "layers": [
+    {
+      "layer": 1,
+      "role": "development",
+      "triggerCount": 94736,
+      "frameCount": 94713,
+      "triggerMinusFrame": 23,
+      "aggregateCountVerdict": "deficit-reproduced",
+      "identityLedgerVerdict": "not-identifiable",
+      "javascriptSha256": "65a89e43591bb385173c190568b98af9aca4ebbdfdbdca5c5b238a76f195875a",
+      "pythonSha256": "00e2d107d526ea0231b69f070ed0c165e03841a026262217bfc1534eb4e6c98d",
+      "independentComparisonPassed": true
+    },
+    {
+      "layer": 2,
+      "role": "holdout",
+      "triggerCount": 95504,
+      "frameCount": 95504,
+      "triggerMinusFrame": 0,
+      "aggregateCountVerdict": "count-equality-reproduced",
+      "identityLedgerVerdict": "not-identifiable",
+      "javascriptSha256": "5cb02da27db06e11525019d3191b7b830d0d2f1c47f7f3b37c63e18021b6901f",
+      "pythonSha256": "798a11d4d91496feabf3692aaa3f3b999d84d819f1ea69b7da9c6c0a5b309c12",
+      "independentComparisonPassed": true
+    }
+  ],
+  "hypotheses": {
+    "H1_moreFramesThanTriggers": "rejected-on-both-layers",
+    "H2_deficitFromZeroThroughTwenty": "rejected-on-development-supported-on-holdout",
+    "H3_publicPerFrameSlotKey": "rejected-on-both-stable-headers",
+    "H4_stableHeaderPrefixWithinBudget": "supported-on-both-layers",
+    "H5_independentReproductionWithoutRuleChange": "supported-for-both-layers"
+  },
+  "causalChain": {
+    "inputAndAllowedAssumptions": "Official ZIP central directories, complete CRC-verified XYPT members, nested 4 MiB and 8 MiB AVI archive prefixes, and documented four-column trigger semantics.",
+    "bottleneck": "The AVI header exposes aggregate frame totals but no public frame-to-trigger identity key.",
+    "bridgeClaim": "Agreement among avih.dwTotalFrames, video strh.dwLength, and dmlh.dwTotalFrames makes the aggregate count reproducible.",
+    "independentAdjudicand": "A separate Python ZIP64, CSV, and AVI parser reproduces counts, source hashes, retained-prefix hashes, and native counters.",
+    "resolutionBoundary": "Aggregate deficits are established; missing-frame identities, causes, and tail placement are not."
+  },
+  "transferBudget": {
+    "maximumCumulativeBytes": 134217728,
+    "conservativeCumulativeUpperBound": 106125907,
+    "remainingConservativeBytes": 28091821
+  },
+  "uncertaintyAndIndependence": {
+    "sampling": "Two layers only; L0001 was development and L0002 was a frozen holdout.",
+    "measurement": "Counts come from digital trigger masks and three agreeing AVI header counters, not decoded image content.",
+    "model": "A count difference does not identify which trigger lacked a frame or why.",
+    "implementation": "JavaScript and Python parsers are independent, but both use the installed 7-Zip 22.01 Deflate64 decoder.",
+    "extrapolation": "No loss-rate claim is extrapolated to the remaining 248 layers or other builds."
+  },
+  "nextDecisiveTest": "Preregister a development/holdout dynamic sequence-alignment protocol that compares XY command motion and image-derived melt-pool trajectories, inserts synthetic deletions as positive controls, and requires a separate implementation to recover held-out deletion identities before interpreting natural discrepancies.",
+  "status": "aggregate-count-reproduced-identity-ledger-unresolved"
+}
