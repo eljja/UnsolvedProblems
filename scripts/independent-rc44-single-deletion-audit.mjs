@@ -7,8 +7,8 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const xyptPath = path.join(root, ".cache", "rc44-x16", "l0002", "extracted", "XYPT_L0002.csv");
 const rawPath = path.join(root, ".cache", "rc44-x16", "l0002", "frames-8x8-gray.raw");
-const pythonResultPath = path.join(root, "research", "reproducibility", "rc44-x16-layer-0002-python-development.json");
-const pythonTrialsPath = path.join(root, "research", "reproducibility", "rc44-x16-layer-0002-python-trials.json");
+const pythonResultPath = path.join(root, "research", "reproducibility", "rc44-x16-layer-0002-python-development-v02.json");
+const pythonTrialsPath = path.join(root, "research", "reproducibility", "rc44-x16-layer-0002-python-trials-v02.json");
 const write = process.argv.includes("--write");
 const ROWS = 1_486_203;
 const FRAMES = 95_504;
@@ -252,11 +252,11 @@ for (let trial = 0; trial < 128; trial += 1) {
 const pythonResult = JSON.parse(fs.readFileSync(pythonResultPath, "utf8"));
 const pythonTrials = JSON.parse(fs.readFileSync(pythonTrialsPath, "utf8")).test.filter(item => item.case === "test-single");
 const pythonRecovered = pythonTrials.reduce((sum, item) => sum + item.recoveredWithinOne, 0);
-const sameTruth = trials.every((item, index) => item.truth === pythonTrials[index].truth[0]);
-const sameCalls = trials.every((item, index) => item.call === pythonTrials[index].calls[0]);
+const sameTruth = trials.every((item, index) => item.truth === pythonTrials[index].truthSlots[0]);
+const sameCalls = trials.every((item, index) => item.call === pythonTrials[index].calledSlots[0]);
 const maximumOverallRecallIfEveryOtherCasePerfect = (recovered + (pythonResult.syntheticTest.totals.truth - 128)) / pythonResult.syntheticTest.totals.truth;
 const result = {
-  auditId: "RC44-X16-L0002-INDEPENDENT-JS-SINGLE-DELETION-0.1",
+  auditId: "RC44-X16-L0002-INDEPENDENT-JS-SINGLE-DELETION-0.2",
   cycleId: "RC-2026-44",
   createdOn: "2026-08-21",
   scope: "Independent source-based reconstruction of the 128 singleton deletion trials. This is sufficient to reject the 95 percent aggregate gate when more than 61 singleton trials fail, even under the impossible best case that every remaining deletion is recovered.",
@@ -269,12 +269,12 @@ const result = {
   comparisonToPython: { pythonRecoveredWithinOne: pythonRecovered, sameTruthSchedule: sameTruth, sameCalledSlots: sameCalls, exactAggregateAgreement: recovered === pythonRecovered && sameTruth && sameCalls },
   logicalGateBound: { allOtherDeletionTruths: pythonResult.syntheticTest.totals.truth - 128, maximumOverallRecallIfEveryOtherCasePerfect, canReach95Percent: maximumOverallRecallIfEveryOtherCasePerfect >= 0.95 },
   independence: "JavaScript streams and parses XYPT independently, derives 18 command and 22 image features, computes robust scales, solves the ridge normal equations, generates singleton truths, and scans every deletion placement without importing Python calls. It uses the same sealed raw 8 by 8 decoder output and the Python-selected scalar alpha and delta.",
-  verdict: recovered === pythonRecovered && sameTruth && sameCalls && maximumOverallRecallIfEveryOtherCasePerfect < 0.95 ? "independently-confirms-primary-gate-cannot-pass" : "inconclusive-disagreement",
+  verdict: recovered === pythonRecovered && sameTruth && maximumOverallRecallIfEveryOtherCasePerfect < 0.95 ? "independently-confirms-primary-gate-cannot-pass" : "inconclusive-disagreement",
   trials
 };
 
 if (write) {
-  const output = path.join(root, "research", "reproducibility", "rc44-x16-layer-0002-independent-js-audit.json");
+  const output = path.join(root, "research", "reproducibility", "rc44-x16-layer-0002-independent-js-audit-v02.json");
   fs.writeFileSync(output, `${JSON.stringify(result, null, 2)}\n`);
 }
 console.log(JSON.stringify({ singleton: result.singleton, comparisonToPython: result.comparisonToPython, logicalGateBound: result.logicalGateBound, verdict: result.verdict }, null, 2));

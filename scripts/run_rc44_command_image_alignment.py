@@ -218,7 +218,7 @@ def run_suite(predicted, observed, start, end, delta, suite):
             score = score_calls(truth, calls)
             for key in totals:
                 totals[key] += score[key]
-            trials.append({"case": case, "trial": trial, "truth": truth, "calls": calls, "cost": cost, **score})
+            trials.append({"case": case, "trial": trial, "truthSlots": truth, "calledSlots": calls, "cost": cost, **score})
     recall = totals["recoveredWithinOne"] / totals["truth"] if totals["truth"] else 1.0
     fdr = totals["falseDiscoveries"] / totals["calls"] if totals["calls"] else 0.0
     return {"totals": totals, "recallWithinOne": recall, "falseDiscoveryRate": fdr, "trials": trials}
@@ -257,13 +257,13 @@ def main():
     unmodified_calls, unmodified_cost = recover_deletions(predicted[validation_end:], y_all[validation_end:], 0, delta)
     gate = test["recallWithinOne"] >= 0.95 and test["falseDiscoveryRate"] <= 0.01 and len(unmodified_calls) == 0
     result = {
-        "resultId": "RC44-X16-L0002-PYTHON-DEVELOPMENT-0.1",
+        "resultId": "RC44-X16-L0002-PYTHON-DEVELOPMENT-0.2",
         "cycleId": "RC-2026-44",
         "createdOn": "2026-08-21",
         "layer": 2,
         "role": "development",
         "precommit": "research/reproducibility/rc44-command-image-alignment-precommit.json",
-        "amendments": ["research/reproducibility/rc44-amendment-01.json", "research/reproducibility/rc44-amendment-02.json"],
+        "amendments": ["research/reproducibility/rc44-amendment-01.json", "research/reproducibility/rc44-amendment-02.json", "research/reproducibility/rc44-amendment-03.json"],
         "inputs": {
             "xypt": {"path": str(xypt_path.relative_to(ROOT)).replace("\\", "/"), "sha256": sha256_file(xypt_path), "triggerRows": int(n)},
             "avi": {"path": str(avi_path.relative_to(ROOT)).replace("\\", "/"), "sha256": sha256_file(avi_path), "frames": int(len(frames))},
@@ -283,9 +283,9 @@ def main():
         ]
     }
     if args.write:
-        output = ROOT / "research" / "reproducibility" / "rc44-x16-layer-0002-python-development.json"
+        output = ROOT / "research" / "reproducibility" / "rc44-x16-layer-0002-python-development-v02.json"
         output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-        trial_output = ROOT / "research" / "reproducibility" / "rc44-x16-layer-0002-python-trials.json"
+        trial_output = ROOT / "research" / "reproducibility" / "rc44-x16-layer-0002-python-trials-v02.json"
         trial_output.write_text(json.dumps({"validation": validation_candidates, "test": test["trials"]}, separators=(",", ":")) + "\n", encoding="utf-8")
     print(json.dumps(result, indent=2))
 

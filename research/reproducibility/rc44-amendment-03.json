@@ -1,0 +1,14 @@
+{
+  "amendmentId": "RC44-AMENDMENT-03",
+  "cycleId": "RC-2026-44",
+  "createdOn": "2026-08-21",
+  "status": "post-result-recording-correction-with-original-artifacts-preserved",
+  "trigger": "The independent JavaScript audit found that the Python compact trial ledger stored per-trial truth and call arrays under keys later overwritten by scalar count fields from score_calls.",
+  "affectedArtifacts": [
+    "research/reproducibility/rc44-x16-layer-0002-python-trials.json",
+    "research/reproducibility/rc44-x16-layer-0002-independent-js-audit.json"
+  ],
+  "unaffectedResults": "The Python aggregate totals, recall, false-discovery rate, unmodified control, and failed gate were accumulated before serialization and remain valid. JavaScript independently recovered 1 of 128 singleton deletions, which by itself caps the impossible best-case overall recall at 89.691558 percent.",
+  "correction": "Preserve both original artifacts. Emit v0.2 Python result and trial artifacts with truthSlots and calledSlots keys, then rerun the independent JavaScript comparison against v0.2. Do not acquire L0001 under either outcome.",
+  "newRiskExposed": "If implementations agree on the aggregate one-of-128 recall but select different wrong slots, the cost surface is numerically or structurally unstable. That disagreement is evidence against positional interpretation, not a reason to tune thresholds."
+}
