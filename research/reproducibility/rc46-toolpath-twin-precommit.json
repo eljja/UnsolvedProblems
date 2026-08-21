@@ -1,0 +1,131 @@
+{
+  "precommitId": "RC46-X16-TOOLPATH-TWIN-PRECOMMIT-0.1",
+  "cycleId": "RC-2026-46",
+  "createdOn": "2026-08-22",
+  "status": "sealed-before-L0001-or-candidate-XYPT-member-inspection",
+  "problems": ["UP-605", "UP-315"],
+  "question": "Does any untouched layer in the first X16 archive provide a command-level twin of L0001 strong enough to justify a later image-image synthetic-deletion benchmark without choosing the layer from pixels?",
+  "inheritedEvidence": {
+    "L0001": "RC43 established 94,736 nonzero camera-trigger rows and 94,713 AVI frames, but no public per-frame identity key. RC44 and RC45 kept all L0001 pixels sealed.",
+    "L0002": "RC43 established 95,504 trigger rows and 95,504 AVI frames. RC44 rejected an 8 by 8 command-image bridge and RC45 rejected all 24 documented in-frame-counter interpretations.",
+    "archiveIdentity": "NIST XYPT_L001-025.zip is 159,164,372 bytes with official SHA-256 7b2b863c843aeabe19f308a5886d57ae241cd386f38c95a7e7ce01e9bc34d007; its sealed central directory contains exactly 25 CSV members.",
+    "sidecarSearch": "The public X16 record exposes XYPT CSV, AVI, TIFF, layer images, machine records, scan files, and user notes, but no MotionBLITZ .dat/.exp member, camera tick ledger, or trigger-to-frame sidecar has been identified. Absence from the public manifest does not prove that the acquisition laboratory never created one."
+  },
+  "inspectedBeforeSeal": [
+    "Committed RC43-RC45 preregistrations, results, raw-byte receipts, independent audits, and public problem records.",
+    "NIST X16 NERDm component names, official archive identity, the already sealed ZIP central-directory metadata, and NIST primary papers on command/measurement/trigger registration.",
+    "The complete L0002 XYPT file already used in RC44, without comparing it with any other layer.",
+    "Primary research showing that interlayer temperature and scan direction can change melt-pool morphology, so command similarity cannot by itself guarantee image-distribution exchangeability."
+  ],
+  "notInspectedBeforeSeal": [
+    "Any L0001 XYPT member row during RC46; prior aggregate counts and member identity are inherited, but the command sequence remains outcome-sealed for candidate selection.",
+    "Any L0003-L0025 XYPT member row, trigger-level feature, distance, rank, or pass/fail result.",
+    "Any L0001 pixel, compressed AVI member byte, TIFF pixel, natural omission position, or image-derived candidate choice.",
+    "Any candidate-layer AVI frame beyond previously published archive directory metadata."
+  ],
+  "candidateSet": {
+    "target": "L0001",
+    "candidates": "L0002 through L0025, with no substitution or exclusion after member inspection",
+    "dataAllowedForRanking": "Only each candidate's complete XYPT command stream and its archive identity. No AVI/TIFF header, pixel, thermal label, defect label, layer image, or build outcome may enter the rank.",
+    "triggerRule": "Parse every four-column numeric row as X,Y,P,T and retain a camera sample exactly when integer T has bit 1 set, i.e. (T & 2) != 0. Report nonzero-T count separately; disagreement between the two counts stops the run.",
+    "malformedRule": "A nonempty row with other than four finite numbers, a T value not exactly integral, a member CRC failure, or a parser count disagreement makes the entire comparison inconclusive."
+  },
+  "fixedFingerprints": {
+    "raw": [
+      "SHA-256 and CRC-32 of every uncompressed XYPT member",
+      "total rows, camera-trigger rows, nonzero-T rows, P>0 camera rows, first and last camera tuple"
+    ],
+    "ordinalProfile": {
+      "bins": 1024,
+      "construction": "Partition camera-trigger rows into 1,024 consecutive equal-ordinal bins using floor(i*1024/N). For each bin compute mean X, mean Y, mean P, fraction P>0, mean step speed to the preceding camera row, and mean unit direction components for nonzero steps.",
+      "normalization": "For each layer center X and Y by its camera-row centroid and divide both by the target L0001 root-mean-square radius. Divide P by the target L0001 maximum positive power and step speed by the target L0001 median positive step speed. No candidate-specific rescaling is allowed.",
+      "alignment": "Fit only a proper 2-D rotation and translation from candidate binned XY means to target binned XY means by orthogonal Procrustes. Reflection, temporal reversal, nonlinear warping, and candidate-specific time shifts are forbidden. Apply the same rotation to direction vectors."
+    },
+    "spatialProfile": {
+      "grid": "32 by 32 fixed cells over the union of target and candidate camera-row X/Y bounds",
+      "channels": "All-camera occupancy and P>0-camera occupancy, each normalized to unit mass",
+      "distance": "Hellinger distance for each channel after rotating the candidate points with the ordinal-profile rotation; out-of-grid mass is a failure."
+    },
+    "segmentProfile": {
+      "definition": "A laser-on segment is a maximal consecutive run of camera-trigger rows with P>0.",
+      "statistics": "Segment count; 10th, 25th, 50th, 75th, and 90th percentiles of segment length, within-segment step speed, and positive power; and a 36-bin direction histogram weighted by within-segment path length.",
+      "distance": "Absolute relative error for counts and quantiles; Hellinger distance for direction histograms after the fixed proper rotation."
+    },
+    "localCorrespondence": {
+      "bins": 4096,
+      "construction": "Repeat the ordinal aggregation at 4,096 bins and apply the already fitted rotation; do not refit.",
+      "matchingBin": "A bin matches only when center displacement is at most 0.02 target RMS radii, positive-power disagreement is at most 0.05 target maximum power, laser-on fraction differs by at most 0.05, and direction dot product is at least 0.95 whenever both directions are defined.",
+      "reported": "Matching-bin fraction, longest consecutive matching-bin run, and every failed component count."
+    }
+  },
+  "rankingAndGate": {
+    "hardEligibility": [
+      "Absolute camera-trigger count difference from L0001 is at most 1 percent of 94,736.",
+      "P>0 camera-row fraction differs by at most 0.02.",
+      "The 1,024-bin Procrustes XY RMSE is at most 0.05 target RMS radii.",
+      "The 1,024-bin normalized power RMSE is at most 0.10 and laser-on-fraction RMSE at most 0.05.",
+      "Both spatial Hellinger distances are at most 0.10 and segment direction Hellinger distance is at most 0.10.",
+      "At least 0.95 of the 4,096 local bins meet every local-correspondence condition."
+    ],
+    "score": "For deterministic ranking only, score = count-relative-error + positive-fraction-error + Procrustes-XY-RMSE + power-RMSE + laser-on-RMSE + all-occupancy-Hellinger + on-occupancy-Hellinger + direction-Hellinger + (1-local-match-fraction). Lowest score wins; ties resolve by lower layer number.",
+    "release": "A future image benchmark may use the top-ranked layer only if it passes every hard condition and independent implementations agree on its rank, all metrics to 1e-9, member hashes, and gate. RC46 itself does not acquire candidate AVI pixels.",
+    "negative": "If no candidate passes every hard condition, reject the cross-layer framewise-twin premise for L0001 within layers 2-25. Do not relax thresholds, add transformations, inspect images to rescue a candidate, or describe the closest layer as a valid twin.",
+    "ambiguity": "If more than one layer passes, preserve all passing layers but freeze the lowest-score layer as development and the next-lowest as independent image holdout for the next cycle."
+  },
+  "competingHypotheses": [
+    {
+      "id": "T0",
+      "claim": "No layer in L0002-L0025 is a frame-correspondable command twin of L0001.",
+      "prediction": "Every candidate fails at least one hard eligibility condition.",
+      "decision": "Stop cross-layer pixel acquisition and seek a raw acquisition sidecar or same-layer synthetic control that does not require cross-layer exchangeability."
+    },
+    {
+      "id": "T1",
+      "claim": "At least one layer repeats L0001 closely enough in command order, geometry, power state, and local direction to justify a prospective image-image deletion benchmark.",
+      "prediction": "At least one candidate passes every hard condition in both implementations.",
+      "decision": "Freeze the top-ranked passing layer and acquire only its authenticated AVI in a later preregistered cycle; passing remains a command-level eligibility result, not proof of equal melt-pool images."
+    },
+    {
+      "id": "T2",
+      "claim": "A globally similar layer lacks local framewise correspondence.",
+      "prediction": "Aggregate spatial, power, and segment distances are small but the 4,096-bin local-match fraction is below 0.95.",
+      "decision": "Reject it as a deletion-recovery twin even if it is closest by aggregate score."
+    }
+  ],
+  "causalChain": [
+    "Official, hash-bound XYPT command members and the documented T=2 camera trigger semantics",
+    "unknown repetition of scan order across layers plus possible thermal and geometric drift",
+    "a candidate preserves target command geometry, power state, direction, and local ordinal correspondence under one proper rotation",
+    "two independent parsers agree on a preregistered command-only twin gate",
+    "only then may a later independent image benchmark test whether image morphology transfers; natural L0001 remains sealed"
+  ],
+  "fastFailureTests": [
+    "Check archive SHA-256 and all member CRC-32 values before interpreting metrics.",
+    "Stop before ranking on parser disagreement, malformed rows, or T-bit/nonzero-T disagreement.",
+    "Evaluate every hard condition independently; the composite score cannot compensate for a failed condition.",
+    "Keep command eligibility and thermal/image exchangeability as separate propositions."
+  ],
+  "independence": {
+    "implementationA": "Node.js standard-library ZIP central-directory, Deflate, CSV, Procrustes, histogram, and gate implementation.",
+    "implementationB": "Python standard-library zipfile, CSV, linear-algebra, histogram, and gate implementation written without importing Node output.",
+    "sharedDependencies": "Both consume the same official ZIP and mathematical specification. Agreement detects parsing and implementation faults but not a common conceptual error in the twin definition.",
+    "noOutcomeSelection": "The candidate rank is sealed from XYPT alone. No image or natural missing-position result is available in RC46."
+  },
+  "resourceBudget": {
+    "maximumNetworkResponseBodyBytes": 170000000,
+    "maximumPersistentCacheBytes": 170000000,
+    "expectedArchiveBytes": 159164372,
+    "prohibited": "Do not download AVI/TIFF archives, L0001 AVI member ranges, layer images, or additional X16 archive groups in this cycle. Stream uncompressed CSV members from the ZIP rather than persisting their roughly gigabyte-scale expansion."
+  },
+  "uncertaintyBudget": {
+    "measurement": "XYPT stores commanded X,Y,P and trigger state, not encoder position, shutter-open time, interlayer temperature, emissivity, or actual melt-pool state.",
+    "model": "Ordinal bins and one proper rotation are a deliberately strict definition of framewise command correspondence; a physically useful nonlinear alignment could exist outside this gate.",
+    "sampling": "Only the first 25 of 250 X16 layers are searched; a later layer could be closer, but expanding the candidate set after observing this result requires a new seal.",
+    "implementation": "The two implementations share the same archive and preregistered equations; common specification bias remains.",
+    "extrapolation": "Passing command similarity does not establish image exchangeability because layer temperature, powder state, optical drift, and accumulated geometry can differ.",
+    "selection": "All 24 candidates are enumerated and the score is used only after hard gates, preventing image-driven candidate cherry-picking."
+  },
+  "minimumAdvance": "A positive result supplies an outcome-blind development/holdout assignment for a later pixel benchmark. A negative result rules out the entire first-25-layer cross-layer shortcut before transferring gigabytes or opening the natural layer.",
+  "safetyEthicsEnvironment": "Only public NIST machine-command data are read. No hardware is actuated, no personal data are processed, and no defect-certification claim is made. The single 159 MB archive cap bounds network, storage, and computation.",
+  "priorArt": "research/reproducibility/rc46-toolpath-twin-prior-art.json"
+}

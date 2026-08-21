@@ -1,0 +1,66 @@
+{
+  "reviewId": "RC46-TOOLPATH-TWIN-PRIOR-ART-0.1",
+  "cycleId": "RC-2026-46",
+  "reviewedOn": "2026-08-22",
+  "scope": "Primary and official evidence bearing on X16 command-to-image registration, public raw-sidecar availability, image registration, and the validity limits of cross-layer melt-pool comparison.",
+  "confirmedFacts": [
+    {
+      "claim": "The NIST registration procedure represents synchronized command, measured scanner position, timestamp, and camera trigger in one matrix; a camera image is captured when the trigger switches from 0 to 2, and calibrated command/measurement and trigger/shutter delays are required for spatial registration.",
+      "source": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=931761",
+      "publishedOn": "2022-02-01",
+      "resultPeriod": "AMMT registration case study; manuscript JCISE-21-1184"
+    },
+    {
+      "claim": "The X16 public record manifest provides XYPT command files and exported camera image products but does not list MotionBLITZ .dat/.exp files, a high-performance tick ledger, or a trigger-to-frame identity sidecar.",
+      "source": "https://data.nist.gov/od/id/mds2-2309",
+      "publishedOn": "2020-10-16",
+      "resultPeriod": "Public record version 1.1.1, rechecked 2026-08-22"
+    },
+    {
+      "claim": "NIST spatiotemporal melt-pool work constructs layer-level features only after associating image frames with scan position; local image statistics can preserve spatial and temporal variation but do not create a missing frame identity key.",
+      "source": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=932381",
+      "publishedOn": "2022-01-01",
+      "resultPeriod": "Published spatiotemporal feature workflow"
+    },
+    {
+      "claim": "Interlayer temperature materially changes melt-pool morphology; reported half-width increases of roughly 40-130 percent across 100-300 C show that equal commands at different build states need not yield exchangeable images.",
+      "source": "https://doi.org/10.1016/j.addlet.2023.100169",
+      "publishedOn": "2023-12-01",
+      "resultPeriod": "Inconel 718 interlayer-temperature experiment"
+    },
+    {
+      "claim": "Recent physics-guided spatiotemporal prediction incorporates neighboring track history and image motion because current command variables alone omit thermal memory and local context.",
+      "source": "https://doi.org/10.1080/17452759.2024.2427243",
+      "publishedOn": "2024-11-01",
+      "resultPeriod": "2024 Virtual and Physical Prototyping study"
+    },
+    {
+      "claim": "A 2025 high-definition melting-map study distinguishes image-based registration/fusion, which preserves spatial resolution at high compute and storage cost, from feature-based mapping; both assume that frames are already associated with process coordinates.",
+      "source": "https://doi.org/10.1115/DETC2025-168465",
+      "publishedOn": "2025-11-01",
+      "resultPeriod": "ASME IDETC/CIE 2025 paper"
+    }
+  ],
+  "inferences": [
+    "Because the public manifest lacks raw MotionBLITZ and tick products, the presently reproducible path must operate on XYPT and exported AVI. This is a public-release boundary, not evidence that no private acquisition record exists.",
+    "A command-only twin can prevent outcome-driven layer selection but cannot certify equal image distributions. Interlayer thermal state and accumulated build geometry remain unmeasured confounders.",
+    "A strict local-correspondence gate is more relevant to single-deletion recovery than a visually similar spatial footprint or equal aggregate trigger count."
+  ],
+  "unverifiedProposals": [
+    "If a command twin passes, multiscale image tails and optical flow may recover an artificially deleted frame's ordinal position on that candidate layer.",
+    "If every first-25-layer candidate fails, a same-layer blocked synthetic deletion design may still test image-image identifiability without assuming cross-layer exchangeability.",
+    "Author- or laboratory-held MotionBLITZ .dat/.exp and tick logs could supersede image inference if their byte provenance and relation to the public AVI are independently established."
+  ],
+  "searchStrategy": {
+    "queries": [
+      "site:data.nist.gov mds2-2309 MotionBLITZ dat exp",
+      "site:nist.gov AMMT X16 camera trigger tick raw",
+      "melt pool image registration scan path frame trigger",
+      "cross-layer melt pool image registration interlayer temperature",
+      "toolpath similarity laser powder bed fusion layer registration",
+      "image-based high-definition melting map PBF registration fusion"
+    ],
+    "priority": "NIST record and primary NIST papers first; manufacturer documentation for acquisition semantics; original experiments and methods papers for transfer limits. Blogs and unsourced summaries are excluded.",
+    "noveltyBoundary": "RC46 does not claim that command-profile comparison, Procrustes alignment, or image-image deletion recovery is novel. The contribution is the preregistered separation of command-only eligibility, later image validation, and a still-sealed natural omission holdout."
+  }
+}
