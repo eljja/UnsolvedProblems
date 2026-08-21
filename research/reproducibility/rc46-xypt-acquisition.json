@@ -16,6 +16,7 @@
     "entryCount": 25,
     "centralDirectoryBytes": 1500,
     "centralDirectoryOffset": 159162850,
+    "centralDirectorySha256": "0967318be4ea6413c605bf0ca55e810952a280b07b11407262a2a73b69b92a5d",
     "names": [
       "XYPT_L0001.csv",
       "XYPT_L0002.csv",
@@ -49,6 +50,10 @@
     "responseBodyBytesObservedByCompletingProcess": 173844436,
     "conservativeCrossProcessUpperBoundBytes": 260000000,
     "completedArchiveBytes": 159164372
+  },
+  "verification": {
+    "lastVerifiedOn": "2026-08-21T17:41:59.447Z",
+    "reusedAuthenticatedCache": true
   },
   "provenance": {
     "publisherUrl": "https://data.nist.gov/od/ds/ark:/88434/mds2-2309/XYPT_L001-025.zip",

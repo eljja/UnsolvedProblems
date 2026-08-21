@@ -8,6 +8,7 @@ const cacheDir = path.join(root, ".cache", "rc46-x16");
 const output = path.join(cacheDir, "XYPT_L001-025.zip");
 const partial = `${output}.part`;
 const manifestPath = path.join(root, "research", "reproducibility", "rc46-xypt-acquisition.json");
+const priorManifest = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, "utf8")) : null;
 const expected = {
   url: "https://data.nist.gov/od/ds/ark:/88434/mds2-2309/XYPT_L001-025.zip",
   mementoUrl: "https://web.archive.org/web/20210507202033id_/https://data.nist.gov/od/ds/ark:/88434/mds2-2309/XYPT_L001-025.zip",
@@ -45,7 +46,8 @@ const inspectDirectory = file => {
   const size = data.readUInt32LE(eocd + 12);
   const offset = data.readUInt32LE(eocd + 16);
   const central = data.subarray(offset, offset + size);
-  if (crypto.createHash("sha256").update(central).digest("hex") !== expected.centralDirectorySha256) throw new Error("central directory hash mismatch");
+  const centralDirectorySha256 = crypto.createHash("sha256").update(central).digest("hex");
+  if (centralDirectorySha256 !== expected.centralDirectorySha256) throw new Error("central directory hash mismatch");
   const names = [];
   for (let cursor = 0; cursor < central.length;) {
     if (central.readUInt32LE(cursor) !== 0x02014b50) throw new Error(`bad central entry at ${cursor}`);
@@ -55,7 +57,7 @@ const inspectDirectory = file => {
     names.push(central.subarray(cursor + 46, cursor + 46 + nameLength).toString("utf8"));
     cursor += 46 + nameLength + extraLength + commentLength;
   }
-  return { entryCount, centralDirectoryBytes: size, centralDirectoryOffset: offset, names };
+  return { entryCount, centralDirectoryBytes: size, centralDirectoryOffset: offset, centralDirectorySha256, names };
 };
 
 fs.mkdirSync(cacheDir, { recursive: true });
@@ -121,14 +123,17 @@ for (let layer = 1; layer <= 25; layer += 1) {
 const manifest = {
   acquisitionId: "RC46-X16-XYPT-ACQUISITION-0.1",
   cycleId: "RC-2026-46",
-  createdOn: new Date().toISOString(),
+  createdOn: reused && priorManifest?.createdOn ? priorManifest.createdOn : new Date().toISOString(),
   source: expected,
   observed: {
     bytes: fs.statSync(output).size,
     sha256: await sha256File(output),
     ...directory
   },
-  transfer: { reusedAuthenticatedCache: reused, responseBodyBytesObservedByCompletingProcess: reused ? 0 : chargedNetworkBytes, conservativeCrossProcessUpperBoundBytes: reused ? 0 : 260000000, completedArchiveBytes: expected.bytes },
+  transfer: reused && priorManifest?.transfer && !priorManifest.transfer.reusedAuthenticatedCache
+    ? priorManifest.transfer
+    : { reusedAuthenticatedCache: reused, responseBodyBytesObservedByCompletingProcess: reused ? 0 : chargedNetworkBytes, conservativeCrossProcessUpperBoundBytes: reused ? 0 : 260000000, completedArchiveBytes: expected.bytes },
+  verification: { lastVerifiedOn: new Date().toISOString(), reusedAuthenticatedCache: reused },
   provenance: { publisherUrl: expected.url, retrievalUrl: expected.url, sessionRule: "One successful HEAD request established the Cloudflare session used for every subsequent byte range.", identityRule: "The completed object is accepted only after its byte count, full SHA-256, central-directory SHA-256, and all member CRC values match the NIST identities sealed before analysis." },
   localPathExcludedFromGit: path.relative(root, output).replaceAll("\\", "/"),
   boundary: "Only the public 159 MB XYPT command archive was acquired; no AVI, TIFF, layer-image, or natural-pixel member was requested."

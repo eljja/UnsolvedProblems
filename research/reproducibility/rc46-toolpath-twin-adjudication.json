@@ -1,0 +1,94 @@
+{
+  "adjudicationId": "RC46-X16-TOOLPATH-TWIN-ADJUDICATION-0.1",
+  "cycleId": "RC-2026-46",
+  "createdOn": "2026-08-21T17:28:58.967Z",
+  "preregistration": "research/reproducibility/rc46-toolpath-twin-precommit.json",
+  "amendments": [
+    "research/reproducibility/rc46-toolpath-twin-amendment-01.json",
+    "research/reproducibility/rc46-toolpath-twin-amendment-02.json",
+    "research/reproducibility/rc46-toolpath-twin-amendment-03.json",
+    "research/reproducibility/rc46-toolpath-twin-amendment-04.json",
+    "research/reproducibility/rc46-toolpath-twin-amendment-05.json"
+  ],
+  "inputs": [
+    "research/reproducibility/rc46-toolpath-twin-node.json",
+    "research/reproducibility/rc46-toolpath-twin-python.json"
+  ],
+  "archive": {
+    "bytes": 159164372,
+    "sha256": "7b2b863c843aeabe19f308a5886d57ae241cd386f38c95a7e7ce01e9bc34d007",
+    "officialIdentityMatched": true,
+    "memberCount": 25,
+    "transport": {
+      "publisherUrl": "https://data.nist.gov/od/ds/ark:/88434/mds2-2309/XYPT_L001-025.zip",
+      "retrievalUrl": "https://data.nist.gov/od/ds/ark:/88434/mds2-2309/XYPT_L001-025.zip",
+      "sessionRule": "One successful HEAD request established the Cloudflare session used for every subsequent byte range.",
+      "identityRule": "The completed object is accepted only after its byte count, full SHA-256, central-directory SHA-256, and all member CRC values match the NIST identities sealed before analysis."
+    }
+  },
+  "implementationAgreement": {
+    "pass": true,
+    "tolerance": 1e-9,
+    "maximumNumericDifference": 3.197442310920451e-13,
+    "candidateCount": 24,
+    "memberHashesExact": true,
+    "rankingExact": true,
+    "gatesExact": true
+  },
+  "decision": {
+    "hypothesis": "T0",
+    "passingLayers": [],
+    "topRankedLayer": 13,
+    "topRankedScore": 1.2663470413948748,
+    "topRankedEligible": false,
+    "topRankedFailedGates": [
+      "count",
+      "direction",
+      "local"
+    ],
+    "aggregateCloseButLocalFailLayers": [],
+    "releaseCandidateAviThisCycle": false,
+    "naturalL0001PixelBytes": 0,
+    "naturalMissingPositionsAdjudicated": 0
+  },
+  "hypotheses": {
+    "T0_noFirst25CommandTwin": "supported-within-layers-2-through-25",
+    "T1_atLeastOneEligibleTwin": "rejected",
+    "T2_globalSimilarityWithoutLocalCorrespondence": "not-observed-under-the-full-aggregate-gate"
+  },
+  "causalChain": [
+    {
+      "link": "official command archive -> authenticated layer members",
+      "status": "pass",
+      "fastestFailureTest": "NIST byte count and SHA-256 plus per-member CRC-32 and SHA-256"
+    },
+    {
+      "link": "layer members -> command-only candidate metrics",
+      "status": "pass",
+      "fastestFailureTest": "two independent parsers and T-bit/nonzero-T equality"
+    },
+    {
+      "link": "candidate metrics -> frame-correspondable command twin",
+      "status": "fail",
+      "fastestFailureTest": "all nine independent hard gates; composite score cannot override a failure"
+    },
+    {
+      "link": "command twin -> image-distribution exchangeability",
+      "status": "unadjudicated",
+      "fastestFailureTest": "prospective synthetic deletion and thermal/context covariate audit on separate development and holdout layers"
+    },
+    {
+      "link": "image benchmark -> natural L0001 omission identities",
+      "status": "sealed",
+      "fastestFailureTest": "only a separately preregistered release may open L0001 pixels"
+    }
+  ],
+  "uncertainty": {
+    "measurement": "XYPT contains commanded position, power, and trigger state, not encoder motion, shutter-open time, interlayer temperature, or frame identity.",
+    "model": "One proper rotation and ordinal bins deliberately reject nonlinear or temporally warped similarity.",
+    "sampling": "The search covers layers 2-25 only.",
+    "implementation": "Independent numeric outputs agree within 3.197442310920451e-13; both implement the same specification and consume the same bytes.",
+    "extrapolation": "Command eligibility does not prove image exchangeability or locate any natural omission."
+  },
+  "nextDecision": "Do not acquire a candidate AVI as a cross-layer twin. Audit same-layer blocked synthetic deletion or seek author-held camera tick/export records; DAQ encoder/power data may improve registration but cannot supply frame identities."
+}

@@ -1,0 +1,63 @@
+{
+  "resultId": "RC46-X16-TOOLPATH-TWIN-CYCLE-0.1",
+  "cycleId": "RC-2026-46",
+  "reviewedOn": "2026-08-22",
+  "status": "first-25-layer-command-twin-rejected-natural-holdout-sealed",
+  "problems": ["UP-605", "UP-315"],
+  "problemRelevance": {
+    "UP-605": "X16 layers form a controlled, weaker domain-shift test of the state-overlap condition required before transferring a process twin across tools or fabs; no semiconductor-fab performance claim is made.",
+    "UP-315": "The X16 ledger is a bounded counterexample to the assumption that several finite synchronized channels necessarily identify one system history; it is not a universal impossibility theorem."
+  },
+  "confirmedFacts": [
+    "The public X16 manifest includes DAQ archives but no MotionBLITZ .dat or .exp file, camera tick ledger, or trigger-to-frame sidecar. Manifest absence does not prove that no laboratory-held copy exists.",
+    "X16 DAQ files sample galvo X encoder, galvo Y encoder, LTZ lens encoder, and laser-power reference at 100 kHz. They measure actual motion and power with calibration uncertainty but do not contain camera exposure identity.",
+    "The official XYPT_L001-025.zip object is 159,164,372 bytes, matches its official SHA-256, and contains 25 authenticated CSV members.",
+    "L0001 has 94,736 camera-trigger rows; all camera-trigger rows have positive commanded power.",
+    "No candidate in L0002-L0025 passes all nine preregistered gates.",
+    "L0013 and L0025 are byte-identical and tie for lowest score, yet fail trigger count, direction, and local correspondence.",
+    "L0008/L0020, L0010/L0022, L0012/L0024, and L0013/L0025 are four byte-identical member pairs.",
+    "After a documented cell-boundary clarification, Node and Python agree on every hash, gate, rank, and numeric result within 3.20e-13."
+  ],
+  "inferences": [
+    "The first 25 layers do not contain a frame-correspondable command twin of L0001 under the sealed definition.",
+    "A small global geometry or power distance cannot compensate for mismatched count, direction, or local ordinal structure.",
+    "Downloading a candidate AVI as though it were an L0001 framewise control is not justified by these commands.",
+    "Within-layer synthetic deletion can still test a detector without requiring different layers to correspond frame by frame."
+  ],
+  "unverifiedProposals": [
+    "Replace whole-layer twins with state-supported self-deletion calibration across disjoint development and confirmatory layers.",
+    "Use XYPT plus calibrated DAQ encoder and power states to define transfer support, while treating thermal history and optical drift as explicit nuisance variables.",
+    "Report natural L0001 locations only for strata with preregistered holdout error bounds; retain intervals or an unknown label elsewhere."
+  ],
+  "hypotheses": {
+    "T0_noFirst25CommandTwin": "supported-within-layers-2-through-25",
+    "T1_atLeastOneEligibleTwin": "rejected",
+    "T2_globalSimilarityWithoutFullLocalCorrespondence": "not observed under every aggregate gate; several close layers still fail count or direction before the local gate",
+    "S1_stateSupportedWithinLayerTransfer": "unadjudicated-next-cycle"
+  },
+  "decision": {
+    "passingLayers": [],
+    "topRankedLayers": [13, 25],
+    "topRankedScore": 1.2663470413948748,
+    "topRankedFailedGates": ["count", "direction", "local"],
+    "candidateAviReleased": false,
+    "naturalL0001PixelBytes": 0,
+    "naturalMissingPositionsAdjudicated": 0
+  },
+  "failedAttempt": {
+    "description": "The first independent runs disagreed only in seven spatial Hellinger values because binary floating-point values on grid boundaries were assigned to opposite cells.",
+    "preservation": [
+      "research/reproducibility/rc46-toolpath-twin-node-first-run.json",
+      "research/reproducibility/rc46-toolpath-twin-python-first-run.json"
+    ],
+    "resolution": "Amendment 05 fixed a symmetric 1e-12 integer-boundary snap and required a complete rerun; it did not change any threshold or candidate."
+  },
+  "uncertainty": {
+    "measurement": "XYPT is command data. DAQ adds calibrated actual motion and power but not frame identity or exact shutter-open time.",
+    "model": "The strict ordinal and proper-rotation gate can reject a nonlinear physical similarity, deliberately prioritizing false-transfer control.",
+    "sampling": "The negative search covers layers 2 through 25, not all 250 X16 layers.",
+    "externalValidity": "Even a command pass would not prove image exchangeability because interlayer temperature, powder state, geometry, and optics can change.",
+    "implementation": "Independent agreement detects implementation faults but both implementations share the same mathematical specification and source archive."
+  },
+  "nextCycleStart": "Preregister a state-supported self-deletion benchmark. Use L0002 only for descriptor development; choose disjoint confirmatory layers from XYPT and DAQ coverage of L0001 before requesting pixels. Inject singleton and short-block deletions within each intact layer, estimate state-conditional sensitivity and false discovery with independent code, and keep L0001 sealed unless coverage and risk gates pass. Continue a separate provenance search for author-held MotionBLITZ recorder sidecars because a direct ledger overrides inference."
+}

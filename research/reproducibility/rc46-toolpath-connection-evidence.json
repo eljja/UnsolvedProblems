@@ -1,0 +1,44 @@
+{
+  "connectionId": "CONN-EVIDENCE-019",
+  "cycleId": "RC-2026-46",
+  "reviewedOn": "2026-08-22",
+  "problemIds": ["UP-605", "UP-315"],
+  "connectionType": "command geometry to local support to image-sequence exchangeability",
+  "strength": "moderate-prospective",
+  "verifiedEvidence": {
+    "archive": "The official 159,164,372-byte NIST XYPT archive matches SHA-256 7b2b863c843aeabe19f308a5886d57ae241cd386f38c95a7e7ce01e9bc34d007 and contains 25 CRC-valid members.",
+    "target": "L0001 contains 94,736 camera-trigger rows.",
+    "candidateSearch": "Two independent implementations agree within 3.20e-13 that none of L0002-L0025 passes all nine preregistered command-twin gates.",
+    "closestByScore": "L0013 and byte-identical L0025 tie at score 1.266347, but each has 7.448% trigger-count error, direction Hellinger 0.106583, and only 13.574% local-bin agreement.",
+    "closestByCount": "L0002 differs by only 0.811% in trigger count but fails XY geometry, both spatial gates, direction, and local correspondence; its local-bin agreement is zero."
+  },
+  "commonStructure": "UP-605 asks when a process twin learned in one fab transfers to another; UP-315 asks when finite measurements determine one physical state or history. Both require evidence that source measurements exclude target-domain alternatives. A whole-layer twin would provide this by framewise correspondence, but RC46 rejects that shortcut for the first 25 layers. A weaker and testable substitute is state-conditional support: synthetic deletion is judged within each intact layer, transfer is allowed only for local states covered by independent layers, and exact identity is replaced by an explicit equivalence class whenever multiple histories remain.",
+  "variableMapping": {
+    "L0001 local XYPT or DAQ state": "target covariate query",
+    "intact non-target layer window": "calibration or holdout support point",
+    "known injected deletion": "observable ground-truth omission",
+    "image seam or temporal residual": "deletion score",
+    "coverage radius in state space": "transferability condition",
+    "holdout false-negative and false-discovery bounds": "risk certificate for a covered target state",
+    "uncovered target state": "explicitly unadjudicated interval rather than an exact missing slot"
+  },
+  "validWhen": [
+    "Synthetic faults are injected after descriptor and thresholds are sealed.",
+    "Development layers and confirmatory layers are disjoint and selected without their image outcomes.",
+    "The target state lies inside a preregistered support radius with sufficient independent deletion trials.",
+    "DAQ-to-XYPT timing and calibration uncertainty are propagated rather than treated as exact frame identities."
+  ],
+  "breaksWhen": [
+    "Interlayer temperature, powder condition, accumulated geometry, optical drift, or remelting history changes image morphology beyond the state variables.",
+    "A layer is reused adaptively for descriptor choice and final error estimation.",
+    "Camera frames are silently dropped in a way that contaminates supposedly intact calibration sequences.",
+    "The method outputs exact L0001 positions for states outside confirmed support."
+  ],
+  "minimumValidation": "Freeze a self-alignment descriptor on L0002, inject singleton and short-block deletions at prespecified positions, and estimate recovery and false-discovery rates separately by local state. Repeat without refitting on outcome-blindly selected confirmatory layers whose XYPT and DAQ states cover L0001. Release a natural call only for covered strata meeting the preregistered risk bounds; leave all other strata interval-censored.",
+  "surfaceAnalogyRisk": "Similar command histograms do not imply equal images. The mapping is useful only as an external-validity test for within-layer deletion experiments, not as permission to align frames across different layers.",
+  "affectedProblems": {
+    "UP-605": "Provides a bounded prototype for cross-domain twin transfer: carry a claim only inside demonstrated target-state support and abstain elsewhere.",
+    "UP-315": "Provides a finite-measurement counterexample and a restricted alternative: report observationally equivalent histories until added identity evidence separates them."
+  },
+  "status": "The negative whole-layer result is verified; the local-support transfer program is a falsifiable next-cycle proposal, not a validated solution."
+}

@@ -11,7 +11,7 @@
 - 확장 설명·대표 시도·최근 연구 흐름: [`research-context.js`](./research-context.js)
 - 문제별 해결 시도 설계: [`solution-context.js`](./solution-context.js)
 - 문제별 가설 경쟁·불확실성 예산·실행 프로그램: [`deep-solution-context.js`](./deep-solution-context.js)
-- 반복 연구 사이클·난제 간 구조적 연결: [`research-cycle-data.js`](./research-cycle-data.js), [`research-cycle-03-data.js`](./research-cycle-03-data.js)–[`research-cycle-44-data.js`](./research-cycle-44-data.js)
+- 반복 연구 사이클·난제 간 구조적 연결: [`research-cycle-data.js`](./research-cycle-data.js), [`research-cycle-03-data.js`](./research-cycle-03-data.js)–[`research-cycle-46-data.js`](./research-cycle-46-data.js)
 - 자율 합성 공개 데이터 감사: [`research/alab-public-data-audit.json`](./research/alab-public-data-audit.json)
 - 완전 원장·재생성 기준선: [`research/complete-ledger.schema.json`](./research/complete-ledger.schema.json), [`research/alab-replay-benchmark.json`](./research/alab-replay-benchmark.json)
 - ARROWS 필드 감사·독립 재생 시험: [`research/replay/arrows-ybco-field-audit.json`](./research/replay/arrows-ybco-field-audit.json), [`research/replay/synthetic-replay-fixture.json`](./research/replay/synthetic-replay-fixture.json), [`research/replay/verification-result.json`](./research/replay/verification-result.json)
