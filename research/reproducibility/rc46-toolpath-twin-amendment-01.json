@@ -1,0 +1,27 @@
+{
+  "amendmentId": "RC46-X16-TOOLPATH-TWIN-AMENDMENT-01",
+  "cycleId": "RC-2026-46",
+  "createdOn": "2026-08-22",
+  "status": "sealed-before-any-XYPT-member-inflation-or-candidate-metric",
+  "changes": [
+    "Raise the response-body ceiling from 170,000,000 to 260,000,000 bytes for acquisition of the same 159,164,372-byte archive.",
+    "Retrieve the archive in 4 MiB ranges instead of 8 MiB ranges, retaining the same byte count, official SHA-256, central-directory SHA-256, candidate set, parser, metrics, thresholds, and stop rules.",
+    "Use the 2021-05-07 Internet Archive Memento of the exact NIST URL only if the completed bytes match the current NIST manifest's length and SHA-256. The Memento is a transport mirror, not an evidentiary substitute."
+  ],
+  "reason": "On 2026-08-22 the NIST origin returned HTTP 524 for both a full request and the first 8 MiB range, including a separate checksum-sidecar probe. The Memento returned the correct 159,164,372-byte Content-Length and accepted ranges, but closed long-lived 8 MiB transfers after roughly 5 MiB. Five complete ranges and incomplete retries consumed transport bytes without exposing or inflating any ZIP member. A 4 MiB range stays below the observed connection boundary; the larger ceiling accounts conservatively for already transferred failed fragments while remaining far below any MPM image archive.",
+  "inspectedBeforeAmendment": [
+    "HTTP status, response headers, range progress, official archive size and SHA-256, and the already sealed 2021 central-directory identity.",
+    "The local partial file only as a byte count for safe resumption; no ZIP local header, compressed member, CSV row, candidate feature, rank, or eligibility result was read."
+  ],
+  "notChanged": [
+    "L0001 target and L0002-L0025 candidate roles",
+    "T-bit trigger rule",
+    "1,024-bin and 4,096-bin fingerprints",
+    "proper-rotation-only alignment",
+    "all nine hard eligibility gates and composite ranking score",
+    "two independent implementations",
+    "prohibition on AVI, TIFF, layer-image, and L0001 pixel acquisition"
+  ],
+  "budgetAccountingBoundary": "Failed connections did not expose candidate content but their received body fragments count against the amended 260 MB ceiling. The acquisition receipt reports the fetcher's conservative charged count; prior NIST requests returned zero body bytes.",
+  "scientificEffect": "None. This is a transport-only amendment made before any outcome-bearing member data were inspected."
+}
