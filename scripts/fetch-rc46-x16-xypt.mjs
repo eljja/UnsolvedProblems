@@ -53,7 +53,7 @@ let chargedNetworkBytes = 0;
 if (fs.existsSync(output) && fs.statSync(output).size === expected.bytes && await sha256File(output) === expected.sha256) {
   reused = true;
 } else {
-  const chunkSize = 4 * 1024 * 1024;
+  const chunkSize = 1 * 1024 * 1024;
   const observedPartialBytes = fs.existsSync(partial) ? fs.statSync(partial).size : 0;
   const resumeAt = Math.floor(observedPartialBytes / chunkSize) * chunkSize;
   if (fs.existsSync(partial)) fs.truncateSync(partial, resumeAt);
@@ -114,7 +114,7 @@ const manifest = {
     sha256: await sha256File(output),
     ...directory
   },
-  transfer: { reusedAuthenticatedCache: reused, responseBodyBytesChargedAcrossResumedMementoRun: reused ? 0 : chargedNetworkBytes, completedArchiveBytes: expected.bytes },
+  transfer: { reusedAuthenticatedCache: reused, responseBodyBytesObservedByCompletingProcess: reused ? 0 : chargedNetworkBytes, conservativeCrossProcessUpperBoundBytes: reused ? 0 : 260000000, completedArchiveBytes: expected.bytes },
   provenance: { publisherUrl: expected.url, retrievalUrl: expected.mementoUrl, mementoDatetime: expected.mementoDatetime, identityRule: "The archived copy is accepted only because its byte count and SHA-256 exactly equal the current NIST official manifest." },
   localPathExcludedFromGit: path.relative(root, output).replaceAll("\\", "/"),
   boundary: "Only the public 159 MB XYPT command archive was acquired; no AVI, TIFF, layer-image, or natural-pixel member was requested."

@@ -1,0 +1,16 @@
+{
+  "amendmentId": "RC46-X16-TOOLPATH-TWIN-AMENDMENT-02",
+  "cycleId": "RC-2026-46",
+  "createdOn": "2026-08-22",
+  "status": "sealed-before-any-XYPT-member-inflation-or-candidate-metric",
+  "change": "Reduce the Memento range size from 4 MiB to 1 MiB while retaining the 260,000,000-byte ceiling and every scientific rule.",
+  "reason": "One 4 MiB range completed, but the next connection closed three times before delivering the same 4 MiB interval. One MiB requests remain below both observed connection-close boundaries and do not change archive identity or analytic content.",
+  "accounting": "Because failed Node processes cannot persist an exact count of response fragments already received, the final receipt must not report a falsely exact cross-process byte total. It reports the completing process's observed count and a conservative 260,000,000-byte upper bound. The completed file must still equal the 159,164,372-byte NIST object exactly.",
+  "notChanged": [
+    "official NIST URL, byte count, SHA-256, and central-directory hash",
+    "L0001 target and L0002-L0025 candidates",
+    "all fingerprints, gates, rank rules, and implementation-independence requirements",
+    "prohibition on image acquisition and natural-position inference"
+  ],
+  "scientificEffect": "None; no local member header, compressed member, CSV row, feature, rank, or gate result had been inspected."
+}
