@@ -64,7 +64,7 @@ let chargedNetworkBytes = 0;
 if (fs.existsSync(output) && fs.statSync(output).size === expected.bytes && await sha256File(output) === expected.sha256) {
   reused = true;
 } else {
-  const chunkSize = 1 * 1024 * 1024;
+  const chunkSize = 32 * 1024 * 1024;
   const observedPartialBytes = fs.existsSync(partial) ? fs.statSync(partial).size : 0;
   const resumeAt = Math.floor(observedPartialBytes / chunkSize) * chunkSize;
   if (fs.existsSync(partial)) fs.truncateSync(partial, resumeAt);

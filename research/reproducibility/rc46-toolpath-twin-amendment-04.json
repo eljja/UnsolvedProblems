@@ -1,0 +1,16 @@
+{
+  "amendmentId": "RC46-X16-TOOLPATH-TWIN-AMENDMENT-04",
+  "cycleId": "RC-2026-46",
+  "createdOn": "2026-08-22",
+  "status": "sealed-before-any-XYPT-member-inflation-or-candidate-metric",
+  "change": "Increase the official-origin range size from 1 MiB to 32 MiB while retaining the same resume offset, byte budget, object identities, candidate set, and analysis rules.",
+  "reason": "The official origin took about 90 seconds to prepare a valid 1 MiB response, then returned the exact requested bytes. The latency is per request rather than proportional to body size; four 32 MiB-or-smaller ranges reduce repeated origin preparation without increasing the accepted object or scientific scope.",
+  "integrity": "Every response must still be HTTP 206 with an exact Content-Range. The completed 159,164,372-byte object must match the official full SHA-256 and central-directory SHA-256 before any member inflation.",
+  "notChanged": [
+    "L0001 target and L0002-L0025 candidate roles",
+    "all fingerprints, gates, ranking rules, and two independent implementations",
+    "260,000,000-byte conservative response-body ceiling",
+    "prohibition on image acquisition and natural-position inference"
+  ],
+  "scientificEffect": "None; no member was inflated and no CSV row or outcome-bearing candidate metric was inspected before sealing this transport amendment."
+}
