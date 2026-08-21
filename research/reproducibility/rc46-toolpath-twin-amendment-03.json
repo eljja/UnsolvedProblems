@@ -1,0 +1,20 @@
+{
+  "amendmentId": "RC46-X16-TOOLPATH-TWIN-AMENDMENT-03",
+  "cycleId": "RC-2026-46",
+  "createdOn": "2026-08-22",
+  "status": "sealed-before-any-XYPT-member-inflation-or-candidate-metric",
+  "change": "Resume the same byte ranges from the official NIST origin after a successful HEAD request establishes a single Cloudflare session cookie. Keep the 1 MiB range size, official object identity, 260,000,000-byte conservative ceiling, and every scientific rule unchanged.",
+  "reason": "The origin recovered during the cycle. A direct 1,500-byte central-directory request returned HTTP 206 and SHA-256 0967318be4ea6413c605bf0ca55e810952a280b07b11407262a2a73b69b92a5d, exactly matching the preregistered directory. A subsequent 1 MiB range returned the exact requested Content-Range. The gated research-data mirror therefore remains unused and no contact information is disclosed.",
+  "inspectedBeforeAmendment": [
+    "HTTP status, headers, object length, the preregistered central-directory bytes and their hash",
+    "ZIP local headers in the existing partial transport object, sufficient to establish that members L0001-L0007 are complete and L0008 is incomplete",
+    "No compressed member was inflated and no CSV row, candidate feature, rank, or gate result was inspected"
+  ],
+  "notChanged": [
+    "L0001 target and L0002-L0025 candidate roles",
+    "all fingerprints, gates, ranking rules, and independent implementations",
+    "archive length, full SHA-256, central-directory SHA-256, and member CRC requirements",
+    "prohibition on image acquisition and natural-position inference"
+  ],
+  "scientificEffect": "None. The amendment changes only the authenticated transport path from a byte-identical Memento attempt back to the recovered official publisher origin."
+}

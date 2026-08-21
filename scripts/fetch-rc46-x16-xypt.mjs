@@ -17,6 +17,17 @@ const expected = {
   centralDirectorySha256: "0967318be4ea6413c605bf0ca55e810952a280b07b11407262a2a73b69b92a5d"
 };
 
+const officialSessionCookie = async () => {
+  const response = await fetch(expected.url, { method: "HEAD" });
+  if (!response.ok) throw new Error(`NIST session HEAD ${response.status}`);
+  const length = Number(response.headers.get("content-length"));
+  if (length !== expected.bytes) throw new Error(`NIST object length ${length} != ${expected.bytes}`);
+  const setCookie = response.headers.get("set-cookie") || "";
+  const cookie = setCookie.split(";", 1)[0];
+  if (!cookie) throw new Error("NIST session cookie missing");
+  return cookie;
+};
+
 const sha256File = async file => {
   const hash = crypto.createHash("sha256");
   for await (const chunk of fs.createReadStream(file)) hash.update(chunk);
@@ -60,6 +71,7 @@ if (fs.existsSync(output) && fs.statSync(output).size === expected.bytes && awai
   const handle = await fs.promises.open(partial, fs.existsSync(partial) ? "r+" : "w");
   let bytes = resumeAt;
   chargedNetworkBytes = observedPartialBytes;
+  const cookie = await officialSessionCookie();
   try {
     for (let start = resumeAt; start < expected.bytes; start += chunkSize) {
       const end = Math.min(expected.bytes - 1, start + chunkSize - 1);
@@ -67,8 +79,8 @@ if (fs.existsSync(output) && fs.statSync(output).size === expected.bytes && awai
       for (let attempt = 1; attempt <= 3 && !completed; attempt += 1) {
         let position = start;
         try {
-          const response = await fetch(expected.mementoUrl, { headers: { Range: `bytes=${start}-${end}`, "Accept-Encoding": "identity" } });
-          if (response.status !== 206 || !response.body) throw new Error(`Memento range response ${response.status}`);
+          const response = await fetch(expected.url, { headers: { Range: `bytes=${start}-${end}`, "Accept-Encoding": "identity", Cookie: cookie } });
+          if (response.status !== 206 || !response.body) throw new Error(`NIST range response ${response.status}`);
           const contentRange = response.headers.get("content-range");
           if (contentRange !== `bytes ${start}-${end}/${expected.bytes}`) throw new Error(`unexpected Content-Range ${contentRange}`);
           for await (const chunk of response.body) {
@@ -117,7 +129,7 @@ const manifest = {
     ...directory
   },
   transfer: { reusedAuthenticatedCache: reused, responseBodyBytesObservedByCompletingProcess: reused ? 0 : chargedNetworkBytes, conservativeCrossProcessUpperBoundBytes: reused ? 0 : 260000000, completedArchiveBytes: expected.bytes },
-  provenance: { publisherUrl: expected.url, retrievalUrl: expected.mementoUrl, mementoDatetime: expected.mementoDatetime, identityRule: "The archived copy is accepted only because its byte count and SHA-256 exactly equal the current NIST official manifest." },
+  provenance: { publisherUrl: expected.url, retrievalUrl: expected.url, sessionRule: "One successful HEAD request established the Cloudflare session used for every subsequent byte range.", identityRule: "The completed object is accepted only after its byte count, full SHA-256, central-directory SHA-256, and all member CRC values match the NIST identities sealed before analysis." },
   localPathExcludedFromGit: path.relative(root, output).replaceAll("\\", "/"),
   boundary: "Only the public 159 MB XYPT command archive was acquired; no AVI, TIFF, layer-image, or natural-pixel member was requested."
 };
