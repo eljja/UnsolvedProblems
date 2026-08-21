@@ -83,10 +83,12 @@ if (fs.existsSync(output) && fs.statSync(output).size === expected.bytes && awai
           await handle.truncate(start);
           if (attempt === 3 || String(error.message).includes("budget exceeded")) throw error;
           process.stdout.write(`retry ${attempt} for ${start}-${end}: ${error.message}\n`);
+          await new Promise(resolve => setTimeout(resolve, attempt * 5_000));
         }
       }
       bytes = end + 1;
       process.stdout.write(`downloaded ${end + 1}/${expected.bytes}\n`);
+      await new Promise(resolve => setTimeout(resolve, 750));
     }
   } finally {
     await handle.close();
