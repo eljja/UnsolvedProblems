@@ -13,7 +13,7 @@
   Object.assign(sources, {
     wang_interlayer_morphology_2023: {
       discipline: "materials", title: "Effect of interlayer temperature on melt-pool morphology in laser powder bed fusion", url: "https://doi.org/10.1016/j.addlet.2023.100169",
-      evidenceLabel: "층간온도 100 °C→300 °C에서 melt-pool half-width가 40%–130% 증가할 수 있음을 독립 실험으로 보인 원 논문", evidenceLabelEn: "Primary experiment showing that melt-pool half-width can rise by 40%–130% as interlayer temperature increases from 100 °C to 300 °C",
+      evidenceLabel: "층간온도 100 °C→300 °C에서 melt-pool half-width가 크게 증가했으며 초록은 40%–100%, highlights는 40%–130%로 요약한 원 논문", evidenceLabelEn: "Primary experiment finding a large melt-pool half-width increase from 100 °C to 300 °C, summarized as 40%–100% in the abstract and 40%–130% in the highlights",
       publishedOn: "2023-12-01", resultPeriod: "2023 experiment on Inconel 718 LPBF interlayer temperature", resultPeriodEn: "2023 experiment on interlayer temperature in Inconel 718 LPBF", reviewedOn: REVIEWED_ON
     },
     mao_physics_guided_melt_pool_2024: {
