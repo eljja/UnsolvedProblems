@@ -160,6 +160,12 @@ function rotation(target, candidate) {
 const rotate = (x, y, r) => ({ x: r.cos * x - r.sin * y, y: r.sin * x + r.cos * y });
 const rmse = values => Math.sqrt(values.reduce((s, v) => s + v * v, 0) / values.length);
 const hellinger = (a, b) => Math.sqrt(a.reduce((s, v, i) => s + (Math.sqrt(v) - Math.sqrt(b[i])) ** 2, 0)) / Math.sqrt(2);
+const gridIndex = (value, lower, upper) => {
+  let scaled = (value - lower) / Math.max(upper - lower, EPS) * 32;
+  const nearest = Math.round(scaled);
+  if (Math.abs(scaled - nearest) <= 1e-12) scaled = nearest;
+  return Math.max(0, Math.min(31, Math.floor(scaled)));
+};
 
 function spatial(target, candidate, scale, r) {
   const tcx = mean(target.x), tcy = mean(target.y), ccx = mean(candidate.x), ccy = mean(candidate.y);
@@ -172,7 +178,7 @@ function spatial(target, candidate, scale, r) {
   }
   const make = (xs, ys, power, onlyOn) => {
     const h = new Float64Array(1024); let n = 0;
-    for (let i = 0; i < xs.length; i += 1) { if (onlyOn && power[i] <= 0) continue; const gx = Math.min(31, Math.floor((xs[i] - minX) / Math.max(maxX - minX, EPS) * 32)); const gy = Math.min(31, Math.floor((ys[i] - minY) / Math.max(maxY - minY, EPS) * 32)); h[gy * 32 + gx] += 1; n += 1; }
+    for (let i = 0; i < xs.length; i += 1) { if (onlyOn && power[i] <= 0) continue; const gx = gridIndex(xs[i], minX, maxX); const gy = gridIndex(ys[i], minY, maxY); h[gy * 32 + gx] += 1; n += 1; }
     return Array.from(h, v => v / n);
   };
   return { allHellinger: hellinger(make(tx, ty, target.p, false), make(cx, cy, candidate.p, false)), onHellinger: hellinger(make(tx, ty, target.p, true), make(cx, cy, candidate.p, true)), outOfGridMass: 0 };

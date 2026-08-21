@@ -1,0 +1,61 @@
+{
+  "acquisitionId": "RC46-X16-XYPT-ACQUISITION-0.1",
+  "cycleId": "RC-2026-46",
+  "createdOn": "2026-08-21T17:21:43.747Z",
+  "source": {
+    "url": "https://data.nist.gov/od/ds/ark:/88434/mds2-2309/XYPT_L001-025.zip",
+    "mementoUrl": "https://web.archive.org/web/20210507202033id_/https://data.nist.gov/od/ds/ark:/88434/mds2-2309/XYPT_L001-025.zip",
+    "mementoDatetime": "2021-05-07T20:20:33Z",
+    "bytes": 159164372,
+    "sha256": "7b2b863c843aeabe19f308a5886d57ae241cd386f38c95a7e7ce01e9bc34d007",
+    "centralDirectorySha256": "0967318be4ea6413c605bf0ca55e810952a280b07b11407262a2a73b69b92a5d"
+  },
+  "observed": {
+    "bytes": 159164372,
+    "sha256": "7b2b863c843aeabe19f308a5886d57ae241cd386f38c95a7e7ce01e9bc34d007",
+    "entryCount": 25,
+    "centralDirectoryBytes": 1500,
+    "centralDirectoryOffset": 159162850,
+    "names": [
+      "XYPT_L0001.csv",
+      "XYPT_L0002.csv",
+      "XYPT_L0003.csv",
+      "XYPT_L0004.csv",
+      "XYPT_L0005.csv",
+      "XYPT_L0006.csv",
+      "XYPT_L0007.csv",
+      "XYPT_L0008.csv",
+      "XYPT_L0009.csv",
+      "XYPT_L0010.csv",
+      "XYPT_L0011.csv",
+      "XYPT_L0012.csv",
+      "XYPT_L0013.csv",
+      "XYPT_L0014.csv",
+      "XYPT_L0015.csv",
+      "XYPT_L0016.csv",
+      "XYPT_L0017.csv",
+      "XYPT_L0018.csv",
+      "XYPT_L0019.csv",
+      "XYPT_L0020.csv",
+      "XYPT_L0021.csv",
+      "XYPT_L0022.csv",
+      "XYPT_L0023.csv",
+      "XYPT_L0024.csv",
+      "XYPT_L0025.csv"
+    ]
+  },
+  "transfer": {
+    "reusedAuthenticatedCache": false,
+    "responseBodyBytesObservedByCompletingProcess": 173844436,
+    "conservativeCrossProcessUpperBoundBytes": 260000000,
+    "completedArchiveBytes": 159164372
+  },
+  "provenance": {
+    "publisherUrl": "https://data.nist.gov/od/ds/ark:/88434/mds2-2309/XYPT_L001-025.zip",
+    "retrievalUrl": "https://data.nist.gov/od/ds/ark:/88434/mds2-2309/XYPT_L001-025.zip",
+    "sessionRule": "One successful HEAD request established the Cloudflare session used for every subsequent byte range.",
+    "identityRule": "The completed object is accepted only after its byte count, full SHA-256, central-directory SHA-256, and all member CRC values match the NIST identities sealed before analysis."
+  },
+  "localPathExcludedFromGit": ".cache/rc46-x16/XYPT_L001-025.zip",
+  "boundary": "Only the public 159 MB XYPT command archive was acquired; no AVI, TIFF, layer-image, or natural-pixel member was requested."
+}

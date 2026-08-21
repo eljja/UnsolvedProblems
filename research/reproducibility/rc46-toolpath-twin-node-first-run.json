@@ -1,0 +1,2024 @@
+{
+  "resultId": "RC46-X16-TOOLPATH-TWIN-NODE-0.1",
+  "cycleId": "RC-2026-46",
+  "createdOn": "2026-08-21T17:22:31.171Z",
+  "implementation": "Node.js standard library; independent archive, CSV, metric, and gate implementation",
+  "preregistration": "research/reproducibility/rc46-toolpath-twin-precommit.json",
+  "input": {
+    "path": ".cache/rc46-x16/XYPT_L001-025.zip",
+    "bytes": 159164372,
+    "sha256": "7b2b863c843aeabe19f308a5886d57ae241cd386f38c95a7e7ce01e9bc34d007",
+    "memberCount": 25
+  },
+  "target": {
+    "layer": 1,
+    "member": {
+      "name": "XYPT_L0001.csv",
+      "bytes": 72015733,
+      "sha256": "149443c27a88f4faa513fdee7ee9e523aee85a246aeae726c1cdaf164f82bf47",
+      "crc32": "0af07559"
+    },
+    "counts": {
+      "totalRows": 1658275,
+      "cameraRows": 94736,
+      "nonzeroT": 94736,
+      "positiveCameraRows": 94736
+    },
+    "scale": {
+      "cx": -0.5000000000000899,
+      "cy": 0.00021280189156970016,
+      "rmsRadius": 30.193137316962616,
+      "maxPower": 195,
+      "medianPositiveStep": 0.08000000000000007
+    },
+    "segmentCount": 1
+  },
+  "candidates": [
+    {
+      "layer": 13,
+      "member": {
+        "name": "XYPT_L0013.csv",
+        "bytes": 76513910,
+        "sha256": "d811273382aa839ee93680ae8aec1cafd2f67f141a877a0a05667ad60e9f2829",
+        "crc32": "7849f306"
+      },
+      "counts": {
+        "totalRows": 1761267,
+        "cameraRows": 101792,
+        "nonzeroT": 101792,
+        "positiveCameraRows": 101792
+      },
+      "rotationRadians": 0.00013820176072899037,
+      "metrics": {
+        "countRelativeError": 0.07448066205032934,
+        "positiveFractionError": 0,
+        "xyRmse": 0.02107663961562944,
+        "powerRmse": 0.01434631676567162,
+        "laserOnRmse": 0,
+        "allHellinger": 0.09280138777641299,
+        "onHellinger": 0.09280138777641299,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.1065828349104183,
+        "localMatchFraction": 0.1357421875,
+        "longestLocalMatchRun": 6,
+        "positionFailures": 3000,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 2064
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": true,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 1.2663470413948748
+    },
+    {
+      "layer": 25,
+      "member": {
+        "name": "XYPT_L0025.csv",
+        "bytes": 76513910,
+        "sha256": "d811273382aa839ee93680ae8aec1cafd2f67f141a877a0a05667ad60e9f2829",
+        "crc32": "7849f306"
+      },
+      "counts": {
+        "totalRows": 1761267,
+        "cameraRows": 101792,
+        "nonzeroT": 101792,
+        "positiveCameraRows": 101792
+      },
+      "rotationRadians": 0.00013820176072899037,
+      "metrics": {
+        "countRelativeError": 0.07448066205032934,
+        "positiveFractionError": 0,
+        "xyRmse": 0.02107663961562944,
+        "powerRmse": 0.01434631676567162,
+        "laserOnRmse": 0,
+        "allHellinger": 0.09280138777641299,
+        "onHellinger": 0.09280138777641299,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.1065828349104183,
+        "localMatchFraction": 0.1357421875,
+        "longestLocalMatchRun": 6,
+        "positionFailures": 3000,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 2064
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": true,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 1.2663470413948748
+    },
+    {
+      "layer": 21,
+      "member": {
+        "name": "XYPT_L0021.csv",
+        "bytes": 76534140,
+        "sha256": "7f3ce45455281b4db09ac3b256e9780ed8a05109a8a9bbd6c77e649cc6bb827e",
+        "crc32": "9ec0ee50"
+      },
+      "counts": {
+        "totalRows": 1761731,
+        "cameraRows": 101792,
+        "nonzeroT": 101792,
+        "positiveCameraRows": 101792
+      },
+      "rotationRadians": 0.0004707788807495433,
+      "metrics": {
+        "countRelativeError": 0.07448066205032934,
+        "positiveFractionError": 0,
+        "xyRmse": 0.0481403984228594,
+        "powerRmse": 0.01434631676567162,
+        "laserOnRmse": 0,
+        "allHellinger": 0.08890729569910968,
+        "onHellinger": 0.08890729569910968,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.18289467139996837,
+        "localMatchFraction": 0.119384765625,
+        "longestLocalMatchRun": 6,
+        "positionFailures": 3086,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 2224
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": true,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 1.378291874412048
+    },
+    {
+      "layer": 9,
+      "member": {
+        "name": "XYPT_L0009.csv",
+        "bytes": 76347026,
+        "sha256": "4c7edb08dc273b4a3de06003f0dfeb4372dffbf0692504602c40c3895b6da5b9",
+        "crc32": "dfe90f35"
+      },
+      "counts": {
+        "totalRows": 1757223,
+        "cameraRows": 101792,
+        "nonzeroT": 101792,
+        "positiveCameraRows": 101792
+      },
+      "rotationRadians": 0.00042799557465938217,
+      "metrics": {
+        "countRelativeError": 0.07448066205032934,
+        "positiveFractionError": 0,
+        "xyRmse": 0.04848658471677317,
+        "powerRmse": 0.01434631676567162,
+        "laserOnRmse": 0,
+        "allHellinger": 0.08896243129199931,
+        "onHellinger": 0.08896243129199931,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.1724145273252093,
+        "localMatchFraction": 0.103515625,
+        "longestLocalMatchRun": 6,
+        "positionFailures": 3150,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 2384
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": true,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 1.384137328441982
+    },
+    {
+      "layer": 7,
+      "member": {
+        "name": "XYPT_L0007.csv",
+        "bytes": 77001622,
+        "sha256": "fcf7e6420a30d3d7dfbc32b44d33fc17eb240e8694a9ef80faf0e0dad93f5580",
+        "crc32": "d5ec7e02"
+      },
+      "counts": {
+        "totalRows": 1773267,
+        "cameraRows": 100784,
+        "nonzeroT": 100784,
+        "positiveCameraRows": 100784
+      },
+      "rotationRadians": 0.0004104393075266011,
+      "metrics": {
+        "countRelativeError": 0.06384056747171087,
+        "positiveFractionError": 0,
+        "xyRmse": 0.1703305887776961,
+        "powerRmse": 0.012387957664455372,
+        "laserOnRmse": 0,
+        "allHellinger": 0.08964437062233922,
+        "onHellinger": 0.08964437062233922,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.14689619588042402,
+        "localMatchFraction": 0,
+        "longestLocalMatchRun": 0,
+        "positionFailures": 4064,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 2416
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.06384056747171087,
+          0.06384056747171087,
+          0.06384056747171087,
+          0.06384056747171087,
+          0.06384056747171087
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 1.5727440510389648
+    },
+    {
+      "layer": 23,
+      "member": {
+        "name": "XYPT_L0023.csv",
+        "bytes": 76932319,
+        "sha256": "362127818586dc2f03c18ea1f4c3823973a238f96dc4ec602bc9d3940c999510",
+        "crc32": "59c84d2f"
+      },
+      "counts": {
+        "totalRows": 1771155,
+        "cameraRows": 101792,
+        "nonzeroT": 101792,
+        "positiveCameraRows": 101792
+      },
+      "rotationRadians": 0.0000996197243101117,
+      "metrics": {
+        "countRelativeError": 0.07448066205032934,
+        "positiveFractionError": 0,
+        "xyRmse": 0.16569834892884794,
+        "powerRmse": 0.01434631676567162,
+        "laserOnRmse": 0,
+        "allHellinger": 0.09280232215313682,
+        "onHellinger": 0.09280232215313682,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.20331113412671545,
+        "localMatchFraction": 0.015625,
+        "longestLocalMatchRun": 4,
+        "positionFailures": 3968,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 2096
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 1.627816106177838
+    },
+    {
+      "layer": 11,
+      "member": {
+        "name": "XYPT_L0011.csv",
+        "bytes": 76459654,
+        "sha256": "1e233221e9749f01b78e1ffd449fc799e541bb5a650c001279017eda0e55c05d",
+        "crc32": "147a6960"
+      },
+      "counts": {
+        "totalRows": 1759947,
+        "cameraRows": 101792,
+        "nonzeroT": 101792,
+        "positiveCameraRows": 101792
+      },
+      "rotationRadians": 0.00005628167683888007,
+      "metrics": {
+        "countRelativeError": 0.07448066205032934,
+        "positiveFractionError": 0,
+        "xyRmse": 0.16580660985938256,
+        "powerRmse": 0.01434631676567162,
+        "laserOnRmse": 0,
+        "allHellinger": 0.09440124458139287,
+        "onHellinger": 0.09440124458139287,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.20829572137232438,
+        "localMatchFraction": 0.018310546875,
+        "longestLocalMatchRun": 4,
+        "positionFailures": 3989,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 2256
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 1.6334212523354936
+    },
+    {
+      "layer": 4,
+      "member": {
+        "name": "XYPT_L0004.csv",
+        "bytes": 65136624,
+        "sha256": "48ab3f27614a294601f252e85fa31eab4ac89da441b358966d2372158ecec62b",
+        "crc32": "3052f32f"
+      },
+      "counts": {
+        "totalRows": 1494403,
+        "cameraRows": 97312,
+        "nonzeroT": 97312,
+        "positiveCameraRows": 97312
+      },
+      "rotationRadians": 0.0031909254641417847,
+      "metrics": {
+        "countRelativeError": 0.027191352812024994,
+        "positiveFractionError": 0,
+        "xyRmse": 0.11707695577095549,
+        "powerRmse": 0.0024193548387096836,
+        "laserOnRmse": 0,
+        "allHellinger": 0.08998924600018934,
+        "onHellinger": 0.08998924600018934,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.7982635198878228,
+        "localMatchFraction": 0,
+        "longestLocalMatchRun": 0,
+        "positionFailures": 4012,
+        "powerFailures": 16,
+        "onFailures": 0,
+        "directionFailures": 4048
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.027191352812024994,
+          0.027191352812024994,
+          0.027191352812024994,
+          0.027191352812024994,
+          0.027191352812024994
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          1.1102230246251679e-14,
+          2.2204460492503112e-14,
+          0,
+          2.2204460492503112e-14,
+          4.440892098500524e-14
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.1249296753098914
+    },
+    {
+      "layer": 5,
+      "member": {
+        "name": "XYPT_L0005.csv",
+        "bytes": 74566615,
+        "sha256": "c43ec2199c5e6d15cc45e9ba1b9b82989c100967a410564effd40bd76af250ca",
+        "crc32": "3b45ae05"
+      },
+      "counts": {
+        "totalRows": 1716691,
+        "cameraRows": 98768,
+        "nonzeroT": 98768,
+        "positiveCameraRows": 98768
+      },
+      "rotationRadians": -0.000039629211838607456,
+      "metrics": {
+        "countRelativeError": 0.04256037831447391,
+        "positiveFractionError": 0,
+        "xyRmse": 0.05363150789300381,
+        "powerRmse": 0.00834884201819687,
+        "laserOnRmse": 0,
+        "allHellinger": 0.09634518649008911,
+        "onHellinger": 0.09634518649008911,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.9571811009391318,
+        "localMatchFraction": 0.1015625,
+        "longestLocalMatchRun": 17,
+        "positionFailures": 3168,
+        "powerFailures": 16,
+        "onFailures": 0,
+        "directionFailures": 2384
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.04256037831447391,
+          0.04256037831447391,
+          0.04256037831447391,
+          0.04256037831447391,
+          0.04256037831447391
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.1528497021449846
+    },
+    {
+      "layer": 12,
+      "member": {
+        "name": "XYPT_L0012.csv",
+        "bytes": 67737968,
+        "sha256": "2461833687d9757c077cf3dfc0ae9c8050b3d25d2136e17161d1c8583865c0e9",
+        "crc32": "a55c5a42"
+      },
+      "counts": {
+        "totalRows": 1554195,
+        "cameraRows": 100848,
+        "nonzeroT": 100848,
+        "positiveCameraRows": 100848
+      },
+      "rotationRadians": 0.003810832773265937,
+      "metrics": {
+        "countRelativeError": 0.06451612903225806,
+        "positiveFractionError": 0,
+        "xyRmse": 0.11292718881256339,
+        "powerRmse": 0.012387957664455372,
+        "laserOnRmse": 0,
+        "allHellinger": 0.0933667874394701,
+        "onHellinger": 0.0933667874394701,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.7970930621534653,
+        "localMatchFraction": 0.015869140625,
+        "longestLocalMatchRun": 4,
+        "positionFailures": 3934,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 3936
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          1.1102230246251679e-14,
+          2.2204460492503112e-14,
+          0,
+          2.2204460492503112e-14,
+          4.440892098500524e-14
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.1577887719166826
+    },
+    {
+      "layer": 24,
+      "member": {
+        "name": "XYPT_L0024.csv",
+        "bytes": 67737968,
+        "sha256": "2461833687d9757c077cf3dfc0ae9c8050b3d25d2136e17161d1c8583865c0e9",
+        "crc32": "a55c5a42"
+      },
+      "counts": {
+        "totalRows": 1554195,
+        "cameraRows": 100848,
+        "nonzeroT": 100848,
+        "positiveCameraRows": 100848
+      },
+      "rotationRadians": 0.003810832773265937,
+      "metrics": {
+        "countRelativeError": 0.06451612903225806,
+        "positiveFractionError": 0,
+        "xyRmse": 0.11292718881256339,
+        "powerRmse": 0.012387957664455372,
+        "laserOnRmse": 0,
+        "allHellinger": 0.0933667874394701,
+        "onHellinger": 0.0933667874394701,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.7970930621534653,
+        "localMatchFraction": 0.015869140625,
+        "longestLocalMatchRun": 4,
+        "positionFailures": 3934,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 3936
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          1.1102230246251679e-14,
+          2.2204460492503112e-14,
+          0,
+          2.2204460492503112e-14,
+          4.440892098500524e-14
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.1577887719166826
+    },
+    {
+      "layer": 16,
+      "member": {
+        "name": "XYPT_L0016.csv",
+        "bytes": 67111140,
+        "sha256": "f7590d9e702a14e6853a603e048b30dcb2c951e51a31373683625f6660b011c8",
+        "crc32": "074ee113"
+      },
+      "counts": {
+        "totalRows": 1539347,
+        "cameraRows": 100928,
+        "nonzeroT": 100928,
+        "positiveCameraRows": 100928
+      },
+      "rotationRadians": 0.0032611989945374384,
+      "metrics": {
+        "countRelativeError": 0.06536058098294208,
+        "positiveFractionError": 0,
+        "xyRmse": 0.11585937639903698,
+        "powerRmse": 0.009425311844666705,
+        "laserOnRmse": 0,
+        "allHellinger": 0.0892593502762273,
+        "onHellinger": 0.0892593502762273,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.7995954474655429,
+        "localMatchFraction": 0,
+        "longestLocalMatchRun": 0,
+        "positionFailures": 4038,
+        "powerFailures": 16,
+        "onFailures": 0,
+        "directionFailures": 4048
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.06536058098294208,
+          0.06536058098294208,
+          0.06536058098294208,
+          0.06536058098294208,
+          0.06536058098294208
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          1.1102230246251679e-14,
+          2.2204460492503112e-14,
+          0,
+          2.2204460492503112e-14,
+          4.440892098500524e-14
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.1687594172446434
+    },
+    {
+      "layer": 8,
+      "member": {
+        "name": "XYPT_L0008.csv",
+        "bytes": 67677149,
+        "sha256": "2adb15bd285ad9b098d42973b80edbe72ab7ce3e34fdddc543c046f598307932",
+        "crc32": "00dcd8a9"
+      },
+      "counts": {
+        "totalRows": 1552755,
+        "cameraRows": 100848,
+        "nonzeroT": 100848,
+        "positiveCameraRows": 100848
+      },
+      "rotationRadians": 0.004178055152511623,
+      "metrics": {
+        "countRelativeError": 0.06451612903225806,
+        "positiveFractionError": 0,
+        "xyRmse": 0.12035202177525156,
+        "powerRmse": 0.012387957664455372,
+        "laserOnRmse": 0,
+        "allHellinger": 0.09546025715579623,
+        "onHellinger": 0.09546025715579623,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.7838852912928242,
+        "localMatchFraction": 0,
+        "longestLocalMatchRun": 0,
+        "positionFailures": 4018,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 4096
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          1.1102230246251679e-14,
+          2.2204460492503112e-14,
+          0,
+          2.2204460492503112e-14,
+          4.440892098500524e-14
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.172061914076382
+    },
+    {
+      "layer": 20,
+      "member": {
+        "name": "XYPT_L0020.csv",
+        "bytes": 67677149,
+        "sha256": "2adb15bd285ad9b098d42973b80edbe72ab7ce3e34fdddc543c046f598307932",
+        "crc32": "00dcd8a9"
+      },
+      "counts": {
+        "totalRows": 1552755,
+        "cameraRows": 100848,
+        "nonzeroT": 100848,
+        "positiveCameraRows": 100848
+      },
+      "rotationRadians": 0.004178055152511623,
+      "metrics": {
+        "countRelativeError": 0.06451612903225806,
+        "positiveFractionError": 0,
+        "xyRmse": 0.12035202177525156,
+        "powerRmse": 0.012387957664455372,
+        "laserOnRmse": 0,
+        "allHellinger": 0.09546025715579623,
+        "onHellinger": 0.09546025715579623,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.7838852912928242,
+        "localMatchFraction": 0,
+        "longestLocalMatchRun": 0,
+        "positionFailures": 4018,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 4096
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          1.1102230246251679e-14,
+          2.2204460492503112e-14,
+          0,
+          2.2204460492503112e-14,
+          4.440892098500524e-14
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.172061914076382
+    },
+    {
+      "layer": 17,
+      "member": {
+        "name": "XYPT_L0017.csv",
+        "bytes": 75958077,
+        "sha256": "9dc13193a13426039a578b7fa2f826a36bbe58200fc3ff6980ceefa3ceb72668",
+        "crc32": "526f5cba"
+      },
+      "counts": {
+        "totalRows": 1748131,
+        "cameraRows": 101792,
+        "nonzeroT": 101792,
+        "positiveCameraRows": 101792
+      },
+      "rotationRadians": -0.000055583294245669754,
+      "metrics": {
+        "countRelativeError": 0.07448066205032934,
+        "positiveFractionError": 0,
+        "xyRmse": 0.052625726962389374,
+        "powerRmse": 0.01434631676567162,
+        "laserOnRmse": 0,
+        "allHellinger": 0.09602545815291166,
+        "onHellinger": 0.09602545815291166,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.9906879629128637,
+        "localMatchFraction": 0.12109375,
+        "longestLocalMatchRun": 6,
+        "positionFailures": 3073,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 2224
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.2030978349970773
+    },
+    {
+      "layer": 2,
+      "member": {
+        "name": "XYPT_L0002.csv",
+        "bytes": 64749624,
+        "sha256": "576d1e19cc4aee87ab60dcde4376ce21faa3c42342a9a7653d9bf5af4a3a1c7c",
+        "crc32": "3bb9c502"
+      },
+      "counts": {
+        "totalRows": 1486203,
+        "cameraRows": 95504,
+        "nonzeroT": 95504,
+        "positiveCameraRows": 95504
+      },
+      "rotationRadians": -0.004254197267357244,
+      "metrics": {
+        "countRelativeError": 0.008106738726566459,
+        "positiveFractionError": 0,
+        "xyRmse": 0.11723864461285685,
+        "powerRmse": 0.0016927564542526807,
+        "laserOnRmse": 0,
+        "allHellinger": 0.10859830363183487,
+        "onHellinger": 0.10859830363183487,
+        "outOfGridMass": 0,
+        "directionHellinger": 1.0000000000000528,
+        "localMatchFraction": 0,
+        "longestLocalMatchRun": 0,
+        "positionFailures": 4018,
+        "powerFailures": 0,
+        "onFailures": 0,
+        "directionFailures": 4064
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.008106738726566459,
+          0.008106738726566459,
+          0.008106738726566459,
+          0.008106738726566459,
+          0.008106738726566459
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          1.1102230246251679e-14,
+          2.2204460492503112e-14,
+          0,
+          2.2204460492503112e-14,
+          4.440892098500524e-14
+        ]
+      },
+      "gates": {
+        "count": true,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": false,
+        "spatialOn": false,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.3442347470573983
+    },
+    {
+      "layer": 3,
+      "member": {
+        "name": "XYPT_L0003.csv",
+        "bytes": 73333325,
+        "sha256": "befecdf2c63adf45798e93591422996349a6290b9b668e45389b64a4aeb3a8bd",
+        "crc32": "5bbbed54"
+      },
+      "counts": {
+        "totalRows": 1688451,
+        "cameraRows": 96832,
+        "nonzeroT": 96832,
+        "positiveCameraRows": 96832
+      },
+      "rotationRadians": -0.0005168310750248708,
+      "metrics": {
+        "countRelativeError": 0.02212464110792096,
+        "positiveFractionError": 0,
+        "xyRmse": 0.16818339435261853,
+        "powerRmse": 0.0011373035566584063,
+        "laserOnRmse": 0,
+        "allHellinger": 0.09405113203605396,
+        "onHellinger": 0.09405113203605396,
+        "outOfGridMass": 0,
+        "directionHellinger": 1.0000000000000513,
+        "localMatchFraction": 0,
+        "longestLocalMatchRun": 0,
+        "positionFailures": 4080,
+        "powerFailures": 0,
+        "onFailures": 0,
+        "directionFailures": 2336
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.02212464110792096,
+          0.02212464110792096,
+          0.02212464110792096,
+          0.02212464110792096,
+          0.02212464110792096
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.379547603089357
+    },
+    {
+      "layer": 6,
+      "member": {
+        "name": "XYPT_L0006.csv",
+        "bytes": 67014659,
+        "sha256": "77c48c69af63e2c22bf55ac22a869f1a0b1c67adbfb9d408cb115f4ee299692c",
+        "crc32": "9671bf80"
+      },
+      "counts": {
+        "totalRows": 1538039,
+        "cameraRows": 99040,
+        "nonzeroT": 99040,
+        "positiveCameraRows": 99040
+      },
+      "rotationRadians": -0.0037736856118018294,
+      "metrics": {
+        "countRelativeError": 0.04543151494679953,
+        "positiveFractionError": 0,
+        "xyRmse": 0.12247392083723553,
+        "powerRmse": 0.008983190308795156,
+        "laserOnRmse": 0,
+        "allHellinger": 0.10495331440107215,
+        "onHellinger": 0.10495331440107215,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.9940555102185019,
+        "localMatchFraction": 0,
+        "longestLocalMatchRun": 0,
+        "positionFailures": 4028,
+        "powerFailures": 16,
+        "onFailures": 0,
+        "directionFailures": 4096
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.04543151494679953,
+          0.04543151494679953,
+          0.04543151494679953,
+          0.04543151494679953,
+          0.04543151494679953
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          1.1102230246251679e-14,
+          2.2204460492503112e-14,
+          0,
+          2.2204460492503112e-14,
+          4.440892098500524e-14
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": false,
+        "spatialOn": false,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.3808507651134763
+    },
+    {
+      "layer": 14,
+      "member": {
+        "name": "XYPT_L0014.csv",
+        "bytes": 66865483,
+        "sha256": "6483106824375280f25c21a579d893160ae55c700ac3d568e36c767258431be3",
+        "crc32": "1ee955a3"
+      },
+      "counts": {
+        "totalRows": 1533539,
+        "cameraRows": 100928,
+        "nonzeroT": 100928,
+        "positiveCameraRows": 100928
+      },
+      "rotationRadians": -0.004222944220060111,
+      "metrics": {
+        "countRelativeError": 0.06536058098294208,
+        "positiveFractionError": 0,
+        "xyRmse": 0.11535652054592024,
+        "powerRmse": 0.009425311844666705,
+        "laserOnRmse": 0,
+        "allHellinger": 0.10902373330374644,
+        "onHellinger": 0.10902373330374644,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.9941367195865518,
+        "localMatchFraction": 0,
+        "longestLocalMatchRun": 0,
+        "positionFailures": 4030,
+        "powerFailures": 16,
+        "onFailures": 0,
+        "directionFailures": 4048
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.06536058098294208,
+          0.06536058098294208,
+          0.06536058098294208,
+          0.06536058098294208,
+          0.06536058098294208
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          1.1102230246251679e-14,
+          2.2204460492503112e-14,
+          0,
+          2.2204460492503112e-14,
+          4.440892098500524e-14
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": false,
+        "spatialOn": false,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.4023265995675738
+    },
+    {
+      "layer": 10,
+      "member": {
+        "name": "XYPT_L0010.csv",
+        "bytes": 66892506,
+        "sha256": "e914463d752c5dde6604e911635c6ff269d99c9efa1d17b528251df4b99a44ca",
+        "crc32": "2ff48e4e"
+      },
+      "counts": {
+        "totalRows": 1534211,
+        "cameraRows": 100848,
+        "nonzeroT": 100848,
+        "positiveCameraRows": 100848
+      },
+      "rotationRadians": -0.003308382708533606,
+      "metrics": {
+        "countRelativeError": 0.06451612903225806,
+        "positiveFractionError": 0,
+        "xyRmse": 0.12047253006889096,
+        "powerRmse": 0.012387957664455372,
+        "laserOnRmse": 0,
+        "allHellinger": 0.10255333855040816,
+        "onHellinger": 0.10255333855040816,
+        "outOfGridMass": 0,
+        "directionHellinger": 1.0000000000000373,
+        "localMatchFraction": 0,
+        "longestLocalMatchRun": 0,
+        "positionFailures": 4019,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 4096
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          1.1102230246251679e-14,
+          2.2204460492503112e-14,
+          0,
+          2.2204460492503112e-14,
+          4.440892098500524e-14
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": false,
+        "spatialOn": false,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.402483293866458
+    },
+    {
+      "layer": 22,
+      "member": {
+        "name": "XYPT_L0022.csv",
+        "bytes": 66892506,
+        "sha256": "e914463d752c5dde6604e911635c6ff269d99c9efa1d17b528251df4b99a44ca",
+        "crc32": "2ff48e4e"
+      },
+      "counts": {
+        "totalRows": 1534211,
+        "cameraRows": 100848,
+        "nonzeroT": 100848,
+        "positiveCameraRows": 100848
+      },
+      "rotationRadians": -0.003308382708533606,
+      "metrics": {
+        "countRelativeError": 0.06451612903225806,
+        "positiveFractionError": 0,
+        "xyRmse": 0.12047253006889096,
+        "powerRmse": 0.012387957664455372,
+        "laserOnRmse": 0,
+        "allHellinger": 0.10255333855040816,
+        "onHellinger": 0.10255333855040816,
+        "outOfGridMass": 0,
+        "directionHellinger": 1.0000000000000373,
+        "localMatchFraction": 0,
+        "longestLocalMatchRun": 0,
+        "positionFailures": 4019,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 4096
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          1.1102230246251679e-14,
+          2.2204460492503112e-14,
+          0,
+          2.2204460492503112e-14,
+          4.440892098500524e-14
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": false,
+        "spatialOn": false,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.402483293866458
+    },
+    {
+      "layer": 18,
+      "member": {
+        "name": "XYPT_L0018.csv",
+        "bytes": 67188662,
+        "sha256": "7e86ffb6656392cc2eaa8e09e931a186c0260d54d9a6e69534238b95e1b620c9",
+        "crc32": "77ef39db"
+      },
+      "counts": {
+        "totalRows": 1541203,
+        "cameraRows": 100848,
+        "nonzeroT": 100848,
+        "positiveCameraRows": 100848
+      },
+      "rotationRadians": -0.0038337185321665242,
+      "metrics": {
+        "countRelativeError": 0.06451612903225806,
+        "positiveFractionError": 0,
+        "xyRmse": 0.12223086819739833,
+        "powerRmse": 0.012387957664455372,
+        "laserOnRmse": 0,
+        "allHellinger": 0.10622158613287047,
+        "onHellinger": 0.10622158613287047,
+        "outOfGridMass": 0,
+        "directionHellinger": 1.0000000000000375,
+        "localMatchFraction": 0,
+        "longestLocalMatchRun": 0,
+        "positionFailures": 4020,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 4096
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806,
+          0.06451612903225806
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          1.1102230246251679e-14,
+          2.2204460492503112e-14,
+          0,
+          2.2204460492503112e-14,
+          4.440892098500524e-14
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": false,
+        "spatialOn": false,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.41157812715989
+    },
+    {
+      "layer": 19,
+      "member": {
+        "name": "XYPT_L0019.csv",
+        "bytes": 77383116,
+        "sha256": "f501ba64049665371319048fc8f1c660537482671bb3b744b703c45bdcd428ca",
+        "crc32": "64b9845c"
+      },
+      "counts": {
+        "totalRows": 1781795,
+        "cameraRows": 101792,
+        "nonzeroT": 101792,
+        "positiveCameraRows": 101792
+      },
+      "rotationRadians": -0.0000968537187692289,
+      "metrics": {
+        "countRelativeError": 0.07448066205032934,
+        "positiveFractionError": 0,
+        "xyRmse": 0.17156186493298034,
+        "powerRmse": 0.01434631676567162,
+        "laserOnRmse": 0,
+        "allHellinger": 0.09602282494253309,
+        "onHellinger": 0.09602282494253309,
+        "outOfGridMass": 0,
+        "directionHellinger": 0.9853995188913612,
+        "localMatchFraction": 0,
+        "longestLocalMatchRun": 0,
+        "positionFailures": 4064,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 2240
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934,
+          0.07448066205032934
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.4378340125254088
+    },
+    {
+      "layer": 15,
+      "member": {
+        "name": "XYPT_L0015.csv",
+        "bytes": 76008439,
+        "sha256": "de5c00d789baeb133d7c44d821f35da7f6c2ad1c5b648d212208b9fcd5bd7235",
+        "crc32": "af1f5e26"
+      },
+      "counts": {
+        "totalRows": 1749283,
+        "cameraRows": 101872,
+        "nonzeroT": 101872,
+        "positiveCameraRows": 101872
+      },
+      "rotationRadians": -0.0004648459904811926,
+      "metrics": {
+        "countRelativeError": 0.07532511400101334,
+        "positiveFractionError": 0,
+        "xyRmse": 0.16742550286399197,
+        "powerRmse": 0.011270688690043537,
+        "laserOnRmse": 0,
+        "allHellinger": 0.09336281227712385,
+        "onHellinger": 0.09336281227712385,
+        "outOfGridMass": 0,
+        "directionHellinger": 1.000000000000034,
+        "localMatchFraction": 0,
+        "longestLocalMatchRun": 0,
+        "positionFailures": 4064,
+        "powerFailures": 32,
+        "onFailures": 0,
+        "directionFailures": 2224
+      },
+      "segmentComparison": {
+        "countRelativeError": 0,
+        "lengthQuantileRelativeErrors": [
+          0.07532511400101334,
+          0.07532511400101334,
+          0.07532511400101334,
+          0.07532511400101334,
+          0.07532511400101334
+        ],
+        "powerQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "speedQuantileRelativeErrors": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "gates": {
+        "count": false,
+        "positiveFraction": true,
+        "xy": false,
+        "power": true,
+        "laserOn": true,
+        "spatialAll": true,
+        "spatialOn": true,
+        "direction": false,
+        "local": false
+      },
+      "eligible": false,
+      "score": 2.4407469301093307
+    }
+  ],
+  "ranking": [
+    {
+      "rank": 1,
+      "layer": 13,
+      "score": 1.2663470413948748,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 2,
+      "layer": 25,
+      "score": 1.2663470413948748,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 3,
+      "layer": 21,
+      "score": 1.378291874412048,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 4,
+      "layer": 9,
+      "score": 1.384137328441982,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 5,
+      "layer": 7,
+      "score": 1.5727440510389648,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 6,
+      "layer": 23,
+      "score": 1.627816106177838,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 7,
+      "layer": 11,
+      "score": 1.6334212523354936,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 8,
+      "layer": 4,
+      "score": 2.1249296753098914,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 9,
+      "layer": 5,
+      "score": 2.1528497021449846,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 10,
+      "layer": 12,
+      "score": 2.1577887719166826,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 11,
+      "layer": 24,
+      "score": 2.1577887719166826,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 12,
+      "layer": 16,
+      "score": 2.1687594172446434,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 13,
+      "layer": 8,
+      "score": 2.172061914076382,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 14,
+      "layer": 20,
+      "score": 2.172061914076382,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 15,
+      "layer": 17,
+      "score": 2.2030978349970773,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 16,
+      "layer": 2,
+      "score": 2.3442347470573983,
+      "eligible": false,
+      "failedGates": [
+        "xy",
+        "spatialAll",
+        "spatialOn",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 17,
+      "layer": 3,
+      "score": 2.379547603089357,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 18,
+      "layer": 6,
+      "score": 2.3808507651134763,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "spatialAll",
+        "spatialOn",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 19,
+      "layer": 14,
+      "score": 2.4023265995675738,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "spatialAll",
+        "spatialOn",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 20,
+      "layer": 10,
+      "score": 2.402483293866458,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "spatialAll",
+        "spatialOn",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 21,
+      "layer": 22,
+      "score": 2.402483293866458,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "spatialAll",
+        "spatialOn",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 22,
+      "layer": 18,
+      "score": 2.41157812715989,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "spatialAll",
+        "spatialOn",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 23,
+      "layer": 19,
+      "score": 2.4378340125254088,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "direction",
+        "local"
+      ]
+    },
+    {
+      "rank": 24,
+      "layer": 15,
+      "score": 2.4407469301093307,
+      "eligible": false,
+      "failedGates": [
+        "count",
+        "xy",
+        "direction",
+        "local"
+      ]
+    }
+  ],
+  "adjudication": {
+    "passingLayers": [],
+    "topRankedLayer": 13,
+    "topRankedEligible": false,
+    "hypothesis": "T0-no-first-25-layer-command-twin",
+    "releaseCandidateAviThisCycle": false,
+    "naturalL0001RemainsSealed": true
+  },
+  "boundary": "Command-level similarity can qualify a prospective image benchmark but cannot establish image exchangeability, recover a natural missing position, or certify process truth."
+}

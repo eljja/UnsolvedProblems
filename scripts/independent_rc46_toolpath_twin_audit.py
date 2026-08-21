@@ -114,6 +114,14 @@ def hellinger(first, second):
     return math.sqrt(sum((math.sqrt(a) - math.sqrt(b)) ** 2 for a, b in zip(first, second))) / math.sqrt(2)
 
 
+def grid_index(value, lower, upper):
+    scaled = (value - lower) / max(upper - lower, EPS) * 32
+    nearest = round(scaled)
+    if abs(scaled - nearest) <= 1e-12:
+        scaled = nearest
+    return max(0, min(31, math.floor(scaled)))
+
+
 def spatial(target, candidate, scale, rotation):
     tcx, tcy = statistics.fmean(target["x"]), statistics.fmean(target["y"])
     ccx, ccy = statistics.fmean(candidate["x"]), statistics.fmean(candidate["y"])
@@ -127,8 +135,8 @@ def spatial(target, candidate, scale, rotation):
         for x, y, power in zip(xs, ys, powers):
             if only_on and power <= 0:
                 continue
-            gx = min(31, math.floor((x - min_x) / max(max_x - min_x, EPS) * 32))
-            gy = min(31, math.floor((y - min_y) / max(max_y - min_y, EPS) * 32))
+            gx = grid_index(x, min_x, max_x)
+            gy = grid_index(y, min_y, max_y)
             cells[gy * 32 + gx] += 1; count += 1
         return [value / count for value in cells]
 

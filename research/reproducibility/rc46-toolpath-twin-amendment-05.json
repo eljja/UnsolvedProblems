@@ -1,0 +1,24 @@
+{
+  "amendmentId": "RC46-X16-TOOLPATH-TWIN-AMENDMENT-05",
+  "cycleId": "RC-2026-46",
+  "createdOn": "2026-08-22",
+  "status": "post-first-run-numerical-clarification-with-original-results-preserved",
+  "trigger": "The first Node and Python runs agreed that all 24 candidates failed and that L0013 ranked first, but seven layers differed in spatial Hellinger distance by 0.00147 to 0.00344. Every other metric agreed. The discrepancy occurred where a normalized coordinate lay numerically on a 32-cell boundary; language runtimes rounded opposite sides of that boundary.",
+  "observedBeforeChange": {
+    "commonDecision": "No eligible candidate; L0013 top-ranked and ineligible",
+    "affectedLayers": [2, 3, 6, 10, 14, 18, 22],
+    "maximumSpatialHellingerDifference": 0.00343533658280626,
+    "preservedOutputs": [
+      "research/reproducibility/rc46-toolpath-twin-node-first-run.json",
+      "research/reproducibility/rc46-toolpath-twin-python-first-run.json"
+    ]
+  },
+  "clarification": "Before flooring a normalized grid coordinate, multiply by 32 and snap it to the nearest integer when the absolute difference is at most 1e-12; then clamp the integer cell index to 0 through 31. This rule applies identically to both all-camera and laser-on histograms.",
+  "reason": "The preregistration fixed the grid and Hellinger statistic but did not define how binary floating-point values exactly at a cell boundary are assigned. Snapping only values within 1e-12 of an integer makes the intended mathematical partition deterministic without moving an observation that is meaningfully inside a cell.",
+  "notChanged": [
+    "archive, candidate set, features, rotation, score terms, thresholds, and all nine hard gates",
+    "the first-run records or their failure",
+    "the prohibition on candidate images and natural L0001 pixels"
+  ],
+  "decisionRule": "Rerun both implementations from the authenticated archive. Accept a cycle adjudication only if hashes, rank, gates, and all numeric fields then agree to 1e-9."
+}
