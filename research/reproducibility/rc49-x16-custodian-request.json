@@ -1,0 +1,56 @@
+{
+  "requestId": "RC49-X16-IDENTITY-SIDECAR-REQUEST-0.1",
+  "cycleId": "RC-2026-49",
+  "preparedOn": "2026-08-25",
+  "status": "draft-only-not-sent-no-artifact-assumed",
+  "purpose": "Determine whether an author- or custodian-held X16 artifact can bind each released AVI frame to an original camera exposure without inferring identity from image content or exported order.",
+  "publicRecordContext": {
+    "record": "NIST AMMT X16 Powder Bed Fusion 3D Build",
+    "url": "https://data.nist.gov/od/id/mds2-2309",
+    "namedArtifact": "The public notes refer to an indexing file used during FPGA decompression, but the audited public manifests do not list it.",
+    "knownGap": "For L0001, the public XYPT roster has 94,736 camera-trigger rows while the released AVI has 94,713 frames. The stage and identities of the 23 missing records remain unknown.",
+    "nonClaim": "This request does not assert that the index contains exposure identities, that it survives, or that XYPT is a complete physical trigger roster."
+  },
+  "requestedArtifacts": [
+    {
+      "priority": 1,
+      "artifact": "The exact FPGA compression/decompression indexing file used to create L0001 and L0002 AVI outputs",
+      "requiredReceipt": ["original filename and relative path", "byte length", "SHA-256 digest", "creation and last-modification times with clock basis", "software/firmware version that wrote and consumed it"]
+    },
+    {
+      "priority": 2,
+      "artifact": "Camera acquisition roster or acquisition-PC/FPGA log for L0001 and L0002",
+      "requiredReceipt": ["original filename and relative path", "byte length", "SHA-256 digest", "counter/timestamp clock domains", "whether entries are allocated before exposure, after transfer, or during export"]
+    },
+    {
+      "priority": 3,
+      "artifact": "Export/decompression log mapping source records to released AVI frames",
+      "requiredReceipt": ["input and output digests", "software version and parameters", "per-frame mapping or explicit loss markers", "error/warning output", "operator or automated-job identifier"]
+    }
+  ],
+  "semanticQuestions": [
+    "What does one index row identify: requested trigger, accepted sensor exposure, FPGA packet, decompressed image, or AVI frame?",
+    "Is any numerical field generated before image capture, and does it increment on a dropped exposure, failed transfer, or failed export?",
+    "What are the counter width, starting value, wrap rule, reset rule, and domain identifier across layer, acquisition restart, firmware restart, and file split?",
+    "Are omissions represented by absent rows, explicit status values, repeated counters, or a discontinuity?",
+    "Does the file map directly to XYPT camera-trigger rows? If so, which keys and clock-delay corrections are used, and where is that derivation documented?",
+    "Does the file map directly to AVI frame indices? If so, is the mapping stored during export or reconstructed later by ordinal position?",
+    "Are timestamps exposure-start, exposure-end, FPGA-receipt, host-receipt, decompression, or AVI-write times? State resolution, clock source, synchronization, latency, and error bound.",
+    "Did any filtering, trimming, deduplication, frame substitution, or codec retry occur between camera transfer and the public AVI?",
+    "Can the custodian state whether the supplied bytes are the original artifact or a later reconstruction, and provide the derivation if reconstructed?"
+  ],
+  "acceptanceGate": [
+    "The artifact is delivered with byte length and SHA-256 digest plus an authoritative statement of its role in the X16 pipeline.",
+    "At least one field has documented acquisition semantics independent of released-frame order.",
+    "A direct, reproducible join from original exposure identity to public frame identity is specified without filling gaps by ordinal interpolation.",
+    "Counter reset/wrap and clock-domain changes are explicit; an unexplained reset blocks downstream exact identity.",
+    "The join passes a frozen invariant on L0002 before L0001 is opened for identity reconstruction."
+  ],
+  "rejectionOrAbstention": [
+    "A decompression offset table that only orders surviving compressed blocks is useful provenance but not a trigger-identity ledger.",
+    "A filename, screenshot, human recollection, or hash without field semantics cannot establish the join.",
+    "A later table built by pairing the nth AVI frame with the nth XYPT trigger reproduces the assumption under test and is rejected as independent evidence.",
+    "If no artifact survives or access is not granted, the historical X16 result remains a 306-bit partial-identification class; absence is not converted into evidence about the loss stage."
+  ],
+  "nextActionIfReceived": "Freeze the delivered bytes and custodian statement by digest, keep L0001 image content sealed, preregister a parser and L0002 invariant test, then decide whether L0001 exact identity reconstruction is admissible."
+}

@@ -1,0 +1,92 @@
+{
+  "reviewId": "RC49-IDENTITY-PLANE-PRIOR-ART-0.1",
+  "cycleId": "RC-2026-49",
+  "reviewedOn": "2026-08-25",
+  "scope": "Primary standards and repository evidence that bound what counters, clocks, signatures, Merkle proofs, and provenance attestations can establish before the RC49 fault outcomes are generated.",
+  "confirmedFacts": [
+    {
+      "claim": "RFC 9162 defines an ordered binary Merkle tree with SHA-domain separation between leaves and internal nodes, plus inclusion and append-only consistency proofs. These proofs establish membership and prefix consistency of supplied entries; they do not establish that an entry names the correct physical event.",
+      "source": "https://www.rfc-editor.org/rfc/rfc9162",
+      "publishedOn": "2021-12-01",
+      "resultPeriod": "Certificate Transparency Version 2.0 Merkle-tree and proof semantics"
+    },
+    {
+      "claim": "RFC 9942, published in June 2026, standardizes COSE receipts over verifiable data structures and gives concrete CBOR encodings for RFC9162_SHA256 inclusion and consistency proofs. Verification combines the candidate entry, proof, root, and receipt signature.",
+      "source": "https://www.rfc-editor.org/rfc/rfc9942",
+      "publishedOn": "2026-06-01",
+      "resultPeriod": "COSE Receipts Standards Track RFC"
+    },
+    {
+      "claim": "RFC 9943, published in June 2026, defines SCITT signed statements and transparent statements. It explicitly states that registration proves a statement was produced by an issuer, not that the statement is accurate, and that log order cannot be assumed to equal issuance order unless the registration policy says so.",
+      "source": "https://www.rfc-editor.org/rfc/rfc9943",
+      "publishedOn": "2026-06-01",
+      "resultPeriod": "SCITT Architecture Standards Track RFC, especially Sections 9.1 and 9.2"
+    },
+    {
+      "claim": "RFC 8785 supplies a canonical JSON representation for repeatable hashing and signing, while restricting inputs to I-JSON and deterministic property ordering. Canonicalization removes serialization ambiguity but adds no physical-event semantics.",
+      "source": "https://www.rfc-editor.org/rfc/rfc8785",
+      "publishedOn": "2020-06-01",
+      "resultPeriod": "JSON Canonicalization Scheme"
+    },
+    {
+      "claim": "The in-toto project lists the in-toto Attestation Framework v1.0 as its stable attestation format. Its statement/subject/predicate separation is useful for naming evidence, but an application still has to define the predicate that binds a scientific acquisition to a physical event.",
+      "source": "https://in-toto.io/docs/specs/",
+      "publishedOn": "2024-12-16",
+      "resultPeriod": "Stable specification index reviewed 2026-08-25"
+    },
+    {
+      "claim": "SLSA v1.2 is the current approved specification and treats provenance as verifiable information about where, when, and how an artifact was produced. Its software-build threat model informs stage separation, but it does not itself define camera-trigger or wafer-event identity.",
+      "source": "https://slsa.dev/spec/v1.2/",
+      "publishedOn": "2025-11-01",
+      "resultPeriod": "SLSA v1.2 approved specification current at review"
+    },
+    {
+      "claim": "RC48 found no direct X16 frame-identity ledger in three official NIST manifests, a selected DAQ archive central directory, or the X16 hierarchy of the 2025 compilation. The exact count-only class remains C(94736,23), requiring 306 aggregate binary decisions under the ordered-loss model.",
+      "source": "research/reproducibility/rc48-x16-cycle-result.json",
+      "publishedOn": "2026-08-25",
+      "resultPeriod": "RC48 bounded public-provenance audit and exact independent identity-budget calculation"
+    }
+  ],
+  "inferences": [
+    "A valid signature over a Merkle root authenticates a statement about an ordered byte set; it cannot repair a wrong or missing physical-event label already present when the first root was created.",
+    "A trigger-allocated counter and a payload commitment answer different questions: the counter contracts event-history ambiguity, while the commitment exposes byte changes after its boundary.",
+    "Stage localization requires independently retained boundary commitments. A final counter can reveal an anomalous sequence but cannot say whether capture, export, or packaging caused it.",
+    "A clock can replace a counter only within a declared clock domain and error envelope whose entire possible-time interval lies inside one trigger's decision cell. A nominal timestamp field is not sufficient.",
+    "Counter reset is not merely another missing record. Unless a signed bridge maps old and new domains, downstream event identities are non-identifiable and the correct action is refusal."
+  ],
+  "unverifiedProposals": [
+    "A trigger-domain counter combined with signed Merkle roots at capture, export, and packaging will exactly localize every injected structural fault and every payload mutation occurring after the first commitment.",
+    "The same design will correctly abstain on capture-side payload corruption that precedes the first commitment, demonstrating rather than hiding the sensor-boundary limit.",
+    "The identity/integrity separation will transfer from camera frames to semiconductor wafer, chamber, recipe, metrology, and maintenance-event lineage when the one-event-to-one-record assumptions are made explicit."
+  ],
+  "existingRepositoryAssets": [
+    {
+      "path": "research/reproducibility/site-lineage-interface-protocol.json",
+      "reused": "physical event, export, analysis, and attestation boundary vocabulary",
+      "notRepeated": "RC49 does not rerun the earlier 13-case site-lineage schema audit"
+    },
+    {
+      "path": "research/reproducibility/unseen-attestation-protocol.json",
+      "reused": "outcome-free commitment, canonical digest, chronology, and independent-adjudication discipline",
+      "notRepeated": "RC49 does not regenerate the earlier hidden 28-case attestation corpus"
+    },
+    {
+      "path": "research/reproducibility/rc48-identity-connection-evidence.json",
+      "reused": "ordered event/observation matching and counter-bound Merkle minimum-validation test",
+      "notRepeated": "RC49 begins with the proposed 10,000-event fault test rather than another identity-budget calculation"
+    }
+  ],
+  "searchStrategy": {
+    "queries": [
+      "site:rfc-editor.org RFC 9942 COSE receipts inclusion consistency proof",
+      "site:rfc-editor.org RFC 9943 SCITT statement accuracy ordering",
+      "site:rfc-editor.org RFC 9162 Merkle inclusion consistency domain separation",
+      "site:in-toto.io attestation framework v1 statement subject predicate",
+      "site:slsa.dev spec v1.2 provenance verification",
+      "scientific acquisition trigger counter signed Merkle manifest frame provenance",
+      "semiconductor manufacturing event lineage signed metrology provenance"
+    ],
+    "priority": "Standards-track RFCs, official specification sites, primary papers, and official research records. Secondary summaries are excluded from factual claims.",
+    "noveltyBoundary": "RC49 does not claim novelty for counters, Ed25519, SHA-256, Merkle trees, signed manifests, transparency receipts, or stage provenance. The testable contribution is the preregistered separation of event identity, byte integrity, stage attribution, clock-domain refusal, and pre-commit observability on one fault corpus."
+  }
+}
