@@ -1,0 +1,129 @@
+{
+  "reviewId": "RC50-COMPOSITIONAL-RECEIPTS-PRIOR-ART-0.1",
+  "cycleId": "RC-2026-50",
+  "reviewedOn": "2026-08-25",
+  "status": "sealed-before-rc50-fixture-generation-or-outcome",
+  "selectionBoundary": "Primary standards and official registries define cryptographic transport, append-only evidence, protected claim labels, and threat boundaries. They do not solve physical event accuracy, role independence, or causal identifiability. RC50 tests that application-layer boundary rather than proposing a new signature, Merkle tree, or transparency architecture.",
+  "sources": [
+    {
+      "id": "rfc_cbor_8949_2020",
+      "title": "RFC 8949: Concise Binary Object Representation (CBOR)",
+      "url": "https://www.rfc-editor.org/rfc/rfc8949.html",
+      "publisher": "IETF / RFC Editor",
+      "published": "2020-12",
+      "type": "standard",
+      "usedFor": "Core deterministic encoding, preferred shortest encodings, map-key ordering, and the distinction among well-formed, valid, and application-expected input.",
+      "doesNotEstablish": "COSE signature validity, receipt semantics, or physical accuracy."
+    },
+    {
+      "id": "rfc_cose_9052_2022",
+      "title": "RFC 9052: CBOR Object Signing and Encryption (COSE): Structures and Process",
+      "url": "https://www.rfc-editor.org/rfc/rfc9052.html",
+      "publisher": "IETF / RFC Editor",
+      "published": "2022-08",
+      "type": "internet-standard",
+      "usedFor": "COSE_Sign1, tag 18, protected versus unprotected headers, Sig_structure, detached payload, and empty external_aad in the frozen profile.",
+      "doesNotEstablish": "Application replay protection, transparency, or statement truth."
+    },
+    {
+      "id": "rfc_cose_countersignatures_9338_2022",
+      "title": "RFC 9338: CBOR Object Signing and Encryption (COSE): Countersignatures",
+      "url": "https://www.rfc-editor.org/rfc/rfc9338.html",
+      "publisher": "IETF / RFC Editor",
+      "published": "2022-12",
+      "type": "internet-standard",
+      "usedFor": "The prior-art boundary that a second party can separately sign a COSE object and that the resulting security meaning must be specified.",
+      "doesNotEstablish": "That two keys are operationally independent or that countersignature validation makes a nonce one-time. RC50 uses two separate Signed Statements and claims no header-11 conformance."
+    },
+    {
+      "id": "rfc_ct_9162_2021",
+      "title": "RFC 9162: Certificate Transparency Version 2.0",
+      "url": "https://www.rfc-editor.org/rfc/rfc9162.html",
+      "publisher": "IETF / RFC Editor",
+      "published": "2021-12",
+      "type": "standard",
+      "usedFor": "SHA-256 Merkle leaf/node domain separation, inclusion and consistency proof algorithms, retained signed tree heads, and the need to share log responses to detect inconsistent views.",
+      "doesNotEstablish": "Which conflicting branch is physically correct or that an entry's payload is accurate."
+    },
+    {
+      "id": "rfc_cwt_cose_headers_9597_2024",
+      "title": "RFC 9597: CBOR Web Token (CWT) Claims in COSE Headers",
+      "url": "https://www.rfc-editor.org/rfc/rfc9597.html",
+      "publisher": "IETF / RFC Editor",
+      "published": "2024-06",
+      "type": "standard",
+      "usedFor": "Protected COSE header label 15 carrying issuer and subject CWT claims required by the RC50 SCITT subset.",
+      "doesNotEstablish": "Uniqueness or accuracy of application sequence values."
+    },
+    {
+      "id": "rfc_cose_receipts_9942_2026",
+      "title": "RFC 9942: CBOR Object Signing and Encryption (COSE) Receipts",
+      "url": "https://www.rfc-editor.org/rfc/rfc9942.html",
+      "publisher": "IETF / RFC Editor",
+      "published": "2026-06",
+      "type": "standard",
+      "usedFor": "COSE receipt labels 394-396, VDS identifier RFC9162_SHA256=1, inclusion proof -1, consistency proof -2, detached-root verification order, and one joint receipt result.",
+      "doesNotEstablish": "Registration policy, physical event identity, role independence, currentness across observers, or truth of the logged statement."
+    },
+    {
+      "id": "rfc_scitt_9943_2026",
+      "title": "RFC 9943: An Architecture for Trustworthy and Transparent Digital Supply Chains",
+      "url": "https://www.rfc-editor.org/rfc/rfc9943.html",
+      "publisher": "IETF / RFC Editor",
+      "published": "2026-06",
+      "type": "standard",
+      "usedFor": "Mandatory issuer/subject claims, Signed and Transparent Statement structures, multiple independent receipts, append-only/non-equivocation/replayability requirements, transparent registration policy, and the threat boundary between authentic statements and accurate claims.",
+      "doesNotEstablish": "That an issuer statement is true, that VDS order equals issuance order, or that a single transparency service exposes every conflicting view."
+    },
+    {
+      "id": "iana_cose_registry_2026",
+      "title": "CBOR Object Signing and Encryption (COSE) Registries",
+      "url": "https://www.iana.org/assignments/cose",
+      "publisher": "IANA",
+      "published": "live-registry-last-updated-2026-08-11",
+      "type": "official-registry",
+      "usedFor": "Current labels 1, 3, 4, 15, 16, 394, 395, 396; EdDSA -8; RFC9162_SHA256 VDS 1; and inclusion/consistency proof identifiers.",
+      "doesNotEstablish": "Correct implementation or application semantics."
+    }
+  ],
+  "repositoryInheritance": [
+    {
+      "asset": "RC49 10,000-event single-fault corpus and Node/Python agreement",
+      "reused": "Fault names, event-versus-byte distinction, first-witness boundary, RFC9162 hash construction, and explicit refusal semantics.",
+      "notRepeated": "RC50 does not rerun the 80 single-fault trials, refit X16 images, or claim another single-fault result."
+    },
+    {
+      "asset": "RC35-RC41 state-machine, crash, witness, interval, and common-cause cycles",
+      "reused": "Transactional one-time state, adversarial schedules, refusal under missing independent evidence, and explicit common-cause residuals.",
+      "notRepeated": "RC50 does not claim a new distributed-consensus or hardware-in-the-loop result."
+    },
+    {
+      "asset": "RC31-RC34 attestation, role separation, transparency, and independent-verifier cycles",
+      "reused": "Protected identities, negative cryptographic controls, code-independent wire adjudication, and append-only receipt auditing.",
+      "notRepeated": "RC50 tests a published RFC 9942/9943 subset and composite physical-history claims rather than relabeling earlier JSON attestations."
+    }
+  ],
+  "noveltyBoundary": {
+    "notClaimed": [
+      "A new cryptographic primitive, Merkle construction, CBOR encoding, COSE message, transparency architecture, countersignature scheme, or consensus protocol",
+      "General SCITT interoperability or production conformance",
+      "A proof that two organizational roles are truly independent",
+      "A recovered X16 frame ledger or semiconductor-fab validation"
+    ],
+    "experimentSpecificCombination": "A physical-event causal adjudicator that keeps event identity, byte integrity, reset-domain continuity, log currentness, cross-view uniqueness, and earliest independent witness as separate coordinates while transporting representative proofs in the now-published RFC 9942/9943 formats.",
+    "firstPriorArtSearchTerms": [
+      "RFC 9942 scientific acquisition event identity receipt",
+      "RFC 9943 physical event reset domain bridge",
+      "COSE receipt rollback equivocation cross view",
+      "pre-capture independent witness payload digest camera FPGA",
+      "semiconductor lineage counter reset Merkle receipt",
+      "mutation omission causal ambiguity provenance"
+    ]
+  },
+  "stateReview": {
+    "rfc9942": "Published June 2026 as an Internet Standards Track document; it defines RFC9162_SHA256 inclusion and consistency receipt encodings.",
+    "rfc9943": "Published June 2026 as an Internet Standards Track document; it requires SCITT Signed Statements and Receipts to carry protected issuer and subject claims and explicitly separates registration from claim accuracy.",
+    "iana": "The official COSE registry was reviewed after both RFCs and lists receipt, VDS, and VDP labels 394-396 as of 2026-08-11.",
+    "implementationBoundary": "The official standards supply structures and algorithms but not the RC50 application policy, reset registry, physical witness definition, or causal candidate-history adjudicator."
+  }
+}

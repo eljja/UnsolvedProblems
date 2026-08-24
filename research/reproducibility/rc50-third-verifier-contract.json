@@ -1,0 +1,48 @@
+{
+  "contractId": "RC50-THIRD-WIRE-VERIFIER-CONTRACT-0.1",
+  "cycleId": "RC-2026-50",
+  "createdOn": "2026-08-25",
+  "status": "sealed-before-wire-vectors-or-outcomes",
+  "allowedInputs": [
+    "rc50-compositional-receipts-wire-vectors.json after it is generated",
+    "public Ed25519 verification keys embedded in that artifact",
+    "rc50-compositional-receipts-precommit.json",
+    "RFC 8949, RFC 9052, RFC 9162, RFC 9597, RFC 9942, RFC 9943, and the IANA COSE registry"
+  ],
+  "forbiddenInputs": [
+    "Node generator source imports",
+    "Python scientific generator source imports",
+    "Node or Python trial verdicts and aggregate summaries",
+    "precomputed decoded CBOR trees or reconstructed roots",
+    "any private operational key or live transparency service"
+  ],
+  "requiredIndependentOperations": [
+    "Parse the complete deterministic-CBOR subset and reject trailing bytes, indefinite lengths, duplicate map keys, unsupported simple values, and tags other than 18.",
+    "Require COSE_Sign1 tag 18 and the exact four-element array shape.",
+    "Decode protected headers from their byte string and require alg=-8, kid, CWT Claims label 15 with issuer 1 and subject 2, and receipt vds=1.",
+    "Re-encode Sig_structure independently with context Signature1, protected bytes, empty external_aad, and the attached or supplied detached payload.",
+    "Verify Ed25519 statement and receipt signatures from the supplied public keys.",
+    "Decode inclusion proof label -1 and reconstruct the RFC9162_SHA256 root from the candidate entry before receipt signature verification.",
+    "Decode consistency proof label -2 and verify both retained roots and sizes according to RFC 9162 before returning success.",
+    "Verify that a Transparent Statement may attach multiple receipt byte strings under unprotected label 394 without changing the issuer signature.",
+    "Run every frozen negative control and reject any joint signature-plus-proof success."
+  ],
+  "expectedCounts": {
+    "signedStatementPositive": 12,
+    "inclusionReceiptPositive": 12,
+    "consistencyReceiptPositive": 3,
+    "statementSignatureMutationRejected": 12,
+    "receiptSignatureMutationRejected": 15,
+    "wrongLeafRejected": 12,
+    "inclusionPathMutationRejected": 12,
+    "consistencyPathMutationRejected": 3
+  },
+  "stopConditions": [
+    "Any vector cannot be parsed under the frozen subset.",
+    "Any mandatory protected claim is missing or accepted from an unprotected header.",
+    "Any positive signature or proof fails.",
+    "Any negative mutation is accepted.",
+    "The verifier needs a generator-owned decoded value or verdict to decide."
+  ],
+  "output": "research/reproducibility/rc50-compositional-receipts-third-wire-audit.json"
+}

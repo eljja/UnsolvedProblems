@@ -1,0 +1,205 @@
+{
+  "precommitId": "RC50-COMPOSITIONAL-RECEIPTS-PRECOMMIT-0.1",
+  "cycleId": "RC-2026-50",
+  "createdOn": "2026-08-25",
+  "status": "sealed-after-repository-prior-art-and-capability-audit-before-fixture-generation-outcomes-or-independent-adjudication",
+  "problems": ["UP-605", "UP-315"],
+  "inheritedStart": "Extend RC49 only at its declared open boundaries: an independent pre-capture witness, a one-time reset-domain bridge, ambiguity-producing composite faults, rollback and equivocation, and an RFC 9942/9943 wire profile. Do not reopen the historical X16 branch without a custodian artifact.",
+  "question": "When multiple lineage faults or adversarial histories coexist, which evidence composition makes the physical event and first changed boundary unique, and when must a verifier return a set, reject a bridge, or refuse truth even though every individual signature and Merkle proof is valid?",
+  "selectionReason": "RC49 passed a single-fault synthetic gate but explicitly left composition, pre-capture independence, reset continuity, rollback, equivocation, and standards transport open. Those six boundaries can be tested with small deterministic fixtures and independent implementations without inventing unavailable physical provenance. They are shared by semiconductor process lineage and finite measurement-history reconstruction.",
+  "capabilityAuditBeforeSeal": {
+    "node": "Node.js v25.8.2 provides SHA-256 and Ed25519. No external CBOR or COSE package is installed; the primary implementation will encode only the frozen deterministic-CBOR subset specified here.",
+    "python": "Python cryptography 41.0.3 provides an independently implemented Ed25519 signer and verifier. The independent model will regenerate all scientific fixtures without reading the Node outcome.",
+    "thirdVerifier": "A separate wire verifier will parse only the emitted hexadecimal COSE/CBOR vectors with its own decoder and Merkle code. It may read the Node wire-vector artifact but may not import either generator or their verdicts.",
+    "boundary": "Only existing RC49 assets, runtime capabilities, and primary standards were inspected. No RC50 fixture, COSE byte string, trial verdict, aggregate metric, or independent result existed before this precommit."
+  },
+  "corpus": {
+    "eventCount": 1024,
+    "periodMicroseconds": 100,
+    "oldIdentityDomain": "RC50-SYNTHETIC-TRIGGER-DOMAIN-A",
+    "newIdentityDomain": "RC50-SYNTHETIC-TRIGGER-DOMAIN-B",
+    "payloadBytes": 32,
+    "placements": [17, 257, 998],
+    "stages": ["capture", "export", "package"],
+    "payloadGeneration": "SHA-256 over a fixed UTF-8 domain tag, uint64 physical ordinal, and a fixed public salt. The physical ordinal is not encoded as text inside the payload.",
+    "trialSchedule": {
+      "clean": 3,
+      "authorized-reset-plus-omission": 9,
+      "payload-mutation-plus-adjacent-reorder": 9,
+      "disjoint-payload-mutation-plus-omission": 9,
+      "shadowed-mutation-then-same-event-omission": 3,
+      "signed-log-rollback": 3,
+      "issuer-equivocation": 2,
+      "log-equivocation": 2,
+      "reset-bridge-replay": 1,
+      "reset-bridge-fork": 1,
+      "pre-capture-witness-and-capture-writer-collusion": 2,
+      "total": 44
+    },
+    "standardsVectors": {
+      "inclusionLeafIndices": [0, 1, 16, 17, 255, 256, 257, 511, 512, 997, 998, 1023],
+      "consistencyOldSizes": [17, 257, 998],
+      "newSize": 1024,
+      "positiveSignedStatements": 12,
+      "positiveInclusionReceipts": 12,
+      "positiveConsistencyReceipts": 3,
+      "negativeStatementSignatureMutations": 12,
+      "negativeReceiptSignatureMutations": 15,
+      "negativeWrongLeafChecks": 12,
+      "negativeInclusionPathMutations": 12,
+      "negativeConsistencyPathMutations": 3
+    }
+  },
+  "faultSemantics": {
+    "authorized-reset-plus-omission": "At capture, a dual-role bridge closes the old domain after ordinal p-1 and maps new-domain counter zero to physical ordinal p. A record at p+1 is then omitted at capture, export, or package.",
+    "payload-mutation-plus-adjacent-reorder": "At one named boundary, payload p is bit-flipped and the distinct records p+1 and p+2 are swapped. Both transformations remain in that boundary output.",
+    "disjoint-payload-mutation-plus-omission": "At one named boundary, payload p is bit-flipped and the distinct record p+2 is removed. Both transformations remain observable.",
+    "shadowed-mutation-then-same-event-omission": "At one named boundary, payload p is bit-flipped and then that same record is removed before the boundary commitment. The observations are byte-for-byte identical to omission without mutation.",
+    "signed-log-rollback": "After a relying party stores the signed 1024-entry head, it is served an older, correctly signed and internally valid prefix receipt at size 17, 257, or 998.",
+    "issuer-equivocation": "The same issuer signs two conflicting payloads under the same subject and application sequence; each is registered in a different transparency service.",
+    "log-equivocation": "One transparency-service key signs two different Merkle roots for the same tree size and log identity and sends one view to each observer.",
+    "reset-bridge-replay": "A previously accepted bridge nonce is presented again after it has been consumed.",
+    "reset-bridge-fork": "The same old domain, old root, closing counter, and nonce are used to authorize two different new domains.",
+    "pre-capture-witness-and-capture-writer-collusion": "The nominally independent witness and capture writer both commit the same mutated payload. No earlier evidence distinguishes an already-wrong sensor value from coordinated rewriting."
+  },
+  "evidenceRoles": {
+    "eventIssuer": "Allocates the physical event ordinal and signs event statements.",
+    "preCaptureWitness": "Uses a different deterministic test key to sign the ordinal-to-payload-digest manifest before the capture writer.",
+    "captureWriter": "Produces capture, export, and package manifests and may receive injected transformations.",
+    "resetAuthority": "Signs the reset bridge payload containing old/new domains, old root, closing counter, new counter origin, physical ordinal mapping, reason, and nonce.",
+    "resetWitness": "Independently signs the same bridge digest under a separate role and key.",
+    "transparencyA": "Registers signed statements in one RFC9162_SHA256 log and issues RFC 9942 receipts.",
+    "transparencyB": "Maintains an independently keyed second log for cross-view comparison.",
+    "monitor": "Retains prior heads, consumed nonces, subject sequences, and cross-service views. It never treats a valid receipt as physical truth by itself."
+  },
+  "arms": [
+    {
+      "id": "receipt-local",
+      "evidence": "One COSE_Sign1 statement and one RFC 9942 receipt are verified in isolation, including deterministic CBOR, EdDSA, RFC9162_SHA256 inclusion or consistency proof, required protected headers, and the candidate entry.",
+      "canTest": "Statement authenticity and one VDS property at the signed root.",
+      "cannotClaim": "Currentness, uniqueness across observers, nonce freshness, physical payload accuracy, or completeness of all statements about a subject."
+    },
+    {
+      "id": "stateful-single-view",
+      "evidence": "The local receipts are augmented with the pre-capture witness, dual-role bridge, consumed-nonce registry, stored tree head, and ordered boundary manifests, but only one transparency-service view is available.",
+      "canTest": "Separable composite faults, same-view rollback, bridge replay and fork, and post-witness mutations.",
+      "cannotClaim": "A log or issuer has not shown a conflicting valid view to another observer."
+    },
+    {
+      "id": "cross-view-causal",
+      "evidence": "Two independently keyed transparency views and a causal-history enumerator are added to the stateful evidence. The enumerator preserves every history compatible with the retained bytes rather than selecting one explanation heuristically.",
+      "canTest": "Separable composite localization, rollback, issuer/log equivocation, and structural non-identifiability caused by shadowing or collusion.",
+      "cannotClaim": "Which conflicting issuer/log branch is physically true, or any state before the earliest genuinely independent witness."
+    }
+  ],
+  "resetBridgeProfile": {
+    "payloadFields": ["schemaVersion", "subject", "oldDomain", "oldRoot", "oldClosingCounter", "newDomain", "newCounterOrigin", "newPhysicalOrdinal", "reasonCode", "nonce", "policyDigest"],
+    "authorization": "Two separate COSE_Sign1 statements from resetAuthority and resetWitness sign the identical deterministic-CBOR payload digest. This experiment does not claim RFC 9338 countersignature-header conformance.",
+    "stateRule": "Acceptance is transactional: both signatures and policy must pass, nonce must be unseen, the old head must equal the retained head, and neither old head nor new domain may already have another successor. On acceptance, nonce and edge are committed together.",
+    "refusalRule": "Any replay, fork, missing role, policy mismatch, stale old root, or reused new domain rejects the bridge and all downstream identity."
+  },
+  "wireProfile": {
+    "name": "UP-RC50-SCITT-EVENT-LINEAGE-v1",
+    "scope": "A frozen application profile over published RFC mechanisms; not a new IANA-registered profile and not a production transparency service.",
+    "cbor": "RFC 8949 core deterministic encoding; definite lengths only; integers, byte/text strings, arrays, maps, false/true/null; no floats, duplicate map keys, indefinite lengths, or tags except tag 18 for COSE_Sign1.",
+    "cose": "RFC 9052 COSE_Sign1 and Sig_structure with empty external_aad. EdDSA algorithm label -8 is used with deterministic public test keys.",
+    "scittProtectedHeaders": "Every Signed Statement and Receipt includes CWT Claims label 15 with issuer claim 1 and subject claim 2. kid label 4 is present because X.509 is not used. Statements include alg 1 and content type 3. Receipts include alg 1, vds 395 equal to 1, and a receipt media type.",
+    "inclusionReceipt": "RFC 9942 detached-payload COSE_Sign1. Unprotected vdp label 396 contains proof label -1 and a CBOR byte string encoding [tree-size, leaf-index, inclusion-path]. The candidate entry reconstructs the root before signature verification.",
+    "consistencyReceipt": "RFC 9942 detached-payload COSE_Sign1. Unprotected vdp label 396 contains proof label -2 and a CBOR byte string encoding [old-size, new-size, consistency-path]. The newer root is the detached signature payload and both retained roots must pass RFC 9162 verification.",
+    "transparentStatement": "A Signed Statement may carry two independently issued Receipt byte strings under unprotected header label 394. Receipt attachment never alters the issuer signature input.",
+    "negativePolicy": "A verifier returns one boolean for the joint receipt signature-plus-proof result and must reject unknown VDS identifiers, malformed proof shapes, wrong leaf indices, wrong roots, altered paths, missing mandatory SCITT claims, or invalid signatures."
+  },
+  "competingHypotheses": [
+    {
+      "id": "H0-universal-composition",
+      "claim": "Once every boundary has signed counter-bound Merkle evidence, any two simultaneous transformations have one exactly recoverable physical history.",
+      "prediction": "All 41 non-clean, non-collusion fixtures have a single exact explanation.",
+      "decisiveTest": "The three same-event mutate-then-omit fixtures and four equivocation fixtures.",
+      "reject": "Reject if two distinct causal histories produce identical retained bytes, or if two conflicting valid views identify misconduct without identifying physical truth."
+    },
+    {
+      "id": "H1-witness-bounded-causal-graph",
+      "claim": "Independent pre-capture evidence, a transactional reset bridge, retained log state, and cross-view comparison produce exact localization only for unique admissible histories and explicit set/refusal results otherwise.",
+      "prediction": "The cross-view arm returns 3 clean, 27 exact composite, 3 set-valued shadow, 3 rollback refusal, 2 issuer-equivocation refusal, 2 log-equivocation refusal, 1 bridge-replay rejection, 1 bridge-fork rejection, and 2 outside-independent-boundary verdicts.",
+      "decisiveTest": "All 44 preregistered fixtures generated and adjudicated independently.",
+      "reject": "Reject on any wrong event or stage, any collapsed ambiguity, any accepted replay/fork, any missed cross-view conflict, any clean false call, or any implementation disagreement."
+    },
+    {
+      "id": "H2-one-receipt-is-current-history",
+      "claim": "A valid RFC 9942 receipt is sufficient evidence that the presented history is current and globally unique.",
+      "prediction": "Receipt-local verification rejects all three rollback and four equivocation fixtures.",
+      "decisiveTest": "Verify each adversarial view separately before comparing retained or cross-service state.",
+      "reject": "Reject if both stale and forked views pass local cryptographic verification and become distinguishable only through remembered or shared state."
+    },
+    {
+      "id": "H3-signature-makes-reset-one-time",
+      "claim": "Two valid signatures on a reset bridge make it non-replayable and non-forking without a stateful registry.",
+      "prediction": "Stateless bridge verification rejects the replay and fork fixtures.",
+      "decisiveTest": "Present one byte-identical replay and one dual-signed competing successor.",
+      "reject": "Reject if signatures validate both fixtures and only transactional nonce/successor state rejects them."
+    },
+    {
+      "id": "H4-independent-witness-contract",
+      "claim": "A separately keyed pre-capture witness makes capture-stage payload mutations observable, but the guarantee ends when witness and writer share the same hidden corruption or collude.",
+      "prediction": "All disjoint and reorder mutation cases are localized, while two collusion fixtures remain outside the independent boundary.",
+      "decisiveTest": "Compare honest-witness mutation fixtures with the two byte-identical collusion fixtures.",
+      "reject": "Reject if an honest witness cannot expose a later mutation or if colluding commitments are overclaimed as physical truth."
+    }
+  ],
+  "expectedAdjudication": {
+    "crossViewCounts": {
+      "clean": 3,
+      "exact-composite": 27,
+      "set-valued-shadow": 3,
+      "refuse-rollback": 3,
+      "refuse-issuer-equivocation": 2,
+      "refuse-log-equivocation": 2,
+      "reject-bridge-replay": 1,
+      "reject-bridge-fork": 1,
+      "outside-independent-boundary": 2
+    },
+    "separable": "Every reset-plus-omission, mutation-plus-reorder, and disjoint mutation-plus-omission fixture must name both transformations, their physical ordinals, and the first changed boundary.",
+    "shadowed": "Same-event mutation followed by omission must preserve exactly two admissible histories: omission-only and mutation-then-omission. The omission is identified; the mutation claim is refused.",
+    "equivocation": "Conflicting signed views identify the responsible issuer or log key and conflict coordinate, but the verifier must refuse to label either payload/root as physical truth without external evidence.",
+    "collusion": "Agreement between two nominal roles sharing the same altered bytes does not create independence. The verifier reports the earliest common-cause boundary and abstains on pre-witness truth."
+  },
+  "hardGates": [
+    "The 1024-event corpus, 44-trial schedule, placements, transformations, standards-vector indices and sizes, hypotheses, outcome classes, and H1 counts are immutable after this precommit.",
+    "Every exact composite verdict must name both operations, each physical ordinal, and the first changed stage; finding only a changed root or record position is not exact.",
+    "The shadowed mutation fixtures must never be promoted to exact two-fault explanations because omission-only produces identical retained evidence.",
+    "A locally valid receipt may not imply currentness or global uniqueness. Rollback requires retained state; equivocation requires a compared second view.",
+    "Reset bridge acceptance must atomically consume its nonce and successor edge. Signatures without registry state are scored as a baseline, not as replay protection.",
+    "The Node and Python scientific implementations independently generate corpus bytes, transformations, causal candidate sets, bridge decisions, and aggregate counts from this precommit.",
+    "The third wire verifier may consume hexadecimal vectors and public keys only. It must independently parse CBOR, reconstruct RFC9162 roots, build COSE Sig_structure bytes, and verify all positive and negative controls.",
+    "Any malformed mandatory header, unexpected VDS/proof identifier, non-deterministic encoding, signature/proof disagreement, scientific implementation mismatch, or wire-verifier mismatch stops integration and preserves all outputs.",
+    "No synthetic result is projected onto X16, a fab, a camera, or operational key custody. Physical n remains zero."
+  ],
+  "causalChain": [
+    "Complete physical roster, deterministic payloads, declared role separation, retained checkpoints, and frozen application policy",
+    "multiple transformations, reset discontinuity, stale history, forked views, or common-cause corruption leave several physical histories compatible with one signed artifact",
+    "pre-capture evidence contracts payload histories; a stateful bridge contracts domain-successor histories; inclusion/consistency receipts contract log histories; cross-view exchange exposes forks",
+    "independent proof verification plus explicit enumeration of admissible histories yields exact, set-valued, rejected, or outside-boundary verdicts",
+    "the criterion is satisfied only where one physical history remains after all allowed assumptions; otherwise the smallest unresolved equivalence class is the result"
+  ],
+  "fastFailureTests": [
+    "Stop on the first corpus digest, deterministic-CBOR byte, Merkle root, Ed25519 signature, or trial-ID mismatch between scientific implementations.",
+    "Reject any receipt verifier that verifies the signature without first reconstructing or checking the detached root required by its proof type.",
+    "Reject any causal adjudicator that returns one mutation-plus-omission history for the shadowed fixtures.",
+    "Reject any bridge implementation that verifies replay or fork fixtures without consulting committed nonce and successor state.",
+    "Reject any monitor that calls one of two valid conflicting views true solely because it was observed first.",
+    "Stop if the third verifier imports a generator file, reads aggregate verdicts, or treats unprotected headers as issuer-signed claims."
+  ],
+  "uncertaintyBudget": {
+    "measurement": "All event times, roles, and bytes are deterministic. Real latency, oscillator drift, sensor noise, dropped triggers, and witness transfer errors remain unmeasured.",
+    "model": "The fixture assumes one physical event per record and a declared three-boundary order. Asynchronous many-to-many measurements and unknown reference-roster omissions remain outside scope.",
+    "cryptographic": "All private keys are deterministic public test material. The experiment tests wire and state-machine correctness, not key secrecy, revocation, compromise recovery, or cryptanalytic strength.",
+    "implementation": "Three code paths still share the written precommit. Agreement cannot validate a scientifically wrong role-independence assumption.",
+    "sampling": "Designed placements exercise early, power-of-two-adjacent, and late boundaries. They are counterexamples and conformance fixtures, not estimates of field-failure prevalence.",
+    "externalValidity": "No live transparency service, hardware sensor, semiconductor tool, camera, operator, or custodian artifact is used.",
+    "standards": "The profile exercises RFC 8949, RFC 9052, RFC 9162, RFC 9597, RFC 9942, and RFC 9943 structures in a bounded subset. It does not claim IANA registration, general COSE interoperability, or deployment conformance beyond the emitted vectors."
+  },
+  "safetyEthicsEnvironment": "Synthetic opaque bytes and public test keys only; no device actuation, credentials, personal or proprietary records, hazardous process, surveillance, production decision, or certification. Equivocation fixtures are isolated test vectors, not attacks on a live service.",
+  "minimumAdvance": "Even if universal composition fails, the cycle succeeds scientifically by identifying the smallest histories that signatures and proofs cannot distinguish, and by separating four missing resources: an earlier independent witness, stateful freshness, cross-view communication, and external physical truth.",
+  "priorArt": "research/reproducibility/rc50-compositional-receipts-prior-art.json",
+  "thirdVerifierContract": "research/reproducibility/rc50-third-verifier-contract.json"
+}
