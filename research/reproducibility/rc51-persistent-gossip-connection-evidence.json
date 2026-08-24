@@ -1,0 +1,67 @@
+{
+  "connectionId": "CONN-EVIDENCE-024",
+  "cycleId": "RC-2026-51",
+  "problemIds": [
+    "UP-605",
+    "UP-602",
+    "UP-315"
+  ],
+  "reviewedOn": "2026-08-25",
+  "type": "Transactional monotone state × external anti-rollback anchor × cross-view identifiability",
+  "commonStructure": "Fab lineage, chiplet provenance, and finite-history reconstruction all receive signed observations of a hidden sequence. A signature fixes authorship and bytes, a local transaction fixes one process's state transition, and an independently retained checkpoint plus exchanged views determines whether that state is current and non-forked. These are different predicates and must not be collapsed.",
+  "variableMapping": [
+    {
+      "processLineage": "accepted wafer-event tree head",
+      "chipletProvenance": "newest accepted pedigree checkpoint",
+      "finiteHistory": "maximum observed history prefix",
+      "shared": "retained monotone frontier"
+    },
+    {
+      "processLineage": "restart-domain nonce",
+      "chipletProvenance": "shipment or enrollment transition token",
+      "finiteHistory": "one-use transition witness",
+      "shared": "consumed edge identifier"
+    },
+    {
+      "processLineage": "equipment/writer key epoch",
+      "chipletProvenance": "manufacturer or inspection-authority key epoch",
+      "finiteHistory": "trusted observation-rule version",
+      "shared": "versioned trust continuity"
+    },
+    {
+      "processLineage": "restored process database",
+      "chipletProvenance": "replayed old pedigree ledger",
+      "finiteHistory": "shorter admissible prefix",
+      "shared": "internally valid rollback"
+    },
+    {
+      "processLineage": "fab/customer log view",
+      "chipletProvenance": "vendor/customer transparency view",
+      "finiteHistory": "observer-specific evidence set",
+      "shared": "split observation"
+    },
+    {
+      "processLineage": "same event sequence with different payload",
+      "chipletProvenance": "same device/lot sequence with different pedigree",
+      "finiteHistory": "same index with incompatible state",
+      "shared": "issuer equivocation"
+    }
+  ],
+  "holdsWhen": [
+    "The state tuple is committed in one local transaction and database integrity survives restart.",
+    "The anchor that remembers the newest generation is not restored with the primary database.",
+    "Rotation is exactly sequential and authorized by both the immediately trusted and proposed key sets.",
+    "Observers exchange signed views with stable log, issuer, subject, sequence, and digest semantics.",
+    "At least one retained observer or anchor remains outside the rollback or fork fault."
+  ],
+  "breaksWhen": [
+    "Primary and anchor are rolled back together or all observers receive the same fork.",
+    "A compromised signer creates false but mutually consistent physical claims.",
+    "Operational keys, administrators, power, or storage share an unmeasured common cause.",
+    "Tree size, generation, subject, or sequence have different meanings across services.",
+    "The hidden physical event occurs before every independent witness or is absent from the modeled lineage."
+  ],
+  "minimumValidation": "Repeat F03-F16 with an anchor under a separate administrator and host, hardware-backed operational keys, and a storage fault-injection or controlled power-interruption protocol. Exchange views through an independently implemented monitor, then open one preregistered untouched acquisition only if no rollback, replay, or fork passes.",
+  "validationStatus": "Strong software-structural connection in local multi-process scope: Node SQLite 3.52.0 and Python SQLite 3.41.2 agree on sixteen fixtures, forty integrity/configuration snapshots pass, and blind replay matches sixteen verdict/state pairs. Separate operators: 0; storage power cuts: 0; physical acquisitions: 0.",
+  "transferableMethod": "Transfer TUF-style exact-version and dual-key continuity plus CT-style retained-head comparison into scientific and hardware provenance, while using one transactional causal tuple locally and an external anchor only for facts the local backup cannot remember."
+}

@@ -1,0 +1,68 @@
+{
+  "auditId": "RC51-PERSISTENT-GOSSIP-INDEPENDENT-ADJUDICATION-0.1",
+  "cycleId": "RC-2026-51",
+  "reviewedOn": "2026-08-25",
+  "preregistrationCommit": "5a2f847",
+  "runtimes": {
+    "node": {
+      "node": "v25.8.2",
+      "sqlite": "3.52.0",
+      "platform": "win32-x64"
+    },
+    "python": {
+      "python": "3.11.5",
+      "sqlite": "3.41.2",
+      "platform": "Windows-10-10.0.26200-SP0"
+    }
+  },
+  "comparisons": {
+    "nodePythonFixtureStructures": 16,
+    "blindVerdictAndStatePairs": 16,
+    "nodePragmaAndIntegritySnapshots": 20,
+    "pythonPragmaAndIntegritySnapshots": 20,
+    "implementationGateFamilies": 6,
+    "total": 78
+  },
+  "hypothesisAdjudication": [
+    {
+      "code": "H0",
+      "verdict": "rejected",
+      "reason": "The signature-only arm accepts the correctly signed replay and same-nonce fork in F05-F06. One-time use appears only after the spent-nonce and accepted-domain state is retained."
+    },
+    {
+      "code": "H1",
+      "verdict": "supported-in-process-crash-scope",
+      "reason": "Both SQLite implementations expose the complete old tuple after pre-commit termination and the complete new tuple after post-commit response loss for transition and key-rotation cases; no mixed tuple appears and every reopened database passes integrity_check."
+    },
+    {
+      "code": "H2",
+      "verdict": "rejected",
+      "reason": "After a safe restore, the single database is internally valid at generation one and cannot know that generation two once existed. The rollback is refused only because a generation-two digest survives in the separate anchor."
+    },
+    {
+      "code": "H3",
+      "verdict": "supported-in-process-crash-scope",
+      "reason": "Exact N+1 rotation with both predecessor and proposed-key signatures is accepted; either missing continuity signature is rejected; pre- and post-commit termination preserve complete key epochs."
+    },
+    {
+      "code": "H4",
+      "verdict": "rejected",
+      "reason": "F13-F15 contain locally valid signatures while presenting a stale head, same-size/different-root log fork, or same-issuer/subject/sequence statement fork. A local view is not a global uniqueness proof."
+    },
+    {
+      "code": "H5",
+      "verdict": "supported-in-local-multi-process-scope",
+      "reason": "The separately retained anchor refuses the restored primary, and exchanged views refuse all three stale or equivocation cases while accepting the nonconflicting two-log advance. The blind replay independently reconstructs all sixteen verdicts and state digests."
+    }
+  ],
+  "verdict": "pass",
+  "failures": [],
+  "interpretation": "Two independent file-backed SQLite implementations agree on every preregistered verdict and state digest after actual process termination. A blind verifier reading only opaque events reconstructs the same results. This establishes application-process crash atomicity and local multi-process rollback/fork detection under the frozen schedule; it does not establish storage-device power-loss safety, operator independence, production protocol interoperability, or physical provenance.",
+  "preservedLimits": [
+    "Process termination is not a power cut, torn write, filesystem failure, or disk-controller fault.",
+    "SQLite's FULL/WAL guarantee relies on VFS, operating-system, filesystem, and storage behavior.",
+    "Separate files, processes, and deterministic test keys on one host are not separately administered services.",
+    "The sixteen cases are falsification fixtures, not a field error-rate sample.",
+    "Physical acquisitions and chiplet specimens: 0."
+  ]
+}

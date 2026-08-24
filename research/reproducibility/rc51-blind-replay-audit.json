@@ -1,0 +1,112 @@
+{
+  "auditId": "RC51-BLIND-REPLAY-AUDIT-0.1",
+  "cycleId": "RC-2026-51",
+  "contractId": "RC51-BLIND-REPLAY-CONTRACT-0.1",
+  "inputTraceId": "RC51-BLIND-EVENT-LEDGER-0.1",
+  "readFiles": [
+    "research/reproducibility/rc51-blind-replay-contract.json",
+    "research/reproducibility/rc51-blind-event-ledger.json"
+  ],
+  "withheldFieldsAbsent": true,
+  "fixtureLabelsRead": false,
+  "expectedVerdictsRead": false,
+  "generatorOutcomesRead": false,
+  "cases": [
+    {
+      "opaqueCaseId": "X-278d5cad9dcf4db8",
+      "verdict": "accept",
+      "stateDigest": "a9d0d13e045f9d0189031db262cd4940fb9945f17ab7b48bbac35c3e16e2c7eb",
+      "reasonCode": "valid-atomic-transition"
+    },
+    {
+      "opaqueCaseId": "X-4de91e8001bf5c79",
+      "verdict": "accept",
+      "stateDigest": "a06dfd2d05ec1206f2f4146434f4c5b5a7767c9f3e980993c493b4a28fb699fb",
+      "reasonCode": "valid-atomic-transition"
+    },
+    {
+      "opaqueCaseId": "X-2d84427d3863a3d1",
+      "verdict": "retry-accepted-once",
+      "stateDigest": "a9d0d13e045f9d0189031db262cd4940fb9945f17ab7b48bbac35c3e16e2c7eb",
+      "reasonCode": "pre-commit-termination-left-old-state"
+    },
+    {
+      "opaqueCaseId": "X-17dce07f1d1d93e7",
+      "verdict": "retry-rejected-replay",
+      "stateDigest": "a9d0d13e045f9d0189031db262cd4940fb9945f17ab7b48bbac35c3e16e2c7eb",
+      "reasonCode": "post-commit-response-loss-retained-nonce"
+    },
+    {
+      "opaqueCaseId": "X-e1ca8a008760c8a7",
+      "verdict": "reject-nonce-replay",
+      "stateDigest": "a9d0d13e045f9d0189031db262cd4940fb9945f17ab7b48bbac35c3e16e2c7eb",
+      "reasonCode": "retained-nonce-already-spent"
+    },
+    {
+      "opaqueCaseId": "X-0bcf794fa52734d6",
+      "verdict": "reject-nonce-fork",
+      "stateDigest": "a9d0d13e045f9d0189031db262cd4940fb9945f17ab7b48bbac35c3e16e2c7eb",
+      "reasonCode": "retained-nonce-already-spent"
+    },
+    {
+      "opaqueCaseId": "X-101ba7a0ce9fe1a2",
+      "verdict": "accept-rotation",
+      "stateDigest": "610f8f3baeb1a843ec90d2ef0c88a27852f0fc4337cec3e9ff59f80bfff95dd7",
+      "reasonCode": "dual-authorized-exact-successor"
+    },
+    {
+      "opaqueCaseId": "X-5cd3ab23b95a9bc1",
+      "verdict": "reject-new-key-continuity",
+      "stateDigest": "4874d8a34054881cd32694bc108a7ebc4b87473a066a1539704b2c85cd1e4c30",
+      "reasonCode": "missing-or-invalid-new-key-signature"
+    },
+    {
+      "opaqueCaseId": "X-b8112f596ef6dd5f",
+      "verdict": "reject-predecessor-continuity",
+      "stateDigest": "4874d8a34054881cd32694bc108a7ebc4b87473a066a1539704b2c85cd1e4c30",
+      "reasonCode": "missing-or-invalid-predecessor-signature"
+    },
+    {
+      "opaqueCaseId": "X-6d38ebbebc1bcde5",
+      "verdict": "retry-accepted-rotation",
+      "stateDigest": "610f8f3baeb1a843ec90d2ef0c88a27852f0fc4337cec3e9ff59f80bfff95dd7",
+      "reasonCode": "pre-commit-termination-left-old-key-epoch"
+    },
+    {
+      "opaqueCaseId": "X-70aedd76a8b9cf48",
+      "verdict": "retry-rejected-rotation",
+      "stateDigest": "610f8f3baeb1a843ec90d2ef0c88a27852f0fc4337cec3e9ff59f80bfff95dd7",
+      "reasonCode": "post-commit-response-loss-retained-key-epoch"
+    },
+    {
+      "opaqueCaseId": "X-3634d88f0cf332f2",
+      "verdict": "refuse-backup-rollback",
+      "stateDigest": "a9d0d13e045f9d0189031db262cd4940fb9945f17ab7b48bbac35c3e16e2c7eb",
+      "reasonCode": "primary-generation-lower-than-anchor"
+    },
+    {
+      "opaqueCaseId": "X-096b4cf1030d7b43",
+      "verdict": "refuse-stale-view",
+      "stateDigest": "4874d8a34054881cd32694bc108a7ebc4b87473a066a1539704b2c85cd1e4c30",
+      "reasonCode": "retained-tree-size-is-greater"
+    },
+    {
+      "opaqueCaseId": "X-94edf370b38298ea",
+      "verdict": "refuse-log-equivocation",
+      "stateDigest": "4874d8a34054881cd32694bc108a7ebc4b87473a066a1539704b2c85cd1e4c30",
+      "reasonCode": "same-log-and-size-different-root"
+    },
+    {
+      "opaqueCaseId": "X-7ca8667f5adb6b23",
+      "verdict": "refuse-issuer-equivocation",
+      "stateDigest": "4874d8a34054881cd32694bc108a7ebc4b87473a066a1539704b2c85cd1e4c30",
+      "reasonCode": "same-issuer-subject-sequence-different-digest"
+    },
+    {
+      "opaqueCaseId": "X-fdc7138d45a276b8",
+      "verdict": "accept-cross-view",
+      "stateDigest": "4874d8a34054881cd32694bc108a7ebc4b87473a066a1539704b2c85cd1e4c30",
+      "reasonCode": "valid-nonconflicting-views"
+    }
+  ]
+}

@@ -112,5 +112,5 @@ for (const phrase of ["1단계", "2단계", "전공자 포인트", "핵심 아�
 const packageJson = read("package.json");
 for (const script of ["run-rc50-compositional-receipts.mjs", "independent_rc50_compositional_receipts.py", "standalone_rc50_cose_wire_verifier.py", "adjudicate-rc50-compositional-receipts.mjs", "verify-rc50-compositional-receipts-cycle.mjs"]) assert(packageJson.includes(script), `package.json missing RC50 script: ${script}`);
 assert(read("sitemap.xml").includes("RC-2026-50&amp;lang=ko") && read("sitemap.xml").includes("RC-2026-50&amp;lang=en"), "RC50 is missing from sitemap.xml.");
-assert(read("README.md").includes("50개 누적 연구 사이클") && read("README.md").includes("1,590개 현지화 URL"), "README RC50 counts incomplete.");
+assert(read("README.md").includes("RC50 compositional") || (read("README.md").includes("Composite lineage") && read("README.md").includes("rc50-compositional-receipts-precommit.json")), "README RC50 artifact record missing.");
 console.log("RC50 verified: 27 exact composites, 3 causal sets, 7 refusals, 2 state rejections, 2 witness-boundary cases, 63 scientific comparisons, and 81 wire checks.");

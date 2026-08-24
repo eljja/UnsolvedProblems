@@ -1,0 +1,779 @@
+{
+  "traceId": "RC51-BLIND-EVENT-LEDGER-0.1",
+  "cycleId": "RC-2026-51",
+  "contract": "research/reproducibility/rc51-blind-replay-contract.json",
+  "withheld": "Fixture labels, expected verdicts, generator verdicts, hypotheses, and aggregate outcomes are absent.",
+  "cases": [
+    {
+      "opaqueCaseId": "X-278d5cad9dcf4db8",
+      "initialState": {
+        "acceptedHead": {
+          "logId": "lineage-log",
+          "treeSize": 1,
+          "root": "071232b6acddf716f08b7ba70e0b3ef879030ff1e28f3250de787382a2805552"
+        },
+        "domain": "DOMAIN-0",
+        "generation": 0,
+        "keyEpoch": 1,
+        "keyId": "K1",
+        "spentNonces": []
+      },
+      "operations": [
+        {
+          "type": "transition",
+          "operation": {
+            "nonce": "N-01",
+            "successorDomain": "DOMAIN-1",
+            "generation": 1,
+            "head": {
+              "logId": "lineage-log",
+              "treeSize": 2,
+              "root": "b00023af7a714e3a3a0a5500fbda8723e014ddc814118e3119142c13c7e258d7"
+            },
+            "signature": "2CToWv9JK0mKdL9ZbhIuQaEysFKxUxtyNQ6hi5EpSPNkxeu+NOk8gdt1yXRKDHUzV8whkXv15hVyyJKcZVKgCA=="
+          },
+          "committed": true,
+          "responseObserved": true
+        }
+      ],
+      "observations": {}
+    },
+    {
+      "opaqueCaseId": "X-4de91e8001bf5c79",
+      "initialState": {
+        "acceptedHead": {
+          "logId": "lineage-log",
+          "treeSize": 1,
+          "root": "071232b6acddf716f08b7ba70e0b3ef879030ff1e28f3250de787382a2805552"
+        },
+        "domain": "DOMAIN-0",
+        "generation": 0,
+        "keyEpoch": 1,
+        "keyId": "K1",
+        "spentNonces": []
+      },
+      "operations": [
+        {
+          "type": "transition",
+          "operation": {
+            "nonce": "N-01",
+            "successorDomain": "DOMAIN-1",
+            "generation": 1,
+            "head": {
+              "logId": "lineage-log",
+              "treeSize": 2,
+              "root": "b00023af7a714e3a3a0a5500fbda8723e014ddc814118e3119142c13c7e258d7"
+            },
+            "signature": "2CToWv9JK0mKdL9ZbhIuQaEysFKxUxtyNQ6hi5EpSPNkxeu+NOk8gdt1yXRKDHUzV8whkXv15hVyyJKcZVKgCA=="
+          },
+          "committed": true,
+          "responseObserved": true
+        },
+        {
+          "type": "transition",
+          "operation": {
+            "nonce": "N-02",
+            "successorDomain": "DOMAIN-2",
+            "generation": 2,
+            "head": {
+              "logId": "lineage-log",
+              "treeSize": 3,
+              "root": "690233d66b955c27effa2431af76c08d2643ee764acfdc6d43135e2cd59b0ebf"
+            },
+            "signature": "5w9Ag1MXLPO5rTZR9UvteOHbzDyKAR0UxR1LP9pxjHk4YU3hc0UDYPRtfzDnr+wFtHnLO094aSGSSihXKnGsDw=="
+          },
+          "committed": true,
+          "responseObserved": true
+        }
+      ],
+      "observations": {}
+    },
+    {
+      "opaqueCaseId": "X-2d84427d3863a3d1",
+      "initialState": {
+        "acceptedHead": {
+          "logId": "lineage-log",
+          "treeSize": 1,
+          "root": "071232b6acddf716f08b7ba70e0b3ef879030ff1e28f3250de787382a2805552"
+        },
+        "domain": "DOMAIN-0",
+        "generation": 0,
+        "keyEpoch": 1,
+        "keyId": "K1",
+        "spentNonces": []
+      },
+      "operations": [
+        {
+          "type": "transition",
+          "operation": {
+            "nonce": "N-01",
+            "successorDomain": "DOMAIN-1",
+            "generation": 1,
+            "head": {
+              "logId": "lineage-log",
+              "treeSize": 2,
+              "root": "b00023af7a714e3a3a0a5500fbda8723e014ddc814118e3119142c13c7e258d7"
+            },
+            "signature": "2CToWv9JK0mKdL9ZbhIuQaEysFKxUxtyNQ6hi5EpSPNkxeu+NOk8gdt1yXRKDHUzV8whkXv15hVyyJKcZVKgCA=="
+          },
+          "committed": false,
+          "responseObserved": false
+        },
+        {
+          "type": "transition",
+          "operation": {
+            "nonce": "N-01",
+            "successorDomain": "DOMAIN-1",
+            "generation": 1,
+            "head": {
+              "logId": "lineage-log",
+              "treeSize": 2,
+              "root": "b00023af7a714e3a3a0a5500fbda8723e014ddc814118e3119142c13c7e258d7"
+            },
+            "signature": "2CToWv9JK0mKdL9ZbhIuQaEysFKxUxtyNQ6hi5EpSPNkxeu+NOk8gdt1yXRKDHUzV8whkXv15hVyyJKcZVKgCA=="
+          },
+          "committed": true,
+          "responseObserved": true
+        }
+      ],
+      "observations": {
+        "crashExit": 91,
+        "preCommitStateDigest": "4874d8a34054881cd32694bc108a7ebc4b87473a066a1539704b2c85cd1e4c30"
+      }
+    },
+    {
+      "opaqueCaseId": "X-17dce07f1d1d93e7",
+      "initialState": {
+        "acceptedHead": {
+          "logId": "lineage-log",
+          "treeSize": 1,
+          "root": "071232b6acddf716f08b7ba70e0b3ef879030ff1e28f3250de787382a2805552"
+        },
+        "domain": "DOMAIN-0",
+        "generation": 0,
+        "keyEpoch": 1,
+        "keyId": "K1",
+        "spentNonces": []
+      },
+      "operations": [
+        {
+          "type": "transition",
+          "operation": {
+            "nonce": "N-01",
+            "successorDomain": "DOMAIN-1",
+            "generation": 1,
+            "head": {
+              "logId": "lineage-log",
+              "treeSize": 2,
+              "root": "b00023af7a714e3a3a0a5500fbda8723e014ddc814118e3119142c13c7e258d7"
+            },
+            "signature": "2CToWv9JK0mKdL9ZbhIuQaEysFKxUxtyNQ6hi5EpSPNkxeu+NOk8gdt1yXRKDHUzV8whkXv15hVyyJKcZVKgCA=="
+          },
+          "committed": true,
+          "responseObserved": false
+        },
+        {
+          "type": "transition",
+          "operation": {
+            "nonce": "N-01",
+            "successorDomain": "DOMAIN-1",
+            "generation": 1,
+            "head": {
+              "logId": "lineage-log",
+              "treeSize": 2,
+              "root": "b00023af7a714e3a3a0a5500fbda8723e014ddc814118e3119142c13c7e258d7"
+            },
+            "signature": "2CToWv9JK0mKdL9ZbhIuQaEysFKxUxtyNQ6hi5EpSPNkxeu+NOk8gdt1yXRKDHUzV8whkXv15hVyyJKcZVKgCA=="
+          },
+          "committed": false,
+          "responseObserved": true
+        }
+      ],
+      "observations": {
+        "crashExit": 92,
+        "postCommitStateDigest": "a9d0d13e045f9d0189031db262cd4940fb9945f17ab7b48bbac35c3e16e2c7eb"
+      }
+    },
+    {
+      "opaqueCaseId": "X-e1ca8a008760c8a7",
+      "initialState": {
+        "acceptedHead": {
+          "logId": "lineage-log",
+          "treeSize": 1,
+          "root": "071232b6acddf716f08b7ba70e0b3ef879030ff1e28f3250de787382a2805552"
+        },
+        "domain": "DOMAIN-0",
+        "generation": 0,
+        "keyEpoch": 1,
+        "keyId": "K1",
+        "spentNonces": []
+      },
+      "operations": [
+        {
+          "type": "transition",
+          "operation": {
+            "nonce": "N-01",
+            "successorDomain": "DOMAIN-1",
+            "generation": 1,
+            "head": {
+              "logId": "lineage-log",
+              "treeSize": 2,
+              "root": "b00023af7a714e3a3a0a5500fbda8723e014ddc814118e3119142c13c7e258d7"
+            },
+            "signature": "2CToWv9JK0mKdL9ZbhIuQaEysFKxUxtyNQ6hi5EpSPNkxeu+NOk8gdt1yXRKDHUzV8whkXv15hVyyJKcZVKgCA=="
+          },
+          "committed": true,
+          "responseObserved": true
+        },
+        {
+          "type": "transition",
+          "operation": {
+            "nonce": "N-01",
+            "successorDomain": "DOMAIN-1",
+            "generation": 1,
+            "head": {
+              "logId": "lineage-log",
+              "treeSize": 2,
+              "root": "b00023af7a714e3a3a0a5500fbda8723e014ddc814118e3119142c13c7e258d7"
+            },
+            "signature": "2CToWv9JK0mKdL9ZbhIuQaEysFKxUxtyNQ6hi5EpSPNkxeu+NOk8gdt1yXRKDHUzV8whkXv15hVyyJKcZVKgCA=="
+          },
+          "committed": false,
+          "responseObserved": true
+        }
+      ],
+      "observations": {}
+    },
+    {
+      "opaqueCaseId": "X-0bcf794fa52734d6",
+      "initialState": {
+        "acceptedHead": {
+          "logId": "lineage-log",
+          "treeSize": 1,
+          "root": "071232b6acddf716f08b7ba70e0b3ef879030ff1e28f3250de787382a2805552"
+        },
+        "domain": "DOMAIN-0",
+        "generation": 0,
+        "keyEpoch": 1,
+        "keyId": "K1",
+        "spentNonces": []
+      },
+      "operations": [
+        {
+          "type": "transition",
+          "operation": {
+            "nonce": "N-01",
+            "successorDomain": "DOMAIN-1",
+            "generation": 1,
+            "head": {
+              "logId": "lineage-log",
+              "treeSize": 2,
+              "root": "b00023af7a714e3a3a0a5500fbda8723e014ddc814118e3119142c13c7e258d7"
+            },
+            "signature": "2CToWv9JK0mKdL9ZbhIuQaEysFKxUxtyNQ6hi5EpSPNkxeu+NOk8gdt1yXRKDHUzV8whkXv15hVyyJKcZVKgCA=="
+          },
+          "committed": true,
+          "responseObserved": true
+        },
+        {
+          "type": "transition",
+          "operation": {
+            "nonce": "N-01",
+            "successorDomain": "DOMAIN-X",
+            "generation": 1,
+            "head": {
+              "logId": "lineage-log",
+              "treeSize": 2,
+              "root": "b00023af7a714e3a3a0a5500fbda8723e014ddc814118e3119142c13c7e258d7"
+            },
+            "signature": "ljh5kNQt0qkCZ3Y5dAF9WALmsdLlNC2Tdh1BoNp9fRsYg8MvIJv6CH8ksiNkJKkqWhIQGC5jEMsEnlnMWEv1DA=="
+          },
+          "committed": false,
+          "responseObserved": true
+        }
+      ],
+      "observations": {}
+    },
+    {
+      "opaqueCaseId": "X-101ba7a0ce9fe1a2",
+      "initialState": {
+        "acceptedHead": {
+          "logId": "lineage-log",
+          "treeSize": 1,
+          "root": "071232b6acddf716f08b7ba70e0b3ef879030ff1e28f3250de787382a2805552"
+        },
+        "domain": "DOMAIN-0",
+        "generation": 0,
+        "keyEpoch": 1,
+        "keyId": "K1",
+        "spentNonces": []
+      },
+      "operations": [
+        {
+          "type": "rotation",
+          "operation": {
+            "epoch": 2,
+            "predecessorKeyId": "K1",
+            "newKeyId": "K2",
+            "predecessorSignature": "AB1D/ZNEaq20OkTUd0TDXFWR7TLl7oEj0t/U4hd+MV6fDgWem7lSwj3AdaDBJdWuqPZ7fniEB7vAYvjPXOz8AQ==",
+            "newSignature": "HCVW9iUVB8GoGzNWzs9NplzA1viViV5c5m8pTIWeLlvS6R0MbftGskRcrHwJNJmuFAp8Eg4c4z3iDHJDdJFaAQ=="
+          },
+          "committed": true,
+          "responseObserved": true
+        }
+      ],
+      "observations": {}
+    },
+    {
+      "opaqueCaseId": "X-5cd3ab23b95a9bc1",
+      "initialState": {
+        "acceptedHead": {
+          "logId": "lineage-log",
+          "treeSize": 1,
+          "root": "071232b6acddf716f08b7ba70e0b3ef879030ff1e28f3250de787382a2805552"
+        },
+        "domain": "DOMAIN-0",
+        "generation": 0,
+        "keyEpoch": 1,
+        "keyId": "K1",
+        "spentNonces": []
+      },
+      "operations": [
+        {
+          "type": "rotation",
+          "operation": {
+            "epoch": 2,
+            "predecessorKeyId": "K1",
+            "newKeyId": "K2",
+            "predecessorSignature": "AB1D/ZNEaq20OkTUd0TDXFWR7TLl7oEj0t/U4hd+MV6fDgWem7lSwj3AdaDBJdWuqPZ7fniEB7vAYvjPXOz8AQ==",
+            "newSignature": null
+          },
+          "committed": false,
+          "responseObserved": true
+        }
+      ],
+      "observations": {}
+    },
+    {
+      "opaqueCaseId": "X-b8112f596ef6dd5f",
+      "initialState": {
+        "acceptedHead": {
+          "logId": "lineage-log",
+          "treeSize": 1,
+          "root": "071232b6acddf716f08b7ba70e0b3ef879030ff1e28f3250de787382a2805552"
+        },
+        "domain": "DOMAIN-0",
+        "generation": 0,
+        "keyEpoch": 1,
+        "keyId": "K1",
+        "spentNonces": []
+      },
+      "operations": [
+        {
+          "type": "rotation",
+          "operation": {
+            "epoch": 2,
+            "predecessorKeyId": "K1",
+            "newKeyId": "K2",
+            "predecessorSignature": null,
+            "newSignature": "HCVW9iUVB8GoGzNWzs9NplzA1viViV5c5m8pTIWeLlvS6R0MbftGskRcrHwJNJmuFAp8Eg4c4z3iDHJDdJFaAQ=="
+          },
+          "committed": false,
+          "responseObserved": true
+        }
+      ],
+      "observations": {}
+    },
+    {
+      "opaqueCaseId": "X-6d38ebbebc1bcde5",
+      "initialState": {
+        "acceptedHead": {
+          "logId": "lineage-log",
+          "treeSize": 1,
+          "root": "071232b6acddf716f08b7ba70e0b3ef879030ff1e28f3250de787382a2805552"
+        },
+        "domain": "DOMAIN-0",
+        "generation": 0,
+        "keyEpoch": 1,
+        "keyId": "K1",
+        "spentNonces": []
+      },
+      "operations": [
+        {
+          "type": "rotation",
+          "operation": {
+            "epoch": 2,
+            "predecessorKeyId": "K1",
+            "newKeyId": "K2",
+            "predecessorSignature": "AB1D/ZNEaq20OkTUd0TDXFWR7TLl7oEj0t/U4hd+MV6fDgWem7lSwj3AdaDBJdWuqPZ7fniEB7vAYvjPXOz8AQ==",
+            "newSignature": "HCVW9iUVB8GoGzNWzs9NplzA1viViV5c5m8pTIWeLlvS6R0MbftGskRcrHwJNJmuFAp8Eg4c4z3iDHJDdJFaAQ=="
+          },
+          "committed": false,
+          "responseObserved": false
+        },
+        {
+          "type": "rotation",
+          "operation": {
+            "epoch": 2,
+            "predecessorKeyId": "K1",
+            "newKeyId": "K2",
+            "predecessorSignature": "AB1D/ZNEaq20OkTUd0TDXFWR7TLl7oEj0t/U4hd+MV6fDgWem7lSwj3AdaDBJdWuqPZ7fniEB7vAYvjPXOz8AQ==",
+            "newSignature": "HCVW9iUVB8GoGzNWzs9NplzA1viViV5c5m8pTIWeLlvS6R0MbftGskRcrHwJNJmuFAp8Eg4c4z3iDHJDdJFaAQ=="
+          },
+          "committed": true,
+          "responseObserved": true
+        }
+      ],
+      "observations": {
+        "crashExit": 93
+      }
+    },
+    {
+      "opaqueCaseId": "X-70aedd76a8b9cf48",
+      "initialState": {
+        "acceptedHead": {
+          "logId": "lineage-log",
+          "treeSize": 1,
+          "root": "071232b6acddf716f08b7ba70e0b3ef879030ff1e28f3250de787382a2805552"
+        },
+        "domain": "DOMAIN-0",
+        "generation": 0,
+        "keyEpoch": 1,
+        "keyId": "K1",
+        "spentNonces": []
+      },
+      "operations": [
+        {
+          "type": "rotation",
+          "operation": {
+            "epoch": 2,
+            "predecessorKeyId": "K1",
+            "newKeyId": "K2",
+            "predecessorSignature": "AB1D/ZNEaq20OkTUd0TDXFWR7TLl7oEj0t/U4hd+MV6fDgWem7lSwj3AdaDBJdWuqPZ7fniEB7vAYvjPXOz8AQ==",
+            "newSignature": "HCVW9iUVB8GoGzNWzs9NplzA1viViV5c5m8pTIWeLlvS6R0MbftGskRcrHwJNJmuFAp8Eg4c4z3iDHJDdJFaAQ=="
+          },
+          "committed": true,
+          "responseObserved": false
+        },
+        {
+          "type": "rotation",
+          "operation": {
+            "epoch": 2,
+            "predecessorKeyId": "K1",
+            "newKeyId": "K2",
+            "predecessorSignature": "AB1D/ZNEaq20OkTUd0TDXFWR7TLl7oEj0t/U4hd+MV6fDgWem7lSwj3AdaDBJdWuqPZ7fniEB7vAYvjPXOz8AQ==",
+            "newSignature": "HCVW9iUVB8GoGzNWzs9NplzA1viViV5c5m8pTIWeLlvS6R0MbftGskRcrHwJNJmuFAp8Eg4c4z3iDHJDdJFaAQ=="
+          },
+          "committed": false,
+          "responseObserved": true
+        }
+      ],
+      "observations": {
+        "crashExit": 94
+      }
+    },
+    {
+      "opaqueCaseId": "X-3634d88f0cf332f2",
+      "initialState": {
+        "acceptedHead": {
+          "logId": "lineage-log",
+          "treeSize": 1,
+          "root": "071232b6acddf716f08b7ba70e0b3ef879030ff1e28f3250de787382a2805552"
+        },
+        "domain": "DOMAIN-0",
+        "generation": 0,
+        "keyEpoch": 1,
+        "keyId": "K1",
+        "spentNonces": []
+      },
+      "operations": [
+        {
+          "type": "transition",
+          "operation": {
+            "nonce": "N-01",
+            "successorDomain": "DOMAIN-1",
+            "generation": 1,
+            "head": {
+              "logId": "lineage-log",
+              "treeSize": 2,
+              "root": "b00023af7a714e3a3a0a5500fbda8723e014ddc814118e3119142c13c7e258d7"
+            },
+            "signature": "2CToWv9JK0mKdL9ZbhIuQaEysFKxUxtyNQ6hi5EpSPNkxeu+NOk8gdt1yXRKDHUzV8whkXv15hVyyJKcZVKgCA=="
+          },
+          "committed": true,
+          "responseObserved": true
+        },
+        {
+          "type": "checkpoint",
+          "label": "backup"
+        },
+        {
+          "type": "transition",
+          "operation": {
+            "nonce": "N-02",
+            "successorDomain": "DOMAIN-2",
+            "generation": 2,
+            "head": {
+              "logId": "lineage-log",
+              "treeSize": 3,
+              "root": "690233d66b955c27effa2431af76c08d2643ee764acfdc6d43135e2cd59b0ebf"
+            },
+            "signature": "5w9Ag1MXLPO5rTZR9UvteOHbzDyKAR0UxR1LP9pxjHk4YU3hc0UDYPRtfzDnr+wFtHnLO094aSGSSihXKnGsDw=="
+          },
+          "committed": true,
+          "responseObserved": true
+        },
+        {
+          "type": "anchor",
+          "checkpoint": {
+            "generation": 2,
+            "stateDigest": "a06dfd2d05ec1206f2f4146434f4c5b5a7767c9f3e980993c493b4a28fb699fb"
+          },
+          "committed": true
+        },
+        {
+          "type": "restore",
+          "restoredState": {
+            "acceptedHead": {
+              "logId": "lineage-log",
+              "treeSize": 2,
+              "root": "b00023af7a714e3a3a0a5500fbda8723e014ddc814118e3119142c13c7e258d7"
+            },
+            "domain": "DOMAIN-1",
+            "generation": 1,
+            "keyEpoch": 1,
+            "keyId": "K1",
+            "spentNonces": [
+              "N-01"
+            ]
+          }
+        },
+        {
+          "type": "compare-anchor"
+        }
+      ],
+      "observations": {
+        "backupMethod": "node:sqlite backup API",
+        "restoredIntegrity": "ok",
+        "anchorGeneration": 2,
+        "anchorStateDigest": "a06dfd2d05ec1206f2f4146434f4c5b5a7767c9f3e980993c493b4a28fb699fb"
+      }
+    },
+    {
+      "opaqueCaseId": "X-096b4cf1030d7b43",
+      "initialState": {
+        "acceptedHead": {
+          "logId": "lineage-log",
+          "treeSize": 1,
+          "root": "071232b6acddf716f08b7ba70e0b3ef879030ff1e28f3250de787382a2805552"
+        },
+        "domain": "DOMAIN-0",
+        "generation": 0,
+        "keyEpoch": 1,
+        "keyId": "K1",
+        "spentNonces": []
+      },
+      "operations": [
+        {
+          "type": "compare-views",
+          "retained": {
+            "view": {
+              "logId": "log-A",
+              "treeSize": 3,
+              "root": "9144ed0b5d28ce6e04e47f9c0235f825fca8ca0feb7e9c0a9128590f10f52dac",
+              "issuer": "issuer",
+              "subject": "subject",
+              "sequence": 3,
+              "statementDigest": "44d6a8a73eddb284d49799fdbfa2919a004ece6d2df3546eaa4e246048bcdf81"
+            },
+            "signerKeyId": "LOG-A",
+            "signature": "RWZYIOiJ8HrEb0Cy3G1nImmDcUcpX5BUfpI9JUhH/mruFpm+t962q9Kc0ZkFG9gCQdKBsQ+hpbJ2whIaTJnCBA==",
+            "signatureValid": true
+          },
+          "incoming": {
+            "view": {
+              "logId": "log-A",
+              "treeSize": 2,
+              "root": "bd17e728f579eafe3f5d5e6f91d1cbea04b034aefe780c4a12704b0090745f4e",
+              "issuer": "issuer",
+              "subject": "subject",
+              "sequence": 2,
+              "statementDigest": "adfa2b24c2d924fe6383d8804be55afb98ea3eb0e14c3470ac3a0f651b9a422e"
+            },
+            "signerKeyId": "LOG-A",
+            "signature": "XycCUobrrpK+uCozlUbwe/qnC6lRzXy2YqtvU0gS2+z/NQgEPuKlxHABgoxzm9ngUF2rJPojaaa1ajc7rWnGDg==",
+            "signatureValid": true
+          }
+        }
+      ],
+      "observations": {
+        "processDatabases": [
+          "F13-view-a.sqlite",
+          "F13-view-b.sqlite"
+        ]
+      }
+    },
+    {
+      "opaqueCaseId": "X-94edf370b38298ea",
+      "initialState": {
+        "acceptedHead": {
+          "logId": "lineage-log",
+          "treeSize": 1,
+          "root": "071232b6acddf716f08b7ba70e0b3ef879030ff1e28f3250de787382a2805552"
+        },
+        "domain": "DOMAIN-0",
+        "generation": 0,
+        "keyEpoch": 1,
+        "keyId": "K1",
+        "spentNonces": []
+      },
+      "operations": [
+        {
+          "type": "compare-views",
+          "retained": {
+            "view": {
+              "logId": "log-A",
+              "treeSize": 3,
+              "root": "1090336011f1c89dbcccdb75c7af7a5e04b9d62e0e073b3633e6fce3280a15b6",
+              "issuer": "issuer",
+              "subject": "subject",
+              "sequence": 3,
+              "statementDigest": "44d6a8a73eddb284d49799fdbfa2919a004ece6d2df3546eaa4e246048bcdf81"
+            },
+            "signerKeyId": "LOG-A",
+            "signature": "kGMW/EpQHQ1jfxoSArerry1jUkSp/M5gc/UBGFjX8/OXMEgY2qoN4v5OECldMJM/NJS1K+7PsVFWAeDulwITDg==",
+            "signatureValid": true
+          },
+          "incoming": {
+            "view": {
+              "logId": "log-A",
+              "treeSize": 3,
+              "root": "3edfd1704d21add4792ad81070674ccacc1f06898c51e80d8502c4b82d1ee74d",
+              "issuer": "issuer",
+              "subject": "subject",
+              "sequence": 3,
+              "statementDigest": "44d6a8a73eddb284d49799fdbfa2919a004ece6d2df3546eaa4e246048bcdf81"
+            },
+            "signerKeyId": "LOG-A",
+            "signature": "dd5uzcgs+UbVkqw3mXmkmhB6FdfVMxmPyomkohc/BBTGYzuEUm48vViMF4k/p4bo73EQyzD4MqSxfYf0TwIoAA==",
+            "signatureValid": true
+          }
+        }
+      ],
+      "observations": {
+        "processDatabases": [
+          "F14-view-a.sqlite",
+          "F14-view-b.sqlite"
+        ]
+      }
+    },
+    {
+      "opaqueCaseId": "X-7ca8667f5adb6b23",
+      "initialState": {
+        "acceptedHead": {
+          "logId": "lineage-log",
+          "treeSize": 1,
+          "root": "071232b6acddf716f08b7ba70e0b3ef879030ff1e28f3250de787382a2805552"
+        },
+        "domain": "DOMAIN-0",
+        "generation": 0,
+        "keyEpoch": 1,
+        "keyId": "K1",
+        "spentNonces": []
+      },
+      "operations": [
+        {
+          "type": "compare-views",
+          "retained": {
+            "view": {
+              "logId": "log-A",
+              "treeSize": 3,
+              "root": "9144ed0b5d28ce6e04e47f9c0235f825fca8ca0feb7e9c0a9128590f10f52dac",
+              "issuer": "issuer",
+              "subject": "subject",
+              "sequence": 7,
+              "statementDigest": "2cba9d25c1eaf7f3ef0e86b1562165b1d66e950ff5155de71b68049916145faf"
+            },
+            "signerKeyId": "LOG-A",
+            "signature": "qqGEWywgH7p+70s1cVn9rk3R5snVvjdgFFGEEgXOvbDXlL4KAWfCof6erPwYVz+rO9hF6x9fKKMhO/uL/QroBw==",
+            "signatureValid": true
+          },
+          "incoming": {
+            "view": {
+              "logId": "log-B",
+              "treeSize": 4,
+              "root": "cb5cb60e05ff87f1a7c5f5dedd54a44d60e586a2fc0809bddda3abd40d72ead6",
+              "issuer": "issuer",
+              "subject": "subject",
+              "sequence": 7,
+              "statementDigest": "c4ce3c7ad82c8235da21fae8ea48e071a10e7b1c6df6a9e5b4603852d8b3001c"
+            },
+            "signerKeyId": "LOG-B",
+            "signature": "uuKjp70SxGYqHi8Pr3zs3j2dxKZL6qlt6u1hFf6dolonq9nzVG04R5H3NYwhfKKk0LMzTPpzcQ0aXw7NJ/6QCA==",
+            "signatureValid": true
+          }
+        }
+      ],
+      "observations": {
+        "processDatabases": [
+          "F15-view-a.sqlite",
+          "F15-view-b.sqlite"
+        ]
+      }
+    },
+    {
+      "opaqueCaseId": "X-fdc7138d45a276b8",
+      "initialState": {
+        "acceptedHead": {
+          "logId": "lineage-log",
+          "treeSize": 1,
+          "root": "071232b6acddf716f08b7ba70e0b3ef879030ff1e28f3250de787382a2805552"
+        },
+        "domain": "DOMAIN-0",
+        "generation": 0,
+        "keyEpoch": 1,
+        "keyId": "K1",
+        "spentNonces": []
+      },
+      "operations": [
+        {
+          "type": "compare-views",
+          "retained": {
+            "view": {
+              "logId": "log-A",
+              "treeSize": 3,
+              "root": "9144ed0b5d28ce6e04e47f9c0235f825fca8ca0feb7e9c0a9128590f10f52dac",
+              "issuer": "issuer",
+              "subject": "subject",
+              "sequence": 7,
+              "statementDigest": "d1ed0d26ea9bd962c0f13e5ffe5bfea928bb8c9ca808dbcaa565e02a3ae1e1db"
+            },
+            "signerKeyId": "LOG-A",
+            "signature": "gG3QJ/QlpmW+UnNeU0y3HiP/5ADnW+PeQM0q4/ztco2n3LuOzFgjTFnbtjA67mvDc5tl4Ee6o/N7q4u+B87NAg==",
+            "signatureValid": true
+          },
+          "incoming": {
+            "view": {
+              "logId": "log-B",
+              "treeSize": 4,
+              "root": "cb5cb60e05ff87f1a7c5f5dedd54a44d60e586a2fc0809bddda3abd40d72ead6",
+              "issuer": "issuer",
+              "subject": "subject",
+              "sequence": 7,
+              "statementDigest": "d1ed0d26ea9bd962c0f13e5ffe5bfea928bb8c9ca808dbcaa565e02a3ae1e1db"
+            },
+            "signerKeyId": "LOG-B",
+            "signature": "Xyl1bYiVxCgfvyXdk2yl3HdgFtu9gTU+U6o22HUDLgo/Y/nNqykDkUUMhaUwkKi3e3xwleBRLhRQiDHQ9joGAw==",
+            "signatureValid": true
+          }
+        }
+      ],
+      "observations": {
+        "processDatabases": [
+          "F16-view-a.sqlite",
+          "F16-view-b.sqlite"
+        ]
+      }
+    }
+  ]
+}

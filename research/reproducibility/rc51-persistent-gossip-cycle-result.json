@@ -1,0 +1,173 @@
+{
+  "resultId": "RC51-PERSISTENT-GOSSIP-CYCLE-RESULT-0.1",
+  "cycleId": "RC-2026-51",
+  "reviewedOn": "2026-08-25",
+  "precommit": {
+    "path": "research/reproducibility/rc51-persistent-gossip-precommit.json",
+    "gitCommit": "5a2f847"
+  },
+  "selectedProblems": [
+    {
+      "id": "UP-605",
+      "reason": "Process-twin residuals are scientifically meaningful only if the input lineage survives restart and is current rather than a restored or forked history."
+    },
+    {
+      "id": "UP-602",
+      "reason": "Chiplet pedigree has the same anti-rollback and trust-rotation problem; TUF supplies a concrete cross-field transfer with exact N+1 and old/new key continuity."
+    },
+    {
+      "id": "UP-315",
+      "reason": "The experiment isolates the observation needed to distinguish two otherwise valid hidden histories: an independently retained later checkpoint or a conflicting peer view."
+    }
+  ],
+  "newlyVerifiedFacts": [
+    "Node SQLite 3.52.0 and Python SQLite 3.41.2 independently agree on all sixteen verdicts and final causal-state digests.",
+    "Termination before COMMIT leaves the complete old tuple and a retry accepts once; termination after COMMIT but before response leaves the complete new tuple and a retry is rejected.",
+    "The same atomic boundary holds for accepted head, domain generation, spent nonce, and for exact-successor key rotation.",
+    "A safe SQLite backup restored while connections are closed remains internally valid and passes integrity_check, but the single database cannot know that a later generation existed.",
+    "An unrestored generation-two anchor refuses the restored generation-one primary.",
+    "Locally valid signatures do not prevent nonce replay, nonce fork, stale tree heads, same-size/different-root log forks, or same-sequence issuer forks.",
+    "Exchanging retained views refuses all three preregistered stale/equivocation cases and accepts the nonconflicting advance.",
+    "The blind verifier reconstructs sixteen of sixteen verdicts and state digests without fixture labels, expected verdicts, or generator outcomes.",
+    "All forty Node/Python database snapshots report WAL, synchronous=FULL, foreign keys enabled, and integrity_check=ok.",
+    "No power-loss, multi-host operator-independence, production protocol, or physical-provenance test occurred."
+  ],
+  "hypothesisAdjudication": [
+    {
+      "code": "H0",
+      "verdict": "rejected",
+      "reason": "The signature-only arm accepts the correctly signed replay and same-nonce fork in F05-F06. One-time use appears only after the spent-nonce and accepted-domain state is retained."
+    },
+    {
+      "code": "H1",
+      "verdict": "supported-in-process-crash-scope",
+      "reason": "Both SQLite implementations expose the complete old tuple after pre-commit termination and the complete new tuple after post-commit response loss for transition and key-rotation cases; no mixed tuple appears and every reopened database passes integrity_check."
+    },
+    {
+      "code": "H2",
+      "verdict": "rejected",
+      "reason": "After a safe restore, the single database is internally valid at generation one and cannot know that generation two once existed. The rollback is refused only because a generation-two digest survives in the separate anchor."
+    },
+    {
+      "code": "H3",
+      "verdict": "supported-in-process-crash-scope",
+      "reason": "Exact N+1 rotation with both predecessor and proposed-key signatures is accepted; either missing continuity signature is rejected; pre- and post-commit termination preserve complete key epochs."
+    },
+    {
+      "code": "H4",
+      "verdict": "rejected",
+      "reason": "F13-F15 contain locally valid signatures while presenting a stale head, same-size/different-root log fork, or same-issuer/subject/sequence statement fork. A local view is not a global uniqueness proof."
+    },
+    {
+      "code": "H5",
+      "verdict": "supported-in-local-multi-process-scope",
+      "reason": "The separately retained anchor refuses the restored primary, and exchanged views refuse all three stale or equivocation cases while accepting the nonconflicting two-log advance. The blind replay independently reconstructs all sixteen verdicts and state digests."
+    }
+  ],
+  "mostPromisingPath": {
+    "name": "Externally anchored causal checkpoint",
+    "status": "A tested composition of established transaction, update-security, and transparency ideas; not claimed as a new primitive or production profile.",
+    "claim": "Keep the accepted head, domain generation, spent nonce, and key epoch in one local transaction. Publish only its digest and monotone generation to a fault-separated anchor, and require exact predecessor/new-key continuity plus peer-view comparison before accepting a successor. The local database supplies atomicity; the external memory supplies anti-rollback; exchanged views supply fork evidence.",
+    "exactBottleneck": "A crash can interrupt one transition, a response can be lost after it commits, and a valid old backup can erase the fact that a nonce, key epoch, or tree head was already superseded. No signature answers all three questions.",
+    "decisiveTest": "Run the same frozen schedule on two hosts under separate administrators, with an anchor excluded from primary backups and hardware-backed operational keys. Add controlled storage-fault injection, independently exchange signed heads, and require the blind verifier to reject rollback, replay, stale views, and both fork types without rejecting the consistent advance.",
+    "success": "No mixed tuple after any injected failure; no committed nonce or rotation accepted twice; restored primary refused by the external anchor; all conflicting views yield signed evidence; independent monitor and verifier agree.",
+    "rejection": "Reject the architecture if a fault inside the declared model advances only part of the tuple, if primary and fault-separated anchor can both regress undetected, or if two conflicting valid views are accepted after exchange.",
+    "stop": "Stop physical-provenance claims if anchor custody is not independent, view semantics differ, operational key rotation is not rehearsed, or power/storage behavior remains untested."
+  },
+  "workPackages": [
+    {
+      "id": "WP51-1",
+      "status": "complete-in-process-crash-scope",
+      "purpose": "Persistent causal baseline",
+      "method": "Two file-backed SQLite implementations inject termination before and after transaction and rotation commit.",
+      "output": "Sixteen matched verdict/state pairs and forty integrity snapshots",
+      "pass": "All preregistered gates pass",
+      "failNext": "Isolate transaction, signature, or state-digest divergence"
+    },
+    {
+      "id": "WP51-2",
+      "status": "next",
+      "purpose": "Storage durability boundary",
+      "method": "Use an approved SQLite crash-test VFS or controlled power-interruption rig across commit and checkpoint boundaries.",
+      "output": "Torn-write/power-loss matrix with storage-stack metadata",
+      "pass": "Old or new complete tuple only; no corruption or silent mixed state",
+      "failNext": "Change journal/VFS/storage design and bound the unsupported platform"
+    },
+    {
+      "id": "WP51-3",
+      "status": "next",
+      "purpose": "Administrative fault separation",
+      "method": "Place primary, anchor, and monitor on separately administered hosts with hardware-backed keys and independent backups.",
+      "output": "Custody diagram, rotation/revocation transcript, split-view exchange evidence",
+      "pass": "One-domain rollback or key loss does not erase every checkpoint",
+      "failNext": "Reduce guarantee to the measured common-cause domain"
+    },
+    {
+      "id": "WP51-4",
+      "status": "gated",
+      "purpose": "Untouched physical witness",
+      "method": "After WP51-2/3, preregister one pre-capture hardware receipt and one ordinary acquisition without exposing the event map to adjudicators.",
+      "output": "One independently joined physical event",
+      "pass": "Both paths bind the same event and payload before ordinary capture",
+      "failNext": "Audit clocks, power, firmware, and administrator common causes"
+    },
+    {
+      "id": "WP51-5",
+      "status": "later",
+      "purpose": "Many-to-many lineage",
+      "method": "Replace one transition chain with a time-bounded bipartite graph and retain a digest of the admissible-history set.",
+      "output": "Exact or set-valued histories under asynchronous sampling",
+      "pass": "Singleton claims occur only when one graph survives",
+      "failNext": "Report equivalence classes and design a separating measurement"
+    }
+  ],
+  "uncertaintyBudget": [
+    {
+      "source": "measurement",
+      "current": "Physical acquisitions n=0",
+      "reduction": "One untouched pre-capture/ordinary-path acquisition after software and custody gates"
+    },
+    {
+      "source": "storage",
+      "current": "Application process termination only",
+      "reduction": "Fault-injected VFS or controlled power interruption on documented storage hardware"
+    },
+    {
+      "source": "implementation",
+      "current": "Two languages and SQLite builds on one Windows host",
+      "reduction": "Independent host, implementation, and monitoring stack"
+    },
+    {
+      "source": "model",
+      "current": "Sixteen frozen cases and one-to-one transitions",
+      "reduction": "Partial-order and many-to-many adversarial schedules"
+    },
+    {
+      "source": "organizational",
+      "current": "Separate test processes and keys; independent operators 0",
+      "reduction": "Documented custody, backup, rotation, revocation, and non-colluding administration"
+    },
+    {
+      "source": "extrapolation",
+      "current": "No production SCITT, Rekor, TUF, fab, or chiplet deployment",
+      "reduction": "Standards interoperability and controlled domain pilot"
+    }
+  ],
+  "failedOrRejectedApproaches": [
+    "Signature-only one-time semantics is rejected by the valid nonce replay and fork.",
+    "A single persistent database as its own anti-rollback oracle is rejected by the valid old-backup restore.",
+    "Old-key-only rotation and new-key-only rotation are each rejected; continuity needs both sides of the immediate transition.",
+    "One locally valid tree head as global uniqueness proof is rejected by stale and split-view fixtures.",
+    "Separate local processes and keys are insufficient evidence of operator independence.",
+    "Process-crash success is not accepted as evidence of physical power-loss durability."
+  ],
+  "unresolved": [
+    "Whether the causal tuple survives real power interruption, torn sectors, and faulty flush semantics on the target storage stack.",
+    "Whether primary, anchor, monitor, and key custody can be separated across real organizations without a common backup or administrative rollback path.",
+    "Whether a production transparency implementation exchanges semantically compatible heads and conflict evidence within a bounded time.",
+    "Whether a physical witness binds the event before the ordinary writer and remains independent in firmware, power, clock, and administration.",
+    "How the monotone tuple generalizes to asynchronous many-to-many wafer, metrology, shipment, and inspection relations.",
+    "The prevalence and cost distribution of replay, rollback, fork, false refusal, and unavailable-anchor events in field operation."
+  ],
+  "nextCycleStart": "RC52 should not repeat the process-termination fixtures or increase their count. First move the primary and anchor to fault-separated hosts and inject a documented storage-level failure at the frozen commit/checkpoint boundaries, with operational rotation and an independently implemented view monitor. Keep physical acquisition and X16 closed until the storage and administrative common-cause gates pass."
+}

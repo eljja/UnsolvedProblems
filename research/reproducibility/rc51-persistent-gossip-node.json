@@ -1,0 +1,362 @@
+{
+  "resultId": "RC51-PERSISTENT-GOSSIP-NODE-RESULT-0.1",
+  "cycleId": "RC-2026-51",
+  "runtime": {
+    "node": "v25.8.2",
+    "sqlite": "3.52.0",
+    "platform": "win32-x64"
+  },
+  "preregistrationCommit": "5a2f847",
+  "processCrashScope": true,
+  "powerLossScope": false,
+  "operatorIndependenceScope": false,
+  "physicalAcquisitions": 0,
+  "fixtures": [
+    {
+      "id": "F01",
+      "opaqueCaseId": "X-278d5cad9dcf4db8",
+      "verdict": "accept",
+      "stateDigest": "a9d0d13e045f9d0189031db262cd4940fb9945f17ab7b48bbac35c3e16e2c7eb",
+      "armVerdicts": {
+        "signatureOnly": "accept-local-signature",
+        "singlePersistentRegistry": "accept",
+        "anchoredCrossView": "not-required"
+      }
+    },
+    {
+      "id": "F02",
+      "opaqueCaseId": "X-4de91e8001bf5c79",
+      "verdict": "accept",
+      "stateDigest": "a06dfd2d05ec1206f2f4146434f4c5b5a7767c9f3e980993c493b4a28fb699fb",
+      "armVerdicts": {
+        "signatureOnly": "accept-local-signature",
+        "singlePersistentRegistry": "accept",
+        "anchoredCrossView": "not-required"
+      }
+    },
+    {
+      "id": "F03",
+      "opaqueCaseId": "X-2d84427d3863a3d1",
+      "verdict": "retry-accepted-once",
+      "stateDigest": "a9d0d13e045f9d0189031db262cd4940fb9945f17ab7b48bbac35c3e16e2c7eb",
+      "armVerdicts": {
+        "signatureOnly": "accept-local-signature",
+        "singlePersistentRegistry": "retry-accepted-once",
+        "anchoredCrossView": "not-required"
+      }
+    },
+    {
+      "id": "F04",
+      "opaqueCaseId": "X-17dce07f1d1d93e7",
+      "verdict": "retry-rejected-replay",
+      "stateDigest": "a9d0d13e045f9d0189031db262cd4940fb9945f17ab7b48bbac35c3e16e2c7eb",
+      "armVerdicts": {
+        "signatureOnly": "accept-local-signature",
+        "singlePersistentRegistry": "retry-rejected-replay",
+        "anchoredCrossView": "not-required"
+      }
+    },
+    {
+      "id": "F05",
+      "opaqueCaseId": "X-e1ca8a008760c8a7",
+      "verdict": "reject-nonce-replay",
+      "stateDigest": "a9d0d13e045f9d0189031db262cd4940fb9945f17ab7b48bbac35c3e16e2c7eb",
+      "armVerdicts": {
+        "signatureOnly": "accept-local-signature",
+        "singlePersistentRegistry": "reject-nonce-replay",
+        "anchoredCrossView": "not-required"
+      }
+    },
+    {
+      "id": "F06",
+      "opaqueCaseId": "X-0bcf794fa52734d6",
+      "verdict": "reject-nonce-fork",
+      "stateDigest": "a9d0d13e045f9d0189031db262cd4940fb9945f17ab7b48bbac35c3e16e2c7eb",
+      "armVerdicts": {
+        "signatureOnly": "accept-local-signature",
+        "singlePersistentRegistry": "reject-nonce-fork",
+        "anchoredCrossView": "not-required"
+      }
+    },
+    {
+      "id": "F07",
+      "opaqueCaseId": "X-101ba7a0ce9fe1a2",
+      "verdict": "accept-rotation",
+      "stateDigest": "610f8f3baeb1a843ec90d2ef0c88a27852f0fc4337cec3e9ff59f80bfff95dd7",
+      "armVerdicts": {
+        "signatureOnly": "accept-both-signatures",
+        "singlePersistentRegistry": "accept-rotation",
+        "anchoredCrossView": "not-required"
+      }
+    },
+    {
+      "id": "F08",
+      "opaqueCaseId": "X-5cd3ab23b95a9bc1",
+      "verdict": "reject-new-key-continuity",
+      "stateDigest": "4874d8a34054881cd32694bc108a7ebc4b87473a066a1539704b2c85cd1e4c30",
+      "armVerdicts": {
+        "signatureOnly": "reject-missing-required-signature",
+        "singlePersistentRegistry": "reject-new-key-continuity",
+        "anchoredCrossView": "not-required"
+      }
+    },
+    {
+      "id": "F09",
+      "opaqueCaseId": "X-b8112f596ef6dd5f",
+      "verdict": "reject-predecessor-continuity",
+      "stateDigest": "4874d8a34054881cd32694bc108a7ebc4b87473a066a1539704b2c85cd1e4c30",
+      "armVerdicts": {
+        "signatureOnly": "reject-missing-required-signature",
+        "singlePersistentRegistry": "reject-predecessor-continuity",
+        "anchoredCrossView": "not-required"
+      }
+    },
+    {
+      "id": "F10",
+      "opaqueCaseId": "X-6d38ebbebc1bcde5",
+      "verdict": "retry-accepted-rotation",
+      "stateDigest": "610f8f3baeb1a843ec90d2ef0c88a27852f0fc4337cec3e9ff59f80bfff95dd7",
+      "armVerdicts": {
+        "signatureOnly": "accept-both-signatures",
+        "singlePersistentRegistry": "retry-accepted-rotation",
+        "anchoredCrossView": "not-required"
+      }
+    },
+    {
+      "id": "F11",
+      "opaqueCaseId": "X-70aedd76a8b9cf48",
+      "verdict": "retry-rejected-rotation",
+      "stateDigest": "610f8f3baeb1a843ec90d2ef0c88a27852f0fc4337cec3e9ff59f80bfff95dd7",
+      "armVerdicts": {
+        "signatureOnly": "accept-both-signatures",
+        "singlePersistentRegistry": "retry-rejected-rotation",
+        "anchoredCrossView": "not-required"
+      }
+    },
+    {
+      "id": "F12",
+      "opaqueCaseId": "X-3634d88f0cf332f2",
+      "verdict": "refuse-backup-rollback",
+      "stateDigest": "a9d0d13e045f9d0189031db262cd4940fb9945f17ab7b48bbac35c3e16e2c7eb",
+      "armVerdicts": {
+        "signatureOnly": "accept-local-signature",
+        "singlePersistentRegistry": "accept-internally-valid-old-state",
+        "anchoredCrossView": "refuse-backup-rollback"
+      }
+    },
+    {
+      "id": "F13",
+      "opaqueCaseId": "X-096b4cf1030d7b43",
+      "verdict": "refuse-stale-view",
+      "stateDigest": "4874d8a34054881cd32694bc108a7ebc4b87473a066a1539704b2c85cd1e4c30",
+      "armVerdicts": {
+        "signatureOnly": "accept-both-local-signatures",
+        "singlePersistentRegistry": "accept-own-view",
+        "anchoredCrossView": "refuse-stale-view"
+      }
+    },
+    {
+      "id": "F14",
+      "opaqueCaseId": "X-94edf370b38298ea",
+      "verdict": "refuse-log-equivocation",
+      "stateDigest": "4874d8a34054881cd32694bc108a7ebc4b87473a066a1539704b2c85cd1e4c30",
+      "armVerdicts": {
+        "signatureOnly": "accept-both-local-signatures",
+        "singlePersistentRegistry": "accept-own-view",
+        "anchoredCrossView": "refuse-log-equivocation"
+      }
+    },
+    {
+      "id": "F15",
+      "opaqueCaseId": "X-7ca8667f5adb6b23",
+      "verdict": "refuse-issuer-equivocation",
+      "stateDigest": "4874d8a34054881cd32694bc108a7ebc4b87473a066a1539704b2c85cd1e4c30",
+      "armVerdicts": {
+        "signatureOnly": "accept-both-local-signatures",
+        "singlePersistentRegistry": "accept-own-view",
+        "anchoredCrossView": "refuse-issuer-equivocation"
+      }
+    },
+    {
+      "id": "F16",
+      "opaqueCaseId": "X-fdc7138d45a276b8",
+      "verdict": "accept-cross-view",
+      "stateDigest": "4874d8a34054881cd32694bc108a7ebc4b87473a066a1539704b2c85cd1e4c30",
+      "armVerdicts": {
+        "signatureOnly": "accept-both-local-signatures",
+        "singlePersistentRegistry": "accept-own-view",
+        "anchoredCrossView": "accept-cross-view"
+      }
+    }
+  ],
+  "pragmaChecks": [
+    {
+      "id": "F01",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F02",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F03",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F04",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F05",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F06",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F07",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F08",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F09",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F10",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F11",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F12",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F13A",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F13B",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F14A",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F14B",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F15A",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F15B",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F16A",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    },
+    {
+      "id": "F16B",
+      "journalMode": "wal",
+      "synchronous": 2,
+      "foreignKeys": 1,
+      "integrity": "ok",
+      "sqliteVersion": "3.52.0"
+    }
+  ],
+  "gates": {
+    "fixtureCount": true,
+    "atomicCrashTuples": true,
+    "backupRollbackDetectedOnlyWithAnchor": true,
+    "equivocationDetectedAfterExchange": true,
+    "consistentViewsAccepted": true,
+    "sqlitePragmasAndIntegrity": true
+  }
+}
