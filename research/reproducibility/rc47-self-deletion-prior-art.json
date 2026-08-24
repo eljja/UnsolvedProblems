@@ -1,0 +1,64 @@
+{
+  "reviewId": "RC47-SELF-DELETION-PRIOR-ART-0.1",
+  "cycleId": "RC-2026-47",
+  "reviewedOn": "2026-08-24",
+  "scope": "Primary evidence for temporal melt-pool structure, frame registration, frame-deletion localization, and the limits of transferring a same-video synthetic test to a naturally incomplete record.",
+  "confirmedFacts": [
+    {
+      "claim": "NIST treats each co-axial melt-pool frame as a time-specific observation and constructs spatiotemporal features only after associating frames with process position; temporal structure is informative but does not itself supply an exposure identity ledger.",
+      "source": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=932381",
+      "publishedOn": "2022-07-01",
+      "resultPeriod": "X16-derived spatiotemporal monitoring study"
+    },
+    {
+      "claim": "NIST's generalized superposition work preserves temporal information alongside registered melt-pool features because individual frames and their neighborhood carry different physical information.",
+      "source": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=934033",
+      "publishedOn": "2022-05-23",
+      "resultPeriod": "IISE 2022 melt-pool feature workflow"
+    },
+    {
+      "claim": "NIST camera-registration work requires calibrated command, measurement, trigger, and shutter delays; image continuity cannot replace those calibrations when the claim is absolute process-coordinate identity.",
+      "source": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=930452",
+      "publishedOn": "2020-11-16",
+      "resultPeriod": "AMMT and commercial-system registration case studies"
+    },
+    {
+      "claim": "Frame-deletion forensics has used temporal discontinuities and compression-domain periodicity to localize edit breakpoints, but its assumptions concern encoded consumer video and cannot be imported unchanged into a lossless scientific camera stream.",
+      "source": "https://doi.org/10.1016/j.jvcir.2022.103436",
+      "publishedOn": "2022-02-01",
+      "resultPeriod": "Frame-deletion localization experiments"
+    },
+    {
+      "claim": "Bidirectional flow and temporal interpolation are established ways to test whether two endpoints admit a plausible intermediate frame, while occlusion and nonlinear motion remain known failure modes.",
+      "source": "https://openaccess.thecvf.com/content_cvpr_2018/html/Jiang_Super_SloMo_High_CVPR_2018_paper.html",
+      "publishedOn": "2018-06-01",
+      "resultPeriod": "CVPR 2018 video-frame interpolation benchmarks"
+    },
+    {
+      "claim": "The public X16 record supplies lossless Lagarith AVI products and command/measurement archives but no public camera tick ledger or trigger-to-frame sidecar identified in its manifest.",
+      "source": "https://data.nist.gov/od/id/mds2-2309",
+      "publishedOn": "2020-10-16",
+      "resultPeriod": "X16 record version 1.1.1, manifest rechecked 2026-08-24"
+    }
+  ],
+  "inferences": [
+    "A same-layer synthetic deletion can test whether the exported image sequence contains enough cadence information to expose a missing interval without assuming cross-layer frame correspondence.",
+    "The relevant contrast is not simply a large adjacent-frame difference: a deletion seam should resemble an intact pair separated by two to nine acquisition steps more than it resembles a one-step pair in the same local state.",
+    "Passing a synthetic test would establish a detector's bounded error on injected omissions in L0002, not the location or cause of L0001's natural 23-frame deficit."
+  ],
+  "unverifiedProposals": [
+    "A self-supervised gap discriminator trained only on intact L0002 cadence can separate one-step transitions from two-to-nine-step transitions at useful whole-partition false-discovery control.",
+    "Multiscale intensity, tail geometry, and local motion ratios can outperform RC44's 8 by 8 command-to-image prediction because they test the deletion seam directly rather than predicting image content from commands.",
+    "If the detector passes a sealed L0002 development gate, independently selected layers can measure transport error before any natural L0001 call is permitted."
+  ],
+  "searchStrategy": {
+    "queries": [
+      "NIST melt pool spatiotemporal features frame registration",
+      "laser powder bed fusion melt pool temporal optical flow",
+      "video frame deletion localization temporal consistency",
+      "video frame interpolation bidirectional optical flow missing frame"
+    ],
+    "priority": "NIST data and primary NIST papers first, then original peer-reviewed video-forensics and frame-interpolation papers. Blogs, tutorials, and vendor marketing are excluded.",
+    "noveltyBoundary": "RC47 does not claim that deletion forensics, multiscale temporal differences, LDA, or self-supervised gap classification is new. The proposed contribution is their preregistered use as a scientific-instrument cadence test with a sealed natural record, explicit refusal, and a later cross-layer transport gate."
+  }
+}

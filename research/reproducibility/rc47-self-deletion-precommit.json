@@ -1,0 +1,135 @@
+{
+  "precommitId": "RC47-X16-SELF-DELETION-PRECOMMIT-0.1",
+  "cycleId": "RC-2026-47",
+  "createdOn": "2026-08-24",
+  "status": "sealed-before-32x32-pixel-decoding-or-any-rc47-gap-score",
+  "problems": ["UP-605", "UP-315"],
+  "question": "Does the intact L0002 melt-pool stream contain enough local cadence information to distinguish a genuine one-step transition from a seam that skips one to eight frames, at error rates strong enough to justify acquiring independent-layer pixels?",
+  "inheritedEvidence": {
+    "RC43": "L0002 has 95,504 camera-trigger rows and 95,504 exported AVI frames. Count equality does not authenticate ordinal identity.",
+    "RC44": "An 8 by 8 command-to-image ridge bridge recovered only 1 of 128 singleton deletions within one slot; the independent implementation proved the overall 95 percent recall gate unreachable.",
+    "RC45": "All 24 documented in-frame-counter interpretations failed, so no embedded counter currently joins frames to trigger rows.",
+    "RC46": "No layer from L0002 through L0025 passed all nine command-twin gates for L0001. RC46 retained state-supported within-layer deletion as hypothesis S1.",
+    "developmentAsset": "The authenticated L0002 lossless AVI is already cached from RC44: 172,605,872 bytes, SHA-256 54bc90814acf15304257ee4c9c56f029d50999ab38b9c27455137a12f884b53a, 95,504 frames, Lagarith 120 by 120. No new source object is needed for RC47 development."
+  },
+  "inspectedBeforeSeal": [
+    "Committed RC43-RC46 preregistrations, failed attempts, independent audits, acquisition receipts, cycle results, and public problem records.",
+    "The L0002 AVI container header, codec, dimensions, frame count, duration, and existing RC44 8 by 8 aggregate failure; no RC47 32 by 32 pixel or gap score.",
+    "Primary NIST papers on registration and spatiotemporal melt-pool features, plus primary frame-deletion and interpolation literature recorded in the prior-art file."
+  ],
+  "notInspectedBeforeSeal": [
+    "Any 32 by 32 decoded L0002 frame or feature, any RC47 adjacent-versus-gap score, and any RC47 validation or test call.",
+    "Any L0001 pixel, natural omission position, L0001 image statistic, or recorder-sidecar content.",
+    "Any new layer AVI, TIFF, layer-camera image, build outcome, or defect label."
+  ],
+  "inputs": {
+    "avi": ".cache/rc44-x16/l0002/extracted/MPMcamera_L0002.avi",
+    "expectedAviBytes": 172605872,
+    "expectedAviSha256": "54bc90814acf15304257ee4c9c56f029d50999ab38b9c27455137a12f884b53a",
+    "expectedFrames": 95504,
+    "decode": "FFmpeg v7.1 area-resamples every frame to 32 by 32 and converts it to 8-bit gray without temporal filtering. The expected raw byte count is 97,796,096. The decoder executable hash and raw SHA-256 are recorded.",
+    "naturalHoldout": "L0001 remains byte-sealed and is not an input."
+  },
+  "partition": {
+    "development": "frame ordinals [0, 57302)",
+    "validation": "frame ordinals [57302, 76403)",
+    "sealedTest": "frame ordinals [76403, 95504)",
+    "boundaryGuard": 128,
+    "meaning": "All three blocks belong to L0002 and therefore measure within-layer temporal generalization only. L0002 remains development evidence for the larger cross-layer program even when its final block is sealed from model selection."
+  },
+  "representation": {
+    "scales": [32, 16, 8, 4],
+    "quartet": "For each candidate seam use the preceding frame A, left endpoint L, right endpoint R, and following frame B.",
+    "featuresPerScale": [
+      "mean absolute L-R difference",
+      "root-mean-square L-R difference",
+      "mean absolute A-L and R-B differences",
+      "log ratio of the center jump to the mean side jump",
+      "centered cosine distance between L and R",
+      "constant-velocity residual comparing R-L with the mean of L-A and B-R"
+    ],
+    "shapeFeatures": [
+      "intensity-weighted centroid displacement",
+      "change in bright area at fixed gray thresholds 32, 64, 128, and 192",
+      "change in row and column intensity projections"
+    ],
+    "normalization": "Each feature is centered and scaled using development one-step transitions only; zero scales become one. No framewise contrast normalization is allowed because intensity is a physical signal and a possible cadence cue."
+  },
+  "selfSupervisedGapModels": {
+    "classes": "For block length b in {1,2,4,8}, intact development quartets separated by gap g=b+1 form the skip class and ordinary adjacent quartets form the one-step class.",
+    "sampling": "Use every fourth eligible development seam for both classes; the same starting ordinals are used where boundary conditions permit.",
+    "candidateFamilies": [
+      "scalar-jump: the standardized multiscale log jump-ratio sum",
+      "diagonal-LDA: pooled feature variances with no off-diagonal covariance",
+      "ridge-LDA-0.01, ridge-LDA-0.1, and ridge-LDA-1.0: pooled covariance plus the named diagonal ridge times the mean feature variance"
+    ],
+    "selection": "For each gap independently, choose the family with highest validation boundary recall, then lowest validation false-discovery rate, then the fixed order scalar-jump, diagonal-LDA, ridge-LDA-1.0, ridge-LDA-0.1, ridge-LDA-0.01. No test result may select a family.",
+    "threshold": "For each family and gap, the call threshold is the largest score among every intact one-step validation seam. Calls require a strict greater-than comparison."
+  },
+  "injectionsAndScoring": {
+    "validationTrials": {"singleton": 128, "block2": 96, "block4": 96, "block8": 96},
+    "sealedTestTrials": {"singleton": 256, "block2": 128, "block4": 128, "block8": 128},
+    "positionRule": "Generate each block start from SHA-256 of RC47-X16-SELF-DELETION-v1, partition, block length, and trial number; map into the guarded interval. Repeated positions remain separate trials.",
+    "simulation": "Delete the known contiguous block, score every valid observed seam, and return at most the single highest score above threshold. The implementation may reuse unaffected intact scores only if it recomputes every quartet whose context touches the deletion.",
+    "correctCall": "The called seam is within one observed slot of the true deletion boundary. For a block, both start and end are then known because the block length is supplied to the detector.",
+    "unmodifiedControl": "Apply each frozen model and threshold to the complete unmodified sealed-test partition; any call is a false alarm."
+  },
+  "hardGates": [
+    "AVI and decoder identities match, exactly 95,504 frames decode, and independent implementations match the raw-byte SHA-256.",
+    "On the sealed-test trials, singleton boundary recall is at least 0.95.",
+    "For each of block lengths 2, 4, and 8, sealed-test boundary recall is at least 0.95.",
+    "Aggregate false-discovery rate is at most 0.01 and each unmodified-control call count is zero.",
+    "Every frame-intensity quartile containing at least 20 sealed truths has recall at least 0.90; otherwise the detector must refuse that stratum.",
+    "Python and Node implementations agree on selected families, thresholds within 1e-9, every truth/call pair, aggregate metrics, and the final gate."
+  ],
+  "competingHypotheses": [
+    {
+      "id": "S0",
+      "claim": "Natural melt-pool variation produces one-step discontinuities indistinguishable from one-to-eight-frame gaps at whole-partition false-alarm control.",
+      "prediction": "At least one required gap misses the recall gate or the unmodified test produces a call.",
+      "decision": "Stop before acquiring another AVI; preserve the error strata and seek a direct recorder ledger or an additional independent sensor."
+    },
+    {
+      "id": "S1",
+      "claim": "A deletion seam has a reproducible multiscale cadence signature within L0002.",
+      "prediction": "Every gap-specific model passes all recall, false-discovery, stratum, integrity, and implementation gates.",
+      "decision": "Freeze the detector and select independent layers from command and DAQ state coverage before requesting their pixels. Do not inspect L0001."
+    },
+    {
+      "id": "S2",
+      "claim": "Only some local melt-pool states expose deletion cadence.",
+      "prediction": "Aggregate performance may pass while at least one predeclared intensity stratum fails 0.90 recall.",
+      "decision": "Retain a state-conditional refusal rule and measure whether independent layers cover only the passing strata."
+    }
+  ],
+  "causalChain": [
+    "Authenticated intact L0002 image order and fixed area-resampled pixels",
+    "unknown separability of ordinary one-step dynamics from longer temporal gaps",
+    "a self-supervised gap model assigns larger likelihood to the correct injected seam than to every natural transition",
+    "a sealed within-layer block and an independent implementation bound recall and false discovery",
+    "only a later independent-layer transport test may authorize a bounded natural interpretation; exact L0001 identity still requires an external ledger"
+  ],
+  "fastFailureTests": [
+    "Stop on any AVI hash, decoder hash, frame-count, raw-byte-count, or cross-implementation raw-hash disagreement.",
+    "Evaluate the singleton gate first; if its recall cannot reach 0.95 even under perfect results for remaining cases, preserve the run and skip needless extensions.",
+    "Do not lower a threshold after viewing the sealed test and do not remove naturally difficult transitions.",
+    "Do not interpret a synthetic pass as proof that L0001 lost frames inside the camera rather than during export or packaging."
+  ],
+  "uncertaintyBudget": {
+    "measurement": "The exported AVI has no authenticated per-frame exposure time. Area resampling and 8-bit gray conversion discard color and subpixel information.",
+    "model": "LDA and scalar jump models approximate a nonstationary physical sequence; a high score may mark a real regime change rather than deletion.",
+    "sampling": "All development and sealed-test evidence comes from one layer, one build, and one exported codec stream.",
+    "implementation": "Independent code shares FFmpeg-decoded bytes and the mathematical specification, so agreement does not test codec correctness or conceptual bias.",
+    "extrapolation": "L0001 differs in frame count and may differ in geometry, thermal state, optics, or export history. No L0002 rate transfers without a later support test.",
+    "selection": "Five model families are fixed before decoding; validation chooses one per gap and the sealed test is one-shot."
+  },
+  "resources": {
+    "network": "Zero new source-object bytes are required for the development experiment.",
+    "persistentDerivedCacheLimitBytes": 110000000,
+    "compute": "CPU-only FFmpeg decode plus Python and Node implementations; no pretrained model or external service.",
+    "prohibited": "Do not download or decode L0001, acquire another layer, use defect labels, or tune on the sealed-test block in RC47."
+  },
+  "safetyEthicsEnvironment": "The experiment reads a public scientific video already in local cache. It actuates no equipment, processes no personal data, makes no part-certification claim, and limits new persistent derived data to one 32 by 32 gray stream.",
+  "minimumAdvance": "A pass establishes that a direct image-cadence detector deserves an independent-layer transport test. A failure rules out the fixed multiscale gap family before additional multi-gigabyte acquisition and identifies the physical states where finite images remain observationally ambiguous.",
+  "priorArt": "research/reproducibility/rc47-self-deletion-prior-art.json"
+}
