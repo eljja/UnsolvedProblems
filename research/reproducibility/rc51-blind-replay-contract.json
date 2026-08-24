@@ -1,0 +1,34 @@
+{
+  "contractId": "RC51-BLIND-REPLAY-CONTRACT-0.1",
+  "cycleId": "RC-2026-51",
+  "sealedOn": "2026-08-25",
+  "verifierInput": [
+    "opaque case identifier",
+    "ordered event records with operation codes, pre-state digest, proposed tuple, signature booleans, and commit observation",
+    "retained primary and anchor checkpoints",
+    "signed view tuples containing log identity, tree size, root, issuer, subject, sequence, and statement digest"
+  ],
+  "withheld": [
+    "fixture name and human-readable attack label",
+    "preregistered expected verdict",
+    "Node or Python generator verdict",
+    "hypothesis code",
+    "site prose and aggregate outcome"
+  ],
+  "allowedRules": [
+    "A committed event changes all tuple fields named by that event; an uncommitted event changes none.",
+    "A nonce already present in the retained spent set cannot authorize another successor.",
+    "A rotation requires exact predecessor epoch plus one and valid predecessor-key and new-key authorization.",
+    "A checkpoint lower than an independently retained generation or with the same generation and different digest is refused.",
+    "Two views with the same log identity and tree size but different roots are an equivocation.",
+    "Two statements with the same issuer, subject, and sequence but different digests are an issuer equivocation.",
+    "A lower tree size than a retained view is stale; a consistent strictly advancing view is accepted."
+  ],
+  "output": [
+    "one verdict per opaque case",
+    "post-case causal-state digest",
+    "reason code computed only from the allowed rules",
+    "aggregate exact-match count after the sealed output is compared by the adjudicator"
+  ],
+  "failure": "The blind gate fails if the verifier reads any withheld field, cannot reconstruct a case, or disagrees with either implementation on any verdict or state digest."
+}

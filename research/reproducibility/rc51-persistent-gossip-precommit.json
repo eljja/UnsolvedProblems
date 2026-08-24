@@ -1,0 +1,136 @@
+{
+  "precommitId": "RC51-PERSISTENT-GOSSIP-PRECOMMIT-0.1",
+  "cycleId": "RC-2026-51",
+  "sealedOn": "2026-08-25",
+  "status": "sealed-after-rc50-boundary-and-primary-source-audit-before-service-implementation-traces-or-outcomes",
+  "selection": {
+    "problemIds": ["UP-605", "UP-602", "UP-315"],
+    "reason": "RC50 showed that signed receipts authenticate one view but that freshness, one-time reset use, and global uniqueness require retained state and compared views. RC51 tests the smallest unresolved operational step: whether the accepted head, domain generation, spent nonce, and key epoch survive real process termination as one transaction, and whether a separately retained view detects restoration of an older but internally valid database.",
+    "excluded": [
+      "No physical fab, chiplet, sensor, or historical X16 acquisition is opened.",
+      "No larger random synthetic corpus is used to substitute for the crash and rollback boundary.",
+      "No claim of independent operators, hardware power-loss durability, or production interoperability is permitted."
+    ]
+  },
+  "causalChain": {
+    "inputsAndAllowedAssumptions": [
+      "File-backed SQLite databases on one Windows host; WAL mode and synchronous=FULL are requested and read back.",
+      "Node and Python use separate programs and their bundled SQLite versions; deterministic public demonstration keys are not secrets.",
+      "A primary registry and an anchor registry use different files and processes; the anchor file is not included when the primary backup is restored.",
+      "Process termination is injected before COMMIT or after COMMIT but before an application response."
+    ],
+    "bottleneck": "Local validity does not reveal whether accepted causal state was partly committed, forgotten by backup restoration, or forked across observers.",
+    "bridgeProposition": "Commit the accepted head, reset-domain generation, spent nonce, and key epoch atomically; then compare the resulting checkpoint with a separately retained monotone anchor before accepting another transition.",
+    "independentAdjudicands": [
+      "database integrity and exact state tuple after restart",
+      "whether a retried nonce is accepted exactly once",
+      "whether root-key rotation has immediate-predecessor and new-key continuity",
+      "whether an anchor detects a lower generation or conflicting digest",
+      "whether two views share log identity and tree size but disagree on root",
+      "whether a blind replay of opaque events reconstructs the same verdict"
+    ],
+    "finalCriterion": "Within process-crash scope, no partial tuple is visible; a committed transition is never accepted twice after restart; an old primary backup is refused when compared with an unrestored anchor; split log and issuer views are refused; two independent implementations and a blind replay agree exactly."
+  },
+  "arms": [
+    {
+      "id": "signature-only",
+      "state": "No retained head, nonce, generation, key epoch, or peer view",
+      "prediction": "Correctly signed replay, rollback, rotation fork, and split views can remain locally acceptable."
+    },
+    {
+      "id": "single-persistent-registry",
+      "state": "One SQLite transaction retains head, generation, spent nonce, key epoch, and append-only event rows",
+      "prediction": "Process-crash atomicity and restart replay are enforced, but restoring an internally valid old backup is not self-detecting."
+    },
+    {
+      "id": "anchored-cross-view",
+      "state": "The persistent registry is compared with a separately stored monotone checkpoint and with heads received from another view",
+      "prediction": "Primary rollback, same-size/different-root log forks, and same-sequence/different-digest issuer forks are refused after views are exchanged."
+    }
+  ],
+  "fixtureSchedule": [
+    {"id": "F01", "case": "genesis commit", "expected": "accept"},
+    {"id": "F02", "case": "successor commit", "expected": "accept"},
+    {"id": "F03", "case": "terminate before commit", "expected": "no state change; retry accepts once"},
+    {"id": "F04", "case": "terminate after commit before response", "expected": "complete state change; retry rejects replay"},
+    {"id": "F05", "case": "spent nonce replay after clean restart", "expected": "reject-nonce-replay"},
+    {"id": "F06", "case": "same nonce proposes a different successor domain", "expected": "reject-nonce-fork"},
+    {"id": "F07", "case": "old-and-new-key signed N+1 rotation", "expected": "accept-rotation"},
+    {"id": "F08", "case": "rotation signed only by old key", "expected": "reject-new-key-continuity"},
+    {"id": "F09", "case": "rotation signed only by new key", "expected": "reject-predecessor-continuity"},
+    {"id": "F10", "case": "rotation terminates before commit", "expected": "old epoch remains; retry accepts"},
+    {"id": "F11", "case": "rotation terminates after commit before response", "expected": "new epoch remains; retry rejects"},
+    {"id": "F12", "case": "restore primary backup older than unrestored anchor", "expected": "single registry accepts its local state; anchored arm refuses rollback"},
+    {"id": "F13", "case": "lower tree size from one observer", "expected": "signature-only accepts local signature; anchored arm refuses stale view"},
+    {"id": "F14", "case": "same log identity and tree size with different roots", "expected": "signature-only accepts both; cross-view arm refuses log equivocation"},
+    {"id": "F15", "case": "same issuer, subject, and sequence with different statement digests", "expected": "signature-only accepts both; cross-view arm refuses issuer equivocation"},
+    {"id": "F16", "case": "two consistent advancing views", "expected": "accept-cross-view"}
+  ],
+  "competingHypotheses": [
+    {
+      "code": "H0",
+      "claim": "A signed state transition is one-time without retained causal state.",
+      "divergentPrediction": "F05 and F06 are rejected by the signature-only arm.",
+      "rejectWhen": "Either correctly signed replay or fork is locally accepted."
+    },
+    {
+      "code": "H1",
+      "claim": "One SQLite transaction prevents partial accepted-head, generation, spent-nonce, and key-epoch states across process termination.",
+      "divergentPrediction": "F03 and F10 expose the complete old tuple; F04 and F11 expose the complete new tuple; no mixed tuple occurs.",
+      "rejectWhen": "Any restart exposes a mixed tuple, fails integrity_check, or accepts a committed nonce twice."
+    },
+    {
+      "code": "H2",
+      "claim": "A single durable registry detects restoration of its own older valid backup.",
+      "divergentPrediction": "The single-registry arm refuses F12 without external state.",
+      "rejectWhen": "The restored database is internally valid and cannot distinguish itself from a legitimately old state."
+    },
+    {
+      "code": "H3",
+      "claim": "Immediate-predecessor plus new-key signatures and exact N+1 versioning preserve rotation continuity across restart.",
+      "divergentPrediction": "F07 is accepted, F08-F09 are rejected, and F10-F11 remain atomic.",
+      "rejectWhen": "An incomplete signature set is accepted, a valid dual-signed N+1 rotation is rejected, or a crash yields a mixed epoch."
+    },
+    {
+      "code": "H4",
+      "claim": "One locally valid transparency view establishes a globally unique history.",
+      "divergentPrediction": "F13-F15 remain acceptable without comparing retained views.",
+      "rejectWhen": "Two locally valid views encode a stale checkpoint or conflicting root or statement digest."
+    },
+    {
+      "code": "H5",
+      "claim": "A separately retained anchor plus view exchange detects the preregistered rollback and equivocation cases without rejecting a consistent advance.",
+      "divergentPrediction": "The anchored arm refuses F12-F15 and accepts F16.",
+      "rejectWhen": "Any F12-F15 attack is accepted, F16 is rejected, or the blind verifier disagrees."
+    }
+  ],
+  "hardGates": [
+    "The preregistration commit contains only this precommit, the prior-art audit, and the blind-replay contract.",
+    "No RC51 trace, result, adjudication, implementation, public site record, or expected-output file exists in the preregistration commit.",
+    "Node requests and reads back journal_mode=wal, synchronous=2, foreign_keys=1, and passes integrity_check after every injected restart.",
+    "Python requests and reads back the same pragmas and independently executes every F01-F16 semantic case.",
+    "F03/F10 show the complete old state; F04/F11 show the complete new state; no tuple field is partially advanced.",
+    "A transition committed before response loss is rejected on retry after a new process opens the database.",
+    "The safe SQLite backup API is used; the backup is restored only while all primary connections are closed.",
+    "The single-registry arm does not claim to detect F12, while the unrestored anchor must refuse it.",
+    "Rotation acceptance requires exact N+1 plus valid signatures under both the immediate predecessor and proposed key sets.",
+    "The cross-view arm refuses F13-F15 and accepts F16.",
+    "The blind verifier receives opaque event codes and cryptographic/public state only, not fixture names, expected verdicts, or generator outcomes.",
+    "Node, Python, and blind replay agree on all sixteen verdicts and causal state digests.",
+    "Power-loss, disk-controller, filesystem, multi-host, independent-operator, hardware-key, and physical-event claims remain explicitly outside scope."
+  ],
+  "uncertaintyBudget": [
+    {"source": "measurement", "bound": "Physical acquisitions n=0; process termination is observed, not equipment truth."},
+    {"source": "storage", "bound": "No mains-power cut or fault-injected storage device; SQLite durability still depends on VFS, OS, filesystem, and hardware behavior."},
+    {"source": "model", "bound": "Sixteen adversarial state-machine cases do not estimate field attack prevalence or exhaust all schedules."},
+    {"source": "implementation", "bound": "Node and Python differ in language and bundled SQLite version but run on one Windows host."},
+    {"source": "organizational", "bound": "Separate files, processes, and test keys are not evidence of separate operators or non-collusion."},
+    {"source": "extrapolation", "bound": "No production SCITT, Rekor, TUF, fab, or chiplet service is exercised."}
+  ],
+  "stopConditions": [
+    "Stop scientific integration if any hard gate fails or if a verifier requires fixture labels to recover verdicts.",
+    "Stop durability claims at process-crash scope; do not infer power-loss safety from this run.",
+    "Stop physical-pilot progression if an unrestored external anchor and an independently administered view cannot be arranged.",
+    "Do not open X16 or a physical acquisition merely because software gates pass."
+  ]
+}

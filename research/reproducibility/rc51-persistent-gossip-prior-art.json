@@ -1,0 +1,132 @@
+{
+  "reviewId": "RC51-PERSISTENT-GOSSIP-PRIOR-ART-0.1",
+  "cycleId": "RC-2026-51",
+  "reviewedOn": "2026-08-25",
+  "selectionBoundary": "The sources define transaction atomicity, persistence assumptions, rollback-resistant update state, key continuity, transparency proofs, and cross-view monitoring. RC51 does not propose a new database, signature scheme, transparency log, gossip protocol, or software-update framework. It tests an application-specific composition for research-event lineage under process termination and backup rollback.",
+  "sources": [
+    {
+      "id": "sqlite_atomic_commit_2026",
+      "title": "Atomic Commit In SQLite",
+      "url": "https://sqlite.org/atomiccommit.html",
+      "publishedOrUpdated": "living official documentation; reviewed 2026-08-25",
+      "usedFor": "All-or-nothing transaction semantics and the explicit dependence on filesystem, VFS, operating-system, and hardware behavior.",
+      "doesNotEstablish": "That this RC51 process-termination schedule is a power-loss or torn-sector test, or that an older complete backup is detectable locally."
+    },
+    {
+      "id": "sqlite_wal_2026",
+      "title": "Write-Ahead Logging",
+      "url": "https://sqlite.org/wal.html",
+      "publishedOrUpdated": "living official documentation; reviewed 2026-08-25",
+      "usedFor": "WAL commit records, reader snapshots, checkpoint behavior, and same-host scope.",
+      "doesNotEstablish": "Cross-host consensus or atomic commitment across two independent database files."
+    },
+    {
+      "id": "sqlite_synchronous_2026",
+      "title": "PRAGMA synchronous",
+      "url": "https://sqlite.org/pragma.html#pragma_synchronous",
+      "publishedOrUpdated": "living official documentation; reviewed 2026-08-25",
+      "usedFor": "The meaning of synchronous=FULL in WAL mode and the distinction between application-crash and power-loss durability.",
+      "doesNotEstablish": "That the underlying Windows storage stack honors every requested flush under physical failure."
+    },
+    {
+      "id": "sqlite_backup_corruption_2026",
+      "title": "How To Corrupt An SQLite Database File",
+      "url": "https://sqlite.org/howtocorrupt.html",
+      "publishedOrUpdated": "living official documentation; reviewed 2026-08-25",
+      "usedFor": "The requirement to use the backup API or another consistent snapshot method rather than copying a live database file.",
+      "doesNotEstablish": "Semantic freshness of a correct old backup."
+    },
+    {
+      "id": "node_sqlite_25_2026",
+      "title": "Node.js SQLite documentation",
+      "url": "https://nodejs.org/api/sqlite.html",
+      "publishedOrUpdated": "current official documentation; reviewed 2026-08-25",
+      "usedFor": "DatabaseSync and the SQLite backup API used by the Node implementation.",
+      "doesNotEstablish": "Application policy correctness or interoperability with a production service."
+    },
+    {
+      "id": "rfc_ct_9162_2021",
+      "title": "RFC 9162: Certificate Transparency Version 2.0",
+      "url": "https://www.rfc-editor.org/rfc/rfc9162.html",
+      "publishedOrUpdated": "2021-12",
+      "usedFor": "Merkle consistency, signed tree heads, the split-view limitation, and the need for clients to compare views to detect equivocation.",
+      "doesNotEstablish": "A complete gossip protocol or physical truth of logged statements."
+    },
+    {
+      "id": "sigstore_rekor_monitoring_2026",
+      "title": "Sigstore Rekor logging overview",
+      "url": "https://docs.sigstore.dev/logging/overview/",
+      "publishedOrUpdated": "living official documentation; reviewed 2026-08-25",
+      "usedFor": "Operational log auditing and named independent-monitor implementations.",
+      "doesNotEstablish": "That RC51's two local processes have independent administration or production Rekor semantics."
+    },
+    {
+      "id": "sigstore_security_model_2026",
+      "title": "Sigstore Security Model",
+      "url": "https://docs.sigstore.dev/about/security/",
+      "publishedOrUpdated": "living official documentation; reviewed 2026-08-25",
+      "usedFor": "The boundary that long-term transparency trust requires monitoring and that users retain responsibility for monitoring unauthorized identities.",
+      "doesNotEstablish": "That a signature or an unmonitored local tree head is globally fresh."
+    },
+    {
+      "id": "tuf_specification_2026",
+      "title": "The Update Framework Specification",
+      "url": "https://theupdateframework.github.io/specification/latest/",
+      "publishedOrUpdated": "current specification; reviewed 2026-08-25",
+      "usedFor": "Persisted trusted version state, exact N+1 root rotation, dual old/new threshold signatures, and rollback, freeze, and mix-and-match checks.",
+      "doesNotEstablish": "That TUF version rules automatically apply to experimental-event lineage; RC51 makes and tests that transfer explicitly."
+    },
+    {
+      "id": "nist_sp80057_r5_2020",
+      "title": "NIST SP 800-57 Part 1 Revision 5: Recommendation for Key Management",
+      "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final",
+      "publishedOrUpdated": "2020-05-04",
+      "usedFor": "Key lifecycle, cryptoperiod, compromise, backup, archive, and trust-anchor terminology.",
+      "doesNotEstablish": "An RC51 key-custody audit; all keys in this cycle are public deterministic demonstration keys."
+    },
+    {
+      "id": "rfc_cose_receipts_9942_2026",
+      "title": "RFC 9942: Concise Binary Object Representation (CBOR) Object Signing and Encryption (COSE) Receipts",
+      "url": "https://www.rfc-editor.org/rfc/rfc9942.html",
+      "publishedOrUpdated": "2026-07",
+      "usedFor": "Inherited RC50 receipt boundary: a receipt authenticates a specific statement and proof context.",
+      "doesNotEstablish": "One-time nonce use, latest-state semantics, or uniqueness across logs."
+    },
+    {
+      "id": "rfc_scitt_9943_2026",
+      "title": "RFC 9943: An Architecture for Trustworthy and Transparent Digital Supply Chains",
+      "url": "https://www.rfc-editor.org/rfc/rfc9943.html",
+      "publishedOrUpdated": "2026-07",
+      "usedFor": "Inherited RC50 signed/transparent-statement architecture and relying-party policy boundary.",
+      "doesNotEstablish": "Physical provenance accuracy or the RC51 persistent application state machine."
+    }
+  ],
+  "repositoryInheritance": [
+    {
+      "artifact": "RC49 identity-plane cycle",
+      "inherited": "Event identity, domain separation, and first-appearance boundary.",
+      "notRepeated": "RC51 does not rerun the eighty single-fault identity trials."
+    },
+    {
+      "artifact": "RC50 compositional-receipts cycle",
+      "inherited": "Forty-four frozen composite cases, locally valid rollback/fork counterexamples, and the stateful reset-bridge result.",
+      "notRepeated": "RC51 does not enlarge or regenerate the RC50 fixture corpus and does not rerun its CBOR/COSE wire vectors."
+    },
+    {
+      "artifact": "RC35-RC37 distributed delivery cycles",
+      "inherited": "Crash placement around commit and the distinction between local state, delivery evidence, and externally owned effects.",
+      "notRepeated": "RC51 targets causal-lineage freshness, key epoch, and backup restoration rather than claiming exactly-once remote actuation."
+    }
+  ],
+  "noveltySearch": {
+    "claimPolicy": "No novelty claim is made before a systematic literature search and external expert review.",
+    "queries": [
+      "persistent anti-rollback state transparency log gossip SQLite backup restore",
+      "transactional spent nonce key rotation monotonic checkpoint",
+      "TUF trusted version state transparency split view gossip",
+      "SCITT receipt freshness rollback state key rotation",
+      "scientific provenance crash consistency external witness rollback"
+    ],
+    "provisionalDifference": "RC51 combines well-known transactional state, TUF-like version/key continuity, and CT-like view comparison for a specific scientific-event causal tuple. The combination is an experiment-specific policy transfer, not a new primitive."
+  }
+}
