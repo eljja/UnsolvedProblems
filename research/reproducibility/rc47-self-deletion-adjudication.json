@@ -1,0 +1,62 @@
+{
+  "adjudicationId": "RC47-X16-SELF-DELETION-ADJUDICATION-0.1",
+  "cycleId": "RC-2026-47",
+  "createdOn": "2026-08-24T14:21:32.380Z",
+  "preregistration": "research/reproducibility/rc47-self-deletion-precommit.json",
+  "inputs": [
+    "research/reproducibility/rc47-self-deletion-python.json",
+    "research/reproducibility/rc47-self-deletion-node.json",
+    "research/reproducibility/rc47-self-deletion-python-trials.json",
+    "research/reproducibility/rc47-self-deletion-node-trials.json"
+  ],
+  "implementationAgreement": {
+    "pass": true,
+    "tolerance": 1e-9,
+    "maximumNumericDifference": 7.105427357601002e-15,
+    "exactTrialTruthAndCalls": true,
+    "failures": []
+  },
+  "selectedFamilies": {
+    "1": "scalar-jump",
+    "2": "ridge-LDA-1.0",
+    "4": "scalar-jump",
+    "8": "scalar-jump"
+  },
+  "sealedTest": {
+    "1": {
+      "recallWithinOne": 0,
+      "falseDiscoveryRate": 1,
+      "unmodifiedCalls": 1,
+      "firstNaturalMaximumStart": 77596
+    },
+    "2": {
+      "recallWithinOne": 0.0390625,
+      "falseDiscoveryRate": 0.9609375,
+      "unmodifiedCalls": 1,
+      "firstNaturalMaximumStart": 92905
+    },
+    "4": {
+      "recallWithinOne": 0.046875,
+      "falseDiscoveryRate": 0.953125,
+      "unmodifiedCalls": 1,
+      "firstNaturalMaximumStart": 77596
+    },
+    "8": {
+      "recallWithinOne": 0.0703125,
+      "falseDiscoveryRate": 0.9296875,
+      "unmodifiedCalls": 1,
+      "firstNaturalMaximumStart": 77596
+    }
+  },
+  "aggregate": {
+    "calls": 640,
+    "falseDiscoveries": 620,
+    "falseDiscoveryRate": 0.96875
+  },
+  "hypothesisDecision": "S0-supported-for-fixed-family",
+  "gatePassed": false,
+  "independentLayerPixelsAuthorized": false,
+  "naturalL0001Authorized": false,
+  "interpretation": "The fixed multiscale cadence families cannot separate synthetic one-to-eight-frame gaps from natural L0002 regime changes at the preregistered whole-partition false-alarm level. This rejects the detector family, not every possible image or auxiliary-sensor method.",
+  "next": "Characterize the repeated natural maximum as a regime-boundary confounder using command and DAQ state only; then preregister either a state-conditioned abstention test with an external timing channel or stop image-only identification."
+}

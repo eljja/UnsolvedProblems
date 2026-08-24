@@ -1,0 +1,39 @@
+{
+  "boundId": "RC47-X16-HISTORY-EQUIVALENCE-BOUND-0.1",
+  "cycleId": "RC-2026-47",
+  "createdOn": "2026-08-24",
+  "problem": "UP-315",
+  "inputs": {
+    "cameraTriggerCount": 94736,
+    "exportedFrameCount": 94713,
+    "deficit": 23
+  },
+  "models": {
+    "arbitraryOrderPreservingOmissions": {
+      "assumptions": "Exactly 23 trigger-associated frames are omitted, the surviving order is preserved, and no positional identity or image evidence is admitted.",
+      "possibleMissingSetsExact": "111222247780697737811569949505047670092175708162872419433827601154009970755623534825120294400",
+      "log2PossibleMissingSets": 305.7708301287824,
+      "minimumAggregateIdentityBitsToSelectOneSet": 306
+    },
+    "oneContiguousInternalBlock": {
+      "assumptions": "All 23 omissions form one internal contiguous block and its start is unknown.",
+      "possibleMissingSetsExact": "94714",
+      "log2PossibleMissingSets": 16.531290070689266,
+      "minimumAggregateIdentityBitsToSelectOneSet": 17
+    },
+    "allTerminal": {
+      "assumptions": "All 23 missing frames are known independently to be the final 23 triggers.",
+      "possibleMissingSetsExact": "1",
+      "log2PossibleMissingSets": 0,
+      "minimumAggregateIdentityBitsToSelectOneSet": 0
+    }
+  },
+  "rc47Effect": "Because every image-only RC47 model fails the sealed recall and false-alarm gates, it safely removes no missing set from the arbitrary-subset equivalence class.",
+  "interpretation": "The 306-bit figure is an information-counting lower bound for distinguishing one subset under the stated combinatorial model, not a claim that any arbitrary 306-bit measurement is sufficient. A verified monotonic exposure ledger, authenticated frame timestamps, or an independently calibrated join key supplies structure that a generic bit string does not.",
+  "boundaries": [
+    "The count model does not prove that the deficit arose in the camera; export, codec, or packaging loss remains possible.",
+    "Duplicate frames, extra frames, reordered frames, and uncertain trigger semantics would enlarge or change the history class.",
+    "A statement that losses usually occur at the tail is not evidence that the L0001 loss is terminal.",
+    "Probabilistic image scores shrink the class only after an independently validated error rule authorizes exclusions."
+  ]
+}

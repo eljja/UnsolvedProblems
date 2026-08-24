@@ -1,0 +1,29 @@
+{
+  "decodeId": "RC47-X16-L0002-DECODE-0.1",
+  "cycleId": "RC-2026-47",
+  "createdOn": "2026-08-24T14:13:10.756Z",
+  "preregistration": "research/reproducibility/rc47-self-deletion-precommit.json",
+  "source": {
+    "relativeCachePath": ".cache/rc44-x16/l0002/extracted/MPMcamera_L0002.avi",
+    "bytes": 172605872,
+    "sha256": "54bc90814acf15304257ee4c9c56f029d50999ab38b9c27455137a12f884b53a",
+    "publicRecord": "https://data.nist.gov/od/id/mds2-2309",
+    "acquisitionReceipt": "research/reproducibility/rc44-x16-layer-0002-acquisition.json"
+  },
+  "decoder": {
+    "relativeCachePath": ".cache/rc44-python/imageio_ffmpeg/binaries/ffmpeg-win-x86_64-v7.1.exe",
+    "bytes": 87638016,
+    "sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+    "operation": "scale=32:32:flags=area,format=gray; rawvideo; first 95,504 frames"
+  },
+  "output": {
+    "relativeCachePath": ".cache/rc47-x16/l0002/frames-32x32-gray.raw",
+    "reusedAuthenticatedDerivedCache": false,
+    "frames": 95504,
+    "width": 32,
+    "height": 32,
+    "bytes": 97796096,
+    "sha256": "6bfe5a05a9825344bfa84f380a42d16b486885030429dba8818093d0b5b69df1"
+  },
+  "boundary": "This is a deterministic derived representation of the already authenticated L0002 development AVI. It contains no L0001 or independent-layer pixel."
+}

@@ -1,0 +1,2370 @@
+{
+  "diagnosticId": "RC47-X16-REGIME-BOUNDARY-DIAGNOSTIC-0.1",
+  "cycleId": "RC-2026-47",
+  "createdOn": "2026-08-24",
+  "status": "exploratory-after-sealed-gate-failure",
+  "purpose": "Identify whether the false-alarm maxima are isolated codec/image events or coincide with large command-state transitions under the explicitly unauthenticated count-equal ordinal mapping.",
+  "inputs": {
+    "primaryResult": "research/reproducibility/rc47-self-deletion-python.json",
+    "rawSha256": "6bfe5a05a9825344bfa84f380a42d16b486885030429dba8818093d0b5b69df1",
+    "xyptSha256": "576d1e19cc4aee87ab60dcde4376ce21faa3c42342a9a7653d9bf5af4a3a1c7c",
+    "triggerRows": 95504
+  },
+  "repeatedTopNaturalStarts": {
+    "77596": [
+      "1",
+      "4",
+      "8"
+    ],
+    "92905": [
+      "2"
+    ]
+  },
+  "blocks": {
+    "1": {
+      "selectedFamily": "scalar-jump",
+      "validationThreshold": 18.08193723520305,
+      "topNaturalTransitions": [
+        {
+          "rank": 1,
+          "startOrdinal": 77596,
+          "score": 19.34292609753102,
+          "aboveValidationThreshold": true,
+          "image": {
+            "frameMeans": [
+              6.5810546875,
+              5.990234375,
+              0.296875,
+              3.470703125
+            ],
+            "adjacentMad": [
+              0.7255859375,
+              5.791015625,
+              3.279296875
+            ],
+            "centerMadPercentileAllL0002": 0.9950577468770615,
+            "frameSha256": [
+              "ed7296901a3430f3637255cda2849d793f77ccd075546ddca5caa09e46edb8b9",
+              "689b9dac4da746ea2f6531b3d41872ff32e4a9838b71300c366c7e202685e4ca",
+              "d62072a2ab7fe1ad3bcaaf67b22c715c3a77334d0896d1d6aedca9a059d826d2",
+              "f415621b302dd37204d38c2817bd3c3d6d50a7690550c49216c3909e096f58bc"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                35.38,
+                11.1,
+                195.0
+              ],
+              [
+                35.46,
+                11.1,
+                195.0
+              ],
+              [
+                30.5,
+                2.0,
+                100.0
+              ],
+              [
+                30.5,
+                2.005,
+                100.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              10.3639567733564,
+              0.004999999999999893
+            ],
+            "centerStepPercentileAllL0002": 0.9999685873742186,
+            "incomingToCenterDirectionCosine": -0.47858169504827924,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 2,
+          "startOrdinal": 89534,
+          "score": 18.745325364613358,
+          "aboveValidationThreshold": true,
+          "image": {
+            "frameMeans": [
+              6.2236328125,
+              5.8466796875,
+              0.2626953125,
+              3.486328125
+            ],
+            "adjacentMad": [
+              0.802734375,
+              5.626953125,
+              3.2509765625
+            ],
+            "centerMadPercentileAllL0002": 0.9936127660911176,
+            "frameSha256": [
+              "c01a9f14031d0730058b6fc61c17c4fbdaf154c7516316588a2c701ff5c008b8",
+              "bb7d676da4676f78a9d3199de15be6ef39c4e622bd358ffb7a72221492f30076",
+              "07711918f5ba6ff1b7b2e90f35eb398da05835581359c6fe817d0a14c565760f",
+              "38b517a67d8ab8ec5525293bcf765ad5ca26ac29e3432d955b4bfadb386eae70"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                43.38,
+                -6.9,
+                195.0
+              ],
+              [
+                43.46,
+                -6.9,
+                195.0
+              ],
+              [
+                38.5,
+                -16.0,
+                100.0
+              ],
+              [
+                38.5,
+                -15.995,
+                100.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              10.3639567733564,
+              0.005000000000000782
+            ],
+            "centerStepPercentileAllL0002": 0.9999685873742186,
+            "incomingToCenterDirectionCosine": -0.47858169504827924,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 3,
+          "startOrdinal": 83565,
+          "score": 17.384516872893514,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              5.3896484375,
+              5.2197265625,
+              0.2548828125,
+              3.48828125
+            ],
+            "adjacentMad": [
+              0.560546875,
+              5.033203125,
+              3.2666015625
+            ],
+            "centerMadPercentileAllL0002": 0.9885448624650535,
+            "frameSha256": [
+              "30e1b148338929c79e37ceedc7ee8030b6ab7e6bcaa707af9c49fffeff0030ab",
+              "b3c23856f9f8923895be0ef3caa6020fb7ae72c1d6e7e9bd39f138427df77f71",
+              "bece48b4e58fa381acf1514996dd28cae039d513babc542e2b841d990301b9c6",
+              "d86304a708a3841b84109bcd48aa5b90d848371903d1c1fffbf9c87cd9784647"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                39.38,
+                2.1,
+                195.0
+              ],
+              [
+                39.46,
+                2.1,
+                195.0
+              ],
+              [
+                34.5,
+                -7.0,
+                100.0
+              ],
+              [
+                34.5,
+                -6.995,
+                100.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              10.3639567733564,
+              0.004999999999999893
+            ],
+            "centerStepPercentileAllL0002": 0.9999685873742186,
+            "incomingToCenterDirectionCosine": -0.47858169504827924,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 4,
+          "startOrdinal": 88630,
+          "score": 15.155448943694676,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              6.255859375,
+              6.3955078125,
+              0.2509765625,
+              5.3251953125
+            ],
+            "adjacentMad": [
+              0.4521484375,
+              6.16796875,
+              5.109375
+            ],
+            "centerMadPercentileAllL0002": 0.9974765190622285,
+            "frameSha256": [
+              "a19cbcfbe82be98f0d9b6dda98a24045c5fffa2e0c4e8e17fbac7b0ef1780b08",
+              "4c85226cd78c9cc8b3bbd4d8bd0647dcecb6d6ecbc8a82911d2422b33068e3f3",
+              "9436aca61181bf19544915634b33cc6fc3e1da2b10b038b8a48824ab25a82837",
+              "69e33c8ca67de4bd44d0525038d4e57c34a60463cf8797622cbd9720945c23f1"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                43.38,
+                -6.116,
+                195.0
+              ],
+              [
+                43.46,
+                -6.116,
+                195.0
+              ],
+              [
+                43.5,
+                -6.214,
+                195.0
+              ],
+              [
+                43.42,
+                -6.214,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              0.10584894897919431,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.9993193931080699,
+            "incomingToCenterDirectionCosine": 0.37789699742660227,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 5,
+          "startOrdinal": 88856,
+          "score": 14.699247740826868,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              6.177734375,
+              6.3310546875,
+              0.2333984375,
+              5.40625
+            ],
+            "adjacentMad": [
+              0.5205078125,
+              6.119140625,
+              5.1923828125
+            ],
+            "centerMadPercentileAllL0002": 0.9972356889312377,
+            "frameSha256": [
+              "646821ad9921a9bb83abcc699d7aaacf33b8a51153ae6c3aa5108952ccd84187",
+              "a69c371db218f3776f36bf3279913dc860fac2185b585131d96e3a6fce3835ae",
+              "ca10ff230e70846842397f6b4d2fe9d21b757745176004157e845ea19dd92533",
+              "7acd7ac0756c82cfb996a0ac8b35dd545bdb0c088505f6a9066b068e64211bb6"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                43.38,
+                -6.312,
+                195.0
+              ],
+              [
+                43.46,
+                -6.312,
+                195.0
+              ],
+              [
+                43.5,
+                -6.41,
+                195.0
+              ],
+              [
+                43.42,
+                -6.41,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              0.10584894897919349,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.996042009151545,
+            "incomingToCenterDirectionCosine": 0.3778969974266052,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 6,
+          "startOrdinal": 77657,
+          "score": 14.516436761949077,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              3.96484375,
+              4.443359375,
+              0.2646484375,
+              3.2841796875
+            ],
+            "adjacentMad": [
+              0.51171875,
+              4.2353515625,
+              3.1484375
+            ],
+            "centerMadPercentileAllL0002": 0.9846706386186821,
+            "frameSha256": [
+              "ef13f43fdf857caa1a384c823bec92f0c5632a9efc65fea3bcdbbb84494bbb1a",
+              "92c82c47c93410deacb0a3f8273fa44f9dd529bcc1144a15087a6d5586b06ad7",
+              "541bd06adc07ba1f0460cf44a6f90ef4f0caaaa2605a0ea36385864eb3e2ee48",
+              "70d8108e762febdb0fc773dee32f7d6c4bc9d48e47c664f5a7f87f5296986665"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                30.5,
+                6.901086,
+                100.0
+              ],
+              [
+                30.5,
+                6.991008,
+                100.0
+              ],
+              [
+                30.5,
+                7.0,
+                100.0
+              ],
+              [
+                30.59,
+                7.0,
+                100.0
+              ]
+            ],
+            "stepDistances": [
+              0.08992199999999961,
+              0.008992000000000111,
+              0.08999999999999986
+            ],
+            "centerStepPercentileAllL0002": 0.0005026020125022251,
+            "incomingToCenterDirectionCosine": 1.0,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 7,
+          "startOrdinal": 80062,
+          "score": 14.31633948505899,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              5.2236328125,
+              5.2109375,
+              0.2763671875,
+              4.4150390625
+            ],
+            "adjacentMad": [
+              0.4345703125,
+              5.0380859375,
+              4.244140625
+            ],
+            "centerMadPercentileAllL0002": 0.9885762750908348,
+            "frameSha256": [
+              "e81cba7bcd9d4c46e87aad104972919dcd32e2a075d7af90004be8c6646ca70e",
+              "b460cd566bcf41b45fd0a47f8b7b41e280736096fe9cf7a26498bc892ea1d728",
+              "74a5b88799fc2288d96ca9aaa14ba7598f7194c189a19fba377dee36919f5dd1",
+              "4c73b8c3c05f6de769631c1802d491da1dc338acd500d75ed9650bb0eef78206"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                30.62,
+                5.138,
+                195.0
+              ],
+              [
+                30.54,
+                5.138,
+                195.0
+              ],
+              [
+                30.5,
+                5.04,
+                195.0
+              ],
+              [
+                30.58,
+                5.04,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.08000000000000185,
+              0.10584894897919349,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.996042009151545,
+            "incomingToCenterDirectionCosine": 0.3778969974266052,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 8,
+          "startOrdinal": 77370,
+          "score": 13.992077222857127,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              6.5029296875,
+              6.33984375,
+              0.25,
+              5.6962890625
+            ],
+            "adjacentMad": [
+              0.5498046875,
+              6.169921875,
+              5.5068359375
+            ],
+            "centerMadPercentileAllL0002": 0.9974869899374889,
+            "frameSha256": [
+              "d62155f2f63c6aaaa1882ab51da258585721023a95a0162a8a0caafbf0233eb8",
+              "f9f68dc4dcf9635769b6adbcd3fb6a90cf1d8236bd513be6cf100b5098639ae3",
+              "86abd074228492c8970eefa8aa49916249e0976beda821a7d1daaac2579b6469",
+              "31777ee0c63d0e659b326bcf14998dfb10f00f35e18af8721101d7d7825098bc"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                35.38,
+                11.296,
+                195.0
+              ],
+              [
+                35.46,
+                11.296,
+                195.0
+              ],
+              [
+                35.5,
+                11.198,
+                195.0
+              ],
+              [
+                35.42,
+                11.198,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              0.10584894897919267,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.9930054553260107,
+            "incomingToCenterDirectionCosine": 0.3778969974266081,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 9,
+          "startOrdinal": 81645,
+          "score": 13.654954244296233,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              4.921875,
+              0.232421875,
+              6.544921875,
+              6.9169921875
+            ],
+            "adjacentMad": [
+              4.75,
+              6.3515625,
+              2.1806640625
+            ],
+            "centerMadPercentileAllL0002": 0.9982723055820236,
+            "frameSha256": [
+              "f063147a5e623b16b914bb4f7c62b7a6820ab9355226f2160b4ec6e1c142d7ec",
+              "7064323b9b02b9b72071a29fe64642d9a1e63a29a582efa30e7050ef046f5fe8",
+              "b81c0be2c10e319e197c02318e2e957cbdd70a5fd609ab6dcef3e0b054b1e35d",
+              "6c0c0449e6e31bec59a35dd1e087c6d44d8ff2c60115bfaef90f95d446ec384c"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                30.54,
+                3.766,
+                195.0
+              ],
+              [
+                30.5,
+                3.668,
+                195.0
+              ],
+              [
+                30.58,
+                3.668,
+                195.0
+              ],
+              [
+                30.66,
+                3.668,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.10584894897919349,
+              0.0799999999999983,
+              0.08000000000000185
+            ],
+            "centerStepPercentileAllL0002": 0.4138718155450614,
+            "incomingToCenterDirectionCosine": -0.3778969974266052,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 10,
+          "startOrdinal": 89595,
+          "score": 13.62459971160666,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              3.818359375,
+              4.140625,
+              0.2470703125,
+              3.3251953125
+            ],
+            "adjacentMad": [
+              0.44921875,
+              3.9501953125,
+              3.126953125
+            ],
+            "centerMadPercentileAllL0002": 0.9836340219678963,
+            "frameSha256": [
+              "98f238caae1f0158b26db83e53e860855e5828c557bd37f64c16a48ca8ae2332",
+              "3612ab5577a47814b2ba59ac6e994847b2a205edf1569d4ca90ae5e2c039f0d8",
+              "3e753370225c2fe1fdfec5b671491bf9ee78e39248656805fa5335c6017ad126",
+              "7c2f7083bd67b8838d1c6f345962072ce969cb8fc7ba4aa33b1b3e4ea7de1220"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                38.5,
+                -11.098914,
+                100.0
+              ],
+              [
+                38.5,
+                -11.008992,
+                100.0
+              ],
+              [
+                38.5,
+                -11.0,
+                100.0
+              ],
+              [
+                38.59,
+                -11.0,
+                100.0
+              ]
+            ],
+            "stepDistances": [
+              0.08992200000000139,
+              0.008991999999999223,
+              0.09000000000000341
+            ],
+            "centerStepPercentileAllL0002": 0.00041883501041852086,
+            "incomingToCenterDirectionCosine": 1.0,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        }
+      ]
+    },
+    "2": {
+      "selectedFamily": "ridge-LDA-1.0",
+      "validationThreshold": 1.0027232294782062,
+      "topNaturalTransitions": [
+        {
+          "rank": 1,
+          "startOrdinal": 92905,
+          "score": 1.0802751616929516,
+          "aboveValidationThreshold": true,
+          "image": {
+            "frameMeans": [
+              4.8232421875,
+              0.2431640625,
+              7.87109375,
+              5.4375
+            ],
+            "adjacentMad": [
+              4.646484375,
+              7.6591796875,
+              3.77734375
+            ],
+            "centerMadPercentileAllL0002": 0.9998534077463536,
+            "frameSha256": [
+              "7d68baaba1c3b63e617671d2d5b61b80d8cfb02d7664aabb0882852d1f3d69d1",
+              "e73e05de308dc4f9622eb112ef4e88e4d0442d06570a1528c80532a433ca21a6",
+              "460e170063a87e470d66f8049895a57c44bb4da26404d70fc2fb149151f62ee1",
+              "59867b2fc12437cc237225702d78bf056c1514f729af60dbe831614551858ba0"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                38.54,
+                -13.646,
+                195.0
+              ],
+              [
+                38.5,
+                -13.744,
+                195.0
+              ],
+              [
+                38.58,
+                -13.744,
+                195.0
+              ],
+              [
+                38.66,
+                -13.744,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.10584894897919267,
+              0.0799999999999983,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.4138718155450614,
+            "incomingToCenterDirectionCosine": -0.3778969974266081,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 2,
+          "startOrdinal": 93357,
+          "score": 1.0167686833162344,
+          "aboveValidationThreshold": true,
+          "image": {
+            "frameMeans": [
+              5.3818359375,
+              0.2578125,
+              8.50390625,
+              7.4345703125
+            ],
+            "adjacentMad": [
+              5.2275390625,
+              8.294921875,
+              4.4736328125
+            ],
+            "centerMadPercentileAllL0002": 0.9999685873742186,
+            "frameSha256": [
+              "adf72dd23858485ca600e24c4c10cd8cadd0343671c72e41ff102fa0edc09b63",
+              "feaedb557e6c729419afef5d50096357887aced7041e66a826950194d27d7dc0",
+              "e28c1845ac69838b3ccd540bea6962490e00d655c31abe610e78b2108c90a54b",
+              "125c5566bab7e55f61ff0ff33383536451b2bbaf6698f084a0389ed9515a0ae4"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                38.54,
+                -14.038,
+                195.0
+              ],
+              [
+                38.5,
+                -14.136,
+                195.0
+              ],
+              [
+                38.58,
+                -14.136,
+                195.0
+              ],
+              [
+                38.66,
+                -14.136,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.10584894897919267,
+              0.0799999999999983,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.4138718155450614,
+            "incomingToCenterDirectionCosine": -0.3778969974266081,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 3,
+          "startOrdinal": 92566,
+          "score": 0.960628133141344,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              5.8642578125,
+              0.2421875,
+              8.5498046875,
+              5.4736328125
+            ],
+            "adjacentMad": [
+              5.6650390625,
+              8.3173828125,
+              4.9296875
+            ],
+            "centerMadPercentileAllL0002": 0.9999790582494791,
+            "frameSha256": [
+              "f1c714cf6fdbd49613cc6856403116cad7971c6389c3bfa47e396b44e9991b99",
+              "dd5f001f07d45b297875ad35fe12af99106f2122dc1eab7624b5e138f1209612",
+              "d1398c4565f77a1c50b86a7a82968554049ea44c3cea27077ab2863ee3e2e3e0",
+              "d70d283cee5e3cd74df63870762b380bcd4633835f141e6e019e6765943441df"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                47.46,
+                -13.352,
+                195.0
+              ],
+              [
+                47.5,
+                -13.45,
+                195.0
+              ],
+              [
+                47.42,
+                -13.45,
+                195.0
+              ],
+              [
+                47.34,
+                -13.45,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.10584894897919267,
+              0.0799999999999983,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.4138718155450614,
+            "incomingToCenterDirectionCosine": -0.3778969974266081,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 4,
+          "startOrdinal": 77916,
+          "score": 0.9311847791108723,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              3.845703125,
+              0.2666015625,
+              8.1123046875,
+              6.515625
+            ],
+            "adjacentMad": [
+              3.6630859375,
+              7.875,
+              4.8759765625
+            ],
+            "centerMadPercentileAllL0002": 0.9998952912473954,
+            "frameSha256": [
+              "f224008232c6745cb3b00616378b47d214e5b45c4e53def0577eb4574624b42a",
+              "7d51cdbd9a7bfa863a6c8043357e2625151195ac326bb2c57d1f860ee5096993",
+              "c1650e5fd0d9e655ad48828176d9199cba38f6d153bb8f01d94bb7581adabce6",
+              "bf57280cb5e40903c9ad120a494370b27e22cec0f19cc6388dd98647d10217a7"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                30.5,
+                2.0,
+                100.0
+              ],
+              [
+                39.5,
+                6.902,
+                195.0
+              ],
+              [
+                39.42,
+                6.902,
+                195.0
+              ],
+              [
+                39.34,
+                6.902,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              10.24839519144339,
+              0.0799999999999983,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.4138718155450614,
+            "incomingToCenterDirectionCosine": -0.8781862752047557,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 5,
+          "startOrdinal": 92001,
+          "score": 0.897987632991806,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              5.1220703125,
+              0.2431640625,
+              6.9267578125,
+              5.79296875
+            ],
+            "adjacentMad": [
+              4.9140625,
+              6.716796875,
+              3.1201171875
+            ],
+            "centerMadPercentileAllL0002": 0.9990890338523397,
+            "frameSha256": [
+              "143369cf6907e4098c78ee82691c34b3e67841e5f7e9911fc6eaa4c6e7ef8219",
+              "255dc65341a359b722bb6e3524e378b9ab9f635aa3b9a571a115e947778d23a4",
+              "d4dfbfb8f5b11b921d8c7d4e0c02420af963bb6a4c4f03e6a9ea01052a53ba01",
+              "b108565344debbe5cc8a1145d482772e75b9d13320ad1e947e9d5904db5ac2bb"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                38.54,
+                -12.862,
+                195.0
+              ],
+              [
+                38.5,
+                -12.96,
+                195.0
+              ],
+              [
+                38.58,
+                -12.96,
+                195.0
+              ],
+              [
+                38.66,
+                -12.96,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.10584894897919431,
+              0.0799999999999983,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.4138718155450614,
+            "incomingToCenterDirectionCosine": -0.37789699742660227,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 6,
+          "startOrdinal": 81645,
+          "score": 0.8725752210524145,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              4.921875,
+              0.232421875,
+              6.544921875,
+              6.9169921875
+            ],
+            "adjacentMad": [
+              4.75,
+              6.3515625,
+              2.1806640625
+            ],
+            "centerMadPercentileAllL0002": 0.9982723055820236,
+            "frameSha256": [
+              "f063147a5e623b16b914bb4f7c62b7a6820ab9355226f2160b4ec6e1c142d7ec",
+              "7064323b9b02b9b72071a29fe64642d9a1e63a29a582efa30e7050ef046f5fe8",
+              "b81c0be2c10e319e197c02318e2e957cbdd70a5fd609ab6dcef3e0b054b1e35d",
+              "6c0c0449e6e31bec59a35dd1e087c6d44d8ff2c60115bfaef90f95d446ec384c"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                30.54,
+                3.766,
+                195.0
+              ],
+              [
+                30.5,
+                3.668,
+                195.0
+              ],
+              [
+                30.58,
+                3.668,
+                195.0
+              ],
+              [
+                30.66,
+                3.668,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.10584894897919349,
+              0.0799999999999983,
+              0.08000000000000185
+            ],
+            "centerStepPercentileAllL0002": 0.4138718155450614,
+            "incomingToCenterDirectionCosine": -0.3778969974266052,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 7,
+          "startOrdinal": 80741,
+          "score": 0.856885041225812,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              5.353515625,
+              0.244140625,
+              7.125,
+              5.4296875
+            ],
+            "adjacentMad": [
+              5.173828125,
+              6.935546875,
+              3.677734375
+            ],
+            "centerMadPercentileAllL0002": 0.9994031601101536,
+            "frameSha256": [
+              "3f73bee4713b7c49ca723b95b96baf7ef4ee193d45625504f13eedf2771b7a15",
+              "4c9f9270a4eed34262f092f017f25ccaa1d44a642d64a32fe6ad02df674ca139",
+              "4a3d4010454903645a8542241c651bc156a7eef3143e733ff37f4d944f5957c3",
+              "a5bf6870f7657801d096d125f65389aaced87baea7c23dd78146b9965ac37979"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                30.54,
+                4.55,
+                195.0
+              ],
+              [
+                30.5,
+                4.452,
+                195.0
+              ],
+              [
+                30.58,
+                4.452,
+                195.0
+              ],
+              [
+                30.66,
+                4.452,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.10584894897919349,
+              0.0799999999999983,
+              0.08000000000000185
+            ],
+            "centerStepPercentileAllL0002": 0.4138718155450614,
+            "incomingToCenterDirectionCosine": -0.3778969974266052,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 8,
+          "startOrdinal": 92340,
+          "score": 0.8495613319447617,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              5.13671875,
+              0.2666015625,
+              8.34765625,
+              5.900390625
+            ],
+            "adjacentMad": [
+              4.9306640625,
+              8.0908203125,
+              4.880859375
+            ],
+            "centerMadPercentileAllL0002": 0.9999476456236976,
+            "frameSha256": [
+              "15b7f6bb91adc092a0578ff49414bfb9e776cc309252194b39616adfabddf541",
+              "b8f1da6571ad6ed63e525b4ccec450438310b9c30b8dcb16017f9faa0651e33d",
+              "e795ff1556a0684f59892a576253fb945f66f902be746863f8db40d5ae7e66cf",
+              "690e760af313e3724e0871778a4dd8bfd16b4fb369c6d6868b67c04938024c80"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                47.46,
+                -13.156,
+                195.0
+              ],
+              [
+                47.5,
+                -13.254,
+                195.0
+              ],
+              [
+                47.42,
+                -13.254,
+                195.0
+              ],
+              [
+                47.34,
+                -13.254,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.10584894897919267,
+              0.0799999999999983,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.4138718155450614,
+            "incomingToCenterDirectionCosine": -0.3778969974266081,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 9,
+          "startOrdinal": 84676,
+          "score": 0.8346858630257716,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              5.2197265625,
+              0.2353515625,
+              7.3779296875,
+              7.0712890625
+            ],
+            "adjacentMad": [
+              5.046875,
+              7.177734375,
+              3.494140625
+            ],
+            "centerMadPercentileAllL0002": 0.9996335193658838,
+            "frameSha256": [
+              "3df79bafdb7d70bc1431837ebdd70ae67f5128d8b39a146885190bca441cf371",
+              "3537948de8bbafa7ecc57b8373e316fe17dc8e4dad5c8a5a86d280a27854c433",
+              "b794df17766e84b70ccfc4d06d5bd1b781254ec21ee6e4a018fa962a83158869",
+              "f0b736b8ef10c468b8452bf74bab2f2f82c01adaa1f42892941a5c4eff5e02f5"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                34.54,
+                -2.686,
+                195.0
+              ],
+              [
+                34.5,
+                -2.784,
+                195.0
+              ],
+              [
+                34.58,
+                -2.784,
+                195.0
+              ],
+              [
+                34.66,
+                -2.784,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.10584894897919349,
+              0.0799999999999983,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.4138718155450614,
+            "incomingToCenterDirectionCosine": -0.3778969974266052,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 10,
+          "startOrdinal": 90419,
+          "score": 0.8334533601717485,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              5.3603515625,
+              0.2646484375,
+              8.46875,
+              5.5771484375
+            ],
+            "adjacentMad": [
+              5.162109375,
+              8.2041015625,
+              4.1298828125
+            ],
+            "centerMadPercentileAllL0002": 0.9999581164989582,
+            "frameSha256": [
+              "0e4fba1400ba90b8441eec770327af6177607fd53e5e693c7a93efe0c13afdd0",
+              "96ccaad78da80408234a049a89cf4025cabf2cf067dcb0a93cb01d35d382cf37",
+              "bdf16b13a4f06c5e6f798d0fb6bbc7069b25ca32dea47f87fe0ac24a889315d5",
+              "307d2b091acd3642c331366e68b878e2efe159c05e94905e6b8fb4e0133dbe51"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                38.54,
+                -11.49,
+                195.0
+              ],
+              [
+                38.5,
+                -11.588,
+                195.0
+              ],
+              [
+                38.58,
+                -11.588,
+                195.0
+              ],
+              [
+                38.66,
+                -11.588,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.10584894897919267,
+              0.0799999999999983,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.4138718155450614,
+            "incomingToCenterDirectionCosine": -0.3778969974266081,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        }
+      ]
+    },
+    "4": {
+      "selectedFamily": "scalar-jump",
+      "validationThreshold": 18.081423459577373,
+      "topNaturalTransitions": [
+        {
+          "rank": 1,
+          "startOrdinal": 77596,
+          "score": 19.342374856770657,
+          "aboveValidationThreshold": true,
+          "image": {
+            "frameMeans": [
+              6.5810546875,
+              5.990234375,
+              0.296875,
+              3.470703125
+            ],
+            "adjacentMad": [
+              0.7255859375,
+              5.791015625,
+              3.279296875
+            ],
+            "centerMadPercentileAllL0002": 0.9950577468770615,
+            "frameSha256": [
+              "ed7296901a3430f3637255cda2849d793f77ccd075546ddca5caa09e46edb8b9",
+              "689b9dac4da746ea2f6531b3d41872ff32e4a9838b71300c366c7e202685e4ca",
+              "d62072a2ab7fe1ad3bcaaf67b22c715c3a77334d0896d1d6aedca9a059d826d2",
+              "f415621b302dd37204d38c2817bd3c3d6d50a7690550c49216c3909e096f58bc"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                35.38,
+                11.1,
+                195.0
+              ],
+              [
+                35.46,
+                11.1,
+                195.0
+              ],
+              [
+                30.5,
+                2.0,
+                100.0
+              ],
+              [
+                30.5,
+                2.005,
+                100.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              10.3639567733564,
+              0.004999999999999893
+            ],
+            "centerStepPercentileAllL0002": 0.9999685873742186,
+            "incomingToCenterDirectionCosine": -0.47858169504827924,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 2,
+          "startOrdinal": 89534,
+          "score": 18.744791938001097,
+          "aboveValidationThreshold": true,
+          "image": {
+            "frameMeans": [
+              6.2236328125,
+              5.8466796875,
+              0.2626953125,
+              3.486328125
+            ],
+            "adjacentMad": [
+              0.802734375,
+              5.626953125,
+              3.2509765625
+            ],
+            "centerMadPercentileAllL0002": 0.9936127660911176,
+            "frameSha256": [
+              "c01a9f14031d0730058b6fc61c17c4fbdaf154c7516316588a2c701ff5c008b8",
+              "bb7d676da4676f78a9d3199de15be6ef39c4e622bd358ffb7a72221492f30076",
+              "07711918f5ba6ff1b7b2e90f35eb398da05835581359c6fe817d0a14c565760f",
+              "38b517a67d8ab8ec5525293bcf765ad5ca26ac29e3432d955b4bfadb386eae70"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                43.38,
+                -6.9,
+                195.0
+              ],
+              [
+                43.46,
+                -6.9,
+                195.0
+              ],
+              [
+                38.5,
+                -16.0,
+                100.0
+              ],
+              [
+                38.5,
+                -15.995,
+                100.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              10.3639567733564,
+              0.005000000000000782
+            ],
+            "centerStepPercentileAllL0002": 0.9999685873742186,
+            "incomingToCenterDirectionCosine": -0.47858169504827924,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 3,
+          "startOrdinal": 83565,
+          "score": 17.384024654216947,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              5.3896484375,
+              5.2197265625,
+              0.2548828125,
+              3.48828125
+            ],
+            "adjacentMad": [
+              0.560546875,
+              5.033203125,
+              3.2666015625
+            ],
+            "centerMadPercentileAllL0002": 0.9885448624650535,
+            "frameSha256": [
+              "30e1b148338929c79e37ceedc7ee8030b6ab7e6bcaa707af9c49fffeff0030ab",
+              "b3c23856f9f8923895be0ef3caa6020fb7ae72c1d6e7e9bd39f138427df77f71",
+              "bece48b4e58fa381acf1514996dd28cae039d513babc542e2b841d990301b9c6",
+              "d86304a708a3841b84109bcd48aa5b90d848371903d1c1fffbf9c87cd9784647"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                39.38,
+                2.1,
+                195.0
+              ],
+              [
+                39.46,
+                2.1,
+                195.0
+              ],
+              [
+                34.5,
+                -7.0,
+                100.0
+              ],
+              [
+                34.5,
+                -6.995,
+                100.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              10.3639567733564,
+              0.004999999999999893
+            ],
+            "centerStepPercentileAllL0002": 0.9999685873742186,
+            "incomingToCenterDirectionCosine": -0.47858169504827924,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 4,
+          "startOrdinal": 88630,
+          "score": 15.155024159260886,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              6.255859375,
+              6.3955078125,
+              0.2509765625,
+              5.3251953125
+            ],
+            "adjacentMad": [
+              0.4521484375,
+              6.16796875,
+              5.109375
+            ],
+            "centerMadPercentileAllL0002": 0.9974765190622285,
+            "frameSha256": [
+              "a19cbcfbe82be98f0d9b6dda98a24045c5fffa2e0c4e8e17fbac7b0ef1780b08",
+              "4c85226cd78c9cc8b3bbd4d8bd0647dcecb6d6ecbc8a82911d2422b33068e3f3",
+              "9436aca61181bf19544915634b33cc6fc3e1da2b10b038b8a48824ab25a82837",
+              "69e33c8ca67de4bd44d0525038d4e57c34a60463cf8797622cbd9720945c23f1"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                43.38,
+                -6.116,
+                195.0
+              ],
+              [
+                43.46,
+                -6.116,
+                195.0
+              ],
+              [
+                43.5,
+                -6.214,
+                195.0
+              ],
+              [
+                43.42,
+                -6.214,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              0.10584894897919431,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.9993193931080699,
+            "incomingToCenterDirectionCosine": 0.37789699742660227,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 5,
+          "startOrdinal": 88856,
+          "score": 14.698836405824487,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              6.177734375,
+              6.3310546875,
+              0.2333984375,
+              5.40625
+            ],
+            "adjacentMad": [
+              0.5205078125,
+              6.119140625,
+              5.1923828125
+            ],
+            "centerMadPercentileAllL0002": 0.9972356889312377,
+            "frameSha256": [
+              "646821ad9921a9bb83abcc699d7aaacf33b8a51153ae6c3aa5108952ccd84187",
+              "a69c371db218f3776f36bf3279913dc860fac2185b585131d96e3a6fce3835ae",
+              "ca10ff230e70846842397f6b4d2fe9d21b757745176004157e845ea19dd92533",
+              "7acd7ac0756c82cfb996a0ac8b35dd545bdb0c088505f6a9066b068e64211bb6"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                43.38,
+                -6.312,
+                195.0
+              ],
+              [
+                43.46,
+                -6.312,
+                195.0
+              ],
+              [
+                43.5,
+                -6.41,
+                195.0
+              ],
+              [
+                43.42,
+                -6.41,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              0.10584894897919349,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.996042009151545,
+            "incomingToCenterDirectionCosine": 0.3778969974266052,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 6,
+          "startOrdinal": 77657,
+          "score": 14.516031345860787,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              3.96484375,
+              4.443359375,
+              0.2646484375,
+              3.2841796875
+            ],
+            "adjacentMad": [
+              0.51171875,
+              4.2353515625,
+              3.1484375
+            ],
+            "centerMadPercentileAllL0002": 0.9846706386186821,
+            "frameSha256": [
+              "ef13f43fdf857caa1a384c823bec92f0c5632a9efc65fea3bcdbbb84494bbb1a",
+              "92c82c47c93410deacb0a3f8273fa44f9dd529bcc1144a15087a6d5586b06ad7",
+              "541bd06adc07ba1f0460cf44a6f90ef4f0caaaa2605a0ea36385864eb3e2ee48",
+              "70d8108e762febdb0fc773dee32f7d6c4bc9d48e47c664f5a7f87f5296986665"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                30.5,
+                6.901086,
+                100.0
+              ],
+              [
+                30.5,
+                6.991008,
+                100.0
+              ],
+              [
+                30.5,
+                7.0,
+                100.0
+              ],
+              [
+                30.59,
+                7.0,
+                100.0
+              ]
+            ],
+            "stepDistances": [
+              0.08992199999999961,
+              0.008992000000000111,
+              0.08999999999999986
+            ],
+            "centerStepPercentileAllL0002": 0.0005026020125022251,
+            "incomingToCenterDirectionCosine": 1.0,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 7,
+          "startOrdinal": 80062,
+          "score": 14.315939919702272,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              5.2236328125,
+              5.2109375,
+              0.2763671875,
+              4.4150390625
+            ],
+            "adjacentMad": [
+              0.4345703125,
+              5.0380859375,
+              4.244140625
+            ],
+            "centerMadPercentileAllL0002": 0.9885762750908348,
+            "frameSha256": [
+              "e81cba7bcd9d4c46e87aad104972919dcd32e2a075d7af90004be8c6646ca70e",
+              "b460cd566bcf41b45fd0a47f8b7b41e280736096fe9cf7a26498bc892ea1d728",
+              "74a5b88799fc2288d96ca9aaa14ba7598f7194c189a19fba377dee36919f5dd1",
+              "4c73b8c3c05f6de769631c1802d491da1dc338acd500d75ed9650bb0eef78206"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                30.62,
+                5.138,
+                195.0
+              ],
+              [
+                30.54,
+                5.138,
+                195.0
+              ],
+              [
+                30.5,
+                5.04,
+                195.0
+              ],
+              [
+                30.58,
+                5.04,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.08000000000000185,
+              0.10584894897919349,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.996042009151545,
+            "incomingToCenterDirectionCosine": 0.3778969974266052,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 8,
+          "startOrdinal": 77370,
+          "score": 13.991687005293272,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              6.5029296875,
+              6.33984375,
+              0.25,
+              5.6962890625
+            ],
+            "adjacentMad": [
+              0.5498046875,
+              6.169921875,
+              5.5068359375
+            ],
+            "centerMadPercentileAllL0002": 0.9974869899374889,
+            "frameSha256": [
+              "d62155f2f63c6aaaa1882ab51da258585721023a95a0162a8a0caafbf0233eb8",
+              "f9f68dc4dcf9635769b6adbcd3fb6a90cf1d8236bd513be6cf100b5098639ae3",
+              "86abd074228492c8970eefa8aa49916249e0976beda821a7d1daaac2579b6469",
+              "31777ee0c63d0e659b326bcf14998dfb10f00f35e18af8721101d7d7825098bc"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                35.38,
+                11.296,
+                195.0
+              ],
+              [
+                35.46,
+                11.296,
+                195.0
+              ],
+              [
+                35.5,
+                11.198,
+                195.0
+              ],
+              [
+                35.42,
+                11.198,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              0.10584894897919267,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.9930054553260107,
+            "incomingToCenterDirectionCosine": 0.3778969974266081,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 9,
+          "startOrdinal": 81645,
+          "score": 13.654572751289168,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              4.921875,
+              0.232421875,
+              6.544921875,
+              6.9169921875
+            ],
+            "adjacentMad": [
+              4.75,
+              6.3515625,
+              2.1806640625
+            ],
+            "centerMadPercentileAllL0002": 0.9982723055820236,
+            "frameSha256": [
+              "f063147a5e623b16b914bb4f7c62b7a6820ab9355226f2160b4ec6e1c142d7ec",
+              "7064323b9b02b9b72071a29fe64642d9a1e63a29a582efa30e7050ef046f5fe8",
+              "b81c0be2c10e319e197c02318e2e957cbdd70a5fd609ab6dcef3e0b054b1e35d",
+              "6c0c0449e6e31bec59a35dd1e087c6d44d8ff2c60115bfaef90f95d446ec384c"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                30.54,
+                3.766,
+                195.0
+              ],
+              [
+                30.5,
+                3.668,
+                195.0
+              ],
+              [
+                30.58,
+                3.668,
+                195.0
+              ],
+              [
+                30.66,
+                3.668,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.10584894897919349,
+              0.0799999999999983,
+              0.08000000000000185
+            ],
+            "centerStepPercentileAllL0002": 0.4138718155450614,
+            "incomingToCenterDirectionCosine": -0.3778969974266052,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 10,
+          "startOrdinal": 89595,
+          "score": 13.624221113089016,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              3.818359375,
+              4.140625,
+              0.2470703125,
+              3.3251953125
+            ],
+            "adjacentMad": [
+              0.44921875,
+              3.9501953125,
+              3.126953125
+            ],
+            "centerMadPercentileAllL0002": 0.9836340219678963,
+            "frameSha256": [
+              "98f238caae1f0158b26db83e53e860855e5828c557bd37f64c16a48ca8ae2332",
+              "3612ab5577a47814b2ba59ac6e994847b2a205edf1569d4ca90ae5e2c039f0d8",
+              "3e753370225c2fe1fdfec5b671491bf9ee78e39248656805fa5335c6017ad126",
+              "7c2f7083bd67b8838d1c6f345962072ce969cb8fc7ba4aa33b1b3e4ea7de1220"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                38.5,
+                -11.098914,
+                100.0
+              ],
+              [
+                38.5,
+                -11.008992,
+                100.0
+              ],
+              [
+                38.5,
+                -11.0,
+                100.0
+              ],
+              [
+                38.59,
+                -11.0,
+                100.0
+              ]
+            ],
+            "stepDistances": [
+              0.08992200000000139,
+              0.008991999999999223,
+              0.09000000000000341
+            ],
+            "centerStepPercentileAllL0002": 0.00041883501041852086,
+            "incomingToCenterDirectionCosine": 1.0,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        }
+      ]
+    },
+    "8": {
+      "selectedFamily": "scalar-jump",
+      "validationThreshold": 18.08138301673607,
+      "topNaturalTransitions": [
+        {
+          "rank": 1,
+          "startOrdinal": 77596,
+          "score": 19.342352730653417,
+          "aboveValidationThreshold": true,
+          "image": {
+            "frameMeans": [
+              6.5810546875,
+              5.990234375,
+              0.296875,
+              3.470703125
+            ],
+            "adjacentMad": [
+              0.7255859375,
+              5.791015625,
+              3.279296875
+            ],
+            "centerMadPercentileAllL0002": 0.9950577468770615,
+            "frameSha256": [
+              "ed7296901a3430f3637255cda2849d793f77ccd075546ddca5caa09e46edb8b9",
+              "689b9dac4da746ea2f6531b3d41872ff32e4a9838b71300c366c7e202685e4ca",
+              "d62072a2ab7fe1ad3bcaaf67b22c715c3a77334d0896d1d6aedca9a059d826d2",
+              "f415621b302dd37204d38c2817bd3c3d6d50a7690550c49216c3909e096f58bc"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                35.38,
+                11.1,
+                195.0
+              ],
+              [
+                35.46,
+                11.1,
+                195.0
+              ],
+              [
+                30.5,
+                2.0,
+                100.0
+              ],
+              [
+                30.5,
+                2.005,
+                100.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              10.3639567733564,
+              0.004999999999999893
+            ],
+            "centerStepPercentileAllL0002": 0.9999685873742186,
+            "incomingToCenterDirectionCosine": -0.47858169504827924,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 2,
+          "startOrdinal": 89534,
+          "score": 18.744760522815394,
+          "aboveValidationThreshold": true,
+          "image": {
+            "frameMeans": [
+              6.2236328125,
+              5.8466796875,
+              0.2626953125,
+              3.486328125
+            ],
+            "adjacentMad": [
+              0.802734375,
+              5.626953125,
+              3.2509765625
+            ],
+            "centerMadPercentileAllL0002": 0.9936127660911176,
+            "frameSha256": [
+              "c01a9f14031d0730058b6fc61c17c4fbdaf154c7516316588a2c701ff5c008b8",
+              "bb7d676da4676f78a9d3199de15be6ef39c4e622bd358ffb7a72221492f30076",
+              "07711918f5ba6ff1b7b2e90f35eb398da05835581359c6fe817d0a14c565760f",
+              "38b517a67d8ab8ec5525293bcf765ad5ca26ac29e3432d955b4bfadb386eae70"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                43.38,
+                -6.9,
+                195.0
+              ],
+              [
+                43.46,
+                -6.9,
+                195.0
+              ],
+              [
+                38.5,
+                -16.0,
+                100.0
+              ],
+              [
+                38.5,
+                -15.995,
+                100.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              10.3639567733564,
+              0.005000000000000782
+            ],
+            "centerStepPercentileAllL0002": 0.9999685873742186,
+            "incomingToCenterDirectionCosine": -0.47858169504827924,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 3,
+          "startOrdinal": 83565,
+          "score": 17.383971151298265,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              5.3896484375,
+              5.2197265625,
+              0.2548828125,
+              3.48828125
+            ],
+            "adjacentMad": [
+              0.560546875,
+              5.033203125,
+              3.2666015625
+            ],
+            "centerMadPercentileAllL0002": 0.9885448624650535,
+            "frameSha256": [
+              "30e1b148338929c79e37ceedc7ee8030b6ab7e6bcaa707af9c49fffeff0030ab",
+              "b3c23856f9f8923895be0ef3caa6020fb7ae72c1d6e7e9bd39f138427df77f71",
+              "bece48b4e58fa381acf1514996dd28cae039d513babc542e2b841d990301b9c6",
+              "d86304a708a3841b84109bcd48aa5b90d848371903d1c1fffbf9c87cd9784647"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                39.38,
+                2.1,
+                195.0
+              ],
+              [
+                39.46,
+                2.1,
+                195.0
+              ],
+              [
+                34.5,
+                -7.0,
+                100.0
+              ],
+              [
+                34.5,
+                -6.995,
+                100.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              10.3639567733564,
+              0.004999999999999893
+            ],
+            "centerStepPercentileAllL0002": 0.9999685873742186,
+            "incomingToCenterDirectionCosine": -0.47858169504827924,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 4,
+          "startOrdinal": 88630,
+          "score": 15.15493334714113,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              6.255859375,
+              6.3955078125,
+              0.2509765625,
+              5.3251953125
+            ],
+            "adjacentMad": [
+              0.4521484375,
+              6.16796875,
+              5.109375
+            ],
+            "centerMadPercentileAllL0002": 0.9974765190622285,
+            "frameSha256": [
+              "a19cbcfbe82be98f0d9b6dda98a24045c5fffa2e0c4e8e17fbac7b0ef1780b08",
+              "4c85226cd78c9cc8b3bbd4d8bd0647dcecb6d6ecbc8a82911d2422b33068e3f3",
+              "9436aca61181bf19544915634b33cc6fc3e1da2b10b038b8a48824ab25a82837",
+              "69e33c8ca67de4bd44d0525038d4e57c34a60463cf8797622cbd9720945c23f1"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                43.38,
+                -6.116,
+                195.0
+              ],
+              [
+                43.46,
+                -6.116,
+                195.0
+              ],
+              [
+                43.5,
+                -6.214,
+                195.0
+              ],
+              [
+                43.42,
+                -6.214,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              0.10584894897919431,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.9993193931080699,
+            "incomingToCenterDirectionCosine": 0.37789699742660227,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 5,
+          "startOrdinal": 88856,
+          "score": 14.698738782462812,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              6.177734375,
+              6.3310546875,
+              0.2333984375,
+              5.40625
+            ],
+            "adjacentMad": [
+              0.5205078125,
+              6.119140625,
+              5.1923828125
+            ],
+            "centerMadPercentileAllL0002": 0.9972356889312377,
+            "frameSha256": [
+              "646821ad9921a9bb83abcc699d7aaacf33b8a51153ae6c3aa5108952ccd84187",
+              "a69c371db218f3776f36bf3279913dc860fac2185b585131d96e3a6fce3835ae",
+              "ca10ff230e70846842397f6b4d2fe9d21b757745176004157e845ea19dd92533",
+              "7acd7ac0756c82cfb996a0ac8b35dd545bdb0c088505f6a9066b068e64211bb6"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                43.38,
+                -6.312,
+                195.0
+              ],
+              [
+                43.46,
+                -6.312,
+                195.0
+              ],
+              [
+                43.5,
+                -6.41,
+                195.0
+              ],
+              [
+                43.42,
+                -6.41,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              0.10584894897919349,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.996042009151545,
+            "incomingToCenterDirectionCosine": 0.3778969974266052,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 6,
+          "startOrdinal": 77657,
+          "score": 14.515929474506525,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              3.96484375,
+              4.443359375,
+              0.2646484375,
+              3.2841796875
+            ],
+            "adjacentMad": [
+              0.51171875,
+              4.2353515625,
+              3.1484375
+            ],
+            "centerMadPercentileAllL0002": 0.9846706386186821,
+            "frameSha256": [
+              "ef13f43fdf857caa1a384c823bec92f0c5632a9efc65fea3bcdbbb84494bbb1a",
+              "92c82c47c93410deacb0a3f8273fa44f9dd529bcc1144a15087a6d5586b06ad7",
+              "541bd06adc07ba1f0460cf44a6f90ef4f0caaaa2605a0ea36385864eb3e2ee48",
+              "70d8108e762febdb0fc773dee32f7d6c4bc9d48e47c664f5a7f87f5296986665"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                30.5,
+                6.901086,
+                100.0
+              ],
+              [
+                30.5,
+                6.991008,
+                100.0
+              ],
+              [
+                30.5,
+                7.0,
+                100.0
+              ],
+              [
+                30.59,
+                7.0,
+                100.0
+              ]
+            ],
+            "stepDistances": [
+              0.08992199999999961,
+              0.008992000000000111,
+              0.08999999999999986
+            ],
+            "centerStepPercentileAllL0002": 0.0005026020125022251,
+            "incomingToCenterDirectionCosine": 1.0,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 7,
+          "startOrdinal": 80062,
+          "score": 14.315837937081245,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              5.2236328125,
+              5.2109375,
+              0.2763671875,
+              4.4150390625
+            ],
+            "adjacentMad": [
+              0.4345703125,
+              5.0380859375,
+              4.244140625
+            ],
+            "centerMadPercentileAllL0002": 0.9885762750908348,
+            "frameSha256": [
+              "e81cba7bcd9d4c46e87aad104972919dcd32e2a075d7af90004be8c6646ca70e",
+              "b460cd566bcf41b45fd0a47f8b7b41e280736096fe9cf7a26498bc892ea1d728",
+              "74a5b88799fc2288d96ca9aaa14ba7598f7194c189a19fba377dee36919f5dd1",
+              "4c73b8c3c05f6de769631c1802d491da1dc338acd500d75ed9650bb0eef78206"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                30.62,
+                5.138,
+                195.0
+              ],
+              [
+                30.54,
+                5.138,
+                195.0
+              ],
+              [
+                30.5,
+                5.04,
+                195.0
+              ],
+              [
+                30.58,
+                5.04,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.08000000000000185,
+              0.10584894897919349,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.996042009151545,
+            "incomingToCenterDirectionCosine": 0.3778969974266052,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 8,
+          "startOrdinal": 77370,
+          "score": 13.991578727628509,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              6.5029296875,
+              6.33984375,
+              0.25,
+              5.6962890625
+            ],
+            "adjacentMad": [
+              0.5498046875,
+              6.169921875,
+              5.5068359375
+            ],
+            "centerMadPercentileAllL0002": 0.9974869899374889,
+            "frameSha256": [
+              "d62155f2f63c6aaaa1882ab51da258585721023a95a0162a8a0caafbf0233eb8",
+              "f9f68dc4dcf9635769b6adbcd3fb6a90cf1d8236bd513be6cf100b5098639ae3",
+              "86abd074228492c8970eefa8aa49916249e0976beda821a7d1daaac2579b6469",
+              "31777ee0c63d0e659b326bcf14998dfb10f00f35e18af8721101d7d7825098bc"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                35.38,
+                11.296,
+                195.0
+              ],
+              [
+                35.46,
+                11.296,
+                195.0
+              ],
+              [
+                35.5,
+                11.198,
+                195.0
+              ],
+              [
+                35.42,
+                11.198,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.0799999999999983,
+              0.10584894897919267,
+              0.0799999999999983
+            ],
+            "centerStepPercentileAllL0002": 0.9930054553260107,
+            "incomingToCenterDirectionCosine": 0.3778969974266081,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 9,
+          "startOrdinal": 81645,
+          "score": 13.65447156257639,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              4.921875,
+              0.232421875,
+              6.544921875,
+              6.9169921875
+            ],
+            "adjacentMad": [
+              4.75,
+              6.3515625,
+              2.1806640625
+            ],
+            "centerMadPercentileAllL0002": 0.9982723055820236,
+            "frameSha256": [
+              "f063147a5e623b16b914bb4f7c62b7a6820ab9355226f2160b4ec6e1c142d7ec",
+              "7064323b9b02b9b72071a29fe64642d9a1e63a29a582efa30e7050ef046f5fe8",
+              "b81c0be2c10e319e197c02318e2e957cbdd70a5fd609ab6dcef3e0b054b1e35d",
+              "6c0c0449e6e31bec59a35dd1e087c6d44d8ff2c60115bfaef90f95d446ec384c"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                30.54,
+                3.766,
+                195.0
+              ],
+              [
+                30.5,
+                3.668,
+                195.0
+              ],
+              [
+                30.58,
+                3.668,
+                195.0
+              ],
+              [
+                30.66,
+                3.668,
+                195.0
+              ]
+            ],
+            "stepDistances": [
+              0.10584894897919349,
+              0.0799999999999983,
+              0.08000000000000185
+            ],
+            "centerStepPercentileAllL0002": 0.4138718155450614,
+            "incomingToCenterDirectionCosine": -0.3778969974266052,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        },
+        {
+          "rank": 10,
+          "startOrdinal": 89595,
+          "score": 13.624104783720759,
+          "aboveValidationThreshold": false,
+          "image": {
+            "frameMeans": [
+              3.818359375,
+              4.140625,
+              0.2470703125,
+              3.3251953125
+            ],
+            "adjacentMad": [
+              0.44921875,
+              3.9501953125,
+              3.126953125
+            ],
+            "centerMadPercentileAllL0002": 0.9836340219678963,
+            "frameSha256": [
+              "98f238caae1f0158b26db83e53e860855e5828c557bd37f64c16a48ca8ae2332",
+              "3612ab5577a47814b2ba59ac6e994847b2a205edf1569d4ca90ae5e2c039f0d8",
+              "3e753370225c2fe1fdfec5b671491bf9ee78e39248656805fa5335c6017ad126",
+              "7c2f7083bd67b8838d1c6f345962072ce969cb8fc7ba4aa33b1b3e4ea7de1220"
+            ]
+          },
+          "commandOrdinalAssumption": {
+            "xyPower": [
+              [
+                38.5,
+                -11.098914,
+                100.0
+              ],
+              [
+                38.5,
+                -11.008992,
+                100.0
+              ],
+              [
+                38.5,
+                -11.0,
+                100.0
+              ],
+              [
+                38.59,
+                -11.0,
+                100.0
+              ]
+            ],
+            "stepDistances": [
+              0.08992200000000139,
+              0.008991999999999223,
+              0.09000000000000341
+            ],
+            "centerStepPercentileAllL0002": 0.00041883501041852086,
+            "incomingToCenterDirectionCosine": 1.0,
+            "warning": "This comparison uses count-equal ordinal pairing; no public identity ledger authenticates the mapping."
+          }
+        }
+      ]
+    }
+  },
+  "boundary": "This diagnostic was designed after viewing RC47 outcomes. It may explain failure and propose a future state-conditioned test, but it cannot change thresholds, pass RC47, or authorize L0001."
+}

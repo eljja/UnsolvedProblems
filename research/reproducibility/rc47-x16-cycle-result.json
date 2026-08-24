@@ -1,0 +1,69 @@
+{
+  "resultId": "RC47-X16-SELF-DELETION-CYCLE-0.1",
+  "cycleId": "RC-2026-47",
+  "reviewedOn": "2026-08-24",
+  "status": "image-only-cadence-rejected-natural-holdout-sealed",
+  "problems": ["UP-605", "UP-315"],
+  "problemRelevance": {
+    "UP-605": "The sealed L0002 interval is a within-domain test of whether a source-calibrated temporal detector remains valid under a later process regime. Its failure is a bounded external-validity result, not a semiconductor-fab transfer claim.",
+    "UP-315": "Synthetic omissions and natural transitions form competing histories with overlapping image evidence. The result is a concrete non-identification example, not a universal finite-measurement impossibility theorem."
+  },
+  "confirmedFacts": [
+    "The authenticated L0002 AVI contains 95,504 lossless 120 by 120 frames and was deterministically area-resampled to a 97,796,096-byte 32 by 32 gray stream with SHA-256 6bfe5a05a9825344bfa84f380a42d16b486885030429dba8818093d0b5b69df1.",
+    "Five model families, four gap lengths, all split boundaries, deterministic injection positions, thresholds, and hard gates were committed before any RC47 pixel or score was inspected.",
+    "Validation selected scalar-jump for block lengths 1, 4, and 8 and ridge-LDA-1.0 for block length 2.",
+    "On the untouched final 19,101 frames, singleton recall is 0; block-2, block-4, and block-8 recall are 3.90625%, 4.6875%, and 7.03125%.",
+    "All 640 injected trials make a call, 620 calls are false, aggregate FDR is 96.875%, and each of four unmodified controls produces a false call.",
+    "Python and Node independently agree on every truth and call, all selected families, and the final decision with maximum numeric difference 7.11e-15.",
+    "The dominant scalar-model false alarm at ordinal 77,596 coincides with a 99.997th-percentile command-position jump only under an unauthenticated count-equal ordinal mapping.",
+    "The block-2 maximum at ordinal 92,905 has a 99.985th-percentile image transition but an ordinary mapped command step, so command jump filtering alone is insufficient."
+  ],
+  "inferences": [
+    "The fixed image-only cadence families do not separate one-to-eight-frame omissions from natural L0002 transitions at whole-partition false-alarm control.",
+    "The source and target intervals are nonstationary enough that a validation-maximum threshold is not transportable even within one layer.",
+    "A state-conditioned model would need an independently timed state channel and a new untouched outcome block; post hoc removal of ordinals 77,596 or 92,905 would be selection leakage.",
+    "Because no RC47 error rule passes, image scores safely exclude none of L0001's possible missing-position histories."
+  ],
+  "unverifiedProposals": [
+    "Recover a laboratory-held MotionBLITZ tick or exposure ledger and bind it cryptographically to the public AVI; direct identity would supersede image inference.",
+    "If no ledger exists, preregister a regime-boundary state model using independently calibrated DAQ timing, test it on a new layer, and make abstention—not forced localization—the primary output.",
+    "Generalize the count-only equivalence bound into an identifiability budget that quantifies how verified anchors and timing bits shrink possible histories."
+  ],
+  "hypotheses": {
+    "S0_naturalTransitionsIndistinguishable": "supported-for-fixed-image-family",
+    "S1_imageCadenceSeparatesAllGaps": "rejected",
+    "S2_onlySomeStatesAreObservable": "suggested-by-post-gate-diagnostic-not-prospectively-tested"
+  },
+  "decision": {
+    "gatePassed": false,
+    "independentLayerPixelAcquisitionAuthorized": false,
+    "naturalL0001PixelAccessAuthorized": false,
+    "naturalMissingPositionsAdjudicated": 0,
+    "aggregateTrials": 640,
+    "aggregateFalseDiscoveries": 620,
+    "aggregateFalseDiscoveryRate": 0.96875
+  },
+  "minimumAdvance": {
+    "empirical": "A preregistered negative result prevents further image acquisition for a detector family that fails even within its development layer.",
+    "theoretical": "Under exactly 23 arbitrary order-preserving omissions among 94,736 triggers, count-only evidence leaves choose(94,736,23), about 2^305.77, missing sets and therefore requires at least 306 aggregate discriminating bits under that model."
+  },
+  "failedAttempt": {
+    "description": "Multiscale pair jumps, tail-area changes, projection changes, scalar scores, diagonal LDA, and three ridge-LDA strengths were unable to dominate natural regime boundaries in the sealed block.",
+    "preservation": [
+      "research/reproducibility/rc47-self-deletion-python.json",
+      "research/reproducibility/rc47-self-deletion-node.json",
+      "research/reproducibility/rc47-self-deletion-python-trials.json",
+      "research/reproducibility/rc47-self-deletion-node-trials.json"
+    ],
+    "resolution": "No threshold or family was changed. The route is rejected and the outcome-aware regime diagnostic is labeled exploratory."
+  },
+  "uncertainty": {
+    "measurement": "The public AVI lacks authenticated exposure ticks; 32 by 32 gray conversion discards color and fine spatial information.",
+    "model": "The fixed families do not include a learned optical-flow or physical thermal-state model, so failure does not exclude every image method.",
+    "sampling": "Training, validation, and sealed testing all use one L0002 layer; the result has no independent-layer transport estimate.",
+    "externalValidity": "An additive-manufacturing camera stream is only a structural test for UP-605 and UP-315, not a semiconductor-yield or arbitrary-replication experiment.",
+    "implementation": "Independent implementations share the same FFmpeg-derived bytes, feature specification, and source AVI.",
+    "postGate": "Associations between false alarms and mapped commands are exploratory because the diagnostic was designed after viewing outcomes and ordinal pairing is not authenticated."
+  },
+  "nextCycleStart": "Prioritize a provenance and identifiability cycle rather than another outcome-tuned image detector. Recheck the public record and primary papers for MotionBLITZ .dat/.exp, exposure ticks, trigger logs, or archive revisions; specify the byte-level evidence needed to bind any recovered sidecar to the AVI. In parallel, preregister how one verified anchor, periodic authenticated timestamps, and a monotonic counter shrink the 2^305.77 count-only history class. Only if an independently timed state channel and a new untouched layer are available should a regime-conditioned deletion detector be attempted; L0001 remains sealed."
+}
