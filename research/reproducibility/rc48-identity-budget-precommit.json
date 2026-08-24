@@ -1,0 +1,139 @@
+{
+  "precommitId": "RC48-X16-IDENTITY-BUDGET-PRECOMMIT-0.1",
+  "cycleId": "RC-2026-48",
+  "createdOn": "2026-08-25",
+  "status": "sealed-after-public-catalog-and-figshare-spreadsheet-reconnaissance-before-hdf5-hierarchy-or-new-archive-inspection",
+  "problems": ["UP-605", "UP-315"],
+  "question": "Does any public X16 artifact carry an independently documented exposure identity, and how much does each feasible identity channel contract the 305.77-bit history-equivalence class left by 23 missing frames?",
+  "inheritedEvidence": {
+    "RC43": "L0001 has 94,713 exported frames but 94,736 camera-trigger rows, leaving exactly 23 missing under the order-preserving count model. L0002 count equality does not authenticate ordinal identity.",
+    "RC44": "Command-to-image ridge localization recovered only 1 of 128 injected singleton deletions and could not identify the natural L0001 history.",
+    "RC45": "All 24 documented interpretations of the EoSens 3CL optional 32-bit in-frame counter failed the unit-step gate on L0002; the public AVI does not expose that counter under the tested configurations.",
+    "RC46": "No public layer passed all command-twin transport gates for L0001.",
+    "RC47": "An image-only deletion detector made 620 false calls in 640 trials, FDR 96.875%. The exact count-only class remains C(94736,23), log2 305.7708301287824, so at least 306 aggregate binary decisions are required without additional structure."
+  },
+  "inspectedBeforeSeal": [
+    "Committed RC43-RC47 preregistrations, acquisition receipts, failures, independent audits, cycle results, and public problem records.",
+    "The NIST X16 public record pages for versions 1.0.0, 1.1.0, and 1.1.1, their embedded NERDm manifests, the X16 user notes, and the X4/X16 NIST papers already cited by the project.",
+    "The names, sizes, and checksums in all three public record manifests. Each exposes the same 88 file paths and no file named as a trigger ledger, timestamp ledger, counter stream, frame roster, DAT, or EXP sidecar.",
+    "The 2025 Scientific Data article and Figshare article metadata for the multi-source melt-pool compilation, plus its 114-row metadata spreadsheet. The X16 row names source8/NIST16X/rawdata, reports 18,432 images, and contains no per-frame identity field.",
+    "Manufacturer documentation stating that the EoSens 3CL can replace the first four pixels with a 32-bit image counter, and a MotionBLITZ Cube manual describing optional frame number, relative trigger time, IRIG-B time, and sequence number. X16 documents instead name an FPGA-based acquisition path, so the Cube fields are not attributed to X16.",
+    "HTTP range support for the Figshare HDF5 object was tested with bytes 0-1023 only. No HDF5 object hierarchy, dataset, attribute, or value was inspected."
+  ],
+  "notInspectedBeforeSeal": [
+    "The HDF5 object hierarchy or any array, attribute, scalar, timestamp, coordinate, frame name, ordinal, or provenance value in Final_DatasetV3.h5.",
+    "Any newly acquired DAQ ZIP central directory, member header, member payload, camera archive, layer-camera archive, or unpublished recorder/FPGA artifact.",
+    "Any RC48 identity-anchor contraction result, dynamic-programming table, independent implementation output, or adjudicated gate.",
+    "Any L0001 or L0002 image pixel. L0001 remains sealed and RC48 performs no image-model experiment."
+  ],
+  "publicArtifactAudit": {
+    "nistVersions": ["1.0.0", "1.1.0", "1.1.1"],
+    "manifestTest": "Extract the embedded NERDm JSON from each official version page. Compare the complete component path set and every available size/checksum pair. Record additions, removals, and mutations exactly.",
+    "archiveTest": "Use bounded HTTP range requests to read only ZIP end records and central directories for selected official archives. Do not download image payloads. Record archive byte identity, member names, sizes, CRC values, and the exact byte budget.",
+    "figshareTest": "Open the 52,251,443,134-byte HDF5 object through bounded HTTP range reads. Enumerate only object paths, shapes, dtypes, compression, attributes, and small non-image identity/provenance values under source8/NIST16X. Do not read raw or processed image arrays.",
+    "directIdentityGate": [
+      "The artifact contains an exposure counter, trigger-row identifier, or timestamp with documented acquisition semantics rather than a label inferred only from exported order.",
+      "The field binds each relevant original X16 layer/frame to that acquisition identity without an unexplained ordinal join.",
+      "The provenance identifies the source object and derivation, and an independently checkable invariant such as monotonic unit steps, exact trigger-set membership, or bounded clock correspondence passes.",
+      "A derived position label, an equal array length, or a compiler's statement that images are registered is insufficient without the original-frame-to-acquisition join."
+    ],
+    "rejectionRule": "Reject an artifact as a direct identity ledger if it omits the join, documents only an optional feature not used by X16, derives labels from ordinal pairing, or cannot distinguish at least two histories that remain possible under the count-only model. Preserve useful but non-identifying metadata separately."
+  },
+  "countModel": {
+    "N": 94736,
+    "M": 94713,
+    "missing": 23,
+    "assumptions": [
+      "The trigger roster is complete and totally ordered.",
+      "Exported frames preserve acquisition order.",
+      "Exactly 23 trigger events lack an exported frame; there are no duplicate, inserted, or reordered frames.",
+      "An identity anchor states the exact trigger ordinal of an exported frame and is authenticated independently of image content."
+    ],
+    "countOnly": "C(N, missing)",
+    "firstFrameAnchor": "If exported frame 1 is trigger t, the class is C(N-t, missing-(t-1)); t must lie in [1, missing+1].",
+    "lastFrameAnchor": "If exported frame M is trigger t, the class is C(t-1, t-M); t must lie in [M,N].",
+    "periodicAnchors": "Authenticate exported indices 1, 1+K, 1+2K, ..., and M. Between consecutive anchors with s unanchored survivors and d missing triggers, the local class is C(s+d,d); the full class is the product over intervals. Compute the worst allocation of 23 omissions by exact BigInt dynamic programming.",
+    "counter": "An authenticated non-wrapping unit-step exposure counter yields class 1 by taking the complement of observed identities in the trigger interval. Any wrap, reset, duplicate, reorder, or unauthenticated export transform invalidates this conclusion.",
+    "timestamps": "Timestamps are counter-equivalent only when authenticated, unique at the exposure period, and joined to trigger time by a documented clock map whose total error cannot cross a trigger boundary. Coarser timestamps define bins and retain the product of within-bin combinations."
+  },
+  "anchorSweep": {
+    "periods": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 94712],
+    "outputs": [
+      "exact remaining history count as a decimal integer",
+      "ceil(log2 remaining histories) as the minimum aggregate binary-decision budget",
+      "the worst omission allocation across anchor intervals",
+      "number of authenticated anchor records",
+      "endpoint-anchor classes for every allowed endpoint identity"
+    ],
+    "independence": "Node.js is the primary implementation. Python independently recomputes math.comb values, endpoint formulas, interval construction, and dynamic programming without reading the Node result. An adjudicator requires exact decimal agreement and log2 agreement within 1e-12."
+  },
+  "competingHypotheses": [
+    {
+      "id": "P0",
+      "claim": "The public record contains no direct exposure-identity ledger.",
+      "prediction": "Every inspected artifact either lacks a per-frame identity field or fails the documented-join and independent-invariant gates.",
+      "decision": "Keep C(94736,23) as the X16 identity class and request the named FPGA indexing file, exposure roster, or recorder export from the data custodian."
+    },
+    {
+      "id": "P1",
+      "claim": "A public artifact contains a direct exposure identity that was not represented in the existing problem record.",
+      "prediction": "At least one field passes all semantics, binding, provenance, and invariant gates and contracts the class below count-only.",
+      "decision": "Freeze the parser and derivation, acquire an independently hashed copy, and run a separate preregistered identity reconstruction before any image interpretation."
+    },
+    {
+      "id": "P2",
+      "claim": "A public derived compilation has useful coordinates or times but no acquisition-authenticated join to original X16 frames.",
+      "prediction": "Labels exist, but their derivation rests on ordinal pairing or undocumented preprocessing and cannot distinguish deletion histories.",
+      "decision": "Use the compilation only for model development and preserve it outside the final identity verdict."
+    },
+    {
+      "id": "B0",
+      "claim": "Sparse identity anchors leave a large worst-case ambiguity even when only 23 frames are missing.",
+      "prediction": "For K greater than 1 the worst-case class exceeds one, with omissions concentrated where the largest unauthenticated interval permits the most placements.",
+      "decision": "Specify the anchor density from a target bit budget rather than calling occasional timestamps sufficient."
+    },
+    {
+      "id": "B1",
+      "claim": "A verified per-exposure counter or trigger-resolution timestamp eliminates count-model ambiguity.",
+      "prediction": "Under the stated no-wrap, no-reset, unique-clock, and authentication assumptions, the class is exactly one.",
+      "decision": "Treat acquisition identity as a first-class sensor channel and validate its failure modes before accepting image data."
+    }
+  ],
+  "hardGates": [
+    "No image array or L0001/L0002 pixel is read in RC48.",
+    "Every ranged remote read reports requested and received bytes; HDF5 inspection stops if cumulative transfer exceeds 64 MiB.",
+    "No field is called a direct ledger unless all four public-artifact identity gates pass.",
+    "The primary and independent identity-budget implementations agree exactly on every integer class and worst allocation, and agree on reported logarithms within 1e-12.",
+    "Count-only must reproduce C(94736,23) and log2 305.7708301287824 before anchor results are accepted.",
+    "A failed or inaccessible audit is reported as unknown, never as evidence that a field is absent."
+  ],
+  "causalChain": [
+    "Authenticated X16 trigger roster plus order preservation and explicitly stated loss assumptions",
+    "unknown mapping from 94,713 exported frames to 94,736 trigger identities",
+    "a provenance-bound counter, timestamp, roster, or periodic anchor partitions the possible omission placements",
+    "independent parsing and exact combinatorial calculation measure the surviving equivalence class",
+    "class 1 with an independently verified join meets the finite-record identity criterion; any larger class identifies the exact remaining evidence budget"
+  ],
+  "fastFailureTests": [
+    "Stop HDF5 inspection on missing range support, signature expiry that cannot be refreshed, object-size mismatch, or the 64 MiB transfer cap.",
+    "Stop archive parsing on invalid EOCD/ZIP64 structure, central-directory byte bounds outside the authenticated object, or a changed official object identity.",
+    "Reject any proposed identity field before value analysis if its documentation shows it was derived solely from exported order.",
+    "Stop the quantitative branch on the first independent integer mismatch and preserve both outputs."
+  ],
+  "uncertaintyBudget": {
+    "measurement": "Public exports may omit recorder fields that existed during acquisition; absence from a manifest is not proof that no private sidecar exists.",
+    "model": "The combinatorial result is conditional on complete triggers, exact loss count, order preservation, and no duplicates or insertions. Violating those assumptions enlarges or changes the history space.",
+    "provenance": "The 2025 compilation is a derived multi-source product. Its labels authenticate X16 exposure identity only if the original join and derivation are exposed and independently checkable.",
+    "implementation": "Independent Node and Python implementations share the mathematical specification, so agreement catches coding errors but not an incorrect specification.",
+    "clock": "Timestamp utility depends on resolution, synchronization, latency, drift, collision rate, and authenticated binding. A nominal timestamp column alone has no fixed bit value.",
+    "externalValidity": "The budget calculation applies to the L0001 X16 dimensions and loss model; other instruments require their own trigger completeness and export semantics."
+  },
+  "resources": {
+    "network": "At most 64 MiB of HDF5 ranges plus bounded archive central directories and small official metadata pages; no 52GB image download.",
+    "compute": "CPU-only metadata parsing and exact integer dynamic programming.",
+    "prohibited": "No image payload, no trained image model, no equipment actuation, no claim that an optional manufacturer feature was enabled without X16-specific evidence."
+  },
+  "safetyEthicsEnvironment": "The cycle reads public scientific metadata and performs exact calculations. It processes no personal data, actuates no equipment, and makes no manufacturing-certification claim.",
+  "minimumAdvance": "Even if no ledger is found, RC48 converts an undifferentiated 306-bit deficit into a verified acquisition-design curve: exactly how endpoint anchors, periodic identities, and per-exposure counters change the set of admissible histories.",
+  "priorArt": "research/reproducibility/rc48-provenance-prior-art.json"
+}

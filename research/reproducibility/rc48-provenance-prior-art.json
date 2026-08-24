@@ -1,0 +1,91 @@
+{
+  "reviewId": "RC48-PROVENANCE-PRIOR-ART-0.1",
+  "cycleId": "RC-2026-48",
+  "reviewedOn": "2026-08-25",
+  "scope": "Primary evidence for X16 acquisition provenance, optional camera/recorder identity channels, the 2025 multi-source compilation, and authenticated timestamp semantics inspected before the RC48 outcome audit.",
+  "confirmedFacts": [
+    {
+      "claim": "The X16 public record describes a 10 kHz EoSens 3CL stream captured through an FPGA-based acquisition/compression path and says dropped frames are usually fewer than 20 and primarily at the end of a video. It names an indexing file used for decompression, but that file is not listed in the public record manifest.",
+      "source": "https://data.nist.gov/od/id/mds2-2309",
+      "publishedOn": "2020-10-16",
+      "resultPeriod": "X16 build performed 2019-07-03; record versions through 1.1.1 rechecked 2026-08-25"
+    },
+    {
+      "claim": "The X4 NIST paper documents 10,000 frame/s FPGA camera acquisition, 20 microsecond integration, and an XYPT trigger state marking expected camera capture, while the synchronous DAQ export contains four analog process channels rather than a per-frame identity channel.",
+      "source": "https://nvlpubs.nist.gov/nistpubs/jres/125/jres.125.027.pdf",
+      "publishedOn": "2020-09-30",
+      "resultPeriod": "AMMT X4 in-situ monitoring experiment"
+    },
+    {
+      "claim": "NIST registration work aligns camera observations to command and measurement records using calibrated command, measurement, trigger, and shutter delays. This establishes a coordinate method, not an authenticated roster for missing exported frames.",
+      "source": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=930452",
+      "publishedOn": "2020-11-16",
+      "resultPeriod": "AMMT and commercial-system registration case studies"
+    },
+    {
+      "claim": "The EoSens 3CL reference guide documents an optional 32-bit counter that replaces the first four pixels and increments for each image. RC45 tested the documented interpretations and found no valid unit-step counter in the released L0002 AVI.",
+      "source": "https://ads-img.co.jp/mv/wp-content/uploads/2022/07/Mikrotron-Eosens-RG_3CL_en-v1.3.pdf",
+      "publishedOn": "2013-01-01",
+      "resultPeriod": "EoSens 3CL camera interface specification v1.3"
+    },
+    {
+      "claim": "The MotionBLITZ Cube manual describes frame number, time relative to trigger, optional IRIG-B time, and sequence number in its image-information display. The X16 notes identify a different FPGA-based acquisition path, so those Cube capabilities do not establish that X16 recorded them.",
+      "source": "https://www.sedatec.org/upload/iblock/cbf/manual_cube_4.pdf",
+      "publishedOn": "2011-11-28",
+      "resultPeriod": "MotionBLITZ Cube manual v1.11.28"
+    },
+    {
+      "claim": "The 2025 multi-source melt-pool compilation publishes raw and registered arrays when labels were available from source records. Its metadata spreadsheet lists the X16 group as source8/NIST16X/rawdata with 18,432 images, while the spreadsheet exposes no per-frame counter, timestamp, or trigger-row identity.",
+      "source": "https://doi.org/10.1038/s41597-025-05597-2",
+      "publishedOn": "2025-07-22",
+      "resultPeriod": "Final_DatasetV3 compilation and associated metadata"
+    },
+    {
+      "claim": "The compilation's official Figshare record identifies Final_DatasetV3.h5 as a 52,251,443,134-byte object and supplies its checksum and separate metadata spreadsheet.",
+      "source": "https://doi.org/10.6084/m9.figshare.28200101",
+      "publishedOn": "2025-07-21",
+      "resultPeriod": "Figshare version current at review"
+    },
+    {
+      "claim": "RFC 3161 defines a timestamp token as a signed assertion over a message imprint and time. It can authenticate a frame-identity digest and acquisition time, but only an acquisition-specific clock and binding design can make adjacent exposure identities distinguishable.",
+      "source": "https://www.rfc-editor.org/rfc/rfc3161",
+      "publishedOn": "2001-08-01",
+      "resultPeriod": "Internet X.509 Time-Stamp Protocol"
+    }
+  ],
+  "localEvidenceHashes": [
+    {
+      "artifact": "EoSens-3CL-Reference-Guide-v1.3.pdf",
+      "sha256": "4aa627849e84f88cf5e460e41c8d73c6517256148c488f10151bd1d9ee1d5ff5"
+    },
+    {
+      "artifact": "MotionBLITZ-Cube-Manual-1.11.28.pdf",
+      "sha256": "d0ec598fc248906aedfa41194f9649d6e1a3cd29bcbb57463ec50967182aee27"
+    },
+    {
+      "artifact": "Melt-Pool-Kinetics-Metadata-Revised.xlsx",
+      "sha256": "cfc313e6b0427479e28af3e016819113c268e439743217d13772a587ddb9dbc2"
+    }
+  ],
+  "inferences": [
+    "The FPGA decompression indexing file is the most directly named historical sidecar candidate because it necessarily participated in reconstructing compressed frames, but its existence alone does not imply that it contains trigger identity or survived the public export.",
+    "A derived compilation can improve accessibility and coordinate registration while leaving the original deletion history observationally equivalent if it joined images to labels by ordinal position.",
+    "Identity-anchor density is an instrument-design variable: exact combinatorics can state the residual ambiguity before any image-based inference is attempted."
+  ],
+  "unverifiedProposals": [
+    "A bounded range inspection of the compilation HDF5 may expose provenance attributes or non-image arrays clarifying whether the X16 subset carries direct or ordinal-derived labels.",
+    "An unpublished FPGA indexing file, frame export log, or acquisition roster may bind reconstructed X16 frames to original exposure ordinals.",
+    "Periodic signed digests that bind image payload, exposure counter, and trigger-clock state can make future melt-pool records independently auditable with a calculable ambiguity budget."
+  ],
+  "searchStrategy": {
+    "queries": [
+      "NIST AMMT X16 frame timestamp trigger ledger FPGA indexing file",
+      "EoSens 3CL image counter first four pixels",
+      "MotionBLITZ frame number relative trigger time IRIG-B sequence",
+      "source8 NIST16X Final_DatasetV3 HDF5 registered rawdata",
+      "authenticated timestamp per-frame scientific imaging provenance RFC 3161"
+    ],
+    "priority": "Official NIST data and papers, manufacturer manuals, the original Scientific Data article, official Figshare metadata, and standards documents. Secondary summaries are excluded from factual claims.",
+    "noveltyBoundary": "RC48 does not claim novelty for counters, timestamps, ZIP/HDF5 metadata inspection, cryptographic commitments, or combinatorial ranking. Its proposed contribution is the explicit identity-evidence gate and exact worst-case anchor-density curve for this finite X16 omission record."
+  }
+}
