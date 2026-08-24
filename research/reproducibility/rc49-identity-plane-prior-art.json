@@ -2,6 +2,15 @@
   "reviewId": "RC49-IDENTITY-PLANE-PRIOR-ART-0.1",
   "cycleId": "RC-2026-49",
   "reviewedOn": "2026-08-25",
+  "postSealMetadataCorrections": [
+    {
+      "field": "confirmedFacts[SLSA v1.2].publishedOn",
+      "sealedValue": "2025-11-01",
+      "correctedValue": "2025-11-24",
+      "verifiedFrom": "https://slsa.dev/blog/2025/11/announce-slsa-v1.2",
+      "effectOnPreregisteredDesign": "none; this corrects publication-day metadata and changes no hypothesis, trial, threshold, or outcome"
+    }
+  ],
   "scope": "Primary standards and repository evidence that bound what counters, clocks, signatures, Merkle proofs, and provenance attestations can establish before the RC49 fault outcomes are generated.",
   "confirmedFacts": [
     {
@@ -37,7 +46,7 @@
     {
       "claim": "SLSA v1.2 is the current approved specification and treats provenance as verifiable information about where, when, and how an artifact was produced. Its software-build threat model informs stage separation, but it does not itself define camera-trigger or wafer-event identity.",
       "source": "https://slsa.dev/spec/v1.2/",
-      "publishedOn": "2025-11-01",
+      "publishedOn": "2025-11-24",
       "resultPeriod": "SLSA v1.2 approved specification current at review"
     },
     {

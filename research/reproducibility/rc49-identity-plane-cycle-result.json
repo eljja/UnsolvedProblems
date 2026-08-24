@@ -1,0 +1,158 @@
+{
+  "resultId": "RC49-STAGE-BOUNDED-IDENTITY-PLANE-CYCLE-RESULT-0.1",
+  "cycleId": "RC-2026-49",
+  "reviewedOn": "2026-08-25",
+  "precommit": {
+    "path": "research/reproducibility/rc49-identity-plane-precommit.json",
+    "gitCommit": "0ab691d",
+    "chronology": "The preregistration, prior-art boundary, exact 80-trial schedule, hypotheses, and gates were committed before either outcome file existed."
+  },
+  "selectionReason": "RC48 ended with a precise prospective test: replace image-content guessing with an identity-plane qualification on the same fault grammar needed by both finite camera histories and semiconductor process lineage. June 2026 RFC 9942 and RFC 9943 also made signed verifiable-data-structure receipts the timely standards boundary, while explicitly preserving the distinction between authentic statements and accurate physical claims.",
+  "postSealMetadataCorrection": "After outcomes, the official SLSA announcement fixed the v1.2 release date to 2025-11-24 rather than the month-normalized 2025-11-01 value in the sealed review. The correction changes no trial, hypothesis, gate, or verdict and is recorded in the prior-art artifact.",
+  "verifiedFindings": [
+    "The fixed corpus contains 10,000 trigger events, 80 trials, 400 arm/regime evaluations, and 480 signed stage receipts per implementation.",
+    "Counter-only identifies the affected event in 45 omission/duplication/reorder trials and identifies the reset start in 15 trials, but produces zero exact event-and-stage localizations and misses all 15 payload mutations.",
+    "Signature-only identifies 50 capture-stage or post-capture stage/token changes, but produces zero physical trigger identities; five capture payload mutations are already self-consistent with the first root.",
+    "Clock-only with a ±40 microsecond total-error half-width identifies 45 structural event anomalies but no stage. With ±60 microseconds, every interval crosses a 100-microsecond trigger decision boundary and all 80 trials are refused as ambiguous.",
+    "Counter plus chained Merkle boundaries exactly localizes all 55 observable faults: 45 structural faults at three stages and 10 payload mutations after capture.",
+    "The combined arm localizes the boundary and start position of all 15 unannounced resets but refuses downstream identity in the reused domain.",
+    "The combined arm explicitly abstains on all five capture payload mutations because no independent payload witness exists before the capture commitment.",
+    "All five clean controls remain clean in the combined arm, with zero false fault localizations.",
+    "Node and Python agree exactly on 1,367 compared structures, including 400 trial verdicts, 480 receipt statements, 480 deterministic Ed25519 signatures, five summaries, and two corpus digests.",
+    "Each implementation accepts all 480 valid signatures and roots and rejects 480 one-bit signature mutations plus 480 signed-root mutations."
+  ],
+  "factInferenceProposalBoundary": {
+    "facts": [
+      "H1 passes all preregistered synthetic gates; H0 and H2 are rejected; H3 is supported under its fixed clock envelopes.",
+      "RFC 9942 is a June 2026 Standards Track definition of COSE receipts and RFC9162_SHA256 proof encoding.",
+      "RFC 9943 states that registration authenticates issuer production of a statement, not the statement's physical accuracy or issuance order without policy."
+    ],
+    "inferences": [
+      "The earliest independent commitment is an information boundary: integrity proofs can expose later changes but cannot diagnose already-wrong bytes.",
+      "Event identity and byte integrity are orthogonal coordinates. A signature-only or counter-only certificate should state which coordinate it leaves unresolved.",
+      "An explicit refusal is a successful scientific outcome when reset or clock overlap removes identifiability."
+    ],
+    "unverifiedProposals": [
+      "A production camera/FPGA or fab equipment controller can allocate the event identity before sensing and retain an independent pre-capture payload witness.",
+      "The repository's JSON/Ed25519 fixture can be migrated into a conformant RFC 9942 COSE receipt and RFC 9943 registration policy without semantic loss.",
+      "The result remains valid under multiple simultaneous faults, log rollback/equivocation, counter wrap, and asynchronous many-to-many observations."
+    ]
+  },
+  "hypothesisAdjudication": [
+    {"id": "H0-universal-integrity", "verdict": "rejected", "reason": "A first root cannot reveal that its input payload was already corrupted; five capture mutations are correctly outside the observable boundary."},
+    {"id": "H1-stage-bounded-identity", "verdict": "supported-in-synthetic-scope", "reason": "55 exact observable localizations, 15 reset refusals, five pre-commit abstentions, five clean controls, and no independent mismatch."},
+    {"id": "H2-signature-is-identity", "verdict": "rejected", "reason": "Signed anonymous roots yield stage/token evidence but zero physical trigger identities."},
+    {"id": "H3-clock-envelope", "verdict": "supported-in-synthetic-scope", "reason": "Every ±40 microsecond interval stays inside one decision cell and every ±60 microsecond interval crosses a boundary and is refused."}
+  ],
+  "causalChain": [
+    "A complete trigger roster, a versioned event domain, deterministic payload bytes, and three ordered pipeline boundaries are allowed inputs.",
+    "Omission, duplication, reordering, reset, or payload change otherwise leaves event identity, change stage, or both ambiguous.",
+    "A pre-fault counter contracts physical-event histories; a signed payload-bound root at each boundary contracts byte-transformation histories.",
+    "Independent counter matching, root/signature recomputation, and first-differing-boundary comparison produce exact localization, refusal, or outside-boundary abstention.",
+    "The synthetic identity-plane criterion is met only for the 55 observable faults; reset continuations and pre-capture payload truth remain explicitly unsolved."
+  ],
+  "newSolutionPath": {
+    "name": "Two-coordinate, witness-bounded lineage certificate",
+    "status": "Experiment-specific composition; not claimed as a new cryptographic primitive or as RFC 9942/9943 conformance",
+    "coreHypothesis": "A lineage certificate should carry event identity and byte integrity as separate claims and name the earliest independent witness that gives each claim meaning.",
+    "difference": "Common signed-manifest designs report a valid root as one integrity result. RC49 instead scores physical event, pipeline boundary, payload, reset domain, and pre-witness scope independently on competing arms, so a valid signature cannot silently substitute for physical accuracy.",
+    "bottleneckSolved": "Separates record misalignment from model error and separates post-capture mutation from pre-capture sensor uncertainty.",
+    "minimumDecisiveTest": "Add one independently operated pre-capture witness and one signed reset-domain bridge, then blind-inject reset-plus-omission, mutation-plus-reorder, rollback, and equivocation cases while a third implementation verifies standards-profiled receipts.",
+    "success": "Exact event and first-boundary localization for every in-scope fault, zero clean calls, mandatory refusal outside the witness/domain graph, and three-way receipt agreement.",
+    "reject": "Reject if a signed root is accepted as payload truth before its witness, if a reset bridge permits replay or forked ancestry, or if any implementation disagrees.",
+    "resources": "CPU-scale conformance vectors first; then an FPGA/camera or fab-equipment engineer, operational key custody, a second timing/trigger sensor, independent verifier, and one untouched acquisition run.",
+    "failureValue": "A failing combination identifies whether the missing primitive is pre-capture witnessing, domain continuity, non-equivocation, or many-to-many event semantics rather than merely asking for more data.",
+    "priorArtSearch": [
+      "RFC 9942 scientific acquisition COSE receipt Merkle counter",
+      "RFC 9943 hardware supply chain physical event identity registration policy",
+      "camera FPGA signed exposure counter pre-capture payload hash",
+      "semiconductor manufacturing event-sourced lineage counter reset bridge",
+      "multi-fault provenance omission reorder rollback equivocation benchmark"
+    ]
+  },
+  "workPackages": [
+    {
+      "id": "WP0-reproducible-baseline",
+      "purpose": "Preserve the 10,000-event single-fault baseline as immutable conformance vectors.",
+      "method": "Freeze corpus digests, all 400 verdicts, 480 receipt statements/signatures, and negative cryptographic controls.",
+      "inputs": "Precommit 0ab691d, Node and Python outputs",
+      "deliverable": "Versioned fixture manifest and verifier",
+      "pass": "All 1,367 structures and 1,920 positive/negative cryptographic checks replay exactly.",
+      "fail": "Any digest, signature, verdict, or count changes without a new cycle/version.",
+      "next": "Keep RC49 immutable and open a versioned extension rather than rewriting results."
+    },
+    {
+      "id": "WP1-witness-and-domain-bridge",
+      "purpose": "Move the lower evidence boundary before capture and reconnect identities after an authorized reset.",
+      "method": "Create a separate sensor/receiver receipt before payload ingestion and sign a bridge over old domain/root, new domain/start, reason, operator/policy, and anti-replay nonce.",
+      "inputs": "Independent receiver, two keys or roles, clock/error policy, reset cause code",
+      "deliverable": "Pre-capture witness and reset-bridge schema with adversarial fixtures",
+      "pass": "Capture mutation becomes observable and authorized reset resumes identity exactly once.",
+      "fail": "The same actor can rewrite both witness and capture, or a bridge can be replayed/forked.",
+      "next": "Add role separation or preserve refusal if independence cannot be supplied."
+    },
+    {
+      "id": "WP2-compositional-faults",
+      "purpose": "Test whether single-fault localization composes.",
+      "method": "Preregister pairwise faults that create competing explanations: reset+omission, duplicate+reorder, mutation+omission, rollback, and issuer/log equivocation.",
+      "inputs": "Frozen RC49 vectors and new outcome-free pair schedule",
+      "deliverable": "Minimal counterexample grammar and residual equivalence classes",
+      "pass": "Each trial yields one exact explanation or a calculable set with a declared refusal.",
+      "fail": "The verifier chooses one plausible history without reporting alternatives.",
+      "next": "Promote the smallest ambiguity-producing pair to the next design constraint."
+    },
+    {
+      "id": "WP3-standards-profile-and-external-verifier",
+      "purpose": "Separate the scientific predicate from transport syntax and repository implementations.",
+      "method": "Encode selected boundary statements and proofs as RFC9942_SHA256 COSE receipts under a documented RFC 9943 registration policy; give frozen vectors to an implementation that shares no code.",
+      "inputs": "RFC 9942/9943, COSE library, public conformance vectors, independent key policy",
+      "deliverable": "Profile, vectors, compatibility matrix, and external verdict",
+      "pass": "All supported receipts verify identically and unsupported scientific claims remain rejected.",
+      "fail": "Transport conformance changes a physical-event verdict or hides an accuracy assumption.",
+      "next": "Revise only the profile boundary; retain the scientific adjudication."
+    },
+    {
+      "id": "WP4-untouched-physical-pilot",
+      "purpose": "Measure oscillator, transfer, key-custody, and operator errors absent from the synthetic corpus.",
+      "method": "Freeze the qualified verifier, acquire one untouched bench stream with hardware trigger totals and an independent witness, and adjudicate without reusing development data.",
+      "inputs": "Qualified pipeline, separate operators, operational keys, independent timing/trigger sensor",
+      "deliverable": "Physical qualification report with coverage, abstentions, and uncertainty budget",
+      "pass": "All identities and proofs remain within the preregistered domain and error envelope.",
+      "fail": "Any configuration drift, missing reference trigger, key ambiguity, or clock-bound violation returns outside qualification.",
+      "next": "Open a new cycle at the first failed boundary; do not broaden the certificate post hoc."
+    }
+  ],
+  "uncertaintyBudget": {
+    "measurement": "No real timing jitter, latency, oscillator drift, sensor corruption, or missed physical trigger is present in the deterministic fixture.",
+    "model": "One fault per trial and one record per trigger exclude interactions, legitimate reorder, integration windows, and missing reference events.",
+    "cryptographic": "The fixed Ed25519 private seed is public; deterministic verification says nothing about operational key custody, revocation, trusted time, or issuer authority.",
+    "implementation": "Independent code shares the same written model and test seed. Exact agreement does not validate a wrong common abstraction.",
+    "sampling": "Five designed placements test boundary-sensitive positions but do not estimate failure prevalence.",
+    "externalValidity": "No historical X16 frame identity or semiconductor-fab deployment is recovered by the synthetic result.",
+    "standards": "The Merkle construction follows RFC 9162 and the scientific design is informed by RFC 9942/9943, but the repository JSON receipts are not COSE/SCITT-conformant artifacts."
+  },
+  "decisionTree": [
+    {"if": "A candidate fault occurs before the earliest independent witness", "then": "Report outside-observable-boundary; add an earlier independent measurement rather than a later signature."},
+    {"if": "Counter or clock domain resets without a signed one-time bridge", "then": "Locate the break if possible and refuse downstream identity."},
+    {"if": "Event identity is exact but no boundary commitment differs", "then": "Report an event anomaly with unknown stage; do not assign cause."},
+    {"if": "A signed anonymous token changes but has no event join", "then": "Report stage/token evidence without a physical event identity."},
+    {"if": "Event and first boundary are exact and all proofs verify", "then": "Accept only within the stated roster, witness, domain, and single-fault coverage."}
+  ],
+  "failedAttempts": [
+    "H0 fails because cryptographic integrity begins at the first commitment and cannot retrospectively measure its input.",
+    "H2 fails because an authenticated anonymous token remains anonymous with respect to the physical trigger roster.",
+    "Counter-only and tight-clock arms recover event positions but cannot attribute capture, export, or packaging cause.",
+    "The loose clock is not repaired with nearest-neighbor point estimates; all overlapping-interval claims are refused.",
+    "No historical X16 sidecar was inferred from the synthetic success; the prepared custodian request remains unsent and no artifact is assumed."
+  ],
+  "unresolved": [
+    "Whether a genuinely independent pre-capture payload witness is practical without duplicating the same failure mode",
+    "Whether reset-domain bridges remain non-replayable and non-equivocating under key rotation and log rollback",
+    "How fault localization composes when two or more transformations occur in one trial",
+    "How to generalize from ordered one-to-one events to asynchronous many-to-many fab observations",
+    "Whether an X16 FPGA indexing file or acquisition roster survives with field semantics and official hashes",
+    "Whether an external implementation accepts a future RFC 9942/9943 profile without changing the scientific claim boundary"
+  ],
+  "safetyEthicsEnvironment": "The experiment uses deterministic synthetic bytes and a deliberately public test key. It contains no personal or proprietary data, performs no device actuation, and cannot certify a camera, fab, supplier, or scientific result.",
+  "nextCycleStart": "RC50 should not rerun the single-fault synthetic corpus or enlarge it by unstructured random cases. First add a separately controlled pre-capture witness and a signed, one-time reset-domain bridge. Then preregister the smallest ambiguity-producing two-fault set—reset plus omission, mutation plus reorder or omission, rollback, and issuer/log equivocation—and encode a representative subset as RFC 9942/9943-profiled receipts for a third implementation. Only after those gates pass should one untouched physical acquisition be opened. The historical X16 branch remains paused until the draft custodian request yields an artifact with filename, digest, semantics, and a direct join."
+}

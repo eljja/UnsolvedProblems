@@ -1,0 +1,59 @@
+{
+  "evidenceId": "RC49-STAGE-BOUNDED-IDENTITY-CONNECTION-0.1",
+  "cycleId": "RC-2026-49",
+  "createdOn": "2026-08-25",
+  "connectionId": "CONN-EVIDENCE-022",
+  "problemIds": ["UP-605", "UP-315"],
+  "connectionType": "Event identity × byte integrity × observability boundary",
+  "strength": "strong in the preregistered one-trigger-to-one-record, single-fault synthetic model",
+  "commonStructure": {
+    "UP-605": "A semiconductor digital twin can transport a residual only after each wafer, chamber, recipe, maintenance, and metrology record is joined to the physical process event that produced it and each transformation boundary is auditable.",
+    "UP-315": "A finite imaging record can identify one history only after each released frame is joined to its physical trigger and transformations between capture and release cannot silently change that join or its payload.",
+    "shared": "Both require two independent coordinates. An event key contracts the set of possible physical histories; a boundary commitment contracts the set of possible byte-transformation histories. Either coordinate alone leaves a different equivalence class."
+  },
+  "variableMapping": [
+    {"UP-605": "lot/wafer/chamber event domain", "UP-315": "dataset/layer/camera trigger domain", "role": "versioned identity domain"},
+    {"UP-605": "process-event counter or durable event ID", "UP-315": "exposure counter", "role": "physical event coordinate"},
+    {"UP-605": "recipe, sensor, metrology, or twin-input digest", "UP-315": "frame payload digest", "role": "content coordinate"},
+    {"UP-605": "equipment capture, ETL, feature store, release", "UP-315": "capture, export, package", "role": "ordered commitment boundaries"},
+    {"UP-605": "signed batch or provenance statement", "UP-315": "signed Merkle boundary statement", "role": "authenticated stage evidence"},
+    {"UP-605": "domain reset after tool/recipe/maintenance change", "UP-315": "counter reset after recorder restart", "role": "identity discontinuity requiring a bridge"},
+    {"UP-605": "unmeasured sensor state before ingestion", "UP-315": "payload corruption before the capture root", "role": "pre-commit hidden state"}
+  ],
+  "experimentMapping": {
+    "referenceRoster": "10,000 complete trigger identities at 100 microsecond cadence",
+    "boundaries": ["capture", "export", "package"],
+    "faultGrammar": ["omission", "duplicate", "adjacent reorder", "unannounced counter reset", "payload mutation"],
+    "placements": [17, 257, 4095, 5000, 9998],
+    "arms": ["counter-only", "signature-only", "clock-only with two error envelopes", "counter plus Merkle"],
+    "independentResult": "Node and Python agree exactly on 400 verdicts, 480 boundary statements, 480 signatures, five summaries, and two corpus digests."
+  },
+  "verifiedTransferableClaims": [
+    "A final counter sequence can identify 45 structural event anomalies and refuse 15 resets, but it gives zero exact event-and-stage localizations because no intermediate boundary exists.",
+    "Signed anonymous manifests identify 50 fault stages or stage-token positions but zero physical trigger identities.",
+    "The combined arm exactly identifies event and stage for all 55 observable structural or post-capture payload faults, refuses all 15 resets, abstains on all five pre-commit payload mutations, and makes zero clean-control calls.",
+    "A timestamp interval is a robust identity only if its entire error interval remains inside one event decision cell; the ±40 microsecond arm maps uniquely while the ±60 microsecond arm refuses all 80 trials as ambiguous."
+  ],
+  "holdsWhen": [
+    "A complete reference roster exists and one reference event generates at most one observed record.",
+    "Legitimate records preserve order between declared boundaries and only one injected fault occurs per trial.",
+    "Event IDs are allocated before the fault boundary, are versioned by domain, and survive export unchanged.",
+    "Each boundary retains its ordered leaves and a signature whose verification key and policy are independently trusted.",
+    "Clock-based substitution is used only when the stated error interval remains inside one trigger decision cell."
+  ],
+  "breaksWhen": [
+    "A sensor record integrates several events, asynchronous streams legitimately reorder, or the reference roster itself misses physical events.",
+    "A counter is created during export rather than before capture, or its domain is reused after reset without an authenticated bridge.",
+    "Only a final root survives, preventing comparison of the first differing boundary.",
+    "Payload corruption occurs before the earliest independent payload witness; a later valid signature then authenticates the corrupted bytes faithfully.",
+    "A deterministic public test key is mistaken for production key custody, trusted time, or independent institutional attestation."
+  ],
+  "superficialSimilarityRisk": "Manufacturing traceability and frame lineage both use provenance language, but a transfer is invalid if a wafer measurement covers a process window while the camera fixture assumes one trigger per record. The variable map must be replaced by an explicit bipartite or interval graph before applying the result to asynchronous fab data.",
+  "minimumValidationTest": {
+    "design": "At one real acquisition boundary, allocate an identity before sensing, retain a separate pre-capture witness of the payload or sensor receipt, sign RFC9162_SHA256-compatible stage statements with operational keys, and inject the same faults under blind custody. Add signed reset-domain bridges and two-fault combinations.",
+    "success": "An independently operated verifier reports exact event and first boundary for every observable fault, refuses every unbridged reset, rejects every signature/root mutation, preserves all clean controls, and names pre-witness faults as outside scope.",
+    "failure": "Any ordinal-only join, false localization, accepted reset continuation, pre-commit overclaim, key-policy ambiguity, or Node/Python/external disagreement blocks transfer."
+  },
+  "simultaneousImpact": "The result does not solve digital-twin transfer or finite-history reconstruction. It removes one shared confounder and, more importantly, states where removal is impossible: before the first independent witness and across an unbridged identity-domain reset.",
+  "validationStatus": "Synthetic single-fault mapping independently verified; production, multi-fault, many-to-many, and historical X16 transfer unverified"
+}

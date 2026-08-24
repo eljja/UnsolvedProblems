@@ -1,0 +1,51 @@
+{
+  "auditId": "RC49-COUNTER-MERKLE-INDEPENDENT-ADJUDICATION-0.1",
+  "cycleId": "RC-2026-49",
+  "reviewedOn": "2026-08-25",
+  "implementations": [
+    {
+      "language": "Node.js",
+      "runtime": "v25.8.2",
+      "script": "scripts/run-rc49-identity-plane.mjs",
+      "importedOtherOutcome": false
+    },
+    {
+      "language": "Python",
+      "runtime": "3.11.5",
+      "script": "scripts/independent_rc49_identity_plane_audit.py",
+      "importedOtherOutcome": false
+    }
+  ],
+  "comparisons": {
+    "corpusDigests": 2,
+    "trialVerdicts": 400,
+    "receiptStatements": 480,
+    "receiptSignatures": 480,
+    "aggregateSummaries": 5,
+    "totalExactStructuredComparisons": 1367
+  },
+  "cryptographicControls": {
+    "validSignaturesAcceptedByEachImplementation": 480,
+    "validMerkleRootsRecomputedByEachImplementation": 480,
+    "mutatedSignaturesRejectedByEachImplementation": 480,
+    "mutatedSignedRootsRejectedByEachImplementation": 480,
+    "publicDemoKeyOnly": true
+  },
+  "preregisteredGate": {
+    "exactObservable": 55,
+    "resetRefusals": 15,
+    "precommitAbstentions": 5,
+    "cleanAccepted": 5,
+    "failures": [],
+    "pass": true
+  },
+  "verdict": "pass",
+  "failures": [],
+  "interpretation": "Two independent implementations exactly agree on corpus identities, 400 arm/regime verdicts, 480 chained receipt statements, 480 Ed25519 signatures, aggregate counts, and all positive and negative cryptographic controls. This validates the synthetic stage-bounded identity claim, not a production or historical X16 identity plane.",
+  "preservedLimits": [
+    "Five capture payload mutations are intentionally not detected because no independent payload witness exists before the first commitment.",
+    "Fifteen unannounced resets are localized to a boundary and start position but downstream identity is refused.",
+    "The deterministic public Ed25519 seed demonstrates verification behavior and cannot establish operational signer identity.",
+    "One synthetic fault per trial, a complete reference roster, and one-record-per-trigger semantics remain assumptions."
+  ]
+}
