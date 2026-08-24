@@ -1,0 +1,174 @@
+{
+  "resultId": "RC48-X16-IDENTITY-PROVENANCE-CYCLE-RESULT-0.1",
+  "cycleId": "RC-2026-48",
+  "completedOn": "2026-08-25",
+  "problems": ["UP-605", "UP-315"],
+  "preregistration": "research/reproducibility/rc48-identity-budget-precommit.json",
+  "selectionReason": "RC47 closed the image-only cadence route without opening L0001 and left an exact 306-bit count-model deficit. Public acquisition provenance and an exact anchor-density calculation could therefore falsify a direct-ledger hypothesis or convert an informal request for more metadata into a quantitative instrument requirement without acquiring another image.",
+  "verifiedFindings": [
+    {
+      "finding": "The official X16 record versions 1.0.0, 1.1.0, and 1.1.1 each expose the same 88 component paths. No path, size, or checksum changed across the two version transitions.",
+      "evidence": "research/reproducibility/rc48-public-provenance-audit.json"
+    },
+    {
+      "finding": "No official manifest path names a counter, trigger ledger, timestamp ledger, frame roster, DAT/EXP sidecar, IRIG record, sequence record, or FPGA indexing file.",
+      "evidence": "research/reproducibility/rc48-public-provenance-audit.json"
+    },
+    {
+      "finding": "The DAQ_L001-L025 ZIP central directory contains 25 layer DAQ members and no identity-named sidecar. Only 132,522 central-directory/tail bytes were transferred and no member payload was read.",
+      "evidence": "research/reproducibility/rc48-public-provenance-audit.json"
+    },
+    {
+      "finding": "The 52,251,443,134-byte 2025 compilation was inspected through 39 bounded range requests totaling 20,447,232 bytes. /source8/NIST16X contains only one 18,432×120×120 uint8 rawdata dataset with no attributes or sibling identity arrays; no dataset value was read.",
+      "evidence": "research/reproducibility/rc48-figshare-hdf5-metadata.json"
+    },
+    {
+      "finding": "The public audit found no artifact that passes acquisition semantics, original-frame binding, provenance, and an independent monotonic/clock invariant. The count-only X16 class therefore remains C(94736,23), approximately 2^305.77083.",
+      "evidence": "research/reproducibility/rc48-public-provenance-audit.json"
+    },
+    {
+      "finding": "Node BigInt and Python math.comb implementations agree exactly on 68 history counts and worst allocations, with every log2 value agreeing within 1e-12.",
+      "evidence": "research/reproducibility/rc48-identity-budget-independent-audit.json"
+    },
+    {
+      "finding": "Exact identities for every exported frame leave one history. Anchoring every second exported frame leaves at most 2^23 histories; every fourth leaves 2^46; every eighth leaves 2^69. Anchoring only the first and last exported frames can still leave a 306-bit class.",
+      "evidence": "research/reproducibility/rc48-identity-budget-node.json"
+    },
+    {
+      "finding": "One endpoint anchor is decisive only when it proves all 23 losses are on the known outside edge: first exported frame=trigger 24 or last exported frame=trigger 94713. Typical interior uncertainty remains combinatorial.",
+      "evidence": "research/reproducibility/rc48-identity-budget-node.json"
+    }
+  ],
+  "hypothesisAdjudication": [
+    {
+      "id": "P0",
+      "verdict": "supported for the audited public artifacts",
+      "reason": "All public artifacts either lack a per-frame identity field or lack an original-acquisition join. This does not establish that no private sidecar exists."
+    },
+    {
+      "id": "P1",
+      "verdict": "not supported",
+      "reason": "No audited field passed all direct-ledger gates; natural identity reconstruction was not released."
+    },
+    {
+      "id": "P2",
+      "verdict": "partly supported",
+      "reason": "The 2025 compilation contributes a documented X16 image subset, but the HDF5 path contains raw images only and provides no identity join to the original trigger roster."
+    },
+    {
+      "id": "B0",
+      "verdict": "verified",
+      "reason": "Sparse periodic anchors leave large worst-case equivalence classes; the exact curve is independently reproduced."
+    },
+    {
+      "id": "B1",
+      "verdict": "verified as a conditional theorem, untested as an X16 artifact",
+      "reason": "A complete authenticated counter makes the ordered matching unique under the stated assumptions, but the released X16 stream does not expose such a counter."
+    }
+  ],
+  "newSolutionPath": {
+    "name": "Counter-bound Merkle identity plane",
+    "status": "proposed after prior-art review; not claimed as a novel primitive",
+    "hypothesis": "A direct exposure counter supplies position identity while a chunk-level Merkle commitment over counter, payload hash, clock domain, and trigger receipt supplies export integrity. Their combination makes omissions, duplicates, reorders, and later byte mutation distinguishable without signing every frame separately.",
+    "differenceFromPriorWork": "The camera guide provides a counter and RFC 3161 provides signed time, but neither alone defines the full camera-to-public-archive join. The proposed contribution is a falsifiable acquisition contract with explicit identity domains, chunk proofs, injected pipeline faults, and a precomputed residual-history budget.",
+    "bottleneckAddressed": "It separates two jobs currently conflated by image inference: which exposure a frame is, and whether the released bytes are the bytes attached to that identity.",
+    "requiredResources": [
+      "Camera or FPGA access exposing a non-wrapping counter, trigger receipt, and clock-domain identifier",
+      "Raw or lossless frame export with stable payload hashes",
+      "Chunk manifest generator and independent verifier",
+      "Trusted timestamp service or an independently archived signed root",
+      "Additive-manufacturing acquisition engineer, metrologist, data-provenance engineer, and independent implementation team"
+    ],
+    "minimumDecisiveTest": "Capture 10,000 synthetic or benchtop exposures at the target cadence. At capture, recorder export, and archive packaging independently inject one omission, duplicate, adjacent reorder, counter reset, and payload mutation. Freeze both parsers before opening injections. Require exact event localization, zero clean-control calls, explicit refusal across an unannounced clock-domain reset, and matching Merkle proofs in the independent implementation.",
+    "expectedResults": {
+      "identityPlaneValid": "Every omission and duplicate is recovered from counter set difference, each reorder violates monotonic order, each payload mutation breaks its chunk proof, and no clean control is called.",
+      "counterOnly": "Missing identities are located, but archive mutation or substitution can remain unauthenticated.",
+      "signatureOnly": "Chunk bytes are authenticated, but the exact missing position inside a chunk remains ambiguous.",
+      "clockOnly": "Adjacent identities remain ambiguous whenever combined clock, latency, and quantization uncertainty crosses half the minimum trigger separation."
+    },
+    "successCriteria": [
+      "100% exact localization for every predeclared injected fault at all three pipeline stages",
+      "Zero false localization on clean controls",
+      "A counter domain change is detected rather than silently joined",
+      "Independent verifier matches every identity and proof without importing the primary output",
+      "The resulting history class is exactly one under the declared trigger-completeness and order model"
+    ],
+    "rejectionAndStop": [
+      "Reject the contract if any counter duplicates, resets without a domain identifier, or changes under export.",
+      "Reject timestamp identity if total uncertainty permits two adjacent trigger assignments.",
+      "Stop exact reconstruction on any unbound sidecar, unverified transform, false localization, or independent disagreement.",
+      "Do not compensate by fitting image content to failed identity metadata."
+    ],
+    "uncertaintyBudget": [
+      {"source": "counter", "risk": "wrap, reset, duplicate, crop, endian reinterpretation", "control": "domain identifier, raw-byte test vector, full monotonic and uniqueness scan", "withhold": "any unexplained non-unit step or reused (domain,counter)"},
+      {"source": "clock", "risk": "latency, drift, quantization, epoch mismatch", "control": "two-way calibration and trigger-loopback measurement", "withhold": "combined interval overlaps adjacent trigger assignment"},
+      {"source": "payload", "risk": "crop, color conversion, codec transform", "control": "hash the released canonical bytes and record the transform recipe", "withhold": "unversioned transform or hash mismatch"},
+      {"source": "manifest", "risk": "signature authenticates the wrong roster", "control": "bind dataset ID, layer ID, counter domain, payload hash, and previous chunk root", "withhold": "missing binding field or broken chain"},
+      {"source": "reference roster", "risk": "trigger log itself is incomplete", "control": "independent hardware trigger counter and fault injection", "withhold": "reference counters disagree"},
+      {"source": "external validity", "risk": "benchtop pass does not cover production export", "control": "one untouched production layer with the frozen verifier", "withhold": "new pipeline stage or configuration outside the qualification manifest"}
+    ],
+    "safetyEthicsEnvironment": "The first experiment uses synthetic or benchtop frames and deliberate data-pipeline faults, not changes to laser power or safety interlocks. Production validation is read-only. No personal data or device security secret is published; signing keys remain in a standard managed service.",
+    "noveltySearch": [
+      "scientific camera exposure counter Merkle manifest trigger receipt",
+      "high speed camera frame provenance signed timestamp sequence counter",
+      "additive manufacturing in situ monitoring data provenance frame identity",
+      "RFC 3161 Merkle root scientific dataset acquisition"
+    ]
+  },
+  "workPackages": [
+    {
+      "id": "WP1",
+      "purpose": "Recover the strongest historical evidence before any new inference.",
+      "method": "Request or locate the X16 FPGA decompression indexing file, acquisition configuration, exposure roster, trigger receipts, and export log; bind each candidate by official hash and documented semantics.",
+      "inputs": "NIST X16 record identity, layer names, public archive hashes, acquisition notes",
+      "deliverable": "Immutable sidecar inventory with byte receipts, ownership, clock domain, and original-to-public transform",
+      "pass": "A sidecar passes all four direct identity gates and its invariant reproduces independently.",
+      "fail": "No artifact is available or the join rests on ordinal pairing.",
+      "next": "On pass, preregister exact reconstruction; on fail, preserve the 306-bit class and do not open L0001 pixels."
+    },
+    {
+      "id": "WP2",
+      "purpose": "Turn future acquisition identity into a testable contract.",
+      "method": "Specify (dataset, layer, clock domain, counter, trigger receipt, canonical payload hash, previous chunk root) and Merkle-commit fixed-size chunks with an external timestamp.",
+      "inputs": "Camera/FPGA interface, trigger clock, canonical export recipe, timestamp service",
+      "deliverable": "Machine-readable manifest schema, test vectors, primary generator, independent verifier",
+      "pass": "Every field survives capture-to-release and all clean proofs verify.",
+      "fail": "Any field is synthesized after export or is not stable across the released transform.",
+      "next": "Revise the canonicalization or expose a recorder-native sidecar; never infer missing identities from payload appearance."
+    },
+    {
+      "id": "WP3",
+      "purpose": "Separate competing failure locations with minimal data.",
+      "method": "Inject the fixed fault set once at capture, recorder export, and packaging while clean controls traverse the same pipeline.",
+      "inputs": "10,000 exposures, sealed injection schedule, identity-plane implementation",
+      "deliverable": "Fault-by-stage adjudication ledger and residual-history class for every trial",
+      "pass": "All faults localize exactly, all controls remain clean, both implementations agree.",
+      "fail": "A stage produces an ambiguous or false identity.",
+      "next": "Stop qualification at the first failing stage and redesign only that boundary."
+    },
+    {
+      "id": "WP4",
+      "purpose": "Test transfer without reusing development evidence.",
+      "method": "Apply the frozen verifier to one untouched production layer acquired through the fully qualified pipeline; compare hardware trigger totals with the released roster.",
+      "inputs": "Independent layer, separate operators, frozen code and schema",
+      "deliverable": "External qualification report with coverage, failures, and abstentions",
+      "pass": "History class one, all proof chains valid, and reference counters agree.",
+      "fail": "Any new configuration, proof failure, count disagreement, or domain reset is outside qualification.",
+      "next": "Report the failure boundary and open a new preregistered cycle; do not broaden the certificate post hoc."
+    }
+  ],
+  "failedAttempts": [
+    "The public-record search found no direct identity ledger in three NIST manifests, the selected DAQ archive, or the X16 path of the 2025 HDF5 compilation.",
+    "The compilation could not serve as an independent identity source because it contains raw X16 image data without provenance attributes or a trigger join.",
+    "MotionBLITZ Cube timing fields were not attributed to X16 because the X16 notes specify an FPGA-based acquisition path; equipment capability was not substituted for experiment evidence.",
+    "A post-result replay of the bounded NIST ZIP range request encountered a server read timeout and was stopped without overwriting the completed audit. GET-only retry handling was added; this transport failure changes no provenance verdict and remains separate from artifact absence."
+  ],
+  "unresolved": [
+    "Whether the named FPGA decompression indexing file or an acquisition-PC log survives outside the public release",
+    "Whether the 23-frame deficit arose at exposure, FPGA transfer, recorder export, AVI construction, or archive packaging",
+    "Whether the XYPT trigger roster is itself complete enough to serve as the reference identity set",
+    "The exact canonical byte representation and clock-error envelope for a future production implementation",
+    "How the ordered-subsequence theorem must change when duplicates, insertions, many-to-one integration windows, or legitimate reordering are allowed"
+  ],
+  "nextCycleStart": "RC49 should not fit another X16 image model. First, formalize and validate the counter-bound Merkle manifest on a synthetic 10,000-event stream with capture/export/package faults and independent verification. In parallel, prepare a precise custodian request for the named FPGA indexing file and acquisition roster, but do not claim or use an unavailable artifact. If neither a historical sidecar nor a prospectively qualified identity plane exists, preserve X16 L0001 as a 306-bit partial-identification result."
+}

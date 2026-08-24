@@ -25,14 +25,14 @@
     {
       "claim": "The EoSens 3CL reference guide documents an optional 32-bit counter that replaces the first four pixels and increments for each image. RC45 tested the documented interpretations and found no valid unit-step counter in the released L0002 AVI.",
       "source": "https://ads-img.co.jp/mv/wp-content/uploads/2022/07/Mikrotron-Eosens-RG_3CL_en-v1.3.pdf",
-      "publishedOn": "2013-01-01",
-      "resultPeriod": "EoSens 3CL camera interface specification v1.3"
+      "publishedOn": "2020-03-04",
+      "resultPeriod": "EoSens 3CL camera interface specification v1.3; PDF created 2020-03-04 and modified 2020-04-24"
     },
     {
       "claim": "The MotionBLITZ Cube manual describes frame number, time relative to trigger, optional IRIG-B time, and sequence number in its image-information display. The X16 notes identify a different FPGA-based acquisition path, so those Cube capabilities do not establish that X16 recorded them.",
       "source": "https://www.sedatec.org/upload/iblock/cbf/manual_cube_4.pdf",
-      "publishedOn": "2011-11-28",
-      "resultPeriod": "MotionBLITZ Cube manual v1.11.28"
+      "publishedOn": "2013-02-14",
+      "resultPeriod": "MotionBLITZ Cube manual version 1.11.28; PDF creation metadata dated 2013-02-14"
     },
     {
       "claim": "The 2025 multi-source melt-pool compilation publishes raw and registered arrays when labels were available from source records. Its metadata spreadsheet lists the X16 group as source8/NIST16X/rawdata with 18,432 images, while the spreadsheet exposes no per-frame counter, timestamp, or trigger-row identity.",

@@ -1,0 +1,2849 @@
+{
+  "resultId": "RC48-X16-IDENTITY-BUDGET-NODE-0.1",
+  "cycleId": "RC-2026-48",
+  "computedOn": "2026-08-25",
+  "implementation": "Node.js BigInt primary implementation",
+  "inputs": {
+    "cameraTriggerCount": 94736,
+    "exportedFrameCount": 94713,
+    "missing": 23
+  },
+  "assumptions": [
+    "The trigger roster is complete and totally ordered.",
+    "Exported frames preserve acquisition order.",
+    "Exactly 23 frames are missing, with no duplicates, insertions, or reorderings.",
+    "Every anchor is an independently authenticated exact trigger identity for the named exported frame."
+  ],
+  "countOnly": {
+    "histories": "111222247780697737811569949505047670092175708162872419433827601154009970755623534825120294400",
+    "log2Histories": 305.7708301287825,
+    "minimumAggregateIdentityBits": 306
+  },
+  "firstFrameAnchors": [
+    {
+      "triggerOrdinal": 1,
+      "leadingMissing": 0,
+      "histories": "111195245250519600166222181931594958383721477022780521257347930967105919187820594640808335200",
+      "log2Histories": 305.77047982884847,
+      "minimumAggregateIdentityBits": 306
+    },
+    {
+      "triggerOrdinal": 2,
+      "leadingMissing": 1,
+      "histories": "26996259468643593221334355670308587563472781670174191047859844959554928393095198994443360",
+      "log2Histories": 293.7624318751462,
+      "minimumAggregateIdentityBits": 294
+    },
+    {
+      "triggerOrdinal": 3,
+      "leadingMissing": 2,
+      "histories": "6269319445079475699003059352996695235041286093101021840658228187453379194883509382880",
+      "log2Histories": 281.69026881284844,
+      "minimumAggregateIdentityBits": 282
+    },
+    {
+      "triggerOrdinal": 4,
+      "leadingMissing": 3,
+      "histories": "1389755505965914619816370709393037272501314303939719618863783390545226722394030560",
+      "log2Histories": 269.551006783677,
+      "minimumAggregateIdentityBits": 270
+    },
+    {
+      "triggerOrdinal": 5,
+      "leadingMissing": 4,
+      "histories": "293407825437215432972252398216661164654248681319874935367939743813120534221600",
+      "log2Histories": 257.3413706557599,
+      "minimumAggregateIdentityBits": 258
+    },
+    {
+      "triggerOrdinal": 6,
+      "leadingMissing": 5,
+      "histories": "58848198407143313450431174231419093310856266112229616197346751669984378400",
+      "log2Histories": 245.0577491757053,
+      "minimumAggregateIdentityBits": 246
+    },
+    {
+      "triggerOrdinal": 7,
+      "leadingMissing": 6,
+      "histories": "11181965283738832915736948550253812726648504064394944490153505014881440",
+      "log2Histories": 232.6961404131167,
+      "minimumAggregateIdentityBits": 233
+    },
+    {
+      "triggerOrdinal": 8,
+      "leadingMissing": 7,
+      "histories": "2006707658938236016083017084043057736839031015789399828274441673120",
+      "log2Histories": 220.25208471996405,
+      "minimumAggregateIdentityBits": 221
+    },
+    {
+      "triggerOrdinal": 9,
+      "leadingMissing": 8,
+      "histories": "338942261453971120020778157933123509304793685632868816531448640",
+      "log2Histories": 207.72058141534978,
+      "minimumAggregateIdentityBits": 208
+    },
+    {
+      "triggerOrdinal": 10,
+      "leadingMissing": 9,
+      "histories": "53671433929181403404643579644629858853039843808977717524800",
+      "log2Histories": 195.09598393629355,
+      "minimumAggregateIdentityBits": 196
+    },
+    {
+      "triggerOrdinal": 11,
+      "leadingMissing": 10,
+      "histories": "7932353049939189321464118774410595020823826756388827200",
+      "log2Histories": 182.37186601379665,
+      "minimumAggregateIdentityBits": 183
+    },
+    {
+      "triggerOrdinal": 12,
+      "leadingMissing": 11,
+      "histories": "1088631191862860503341605110238455901511847430277696",
+      "log2Histories": 169.54084811765432,
+      "minimumAggregateIdentityBits": 170
+    },
+    {
+      "triggerOrdinal": 13,
+      "leadingMissing": 12,
+      "histories": "137911979037565200372653829260393045248745504448",
+      "log2Histories": 156.5943682345239,
+      "minimumAggregateIdentityBits": 157
+    },
+    {
+      "triggerOrdinal": 14,
+      "leadingMissing": 13,
+      "histories": "16015453157239711623356440588498289726214336",
+      "log2Histories": 143.52237269990223,
+      "minimumAggregateIdentityBits": 144
+    },
+    {
+      "triggerOrdinal": 15,
+      "leadingMissing": 14,
+      "histories": "1690784945127817362741120393203087954880",
+      "log2Histories": 130.31288887228405,
+      "minimumAggregateIdentityBits": 131
+    },
+    {
+      "triggerOrdinal": 16,
+      "leadingMissing": 15,
+      "histories": "160651434276985634280361097737859520",
+      "log2Histories": 116.95141718213503,
+      "minimumAggregateIdentityBits": 117
+    },
+    {
+      "triggerOrdinal": 17,
+      "leadingMissing": 16,
+      "histories": "13568533300421083976381849471103",
+      "log2Histories": 103.42003572161872,
+      "minimumAggregateIdentityBits": 104
+    },
+    {
+      "triggerOrdinal": 18,
+      "leadingMissing": 17,
+      "histories": "1002752701178724309110874759",
+      "log2Histories": 89.69602441439582,
+      "minimumAggregateIdentityBits": 90
+    },
+    {
+      "triggerOrdinal": 19,
+      "leadingMissing": 18,
+      "histories": "63520304557447854205803",
+      "log2Histories": 75.7496359172331,
+      "minimumAggregateIdentityBits": 76
+    },
+    {
+      "triggerOrdinal": 20,
+      "leadingMissing": 19,
+      "histories": "3353162819633637795",
+      "log2Histories": 61.540228245794026,
+      "minimumAggregateIdentityBits": 62
+    },
+    {
+      "triggerOrdinal": 21,
+      "leadingMissing": 20,
+      "histories": "141609139728605",
+      "log2Histories": 47.00890771118582,
+      "minimumAggregateIdentityBits": 48
+    },
+    {
+      "triggerOrdinal": 22,
+      "leadingMissing": 21,
+      "histories": "4485323541",
+      "log2Histories": 32.06256490917784,
+      "minimumAggregateIdentityBits": 33
+    },
+    {
+      "triggerOrdinal": 23,
+      "leadingMissing": 22,
+      "histories": "94713",
+      "log2Histories": 16.531274838488567,
+      "minimumAggregateIdentityBits": 17
+    },
+    {
+      "triggerOrdinal": 24,
+      "leadingMissing": 23,
+      "histories": "1",
+      "log2Histories": 0,
+      "minimumAggregateIdentityBits": 0
+    }
+  ],
+  "lastFrameAnchors": [
+    {
+      "triggerOrdinal": 94713,
+      "missingBefore": 0,
+      "trailingMissing": 23,
+      "histories": "1",
+      "log2Histories": 0,
+      "minimumAggregateIdentityBits": 0
+    },
+    {
+      "triggerOrdinal": 94714,
+      "missingBefore": 1,
+      "trailingMissing": 22,
+      "histories": "94713",
+      "log2Histories": 16.531274838488567,
+      "minimumAggregateIdentityBits": 17
+    },
+    {
+      "triggerOrdinal": 94715,
+      "missingBefore": 2,
+      "trailingMissing": 21,
+      "histories": "4485323541",
+      "log2Histories": 32.06256490917784,
+      "minimumAggregateIdentityBits": 33
+    },
+    {
+      "triggerOrdinal": 94716,
+      "missingBefore": 3,
+      "trailingMissing": 20,
+      "histories": "141609139728605",
+      "log2Histories": 47.00890771118582,
+      "minimumAggregateIdentityBits": 48
+    },
+    {
+      "triggerOrdinal": 94717,
+      "missingBefore": 4,
+      "trailingMissing": 19,
+      "histories": "3353162819633637795",
+      "log2Histories": 61.540228245794026,
+      "minimumAggregateIdentityBits": 62
+    },
+    {
+      "triggerOrdinal": 94718,
+      "missingBefore": 5,
+      "trailingMissing": 18,
+      "histories": "63520304557447854205803",
+      "log2Histories": 75.7496359172331,
+      "minimumAggregateIdentityBits": 76
+    },
+    {
+      "triggerOrdinal": 94719,
+      "missingBefore": 6,
+      "trailingMissing": 17,
+      "histories": "1002752701178724309110874759",
+      "log2Histories": 89.69602441439582,
+      "minimumAggregateIdentityBits": 90
+    },
+    {
+      "triggerOrdinal": 94720,
+      "missingBefore": 7,
+      "trailingMissing": 16,
+      "histories": "13568533300421083976381849471103",
+      "log2Histories": 103.42003572161872,
+      "minimumAggregateIdentityBits": 104
+    },
+    {
+      "triggerOrdinal": 94721,
+      "missingBefore": 8,
+      "trailingMissing": 15,
+      "histories": "160651434276985634280361097737859520",
+      "log2Histories": 116.95141718213503,
+      "minimumAggregateIdentityBits": 117
+    },
+    {
+      "triggerOrdinal": 94722,
+      "missingBefore": 9,
+      "trailingMissing": 14,
+      "histories": "1690784945127817362741120393203087954880",
+      "log2Histories": 130.31288887228405,
+      "minimumAggregateIdentityBits": 131
+    },
+    {
+      "triggerOrdinal": 94723,
+      "missingBefore": 10,
+      "trailingMissing": 13,
+      "histories": "16015453157239711623356440588498289726214336",
+      "log2Histories": 143.52237269990223,
+      "minimumAggregateIdentityBits": 144
+    },
+    {
+      "triggerOrdinal": 94724,
+      "missingBefore": 11,
+      "trailingMissing": 12,
+      "histories": "137911979037565200372653829260393045248745504448",
+      "log2Histories": 156.5943682345239,
+      "minimumAggregateIdentityBits": 157
+    },
+    {
+      "triggerOrdinal": 94725,
+      "missingBefore": 12,
+      "trailingMissing": 11,
+      "histories": "1088631191862860503341605110238455901511847430277696",
+      "log2Histories": 169.54084811765432,
+      "minimumAggregateIdentityBits": 170
+    },
+    {
+      "triggerOrdinal": 94726,
+      "missingBefore": 13,
+      "trailingMissing": 10,
+      "histories": "7932353049939189321464118774410595020823826756388827200",
+      "log2Histories": 182.37186601379665,
+      "minimumAggregateIdentityBits": 183
+    },
+    {
+      "triggerOrdinal": 94727,
+      "missingBefore": 14,
+      "trailingMissing": 9,
+      "histories": "53671433929181403404643579644629858853039843808977717524800",
+      "log2Histories": 195.09598393629355,
+      "minimumAggregateIdentityBits": 196
+    },
+    {
+      "triggerOrdinal": 94728,
+      "missingBefore": 15,
+      "trailingMissing": 8,
+      "histories": "338942261453971120020778157933123509304793685632868816531448640",
+      "log2Histories": 207.72058141534978,
+      "minimumAggregateIdentityBits": 208
+    },
+    {
+      "triggerOrdinal": 94729,
+      "missingBefore": 16,
+      "trailingMissing": 7,
+      "histories": "2006707658938236016083017084043057736839031015789399828274441673120",
+      "log2Histories": 220.25208471996405,
+      "minimumAggregateIdentityBits": 221
+    },
+    {
+      "triggerOrdinal": 94730,
+      "missingBefore": 17,
+      "trailingMissing": 6,
+      "histories": "11181965283738832915736948550253812726648504064394944490153505014881440",
+      "log2Histories": 232.6961404131167,
+      "minimumAggregateIdentityBits": 233
+    },
+    {
+      "triggerOrdinal": 94731,
+      "missingBefore": 18,
+      "trailingMissing": 5,
+      "histories": "58848198407143313450431174231419093310856266112229616197346751669984378400",
+      "log2Histories": 245.0577491757053,
+      "minimumAggregateIdentityBits": 246
+    },
+    {
+      "triggerOrdinal": 94732,
+      "missingBefore": 19,
+      "trailingMissing": 4,
+      "histories": "293407825437215432972252398216661164654248681319874935367939743813120534221600",
+      "log2Histories": 257.3413706557599,
+      "minimumAggregateIdentityBits": 258
+    },
+    {
+      "triggerOrdinal": 94733,
+      "missingBefore": 20,
+      "trailingMissing": 3,
+      "histories": "1389755505965914619816370709393037272501314303939719618863783390545226722394030560",
+      "log2Histories": 269.551006783677,
+      "minimumAggregateIdentityBits": 270
+    },
+    {
+      "triggerOrdinal": 94734,
+      "missingBefore": 21,
+      "trailingMissing": 2,
+      "histories": "6269319445079475699003059352996695235041286093101021840658228187453379194883509382880",
+      "log2Histories": 281.69026881284844,
+      "minimumAggregateIdentityBits": 282
+    },
+    {
+      "triggerOrdinal": 94735,
+      "missingBefore": 22,
+      "trailingMissing": 1,
+      "histories": "26996259468643593221334355670308587563472781670174191047859844959554928393095198994443360",
+      "log2Histories": 293.7624318751462,
+      "minimumAggregateIdentityBits": 294
+    },
+    {
+      "triggerOrdinal": 94736,
+      "missingBefore": 23,
+      "trailingMissing": 0,
+      "histories": "111195245250519600166222181931594958383721477022780521257347930967105919187820594640808335200",
+      "log2Histories": 305.77047982884847,
+      "minimumAggregateIdentityBits": 306
+    }
+  ],
+  "periodicAnchors": [
+    {
+      "period": 1,
+      "authenticatedAnchorCount": 94713,
+      "intervalCount": 94712,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 0,
+          "intervalCount": 94712
+        }
+      ],
+      "histories": "1",
+      "log2Histories": 0,
+      "minimumAggregateIdentityBits": 0,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 22,
+          "leftExportedIndex": 23,
+          "rightExportedIndex": 24,
+          "unanchoredSurvivors": 0,
+          "missing": 23
+        }
+      ]
+    },
+    {
+      "period": 2,
+      "authenticatedAnchorCount": 47357,
+      "intervalCount": 47356,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 1,
+          "intervalCount": 47356
+        }
+      ],
+      "histories": "8388608",
+      "log2Histories": 23,
+      "minimumAggregateIdentityBits": 23,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 3,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 1,
+          "leftExportedIndex": 3,
+          "rightExportedIndex": 5,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 2,
+          "leftExportedIndex": 5,
+          "rightExportedIndex": 7,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 3,
+          "leftExportedIndex": 7,
+          "rightExportedIndex": 9,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 4,
+          "leftExportedIndex": 9,
+          "rightExportedIndex": 11,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 5,
+          "leftExportedIndex": 11,
+          "rightExportedIndex": 13,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 6,
+          "leftExportedIndex": 13,
+          "rightExportedIndex": 15,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 7,
+          "leftExportedIndex": 15,
+          "rightExportedIndex": 17,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 8,
+          "leftExportedIndex": 17,
+          "rightExportedIndex": 19,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 9,
+          "leftExportedIndex": 19,
+          "rightExportedIndex": 21,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 10,
+          "leftExportedIndex": 21,
+          "rightExportedIndex": 23,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 11,
+          "leftExportedIndex": 23,
+          "rightExportedIndex": 25,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 12,
+          "leftExportedIndex": 25,
+          "rightExportedIndex": 27,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 13,
+          "leftExportedIndex": 27,
+          "rightExportedIndex": 29,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 14,
+          "leftExportedIndex": 29,
+          "rightExportedIndex": 31,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 15,
+          "leftExportedIndex": 31,
+          "rightExportedIndex": 33,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 16,
+          "leftExportedIndex": 33,
+          "rightExportedIndex": 35,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 17,
+          "leftExportedIndex": 35,
+          "rightExportedIndex": 37,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 18,
+          "leftExportedIndex": 37,
+          "rightExportedIndex": 39,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 19,
+          "leftExportedIndex": 39,
+          "rightExportedIndex": 41,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 20,
+          "leftExportedIndex": 41,
+          "rightExportedIndex": 43,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 21,
+          "leftExportedIndex": 43,
+          "rightExportedIndex": 45,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 22,
+          "leftExportedIndex": 45,
+          "rightExportedIndex": 47,
+          "unanchoredSurvivors": 1,
+          "missing": 1
+        }
+      ]
+    },
+    {
+      "period": 4,
+      "authenticatedAnchorCount": 23679,
+      "intervalCount": 23678,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 3,
+          "intervalCount": 23678
+        }
+      ],
+      "histories": "70368744177664",
+      "log2Histories": 46,
+      "minimumAggregateIdentityBits": 46,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 5,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 1,
+          "leftExportedIndex": 5,
+          "rightExportedIndex": 9,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 2,
+          "leftExportedIndex": 9,
+          "rightExportedIndex": 13,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 3,
+          "leftExportedIndex": 13,
+          "rightExportedIndex": 17,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 4,
+          "leftExportedIndex": 17,
+          "rightExportedIndex": 21,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 5,
+          "leftExportedIndex": 21,
+          "rightExportedIndex": 25,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 6,
+          "leftExportedIndex": 25,
+          "rightExportedIndex": 29,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 7,
+          "leftExportedIndex": 29,
+          "rightExportedIndex": 33,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 8,
+          "leftExportedIndex": 33,
+          "rightExportedIndex": 37,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 9,
+          "leftExportedIndex": 37,
+          "rightExportedIndex": 41,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 10,
+          "leftExportedIndex": 41,
+          "rightExportedIndex": 45,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 11,
+          "leftExportedIndex": 45,
+          "rightExportedIndex": 49,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 12,
+          "leftExportedIndex": 49,
+          "rightExportedIndex": 53,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 13,
+          "leftExportedIndex": 53,
+          "rightExportedIndex": 57,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 14,
+          "leftExportedIndex": 57,
+          "rightExportedIndex": 61,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 15,
+          "leftExportedIndex": 61,
+          "rightExportedIndex": 65,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 16,
+          "leftExportedIndex": 65,
+          "rightExportedIndex": 69,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 17,
+          "leftExportedIndex": 69,
+          "rightExportedIndex": 73,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 18,
+          "leftExportedIndex": 73,
+          "rightExportedIndex": 77,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 19,
+          "leftExportedIndex": 77,
+          "rightExportedIndex": 81,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 20,
+          "leftExportedIndex": 81,
+          "rightExportedIndex": 85,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 21,
+          "leftExportedIndex": 85,
+          "rightExportedIndex": 89,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 22,
+          "leftExportedIndex": 89,
+          "rightExportedIndex": 93,
+          "unanchoredSurvivors": 3,
+          "missing": 1
+        }
+      ]
+    },
+    {
+      "period": 8,
+      "authenticatedAnchorCount": 11840,
+      "intervalCount": 11839,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 7,
+          "intervalCount": 11839
+        }
+      ],
+      "histories": "590295810358705651712",
+      "log2Histories": 69,
+      "minimumAggregateIdentityBits": 69,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 9,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 1,
+          "leftExportedIndex": 9,
+          "rightExportedIndex": 17,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 2,
+          "leftExportedIndex": 17,
+          "rightExportedIndex": 25,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 3,
+          "leftExportedIndex": 25,
+          "rightExportedIndex": 33,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 4,
+          "leftExportedIndex": 33,
+          "rightExportedIndex": 41,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 5,
+          "leftExportedIndex": 41,
+          "rightExportedIndex": 49,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 6,
+          "leftExportedIndex": 49,
+          "rightExportedIndex": 57,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 7,
+          "leftExportedIndex": 57,
+          "rightExportedIndex": 65,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 8,
+          "leftExportedIndex": 65,
+          "rightExportedIndex": 73,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 9,
+          "leftExportedIndex": 73,
+          "rightExportedIndex": 81,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 10,
+          "leftExportedIndex": 81,
+          "rightExportedIndex": 89,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 11,
+          "leftExportedIndex": 89,
+          "rightExportedIndex": 97,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 12,
+          "leftExportedIndex": 97,
+          "rightExportedIndex": 105,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 13,
+          "leftExportedIndex": 105,
+          "rightExportedIndex": 113,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 14,
+          "leftExportedIndex": 113,
+          "rightExportedIndex": 121,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 15,
+          "leftExportedIndex": 121,
+          "rightExportedIndex": 129,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 16,
+          "leftExportedIndex": 129,
+          "rightExportedIndex": 137,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 17,
+          "leftExportedIndex": 137,
+          "rightExportedIndex": 145,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 18,
+          "leftExportedIndex": 145,
+          "rightExportedIndex": 153,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 19,
+          "leftExportedIndex": 153,
+          "rightExportedIndex": 161,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 20,
+          "leftExportedIndex": 161,
+          "rightExportedIndex": 169,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 21,
+          "leftExportedIndex": 169,
+          "rightExportedIndex": 177,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 22,
+          "leftExportedIndex": 177,
+          "rightExportedIndex": 185,
+          "unanchoredSurvivors": 7,
+          "missing": 1
+        }
+      ]
+    },
+    {
+      "period": 16,
+      "authenticatedAnchorCount": 5921,
+      "intervalCount": 5920,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 7,
+          "intervalCount": 1
+        },
+        {
+          "unanchoredSurvivors": 15,
+          "intervalCount": 5919
+        }
+      ],
+      "histories": "4951760157141521099596496896",
+      "log2Histories": 92,
+      "minimumAggregateIdentityBits": 92,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 17,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 1,
+          "leftExportedIndex": 17,
+          "rightExportedIndex": 33,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 2,
+          "leftExportedIndex": 33,
+          "rightExportedIndex": 49,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 3,
+          "leftExportedIndex": 49,
+          "rightExportedIndex": 65,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 4,
+          "leftExportedIndex": 65,
+          "rightExportedIndex": 81,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 5,
+          "leftExportedIndex": 81,
+          "rightExportedIndex": 97,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 6,
+          "leftExportedIndex": 97,
+          "rightExportedIndex": 113,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 7,
+          "leftExportedIndex": 113,
+          "rightExportedIndex": 129,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 8,
+          "leftExportedIndex": 129,
+          "rightExportedIndex": 145,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 9,
+          "leftExportedIndex": 145,
+          "rightExportedIndex": 161,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 10,
+          "leftExportedIndex": 161,
+          "rightExportedIndex": 177,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 11,
+          "leftExportedIndex": 177,
+          "rightExportedIndex": 193,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 12,
+          "leftExportedIndex": 193,
+          "rightExportedIndex": 209,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 13,
+          "leftExportedIndex": 209,
+          "rightExportedIndex": 225,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 14,
+          "leftExportedIndex": 225,
+          "rightExportedIndex": 241,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 15,
+          "leftExportedIndex": 241,
+          "rightExportedIndex": 257,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 16,
+          "leftExportedIndex": 257,
+          "rightExportedIndex": 273,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 17,
+          "leftExportedIndex": 273,
+          "rightExportedIndex": 289,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 18,
+          "leftExportedIndex": 289,
+          "rightExportedIndex": 305,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 19,
+          "leftExportedIndex": 305,
+          "rightExportedIndex": 321,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 20,
+          "leftExportedIndex": 321,
+          "rightExportedIndex": 337,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 21,
+          "leftExportedIndex": 337,
+          "rightExportedIndex": 353,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 22,
+          "leftExportedIndex": 353,
+          "rightExportedIndex": 369,
+          "unanchoredSurvivors": 15,
+          "missing": 1
+        }
+      ]
+    },
+    {
+      "period": 32,
+      "authenticatedAnchorCount": 2961,
+      "intervalCount": 2960,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 23,
+          "intervalCount": 1
+        },
+        {
+          "unanchoredSurvivors": 31,
+          "intervalCount": 2959
+        }
+      ],
+      "histories": "41538374868278621028243970633760768",
+      "log2Histories": 115,
+      "minimumAggregateIdentityBits": 115,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 33,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 1,
+          "leftExportedIndex": 33,
+          "rightExportedIndex": 65,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 2,
+          "leftExportedIndex": 65,
+          "rightExportedIndex": 97,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 3,
+          "leftExportedIndex": 97,
+          "rightExportedIndex": 129,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 4,
+          "leftExportedIndex": 129,
+          "rightExportedIndex": 161,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 5,
+          "leftExportedIndex": 161,
+          "rightExportedIndex": 193,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 6,
+          "leftExportedIndex": 193,
+          "rightExportedIndex": 225,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 7,
+          "leftExportedIndex": 225,
+          "rightExportedIndex": 257,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 8,
+          "leftExportedIndex": 257,
+          "rightExportedIndex": 289,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 9,
+          "leftExportedIndex": 289,
+          "rightExportedIndex": 321,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 10,
+          "leftExportedIndex": 321,
+          "rightExportedIndex": 353,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 11,
+          "leftExportedIndex": 353,
+          "rightExportedIndex": 385,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 12,
+          "leftExportedIndex": 385,
+          "rightExportedIndex": 417,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 13,
+          "leftExportedIndex": 417,
+          "rightExportedIndex": 449,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 14,
+          "leftExportedIndex": 449,
+          "rightExportedIndex": 481,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 15,
+          "leftExportedIndex": 481,
+          "rightExportedIndex": 513,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 16,
+          "leftExportedIndex": 513,
+          "rightExportedIndex": 545,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 17,
+          "leftExportedIndex": 545,
+          "rightExportedIndex": 577,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 18,
+          "leftExportedIndex": 577,
+          "rightExportedIndex": 609,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 19,
+          "leftExportedIndex": 609,
+          "rightExportedIndex": 641,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 20,
+          "leftExportedIndex": 641,
+          "rightExportedIndex": 673,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 21,
+          "leftExportedIndex": 673,
+          "rightExportedIndex": 705,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 22,
+          "leftExportedIndex": 705,
+          "rightExportedIndex": 737,
+          "unanchoredSurvivors": 31,
+          "missing": 1
+        }
+      ]
+    },
+    {
+      "period": 64,
+      "authenticatedAnchorCount": 1481,
+      "intervalCount": 1480,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 55,
+          "intervalCount": 1
+        },
+        {
+          "unanchoredSurvivors": 63,
+          "intervalCount": 1479
+        }
+      ],
+      "histories": "348449143727040986586495598010130648530944",
+      "log2Histories": 138,
+      "minimumAggregateIdentityBits": 138,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 65,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 1,
+          "leftExportedIndex": 65,
+          "rightExportedIndex": 129,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 2,
+          "leftExportedIndex": 129,
+          "rightExportedIndex": 193,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 3,
+          "leftExportedIndex": 193,
+          "rightExportedIndex": 257,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 4,
+          "leftExportedIndex": 257,
+          "rightExportedIndex": 321,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 5,
+          "leftExportedIndex": 321,
+          "rightExportedIndex": 385,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 6,
+          "leftExportedIndex": 385,
+          "rightExportedIndex": 449,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 7,
+          "leftExportedIndex": 449,
+          "rightExportedIndex": 513,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 8,
+          "leftExportedIndex": 513,
+          "rightExportedIndex": 577,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 9,
+          "leftExportedIndex": 577,
+          "rightExportedIndex": 641,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 10,
+          "leftExportedIndex": 641,
+          "rightExportedIndex": 705,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 11,
+          "leftExportedIndex": 705,
+          "rightExportedIndex": 769,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 12,
+          "leftExportedIndex": 769,
+          "rightExportedIndex": 833,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 13,
+          "leftExportedIndex": 833,
+          "rightExportedIndex": 897,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 14,
+          "leftExportedIndex": 897,
+          "rightExportedIndex": 961,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 15,
+          "leftExportedIndex": 961,
+          "rightExportedIndex": 1025,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 16,
+          "leftExportedIndex": 1025,
+          "rightExportedIndex": 1089,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 17,
+          "leftExportedIndex": 1089,
+          "rightExportedIndex": 1153,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 18,
+          "leftExportedIndex": 1153,
+          "rightExportedIndex": 1217,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 19,
+          "leftExportedIndex": 1217,
+          "rightExportedIndex": 1281,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 20,
+          "leftExportedIndex": 1281,
+          "rightExportedIndex": 1345,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 21,
+          "leftExportedIndex": 1345,
+          "rightExportedIndex": 1409,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 22,
+          "leftExportedIndex": 1409,
+          "rightExportedIndex": 1473,
+          "unanchoredSurvivors": 63,
+          "missing": 1
+        }
+      ]
+    },
+    {
+      "period": 128,
+      "authenticatedAnchorCount": 741,
+      "intervalCount": 740,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 119,
+          "intervalCount": 1
+        },
+        {
+          "unanchoredSurvivors": 127,
+          "intervalCount": 739
+        }
+      ],
+      "histories": "2923003274661805836407369665432566039311865085952",
+      "log2Histories": 161,
+      "minimumAggregateIdentityBits": 161,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 129,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 1,
+          "leftExportedIndex": 129,
+          "rightExportedIndex": 257,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 2,
+          "leftExportedIndex": 257,
+          "rightExportedIndex": 385,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 3,
+          "leftExportedIndex": 385,
+          "rightExportedIndex": 513,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 4,
+          "leftExportedIndex": 513,
+          "rightExportedIndex": 641,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 5,
+          "leftExportedIndex": 641,
+          "rightExportedIndex": 769,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 6,
+          "leftExportedIndex": 769,
+          "rightExportedIndex": 897,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 7,
+          "leftExportedIndex": 897,
+          "rightExportedIndex": 1025,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 8,
+          "leftExportedIndex": 1025,
+          "rightExportedIndex": 1153,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 9,
+          "leftExportedIndex": 1153,
+          "rightExportedIndex": 1281,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 10,
+          "leftExportedIndex": 1281,
+          "rightExportedIndex": 1409,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 11,
+          "leftExportedIndex": 1409,
+          "rightExportedIndex": 1537,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 12,
+          "leftExportedIndex": 1537,
+          "rightExportedIndex": 1665,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 13,
+          "leftExportedIndex": 1665,
+          "rightExportedIndex": 1793,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 14,
+          "leftExportedIndex": 1793,
+          "rightExportedIndex": 1921,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 15,
+          "leftExportedIndex": 1921,
+          "rightExportedIndex": 2049,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 16,
+          "leftExportedIndex": 2049,
+          "rightExportedIndex": 2177,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 17,
+          "leftExportedIndex": 2177,
+          "rightExportedIndex": 2305,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 18,
+          "leftExportedIndex": 2305,
+          "rightExportedIndex": 2433,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 19,
+          "leftExportedIndex": 2433,
+          "rightExportedIndex": 2561,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 20,
+          "leftExportedIndex": 2561,
+          "rightExportedIndex": 2689,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 21,
+          "leftExportedIndex": 2689,
+          "rightExportedIndex": 2817,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 22,
+          "leftExportedIndex": 2817,
+          "rightExportedIndex": 2945,
+          "unanchoredSurvivors": 127,
+          "missing": 1
+        }
+      ]
+    },
+    {
+      "period": 256,
+      "authenticatedAnchorCount": 371,
+      "intervalCount": 370,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 247,
+          "intervalCount": 1
+        },
+        {
+          "unanchoredSurvivors": 255,
+          "intervalCount": 369
+        }
+      ],
+      "histories": "24519928653854221733733552434404946937899825954937634816",
+      "log2Histories": 184,
+      "minimumAggregateIdentityBits": 184,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 257,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 1,
+          "leftExportedIndex": 257,
+          "rightExportedIndex": 513,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 2,
+          "leftExportedIndex": 513,
+          "rightExportedIndex": 769,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 3,
+          "leftExportedIndex": 769,
+          "rightExportedIndex": 1025,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 4,
+          "leftExportedIndex": 1025,
+          "rightExportedIndex": 1281,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 5,
+          "leftExportedIndex": 1281,
+          "rightExportedIndex": 1537,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 6,
+          "leftExportedIndex": 1537,
+          "rightExportedIndex": 1793,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 7,
+          "leftExportedIndex": 1793,
+          "rightExportedIndex": 2049,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 8,
+          "leftExportedIndex": 2049,
+          "rightExportedIndex": 2305,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 9,
+          "leftExportedIndex": 2305,
+          "rightExportedIndex": 2561,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 10,
+          "leftExportedIndex": 2561,
+          "rightExportedIndex": 2817,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 11,
+          "leftExportedIndex": 2817,
+          "rightExportedIndex": 3073,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 12,
+          "leftExportedIndex": 3073,
+          "rightExportedIndex": 3329,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 13,
+          "leftExportedIndex": 3329,
+          "rightExportedIndex": 3585,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 14,
+          "leftExportedIndex": 3585,
+          "rightExportedIndex": 3841,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 15,
+          "leftExportedIndex": 3841,
+          "rightExportedIndex": 4097,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 16,
+          "leftExportedIndex": 4097,
+          "rightExportedIndex": 4353,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 17,
+          "leftExportedIndex": 4353,
+          "rightExportedIndex": 4609,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 18,
+          "leftExportedIndex": 4609,
+          "rightExportedIndex": 4865,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 19,
+          "leftExportedIndex": 4865,
+          "rightExportedIndex": 5121,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 20,
+          "leftExportedIndex": 5121,
+          "rightExportedIndex": 5377,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 21,
+          "leftExportedIndex": 5377,
+          "rightExportedIndex": 5633,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 22,
+          "leftExportedIndex": 5633,
+          "rightExportedIndex": 5889,
+          "unanchoredSurvivors": 255,
+          "missing": 1
+        }
+      ]
+    },
+    {
+      "period": 512,
+      "authenticatedAnchorCount": 186,
+      "intervalCount": 185,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 503,
+          "intervalCount": 1
+        },
+        {
+          "unanchoredSurvivors": 511,
+          "intervalCount": 184
+        }
+      ],
+      "histories": "205688069665150755269371147819668813122841983204197482918576128",
+      "log2Histories": 207,
+      "minimumAggregateIdentityBits": 207,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 513,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 1,
+          "leftExportedIndex": 513,
+          "rightExportedIndex": 1025,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 2,
+          "leftExportedIndex": 1025,
+          "rightExportedIndex": 1537,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 3,
+          "leftExportedIndex": 1537,
+          "rightExportedIndex": 2049,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 4,
+          "leftExportedIndex": 2049,
+          "rightExportedIndex": 2561,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 5,
+          "leftExportedIndex": 2561,
+          "rightExportedIndex": 3073,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 6,
+          "leftExportedIndex": 3073,
+          "rightExportedIndex": 3585,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 7,
+          "leftExportedIndex": 3585,
+          "rightExportedIndex": 4097,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 8,
+          "leftExportedIndex": 4097,
+          "rightExportedIndex": 4609,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 9,
+          "leftExportedIndex": 4609,
+          "rightExportedIndex": 5121,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 10,
+          "leftExportedIndex": 5121,
+          "rightExportedIndex": 5633,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 11,
+          "leftExportedIndex": 5633,
+          "rightExportedIndex": 6145,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 12,
+          "leftExportedIndex": 6145,
+          "rightExportedIndex": 6657,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 13,
+          "leftExportedIndex": 6657,
+          "rightExportedIndex": 7169,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 14,
+          "leftExportedIndex": 7169,
+          "rightExportedIndex": 7681,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 15,
+          "leftExportedIndex": 7681,
+          "rightExportedIndex": 8193,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 16,
+          "leftExportedIndex": 8193,
+          "rightExportedIndex": 8705,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 17,
+          "leftExportedIndex": 8705,
+          "rightExportedIndex": 9217,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 18,
+          "leftExportedIndex": 9217,
+          "rightExportedIndex": 9729,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 19,
+          "leftExportedIndex": 9729,
+          "rightExportedIndex": 10241,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 20,
+          "leftExportedIndex": 10241,
+          "rightExportedIndex": 10753,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 21,
+          "leftExportedIndex": 10753,
+          "rightExportedIndex": 11265,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 22,
+          "leftExportedIndex": 11265,
+          "rightExportedIndex": 11777,
+          "unanchoredSurvivors": 511,
+          "missing": 1
+        }
+      ]
+    },
+    {
+      "period": 1024,
+      "authenticatedAnchorCount": 94,
+      "intervalCount": 93,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 503,
+          "intervalCount": 1
+        },
+        {
+          "unanchoredSurvivors": 1023,
+          "intervalCount": 92
+        }
+      ],
+      "histories": "1725436586697640946858688965569256363112777243042596638790631055949824",
+      "log2Histories": 230,
+      "minimumAggregateIdentityBits": 230,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 1025,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 1,
+          "leftExportedIndex": 1025,
+          "rightExportedIndex": 2049,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 2,
+          "leftExportedIndex": 2049,
+          "rightExportedIndex": 3073,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 3,
+          "leftExportedIndex": 3073,
+          "rightExportedIndex": 4097,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 4,
+          "leftExportedIndex": 4097,
+          "rightExportedIndex": 5121,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 5,
+          "leftExportedIndex": 5121,
+          "rightExportedIndex": 6145,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 6,
+          "leftExportedIndex": 6145,
+          "rightExportedIndex": 7169,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 7,
+          "leftExportedIndex": 7169,
+          "rightExportedIndex": 8193,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 8,
+          "leftExportedIndex": 8193,
+          "rightExportedIndex": 9217,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 9,
+          "leftExportedIndex": 9217,
+          "rightExportedIndex": 10241,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 10,
+          "leftExportedIndex": 10241,
+          "rightExportedIndex": 11265,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 11,
+          "leftExportedIndex": 11265,
+          "rightExportedIndex": 12289,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 12,
+          "leftExportedIndex": 12289,
+          "rightExportedIndex": 13313,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 13,
+          "leftExportedIndex": 13313,
+          "rightExportedIndex": 14337,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 14,
+          "leftExportedIndex": 14337,
+          "rightExportedIndex": 15361,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 15,
+          "leftExportedIndex": 15361,
+          "rightExportedIndex": 16385,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 16,
+          "leftExportedIndex": 16385,
+          "rightExportedIndex": 17409,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 17,
+          "leftExportedIndex": 17409,
+          "rightExportedIndex": 18433,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 18,
+          "leftExportedIndex": 18433,
+          "rightExportedIndex": 19457,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 19,
+          "leftExportedIndex": 19457,
+          "rightExportedIndex": 20481,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 20,
+          "leftExportedIndex": 20481,
+          "rightExportedIndex": 21505,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 21,
+          "leftExportedIndex": 21505,
+          "rightExportedIndex": 22529,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 22,
+          "leftExportedIndex": 22529,
+          "rightExportedIndex": 23553,
+          "unanchoredSurvivors": 1023,
+          "missing": 1
+        }
+      ]
+    },
+    {
+      "period": 2048,
+      "authenticatedAnchorCount": 48,
+      "intervalCount": 47,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 503,
+          "intervalCount": 1
+        },
+        {
+          "unanchoredSurvivors": 2047,
+          "intervalCount": 46
+        }
+      ],
+      "histories": "14474011154664524427946373126085988481658748083205070504932198000989141204992",
+      "log2Histories": 253,
+      "minimumAggregateIdentityBits": 253,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 2049,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 1,
+          "leftExportedIndex": 2049,
+          "rightExportedIndex": 4097,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 2,
+          "leftExportedIndex": 4097,
+          "rightExportedIndex": 6145,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 3,
+          "leftExportedIndex": 6145,
+          "rightExportedIndex": 8193,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 4,
+          "leftExportedIndex": 8193,
+          "rightExportedIndex": 10241,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 5,
+          "leftExportedIndex": 10241,
+          "rightExportedIndex": 12289,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 6,
+          "leftExportedIndex": 12289,
+          "rightExportedIndex": 14337,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 7,
+          "leftExportedIndex": 14337,
+          "rightExportedIndex": 16385,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 8,
+          "leftExportedIndex": 16385,
+          "rightExportedIndex": 18433,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 9,
+          "leftExportedIndex": 18433,
+          "rightExportedIndex": 20481,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 10,
+          "leftExportedIndex": 20481,
+          "rightExportedIndex": 22529,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 11,
+          "leftExportedIndex": 22529,
+          "rightExportedIndex": 24577,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 12,
+          "leftExportedIndex": 24577,
+          "rightExportedIndex": 26625,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 13,
+          "leftExportedIndex": 26625,
+          "rightExportedIndex": 28673,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 14,
+          "leftExportedIndex": 28673,
+          "rightExportedIndex": 30721,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 15,
+          "leftExportedIndex": 30721,
+          "rightExportedIndex": 32769,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 16,
+          "leftExportedIndex": 32769,
+          "rightExportedIndex": 34817,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 17,
+          "leftExportedIndex": 34817,
+          "rightExportedIndex": 36865,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 18,
+          "leftExportedIndex": 36865,
+          "rightExportedIndex": 38913,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 19,
+          "leftExportedIndex": 38913,
+          "rightExportedIndex": 40961,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 20,
+          "leftExportedIndex": 40961,
+          "rightExportedIndex": 43009,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 21,
+          "leftExportedIndex": 43009,
+          "rightExportedIndex": 45057,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 22,
+          "leftExportedIndex": 45057,
+          "rightExportedIndex": 47105,
+          "unanchoredSurvivors": 2047,
+          "missing": 1
+        }
+      ]
+    },
+    {
+      "period": 4096,
+      "authenticatedAnchorCount": 25,
+      "intervalCount": 24,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 503,
+          "intervalCount": 1
+        },
+        {
+          "unanchoredSurvivors": 4095,
+          "intervalCount": 23
+        }
+      ],
+      "histories": "121416805764108066932466369176469931665150427440758720078238275608681517825325531136",
+      "log2Histories": 276,
+      "minimumAggregateIdentityBits": 276,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 4097,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 1,
+          "leftExportedIndex": 4097,
+          "rightExportedIndex": 8193,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 2,
+          "leftExportedIndex": 8193,
+          "rightExportedIndex": 12289,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 3,
+          "leftExportedIndex": 12289,
+          "rightExportedIndex": 16385,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 4,
+          "leftExportedIndex": 16385,
+          "rightExportedIndex": 20481,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 5,
+          "leftExportedIndex": 20481,
+          "rightExportedIndex": 24577,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 6,
+          "leftExportedIndex": 24577,
+          "rightExportedIndex": 28673,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 7,
+          "leftExportedIndex": 28673,
+          "rightExportedIndex": 32769,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 8,
+          "leftExportedIndex": 32769,
+          "rightExportedIndex": 36865,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 9,
+          "leftExportedIndex": 36865,
+          "rightExportedIndex": 40961,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 10,
+          "leftExportedIndex": 40961,
+          "rightExportedIndex": 45057,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 11,
+          "leftExportedIndex": 45057,
+          "rightExportedIndex": 49153,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 12,
+          "leftExportedIndex": 49153,
+          "rightExportedIndex": 53249,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 13,
+          "leftExportedIndex": 53249,
+          "rightExportedIndex": 57345,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 14,
+          "leftExportedIndex": 57345,
+          "rightExportedIndex": 61441,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 15,
+          "leftExportedIndex": 61441,
+          "rightExportedIndex": 65537,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 16,
+          "leftExportedIndex": 65537,
+          "rightExportedIndex": 69633,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 17,
+          "leftExportedIndex": 69633,
+          "rightExportedIndex": 73729,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 18,
+          "leftExportedIndex": 73729,
+          "rightExportedIndex": 77825,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 19,
+          "leftExportedIndex": 77825,
+          "rightExportedIndex": 81921,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 20,
+          "leftExportedIndex": 81921,
+          "rightExportedIndex": 86017,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 21,
+          "leftExportedIndex": 86017,
+          "rightExportedIndex": 90113,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 22,
+          "leftExportedIndex": 90113,
+          "rightExportedIndex": 94209,
+          "unanchoredSurvivors": 4095,
+          "missing": 1
+        }
+      ]
+    },
+    {
+      "period": 8192,
+      "authenticatedAnchorCount": 13,
+      "intervalCount": 12,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 4599,
+          "intervalCount": 1
+        },
+        {
+          "unanchoredSurvivors": 8191,
+          "intervalCount": 11
+        }
+      ],
+      "histories": "279633863313371335577123037789977936901775916386964479722693223947798508367481353011200",
+      "log2Histories": 287.1693552401826,
+      "minimumAggregateIdentityBits": 288,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 11,
+          "leftExportedIndex": 90113,
+          "rightExportedIndex": 94713,
+          "unanchoredSurvivors": 4599,
+          "missing": 1
+        },
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 8193,
+          "unanchoredSurvivors": 8191,
+          "missing": 2
+        },
+        {
+          "intervalIndex": 1,
+          "leftExportedIndex": 8193,
+          "rightExportedIndex": 16385,
+          "unanchoredSurvivors": 8191,
+          "missing": 2
+        },
+        {
+          "intervalIndex": 2,
+          "leftExportedIndex": 16385,
+          "rightExportedIndex": 24577,
+          "unanchoredSurvivors": 8191,
+          "missing": 2
+        },
+        {
+          "intervalIndex": 3,
+          "leftExportedIndex": 24577,
+          "rightExportedIndex": 32769,
+          "unanchoredSurvivors": 8191,
+          "missing": 2
+        },
+        {
+          "intervalIndex": 4,
+          "leftExportedIndex": 32769,
+          "rightExportedIndex": 40961,
+          "unanchoredSurvivors": 8191,
+          "missing": 2
+        },
+        {
+          "intervalIndex": 5,
+          "leftExportedIndex": 40961,
+          "rightExportedIndex": 49153,
+          "unanchoredSurvivors": 8191,
+          "missing": 2
+        },
+        {
+          "intervalIndex": 6,
+          "leftExportedIndex": 49153,
+          "rightExportedIndex": 57345,
+          "unanchoredSurvivors": 8191,
+          "missing": 2
+        },
+        {
+          "intervalIndex": 7,
+          "leftExportedIndex": 57345,
+          "rightExportedIndex": 65537,
+          "unanchoredSurvivors": 8191,
+          "missing": 2
+        },
+        {
+          "intervalIndex": 8,
+          "leftExportedIndex": 65537,
+          "rightExportedIndex": 73729,
+          "unanchoredSurvivors": 8191,
+          "missing": 2
+        },
+        {
+          "intervalIndex": 9,
+          "leftExportedIndex": 73729,
+          "rightExportedIndex": 81921,
+          "unanchoredSurvivors": 8191,
+          "missing": 2
+        },
+        {
+          "intervalIndex": 10,
+          "leftExportedIndex": 81921,
+          "rightExportedIndex": 90113,
+          "unanchoredSurvivors": 8191,
+          "missing": 2
+        }
+      ]
+    },
+    {
+      "period": 16384,
+      "authenticatedAnchorCount": 7,
+      "intervalCount": 6,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 12791,
+          "intervalCount": 1
+        },
+        {
+          "unanchoredSurvivors": 16383,
+          "intervalCount": 5
+        }
+      ],
+      "histories": "85291093864979050941231348690141968192966017948744537894609508102703708761532189900800000",
+      "log2Histories": 295.42206745262035,
+      "minimumAggregateIdentityBits": 296,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 5,
+          "leftExportedIndex": 81921,
+          "rightExportedIndex": 94713,
+          "unanchoredSurvivors": 12791,
+          "missing": 3
+        },
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 16385,
+          "unanchoredSurvivors": 16383,
+          "missing": 4
+        },
+        {
+          "intervalIndex": 1,
+          "leftExportedIndex": 16385,
+          "rightExportedIndex": 32769,
+          "unanchoredSurvivors": 16383,
+          "missing": 4
+        },
+        {
+          "intervalIndex": 2,
+          "leftExportedIndex": 32769,
+          "rightExportedIndex": 49153,
+          "unanchoredSurvivors": 16383,
+          "missing": 4
+        },
+        {
+          "intervalIndex": 3,
+          "leftExportedIndex": 49153,
+          "rightExportedIndex": 65537,
+          "unanchoredSurvivors": 16383,
+          "missing": 4
+        },
+        {
+          "intervalIndex": 4,
+          "leftExportedIndex": 65537,
+          "rightExportedIndex": 81921,
+          "unanchoredSurvivors": 16383,
+          "missing": 4
+        }
+      ]
+    },
+    {
+      "period": 32768,
+      "authenticatedAnchorCount": 4,
+      "intervalCount": 3,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 29175,
+          "intervalCount": 1
+        },
+        {
+          "unanchoredSurvivors": 32767,
+          "intervalCount": 2
+        }
+      ],
+      "histories": "3890114128007061786889862844709346527328200783042817610526926628123749812954530358231040000",
+      "log2Histories": 300.9333410214223,
+      "minimumAggregateIdentityBits": 301,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 2,
+          "leftExportedIndex": 65537,
+          "rightExportedIndex": 94713,
+          "unanchoredSurvivors": 29175,
+          "missing": 7
+        },
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 32769,
+          "unanchoredSurvivors": 32767,
+          "missing": 8
+        },
+        {
+          "intervalIndex": 1,
+          "leftExportedIndex": 32769,
+          "rightExportedIndex": 65537,
+          "unanchoredSurvivors": 32767,
+          "missing": 8
+        }
+      ]
+    },
+    {
+      "period": 65536,
+      "authenticatedAnchorCount": 3,
+      "intervalCount": 2,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 29175,
+          "intervalCount": 1
+        },
+        {
+          "unanchoredSurvivors": 65535,
+          "intervalCount": 1
+        }
+      ],
+      "histories": "19811471541900671919474114196539209439605352516480504340952120340601690591860019154269470720",
+      "log2Histories": 303.28179267839766,
+      "minimumAggregateIdentityBits": 304,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 1,
+          "leftExportedIndex": 65537,
+          "rightExportedIndex": 94713,
+          "unanchoredSurvivors": 29175,
+          "missing": 7
+        },
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 65537,
+          "unanchoredSurvivors": 65535,
+          "missing": 16
+        }
+      ]
+    },
+    {
+      "period": 94712,
+      "authenticatedAnchorCount": 2,
+      "intervalCount": 1,
+      "intervalProfile": [
+        {
+          "unanchoredSurvivors": 94711,
+          "intervalCount": 1
+        }
+      ],
+      "histories": "111168248991050956573000847575924649796158004241110347066300071122146364259427499441813891840",
+      "log2Histories": 305.77012952521625,
+      "minimumAggregateIdentityBits": 306,
+      "worstMissingByInterval": [
+        {
+          "intervalIndex": 0,
+          "leftExportedIndex": 1,
+          "rightExportedIndex": 94713,
+          "unanchoredSurvivors": 94711,
+          "missing": 23
+        }
+      ]
+    }
+  ],
+  "perExposureCounter": {
+    "histories": "1",
+    "log2Histories": 0,
+    "minimumAggregateIdentityBits": 0,
+    "conditions": "Authenticated, non-wrapping, non-resetting, unique exposure counter with no duplicate or reordered exports."
+  },
+  "theoremChecks": {
+    "inheritedCountMatches": true,
+    "inheritedLog2Difference": 1.1368683772161603e-13,
+    "period1IsUnique": true,
+    "period2Is2Pow23": true,
+    "period4Is4Pow23": true,
+    "perExposureCounterIsUnique": true
+  }
+}
