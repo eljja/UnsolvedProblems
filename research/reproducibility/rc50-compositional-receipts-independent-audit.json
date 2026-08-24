@@ -1,0 +1,97 @@
+{
+  "auditId": "RC50-COMPOSITIONAL-RECEIPTS-INDEPENDENT-ADJUDICATION-0.1",
+  "cycleId": "RC-2026-50",
+  "reviewedOn": "2026-08-25",
+  "implementations": [
+    "Node.js independent primary generator and adjudicator",
+    "Python independent scientific generator and adjudicator",
+    "Standalone Python deterministic-CBOR, COSE_Sign1, RFC9162_SHA256, and RFC 9942 verifier; no generator imports"
+  ],
+  "comparisons": {
+    "scientificCorpusFields": 4,
+    "publicKeyFixture": 1,
+    "trialVerdicts": 44,
+    "armSummaries": 3,
+    "preregisteredGate": 1,
+    "wireCountFamilies": 8,
+    "transparentStatementChecks": 2,
+    "totalExactStructuredComparisons": 63
+  },
+  "wireChecks": {
+    "signedStatementPositive": 12,
+    "inclusionReceiptPositive": 12,
+    "consistencyReceiptPositive": 3,
+    "statementSignatureMutationRejected": 12,
+    "receiptSignatureMutationRejected": 15,
+    "wrongLeafRejected": 12,
+    "inclusionPathMutationRejected": 12,
+    "consistencyPathMutationRejected": 3,
+    "total": 81,
+    "transparentStatement": {
+      "issuerSignatureValid": true,
+      "twoIndependentReceiptsValid": true
+    }
+  },
+  "preregisteredGate": {
+    "pass": true,
+    "expected": {
+      "clean": 3,
+      "exact-composite": 27,
+      "set-valued-shadow": 3,
+      "refuse-rollback": 3,
+      "refuse-issuer-equivocation": 2,
+      "refuse-log-equivocation": 2,
+      "reject-bridge-replay": 1,
+      "reject-bridge-fork": 1,
+      "outside-independent-boundary": 2
+    },
+    "actual": {
+      "clean": 3,
+      "exact-composite": 27,
+      "set-valued-shadow": 3,
+      "outside-independent-boundary": 2,
+      "refuse-rollback": 3,
+      "refuse-issuer-equivocation": 2,
+      "refuse-log-equivocation": 2,
+      "reject-bridge-replay": 1,
+      "reject-bridge-fork": 1
+    },
+    "failures": []
+  },
+  "hypothesisAdjudication": [
+    {
+      "code": "H0",
+      "verdict": "rejected",
+      "reason": "Three shadowed mutation-then-omission cases and four signed equivocation cases leave more than one causal history. Universal exact composition is false even in the frozen grammar."
+    },
+    {
+      "code": "H1",
+      "verdict": "supported-in-synthetic-scope",
+      "reason": "The witness-bounded causal graph returned the preregistered 3 clean, 27 exact, 3 set-valued, 7 refusal, 2 bridge rejection, and 2 outside-boundary verdicts with independent Node/Python agreement."
+    },
+    {
+      "code": "H2",
+      "verdict": "rejected",
+      "reason": "Seven rollback or equivocation fixtures retained valid local receipts or signatures while failing current or cross-view uniqueness."
+    },
+    {
+      "code": "H3",
+      "verdict": "rejected",
+      "reason": "A stateless verifier accepted one replayed and one forked, correctly signed reset bridge; the nonce became one-time only when retained registry state was consulted."
+    },
+    {
+      "code": "H4",
+      "verdict": "supported-in-synthetic-scope",
+      "reason": "Separate witness and writer commitments localized all eighteen observable payload-mutation composites, while two collusion fixtures remained explicitly outside the independent-witness boundary."
+    }
+  ],
+  "verdict": "pass",
+  "failures": [],
+  "interpretation": "Two independent scientific generators agree on every frozen fixture and verdict, and a third no-shared-code parser accepts all positive RFC 9942/9943 subset vectors while rejecting every frozen mutation. The result identifies which synthetic causal histories are unique, set-valued, refused, or outside the first-witness boundary; it does not validate physical acquisition or general SCITT interoperability.",
+  "preservedLimits": [
+    "The two nominal evidence roles use different deterministic keys but no organizational independence is measured.",
+    "The causal grammar is frozen and finite; unmodeled transformations can create additional equivalent histories.",
+    "The COSE profile covers a strict deterministic subset and does not claim general interoperability or a live SCITT service.",
+    "Physical acquisition count is zero and the historical X16 branch remains paused."
+  ]
+}

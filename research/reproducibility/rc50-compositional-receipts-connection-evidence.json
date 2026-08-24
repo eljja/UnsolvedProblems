@@ -1,0 +1,55 @@
+{
+  "connectionId": "CONN-EVIDENCE-023",
+  "cycleId": "RC-2026-50",
+  "problemIds": [
+    "UP-605",
+    "UP-315"
+  ],
+  "reviewedOn": "2026-08-25",
+  "type": "Local cryptographic validity × retained state × cross-view causal identifiability",
+  "commonStructure": "Both process-twin lineage and finite-history reconstruction observe signed records produced by a hidden sequence of physical events and transformations. Event identity, byte integrity, reset continuity, freshness, and observer agreement are independent coordinates; collapsing them into one valid/invalid receipt loses causal information.",
+  "variableMapping": [
+    {
+      "processLineage": "wafer/chamber trigger ordinal",
+      "finiteHistory": "physical event index",
+      "sharedVariable": "event identity"
+    },
+    {
+      "processLineage": "capture/export/package commitment",
+      "finiteHistory": "observation boundary",
+      "sharedVariable": "first changed boundary"
+    },
+    {
+      "processLineage": "equipment restart and lot-domain change",
+      "finiteHistory": "counter-domain reset",
+      "sharedVariable": "state transition with one-time nonce"
+    },
+    {
+      "processLineage": "fab/vendor receipt views",
+      "finiteHistory": "competing retained histories",
+      "sharedVariable": "cross-view consistency"
+    },
+    {
+      "processLineage": "independent receiver digest",
+      "finiteHistory": "earliest independent measurement",
+      "sharedVariable": "truth boundary"
+    }
+  ],
+  "holdsWhen": [
+    "Every evidence object names the same event and transformation domain.",
+    "A relying party retains the newest accepted state and a spent-nonce registry.",
+    "At least two independent observers can compare signed roots or consistency receipts.",
+    "The candidate transformation grammar contains the true in-scope operations.",
+    "The earliest witness and writer do not share the same hidden failure."
+  ],
+  "breaksWhen": [
+    "A mutation is erased by omission before any boundary commitment.",
+    "Witness and writer collude or fail from one common cause.",
+    "A verifier has no prior state against which to detect rollback or bridge replay.",
+    "All observers receive the same fork and never exchange views.",
+    "Unmodeled many-to-many or asynchronous transformations create additional histories."
+  ],
+  "minimumValidation": "Reproduce all 44 fixtures independently, then repeat the bridge and split-view tests with persistent state and independently administered keys; only afterward introduce one untouched acquisition whose witness is generated before the normal capture path.",
+  "validationStatus": "Strong synthetic structural connection. Node and Python agree on 44 causal verdicts; the third verifier passes 81 wire checks. Physical acquisitions: 0; organizational-independence tests: 0.",
+  "transferableMethod": "Use a verdict lattice—exact history, candidate set, refuse, or outside boundary—backed by retained monotone state and shared views, instead of treating a valid receipt as a universal truth certificate."
+}

@@ -1,0 +1,1174 @@
+{
+  "resultId": "RC50-COMPOSITIONAL-RECEIPTS-PYTHON-RESULT-0.1",
+  "cycleId": "RC-2026-50",
+  "generatedOn": "2026-08-25",
+  "implementation": "Python independent scientific generator and adjudicator",
+  "precommitPath": "research/reproducibility/rc50-compositional-receipts-precommit.json",
+  "corpus": {
+    "eventCount": 1024,
+    "placements": [
+      17,
+      257,
+      998
+    ],
+    "payloadDigest": "32b170ad2695abc792febdc1fb4e8424c1a6537618023a0fa6849b39f4fdfafe",
+    "referenceManifestRoot": "ece856a3d2581c32c53f80628051eaa85a4a8948ccaadd6c01606c40855d5cf3"
+  },
+  "publicKeys": {
+    "event-issuer": "ee1448e8d14b1fae22671fc679a7ab5dfdc209cd9c0c08549b6abc2f6670cdcd",
+    "pre-capture-witness": "528119f343c4755e47055bf57bd0e5dc9223c30e92a225f3dcffb59228630991",
+    "capture-writer": "1fbb9342525f6547594a145ebb9741294090349bc1cc6a5fad77b5af5254b041",
+    "reset-authority": "1c94f352523e8b2a3c1dc8d5803afcd86eee71d6b4c130d13800740b0c2c876b",
+    "reset-witness": "fc142486a7e2442df38b3daee6e6d464a6614c39b050cd2a12cb26ecb2f08e02",
+    "log-a": "9b0aa474da8cb750ec559642d5806847245f558050a3c09fa89dc265d20bd3be",
+    "log-b": "cd32c3081a3924b016e44f9780592a0bcae2f0b931f8373383dcd3d5f34e946d"
+  },
+  "trials": [
+    {
+      "trialId": "CLEAN-01",
+      "kind": "clean",
+      "placement": null,
+      "stage": null,
+      "evidenceDigest": "6f2e6fa6dce122010f5990bad9aea3cdcda8f7ae738c78e8995852d3ea15cab7",
+      "earliestChangedBoundary": null,
+      "operations": [],
+      "candidates": [
+        "no-in-scope-transformation"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "c6425d2efadfd179e3f6d85770320e97ec529fe3e0946fbaabda87a4dc81b818",
+      "crossViewStatus": "clean",
+      "receiptLocalStatus": "authenticated-clean-snapshot",
+      "statefulSingleViewStatus": "clean"
+    },
+    {
+      "trialId": "CLEAN-02",
+      "kind": "clean",
+      "placement": null,
+      "stage": null,
+      "evidenceDigest": "6f2e6fa6dce122010f5990bad9aea3cdcda8f7ae738c78e8995852d3ea15cab7",
+      "earliestChangedBoundary": null,
+      "operations": [],
+      "candidates": [
+        "no-in-scope-transformation"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "03f76d7fec891c7a7b99ad067fd79e3bec8e02b1c5e19e8b0066b8b9a1107a68",
+      "crossViewStatus": "clean",
+      "receiptLocalStatus": "authenticated-clean-snapshot",
+      "statefulSingleViewStatus": "clean"
+    },
+    {
+      "trialId": "CLEAN-03",
+      "kind": "clean",
+      "placement": null,
+      "stage": null,
+      "evidenceDigest": "6f2e6fa6dce122010f5990bad9aea3cdcda8f7ae738c78e8995852d3ea15cab7",
+      "earliestChangedBoundary": null,
+      "operations": [],
+      "candidates": [
+        "no-in-scope-transformation"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "8f8953b2a4250de0f0917aefbfbffd9af36c309df9fd892ffb9c730af87638b6",
+      "crossViewStatus": "clean",
+      "receiptLocalStatus": "authenticated-clean-snapshot",
+      "statefulSingleViewStatus": "clean"
+    },
+    {
+      "trialId": "RESET-OMIT-CAPTURE-17",
+      "kind": "reset-omission",
+      "placement": 17,
+      "stage": "capture",
+      "evidenceDigest": "7a171a1826bfa794ccb92bb34d3c5a237a27bee52562d71e111f075b08b6fd54",
+      "earliestChangedBoundary": "capture",
+      "operations": [
+        {
+          "kind": "authorized-reset",
+          "ordinal": 17,
+          "stage": "identity-transition"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 18,
+          "stage": "capture"
+        }
+      ],
+      "candidates": [
+        "authorized-reset@17+omission@18/capture"
+      ],
+      "bridgeDigest": "9cf5ce714e9dfc9e423b1eddf84fcda47ccfd14bbd1819c581d746d185a4c6d9",
+      "evidenceSignatureDigest": "17c921eca31067dce811a52fc5e2ad0c5935170c720a86e984c824f743bd2079",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "RESET-OMIT-CAPTURE-257",
+      "kind": "reset-omission",
+      "placement": 257,
+      "stage": "capture",
+      "evidenceDigest": "d6da0b79589d91ffe8e0eaa36d851bcab039210a1c32030935efb80ec10b2922",
+      "earliestChangedBoundary": "capture",
+      "operations": [
+        {
+          "kind": "authorized-reset",
+          "ordinal": 257,
+          "stage": "identity-transition"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 258,
+          "stage": "capture"
+        }
+      ],
+      "candidates": [
+        "authorized-reset@257+omission@258/capture"
+      ],
+      "bridgeDigest": "9e38f1ca34ab1334f9ecdd670e66543bf64d14a459197b5a413c5a833b781ac0",
+      "evidenceSignatureDigest": "c7ded20f7b14565e815ed571cab25298d7807ca58b24a65a9de9ea55ce5e12c5",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "RESET-OMIT-CAPTURE-998",
+      "kind": "reset-omission",
+      "placement": 998,
+      "stage": "capture",
+      "evidenceDigest": "f6b039209de9ada1b1d29f0250d309e153cfebe4b22789d2454bc75a9d700ae9",
+      "earliestChangedBoundary": "capture",
+      "operations": [
+        {
+          "kind": "authorized-reset",
+          "ordinal": 998,
+          "stage": "identity-transition"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 999,
+          "stage": "capture"
+        }
+      ],
+      "candidates": [
+        "authorized-reset@998+omission@999/capture"
+      ],
+      "bridgeDigest": "6a391f427a62d2c68d70d6e0b681ad01fb8db3e27382ca43092d6535c3e016f1",
+      "evidenceSignatureDigest": "d8ef1f7db61eb022c2b125e91219399a960a116fa945e67a5f9fede74cb432bd",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "RESET-OMIT-EXPORT-17",
+      "kind": "reset-omission",
+      "placement": 17,
+      "stage": "export",
+      "evidenceDigest": "9b02594500e84c27928fa74c79a9a401bd65ec8f70854b2b1b64f328862494d3",
+      "earliestChangedBoundary": "export",
+      "operations": [
+        {
+          "kind": "authorized-reset",
+          "ordinal": 17,
+          "stage": "identity-transition"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 18,
+          "stage": "export"
+        }
+      ],
+      "candidates": [
+        "authorized-reset@17+omission@18/export"
+      ],
+      "bridgeDigest": "053728da688c2415d89530125e8b9efd9972e062f188ac2efe5064f8dd22d7b8",
+      "evidenceSignatureDigest": "34a84002257ad041e9af0eb1c1e55e5964b4a4298f8a63b7a03698275fe2aabe",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "RESET-OMIT-EXPORT-257",
+      "kind": "reset-omission",
+      "placement": 257,
+      "stage": "export",
+      "evidenceDigest": "b5203bad579e4226bd589574ebf64c02fca0015450e3b96e4fb39c95f0f960cc",
+      "earliestChangedBoundary": "export",
+      "operations": [
+        {
+          "kind": "authorized-reset",
+          "ordinal": 257,
+          "stage": "identity-transition"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 258,
+          "stage": "export"
+        }
+      ],
+      "candidates": [
+        "authorized-reset@257+omission@258/export"
+      ],
+      "bridgeDigest": "fd6e3d3d1b6839206a613abbb5ca7f8057d4e04257c922b9278f0fd3b11c51c4",
+      "evidenceSignatureDigest": "b324c46ed3542dcc1e29d4c3bbca9ce566b2ff07ff39cfa611eb54e558836c24",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "RESET-OMIT-EXPORT-998",
+      "kind": "reset-omission",
+      "placement": 998,
+      "stage": "export",
+      "evidenceDigest": "9ae176100dde2471aa8cab1d2c8eadd146c22c94df56f1dcd52ae991bfbe7308",
+      "earliestChangedBoundary": "export",
+      "operations": [
+        {
+          "kind": "authorized-reset",
+          "ordinal": 998,
+          "stage": "identity-transition"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 999,
+          "stage": "export"
+        }
+      ],
+      "candidates": [
+        "authorized-reset@998+omission@999/export"
+      ],
+      "bridgeDigest": "588d71c936746b942d26f0b4e8a927d266b8ef91e862a006c236fb0b3927c0a7",
+      "evidenceSignatureDigest": "4a0f86a283ac1127c3c6f6b2fa4c6730f18a7bed041232c9e79849868bb740cd",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "RESET-OMIT-PACKAGE-17",
+      "kind": "reset-omission",
+      "placement": 17,
+      "stage": "package",
+      "evidenceDigest": "49565d656620d3db88bea149a5e3ab7da8fdb0c595b0892e243e7902a0583fb6",
+      "earliestChangedBoundary": "package",
+      "operations": [
+        {
+          "kind": "authorized-reset",
+          "ordinal": 17,
+          "stage": "identity-transition"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 18,
+          "stage": "package"
+        }
+      ],
+      "candidates": [
+        "authorized-reset@17+omission@18/package"
+      ],
+      "bridgeDigest": "a5a7f534a0000b33461cd868220e9148d53bb4cf1c7b80168431b86c98839021",
+      "evidenceSignatureDigest": "23c7b3d10af3cad45c4a0170f54ee3422b17b33d80d51c37678c291bb383b89f",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "RESET-OMIT-PACKAGE-257",
+      "kind": "reset-omission",
+      "placement": 257,
+      "stage": "package",
+      "evidenceDigest": "b3bbd64e6e03f1d122e686a6033db0f337083dc91b0134e0fa0ca17bd60a56ae",
+      "earliestChangedBoundary": "package",
+      "operations": [
+        {
+          "kind": "authorized-reset",
+          "ordinal": 257,
+          "stage": "identity-transition"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 258,
+          "stage": "package"
+        }
+      ],
+      "candidates": [
+        "authorized-reset@257+omission@258/package"
+      ],
+      "bridgeDigest": "3c1ac8499800430dee0e291e498c079f04da9cef0602ff5b8cd0428c5cfa9483",
+      "evidenceSignatureDigest": "b23d780f09d3847b1673cc0849ccf4fdcaf92289e57afedf672fe854c362ba3c",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "RESET-OMIT-PACKAGE-998",
+      "kind": "reset-omission",
+      "placement": 998,
+      "stage": "package",
+      "evidenceDigest": "cd5b3cc20e2ead15883f6f97c54943bffeec281a5aef2c368541c9b490524506",
+      "earliestChangedBoundary": "package",
+      "operations": [
+        {
+          "kind": "authorized-reset",
+          "ordinal": 998,
+          "stage": "identity-transition"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 999,
+          "stage": "package"
+        }
+      ],
+      "candidates": [
+        "authorized-reset@998+omission@999/package"
+      ],
+      "bridgeDigest": "4a96fa86897be4fca3b6a40a4c6bccbeb3bf24d004aede0ebf49392cbbb6b567",
+      "evidenceSignatureDigest": "3c78bc0f5210c9daafbb779b50d0ed3c3c35e22abf1854b02613625b01416697",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-REORDER-CAPTURE-17",
+      "kind": "mutation-reorder",
+      "placement": 17,
+      "stage": "capture",
+      "evidenceDigest": "0ba0401d7002571f90b12f16f37e5d02a822771e8739675a3badaffa8345d33f",
+      "earliestChangedBoundary": "capture",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 17,
+          "stage": "capture"
+        },
+        {
+          "kind": "adjacent-reorder",
+          "ordinal": 18,
+          "stage": "capture"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@17/capture+adjacent-reorder@18/capture"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "435175d63c36dd8097acc311c64e727cdf05a9db965cbb9ef79c562aec93db25",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-REORDER-CAPTURE-257",
+      "kind": "mutation-reorder",
+      "placement": 257,
+      "stage": "capture",
+      "evidenceDigest": "c7c3915e940d2b82f580695f1e2c51923046f0a7dd7724c2d5226d849c41e177",
+      "earliestChangedBoundary": "capture",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 257,
+          "stage": "capture"
+        },
+        {
+          "kind": "adjacent-reorder",
+          "ordinal": 258,
+          "stage": "capture"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@257/capture+adjacent-reorder@258/capture"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "1b3bcfee76f7bab7a320b9bfb1efe7a910663247c9ea35a8f5c9ee9658f371e4",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-REORDER-CAPTURE-998",
+      "kind": "mutation-reorder",
+      "placement": 998,
+      "stage": "capture",
+      "evidenceDigest": "875111f8c9c5989e8620162bca289322b82ffd0d56ea0289cf632d7a3124aeaa",
+      "earliestChangedBoundary": "capture",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 998,
+          "stage": "capture"
+        },
+        {
+          "kind": "adjacent-reorder",
+          "ordinal": 999,
+          "stage": "capture"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@998/capture+adjacent-reorder@999/capture"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "2b45733753ca47701678da8380627fa9fbe455c64e77374fcec75e41f20f14c5",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-REORDER-EXPORT-17",
+      "kind": "mutation-reorder",
+      "placement": 17,
+      "stage": "export",
+      "evidenceDigest": "0a1344e9e17b761d0f6d650c0f4c7faca0f375cd6dbb03123cf1f3e26008302d",
+      "earliestChangedBoundary": "export",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 17,
+          "stage": "export"
+        },
+        {
+          "kind": "adjacent-reorder",
+          "ordinal": 18,
+          "stage": "export"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@17/export+adjacent-reorder@18/export"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "467ecdfc50f99c5c7acb03b408d56cfab2dda8f7b543fdeaf1d392c3f3b43075",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-REORDER-EXPORT-257",
+      "kind": "mutation-reorder",
+      "placement": 257,
+      "stage": "export",
+      "evidenceDigest": "aaad2d7fd9c28c65191b2da2acda974685f1ec5650db00c2efc05f223e57c15d",
+      "earliestChangedBoundary": "export",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 257,
+          "stage": "export"
+        },
+        {
+          "kind": "adjacent-reorder",
+          "ordinal": 258,
+          "stage": "export"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@257/export+adjacent-reorder@258/export"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "d0f837b68c42b0d74cdbee2dc87caec515ca55b1692a91b18a07c17874629d1d",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-REORDER-EXPORT-998",
+      "kind": "mutation-reorder",
+      "placement": 998,
+      "stage": "export",
+      "evidenceDigest": "a6a2a369ed5fb9ee0e31d2f597f03facf6360bd38ecfeb429918308a86abfc37",
+      "earliestChangedBoundary": "export",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 998,
+          "stage": "export"
+        },
+        {
+          "kind": "adjacent-reorder",
+          "ordinal": 999,
+          "stage": "export"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@998/export+adjacent-reorder@999/export"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "3855df633377805ac295f0450fe300c276145ee36f501d7626a0f8d021d71184",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-REORDER-PACKAGE-17",
+      "kind": "mutation-reorder",
+      "placement": 17,
+      "stage": "package",
+      "evidenceDigest": "f36259b3b46031e47a3f845a2a888f861b59a2c866c9c6c883013631a0388e16",
+      "earliestChangedBoundary": "package",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 17,
+          "stage": "package"
+        },
+        {
+          "kind": "adjacent-reorder",
+          "ordinal": 18,
+          "stage": "package"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@17/package+adjacent-reorder@18/package"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "d2499d3f32d779ce025e452c794df2a4dcddf04767be5b946299e2cc6337a61b",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-REORDER-PACKAGE-257",
+      "kind": "mutation-reorder",
+      "placement": 257,
+      "stage": "package",
+      "evidenceDigest": "c5199bf3cb735747be5e3cc2b87773d49aca50876dd17229cfa4ffdfdce4720e",
+      "earliestChangedBoundary": "package",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 257,
+          "stage": "package"
+        },
+        {
+          "kind": "adjacent-reorder",
+          "ordinal": 258,
+          "stage": "package"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@257/package+adjacent-reorder@258/package"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "8d32a131044ce54679026f8e0ad4fccbcf13d6589fb5cac8af77eb53dfe6c12b",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-REORDER-PACKAGE-998",
+      "kind": "mutation-reorder",
+      "placement": 998,
+      "stage": "package",
+      "evidenceDigest": "0cd25d1748e1ebd5967be3e52d8d89e300e307657382140ad42bfb737403bcbd",
+      "earliestChangedBoundary": "package",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 998,
+          "stage": "package"
+        },
+        {
+          "kind": "adjacent-reorder",
+          "ordinal": 999,
+          "stage": "package"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@998/package+adjacent-reorder@999/package"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "775362f5605d578636fdaff7d4df3ddb51b873ee355eb61287a20472f0aec9db",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-OMIT-DISJOINT-CAPTURE-17",
+      "kind": "mutation-omission-disjoint",
+      "placement": 17,
+      "stage": "capture",
+      "evidenceDigest": "8e76ca8cd8ef86f468420201d5f35517dd73158b8dd64dac0989d00e61ea8122",
+      "earliestChangedBoundary": "capture",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 17,
+          "stage": "capture"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 19,
+          "stage": "capture"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@17/capture+omission@19/capture"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "c3cac4dbe0c6d6ca0ea822c2a99fcab65700f438af8ed69ccaddd5e7713de09f",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-OMIT-DISJOINT-CAPTURE-257",
+      "kind": "mutation-omission-disjoint",
+      "placement": 257,
+      "stage": "capture",
+      "evidenceDigest": "7e6881d7f36614b31274baebb19904fe726cc779e40b15fabf684a50f0365717",
+      "earliestChangedBoundary": "capture",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 257,
+          "stage": "capture"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 259,
+          "stage": "capture"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@257/capture+omission@259/capture"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "97e8a4e7880b5a0f450add55dd06f0729345b3f5015edef28215ae13ff4082c1",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-OMIT-DISJOINT-CAPTURE-998",
+      "kind": "mutation-omission-disjoint",
+      "placement": 998,
+      "stage": "capture",
+      "evidenceDigest": "8ee419d9d8301f31e467c2f5b77b52af9b91f971006b8a1baf0e7664b6c88698",
+      "earliestChangedBoundary": "capture",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 998,
+          "stage": "capture"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 1000,
+          "stage": "capture"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@998/capture+omission@1000/capture"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "7cb87dbd89c079f6aac9c05584142b4f814b6c60a21cbe2e5e65279f25dfb869",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-OMIT-DISJOINT-EXPORT-17",
+      "kind": "mutation-omission-disjoint",
+      "placement": 17,
+      "stage": "export",
+      "evidenceDigest": "bcbf1ed8d7e2b3a68cbd1ed7d303eda0e5f1a3e4a181adfd29b2ce9c441a6944",
+      "earliestChangedBoundary": "export",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 17,
+          "stage": "export"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 19,
+          "stage": "export"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@17/export+omission@19/export"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "5941adaa991d13c4503637aaf97a48b8027df399c78f45a9d5ac781b35eab168",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-OMIT-DISJOINT-EXPORT-257",
+      "kind": "mutation-omission-disjoint",
+      "placement": 257,
+      "stage": "export",
+      "evidenceDigest": "a2ac9fd5ef98c5c7bf644fbe80935c860e26eede8f6102d86e709773deb529cd",
+      "earliestChangedBoundary": "export",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 257,
+          "stage": "export"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 259,
+          "stage": "export"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@257/export+omission@259/export"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "3be5271d587d4c72b12bc77213f58b9ce4ed0aae0193b7fc0fd0867d209f1764",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-OMIT-DISJOINT-EXPORT-998",
+      "kind": "mutation-omission-disjoint",
+      "placement": 998,
+      "stage": "export",
+      "evidenceDigest": "25a53974dbaf7912b2a4b362576406166f93ab90e8adffc7e3d6a9fc28685d8a",
+      "earliestChangedBoundary": "export",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 998,
+          "stage": "export"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 1000,
+          "stage": "export"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@998/export+omission@1000/export"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "1a5fa7ffcb818c4150441ebd3b644c1a105352d0d25c34b628cadd5d6f31cb74",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-OMIT-DISJOINT-PACKAGE-17",
+      "kind": "mutation-omission-disjoint",
+      "placement": 17,
+      "stage": "package",
+      "evidenceDigest": "c17dd0547f31d392880df23dbfc2bdcfc7d3b7c2285d5c8895dc6f752b3efd37",
+      "earliestChangedBoundary": "package",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 17,
+          "stage": "package"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 19,
+          "stage": "package"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@17/package+omission@19/package"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "991d0b7455f53529c9eee5223549d377f356324ea177067bb8913b971d188c0e",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-OMIT-DISJOINT-PACKAGE-257",
+      "kind": "mutation-omission-disjoint",
+      "placement": 257,
+      "stage": "package",
+      "evidenceDigest": "0fb3c6ed8f67f6116aba1e78f4e5f43a4f2561e66b8072c09ce7d11b6d62c378",
+      "earliestChangedBoundary": "package",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 257,
+          "stage": "package"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 259,
+          "stage": "package"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@257/package+omission@259/package"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "b0035d84087c95dac8b08ec5731d739cce6363f7199e68df4d6b13436e920a77",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-OMIT-DISJOINT-PACKAGE-998",
+      "kind": "mutation-omission-disjoint",
+      "placement": 998,
+      "stage": "package",
+      "evidenceDigest": "e319502489d0e232d4d2ec96b045734ddc845ae9c305e24b0686c37de3da0c46",
+      "earliestChangedBoundary": "package",
+      "operations": [
+        {
+          "kind": "payload-mutation",
+          "ordinal": 998,
+          "stage": "package"
+        },
+        {
+          "kind": "omission",
+          "ordinal": 1000,
+          "stage": "package"
+        }
+      ],
+      "candidates": [
+        "payload-mutation@998/package+omission@1000/package"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "f891811c39c4d85ac210ad5d5336713f1b471c37b3ad33197f6567784e67a9b3",
+      "crossViewStatus": "exact-composite",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "exact-composite"
+    },
+    {
+      "trialId": "MUTATE-OMIT-SHADOW-CAPTURE",
+      "kind": "mutation-omission-shadow",
+      "placement": 17,
+      "stage": "capture",
+      "evidenceDigest": "4c8148cc87f7906223ae43ad359aa8699fa481b7481e681e30e86ed0242c800b",
+      "earliestChangedBoundary": "capture",
+      "operations": [
+        {
+          "kind": "omission",
+          "ordinal": 17,
+          "stage": "capture"
+        }
+      ],
+      "candidates": [
+        "omission-only@17/capture",
+        "mutation-then-omission@17/capture"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "935a008655404056e610a433322579614b41598d7e9306bdc422cc9a839d32ed",
+      "crossViewStatus": "set-valued-shadow",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "set-valued-shadow"
+    },
+    {
+      "trialId": "MUTATE-OMIT-SHADOW-EXPORT",
+      "kind": "mutation-omission-shadow",
+      "placement": 257,
+      "stage": "export",
+      "evidenceDigest": "4ce11bcfbb068bb2dc4a55e0a4c9b4966784c6a0bd523629763016459ff1698c",
+      "earliestChangedBoundary": "export",
+      "operations": [
+        {
+          "kind": "omission",
+          "ordinal": 257,
+          "stage": "export"
+        }
+      ],
+      "candidates": [
+        "omission-only@257/export",
+        "mutation-then-omission@257/export"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "144c10adca2b2bb171167c15551a667cd15a28663348c0323a7315554493e7c1",
+      "crossViewStatus": "set-valued-shadow",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "set-valued-shadow"
+    },
+    {
+      "trialId": "MUTATE-OMIT-SHADOW-PACKAGE",
+      "kind": "mutation-omission-shadow",
+      "placement": 998,
+      "stage": "package",
+      "evidenceDigest": "88a65c14d5aa6260efe3bf2fd7d6d703bb420bf841514a68f0d098fca8c152bf",
+      "earliestChangedBoundary": "package",
+      "operations": [
+        {
+          "kind": "omission",
+          "ordinal": 998,
+          "stage": "package"
+        }
+      ],
+      "candidates": [
+        "omission-only@998/package",
+        "mutation-then-omission@998/package"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "4989b0e5a1e348f82c67c2b9eb3c4cb21b7f66436adfda5fc60f48892c90f2ee",
+      "crossViewStatus": "set-valued-shadow",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "set-valued-shadow"
+    },
+    {
+      "trialId": "WITNESS-COLLUSION-01",
+      "kind": "collusion",
+      "placement": 17,
+      "stage": null,
+      "evidenceDigest": "3cb61e3b5d8334fd1afe471bd5aaca6fbb52d82c58445f44ac6116c8b30cc1d7",
+      "earliestChangedBoundary": null,
+      "operations": [],
+      "candidates": [
+        "payload-originated-as-observed@17",
+        "witness-and-writer-common-cause@17"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "775a627fc714e2a9532ca985ecef00fd705ddb3268cff5c4d877024aeda25b6c",
+      "crossViewStatus": "outside-independent-boundary",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "outside-independent-boundary"
+    },
+    {
+      "trialId": "WITNESS-COLLUSION-02",
+      "kind": "collusion",
+      "placement": 998,
+      "stage": null,
+      "evidenceDigest": "54b4913027a73c2608a661fbf4548e17f97a8b361a23d09fdbd921df1ad62844",
+      "earliestChangedBoundary": null,
+      "operations": [],
+      "candidates": [
+        "payload-originated-as-observed@998",
+        "witness-and-writer-common-cause@998"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "1aa57a34c0560d0e560677ecf02caf1d95bad46ab2b02acc2ab66764e86c06c5",
+      "crossViewStatus": "outside-independent-boundary",
+      "receiptLocalStatus": "authenticated-no-causal-verdict",
+      "statefulSingleViewStatus": "outside-independent-boundary"
+    },
+    {
+      "trialId": "ROLLBACK-17",
+      "kind": "rollback",
+      "placement": 17,
+      "stage": null,
+      "evidenceDigest": "b97f83a8a56cfc6420790e0277f06f335c7af36df75179ae8b9d9b3ae222be6d",
+      "earliestChangedBoundary": "retained-log-head",
+      "operations": [],
+      "candidates": [
+        "stale-valid-prefix-replayed",
+        "transparency-service-rolled-back"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "7658a854ceabb28b1ee67696530ce3541136590f38d25ba4d25ed5139080fb3b",
+      "crossViewStatus": "refuse-rollback",
+      "receiptLocalStatus": "accepted-valid-local-receipt",
+      "statefulSingleViewStatus": "refuse-rollback"
+    },
+    {
+      "trialId": "ROLLBACK-257",
+      "kind": "rollback",
+      "placement": 257,
+      "stage": null,
+      "evidenceDigest": "d40354199f89410a49b8033705528e7422171d93c8428adf3dcfbd52511e3dd7",
+      "earliestChangedBoundary": "retained-log-head",
+      "operations": [],
+      "candidates": [
+        "stale-valid-prefix-replayed",
+        "transparency-service-rolled-back"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "5988207cfdf9cfab0b7dc3bbcf5bfcef4fb1b537e2ff4ede1fe6cc6878d2f6ec",
+      "crossViewStatus": "refuse-rollback",
+      "receiptLocalStatus": "accepted-valid-local-receipt",
+      "statefulSingleViewStatus": "refuse-rollback"
+    },
+    {
+      "trialId": "ROLLBACK-998",
+      "kind": "rollback",
+      "placement": 998,
+      "stage": null,
+      "evidenceDigest": "c1a97fda67074ef75c6301d8ff1a1cc66af99f179e18321bc271565a48c93b2a",
+      "earliestChangedBoundary": "retained-log-head",
+      "operations": [],
+      "candidates": [
+        "stale-valid-prefix-replayed",
+        "transparency-service-rolled-back"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "88cd5872501bd51555601975cb2b63b72f647ae0330b6d5fc8270d21abc0fdad",
+      "crossViewStatus": "refuse-rollback",
+      "receiptLocalStatus": "accepted-valid-local-receipt",
+      "statefulSingleViewStatus": "refuse-rollback"
+    },
+    {
+      "trialId": "ISSUER-EQUIVOCATION-01",
+      "kind": "issuer-equivocation",
+      "placement": null,
+      "stage": null,
+      "evidenceDigest": "5b09063cb5484e9b553eed5162ee28fb24899d6318895a0cc1d75dfb61566d8f",
+      "earliestChangedBoundary": "cross-service-subject-sequence",
+      "operations": [],
+      "candidates": [
+        "35729f8e95b210c493601e4607b81a6057f484050bf4b6a3f3f6556ad30e0084",
+        "dd59cffa15a6f077eb3ebf65b7488c26f0cf4e0818e1e726766f3d72d5fdfc92"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "8a30632aee5bdc35490662cc61994203bf9a87205b18d9b32b824b8ad360b9a8",
+      "crossViewStatus": "refuse-issuer-equivocation",
+      "receiptLocalStatus": "accepted-valid-local-receipt",
+      "statefulSingleViewStatus": "accepted-single-view"
+    },
+    {
+      "trialId": "ISSUER-EQUIVOCATION-02",
+      "kind": "issuer-equivocation",
+      "placement": null,
+      "stage": null,
+      "evidenceDigest": "5ab6e53a6b24c5bf058577bf95e6dd303576a34c7001be68bec2f59da9b320bf",
+      "earliestChangedBoundary": "cross-service-subject-sequence",
+      "operations": [],
+      "candidates": [
+        "b3eb3afd2b5c97e27cf64b4cd29e751427e32f524d536cc23c707059c9d4edc6",
+        "0c03a3a30cfe2d27894242fe8be86eb4d01c93e177200c2eef0fda4c32e6bd43"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "ea5bdc1d3672e63cfb524f41411586efb97e4edae6b22d735c487aa25d91e2c5",
+      "crossViewStatus": "refuse-issuer-equivocation",
+      "receiptLocalStatus": "accepted-valid-local-receipt",
+      "statefulSingleViewStatus": "accepted-single-view"
+    },
+    {
+      "trialId": "LOG-EQUIVOCATION-01",
+      "kind": "log-equivocation",
+      "placement": null,
+      "stage": null,
+      "evidenceDigest": "602156338d72975555856f22b4ebde7b8ae0eaadaf478323d15664be75743bf8",
+      "earliestChangedBoundary": "cross-observer-log-head",
+      "operations": [],
+      "candidates": [
+        "961f41c4508367a07fe941a083a165e06cf31d4ccb13ab4568e4a328ec074817",
+        "477acc90a44f4b10e5cda435178365b06fae7a70105dc66fd502defc96c29df5"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "dcc1c94b43afd7feeb54208ce6c07395c39dd3f6e5e6bc063f366e93095fbc5f",
+      "crossViewStatus": "refuse-log-equivocation",
+      "receiptLocalStatus": "accepted-valid-local-receipt",
+      "statefulSingleViewStatus": "accepted-single-view"
+    },
+    {
+      "trialId": "LOG-EQUIVOCATION-02",
+      "kind": "log-equivocation",
+      "placement": null,
+      "stage": null,
+      "evidenceDigest": "166f396d8be234e7094b935c3e80b9a073b5f2e426910282b9a212aa81d70b2b",
+      "earliestChangedBoundary": "cross-observer-log-head",
+      "operations": [],
+      "candidates": [
+        "dcfe4df7df88cdde3d073c90c982017cd4efb2655497ccba4c028005b6540480",
+        "d32f31b4596e69315948d59f774880eac7903c10108881f1550497605f8d0698"
+      ],
+      "bridgeDigest": null,
+      "evidenceSignatureDigest": "47b04ec694d0383f3751560cbfb375b938a7fe6f5d357ec1627400419ef6c0f6",
+      "crossViewStatus": "refuse-log-equivocation",
+      "receiptLocalStatus": "accepted-valid-local-receipt",
+      "statefulSingleViewStatus": "accepted-single-view"
+    },
+    {
+      "trialId": "BRIDGE-REPLAY-01",
+      "kind": "bridge-replay",
+      "placement": 257,
+      "stage": null,
+      "evidenceDigest": "6926f014410a333b47a49c10d81c020b96d958797178a7d597cebaf0e8ae9b04",
+      "earliestChangedBoundary": "bridge-registry",
+      "operations": [],
+      "candidates": [
+        "same-authorized-bridge-presented-twice"
+      ],
+      "bridgeDigest": "6926f014410a333b47a49c10d81c020b96d958797178a7d597cebaf0e8ae9b04",
+      "evidenceSignatureDigest": "0ea0883c2636097a46388f310e8226c0bbee43ec6080d261cc29fc8bddc57f4d",
+      "crossViewStatus": "reject-bridge-replay",
+      "receiptLocalStatus": "accepted-valid-signatures",
+      "statefulSingleViewStatus": "reject-bridge-replay"
+    },
+    {
+      "trialId": "BRIDGE-FORK-01",
+      "kind": "bridge-fork",
+      "placement": 257,
+      "stage": null,
+      "evidenceDigest": "1f8c9127f4da7dafc6594e522165d5452f0eac792b60aeacfb25cd76a1b26d73",
+      "earliestChangedBoundary": "bridge-registry",
+      "operations": [],
+      "candidates": [
+        "7a2226829463776cc036868100966de3d8f98de3b2123fcdcf126a8e49f347bd",
+        "fdd0452388a8aee48c725ce8b867e17793db5177286f3f88354f32396d86cafb"
+      ],
+      "bridgeDigest": "7a2226829463776cc036868100966de3d8f98de3b2123fcdcf126a8e49f347bd",
+      "evidenceSignatureDigest": "7baeb39db2f394c55199b82991bcc430ef5e6cc633824ce3aee945b48dcf5a91",
+      "crossViewStatus": "reject-bridge-fork",
+      "receiptLocalStatus": "accepted-valid-signatures",
+      "statefulSingleViewStatus": "reject-bridge-fork"
+    }
+  ],
+  "summaries": {
+    "receiptLocal": {
+      "evaluations": 44,
+      "statuses": {
+        "authenticated-clean-snapshot": 3,
+        "authenticated-no-causal-verdict": 32,
+        "accepted-valid-local-receipt": 7,
+        "accepted-valid-signatures": 2
+      }
+    },
+    "statefulSingleView": {
+      "evaluations": 44,
+      "statuses": {
+        "clean": 3,
+        "exact-composite": 27,
+        "set-valued-shadow": 3,
+        "outside-independent-boundary": 2,
+        "refuse-rollback": 3,
+        "accepted-single-view": 4,
+        "reject-bridge-replay": 1,
+        "reject-bridge-fork": 1
+      }
+    },
+    "crossViewCausal": {
+      "evaluations": 44,
+      "statuses": {
+        "clean": 3,
+        "exact-composite": 27,
+        "set-valued-shadow": 3,
+        "outside-independent-boundary": 2,
+        "refuse-rollback": 3,
+        "refuse-issuer-equivocation": 2,
+        "refuse-log-equivocation": 2,
+        "reject-bridge-replay": 1,
+        "reject-bridge-fork": 1
+      }
+    }
+  },
+  "h1Gate": {
+    "pass": true,
+    "expected": {
+      "clean": 3,
+      "exact-composite": 27,
+      "set-valued-shadow": 3,
+      "refuse-rollback": 3,
+      "refuse-issuer-equivocation": 2,
+      "refuse-log-equivocation": 2,
+      "reject-bridge-replay": 1,
+      "reject-bridge-fork": 1,
+      "outside-independent-boundary": 2
+    },
+    "actual": {
+      "clean": 3,
+      "exact-composite": 27,
+      "set-valued-shadow": 3,
+      "outside-independent-boundary": 2,
+      "refuse-rollback": 3,
+      "refuse-issuer-equivocation": 2,
+      "refuse-log-equivocation": 2,
+      "reject-bridge-replay": 1,
+      "reject-bridge-fork": 1
+    },
+    "failures": []
+  },
+  "limitations": [
+    "Different deterministic keys encode nominal role separation; operational independence is not measured.",
+    "The finite causal grammar cannot exclude transformations that were not preregistered.",
+    "This implementation regenerates scientific fixtures but does not consume the Node COSE wire artifact.",
+    "Physical acquisition count is zero and the historical X16 branch remains paused."
+  ]
+}

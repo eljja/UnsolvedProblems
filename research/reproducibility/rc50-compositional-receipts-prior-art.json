@@ -21,7 +21,7 @@
       "url": "https://www.rfc-editor.org/rfc/rfc9052.html",
       "publisher": "IETF / RFC Editor",
       "published": "2022-08",
-      "type": "internet-standard",
+      "type": "standards-track",
       "usedFor": "COSE_Sign1, tag 18, protected versus unprotected headers, Sig_structure, detached payload, and empty external_aad in the frozen profile.",
       "doesNotEstablish": "Application replay protection, transparency, or statement truth."
     },
@@ -31,7 +31,7 @@
       "url": "https://www.rfc-editor.org/rfc/rfc9338.html",
       "publisher": "IETF / RFC Editor",
       "published": "2022-12",
-      "type": "internet-standard",
+      "type": "standards-track",
       "usedFor": "The prior-art boundary that a second party can separately sign a COSE object and that the resulting security meaning must be specified.",
       "doesNotEstablish": "That two keys are operationally independent or that countersignature validation makes a nonce one-time. RC50 uses two separate Signed Statements and claims no header-11 conformance."
     },
@@ -44,6 +44,16 @@
       "type": "standard",
       "usedFor": "SHA-256 Merkle leaf/node domain separation, inclusion and consistency proof algorithms, retained signed tree heads, and the need to share log responses to detect inconsistent views.",
       "doesNotEstablish": "Which conflicting branch is physically correct or that an entry's payload is accurate."
+    },
+    {
+      "id": "rfc_cose_typ_9596_2024",
+      "title": "RFC 9596: CBOR Object Signing and Encryption (COSE) \"typ\" (type) Header Parameter",
+      "url": "https://www.rfc-editor.org/rfc/rfc9596.html",
+      "publisher": "IETF / RFC Editor",
+      "published": "2024-06",
+      "type": "standards-track",
+      "usedFor": "Protected COSE header label 16 identifying Signed Statement and Receipt media types before application processing.",
+      "doesNotEstablish": "That an application payload is accurate or that a message is fresh."
     },
     {
       "id": "rfc_cwt_cose_headers_9597_2024",
@@ -125,5 +135,21 @@
     "rfc9943": "Published June 2026 as an Internet Standards Track document; it requires SCITT Signed Statements and Receipts to carry protected issuer and subject claims and explicitly separates registration from claim accuracy.",
     "iana": "The official COSE registry was reviewed after both RFCs and lists receipt, VDS, and VDP labels 394-396 as of 2026-08-11.",
     "implementationBoundary": "The official standards supply structures and algorithms but not the RC50 application policy, reset registry, physical witness definition, or causal candidate-history adjudicator."
-  }
+  },
+  "postSealMetadataCorrections": [
+    {
+      "fields": "RFC 9052 and RFC 9338 type",
+      "sealedValue": "internet-standard",
+      "correctedValue": "standards-track",
+      "reason": "The RFC Editor headers classify both documents as Standards Track; the sealed labels overstated their maturity category.",
+      "effectOnPreregisteredDesign": "none; algorithms, vectors, hypotheses, fixtures, counts, and gates are unchanged"
+    },
+    {
+      "fields": "RFC 9596 direct citation",
+      "sealedValue": "label 16 was checked through the IANA registry without its defining RFC in the source list",
+      "correctedValue": "RFC 9596 is cited directly for the protected typ header semantics",
+      "reason": "The wire profile validates label 16, so the defining primary standard should accompany the registry entry.",
+      "effectOnPreregisteredDesign": "none; the sealed profile already required protected message types and no fixture, byte vector, hypothesis, count, or gate changed"
+    }
+  ]
 }

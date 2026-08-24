@@ -1,0 +1,25 @@
+{
+  "auditId": "RC50-STANDALONE-COSE-WIRE-AUDIT-0.1",
+  "cycleId": "RC-2026-50",
+  "reviewedOn": "2026-08-25",
+  "implementation": "Standalone Python deterministic-CBOR, COSE_Sign1, RFC9162_SHA256, and RFC 9942 verifier; no generator imports",
+  "vectorsPath": "research/reproducibility/rc50-compositional-receipts-wire-vectors.json",
+  "checks": {
+    "signedStatementPositive": 12,
+    "inclusionReceiptPositive": 12,
+    "consistencyReceiptPositive": 3,
+    "statementSignatureMutationRejected": 12,
+    "receiptSignatureMutationRejected": 15,
+    "wrongLeafRejected": 12,
+    "inclusionPathMutationRejected": 12,
+    "consistencyPathMutationRejected": 3
+  },
+  "transparentStatement": {
+    "issuerSignatureValid": true,
+    "twoIndependentReceiptsValid": true
+  },
+  "exactExpectedCounts": true,
+  "failures": [],
+  "allPassed": true,
+  "limitations": "Wire conformance within the frozen subset does not prove application payload accuracy, role independence, currentness without retained state, or physical event truth."
+}

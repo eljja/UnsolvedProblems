@@ -40,7 +40,12 @@
     $("cycle-meta").innerHTML = `<span>${cycle.problemIds.length} ${esc(t("problemsCount"))}</span><span>${cycleConnections.length} ${esc(t("linksCount"))}</span><span>${esc(cycle.reviewedOn)}</span>`;
     text("next-cycle", pair(cycle.nextCycle));
     $("cycle-index").setAttribute("aria-label", lang === "en" ? "Research cycles" : "연구 사이클");
-    $("cycle-index").innerHTML = cycles.slice().reverse().map(item => `<a href="research-log.html?cycle=${encodeURIComponent(item.id)}&lang=${lang}"${item.id === cycle.id ? ' aria-current="page"' : ""}>${esc(item.id)}</a>`).join("");
+    const currentCycleIndex = cycles.findIndex(item => item.id === cycle.id);
+    const cycleWindowStart = Math.max(0, Math.min(currentCycleIndex - 4, cycles.length - 9));
+    const nearbyCycles = cycles.slice(cycleWindowStart, cycleWindowStart + 9).reverse();
+    const latestCycle = cycles.at(-1);
+    const cycleNavItems = latestCycle && !nearbyCycles.some(item => item.id === latestCycle.id) ? [latestCycle, ...nearbyCycles] : nearbyCycles;
+    $("cycle-index").innerHTML = cycleNavItems.map(item => `<a href="research-log.html?cycle=${encodeURIComponent(item.id)}&lang=${lang}"${item.id === cycle.id ? ' aria-current="page"' : ""}>${esc(item.id)}</a>`).join("");
     text("program-title", pair(cycle.sharedProgram.name)); text("program-thesis", pair(cycle.sharedProgram.thesis));
     $("finding-list").innerHTML = cycle.verifiedFindings.map((finding, index) => `<article><span>${String(index + 1).padStart(2, "0")}</span><div><p>${esc(local(finding, "text"))}</p><div>${finding.sourceIds.map(id => `<a href="${esc(sources[id].url)}" target="_blank" rel="noreferrer">${esc(sources[id].title)} ↗</a>`).join("")}</div></div></article>`).join("");
     const programRows = [["design", cycle.sharedProgram.design], ["adjudication", cycle.sharedProgram.adjudication], ["metrics", cycle.sharedProgram.primaryMetrics], ["success", cycle.sharedProgram.successRule], ["stop", cycle.sharedProgram.stopRule]];
