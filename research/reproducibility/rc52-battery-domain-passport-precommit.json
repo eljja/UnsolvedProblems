@@ -1,0 +1,144 @@
+{
+  "precommitId": "RC52-BATTERY-DOMAIN-PASSPORT-PRECOMMIT-0.1",
+  "cycleId": "RC-2026-52",
+  "sealedOn": "2026-08-26",
+  "status": "sealed-after-source-and-label-file-inspection-but-before-feature-extraction-model-fitting-or-performance-results",
+  "chronologyBoundary": {
+    "alreadyObserved": [
+      "The analyst inspected the four official life-label JSON files, so this is not an outcome-blind preregistration.",
+      "A separate schema-audit program read label keys but not label values and found 55 matched labelled files with at least 20 stored cycle records.",
+      "The current Zenodo archive hashes and the April 2026 v11 correction notice were checked before sealing."
+    ],
+    "notYetObservedAtSeal": [
+      "No RC52 feature vector had been extracted.",
+      "No random-split, leave-source-out, support-score, interval, or pilot performance statistic had been computed.",
+      "No model or decision threshold had been tuned against RC52 prediction errors."
+    ]
+  },
+  "selection": {
+    "problemIds": ["UP-219", "UP-233", "UP-234"],
+    "reason": "These three material-engineering questions share a testable transport bottleneck: whether early non-invasive electrical observations retain their relation to lifetime when cell design, temperature, protocol, and laboratory change. BatteryLife v11 supplies several small public source domains that can be tested now without equipment or security-sensitive infrastructure.",
+    "deferredScope": "Cyber-trust experiments, field packs, destructive diagnostics, computed tomography, and new cell fabrication are outside this cycle."
+  },
+  "sourceManifest": {
+    "record": "https://zenodo.org/records/19688272",
+    "doi": "10.5281/zenodo.19688272",
+    "version": "v11",
+    "publishedOn": "2026-04-22",
+    "archives": [
+      {"source": "CALB", "file": "CALB.zip", "bytes": 12671967, "md5": "2b1006e96e0ca42765a732060f964687"},
+      {"source": "HNEI", "file": "HNEI.zip", "bytes": 43057070, "md5": "27d009bbb908f04e90ecd9a145d81b62"},
+      {"source": "MICH_EXP", "file": "MICH_EXP.zip", "bytes": 67614388, "md5": "e267051a90f0fc02f8e6701b9f3ecc58"},
+      {"source": "UL_PUR", "file": "UL_PUR.zip", "bytes": 5965577, "md5": "65551018b3d67d96eda724552a0360bd"},
+      {"source": "LABELS", "file": "Life labels.zip", "bytes": 12586, "md5": "cd0cc01a7211972be45e8e38d86cdeca"},
+      {"source": "READMES", "file": "READMEs.zip", "bytes": 17166, "md5": "f1b28ff26d2cbb1e81455518be9b0e23"}
+    ]
+  },
+  "cohortRule": {
+    "include": [
+      "Filename is a key in its source's official v11 life-label JSON.",
+      "A same-named pickle exists in the corresponding processed source archive.",
+      "After stable ascending sort by cycle_number, at least 20 records have finite current, voltage, charge capacity, discharge capacity, and time arrays.",
+      "The official lifetime label is numeric, finite, and greater than the 20-cycle observation horizon."
+    ],
+    "exclude": [
+      "Unlabelled pickle files are excluded even if their time series are complete.",
+      "Temperature and internal resistance are excluded from predictors because the schema audit found entire source domains without them.",
+      "No source, cell, or feature may be removed because its prediction error is large."
+    ],
+    "horizon": 20,
+    "target": "natural logarithm of the official total-cycle-life label"
+  },
+  "featureContract": {
+    "allowedInputs": "Only cycles 1 through 20, nominal_capacity_in_Ah, and the five common non-invasive arrays: current, voltage, charge capacity, discharge capacity, and time.",
+    "cycleSummary": {
+      "chargeCapacity": "maximum finite charge_capacity_in_Ah divided by nominal capacity",
+      "dischargeCapacity": "maximum finite discharge_capacity_in_Ah divided by nominal capacity",
+      "coulombicEfficiency": "maximum discharge capacity divided by maximum charge capacity",
+      "chargeCRate": "median positive current divided by nominal capacity",
+      "dischargeCRate": "median absolute negative current divided by nominal capacity",
+      "duration": "maximum finite time minus minimum finite time in seconds",
+      "dischargeVoltage": "median voltage among samples whose current is negative"
+    },
+    "featuresInOrder": [
+      "charge_capacity_norm_cycle_1", "charge_capacity_norm_cycle_5", "charge_capacity_norm_cycle_10", "charge_capacity_norm_cycle_20",
+      "discharge_capacity_norm_cycle_1", "discharge_capacity_norm_cycle_5", "discharge_capacity_norm_cycle_10", "discharge_capacity_norm_cycle_20",
+      "ols_discharge_capacity_norm_slope_cycles_2_20",
+      "median_coulombic_efficiency_cycles_2_20", "ols_coulombic_efficiency_slope_cycles_2_20",
+      "median_charge_c_rate_cycles_2_20", "median_discharge_c_rate_cycles_2_20",
+      "log_median_cycle_duration_seconds_cycles_2_20",
+      "discharge_voltage_median_cycle_20", "discharge_voltage_median_cycle_20_minus_cycle_2"
+    ],
+    "preprocessing": "Within each training split, subtract the training mean and divide by the training population standard deviation; replace a zero standard deviation with one. Apply those frozen values to test cells. No clipping, outcome-based feature selection, categorical source indicator, or target normalization is allowed."
+  },
+  "modelContract": {
+    "regressor": "Ridge regression on log lifetime with an unpenalized intercept and fixed L2 alpha 1.0.",
+    "randomMixtureEstimate": "Run 200 source-stratified 80/20 cell splits with seed 520026. Each source contributes at least one train and one test cell. Report the median split MdAPE and median catastrophic-error fraction, where catastrophic means absolute percentage error greater than 50%.",
+    "leaveSourceOut": "Hold out CALB, HNEI, MICH_EXP, and UL_PUR in turn. Train on every eligible cell in the other three sources and report every cell prediction, per-source and pooled MdAPE, RMSE on log lifetime, and catastrophic-error fraction.",
+    "supportScore": "For each outer fold, compute the target cell's minimum Euclidean distance to a training cell after training-only standardization. The acceptance threshold is the 95th percentile of leave-one-out nearest-neighbour distances among training cells, computed without outcomes.",
+    "interval": "For each outer fold, obtain absolute log residuals from inner leave-one-training-source-out predictions. The two-sided interval is the outer point prediction plus or minus the finite-sample 90% order statistic ceil((n+1)*0.90), clamped to the available residual count. Report empirical coverage and multiplicative width. This cycle does not claim distribution-free coverage under arbitrary source shift.",
+    "twoCellPilot": "For each target source with at least five eligible cells, choose the pair that minimizes the maximum standardized distance from any target cell to its nearer member; break ties by mean distance and then filenames. Reveal only these two labels, add the median of their log residuals as an offset to all remaining target predictions, and compare remaining-cell MdAPE with the uncalibrated model and with the median MdAPE over every possible two-cell pilot pair."
+  },
+  "competingHypotheses": [
+    {
+      "code": "H0",
+      "claim": "A source-stratified random split is an adequate estimate of transfer to a new battery source.",
+      "prediction": "Pooled leave-source-out MdAPE is less than 1.5 times the median random-split MdAPE and its catastrophic-error fraction is less than twice the random-split median.",
+      "reject": "Reject if either registered ratio reaches its boundary."
+    },
+    {
+      "code": "H1",
+      "claim": "Feature-space support distance identifies cells for which a transported point prediction is unsafe.",
+      "prediction": "Across leave-source-out cells, Spearman correlation between support distance and absolute percentage error is at least 0.50; accepting only in-support cells reduces catastrophic errors by at least 50% while retaining at least 50% of cells.",
+      "reject": "Reject unless both ranking and selective-risk conditions hold."
+    },
+    {
+      "code": "H2",
+      "claim": "A residual interval calibrated across training sources remains empirically adequate on an unseen source.",
+      "prediction": "The registered 90% interval covers at least 90% of pooled target cells and at least 75% of cells in every target source with at least four eligible cells.",
+      "reject": "Reject if pooled coverage or any eligible source-level coverage misses its boundary; UL_PUR is reported but excluded from the source-level gate because n=2."
+    },
+    {
+      "code": "H3",
+      "claim": "A label-free two-cell domain passport can correct a transported model efficiently.",
+      "prediction": "The registered maximin pair reduces remaining-cell MdAPE by at least 20% and is no worse than the exact median over all possible pairs in at least two of the three eligible target sources.",
+      "reject": "Reject if fewer than two eligible sources satisfy both conditions."
+    },
+    {
+      "code": "H4",
+      "claim": "Twenty cycles of electrical curves alone identify the physical degradation or failure mechanism.",
+      "prediction": "The present observational data contain neither intervention labels nor independent internal-state measurements needed for mechanism identification.",
+      "reject": "Treat the mechanism claim as untestable and unsupported in this cycle regardless of predictive accuracy."
+    }
+  ],
+  "hardGates": [
+    "All six downloaded archives match the registered v11 MD5 values.",
+    "The schema audit reads label keys but not lifetime values.",
+    "Only official labelled filenames enter the candidate cohort.",
+    "The 20-cycle horizon and feature order remain unchanged after performance is observed.",
+    "Train-only standardization is used in every split.",
+    "Source identity is not supplied as a predictor.",
+    "Every random split contains train and test cells from all four sources.",
+    "All four leave-source-out folds are reported, including the two-cell UL_PUR fold.",
+    "Intervals are described as empirical under source shift, not as unconditional conformal guarantees.",
+    "Pilot selection does not use lifetime labels.",
+    "A separate Node implementation recomputes ridge predictions and registered metrics from the derived feature table.",
+    "No field-pack, safety-failure, multimodal-sensing, or mechanistic-causality claim is made from this cohort.",
+    "Failed downloads, exclusions, rejected hypotheses, and zero-denominator boundaries remain in the research record."
+  ],
+  "causalChain": [
+    "First 20 non-invasive current-voltage-capacity-time records plus a nameplate capacity",
+    "hidden degradation state and source-domain shift",
+    "support test plus a two-cell target calibration bridge",
+    "independent leave-source-out error, interval coverage, and pilot comparison",
+    "a bounded decision to predict, abstain, or require new measurements—not a claim of universal lifetime prediction"
+  ],
+  "uncertaintyBudget": [
+    {"category": "measurement", "control": "Use only fields complete in all four source domains; report excluded missing modalities.", "stop": "Stop a cell if a registered summary cannot be computed from finite values."},
+    {"category": "label", "control": "Use v11 labels and preserve source-specific EOL semantics as a limitation.", "stop": "Do not reinterpret or repair an individual label after seeing its error."},
+    {"category": "model", "control": "Freeze features and ridge alpha; reproduce in Python and Node.", "stop": "Do not promote a result if cell-level predictions disagree beyond 1e-8 in log life."},
+    {"category": "sampling", "control": "Report every source and exact denominators; treat four source domains as descriptive, not population sampling.", "stop": "No universal chemistry or field claim from these folds."},
+    {"category": "extrapolation", "control": "Use support-aware abstention and a separately evaluated target pilot.", "stop": "Outside support or failed coverage forces abstention or new sensing rather than a point estimate."}
+  ],
+  "safetyEthics": "This cycle uses public, previously collected cycling data and performs no charging, disassembly, destructive testing, personal-data processing, or security-sensitive experiment. The results must not be used alone for safety certification, warranty denial, or operation beyond manufacturer limits."
+}

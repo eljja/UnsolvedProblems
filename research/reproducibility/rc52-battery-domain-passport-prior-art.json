@@ -1,0 +1,129 @@
+{
+  "auditId": "RC52-BATTERY-DOMAIN-PASSPORT-PRIOR-ART-0.1",
+  "reviewedOn": "2026-08-26",
+  "noveltyPosition": "The cycle does not claim to invent early-life battery prediction, domain adaptation, active learning, hierarchical transfer, support diagnostics, or conformal prediction. It tests a preregistered composition—forced leave-source-out evaluation, support-aware abstention, and a two-cell target-domain offset—on four current BatteryLife v11 sources.",
+  "sources": [
+    {
+      "id": "batterylife_kdd_2025",
+      "title": "BatteryLife: A Comprehensive Dataset and Benchmark for Battery Life Prediction",
+      "url": "https://doi.org/10.1145/3711896.3737372",
+      "resultDate": "2025",
+      "usedFor": "Defines the cross-dataset benchmark, standardized records, and documented difficulty of transfer and domain adaptation.",
+      "doesNotEstablish": "It does not validate the registered support gate or two-cell passport on the four RC52 sources."
+    },
+    {
+      "id": "batterylife_v11_2026",
+      "title": "BatteryLife_Processed v11",
+      "url": "https://zenodo.org/records/19688272",
+      "resultDate": "2026-04-22",
+      "usedFor": "Provides the exact processed archives, labels, READMEs, version date, and archive checksums.",
+      "doesNotEstablish": "A data release does not establish transport accuracy or mechanistic validity."
+    },
+    {
+      "id": "batterylife_v11_notes_2026",
+      "title": "BatteryLife v11 update details",
+      "url": "https://github.com/Ruifeng-Tan/BatteryLife/blob/main/assets/Version11_Update_Details.md",
+      "resultDate": "2026-04",
+      "usedFor": "Records corrected CALB charge capacity and life labels, making older-version results non-equivalent.",
+      "doesNotEstablish": "The correction notice does not quantify downstream prediction changes."
+    },
+    {
+      "id": "limits_electrochemical_battery_2026",
+      "title": "Limits of electrochemical data for predicting battery lifetime and failure",
+      "url": "https://doi.org/10.1016/j.joule.2026.102423",
+      "resultDate": "2026-05-20",
+      "usedFor": "Shows why electrical histories can be necessary yet insufficient for reservoir depletion, mechanical thresholds, and latent localized defects.",
+      "doesNotEstablish": "It does not measure RC52 cross-source errors; its impossibility boundary is retained even if prediction metrics look good."
+    },
+    {
+      "id": "discovery_learning_battery_2026",
+      "title": "Discovery Learning predicts battery cycle life from minimal experiments",
+      "url": "https://doi.org/10.1038/s41586-025-09951-7",
+      "resultDate": "2026-02-04",
+      "usedFor": "Demonstrates an active, physics-guided, zero-shot/few-experiment route on 123 industrial pouch cells and reports 7.2% test error after 50 cycles on 51% of prototypes.",
+      "doesNotEstablish": "Its target design, selected prototypes, physical features, and 50-cycle horizon differ from RC52's four-source 20-cycle audit."
+    },
+    {
+      "id": "varying_usage_battery_2024",
+      "title": "Predicting battery lifetime under varying usage conditions from early aging data",
+      "url": "https://doi.org/10.1016/j.xcrp.2024.101891",
+      "resultDate": "2024-03-22",
+      "usedFor": "Reports 15.1% in-distribution MAPE and 21.8% out-of-distribution MAPE with degradation-informed features and a hierarchical Bayesian model on 225 cells.",
+      "doesNotEstablish": "A controlled NMC/graphite stress matrix does not establish transfer between RC52 laboratories, formats, capacities, and label conventions."
+    },
+    {
+      "id": "severson_battery_2019",
+      "title": "Data-driven prediction of battery cycle life before capacity degradation",
+      "url": "https://doi.org/10.1038/s41560-019-0356-8",
+      "resultDate": "2019",
+      "usedFor": "Establishes that early voltage-curve features can predict cycle life within a deliberately generated 124-cell LFP/graphite fast-charge study.",
+      "doesNotEstablish": "Its 9.1% reported test error does not imply new-source or cross-chemistry transfer."
+    },
+    {
+      "id": "battery_data_genome_2022",
+      "title": "Principles of the Battery Data Genome",
+      "url": "https://doi.org/10.1016/j.joule.2022.08.008",
+      "resultDate": "2022-10-19",
+      "usedFor": "Frames minimum observation length, use-scenario transfer, chemistry transfer, uncertainty, and standardized data as open program-level questions.",
+      "doesNotEstablish": "A roadmap does not supply a validated prediction rule or coverage guarantee."
+    },
+    {
+      "id": "hnei_variability_2018",
+      "title": "Intrinsic Variability in the Degradation of a Batch of Commercial 18650 Lithium-Ion Cells",
+      "url": "https://doi.org/10.3390/en11051031",
+      "resultDate": "2018-05",
+      "usedFor": "Documents growing degradation variability in nominally similar HNEI cells and the weak relation between initial variation and durability.",
+      "doesNotEstablish": "One batch does not determine cross-source transport."
+    },
+    {
+      "id": "mich_formation_2021",
+      "title": "Predicting the impact of formation protocols on battery lifetime immediately after manufacturing",
+      "url": "https://doi.org/10.1016/j.joule.2021.09.015",
+      "resultDate": "2021-09",
+      "usedFor": "Identifies low-SOC resistance after formation as a rapid signal linked to lithium consumption and later life in the MICH experiment.",
+      "doesNotEstablish": "RC52 lacks the registered low-SOC resistance modality and therefore cannot reproduce or refute that mechanism."
+    },
+    {
+      "id": "ulpur_aging_2020",
+      "title": "Degradation-Safety Analytics in Lithium-Ion Cells: Part I. Aging under Charge/Discharge Cycling",
+      "url": "https://doi.org/10.1149/1945-7111/abc8c0",
+      "resultDate": "2020-11-26",
+      "usedFor": "Supplies the UL-PUR cycling study and links voltage-window changes with capacity-life and post-mortem degradation mechanisms.",
+      "doesNotEstablish": "Only two UL-PUR cells have official v11 life labels in the downloaded subset, preventing a source-level population claim."
+    },
+    {
+      "id": "weighted_conformal_2019",
+      "title": "Conformal Prediction Under Covariate Shift",
+      "url": "https://arxiv.org/abs/1904.06019",
+      "resultDate": "2019-04-12",
+      "usedFor": "Shows that coverage under covariate shift requires weighted exchangeability, specifically stable conditional outcomes and a known or well-estimated test-to-train covariate likelihood ratio.",
+      "doesNotEstablish": "Battery source shift may change the conditional lifetime law, so RC52 reports empirical intervals and does not invoke the theorem's guarantee."
+    }
+  ],
+  "repositoryInheritance": [
+    {
+      "problemId": "UP-219",
+      "inherited": "The atlas already separates observable health indicators from hidden failure mechanisms and requires non-invasive validation.",
+      "newBoundary": "RC52 forces entire experimental sources out of training and tests abstention plus minimal target calibration."
+    },
+    {
+      "problemId": "UP-233",
+      "inherited": "The atlas already treats a process–structure–property–lifetime twin as a transport and uncertainty problem rather than a visualization task.",
+      "newBoundary": "RC52 measures one narrow surrogate link—early cell history to lifetime—across design and laboratory domains; it does not create a full process twin."
+    },
+    {
+      "problemId": "UP-234",
+      "inherited": "The atlas already requires accelerated tests to preserve mechanisms and path dependence before long-service claims.",
+      "newBoundary": "RC52 tests whether a fixed 20-cycle observation survives a source change and explicitly abstains when it does not."
+    }
+  ],
+  "searchStrategy": [
+    "BatteryLife v11 domain adaptation cross-dataset battery life prediction",
+    "battery lifetime prediction electrochemical data identifiability latent defect",
+    "battery early-life prediction out-of-distribution hierarchical Bayesian",
+    "battery cycle life minimal experiments active learning zero shot",
+    "conformal prediction covariate shift likelihood ratio conditional invariance",
+    "battery digital twin uncertainty process structure property lifetime",
+    "accelerated battery life path dependence mechanism transfer"
+  ]
+}

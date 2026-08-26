@@ -1,0 +1,182 @@
+{
+  "audit": "RC52 BatteryLife label-blind schema audit",
+  "horizon": 20,
+  "labelValuesRead": false,
+  "sources": {
+    "CALB": {
+      "completeCellsByCycleField": {
+        "charge_capacity_in_Ah": 27,
+        "current_in_A": 27,
+        "discharge_capacity_in_Ah": 27,
+        "temperature_in_C": 27,
+        "time_in_s": 27,
+        "voltage_in_V": 27
+      },
+      "cycleCountRange": [
+        99,
+        208
+      ],
+      "eligibleAtHorizonCount": 27,
+      "labelledFileCount": 27,
+      "matchedLabelledFileCount": 27,
+      "metadataPresentCellCount": {
+        "anode_material": 27,
+        "cathode_material": 27,
+        "cell_id": 27,
+        "charge_protocol": 27,
+        "depth_of_charge": 27,
+        "depth_of_discharge": 27,
+        "discharge_protocol": 27,
+        "form_factor": 27,
+        "nominal_capacity_in_Ah": 27
+      },
+      "missingLabelledFiles": [],
+      "unlabelledExtraFiles": [],
+      "validCycleObservationsByField": {
+        "charge_capacity_in_Ah": 540,
+        "current_in_A": 540,
+        "discharge_capacity_in_Ah": 540,
+        "internal_resistance_in_ohm": 0,
+        "temperature_in_C": 540,
+        "time_in_s": 540,
+        "voltage_in_V": 540
+      }
+    },
+    "HNEI": {
+      "completeCellsByCycleField": {
+        "charge_capacity_in_Ah": 14,
+        "current_in_A": 14,
+        "discharge_capacity_in_Ah": 14,
+        "time_in_s": 14,
+        "voltage_in_V": 14
+      },
+      "cycleCountRange": [
+        1075,
+        1107
+      ],
+      "eligibleAtHorizonCount": 14,
+      "labelledFileCount": 14,
+      "matchedLabelledFileCount": 14,
+      "metadataPresentCellCount": {
+        "anode_material": 14,
+        "cathode_material": 14,
+        "cell_id": 14,
+        "charge_protocol": 14,
+        "depth_of_charge": 14,
+        "depth_of_discharge": 14,
+        "discharge_protocol": 14,
+        "form_factor": 14,
+        "nominal_capacity_in_Ah": 14
+      },
+      "missingLabelledFiles": [],
+      "unlabelledExtraFiles": [],
+      "validCycleObservationsByField": {
+        "charge_capacity_in_Ah": 280,
+        "current_in_A": 280,
+        "discharge_capacity_in_Ah": 280,
+        "internal_resistance_in_ohm": 0,
+        "temperature_in_C": 0,
+        "time_in_s": 280,
+        "voltage_in_V": 280
+      }
+    },
+    "MICH_EXP": {
+      "completeCellsByCycleField": {
+        "charge_capacity_in_Ah": 12,
+        "current_in_A": 12,
+        "discharge_capacity_in_Ah": 12,
+        "time_in_s": 12,
+        "voltage_in_V": 12
+      },
+      "cycleCountRange": [
+        103,
+        573
+      ],
+      "eligibleAtHorizonCount": 12,
+      "labelledFileCount": 12,
+      "matchedLabelledFileCount": 12,
+      "metadataPresentCellCount": {
+        "anode_material": 12,
+        "cathode_material": 12,
+        "cell_id": 12,
+        "charge_protocol": 12,
+        "depth_of_charge": 12,
+        "depth_of_discharge": 12,
+        "discharge_protocol": 12,
+        "form_factor": 12,
+        "nominal_capacity_in_Ah": 12
+      },
+      "missingLabelledFiles": [],
+      "unlabelledExtraFiles": [
+        "MICH_13R_pouch_NMC_25C_50-100_0.2-0.2C.pkl",
+        "MICH_14C_pouch_NMC_-5C_50-100_0.2-0.2C.pkl",
+        "MICH_15H_pouch_NMC_45C_50-100_0.2-0.2C.pkl",
+        "MICH_16R_pouch_NMC_25C_50-100_0.2-1.5C.pkl",
+        "MICH_17C_pouch_NMC_-5C_50-100_0.2-1.5C.pkl",
+        "MICH_18H_pouch_NMC_45C_50-100_0.2-1.5C.pkl"
+      ],
+      "validCycleObservationsByField": {
+        "charge_capacity_in_Ah": 240,
+        "current_in_A": 240,
+        "discharge_capacity_in_Ah": 240,
+        "internal_resistance_in_ohm": 0,
+        "temperature_in_C": 0,
+        "time_in_s": 240,
+        "voltage_in_V": 240
+      }
+    },
+    "UL_PUR": {
+      "completeCellsByCycleField": {
+        "charge_capacity_in_Ah": 2,
+        "current_in_A": 2,
+        "discharge_capacity_in_Ah": 2,
+        "temperature_in_C": 2,
+        "time_in_s": 2,
+        "voltage_in_V": 2
+      },
+      "cycleCountRange": [
+        164,
+        259
+      ],
+      "eligibleAtHorizonCount": 2,
+      "labelledFileCount": 2,
+      "matchedLabelledFileCount": 2,
+      "metadataPresentCellCount": {
+        "anode_material": 2,
+        "cathode_material": 2,
+        "cell_id": 2,
+        "charge_protocol": 2,
+        "depth_of_charge": 2,
+        "depth_of_discharge": 2,
+        "discharge_protocol": 2,
+        "form_factor": 2,
+        "nominal_capacity_in_Ah": 2
+      },
+      "missingLabelledFiles": [],
+      "unlabelledExtraFiles": [
+        "UL-PUR_N10-EX9_18650_NCA_23C_0-100_0.5-0.5C_i.pkl",
+        "UL-PUR_N10-OV8_18650_NCA_23C_0-100_0.5-0.5C_h.pkl",
+        "UL-PUR_N15-EX4_18650_NCA_23C_0-100_0.5-0.5C_d.pkl",
+        "UL-PUR_N15-OV3_18650_NCA_23C_0-100_0.5-0.5C_c.pkl",
+        "UL-PUR_N20-EX2_18650_NCA_23C_0-100_0.5-0.5C_b.pkl",
+        "UL-PUR_N20-NA5_18650_NCA_23C_0-100_0.5-0.5C_e.pkl",
+        "UL-PUR_N20-NA6_18650_NCA_23C_0-100_0.5-0.5C_f.pkl",
+        "UL-PUR_N20-OV1_18650_NCA_23C_0-100_0.5-0.5C_a.pkl"
+      ],
+      "validCycleObservationsByField": {
+        "charge_capacity_in_Ah": 40,
+        "current_in_A": 40,
+        "discharge_capacity_in_Ah": 40,
+        "internal_resistance_in_ohm": 0,
+        "temperature_in_C": 40,
+        "time_in_s": 40,
+        "voltage_in_V": 40
+      }
+    }
+  },
+  "totals": {
+    "eligibleAtHorizonCountBeforeOutcomeRules": 55,
+    "labelledFileCount": 55,
+    "unlabelledExtraFileCount": 14
+  }
+}
