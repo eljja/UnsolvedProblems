@@ -1,0 +1,85 @@
+{
+  "connectionId": "CONN-EVIDENCE-025",
+  "cycleId": "RC-2026-52",
+  "reviewedOn": "2026-08-26",
+  "problemIds": ["UP-219", "UP-233", "UP-234"],
+  "connectionType": "domain transport and finite-horizon identifiability",
+  "strength": "strong",
+  "sharedBottleneck": "A short observable trajectory X_1:20 does not determine long life T unless the source domain D preserves the relation between measured electrical behavior, hidden degradation state Z, and the source-specific end-of-life label. Randomly mixing cells lets train and test share D and therefore does not test that bridge.",
+  "variableMapping": [
+    {
+      "symbol": "D",
+      "UP-219": "cell design, chemistry, temperature, protocol, laboratory, and label convention",
+      "UP-233": "manufacturing and operating domain of the process–structure–property–lifetime twin",
+      "UP-234": "accelerated-test regime versus intended service regime"
+    },
+    {
+      "symbol": "X_1:20",
+      "UP-219": "first 20 non-invasive current, voltage, capacity, and time histories",
+      "UP-233": "observable property trajectory supplied to the lifetime part of a digital twin",
+      "UP-234": "short-test evidence available before long service is observed"
+    },
+    {
+      "symbol": "Z",
+      "UP-219": "lithium inventory, interface growth, cracking, electrolyte depletion, localized defects, and other hidden internal states",
+      "UP-233": "unmeasured microstructure and process history required for causal twin state",
+      "UP-234": "failure mechanism and path-dependent damage state that must remain invariant under acceleration"
+    },
+    {
+      "symbol": "T",
+      "UP-219": "official source-specific total cycle-life label",
+      "UP-233": "lifetime output the twin must predict with calibrated uncertainty",
+      "UP-234": "long-horizon service life or failure time"
+    },
+    {
+      "symbol": "s(X,D)",
+      "UP-219": "distance from an unseen cell to the frozen training support",
+      "UP-233": "applicability-domain test before a twin is allowed to forecast",
+      "UP-234": "evidence that an accelerated condition remains inside the service-relevant mechanism domain"
+    },
+    {
+      "symbol": "P(T|X,D)",
+      "UP-219": "transported lifetime relation",
+      "UP-233": "process-to-lifetime constitutive link",
+      "UP-234": "short-to-long extrapolation law"
+    }
+  ],
+  "holdsWhen": [
+    "Training and target labels use compatible end-of-life definitions.",
+    "The target's dominant degradation and failure modes are represented in training.",
+    "The first 20 cycles expose variables sufficient for the intended prediction target.",
+    "Measurement processing preserves comparable physical quantities across sources.",
+    "A target-domain pilot is kept separate from the remaining adjudication cells."
+  ],
+  "breaksWhen": [
+    "A latent localized defect or mechanical threshold leaves no early electrical signature.",
+    "Formation, rest, calendar aging, dynamic duty cycle, or temperature changes the conditional lifetime law rather than only the feature distribution.",
+    "Source-specific end-of-life thresholds make nominally identical cycle-life labels incomparable.",
+    "A target cell lies far outside every training-source feature neighborhood.",
+    "The same two target labels are used to choose, tune, and finally evaluate the correction."
+  ],
+  "surfaceAnalogyRisk": "All three questions mention lifetime, but the connection is substantive only for the narrow subproblem represented by D → X_1:20 ← Z → T. A full manufacturing twin needs process and structure measurements, and an accelerated qualification needs verified mechanism preservation; neither follows from electrical prediction alone.",
+  "minimumVerificationTest": "Freeze the 20-cycle extractor, admissibility rule, and prediction set before acquiring a fifth independently curated source. Hide its life labels; collect at least one orthogonal early measurement tied to an internal state—such as low-SOC resistance, ultrasound, pressure/expansion, or manufacturing telemetry—and compare electrical-only, multimodal, and abstaining arms on untouched cells.",
+  "transferableMethod": "Use domain-held-out validation as the default unit, report support before accuracy, bound or refuse extrapolation, spend a small labelled pilot only after label-free coverage design, and reserve a separate target set for final adjudication.",
+  "evidence": {
+    "eligibleCells": 52,
+    "sourceDomains": 4,
+    "randomSplitMedianMdape": 0.19387526525911958,
+    "leaveSourceOutMdape": 0.6499148977864233,
+    "mdapeRatio": 3.3522321525533147,
+    "leaveSourceOutCatastrophicFraction": 0.6538461538461539,
+    "supportErrorSpearman": 0.5145564757107487,
+    "supportAcceptedFraction": 0.038461538461538464,
+    "intervalPooledCoverage": 0.8076923076923077,
+    "hneiIntervalCoverage": 0.2857142857142857,
+    "twoCellPilotPassingSources": 1,
+    "twoCellPilotEligibleSources": 3,
+    "independentImplementationComparisons": 1399
+  },
+  "validationStatus": "The shared transport failure is reproduced by Python/NumPy and dependency-free Node implementations. It is validated only on four public processed source domains; field packs, multimodal internal states, new fabrication, safety failures, and independent laboratory replication all have denominator zero.",
+  "affectedProblems": {
+    "UP-219": "A model must expose an applicability domain and cannot infer every failure mode from early electrical curves.",
+    "UP-233": "A lifetime twin needs domain admissibility, source-specific uncertainty, and orthogonal state measurements before deployment.",
+    "UP-234": "A short test becomes evidence for long service only after mechanism and label semantics survive domain transfer."
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "audit": "RC52 battery domain-passport independent adjudication",
+  "generatedOn": "2026-08-26",
+  "precommitGitCommit": "bd5a4ae",
+  "verdict": "pass",
+  "failures": [],
+  "comparisons": {
+    "exact": 340,
+    "numeric": 1059,
+    "total": 1399
+  },
+  "chronology": {
+    "preregistrationFileCount": 4,
+    "outcomeFilesAbsentAtSeal": true,
+    "outcomeBlindClaimed": false,
+    "note": "Life-label files had been inspected before sealing, but all feature, model, split-performance, support, interval, and pilot results were absent."
+  },
+  "reproducibility": {
+    "pythonVersionFamily": "Python/NumPy",
+    "nodeVersionFamily": "Node.js without numerical dependencies",
+    "eligibleCells": 52,
+    "featureCount": 16,
+    "randomSplits": 200,
+    "leaveSourceOutCells": 52,
+    "maximumAllowedLogPredictionDifference": 1e-8
+  },
+  "registeredAdjudication": [
+    {
+      "catastrophicRatio": 7.1923076923076925,
+      "code": "H0",
+      "mdapeRatio": 3.3522321525533147,
+      "verdict": "rejected"
+    },
+    {
+      "acceptedCatastrophicFraction": 0.5,
+      "acceptedFraction": 0.038461538461538464,
+      "allCatastrophicFraction": 0.6538461538461539,
+      "code": "H1",
+      "spearman": 0.5145564757107487,
+      "verdict": "rejected"
+    },
+    {
+      "code": "H2",
+      "eligibleSourceCoverage": [
+        1,
+        0.2857142857142857,
+        1
+      ],
+      "pooledCoverage": 0.8076923076923077,
+      "verdict": "rejected"
+    },
+    {
+      "code": "H3",
+      "eligibleSourceCount": 3,
+      "passingSourceCount": 1,
+      "verdict": "rejected"
+    },
+    {
+      "code": "H4",
+      "independentInternalStateMeasurements": 0,
+      "interventionLabels": 0,
+      "verdict": "unsupported-and-not-testable-with-this-cohort"
+    }
+  ],
+  "decisiveBoundaries": {
+    "randomMedianMdape": 0.19387526525911958,
+    "leaveSourceOutMdape": 0.6499148977864233,
+    "mdapeRatio": 3.3522321525533147,
+    "supportAcceptedFraction": 0.038461538461538464,
+    "intervalPooledCoverage": 0.8076923076923077,
+    "pilotPassingSources": 1
+  },
+  "scopeBoundary": {
+    "claim": "A four-source observational transfer audit, not universal lifetime prediction, mechanism identification, or safety certification.",
+    "fieldPackCount": 0,
+    "independentLaboratoryReplicationCount": 0,
+    "multimodalInternalStateCount": 0,
+    "newlyFabricatedCellCount": 0,
+    "safetyFailureCount": 0
+  }
+}

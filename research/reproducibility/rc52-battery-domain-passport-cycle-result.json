@@ -1,0 +1,142 @@
+{
+  "cycleId": "RC-2026-52",
+  "reviewedOn": "2026-08-26",
+  "title": "A good random split did not survive a new battery source",
+  "precommit": {
+    "gitCommit": "bd5a4ae",
+    "outcomeBlind": false,
+    "boundary": "Official label files were inspected before sealing, but no RC52 features, models, errors, intervals, pilot outcomes, or hypothesis verdicts existed in the preregistration commit."
+  },
+  "selectedProblems": [
+    {"id": "UP-219", "role": "Direct target: non-invasive early-life battery health and lifetime prediction."},
+    {"id": "UP-233", "role": "Transfer target: the lifetime link in a process–structure–property digital twin."},
+    {"id": "UP-234", "role": "Extrapolation target: what a short test can establish about long service."}
+  ],
+  "newlyVerifiedFacts": [
+    "The current BatteryLife_Processed v11 record was published on 2026-04-22; all six downloaded archive MD5 values match the official Zenodo record.",
+    "The label-key-only schema audit found 55 matched labelled files with at least 20 stored cycle records; temperature is absent for all HNEI and MICH_EXP cells, and internal resistance is absent across all four selected sources.",
+    "The registered lifetime-greater-than-horizon rule excludes three MICH_EXP labels equal to one, leaving 52 cells: CALB 27, HNEI 14, MICH_EXP 9, and UL_PUR 2.",
+    "Across 200 source-stratified random cell splits, median MdAPE is 19.39% and median catastrophic-error fraction is 9.09%.",
+    "When an entire source is held out, pooled MdAPE rises to 64.99%, 3.35 times the random-split estimate; 65.38% of cells exceed 50% relative error.",
+    "The unbounded ridge model predicts one HNEI cell at approximately 4.90e18 cycles. Both implementations reproduce its log prediction; it is feature-space extrapolation rather than a serialization or solver discrepancy.",
+    "Support distance ranks error moderately (Spearman 0.515) but the frozen gate accepts only two of 52 cells, so it is a warning signal rather than a useful predictor at this threshold.",
+    "The source-calibrated nominal 90% interval covers 80.77% pooled and only 28.57% of HNEI; multiplicative widths range from 6.51 to 337,351 among source folds.",
+    "The two-cell label-free geometric pilot reduces MdAPE by at least 20% in CALB, HNEI, and MICH_EXP, but is no worse than the exact median pair only in MICH_EXP; the registered two-of-three gate fails.",
+    "The post-outcome three-nearest-neighbour diagnostic removes explosive extrapolation and lowers pooled MdAPE to 60.50%, but 57.69% of cells still exceed 50% error. Bounded ridge removes the explosion but worsens MdAPE to 78.59%.",
+    "Python/NumPy and a dependency-free Node implementation agree across 1,399 exact and numerical comparisons.",
+    "No field pack, safety-failure example, orthogonal internal-state measurement, newly fabricated cell, or independent laboratory replication was tested."
+  ],
+  "statusChanges": [
+    {
+      "problemId": "UP-219",
+      "change": "A universal point-prediction framing is weakened. Early electrical curves can be predictive within mixtures yet fail under source transfer, and some important failure modes are not electrically identifiable early."
+    },
+    {
+      "problemId": "UP-233",
+      "change": "The digital-twin question now has an explicit admissibility gate: a lifetime output is invalid when the target trajectory lies outside validated source support or when the hidden mechanism is unmeasured."
+    },
+    {
+      "problemId": "UP-234",
+      "change": "Twenty cycles are not evidence for long service across these four sources without a target bridge. Short duration alone is not the acceleration variable; preservation of mechanism and label semantics is."
+    }
+  ],
+  "hypothesisAdjudication": [
+    {"code": "H0", "verdict": "rejected", "reason": "Leave-source-out MdAPE is 3.35 times the registered random-split median and catastrophic error is 7.19 times its median."},
+    {"code": "H1", "verdict": "rejected", "reason": "Distance ranks error, but the 95th-percentile support gate retains only 3.85%, below the 50% utility boundary, and accepted catastrophic error remains 50%."},
+    {"code": "H2", "verdict": "rejected", "reason": "Pooled interval coverage is 80.77% rather than 90%, with HNEI at 28.57%."},
+    {"code": "H3", "verdict": "rejected", "reason": "Only MICH_EXP passes both the 20% improvement and no-worse-than-median-pair conditions; CALB and HNEI fail the pair-efficiency gate."},
+    {"code": "H4", "verdict": "unsupported-and-not-testable", "reason": "The cohort contains zero interventions and zero independent internal-state measurements, so predictive fit cannot identify a degradation mechanism."}
+  ],
+  "survivingClaims": [
+    "Source identity must define validation folds whenever the intended use includes a new laboratory, design, chemistry, or protocol.",
+    "Feature-space distance is useful as an alarm because it correlates with error, but its threshold must be validated for coverage and utility rather than assumed.",
+    "Prediction sets under source shift require explicit invariance assumptions; ordinary residual calibration cannot be called a guarantee when P(T|X,D) changes.",
+    "A small target pilot can correct a domain-wide offset, but label-free geometric coverage is not enough when one extreme point has disproportionate leverage."
+  ],
+  "failedOrRejectedApproaches": [
+    {"approach": "Random cell split as deployment evidence", "failure": "Cells from every source appear on both sides, hiding the domain shift that deployment must survive."},
+    {"approach": "Unbounded ridge point prediction", "failure": "Out-of-support HNEI features drive an astronomical forecast even though the training loss is finite."},
+    {"approach": "Fixed nearest-distance gate", "failure": "It correctly refuses most unseen-source cells but leaves only two accepted predictions, which is not operationally useful."},
+    {"approach": "Training-source residual interval", "failure": "Conditional shift produces severe HNEI undercoverage; other folds cover only by becoming hundreds to hundreds of thousands times wide."},
+    {"approach": "Two-cell maximin offset", "failure": "The selected HNEI extreme cell creates a -19.21 log-life offset and damages remaining predictions; geometry without influence control is insufficient."},
+    {"approach": "Clipping forecasts to training lifetime range", "failure": "It removes numerical explosion but increases pooled MdAPE and does not restore transfer."},
+    {"approach": "Electrical curves as mechanism identifiers", "failure": "The data lack intervention and internal-state observations, and current primary literature gives explicit counterexamples for latent and mechanical failures."}
+  ],
+  "mostPromisingPath": {
+    "name": "Multimodal domain passport with independent target adjudication",
+    "status": "proposed composition; not established as novel or validated",
+    "hypothesis": "A target source becomes predictable only after a small pilot measures both lifetime offset and at least one hidden-state proxy that distinguishes mechanism shift from ordinary covariate shift.",
+    "differentCombination": "Combine a pre-outcome support map, influence-bounded pilot selection, low-SOC resistance or another orthogonal state proxy, a bounded prediction set, and untouched target cells. Existing early-life, active-learning, multimodal, and conformal components are prior art; their gate ordering is the tested proposal.",
+    "bottleneck": "The electrical X_1:20 vector does not reveal whether a distant target is merely a rescaled version of training or follows a different degradation/failure law.",
+    "minimumDecisiveTest": "Acquire a fifth source with at least 30 cells and hide all life labels. Measure the frozen electrical vector and one orthogonal proxy on every cell. Choose four pilot cells by support coverage with leave-one-pilot influence limits, reveal their lives, freeze the correction and interval, then adjudicate at least 20 untouched cells. Compare electrical-only, electrical-plus-proxy, and abstaining arms.",
+    "success": "The multimodal arm achieves at least 80% coverage for a registered 80% interval, MdAPE at least 25% lower than electrical-only, no forecast outside the training-plus-pilot label envelope, and no single pilot removal changes median prediction by more than 15%.",
+    "reject": "Reject the proxy or pilot rule if it misses coverage, fails the accuracy improvement, or one pilot controls the result. If both electrical and multimodal arms fail while support is adequate, the target requires a different mechanism model rather than more labels of the same kind.",
+    "resources": "A public or newly collected fifth source; low-SOC resistance, ultrasound, pressure/expansion, or manufacturing telemetry; preregistered EOL semantics; approximately 30 cells; independent data steward; Python and Node/R reimplementation.",
+    "failureValue": "Failure distinguishes missing mechanism information from a correctable source offset and defines which modality or failure family must be added next."
+  },
+  "workPackages": [
+    {
+      "id": "WP1",
+      "purpose": "Build a source-contract baseline.",
+      "method": "Record EOL definition, protocol, chemistry, form factor, sampling, preprocessing version, and missing modalities before modelling.",
+      "output": "Machine-readable domain card plus immutable raw hashes and frozen feature extractor.",
+      "pass": "An independent reader can reproduce cell inclusion and every feature without lifetime access.",
+      "failure": "Ambiguous label semantics or missing raw provenance blocks cross-source claims.",
+      "next": "Repair provenance or choose a different fifth source."
+    },
+    {
+      "id": "WP2",
+      "purpose": "Separate covariate shift from hidden-mechanism shift.",
+      "method": "Measure one electrical support score and at least one orthogonal internal-state proxy before labels are opened.",
+      "output": "Registered target support map and competing mechanism-shift classifications.",
+      "pass": "The proxy changes predictions or residual strata reproducibly on held-out pilots.",
+      "failure": "No discriminating signal means the modality is dropped rather than compensated with model size.",
+      "next": "Test a different proxy tied to the suspected failure family."
+    },
+    {
+      "id": "WP3",
+      "purpose": "Choose a small pilot without high-leverage collapse.",
+      "method": "Optimize feature-space coverage subject to a leave-one-pilot influence constraint; never select using life labels.",
+      "output": "Four-cell pilot manifest and sealed selection code.",
+      "pass": "Removing any one pilot changes median target prediction by no more than 15% in retrospective source folds.",
+      "failure": "If no admissible set exists, increase pilot count before acquiring labels.",
+      "next": "Recompute the minimum pilot count needed for the influence gate."
+    },
+    {
+      "id": "WP4",
+      "purpose": "Adjudicate on untouched target cells.",
+      "method": "Freeze electrical-only, multimodal, and abstaining arms after pilots; evaluate at least 20 untouched target cells with the registered EOL rule.",
+      "output": "Cell-level predictions, intervals, refusal decisions, and uncertainty decomposition.",
+      "pass": "Joint coverage, accuracy, boundedness, and influence gates pass in independent code.",
+      "failure": "Retain all failures and classify them by support, proxy, label, or model error.",
+      "next": "Only the failing component is redesigned."
+    },
+    {
+      "id": "WP5",
+      "purpose": "Move from cycle-life transfer to field relevance.",
+      "method": "After WP4 passes, test dynamic duty cycle and calendar aging on a separate pack-level cohort; no lab-only score is reused as final evidence.",
+      "output": "Field-domain validation card with safety and warranty exclusion boundaries.",
+      "pass": "Predefined field coverage and failure-detection gates pass across seasons and duty cycles.",
+      "failure": "Return to mechanism-specific sensing; do not widen a lab interval indefinitely.",
+      "next": "Choose the unresolved field failure family with highest information value."
+    }
+  ],
+  "uncertaintyBudget": [
+    {"category": "measurement", "observed": "Temperature and resistance are structurally missing in two or all selected sources.", "control": "Use only common electrical fields in RC52; require orthogonal sensing in the next cycle.", "remaining": "Sensor calibration and preprocessing equivalence were not independently checked against raw files."},
+    {"category": "label", "observed": "EOL labels are source-specific and three MICH_EXP labels equal one despite long stored records.", "control": "Apply the sealed >20 rule without per-cell repair.", "remaining": "Cross-source label semantics may account for part of the apparent transport failure."},
+    {"category": "model", "observed": "Unbounded linear extrapolation creates a 4.90e18-cycle forecast.", "control": "Report robust MdAPE, catastrophic rate, support, and bounded post-hoc baselines.", "remaining": "A safer model does not make the conditional lifetime relation invariant."},
+    {"category": "sampling", "observed": "Only four domains and 52 eligible cells; UL_PUR contributes two.", "control": "Report every source and exclude UL_PUR from the n≥4 interval gate.", "remaining": "No source-level population uncertainty can be estimated from four nonrandom domains."},
+    {"category": "extrapolation", "observed": "HNEI lies far outside training support and interval coverage falls to 28.57%.", "control": "Refuse universal or safety claims and design an untouched fifth-source test.", "remaining": "Field duty cycles, calendar time, rare failure, and multimodal state remain unobserved."}
+  ],
+  "failedOperationalEvents": [
+    "The first MICH_EXP archive transfer ended prematurely and failed its MD5 check. It was resumed, and only the final file matching e267051a90f0fc02f8e6701b9f3ecc58 was extracted or used."
+  ],
+  "unsupportedClaims": [
+    "That 20 electrical cycles universally predict battery life.",
+    "That support-gated or conformal intervals have a distribution-free guarantee under these source shifts.",
+    "That any fitted feature identifies a degradation mechanism.",
+    "That the result applies to field packs, calendar life, latent safety defects, warranty decisions, or a complete manufacturing digital twin.",
+    "That the proposed multimodal domain passport is new before a dedicated prior-art search and prospective test."
+  ],
+  "nextCycleStart": "Do not tune another model on the same 52 labels. Select a fifth independently curated source with at least 30 cells and an orthogonal early-state modality, align EOL semantics before labels are opened, preregister the influence-bounded four-cell pilot and three-arm comparison, and reserve at least 20 target cells for untouched adjudication."
+}

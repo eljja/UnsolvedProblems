@@ -1,0 +1,229 @@
+{
+  "diagnostic": "RC52 post-outcome bounded-extrapolation audit",
+  "folds": [
+    {
+      "methods": {
+        "bounded_ridge": {
+          "catastrophicFraction": 0.7037037037037037,
+          "maximumPredictedLife": 269.0,
+          "mdape": 0.7702818104184458,
+          "n": 27,
+          "rmseLogLife": 1.261868558451206
+        },
+        "bounded_ridge_without_cycle1": {
+          "catastrophicFraction": 0.7037037037037037,
+          "maximumPredictedLife": 269.0,
+          "mdape": 0.7702818104184458,
+          "n": 27,
+          "rmseLogLife": 1.2580543654643979
+        },
+        "three_nearest_neighbours": {
+          "catastrophicFraction": 0.8518518518518519,
+          "maximumPredictedLife": 205.61463758473806,
+          "mdape": 0.8715299113398988,
+          "n": 27,
+          "rmseLogLife": 1.6900088194852418
+        },
+        "training_log_median": {
+          "catastrophicFraction": 0.8518518518518519,
+          "maximumPredictedLife": 239.00000000000009,
+          "mdape": 0.8092577813248203,
+          "n": 27,
+          "rmseLogLife": 1.3826805109776972
+        },
+        "unbounded_ridge": {
+          "catastrophicFraction": 0.5555555555555556,
+          "maximumPredictedLife": 588.4771490268131,
+          "mdape": 0.6045784290111441,
+          "n": 27,
+          "rmseLogLife": 0.8444743445039606
+        }
+      },
+      "source": "CALB",
+      "trainingLogLifeRange": [
+        4.59511985013459,
+        5.594711379601839
+      ]
+    },
+    {
+      "methods": {
+        "bounded_ridge": {
+          "catastrophicFraction": 0.8571428571428571,
+          "maximumPredictedLife": 1411.0000000000007,
+          "mdape": 1.87908827556857,
+          "n": 14,
+          "rmseLogLife": 1.226414300004439
+        },
+        "bounded_ridge_without_cycle1": {
+          "catastrophicFraction": 0.9285714285714286,
+          "maximumPredictedLife": 1411.0000000000007,
+          "mdape": 2.788130463630589,
+          "n": 14,
+          "rmseLogLife": 1.3812810427642248
+        },
+        "three_nearest_neighbours": {
+          "catastrophicFraction": 0.2857142857142857,
+          "maximumPredictedLife": 151.72410710553186,
+          "mdape": 0.43020945098618735,
+          "n": 14,
+          "rmseLogLife": 0.6088484545748221
+        },
+        "training_log_median": {
+          "catastrophicFraction": 1.0,
+          "maximumPredictedLife": 461.57122960600566,
+          "mdape": 0.8393963424800733,
+          "n": 14,
+          "rmseLogLife": 0.6271809668084987
+        },
+        "unbounded_ridge": {
+          "catastrophicFraction": 0.8571428571428571,
+          "maximumPredictedLife": 4.901956503995503e+18,
+          "mdape": 1.87908827556857,
+          "n": 14,
+          "rmseLogLife": 10.442891550056805
+        }
+      },
+      "source": "HNEI",
+      "trainingLogLifeRange": [
+        4.59511985013459,
+        7.252053951852814
+      ]
+    },
+    {
+      "methods": {
+        "bounded_ridge": {
+          "catastrophicFraction": 0.5555555555555556,
+          "maximumPredictedLife": 570.5431498618426,
+          "mdape": 1.0256539307354589,
+          "n": 9,
+          "rmseLogLife": 0.9487086355156961
+        },
+        "bounded_ridge_without_cycle1": {
+          "catastrophicFraction": 0.5555555555555556,
+          "maximumPredictedLife": 508.64080799288433,
+          "mdape": 0.6119402985074627,
+          "n": 9,
+          "rmseLogLife": 0.8938758566706901
+        },
+        "three_nearest_neighbours": {
+          "catastrophicFraction": 0.3333333333333333,
+          "maximumPredictedLife": 387.3242013528787,
+          "mdape": 0.29721180310236556,
+          "n": 9,
+          "rmseLogLife": 0.5654853428498493
+        },
+        "training_log_median": {
+          "catastrophicFraction": 0.6666666666666666,
+          "maximumPredictedLife": 263.00000000000006,
+          "mdape": 1.0076335877862599,
+          "n": 9,
+          "rmseLogLife": 0.6581287310617626
+        },
+        "unbounded_ridge": {
+          "catastrophicFraction": 0.6666666666666666,
+          "maximumPredictedLife": 570.5431498618426,
+          "mdape": 1.0256539307354589,
+          "n": 9,
+          "rmseLogLife": 1.0221927230690864
+        }
+      },
+      "source": "MICH_EXP",
+      "trainingLogLifeRange": [
+        4.6443908991413725,
+        7.252053951852814
+      ]
+    },
+    {
+      "methods": {
+        "bounded_ridge": {
+          "catastrophicFraction": 0.5,
+          "maximumPredictedLife": 407.9031910134573,
+          "mdape": 0.5355656414847747,
+          "n": 2,
+          "rmseLogLife": 0.42933614370137196
+        },
+        "bounded_ridge_without_cycle1": {
+          "catastrophicFraction": 1.0,
+          "maximumPredictedLife": 418.584905139559,
+          "mdape": 0.561678522908763,
+          "n": 2,
+          "rmseLogLife": 0.4465182947989987
+        },
+        "three_nearest_neighbours": {
+          "catastrophicFraction": 0.0,
+          "maximumPredictedLife": 186.98975226712304,
+          "mdape": 0.292053748588207,
+          "n": 2,
+          "rmseLogLife": 0.34615055813115864
+        },
+        "training_log_median": {
+          "catastrophicFraction": 0.5,
+          "maximumPredictedLife": 260.49568134615964,
+          "mdape": 0.32205622499082986,
+          "n": 2,
+          "rmseLogLife": 0.34910969173470807
+        },
+        "unbounded_ridge": {
+          "catastrophicFraction": 0.5,
+          "maximumPredictedLife": 407.9031910134573,
+          "mdape": 0.5355656414847747,
+          "n": 2,
+          "rmseLogLife": 0.42933614370137196
+        }
+      },
+      "source": "UL_PUR",
+      "trainingLogLifeRange": [
+        4.59511985013459,
+        7.252053951852814
+      ]
+    }
+  ],
+  "generatedOn": "2026-08-26",
+  "interpretationRule": "A bounded method may define a safer fallback only if it removes explosive predictions without being described as validated transfer; this same data selected the diagnostic.",
+  "pooled": {
+    "bounded_ridge": {
+      "catastrophicFraction": 0.7115384615384616,
+      "maximumPredictedLife": 1411.0000000000007,
+      "mdape": 0.7859115899618693,
+      "n": 52,
+      "rmseLogLife": 1.1809286698145585
+    },
+    "bounded_ridge_without_cycle1": {
+      "catastrophicFraction": 0.75,
+      "maximumPredictedLife": 1411.0000000000007,
+      "mdape": 0.7844516683692043,
+      "n": 52,
+      "rmseLogLife": 1.2171366722238806
+    },
+    "three_nearest_neighbours": {
+      "catastrophicFraction": 0.5769230769230769,
+      "maximumPredictedLife": 387.3242013528787,
+      "mdape": 0.6050076525085551,
+      "n": 52,
+      "rmseLogLife": 1.2816970309218985
+    },
+    "training_log_median": {
+      "catastrophicFraction": 0.8461538461538461,
+      "maximumPredictedLife": 461.57122960600566,
+      "mdape": 0.8096705173408526,
+      "n": 52,
+      "rmseLogLife": 1.0854606004095542
+    },
+    "unbounded_ridge": {
+      "catastrophicFraction": 0.6538461538461539,
+      "maximumPredictedLife": 4.901956503995503e+18,
+      "mdape": 0.6499148977864233,
+      "n": 52,
+      "rmseLogLife": 5.4698175902719
+    }
+  },
+  "purpose": "Determine whether catastrophic errors are primarily unconstrained numerical extrapolation and identify a safer baseline; no registered hypothesis is revised.",
+  "status": "exploratory-after-registered-outcomes",
+  "variants": {
+    "bounded_ridge": "Registered ridge prediction clipped to the minimum and maximum training-source log lifetime.",
+    "bounded_ridge_without_cycle1": "Bounded ridge after removing cycle-1 charge and discharge capacities, chosen because first-cycle formation artifacts can differ by source.",
+    "three_nearest_neighbours": "Mean log lifetime of the three closest standardized training cells; predictions remain within training label support.",
+    "training_log_median": "No early-life features; predicts the geometric median training lifetime.",
+    "unbounded_ridge": "Registered ridge model, repeated as a reference."
+  }
+}

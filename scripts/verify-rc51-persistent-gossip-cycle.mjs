@@ -100,6 +100,10 @@ const publicText = readText("research-cycle-51-data.js");
 for (const phrase of ["1단계", "2단계", "전공자 포인트", "핵심 아이디어", "아래 시도는 개별 논문", "개수를 맞추지", "문제 수를 맞추", "분량 목표", "전공자 관점의 질문은"]) assert(!publicText.includes(phrase), `RC51 contains forbidden wording: ${phrase}`);
 for (const script of ["run-rc51-persistent-gossip.mjs", "independent_rc51_persistent_gossip.py", "blind_rc51_event_replay.py", "adjudicate-rc51-persistent-gossip.mjs", "verify-rc51-persistent-gossip-cycle.mjs"]) assert(readText("package.json").includes(script), `package.json missing RC51 script: ${script}`);
 assert(readText("sitemap.xml").includes("RC-2026-51&amp;lang=ko") && readText("sitemap.xml").includes("RC-2026-51&amp;lang=en"), "RC51 missing from sitemap.xml");
-assert(readText("README.md").includes("51개 누적 연구 사이클") && readText("README.md").includes("1,592개 현지화 URL") && readText("README.md").includes("297개 기관·로드맵·원 연구 출처"), "README RC51 counts incomplete");
+const readme = readText("README.md");
+const currentCycles = Number(readme.match(/([\d,]+)개 누적 연구 사이클/)?.[1].replaceAll(",", ""));
+const currentUrls = Number(readme.match(/([\d,]+)개 현지화 URL/)?.[1].replaceAll(",", ""));
+const currentSources = Number(readme.match(/([\d,]+)개 기관·로드맵·원 연구 출처/)?.[1].replaceAll(",", ""));
+assert(currentCycles >= 51 && currentUrls >= 1592 && currentSources >= 297, "README no longer preserves or advances the RC51 counts");
 
 console.log("RC51 verified: 16/16 Node/Python fixtures, 16/16 blind verdict-state pairs, 40 SQLite snapshots, and explicit power/operator/physical zero boundaries.");
