@@ -1,0 +1,679 @@
+{
+  "resultId": "RC53-BATTERY-MECHANISM-BRIDGE-NODE-0.1",
+  "cycleId": "RC-2026-53",
+  "runOn": "2026-08-26",
+  "implementation": "dependency-free Node recomputation from the frozen feature table",
+  "counts": {
+    "candidate": 40,
+    "pilotZeroWeight": 4,
+    "development": 14,
+    "untouchedTarget": 22
+  },
+  "armResults": {
+    "A": {
+      "model": {
+        "features": [
+          "temperature_c",
+          "soc_lower_fraction",
+          "soc_upper_fraction",
+          "soc_span_fraction",
+          "drive_cycle_indicator"
+        ],
+        "means": [
+          23.928571428571427,
+          0.42499999999999993,
+          0.65,
+          0.22499999999999995,
+          0
+        ],
+        "scales": [
+          13.252839510913908,
+          0.425,
+          0.35000000000000003,
+          0.07499999999999998,
+          1
+        ],
+        "intercept": 0.840335279889736,
+        "coefficients": [
+          -0.0029715322007689573,
+          0.004200729469146267,
+          0.004200729469146245,
+          -0.004200729469146239,
+          0
+        ],
+        "alpha": 1
+      },
+      "metrics": {
+        "count": 22,
+        "medianAbsoluteErrorPercentagePoints": 6.383341373325774,
+        "meanAbsoluteErrorPercentagePoints": 6.005315375606904,
+        "maximumAbsoluteErrorPercentagePoints": 10.325674369715298,
+        "spearman": 0.49971023044616614
+      },
+      "byExperiment": {
+        "4": {
+          "count": 8,
+          "medianAbsoluteErrorPercentagePoints": 7.281347251103948,
+          "meanAbsoluteErrorPercentagePoints": 6.979415367565126,
+          "maximumAbsoluteErrorPercentagePoints": 10.325674369715298,
+          "spearman": -0.06299407883487121
+        },
+        "5": {
+          "count": 8,
+          "medianAbsoluteErrorPercentagePoints": 5.772730415999522,
+          "meanAbsoluteErrorPercentagePoints": 4.371680863574779,
+          "maximumAbsoluteErrorPercentagePoints": 6.8929732292990264,
+          "spearman": -0.5669467095138409
+        },
+        "2,2": {
+          "count": 6,
+          "medianAbsoluteErrorPercentagePoints": 6.830745296345747,
+          "meanAbsoluteErrorPercentagePoints": 6.884694735705445,
+          "maximumAbsoluteErrorPercentagePoints": 8.097266228061073,
+          "spearman": 0.23904572186687872
+        }
+      },
+      "predictions": [
+        {
+          "cellId": "2,2-A",
+          "experiment": "2,2",
+          "observed": 0.9189006441015372,
+          "prediction": 0.8527775890850582
+        },
+        {
+          "cellId": "2,2-B",
+          "experiment": "2,2",
+          "observed": 0.9108267995628625,
+          "prediction": 0.8527775890850582
+        },
+        {
+          "cellId": "2,2-C",
+          "experiment": "2,2",
+          "observed": 0.9303869734073998,
+          "prediction": 0.8494143111267891
+        },
+        {
+          "cellId": "2,2-D",
+          "experiment": "2,2",
+          "observed": 0.9250959575914592,
+          "prediction": 0.8494143111267891
+        },
+        {
+          "cellId": "2,2-E",
+          "experiment": "2,2",
+          "observed": 0.916542884078956,
+          "prediction": 0.84605103316852
+        },
+        {
+          "cellId": "2,2-F",
+          "experiment": "2,2",
+          "observed": 0.9078142921608466,
+          "prediction": 0.84605103316852
+        },
+        {
+          "cellId": "4-A",
+          "experiment": "4",
+          "observed": 0.888880028710196,
+          "prediction": 0.8000507858602842
+        },
+        {
+          "cellId": "4-B",
+          "experiment": "4",
+          "observed": 0.7336952437553181,
+          "prediction": 0.8000507858602842
+        },
+        {
+          "cellId": "4-C",
+          "experiment": "4",
+          "observed": 0.6967940421631312,
+          "prediction": 0.8000507858602842
+        },
+        {
+          "cellId": "4-D",
+          "experiment": "4",
+          "observed": 0.875958910819128,
+          "prediction": 0.7966875079020151
+        },
+        {
+          "cellId": "4-E",
+          "experiment": "4",
+          "observed": 0.8769456365435555,
+          "prediction": 0.7966875079020151
+        },
+        {
+          "cellId": "4-F",
+          "experiment": "4",
+          "observed": 0.8417297823861739,
+          "prediction": 0.7933242299437461
+        },
+        {
+          "cellId": "4-G",
+          "experiment": "4",
+          "observed": 0.8388371519855474,
+          "prediction": 0.7933242299437461
+        },
+        {
+          "cellId": "4-H",
+          "experiment": "4",
+          "observed": 0.8397879246540428,
+          "prediction": 0.7933242299437461
+        },
+        {
+          "cellId": "5-A",
+          "experiment": "5",
+          "observed": 0.8044691536942837,
+          "prediction": 0.8000507858602842
+        },
+        {
+          "cellId": "5-B",
+          "experiment": "5",
+          "observed": 0.8143553276793362,
+          "prediction": 0.8000507858602842
+        },
+        {
+          "cellId": "5-C",
+          "experiment": "5",
+          "observed": 0.8214546359438883,
+          "prediction": 0.8000507858602842
+        },
+        {
+          "cellId": "5-D",
+          "experiment": "5",
+          "observed": 0.862591076376204,
+          "prediction": 0.7966875079020151
+        },
+        {
+          "cellId": "5-E",
+          "experiment": "5",
+          "observed": 0.8656172401950054,
+          "prediction": 0.7966875079020151
+        },
+        {
+          "cellId": "5-F",
+          "experiment": "5",
+          "observed": 0.8522315864914315,
+          "prediction": 0.7933242299437461
+        },
+        {
+          "cellId": "5-G",
+          "experiment": "5",
+          "observed": 0.8498714817160511,
+          "prediction": 0.7933242299437461
+        },
+        {
+          "cellId": "5-H",
+          "experiment": "5",
+          "observed": 0.8526440302059033,
+          "prediction": 0.7933242299437461
+        }
+      ]
+    },
+    "B": {
+      "model": {
+        "features": [
+          "temperature_c",
+          "soc_lower_fraction",
+          "soc_upper_fraction",
+          "soc_span_fraction",
+          "drive_cycle_indicator",
+          "bol_c10_capacity_ah",
+          "bol_c2_capacity_ah"
+        ],
+        "means": [
+          23.928571428571427,
+          0.42499999999999993,
+          0.65,
+          0.22499999999999995,
+          0,
+          4.859116192161628,
+          4.779770019007492
+        ],
+        "scales": [
+          13.252839510913908,
+          0.425,
+          0.35000000000000003,
+          0.07499999999999998,
+          1,
+          0.025307065377776265,
+          0.028367720975875213
+        ],
+        "intercept": 0.840335279889736,
+        "coefficients": [
+          -0.0042607456761948525,
+          0.0042518363071718515,
+          0.0042518363071718124,
+          -0.004251836307171838,
+          0,
+          -0.02180489061598024,
+          0.011936525191009626
+        ],
+        "alpha": 1
+      },
+      "metrics": {
+        "count": 22,
+        "medianAbsoluteErrorPercentagePoints": 5.698823207031673,
+        "meanAbsoluteErrorPercentagePoints": 5.649760059637408,
+        "maximumAbsoluteErrorPercentagePoints": 11.203248034449487,
+        "spearman": 0.5844155844155844
+      },
+      "byExperiment": {
+        "4": {
+          "count": 8,
+          "medianAbsoluteErrorPercentagePoints": 7.1723076050129615,
+          "meanAbsoluteErrorPercentagePoints": 7.115416297443657,
+          "maximumAbsoluteErrorPercentagePoints": 11.203248034449487,
+          "spearman": -0.2857142857142857
+        },
+        "5": {
+          "count": 8,
+          "medianAbsoluteErrorPercentagePoints": 5.223292252196682,
+          "meanAbsoluteErrorPercentagePoints": 4.51418438118521,
+          "maximumAbsoluteErrorPercentagePoints": 7.343356707054072,
+          "spearman": 0.16666666666666666
+        },
+        "2,2": {
+          "count": 6,
+          "medianAbsoluteErrorPercentagePoints": 5.725621434191503,
+          "meanAbsoluteErrorPercentagePoints": 5.209652647165339,
+          "maximumAbsoluteErrorPercentagePoints": 6.501142972786111,
+          "spearman": 0.14285714285714285
+        }
+      },
+      "predictions": [
+        {
+          "cellId": "2,2-A",
+          "experiment": "2,2",
+          "observed": 0.9189006441015372,
+          "prediction": 0.8609311885295687
+        },
+        {
+          "cellId": "2,2-B",
+          "experiment": "2,2",
+          "observed": 0.9108267995628625,
+          "prediction": 0.8815085165820508
+        },
+        {
+          "cellId": "2,2-C",
+          "experiment": "2,2",
+          "observed": 0.9303869734073998,
+          "prediction": 0.8708574145695603
+        },
+        {
+          "cellId": "2,2-D",
+          "experiment": "2,2",
+          "observed": 0.9250959575914592,
+          "prediction": 0.8685529844795976
+        },
+        {
+          "cellId": "2,2-E",
+          "experiment": "2,2",
+          "observed": 0.916542884078956,
+          "prediction": 0.8515314543510949
+        },
+        {
+          "cellId": "2,2-F",
+          "experiment": "2,2",
+          "observed": 0.9078142921608466,
+          "prediction": 0.8636068335612687
+        },
+        {
+          "cellId": "4-A",
+          "experiment": "4",
+          "observed": 0.888880028710196,
+          "prediction": 0.7768475483657011
+        },
+        {
+          "cellId": "4-B",
+          "experiment": "4",
+          "observed": 0.7336952437553181,
+          "prediction": 0.8038391829821606
+        },
+        {
+          "cellId": "4-C",
+          "experiment": "4",
+          "observed": 0.6967940421631312,
+          "prediction": 0.7963944957280229
+        },
+        {
+          "cellId": "4-D",
+          "experiment": "4",
+          "observed": 0.875958910819128,
+          "prediction": 0.8026566979457113
+        },
+        {
+          "cellId": "4-E",
+          "experiment": "4",
+          "observed": 0.8769456365435555,
+          "prediction": 0.8004120461227957
+        },
+        {
+          "cellId": "4-F",
+          "experiment": "4",
+          "observed": 0.8417297823861739,
+          "prediction": 0.7944153200243211
+        },
+        {
+          "cellId": "4-G",
+          "experiment": "4",
+          "observed": 0.8388371519855474,
+          "prediction": 0.8000935486323256
+        },
+        {
+          "cellId": "4-H",
+          "experiment": "4",
+          "observed": 0.8397879246540428,
+          "prediction": 0.7882253630040305
+        },
+        {
+          "cellId": "5-A",
+          "experiment": "5",
+          "observed": 0.8044691536942837,
+          "prediction": 0.7918556846037357
+        },
+        {
+          "cellId": "5-B",
+          "experiment": "5",
+          "observed": 0.8143553276793362,
+          "prediction": 0.799984826687192
+        },
+        {
+          "cellId": "5-C",
+          "experiment": "5",
+          "observed": 0.8214546359438883,
+          "prediction": 0.7878184100040275
+        },
+        {
+          "cellId": "5-D",
+          "experiment": "5",
+          "observed": 0.862591076376204,
+          "prediction": 0.7974094250471865
+        },
+        {
+          "cellId": "5-E",
+          "experiment": "5",
+          "observed": 0.8656172401950054,
+          "prediction": 0.7921836731244647
+        },
+        {
+          "cellId": "5-F",
+          "experiment": "5",
+          "observed": 0.8522315864914315,
+          "prediction": 0.8022942847474568
+        },
+        {
+          "cellId": "5-G",
+          "experiment": "5",
+          "observed": 0.8498714817160511,
+          "prediction": 0.7953429384160922
+        },
+        {
+          "cellId": "5-H",
+          "experiment": "5",
+          "observed": 0.8526440302059033,
+          "prediction": 0.7952105391771315
+        }
+      ]
+    },
+    "C": {
+      "model": {
+        "features": [
+          "temperature_c",
+          "soc_lower_fraction",
+          "soc_upper_fraction",
+          "soc_span_fraction",
+          "drive_cycle_indicator",
+          "bol_c10_capacity_ah",
+          "bol_c2_capacity_ah",
+          "bol_positive_electrode_capacity_ah",
+          "bol_negative_electrode_capacity_ah",
+          "bol_graphite_capacity_ah",
+          "bol_silicon_capacity_ah",
+          "bol_electrode_offset_ah",
+          "bol_r_0_1s_ohm",
+          "bol_r_10s_ohm",
+          "bol_r_10s_minus_0_1s_ohm"
+        ],
+        "means": [
+          23.928571428571427,
+          0.42499999999999993,
+          0.65,
+          0.22499999999999995,
+          0,
+          4.859116192161628,
+          4.779770019007492,
+          5.62817643868638,
+          5.25522006231463,
+          4.453235838030893,
+          0.8019842242837381,
+          0.5596207158646219,
+          0.026220906604362104,
+          0.03280569000191602,
+          0.006584783397553919
+        ],
+        "scales": [
+          13.252839510913908,
+          0.425,
+          0.35000000000000003,
+          0.07499999999999998,
+          1,
+          0.025307065377776265,
+          0.028367720975875213,
+          0.057087356481054306,
+          0.08841362382683031,
+          0.08055239853972579,
+          0.01983559424367668,
+          0.04238379200521168,
+          0.0004191579340005999,
+          0.0004108602383806383,
+          0.00009079781664909407
+        ],
+        "intercept": 0.840335279889736,
+        "coefficients": [
+          -0.008121472975265135,
+          0.008862164269092584,
+          0.008862164269092499,
+          -0.008862164269092539,
+          0,
+          -0.00480464723420147,
+          0.01750103805738172,
+          0.005262032543709118,
+          -0.018342862437152278,
+          -0.019484857224900294,
+          -0.0026319833988559613,
+          0.01414940072164516,
+          -0.0006353640186142571,
+          -0.004801806636433901,
+          -0.018795094561773303
+        ],
+        "alpha": 1
+      },
+      "metrics": {
+        "count": 22,
+        "medianAbsoluteErrorPercentagePoints": 10.546761031048192,
+        "meanAbsoluteErrorPercentagePoints": 8.793416517685502,
+        "maximumAbsoluteErrorPercentagePoints": 16.646168239248983,
+        "spearman": 0.6239412761151891
+      },
+      "byExperiment": {
+        "4": {
+          "count": 8,
+          "medianAbsoluteErrorPercentagePoints": 10.103105484372666,
+          "meanAbsoluteErrorPercentagePoints": 9.062485391287758,
+          "maximumAbsoluteErrorPercentagePoints": 16.646168239248983,
+          "spearman": 0.38095238095238093
+        },
+        "5": {
+          "count": 8,
+          "medianAbsoluteErrorPercentagePoints": 11.435284679837293,
+          "meanAbsoluteErrorPercentagePoints": 9.735459913337117,
+          "maximumAbsoluteErrorPercentagePoints": 15.787585637391665,
+          "spearman": -0.2619047619047619
+        },
+        "2,2": {
+          "count": 6,
+          "medianAbsoluteErrorPercentagePoints": 6.578902215993947,
+          "meanAbsoluteErrorPercentagePoints": 7.178600158680344,
+          "maximumAbsoluteErrorPercentagePoints": 13.369039801229189,
+          "spearman": -0.6571428571428571
+        }
+      },
+      "predictions": [
+        {
+          "cellId": "2,2-A",
+          "experiment": "2,2",
+          "observed": 0.9189006441015372,
+          "prediction": 0.8859273206423449
+        },
+        {
+          "cellId": "2,2-B",
+          "experiment": "2,2",
+          "observed": 0.9108267995628625,
+          "prediction": 0.9243539144677532
+        },
+        {
+          "cellId": "2,2-C",
+          "experiment": "2,2",
+          "observed": 0.9303869734073998,
+          "prediction": 0.811439844582833
+        },
+        {
+          "cellId": "2,2-D",
+          "experiment": "2,2",
+          "observed": 0.9250959575914592,
+          "prediction": 0.7914055595791674
+        },
+        {
+          "cellId": "2,2-E",
+          "experiment": "2,2",
+          "observed": 0.916542884078956,
+          "prediction": 0.8188241907101007
+        },
+        {
+          "cellId": "2,2-F",
+          "experiment": "2,2",
+          "observed": 0.9078142921608466,
+          "prediction": 0.873954941209823
+        },
+        {
+          "cellId": "4-A",
+          "experiment": "4",
+          "observed": 0.888880028710196,
+          "prediction": 0.7224183463177062
+        },
+        {
+          "cellId": "4-B",
+          "experiment": "4",
+          "observed": 0.7336952437553181,
+          "prediction": 0.7298141071751452
+        },
+        {
+          "cellId": "4-C",
+          "experiment": "4",
+          "observed": 0.6967940421631312,
+          "prediction": 0.6964186685754954
+        },
+        {
+          "cellId": "4-D",
+          "experiment": "4",
+          "observed": 0.875958910819128,
+          "prediction": 0.7545481144404476
+        },
+        {
+          "cellId": "4-E",
+          "experiment": "4",
+          "observed": 0.8769456365435555,
+          "prediction": 0.7950956487456131
+        },
+        {
+          "cellId": "4-F",
+          "experiment": "4",
+          "observed": 0.8417297823861739,
+          "prediction": 0.6830071357964
+        },
+        {
+          "cellId": "4-G",
+          "experiment": "4",
+          "observed": 0.8388371519855474,
+          "prediction": 0.7186250300960365
+        },
+        {
+          "cellId": "4-H",
+          "experiment": "4",
+          "observed": 0.8397879246540428,
+          "prediction": 0.7677028385672284
+        },
+        {
+          "cellId": "5-A",
+          "experiment": "5",
+          "observed": 0.8044691536942837,
+          "prediction": 0.6889799873496464
+        },
+        {
+          "cellId": "5-B",
+          "experiment": "5",
+          "observed": 0.8143553276793362,
+          "prediction": 0.8009508315832395
+        },
+        {
+          "cellId": "5-C",
+          "experiment": "5",
+          "observed": 0.8214546359438883,
+          "prediction": 0.7828672803555901
+        },
+        {
+          "cellId": "5-D",
+          "experiment": "5",
+          "observed": 0.862591076376204,
+          "prediction": 0.7326123046093667
+        },
+        {
+          "cellId": "5-E",
+          "experiment": "5",
+          "observed": 0.8656172401950054,
+          "prediction": 0.7077413838210888
+        },
+        {
+          "cellId": "5-F",
+          "experiment": "5",
+          "observed": 0.8522315864914315,
+          "prediction": 0.7177294973662479
+        },
+        {
+          "cellId": "5-G",
+          "experiment": "5",
+          "observed": 0.8498714817160511,
+          "prediction": 0.7740889511961601
+        },
+        {
+          "cellId": "5-H",
+          "experiment": "5",
+          "observed": 0.8526440302059033,
+          "prediction": 0.7394275029537948
+        }
+      ]
+    }
+  },
+  "comparisons": {
+    "passportVsStressMdAEImprovement": -0.6522320230467703,
+    "passportVsCapacityMdAEImprovement": -0.8506910370609038,
+    "capacityVsStressMdAEImprovement": 0.1072350868080648
+  },
+  "hypotheses": [
+    {
+      "code": "H0",
+      "verdict": "rejected"
+    },
+    {
+      "code": "H1",
+      "verdict": "rejected"
+    },
+    {
+      "code": "H2",
+      "verdict": "rejected"
+    },
+    {
+      "code": "H3",
+      "verdict": "unsupported-by-design"
+    }
+  ]
+}

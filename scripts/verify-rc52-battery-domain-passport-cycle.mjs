@@ -104,6 +104,6 @@ const publicText = readText("research-cycle-52-data.js");
 for (const phrase of ["1단계", "2단계", "전공자 포인트", "핵심 아이디어", "아래 시도는 개별 논문", "개수를 맞추지", "문제 수를 맞추", "분량 목표", "전공자 관점의 질문은"]) assert(!publicText.includes(phrase), `RC52 contains forbidden wording: ${phrase}`);
 for (const script of ["audit_rc52_battery_schema.py", "run_rc52_battery_domain_passport.py", "independent-rc52-battery-domain-passport.mjs", "diagnose_rc52_battery_boundary.py", "adjudicate-rc52-battery-domain-passport.mjs", "verify-rc52-battery-domain-passport-cycle.mjs"]) assert(readText("package.json").includes(script), `package.json missing RC52 script: ${script}`);
 assert(readText("sitemap.xml").includes("RC-2026-52&amp;lang=ko") && readText("sitemap.xml").includes("RC-2026-52&amp;lang=en"), "RC52 missing from sitemap.xml");
-assert(readText("README.md").includes("52개 누적 연구 사이클") && readText("README.md").includes("1,594개 현지화 URL") && readText("README.md").includes("309개 기관·로드맵·원 연구 출처"), "README RC52 counts incomplete");
+assert(/5[2-9]개 누적 연구 사이클/.test(readText("README.md")) && /1,5(?:9[4-9]|[0-9]{3,})개 현지화 URL/.test(readText("README.md")) && /3(?:09|1[0-9]|[2-9][0-9])개 기관·로드맵·원 연구 출처/.test(readText("README.md")), "README no longer reports RC52-or-later cumulative counts");
 
 console.log("RC52 verified: 52 cells, 200 random splits, 4 source holdouts, 1,399 independent comparisons, and explicit multimodal/field zero boundaries.");

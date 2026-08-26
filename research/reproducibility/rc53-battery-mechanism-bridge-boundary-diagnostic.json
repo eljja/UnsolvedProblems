@@ -1,0 +1,300 @@
+{
+  "diagnosticId": "RC53-BATTERY-MECHANISM-BRIDGE-BOUNDARY-DIAGNOSTIC-0.1",
+  "cycleId": "RC-2026-53",
+  "status": "exploratory-after-registered-outcomes; cannot rescue H0-H3 or alter the RC53 verdict",
+  "registeredFullPassport": {
+    "pooledSpearman": 0.6239412761151891,
+    "withinExperimentCenteredSpearman": -0.011857707509881422,
+    "byExperiment": {
+      "2,2": {
+        "count": 6,
+        "meanObserved": 0.9182612584838435,
+        "meanPrediction": 0.8509842951986699,
+        "meanBiasPercentagePoints": -6.7276963285173625,
+        "spearman": -0.6571428571428571
+      },
+      "4": {
+        "count": 8,
+        "meanObserved": 0.8240785901271366,
+        "meanPrediction": 0.7334537362142584,
+        "meanBiasPercentagePoints": -9.062485391287822,
+        "spearman": 0.38095238095238093
+      },
+      "5": {
+        "count": 8,
+        "meanObserved": 0.8404043165377629,
+        "meanPrediction": 0.7430497174043912,
+        "meanBiasPercentagePoints": -9.735459913337174,
+        "spearman": -0.2619047619047619
+      }
+    }
+  },
+  "supportDiagnostic": {
+    "distanceErrorSpearman": 0.1789949181253529,
+    "cells": [
+      {
+        "cellId": "2,2-A",
+        "experiment": "2,2",
+        "nearestDevelopmentDistance": 3.694152326571822,
+        "absoluteErrorPercentagePoints": 3.2973323459192683
+      },
+      {
+        "cellId": "2,2-B",
+        "experiment": "2,2",
+        "nearestDevelopmentDistance": 3.4859582252160326,
+        "absoluteErrorPercentagePoints": 1.3527114904890225
+      },
+      {
+        "cellId": "2,2-C",
+        "experiment": "2,2",
+        "nearestDevelopmentDistance": 2.864057114732502,
+        "absoluteErrorPercentagePoints": 11.894712882456727
+      },
+      {
+        "cellId": "2,2-D",
+        "experiment": "2,2",
+        "nearestDevelopmentDistance": 9.900704767267628,
+        "absoluteErrorPercentagePoints": 13.369039801229244
+      },
+      {
+        "cellId": "2,2-E",
+        "experiment": "2,2",
+        "nearestDevelopmentDistance": 3.5388751329419113,
+        "absoluteErrorPercentagePoints": 9.771869336885587
+      },
+      {
+        "cellId": "2,2-F",
+        "experiment": "2,2",
+        "nearestDevelopmentDistance": 3.0442800987744345,
+        "absoluteErrorPercentagePoints": 3.3859350951024103
+      },
+      {
+        "cellId": "4-A",
+        "experiment": "4",
+        "nearestDevelopmentDistance": 11.2187270305904,
+        "absoluteErrorPercentagePoints": 16.64616823924906
+      },
+      {
+        "cellId": "4-B",
+        "experiment": "4",
+        "nearestDevelopmentDistance": 10.075274550721188,
+        "absoluteErrorPercentagePoints": 0.38811365801736386
+      },
+      {
+        "cellId": "4-C",
+        "experiment": "4",
+        "nearestDevelopmentDistance": 10.234086509909078,
+        "absoluteErrorPercentagePoints": 0.03753735876365072
+      },
+      {
+        "cellId": "4-D",
+        "experiment": "4",
+        "nearestDevelopmentDistance": 9.75679803951362,
+        "absoluteErrorPercentagePoints": 12.141079637868113
+      },
+      {
+        "cellId": "4-E",
+        "experiment": "4",
+        "nearestDevelopmentDistance": 9.819214382035685,
+        "absoluteErrorPercentagePoints": 8.184998779794295
+      },
+      {
+        "cellId": "4-F",
+        "experiment": "4",
+        "nearestDevelopmentDistance": 10.284901858951825,
+        "absoluteErrorPercentagePoints": 15.872264658977453
+      },
+      {
+        "cellId": "4-G",
+        "experiment": "4",
+        "nearestDevelopmentDistance": 9.680750415845647,
+        "absoluteErrorPercentagePoints": 12.02121218895117
+      },
+      {
+        "cellId": "4-H",
+        "experiment": "4",
+        "nearestDevelopmentDistance": 9.711002003244564,
+        "absoluteErrorPercentagePoints": 7.2085086086814965
+      },
+      {
+        "cellId": "5-A",
+        "experiment": "5",
+        "nearestDevelopmentDistance": 9.963472121151206,
+        "absoluteErrorPercentagePoints": 11.5489166344638
+      },
+      {
+        "cellId": "5-B",
+        "experiment": "5",
+        "nearestDevelopmentDistance": 9.837206550763664,
+        "absoluteErrorPercentagePoints": 1.3404496096097174
+      },
+      {
+        "cellId": "5-C",
+        "experiment": "5",
+        "nearestDevelopmentDistance": 9.87354277917502,
+        "absoluteErrorPercentagePoints": 3.8587355588298955
+      },
+      {
+        "cellId": "5-D",
+        "experiment": "5",
+        "nearestDevelopmentDistance": 9.815923255272537,
+        "absoluteErrorPercentagePoints": 12.997877176683803
+      },
+      {
+        "cellId": "5-E",
+        "experiment": "5",
+        "nearestDevelopmentDistance": 9.837828210733939,
+        "absoluteErrorPercentagePoints": 15.787585637391722
+      },
+      {
+        "cellId": "5-F",
+        "experiment": "5",
+        "nearestDevelopmentDistance": 9.684233699896978,
+        "absoluteErrorPercentagePoints": 13.450208912518423
+      },
+      {
+        "cellId": "5-G",
+        "experiment": "5",
+        "nearestDevelopmentDistance": 9.81563047307088,
+        "absoluteErrorPercentagePoints": 7.578253051989159
+      },
+      {
+        "cellId": "5-H",
+        "experiment": "5",
+        "nearestDevelopmentDistance": 9.833086821559002,
+        "absoluteErrorPercentagePoints": 11.321652725210917
+      }
+    ],
+    "outOfDevelopmentRangeCounts": {
+      "temperature_c": 0,
+      "soc_lower_fraction": 0,
+      "soc_upper_fraction": 0,
+      "soc_span_fraction": 16,
+      "drive_cycle_indicator": 8,
+      "bol_c10_capacity_ah": 1,
+      "bol_c2_capacity_ah": 0,
+      "bol_positive_electrode_capacity_ah": 2,
+      "bol_negative_electrode_capacity_ah": 3,
+      "bol_graphite_capacity_ah": 4,
+      "bol_silicon_capacity_ah": 2,
+      "bol_electrode_offset_ah": 2,
+      "bol_r_0_1s_ohm": 3,
+      "bol_r_10s_ohm": 4,
+      "bol_r_10s_minus_0_1s_ohm": 2
+    },
+    "maximumAbsoluteStandardizedTargetValue": {
+      "temperature_c": 1.212678125181665,
+      "soc_lower_fraction": 1.0,
+      "soc_upper_fraction": 0.9999999999999999,
+      "soc_span_fraction": 10.333333333333336,
+      "drive_cycle_indicator": 1.0,
+      "bol_c10_capacity_ah": 1.848879075597444,
+      "bol_c2_capacity_ah": 1.3642600947130692,
+      "bol_positive_electrode_capacity_ah": 3.4686095577443607,
+      "bol_negative_electrode_capacity_ah": 2.6864165239421895,
+      "bol_graphite_capacity_ah": 2.607394781202508,
+      "bol_silicon_capacity_ah": 2.27039315250257,
+      "bol_electrode_offset_ah": 3.273694234140977,
+      "bol_r_0_1s_ohm": 8.735731821187853,
+      "bol_r_10s_ohm": 9.085698767078235,
+      "bol_r_10s_minus_0_1s_ohm": 2.8281978367240304
+    }
+  },
+  "postHocBlockAblations": {
+    "D_capacity_plus_dma": {
+      "featureNames": [
+        "temperature_c",
+        "soc_lower_fraction",
+        "soc_upper_fraction",
+        "soc_span_fraction",
+        "drive_cycle_indicator",
+        "bol_c10_capacity_ah",
+        "bol_c2_capacity_ah",
+        "bol_positive_electrode_capacity_ah",
+        "bol_negative_electrode_capacity_ah",
+        "bol_graphite_capacity_ah",
+        "bol_silicon_capacity_ah",
+        "bol_electrode_offset_ah"
+      ],
+      "metrics": {
+        "count": 22,
+        "medianAbsoluteErrorPercentagePoints": 8.44960735281045,
+        "meanAbsoluteErrorPercentagePoints": 7.088240892014864,
+        "maximumAbsoluteErrorPercentagePoints": 15.837641539448455,
+        "spearman": 0.6386222473178995
+      },
+      "byExperiment": {
+        "2,2": {
+          "count": 6,
+          "medianAbsoluteErrorPercentagePoints": 4.917111823751447,
+          "meanAbsoluteErrorPercentagePoints": 4.890381668882047,
+          "maximumAbsoluteErrorPercentagePoints": 8.901264840264933,
+          "spearman": -0.8857142857142857
+        },
+        "4": {
+          "count": 8,
+          "medianAbsoluteErrorPercentagePoints": 9.367810672412086,
+          "meanAbsoluteErrorPercentagePoints": 7.816212003756205,
+          "maximumAbsoluteErrorPercentagePoints": 15.837641539448455,
+          "spearman": 0.40476190476190477
+        },
+        "5": {
+          "count": 8,
+          "medianAbsoluteErrorPercentagePoints": 9.041839920439676,
+          "meanAbsoluteErrorPercentagePoints": 8.008664197623133,
+          "maximumAbsoluteErrorPercentagePoints": 14.45113996388596,
+          "spearman": -0.23809523809523808
+        }
+      }
+    },
+    "E_capacity_plus_resistance": {
+      "featureNames": [
+        "temperature_c",
+        "soc_lower_fraction",
+        "soc_upper_fraction",
+        "soc_span_fraction",
+        "drive_cycle_indicator",
+        "bol_c10_capacity_ah",
+        "bol_c2_capacity_ah",
+        "bol_r_0_1s_ohm",
+        "bol_r_10s_ohm",
+        "bol_r_10s_minus_0_1s_ohm"
+      ],
+      "metrics": {
+        "count": 22,
+        "medianAbsoluteErrorPercentagePoints": 6.7620619465133425,
+        "meanAbsoluteErrorPercentagePoints": 6.698040140339483,
+        "maximumAbsoluteErrorPercentagePoints": 12.946327257020407,
+        "spearman": 0.611518915866742
+      },
+      "byExperiment": {
+        "2,2": {
+          "count": 6,
+          "medianAbsoluteErrorPercentagePoints": 5.923669851781388,
+          "meanAbsoluteErrorPercentagePoints": 6.036525081402595,
+          "maximumAbsoluteErrorPercentagePoints": 12.946327257020407,
+          "spearman": 0.14285714285714285
+        },
+        "4": {
+          "count": 8,
+          "medianAbsoluteErrorPercentagePoints": 7.067752707506281,
+          "meanAbsoluteErrorPercentagePoints": 7.493570690037144,
+          "maximumAbsoluteErrorPercentagePoints": 8.952145846419867,
+          "spearman": 0.4523809523809524
+        },
+        "5": {
+          "count": 8,
+          "medianAbsoluteErrorPercentagePoints": 7.216923823534371,
+          "meanAbsoluteErrorPercentagePoints": 6.398645884844485,
+          "maximumAbsoluteErrorPercentagePoints": 9.672264711168733,
+          "spearman": -0.14285714285714285
+        }
+      }
+    }
+  },
+  "interpretation": [
+    "The full passport's pooled rank correlation must be compared with within-experiment ranks; a pooled value can be driven by regime means rather than cell-level susceptibility.",
+    "BoL electrode and resistance levels are nested within experiment, rig, and acquisition context. Without an early change measurement or replicated regime coverage, a static passport can encode batch/domain coordinates rather than a transferable damage state.",
+    "The next decisive test should use a preregistered early diagnostic derivative under a standardized perturbation and an independent common-EOL target, not tune another static BoL regression on these opened outcomes."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "connectionId": "CONN-EVIDENCE-026",
+  "cycleId": "RC-2026-53",
+  "type": "hierarchical-confounding-and-path-state-observability",
+  "strength": "strong",
+  "validationStatus": "RC53 confirms the shared failure structure at a common diagnostic horizon; transfer of an early response derivative to common EOL remains untested.",
+  "problemIds": ["UP-219", "UP-233", "UP-234"],
+  "sharedBottleneck": "A static initial observation can encode experiment, rig, batch, or imposed condition without identifying the latent susceptibility that controls later response. Pooled association then survives while within-regime prediction fails.",
+  "variableMapping": [
+    {"concept": "imposed path", "UP-219": "temperature, SoC range, drive or constant-current duty", "UP-233": "process recipe and boundary conditions", "UP-234": "accelerated stress history"},
+    {"concept": "static initial coordinate", "UP-219": "BoL capacity, DMA electrode capacities, offset, GITT resistance", "UP-233": "initial microstructure or calibrated twin parameters", "UP-234": "pre-test proxy or nominal material state"},
+    {"concept": "latent susceptibility", "UP-219": "cell-specific degradation response", "UP-233": "unresolved defect and state-update law", "UP-234": "mechanism-specific damage-rate response"},
+    {"concept": "early derivative", "UP-219": "RPT0-to-RPTk change in LLI, LAM, offset, and resistance", "UP-233": "measured state-update residual after a controlled process perturbation", "UP-234": "proxy-rate response under a bounded stress increment"},
+    {"concept": "independent verdict", "UP-219": "common-EOL held cell", "UP-233": "new build or process lot", "UP-234": "untouched service-stress arm"}
+  ],
+  "evidence": {
+    "registered": [
+      "Arm C pooled Spearman is 0.6239412761 but target MdAE is 10.5467610310 percentage points.",
+      "Within-experiment centered Spearman is -0.0118577075.",
+      "Experiment-level mean biases are -6.7277, -9.0625, and -9.7355 percentage points.",
+      "Python and Node agree across 117 comparisons."
+    ],
+    "exploratory": [
+      "Capacity plus DMA MdAE is 8.4496 percentage points.",
+      "Capacity plus resistance MdAE is 6.7621 percentage points.",
+      "Nearest-development support distance has only 0.1790 Spearman with Arm C absolute error."
+    ]
+  },
+  "holdsWhen": [
+    "Static coordinates are collected before outcome and processed identically across regimes.",
+    "Regime means and cell-level deviations are adjudicated separately.",
+    "The early perturbation is small enough not to create a new degradation mechanism.",
+    "The response derivative precedes the target horizon and is measured independently of the outcome.",
+    "The common-EOL rule and censoring policy are identical across held arms."
+  ],
+  "breaksWhen": [
+    "Batch, rig, or test date is perfectly confounded with regime.",
+    "The early perturbation changes damage ordering or triggers lithium plating absent in service.",
+    "DMA fitting uses incompatible OCP curves or resistance uses inconsistent pulse timing.",
+    "Late path bifurcation or a local mechanical defect has no early electrochemical response.",
+    "Pooled rank is treated as cell-level evidence without within-regime adjudication."
+  ],
+  "transferableMethod": "Use a standardized perturbation to estimate an early state-response derivative, then fit a hierarchical model with explicit regime effects and require both held-regime magnitude accuracy and within-regime ranking.",
+  "surfaceSimilarityRisk": "All three problems use the word 'state', but the connection is substantive only when variables, perturbations, diagnostic derivatives, and independent outcomes can be mapped with compatible units and ordering.",
+  "minimumValidation": "At least three replicated regimes, 30 untouched common-EOL targets, within-regime Spearman at least 0.50, at least 25% MdAPE improvement over the static passport, calibrated interval coverage and width, bounded calibration-cell influence, and independent implementation agreement."
+}

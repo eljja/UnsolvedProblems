@@ -1,0 +1,99 @@
+{
+  "resultId": "RC53-BATTERY-MECHANISM-BRIDGE-CYCLE-RESULT-0.1",
+  "cycleId": "RC-2026-53",
+  "reviewedOn": "2026-08-26",
+  "precommit": {
+    "gitCommit": "b2fb296",
+    "scope": "Source, 4/14/22 split, RPT8 response, three arms, ridge model, metrics, and gates were sealed before any per-cell summary CSV value was read.",
+    "pilotSchemaCommit": "47bf264",
+    "pilotBoundary": "Four zero-weight cells fixed exact column, unit, RPT-row, and GITT pulse mappings before development or target values were read."
+  },
+  "selection": {
+    "problemIds": ["UP-219", "UP-233", "UP-234"],
+    "reason": "RC52 failed under source transfer because early electrical curves lacked a transportable hidden-state coordinate. RC53 tests whether beginning-of-life electrode-resolved and pulse-resistance diagnostics add that coordinate under complete usage-regime holdout.",
+    "source": "40 LG M50T 21700 cells from Imperial College London, 15 operating conditions, official Zenodo record 10637534."
+  },
+  "newlyVerifiedFacts": [
+    "The official metadata lists 40 cells and the five archives contain exactly 40 matching Performance Summary files.",
+    "All 40 cells contain RPT0 and RPT8 C/10 capacity; the primary paper identifies RPT8 as the last common diagnostic horizon.",
+    "The response is direct RPT8/RPT0 C/10 capacity retention. It is not an EOL or lifetime label because some cells stopped before a common EOL.",
+    "The four pilot cells passed the registered schema, unit, 25-pulse, and twelfth-pulse checks and have exactly zero model weight.",
+    "Arm A, using only imposed stress, has 6.3833 percentage-point target MdAE, 6.0053 pp MAE, 10.3257 pp maximum error, and pooled Spearman 0.4997.",
+    "Arm B adds BoL C/10 and C/2 capacity and lowers MdAE to 5.6988 pp, a 10.72% improvement, but raises maximum error to 11.2032 pp; H1 therefore fails its joint gate.",
+    "Arm C adds electrode capacities, electrode offset, and 0.1 s and 10 s GITT resistance. Its pooled Spearman rises to 0.6239, but MdAE worsens to 10.5468 pp and maximum error to 16.6462 pp.",
+    "Arm C worsens MdAE by 65.22% relative to stress-only and by 85.07% relative to capacity, so the static passport hypothesis is rejected rather than rescued by rank correlation.",
+    "Arm C's pooled rank is regime-confounded: after centering within experiments, Spearman is -0.0119; experiment-specific Spearman is -0.6571, 0.3810, and -0.2619.",
+    "Arm C underpredicts mean retention by 6.73, 9.06, and 9.74 percentage points in held experiments 2,2, 4, and 5 respectively.",
+    "Post-verdict block ablations remain poor: capacity plus DMA has MdAE 8.4496 pp, while capacity plus resistance has 6.7621 pp. Neither changes the registered verdict.",
+    "Python and dependency-free Node agree across 117 predictions, metrics, experiment metrics, and verdict comparisons with maximum absolute difference 7.82e-14."
+  ],
+  "hypotheses": [
+    {"code": "H0", "verdict": "rejected", "reason": "Stress-only misses the 1.5 pp MdAE, 0.60 Spearman, and per-experiment 2.0 pp gates."},
+    {"code": "H1", "verdict": "rejected", "reason": "BoL capacity improves median error by 10.72% but increases maximum error, failing the joint condition."},
+    {"code": "H2", "verdict": "rejected", "reason": "The static electrode/resistance passport improves pooled rank but increases median and maximum errors and fails every per-experiment error gate."},
+    {"code": "H3", "verdict": "unsupported-by-design", "reason": "A common RPT8 response cannot establish fifth-source EOL or lifetime validation without a common EOL event and sealed EOL target cohort."}
+  ],
+  "failedOrRejectedApproaches": [
+    "Treating known temperature and SoC/protocol as sufficient across untrained usage regimes.",
+    "Adding initial capacity while ignoring its increased worst-case error.",
+    "Treating pooled Spearman 0.624 as evidence of cell-level ranking; within-regime rank is essentially zero.",
+    "Using a high-dimensional static BoL passport as a transferable degradation coordinate with only 14 development cells.",
+    "Interpreting electrode-fit variables as direct, unique mechanism observations rather than model-dependent diagnostic proxies.",
+    "Calling RPT8 capacity retention lifetime or EOL despite heterogeneous termination.",
+    "Post-hoc removal of the DMA or resistance block to rescue H2; both are exploratory and neither passes the original gate."
+  ],
+  "causalFinding": {
+    "input": "Usage descriptors plus BoL capacity, electrode-fit, and GITT resistance.",
+    "bottleneck": "Static BoL levels mix cell susceptibility with experiment, rig, batch, and feature-extraction coordinates; they do not observe how the state responds to damage.",
+    "bridgeTested": "If the passport were transportable, it would reduce held-regime magnitude error and preserve within-regime ranking.",
+    "independentQuantity": "RPT8/RPT0 C/10 retention on 22 cells from three complete held experiments.",
+    "verdict": "The bridge fails: pooled rank is between-regime structure, not within-regime cell susceptibility, and magnitude bias remains 6.7-9.7 pp."
+  },
+  "mostPromisingPath": {
+    "name": "Standardized perturbation response passport",
+    "status": "A falsifiable next path supported by RC53 failure structure, not established as novel or validated.",
+    "hypothesis": "A short early change vector—RPT0 to RPT1 or RPT2 changes in LLI, LAM, electrode offset, and GITT resistance under a standardized perturbation—captures damage susceptibility more directly than static BoL levels.",
+    "difference": "The new coordinate is a response derivative under controlled damage, not a baseline manufacturing or rig coordinate. It must be combined with the future duty descriptor and evaluated hierarchically within regimes.",
+    "minimumTest": "On a new source with at least 60 cells and a common EOL definition, randomize at least three early perturbation regimes within one lot, reserve four zero-weight schema pilots, use at most eight influence-bounded calibration cells, and keep at least 30 cells plus entire duty regimes sealed. Compare stress-only, static BoL, early-change, and early-change-plus-physics arms.",
+    "success": "The early-change arm must improve common-EOL MdAPE by at least 25% over static BoL, retain within-regime Spearman at least 0.50, meet an 80% interval coverage and width gate, and remain stable when one calibration cell is removed.",
+    "reject": "Reject if improvement exists only in pooled regime means, if within-regime ranking is below 0.50, if one perturbation cell controls the result, or if degradation-mode ordering changes between accelerated and service arms.",
+    "failureValue": "Failure would show whether the missing information is not a diagnostic derivative but later path bifurcation, spatial/mechanical state, or an unobserved manufacturing variable."
+  },
+  "structuralConnection": {
+    "connectionId": "CONN-EVIDENCE-026",
+    "type": "Hierarchical confounding and path-state observability",
+    "sharedBottleneck": "UP-219, UP-233, and UP-234 all require a state coordinate that separates imposed history from latent susceptibility. Static initial observations can identify experiment means while failing cell-level transport.",
+    "variableMapping": [
+      {"batteryRUL": "BoL diagnostic -> later retention", "digitalTwin": "initial state parameter -> process response", "acceleratedTesting": "baseline proxy -> service damage ordering"},
+      {"batteryRUL": "usage regime", "digitalTwin": "process path", "acceleratedTesting": "stress arm"},
+      {"batteryRUL": "RPT0-to-RPTk derivative", "digitalTwin": "state update residual", "acceleratedTesting": "mechanism-sensitive response rate"}
+    ],
+    "holdsWhen": "The perturbation is standardized, diagnostics are comparable, response derivatives precede the adjudication horizon, and held regimes share the same mechanism ordering.",
+    "breaksWhen": "Baseline features encode batch or rig, mechanisms bifurcate after the early window, EOL semantics differ, or spatial/mechanical defects remain invisible.",
+    "minimumValidation": "Within-regime ranking and held-regime magnitude error must pass separately; pooled correlation is never sufficient."
+  },
+  "workPackages": [
+    {"code": "WP53-A", "purpose": "Find a source with common EOL and early repeated diagnostics.", "method": "Screen official datasets for at least 60 same-lot cells, common EOL, RPT0 and RPT1/2 DMA or resistance, and condition replication.", "deliverable": "Machine-readable endpoint and modality audit.", "pass": "At least 30 untouched EOL targets remain after pilots and calibration.", "fail": "Do not substitute a common-horizon SOH response for EOL."},
+    {"code": "WP53-B", "purpose": "Separate baseline coordinates from response derivatives.", "method": "Randomize a standardized low-damage perturbation and freeze RPT0-to-RPTk changes in LLI, LAM, offset, and resistance before EOL labels.", "deliverable": "Static and derivative feature tables with extraction hashes.", "pass": "Independent extraction agrees and no target contributes to scaling.", "fail": "If the perturbation changes mechanism ordering, redesign rather than extrapolate."},
+    {"code": "WP53-C", "purpose": "Adjudicate hierarchy rather than pooled association.", "method": "Report held-regime magnitude error, within-regime rank, interval coverage/width, and calibration-cell influence for all arms.", "deliverable": "Cell-level predictions and regime-centered diagnostics from two implementations.", "pass": "Joint registered gates pass in every eligible regime.", "fail": "Any pooled-only improvement is rejected."},
+    {"code": "WP53-D", "purpose": "Escalate sensing only when electrochemical derivatives fail.", "method": "Add expansion, pressure, ultrasound, or manufacturing telemetry one modality at a time against the same sealed targets.", "deliverable": "Incremental information-gain and failure-boundary ledger.", "pass": "A modality reduces error and preserves mechanism ordering under independent replication.", "fail": "Stop adding correlated proxies if conditional error does not fall."}
+  ],
+  "uncertaintyBudget": [
+    {"category": "endpoint", "risk": "RPT8 retention is not EOL.", "control": "Keep the claim at common-horizon degradation and require common EOL next.", "stop": "No RUL, warranty, or safety inference."},
+    {"category": "measurement", "risk": "DMA depends on OCV fitting and GITT on timing and contact resistance.", "control": "Freeze pulse and fit definitions; replicate extraction independently.", "stop": "Unresolved unit, pulse, or fit ambiguity stops the arm."},
+    {"category": "sampling", "risk": "Fourteen development cells support fifteen passport features only through ridge regularization.", "control": "Treat the result as a strict stress test and require larger, replicated next cohorts.", "stop": "No feature-selection claim from RC53."},
+    {"category": "hierarchy", "risk": "Pooled associations reflect regime means.", "control": "Report within-regime centered rank and per-regime error.", "stop": "Pooled-only success is rejected."},
+    {"category": "mechanism", "risk": "Several mechanisms produce the same capacity and resistance.", "control": "Use degradation-mode ordering and independent modalities as validation axes.", "stop": "Prediction accuracy alone never identifies a unique mechanism."}
+  ],
+  "failedRuns": [
+    "The first full extraction stopped at Expt 5-A because its GITT folder uses 'Cell' while earlier archives use 'cell'. No result artifact was written and no cell was removed. The path match was made case-insensitive to folder capitalization without changing the registered file suffix or quantity.",
+    "The pilot initially required direct C/10 retention and the source SoH column to agree within 1e-10. Their maximum difference was 1.83e-6, so the sealed amendment kept the direct ratio and recorded a 1e-4 schema cross-check tolerance before development or target values were read."
+  ],
+  "claimBoundaries": [
+    "No fifth-source lifetime or EOL validation was achieved.",
+    "No field pack, calendar life, safety failure, chemistry transfer, or fabrication experiment was performed.",
+    "No static BoL passport was validated for deployment.",
+    "The next derivative-passport proposal is unvalidated and not claimed as novel until a focused prior-art search and prospective test."
+  ],
+  "nextCycleStart": "Do not tune another static model on the opened Imperial RPT8 outcomes. Search for a new source with a common EOL event, at least 60 same-lot cells, replicated usage regimes, and RPT0 plus early repeated DMA/resistance or another orthogonal diagnostic. Before EOL values are opened, preregister a standardized perturbation, four zero-weight schema pilots, at most eight influence-bounded calibration cells, at least 30 untouched EOL targets, and separate pooled, within-regime, coverage, width, and mechanism-ordering gates."
+}
