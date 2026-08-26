@@ -1,0 +1,64 @@
+{
+  "cycleId": "RC-2026-53",
+  "reviewedOn": "2026-08-26",
+  "searchBoundary": "Primary papers, official institutional copies, and official datasets were searched for common-horizon battery degradation, varying-condition lifetime prediction, degradation-mode validation, and path-dependent ageing. Similarity does not establish novelty.",
+  "sources": [
+    {
+      "id": "imperial_m50t_dataset_2024",
+      "title": "Data from: Lithium-ion battery degradation: comprehensive cycle ageing data and analysis for commercial 21700 cells",
+      "url": "https://zenodo.org/records/10637534",
+      "publishedOn": "2024-03-14",
+      "usedFor": "Official 40-cell source, file hashes, experiment metadata, processed performance summaries, and the RPT0/RPT8 comparison.",
+      "doesNotEstablish": "The record does not supply a common EOL event for all 40 cells and therefore cannot by itself validate RUL or cycle life."
+    },
+    {
+      "id": "kirkaldy_m50t_2024",
+      "title": "Lithium-ion battery degradation: Comprehensive cycle ageing data and analysis for commercial 21700 cells",
+      "url": "https://doi.org/10.1016/j.jpowsour.2024.234185",
+      "publishedOn": "2024-04-05",
+      "usedFor": "Primary experimental design, 15 operating conditions, GITT and degradation-mode definitions, and the statement that RPT8 is common to all cells.",
+      "doesNotEstablish": "The paper reports descriptive degradation trajectories rather than the preregistered held-regime three-arm prediction test."
+    },
+    {
+      "id": "li_dma_models_2025",
+      "title": "The importance of degradation mode analysis in parameterising lifetime prediction models of lithium-ion battery degradation",
+      "url": "https://doi.org/10.1038/s41467-025-57968-3",
+      "publishedOn": "2025-03-21",
+      "usedFor": "Evidence that capacity and resistance can fit multiple incompatible mechanism models and that electrode-resolved degradation modes add a stricter validation axis.",
+      "doesNotEstablish": "It does not show that BoL DMA quantities predict later degradation in unseen SoC/protocol regimes."
+    },
+    {
+      "id": "li_varying_usage_2024",
+      "title": "Predicting battery lifetime under varying usage conditions from early aging data",
+      "url": "https://doi.org/10.1016/j.xcrp.2024.101891",
+      "publishedOn": "2024-03-22",
+      "usedFor": "Primary precedent for separating condition-level and cell-level features under varying usage and for using reference-test differential features.",
+      "doesNotEstablish": "Its 225-cell hierarchy and feature construction are not an independent held-experiment test of the Imperial BoL passport."
+    },
+    {
+      "id": "ramasubramanian_path_indicators_2025",
+      "title": "Degradation path indicators for lithium-ion batteries",
+      "url": "https://doi.org/10.1016/j.est.2025.119113",
+      "publishedOn": "2025-12-15",
+      "usedFor": "Primary evidence that capacity fade, pulse resistance, and degradation modes form distinct path-indicator spaces across 48 cells and 24 stress combinations.",
+      "doesNotEstablish": "Unsupervised path clustering does not prove prospective transfer of a BoL passport to a held usage regime or to EOL."
+    },
+    {
+      "id": "dynamic_path_prediction_2025",
+      "title": "Degradation path prediction of lithium-ion batteries under dynamic operating sequences",
+      "url": "https://doi.org/10.1039/D4EE04787G",
+      "publishedOn": "2025-05-23",
+      "usedFor": "Primary precedent that future internal degradation paths depend on both current diagnostic state and anticipated operating sequence.",
+      "doesNotEstablish": "Its dynamic-sequence model is not a held-regime BoL-only comparison and does not remove the need for independent common-EOL validation."
+    },
+    {
+      "id": "limits_electrochemical_battery_2026",
+      "title": "Limits of electrochemical data for predicting battery lifetime and failure",
+      "url": "https://doi.org/10.1016/j.joule.2026.102423",
+      "publishedOn": "2026-05-20",
+      "usedFor": "Current boundary analysis motivating tests that distinguish predictive electrochemical proxies from unobserved local defects and mechanical thresholds.",
+      "doesNotEstablish": "A perspective identifies limits and candidate modalities but does not adjudicate the present dataset."
+    }
+  ],
+  "noveltyStatement": "RC53 does not claim a new algorithm. Its contribution is the falsifiable combination of a zero-influence schema pilot, complete experiment holdouts, three nested diagnostic arms, a common uncensored horizon, and an explicit refusal to relabel that horizon as lifetime. A prior-art search found related components but did not establish that this exact adjudication has been published."
+}

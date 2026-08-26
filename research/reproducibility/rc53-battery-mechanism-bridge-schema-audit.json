@@ -1,0 +1,400 @@
+{
+  "auditId": "RC53-BATTERY-MECHANISM-BRIDGE-SCHEMA-AUDIT-0.1",
+  "cycleId": "RC-2026-53",
+  "record": "https://zenodo.org/records/10637534",
+  "metadata": {
+    "rows": 40,
+    "sheetNames": [
+      "expt 5",
+      "expt 4",
+      "expt 3",
+      "expt 2,2",
+      "expt 1"
+    ],
+    "md5": "245a3bcfeea2b87e262c8db5385b7172",
+    "registeredMd5": "245a3bcfeea2b87e262c8db5385b7172",
+    "matches": true,
+    "cells": [
+      {
+        "experiment": "5",
+        "cell": "A",
+        "temperatureC": 10,
+        "socRange": "0-100",
+        "ageSets": 15
+      },
+      {
+        "experiment": "5",
+        "cell": "B",
+        "temperatureC": 10,
+        "socRange": "0-100",
+        "ageSets": 15
+      },
+      {
+        "experiment": "5",
+        "cell": "C",
+        "temperatureC": 10,
+        "socRange": "0-100",
+        "ageSets": 15
+      },
+      {
+        "experiment": "5",
+        "cell": "D",
+        "temperatureC": 25,
+        "socRange": "0-100",
+        "ageSets": 15
+      },
+      {
+        "experiment": "5",
+        "cell": "E",
+        "temperatureC": 25,
+        "socRange": "0-100",
+        "ageSets": 15
+      },
+      {
+        "experiment": "5",
+        "cell": "F",
+        "temperatureC": 40,
+        "socRange": "0-100",
+        "ageSets": 15
+      },
+      {
+        "experiment": "5",
+        "cell": "G",
+        "temperatureC": 40,
+        "socRange": "0-100",
+        "ageSets": 15
+      },
+      {
+        "experiment": "5",
+        "cell": "H",
+        "temperatureC": 40,
+        "socRange": "0-100",
+        "ageSets": 15
+      },
+      {
+        "experiment": "4",
+        "cell": "A",
+        "temperatureC": 10,
+        "socRange": "drivecycle",
+        "ageSets": 9
+      },
+      {
+        "experiment": "4",
+        "cell": "B",
+        "temperatureC": 10,
+        "socRange": "drivecycle",
+        "ageSets": 9
+      },
+      {
+        "experiment": "4",
+        "cell": "C",
+        "temperatureC": 10,
+        "socRange": "drivecycle",
+        "ageSets": 9
+      },
+      {
+        "experiment": "4",
+        "cell": "D",
+        "temperatureC": 25,
+        "socRange": "drivecycle",
+        "ageSets": 9
+      },
+      {
+        "experiment": "4",
+        "cell": "E",
+        "temperatureC": 25,
+        "socRange": "drivecycle",
+        "ageSets": 9
+      },
+      {
+        "experiment": "4",
+        "cell": "F",
+        "temperatureC": 40,
+        "socRange": "drivecycle",
+        "ageSets": 9
+      },
+      {
+        "experiment": "4",
+        "cell": "G",
+        "temperatureC": 40,
+        "socRange": "drivecycle",
+        "ageSets": 9
+      },
+      {
+        "experiment": "4",
+        "cell": "H",
+        "temperatureC": 40,
+        "socRange": "drivecycle",
+        "ageSets": 9
+      },
+      {
+        "experiment": "3",
+        "cell": "A",
+        "temperatureC": 10,
+        "socRange": "85-100",
+        "ageSets": 10
+      },
+      {
+        "experiment": "3",
+        "cell": "B",
+        "temperatureC": 10,
+        "socRange": "85-100",
+        "ageSets": 10
+      },
+      {
+        "experiment": "3",
+        "cell": "C",
+        "temperatureC": 10,
+        "socRange": "85-100",
+        "ageSets": 10
+      },
+      {
+        "experiment": "3",
+        "cell": "D",
+        "temperatureC": 25,
+        "socRange": "85-100",
+        "ageSets": 11
+      },
+      {
+        "experiment": "3",
+        "cell": "E",
+        "temperatureC": 25,
+        "socRange": "85-100",
+        "ageSets": 11
+      },
+      {
+        "experiment": "3",
+        "cell": "F",
+        "temperatureC": 25,
+        "socRange": "85-100",
+        "ageSets": 11
+      },
+      {
+        "experiment": "3",
+        "cell": "G",
+        "temperatureC": 40,
+        "socRange": "85-100",
+        "ageSets": 11
+      },
+      {
+        "experiment": "3",
+        "cell": "H",
+        "temperatureC": 40,
+        "socRange": "85-100",
+        "ageSets": 12
+      },
+      {
+        "experiment": "3",
+        "cell": "I",
+        "temperatureC": 40,
+        "socRange": "85-100",
+        "ageSets": 12
+      },
+      {
+        "experiment": "2,2",
+        "cell": "A",
+        "temperatureC": 10,
+        "socRange": "70-85",
+        "ageSets": 12
+      },
+      {
+        "experiment": "2,2",
+        "cell": "B",
+        "temperatureC": 10,
+        "socRange": "70-85",
+        "ageSets": 12
+      },
+      {
+        "experiment": "2,2",
+        "cell": "C",
+        "temperatureC": 25,
+        "socRange": "70-85",
+        "ageSets": 12
+      },
+      {
+        "experiment": "2,2",
+        "cell": "D",
+        "temperatureC": 25,
+        "socRange": "70-85",
+        "ageSets": 12
+      },
+      {
+        "experiment": "2,2",
+        "cell": "E",
+        "temperatureC": 40,
+        "socRange": "70-85",
+        "ageSets": 12
+      },
+      {
+        "experiment": "2,2",
+        "cell": "F",
+        "temperatureC": 40,
+        "socRange": "70-85",
+        "ageSets": 12
+      },
+      {
+        "experiment": "1",
+        "cell": "A",
+        "temperatureC": 10,
+        "socRange": "0-30",
+        "ageSets": 14
+      },
+      {
+        "experiment": "1",
+        "cell": "B",
+        "temperatureC": 10,
+        "socRange": "0-30",
+        "ageSets": 14
+      },
+      {
+        "experiment": "1",
+        "cell": "J",
+        "temperatureC": 10,
+        "socRange": "0-30",
+        "ageSets": 10
+      },
+      {
+        "experiment": "1",
+        "cell": "D",
+        "temperatureC": 25,
+        "socRange": "0-30",
+        "ageSets": 13
+      },
+      {
+        "experiment": "1",
+        "cell": "E",
+        "temperatureC": 25,
+        "socRange": "0-30",
+        "ageSets": 14
+      },
+      {
+        "experiment": "1",
+        "cell": "F",
+        "temperatureC": 25,
+        "socRange": "0-30",
+        "ageSets": 14
+      },
+      {
+        "experiment": "1",
+        "cell": "K",
+        "temperatureC": 40,
+        "socRange": "0-30",
+        "ageSets": 10
+      },
+      {
+        "experiment": "1",
+        "cell": "L",
+        "temperatureC": 40,
+        "socRange": "0-30",
+        "ageSets": 10
+      },
+      {
+        "experiment": "1",
+        "cell": "M",
+        "temperatureC": 40,
+        "socRange": "0-30",
+        "ageSets": 10
+      }
+    ]
+  },
+  "archives": [
+    {
+      "file": "Expt 3 - Cathode Degradation and Li-Plating.zip",
+      "bytes": 12008811111,
+      "md5": "a946432d9bddda09732d5f6a8661f879",
+      "memberCount": 1519,
+      "performanceSummaryCount": 9,
+      "performanceSummaryMembers": [
+        "Expt 3 - Cathode Degradation and Li-Plating/Summary Data/Performance Summary/Expt 3 - cell A (10degC) - Processed Data.csv",
+        "Expt 3 - Cathode Degradation and Li-Plating/Summary Data/Performance Summary/Expt 3 - cell B (10degC) - Processed Data.csv",
+        "Expt 3 - Cathode Degradation and Li-Plating/Summary Data/Performance Summary/Expt 3 - cell C (10degC) - Processed Data.csv",
+        "Expt 3 - Cathode Degradation and Li-Plating/Summary Data/Performance Summary/Expt 3 - cell D (25degC) - Processed Data.csv",
+        "Expt 3 - Cathode Degradation and Li-Plating/Summary Data/Performance Summary/Expt 3 - cell E (25degC) - Processed Data.csv",
+        "Expt 3 - Cathode Degradation and Li-Plating/Summary Data/Performance Summary/Expt 3 - cell F (25degC) - Processed Data.csv",
+        "Expt 3 - Cathode Degradation and Li-Plating/Summary Data/Performance Summary/Expt 3 - cell G (40degC) - Processed Data.csv",
+        "Expt 3 - Cathode Degradation and Li-Plating/Summary Data/Performance Summary/Expt 3 - cell H (40degC) - Processed Data.csv",
+        "Expt 3 - Cathode Degradation and Li-Plating/Summary Data/Performance Summary/Expt 3 - cell I (40degC) - Processed Data.csv"
+      ],
+      "summaryValuesRead": false
+    },
+    {
+      "file": "Expt 4 - Drive Cycle Aging (Control).zip",
+      "bytes": 11376117549,
+      "md5": "99083707bc7a24e72d9865abac19ce50",
+      "memberCount": 1170,
+      "performanceSummaryCount": 8,
+      "performanceSummaryMembers": [
+        "Expt 4 - Drive Cycle Aging (Control)/Summary Data/Performance Summary/Expt 4 - cell A (10degC) - Processed Data.csv",
+        "Expt 4 - Drive Cycle Aging (Control)/Summary Data/Performance Summary/Expt 4 - cell B (10degC) - Processed Data.csv",
+        "Expt 4 - Drive Cycle Aging (Control)/Summary Data/Performance Summary/Expt 4 - cell C (10degC) - Processed Data.csv",
+        "Expt 4 - Drive Cycle Aging (Control)/Summary Data/Performance Summary/Expt 4 - cell D (25degC) - Processed Data.csv",
+        "Expt 4 - Drive Cycle Aging (Control)/Summary Data/Performance Summary/Expt 4 - cell E (25degC) - Processed Data.csv",
+        "Expt 4 - Drive Cycle Aging (Control)/Summary Data/Performance Summary/Expt 4 - cell F (40degC) - Processed Data.csv",
+        "Expt 4 - Drive Cycle Aging (Control)/Summary Data/Performance Summary/Expt 4 - cell G (40degC) - Processed Data.csv",
+        "Expt 4 - Drive Cycle Aging (Control)/Summary Data/Performance Summary/Expt 4 - cell H (40degC) - Processed Data.csv"
+      ],
+      "summaryValuesRead": false
+    },
+    {
+      "file": "Expt 5 - Standard Cycle Aging (Control).zip",
+      "bytes": 10443549687,
+      "md5": "298aa767e4e14acdb348f5832e0cbae9",
+      "memberCount": 1831,
+      "performanceSummaryCount": 8,
+      "performanceSummaryMembers": [
+        "Expt 5 - Standard Cycle Aging (Control)/Summary Data/Performance Summary/Expt 5 - cell A (10degC) - Processed Data.csv",
+        "Expt 5 - Standard Cycle Aging (Control)/Summary Data/Performance Summary/Expt 5 - cell B (10degC) - Processed Data.csv",
+        "Expt 5 - Standard Cycle Aging (Control)/Summary Data/Performance Summary/Expt 5 - cell C (10degC) - Processed Data.csv",
+        "Expt 5 - Standard Cycle Aging (Control)/Summary Data/Performance Summary/Expt 5 - cell D (25degC) - Processed Data.csv",
+        "Expt 5 - Standard Cycle Aging (Control)/Summary Data/Performance Summary/Expt 5 - cell E (25degC) - Processed Data.csv",
+        "Expt 5 - Standard Cycle Aging (Control)/Summary Data/Performance Summary/Expt 5 - cell F (40degC) - Processed Data.csv",
+        "Expt 5 - Standard Cycle Aging (Control)/Summary Data/Performance Summary/Expt 5 - cell G (40degC) - Processed Data.csv",
+        "Expt 5 - Standard Cycle Aging (Control)/Summary Data/Performance Summary/Expt 5 - cell H (40degC) - Processed Data.csv"
+      ],
+      "summaryValuesRead": false
+    },
+    {
+      "file": "Expt 1 - Si-based Degradation.zip",
+      "bytes": 9126944261,
+      "md5": "1a7ee753749a910375c883b7827c73b9",
+      "memberCount": 1765,
+      "performanceSummaryCount": 9,
+      "performanceSummaryMembers": [
+        "Expt 1 - Si-based Degradation/Summary Data/Performance Summary/Expt 1 - cell A (10degC) - Processed Data.csv",
+        "Expt 1 - Si-based Degradation/Summary Data/Performance Summary/Expt 1 - cell B (10degC) - Processed Data.csv",
+        "Expt 1 - Si-based Degradation/Summary Data/Performance Summary/Expt 1 - cell D (25degC) - Processed Data.csv",
+        "Expt 1 - Si-based Degradation/Summary Data/Performance Summary/Expt 1 - cell E (25degC) - Processed Data.csv",
+        "Expt 1 - Si-based Degradation/Summary Data/Performance Summary/Expt 1 - cell F (25degC) - Processed Data.csv",
+        "Expt 1 - Si-based Degradation/Summary Data/Performance Summary/Expt 1 - cell J (10degC) - Processed Data.csv",
+        "Expt 1 - Si-based Degradation/Summary Data/Performance Summary/Expt 1 - cell K (40degC) - Processed Data.csv",
+        "Expt 1 - Si-based Degradation/Summary Data/Performance Summary/Expt 1 - cell L (40degC) - Processed Data.csv",
+        "Expt 1 - Si-based Degradation/Summary Data/Performance Summary/Expt 1 - cell M (40degC) - Processed Data.csv"
+      ],
+      "summaryValuesRead": false
+    },
+    {
+      "file": "Expt 2,2 - C-based Degradation 2.zip",
+      "bytes": 6465174131,
+      "md5": "9f1bdd6e5b11b9e80a5f1f0a6438d1a7",
+      "memberCount": 1146,
+      "performanceSummaryCount": 6,
+      "performanceSummaryMembers": [
+        "Expt 2,2 - C-based Degradation 2/Summary Data/Performance Summary/Expt 2,2 - cell A (10degC) - Processed Data.csv",
+        "Expt 2,2 - C-based Degradation 2/Summary Data/Performance Summary/Expt 2,2 - cell B (10degC) - Processed Data.csv",
+        "Expt 2,2 - C-based Degradation 2/Summary Data/Performance Summary/Expt 2,2 - cell C (25degC) - Processed Data.csv",
+        "Expt 2,2 - C-based Degradation 2/Summary Data/Performance Summary/Expt 2,2 - cell D (25degC) - Processed Data.csv",
+        "Expt 2,2 - C-based Degradation 2/Summary Data/Performance Summary/Expt 2,2 - cell E (40degC) - Processed Data.csv",
+        "Expt 2,2 - C-based Degradation 2/Summary Data/Performance Summary/Expt 2,2 - cell F (40degC) - Processed Data.csv"
+      ],
+      "summaryValuesRead": false
+    }
+  ],
+  "totals": {
+    "metadataRows": 40,
+    "performanceSummaryMembers": 40,
+    "pilotCells": 4,
+    "developmentCells": 14,
+    "untouchedTargetCells": 22
+  },
+  "summaryValuesRead": false
+}

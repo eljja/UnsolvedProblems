@@ -1,0 +1,163 @@
+{
+  "precommitId": "RC53-BATTERY-MECHANISM-BRIDGE-PRECOMMIT-0.1",
+  "cycleId": "RC-2026-53",
+  "sealedOn": "2026-08-26",
+  "status": "sealed-after-primary-paper-metadata-and-archive-directory-inspection-but-before-any-summary-csv-value-was-read",
+  "chronologyBoundary": {
+    "alreadyObserved": [
+      "The analyst read the official 2024 paper, Zenodo record, experiment metadata workbook, and archive member names.",
+      "The paper reports aggregate beginning-of-life statistics and states that RPT8 is the last reference test shared by all 40 cells; these published aggregates were visible before sealing.",
+      "No per-cell Performance Summary or Ageing Sets Summary CSV content was read before sealing.",
+      "A separate 116-cell Panasonic dataset was screened and rejected for this cycle because its 70%-of-initial-capacity-or-project-end endpoint is censored and not aligned with RC52 cycle-life labels."
+    ],
+    "notYetObservedAtSeal": [
+      "No per-cell RPT0 or RPT8 capacity, resistance, electrode-capacity, offset, degradation-mode, or throughput value had been read.",
+      "No pilot, development, or target response had been computed.",
+      "No three-arm model had been fitted and no prediction error, rank correlation, or arm comparison had been computed.",
+      "No feature, ridge penalty, split, threshold, or decision rule had been changed in response to a per-cell result."
+    ]
+  },
+  "selection": {
+    "problemIds": ["UP-219", "UP-233", "UP-234"],
+    "reason": "RC52 showed that twenty-cycle electrical features do not transport reliably across four battery sources. The fifth source must therefore test a missing bridge rather than add another flexible predictor. The Imperial LG M50T study supplies 40 cells, 15 operating conditions, a common RPT8 endpoint, beginning-of-life GITT resistance, and electrode-resolved degradation-mode analysis. This makes it possible to ask whether an orthogonal electrochemical passport improves prediction under held-out usage regimes.",
+    "claimBoundary": "RC53 is a mechanism-bridge experiment. It does not validate remaining useful life, an end-of-life distribution, field-pack safety, chemistry transfer, or a universal digital twin because the source stopped some cells before a common end-of-life threshold.",
+    "deferredScope": "Cyber-trust experiments, destructive post-mortem work, new cell cycling, field packs, warranty decisions, and safety certification remain outside scope."
+  },
+  "sourceManifest": {
+    "record": "https://zenodo.org/records/10637534",
+    "doi": "10.5281/zenodo.10637534",
+    "paper": "https://doi.org/10.1016/j.jpowsour.2024.234185",
+    "publishedOn": "2024-03-14",
+    "paperAvailableOnline": "2024-04-05",
+    "cellType": "LG M50T 21700, NMC811 positive electrode and graphite/silicon-oxide composite negative electrode",
+    "files": [
+      {"key": "experiment_metadata.xlsx", "bytes": 21913, "md5": "245a3bcfeea2b87e262c8db5385b7172"},
+      {"key": "Battery_Degradation_Data_example_notebook.ipynb", "bytes": 16008, "md5": "f1893b7d807cb585febe231868f41135"},
+      {"key": "Expt 1 - Si-based Degradation.zip", "bytes": 9126944261, "md5": "1a7ee753749a910375c883b7827c73b9"},
+      {"key": "Expt 2,2 - C-based Degradation 2.zip", "bytes": 6465174131, "md5": "9f1bdd6e5b11b9e80a5f1f0a6438d1a7"},
+      {"key": "Expt 3 - Cathode Degradation and Li-Plating.zip", "bytes": 12008811111, "md5": "a946432d9bddda09732d5f6a8661f879"},
+      {"key": "Expt 4 - Drive Cycle Aging (Control).zip", "bytes": 11376117549, "md5": "99083707bc7a24e72d9865abac19ce50"},
+      {"key": "Expt 5 - Standard Cycle Aging (Control).zip", "bytes": 10443549687, "md5": "298aa767e4e14acdb348f5832e0cbae9"}
+    ],
+    "remoteAccess": "Read only central directories and registered summary CSV members through HTTP range requests. Do not download or repackage the 49.4 GB raw archive."
+  },
+  "cohortAndSplit": {
+    "candidateCount": 40,
+    "cohortRule": [
+      "Include every cell listed in the official experiment_metadata.xlsx workbook.",
+      "Require a matching Performance Summary CSV and an RPT0 and RPT8 row with finite C/10 capacity.",
+      "Do not remove a cell because a feature is extreme or an error is large.",
+      "If a registered passport field is absent for an entire source arm, report that arm as not computable; do not silently substitute an outcome-derived feature."
+    ],
+    "pilot": {
+      "cells": ["1-E", "1-F", "3-E", "3-G"],
+      "selection": "Two cells per development experiment, selected by ascending SHA-256 of 'rc53-pilot:<experiment>-<cell>'.",
+      "use": "Schema, units, row identity, and sign checks only. Pilot rows have zero weight in every fitted model and every reported error metric.",
+      "permittedAmendment": "Before any other CSV is read, a dated amendment may map exact column names to the already registered quantities or declare a quantity unavailable. It may not change the split, response, features, model, thresholds, or hypotheses."
+    },
+    "development": {
+      "experiments": ["1", "3"],
+      "cells": ["1-A", "1-B", "1-D", "1-J", "1-K", "1-L", "1-M", "3-A", "3-B", "3-C", "3-D", "3-F", "3-H", "3-I"],
+      "count": 14
+    },
+    "untouchedTarget": {
+      "experiments": ["2,2", "4", "5"],
+      "count": 22,
+      "reason": "The target holds out complete SoC/protocol regimes: 70-85% cycling, drive-cycle discharge, and standard 0-100% cycling. No target row is used for preprocessing, fitting, feature selection, or threshold selection."
+    }
+  },
+  "responseContract": {
+    "name": "capacity_retention_rpt8",
+    "definition": "C/10 discharge capacity at RPT8 divided by C/10 discharge capacity at RPT0 for the same cell.",
+    "whyRPT8": "The primary paper identifies RPT8 as the last RPT completed by all 40 cells. This creates a common, uncensored diagnostic horizon without pretending that every cell reached a shared EOL.",
+    "unit": "fraction; errors are reported in percentage points",
+    "prohibitedInterpretation": "Do not call this cycle life, remaining useful life, time to 80%, time to 70%, or field service life."
+  },
+  "featureContract": {
+    "stressArm": {
+      "code": "A",
+      "featuresInOrder": ["temperature_c", "soc_lower_fraction", "soc_upper_fraction", "soc_span_fraction", "drive_cycle_indicator"],
+      "meaning": "Known imposed usage conditions only."
+    },
+    "capacityArm": {
+      "code": "B",
+      "featuresInOrder": ["temperature_c", "soc_lower_fraction", "soc_upper_fraction", "soc_span_fraction", "drive_cycle_indicator", "bol_c10_capacity_ah", "bol_c2_capacity_ah"],
+      "meaning": "Usage conditions plus conventional beginning-of-life cell capacity."
+    },
+    "passportArm": {
+      "code": "C",
+      "featuresInOrder": ["temperature_c", "soc_lower_fraction", "soc_upper_fraction", "soc_span_fraction", "drive_cycle_indicator", "bol_c10_capacity_ah", "bol_c2_capacity_ah", "bol_positive_electrode_capacity_ah", "bol_negative_electrode_capacity_ah", "bol_graphite_capacity_ah", "bol_silicon_capacity_ah", "bol_electrode_offset_ah", "bol_r_0_1s_ohm", "bol_r_10s_ohm", "bol_r_10s_minus_0_1s_ohm"],
+      "meaning": "Usage and capacity plus the RPT0 electrode-capacity/offset fit and GITT resistance at the registered twelfth pulse near 52% SoC."
+    },
+    "preprocessing": "For each arm, subtract the 14-row development mean and divide by the development population standard deviation; replace exactly zero standard deviation with one. The pilot and target do not contribute to these values.",
+    "missingness": "No outcome-aware imputation. A missing registered input makes that arm non-computable for the affected cell; report exact denominators."
+  },
+  "modelContract": {
+    "regressor": "Ridge regression with an unpenalized intercept and fixed L2 alpha 1.0, fitted separately for arms A, B, and C on the 14 development cells.",
+    "implementation": "Solve the centered normal equations (X'X + I) beta = X'y using deterministic Gaussian elimination with partial pivoting. No library optimizer, hyperparameter search, feature selection, clipping, or target transformation.",
+    "primaryMetrics": [
+      "Target median absolute error in percentage points for each arm.",
+      "Target mean absolute error and maximum absolute error in percentage points for each arm.",
+      "Spearman rank correlation between prediction and observed RPT8 retention for each arm.",
+      "Median absolute error separately for held-out experiments 2,2, 4, and 5."
+    ],
+    "comparisons": "Report C relative to A and C relative to B as (baseline MdAE - C MdAE) / baseline MdAE. Report all arms even when a gate fails.",
+    "independentAdjudication": "A dependency-free Node implementation recomputes preprocessing, ridge coefficients, all 22 target predictions, metrics, and verdicts from the derived feature table. Absolute numeric disagreement above 1e-8 fails the cycle."
+  },
+  "competingHypotheses": [
+    {
+      "code": "H0",
+      "claim": "Known temperature and SoC/protocol descriptors are sufficient to predict the common-horizon degradation response in unseen usage regimes.",
+      "prediction": "Arm A target MdAE is at most 1.5 percentage points, Spearman rho is at least 0.60, and every held-out experiment has MdAE at most 2.0 percentage points.",
+      "reject": "Reject if any boundary fails."
+    },
+    {
+      "code": "H1",
+      "claim": "Conventional BoL capacity contains transferable cell-level information beyond imposed stress.",
+      "prediction": "Arm B reduces target MdAE by at least 10% relative to A without increasing maximum absolute error.",
+      "reject": "Reject unless both conditions hold."
+    },
+    {
+      "code": "H2",
+      "claim": "The BoL electrode/resistance passport supplies a transportable bridge to the later degradation response.",
+      "prediction": "Arm C has target MdAE at most 1.25 percentage points, reduces MdAE by at least 20% relative to A and at least 10% relative to B, has Spearman rho at least 0.60, and has no held-out-experiment MdAE above 2.0 percentage points.",
+      "reject": "Reject if any boundary fails; a lower pooled error alone is insufficient."
+    },
+    {
+      "code": "H3",
+      "claim": "A common RPT8 capacity response establishes a fifth-source lifetime or EOL validation for RC52.",
+      "prediction": "The dataset would need a common EOL event and an untouched EOL adjudication cohort, which it does not provide.",
+      "reject": "Mark unsupported by design regardless of predictive accuracy."
+    }
+  ],
+  "hardGates": [
+    "The official record contains 40 metadata rows and exactly one registered Performance Summary CSV per row.",
+    "Only archive directories, not summary values, were inspected before this precommit.",
+    "Pilot cells are used only for schema and unit validation and have zero model influence.",
+    "No non-pilot summary value is read before the pilot amendment is sealed.",
+    "The response remains RPT8 C/10 capacity divided by RPT0 C/10 capacity.",
+    "All 22 target cells remain untouched until column mapping, feature order, ridge alpha, and code paths are frozen.",
+    "Preprocessing uses only the 14 development rows.",
+    "All three arms use the same development and target rows.",
+    "No target-aware feature selection, imputation, clipping, recalibration, or model tuning is allowed.",
+    "Every target prediction and all three held-out experiment summaries are reported.",
+    "Python and dependency-free Node results agree within 1e-8.",
+    "RPT8 retention is not represented as lifetime, EOL, safety, warranty, or field performance.",
+    "Failed hypotheses, missing fields, extraction failures, and the fifth-source EOL non-result remain in the public research record."
+  ],
+  "causalChain": [
+    "Imposed temperature and SoC/protocol plus BoL capacity, electrode-fit, and GITT resistance measurements",
+    "unobserved initial susceptibility and usage-dependent degradation pathway",
+    "a frozen orthogonal diagnostic passport that must add signal outside the development regimes",
+    "independent RPT8 capacity retention for 22 cells in three unseen regimes",
+    "retain or reject the passport as a candidate measurement for a later common-EOL lifetime experiment"
+  ],
+  "uncertaintyBudget": [
+    {"category": "measurement", "control": "Use source-provided processed summaries and fixed RPT0/RPT8 rows; preserve units and exact column names in the pilot amendment.", "stop": "A unit or row identity that cannot be resolved without looking at target responses stops the affected arm."},
+    {"category": "model", "control": "Freeze three nested feature sets and ridge alpha 1.0 before outcomes; reproduce independently in Node.", "stop": "Numeric disagreement above 1e-8 or a singular implementation error blocks interpretation."},
+    {"category": "sampling", "control": "Hold out complete experiments and report 22 cell predictions plus per-experiment errors.", "stop": "Do not generalize beyond LG M50T or the five tested experiment families."},
+    {"category": "endpoint", "control": "Use the last common uncensored RPT rather than a fabricated EOL label.", "stop": "No lifetime claim is permitted from RPT8 retention."},
+    {"category": "mechanism", "control": "Treat DMA and GITT quantities as electrochemical diagnostic proxies, not direct destructive observations of SEI, plating, or cracking.", "stop": "Prediction improvement alone does not identify a unique degradation mechanism."}
+  ],
+  "safetyEthics": "RC53 uses public, previously collected electrochemical data. It performs no charging, fabrication, cell opening, personal-data processing, or security-sensitive experiment. Its output is research evidence, not an operational safety decision."
+}
