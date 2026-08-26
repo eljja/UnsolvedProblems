@@ -1,0 +1,50 @@
+{
+  "amendmentId": "RC53-BATTERY-MECHANISM-BRIDGE-AMENDMENT-01",
+  "cycleId": "RC-2026-53",
+  "sealedOn": "2026-08-26",
+  "precommitCommit": "b2fb296",
+  "status": "sealed-after-four-zero-weight-pilot-cells-and-before-any-development-or-target-summary-value-was-read",
+  "pilotArtifact": "research/reproducibility/rc53-battery-mechanism-bridge-pilot.json",
+  "pilotCells": ["1-E", "1-F", "3-E", "3-G"],
+  "modelWeight": 0,
+  "schemaMap": {
+    "rowIdentity": "The integer value in 'Ageing Sets'; RPT0 is 0 and RPT8 is 8.",
+    "bol_c10_capacity_ah": "RPT0 'C/10 Capacity [mA h]' divided by 1000.",
+    "bol_c2_capacity_ah": "RPT0 'C/2 Capacity [mA h]' divided by 1000.",
+    "bol_positive_electrode_capacity_ah": "RPT0 'PE Capacity [mA h]' divided by 1000.",
+    "bol_negative_electrode_capacity_ah": "RPT0 'NE Capacity [mA h]' divided by 1000.",
+    "bol_graphite_capacity_ah": "RPT0 'NE_Gr Capacity [mA h]' divided by 1000.",
+    "bol_silicon_capacity_ah": "RPT0 'NE_Si Capacity [mA h]' divided by 1000.",
+    "bol_electrode_offset_ah": "RPT0 'Electrode Offset [mA h]' divided by 1000.",
+    "bol_r_0_1s_ohm": "RPT0 '0.1s Resistance [Ohms]' from the Performance Summary.",
+    "capacity_retention_rpt8": "RPT8 'C/10 Capacity [mA h]' divided by RPT0 'C/10 Capacity [mA h]'."
+  },
+  "gittMap": {
+    "member": "The cell's 'RPT0 - 25-pulse GITT 0.5C discharge data.csv' member under Processed Timeseries Data/GITT Voltage Curves.",
+    "requiredColumns": ["Time (s)", "Voltage (V)", "Current (mA)", "Charge (mA.h)", "Temperature (degC)"],
+    "pulseOnset": "A row whose current is below -100 mA and whose preceding row is at least -100 mA.",
+    "pulseCount": 25,
+    "selectedPulse": 12,
+    "prePulseVoltage": "Median of the last three zero-current samples within 0.5 s before the selected onset.",
+    "tenSecondSample": "The sample nearest 10.000 s after onset, required to be within 0.051 s and below -100 mA.",
+    "bol_r_10s_ohm": "(pre-pulse voltage - ten-second voltage) / absolute ten-second current in amperes.",
+    "bol_r_10s_minus_0_1s_ohm": "bol_r_10s_ohm minus the Performance Summary bol_r_0_1s_ohm."
+  },
+  "pilotChecks": {
+    "records": 4,
+    "allContainRPT0AndRPT8": true,
+    "allContainExactly25GittPulses": true,
+    "allHaveFiniteRegisteredInputs": true,
+    "calculatedRetentionVsSourceSoHTolerance": 0.0001,
+    "maximumObservedAbsoluteDifference": 0.00000183068115977569,
+    "reasonForTolerance": "The source SoH column differs by a few parts per million from the direct C/10 RPT8/RPT0 ratio, consistent with source-side numeric processing. The preregistered direct ratio remains the response."
+  },
+  "unchangedContracts": [
+    "The 4/14/22 split is unchanged.",
+    "The response remains the direct RPT8-to-RPT0 C/10 capacity ratio.",
+    "The three feature arms and their order are unchanged.",
+    "Ridge alpha remains 1.0 and all prediction gates are unchanged.",
+    "Pilot rows remain excluded from fitting and metrics.",
+    "No development or target value has been read."
+  ]
+}
