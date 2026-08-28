@@ -1,0 +1,93 @@
+{
+  "cycleId": "RC-2026-54",
+  "reviewedOn": "2026-08-29",
+  "searchBoundary": "Primary papers, official repositories, and official institutional copies were searched for early battery-life prediction, impedance and pulse features, held-condition validation, protocol leakage, repeated-check-up degradation modes, multimodal limits, and public HG2 data. Similarity does not establish novelty.",
+  "evidenceInferenceProposalBoundary": {
+    "evidence": "The cited studies establish their reported cohorts, measurements, validation splits, and limitations.",
+    "inference": "RC52 and RC53 failures suggest that static early features may confound protocol with cell susceptibility; this is a cross-cycle interpretation, not a result reported by the cited authors.",
+    "proposal": "The CU0-to-CU1 logarithmic EIS/pulse response fingerprint and complete 40-degree holdout are preregistered tests. They are not described as novel or effective before adjudication."
+  },
+  "sources": [
+    {
+      "id": "luh_blank_kit_2024",
+      "title": "Comprehensive battery aging dataset: capacity and impedance fade measurements of a lithium-ion NMC/C-SiO cell",
+      "url": "https://doi.org/10.1038/s41597-024-03831-x",
+      "publishedOn": "2024-09-16",
+      "usedFor": "Primary cohort design: 228 same-batch HG2 cells, 76 triplicate conditions, four temperatures, three aging families, and repeated standardized capacity/EIS/pulse check-ups.",
+      "doesNotEstablish": "The data descriptor does not adjudicate the preregistered nested Weibull models or a complete held-40-degree EOL bridge."
+    },
+    {
+      "id": "kit_hg2_results_v2",
+      "title": "Comprehensive battery aging dataset: capacity and impedance fade measurements of a lithium-ion NMC/C-SiO cell — result data version 2",
+      "url": "https://doi.org/10.35097/1969",
+      "publishedOn": "2024-09-27",
+      "usedFor": "Official configuration, processed EOC/EIS/pulse results, hashes, identifiers, and nearly 600-day continuation.",
+      "doesNotEstablish": "Repository availability does not validate a model; target outcomes remain sealed until the preregistration commit."
+    },
+    {
+      "id": "severson_early_prediction_2019",
+      "title": "Data-driven prediction of battery cycle life before capacity degradation",
+      "url": "https://doi.org/10.1038/s41560-019-0356-8",
+      "publishedOn": "2019-03-25",
+      "usedFor": "Primary precedent that early discharge-curve changes can predict LFP cycle life and that validation must separate training, primary test, and secondary test cells.",
+      "doesNotEstablish": "A 124-cell fast-charge LFP result does not prove transport to NMC/C-SiO calendar, cyclic, and WLTP aging or to an unseen temperature."
+    },
+    {
+      "id": "weng_formation_resistance_2021",
+      "title": "Predicting the impact of formation protocols on battery lifetime immediately after manufacturing",
+      "url": "https://doi.org/10.1016/j.joule.2021.09.015",
+      "publishedOn": "2021-11-17",
+      "usedFor": "Primary evidence that low-SOC resistance after formation can correlate strongly with cycle life and may expose an early cell-level signal.",
+      "doesNotEstablish": "A static formation resistance correlation is not a CU0-to-CU1 response-rate test and does not resolve held-temperature survival calibration."
+    },
+    {
+      "id": "jones_impedance_uneven_usage_2022",
+      "title": "Impedance-based forecasting of lithium-ion battery performance amid uneven usage",
+      "url": "https://doi.org/10.1038/s41467-022-32422-w",
+      "publishedOn": "2022-08-18",
+      "usedFor": "Primary evidence that EIS and early voltage-curve information can be complementary under uneven usage, while equivalent-circuit compression can discard predictive structure.",
+      "doesNotEstablish": "Its datasets and holdouts do not test the five-SOC CU0/CU1 response fingerprint on all 57 held 40-degree HG2 cells."
+    },
+    {
+      "id": "geslin_protocol_leakage_2023",
+      "title": "Data leakage in battery lifetime prediction",
+      "url": "https://doi.org/10.1016/j.joule.2023.07.021",
+      "publishedOn": "2023-09-20",
+      "usedFor": "Primary warning that cycling-condition features can make nominally strong lifetime predictions without resolving cell-to-cell variability, motivating complete condition holdouts and within-condition ranking.",
+      "doesNotEstablish": "The leakage diagnosis does not identify which early electrochemical response, if any, carries transportable susceptibility information."
+    },
+    {
+      "id": "li_varying_usage_2024",
+      "title": "Predicting battery lifetime under varying usage conditions from early aging data",
+      "url": "https://doi.org/10.1016/j.xcrp.2024.101891",
+      "publishedOn": "2024-03-22",
+      "usedFor": "Primary precedent for hierarchical condition/cell modeling and early reference-performance-test degradation modes across 225 NMC/graphite cells.",
+      "doesNotEstablish": "Its reported in-distribution and out-of-distribution errors do not adjudicate an unseen-temperature HG2 EOL test with broadband EIS and pulse responses."
+    },
+    {
+      "id": "fei_eis_gpr_2020",
+      "title": "Identifying degradation patterns of lithium ion batteries from impedance spectroscopy using machine learning",
+      "url": "https://doi.org/10.1038/s41467-020-15235-7",
+      "publishedOn": "2020-03-24",
+      "usedFor": "Primary small-cohort evidence that low-frequency EIS can track capacity and forecast an 80% endpoint without a full equivalent-circuit reduction.",
+      "doesNotEstablish": "Twelve LCO coin cells cycled under limited protocols cannot establish temperature and aging-family transport in the HG2 cohort."
+    },
+    {
+      "id": "discovery_learning_2026",
+      "title": "Discovery learning for battery lifetime prediction",
+      "url": "https://doi.org/10.1038/s41586-025-09951-7",
+      "publishedOn": "2026-02-04",
+      "usedFor": "Primary evidence that public-dataset pretraining plus a limited prototype subset can reduce experimental demand for industrial pouch-cell lifetime prediction.",
+      "doesNotEstablish": "Transfer learning accuracy does not reveal whether a one-week impedance response adds a causal or within-condition bridge in this same-batch public cohort."
+    },
+    {
+      "id": "attia_limits_2026",
+      "title": "Limits of electrochemical data for predicting battery lifetime and failure",
+      "url": "https://doi.org/10.1016/j.joule.2026.102423",
+      "publishedOn": "2026-05-20",
+      "usedFor": "Current boundary analysis: electrochemical measurements can miss electrolyte depletion, internal shorts, and latent mechanical defects, so predictive success must not be equated with universal failure observability.",
+      "doesNotEstablish": "A perspective defines a modality boundary but does not determine the RC54 verdict."
+    }
+  ],
+  "noveltyStatement": "RC54 makes no algorithmic novelty claim. The potentially distinctive object is a falsifiable combination: four zero-weight schema pilots, a complete held-temperature cohort, right-censored 80% EOL, nested static-versus-response diagnostics at five SOCs, within-triplicate concordance, calibration gates, and independent recomputation. The search found each component's motivation but did not establish publication of this exact adjudication."
+}

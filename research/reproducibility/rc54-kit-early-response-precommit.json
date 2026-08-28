@@ -1,0 +1,228 @@
+{
+  "precommitId": "RC54-KIT-EARLY-RESPONSE-PRECOMMIT-0.1",
+  "cycleId": "RC-2026-54",
+  "sealedOn": "2026-08-29",
+  "status": "sealed-after-official-paper-configuration-and-column-definition-review-but-before-any-EOC-EIS-or-pulse-result-value-was-read",
+  "chronologyBoundary": {
+    "alreadyObserved": [
+      "The primary paper, official RADAR record, archive manifest, configuration CSV files, cell overview workbook, and data-structure workbook were inspected.",
+      "The paper reports aggregate cohort design and confirms repeated standardized room-temperature check-ups; those published summaries were visible before sealing.",
+      "Configuration inspection established 228 cells in 76 triplicate conditions, with exactly 57 cells at each of 0, 10, 25, and 40 degrees Celsius.",
+      "Column definitions revealed the available capacity, EIS reference impedance, pulse resistance, timestamp, check-up number, and validity fields."
+    ],
+    "notYetObservedAtSeal": [
+      "No value from cell_eocv2.zip, cell_eisv2.zip, or cell_plsv2.zip was read.",
+      "No cell-level capacity, impedance, resistance, event time, censoring time, prediction, error, or hypothesis verdict was computed.",
+      "No pilot, development, or target outcome informed the split, features, model, thresholds, or decision rules."
+    ]
+  },
+  "selection": {
+    "problemIds": ["UP-219", "UP-233", "UP-234"],
+    "reason": "RC52 rejected a static early-cycle passport across sources, and RC53 found that a static electrode-resistance passport did not improve a common-horizon response. The KIT HG2 study supplies a same-purchase-batch cohort, 76 triplicate stress conditions, repeated capacity/EIS/pulse check-ups, and a continuation to roughly 600 days. A complete 40-degree holdout can therefore test whether an early within-cell perturbation response transfers to a genuine 80%-capacity EOL endpoint.",
+    "claimBoundary": "RC54 tests a same-cell-model, held-temperature EOL bridge. It cannot establish chemistry transfer, pack-level RUL, field duty-cycle transfer, failure safety, or a universal digital twin.",
+    "deferredScope": "Cyber-trust experiments, new battery cycling, cell opening, destructive analysis, field packs, warranty decisions, and safety certification remain outside scope."
+  },
+  "sourceManifest": {
+    "record": "https://doi.org/10.35097/1969",
+    "paper": "https://doi.org/10.1038/s41597-024-03831-x",
+    "paperPublishedOn": "2024-09-16",
+    "version": "2",
+    "versionScope": "Processed result data for nearly 600 days; the primary paper described version 1 through 449 days.",
+    "cellType": "LG INR18650HG2 commercial NMC/C-SiO cell",
+    "cohort": "228 cells from one purchased batch, assigned to 76 conditions with three cells per condition",
+    "resultFiles": [
+      {"key": "cell_eocv2.zip", "bytes": 93167507, "md5": "b4f42914c8eaf176fd47e33e6f112d7c", "fileId": "15a3gtgdzdeffbr8"},
+      {"key": "cell_eisv2.zip", "bytes": 19894633, "md5": "6eb09ae51c8a9e9b4b02b33e739787ab", "fileId": "tz7dk0ag5pcdgm45"},
+      {"key": "cell_plsv2.zip", "bytes": 22972041, "md5": "5c660fc53ac4ae4de5850143f629242a", "fileId": "juxdw51w2ec8gedg"}
+    ],
+    "metadataFiles": [
+      {"key": "cfg.zip", "bytes": 97252, "md5": "b894469e86712b6021bb5364f7296891", "fileId": "w049egbgr21pfcm2"},
+      {"key": "cell_overview.xlsx", "bytes": 74470, "md5": "7a5fc1770ee595c6c44a51a0bf344e65", "fileId": "k71rzemp5d0bjuu0"},
+      {"key": "data_structure.xlsx", "bytes": 186499, "md5": "576711692fd3b5aaa6e0bf7f09bff1e9", "fileId": "47dn6826v0sgdd87"}
+    ]
+  },
+  "cohortAndSplit": {
+    "cohortRule": [
+      "Include every non-P000 configuration with cell_used equal to one.",
+      "Require a resolvable CU0 and CU1 standardized room-temperature capacity record and the registered EIS and pulse summaries for arm D.",
+      "Require a positive landmark-to-last-check-up duration; define an event only from the first standardized capacity check-up at or below the registered 80% threshold.",
+      "Do not remove a cell because its response, prediction, residual, or degradation path is extreme.",
+      "Report feature completeness and event coverage before fitting; a missing registered quantity is not outcome-aware imputed."
+    ],
+    "pilot": {
+      "cells": ["P008-1", "P017-2", "P026-1", "P069-2"],
+      "coverage": "One calendar cell, one symmetric low-rate cyclic cell, one voltage-window/asymmetric cyclic cell, and one WLTP-profile cell, all outside 40 degrees Celsius.",
+      "use": "Exact archive path, delimiter, check-up identity, room-temperature flag, SOC identity, units, sign, validity, and duplicate-row aggregation only.",
+      "modelWeight": 0,
+      "permittedAmendment": "Before any non-pilot result row is read, one dated amendment may map exact columns and row keys to the quantities already registered here or declare a quantity unavailable. It may not change the split, endpoint, feature meaning, model, alpha, thresholds, or hypotheses."
+    },
+    "development": {
+      "temperaturesC": [0, 10, 25],
+      "candidateCount": 171,
+      "zeroWeightPilotCount": 4,
+      "maximumModelCount": 167,
+      "calibrationCells": 0
+    },
+    "untouchedTarget": {
+      "temperatureC": 40,
+      "candidateCount": 57,
+      "conditionCount": 19,
+      "reason": "Every 40-degree cell is withheld as a temperature-extrapolation test. No target feature or endpoint contributes to preprocessing, fitting, feature choice, model choice, threshold choice, or recalibration."
+    }
+  },
+  "endpointContract": {
+    "landmark": "The timestamp of the second standardized room-temperature check-up, CU1, approximately one week after CU0.",
+    "capacityReference": "The same cell's finite room-temperature cap_aged_est_Ah at CU0.",
+    "event": "The first later standardized room-temperature check-up whose cap_aged_est_Ah is at most 0.80 times the CU0 reference.",
+    "eventTime": "Elapsed days from the CU1 landmark to that first observed threshold-crossing check-up.",
+    "censorTime": "If no crossing is observed, elapsed days from CU1 to the last later standardized room-temperature capacity check-up.",
+    "resolution": "No interpolation between check-ups. Event times retain the study's approximately three-week assessment interval.",
+    "primaryErrorCohort": "Target cells with observed events; all target cells, including censored cells, enter concordance and calibration metrics.",
+    "minimumEventGate": 30,
+    "prohibitedInterpretation": "An observed check-up crossing is interval-resolved electrochemical EOL, not a failure timestamp, safety event, warranty outcome, or pack RUL."
+  },
+  "featureContract": {
+    "stressArm": {
+      "code": "A",
+      "featuresInOrder": [
+        "inverse_temperature_relative_to_25c",
+        "cyclic_indicator",
+        "profile_indicator",
+        "age_soc_fraction",
+        "charge_rate_c",
+        "discharge_rate_c",
+        "cycle_voltage_min_v",
+        "cycle_voltage_max_v",
+        "profile_2_indicator",
+        "profile_3_indicator",
+        "profile_4_indicator"
+      ],
+      "definition": "Configuration-known stress only. Inverse temperature is 1/(T_C+273.15)-1/298.15."
+    },
+    "staticDiagnosticArm": {
+      "code": "B",
+      "addsTo": "A",
+      "featuresInOrder": [
+        "cu0_capacity_ah",
+        "cu0_eis_zref_mohm_soc10",
+        "cu0_eis_zref_mohm_soc30",
+        "cu0_eis_zref_mohm_soc50",
+        "cu0_eis_zref_mohm_soc70",
+        "cu0_eis_zref_mohm_soc90",
+        "cu0_pulse_r10ms_mohm_soc10",
+        "cu0_pulse_r10ms_mohm_soc30",
+        "cu0_pulse_r10ms_mohm_soc50",
+        "cu0_pulse_r10ms_mohm_soc70",
+        "cu0_pulse_r10ms_mohm_soc90",
+        "cu0_pulse_r1s_mohm_soc10",
+        "cu0_pulse_r1s_mohm_soc30",
+        "cu0_pulse_r1s_mohm_soc50",
+        "cu0_pulse_r1s_mohm_soc70",
+        "cu0_pulse_r1s_mohm_soc90"
+      ],
+      "definition": "A static room-temperature electrochemical passport at CU0."
+    },
+    "capacityResponseArm": {
+      "code": "C",
+      "addsTo": "B",
+      "featuresInOrder": ["early_log_capacity_response_per_day"],
+      "definition": "log(CU1 capacity/CU0 capacity) divided by elapsed days between CU0 and CU1."
+    },
+    "perturbationResponseArm": {
+      "code": "D",
+      "addsTo": "C",
+      "featuresInOrder": [
+        "early_log_eis_zref_response_per_day_soc10",
+        "early_log_eis_zref_response_per_day_soc30",
+        "early_log_eis_zref_response_per_day_soc50",
+        "early_log_eis_zref_response_per_day_soc70",
+        "early_log_eis_zref_response_per_day_soc90",
+        "early_log_pulse_r10ms_response_per_day_soc10",
+        "early_log_pulse_r10ms_response_per_day_soc30",
+        "early_log_pulse_r10ms_response_per_day_soc50",
+        "early_log_pulse_r10ms_response_per_day_soc70",
+        "early_log_pulse_r10ms_response_per_day_soc90",
+        "early_log_pulse_r1s_response_per_day_soc10",
+        "early_log_pulse_r1s_response_per_day_soc30",
+        "early_log_pulse_r1s_response_per_day_soc50",
+        "early_log_pulse_r1s_response_per_day_soc70",
+        "early_log_pulse_r1s_response_per_day_soc90"
+      ],
+      "definition": "For each positive EIS or pulse quantity Q, log(Q_CU1/Q_CU0) divided by its exact elapsed days. This tests a multiscale impedance-response fingerprint rather than another static level."
+    },
+    "rowRules": [
+      "Use source rows marked as room-temperature check-ups and, for EIS, valid rows only.",
+      "Select nominal SOC values 10, 30, 50, 70, and 90 percent exactly as represented in the source.",
+      "If duplicate valid summaries exist for one cell, check-up, and SOC, aggregate by the median before forming a feature.",
+      "Require every logarithm input to be finite and strictly positive."
+    ],
+    "preprocessing": "For each arm, subtract the non-pilot development mean and divide by the non-pilot development population standard deviation. Replace an exactly zero development standard deviation with one. Pilot and target rows have zero influence.",
+    "missingness": "No outcome-aware imputation, target-derived centering, feature clipping, or feature substitution is allowed. Report exact arm denominators and missing fields."
+  },
+  "modelContract": {
+    "model": "Separate penalized Weibull accelerated-failure-time model for each nested arm. log(lambda_i)=intercept+x_i beta; the Weibull shape k is shared within an arm.",
+    "likelihood": "Use the right-censored Weibull likelihood with observed event/censor time measured from CU1. Penalize beta, but not the intercept or log(k), by fixed L2 alpha 1.0.",
+    "initialization": "Intercept equals log of the development median observed-or-censor time, beta is zero, and log(k)=log(2).",
+    "optimizer": "Primary Python uses deterministic BFGS with analytic likelihood evaluation; independent dependency-free Node uses a separately written deterministic BFGS implementation. No hyperparameter search, target calibration, feature selection, ensemble, or early stopping based on target performance.",
+    "prediction": "Predicted remaining median days equals lambda_i times (log 2)^(1/k). Predicted survival at horizon t equals exp(-(t/lambda_i)^k).",
+    "independentTolerance": "Absolute disagreement at most 1e-5 for every target prediction and reported scalar metric; arm verdicts must match exactly."
+  },
+  "metricContract": {
+    "observedEventErrors": ["median_absolute_error_days", "mean_absolute_error_days", "maximum_absolute_error_days"],
+    "ranking": "Harrell concordance over all target cells; a pair is comparable when the shorter observed time is an event. Tied prediction receives half credit.",
+    "withinConditionRanking": "The same concordance rule restricted to pairs within each three-cell P-condition; report the comparable-pair denominator.",
+    "familyBoundary": "For calendar, cyclic, and profile target cells separately, report event count and median absolute error among observed events.",
+    "calibration": "At 365 and 500 days after CU1, compare mean predicted survival with target Kaplan-Meier survival; report absolute error and the at-risk count.",
+    "pairedImprovement": "For event-observed target cells, report (baseline MdAE-D MdAE)/baseline MdAE. Use 2,000 seeded cluster-bootstrap resamples of the 19 target conditions to report a percentile 95% interval for D-versus-C MdAE change; the interval is descriptive, not a hidden tuning gate.",
+    "reporting": "Publish every target prediction, censor flag, condition, family, and every registered metric even when a gate fails."
+  },
+  "competingHypotheses": [
+    {
+      "code": "H0",
+      "claim": "Imposed stress descriptors alone transport sufficiently from 0/10/25 to 40 degrees Celsius.",
+      "success": "Arm A has at least 30 target events, event MdAE at most 75 days, Harrell concordance at least 0.70, maximum 365/500-day calibration error at most 0.15, and no family MdAE above 105 days.",
+      "reject": "Reject if any condition fails."
+    },
+    {
+      "code": "H1",
+      "claim": "The static CU0 capacity/EIS/pulse passport adds transferable cell information beyond stress.",
+      "success": "Arm B reduces event MdAE by at least 10% relative to A without reducing Harrell concordance by more than 0.02 and without increasing the worst family MdAE.",
+      "reject": "Reject unless all three conditions hold."
+    },
+    {
+      "code": "H2",
+      "claim": "The one-week capacity response carries transferable susceptibility information beyond the static passport.",
+      "success": "Arm C reduces event MdAE by at least 15% relative to B, does not reduce Harrell concordance by more than 0.02, and does not increase maximum calibration error.",
+      "reject": "Reject unless all three conditions hold."
+    },
+    {
+      "code": "H3",
+      "claim": "A multiscale one-week EIS/pulse response supplies the missing bridge to held-temperature EOL.",
+      "success": "Arm D has complete target features, at least 30 target events, event MdAE at most 60 days, at least 10% MdAE improvement over C, Harrell concordance at least 0.72, within-condition concordance at least 0.60 over at least 30 comparable pairs, no family MdAE above 90 days, maximum 365/500-day calibration error at most 0.15, and independent adjudication within tolerance.",
+      "reject": "Reject if any boundary fails; pooled error alone cannot rescue a failure of within-condition ranking, family transport, calibration, coverage, or independent reproduction."
+    }
+  ],
+  "causalChain": [
+    "Known stress and standardized CU0/CU1 electrochemical measurements",
+    "latent cell susceptibility that a static level may confound with batch and protocol",
+    "the registered within-cell logarithmic response rates as a proposed bridge",
+    "independently withheld 40-degree EOL time, censoring, calibration, and triplicate ordering",
+    "retain or reject the response fingerprint as a candidate same-chemistry EOL bridge"
+  ],
+  "fastFailureTests": [
+    "If the three result archives fail their registered MD5 hashes, stop before extraction.",
+    "If a pilot cannot identify CU0/CU1, room-temperature rows, exact SOC, or positive registered quantities without outcome-dependent judgment, stop or declare the affected arm unavailable.",
+    "If fewer than 30 target cells have observed 80% EOL events, H0 and H3 fail the coverage gate; report survival metrics without claiming a decisive EOL bridge.",
+    "If fewer than 30 within-condition target pairs are comparable, H3 fails even if pooled concordance is high.",
+    "If Python and Node disagree beyond 1e-5, stop interpretation and debug before publication."
+  ],
+  "uncertaintyBudget": [
+    {"category": "measurement", "control": "Use standardized room-temperature check-ups, source validity flags, exact SOC, median duplicate aggregation, and source units.", "residual": "Capacity EOL is interval observed and EIS/pulse summaries may retain fixture or temperature history effects.", "stop": "Unresolvable check-up/SOC identity or nonpositive response inputs make the affected arm non-computable."},
+    {"category": "model", "control": "Freeze nested feature sets, Weibull AFT form, alpha, initialization, and metrics before results; reproduce with a separate runtime.", "residual": "A single Weibull shape and linear log-scale relation may be misspecified.", "stop": "Optimization failure, nonfinite parameters, or independent disagreement blocks a verdict."},
+    {"category": "sampling", "control": "Hold out all 57 cells and 19 triplicate conditions at 40 degrees; bootstrap by condition rather than by row.", "residual": "All cells share one model and purchase batch, and temperature is extrapolated rather than replicated across laboratories.", "stop": "Do not generalize beyond this HG2 cohort or call the result chemistry transfer."},
+    {"category": "endpoint", "control": "Use a preregistered 80%-of-own-CU0 crossing, preserve right censoring, and avoid interpolation.", "residual": "Approximately three-week check-up spacing limits event-time resolution.", "stop": "Do not represent the endpoint as physical failure, safety, warranty, or field-pack life."},
+    {"category": "extrapolation", "control": "Require pooled, within-condition, family, and calibration gates simultaneously.", "residual": "Forty degrees lies outside the development-temperature range and may activate pathways absent below 25 degrees.", "stop": "A pooled accuracy gain cannot override family or calibration failure."}
+  ],
+  "minimalAcademicAdvance": "Even if H3 fails, a fully held 40-degree survival table will determine whether early capacity response, broadband EIS response, or pulse response adds any reproducible within-condition information beyond imposed stress and static diagnostics.",
+  "safetyEthics": "RC54 uses public, previously collected processed battery data. It performs no charging, fabrication, cell opening, personal-data processing, security testing, or operational safety decision."
+}

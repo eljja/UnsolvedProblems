@@ -1,0 +1,250 @@
+{
+  "auditId": "RC54-KIT-EARLY-RESPONSE-SCHEMA-AUDIT-0.1",
+  "cycleId": "RC-2026-54",
+  "generatedOn": "2026-08-29",
+  "officialRecord": "https://doi.org/10.35097/1969",
+  "sourcePaper": "https://doi.org/10.1038/s41597-024-03831-x",
+  "chronologyBoundary": {
+    "filesRead": [
+      "cfg.zip",
+      "cell_overview.xlsx",
+      "data_structure.xlsx"
+    ],
+    "purpose": "Configuration, identifiers, units, and outcome-free column definitions only.",
+    "outcomeArchivesRead": false
+  },
+  "officialFiles": [
+    {
+      "key": "cell_eocv2.zip",
+      "bytes": 93167507,
+      "md5": "b4f42914c8eaf176fd47e33e6f112d7c",
+      "fileId": "15a3gtgdzdeffbr8",
+      "outcomeValuesRead": false
+    },
+    {
+      "key": "cell_eisv2.zip",
+      "bytes": 19894633,
+      "md5": "6eb09ae51c8a9e9b4b02b33e739787ab",
+      "fileId": "tz7dk0ag5pcdgm45",
+      "outcomeValuesRead": false
+    },
+    {
+      "key": "cell_plsv2.zip",
+      "bytes": 22972041,
+      "md5": "5c660fc53ac4ae4de5850143f629242a",
+      "fileId": "juxdw51w2ec8gedg",
+      "outcomeValuesRead": false
+    },
+    {
+      "key": "cfg.zip",
+      "bytes": 97252,
+      "md5": "b894469e86712b6021bb5364f7296891",
+      "fileId": "w049egbgr21pfcm2",
+      "outcomeValuesRead": false
+    },
+    {
+      "key": "cell_overview.xlsx",
+      "bytes": 74470,
+      "md5": "7a5fc1770ee595c6c44a51a0bf344e65",
+      "fileId": "k71rzemp5d0bjuu0",
+      "outcomeValuesRead": false
+    },
+    {
+      "key": "data_structure.xlsx",
+      "bytes": 186499,
+      "md5": "576711692fd3b5aaa6e0bf7f09bff1e9",
+      "fileId": "47dn6826v0sgdd87",
+      "outcomeValuesRead": false
+    }
+  ],
+  "cohort": {
+    "configuredCells": 228,
+    "conditions": 76,
+    "triplicateConditions": 76,
+    "nonTriplicateConditions": [],
+    "temperatureByFamily": {
+      "0C": {
+        "calendar": 12,
+        "cyclic": 36,
+        "profile": 9,
+        "total": 57
+      },
+      "10C": {
+        "calendar": 12,
+        "cyclic": 36,
+        "profile": 9,
+        "total": 57
+      },
+      "25C": {
+        "calendar": 12,
+        "cyclic": 36,
+        "profile": 9,
+        "total": 57
+      },
+      "40C": {
+        "calendar": 12,
+        "cyclic": 36,
+        "profile": 9,
+        "total": 57
+      }
+    }
+  },
+  "split": {
+    "pilot": [
+      {
+        "id": "P008-1",
+        "file": "cell_cfg_P008_1_S07_C11.csv",
+        "conditionId": "P008",
+        "replicate": 1,
+        "ageFamily": "calendar",
+        "ageTemperatureC": 10,
+        "ageSocPercent": 100,
+        "chargeRateC": 0,
+        "dischargeRateC": 0,
+        "profileCode": 0,
+        "cycleVoltageMaxV": 4.2,
+        "cycleVoltageMinV": 4.2,
+        "cycleChargeMaxA": 1,
+        "cycleDischargeMaxA": -1,
+        "selectionHash": "c03df0bc7e7280e83bc9917e56377f5b459f471b53c5879bf583c417f4d86223",
+        "modelWeight": 0
+      },
+      {
+        "id": "P017-2",
+        "file": "cell_cfg_P017_2_S04_C07.csv",
+        "conditionId": "P017",
+        "replicate": 2,
+        "ageFamily": "cyclic",
+        "ageTemperatureC": 0,
+        "ageSocPercent": 0,
+        "chargeRateC": 0.33,
+        "dischargeRateC": 0.33,
+        "profileCode": 0,
+        "cycleVoltageMaxV": 4.2,
+        "cycleVoltageMinV": 2.5,
+        "cycleChargeMaxA": 1,
+        "cycleDischargeMaxA": -1,
+        "selectionHash": "fb85a5d1edaa38db4f7c1bcd13e81dc49460c1a7e0b33a5d0a8c304d3150f140",
+        "modelWeight": 0
+      },
+      {
+        "id": "P026-1",
+        "file": "cell_cfg_P026_1_S01_C07.csv",
+        "conditionId": "P026",
+        "replicate": 1,
+        "ageFamily": "cyclic",
+        "ageTemperatureC": 0,
+        "ageSocPercent": 0,
+        "chargeRateC": 0.33,
+        "dischargeRateC": 1,
+        "profileCode": 0,
+        "cycleVoltageMaxV": 4.092,
+        "cycleVoltageMinV": 3.249,
+        "cycleChargeMaxA": 1,
+        "cycleDischargeMaxA": -3,
+        "selectionHash": "5de54c573ea1967a34ae0cb9e32fac915e16c65e12ad853b5ad61142472dbefa",
+        "modelWeight": 0
+      },
+      {
+        "id": "P069-2",
+        "file": "cell_cfg_P069_2_S09_C02.csv",
+        "conditionId": "P069",
+        "replicate": 2,
+        "ageFamily": "profile",
+        "ageTemperatureC": 10,
+        "ageSocPercent": 0,
+        "chargeRateC": 0,
+        "dischargeRateC": 0,
+        "profileCode": 3,
+        "cycleVoltageMaxV": 4.2,
+        "cycleVoltageMinV": 2.5,
+        "cycleChargeMaxA": 1,
+        "cycleDischargeMaxA": -1,
+        "selectionHash": "0d73c496b624b9a7bc57025a2a020f6714f5e2b2a50d90605cb0819e93622e57",
+        "modelWeight": 0
+      }
+    ],
+    "development": {
+      "temperaturesC": [
+        0,
+        10,
+        25
+      ],
+      "count": 167,
+      "excludedPilotCount": 4
+    },
+    "untouchedTarget": {
+      "temperatureC": 40,
+      "count": 57,
+      "conditionCount": 19,
+      "ids": [
+        "P013-1",
+        "P013-2",
+        "P013-3",
+        "P014-1",
+        "P014-2",
+        "P014-3",
+        "P015-1",
+        "P015-2",
+        "P015-3",
+        "P016-1",
+        "P016-2",
+        "P016-3",
+        "P053-1",
+        "P053-2",
+        "P053-3",
+        "P054-1",
+        "P054-2",
+        "P054-3",
+        "P055-1",
+        "P055-2",
+        "P055-3",
+        "P056-1",
+        "P056-2",
+        "P056-3",
+        "P057-1",
+        "P057-2",
+        "P057-3",
+        "P058-1",
+        "P058-2",
+        "P058-3",
+        "P059-1",
+        "P059-2",
+        "P059-3",
+        "P060-1",
+        "P060-2",
+        "P060-3",
+        "P061-1",
+        "P061-2",
+        "P061-3",
+        "P062-1",
+        "P062-2",
+        "P062-3",
+        "P063-1",
+        "P063-2",
+        "P063-3",
+        "P064-1",
+        "P064-2",
+        "P064-3",
+        "P074-1",
+        "P074-2",
+        "P074-3",
+        "P075-1",
+        "P075-2",
+        "P075-3",
+        "P076-1",
+        "P076-2",
+        "P076-3"
+      ]
+    }
+  },
+  "assertions": {
+    "allConditionsAreTriplicates": true,
+    "configuredCellCountIs228": true,
+    "targetCellCountIs57": true,
+    "developmentCellCountIs167": true,
+    "pilotCellCountIs4": true,
+    "pilotsDoNotOverlapTarget": true,
+    "outcomeValuesRead": false
+  }
+}
