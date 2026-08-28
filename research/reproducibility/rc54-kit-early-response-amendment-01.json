@@ -1,0 +1,63 @@
+{
+  "amendmentId": "RC54-KIT-EARLY-RESPONSE-AMENDMENT-01",
+  "cycleId": "RC-2026-54",
+  "sealedOn": "2026-08-29",
+  "status": "sealed-after-four-zero-weight-pilots-and-before-any-non-pilot-result-file-was-read",
+  "authority": "The preregistration permits one pilot-only amendment that maps exact rows and keys to already registered quantities without changing the split, endpoint, feature meaning, model, alpha, thresholds, or hypotheses.",
+  "archiveIntegrity": [
+    {"key": "cell_eocv2.zip", "registeredMd5": "b4f42914c8eaf176fd47e33e6f112d7c", "observedMd5": "b4f42914c8eaf176fd47e33e6f112d7c", "matches": true},
+    {"key": "cell_eisv2.zip", "registeredMd5": "6eb09ae51c8a9e9b4b02b33e739787ab", "observedMd5": "6eb09ae51c8a9e9b4b02b33e739787ab", "matches": true},
+    {"key": "cell_plsv2.zip", "registeredMd5": "5c660fc53ac4ae4de5850143f629242a", "observedMd5": "5c660fc53ac4ae4de5850143f629242a", "matches": true}
+  ],
+  "pilotBoundary": {
+    "cellsRead": ["P008-1", "P017-2", "P026-1", "P069-2"],
+    "modelWeight": 0,
+    "nonPilotResultFilesRead": false,
+    "targetResultFilesRead": false
+  },
+  "resolvedMapping": {
+    "capacityAnchor": {
+      "fileFamily": "cell_eocv2_*.csv",
+      "filter": "cyc_condition=2, cyc_charged=0, and finite cap_aged_est_Ah",
+      "ordering": "ascending timestamp_s",
+      "identity": "The first row is CU0, the second is CU1, and later rows are later standardized capacity check-ups.",
+      "unit": "Ah"
+    },
+    "eisMeasurement": {
+      "fileFamily": "cell_eisv2_*.csv",
+      "filter": "is_rt=1, valid=1, and soc_nom in {10,30,50,70,90}",
+      "measurementKey": "sd_block_id and soc_nom",
+      "summary": "Median z_ref_now_mOhm across frequency rows in one measurement key.",
+      "checkupAssignment": "Measurement timestamp t belongs to capacity check-up j when anchor_j <= t < anchor_(j+1).",
+      "duplicateRule": "If more than one valid spectrum exists at the same SOC in a check-up window, take the median measurement summary.",
+      "unit": "mOhm"
+    },
+    "pulseMeasurement": {
+      "fileFamily": "cell_plsv2_*.csv",
+      "filter": "is_rt=1 and soc_nom in {10,30,50,70,90}",
+      "measurementKey": "sd_block_id and soc_nom",
+      "summary": "Separately take the median r_ref_10ms_mOhm and r_ref_1s_mOhm across waveform rows in one measurement key.",
+      "checkupAssignment": "Use the same half-open capacity-anchor window as EIS.",
+      "duplicateRule": "If more than one pulse waveform exists at the same SOC in a check-up window, take the median measurement summary.",
+      "unit": "mOhm"
+    },
+    "elapsedTime": "Use exact timestamp_s differences divided by 86400. Capacity response uses the CU0/CU1 capacity anchors; each EIS or pulse response uses the corresponding CU0/CU1 measurement timestamps after within-window aggregation."
+  },
+  "pilotFinding": "Raw pulse rows advance timestamp_s through the waveform, so grouping pulse data by exact timestamp would mistake samples from one pulse for distinct check-ups. sd_block_id is the source-provided measurement identifier. The pilot caught and corrected this row-identity error before any non-pilot file was opened.",
+  "observedPilotStructure": {
+    "capacityCheckupCounts": {"P008-1": 29, "P017-2": 9, "P026-1": 12, "P069-2": 29},
+    "everyPilotHasCu0AndCu1Capacity": true,
+    "everyPilotHasFiveSocCu0AndCu1Eis": true,
+    "everyPilotHasFiveSocCu0AndCu1Pulse10ms": true,
+    "everyPilotHasFiveSocCu0AndCu1Pulse1s": true,
+    "duplicateSpectraOrPulsesObserved": true
+  },
+  "unchangedContracts": [
+    "All 40-degree cells remain untouched targets.",
+    "The four pilot cells retain zero model and metric weight.",
+    "The endpoint remains first observed standardized capacity check-up at or below 80% of own CU0 capacity, measured from CU1 and right censored.",
+    "Feature meanings and nesting A/B/C/D remain unchanged.",
+    "The Weibull AFT model, ridge alpha 1.0, preprocessing, metrics, thresholds, and hypotheses remain unchanged.",
+    "No target-aware imputation, tuning, recalibration, or row deletion is permitted."
+  ]
+}

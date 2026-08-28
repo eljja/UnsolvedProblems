@@ -1,0 +1,1029 @@
+{
+  "pilotId": "RC54-KIT-EARLY-RESPONSE-PILOT-0.1",
+  "cycleId": "RC-2026-54",
+  "runOn": "2026-08-29",
+  "scope": {
+    "cells": [
+      "P008-1",
+      "P017-2",
+      "P026-1",
+      "P069-2"
+    ],
+    "modelWeight": 0,
+    "nonPilotFilesRead": false,
+    "purpose": "Resolve exact row identity, units, check-up ordering, duplicate aggregation, and feature completeness only."
+  },
+  "resolvedMapping": {
+    "capacity": "EOC row with cyc_condition=2, cyc_charged=0, and finite cap_aged_est_Ah; chronological order defines CU0, CU1, and later check-ups.",
+    "eis": "EIS rows with is_rt=1, valid=1, and soc_nom in {10,30,50,70,90}; sd_block_id identifies one spectrum. Assign a spectrum to capacity check-up j when its timestamp is at or after capacity anchor j and before anchor j+1, then take the median z_ref_now_mOhm across duplicate spectra at that SOC.",
+    "pulse": "PLS rows with is_rt=1 and soc_nom in {10,30,50,70,90}; sd_block_id identifies one pulse waveform. Assign it to capacity check-up j by the same half-open anchor window, then take the median r_ref_10ms_mOhm and r_ref_1s_mOhm across duplicate waveforms at that SOC.",
+    "time": "timestamp_s is Unix seconds; elapsed days equals timestamp difference divided by 86400.",
+    "duplicateReason": "EIS summary values repeat across frequency rows and pulse summary values repeat across raw waveform rows. sd_block_id first collapses one measurement; a second median handles repeated measurements within the same capacity-check-up window without using later outcomes."
+  },
+  "units": {
+    "capacity": "Ah",
+    "eisReference": "mOhm",
+    "pulseResistance": "mOhm",
+    "timestamp": "s"
+  },
+  "cells": [
+    {
+      "id": "P008-1",
+      "modelWeight": 0,
+      "files": {
+        "eoc": "cell_eocv2_P008_1_S07_C11.csv",
+        "eis": "cell_eisv2_P008_1_S07_C11.csv",
+        "pls": "cell_plsv2_P008_1_S07_C11.csv"
+      },
+      "rowCounts": {
+        "eoc": 432,
+        "eis": 8439,
+        "pulse": 17690
+      },
+      "capacityCheckups": 29,
+      "firstTwoCapacityDischarges": [
+        {
+          "timestamp": 1665626218,
+          "capacityAh": 2.944918
+        },
+        {
+          "timestamp": 1666241522,
+          "capacityAh": 2.921013
+        }
+      ],
+      "firstTwoEis": [
+        {
+          "checkup": "CU0",
+          "anchorTimestamp": 1665626218,
+          "bySoc": {
+            "10": {
+              "value": 24.996000000000002,
+              "measurementCount": 2,
+              "rawRows": 58,
+              "firstTimestamp": 1665654341
+            },
+            "30": {
+              "value": 19.807,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665667741
+            },
+            "50": {
+              "value": 19.517,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665677658
+            },
+            "70": {
+              "value": 19.444,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665687459
+            },
+            "90": {
+              "value": 20.16,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665698060
+            }
+          }
+        },
+        {
+          "checkup": "CU1",
+          "anchorTimestamp": 1666241522,
+          "bySoc": {
+            "10": {
+              "value": 22.846,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666248146
+            },
+            "30": {
+              "value": 19.344,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666256809
+            },
+            "50": {
+              "value": 19.128,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666265649
+            },
+            "70": {
+              "value": 19.328,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666272887
+            },
+            "90": {
+              "value": 19.868,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666277677
+            }
+          }
+        }
+      ],
+      "firstTwoPulse10ms": [
+        {
+          "checkup": "CU0",
+          "anchorTimestamp": 1665626218,
+          "bySoc": {
+            "10": {
+              "value": 21.049,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665658728
+            },
+            "30": {
+              "value": 19.083,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665668251
+            },
+            "50": {
+              "value": 18.815,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665678168
+            },
+            "70": {
+              "value": 18.294,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665687969
+            },
+            "90": {
+              "value": 18.445,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665698572
+            }
+          }
+        },
+        {
+          "checkup": "CU1",
+          "anchorTimestamp": 1666241522,
+          "bySoc": {
+            "10": {
+              "value": 19.973,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666248656
+            },
+            "30": {
+              "value": 18.549,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666257319
+            },
+            "50": {
+              "value": 18.257,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666266159
+            },
+            "70": {
+              "value": 18.614,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666273397
+            },
+            "90": {
+              "value": 18.969,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666278189
+            }
+          }
+        }
+      ],
+      "firstTwoPulse1s": [
+        {
+          "checkup": "CU0",
+          "anchorTimestamp": 1665626218,
+          "bySoc": {
+            "10": {
+              "value": 25.624,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665658728
+            },
+            "30": {
+              "value": 19.388,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665668251
+            },
+            "50": {
+              "value": 18.903,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665678168
+            },
+            "70": {
+              "value": 19.619,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665687969
+            },
+            "90": {
+              "value": 19.655,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665698572
+            }
+          }
+        },
+        {
+          "checkup": "CU1",
+          "anchorTimestamp": 1666241522,
+          "bySoc": {
+            "10": {
+              "value": 22.745,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666248656
+            },
+            "30": {
+              "value": 18.425,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666257319
+            },
+            "50": {
+              "value": 19.397,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666266159
+            },
+            "70": {
+              "value": 19.512,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666273397
+            },
+            "90": {
+              "value": 20.117,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666278189
+            }
+          }
+        }
+      ],
+      "featureReady": true
+    },
+    {
+      "id": "P017-2",
+      "modelWeight": 0,
+      "files": {
+        "eoc": "cell_eocv2_P017_2_S04_C07.csv",
+        "eis": "cell_eisv2_P017_2_S04_C07.csv",
+        "pls": "cell_plsv2_P017_2_S04_C07.csv"
+      },
+      "rowCounts": {
+        "eoc": 1433,
+        "eis": 2755,
+        "pulse": 5795
+      },
+      "capacityCheckups": 9,
+      "firstTwoCapacityDischarges": [
+        {
+          "timestamp": 1665626177,
+          "capacityAh": 2.953405
+        },
+        {
+          "timestamp": 1666230855,
+          "capacityAh": 2.827057
+        }
+      ],
+      "firstTwoEis": [
+        {
+          "checkup": "CU0",
+          "anchorTimestamp": 1665626177,
+          "bySoc": {
+            "10": {
+              "value": 24.486,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665658990
+            },
+            "30": {
+              "value": 19.144,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665669691
+            },
+            "50": {
+              "value": 18.755,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665679954
+            },
+            "70": {
+              "value": 18.56,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665685586
+            },
+            "90": {
+              "value": 19.496,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665695943
+            }
+          }
+        },
+        {
+          "checkup": "CU1",
+          "anchorTimestamp": 1666230855,
+          "bySoc": {
+            "10": {
+              "value": 20.931,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666233523
+            },
+            "30": {
+              "value": 18.688,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666241490
+            },
+            "50": {
+              "value": 18.727,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666251515
+            },
+            "70": {
+              "value": 18.901,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666261205
+            },
+            "90": {
+              "value": 19.398,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666270658
+            }
+          }
+        }
+      ],
+      "firstTwoPulse10ms": [
+        {
+          "checkup": "CU0",
+          "anchorTimestamp": 1665626177,
+          "bySoc": {
+            "10": {
+              "value": 20.117,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665659502
+            },
+            "30": {
+              "value": 18.444,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665670203
+            },
+            "50": {
+              "value": 17.869,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665680464
+            },
+            "70": {
+              "value": 17.19,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665686098
+            },
+            "90": {
+              "value": 18.188,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665696453
+            }
+          }
+        },
+        {
+          "checkup": "CU1",
+          "anchorTimestamp": 1666230855,
+          "bySoc": {
+            "10": {
+              "value": 19.335,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666234032
+            },
+            "30": {
+              "value": 18.538,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666242002
+            },
+            "50": {
+              "value": 17.989,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666252025
+            },
+            "70": {
+              "value": 17.746,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666261715
+            },
+            "90": {
+              "value": 17.846,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666271168
+            }
+          }
+        }
+      ],
+      "firstTwoPulse1s": [
+        {
+          "checkup": "CU0",
+          "anchorTimestamp": 1665626177,
+          "bySoc": {
+            "10": {
+              "value": 24.699,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665659502
+            },
+            "30": {
+              "value": 18.966,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665670203
+            },
+            "50": {
+              "value": 18.219,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665680464
+            },
+            "70": {
+              "value": 18.401,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665686098
+            },
+            "90": {
+              "value": 18.454,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665696453
+            }
+          }
+        },
+        {
+          "checkup": "CU1",
+          "anchorTimestamp": 1666230855,
+          "bySoc": {
+            "10": {
+              "value": 21.411,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666234032
+            },
+            "30": {
+              "value": 18.562,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666242002
+            },
+            "50": {
+              "value": 18.617,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666252025
+            },
+            "70": {
+              "value": 17.92,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666261715
+            },
+            "90": {
+              "value": 18.95,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666271168
+            }
+          }
+        }
+      ],
+      "featureReady": true
+    },
+    {
+      "id": "P026-1",
+      "modelWeight": 0,
+      "files": {
+        "eoc": "cell_eocv2_P026_1_S01_C07.csv",
+        "eis": "cell_eisv2_P026_1_S01_C07.csv",
+        "pls": "cell_plsv2_P026_1_S01_C07.csv"
+      },
+      "rowCounts": {
+        "eoc": 3460,
+        "eis": 3451,
+        "pulse": 7198
+      },
+      "capacityCheckups": 12,
+      "firstTwoCapacityDischarges": [
+        {
+          "timestamp": 1665624334,
+          "capacityAh": 2.944823
+        },
+        {
+          "timestamp": 1666231258,
+          "capacityAh": 2.889839
+        }
+      ],
+      "firstTwoEis": [
+        {
+          "checkup": "CU0",
+          "anchorTimestamp": 1665624334,
+          "bySoc": {
+            "10": {
+              "value": 24.503500000000003,
+              "measurementCount": 2,
+              "rawRows": 58,
+              "firstTimestamp": 1665647246
+            },
+            "30": {
+              "value": 19.588,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665671762
+            },
+            "50": {
+              "value": 19.171,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665682053
+            },
+            "70": {
+              "value": 17.492,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665692038
+            },
+            "90": {
+              "value": 19.769,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665702653
+            }
+          }
+        },
+        {
+          "checkup": "CU1",
+          "anchorTimestamp": 1666231258,
+          "bySoc": {
+            "10": {
+              "value": 21.763,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666237376
+            },
+            "30": {
+              "value": 18.724,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666245228
+            },
+            "50": {
+              "value": 18.578,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666254785
+            },
+            "70": {
+              "value": 18.657,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666264214
+            },
+            "90": {
+              "value": 19.414,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666273604
+            }
+          }
+        }
+      ],
+      "firstTwoPulse10ms": [
+        {
+          "checkup": "CU0",
+          "anchorTimestamp": 1665624334,
+          "bySoc": {
+            "10": {
+              "value": 20.920499999999997,
+              "measurementCount": 2,
+              "rawRows": 122,
+              "firstTimestamp": 1665647758
+            },
+            "30": {
+              "value": 18.226,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665672271
+            },
+            "50": {
+              "value": 18.356,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665682564
+            },
+            "70": {
+              "value": 17.97,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665692550
+            },
+            "90": {
+              "value": 18.75,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665703163
+            }
+          }
+        },
+        {
+          "checkup": "CU1",
+          "anchorTimestamp": 1666231258,
+          "bySoc": {
+            "10": {
+              "value": 19.472,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666237886
+            },
+            "30": {
+              "value": 17.358,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666245738
+            },
+            "50": {
+              "value": 18.462,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666255295
+            },
+            "70": {
+              "value": 17.788,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666264724
+            },
+            "90": {
+              "value": 17.535,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666274114
+            }
+          }
+        }
+      ],
+      "firstTwoPulse1s": [
+        {
+          "checkup": "CU0",
+          "anchorTimestamp": 1665624334,
+          "bySoc": {
+            "10": {
+              "value": 25.283,
+              "measurementCount": 2,
+              "rawRows": 122,
+              "firstTimestamp": 1665647758
+            },
+            "30": {
+              "value": 18.921,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665672271
+            },
+            "50": {
+              "value": 19.083,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665682564
+            },
+            "70": {
+              "value": 18.992,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665692550
+            },
+            "90": {
+              "value": 20.138,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665703163
+            }
+          }
+        },
+        {
+          "checkup": "CU1",
+          "anchorTimestamp": 1666231258,
+          "bySoc": {
+            "10": {
+              "value": 22.031,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666237886
+            },
+            "30": {
+              "value": 17.659,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666245738
+            },
+            "50": {
+              "value": 18.769,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666255295
+            },
+            "70": {
+              "value": 18.624,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666264724
+            },
+            "90": {
+              "value": 18.393,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666274114
+            }
+          }
+        }
+      ],
+      "featureReady": true
+    },
+    {
+      "id": "P069-2",
+      "modelWeight": 0,
+      "files": {
+        "eoc": "cell_eocv2_P069_2_S09_C02.csv",
+        "eis": "cell_eisv2_P069_2_S09_C02.csv",
+        "pls": "cell_plsv2_P069_2_S09_C02.csv"
+      },
+      "rowCounts": {
+        "eoc": 18794,
+        "eis": 8410,
+        "pulse": 17690
+      },
+      "capacityCheckups": 29,
+      "firstTwoCapacityDischarges": [
+        {
+          "timestamp": 1665626275,
+          "capacityAh": 2.951483
+        },
+        {
+          "timestamp": 1666235873,
+          "capacityAh": 2.900839
+        }
+      ],
+      "firstTwoEis": [
+        {
+          "checkup": "CU0",
+          "anchorTimestamp": 1665626275,
+          "bySoc": {
+            "10": {
+              "value": 24.393,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665655946
+            },
+            "30": {
+              "value": 19.67,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665666328
+            },
+            "50": {
+              "value": 19.304,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665676523
+            },
+            "70": {
+              "value": 17.697,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665686578
+            },
+            "90": {
+              "value": 18.516,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1665696953
+            }
+          }
+        },
+        {
+          "checkup": "CU1",
+          "anchorTimestamp": 1666235873,
+          "bySoc": {
+            "10": {
+              "value": 21.824,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666239348
+            },
+            "30": {
+              "value": 18.971,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666248254
+            },
+            "50": {
+              "value": 18.851,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666256914
+            },
+            "70": {
+              "value": 18.956,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666266181
+            },
+            "90": {
+              "value": 19.664,
+              "measurementCount": 1,
+              "rawRows": 29,
+              "firstTimestamp": 1666274315
+            }
+          }
+        }
+      ],
+      "firstTwoPulse10ms": [
+        {
+          "checkup": "CU0",
+          "anchorTimestamp": 1665626275,
+          "bySoc": {
+            "10": {
+              "value": 20.711,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665656456
+            },
+            "30": {
+              "value": 18.96,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665666837
+            },
+            "50": {
+              "value": 18.694,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665677035
+            },
+            "70": {
+              "value": 18.761,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665687090
+            },
+            "90": {
+              "value": 19.008,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665697463
+            }
+          }
+        },
+        {
+          "checkup": "CU1",
+          "anchorTimestamp": 1666235873,
+          "bySoc": {
+            "10": {
+              "value": 19.346,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666239860
+            },
+            "30": {
+              "value": 17.926,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666248766
+            },
+            "50": {
+              "value": 17.943,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666257424
+            },
+            "70": {
+              "value": 18.044,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666266693
+            },
+            "90": {
+              "value": 17.566,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666274825
+            }
+          }
+        }
+      ],
+      "firstTwoPulse1s": [
+        {
+          "checkup": "CU0",
+          "anchorTimestamp": 1665626275,
+          "bySoc": {
+            "10": {
+              "value": 24.897,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665656456
+            },
+            "30": {
+              "value": 19.477,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665666837
+            },
+            "50": {
+              "value": 19.185,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665677035
+            },
+            "70": {
+              "value": 18.566,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665687090
+            },
+            "90": {
+              "value": 19.39,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1665697463
+            }
+          }
+        },
+        {
+          "checkup": "CU1",
+          "anchorTimestamp": 1666235873,
+          "bySoc": {
+            "10": {
+              "value": 22.222,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666239860
+            },
+            "30": {
+              "value": 19.038,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666248766
+            },
+            "50": {
+              "value": 19.116,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666257424
+            },
+            "70": {
+              "value": 19.077,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666266693
+            },
+            "90": {
+              "value": 18.649,
+              "measurementCount": 1,
+              "rawRows": 61,
+              "firstTimestamp": 1666274825
+            }
+          }
+        }
+      ],
+      "featureReady": true
+    }
+  ],
+  "assertions": {
+    "pilotCountIs4": true,
+    "everyPilotFeatureReady": true,
+    "everyPilotHasZeroWeight": true,
+    "nonPilotFilesRead": false
+  }
+}
