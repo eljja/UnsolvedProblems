@@ -1,0 +1,66 @@
+{
+  "artifactId": "RC55-RWTH-FRAILTY-RESPONSE-CONNECTION-EVIDENCE-0.1",
+  "cycleId": "RC-2026-55",
+  "reviewedOn": "2026-08-29",
+  "connections": [
+    {
+      "id": "RC55-C01",
+      "problems": ["UP-219", "UP-233"],
+      "type": "latent-state-observability",
+      "strength": "strong-negative-evidence-for-sparse-coordinate",
+      "commonStructure": "A digital twin can only issue cell-specific RUL when its observed state distinguishes cells that share the same imposed stress but later fail at different times.",
+      "variableMapping": {
+        "physicalFrailty": "unobserved manufacturing and early degradation susceptibility",
+        "twinState": "registered early capacity-response coordinate",
+        "futureOutcome": "remaining cycles to 80%-of-own-BOL capacity"
+      },
+      "evidence": "In 16 untouched same-condition cells, the capacity-response model produced concordance 0.4156 and worsened MdAE from 80.0 to 90.3 cycles.",
+      "holdsWhen": "The diagnostic is measured reproducibly and contains stable information about a later degradation mode.",
+      "breaksWhen": "Early fade is dominated by measurement variation or a mechanism that does not determine the later knee and EOL ordering.",
+      "minimumValidation": "A new lot must reproduce at least 0.65 held-cell concordance and calibrated uncertainty before the coordinate enters a cell-specific twin.",
+      "transferableMethod": "Separate cohort survival from individual frailty; abstain from individual ranking when the observed state fails a held-cell ordering gate.",
+      "validationStatus": "registered sparse capacity bridge rejected"
+    },
+    {
+      "id": "RC55-C02",
+      "problems": ["UP-219", "UP-234"],
+      "type": "between-condition-versus-within-condition-identification",
+      "strength": "strong",
+      "commonStructure": "Accelerated-life stress laws estimate how a condition moves a population distribution; they do not automatically explain ordering among cells exposed to the same condition.",
+      "variableMapping": {
+        "acceleratingStress": "temperature, SOC, current, and voltage window",
+        "randomEffect": "cell-specific frailty under fixed stress",
+        "endpoint": "interval-resolved EOL cycle"
+      },
+      "evidence": "RC54 ranked pooled lifetimes largely through stress while failing triplicate ordering; RC55 removed stress variation and the early capacity response still failed held-cell ordering.",
+      "holdsWhen": "Between-condition effects and within-condition random effects are estimated and validated on separate denominators.",
+      "breaksWhen": "Pooled stress discrimination is reported as individual prognostic accuracy.",
+      "minimumValidation": "Report both held-condition transport and at least 30 same-condition comparable pairs; neither denominator may substitute for the other.",
+      "transferableMethod": "Use a hierarchical survival model with a stress law for group location and an independently observed frailty state for within-group rank.",
+      "validationStatus": "shared bottleneck confirmed"
+    },
+    {
+      "id": "RC55-C03",
+      "problems": ["UP-233", "UP-234"],
+      "type": "resolution-and-identifiability",
+      "strength": "moderate",
+      "commonStructure": "A model cannot validate fine cell ordering when the endpoint is observed only at widely spaced RPTs and many cells share the same recorded EOL cycle.",
+      "variableMapping": {
+        "measurementSchedule": "roughly 160 aging cycles between capacity RPTs",
+        "quantizedOutcome": "four distinct target remaining-life times",
+        "identifiabilityLoss": "43 of 120 target pairs are tied and excluded from concordance"
+      },
+      "evidence": "The target supplied 77 comparable pairs, enough for the gate but too coarse to distinguish every cell pair.",
+      "holdsWhen": "Endpoint resolution is finer than the lifetime differences a twin or stress model claims to predict.",
+      "breaksWhen": "Interpolation or a learned smooth curve is mistaken for independently measured event-time precision.",
+      "minimumValidation": "Repeat on a source with at least one capacity observation per 50 cycles or validate a dense proxy against independent full-capacity RPTs.",
+      "transferableMethod": "Model interval censoring explicitly and align claimed prediction resolution with acquisition resolution.",
+      "validationStatus": "measurement bottleneck quantified"
+    }
+  ],
+  "promotedProgram": {
+    "name": "Stress–frailty separation with resolution-matched validation",
+    "sharedBottleneck": "Population stress effects, individual susceptibility, and interval-censored endpoints are conflated in many lifetime forecasts.",
+    "minimumProgram": "Fit the stress law and frailty observation on separate levels, preregister a same-condition ordering gate, preserve interval censoring, and require a new batch or laboratory for confirmation."
+  }
+}

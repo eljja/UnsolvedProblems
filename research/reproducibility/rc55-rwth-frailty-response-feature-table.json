@@ -1,0 +1,7371 @@
+{
+  "tableId": "RC55-RWTH-FRAILTY-RESPONSE-FEATURE-TABLE-0.1",
+  "cycleId": "RC-2026-55",
+  "sourceCommit": "488eb68c23898f46308f58b9299088c287b9380d",
+  "sourceTree": "0b525ffafd634535b5af81d629fc4c09b1b8ec5e",
+  "featureNamesByArm": {
+    "A": [],
+    "B": [
+      "early_log_capacity_response_per_cycle"
+    ]
+  },
+  "pulseArm": {
+    "available": false,
+    "reason": "pilot exposes only 2-second and 10-second resistance; no 10 ms value"
+  },
+  "rows": [
+    {
+      "id": 1,
+      "sourceId": "epSanyo002",
+      "split": "pilot",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00018657274528794367
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.834012342776987,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.780073159927269,
+        "thresholdAh": 1.4672098742215898,
+        "terminalCycle": 1252.0,
+        "terminalCapacityAh": 1.40649485614631,
+        "timeCycles": 1092.0,
+        "event": true,
+        "capacityRoundCount": 17
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.834012342776987,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010389"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.780073159927269,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010903"
+          ]
+        },
+        {
+          "cycle": 452.0,
+          "capacityAh": 1.707230088170036,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011765"
+          ]
+        },
+        {
+          "cycle": 612.0,
+          "capacityAh": 1.664173105298687,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012203"
+          ]
+        },
+        {
+          "cycle": 772.0,
+          "capacityAh": 1.629689415734902,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012700"
+          ]
+        },
+        {
+          "cycle": 932.0,
+          "capacityAh": 1.590402475314477,
+          "measurementCount": 2,
+          "sourceTests": [
+            "TS013139",
+            "TS013217"
+          ]
+        },
+        {
+          "cycle": 1092.0,
+          "capacityAh": 1.514644543971372,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013737"
+          ]
+        },
+        {
+          "cycle": 1252.0,
+          "capacityAh": 1.40649485614631,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014406"
+          ]
+        },
+        {
+          "cycle": 1412.0,
+          "capacityAh": 1.202165272599814,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014816"
+          ]
+        },
+        {
+          "cycle": 1572.0,
+          "capacityAh": 1.020999901882533,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015275"
+          ]
+        },
+        {
+          "cycle": 1732.0,
+          "capacityAh": 0.842119194742736,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015937"
+          ]
+        },
+        {
+          "cycle": 1892.0,
+          "capacityAh": 0.624940741784485,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016442"
+          ]
+        },
+        {
+          "cycle": 2052.0,
+          "capacityAh": 0.491336447069898,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016945"
+          ]
+        },
+        {
+          "cycle": 2212.0,
+          "capacityAh": 0.373413483596778,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017499"
+          ]
+        },
+        {
+          "cycle": 2372.0,
+          "capacityAh": 0.3045396878919746,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017939"
+          ]
+        },
+        {
+          "cycle": 2532.0,
+          "capacityAh": 0.223468883990563,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018457"
+          ]
+        },
+        {
+          "cycle": 2639.0,
+          "capacityAh": 0.1846351160006634,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018886"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 2,
+      "sourceId": "epSanyo003",
+      "split": "pilot",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00026078449468726794
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.84237322968329,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.767080977808291,
+        "thresholdAh": 1.473898583746632,
+        "terminalCycle": 1092.0,
+        "terminalCapacityAh": 1.465893772505297,
+        "timeCycles": 932.0,
+        "event": true,
+        "capacityRoundCount": 18
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.84237322968329,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010388"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.767080977808291,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010900"
+          ]
+        },
+        {
+          "cycle": 292.0,
+          "capacityAh": 1.736306665481607,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011296"
+          ]
+        },
+        {
+          "cycle": 452.0,
+          "capacityAh": 1.691868025398435,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011762"
+          ]
+        },
+        {
+          "cycle": 612.0,
+          "capacityAh": 1.650424284693145,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012200"
+          ]
+        },
+        {
+          "cycle": 772.0,
+          "capacityAh": 1.611528105040634,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012696"
+          ]
+        },
+        {
+          "cycle": 932.0,
+          "capacityAh": 1.564205879442852,
+          "measurementCount": 2,
+          "sourceTests": [
+            "TS013136",
+            "TS013214"
+          ]
+        },
+        {
+          "cycle": 1092.0,
+          "capacityAh": 1.465893772505297,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013734"
+          ]
+        },
+        {
+          "cycle": 1252.0,
+          "capacityAh": 1.344223477641208,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014400"
+          ]
+        },
+        {
+          "cycle": 1412.0,
+          "capacityAh": 1.135647600380253,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014813"
+          ]
+        },
+        {
+          "cycle": 1572.0,
+          "capacityAh": 0.9479922286291185,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015272"
+          ]
+        },
+        {
+          "cycle": 1732.0,
+          "capacityAh": 0.8011096552390882,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015934"
+          ]
+        },
+        {
+          "cycle": 1892.0,
+          "capacityAh": 0.6626715799757221,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016436"
+          ]
+        },
+        {
+          "cycle": 2052.0,
+          "capacityAh": 0.5499987636294463,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016942"
+          ]
+        },
+        {
+          "cycle": 2212.0,
+          "capacityAh": 0.4626754356504534,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017494"
+          ]
+        },
+        {
+          "cycle": 2372.0,
+          "capacityAh": 0.3876382630282933,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017936"
+          ]
+        },
+        {
+          "cycle": 2532.0,
+          "capacityAh": 0.2860219156627863,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018438"
+          ]
+        },
+        {
+          "cycle": 2660.0,
+          "capacityAh": 0.265949282469137,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018879"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 3,
+      "sourceId": "epSanyo004",
+      "split": "target",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00024347196859777305
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.838271301809073,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.76803737755472,
+        "thresholdAh": 1.4706170414472586,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.432438058567641,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 18
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.838271301809073,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010626"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.76803737755472,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011103"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.732600290864866,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011506"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.696584740131584,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011999"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.655165248070261,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012402"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.624491967877475,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012841"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.584841370360664,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013292"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.521826842010341,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013804"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.432438058567641,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014414"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.235480006977014,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014824"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 1.025698444283989,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015283"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.8496380738761218,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015945"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.6569152685669906,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016453"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5404085016953104,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016953"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.4378317731707284,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017507"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.3612152554155728,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017947"
+          ]
+        },
+        {
+          "cycle": 2560.0,
+          "capacityAh": 0.2663763653476963,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018432"
+          ]
+        },
+        {
+          "cycle": 2688.0,
+          "capacityAh": 0.2429636881045099,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018899"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 4,
+      "sourceId": "epSanyo005",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00017874366966423978
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.835466668224399,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.783717691812853,
+        "thresholdAh": 1.4683733345795194,
+        "terminalCycle": 1440.0,
+        "terminalCapacityAh": 1.310121799622721,
+        "timeCycles": 1280.0,
+        "event": true,
+        "capacityRoundCount": 18
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.835466668224399,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010629"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.783717691812853,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011101"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.740162168736788,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011504"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.705339604101027,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011997"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.664195891746203,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012400"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.637223475645442,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012839"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.601329988221551,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013287"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.551823311965563,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013798"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.485388478859022,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014412"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.310121799622721,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014822"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 1.094122253107344,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015281"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.8836152359090192,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015943"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.6550822007029637,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016451"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5155503270962072,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016951"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.4151135612869439,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017505"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.3344687997018809,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017945"
+          ]
+        },
+        {
+          "cycle": 2560.0,
+          "capacityAh": 0.2450291598645435,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018466"
+          ]
+        },
+        {
+          "cycle": 2666.0,
+          "capacityAh": 0.2082586818517029,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018897"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 5,
+      "sourceId": "epSanyo006",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00020956579872596828
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.827375793880492,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.767118789071901,
+        "thresholdAh": 1.4619006351043937,
+        "terminalCycle": 1440.0,
+        "terminalCapacityAh": 1.363350907511631,
+        "timeCycles": 1280.0,
+        "event": true,
+        "capacityRoundCount": 18
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.827375793880492,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010628"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.767118789071901,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011102"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.725405814766418,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011505"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.692013768786637,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011998"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.656861259774814,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012401"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.624928334522338,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012840"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.591954675988745,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013289"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.548897485568887,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013801"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.493676973277616,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014413"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.363350907511631,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014823"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 1.176553498686189,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015282"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.9589640071890244,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015944"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.7211184392672294,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016452"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5651815383289431,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016952"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.437692830708329,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017506"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.3343960780330235,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017946"
+          ]
+        },
+        {
+          "cycle": 2560.0,
+          "capacityAh": 0.2214716487949318,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018431"
+          ]
+        },
+        {
+          "cycle": 2687.0,
+          "capacityAh": 0.1907565730800798,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018898"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 6,
+      "sourceId": "epSanyo007",
+      "split": "target",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00016325643541530044
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.831291538645019,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.784075666255376,
+        "thresholdAh": 1.4650332309160152,
+        "terminalCycle": 1412.0,
+        "terminalCapacityAh": 1.327086556655559,
+        "timeCycles": 1252.0,
+        "event": true,
+        "capacityRoundCount": 17
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.831291538645019,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010391"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.784075666255376,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010901"
+          ]
+        },
+        {
+          "cycle": 452.0,
+          "capacityAh": 1.711703421542552,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011763"
+          ]
+        },
+        {
+          "cycle": 612.0,
+          "capacityAh": 1.673961808417516,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012201"
+          ]
+        },
+        {
+          "cycle": 772.0,
+          "capacityAh": 1.637301771665079,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012698"
+          ]
+        },
+        {
+          "cycle": 932.0,
+          "capacityAh": 1.603684207830156,
+          "measurementCount": 2,
+          "sourceTests": [
+            "TS013137",
+            "TS013215"
+          ]
+        },
+        {
+          "cycle": 1092.0,
+          "capacityAh": 1.556093824738127,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013735"
+          ]
+        },
+        {
+          "cycle": 1252.0,
+          "capacityAh": 1.48354818417647,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014402"
+          ]
+        },
+        {
+          "cycle": 1412.0,
+          "capacityAh": 1.327086556655559,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014814"
+          ]
+        },
+        {
+          "cycle": 1572.0,
+          "capacityAh": 1.131311937924693,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015273"
+          ]
+        },
+        {
+          "cycle": 1732.0,
+          "capacityAh": 0.8997663681966515,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015935"
+          ]
+        },
+        {
+          "cycle": 1892.0,
+          "capacityAh": 0.6853234466470894,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016438"
+          ]
+        },
+        {
+          "cycle": 2052.0,
+          "capacityAh": 0.5281853044634772,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016943"
+          ]
+        },
+        {
+          "cycle": 2212.0,
+          "capacityAh": 0.4027070163792814,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017496"
+          ]
+        },
+        {
+          "cycle": 2372.0,
+          "capacityAh": 0.3117854998836265,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017937"
+          ]
+        },
+        {
+          "cycle": 2532.0,
+          "capacityAh": 0.2142399649012532,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018455"
+          ]
+        },
+        {
+          "cycle": 2634.0,
+          "capacityAh": 0.1792873249125933,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018881"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 7,
+      "sourceId": "epSanyo008",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.0001856686228659772
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.834243318795416,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.780554898537957,
+        "thresholdAh": 1.4673946550363328,
+        "terminalCycle": 1252.0,
+        "terminalCapacityAh": 1.342863399451744,
+        "timeCycles": 1092.0,
+        "event": true,
+        "capacityRoundCount": 17
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.834243318795416,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010390"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.780554898537957,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010902"
+          ]
+        },
+        {
+          "cycle": 452.0,
+          "capacityAh": 1.702440767377993,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011764"
+          ]
+        },
+        {
+          "cycle": 612.0,
+          "capacityAh": 1.664242967142855,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012202"
+          ]
+        },
+        {
+          "cycle": 772.0,
+          "capacityAh": 1.626183552240036,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012699"
+          ]
+        },
+        {
+          "cycle": 932.0,
+          "capacityAh": 1.5772957406916248,
+          "measurementCount": 2,
+          "sourceTests": [
+            "TS013138",
+            "TS013216"
+          ]
+        },
+        {
+          "cycle": 1092.0,
+          "capacityAh": 1.485915701110571,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013736"
+          ]
+        },
+        {
+          "cycle": 1252.0,
+          "capacityAh": 1.342863399451744,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014404"
+          ]
+        },
+        {
+          "cycle": 1412.0,
+          "capacityAh": 1.12671025585405,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014815"
+          ]
+        },
+        {
+          "cycle": 1572.0,
+          "capacityAh": 0.9494758627051851,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015274"
+          ]
+        },
+        {
+          "cycle": 1732.0,
+          "capacityAh": 0.7927516919644404,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015936"
+          ]
+        },
+        {
+          "cycle": 1892.0,
+          "capacityAh": 0.6320675928627679,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016440"
+          ]
+        },
+        {
+          "cycle": 2052.0,
+          "capacityAh": 0.5233946040843875,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016944"
+          ]
+        },
+        {
+          "cycle": 2212.0,
+          "capacityAh": 0.4365758064041074,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017498"
+          ]
+        },
+        {
+          "cycle": 2372.0,
+          "capacityAh": 0.3630968417746772,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017938"
+          ]
+        },
+        {
+          "cycle": 2532.0,
+          "capacityAh": 0.294610073946842,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018456"
+          ]
+        },
+        {
+          "cycle": 2640.0,
+          "capacityAh": 0.2587110242338895,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018884"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 8,
+      "sourceId": "epSanyo009",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00021040146916035543
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.835988407303375,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.775210030567905,
+        "thresholdAh": 1.4687907258427,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.467598313303824,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 18
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.835988407303375,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010630"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.775210030567905,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011100"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.741675981422304,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011503"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.699040421712198,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011996"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.65246667813517,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012399"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.626848767069532,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012838"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.591163978227996,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013285"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.523712063441053,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013796"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.467598313303824,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014411"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.302101334393228,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014821"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 1.077381652023178,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015280"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.8786744660883414,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015942"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.7098700306760293,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016450"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5917113986715776,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016950"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.4901895411221631,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017504"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.4140193939788333,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017944"
+          ]
+        },
+        {
+          "cycle": 2560.0,
+          "capacityAh": 0.3238671817539398,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018464"
+          ]
+        },
+        {
+          "cycle": 2669.0,
+          "capacityAh": 0.2929810377936519,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018896"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 9,
+      "sourceId": "epSanyo010",
+      "split": "target",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00015021166621798502
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.830273910956748,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.786809750023167,
+        "thresholdAh": 1.4642191287653985,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.37198995444669,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 17
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.830273910956748,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010409"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.786809750023167,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011016"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.74044117705489,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011411"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.70319597265916,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011910"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.66257484641028,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012337"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.626209718397149,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012818"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.499177082610913,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013738"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.37198995444669,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014407"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.132814888798748,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014817"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.9533527454686919,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015276"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.7830386513260237,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015938"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.6308677964407252,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016444"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5232695429021987,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016946"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.4431545158249719,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017500"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.3757828187517589,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017940"
+          ]
+        },
+        {
+          "cycle": 2560.0,
+          "capacityAh": 0.297139204569703,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018458"
+          ]
+        },
+        {
+          "cycle": 2666.0,
+          "capacityAh": 0.2563470439736193,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018888"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 10,
+      "sourceId": "epSanyo011",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00015421531147184335
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.834316517932166,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.789609594610738,
+        "thresholdAh": 1.467453214345733,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.396128771521035,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 17
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.834316517932166,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010408"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.789609594610738,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011017"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.749992446048054,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011412"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.702493477667304,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011911"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.664256750938876,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012338"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.62958153893851,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012819"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.513973461709611,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013739"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.396128771521035,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014408"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.170067612620187,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014818"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.9709952468156189,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015277"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.8065569963464441,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015939"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.6512405710400344,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016446"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5438893201844621,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016947"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.460504961116385,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017501"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.3830338029956693,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017941"
+          ]
+        },
+        {
+          "cycle": 2560.0,
+          "capacityAh": 0.3043114588926983,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018459"
+          ]
+        },
+        {
+          "cycle": 2663.0,
+          "capacityAh": 0.2713655906204622,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018890"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 11,
+      "sourceId": "epSanyo012",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.0001383923982599006
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.832418706821045,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.79228977839739,
+        "thresholdAh": 1.465934965456836,
+        "terminalCycle": 1440.0,
+        "terminalCapacityAh": 1.394556826900953,
+        "timeCycles": 1280.0,
+        "event": true,
+        "capacityRoundCount": 17
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.832418706821045,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010407"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.79228977839739,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011018"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.753024903789992,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011413"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.717902052385398,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011912"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.680912919853654,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012339"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.644206297289202,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012820"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.575322796941691,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013740"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.526712562301327,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014409"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.394556826900953,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014819"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 1.206761881405328,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015278"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.99523117064291,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015940"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.760781488415887,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016448"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5966225301262966,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016948"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.473478426989459,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017502"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.3762281125209483,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017942"
+          ]
+        },
+        {
+          "cycle": 2560.0,
+          "capacityAh": 0.2501001091804938,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018460"
+          ]
+        },
+        {
+          "cycle": 2665.0,
+          "capacityAh": 0.2003849621073641,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018892"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 12,
+      "sourceId": "epSanyo013",
+      "split": "target",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00025401036878573837
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.841317367223383,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.767983473997447,
+        "thresholdAh": 1.4730538937787063,
+        "terminalCycle": 1440.0,
+        "terminalCapacityAh": 1.305600631872949,
+        "timeCycles": 1280.0,
+        "event": true,
+        "capacityRoundCount": 17
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.841317367223383,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010406"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.767983473997447,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011019"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.728971431492028,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011414"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.696172558113176,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011913"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.65650512839602,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012340"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.619636842015098,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012821"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.545832798528863,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013741"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.477468222868993,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014410"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.305600631872949,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014820"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 1.132626921298652,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015279"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.9203752381108643,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015941"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.6912072743944009,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016449"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.528636852276577,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016949"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.4176582419795523,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017503"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.3141077152758953,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017943"
+          ]
+        },
+        {
+          "cycle": 2560.0,
+          "capacityAh": 0.2170192448954822,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018462"
+          ]
+        },
+        {
+          "cycle": 2670.0,
+          "capacityAh": 0.1832700730767556,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018894"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 13,
+      "sourceId": "epSanyo014",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00024074162326358532
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.839214807741882,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.769717777086044,
+        "thresholdAh": 1.4713718461935057,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.414966734888367,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.839214807741882,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010926"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.769717777086044,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011378"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.723854543668494,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011921"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.678283591360014,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012333"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.639566065992767,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012825"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.529496541921617,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013753"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.414966734888367,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014430"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.169237328367672,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014832"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 0.9753485197124974,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015291"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.813696951455313,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015965"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.6663069798787546,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016420"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.5616410544917017,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016968"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.4646108584452122,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017520"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.3956148468764695,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017950"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.3064066495057887,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018436"
+          ]
+        },
+        {
+          "cycle": 2529.0,
+          "capacityAh": 0.2841390370113004,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018875"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 14,
+      "sourceId": "epSanyo015",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00019252592539385446
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.839007466704061,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.78322203096468,
+        "thresholdAh": 1.471205973363249,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.367146902073728,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.839007466704061,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010784"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.78322203096468,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011324"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.734820073192168,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011914"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.701273512662738,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012325"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.661662319967945,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012826"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.579569923800591,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013742"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.511048865786506,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014416"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.367146902073728,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014825"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.194904645319184,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015284"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 1.003265555826147,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015952"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.7828976801538374,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016426"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.6382884112053944,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016954"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5134827886859057,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017508"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.4100770010572887,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017951"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.287979765322234,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018468"
+          ]
+        },
+        {
+          "cycle": 2505.0,
+          "capacityAh": 0.2386306483276712,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018904"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 15,
+      "sourceId": "epSanyo016",
+      "split": "target",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.0001801737169371319
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.830785889032995,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.77876184134584,
+        "thresholdAh": 1.4646287112263963,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.417223133597872,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.830785889032995,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010785"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.77876184134584,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011325"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.737252299782995,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011915"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.694759111773237,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012326"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.659701087430221,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012827"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.586156525128899,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013743"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.53520043350909,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014418"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.417223133597872,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014826"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.246656279598028,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015285"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 1.035811728041153,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015954"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.7969539798732512,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016428"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.6388187121110604,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016956"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5017515735080451,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017509"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.4162117401924661,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017952"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.2796866706216861,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018470"
+          ]
+        },
+        {
+          "cycle": 2507.0,
+          "capacityAh": 0.2466901881959984,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018905"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 16,
+      "sourceId": "epSanyo017",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00018210095852129162
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.832531123687659,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.779908548163803,
+        "thresholdAh": 1.4660248989501272,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.418298511127432,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.832531123687659,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010786"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.779908548163803,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011326"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.735739358835417,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011916"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.690249208879322,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012328"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.650822796236753,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012828"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.523982213157069,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013744"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.418298511127432,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014420"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.16917022567759,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014827"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 0.9761506750173794,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015286"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8182954410522143,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015956"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.6524976703794891,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016430"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.536769715081391,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016958"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.4587153068955558,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017510"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.3847935565318039,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017954"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.3161278155525906,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018472"
+          ]
+        },
+        {
+          "cycle": 2506.0,
+          "capacityAh": 0.2938950779853258,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018865"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 17,
+      "sourceId": "epSanyo018",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00023763550566592416
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.840880433861457,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.772200992971193,
+        "thresholdAh": 1.4727043470891656,
+        "terminalCycle": 960.0,
+        "terminalCapacityAh": 1.452194233173941,
+        "timeCycles": 800.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.840880433861457,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010739"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.772200992971193,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011204"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.727255277495715,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011622"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.693140345703796,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012168"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.65351906100841,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012705"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.5865009453864332,
+          "measurementCount": 2,
+          "sourceTests": [
+            "TS013144",
+            "TS013547"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.452194233173941,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014171"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.314105621315321,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014674"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.156227623509039,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015130"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 0.9282704586585169,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015599"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.7815857772511663,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016264"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.6467183148533877,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016762"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.55457184025272,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017158"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.4542178141277873,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017677"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.3601520447277835,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018203"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.3325799861299856,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018903"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 18,
+      "sourceId": "epSanyo019",
+      "split": "target",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00015219006673834257
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.839492726296157,
+        "landmarkCycle": 246.0,
+        "landmarkCapacityAh": 1.771897639442614,
+        "thresholdAh": 1.4715941810369255,
+        "terminalCycle": 1206.0,
+        "terminalCapacityAh": 1.402411254886829,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.839492726296157,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010924"
+          ]
+        },
+        {
+          "cycle": 246.0,
+          "capacityAh": 1.771897639442614,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011379"
+          ]
+        },
+        {
+          "cycle": 406.0,
+          "capacityAh": 1.724245231949681,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011919"
+          ]
+        },
+        {
+          "cycle": 566.0,
+          "capacityAh": 1.669815001807365,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012331"
+          ]
+        },
+        {
+          "cycle": 726.0,
+          "capacityAh": 1.635186665673245,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012823"
+          ]
+        },
+        {
+          "cycle": 1046.0,
+          "capacityAh": 1.507050375386825,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013749"
+          ]
+        },
+        {
+          "cycle": 1206.0,
+          "capacityAh": 1.402411254886829,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014426"
+          ]
+        },
+        {
+          "cycle": 1366.0,
+          "capacityAh": 1.169962137699258,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014830"
+          ]
+        },
+        {
+          "cycle": 1526.0,
+          "capacityAh": 0.9869227478293396,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015289"
+          ]
+        },
+        {
+          "cycle": 1686.0,
+          "capacityAh": 0.826441581058134,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015962"
+          ]
+        },
+        {
+          "cycle": 1846.0,
+          "capacityAh": 0.6846880379262075,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016416"
+          ]
+        },
+        {
+          "cycle": 2006.0,
+          "capacityAh": 0.5760795217129271,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016964"
+          ]
+        },
+        {
+          "cycle": 2166.0,
+          "capacityAh": 0.4845166446029907,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017516"
+          ]
+        },
+        {
+          "cycle": 2326.0,
+          "capacityAh": 0.4221826089005845,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017960"
+          ]
+        },
+        {
+          "cycle": 2486.0,
+          "capacityAh": 0.3350391517092248,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018477"
+          ]
+        },
+        {
+          "cycle": 2594.0,
+          "capacityAh": 0.2875727621799342,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018871"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 19,
+      "sourceId": "epSanyo020",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00019834069018932459
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.830744293894895,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.773558697577755,
+        "thresholdAh": 1.464595435115916,
+        "terminalCycle": 960.0,
+        "terminalCapacityAh": 1.433000223438285,
+        "timeCycles": 800.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.830744293894895,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010738"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.773558697577755,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011203"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.728933771748416,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011621"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.696019713326677,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012167"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.656562026630127,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012703"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.580339779690803,
+          "measurementCount": 2,
+          "sourceTests": [
+            "TS013142",
+            "TS013545"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.433000223438285,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014170"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.263001091358092,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014672"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.087111747589006,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015129"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 0.8859274306032603,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015597"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.7512066628560206,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016262"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.6248271168406063,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016760"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.5096948736072591,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017155"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.4253848326916341,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017685"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.3745096955408371,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018268"
+          ]
+        },
+        {
+          "cycle": 2391.0,
+          "capacityAh": 0.2981476412455777,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018902"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 20,
+      "sourceId": "epSanyo021",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00016372914467771126
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.83398208498329,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.786561713710398,
+        "thresholdAh": 1.467185667986632,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.399802911075312,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.83398208498329,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010923"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.786561713710398,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011376"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.742961718759034,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011918"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.696113577367214,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012330"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.653608568363779,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012822"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.517488921881522,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013747"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.399802911075312,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014424"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.158038208826838,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014829"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 0.9712123813978906,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015288"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8150812742851485,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015960"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.6441839475901361,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016434"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.5330459806864383,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016962"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.4564861938142713,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017514"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.3795733304673377,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017958"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.3164602776228094,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018476"
+          ]
+        },
+        {
+          "cycle": 2506.0,
+          "capacityAh": 0.2849770805323715,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018869"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 21,
+      "sourceId": "epSanyo022",
+      "split": "target",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00017585089280820488
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.833122237556381,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.782264079696688,
+        "thresholdAh": 1.4664977900451048,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.420651522168555,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.833122237556381,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010787"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.782264079696688,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011327"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.733505959558897,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011917"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.687847763008904,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012329"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.649516239038348,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012829"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.528822605398091,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013745"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.420651522168555,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014422"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.209313536410264,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014828"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.025734910794199,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015287"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.858787507474517,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015958"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.7151336448123402,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016432"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.6158983084669671,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016960"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5419400567398043,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017512"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.470676893640757,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017956"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.3742737244765522,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018474"
+          ]
+        },
+        {
+          "cycle": 2506.0,
+          "capacityAh": 0.3378661465681034,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018867"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 22,
+      "sourceId": "epSanyo023",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00018634209628320736
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.844873443238612,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.790680911997697,
+        "thresholdAh": 1.4758987545908897,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.427175711811287,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.844873443238612,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010737"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.790680911997697,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011202"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.742307708540466,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011620"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.71241141005703,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012166"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.674220584131035,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012702"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.6200802149969604,
+          "measurementCount": 2,
+          "sourceTests": [
+            "TS013141",
+            "TS013544"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.561748834363243,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014169"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.50794221016622,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014670"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.427175711811287,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015128"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.243878389042948,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015595"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 1.049195873512872,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016260"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.84774289273264,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016759"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.6594101980308551,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017152"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.512216067449117,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017671"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.4052394648451809,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018198"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.3674681656098073,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018901"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 23,
+      "sourceId": "epSanyo024",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.000197724761840009
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.832204619542608,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.775148337770588,
+        "thresholdAh": 1.4657636956340865,
+        "terminalCycle": 1440.0,
+        "terminalCapacityAh": 1.423352228124713,
+        "timeCycles": 1280.0,
+        "event": true,
+        "capacityRoundCount": 17
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.832204619542608,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010736"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.775148337770588,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011201"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.736084568241495,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011619"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.702512083211332,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012165"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.667186859063804,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012701"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.63641540691242,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013140"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.603311792317982,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013543"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.562840226000844,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014168"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.508442660830042,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014669"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.423352228124713,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015127"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 1.191231411359695,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015594"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.9914549079685457,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016259"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.7844017767311016,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016758"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.630859656868779,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017150"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.4818478183788102,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017668"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.3618137599955844,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018196"
+          ]
+        },
+        {
+          "cycle": 2560.0,
+          "capacityAh": 0.3159464772188585,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018900"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 24,
+      "sourceId": "epSanyo025",
+      "split": "target",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00022290468899390181
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.828973629342727,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.764893239449521,
+        "thresholdAh": 1.4631789034741818,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.340214794954591,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.828973629342727,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS010925"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.764893239449521,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011377"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.727067653351696,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011920"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.685452664814875,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012332"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.653984903499804,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012824"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.570683317977455,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013751"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.49724680872896,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014428"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.340214794954591,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014831"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.155011916100193,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015290"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.968408456713405,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015964"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.7255198524953812,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016418"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.5725353834832276,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016966"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.4588570757732668,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017518"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.3549681983390656,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017949"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.2391951312779383,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018434"
+          ]
+        },
+        {
+          "cycle": 2530.0,
+          "capacityAh": 0.1997624322532374,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018873"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 25,
+      "sourceId": "epSanyo026",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00022339753912878167
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.838728879074552,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.774166792494725,
+        "thresholdAh": 1.4709831032596417,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.374537581888944,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 15
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.838728879074552,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011354"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.774166792494725,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012209"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.718838267199317,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012718"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.676467795985445,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013151"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.643039928996586,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013552"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.571701771516018,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014175"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.482934653689881,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014681"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.374537581888944,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015136"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.144293583472972,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015603"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 0.9569342841004982,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016268"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8142459093369325,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016767"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.6842409761184172,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017163"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.5729537095485284,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017674"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.4783910258411197,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018211"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.4471632419949856,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018891"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 26,
+      "sourceId": "epSanyo027",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00022384847998386924
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.829488273060633,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.765123286659218,
+        "thresholdAh": 1.4635906184485066,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.433785373686987,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 15
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.829488273060633,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011356"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.765123286659218,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012207"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.714795713191052,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012716"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.675982515485885,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013149"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.644483660884362,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013550"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.583492621010009,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014173"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.513693471328224,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014677"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.433785373686987,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015134"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.218300062841081,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015601"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 0.9885874654664804,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016266"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8058202016409268,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016765"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.6577461310826038,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017161"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.5374057326735056,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017682"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.4597775875968182,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018208"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.4391303157271977,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018887"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 27,
+      "sourceId": "epSanyo028",
+      "split": "target",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00021320550910381838
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.83726639127417,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.775648891087258,
+        "thresholdAh": 1.4698131130193361,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.433812637986193,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 15
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.83726639127417,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011357"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.775648891087258,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012206"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.734112861331596,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012715"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.695843426530701,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013147"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.662741444390122,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013549"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.615258851088584,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014172"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.538091942369647,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014675"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.433812637986193,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015133"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.216181404539384,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015600"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.007401558337733,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016265"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8040508975118428,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016764"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.6394114260765491,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017159"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.4997887120089217,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017686"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.3852345196673923,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018207"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.331003659025555,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018885"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 28,
+      "sourceId": "epSanyo029",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00021301564960111695
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.834439594109426,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.77297075554452,
+        "thresholdAh": 1.4675516752875408,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.323029334891544,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 15
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.834439594109426,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011355"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.77297075554452,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012208"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.730101715480487,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012717"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.691402501623088,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013150"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.65727869057082,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013551"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.614792662518084,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014174"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.556926691368062,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014679"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.478029701649575,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015135"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.323029334891544,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015602"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.12512865599092,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016267"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.9188236970767321,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016766"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.7286636403223383,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017162"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.5745849939385153,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017683"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.4386428359293859,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018210"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.3724805622450731,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018889"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 29,
+      "sourceId": "epSanyo030",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.0001801533889998417
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.834146983344908,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.782033222001701,
+        "thresholdAh": 1.4673175866759265,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.281005326543891,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 11
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.834146983344908,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011056"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.782033222001701,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011516"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.73959071904028,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012046"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.689171696008998,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012425"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.64001016727525,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012866"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.602380808597445,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013295"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.55054333568296,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013805"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.479183225623274,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014419"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.281005326543891,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014837"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.058006314744489,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015304"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8873701521606563,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015961"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 30,
+      "sourceId": "epSanyo031",
+      "split": "target",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00018010150372569774
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.828923130313342,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.776972546445904,
+        "thresholdAh": 1.4631385042506737,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.438265262077039,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 17
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.828923130313342,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011057"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.776972546445904,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011517"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.73135719648235,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012047"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.692293331130713,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012426"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.650534864009387,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012867"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.620317816064926,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013296"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.584033733965043,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013806"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.540085190248647,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014421"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.438265262077039,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014838"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.27933641637901,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015305"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 1.068275884603281,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015963"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.8367335766433825,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016417"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.660719634992347,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016959"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5151902276129476,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017515"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.4047145608637948,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017957"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.2843987540481976,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018463"
+          ]
+        },
+        {
+          "cycle": 2507.0,
+          "capacityAh": 0.2242462609256108,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018870"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 31,
+      "sourceId": "epSanyo032",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00018200080838301074
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.835059092180018,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.782392484916272,
+        "thresholdAh": 1.4680472737440144,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.421008021547095,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 17
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.835059092180018,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011059"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.782392484916272,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011514"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.73335821280125,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012044"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.68551325657063,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012424"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.643908531055786,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012864"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.588803825819923,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013290"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.515088328398633,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013799"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.421008021547095,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014415"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.190032704133046,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014834"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 0.9634564199959641,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015301"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8115393659591064,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015957"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.6637495539953306,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016427"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.5583611428601216,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016955"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.4768920890232948,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017511"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.4051371462769566,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017953"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.3111659239771143,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018433"
+          ]
+        },
+        {
+          "cycle": 2527.0,
+          "capacityAh": 0.2826813559549919,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018866"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 32,
+      "sourceId": "epSanyo033",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00021060676296329536
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.837771949185481,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.776876164232817,
+        "thresholdAh": 1.4702175593483848,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.297924638776749,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 17
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.837771949185481,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011058"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.776876164232817,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011515"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.730789704530253,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012045"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.689257889793225,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012427"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.650059904008231,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012865"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.615145160458269,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013293"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.558488723139817,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013802"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.472386042340077,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014417"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.297924638776749,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014836"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.063408200778213,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015303"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8253380600071978,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015959"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.5935250684387938,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016429"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.449399582044407,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016957"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.3584117462846734,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017513"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.2848660498111713,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017955"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.1849835915224958,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018461"
+          ]
+        },
+        {
+          "cycle": 2506.0,
+          "capacityAh": 0.1463022391969844,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018868"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 33,
+      "sourceId": "epSanyo034",
+      "split": "target",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00019910172857713054
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.831945633937721,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.774506424299034,
+        "thresholdAh": 1.4655565071501768,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.38990095536974,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.831945633937721,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011134"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.774506424299034,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011640"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.739876647894562,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012171"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.69908813391703,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012709"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.6636168034974617,
+          "measurementCount": 2,
+          "sourceTests": [
+            "TS013148",
+            "TS013220"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.619743509136242,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013755"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.581144963944098,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014434"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.499510157716941,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014835"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.38990095536974,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015302"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.217941296903518,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015967"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 1.006400315252904,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016424"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.8601485764493191,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016972"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.7414071163302651,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017524"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.6467648789830491,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017962"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.5487145400875306,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018478"
+          ]
+        },
+        {
+          "cycle": 2340.0,
+          "capacityAh": 0.4992572124110666,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018863"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 34,
+      "sourceId": "epSanyo035",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00018736727056148746
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.839514167973903,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.785186219289244,
+        "thresholdAh": 1.4716113343791226,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.441419050655895,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.839514167973903,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011133"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.785186219289244,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011639"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.746870410484917,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012169"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.703935872494185,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012708"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.668049780425463,
+          "measurementCount": 2,
+          "sourceTests": [
+            "TS013146",
+            "TS013219"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.627484209568138,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013754"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.58825717356558,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014432"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.52041208409355,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014833"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.441419050655895,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015300"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.303276297137927,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015966"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 1.068677746148751,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016422"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.8858792283235744,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016970"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.7530322670390888,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017522"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.641767921059909,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017948"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.5162572666213237,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018437"
+          ]
+        },
+        {
+          "cycle": 2360.0,
+          "capacityAh": 0.4690575165104747,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018877"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 35,
+      "sourceId": "epSanyo036",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00015418233537728155
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.83381297062806,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.789127759751864,
+        "thresholdAh": 1.467050376502448,
+        "terminalCycle": 1440.0,
+        "terminalCapacityAh": 1.311154489079854,
+        "timeCycles": 1280.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.83381297062806,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011136"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.789127759751864,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011642"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.741578276036307,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012172"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.70265744948847,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012707"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.670628339275936,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013145"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.637709191461909,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013548"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.599211497217766,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014181"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.550564228957228,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014673"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.473420300761063,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015132"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.311154489079854,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015598"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 1.114675430862917,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016263"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.896553249014687,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016763"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.6978110387835841,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017156"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.548894983909122,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017673"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.4633007450906916,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018272"
+          ]
+        },
+        {
+          "cycle": 2386.0,
+          "capacityAh": 0.3288962717506365,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018874"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 36,
+      "sourceId": "epSanyo037",
+      "split": "target",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00016575972676659707
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.83532993105473,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.787293935321941,
+        "thresholdAh": 1.468263944843784,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.409643464749024,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.83532993105473,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011135"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.787293935321941,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011641"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.739426700176409,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012170"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.701106937909572,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012704"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.6588999791893,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013143"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.616810615181748,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013546"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.530425757480771,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014180"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.409643464749024,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014671"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.269339441530974,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015131"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.027595872563325,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015596"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8730088960937792,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016261"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.7136755554247429,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016761"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.5898907190830869,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017153"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.493125822917591,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017670"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.4046872205044565,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018199"
+          ]
+        },
+        {
+          "cycle": 2400.0,
+          "capacityAh": 0.3633863174982253,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018872"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 37,
+      "sourceId": "epSanyo038",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00023146888351234388
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.836878741589317,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.770094214603887,
+        "thresholdAh": 1.4695029932714538,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.378509459860652,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 15
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.836878741589317,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011406"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.770094214603887,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012353"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.729883925518152,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012842"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.688711860941112,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013298"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.643775240656396,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013807"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.615246416005903,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014431"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.5541294781342,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014839"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.4867594088646,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015310"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.378509459860652,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015946"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.162337530231525,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016412"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.9502169772804336,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016969"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.8014772054721107,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017525"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.6908775277224777,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017965"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.548669560583221,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018439"
+          ]
+        },
+        {
+          "cycle": 2208.0,
+          "capacityAh": 0.493465405063489,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018893"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 38,
+      "sourceId": "epSanyo039",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00021825430436492573
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.838835502574511,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.77573035079331,
+        "thresholdAh": 1.4710684020596088,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.445621672144625,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 15
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.838835502574511,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011407"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.77573035079331,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012354"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.734603877699556,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012843"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.694497360229434,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013299"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.651506891810641,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013808"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.60967684827483,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014433"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.547784603850232,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014840"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.445621672144625,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015311"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.294916902590558,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015947"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.074301222895883,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016413"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8956081503520181,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016971"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.7764291842322564,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017526"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.6701247842947851,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017966"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5551277650092743,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018471"
+          ]
+        },
+        {
+          "cycle": 2189.0,
+          "capacityAh": 0.5143676357010918,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018895"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 39,
+      "sourceId": "epSanyo040",
+      "split": "target",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00020991693743345144
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.838518992914032,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.777794662250017,
+        "thresholdAh": 1.4708151943312258,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.417942870917614,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 15
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.838518992914032,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011409"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.777794662250017,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012356"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.739138473340063,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012845"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.698228227038271,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013301"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.656927327088852,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013810"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.613457465313331,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014436"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.53632380979434,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014842"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.417942870917614,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015313"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.240147111873739,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015949"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.026102618330697,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016415"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8581566507818934,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016974"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.7381992230439209,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017528"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.6459709617574845,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017968"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5322863115934524,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018475"
+          ]
+        },
+        {
+          "cycle": 2187.0,
+          "capacityAh": 0.4830255500210114,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018860"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 40,
+      "sourceId": "epSanyo041",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00015621776791207215
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.829017238027518,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.783867841140818,
+        "thresholdAh": 1.4632137904220146,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.461202366135694,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 15
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.829017238027518,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011408"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.783867841140818,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012355"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.740621011289477,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012844"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.701693116405295,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013300"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.659317202595048,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013809"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.624029855187473,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014435"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.559590078963083,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014841"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.461202366135694,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015312"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.303438452685441,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015948"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.045089865730915,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016414"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8579885027838827,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016973"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.7166924090488465,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017527"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.5920677398025873,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017967"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.4599799734396584,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018473"
+          ]
+        },
+        {
+          "cycle": 2187.0,
+          "capacityAh": 0.4059421938795822,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018859"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 41,
+      "sourceId": "epSanyo042",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00020047062973388674
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.837871424382684,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.779856541937988,
+        "thresholdAh": 1.4702971395061473,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.404721501643508,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 14
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.837871424382684,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011967"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.779856541937988,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012626"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.728956938337433,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013074"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.694177317840513,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013555"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.649153700100214,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014178"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.588379796987283,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014687"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.53810805903413,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015139"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.404721501643508,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015606"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.214542096440709,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016271"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 0.9974260425951798,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016770"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8367060005411986,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017166"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.6889560676945621,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017679"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.5724911515135318,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018204"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5208053553951686,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018864"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 42,
+      "sourceId": "epSanyo043",
+      "split": "target",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.0002209078008713416
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.843976164509513,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.779938745266918,
+        "thresholdAh": 1.4751809316076105,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.406888666395389,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 14
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.843976164509513,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011971"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.779938745266918,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012627"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.736453549779981,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013075"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.699327640124466,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013556"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.656837981867284,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014179"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.615045401673342,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014689"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.576281432047836,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015140"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.508145171279466,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015607"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.406888666395389,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016272"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.215128897674731,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016771"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.9769682971254952,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017167"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.7812034066391789,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017680"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.6215478663843896,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018205"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5392783816523661,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018858"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 43,
+      "sourceId": "epSanyo044",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.0002007727080862688
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.848282144768746,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.789852123754827,
+        "thresholdAh": 1.478625715814997,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.436606258756001,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 14
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.848282144768746,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011969"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.789852123754827,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012624"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.741345527012527,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013072"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.709122996810038,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013553"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.657900172544032,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014176"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.607310730225436,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014683"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.551347846725548,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015137"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.436606258756001,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015604"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.284142853082813,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016269"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.067840352941857,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016768"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8490979894486372,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017164"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.6850033179180173,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017675"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.5578269216184708,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018201"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.4984602026415814,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018861"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 44,
+      "sourceId": "epSanyo045",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00019777056305321348
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.836256388700349,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.779060894323266,
+        "thresholdAh": 1.4690051109602793,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.404804054922352,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 14
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.836256388700349,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011968"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.779060894323266,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012625"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.728968570030702,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013073"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.696666660513074,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013554"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.651845479798794,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014177"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.600101571906635,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014685"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.542246969256667,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015138"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.404804054922352,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015605"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.224009966286758,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016270"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.006679711288598,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016769"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8407913882647335,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017165"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.7152046997643993,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017678"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.5957390563462468,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018202"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5534463111489458,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018862"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 45,
+      "sourceId": "epSanyo046",
+      "split": "target",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00024316003376468844
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.846460463226322,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.776002297028754,
+        "thresholdAh": 1.4771683705810577,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.408276181036854,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.846460463226322,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011260"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.776002297028754,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011925"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.73104780441281,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012323"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.681709538524956,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012833"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.648444710255717,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013207"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.601612356545957,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013752"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.53736453793681,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014429"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.408276181036854,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014846"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.206447671704154,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015309"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.004043414744956,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015955"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8205527752861599,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016425"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.6888824355764882,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016967"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.5806068124493322,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017523"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.4894047735647291,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017964"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.3840973017086071,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018469"
+          ]
+        },
+        {
+          "cycle": 2350.0,
+          "capacityAh": 0.3404477158769623,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018882"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 46,
+      "sourceId": "epSanyo047",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00021078112760472865
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.84306884207399,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.781947826999385,
+        "thresholdAh": 1.4744550736591922,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.416080346156377,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.84306884207399,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011261"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.781947826999385,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011924"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.735749626113829,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012322"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.692056074178254,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012832"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.654773685701002,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013206"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.610712984220299,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013750"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.553892337196885,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014427"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.416080346156377,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014845"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.204983082690887,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015308"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 0.999278594254065,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015953"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8057849665292451,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016423"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.6670136881557482,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016965"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.5720958415795394,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017521"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.4823579684643846,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017963"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.367281791782716,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018435"
+          ]
+        },
+        {
+          "cycle": 2365.0,
+          "capacityAh": 0.3298279599157468,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018880"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 47,
+      "sourceId": "epSanyo048",
+      "split": "development",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00020267292320335904
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.833830344941816,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.775317351206468,
+        "thresholdAh": 1.467064275953453,
+        "terminalCycle": 1120.0,
+        "terminalCapacityAh": 1.409695645614193,
+        "timeCycles": 960.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.833830344941816,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011262"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.775317351206468,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011923"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.727873163241384,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012321"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.682946520235419,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012831"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.649093870293655,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013205"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.60606556213861,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013748"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.546761948698986,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014425"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.409695645614193,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014844"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.230906911081547,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015307"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.025320419605123,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015951"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8355595310131321,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016421"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.6892865718309622,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016963"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.5864253796607954,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017519"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.5089952136522697,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017961"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.420013572229891,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018467"
+          ]
+        },
+        {
+          "cycle": 2350.0,
+          "capacityAh": 0.3793462651865411,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018878"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    },
+    {
+      "id": 48,
+      "sourceId": "epSanyo049",
+      "split": "target",
+      "features": {
+        "early_log_capacity_response_per_cycle": -0.00018723699314039845
+      },
+      "endpoint": {
+        "bolCycle": 0.0,
+        "bolCapacityAh": 1.845837189584927,
+        "landmarkCycle": 160.0,
+        "landmarkCapacityAh": 1.791359837092386,
+        "thresholdAh": 1.4766697516679417,
+        "terminalCycle": 1280.0,
+        "terminalCapacityAh": 1.332573660338312,
+        "timeCycles": 1120.0,
+        "event": true,
+        "capacityRoundCount": 16
+      },
+      "capacityRounds": [
+        {
+          "cycle": 0.0,
+          "capacityAh": 1.845837189584927,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011263"
+          ]
+        },
+        {
+          "cycle": 160.0,
+          "capacityAh": 1.791359837092386,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS011922"
+          ]
+        },
+        {
+          "cycle": 320.0,
+          "capacityAh": 1.748697237051601,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012320"
+          ]
+        },
+        {
+          "cycle": 480.0,
+          "capacityAh": 1.709198431666664,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS012830"
+          ]
+        },
+        {
+          "cycle": 640.0,
+          "capacityAh": 1.672779304757569,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013204"
+          ]
+        },
+        {
+          "cycle": 800.0,
+          "capacityAh": 1.63416723840237,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS013746"
+          ]
+        },
+        {
+          "cycle": 960.0,
+          "capacityAh": 1.578426554840917,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014423"
+          ]
+        },
+        {
+          "cycle": 1120.0,
+          "capacityAh": 1.478232605461017,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS014843"
+          ]
+        },
+        {
+          "cycle": 1280.0,
+          "capacityAh": 1.332573660338312,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015306"
+          ]
+        },
+        {
+          "cycle": 1440.0,
+          "capacityAh": 1.130108887078677,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS015950"
+          ]
+        },
+        {
+          "cycle": 1600.0,
+          "capacityAh": 0.8929007409215046,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016419"
+          ]
+        },
+        {
+          "cycle": 1760.0,
+          "capacityAh": 0.735952749633725,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS016961"
+          ]
+        },
+        {
+          "cycle": 1920.0,
+          "capacityAh": 0.6024939855587945,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017517"
+          ]
+        },
+        {
+          "cycle": 2080.0,
+          "capacityAh": 0.4982857348486505,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS017959"
+          ]
+        },
+        {
+          "cycle": 2240.0,
+          "capacityAh": 0.3724812311834285,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018465"
+          ]
+        },
+        {
+          "cycle": 2348.0,
+          "capacityAh": 0.3013865612851987,
+          "measurementCount": 1,
+          "sourceTests": [
+            "TS018876"
+          ]
+        }
+      ],
+      "completeA": true,
+      "completeB": true,
+      "missing": []
+    }
+  ]
+}

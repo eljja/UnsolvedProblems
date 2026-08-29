@@ -1,0 +1,98 @@
+{
+  "diagnosticId": "RC55-RWTH-FRAILTY-RESPONSE-BOUNDARY-DIAGNOSTIC-0.1",
+  "cycleId": "RC-2026-55",
+  "runOn": "2026-08-29",
+  "status": "post-verdict-diagnostic-not-eligible-to-change-preregistered-verdict",
+  "registeredSplit": {
+    "development": {
+      "cells": 30,
+      "earlyCapacityLossPercent": {
+        "median": 3.1192067894281195,
+        "minimum": 2.1899431758843124,
+        "maximum": 3.7786250068943206
+      },
+      "remainingLifeCycles": {
+        "median": 1026.0,
+        "minimum": 800.0,
+        "maximum": 1280.0,
+        "distinctIntervalResolvedTimes": 5
+      },
+      "responseLifetimeAssociation": {
+        "spearmanRho": 0.3688329682489874,
+        "spearmanPValueDescriptive": 0.044889795115945215,
+        "pearsonR": 0.3909365878577422,
+        "pearsonPValueDescriptive": 0.032671205335532555
+      }
+    },
+    "target": {
+      "cells": 16,
+      "earlyCapacityLossPercent": {
+        "median": 3.219157464299649,
+        "minimum": 2.3747353154840556,
+        "maximum": 3.982686229507515
+      },
+      "remainingLifeCycles": {
+        "median": 1120.0,
+        "minimum": 960.0,
+        "maximum": 1280.0,
+        "distinctIntervalResolvedTimes": 4
+      },
+      "responseLifetimeAssociation": {
+        "spearmanRho": -0.16676362912943402,
+        "spearmanPValueDescriptive": 0.5370422622582205,
+        "pearsonR": -0.16174520646962579,
+        "pearsonPValueDescriptive": 0.5495319175949039
+      }
+    }
+  },
+  "moduloSplitSensitivity": [
+    {
+      "residue": 0,
+      "developmentCells": 30,
+      "targetCells": 16,
+      "capacityCoefficientStandardized": 0.04578513823368452,
+      "baselineMdAECycles": 80.0,
+      "capacityMdAECycles": 90.30922474171604,
+      "relativeMdAEImprovement": -0.12886530927145046,
+      "capacityConcordance": {
+        "value": 0.4155844155844156,
+        "comparablePairs": 77
+      },
+      "capacityMaximumCalibrationError": 0.23907647913418473
+    },
+    {
+      "residue": 1,
+      "developmentCells": 31,
+      "targetCells": 15,
+      "capacityCoefficientStandardized": 0.013422001066246128,
+      "baselineMdAECycles": 131.0810772159648,
+      "capacityMdAECycles": 117.3217606113783,
+      "relativeMdAEImprovement": 0.10496798543940185,
+      "capacityConcordance": {
+        "value": 0.5675675675675675,
+        "comparablePairs": 74
+      },
+      "capacityMaximumCalibrationError": 0.07311725481852044
+    },
+    {
+      "residue": 2,
+      "developmentCells": 31,
+      "targetCells": 15,
+      "capacityCoefficientStandardized": -0.004293480024902376,
+      "baselineMdAECycles": 107.34556918421572,
+      "capacityMdAECycles": 108.39248875378257,
+      "relativeMdAEImprovement": -0.009752797227897078,
+      "capacityConcordance": {
+        "value": 0.24358974358974358,
+        "comparablePairs": 78
+      },
+      "capacityMaximumCalibrationError": 0.14383017962043648
+    }
+  ],
+  "interpretationBoundary": [
+    "The development association is weak and does not reproduce in the untouched target.",
+    "Only four distinct interval-resolved target EOL times remain after the first-RPT landmark, so tied pairs limit rank resolution.",
+    "Modulo-split results diagnose split sensitivity; they are not cross-validation estimates and cannot rescue H1.",
+    "The next experiment must improve observability or endpoint resolution and then use a new untouched source."
+  ]
+}

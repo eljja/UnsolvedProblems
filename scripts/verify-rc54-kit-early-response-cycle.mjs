@@ -126,7 +126,11 @@ for (const page of ["index.html", "solve.html", "research-log.html"]) assert(rea
 const publicText = readText("research-cycle-54-data.js");
 for (const phrase of ["1단계", "2단계", "전공자 포인트", "핵심 아이디어", "아래 시도는 개별 논문", "개수를 맞추"]) assert(!publicText.includes(phrase), `Forbidden editorial phrase remains: ${phrase}`);
 assert(readText("sitemap.xml").includes("cycle=RC-2026-54&amp;lang=ko") && readText("sitemap.xml").includes("cycle=RC-2026-54&amp;lang=en"), "RC54 sitemap URLs are missing");
-assert(readText("README.md").includes("54개 누적 연구 사이클") && readText("README.md").includes("1,598개 현지화 URL") && readText("README.md").includes("319개 기관·로드맵·원 연구 출처"), "README cumulative counts are incomplete");
+const readme = readText("README.md");
+const readmeCycles = Number(readme.match(/(\d+)개 누적 연구 사이클/)?.[1]);
+const readmeUrls = Number((readme.match(/([\d,]+)개 현지화 URL/)?.[1] || "").replaceAll(",", ""));
+const readmeSources = Number(readme.match(/(\d+)개 기관·로드맵·원 연구 출처/)?.[1]);
+assert(readmeCycles >= 54 && readmeUrls >= 1598 && readmeSources >= 319, "README cumulative counts are incomplete");
 const pkg = read("package.json");
 for (const command of ["research:rc54-schema", "research:rc54-pilot", "research:rc54-python", "research:rc54-node", "research:rc54-adjudicate", "research:rc54-diagnostic", "verify:rc54"]) assert(pkg.scripts[command], `Missing package command ${command}`);
 assert(pkg.scripts.pretest?.includes("verify-rc54-kit-early-response-cycle.mjs"), "RC54 verifier is not in the default test path");

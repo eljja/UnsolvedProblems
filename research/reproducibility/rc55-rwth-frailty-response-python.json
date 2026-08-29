@@ -1,0 +1,404 @@
+{
+  "resultId": "RC55-RWTH-FRAILTY-RESPONSE-PYTHON-0.1",
+  "cycleId": "RC-2026-55",
+  "runOn": "2026-08-29",
+  "implementation": {
+    "runtime": "Python with SciPy",
+    "optimizer": "BFGS with analytic likelihood gradient",
+    "alpha": 1.0,
+    "penalty": "0.5*alpha*sum(beta^2)"
+  },
+  "source": {
+    "commit": "488eb68c23898f46308f58b9299088c287b9380d",
+    "processedTree": "0b525ffafd634535b5af81d629fc4c09b1b8ec5e"
+  },
+  "cohort": {
+    "sourceCells": 48,
+    "pilotCells": 2,
+    "developmentCandidates": 30,
+    "targetCandidates": 16,
+    "denominators": {
+      "A": {
+        "development": 30,
+        "target": 16
+      },
+      "B": {
+        "development": 30,
+        "target": 16
+      }
+    },
+    "targetEventsB": 16,
+    "targetCensoredB": 0
+  },
+  "availability": {
+    "armA": "available",
+    "armB": "available",
+    "armC": "unavailable-no-10ms-pulse-in-pilot"
+  },
+  "fits": {
+    "A": {
+      "featureNames": [],
+      "developmentMean": [],
+      "developmentScale": [],
+      "intercept": 7.016720440940712,
+      "coefficients": [],
+      "logShape": 2.1344417708228987,
+      "shape": 8.452326854195794,
+      "objective": 190.6550451319712,
+      "optimizerReportedSuccess": true,
+      "optimizerMessage": "Optimization terminated successfully.",
+      "iterations": 9,
+      "gradientMaxAbs": 7.197797913249815e-12,
+      "predictedEta": [
+        7.016720440940712,
+        7.016720440940712,
+        7.016720440940712,
+        7.016720440940712,
+        7.016720440940712,
+        7.016720440940712,
+        7.016720440940712,
+        7.016720440940712,
+        7.016720440940712,
+        7.016720440940712,
+        7.016720440940712,
+        7.016720440940712,
+        7.016720440940712,
+        7.016720440940712,
+        7.016720440940712,
+        7.016720440940712
+      ]
+    },
+    "B": {
+      "featureNames": [
+        "early_log_capacity_response_per_cycle"
+      ],
+      "developmentMean": [
+        -0.0001956369706150892
+      ],
+      "developmentScale": [
+        2.508952588384028e-05
+      ],
+      "intercept": 7.011569666643402,
+      "coefficients": [
+        0.04578513823368452
+      ],
+      "logShape": 2.211891198122137,
+      "shape": 9.132972330820143,
+      "objective": 188.2170705949551,
+      "optimizerReportedSuccess": true,
+      "optimizerMessage": "Optimization terminated successfully.",
+      "iterations": 16,
+      "gradientMaxAbs": 3.337224940835881e-11,
+      "predictedEta": [
+        6.924276985020597,
+        7.07065995344543,
+        7.09446496927916,
+        6.905045768312806,
+        7.039788103710155,
+        7.090854644328201,
+        7.047676698385844,
+        6.9618096089575285,
+        6.979509357214106,
+        7.039919883476864,
+        7.005246931691265,
+        7.0660917706472,
+        6.9855105749818796,
+        6.9654536713902715,
+        6.924846225727608,
+        7.026898538604521
+      ]
+    }
+  },
+  "metrics": {
+    "A": {
+      "targetCount": 16,
+      "eventCount": 16,
+      "censoredCount": 0,
+      "medianAbsoluteErrorCycles": 80.0,
+      "meanAbsoluteErrorCycles": 91.29937658349894,
+      "maximumAbsoluteErrorCycles": 212.19750633399576,
+      "harrellConcordance": {
+        "value": 0.5,
+        "comparablePairs": 77
+      },
+      "calibration": {
+        "900": {
+          "predictedMeanSurvival": 0.8492509458531379,
+          "kaplanMeierSurvival": 1.0,
+          "absoluteError": 0.15074905414686213,
+          "atRisk": 16
+        },
+        "1100": {
+          "predictedMeanSurvival": 0.4102473202848393,
+          "kaplanMeierSurvival": 0.625,
+          "absoluteError": 0.2147526797151607,
+          "atRisk": 10
+        }
+      },
+      "maximumCalibrationError": 0.2147526797151607
+    },
+    "B": {
+      "targetCount": 16,
+      "eventCount": 16,
+      "censoredCount": 0,
+      "medianAbsoluteErrorCycles": 90.30922474171604,
+      "meanAbsoluteErrorCycles": 103.16556139894652,
+      "maximumAbsoluteErrorCycles": 321.9355701751184,
+      "harrellConcordance": {
+        "value": 0.4155844155844156,
+        "comparablePairs": 77
+      },
+      "calibration": {
+        "900": {
+          "predictedMeanSurvival": 0.8417593579823504,
+          "kaplanMeierSurvival": 1.0,
+          "absoluteError": 0.15824064201764965,
+          "atRisk": 16
+        },
+        "1100": {
+          "predictedMeanSurvival": 0.3859235208658153,
+          "kaplanMeierSurvival": 0.625,
+          "absoluteError": 0.23907647913418473,
+          "atRisk": 10
+        }
+      },
+      "maximumCalibrationError": 0.23907647913418473
+    }
+  },
+  "comparison": {
+    "BvsA": {
+      "relativeMdAEImprovement": -0.12886530927145046,
+      "bootstrapSeed": 55029,
+      "bootstrapReplicates": 2000,
+      "percentile95Interval": [
+        -1.1423277137935557,
+        0.382710443869858
+      ]
+    }
+  },
+  "hypotheses": {
+    "H0": {
+      "retained": true,
+      "verdict": "retained"
+    },
+    "H1": {
+      "pass": false,
+      "verdict": "rejected"
+    },
+    "H2": {
+      "pass": false,
+      "verdict": "unavailable",
+      "reason": "registered 10 ms pulse response is absent"
+    }
+  },
+  "targetPredictions": [
+    {
+      "id": 3,
+      "sourceId": "epSanyo004",
+      "event": true,
+      "observedTimeCycles": 1120.0,
+      "bolCapacityAh": 1.838271301809073,
+      "landmarkCycle": 160.0,
+      "capacityResponsePerCycle": -0.00024347196859777305,
+      "predictedMedianCycles": {
+        "A": 1067.8024936660042,
+        "B": 976.6674808052597
+      }
+    },
+    {
+      "id": 6,
+      "sourceId": "epSanyo007",
+      "event": true,
+      "observedTimeCycles": 1252.0,
+      "bolCapacityAh": 1.831291538645019,
+      "landmarkCycle": 160.0,
+      "capacityResponsePerCycle": -0.00016325643541530044,
+      "predictedMedianCycles": {
+        "A": 1067.8024936660042,
+        "B": 1130.6287980097168
+      }
+    },
+    {
+      "id": 9,
+      "sourceId": "epSanyo010",
+      "event": true,
+      "observedTimeCycles": 1120.0,
+      "bolCapacityAh": 1.830273910956748,
+      "landmarkCycle": 160.0,
+      "capacityResponsePerCycle": -0.00015021166621798502,
+      "predictedMedianCycles": {
+        "A": 1067.8024936660042,
+        "B": 1157.8663433142715
+      }
+    },
+    {
+      "id": 12,
+      "sourceId": "epSanyo013",
+      "event": true,
+      "observedTimeCycles": 1280.0,
+      "bolCapacityAh": 1.841317367223383,
+      "landmarkCycle": 160.0,
+      "capacityResponsePerCycle": -0.00025401036878573837,
+      "predictedMedianCycles": {
+        "A": 1067.8024936660042,
+        "B": 958.0644298248816
+      }
+    },
+    {
+      "id": 15,
+      "sourceId": "epSanyo016",
+      "event": true,
+      "observedTimeCycles": 1120.0,
+      "bolCapacityAh": 1.830785889032995,
+      "landmarkCycle": 160.0,
+      "capacityResponsePerCycle": -0.0001801737169371319,
+      "predictedMedianCycles": {
+        "A": 1067.8024936660042,
+        "B": 1096.2574785715597
+      }
+    },
+    {
+      "id": 18,
+      "sourceId": "epSanyo019",
+      "event": true,
+      "observedTimeCycles": 960.0,
+      "bolCapacityAh": 1.839492726296157,
+      "landmarkCycle": 246.0,
+      "capacityResponsePerCycle": -0.00015219006673834257,
+      "predictedMedianCycles": {
+        "A": 1067.8024936660042,
+        "B": 1153.6936065653686
+      }
+    },
+    {
+      "id": 21,
+      "sourceId": "epSanyo022",
+      "event": true,
+      "observedTimeCycles": 960.0,
+      "bolCapacityAh": 1.833122237556381,
+      "landmarkCycle": 160.0,
+      "capacityResponsePerCycle": -0.00017585089280820488,
+      "predictedMedianCycles": {
+        "A": 1067.8024936660042,
+        "B": 1104.9396093615828
+      }
+    },
+    {
+      "id": 24,
+      "sourceId": "epSanyo025",
+      "event": true,
+      "observedTimeCycles": 1120.0,
+      "bolCapacityAh": 1.828973629342727,
+      "landmarkCycle": 160.0,
+      "capacityResponsePerCycle": -0.00022290468899390181,
+      "predictedMedianCycles": {
+        "A": 1067.8024936660042,
+        "B": 1014.0209765484733
+      }
+    },
+    {
+      "id": 27,
+      "sourceId": "epSanyo028",
+      "event": true,
+      "observedTimeCycles": 960.0,
+      "bolCapacityAh": 1.83726639127417,
+      "landmarkCycle": 160.0,
+      "capacityResponsePerCycle": -0.00021320550910381838,
+      "predictedMedianCycles": {
+        "A": 1067.8024936660042,
+        "B": 1032.1286706430524
+      }
+    },
+    {
+      "id": 30,
+      "sourceId": "epSanyo031",
+      "event": true,
+      "observedTimeCycles": 1120.0,
+      "bolCapacityAh": 1.828923130313342,
+      "landmarkCycle": 160.0,
+      "capacityResponsePerCycle": -0.00018010150372569774,
+      "predictedMedianCycles": {
+        "A": 1067.8024936660042,
+        "B": 1096.40195264551
+      }
+    },
+    {
+      "id": 33,
+      "sourceId": "epSanyo034",
+      "event": true,
+      "observedTimeCycles": 1120.0,
+      "bolCapacityAh": 1.831945633937721,
+      "landmarkCycle": 160.0,
+      "capacityResponsePerCycle": -0.00019910172857713054,
+      "predictedMedianCycles": {
+        "A": 1067.8024936660042,
+        "B": 1059.037963713432
+      }
+    },
+    {
+      "id": 36,
+      "sourceId": "epSanyo037",
+      "event": true,
+      "observedTimeCycles": 960.0,
+      "bolCapacityAh": 1.83532993105473,
+      "landmarkCycle": 160.0,
+      "capacityResponsePerCycle": -0.00016575972676659707,
+      "predictedMedianCycles": {
+        "A": 1067.8024936660042,
+        "B": 1125.475658187246
+      }
+    },
+    {
+      "id": 39,
+      "sourceId": "epSanyo040",
+      "event": true,
+      "observedTimeCycles": 960.0,
+      "bolCapacityAh": 1.838518992914032,
+      "landmarkCycle": 160.0,
+      "capacityResponsePerCycle": -0.00020991693743345144,
+      "predictedMedianCycles": {
+        "A": 1067.8024936660042,
+        "B": 1038.3413226532477
+      }
+    },
+    {
+      "id": 42,
+      "sourceId": "epSanyo043",
+      "event": true,
+      "observedTimeCycles": 1120.0,
+      "bolCapacityAh": 1.843976164509513,
+      "landmarkCycle": 160.0,
+      "capacityResponsePerCycle": -0.0002209078008713416,
+      "predictedMedianCycles": {
+        "A": 1067.8024936660042,
+        "B": 1017.7228731698157
+      }
+    },
+    {
+      "id": 45,
+      "sourceId": "epSanyo046",
+      "event": true,
+      "observedTimeCycles": 960.0,
+      "bolCapacityAh": 1.846460463226322,
+      "landmarkCycle": 160.0,
+      "capacityResponsePerCycle": -0.00024316003376468844,
+      "predictedMedianCycles": {
+        "A": 1067.8024936660042,
+        "B": 977.2235979597917
+      }
+    },
+    {
+      "id": 48,
+      "sourceId": "epSanyo049",
+      "event": true,
+      "observedTimeCycles": 1120.0,
+      "bolCapacityAh": 1.845837189584927,
+      "landmarkCycle": 160.0,
+      "capacityResponsePerCycle": -0.00018723699314039845,
+      "predictedMedianCycles": {
+        "A": 1067.8024936660042,
+        "B": 1082.2178730127675
+      }
+    }
+  ]
+}

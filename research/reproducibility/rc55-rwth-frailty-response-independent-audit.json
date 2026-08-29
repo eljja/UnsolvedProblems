@@ -1,0 +1,86 @@
+{
+  "auditId": "RC55-RWTH-FRAILTY-RESPONSE-INDEPENDENT-AUDIT-0.1",
+  "cycleId": "RC-2026-55",
+  "runOn": "2026-08-29",
+  "tolerance": 0.00001,
+  "comparedScalarCount": 49,
+  "maxAbsoluteDifference": 0.000005204570015848731,
+  "hypothesisMatch": true,
+  "denominatorMatch": true,
+  "pass": true,
+  "verdict": "independently-reproduced",
+  "largestDifferences": [
+    {
+      "label": "target.9.B",
+      "python": 1157.8663433142715,
+      "node": 1157.8663381097015,
+      "absoluteDifference": 0.000005204570015848731
+    },
+    {
+      "label": "target.18.B",
+      "python": 1153.6936065653686,
+      "node": 1153.6936013779227,
+      "absoluteDifference": 0.0000051874458222300746
+    },
+    {
+      "label": "target.6.B",
+      "python": 1130.6287980097168,
+      "node": 1130.6287929170276,
+      "absoluteDifference": 0.00000509268920723116
+    },
+    {
+      "label": "target.36.B",
+      "python": 1125.475658187246,
+      "node": 1125.4756531157527,
+      "absoluteDifference": 0.000005071493205832667
+    },
+    {
+      "label": "target.21.B",
+      "python": 1104.9396093615828,
+      "node": 1104.9396043746501,
+      "absoluteDifference": 0.000004986932708561653
+    },
+    {
+      "label": "target.30.B",
+      "python": 1096.40195264551,
+      "node": 1096.401947693776,
+      "absoluteDifference": 0.000004951733899360988
+    },
+    {
+      "label": "target.15.B",
+      "python": 1096.2574785715597,
+      "node": 1096.2574736204226,
+      "absoluteDifference": 0.00000495113704346295
+    },
+    {
+      "label": "target.48.B",
+      "python": 1082.2178730127675,
+      "node": 1082.21786811957,
+      "absoluteDifference": 0.00000489319745611283
+    },
+    {
+      "label": "target.33.B",
+      "python": 1059.037963713432,
+      "node": 1059.0379589160527,
+      "absoluteDifference": 0.000004797379233423271
+    },
+    {
+      "label": "target.39.B",
+      "python": 1038.3413226532477,
+      "node": 1038.3413179415893,
+      "absoluteDifference": 0.000004711658448286471
+    },
+    {
+      "label": "target.27.B",
+      "python": 1032.1286706430524,
+      "node": 1032.128665957157,
+      "absoluteDifference": 0.000004685895419243025
+    },
+    {
+      "label": "target.42.B",
+      "python": 1017.7228731698157,
+      "node": 1017.7228685437149,
+      "absoluteDifference": 0.000004626100803761801
+    }
+  ]
+}

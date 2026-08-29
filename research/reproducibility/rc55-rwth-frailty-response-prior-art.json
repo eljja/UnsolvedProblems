@@ -1,0 +1,64 @@
+{
+  "artifactId": "RC55-RWTH-FRAILTY-RESPONSE-PRIOR-ART-0.1",
+  "cycleId": "RC-2026-55",
+  "reviewedOn": "2026-08-29",
+  "sources": [
+    {
+      "role": "official-dataset",
+      "title": "Time-series cyclic aging data on 48 commercial NMC/graphite Sanyo/Panasonic UR18650E cylindrical cells",
+      "url": "https://doi.org/10.18154/RWTH-2021-04545",
+      "verifiedFacts": "RWTH publishes 48 same-type, same-profile cells with BOL and repeated RPT data under CC BY 4.0."
+    },
+    {
+      "role": "source-primary-paper",
+      "title": "One-shot battery degradation trajectory prediction with deep learning",
+      "url": "https://doi.org/10.1016/j.jpowsour.2021.230024",
+      "published": "2021-06-10 online",
+      "verifiedFacts": "The experiment continued beyond 80% EOL; full early capacity histories, rather than one scalar response, were used to forecast complete trajectories."
+    },
+    {
+      "role": "same-cohort-multitask-prior",
+      "title": "Forecasting battery capacity and power degradation with multi-task learning",
+      "url": "https://doi.org/10.1016/j.ensm.2022.09.013",
+      "published": "2022-09-15 online",
+      "verifiedFacts": "Capacity and internal-resistance histories were jointly modeled; the paper links EOL80 strongly to the later capacity knee rather than to a single early capacity level."
+    },
+    {
+      "role": "recent-physics-informed-excitation",
+      "title": "Non-destructive degradation pattern decoupling for early battery trajectory prediction via physics-informed learning",
+      "url": "https://doi.org/10.1039/D4EE03839H",
+      "published": "2025-01-14",
+      "verifiedFacts": "Multistep charging excitations were used to infer temporally resolved thermodynamic and kinetic parameters, motivating richer identifiable responses rather than a single early fade scalar."
+    },
+    {
+      "role": "recent-same-source-boundary",
+      "title": "Changepoint detection as a light data-driven approach to battery state-of-health prediction",
+      "url": "https://doi.org/10.1016/j.xcrp.2026.103157",
+      "published": "2026",
+      "verifiedFacts": "The study reuses the 48-cell RWTH cohort and treats degradation changepoints as informative structure; it is not an independent cohort for RC55 confirmation."
+    },
+    {
+      "role": "state-definition-and-grading",
+      "title": "The future of battery data and the state of health of lithium-ion batteries in automotive applications",
+      "url": "https://doi.org/10.1038/s44172-024-00299-w",
+      "published": "2025-01-02",
+      "verifiedFacts": "The paper argues that capacity and internal resistance alone may not sufficiently describe battery state and highlights increasing trajectory variability despite similar initial grading."
+    },
+    {
+      "role": "uncertainty-boundary",
+      "title": "Probabilistic machine learning for battery health diagnostics and prognostics—review and perspectives",
+      "url": "https://doi.org/10.1038/s44296-024-00011-1",
+      "published": "2024-06-03",
+      "verifiedFacts": "Cell-to-cell manufacturing variability and time-varying use conditions require uncertainty-aware prognostics; deterministic point forecasts alone do not represent this variance."
+    }
+  ],
+  "noveltyBoundary": "RC55 does not claim the first use of early capacity or resistance for lifetime prediction. Its distinct contribution is a preregistered, sparse two-coordinate falsification test on an untouched same-condition subset, with interval-censored EOL, abstention for an absent 10 ms signal, and independent numerical reproduction.",
+  "searchStrategy": [
+    "RWTH UR18650E 48 cells early lifetime EOL80 pulse resistance",
+    "same-condition lithium-ion cell manufacturing variability early response lifetime prediction",
+    "battery capacity resistance multi-task trajectory knee EOL",
+    "physics-informed multistep excitation battery early degradation trajectory",
+    "battery changepoint prediction RWTH 48 cells",
+    "battery grading initial capacity pulse resistance lifetime variability"
+  ]
+}

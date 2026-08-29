@@ -1,0 +1,338 @@
+{
+  "resultId": "RC55-RWTH-FRAILTY-RESPONSE-NODE-0.1",
+  "cycleId": "RC-2026-55",
+  "runOn": "2026-08-29",
+  "implementation": {
+    "runtime": "dependency-free Node.js",
+    "optimizer": "independently written BFGS with analytic score-equation Newton polish",
+    "alpha": 1,
+    "penalty": "0.5*alpha*sum(beta^2)"
+  },
+  "cohort": {
+    "denominators": {
+      "A": {
+        "development": 30,
+        "target": 16
+      },
+      "B": {
+        "development": 30,
+        "target": 16
+      }
+    },
+    "targetEventsB": 16,
+    "targetCensoredB": 0
+  },
+  "availability": {
+    "armA": "available",
+    "armB": "available",
+    "armC": "unavailable-no-10ms-pulse-in-pilot"
+  },
+  "fits": {
+    "A": {
+      "featureNames": [],
+      "developmentMean": [],
+      "developmentScale": [],
+      "intercept": 7.016720440940047,
+      "coefficients": [],
+      "logShape": 2.1344417708192154,
+      "shape": 8.452326854164662,
+      "objective": 190.65504513197118,
+      "iterations": 10,
+      "gradientMaxAbs": 9.98042537503352e-10,
+      "predictedEta": [
+        7.016720440940047,
+        7.016720440940047,
+        7.016720440940047,
+        7.016720440940047,
+        7.016720440940047,
+        7.016720440940047,
+        7.016720440940047,
+        7.016720440940047,
+        7.016720440940047,
+        7.016720440940047,
+        7.016720440940047,
+        7.016720440940047,
+        7.016720440940047,
+        7.016720440940047,
+        7.016720440940047,
+        7.016720440940047
+      ]
+    },
+    "B": {
+      "featureNames": [
+        "early_log_capacity_response_per_cycle"
+      ],
+      "developmentMean": [
+        -0.00019563697061508918
+      ],
+      "developmentScale": [
+        0.00002508952588384028
+      ],
+      "intercept": 7.011569662116173,
+      "coefficients": [
+        0.04578513825163303
+      ],
+      "logShape": 2.211891198116338,
+      "shape": 9.132972330767183,
+      "objective": 188.21707059495498,
+      "iterations": 5000,
+      "gradientMaxAbs": 0.000011327891748180718,
+      "predictedEta": [
+        6.9242769804591475,
+        7.070659948941365,
+        7.094464964784427,
+        6.905045763743817,
+        7.039788099193988,
+        7.090854639832052,
+        7.047676693872769,
+        6.961809604410792,
+        6.979509352674308,
+        7.039919878960748,
+        7.005246927161557,
+        7.066091766141344,
+        6.9855105704444345,
+        6.965453666844963,
+        6.924846221166382,
+        7.0268985340833
+      ]
+    }
+  },
+  "metrics": {
+    "A": {
+      "targetCount": 16,
+      "eventCount": 16,
+      "censoredCount": 0,
+      "medianAbsoluteErrorCycles": 80,
+      "meanAbsoluteErrorCycles": 91.29937658371892,
+      "maximumAbsoluteErrorCycles": 212.1975063348757,
+      "harrellConcordance": {
+        "value": 0.5,
+        "comparablePairs": 77
+      },
+      "calibration": {
+        "900": {
+          "predictedMeanSurvival": 0.8492509458514325,
+          "kaplanMeierSurvival": 1,
+          "absoluteError": 0.15074905414856754,
+          "atRisk": 16
+        },
+        "1100": {
+          "predictedMeanSurvival": 0.4102473202826315,
+          "kaplanMeierSurvival": 0.625,
+          "absoluteError": 0.2147526797173685,
+          "atRisk": 10
+        }
+      },
+      "maximumCalibrationError": 0.2147526797173685
+    },
+    "B": {
+      "targetCount": 16,
+      "eventCount": 16,
+      "censoredCount": 0,
+      "medianAbsoluteErrorCycles": 90.30922469893721,
+      "meanAbsoluteErrorCycles": 103.16556192708742,
+      "maximumAbsoluteErrorCycles": 321.93557455272685,
+      "harrellConcordance": {
+        "value": 0.4155844155844156,
+        "comparablePairs": 77
+      },
+      "calibration": {
+        "900": {
+          "predictedMeanSurvival": 0.8417593521265752,
+          "kaplanMeierSurvival": 1,
+          "absoluteError": 0.15824064787342484,
+          "atRisk": 16
+        },
+        "1100": {
+          "predictedMeanSurvival": 0.3859235076411578,
+          "kaplanMeierSurvival": 0.625,
+          "absoluteError": 0.2390764923588422,
+          "atRisk": 10
+        }
+      },
+      "maximumCalibrationError": 0.2390764923588422
+    }
+  },
+  "comparison": {
+    "BvsA": {
+      "relativeMdAEImprovement": -0.12886530873671517
+    }
+  },
+  "hypotheses": {
+    "H0": {
+      "retained": true,
+      "verdict": "retained"
+    },
+    "H1": {
+      "pass": false,
+      "verdict": "rejected"
+    },
+    "H2": {
+      "pass": false,
+      "verdict": "unavailable",
+      "reason": "registered 10 ms pulse response is absent"
+    }
+  },
+  "targetPredictions": [
+    {
+      "id": 3,
+      "sourceId": "epSanyo004",
+      "event": true,
+      "observedTimeCycles": 1120,
+      "predictedMedianCycles": {
+        "A": 1067.8024936651243,
+        "B": 976.6674763500127
+      }
+    },
+    {
+      "id": 6,
+      "sourceId": "epSanyo007",
+      "event": true,
+      "observedTimeCycles": 1252,
+      "predictedMedianCycles": {
+        "A": 1067.8024936651243,
+        "B": 1130.6287929170276
+      }
+    },
+    {
+      "id": 9,
+      "sourceId": "epSanyo010",
+      "event": true,
+      "observedTimeCycles": 1120,
+      "predictedMedianCycles": {
+        "A": 1067.8024936651243,
+        "B": 1157.8663381097015
+      }
+    },
+    {
+      "id": 12,
+      "sourceId": "epSanyo013",
+      "event": true,
+      "observedTimeCycles": 1280,
+      "predictedMedianCycles": {
+        "A": 1067.8024936651243,
+        "B": 958.0644254472732
+      }
+    },
+    {
+      "id": 15,
+      "sourceId": "epSanyo016",
+      "event": true,
+      "observedTimeCycles": 1120,
+      "predictedMedianCycles": {
+        "A": 1067.8024936651243,
+        "B": 1096.2574736204226
+      }
+    },
+    {
+      "id": 18,
+      "sourceId": "epSanyo019",
+      "event": true,
+      "observedTimeCycles": 960,
+      "predictedMedianCycles": {
+        "A": 1067.8024936651243,
+        "B": 1153.6936013779227
+      }
+    },
+    {
+      "id": 21,
+      "sourceId": "epSanyo022",
+      "event": true,
+      "observedTimeCycles": 960,
+      "predictedMedianCycles": {
+        "A": 1067.8024936651243,
+        "B": 1104.9396043746501
+      }
+    },
+    {
+      "id": 24,
+      "sourceId": "epSanyo025",
+      "event": true,
+      "observedTimeCycles": 1120,
+      "predictedMedianCycles": {
+        "A": 1067.8024936651243,
+        "B": 1014.0209719377515
+      }
+    },
+    {
+      "id": 27,
+      "sourceId": "epSanyo028",
+      "event": true,
+      "observedTimeCycles": 960,
+      "predictedMedianCycles": {
+        "A": 1067.8024936651243,
+        "B": 1032.128665957157
+      }
+    },
+    {
+      "id": 30,
+      "sourceId": "epSanyo031",
+      "event": true,
+      "observedTimeCycles": 1120,
+      "predictedMedianCycles": {
+        "A": 1067.8024936651243,
+        "B": 1096.401947693776
+      }
+    },
+    {
+      "id": 33,
+      "sourceId": "epSanyo034",
+      "event": true,
+      "observedTimeCycles": 1120,
+      "predictedMedianCycles": {
+        "A": 1067.8024936651243,
+        "B": 1059.0379589160527
+      }
+    },
+    {
+      "id": 36,
+      "sourceId": "epSanyo037",
+      "event": true,
+      "observedTimeCycles": 960,
+      "predictedMedianCycles": {
+        "A": 1067.8024936651243,
+        "B": 1125.4756531157527
+      }
+    },
+    {
+      "id": 39,
+      "sourceId": "epSanyo040",
+      "event": true,
+      "observedTimeCycles": 960,
+      "predictedMedianCycles": {
+        "A": 1067.8024936651243,
+        "B": 1038.3413179415893
+      }
+    },
+    {
+      "id": 42,
+      "sourceId": "epSanyo043",
+      "event": true,
+      "observedTimeCycles": 1120,
+      "predictedMedianCycles": {
+        "A": 1067.8024936651243,
+        "B": 1017.7228685437149
+      }
+    },
+    {
+      "id": 45,
+      "sourceId": "epSanyo046",
+      "event": true,
+      "observedTimeCycles": 960,
+      "predictedMedianCycles": {
+        "A": 1067.8024936651243,
+        "B": 977.2235935022267
+      }
+    },
+    {
+      "id": 48,
+      "sourceId": "epSanyo049",
+      "event": true,
+      "observedTimeCycles": 1120,
+      "predictedMedianCycles": {
+        "A": 1067.8024936651243,
+        "B": 1082.21786811957
+      }
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "resultId": "RC55-RWTH-FRAILTY-RESPONSE-CYCLE-RESULT-0.1",
+  "cycleId": "RC-2026-55",
+  "completedOn": "2026-08-29",
+  "status": "complete-negative-result",
+  "problems": ["UP-219", "UP-233", "UP-234"],
+  "selectionReason": "The RWTH source fixes chemistry, lot, temperature, and duty profile across 48 cells, reaches 80% EOL, and measures BOL plus repeated capacity and pulse diagnostics. It directly tests the within-condition frailty bottleneck left open by RC54.",
+  "newFacts": [
+    "All 16 untouched target cells had a registered 80%-of-own-BOL capacity event, providing 77 comparable non-tied pairs.",
+    "The baseline held-cell median absolute error was 80.0 cycles; adding the first-RPT capacity response increased it to 90.309 cycles.",
+    "Capacity-response concordance was 0.415584, below both chance-like 0.5 and the registered 0.65 gate.",
+    "The capacity-response model's maximum calibration error was 0.239076, above the registered 0.15 gate.",
+    "The registered 10 ms pulse response is absent: official processed pulse records provide 2-second and 10-second durations, so no substitute was introduced.",
+    "Python and a dependency-free Node implementation agreed over 49 scalar comparisons with maximum absolute difference 5.205e-6."
+  ],
+  "hypotheses": {
+    "H0": {
+      "verdict": "retained",
+      "meaning": "The registered sparse early responses do not establish stable cell-specific frailty beyond a common-condition lifetime distribution."
+    },
+    "H1": {
+      "verdict": "rejected",
+      "failedGates": [
+        "concordance 0.415584 < 0.65",
+        "MdAE improvement -12.8865% < +10%",
+        "maximum calibration error 0.239076 > 0.15"
+      ],
+      "passedGates": [
+        "16/16 target feature coverage",
+        "16 target events >= 14",
+        "77 comparable pairs >= 30",
+        "MdAE 90.309 cycles <= 160"
+      ]
+    },
+    "H2": {
+      "verdict": "unavailable",
+      "reason": "No 10 ms pulse-resistance observation exists in the pilot schema; 2-second and 10-second values cannot answer the registered hypothesis."
+    }
+  },
+  "diagnosis": [
+    "The first 160-cycle capacity loss occupied a narrow 2.19–3.98% range, while later degradation accelerated at different times.",
+    "A weak positive development association did not transfer: response–lifetime Spearman rho changed from 0.369 in development to -0.167 in target.",
+    "Alternative modulo splits also missed the 0.65 concordance gate (0.416, 0.568, and 0.244), so the failure is not explained by one unlucky registered residue alone.",
+    "The endpoint had only four distinct target times after the landmark because full-capacity RPTs were widely spaced; this limits fine ordering but does not explain a concordance below 0.5."
+  ],
+  "causalChainOutcome": [
+    {
+      "link": "fixed stress and standardized early capacity measurements -> latent frailty",
+      "verdict": "not identified by one early capacity response",
+      "fastFailureEvidence": "held-cell rank reversal and worse absolute error"
+    },
+    {
+      "link": "latent frailty -> independent EOL ordering",
+      "verdict": "unresolved",
+      "fastFailureEvidence": "the registered 10 ms perturbation channel was unavailable"
+    },
+    {
+      "link": "recorded EOL ordering -> cell-specific RUL claim",
+      "verdict": "blocked",
+      "fastFailureEvidence": "capacity response failed ranking and calibration gates"
+    }
+  ],
+  "minimalAcademicAdvance": "A single early capacity-fade rate is not a transportable frailty coordinate even when stress, chemistry, and lot are fixed. This separates population lifetime modeling from cell-specific ranking and prevents an apparently plausible development correlation from being promoted into a digital twin.",
+  "mostPromisingNextPath": {
+    "hypothesis": "The onset and curvature of the later degradation knee, not the first 160-cycle capacity loss, carries the stable cell-specific signal; a deliberately excited kinetic response may reveal that transition earlier than passive capacity RPTs.",
+    "differentCombination": "Combine interval-censored changepoint inference, multistep current excitation, and hierarchical survival modeling. The changepoint locates transition risk, excitation estimates kinetic state, and the hierarchy keeps stress effects separate from individual frailty.",
+    "exactBottleneck": "Early scalar fade is too narrow and mechanism-ambiguous to order later knee onset among same-condition cells.",
+    "developmentExperiment": "On the RWTH cohort, compare frozen landmarks at 160, 320, and 480 cycles using only pre-landmark capacity curvature and the available 2-second/10-second resistance histories. Use nested cell splits and treat this only as method development because the source has now been opened.",
+    "independentDecisiveTest": "Before opening a new same-condition lot, freeze one landmark and at most three mechanistically named coordinates. Hold out an entire production or test-start batch; require at least 90% coverage, 14 EOL events, 30 comparable pairs, concordance >=0.65, calibration error <=0.15, and independent implementation.",
+    "requiredSource": "At least 36 same-chemistry cells per fixed condition, full-capacity checks no more than 50 cycles apart, raw sub-second pulse or multistep excitation waveforms, randomized tester channels, and follow-up through 80% EOL.",
+    "successSignal": "The same coefficient direction and >=0.65 held-batch concordance reproduce in a new lot without target calibration.",
+    "rejectionAndStop": "Reject a coordinate if its sign changes across internal start cohorts, held-batch concordance is below 0.65, calibration exceeds 0.15, or acquisition coverage falls below 90%. Stop adding model complexity until observability or endpoint resolution improves.",
+    "failureValue": "A failed excitation coordinate still eliminates a proposed state variable and quantifies the minimum landmark or measurement resolution needed for individual RUL."
+  },
+  "uncertaintyBudget": [
+    {
+      "category": "measurement",
+      "observed": "Capacity RPTs are separated by about 160 cycles and early loss spans only a few percentage points.",
+      "consequence": "Noise and interval quantization can dominate the early slope and tie EOL times."
+    },
+    {
+      "category": "sampling",
+      "observed": "One C-grade production lot under one profile; 16 held cells.",
+      "consequence": "The negative result is strong for this sparse coordinate in this cohort, not universal across lots or chemistries."
+    },
+    {
+      "category": "model",
+      "observed": "A linear one-feature Weibull AFT model was frozen and independently reproduced.",
+      "consequence": "A nonlinear relationship could exist, but fitting it post hoc to 30 development cells would not be credible confirmation."
+    },
+    {
+      "category": "missing-observation",
+      "observed": "No 10 ms pulse value exists in the official processed pilot records.",
+      "consequence": "RC55 cannot accept or reject the registered kinetic-response hypothesis."
+    }
+  ],
+  "safetyEthics": "Only public, previously collected cell data were processed. No cell operation, destructive test, personal data, cyber experiment, or deployment decision occurred.",
+  "nextCycleStart": "Audit independent same-condition datasets for sub-50-cycle full-capacity resolution plus raw sub-second excitation. If none qualifies, preregister the RWTH multi-landmark analysis strictly as method development and publish the acquisition gap instead of relabeling 2-second data as 10 ms evidence."
+}
