@@ -1,0 +1,14 @@
+{
+  "auditId": "RC54-KIT-EARLY-RESPONSE-INDEPENDENT-AUDIT-0.1",
+  "cycleId": "RC-2026-54",
+  "runOn": "2026-08-29",
+  "tolerance": 0.00001,
+  "comparedNumericScalars": 850,
+  "maximumAbsoluteDifference": 1.1816155165433884e-8,
+  "worstDifferenceKey": "target[0].predictedMedianDays.C",
+  "targetPredictionCount": 44,
+  "hypothesesMatch": true,
+  "everyOptimizerSucceeded": true,
+  "pass": true,
+  "comparisonBoundary": "The seeded cluster bootstrap interval is a primary descriptive uncertainty calculation and is not recomputed here; all shared deterministic fit, prediction, metric, comparison, cohort, and verdict values are compared."
+}

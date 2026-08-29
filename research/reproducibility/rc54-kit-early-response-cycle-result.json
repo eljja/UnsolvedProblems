@@ -1,0 +1,72 @@
+{
+  "resultId": "RC54-KIT-EARLY-RESPONSE-CYCLE-RESULT-0.1",
+  "cycleId": "RC-2026-54",
+  "completedOn": "2026-08-29",
+  "status": "complete-with-all-four-registered-hypotheses-rejected",
+  "selection": {
+    "problemIds": ["UP-219", "UP-233", "UP-234"],
+    "reason": "RC53's exact continuation point requested a large same-lot source with common EOL, replicated regimes, and an early repeated diagnostic. KIT provides 228 HG2 cells, 76 triplicate conditions, four temperatures, repeated capacity/EIS/pulse check-ups, and almost 600 days of results. Holding all 57 cells at 40 degrees creates a direct, falsifiable temperature-transfer test.",
+    "cyberTrustDeferred": true
+  },
+  "precommit": {
+    "gitCommit": "afd9301",
+    "pilotSchemaCommit": "4ceb79d",
+    "chronology": "Configuration and column definitions were inspected before afd9301; no EOC, EIS, or pulse result value was opened. Four zero-weight pilots then fixed sd_block_id and capacity-anchor mapping before 4ceb79d; no non-pilot result file was opened before that commit."
+  },
+  "newlyVerifiedFacts": [
+    "The official version-2 EOC, EIS, and pulse archives match all three preregistered MD5 values.",
+    "The configuration contains 228 cells in 76 triplicate conditions, split evenly into 57 cells at each of 0, 10, 25, and 40 degrees Celsius.",
+    "All 57 held-temperature cells have a resolvable CU1-to-terminal capacity endpoint; 46 reach the registered 80% EOL and 11 are right censored.",
+    "Thirteen target cells lack at least one registered CU0-to-CU1 EIS response, leaving 44 common complete targets and 36 observed events.",
+    "The common complete development cohort contains 156 cells: all 35 calendar cells are censored, while 89 of 97 cyclic and all 24 profile cells reach EOL.",
+    "Arm A has MdAE 226.22 days, Harrell concordance 0.8476, within-condition concordance 0.500, and maximum calibration error 0.2280.",
+    "Arm B lowers pooled MdAE to 166.53 days and raises concordance to 0.8632, but calendar MdAE worsens from 10,533 to 12,725 days.",
+    "Arm C worsens MdAE to 298.45 days, within-condition concordance to 0.4074, and maximum calibration error to 0.2834.",
+    "Arm D recovers pooled MdAE to 240.46 days but reaches only 0.5185 within-condition concordance over 27 pairs and 0.2710 maximum calibration error.",
+    "The D-versus-C pooled MdAE improvement is 19.43%, but the 2,000-condition-bootstrap 95% interval spans -82.57% to 36.14%.",
+    "H0, H1, H2, and H3 are all rejected under their frozen joint gates.",
+    "Two independent runtimes agree across 850 shared deterministic values with maximum absolute difference 1.1817e-8."
+  ],
+  "evidenceInferenceProposalBoundary": {
+    "confirmed": "Cohort completeness, events and censoring, all registered arm metrics, all rejected verdicts, archive hashes, and independent numerical agreement.",
+    "inference": "The absence of development calendar EOL events makes the 40-degree calendar acceleration weakly identified; high pooled rank with poor within-condition order shows condition recognition without reliable cell-frailty recovery.",
+    "proposal": "A low-dimensional hierarchical longitudinal-frailty model using one preregistered capacity or 30%-SOC pulse response should be tested only on a new unopened endpoint source."
+  },
+  "hypotheses": [
+    {"code": "H0", "verdict": "rejected", "reason": "Stress-only misses the 75-day MdAE, family, calibration, and within-condition boundaries despite high pooled concordance."},
+    {"code": "H1", "verdict": "rejected", "reason": "Static diagnostics reduce pooled MdAE 26.39% but increase worst-family error, so their apparent benefit does not transport across calendar aging."},
+    {"code": "H2", "verdict": "rejected", "reason": "One-week capacity response worsens MdAE by 79.21% relative to B and worsens calibration."},
+    {"code": "H3", "verdict": "rejected", "reason": "The full perturbation response lacks complete target coverage, misses the 60-day error and 0.60 within-condition gates, has only 27 comparable pairs, fails family and calibration gates, and has an uncertainty interval crossing zero."}
+  ],
+  "mostPromisingPath": {
+    "status": "exploratory signal requiring an independent prospective source; not established as novel or validated",
+    "hypothesis": "A single low-noise early capacity or 30%-SOC 10 ms pulse response estimates within-condition frailty, while the full longitudinal capacity history estimates the condition-level degradation law under censoring.",
+    "differenceFromFailedApproach": "RC54 placed sixteen response coordinates directly into one global AFT extrapolation. The next design separates condition-level trajectory from cell-level rank, uses censored pre-EOL paths from calendar cells, and limits the frailty channel to one or two frozen measurements with explicit missingness and abstention.",
+    "firstTest": "On a new unopened source, require at least 90% feature coverage and within-condition concordance above 0.60 over at least 30 comparable EOL pairs before fitting any absolute-life model.",
+    "success": "Only after the rank gate passes, require held-condition magnitude and calibration gates plus an independent implementation.",
+    "stop": "If coverage or within-condition ordering fails, stop adding electrochemical features and move to pressure, expansion, acoustic, thermal, or mechanical sensing."
+  },
+  "workPackages": [
+    {"code": "WP54-A", "purpose": "Preserve the RC54 counterexample", "method": "Publish all 57 target endpoint statuses, the 13 diagnostic-missing cells, common 44-cell predictions, family errors, calibration, and rejected gates.", "deliverable": "Versioned table, two fit implementations, independent audit, and boundary diagnostic.", "pass": "Every reported denominator and prediction is machine-verifiable.", "failure": "Any silent row removal, outcome-aware imputation, or verdict mismatch reopens the cycle.", "next": "Use this fixed record as a negative benchmark."},
+    {"code": "WP54-B", "purpose": "Separate condition law from cell frailty", "method": "Fit a monotone or mechanism-constrained longitudinal capacity trajectory to all pre-EOL check-ups, with condition effects separate from a single early-response frailty term.", "deliverable": "A preregistered two-level likelihood and identifiability audit.", "pass": "Calendar censoring contributes trajectory information without fabricated EOL labels.", "failure": "If condition and frailty remain non-identifiable, do not produce life predictions.", "next": "Add an orthogonal sensor or new temperature arm."},
+    {"code": "WP54-C", "purpose": "Repair the observation process", "method": "Predefine valid-spectrum acquisition and missingness reasons; measure coverage before outcomes and allow abstention rather than complete-case optimism.", "deliverable": "Sensor-coverage ledger and missingness model.", "pass": "At least 90% target coverage and 30 comparable within-condition pairs.", "failure": "Coverage below threshold rejects the modality before modeling.", "next": "Prefer pulse or capacity coordinates that remain observable."},
+    {"code": "WP54-D", "purpose": "Obtain a genuine independent verdict", "method": "Search an external same-chemistry or carefully mapped NMC/C-SiO source with replicated conditions, repeated early capacity/pulse measurements, and common EOL. Freeze the one- or two-coordinate frailty rule before opening outcomes.", "deliverable": "Outcome-sealed manifest, source mapping, and preregistration commit.", "pass": "The source supports 30 comparable pairs, a held condition, censoring, and independent adjudication.", "failure": "Do not reuse the now-open KIT 40-degree cohort as confirmation.", "next": "If no public source qualifies, publish the missing benchmark specification instead of claiming progress."}
+  ],
+  "uncertaintyBudget": [
+    {"category": "measurement", "risk": "Thirteen target cells lack a registered early EIS response and pulse/EIS rows contain repeated raw samples.", "control": "Use sd_block_id, capacity-anchor windows, explicit validity flags, and exact missing fields.", "stop": "No imputation or complete-case claim of full coverage."},
+    {"category": "model", "risk": "One global Weibull shape and linear log-scale law extrapolate into an unobserved temperature.", "control": "Report family boundaries, calibration, within-condition rank, and an independent score-equation solution.", "stop": "High pooled concordance cannot rescue magnitude or calibration failure."},
+    {"category": "sampling", "risk": "All cells share one commercial model and purchase batch; only three replicates occupy each condition.", "control": "Bootstrap by condition and require a new source for confirmation.", "stop": "No chemistry, laboratory, pack, or field generalization."},
+    {"category": "censoring", "risk": "No development calendar cell reaches 80% EOL, so 40-degree calendar life is extrapolated from censored paths.", "control": "Preserve right censoring and promote longitudinal-path modeling rather than fabricated thresholds.", "stop": "Do not claim a calendar acceleration law from this fit."},
+    {"category": "post-selection", "risk": "The 30%-SOC pulse and capacity rank signals were found after outcomes opened.", "control": "Label them exploratory and test them only in a new unopened source.", "stop": "They cannot rescue RC54 or serve as independent validation on KIT."}
+  ],
+  "failedRuns": [
+    {"stage": "download", "failure": "PowerShell Invoke-WebRequest and Windows curl failed TLS credential acquisition.", "resolution": "Anaconda requests downloaded the same official URLs; all three files then matched preregistered MD5 hashes.", "scientificEffect": "none"},
+    {"stage": "pilot grouping", "failure": "Grouping pulse rows by exact timestamp would treat millisecond waveform samples as separate measurements.", "resolution": "The zero-weight pilot identified sd_block_id as the measurement key before any non-pilot file was opened; amendment 01 was committed.", "scientificEffect": "prevented a false CU1 feature"},
+    {"stage": "solver termination", "failure": "A stricter SciPy BFGS tolerance reported precision loss, and initial independent extreme predictions differed by 0.0482 days.", "resolution": "Preserved the attempt in a solver note, used a documented BFGS stopping tolerance, and independently polished the same analytic score equations.", "scientificEffect": "no verdict changed; final maximum difference is 1.1817e-8"}
+  ],
+  "newConnection": {
+    "id": "CONN-EVIDENCE-027",
+    "summary": "RUL, process twins, and accelerated qualification share a two-level identifiability problem: condition-level trajectories and specimen-level frailty must be separated under censoring and an incomplete observation operator."
+  },
+  "nextCycleStart": "Do not tune another model on the opened KIT 40-degree outcomes. First locate or specify a new replicated NMC/C-SiO EOL source. Before outcome access, freeze one capacity-response and at most one 30%-SOC 10 ms pulse-response frailty coordinate, a longitudinal condition model, missingness and abstention rules, at least 90% target coverage, at least 30 comparable within-condition pairs, one complete held condition, calibration thresholds, and an independent solver. If no source meets this denominator, publish the benchmark gap and move to an orthogonal mechanical modality."
+}

@@ -44,7 +44,7 @@
       "id": "jones_impedance_uneven_usage_2022",
       "title": "Impedance-based forecasting of lithium-ion battery performance amid uneven usage",
       "url": "https://doi.org/10.1038/s41467-022-32422-w",
-      "publishedOn": "2022-08-18",
+      "publishedOn": "2022-08-16",
       "usedFor": "Primary evidence that EIS and early voltage-curve information can be complementary under uneven usage, while equivalent-circuit compression can discard predictive structure.",
       "doesNotEstablish": "Its datasets and holdouts do not test the five-SOC CU0/CU1 response fingerprint on all 57 held 40-degree HG2 cells."
     },
@@ -68,7 +68,7 @@
       "id": "fei_eis_gpr_2020",
       "title": "Identifying degradation patterns of lithium ion batteries from impedance spectroscopy using machine learning",
       "url": "https://doi.org/10.1038/s41467-020-15235-7",
-      "publishedOn": "2020-03-24",
+      "publishedOn": "2020-04-06",
       "usedFor": "Primary small-cohort evidence that low-frequency EIS can track capacity and forecast an 80% endpoint without a full equivalent-circuit reduction.",
       "doesNotEstablish": "Twelve LCO coin cells cycled under limited protocols cannot establish temperature and aging-family transport in the HG2 cohort."
     },

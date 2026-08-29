@@ -1,0 +1,29 @@
+{
+  "noteId": "RC54-KIT-EARLY-RESPONSE-SOLVER-NOTE-0.1",
+  "cycleId": "RC-2026-54",
+  "recordedOn": "2026-08-29",
+  "status": "post-outcome-numerical-execution-note-not-a-preregistration-amendment",
+  "initialExecution": {
+    "model": "The preregistered Weibull AFT likelihood with fixed L2 alpha 1.0 and unchanged A/B/C/D feature sets.",
+    "scipyTolerance": "BFGS gtol 1e-8",
+    "observation": "SciPy reported precision loss for arms B, C, and D even though maximum score components were at most 5.1e-6 and all four scientific verdicts were rejected.",
+    "independentObservation": "The first dependency-free BFGS solution matched objectives and central metrics but differed by as much as 0.0482 days on an extreme target median prediction; that exceeded the preregistered 1e-5 absolute agreement tolerance."
+  },
+  "numericalCorrection": {
+    "bfgsTermination": "Use gtol 1e-5, which all SciPy BFGS fits satisfy.",
+    "scorePolish": "After BFGS, both runtimes independently solve the same analytic score equations with a Newton step and line search. This changes only numerical resolution of the already fixed penalized likelihood.",
+    "finalGradientMaximum": "Python at most 8.78e-13; Node at most 2.80e-12.",
+    "finalIndependentAgreement": "850 shared deterministic scalars; maximum absolute difference 1.1817e-8.",
+    "verdictChange": "none"
+  },
+  "unchanged": [
+    "source archives and hashes",
+    "pilot, development, and target identities",
+    "endpoint and censoring",
+    "feature values and nesting",
+    "Weibull AFT likelihood and L2 alpha",
+    "all success, rejection, coverage, calibration, and stop thresholds",
+    "all four rejected hypothesis verdicts"
+  ],
+  "boundary": "This note cannot make the solver change prospective. It documents a post-outcome numerical correction and preserves the earlier failed termination so that a later cycle can predeclare the polished solver from the start."
+}

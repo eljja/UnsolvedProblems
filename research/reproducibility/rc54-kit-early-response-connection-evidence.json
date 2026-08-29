@@ -1,0 +1,49 @@
+{
+  "connectionId": "CONN-EVIDENCE-027",
+  "cycleId": "RC-2026-54",
+  "type": "condition-level-survival-versus-cell-frailty-under-censoring",
+  "strength": "strong",
+  "validationStatus": "RC54 verifies the shared failure structure in a held-temperature EOL test; the proposed longitudinal-frailty remedy remains exploratory and requires a new independent source.",
+  "problemIds": ["UP-219", "UP-233", "UP-234"],
+  "sharedBottleneck": "A model can rank operating conditions while remaining unable to identify cell-level susceptibility or extrapolate a censored mechanism into a temperature where that mechanism reaches EOL. Adding many early coordinates cannot recover an unobserved condition-by-mechanism interaction, and missing diagnostic coordinates can erase the replicated comparisons needed to detect it.",
+  "variableMapping": [
+    {"concept": "condition-level law", "UP-219": "temperature, SoC window, C-rate, and duty-dependent EOL distribution", "UP-233": "process-recipe response surface", "UP-234": "stress-to-damage acceleration law"},
+    {"concept": "cell-level frailty", "UP-219": "same-condition triplicate lifetime ordering", "UP-233": "lot-specific latent defect or state-update residual", "UP-234": "specimen-specific damage susceptibility"},
+    {"concept": "censored longitudinal path", "UP-219": "capacity and impedance check-ups before an 80% crossing", "UP-233": "partial process-state trajectory before failure", "UP-234": "subcritical damage observations below qualification failure"},
+    {"concept": "observation operator", "UP-219": "capacity, five-SOC EIS, and 10 ms/1 s pulse response", "UP-233": "sensor and feature extraction map", "UP-234": "accelerated-test proxy measurement"},
+    {"concept": "independent verdict", "UP-219": "unseen-temperature EOL, calibration, and within-condition concordance", "UP-233": "new lot or process regime with blinded outcome", "UP-234": "service-stress or held-stress failure law"}
+  ],
+  "evidence": {
+    "registered": [
+      "The common complete target contains 44 of 57 held 40-degree cells; 36 reach the registered 80% EOL.",
+      "No complete development calendar cell reaches 80% EOL, while three complete target calendar cells do; calendar MdAE is above 10,500 days in every arm.",
+      "Stress-only pooled Harrell concordance is 0.8476, but within-condition concordance is 0.500 over 27 comparable pairs.",
+      "The static passport lowers pooled MdAE from 226.22 to 166.53 days but worsens the calendar boundary, so H1 is rejected.",
+      "The capacity-response and full perturbation-response arms have MdAE 298.45 and 240.46 days; all H0-H3 verdicts are rejected.",
+      "Thirteen target cells lack at least one registered early EIS response, independently failing complete-coverage and minimum-pair gates.",
+      "Python and dependency-free Node agree across 850 deterministic values within 1.1817e-8."
+    ],
+    "exploratory": [
+      "Across every target cell with the individual coordinate available, 30%-SOC 10 ms pulse response reaches within-condition concordance 0.6444 over 45 pairs.",
+      "One-week capacity response reaches within-condition concordance 0.6222 over 45 pairs, even though the pooled Weibull capacity-response arm worsens magnitude and calibration.",
+      "D beats C in pooled median error but worsens individual absolute error in 25 of 36 event cells; its 2,000-condition-bootstrap improvement interval is -0.826 to 0.361."
+    ]
+  },
+  "holdsWhen": [
+    "Operating conditions have replicated cells so condition means and within-condition frailty can be separated.",
+    "Longitudinal observations precede the endpoint and retain right censoring instead of replacing it with a fabricated life label.",
+    "The observation operator and missingness rule are frozen before target outcomes.",
+    "An accelerated condition can activate a mechanism that is censored in development conditions.",
+    "Pooled prediction, within-condition order, family transport, calibration, and feature coverage are independent gates."
+  ],
+  "breaksWhen": [
+    "Every condition has only one specimen or condition is perfectly confounded with lot and laboratory.",
+    "A direct mechanism measurement makes frailty fully observable before aging.",
+    "Censoring is informative but modeled as administrative, or target rows with missing sensors are silently removed.",
+    "The high-temperature mechanism is absent at service temperature, so an acceleration law has no common physical basis.",
+    "A post-outcome feature is reused as if it were a prospective independent test."
+  ],
+  "transferableMethod": "Fit a two-level joint longitudinal-survival model: a physically constrained condition-level degradation trajectory uses all pre-EOL check-ups, while a single preregistered early capacity or pulse coordinate estimates within-condition frailty. Treat missing diagnostics as an observation-process problem, require explicit abstention, and confirm on a new source whose outcome has not been opened.",
+  "surfaceSimilarityRisk": "RUL, digital twins, and accelerated qualification all contain time series, but the connection is substantive only when a condition law, specimen frailty, censoring, observation operator, and independent endpoint can be mapped separately.",
+  "minimumValidation": "On a new same-chemistry source, freeze one or two response coordinates before outcomes; achieve at least 90% target feature coverage, at least 30 comparable within-condition EOL pairs, within-condition concordance at least 0.60, held-condition MdAE at most the declared practical bound, calibration error at most 0.15, and an independent implementation match. Stop the electrochemical-only route if either coverage or within-condition order fails."
+}

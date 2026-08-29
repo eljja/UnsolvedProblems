@@ -1,0 +1,1905 @@
+{
+  "resultId": "RC54-KIT-EARLY-RESPONSE-PYTHON-0.1",
+  "cycleId": "RC-2026-54",
+  "runOn": "2026-08-29",
+  "implementation": {
+    "runtime": "Python",
+    "optimizer": "scipy.optimize.minimize BFGS",
+    "alpha": 1.0,
+    "penalty": "0.5*alpha*sum(beta^2)"
+  },
+  "sourceIntegrity": {
+    "cell_eocv2.zip": {
+      "registeredMd5": "b4f42914c8eaf176fd47e33e6f112d7c",
+      "observedMd5": "b4f42914c8eaf176fd47e33e6f112d7c",
+      "matches": true
+    },
+    "cell_eisv2.zip": {
+      "registeredMd5": "6eb09ae51c8a9e9b4b02b33e739787ab",
+      "observedMd5": "6eb09ae51c8a9e9b4b02b33e739787ab",
+      "matches": true
+    },
+    "cell_plsv2.zip": {
+      "registeredMd5": "5c660fc53ac4ae4de5850143f629242a",
+      "observedMd5": "5c660fc53ac4ae4de5850143f629242a",
+      "matches": true
+    }
+  },
+  "cohort": {
+    "configuredCells": 228,
+    "pilotCells": 4,
+    "completeDevelopmentCells": 156,
+    "completeTargetCells": 44,
+    "targetFeatureComplete": false,
+    "targetEvents": 36,
+    "targetCensored": 8,
+    "incompleteCells": [
+      {
+        "id": "P013-1",
+        "split": "target",
+        "missing": [
+          "early_log_eis_zref_response_per_day_soc50"
+        ]
+      },
+      {
+        "id": "P013-2",
+        "split": "target",
+        "missing": [
+          "early_log_eis_zref_response_per_day_soc70"
+        ]
+      },
+      {
+        "id": "P015-1",
+        "split": "target",
+        "missing": [
+          "early_log_eis_zref_response_per_day_soc30"
+        ]
+      },
+      {
+        "id": "P016-1",
+        "split": "target",
+        "missing": [
+          "early_log_eis_zref_response_per_day_soc30"
+        ]
+      },
+      {
+        "id": "P024-1",
+        "split": "development",
+        "missing": [
+          "cu0_capacity_ah",
+          "cu0_eis_zref_mohm_soc10",
+          "cu0_eis_zref_mohm_soc30",
+          "cu0_eis_zref_mohm_soc50",
+          "cu0_eis_zref_mohm_soc70",
+          "cu0_eis_zref_mohm_soc90",
+          "cu0_pulse_r10ms_mohm_soc10",
+          "cu0_pulse_r10ms_mohm_soc30",
+          "cu0_pulse_r10ms_mohm_soc50",
+          "cu0_pulse_r10ms_mohm_soc70",
+          "cu0_pulse_r10ms_mohm_soc90",
+          "cu0_pulse_r1s_mohm_soc10",
+          "cu0_pulse_r1s_mohm_soc30",
+          "cu0_pulse_r1s_mohm_soc50",
+          "cu0_pulse_r1s_mohm_soc70",
+          "cu0_pulse_r1s_mohm_soc90",
+          "early_log_capacity_response_per_day",
+          "early_log_eis_zref_response_per_day_soc10",
+          "early_log_eis_zref_response_per_day_soc30",
+          "early_log_eis_zref_response_per_day_soc50",
+          "early_log_eis_zref_response_per_day_soc70",
+          "early_log_eis_zref_response_per_day_soc90",
+          "early_log_pulse_r10ms_response_per_day_soc10",
+          "early_log_pulse_r10ms_response_per_day_soc30",
+          "early_log_pulse_r10ms_response_per_day_soc50",
+          "early_log_pulse_r10ms_response_per_day_soc70",
+          "early_log_pulse_r10ms_response_per_day_soc90",
+          "early_log_pulse_r1s_response_per_day_soc10",
+          "early_log_pulse_r1s_response_per_day_soc30",
+          "early_log_pulse_r1s_response_per_day_soc50",
+          "early_log_pulse_r1s_response_per_day_soc70",
+          "early_log_pulse_r1s_response_per_day_soc90",
+          "fewer_than_three_capacity_checkups"
+        ]
+      },
+      {
+        "id": "P024-3",
+        "split": "development",
+        "missing": [
+          "cu0_capacity_ah",
+          "cu0_eis_zref_mohm_soc10",
+          "cu0_eis_zref_mohm_soc30",
+          "cu0_eis_zref_mohm_soc50",
+          "cu0_eis_zref_mohm_soc70",
+          "cu0_eis_zref_mohm_soc90",
+          "cu0_pulse_r10ms_mohm_soc10",
+          "cu0_pulse_r10ms_mohm_soc30",
+          "cu0_pulse_r10ms_mohm_soc50",
+          "cu0_pulse_r10ms_mohm_soc70",
+          "cu0_pulse_r10ms_mohm_soc90",
+          "cu0_pulse_r1s_mohm_soc10",
+          "cu0_pulse_r1s_mohm_soc30",
+          "cu0_pulse_r1s_mohm_soc50",
+          "cu0_pulse_r1s_mohm_soc70",
+          "cu0_pulse_r1s_mohm_soc90",
+          "early_log_capacity_response_per_day",
+          "early_log_eis_zref_response_per_day_soc10",
+          "early_log_eis_zref_response_per_day_soc30",
+          "early_log_eis_zref_response_per_day_soc50",
+          "early_log_eis_zref_response_per_day_soc70",
+          "early_log_eis_zref_response_per_day_soc90",
+          "early_log_pulse_r10ms_response_per_day_soc10",
+          "early_log_pulse_r10ms_response_per_day_soc30",
+          "early_log_pulse_r10ms_response_per_day_soc50",
+          "early_log_pulse_r10ms_response_per_day_soc70",
+          "early_log_pulse_r10ms_response_per_day_soc90",
+          "early_log_pulse_r1s_response_per_day_soc10",
+          "early_log_pulse_r1s_response_per_day_soc30",
+          "early_log_pulse_r1s_response_per_day_soc50",
+          "early_log_pulse_r1s_response_per_day_soc70",
+          "early_log_pulse_r1s_response_per_day_soc90",
+          "fewer_than_three_capacity_checkups"
+        ]
+      },
+      {
+        "id": "P044-2",
+        "split": "development",
+        "missing": [
+          "cu0_capacity_ah",
+          "cu0_eis_zref_mohm_soc10",
+          "cu0_eis_zref_mohm_soc30",
+          "cu0_eis_zref_mohm_soc50",
+          "cu0_eis_zref_mohm_soc70",
+          "cu0_eis_zref_mohm_soc90",
+          "cu0_pulse_r10ms_mohm_soc10",
+          "cu0_pulse_r10ms_mohm_soc30",
+          "cu0_pulse_r10ms_mohm_soc50",
+          "cu0_pulse_r10ms_mohm_soc70",
+          "cu0_pulse_r10ms_mohm_soc90",
+          "cu0_pulse_r1s_mohm_soc10",
+          "cu0_pulse_r1s_mohm_soc30",
+          "cu0_pulse_r1s_mohm_soc50",
+          "cu0_pulse_r1s_mohm_soc70",
+          "cu0_pulse_r1s_mohm_soc90",
+          "early_log_capacity_response_per_day",
+          "early_log_eis_zref_response_per_day_soc10",
+          "early_log_eis_zref_response_per_day_soc30",
+          "early_log_eis_zref_response_per_day_soc50",
+          "early_log_eis_zref_response_per_day_soc70",
+          "early_log_eis_zref_response_per_day_soc90",
+          "early_log_pulse_r10ms_response_per_day_soc10",
+          "early_log_pulse_r10ms_response_per_day_soc30",
+          "early_log_pulse_r10ms_response_per_day_soc50",
+          "early_log_pulse_r10ms_response_per_day_soc70",
+          "early_log_pulse_r10ms_response_per_day_soc90",
+          "early_log_pulse_r1s_response_per_day_soc10",
+          "early_log_pulse_r1s_response_per_day_soc30",
+          "early_log_pulse_r1s_response_per_day_soc50",
+          "early_log_pulse_r1s_response_per_day_soc70",
+          "early_log_pulse_r1s_response_per_day_soc90",
+          "fewer_than_three_capacity_checkups"
+        ]
+      },
+      {
+        "id": "P044-3",
+        "split": "development",
+        "missing": [
+          "cu0_eis_zref_mohm_soc90",
+          "early_log_eis_zref_response_per_day_soc90"
+        ]
+      },
+      {
+        "id": "P045-2",
+        "split": "development",
+        "missing": [
+          "cu0_eis_zref_mohm_soc90",
+          "early_log_eis_zref_response_per_day_soc90"
+        ]
+      },
+      {
+        "id": "P046-2",
+        "split": "development",
+        "missing": [
+          "cu0_eis_zref_mohm_soc90",
+          "early_log_eis_zref_response_per_day_soc90"
+        ]
+      },
+      {
+        "id": "P047-1",
+        "split": "development",
+        "missing": [
+          "cu0_eis_zref_mohm_soc90",
+          "early_log_eis_zref_response_per_day_soc90"
+        ]
+      },
+      {
+        "id": "P047-3",
+        "split": "development",
+        "missing": [
+          "early_log_eis_zref_response_per_day_soc50"
+        ]
+      },
+      {
+        "id": "P049-3",
+        "split": "development",
+        "missing": [
+          "early_log_eis_zref_response_per_day_soc50"
+        ]
+      },
+      {
+        "id": "P053-2",
+        "split": "target",
+        "missing": [
+          "early_log_eis_zref_response_per_day_soc70"
+        ]
+      },
+      {
+        "id": "P054-1",
+        "split": "target",
+        "missing": [
+          "early_log_eis_zref_response_per_day_soc70"
+        ]
+      },
+      {
+        "id": "P055-1",
+        "split": "target",
+        "missing": [
+          "early_log_eis_zref_response_per_day_soc70"
+        ]
+      },
+      {
+        "id": "P055-2",
+        "split": "target",
+        "missing": [
+          "early_log_eis_zref_response_per_day_soc70"
+        ]
+      },
+      {
+        "id": "P056-1",
+        "split": "target",
+        "missing": [
+          "early_log_eis_zref_response_per_day_soc70"
+        ]
+      },
+      {
+        "id": "P060-1",
+        "split": "target",
+        "missing": [
+          "early_log_eis_zref_response_per_day_soc50"
+        ]
+      },
+      {
+        "id": "P062-1",
+        "split": "target",
+        "missing": [
+          "early_log_eis_zref_response_per_day_soc70"
+        ]
+      },
+      {
+        "id": "P063-1",
+        "split": "target",
+        "missing": [
+          "early_log_eis_zref_response_per_day_soc70"
+        ]
+      },
+      {
+        "id": "P065-2",
+        "split": "development",
+        "missing": [
+          "cu0_capacity_ah",
+          "cu0_eis_zref_mohm_soc10",
+          "cu0_eis_zref_mohm_soc30",
+          "cu0_eis_zref_mohm_soc50",
+          "cu0_eis_zref_mohm_soc70",
+          "cu0_eis_zref_mohm_soc90",
+          "cu0_pulse_r10ms_mohm_soc10",
+          "cu0_pulse_r10ms_mohm_soc30",
+          "cu0_pulse_r10ms_mohm_soc50",
+          "cu0_pulse_r10ms_mohm_soc70",
+          "cu0_pulse_r10ms_mohm_soc90",
+          "cu0_pulse_r1s_mohm_soc10",
+          "cu0_pulse_r1s_mohm_soc30",
+          "cu0_pulse_r1s_mohm_soc50",
+          "cu0_pulse_r1s_mohm_soc70",
+          "cu0_pulse_r1s_mohm_soc90",
+          "early_log_capacity_response_per_day",
+          "early_log_eis_zref_response_per_day_soc10",
+          "early_log_eis_zref_response_per_day_soc30",
+          "early_log_eis_zref_response_per_day_soc50",
+          "early_log_eis_zref_response_per_day_soc70",
+          "early_log_eis_zref_response_per_day_soc90",
+          "early_log_pulse_r10ms_response_per_day_soc10",
+          "early_log_pulse_r10ms_response_per_day_soc30",
+          "early_log_pulse_r10ms_response_per_day_soc50",
+          "early_log_pulse_r10ms_response_per_day_soc70",
+          "early_log_pulse_r10ms_response_per_day_soc90",
+          "early_log_pulse_r1s_response_per_day_soc10",
+          "early_log_pulse_r1s_response_per_day_soc30",
+          "early_log_pulse_r1s_response_per_day_soc50",
+          "early_log_pulse_r1s_response_per_day_soc70",
+          "early_log_pulse_r1s_response_per_day_soc90",
+          "fewer_than_three_capacity_checkups"
+        ]
+      },
+      {
+        "id": "P071-3",
+        "split": "development",
+        "missing": [
+          "cu0_eis_zref_mohm_soc90",
+          "early_log_eis_zref_response_per_day_soc90"
+        ]
+      },
+      {
+        "id": "P075-1",
+        "split": "target",
+        "missing": [
+          "early_log_eis_zref_response_per_day_soc50"
+        ]
+      }
+    ]
+  },
+  "fits": {
+    "A": {
+      "featureNames": [
+        "inverse_temperature_relative_to_25c",
+        "cyclic_indicator",
+        "profile_indicator",
+        "age_soc_fraction",
+        "charge_rate_c",
+        "discharge_rate_c",
+        "cycle_voltage_min_v",
+        "cycle_voltage_max_v",
+        "profile_2_indicator",
+        "profile_3_indicator",
+        "profile_4_indicator"
+      ],
+      "developmentMean": [
+        0.000164969013539826,
+        0.6217948717948718,
+        0.15384615384615385,
+        0.1378205128205128,
+        0.5101282051282049,
+        0.5187179487179484,
+        3.10359615384616,
+        4.0913653846153855,
+        0.04487179487179487,
+        0.05128205128205128,
+        0.057692307692307696
+      ],
+      "developmentScale": [
+        0.00012380292770927098,
+        0.4849391809335178,
+        0.36080121229410994,
+        0.3066240805264831,
+        0.5877204847364349,
+        0.4643643545540588,
+        0.5336281210015728,
+        0.22495153570749324,
+        0.2070225033583993,
+        0.2205724427446827,
+        0.23316068563427192
+      ],
+      "intercept": 5.776765888280824,
+      "coefficients": [
+        -0.38786219725812265,
+        -0.12028238126851698,
+        -0.08362093185103525,
+        0.27790746031482016,
+        -0.5669863722952165,
+        -0.3484162451200281,
+        0.5955272166728561,
+        -1.020743862593298,
+        0.015369711766172555,
+        0.07394685947310677,
+        -0.21299924163001155
+      ],
+      "logShape": 1.2118610232268505,
+      "shape": 3.3597313762243175,
+      "objective": 555.349850529428,
+      "optimizerSuccess": true,
+      "optimizerStatus": 0,
+      "optimizerMessage": "Optimization terminated successfully.",
+      "iterations": 35,
+      "bfgsGradientMaxAbs": 5.731346055470876e-06,
+      "gradientMaxAbs": 8.775202786637237e-13,
+      "numericPolish": {
+        "method": "analytic score-equation Newton polish after BFGS",
+        "iterations": 2,
+        "objective": 555.349850529428,
+        "gradientMaxAbs": 8.775202786637237e-13,
+        "success": true
+      },
+      "predictedEta": [
+        11.676138366776504,
+        10.54685034513212,
+        10.54685034513212,
+        10.54685034513212,
+        9.701556790774628,
+        9.701556790774628,
+        9.412391545187944,
+        9.412391545187944,
+        5.794855735090923,
+        5.794855735090923,
+        5.292149440042509,
+        5.292149440042509,
+        4.645786280507321,
+        3.999423120972131,
+        3.999423120972131,
+        6.630737255822576,
+        6.630737255822576,
+        6.630737255822576,
+        6.128030960774163,
+        6.128030960774163,
+        6.128030960774163,
+        5.481667801238974,
+        5.481667801238974,
+        5.481667801238974,
+        4.835304641703784,
+        4.835304641703784,
+        7.120799867813025,
+        7.120799867813025,
+        7.120799867813025,
+        6.618093572764611,
+        6.618093572764611,
+        5.971730413229422,
+        5.971730413229422,
+        5.325367253694233,
+        5.325367253694233,
+        5.325367253694233,
+        6.451328521669016,
+        6.451328521669016,
+        6.451328521669016,
+        6.712336541777343,
+        6.712336541777343,
+        5.463556946818795,
+        5.463556946818795,
+        5.463556946818795
+      ]
+    },
+    "B": {
+      "featureNames": [
+        "inverse_temperature_relative_to_25c",
+        "cyclic_indicator",
+        "profile_indicator",
+        "age_soc_fraction",
+        "charge_rate_c",
+        "discharge_rate_c",
+        "cycle_voltage_min_v",
+        "cycle_voltage_max_v",
+        "profile_2_indicator",
+        "profile_3_indicator",
+        "profile_4_indicator",
+        "cu0_capacity_ah",
+        "cu0_eis_zref_mohm_soc10",
+        "cu0_eis_zref_mohm_soc30",
+        "cu0_eis_zref_mohm_soc50",
+        "cu0_eis_zref_mohm_soc70",
+        "cu0_eis_zref_mohm_soc90",
+        "cu0_pulse_r10ms_mohm_soc10",
+        "cu0_pulse_r10ms_mohm_soc30",
+        "cu0_pulse_r10ms_mohm_soc50",
+        "cu0_pulse_r10ms_mohm_soc70",
+        "cu0_pulse_r10ms_mohm_soc90",
+        "cu0_pulse_r1s_mohm_soc10",
+        "cu0_pulse_r1s_mohm_soc30",
+        "cu0_pulse_r1s_mohm_soc50",
+        "cu0_pulse_r1s_mohm_soc70",
+        "cu0_pulse_r1s_mohm_soc90"
+      ],
+      "developmentMean": [
+        0.000164969013539826,
+        0.6217948717948718,
+        0.15384615384615385,
+        0.1378205128205128,
+        0.5101282051282049,
+        0.5187179487179484,
+        3.10359615384616,
+        4.0913653846153855,
+        0.04487179487179487,
+        0.05128205128205128,
+        0.057692307692307696,
+        2.9488568205128196,
+        24.079432692307684,
+        19.689778846153857,
+        19.295451923076932,
+        19.253166666666658,
+        19.875750000000007,
+        20.72280769230769,
+        18.8780608974359,
+        18.48570512820513,
+        18.36790384615383,
+        18.796641025641026,
+        24.49369871794872,
+        19.544352564102553,
+        19.08359294871796,
+        18.994166666666658,
+        19.74090384615385
+      ],
+      "developmentScale": [
+        0.00012380292770927098,
+        0.4849391809335178,
+        0.36080121229410994,
+        0.3066240805264831,
+        0.5877204847364349,
+        0.4643643545540588,
+        0.5336281210015728,
+        0.22495153570749324,
+        0.2070225033583993,
+        0.2205724427446827,
+        0.23316068563427192,
+        0.008090047816478759,
+        0.6654906713175625,
+        0.23602625913493747,
+        0.23247776829777092,
+        0.23366985348424926,
+        0.38571677574321744,
+        0.3577057389951398,
+        0.38453157210474714,
+        0.429157275993084,
+        0.46125662775929166,
+        0.45929414837024995,
+        0.7827789207153604,
+        0.3444417129896895,
+        0.42260016565825187,
+        0.47735417740265,
+        0.4809964254204582
+      ],
+      "intercept": 5.73946070206464,
+      "coefficients": [
+        -0.3894656820990349,
+        -0.12834692782065257,
+        -0.07384167781338195,
+        0.2784183320095535,
+        -0.5750907169814811,
+        -0.34228483738856363,
+        0.5854835480423599,
+        -0.9816476445582026,
+        0.026499659709234437,
+        0.07815326887471255,
+        -0.21172801947263173,
+        -0.010644645260190058,
+        -0.10042495738306918,
+        0.15588431883473283,
+        -0.0859695621045219,
+        0.07048177758641144,
+        -0.003255294742770401,
+        -0.1149383451720168,
+        -0.04558123270657326,
+        0.05795740360080761,
+        0.01167603754994586,
+        -0.006157147104781797,
+        0.13681856842358783,
+        -0.03260161293701721,
+        -0.06615922517743264,
+        0.020130387858572716,
+        -0.01186513493923532
+      ],
+      "logShape": 1.289053032265657,
+      "shape": 3.629348052431562,
+      "objective": 547.1512066115635,
+      "optimizerSuccess": true,
+      "optimizerStatus": 0,
+      "optimizerMessage": "Optimization terminated successfully.",
+      "iterations": 70,
+      "bfgsGradientMaxAbs": 7.598681610300473e-06,
+      "gradientMaxAbs": 3.2603086896898503e-13,
+      "numericPolish": {
+        "method": "analytic score-equation Newton polish after BFGS",
+        "iterations": 2,
+        "objective": 547.1512066115635,
+        "gradientMaxAbs": 3.2603086896898503e-13,
+        "success": true
+      },
+      "predictedEta": [
+        11.268223952349901,
+        10.578183919548174,
+        10.714992228792553,
+        10.281827884181434,
+        9.73489710323445,
+        9.638635886331116,
+        9.592722798695988,
+        9.203268887283112,
+        6.019190058093961,
+        5.712818000594929,
+        5.483581260792503,
+        5.120725465687984,
+        4.667611215023544,
+        4.065215312507089,
+        3.8967571959137377,
+        6.4755139114156135,
+        6.539192034186224,
+        6.619477835158398,
+        6.092406118976761,
+        5.927511623235907,
+        6.115506704003195,
+        5.450337220961718,
+        5.425008899372325,
+        5.303309355761143,
+        4.84455785877093,
+        4.469316488722672,
+        7.086527877902811,
+        7.238031358249175,
+        7.063493206737759,
+        6.349523436242116,
+        6.370157282417228,
+        6.125465347591785,
+        5.959017398190074,
+        5.295682843727569,
+        5.339994257197718,
+        5.414919785555185,
+        6.533046069066951,
+        6.553577582864596,
+        6.567419715841487,
+        6.707365939086061,
+        6.668217677028036,
+        5.611615975099035,
+        5.439631644256942,
+        5.466040488251879
+      ]
+    },
+    "C": {
+      "featureNames": [
+        "inverse_temperature_relative_to_25c",
+        "cyclic_indicator",
+        "profile_indicator",
+        "age_soc_fraction",
+        "charge_rate_c",
+        "discharge_rate_c",
+        "cycle_voltage_min_v",
+        "cycle_voltage_max_v",
+        "profile_2_indicator",
+        "profile_3_indicator",
+        "profile_4_indicator",
+        "cu0_capacity_ah",
+        "cu0_eis_zref_mohm_soc10",
+        "cu0_eis_zref_mohm_soc30",
+        "cu0_eis_zref_mohm_soc50",
+        "cu0_eis_zref_mohm_soc70",
+        "cu0_eis_zref_mohm_soc90",
+        "cu0_pulse_r10ms_mohm_soc10",
+        "cu0_pulse_r10ms_mohm_soc30",
+        "cu0_pulse_r10ms_mohm_soc50",
+        "cu0_pulse_r10ms_mohm_soc70",
+        "cu0_pulse_r10ms_mohm_soc90",
+        "cu0_pulse_r1s_mohm_soc10",
+        "cu0_pulse_r1s_mohm_soc30",
+        "cu0_pulse_r1s_mohm_soc50",
+        "cu0_pulse_r1s_mohm_soc70",
+        "cu0_pulse_r1s_mohm_soc90",
+        "early_log_capacity_response_per_day"
+      ],
+      "developmentMean": [
+        0.000164969013539826,
+        0.6217948717948718,
+        0.15384615384615385,
+        0.1378205128205128,
+        0.5101282051282049,
+        0.5187179487179484,
+        3.10359615384616,
+        4.0913653846153855,
+        0.04487179487179487,
+        0.05128205128205128,
+        0.057692307692307696,
+        2.9488568205128196,
+        24.079432692307684,
+        19.689778846153857,
+        19.295451923076932,
+        19.253166666666658,
+        19.875750000000007,
+        20.72280769230769,
+        18.8780608974359,
+        18.48570512820513,
+        18.36790384615383,
+        18.796641025641026,
+        24.49369871794872,
+        19.544352564102553,
+        19.08359294871796,
+        18.994166666666658,
+        19.74090384615385,
+        -0.005073671070572791
+      ],
+      "developmentScale": [
+        0.00012380292770927098,
+        0.4849391809335178,
+        0.36080121229410994,
+        0.3066240805264831,
+        0.5877204847364349,
+        0.4643643545540588,
+        0.5336281210015728,
+        0.22495153570749324,
+        0.2070225033583993,
+        0.2205724427446827,
+        0.23316068563427192,
+        0.008090047816478759,
+        0.6654906713175625,
+        0.23602625913493747,
+        0.23247776829777092,
+        0.23366985348424926,
+        0.38571677574321744,
+        0.3577057389951398,
+        0.38453157210474714,
+        0.429157275993084,
+        0.46125662775929166,
+        0.45929414837024995,
+        0.7827789207153604,
+        0.3444417129896895,
+        0.42260016565825187,
+        0.47735417740265,
+        0.4809964254204582,
+        0.005268511268604967
+      ],
+      "intercept": 5.880568048624252,
+      "coefficients": [
+        -0.44479974572905673,
+        -0.041219455182455275,
+        -0.017947327750834106,
+        0.08486905305370966,
+        -0.8273015149670494,
+        -0.4377007438617688,
+        0.9479114205126387,
+        -1.3887236558725997,
+        0.04552973548656449,
+        0.11580277296773166,
+        -0.1777486535732794,
+        -0.06436804752373301,
+        -0.05680599191138172,
+        0.14539025632488065,
+        -0.11281919585810711,
+        0.015146597089056215,
+        0.025279934418780688,
+        -0.09112245181198853,
+        0.03938378423577112,
+        0.010046272512594552,
+        0.018514666011761688,
+        0.055079489661468944,
+        0.13708984697414486,
+        -0.0389690602573155,
+        -0.028897611094101765,
+        0.0341691166803875,
+        -0.11351755170983431,
+        -0.35335979062369105
+      ],
+      "logShape": 1.5207325895717156,
+      "shape": 4.5755759868673325,
+      "objective": 523.6594842778039,
+      "optimizerSuccess": true,
+      "optimizerStatus": 0,
+      "optimizerMessage": "Optimization terminated successfully.",
+      "iterations": 73,
+      "bfgsGradientMaxAbs": 5.256986573977385e-06,
+      "gradientMaxAbs": 7.105427357601002e-13,
+      "numericPolish": {
+        "method": "analytic score-equation Newton polish after BFGS",
+        "iterations": 2,
+        "objective": 523.6594842778039,
+        "gradientMaxAbs": 7.105427357601002e-13,
+        "success": true
+      },
+      "predictedEta": [
+        12.849025736630463,
+        11.507332072379242,
+        11.63551844531606,
+        11.696126540212152,
+        10.182067908686056,
+        10.042959965946068,
+        9.642874059722072,
+        9.263377594127961,
+        5.7686755856402785,
+        5.65009565246315,
+        5.353056548589813,
+        5.100809498345135,
+        4.621259440714162,
+        3.7248654541347315,
+        3.667070200482341,
+        6.6771892805299435,
+        7.028494733618057,
+        6.980129780518661,
+        6.311512353134068,
+        6.28801927879922,
+        6.410472755612634,
+        5.211898001365108,
+        5.2868378841323835,
+        5.425168230348385,
+        4.339084250139767,
+        4.236702669496442,
+        7.451530493299925,
+        7.6219125025974686,
+        7.475248058665123,
+        6.703125326012496,
+        6.7267425953594175,
+        5.990617665309994,
+        6.050200039745554,
+        4.964710944835223,
+        5.270432114400437,
+        5.055456901600169,
+        6.575722828964322,
+        6.572830437748564,
+        6.538960368287007,
+        6.656947451539654,
+        6.935909236572825,
+        5.627660815286147,
+        5.687748780938861,
+        5.390702530912548
+      ]
+    },
+    "D": {
+      "featureNames": [
+        "inverse_temperature_relative_to_25c",
+        "cyclic_indicator",
+        "profile_indicator",
+        "age_soc_fraction",
+        "charge_rate_c",
+        "discharge_rate_c",
+        "cycle_voltage_min_v",
+        "cycle_voltage_max_v",
+        "profile_2_indicator",
+        "profile_3_indicator",
+        "profile_4_indicator",
+        "cu0_capacity_ah",
+        "cu0_eis_zref_mohm_soc10",
+        "cu0_eis_zref_mohm_soc30",
+        "cu0_eis_zref_mohm_soc50",
+        "cu0_eis_zref_mohm_soc70",
+        "cu0_eis_zref_mohm_soc90",
+        "cu0_pulse_r10ms_mohm_soc10",
+        "cu0_pulse_r10ms_mohm_soc30",
+        "cu0_pulse_r10ms_mohm_soc50",
+        "cu0_pulse_r10ms_mohm_soc70",
+        "cu0_pulse_r10ms_mohm_soc90",
+        "cu0_pulse_r1s_mohm_soc10",
+        "cu0_pulse_r1s_mohm_soc30",
+        "cu0_pulse_r1s_mohm_soc50",
+        "cu0_pulse_r1s_mohm_soc70",
+        "cu0_pulse_r1s_mohm_soc90",
+        "early_log_capacity_response_per_day",
+        "early_log_eis_zref_response_per_day_soc10",
+        "early_log_eis_zref_response_per_day_soc30",
+        "early_log_eis_zref_response_per_day_soc50",
+        "early_log_eis_zref_response_per_day_soc70",
+        "early_log_eis_zref_response_per_day_soc90",
+        "early_log_pulse_r10ms_response_per_day_soc10",
+        "early_log_pulse_r10ms_response_per_day_soc30",
+        "early_log_pulse_r10ms_response_per_day_soc50",
+        "early_log_pulse_r10ms_response_per_day_soc70",
+        "early_log_pulse_r10ms_response_per_day_soc90",
+        "early_log_pulse_r1s_response_per_day_soc10",
+        "early_log_pulse_r1s_response_per_day_soc30",
+        "early_log_pulse_r1s_response_per_day_soc50",
+        "early_log_pulse_r1s_response_per_day_soc70",
+        "early_log_pulse_r1s_response_per_day_soc90"
+      ],
+      "developmentMean": [
+        0.000164969013539826,
+        0.6217948717948718,
+        0.15384615384615385,
+        0.1378205128205128,
+        0.5101282051282049,
+        0.5187179487179484,
+        3.10359615384616,
+        4.0913653846153855,
+        0.04487179487179487,
+        0.05128205128205128,
+        0.057692307692307696,
+        2.9488568205128196,
+        24.079432692307684,
+        19.689778846153857,
+        19.295451923076932,
+        19.253166666666658,
+        19.875750000000007,
+        20.72280769230769,
+        18.8780608974359,
+        18.48570512820513,
+        18.36790384615383,
+        18.796641025641026,
+        24.49369871794872,
+        19.544352564102553,
+        19.08359294871796,
+        18.994166666666658,
+        19.74090384615385,
+        -0.005073671070572791,
+        -0.012628519697054032,
+        -0.0025719191784289437,
+        -0.0006549861334976731,
+        0.00044873522120945214,
+        0.00102609047896711,
+        -0.0062408209857015675,
+        -0.003432950778740118,
+        -0.0013432757804501926,
+        7.048158609871794e-05,
+        7.746428595995293e-05,
+        -0.012942321882848974,
+        -0.0028501404485956994,
+        -0.0001741051574431012,
+        0.0002562301410268202,
+        0.0005308791617636373
+      ],
+      "developmentScale": [
+        0.00012380292770927098,
+        0.4849391809335178,
+        0.36080121229410994,
+        0.3066240805264831,
+        0.5877204847364349,
+        0.4643643545540588,
+        0.5336281210015728,
+        0.22495153570749324,
+        0.2070225033583993,
+        0.2205724427446827,
+        0.23316068563427192,
+        0.008090047816478759,
+        0.6654906713175625,
+        0.23602625913493747,
+        0.23247776829777092,
+        0.23366985348424926,
+        0.38571677574321744,
+        0.3577057389951398,
+        0.38453157210474714,
+        0.429157275993084,
+        0.46125662775929166,
+        0.45929414837024995,
+        0.7827789207153604,
+        0.3444417129896895,
+        0.42260016565825187,
+        0.47735417740265,
+        0.4809964254204582,
+        0.005268511268604967,
+        0.004567084627563593,
+        0.005573830529425148,
+        0.006354496491900656,
+        0.00593611425741725,
+        0.0068794919489464645,
+        0.0053232675200384424,
+        0.00723273181736947,
+        0.007798098334526181,
+        0.007771433192095938,
+        0.007567998041117898,
+        0.005313921493818946,
+        0.006952570675837914,
+        0.007782463980782401,
+        0.007704648158666908,
+        0.00771741080896232
+      ],
+      "intercept": 5.883549988536496,
+      "coefficients": [
+        -0.4287729315810745,
+        -0.033786675855108944,
+        0.00021718707384346753,
+        0.052745316875657755,
+        -0.8666185186316744,
+        -0.3903201399060779,
+        1.0288420520530166,
+        -1.4241531015241953,
+        0.052680810650702355,
+        0.11742688990795251,
+        -0.15752607602485283,
+        -0.04475751578275138,
+        -0.08816343674215112,
+        0.22733768038246083,
+        -0.10557197559003355,
+        -0.07049950959830252,
+        0.05653296613865185,
+        -0.08492519296337406,
+        -0.003588255584581574,
+        -0.029256597369605394,
+        0.09273071800903433,
+        -0.015780191497569464,
+        0.2792099812624842,
+        0.011252292932762442,
+        -0.1056096531567358,
+        -0.055285188620027424,
+        -0.03261863336271657,
+        -0.6051944484189672,
+        -0.02442507174106158,
+        0.061791569435060166,
+        0.022235218459920894,
+        -0.17780038607160842,
+        0.0865228327151383,
+        -0.04415502727531288,
+        -0.07195884066298577,
+        -0.15801311564016632,
+        0.11220532207852066,
+        -0.07979760848254,
+        0.20321664937484504,
+        0.020086075301991985,
+        -0.06970856251193037,
+        -0.1717045485925052,
+        0.15477949764091226
+      ],
+      "logShape": 1.6401610937278182,
+      "shape": 5.156000044603923,
+      "objective": 509.58639382685794,
+      "optimizerSuccess": true,
+      "optimizerStatus": 0,
+      "optimizerMessage": "Optimization terminated successfully.",
+      "iterations": 83,
+      "bfgsGradientMaxAbs": 1.3958080095533183e-06,
+      "gradientMaxAbs": 4.0334402484631937e-13,
+      "numericPolish": {
+        "method": "analytic score-equation Newton polish after BFGS",
+        "iterations": 2,
+        "objective": 509.58639382685794,
+        "gradientMaxAbs": 4.0334402484631937e-13,
+        "success": true
+      },
+      "predictedEta": [
+        12.692745708475737,
+        11.366195779050674,
+        11.797072432722565,
+        11.232198841537171,
+        10.244328473889004,
+        9.737665025477035,
+        9.555336948769165,
+        9.263334110678391,
+        6.064808361448119,
+        5.392741752175334,
+        5.525744487006901,
+        5.414356962460291,
+        4.946621620631064,
+        3.9847979461448704,
+        3.588071969415917,
+        6.731741113840151,
+        6.783029903805306,
+        7.120526501207064,
+        6.316125148543309,
+        6.1505605540424435,
+        6.1589516571662974,
+        5.446000594658077,
+        5.291984654495262,
+        5.463061982156637,
+        4.627416119687623,
+        4.537369711244833,
+        7.508438737815903,
+        7.513073095227216,
+        7.5503798843602645,
+        6.739677171311964,
+        6.606101765286951,
+        5.868840606914095,
+        6.007418829748833,
+        4.8823635415683935,
+        5.281186659617924,
+        5.340903252581163,
+        6.599884293857432,
+        6.611236593323597,
+        6.6126962065262385,
+        6.49769608466088,
+        6.637530612543462,
+        5.230879797377905,
+        5.876207194417824,
+        5.228473543462771
+      ]
+    }
+  },
+  "metrics": {
+    "A": {
+      "targetCount": 44,
+      "eventCount": 36,
+      "censoredCount": 8,
+      "medianAbsoluteErrorDays": 226.22220776726726,
+      "meanAbsoluteErrorDays": 1176.765558715322,
+      "maximumAbsoluteErrorDays": 14191.656837238203,
+      "harrellConcordance": {
+        "value": 0.847636815920398,
+        "comparablePairs": 804
+      },
+      "withinConditionConcordance": {
+        "value": 0.5,
+        "comparablePairs": 27
+      },
+      "byFamily": {
+        "calendar": {
+          "eventCount": 3,
+          "medianAbsoluteErrorDays": 10533.145585819942
+        },
+        "cyclic": {
+          "eventCount": 25,
+          "medianAbsoluteErrorDays": 131.62560378367152
+        },
+        "profile": {
+          "eventCount": 8,
+          "medianAbsoluteErrorDays": 296.4605536682226
+        }
+      },
+      "calibration": {
+        "365": {
+          "predictedMeanSurvival": 0.5305435352307963,
+          "kaplanMeierSurvival": 0.36630036630036616,
+          "absoluteError": 0.16424316893043017,
+          "atRisk": 15
+        },
+        "500": {
+          "predictedMeanSurvival": 0.43968095530494183,
+          "kaplanMeierSurvival": 0.21164021164021157,
+          "absoluteError": 0.22804074366473026,
+          "atRisk": 8
+        }
+      },
+      "maximumCalibrationError": 0.22804074366473026
+    },
+    "B": {
+      "targetCount": 44,
+      "eventCount": 36,
+      "censoredCount": 8,
+      "medianAbsoluteErrorDays": 166.53074107804306,
+      "meanAbsoluteErrorDays": 1195.5055948996849,
+      "maximumAbsoluteErrorDays": 14811.742430993247,
+      "harrellConcordance": {
+        "value": 0.8631840796019901,
+        "comparablePairs": 804
+      },
+      "withinConditionConcordance": {
+        "value": 0.5925925925925926,
+        "comparablePairs": 27
+      },
+      "byFamily": {
+        "calendar": {
+          "eventCount": 3,
+          "medianAbsoluteErrorDays": 12724.719293400016
+        },
+        "cyclic": {
+          "eventCount": 25,
+          "medianAbsoluteErrorDays": 105.86198071602092
+        },
+        "profile": {
+          "eventCount": 8,
+          "medianAbsoluteErrorDays": 284.5739049622334
+        }
+      },
+      "calibration": {
+        "365": {
+          "predictedMeanSurvival": 0.5329886519052232,
+          "kaplanMeierSurvival": 0.36630036630036616,
+          "absoluteError": 0.166688285604857,
+          "atRisk": 15
+        },
+        "500": {
+          "predictedMeanSurvival": 0.43368719064557854,
+          "kaplanMeierSurvival": 0.21164021164021157,
+          "absoluteError": 0.22204697900536696,
+          "atRisk": 8
+        }
+      },
+      "maximumCalibrationError": 0.22204697900536696
+    },
+    "C": {
+      "targetCount": 44,
+      "eventCount": 36,
+      "censoredCount": 8,
+      "medianAbsoluteErrorDays": 298.4478412722743,
+      "meanAbsoluteErrorDays": 1595.5209205448468,
+      "maximumAbsoluteErrorDays": 23928.59472189298,
+      "harrellConcordance": {
+        "value": 0.8532338308457711,
+        "comparablePairs": 804
+      },
+      "withinConditionConcordance": {
+        "value": 0.4074074074074074,
+        "comparablePairs": 27
+      },
+      "byFamily": {
+        "calendar": {
+          "eventCount": 3,
+          "medianAbsoluteErrorDays": 13700.154539188234
+        },
+        "cyclic": {
+          "eventCount": 25,
+          "medianAbsoluteErrorDays": 125.7855080639136
+        },
+        "profile": {
+          "eventCount": 8,
+          "medianAbsoluteErrorDays": 352.89152272679326
+        }
+      },
+      "calibration": {
+        "365": {
+          "predictedMeanSurvival": 0.5629214995173158,
+          "kaplanMeierSurvival": 0.36630036630036616,
+          "absoluteError": 0.19662113321694968,
+          "atRisk": 15
+        },
+        "500": {
+          "predictedMeanSurvival": 0.49501435621133666,
+          "kaplanMeierSurvival": 0.21164021164021157,
+          "absoluteError": 0.2833741445711251,
+          "atRisk": 8
+        }
+      },
+      "maximumCalibrationError": 0.2833741445711251
+    },
+    "D": {
+      "targetCount": 44,
+      "eventCount": 36,
+      "censoredCount": 8,
+      "medianAbsoluteErrorDays": 240.46079940953464,
+      "meanAbsoluteErrorDays": 1619.1655183445973,
+      "maximumAbsoluteErrorDays": 25730.58472937342,
+      "harrellConcordance": {
+        "value": 0.822139303482587,
+        "comparablePairs": 804
+      },
+      "withinConditionConcordance": {
+        "value": 0.5185185185185185,
+        "comparablePairs": 27
+      },
+      "byFamily": {
+        "calendar": {
+          "eventCount": 3,
+          "medianAbsoluteErrorDays": 12625.918728311479
+        },
+        "cyclic": {
+          "eventCount": 25,
+          "medianAbsoluteErrorDays": 135.85098258407123
+        },
+        "profile": {
+          "eventCount": 8,
+          "medianAbsoluteErrorDays": 223.43237331310561
+        }
+      },
+      "calibration": {
+        "365": {
+          "predictedMeanSurvival": 0.5694900709216497,
+          "kaplanMeierSurvival": 0.36630036630036616,
+          "absoluteError": 0.20318970462128355,
+          "atRisk": 15
+        },
+        "500": {
+          "predictedMeanSurvival": 0.48262665747563266,
+          "kaplanMeierSurvival": 0.21164021164021157,
+          "absoluteError": 0.2709864458354211,
+          "atRisk": 8
+        }
+      },
+      "maximumCalibrationError": 0.2709864458354211
+    }
+  },
+  "comparisons": {
+    "BvsA": 0.26386209947448463,
+    "CvsB": -0.7921486407870455,
+    "DvsC": 0.19429539719752234
+  },
+  "bootstrap": {
+    "seed": 54029,
+    "replicatesRequested": 2000,
+    "replicatesComputed": 2000,
+    "clusterCount": 19,
+    "relativeMdAEImprovementDvsC": 0.19429539719752234,
+    "percentile95Interval": [
+      -0.8256588302349271,
+      0.3614143307451017
+    ]
+  },
+  "hypotheses": {
+    "H0": {
+      "pass": false,
+      "verdict": "rejected"
+    },
+    "H1": {
+      "pass": false,
+      "verdict": "rejected"
+    },
+    "H2": {
+      "pass": false,
+      "verdict": "rejected"
+    },
+    "H3": {
+      "pass": false,
+      "verdict": "rejected"
+    }
+  },
+  "targetPredictions": [
+    {
+      "id": "P013-3",
+      "conditionId": "P013",
+      "replicate": 3,
+      "ageFamily": "calendar",
+      "observedTimeDays": 587.6670486111111,
+      "event": false,
+      "predictedMedianDays": {
+        "A": 105561.43861540407,
+        "B": 70773.36926372845,
+        "C": 351134.1796449164,
+        "D": 303052.3884949045
+      }
+    },
+    {
+      "id": "P014-1",
+      "conditionId": "P014",
+      "replicate": 1,
+      "ageFamily": "calendar",
+      "observedTimeDays": 587.6491666666667,
+      "event": false,
+      "predictedMedianDays": {
+        "A": 34124.142272317105,
+        "B": 35496.80728476891,
+        "C": 91787.37531391345,
+        "D": 80427.46806694465
+      }
+    },
+    {
+      "id": "P014-2",
+      "conditionId": "P014",
+      "replicate": 2,
+      "ageFamily": "calendar",
+      "observedTimeDays": 587.6500810185186,
+      "event": false,
+      "predictedMedianDays": {
+        "A": 34124.142272317105,
+        "B": 40700.93503595267,
+        "C": 104340.66148620397,
+        "D": 123746.16537919987
+      }
+    },
+    {
+      "id": "P014-3",
+      "conditionId": "P014",
+      "replicate": 3,
+      "ageFamily": "calendar",
+      "observedTimeDays": 587.6515972222222,
+      "event": false,
+      "predictedMedianDays": {
+        "A": 34124.142272317105,
+        "B": 26392.680592569977,
+        "C": 110860.12063756846,
+        "D": 70341.27991144174
+      }
+    },
+    {
+      "id": "P015-2",
+      "conditionId": "P015",
+      "replicate": 2,
+      "ageFamily": "calendar",
+      "observedTimeDays": 462.3171990740741,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 14653.974036312276,
+        "B": 15274.05963006732,
+        "C": 24390.911920967053,
+        "D": 26192.901928447493
+      }
+    },
+    {
+      "id": "P015-3",
+      "conditionId": "P015",
+      "replicate": 3,
+      "ageFamily": "calendar",
+      "observedTimeDays": 441.0367013888889,
+      "event": false,
+      "predictedMedianDays": {
+        "A": 14653.974036312276,
+        "B": 13872.309398176096,
+        "C": 21223.364161554757,
+        "D": 15781.289144062826
+      }
+    },
+    {
+      "id": "P016-2",
+      "conditionId": "P016",
+      "replicate": 2,
+      "ageFamily": "calendar",
+      "observedTimeDays": 525.0698148148148,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 10974.191824245869,
+        "B": 13249.78910821483,
+        "C": 14225.224354003049,
+        "D": 13150.988543126294
+      }
+    },
+    {
+      "id": "P016-3",
+      "conditionId": "P016",
+      "replicate": 3,
+      "ageFamily": "calendar",
+      "observedTimeDays": 441.04623842592594,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 10974.191824245869,
+        "B": 8975.761023924098,
+        "C": 9732.98163053674,
+        "D": 9820.71658882812
+      }
+    },
+    {
+      "id": "P053-1",
+      "conditionId": "P053",
+      "replicate": 1,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 167.77648148148148,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 294.64339283337574,
+        "B": 371.7435275112471,
+        "C": 295.47184602817913,
+        "D": 400.9046513462281
+      }
+    },
+    {
+      "id": "P053-3",
+      "conditionId": "P053",
+      "replicate": 3,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 167.78314814814814,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 294.64339283337574,
+        "B": 273.64512886416907,
+        "C": 262.4324258140171,
+        "D": 204.7228293968021
+      }
+    },
+    {
+      "id": "P054-2",
+      "conditionId": "P054",
+      "replicate": 2,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 146.76858796296295,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 178.22726261654574,
+        "B": 217.58626161389492,
+        "C": 194.9912175897663,
+        "D": 233.84529106340256
+      }
+    },
+    {
+      "id": "P054-3",
+      "conditionId": "P054",
+      "replicate": 3,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 146.76712962962964,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 178.22726261654574,
+        "B": 151.37187868653763,
+        "C": 151.51846054429578,
+        "D": 209.19612788254406
+      }
+    },
+    {
+      "id": "P055-3",
+      "conditionId": "P055",
+      "replicate": 3,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 83.78140046296296,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 93.38178760227485,
+        "B": 96.21885450606409,
+        "C": 93.79930172355188,
+        "D": 131.04448962784292
+      }
+    },
+    {
+      "id": "P056-2",
+      "conditionId": "P056",
+      "replicate": 2,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 41.8684375,
+      "event": false,
+      "predictedMedianDays": {
+        "A": 48.927185032054844,
+        "B": 52.67966031321576,
+        "C": 38.273717179354186,
+        "D": 50.08458151526187
+      }
+    },
+    {
+      "id": "P056-3",
+      "conditionId": "P056",
+      "replicate": 3,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 62.78489583333333,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 48.927185032054844,
+        "B": 44.51255624337806,
+        "C": 36.12438678362731,
+        "D": 33.68279691798835
+      }
+    },
+    {
+      "id": "P057-1",
+      "conditionId": "P057",
+      "replicate": 1,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 188.76847222222221,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 679.6971341407697,
+        "B": 586.7084554137482,
+        "C": 732.9571571102134,
+        "D": 781.0634388280585
+      }
+    },
+    {
+      "id": "P057-2",
+      "conditionId": "P057",
+      "replicate": 2,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 188.7746527777778,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 679.6971341407697,
+        "B": 625.2841274884223,
+        "C": 1041.4744251103702,
+        "D": 822.1683374698275
+      }
+    },
+    {
+      "id": "P057-3",
+      "conditionId": "P057",
+      "replicate": 3,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 188.78583333333333,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 679.6971341407697,
+        "B": 677.5558273753062,
+        "C": 992.3022530762286,
+        "D": 1152.2153523633924
+      }
+    },
+    {
+      "id": "P058-1",
+      "conditionId": "P058",
+      "replicate": 1,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 188.8038310185185,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 411.14297001978576,
+        "B": 399.98227563244245,
+        "C": 508.47208849116527,
+        "D": 515.4500532946648
+      }
+    },
+    {
+      "id": "P058-2",
+      "conditionId": "P058",
+      "replicate": 2,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 167.81452546296296,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 411.14297001978576,
+        "B": 339.17823611636993,
+        "C": 496.66574261239816,
+        "D": 436.8001703543348
+      }
+    },
+    {
+      "id": "P058-3",
+      "conditionId": "P058",
+      "replicate": 3,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 167.80907407407406,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 411.14297001978576,
+        "B": 409.32964942964304,
+        "C": 561.3646680798349,
+        "D": 440.480826414164
+      }
+    },
+    {
+      "id": "P059-1",
+      "conditionId": "P059",
+      "replicate": 1,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 83.79186342592592,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 215.41746720959745,
+        "B": 210.47172839540946,
+        "C": 169.32094085812722,
+        "D": 215.92170282564655
+      }
+    },
+    {
+      "id": "P059-2",
+      "conditionId": "P059",
+      "replicate": 2,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 104.82145833333334,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 215.41746720959745,
+        "B": 205.20777770064404,
+        "C": 182.49738699617694,
+        "D": 185.10068400302097
+      }
+    },
+    {
+      "id": "P059-3",
+      "conditionId": "P059",
+      "replicate": 3,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 83.78625,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 215.41746720959745,
+        "B": 181.69391253230387,
+        "C": 209.5717580639136,
+        "D": 219.63723258407123
+      }
+    },
+    {
+      "id": "P060-2",
+      "conditionId": "P060",
+      "replicate": 2,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 41.865520833333335,
+      "event": false,
+      "predictedMedianDays": {
+        "A": 112.86751461849103,
+        "B": 114.84368869117293,
+        "C": 70.73795120975173,
+        "D": 95.2334628043309
+      }
+    },
+    {
+      "id": "P060-3",
+      "conditionId": "P060",
+      "replicate": 3,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 83.78340277777778,
+      "event": false,
+      "predictedMedianDays": {
+        "A": 112.86751461849103,
+        "B": 78.9117867336136,
+        "C": 63.85409023279695,
+        "D": 87.03279238815456
+      }
+    },
+    {
+      "id": "P061-1",
+      "conditionId": "P061",
+      "replicate": 1,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 525.0569328703704,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 1109.5501256822188,
+        "B": 1080.8920961759584,
+        "C": 1589.9032817219486,
+        "D": 1698.2506965170237
+      }
+    },
+    {
+      "id": "P061-2",
+      "conditionId": "P061",
+      "replicate": 2,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 525.0565393518518,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 1109.5501256822188,
+        "B": 1257.7069669561738,
+        "C": 1885.240114667029,
+        "D": 1706.1392623166505
+      }
+    },
+    {
+      "id": "P061-3",
+      "conditionId": "P061",
+      "replicate": 3,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 587.6447337962964,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 1109.5501256822188,
+        "B": 1056.27867155278,
+        "C": 1628.0626516290276,
+        "D": 1770.9920428634318
+      }
+    },
+    {
+      "id": "P062-2",
+      "conditionId": "P062",
+      "replicate": 2,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 419.68015046296296,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 671.1573598666006,
+        "B": 517.2558117745275,
+        "C": 752.2158346797888,
+        "D": 787.2866644437519
+      }
+    },
+    {
+      "id": "P062-3",
+      "conditionId": "P062",
+      "replicate": 3,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 441.0520833333333,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 671.1573598666006,
+        "B": 528.0396621787233,
+        "C": 770.1925637064558,
+        "D": 688.845512287656
+      }
+    },
+    {
+      "id": "P063-2",
+      "conditionId": "P063",
+      "replicate": 2,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 251.72861111111112,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 351.6514426954348,
+        "B": 413.4263826137903,
+        "C": 368.8963226998634,
+        "D": 329.5591549631796
+      }
+    },
+    {
+      "id": "P063-3",
+      "conditionId": "P063",
+      "replicate": 3,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 293.7115277777778,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 351.6514426954348,
+        "B": 350.03442767113836,
+        "C": 391.5440443767995,
+        "D": 378.54467217073767
+      }
+    },
+    {
+      "id": "P064-1",
+      "conditionId": "P064",
+      "replicate": 1,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 167.76936342592592,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 184.24701052873647,
+        "B": 180.31349230852734,
+        "C": 132.23873873804735,
+        "D": 122.88866734694794
+      }
+    },
+    {
+      "id": "P064-2",
+      "conditionId": "P064",
+      "replicate": 2,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 167.7725925925926,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 184.24701052873647,
+        "B": 188.48310485002847,
+        "C": 179.5278026517383,
+        "D": 183.11272009321908
+      }
+    },
+    {
+      "id": "P064-3",
+      "conditionId": "P064",
+      "replicate": 3,
+      "ageFamily": "cyclic",
+      "observedTimeDays": 125.80908564814816,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 184.24701052873647,
+        "B": 203.14782211203664,
+        "C": 144.80020164964083,
+        "D": 194.38068167229278
+      }
+    },
+    {
+      "id": "P074-1",
+      "conditionId": "P074",
+      "replicate": 1,
+      "ageFamily": "profile",
+      "observedTimeDays": 188.80295138888889,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 568.0665480006032,
+        "B": 621.4529382884197,
+        "C": 662.2352132951853,
+        "D": 684.5759217782629
+      }
+    },
+    {
+      "id": "P074-2",
+      "conditionId": "P074",
+      "replicate": 2,
+      "ageFamily": "profile",
+      "observedTimeDays": 188.87310185185186,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 568.0665480006032,
+        "B": 634.3441935092787,
+        "C": 660.3225374183793,
+        "D": 692.3917123089906
+      }
+    },
+    {
+      "id": "P074-3",
+      "conditionId": "P074",
+      "replicate": 3,
+      "ageFamily": "profile",
+      "observedTimeDays": 209.77626157407408,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 568.0665480006032,
+        "B": 643.1859232121761,
+        "C": 638.3318819557587,
+        "D": 693.4030743127864
+      }
+    },
+    {
+      "id": "P075-2",
+      "conditionId": "P075",
+      "replicate": 2,
+      "ageFamily": "profile",
+      "observedTimeDays": 441.0424884259259,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 737.485623112667,
+        "B": 739.8001301443521,
+        "C": 718.2699134978277,
+        "D": 618.0759492012785
+      }
+    },
+    {
+      "id": "P075-3",
+      "conditionId": "P075",
+      "replicate": 3,
+      "ageFamily": "profile",
+      "observedTimeDays": 441.00765046296294,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 737.485623112667,
+        "B": 711.3978186690036,
+        "C": 949.3781653936313,
+        "D": 710.8389363138216
+      }
+    },
+    {
+      "id": "P076-1",
+      "conditionId": "P076",
+      "replicate": 1,
+      "ageFamily": "profile",
+      "observedTimeDays": 272.728275462963,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 211.5511892982679,
+        "B": 247.30690392155958,
+        "C": 256.6103499293186,
+        "D": 174.12876561075907
+      }
+    },
+    {
+      "id": "P076-2",
+      "conditionId": "P076",
+      "replicate": 2,
+      "ageFamily": "profile",
+      "observedTimeDays": 251.7140625,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 211.5511892982679,
+        "B": 208.23052525415522,
+        "C": 272.5022175579034,
+        "D": 331.9958453430883
+      }
+    },
+    {
+      "id": "P076-3",
+      "conditionId": "P076",
+      "replicate": 3,
+      "ageFamily": "profile",
+      "observedTimeDays": 272.7302662037037,
+      "event": true,
+      "predictedMedianDays": {
+        "A": 211.5511892982679,
+        "B": 213.8029089593929,
+        "C": 202.47177657020322,
+        "D": 173.71027129049455
+      }
+    }
+  ],
+  "claimBoundary": "This is a same-model, same-purchase-batch, held-40-degree 80%-capacity EOL test. It is not chemistry, pack, field, failure-safety, or warranty validation."
+}

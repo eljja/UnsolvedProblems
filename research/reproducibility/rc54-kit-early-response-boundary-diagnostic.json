@@ -1,0 +1,695 @@
+{
+  "diagnosticId": "RC54-KIT-EARLY-RESPONSE-BOUNDARY-DIAGNOSTIC-0.1",
+  "cycleId": "RC-2026-54",
+  "runOn": "2026-08-29",
+  "status": "post-outcome-exploratory-does-not-change-preregistered-verdicts",
+  "confirmedBoundaries": {
+    "allTarget": {
+      "cells": 57,
+      "completeD": 44,
+      "events": 46,
+      "censored": 11,
+      "noEndpoint": 0
+    },
+    "commonCompleteTarget": {
+      "cells": 44,
+      "completeD": 44,
+      "events": 36,
+      "censored": 8,
+      "noEndpoint": 0
+    },
+    "commonCompleteDevelopment": {
+      "cells": 156,
+      "completeD": 156,
+      "events": 113,
+      "censored": 43,
+      "noEndpoint": 0
+    },
+    "developmentByFamily": {
+      "calendar": {
+        "cells": 35,
+        "completeD": 35,
+        "events": 0,
+        "censored": 35,
+        "noEndpoint": 0
+      },
+      "cyclic": {
+        "cells": 97,
+        "completeD": 97,
+        "events": 89,
+        "censored": 8,
+        "noEndpoint": 0
+      },
+      "profile": {
+        "cells": 24,
+        "completeD": 24,
+        "events": 24,
+        "censored": 0,
+        "noEndpoint": 0
+      }
+    },
+    "temperatureByFamily": {
+      "0": {
+        "calendar": {
+          "cells": 12,
+          "completeD": 12,
+          "events": 0,
+          "censored": 12,
+          "noEndpoint": 0
+        },
+        "cyclic": {
+          "cells": 36,
+          "completeD": 34,
+          "events": 34,
+          "censored": 0,
+          "noEndpoint": 2
+        },
+        "profile": {
+          "cells": 9,
+          "completeD": 8,
+          "events": 8,
+          "censored": 0,
+          "noEndpoint": 1
+        }
+      },
+      "10": {
+        "calendar": {
+          "cells": 12,
+          "completeD": 12,
+          "events": 0,
+          "censored": 12,
+          "noEndpoint": 0
+        },
+        "cyclic": {
+          "cells": 36,
+          "completeD": 36,
+          "events": 35,
+          "censored": 1,
+          "noEndpoint": 0
+        },
+        "profile": {
+          "cells": 9,
+          "completeD": 9,
+          "events": 9,
+          "censored": 0,
+          "noEndpoint": 0
+        }
+      },
+      "25": {
+        "calendar": {
+          "cells": 12,
+          "completeD": 12,
+          "events": 0,
+          "censored": 12,
+          "noEndpoint": 0
+        },
+        "cyclic": {
+          "cells": 36,
+          "completeD": 29,
+          "events": 27,
+          "censored": 8,
+          "noEndpoint": 1
+        },
+        "profile": {
+          "cells": 9,
+          "completeD": 8,
+          "events": 9,
+          "censored": 0,
+          "noEndpoint": 0
+        }
+      },
+      "40": {
+        "calendar": {
+          "cells": 12,
+          "completeD": 8,
+          "events": 4,
+          "censored": 8,
+          "noEndpoint": 0
+        },
+        "cyclic": {
+          "cells": 36,
+          "completeD": 28,
+          "events": 33,
+          "censored": 3,
+          "noEndpoint": 0
+        },
+        "profile": {
+          "cells": 9,
+          "completeD": 8,
+          "events": 9,
+          "censored": 0,
+          "noEndpoint": 0
+        }
+      }
+    },
+    "missingFieldsAll": {
+      "early_log_eis_zref_response_per_day_soc70": 12,
+      "early_log_eis_zref_response_per_day_soc50": 9,
+      "cu0_eis_zref_mohm_soc90": 9,
+      "early_log_eis_zref_response_per_day_soc90": 9,
+      "early_log_eis_zref_response_per_day_soc30": 6,
+      "cu0_capacity_ah": 4,
+      "cu0_eis_zref_mohm_soc10": 4,
+      "cu0_eis_zref_mohm_soc30": 4,
+      "cu0_eis_zref_mohm_soc50": 4,
+      "cu0_eis_zref_mohm_soc70": 4,
+      "cu0_pulse_r10ms_mohm_soc10": 4,
+      "cu0_pulse_r10ms_mohm_soc30": 4,
+      "cu0_pulse_r10ms_mohm_soc50": 4,
+      "cu0_pulse_r10ms_mohm_soc70": 4,
+      "cu0_pulse_r10ms_mohm_soc90": 4,
+      "cu0_pulse_r1s_mohm_soc10": 4,
+      "cu0_pulse_r1s_mohm_soc30": 4,
+      "cu0_pulse_r1s_mohm_soc50": 4,
+      "cu0_pulse_r1s_mohm_soc70": 4,
+      "cu0_pulse_r1s_mohm_soc90": 4,
+      "early_log_capacity_response_per_day": 4,
+      "early_log_eis_zref_response_per_day_soc10": 4,
+      "early_log_pulse_r10ms_response_per_day_soc10": 4,
+      "early_log_pulse_r10ms_response_per_day_soc30": 4,
+      "early_log_pulse_r10ms_response_per_day_soc50": 4,
+      "early_log_pulse_r10ms_response_per_day_soc70": 4,
+      "early_log_pulse_r10ms_response_per_day_soc90": 4,
+      "early_log_pulse_r1s_response_per_day_soc10": 4,
+      "early_log_pulse_r1s_response_per_day_soc30": 4,
+      "early_log_pulse_r1s_response_per_day_soc50": 4,
+      "early_log_pulse_r1s_response_per_day_soc70": 4,
+      "early_log_pulse_r1s_response_per_day_soc90": 4,
+      "fewer_than_three_capacity_checkups": 4
+    },
+    "missingFieldsTarget": {
+      "early_log_eis_zref_response_per_day_soc70": 8,
+      "early_log_eis_zref_response_per_day_soc50": 3,
+      "early_log_eis_zref_response_per_day_soc30": 2
+    },
+    "targetConditionCoverage": [
+      {
+        "conditionId": "P013",
+        "family": "calendar",
+        "configured": 3,
+        "completeD": 1,
+        "eventsAll": 0,
+        "eventsCompleteD": 0
+      },
+      {
+        "conditionId": "P014",
+        "family": "calendar",
+        "configured": 3,
+        "completeD": 3,
+        "eventsAll": 0,
+        "eventsCompleteD": 0
+      },
+      {
+        "conditionId": "P015",
+        "family": "calendar",
+        "configured": 3,
+        "completeD": 2,
+        "eventsAll": 2,
+        "eventsCompleteD": 1
+      },
+      {
+        "conditionId": "P016",
+        "family": "calendar",
+        "configured": 3,
+        "completeD": 2,
+        "eventsAll": 2,
+        "eventsCompleteD": 2
+      },
+      {
+        "conditionId": "P053",
+        "family": "cyclic",
+        "configured": 3,
+        "completeD": 2,
+        "eventsAll": 3,
+        "eventsCompleteD": 2
+      },
+      {
+        "conditionId": "P054",
+        "family": "cyclic",
+        "configured": 3,
+        "completeD": 2,
+        "eventsAll": 3,
+        "eventsCompleteD": 2
+      },
+      {
+        "conditionId": "P055",
+        "family": "cyclic",
+        "configured": 3,
+        "completeD": 1,
+        "eventsAll": 3,
+        "eventsCompleteD": 1
+      },
+      {
+        "conditionId": "P056",
+        "family": "cyclic",
+        "configured": 3,
+        "completeD": 2,
+        "eventsAll": 2,
+        "eventsCompleteD": 1
+      },
+      {
+        "conditionId": "P057",
+        "family": "cyclic",
+        "configured": 3,
+        "completeD": 3,
+        "eventsAll": 3,
+        "eventsCompleteD": 3
+      },
+      {
+        "conditionId": "P058",
+        "family": "cyclic",
+        "configured": 3,
+        "completeD": 3,
+        "eventsAll": 3,
+        "eventsCompleteD": 3
+      },
+      {
+        "conditionId": "P059",
+        "family": "cyclic",
+        "configured": 3,
+        "completeD": 3,
+        "eventsAll": 3,
+        "eventsCompleteD": 3
+      },
+      {
+        "conditionId": "P060",
+        "family": "cyclic",
+        "configured": 3,
+        "completeD": 2,
+        "eventsAll": 1,
+        "eventsCompleteD": 0
+      },
+      {
+        "conditionId": "P061",
+        "family": "cyclic",
+        "configured": 3,
+        "completeD": 3,
+        "eventsAll": 3,
+        "eventsCompleteD": 3
+      },
+      {
+        "conditionId": "P062",
+        "family": "cyclic",
+        "configured": 3,
+        "completeD": 2,
+        "eventsAll": 3,
+        "eventsCompleteD": 2
+      },
+      {
+        "conditionId": "P063",
+        "family": "cyclic",
+        "configured": 3,
+        "completeD": 2,
+        "eventsAll": 3,
+        "eventsCompleteD": 2
+      },
+      {
+        "conditionId": "P064",
+        "family": "cyclic",
+        "configured": 3,
+        "completeD": 3,
+        "eventsAll": 3,
+        "eventsCompleteD": 3
+      },
+      {
+        "conditionId": "P074",
+        "family": "profile",
+        "configured": 3,
+        "completeD": 3,
+        "eventsAll": 3,
+        "eventsCompleteD": 3
+      },
+      {
+        "conditionId": "P075",
+        "family": "profile",
+        "configured": 3,
+        "completeD": 2,
+        "eventsAll": 3,
+        "eventsCompleteD": 2
+      },
+      {
+        "conditionId": "P076",
+        "family": "profile",
+        "configured": 3,
+        "completeD": 3,
+        "eventsAll": 3,
+        "eventsCompleteD": 3
+      }
+    ]
+  },
+  "pairedErrorDiagnosis": {
+    "BvsA": {
+      "wins": 21,
+      "losses": 15,
+      "ties": 0,
+      "medianAbsoluteErrorChangeDays": 2.1965132132942387,
+      "byFamily": {
+        "calendar": {
+          "eventCells": 3,
+          "medianAbsoluteErrorChangeDays": -620.0855937550441,
+          "positiveMeansCandidateLowerError": true
+        },
+        "cyclic": {
+          "eventCells": 25,
+          "medianAbsoluteErrorChangeDays": 4.94573881418799,
+          "positiveMeansCandidateLowerError": true
+        },
+        "profile": {
+          "eventCells": 8,
+          "medianAbsoluteErrorChangeDays": -2.817585537898907,
+          "positiveMeansCandidateLowerError": true
+        }
+      }
+    },
+    "CvsB": {
+      "wins": 13,
+      "losses": 23,
+      "ties": 0,
+      "medianAbsoluteErrorChangeDays": -26.928094720355134,
+      "byFamily": {
+        "calendar": {
+          "eventCells": 3,
+          "medianAbsoluteErrorChangeDays": -975.4352457882178,
+          "positiveMeansCandidateLowerError": true
+        },
+        "cyclic": {
+          "eventCells": 25,
+          "medianAbsoluteErrorChangeDays": -27.877845531609722,
+          "positiveMeansCandidateLowerError": true
+        },
+        "profile": {
+          "eventCells": 8,
+          "medianAbsoluteErrorChangeDays": -3.2385455663861364,
+          "positiveMeansCandidateLowerError": true
+        }
+      }
+    },
+    "DvsC": {
+      "wins": 11,
+      "losses": 25,
+      "ties": 0,
+      "medianAbsoluteErrorChangeDays": -25.55110688139314,
+      "byFamily": {
+        "calendar": {
+          "eventCells": 3,
+          "medianAbsoluteErrorChangeDays": -87.73495829137937,
+          "positiveMeansCandidateLowerError": true
+        },
+        "cyclic": {
+          "eventCells": 25,
+          "medianAbsoluteErrorChangeDays": -9.350071391099405,
+          "positiveMeansCandidateLowerError": true
+        },
+        "profile": {
+          "eventCells": 8,
+          "medianAbsoluteErrorChangeDays": -30.415340085159983,
+          "positiveMeansCandidateLowerError": true
+        }
+      }
+    }
+  },
+  "registeredFeatureDirectionsWithinCondition": {
+    "earlyCapacityResponse": {
+      "value": 0.6666666666666666,
+      "comparablePairs": 27
+    },
+    "early_log_eis_zref_response_per_day_soc10": {
+      "value": 0.3333333333333333,
+      "comparablePairs": 27
+    },
+    "early_log_eis_zref_response_per_day_soc30": {
+      "value": 0.37037037037037035,
+      "comparablePairs": 27
+    },
+    "early_log_eis_zref_response_per_day_soc50": {
+      "value": 0.37037037037037035,
+      "comparablePairs": 27
+    },
+    "early_log_eis_zref_response_per_day_soc70": {
+      "value": 0.5555555555555556,
+      "comparablePairs": 27
+    },
+    "early_log_eis_zref_response_per_day_soc90": {
+      "value": 0.5925925925925926,
+      "comparablePairs": 27
+    },
+    "early_log_pulse_r10ms_response_per_day_soc10": {
+      "value": 0.5925925925925926,
+      "comparablePairs": 27
+    },
+    "early_log_pulse_r10ms_response_per_day_soc30": {
+      "value": 0.6296296296296297,
+      "comparablePairs": 27
+    },
+    "early_log_pulse_r10ms_response_per_day_soc50": {
+      "value": 0.5185185185185185,
+      "comparablePairs": 27
+    },
+    "early_log_pulse_r10ms_response_per_day_soc70": {
+      "value": 0.5185185185185185,
+      "comparablePairs": 27
+    },
+    "early_log_pulse_r10ms_response_per_day_soc90": {
+      "value": 0.37037037037037035,
+      "comparablePairs": 27
+    },
+    "early_log_pulse_r1s_response_per_day_soc10": {
+      "value": 0.5185185185185185,
+      "comparablePairs": 27
+    },
+    "early_log_pulse_r1s_response_per_day_soc30": {
+      "value": 0.5555555555555556,
+      "comparablePairs": 27
+    },
+    "early_log_pulse_r1s_response_per_day_soc50": {
+      "value": 0.4074074074074074,
+      "comparablePairs": 27
+    },
+    "early_log_pulse_r1s_response_per_day_soc70": {
+      "value": 0.4074074074074074,
+      "comparablePairs": 27
+    },
+    "early_log_pulse_r1s_response_per_day_soc90": {
+      "value": 0.5555555555555556,
+      "comparablePairs": 27
+    }
+  },
+  "registeredFeatureDirectionsWithinConditionAllAvailableTarget": {
+    "earlyCapacityResponse": {
+      "value": 0.6222222222222222,
+      "comparablePairs": 45
+    },
+    "early_log_eis_zref_response_per_day_soc10": {
+      "value": 0.4888888888888889,
+      "comparablePairs": 45
+    },
+    "early_log_eis_zref_response_per_day_soc30": {
+      "value": 0.42857142857142855,
+      "comparablePairs": 42
+    },
+    "early_log_eis_zref_response_per_day_soc50": {
+      "value": 0.3953488372093023,
+      "comparablePairs": 43
+    },
+    "early_log_eis_zref_response_per_day_soc70": {
+      "value": 0.46875,
+      "comparablePairs": 32
+    },
+    "early_log_eis_zref_response_per_day_soc90": {
+      "value": 0.6,
+      "comparablePairs": 45
+    },
+    "early_log_pulse_r10ms_response_per_day_soc10": {
+      "value": 0.5333333333333333,
+      "comparablePairs": 45
+    },
+    "early_log_pulse_r10ms_response_per_day_soc30": {
+      "value": 0.6444444444444445,
+      "comparablePairs": 45
+    },
+    "early_log_pulse_r10ms_response_per_day_soc50": {
+      "value": 0.5111111111111111,
+      "comparablePairs": 45
+    },
+    "early_log_pulse_r10ms_response_per_day_soc70": {
+      "value": 0.4666666666666667,
+      "comparablePairs": 45
+    },
+    "early_log_pulse_r10ms_response_per_day_soc90": {
+      "value": 0.4888888888888889,
+      "comparablePairs": 45
+    },
+    "early_log_pulse_r1s_response_per_day_soc10": {
+      "value": 0.6,
+      "comparablePairs": 45
+    },
+    "early_log_pulse_r1s_response_per_day_soc30": {
+      "value": 0.5333333333333333,
+      "comparablePairs": 45
+    },
+    "early_log_pulse_r1s_response_per_day_soc50": {
+      "value": 0.37777777777777777,
+      "comparablePairs": 45
+    },
+    "early_log_pulse_r1s_response_per_day_soc70": {
+      "value": 0.35555555555555557,
+      "comparablePairs": 45
+    },
+    "early_log_pulse_r1s_response_per_day_soc90": {
+      "value": 0.6,
+      "comparablePairs": 45
+    }
+  },
+  "largestStandardizedCoefficients": {
+    "A": [
+      {
+        "feature": "cycle_voltage_max_v",
+        "standardizedCoefficient": -1.020743862593298
+      },
+      {
+        "feature": "cycle_voltage_min_v",
+        "standardizedCoefficient": 0.5955272166728561
+      },
+      {
+        "feature": "charge_rate_c",
+        "standardizedCoefficient": -0.5669863722952165
+      },
+      {
+        "feature": "inverse_temperature_relative_to_25c",
+        "standardizedCoefficient": -0.38786219725812265
+      },
+      {
+        "feature": "discharge_rate_c",
+        "standardizedCoefficient": -0.3484162451200281
+      },
+      {
+        "feature": "age_soc_fraction",
+        "standardizedCoefficient": 0.27790746031482016
+      },
+      {
+        "feature": "profile_4_indicator",
+        "standardizedCoefficient": -0.21299924163001155
+      },
+      {
+        "feature": "cyclic_indicator",
+        "standardizedCoefficient": -0.12028238126851698
+      }
+    ],
+    "B": [
+      {
+        "feature": "cycle_voltage_max_v",
+        "standardizedCoefficient": -0.9816476445582026
+      },
+      {
+        "feature": "cycle_voltage_min_v",
+        "standardizedCoefficient": 0.5854835480423599
+      },
+      {
+        "feature": "charge_rate_c",
+        "standardizedCoefficient": -0.5750907169814811
+      },
+      {
+        "feature": "inverse_temperature_relative_to_25c",
+        "standardizedCoefficient": -0.3894656820990349
+      },
+      {
+        "feature": "discharge_rate_c",
+        "standardizedCoefficient": -0.34228483738856363
+      },
+      {
+        "feature": "age_soc_fraction",
+        "standardizedCoefficient": 0.2784183320095535
+      },
+      {
+        "feature": "profile_4_indicator",
+        "standardizedCoefficient": -0.21172801947263173
+      },
+      {
+        "feature": "cu0_eis_zref_mohm_soc30",
+        "standardizedCoefficient": 0.15588431883473283
+      }
+    ],
+    "C": [
+      {
+        "feature": "cycle_voltage_max_v",
+        "standardizedCoefficient": -1.3887236558725997
+      },
+      {
+        "feature": "cycle_voltage_min_v",
+        "standardizedCoefficient": 0.9479114205126387
+      },
+      {
+        "feature": "charge_rate_c",
+        "standardizedCoefficient": -0.8273015149670494
+      },
+      {
+        "feature": "inverse_temperature_relative_to_25c",
+        "standardizedCoefficient": -0.44479974572905673
+      },
+      {
+        "feature": "discharge_rate_c",
+        "standardizedCoefficient": -0.4377007438617688
+      },
+      {
+        "feature": "early_log_capacity_response_per_day",
+        "standardizedCoefficient": -0.35335979062369105
+      },
+      {
+        "feature": "profile_4_indicator",
+        "standardizedCoefficient": -0.1777486535732794
+      },
+      {
+        "feature": "cu0_eis_zref_mohm_soc30",
+        "standardizedCoefficient": 0.14539025632488065
+      }
+    ],
+    "D": [
+      {
+        "feature": "cycle_voltage_max_v",
+        "standardizedCoefficient": -1.4241531015241953
+      },
+      {
+        "feature": "cycle_voltage_min_v",
+        "standardizedCoefficient": 1.0288420520530166
+      },
+      {
+        "feature": "charge_rate_c",
+        "standardizedCoefficient": -0.8666185186316744
+      },
+      {
+        "feature": "early_log_capacity_response_per_day",
+        "standardizedCoefficient": -0.6051944484189672
+      },
+      {
+        "feature": "inverse_temperature_relative_to_25c",
+        "standardizedCoefficient": -0.4287729315810745
+      },
+      {
+        "feature": "discharge_rate_c",
+        "standardizedCoefficient": -0.3903201399060779
+      },
+      {
+        "feature": "cu0_pulse_r1s_mohm_soc10",
+        "standardizedCoefficient": 0.2792099812624842
+      },
+      {
+        "feature": "cu0_eis_zref_mohm_soc30",
+        "standardizedCoefficient": 0.22733768038246083
+      }
+    ]
+  },
+  "interpretation": [
+    "Temperature and protocol rank many target cells correctly in aggregate, but they cannot order cell-to-cell variation within a triplicate: arm A within-condition concordance is 0.50.",
+    "Static diagnostics lower pooled median error, yet the three observed calendar events produce extremely large extrapolation errors and the worst-family gate fails.",
+    "The one-week capacity response degrades both error and calibration, so its sign or magnitude is not a stable susceptibility bridge across calendar, cyclic, and WLTP aging.",
+    "Adding all fifteen EIS/pulse response rates recovers part of C's loss but remains worse than B; its D-versus-C bootstrap interval crosses zero widely.",
+    "Thirteen target cells lack at least one registered CU0/CU1 EIS response and only 27 within-condition event pairs remain, independently failing the coverage and pair-count gates."
+  ],
+  "nextDecisiveTest": {
+    "hypothesis": "The transferable signal, if present, is a low-dimensional degradation-path response observed after a nontrivial aging interval, not the noisy one-week change of every impedance coordinate.",
+    "design": "Use the same 40-degree target only in a newly preregistered cycle. Select a single later landmark common to the cohort without reading later target values; learn a sparse SOC/frequency or physically constrained impedance-path summary on 0/10/25-degree development cells only; keep complete condition holdout, censoring, family gates, and within-triplicate ranking.",
+    "minimumTest": "Before refitting survival, test whether the selected response summary reaches within-condition concordance above 0.60 with at least 30 comparable held-temperature pairs and at least 90% target feature coverage.",
+    "stop": "Stop the electrochemical-only branch if no prespecified later-landmark summary clears both coverage and within-condition gates; escalate to thermal, pressure, acoustic, or mechanical measurements rather than adding flexible predictors."
+  },
+  "claimBoundary": "Feature-direction and coefficient summaries are exploratory diagnostics. They neither rescue H0-H3 nor establish a mechanism."
+}

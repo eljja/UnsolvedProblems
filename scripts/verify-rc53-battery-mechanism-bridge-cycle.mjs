@@ -122,6 +122,6 @@ const publicText = readText("research-cycle-53-data.js");
 for (const phrase of ["1단계", "2단계", "전공자 포인트", "핵심 아이디어", "아래 시도는 개별 논문", "개수를 맞추지", "문제 수를 맞추", "분량 목표", "전공자 관점의 질문은"]) assert(!publicText.includes(phrase), `RC53 contains forbidden wording: ${phrase}`);
 for (const script of ["audit_rc53_battery_mechanism_bridge.py", "pilot_rc53_battery_mechanism_bridge.py", "run_rc53_battery_mechanism_bridge.py", "independent-rc53-battery-mechanism-bridge.mjs", "diagnose_rc53_battery_mechanism_bridge.py", "verify-rc53-battery-mechanism-bridge-cycle.mjs"]) assert(readText("package.json").includes(script), `package.json missing RC53 script: ${script}`);
 assert(readText("sitemap.xml").includes("RC-2026-53&amp;lang=ko") && readText("sitemap.xml").includes("RC-2026-53&amp;lang=en"), "RC53 missing from sitemap.xml");
-assert(readText("README.md").includes("53개 누적 연구 사이클") && readText("README.md").includes("1,596개 현지화 URL") && readText("README.md").includes("314개 기관·로드맵·원 연구 출처"), "README RC53 counts incomplete");
+assert(readText("README.md").includes("54개 누적 연구 사이클") && readText("README.md").includes("1,598개 현지화 URL") && readText("README.md").includes("319개 기관·로드맵·원 연구 출처"), "README cumulative counts incomplete after RC54");
 
 console.log("RC53 verified: 40 cells, 4 zero-weight pilots, 14 development cells, 22 untouched regime holdouts, 117 independent comparisons, and an explicit pooled/within-regime failure boundary.");
