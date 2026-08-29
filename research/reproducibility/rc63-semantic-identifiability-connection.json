@@ -1,0 +1,30 @@
+{
+  "id": "CONN-EVIDENCE-036",
+  "reviewedOn": "2026-08-29",
+  "problemIds": ["UP-003", "UP-005", "UP-625"],
+  "connectionType": "intervention identifiability under missing measurement lineage",
+  "strength": "strong-for-formal-structure-bounded-for-domain-transfer",
+  "commonStructure": "Each problem asks for a target after changing one part of an observation-generating system. The target is identifiable only when the changed rows, the parameters they constrain, and every shared covariance ancestor are known.",
+  "variableMapping": {
+    "UP-003": "target H0; intervention anchor, host, photometric system, or method; shared ancestors calibration and selection covariance",
+    "UP-005": "target viability of an early-universe mechanism; intervention pre-recombination physics; shared ancestors CMB, BBN, growth, BAO, and ladder calibration",
+    "UP-625": "target functional under source-to-target change; intervention observation mechanism or distribution; shared ancestors sampling clusters and latent selection"
+  },
+  "validWhen": [
+    "Every observation and parameter has a stable identity.",
+    "The covariance or dependence graph can be decomposed by causal ancestor.",
+    "The intervention changes only declared components and the remaining target stays identifiable.",
+    "Final adjudication uses held observations or an explicit dependence correction."
+  ],
+  "breaksWhen": [
+    "Matrix position is used as a surrogate for physical identity.",
+    "Shared calibration or selection ancestors remain hidden.",
+    "Deleting a branch removes the only constraint on a required parameter.",
+    "A historical release is used to claim stability of later measurement branches."
+  ],
+  "surfaceSimilarityRisk": "All three domains use words such as robustness and shift. That vocabulary alone is not a connection; the transfer is justified only by the same rank, dependency-graph, and held-adjudication conditions.",
+  "minimumValidationTest": "Release a labelled synthetic fixture with one hidden shared covariance ancestor. Both cosmology and transport implementations must recover the same target shift when ancestry is present, refuse or widen the claim when it is removed, and detect a deliberately rank-destroying deletion.",
+  "transferableMethod": "Treat semantic lineage as part of the statistical design: validate identities and ancestry before fitting, compute the rank of every proposed reduced system, and use a separate held branch for adjudication.",
+  "simultaneousImpact": "A passing fixture would make SH0ES branch influence auditable, prevent early-physics fitting to a calibration artifact, and provide a concrete domain-transfer benchmark for UP-625. It would not by itself resolve any of the three problems.",
+  "validationStatus": "The exact rank-one and block-deletion algebra is independently reproduced on the SH0ES matrix. The named astrophysical transfer remains blocked because the release lacks semantic lineage and current branches."
+}

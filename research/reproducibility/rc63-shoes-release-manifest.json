@@ -1,0 +1,76 @@
+{
+  "cycleId": "RC-2026-63",
+  "frozenOn": "2026-08-29",
+  "repository": "https://github.com/PantheonPlusSH0ES/DataRelease",
+  "commit": "c447f0fea703fcd0fff57de5000947b5ca81286b",
+  "generatedFromPredeclaredSpec": "research/reproducibility/rc63-shoes-release-audit-spec.json",
+  "fileCount": 6,
+  "totalBytes": 49462230,
+  "downloaded": true,
+  "files": [
+    {
+      "path": "SH0ES_Data/ally_shoes_ceph_topantheonwt6.0_112221.fits",
+      "role": "data-vector",
+      "filename": "ally_shoes_ceph_topantheonwt6.0_112221.fits",
+      "url": "https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/c447f0fea703fcd0fff57de5000947b5ca81286b/SH0ES_Data/ally_shoes_ceph_topantheonwt6.0_112221.fits",
+      "bytes": 17280,
+      "gitBlobSha": "aa7099f0282a6559c07fe4591a79efb96a574489",
+      "sha256": "10BB034CA3FFF53F6625C9FE47EBD054B37EF45D1140AF1C766831CFA6871433",
+      "lfs": null
+    },
+    {
+      "path": "SH0ES_Data/alll_shoes_ceph_topantheonwt6.0_112221.fits",
+      "role": "design-matrix",
+      "filename": "alll_shoes_ceph_topantheonwt6.0_112221.fits",
+      "url": "https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/c447f0fea703fcd0fff57de5000947b5ca81286b/SH0ES_Data/alll_shoes_ceph_topantheonwt6.0_112221.fits",
+      "bytes": 659520,
+      "gitBlobSha": "881814545bcb7333aff2b5d2ec9c6b9c920cf50a",
+      "sha256": "9A2CE872DD20ED4FDF5005CE62A805D3EEFBBB0B20B0C614013E7C0094009DB8",
+      "lfs": null
+    },
+    {
+      "path": "SH0ES_Data/allc_shoes_ceph_topantheonwt6.0_112221.fits",
+      "role": "covariance",
+      "filename": "allc_shoes_ceph_topantheonwt6.0_112221.fits",
+      "url": "https://media.githubusercontent.com/media/PantheonPlusSH0ES/DataRelease/c447f0fea703fcd0fff57de5000947b5ca81286b/SH0ES_Data/allc_shoes_ceph_topantheonwt6.0_112221.fits",
+      "bytes": 48781440,
+      "gitBlobSha": "e2c71ec61db34f5168434c06a7f52d5cb12e90a3",
+      "sha256": "A42778672D25DF7A559BD2949B1E412B99B2E35DD9A36895F6B38828BE019172",
+      "lfs": {
+        "oidSha256": "A42778672D25DF7A559BD2949B1E412B99B2E35DD9A36895F6B38828BE019172",
+        "declaredBytes": 48781440,
+        "pointerGitBlobSha": "e2c71ec61db34f5168434c06a7f52d5cb12e90a3"
+      }
+    },
+    {
+      "path": "SH0ES_Data/lstsq_results.txt",
+      "role": "reference-solution",
+      "filename": "lstsq_results.txt",
+      "url": "https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/c447f0fea703fcd0fff57de5000947b5ca81286b/SH0ES_Data/lstsq_results.txt",
+      "bytes": 721,
+      "gitBlobSha": "3f7add8bca834b466b08278aa188d052c638666c",
+      "sha256": "37D2D423D06B6A2100C47578EB9B1C566A575CAF6ADE0ED61F6B9586D2A35C95",
+      "lfs": null
+    },
+    {
+      "path": "SH0ES_Data/README.md",
+      "role": "release-documentation",
+      "filename": "README.md",
+      "url": "https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/c447f0fea703fcd0fff57de5000947b5ca81286b/SH0ES_Data/README.md",
+      "bytes": 2454,
+      "gitBlobSha": "0392ae3d79f4ae04d344a612c4207983d2c1f081",
+      "sha256": "FD845E484A184AD9740DDDF26550DB9D6D154D1631C1B30622DCECEFE8EE7174",
+      "lfs": null
+    },
+    {
+      "path": "SH0ES_Data/table2.README",
+      "role": "selection-and-covariance-warning",
+      "filename": "table2.README",
+      "url": "https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/c447f0fea703fcd0fff57de5000947b5ca81286b/SH0ES_Data/table2.README",
+      "bytes": 815,
+      "gitBlobSha": "a52d978732ac2ca34f9b3b937c75bb8de3996d8f",
+      "sha256": "3747ACD166DCB77EAB2E6145A17116BC04F1D7283E972EC2DB0FF823BCFCB8BF",
+      "lfs": null
+    }
+  ]
+}

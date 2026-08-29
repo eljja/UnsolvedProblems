@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "cycleId": "RC-2026-63",
+  "reviewedOn": "2026-08-29",
+  "purpose": "Minimum machine-readable lineage needed to turn a compact distance-ladder fit into named, covariance-preserving interventions without reverse-engineering identities from matrix shape.",
+  "release": {
+    "required": ["releaseId", "version", "createdOn", "supersedes", "sourceCommit", "modelEquation", "measurementCutoff", "includedBranches"],
+    "includedBranches": ["Milky Way", "LMC", "NGC 4258", "SMC", "HST", "JWST", "calibrator supernovae", "Hubble-flow supernovae"]
+  },
+  "parameters": {
+    "coverageRequired": 1,
+    "fields": ["columnIndex", "parameterId", "symbol", "unit", "role", "referenceOffset", "priorId"],
+    "rule": "Every design-matrix column must have one stable identifier and an explicit transform from the stored coefficient to the reported physical parameter."
+  },
+  "observations": {
+    "coverageRequired": 1,
+    "fields": ["rowIndex", "observationId", "objectId", "hostId", "anchorId", "instrument", "detector", "filter", "photometricSystem", "method", "epoch", "selectionId", "artificialStarTestId", "covarianceBlockIds"],
+    "rule": "Every data-vector row must map to its measurement identity; null is allowed only when the field is inapplicable, never when the identity is unknown."
+  },
+  "covariance": {
+    "fields": ["blockId", "sourceType", "ancestorId", "affectedObservationIds", "constructionCodeCommit", "calibrationVersion", "positiveSemidefiniteCheck"],
+    "rule": "Removing a named branch must remove its rows and every covariance component descended from that branch, then recompute any selection-dependent uncertainty rather than slicing a printed table."
+  },
+  "interventions": {
+    "fields": ["interventionId", "targetBranch", "rowsRemoved", "covarianceBlocksRemovedOrRebuilt", "parametersRemovedOrConstrained", "heldData", "fitRecipe", "successMetric", "stopCondition"],
+    "requiredExamples": ["leave-one-anchor", "leave-one-calibrator-host", "leave-one-photometric-system", "HST-only", "JWST-only", "HST-versus-JWST common-host contrast"]
+  },
+  "independence": {
+    "rule": "Development and final adjudication must use non-overlapping observations or an explicit shared-ancestor graph with cluster-aware uncertainty.",
+    "fields": ["developmentObservationIds", "adjudicationObservationIds", "sharedAncestorIds", "independenceJustification"]
+  },
+  "validation": {
+    "required": ["schemaValidation", "arrayShapeValidation", "baselineReproduction", "namedDeletionFixtures", "independentImplementation", "heldResidualCheck"],
+    "numericalTolerances": {"H0": 0.000001, "parameterMaximumAbsoluteDifference": 0.00001},
+    "causalClaimGate": "No named anchor, host, instrument, method, or photometric-system influence may be reported until parameter, row, covariance-ancestry, and current-branch coverage all equal one."
+  }
+}

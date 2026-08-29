@@ -1,0 +1,54 @@
+{
+  "cycleId": "RC-2026-63",
+  "frozenOn": "2026-08-29",
+  "selectedProblems": ["UP-003", "UP-005", "UP-625"],
+  "claimBoundary": "This cycle tests whether the public SH0ES compact release can support the anchor-, host-, and photometric-system interventions frozen in RC62. It may reproduce and stress-test the released 2022 linear ladder, but it cannot stand in for unreleased 2024-2025 HST, JWST, or SMC measurements.",
+  "officialRelease": {
+    "repository": "https://github.com/PantheonPlusSH0ES/DataRelease",
+    "commit": "c447f0fea703fcd0fff57de5000947b5ca81286b",
+    "directory": "SH0ES_Data",
+    "description": "SH0ES-2022 compact Gaussian linear system y, L, C and its reference least-squares solution"
+  },
+  "files": [
+    {"path": "SH0ES_Data/ally_shoes_ceph_topantheonwt6.0_112221.fits", "role": "data-vector"},
+    {"path": "SH0ES_Data/alll_shoes_ceph_topantheonwt6.0_112221.fits", "role": "design-matrix"},
+    {"path": "SH0ES_Data/allc_shoes_ceph_topantheonwt6.0_112221.fits", "role": "covariance"},
+    {"path": "SH0ES_Data/lstsq_results.txt", "role": "reference-solution"},
+    {"path": "SH0ES_Data/README.md", "role": "release-documentation"},
+    {"path": "SH0ES_Data/table2.README", "role": "selection-and-covariance-warning"}
+  ],
+  "predeclaredTests": {
+    "sourceIntegrity": "Every file is fetched from the frozen commit and recorded by byte count, Git blob id, and SHA-256.",
+    "baseline": {
+      "covariancePositiveDefinite": true,
+      "designFullColumnRank": true,
+      "maximumReferenceParameterDifference": 0.0005,
+      "publishedH0": 73.04,
+      "publishedH0Sigma": 1.04,
+      "maximumH0Difference": 0.05,
+      "maximumH0SigmaDifference": 0.05
+    },
+    "semanticIntervention": {
+      "requiredRowLabelCoverage": 1.0,
+      "requiredParameterLabelCoverage": 1.0,
+      "requiredCurrentDataCoverage": ["Milky Way", "LMC", "NGC 4258", "SMC when claimed", "calibrator host", "photometric system", "HST versus JWST"],
+      "stop": "Refuse named leave-one-anchor, leave-one-host, or leave-one-system causal estimates when a released row cannot be mapped to its measurement identity and covariance ancestry without inference, or when the public matrix predates the claimed measurement branch."
+    },
+    "anonymousStressTest": {
+      "allowedOnlyWhenSemanticGateFails": true,
+      "outputs": ["single-row leverage", "single-row H0 deletion shift", "design-signature blocks", "worst-case anonymous block shift"],
+      "claimLimit": "Anonymous influence can locate concentration in the linear system but cannot identify an astrophysical anchor, host, instrument, or cause."
+    },
+    "independentAudit": {
+      "methodA": "covariance-whitened QR solve in Python",
+      "methodB": "normal-equation solve from exported sufficient statistics in dependency-free Node",
+      "maximumH0Difference": 0.000001,
+      "maximumParameterDifference": 0.00001
+    }
+  },
+  "decisionRules": {
+    "passLocalAuditContract": "The baseline and semantic gates pass, every declared branch has a covariance-preserving deletion, and no branch shifts H0 by one baseline posterior sigma.",
+    "failLocalAuditContract": "At least one named branch moves H0 by one sigma or more with an independently reproduced fit.",
+    "insufficientRelease": "The numerical baseline passes but row labels, parameter labels, covariance ancestry, or current HST-JWST-SMC branch data are missing. Preserve the numerical results, refuse the named causal claim, and publish the minimum machine-readable release contract needed for the next cycle."
+  }
+}

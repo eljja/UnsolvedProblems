@@ -1,0 +1,77 @@
+{
+  "cycleId": "RC-2026-63",
+  "implementation": "dependency-free Node Gaussian elimination with partial pivoting",
+  "input": "Python-exported normal matrix, right-hand side, and anonymous constraint sufficient statistics",
+  "parameterCount": 47,
+  "H0": 73.04281910198864,
+  "H0Sigma": 1.0071478513384107,
+  "pythonH0": 73.042819101987,
+  "absoluteH0Difference": 1.6342482922482304e-12,
+  "maximumParameterDifference": 4.4089176753914217e-11,
+  "pivotRatio": 21092612.826296054,
+  "constraintDeletionMaximumH0Difference": 8.749623248149874e-11,
+  "constraints": [
+    {
+      "anonymousId": "constraint-row-3207",
+      "status": "identified",
+      "deletedH0": 72.91321722012317,
+      "pythonDeletedH0": 72.913217220117,
+      "absoluteH0Difference": 6.16751094639767e-12
+    },
+    {
+      "anonymousId": "constraint-row-3208",
+      "status": "identified",
+      "deletedH0": 73.34912927147458,
+      "pythonDeletedH0": 73.34912927148,
+      "absoluteH0Difference": 5.4143356464919634e-12
+    },
+    {
+      "anonymousId": "constraint-row-3209",
+      "status": "identified",
+      "deletedH0": 73.04266381698766,
+      "pythonDeletedH0": 73.042663816985,
+      "absoluteH0Difference": 2.6574298317427747e-12
+    },
+    {
+      "anonymousId": "constraint-row-3210",
+      "status": "not-identifiable-after-deletion",
+      "pythonDeletedH0": null,
+      "error": "singular pivot at column 44"
+    },
+    {
+      "anonymousId": "constraint-row-3211",
+      "status": "identified",
+      "deletedH0": 73.04636068593935,
+      "pythonDeletedH0": 73.046360685938,
+      "absoluteH0Difference": 1.3500311979441904e-12
+    },
+    {
+      "anonymousId": "constraint-row-3212",
+      "status": "identified",
+      "deletedH0": 73.04281852231011,
+      "pythonDeletedH0": 73.042818522307,
+      "absoluteH0Difference": 3.112177182629239e-12
+    },
+    {
+      "anonymousId": "constraint-row-3213",
+      "status": "identified",
+      "deletedH0": 73.19887765542025,
+      "pythonDeletedH0": 73.198877655439,
+      "absoluteH0Difference": 1.8758328224066645e-11
+    },
+    {
+      "anonymousId": "constraint-row-3214",
+      "status": "identified",
+      "deletedH0": 72.8051291025925,
+      "pythonDeletedH0": 72.80512910268,
+      "absoluteH0Difference": 8.749623248149874e-11
+    }
+  ],
+  "gates": {
+    "H0Agreement": true,
+    "parameterAgreement": true,
+    "constraintDeletionAgreement": true,
+    "singularConstraintAgreement": true
+  },
+  "passed": true
+}

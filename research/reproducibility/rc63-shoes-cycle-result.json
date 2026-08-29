@@ -1,0 +1,78 @@
+{
+  "cycleId": "RC-2026-63",
+  "reviewedOn": "2026-08-29",
+  "status": "numerical-baseline-reproduced-semantic-audit-blocked",
+  "selectedProblems": ["UP-003", "UP-005", "UP-625"],
+  "selectionReason": "RC62 left a frozen local-ladder influence audit as the most direct gate before opening early-universe models. The official SH0ES compact release makes the numerical fit immediately reproducible, while its ability to support the promised named interventions could be decided without new telescope time.",
+  "newVerifiedFacts": [
+    "Six official SH0ES release files totaling 49,462,230 bytes were frozen at commit c447f0fea703fcd0fff57de5000947b5ca81286b; every byte count and SHA-256 matches the manifest.",
+    "The released system contains 3,492 observations, 47 parameters, and a symmetric positive-definite covariance matrix; the design has full column rank.",
+    "A covariance-whitened QR fit gives H0=73.0428191+-1.0071479 km/s/Mpc, reproducing the published 73.04+-1.04 within the preregistered 0.05 tolerances.",
+    "The official lstsq_results vector differs by as much as 0.04962 in a parameter, failing the preregistered 0.0005 comparison; the official README identifies that file as a constructor for a broad initial prior rather than a precision posterior reference.",
+    "The FITS headers provide array dimensions and 2021 creation dates but no row identities, parameter names, anchor, host, instrument, filter, method, or covariance-ancestry map.",
+    "The compact matrix predates the 2024 SMC anchor result and the 2024-2025 JWST common-host results, so it cannot execute those branches even if its older rows were labelled.",
+    "Among 3,491 identifiable single-row deletions, the largest anonymous H0 displacement is 0.30414 baseline sigma; one row uniquely constrains a parameter and makes the reduced system non-identifiable.",
+    "Exact covariance-preserving deletion of 86 anonymous design-signature blocks leaves 83 identifiable fits; the largest H0 displacement is 0.67914 baseline sigma and no identifiable block crosses one sigma.",
+    "A dependency-free Node solve agrees with Python within 1.7e-12 in H0, 4.5e-11 across parameters, and 8.8e-11 in the seven identifiable constraint-row deletions."
+  ],
+  "hypothesisAdjudication": [
+    {"code": "H63-A", "verdict": "supported", "claim": "The public 2022 compact system is sufficient to reproduce its published numerical H0 baseline."},
+    {"code": "H63-B", "verdict": "not-admissible", "claim": "The compact system supports named leave-one-anchor, host, photometric-system, and HST-versus-JWST causal estimates."},
+    {"code": "H63-C", "verdict": "supported-with-anonymous-claim-boundary", "claim": "No one identifiable row or design-signature block moves H0 by one baseline sigma in the released system."},
+    {"code": "H63-D", "verdict": "supported", "claim": "A second implementation reproduces the fit and anonymous constraint deletions within the frozen numerical tolerances."},
+    {"code": "H63-E", "verdict": "open", "claim": "A current, fully labelled HST-JWST-SMC release will keep every named branch below one sigma under covariance-preserving deletion."}
+  ],
+  "causalChain": [
+    "Input: exact y, L, and C arrays frozen from the official SH0ES commit, plus a published H0 target used only as a reproduction check.",
+    "Bottleneck: numerical rows cannot be assigned to astrophysical anchors, hosts, instruments, or covariance ancestors from the released metadata.",
+    "Bridge: a complete semantic release contract maps every row, parameter, and covariance component to stable identities and current measurement branches.",
+    "Adjudicand: independently reproduced H0 shifts from covariance-preserving named deletions and held common-host residuals.",
+    "Resolution: the required-ruler discrepancy survives every current named branch deletion below one sigma and is then tested by an early-universe model against full CMB, BBN, and growth data."
+  ],
+  "workPackages": [
+    {
+      "code": "RC63-W1",
+      "purpose": "Obtain or construct a semantically complete current ladder release.",
+      "method": "Request or publish row and parameter dictionaries, covariance-component ancestry, selection recipes, and HST-JWST-SMC branch identifiers conforming to the RC63 contract.",
+      "deliverable": "Versioned current y-L-C arrays plus validated observation, parameter, covariance, and intervention tables.",
+      "pass": "Every row and parameter is labelled, every covariance component has ancestry, and all current branches are represented.",
+      "fail": "Any identity is inferred only from matrix position, a covariance component cannot be rebuilt, or current branches remain absent.",
+      "next": "If failed, retain only the anonymous influence envelope and do not attribute a shift to an anchor or instrument."
+    },
+    {
+      "code": "RC63-W2",
+      "purpose": "Execute the frozen named local-ladder influence audit.",
+      "method": "For each anchor, calibrator host, photometric system, and method branch, remove its observations and descended covariance components, refit, and adjudicate on independently coded fits and held common-host residuals.",
+      "deliverable": "Named H0 influence table with branch-specific uncertainty, residual score, and covariance rebuild receipt.",
+      "pass": "No named branch moves H0 by one full-fit sigma and held residuals show no boundary-aligned failure.",
+      "fail": "A branch crosses one sigma, loses identifiability, or disagrees between implementations beyond tolerance.",
+      "next": "If failed, make that measurement branch the active calibration problem and keep early-universe grids closed."
+    },
+    {
+      "code": "RC63-W3",
+      "purpose": "Separate release semantics from cosmological model flexibility.",
+      "method": "Only after W2 passes, combine the family-conditioned 132.8-136.1 Mpc ruler envelope with preregistered early-energy, extra-radiation, and recombination predictions for full CMB, BBN, matter power, and growth.",
+      "deliverable": "Model-by-supernova-family-by-held-observable exclusion matrix.",
+      "pass": "One physical model reaches every surviving ruler interval without violating any held observable or using post-outcome nuisance tuning.",
+      "fail": "The model reaches only selected families, breaks held data, or requires opening additional freedom after seeing the result.",
+      "next": "If all declared families fail, publish the excluded region and return to the measured calibration branch rather than adding unrestricted parameters."
+    }
+  ],
+  "uncertaintyBudget": [
+    "Numerical: float32 released arrays are solved in float64; QR and independent partial-pivot elimination agree far below the frozen tolerance.",
+    "Measurement: the compact covariance carries the 2022 modelled uncertainties, but this cycle does not regenerate photometry, crowding corrections, artificial-star tests, or selection effects.",
+    "Semantic: row and parameter identities are absent, so anonymous structure must not be translated into a named anchor or instrument.",
+    "Temporal: 2024 SMC and 2024-2025 JWST results postdate the compact arrays and cannot be represented by deletions from them.",
+    "Intervention: slicing rows is valid only with matching covariance ancestry; alternative selections may require new artificial-star uncertainty characterization as the official release warns.",
+    "External validity: a sub-one-sigma anonymous deletion envelope in the 2022 linear system does not prove stability of the current ladder."
+  ],
+  "structuralConnection": "CONN-EVIDENCE-036 links cosmological calibration influence to identifiability under interventions: a numerically invertible model can still make a named causal question unidentifiable when observation identity and covariance ancestry are missing.",
+  "failedOrRejectedAttempts": [
+    "The preregistered comparison with lstsq_results failed by 0.04962 because that official file is an initial broad-prior constructor, not a precision posterior target; the failed gate is preserved rather than retuned.",
+    "A named MW, LMC, NGC 4258, host, photometric-system, or HST-JWST effect could not be calculated without guessing identities from design columns, so the analysis stopped at anonymous rows and blocks.",
+    "One single-row deletion made a parameter unidentifiable; it is reported as non-identifiable instead of receiving a pseudoinverse H0 value.",
+    "The 2022 matrix could not represent the later SMC and JWST branches, preventing the current full-ladder stability claim."
+  ],
+  "claimBoundary": "RC63 reproduces the released 2022 linear baseline and exact anonymous deletion envelopes. It does not identify an astrophysical anchor from a matrix column, validate the current HST-JWST-SMC ladder, solve the Hubble tension, or establish early-universe physics.",
+  "exactNextStart": "Acquire a current row dictionary, parameter dictionary, covariance-component ancestry, and HST-JWST-SMC branch matrices satisfying rc63-shoes-semantic-release-contract.json. Validate named deletion fixtures before viewing H0 shifts, then run leave-one-anchor, host, photometric-system, and common-host HST-versus-JWST tests. Keep the early-universe grid closed unless every named branch stays below one full-fit sigma."
+}

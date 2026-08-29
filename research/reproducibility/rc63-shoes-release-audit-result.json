@@ -1,0 +1,1942 @@
+{
+  "cycleId": "RC-2026-63",
+  "reviewedOn": "2026-08-29",
+  "sourceCommit": "c447f0fea703fcd0fff57de5000947b5ca81286b",
+  "status": "insufficient-release-for-named-causal-audit",
+  "claimBoundary": "This cycle tests whether the public SH0ES compact release can support the anchor-, host-, and photometric-system interventions frozen in RC62. It may reproduce and stress-test the released 2022 linear ladder, but it cannot stand in for unreleased 2024-2025 HST, JWST, or SMC measurements.",
+  "integrity": [
+    {
+      "path": "SH0ES_Data/ally_shoes_ceph_topantheonwt6.0_112221.fits",
+      "bytes": 17280,
+      "expectedSha256": "10BB034CA3FFF53F6625C9FE47EBD054B37EF45D1140AF1C766831CFA6871433",
+      "observedSha256": "10BB034CA3FFF53F6625C9FE47EBD054B37EF45D1140AF1C766831CFA6871433",
+      "passed": true
+    },
+    {
+      "path": "SH0ES_Data/alll_shoes_ceph_topantheonwt6.0_112221.fits",
+      "bytes": 659520,
+      "expectedSha256": "9A2CE872DD20ED4FDF5005CE62A805D3EEFBBB0B20B0C614013E7C0094009DB8",
+      "observedSha256": "9A2CE872DD20ED4FDF5005CE62A805D3EEFBBB0B20B0C614013E7C0094009DB8",
+      "passed": true
+    },
+    {
+      "path": "SH0ES_Data/allc_shoes_ceph_topantheonwt6.0_112221.fits",
+      "bytes": 48781440,
+      "expectedSha256": "A42778672D25DF7A559BD2949B1E412B99B2E35DD9A36895F6B38828BE019172",
+      "observedSha256": "A42778672D25DF7A559BD2949B1E412B99B2E35DD9A36895F6B38828BE019172",
+      "passed": true
+    },
+    {
+      "path": "SH0ES_Data/lstsq_results.txt",
+      "bytes": 721,
+      "expectedSha256": "37D2D423D06B6A2100C47578EB9B1C566A575CAF6ADE0ED61F6B9586D2A35C95",
+      "observedSha256": "37D2D423D06B6A2100C47578EB9B1C566A575CAF6ADE0ED61F6B9586D2A35C95",
+      "passed": true
+    },
+    {
+      "path": "SH0ES_Data/README.md",
+      "bytes": 2454,
+      "expectedSha256": "FD845E484A184AD9740DDDF26550DB9D6D154D1631C1B30622DCECEFE8EE7174",
+      "observedSha256": "FD845E484A184AD9740DDDF26550DB9D6D154D1631C1B30622DCECEFE8EE7174",
+      "passed": true
+    },
+    {
+      "path": "SH0ES_Data/table2.README",
+      "bytes": 815,
+      "expectedSha256": "3747ACD166DCB77EAB2E6145A17116BC04F1D7283E972EC2DB0FF823BCFCB8BF",
+      "observedSha256": "3747ACD166DCB77EAB2E6145A17116BC04F1D7283E972EC2DB0FF823BCFCB8BF",
+      "passed": true
+    }
+  ],
+  "releaseShape": {
+    "observations": 3492,
+    "parameters": 47,
+    "releasedLShape": [
+      47,
+      3492
+    ]
+  },
+  "headers": {
+    "yDate": "2021-11-22",
+    "lDate": "2021-11-22",
+    "cDate": "2021-11-22",
+    "semanticTokens": []
+  },
+  "numericalBaseline": {
+    "qH0": 9.317887632654,
+    "qH0Sigma": 0.029941256353,
+    "H0": 73.042819101987,
+    "H0Sigma": 1.007147851338,
+    "method": "covariance-whitened QR least squares",
+    "rank": 47,
+    "smallestWhitenedSingularValue": 6.169669165306,
+    "normalConditionNumber": 26270979.111087,
+    "chi2": 3552.759330295522,
+    "degreesOfFreedom": 3445,
+    "chi2PerDegreeOfFreedom": 1.031279921711,
+    "maximumCovarianceAsymmetry": 0.0,
+    "maximumReferenceParameterDifference": 0.0496177133,
+    "maximumReferenceSigmaDifference": 0.024357822928,
+    "referenceFileRole": "The official README says lstsq_results constructs a broad initial prior; it is not a precision posterior reference vector."
+  },
+  "predeclaredBaselineGates": {
+    "sourceIntegrity": true,
+    "covarianceSymmetric": true,
+    "covariancePositiveDefinite": true,
+    "designFullColumnRank": true,
+    "publishedH0": true,
+    "publishedH0Sigma": true,
+    "referenceParameterVector": false
+  },
+  "semanticInterventionGate": {
+    "rowLabelCoverage": 0.0,
+    "parameterLabelCoverage": 0.0,
+    "requiredRowLabelCoverage": 1.0,
+    "requiredParameterLabelCoverage": 1.0,
+    "presentSemanticHeaderTokens": [],
+    "currentBranchCoverage": {
+      "Milky Way": "not-machine-mapped",
+      "LMC": "not-machine-mapped",
+      "NGC 4258": "not-machine-mapped",
+      "SMC when claimed": "absent-release-predates-2024-SMC-result",
+      "calibrator host": "not-machine-mapped",
+      "photometric system": "not-machine-mapped",
+      "HST versus JWST": "absent-release-predates-2024-2025-JWST-results"
+    },
+    "passed": false,
+    "claimRefused": "Named leave-one-anchor, host, photometric-system, and HST-versus-JWST causal estimates"
+  },
+  "anonymousSingleRowInfluence": {
+    "method": "exact correlated Gaussian marginal deletion using the precision-matrix rank-one identity",
+    "evaluatedRows": 3492,
+    "identifiedAfterDeletion": 3491,
+    "notIdentifiableAfterDeletion": 1,
+    "notIdentifiableRowsZeroBased": [
+      3210
+    ],
+    "maximumAbsoluteH0ShiftSigma": 0.3041362488,
+    "rowsAtOrAboveOneSigma": 0,
+    "medianAbsoluteH0ShiftSigma": 0.00275688842,
+    "maximumGeneralizedLeverage": 1.0,
+    "topRows": [
+      {
+        "rowZeroBased": 3208,
+        "rowOneBased": 3209,
+        "columnsOneBased": [
+          39
+        ],
+        "generalizedLeverage": 0.521452261464,
+        "deletedH0": 73.34912927148,
+        "H0Shift": 0.306310169493,
+        "H0ShiftSigma": 0.3041362488
+      },
+      {
+        "rowZeroBased": 3144,
+        "rowOneBased": 3145,
+        "columnsOneBased": [
+          7,
+          43
+        ],
+        "generalizedLeverage": 0.167253779857,
+        "deletedH0": 73.339075858737,
+        "H0Shift": 0.29625675675,
+        "H0ShiftSigma": 0.294154186356
+      },
+      {
+        "rowZeroBased": 3166,
+        "rowOneBased": 3167,
+        "columnsOneBased": [
+          20,
+          43
+        ],
+        "generalizedLeverage": 0.446071509106,
+        "deletedH0": 73.328719413379,
+        "H0Shift": 0.285900311392,
+        "H0ShiftSigma": 0.283871241955
+      },
+      {
+        "rowZeroBased": 3214,
+        "rowOneBased": 3215,
+        "columnsOneBased": [
+          40
+        ],
+        "generalizedLeverage": 0.544448173782,
+        "deletedH0": 72.80512910268,
+        "H0Shift": -0.237689999307,
+        "H0ShiftSigma": -0.236003084345
+      },
+      {
+        "rowZeroBased": 3213,
+        "rowOneBased": 3214,
+        "columnsOneBased": [
+          38
+        ],
+        "generalizedLeverage": 0.45280171361,
+        "deletedH0": 73.198877655439,
+        "H0Shift": 0.156058553452,
+        "H0ShiftSigma": 0.154950986833
+      },
+      {
+        "rowZeroBased": 3165,
+        "rowOneBased": 3166,
+        "columnsOneBased": [
+          19,
+          43
+        ],
+        "generalizedLeverage": 0.46843363868,
+        "deletedH0": 72.895502298125,
+        "H0Shift": -0.147316803862,
+        "H0ShiftSigma": -0.146271278508
+      },
+      {
+        "rowZeroBased": 3161,
+        "rowOneBased": 3162,
+        "columnsOneBased": [
+          16,
+          43
+        ],
+        "generalizedLeverage": 0.290542536703,
+        "deletedH0": 72.901689906765,
+        "H0Shift": -0.141129195222,
+        "H0ShiftSigma": -0.140127584082
+      },
+      {
+        "rowZeroBased": 3207,
+        "rowOneBased": 3208,
+        "columnsOneBased": [
+          39
+        ],
+        "generalizedLeverage": 0.048539766352,
+        "deletedH0": 72.913217220117,
+        "H0Shift": -0.12960188187,
+        "H0ShiftSigma": -0.128682081482
+      },
+      {
+        "rowZeroBased": 3145,
+        "rowOneBased": 3146,
+        "columnsOneBased": [
+          8,
+          43
+        ],
+        "generalizedLeverage": 0.064882637775,
+        "deletedH0": 72.913514602903,
+        "H0Shift": -0.129304499084,
+        "H0ShiftSigma": -0.128386809257
+      },
+      {
+        "rowZeroBased": 3130,
+        "rowOneBased": 3131,
+        "columnsOneBased": [
+          1,
+          43
+        ],
+        "generalizedLeverage": 0.064201096106,
+        "deletedH0": 73.160604141197,
+        "H0Shift": 0.11778503921,
+        "H0ShiftSigma": 0.116949104397
+      },
+      {
+        "rowZeroBased": 2650,
+        "rowOneBased": 2651,
+        "columnsOneBased": [
+          39,
+          40,
+          42,
+          44,
+          46
+        ],
+        "generalizedLeverage": 0.016934263719,
+        "deletedH0": 73.157235186651,
+        "H0Shift": 0.114416084664,
+        "H0ShiftSigma": 0.113604059734
+      },
+      {
+        "rowZeroBased": 419,
+        "rowOneBased": 420,
+        "columnsOneBased": [
+          7,
+          39,
+          42,
+          44
+        ],
+        "generalizedLeverage": 0.123778747175,
+        "deletedH0": 73.153067444747,
+        "H0Shift": 0.11024834276,
+        "H0ShiftSigma": 0.109465896803
+      },
+      {
+        "rowZeroBased": 3176,
+        "rowOneBased": 3177,
+        "columnsOneBased": [
+          26,
+          43
+        ],
+        "generalizedLeverage": 0.038111350097,
+        "deletedH0": 73.147597501672,
+        "H0Shift": 0.104778399685,
+        "H0ShiftSigma": 0.104034774583
+      },
+      {
+        "rowZeroBased": 2077,
+        "rowOneBased": 2078,
+        "columnsOneBased": [
+          35,
+          39,
+          42,
+          44
+        ],
+        "generalizedLeverage": 0.083554583491,
+        "deletedH0": 72.943076306174,
+        "H0Shift": -0.099742795813,
+        "H0ShiftSigma": -0.099034909006
+      },
+      {
+        "rowZeroBased": 1465,
+        "rowOneBased": 1466,
+        "columnsOneBased": [
+          26,
+          39,
+          42,
+          44
+        ],
+        "generalizedLeverage": 0.039810023052,
+        "deletedH0": 73.142441470501,
+        "H0Shift": 0.099622368514,
+        "H0ShiftSigma": 0.098915336394
+      },
+      {
+        "rowZeroBased": 3180,
+        "rowOneBased": 3181,
+        "columnsOneBased": [
+          27,
+          43
+        ],
+        "generalizedLeverage": 0.055734866946,
+        "deletedH0": 72.947465596683,
+        "H0Shift": -0.095353505304,
+        "H0ShiftSigma": -0.094676769828
+      },
+      {
+        "rowZeroBased": 3136,
+        "rowOneBased": 3137,
+        "columnsOneBased": [
+          4,
+          43
+        ],
+        "generalizedLeverage": 0.109093721677,
+        "deletedH0": 72.94749933762,
+        "H0Shift": -0.095319764367,
+        "H0ShiftSigma": -0.094643268355
+      },
+      {
+        "rowZeroBased": 3163,
+        "rowOneBased": 3164,
+        "columnsOneBased": [
+          17,
+          43
+        ],
+        "generalizedLeverage": 0.078626895738,
+        "deletedH0": 72.949352946124,
+        "H0Shift": -0.093466155863,
+        "H0ShiftSigma": -0.092802815136
+      },
+      {
+        "rowZeroBased": 1223,
+        "rowOneBased": 1224,
+        "columnsOneBased": [
+          19,
+          39,
+          42,
+          44
+        ],
+        "generalizedLeverage": 0.161321772858,
+        "deletedH0": 72.953309928528,
+        "H0Shift": -0.089509173459,
+        "H0ShiftSigma": -0.088873915921
+      },
+      {
+        "rowZeroBased": 1964,
+        "rowOneBased": 1965,
+        "columnsOneBased": [
+          30,
+          39,
+          42,
+          44
+        ],
+        "generalizedLeverage": 0.125592290532,
+        "deletedH0": 73.13078120973,
+        "H0Shift": 0.087962107743,
+        "H0ShiftSigma": 0.087337829919
+      },
+      {
+        "rowZeroBased": 3326,
+        "rowOneBased": 3327,
+        "columnsOneBased": [
+          43,
+          47
+        ],
+        "generalizedLeverage": 0.010187439656,
+        "deletedH0": 72.957212740476,
+        "H0Shift": -0.085606361511,
+        "H0ShiftSigma": -0.084998802706
+      },
+      {
+        "rowZeroBased": 318,
+        "rowOneBased": 319,
+        "columnsOneBased": [
+          4,
+          39,
+          42,
+          44
+        ],
+        "generalizedLeverage": 0.223838892379,
+        "deletedH0": 72.96027123963,
+        "H0Shift": -0.082547862357,
+        "H0ShiftSigma": -0.081962010093
+      },
+      {
+        "rowZeroBased": 3343,
+        "rowOneBased": 3344,
+        "columnsOneBased": [
+          43,
+          47
+        ],
+        "generalizedLeverage": 0.011105588427,
+        "deletedH0": 73.122274759127,
+        "H0Shift": 0.07945565714,
+        "H0ShiftSigma": 0.078891750634
+      },
+      {
+        "rowZeroBased": 2588,
+        "rowOneBased": 2589,
+        "columnsOneBased": [
+          38,
+          39,
+          42,
+          44
+        ],
+        "generalizedLeverage": 0.014723916402,
+        "deletedH0": 72.96375702699,
+        "H0Shift": -0.079062074997,
+        "H0ShiftSigma": -0.078500961793
+      },
+      {
+        "rowZeroBased": 3185,
+        "rowOneBased": 3186,
+        "columnsOneBased": [
+          28,
+          43
+        ],
+        "generalizedLeverage": 0.04427969156,
+        "deletedH0": 72.964889061991,
+        "H0Shift": -0.077930039996,
+        "H0ShiftSigma": -0.077376960982
+      }
+    ]
+  },
+  "anonymousUncorrelatedConstraintRows": [
+    {
+      "anonymousId": "constraint-row-3207",
+      "rowZeroBased": 3207,
+      "rowOneBased": 3208,
+      "columnsOneBased": [
+        39
+      ],
+      "observedValue": -5.803875923157,
+      "standardDeviation": 0.081940487195,
+      "maximumOffDiagonalCovariance": 0.0,
+      "deletedH0": 72.913217220117,
+      "H0Shift": -0.12960188187,
+      "H0ShiftSigma": -0.128682081482,
+      "namedAstrophysicalIdentity": null
+    },
+    {
+      "anonymousId": "constraint-row-3208",
+      "rowZeroBased": 3208,
+      "rowOneBased": 3209,
+      "columnsOneBased": [
+        39
+      ],
+      "observedValue": -5.903414726257,
+      "standardDeviation": 0.025000005541,
+      "maximumOffDiagonalCovariance": 0.0,
+      "deletedH0": 73.34912927148,
+      "H0Shift": 0.306310169493,
+      "H0ShiftSigma": 0.3041362488,
+      "namedAstrophysicalIdentity": null
+    },
+    {
+      "anonymousId": "constraint-row-3209",
+      "rowZeroBased": 3209,
+      "rowOneBased": 3210,
+      "columnsOneBased": [
+        44
+      ],
+      "observedValue": -0.215000003576,
+      "standardDeviation": 0.119999998969,
+      "maximumOffDiagonalCovariance": 0.0,
+      "deletedH0": 73.042663816985,
+      "H0Shift": -0.000155285002,
+      "H0ShiftSigma": -0.000154182926,
+      "namedAstrophysicalIdentity": null
+    },
+    {
+      "anonymousId": "constraint-row-3210",
+      "rowZeroBased": 3210,
+      "rowOneBased": 3211,
+      "columnsOneBased": [
+        45
+      ],
+      "observedValue": 0.0,
+      "standardDeviation": 3.1622776e-05,
+      "maximumOffDiagonalCovariance": 0.0,
+      "deletedH0": null,
+      "H0Shift": null,
+      "H0ShiftSigma": null,
+      "namedAstrophysicalIdentity": null
+    },
+    {
+      "anonymousId": "constraint-row-3211",
+      "rowZeroBased": 3211,
+      "rowOneBased": 3212,
+      "columnsOneBased": [
+        46
+      ],
+      "observedValue": 0.0,
+      "standardDeviation": 0.100000003539,
+      "maximumOffDiagonalCovariance": 0.0,
+      "deletedH0": 73.046360685938,
+      "H0Shift": 0.003541583951,
+      "H0ShiftSigma": 0.003516448897,
+      "namedAstrophysicalIdentity": null
+    },
+    {
+      "anonymousId": "constraint-row-3212",
+      "rowZeroBased": 3212,
+      "rowOneBased": 3213,
+      "columnsOneBased": [
+        42
+      ],
+      "observedValue": 0.0,
+      "standardDeviation": 10.0,
+      "maximumOffDiagonalCovariance": 0.0,
+      "deletedH0": 73.042818522307,
+      "H0Shift": -5.7968e-07,
+      "H0ShiftSigma": -5.75566e-07,
+      "namedAstrophysicalIdentity": null
+    },
+    {
+      "anonymousId": "constraint-row-3213",
+      "rowZeroBased": 3213,
+      "rowOneBased": 3214,
+      "columnsOneBased": [
+        38
+      ],
+      "observedValue": 0.0,
+      "standardDeviation": 0.03239100039,
+      "maximumOffDiagonalCovariance": 0.0,
+      "deletedH0": 73.198877655439,
+      "H0Shift": 0.156058553452,
+      "H0ShiftSigma": 0.154950986833,
+      "namedAstrophysicalIdentity": null
+    },
+    {
+      "anonymousId": "constraint-row-3214",
+      "rowZeroBased": 3214,
+      "rowOneBased": 3215,
+      "columnsOneBased": [
+        40
+      ],
+      "observedValue": 0.0,
+      "standardDeviation": 0.026300000314,
+      "maximumOffDiagonalCovariance": 0.0,
+      "deletedH0": 72.80512910268,
+      "H0Shift": -0.237689999307,
+      "H0ShiftSigma": -0.236003084345,
+      "namedAstrophysicalIdentity": null
+    }
+  ],
+  "anonymousDesignSignatureBlocks": {
+    "method": "exact covariance-preserving deletion grouped only by identical nonzero design columns",
+    "blockCount": 86,
+    "identifiedAfterDeletion": 83,
+    "notIdentifiableAfterDeletion": 3,
+    "maximumAbsoluteH0ShiftSigma": 0.67914235682,
+    "blocksAtOrAboveOneSigma": 0,
+    "blocks": [
+      {
+        "id": "SIG-007",
+        "columnsOneBased": [
+          27,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 165,
+        "firstRowZeroBased": 1492,
+        "lastRowZeroBased": 1656,
+        "status": "identified",
+        "deletedH0": 72.358822336563,
+        "deletedH0Sigma": 1.01225762085,
+        "H0ShiftSigma": -0.67914235682,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-044",
+        "columnsOneBased": [
+          27,
+          43
+        ],
+        "rowCount": 4,
+        "firstRowZeroBased": 3178,
+        "lastRowZeroBased": 3181,
+        "status": "identified",
+        "deletedH0": 72.441478209634,
+        "deletedH0Sigma": 1.013017969706,
+        "H0ShiftSigma": -0.597073102578,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-002",
+        "columnsOneBased": [
+          39,
+          40,
+          42,
+          44,
+          46
+        ],
+        "rowCount": 413,
+        "firstRowZeroBased": 2648,
+        "lastRowZeroBased": 3060,
+        "status": "identified",
+        "deletedH0": 73.565253435734,
+        "deletedH0Sigma": 1.083628208538,
+        "H0ShiftSigma": 0.518726553458,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-020",
+        "columnsOneBased": [
+          7,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 46,
+        "firstRowZeroBased": 381,
+        "lastRowZeroBased": 426,
+        "status": "identified",
+        "deletedH0": 73.4834628874,
+        "deletedH0Sigma": 1.029821492962,
+        "H0ShiftSigma": 0.437516482637,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-057",
+        "columnsOneBased": [
+          7,
+          43
+        ],
+        "rowCount": 2,
+        "firstRowZeroBased": 3143,
+        "lastRowZeroBased": 3144,
+        "status": "identified",
+        "deletedH0": 73.479770575192,
+        "deletedH0Sigma": 1.03020620379,
+        "H0ShiftSigma": 0.43385037522,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-076",
+        "columnsOneBased": [
+          20,
+          43
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3166,
+        "lastRowZeroBased": 3166,
+        "status": "identified",
+        "deletedH0": 73.328719413401,
+        "deletedH0Sigma": 1.020998104841,
+        "H0ShiftSigma": 0.283871241977,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-031",
+        "columnsOneBased": [
+          20,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 27,
+        "firstRowZeroBased": 1253,
+        "lastRowZeroBased": 1279,
+        "status": "identified",
+        "deletedH0": 73.289662739736,
+        "deletedH0Sigma": 1.020667291395,
+        "H0ShiftSigma": 0.245091758297,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-082",
+        "columnsOneBased": [
+          40
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3214,
+        "lastRowZeroBased": 3214,
+        "status": "identified",
+        "deletedH0": 72.805129102597,
+        "deletedH0Sigma": 1.087310792694,
+        "H0ShiftSigma": -0.236003084427,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-010",
+        "columnsOneBased": [
+          26,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 93,
+        "firstRowZeroBased": 1399,
+        "lastRowZeroBased": 1491,
+        "status": "identified",
+        "deletedH0": 72.818676172014,
+        "deletedH0Sigma": 1.017404917954,
+        "H0ShiftSigma": -0.222552160217,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-019",
+        "columnsOneBased": [
+          15,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 48,
+        "firstRowZeroBased": 925,
+        "lastRowZeroBased": 972,
+        "status": "identified",
+        "deletedH0": 72.824605861081,
+        "deletedH0Sigma": 1.016537670245,
+        "H0ShiftSigma": -0.216664554878,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-014",
+        "columnsOneBased": [
+          39,
+          40,
+          42,
+          44
+        ],
+        "rowCount": 69,
+        "firstRowZeroBased": 3061,
+        "lastRowZeroBased": 3129,
+        "status": "identified",
+        "deletedH0": 72.842879685377,
+        "deletedH0Sigma": 1.084793980197,
+        "H0ShiftSigma": -0.198520422145,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-061",
+        "columnsOneBased": [
+          15,
+          43
+        ],
+        "rowCount": 2,
+        "firstRowZeroBased": 3159,
+        "lastRowZeroBased": 3160,
+        "status": "identified",
+        "deletedH0": 72.845432833129,
+        "deletedH0Sigma": 1.016904615982,
+        "H0ShiftSigma": -0.195985394394,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-005",
+        "columnsOneBased": [
+          28,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 251,
+        "firstRowZeroBased": 1657,
+        "lastRowZeroBased": 1907,
+        "status": "identified",
+        "deletedH0": 73.225946966468,
+        "deletedH0Sigma": 1.023624438249,
+        "H0ShiftSigma": 0.181828183655,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-045",
+        "columnsOneBased": [
+          28,
+          43
+        ],
+        "rowCount": 4,
+        "firstRowZeroBased": 3182,
+        "lastRowZeroBased": 3185,
+        "status": "identified",
+        "deletedH0": 73.222297483227,
+        "deletedH0Sigma": 1.023305089985,
+        "H0ShiftSigma": 0.178204601243,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-054",
+        "columnsOneBased": [
+          1,
+          43
+        ],
+        "rowCount": 2,
+        "firstRowZeroBased": 3130,
+        "lastRowZeroBased": 3131,
+        "status": "identified",
+        "deletedH0": 73.219131822724,
+        "deletedH0Sigma": 1.02071216978,
+        "H0ShiftSigma": 0.175061407819,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-047",
+        "columnsOneBased": [
+          4,
+          43
+        ],
+        "rowCount": 3,
+        "firstRowZeroBased": 3136,
+        "lastRowZeroBased": 3138,
+        "status": "identified",
+        "deletedH0": 72.875369511087,
+        "deletedH0Sigma": 1.012291713282,
+        "H0ShiftSigma": -0.166261180697,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-056",
+        "columnsOneBased": [
+          6,
+          43
+        ],
+        "rowCount": 2,
+        "firstRowZeroBased": 3141,
+        "lastRowZeroBased": 3142,
+        "status": "identified",
+        "deletedH0": 73.202594859587,
+        "deletedH0Sigma": 1.019416339401,
+        "H0ShiftSigma": 0.158641809529,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-081",
+        "columnsOneBased": [
+          38
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3213,
+        "lastRowZeroBased": 3213,
+        "status": "identified",
+        "deletedH0": 73.198877655424,
+        "deletedH0Sigma": 1.05144428166,
+        "H0ShiftSigma": 0.154950986819,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-017",
+        "columnsOneBased": [
+          6,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 53,
+        "firstRowZeroBased": 328,
+        "lastRowZeroBased": 380,
+        "status": "identified",
+        "deletedH0": 73.197249025154,
+        "deletedH0Sigma": 1.019485167764,
+        "H0ShiftSigma": 0.153333915137,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-035",
+        "columnsOneBased": [
+          4,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 18,
+        "firstRowZeroBased": 302,
+        "lastRowZeroBased": 319,
+        "status": "identified",
+        "deletedH0": 72.890868324473,
+        "deletedH0Sigma": 1.012537140414,
+        "H0ShiftSigma": -0.150872364283,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-053",
+        "columnsOneBased": [
+          37,
+          43
+        ],
+        "rowCount": 3,
+        "firstRowZeroBased": 3204,
+        "lastRowZeroBased": 3206,
+        "status": "identified",
+        "deletedH0": 73.193818530786,
+        "deletedH0Sigma": 1.019984929375,
+        "H0ShiftSigma": 0.149927767406,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-018",
+        "columnsOneBased": [
+          19,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 52,
+        "firstRowZeroBased": 1201,
+        "lastRowZeroBased": 1252,
+        "status": "identified",
+        "deletedH0": 72.894275686522,
+        "deletedH0Sigma": 1.011542825988,
+        "H0ShiftSigma": -0.147489184699,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-075",
+        "columnsOneBased": [
+          19,
+          43
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3165,
+        "lastRowZeroBased": 3165,
+        "status": "identified",
+        "deletedH0": 72.895502298125,
+        "deletedH0Sigma": 1.011470801356,
+        "H0ShiftSigma": -0.146271278508,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-073",
+        "columnsOneBased": [
+          16,
+          43
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3161,
+        "lastRowZeroBased": 3161,
+        "status": "identified",
+        "deletedH0": 72.901689906753,
+        "deletedH0Sigma": 1.019631001792,
+        "H0ShiftSigma": -0.140127584095,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-025",
+        "columnsOneBased": [
+          37,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 33,
+        "firstRowZeroBased": 2117,
+        "lastRowZeroBased": 2149,
+        "status": "identified",
+        "deletedH0": 73.180907678217,
+        "deletedH0Sigma": 1.019588405521,
+        "H0ShiftSigma": 0.137108544735,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-013",
+        "columnsOneBased": [
+          16,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 73,
+        "firstRowZeroBased": 973,
+        "lastRowZeroBased": 1045,
+        "status": "identified",
+        "deletedH0": 72.912244677531,
+        "deletedH0Sigma": 1.020259668208,
+        "H0ShiftSigma": -0.129647721814,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-011",
+        "columnsOneBased": [
+          8,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 73,
+        "firstRowZeroBased": 427,
+        "lastRowZeroBased": 499,
+        "status": "identified",
+        "deletedH0": 72.917365857867,
+        "deletedH0Sigma": 1.012901468124,
+        "H0ShiftSigma": -0.124562887121,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-043",
+        "columnsOneBased": [
+          26,
+          43
+        ],
+        "rowCount": 4,
+        "firstRowZeroBased": 3174,
+        "lastRowZeroBased": 3177,
+        "status": "identified",
+        "deletedH0": 72.91964314578,
+        "deletedH0Sigma": 1.019708587357,
+        "H0ShiftSigma": -0.122301761398,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-062",
+        "columnsOneBased": [
+          17,
+          43
+        ],
+        "rowCount": 2,
+        "firstRowZeroBased": 3162,
+        "lastRowZeroBased": 3163,
+        "status": "identified",
+        "deletedH0": 72.922427564231,
+        "deletedH0Sigma": 1.018934829818,
+        "H0ShiftSigma": -0.119537104305,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-059",
+        "columnsOneBased": [
+          9,
+          43
+        ],
+        "rowCount": 2,
+        "firstRowZeroBased": 3147,
+        "lastRowZeroBased": 3148,
+        "status": "identified",
+        "deletedH0": 73.154200316423,
+        "deletedH0Sigma": 1.016423394732,
+        "H0ShiftSigma": 0.11059072835,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-008",
+        "columnsOneBased": [
+          9,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 110,
+        "firstRowZeroBased": 500,
+        "lastRowZeroBased": 609,
+        "status": "identified",
+        "deletedH0": 73.152417307166,
+        "deletedH0Sigma": 1.016595123027,
+        "H0ShiftSigma": 0.108820373328,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-068",
+        "columnsOneBased": [
+          36,
+          43
+        ],
+        "rowCount": 2,
+        "firstRowZeroBased": 3202,
+        "lastRowZeroBased": 3203,
+        "status": "identified",
+        "deletedH0": 73.148041024169,
+        "deletedH0Sigma": 1.011834243648,
+        "H0ShiftSigma": 0.104475149346,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-001",
+        "columnsOneBased": [
+          38,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 443,
+        "firstRowZeroBased": 2150,
+        "lastRowZeroBased": 2592,
+        "status": "identified",
+        "deletedH0": 73.147889200964,
+        "deletedH0Sigma": 1.055480699087,
+        "H0ShiftSigma": 0.104324403649,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-006",
+        "columnsOneBased": [
+          10,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 177,
+        "firstRowZeroBased": 610,
+        "lastRowZeroBased": 786,
+        "status": "identified",
+        "deletedH0": 72.943575947072,
+        "deletedH0Sigma": 1.014609786354,
+        "H0ShiftSigma": -0.098538814121,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-023",
+        "columnsOneBased": [
+          34,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 33,
+        "firstRowZeroBased": 2035,
+        "lastRowZeroBased": 2067,
+        "status": "identified",
+        "deletedH0": 72.948684558743,
+        "deletedH0Sigma": 1.010500835741,
+        "H0ShiftSigma": -0.093466458891,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-066",
+        "columnsOneBased": [
+          34,
+          43
+        ],
+        "rowCount": 2,
+        "firstRowZeroBased": 3198,
+        "lastRowZeroBased": 3199,
+        "status": "identified",
+        "deletedH0": 72.948956742285,
+        "deletedH0Sigma": 1.010467996567,
+        "H0ShiftSigma": -0.093196207069,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-024",
+        "columnsOneBased": [
+          36,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 33,
+        "firstRowZeroBased": 2084,
+        "lastRowZeroBased": 2116,
+        "status": "identified",
+        "deletedH0": 73.136298258205,
+        "deletedH0Sigma": 1.011686870732,
+        "H0ShiftSigma": 0.092815723227,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-048",
+        "columnsOneBased": [
+          11,
+          43
+        ],
+        "rowCount": 3,
+        "firstRowZeroBased": 3151,
+        "lastRowZeroBased": 3153,
+        "status": "identified",
+        "deletedH0": 73.134813156757,
+        "deletedH0Sigma": 1.014240884661,
+        "H0ShiftSigma": 0.091341161725,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-027",
+        "columnsOneBased": [
+          24,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 30,
+        "firstRowZeroBased": 1358,
+        "lastRowZeroBased": 1387,
+        "status": "identified",
+        "deletedH0": 73.12259567435,
+        "deletedH0Sigma": 1.012121324523,
+        "H0ShiftSigma": 0.079210388283,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-026",
+        "columnsOneBased": [
+          33,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 31,
+        "firstRowZeroBased": 2004,
+        "lastRowZeroBased": 2034,
+        "status": "identified",
+        "deletedH0": 72.965299941931,
+        "deletedH0Sigma": 1.009092058302,
+        "H0ShiftSigma": -0.076968997107,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-004",
+        "columnsOneBased": [
+          1,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 259,
+        "firstRowZeroBased": 0,
+        "lastRowZeroBased": 258,
+        "status": "identified",
+        "deletedH0": 73.120271404569,
+        "deletedH0Sigma": 1.01998543302,
+        "H0ShiftSigma": 0.076902614129,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-058",
+        "columnsOneBased": [
+          8,
+          43
+        ],
+        "rowCount": 2,
+        "firstRowZeroBased": 3145,
+        "lastRowZeroBased": 3146,
+        "status": "identified",
+        "deletedH0": 72.978728909627,
+        "deletedH0Sigma": 1.012897165376,
+        "H0ShiftSigma": -0.063635336435,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-065",
+        "columnsOneBased": [
+          32,
+          43
+        ],
+        "rowCount": 2,
+        "firstRowZeroBased": 3195,
+        "lastRowZeroBased": 3196,
+        "status": "identified",
+        "deletedH0": 73.103878425344,
+        "deletedH0Sigma": 1.011507338469,
+        "H0ShiftSigma": 0.06062597788,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-034",
+        "columnsOneBased": [
+          29,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 20,
+        "firstRowZeroBased": 1908,
+        "lastRowZeroBased": 1927,
+        "status": "identified",
+        "deletedH0": 73.103312982207,
+        "deletedH0Sigma": 1.009334000974,
+        "H0ShiftSigma": 0.060064547762,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-009",
+        "columnsOneBased": [
+          17,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 101,
+        "firstRowZeroBased": 1046,
+        "lastRowZeroBased": 1146,
+        "status": "identified",
+        "deletedH0": 72.982337552026,
+        "deletedH0Sigma": 1.020296059004,
+        "H0ShiftSigma": -0.060052305012,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-037",
+        "columnsOneBased": [
+          35,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 16,
+        "firstRowZeroBased": 2068,
+        "lastRowZeroBased": 2083,
+        "status": "identified",
+        "deletedH0": 72.982457810325,
+        "deletedH0Sigma": 1.009629051508,
+        "H0ShiftSigma": -0.059932900201,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-060",
+        "columnsOneBased": [
+          10,
+          43
+        ],
+        "rowCount": 2,
+        "firstRowZeroBased": 3149,
+        "lastRowZeroBased": 3150,
+        "status": "identified",
+        "deletedH0": 72.982822623157,
+        "deletedH0Sigma": 1.014922763382,
+        "H0ShiftSigma": -0.05957067649,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-028",
+        "columnsOneBased": [
+          21,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 29,
+        "firstRowZeroBased": 1280,
+        "lastRowZeroBased": 1308,
+        "status": "identified",
+        "deletedH0": 72.983472553383,
+        "deletedH0Sigma": 1.01022919662,
+        "H0ShiftSigma": -0.058925358899,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-069",
+        "columnsOneBased": [
+          39
+        ],
+        "rowCount": 2,
+        "firstRowZeroBased": 3207,
+        "lastRowZeroBased": 3208,
+        "status": "identified",
+        "deletedH0": 73.09599322214,
+        "deletedH0Sigma": 1.167840791171,
+        "H0ShiftSigma": 0.052796736926,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-012",
+        "columnsOneBased": [
+          11,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 73,
+        "firstRowZeroBased": 787,
+        "lastRowZeroBased": 859,
+        "status": "identified",
+        "deletedH0": 73.094282168723,
+        "deletedH0Sigma": 1.013615555628,
+        "H0ShiftSigma": 0.051097827064,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-078",
+        "columnsOneBased": [
+          24,
+          43
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3172,
+        "lastRowZeroBased": 3172,
+        "status": "identified",
+        "deletedH0": 73.093289842887,
+        "deletedH0Sigma": 1.011563239978,
+        "H0ShiftSigma": 0.050112543886,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-067",
+        "columnsOneBased": [
+          35,
+          43
+        ],
+        "rowCount": 2,
+        "firstRowZeroBased": 3200,
+        "lastRowZeroBased": 3201,
+        "status": "identified",
+        "deletedH0": 72.994918129082,
+        "deletedH0Sigma": 1.00979902151,
+        "H0ShiftSigma": -0.047561013849,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-039",
+        "columnsOneBased": [
+          31,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 14,
+        "firstRowZeroBased": 1969,
+        "lastRowZeroBased": 1982,
+        "status": "identified",
+        "deletedH0": 73.087438064392,
+        "deletedH0Sigma": 1.01427719853,
+        "H0ShiftSigma": 0.044302296178,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-074",
+        "columnsOneBased": [
+          18,
+          43
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3164,
+        "lastRowZeroBased": 3164,
+        "status": "identified",
+        "deletedH0": 73.085284277572,
+        "deletedH0Sigma": 1.016399528988,
+        "H0ShiftSigma": 0.042163795046,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-052",
+        "columnsOneBased": [
+          31,
+          43
+        ],
+        "rowCount": 3,
+        "firstRowZeroBased": 3192,
+        "lastRowZeroBased": 3194,
+        "status": "identified",
+        "deletedH0": 73.084688279289,
+        "deletedH0Sigma": 1.014258868713,
+        "H0ShiftSigma": 0.041572026636,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-072",
+        "columnsOneBased": [
+          13,
+          43
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3155,
+        "lastRowZeroBased": 3155,
+        "status": "identified",
+        "deletedH0": 73.083544920175,
+        "deletedH0Sigma": 1.01043772774,
+        "H0ShiftSigma": 0.040436782081,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-036",
+        "columnsOneBased": [
+          13,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 16,
+        "firstRowZeroBased": 882,
+        "lastRowZeroBased": 897,
+        "status": "identified",
+        "deletedH0": 73.082592708278,
+        "deletedH0Sigma": 1.01044839165,
+        "H0ShiftSigma": 0.039491328148,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-063",
+        "columnsOneBased": [
+          21,
+          43
+        ],
+        "rowCount": 2,
+        "firstRowZeroBased": 3167,
+        "lastRowZeroBased": 3168,
+        "status": "identified",
+        "deletedH0": 73.006719121398,
+        "deletedH0Sigma": 1.010485665226,
+        "H0ShiftSigma": -0.035843774617,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-049",
+        "columnsOneBased": [
+          14,
+          43
+        ],
+        "rowCount": 3,
+        "firstRowZeroBased": 3156,
+        "lastRowZeroBased": 3158,
+        "status": "identified",
+        "deletedH0": 73.008860459631,
+        "deletedH0Sigma": 1.008397501596,
+        "H0ShiftSigma": -0.033717633723,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-051",
+        "columnsOneBased": [
+          30,
+          43
+        ],
+        "rowCount": 3,
+        "firstRowZeroBased": 3189,
+        "lastRowZeroBased": 3191,
+        "status": "identified",
+        "deletedH0": 73.071861091313,
+        "deletedH0Sigma": 1.012356243945,
+        "H0ShiftSigma": 0.02883587478,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-064",
+        "columnsOneBased": [
+          22,
+          43
+        ],
+        "rowCount": 2,
+        "firstRowZeroBased": 3169,
+        "lastRowZeroBased": 3170,
+        "status": "identified",
+        "deletedH0": 73.071429892982,
+        "deletedH0Sigma": 1.009851920644,
+        "H0ShiftSigma": 0.028407736716,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-080",
+        "columnsOneBased": [
+          33,
+          43
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3197,
+        "lastRowZeroBased": 3197,
+        "status": "identified",
+        "deletedH0": 73.015678714177,
+        "deletedH0Sigma": 1.009663866593,
+        "H0ShiftSigma": -0.026947769162,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-030",
+        "columnsOneBased": [
+          14,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 27,
+        "firstRowZeroBased": 898,
+        "lastRowZeroBased": 924,
+        "status": "identified",
+        "deletedH0": 73.019502818858,
+        "deletedH0Sigma": 1.008502109328,
+        "H0ShiftSigma": -0.023150804619,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-032",
+        "columnsOneBased": [
+          12,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 22,
+        "firstRowZeroBased": 860,
+        "lastRowZeroBased": 881,
+        "status": "identified",
+        "deletedH0": 73.021598450637,
+        "deletedH0Sigma": 1.008616591993,
+        "H0ShiftSigma": -0.021070045795,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-079",
+        "columnsOneBased": [
+          25,
+          43
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3173,
+        "lastRowZeroBased": 3173,
+        "status": "identified",
+        "deletedH0": 73.063548492467,
+        "deletedH0Sigma": 1.008986183205,
+        "H0ShiftSigma": 0.020582271463,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-050",
+        "columnsOneBased": [
+          29,
+          43
+        ],
+        "rowCount": 3,
+        "firstRowZeroBased": 3186,
+        "lastRowZeroBased": 3188,
+        "status": "identified",
+        "deletedH0": 73.062122950832,
+        "deletedH0Sigma": 1.008921939429,
+        "H0ShiftSigma": 0.019166847072,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-040",
+        "columnsOneBased": [
+          25,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 11,
+        "firstRowZeroBased": 1388,
+        "lastRowZeroBased": 1398,
+        "status": "identified",
+        "deletedH0": 73.061060046227,
+        "deletedH0Sigma": 1.008964599703,
+        "H0ShiftSigma": 0.01811148603,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-022",
+        "columnsOneBased": [
+          23,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 40,
+        "firstRowZeroBased": 1318,
+        "lastRowZeroBased": 1357,
+        "status": "identified",
+        "deletedH0": 73.058744196919,
+        "deletedH0Sigma": 1.012843136063,
+        "H0ShiftSigma": 0.015812072588,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-038",
+        "columnsOneBased": [
+          2,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 15,
+        "firstRowZeroBased": 259,
+        "lastRowZeroBased": 273,
+        "status": "identified",
+        "deletedH0": 73.056652855414,
+        "deletedH0Sigma": 1.012563672263,
+        "H0ShiftSigma": 0.013735573589,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-021",
+        "columnsOneBased": [
+          30,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 41,
+        "firstRowZeroBased": 1928,
+        "lastRowZeroBased": 1968,
+        "status": "identified",
+        "deletedH0": 73.056117730303,
+        "deletedH0Sigma": 1.012162925207,
+        "H0ShiftSigma": 0.013204246326,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-071",
+        "columnsOneBased": [
+          12,
+          43
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3154,
+        "lastRowZeroBased": 3154,
+        "status": "identified",
+        "deletedH0": 73.030966271587,
+        "deletedH0Sigma": 1.008698176806,
+        "H0ShiftSigma": -0.011768709415,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-033",
+        "columnsOneBased": [
+          32,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 21,
+        "firstRowZeroBased": 1983,
+        "lastRowZeroBased": 2003,
+        "status": "identified",
+        "deletedH0": 73.053934261528,
+        "deletedH0Sigma": 1.010668910402,
+        "H0ShiftSigma": 0.011036273896,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-077",
+        "columnsOneBased": [
+          23,
+          43
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3171,
+        "lastRowZeroBased": 3171,
+        "status": "identified",
+        "deletedH0": 73.053611782913,
+        "deletedH0Sigma": 1.012353931211,
+        "H0ShiftSigma": 0.010716083951,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-042",
+        "columnsOneBased": [
+          5,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 8,
+        "firstRowZeroBased": 320,
+        "lastRowZeroBased": 327,
+        "status": "identified",
+        "deletedH0": 73.050516105803,
+        "deletedH0Sigma": 1.008811031298,
+        "H0ShiftSigma": 0.00764237724,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-046",
+        "columnsOneBased": [
+          2,
+          43
+        ],
+        "rowCount": 3,
+        "firstRowZeroBased": 3132,
+        "lastRowZeroBased": 3134,
+        "status": "identified",
+        "deletedH0": 73.049951178691,
+        "deletedH0Sigma": 1.01246548649,
+        "H0ShiftSigma": 0.007081459484,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-070",
+        "columnsOneBased": [
+          3,
+          43
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3135,
+        "lastRowZeroBased": 3135,
+        "status": "identified",
+        "deletedH0": 73.046706476979,
+        "deletedH0Sigma": 1.009410949032,
+        "H0ShiftSigma": 0.003859785817,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-086",
+        "columnsOneBased": [
+          46
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3211,
+        "lastRowZeroBased": 3211,
+        "status": "identified",
+        "deletedH0": 73.046360685943,
+        "deletedH0Sigma": 1.007207985976,
+        "H0ShiftSigma": 0.003516448902,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-029",
+        "columnsOneBased": [
+          3,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 28,
+        "firstRowZeroBased": 274,
+        "lastRowZeroBased": 301,
+        "status": "identified",
+        "deletedH0": 73.039520500805,
+        "deletedH0Sigma": 1.009357289136,
+        "H0ShiftSigma": -0.003275190606,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-055",
+        "columnsOneBased": [
+          5,
+          43
+        ],
+        "rowCount": 2,
+        "firstRowZeroBased": 3139,
+        "lastRowZeroBased": 3140,
+        "status": "identified",
+        "deletedH0": 73.039865776286,
+        "deletedH0Sigma": 1.008724860767,
+        "H0ShiftSigma": -0.002932365588,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-016",
+        "columnsOneBased": [
+          18,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 54,
+        "firstRowZeroBased": 1147,
+        "lastRowZeroBased": 1200,
+        "status": "identified",
+        "deletedH0": 73.0415126372,
+        "deletedH0Sigma": 1.016012317313,
+        "H0ShiftSigma": -0.001297192647,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-041",
+        "columnsOneBased": [
+          22,
+          39,
+          42,
+          44
+        ],
+        "rowCount": 9,
+        "firstRowZeroBased": 1309,
+        "lastRowZeroBased": 1317,
+        "status": "identified",
+        "deletedH0": 73.043760862694,
+        "deletedH0Sigma": 1.009359086696,
+        "H0ShiftSigma": 0.000935076916,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-084",
+        "columnsOneBased": [
+          44
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3209,
+        "lastRowZeroBased": 3209,
+        "status": "identified",
+        "deletedH0": 73.042663816991,
+        "deletedH0Sigma": 1.007204614081,
+        "H0ShiftSigma": -0.000154182919,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-083",
+        "columnsOneBased": [
+          42
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3212,
+        "lastRowZeroBased": 3212,
+        "status": "identified",
+        "deletedH0": 73.042818522314,
+        "deletedH0Sigma": 1.007147934549,
+        "H0ShiftSigma": -5.75559e-07,
+        "reducedRank": 47
+      },
+      {
+        "id": "SIG-003",
+        "columnsOneBased": [
+          43,
+          47
+        ],
+        "rowCount": 277,
+        "firstRowZeroBased": 3215,
+        "lastRowZeroBased": 3491,
+        "status": "not-identifiable-after-deletion",
+        "deletedH0": null,
+        "deletedH0Sigma": null,
+        "H0ShiftSigma": null,
+        "reducedRank": 46
+      },
+      {
+        "id": "SIG-015",
+        "columnsOneBased": [
+          39,
+          41,
+          42,
+          44
+        ],
+        "rowCount": 55,
+        "firstRowZeroBased": 2593,
+        "lastRowZeroBased": 2647,
+        "status": "not-identifiable-after-deletion",
+        "deletedH0": null,
+        "deletedH0Sigma": null,
+        "H0ShiftSigma": null,
+        "reducedRank": 46
+      },
+      {
+        "id": "SIG-085",
+        "columnsOneBased": [
+          45
+        ],
+        "rowCount": 1,
+        "firstRowZeroBased": 3210,
+        "lastRowZeroBased": 3210,
+        "status": "not-identifiable-after-deletion",
+        "deletedH0": null,
+        "deletedH0Sigma": null,
+        "H0ShiftSigma": null,
+        "reducedRank": 46
+      }
+    ]
+  },
+  "adjudication": {
+    "publishedBaselineReproduced": true,
+    "referencePriorVectorGatePassed": false,
+    "namedLocalAuditContractPassed": false,
+    "decisionRule": "insufficientRelease",
+    "reason": "The released numerical system reproduces H0, but it omits row identities, parameter identities, covariance ancestry, and the later SMC/JWST branches required for named interventions."
+  }
+}
