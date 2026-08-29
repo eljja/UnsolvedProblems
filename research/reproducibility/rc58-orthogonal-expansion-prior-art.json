@@ -1,0 +1,68 @@
+{
+  "recordId": "RC58-ORTHOGONAL-EXPANSION-PRIOR-ART-0.1",
+  "cycleId": "RC-2026-58",
+  "reviewedOn": "2026-08-29",
+  "status": "prior-art-bounded-no-novelty-claim",
+  "sources": [
+    {
+      "id": "uofm_expansion_2021",
+      "paper": "https://doi.org/10.1149/1945-7111/ac2d3e",
+      "dataset": "https://doi.org/10.7302/7tw1-kc35",
+      "resultDate": "2021-10-19",
+      "established": "Voltage plus reversible expansion can improve identifiability of electrode-specific state under varied temperature, rate, depth-of-discharge, and pressure conditions.",
+      "boundary": "The public campaign emphasizes stress-factor coverage and pseudo-constant-pressure fixtures; it does not supply a new untouched 36-cell same-condition rank-confirmation block."
+    },
+    {
+      "id": "stanford_dynamic_cycling_2024",
+      "paper": "https://doi.org/10.1038/s41560-024-01675-8",
+      "dataset": "https://purl.stanford.edu/td676xr4322",
+      "resultDate": "2024-12-09",
+      "established": "Ninety-two cells tested across 47 duplicated protocols show that realistic dynamic discharge changes degradation and lifetime relative to constant current.",
+      "boundary": "The large total is intentionally protocol-diverse; two replicates per protocol cannot be pooled into one same-condition frailty block."
+    },
+    {
+      "id": "farasis_discovery_2026",
+      "paper": "https://doi.org/10.1038/s41586-025-09951-7",
+      "dataset": "https://doi.org/10.5281/zenodo.17654407",
+      "resultDate": "2026-02-04",
+      "established": "Physics-guided, zero-shot, and active learning predicted industrial prototype life with 7.2% test error using first-50-cycle features from 51% of 123 prototypes.",
+      "boundary": "The 123 cells span 37 groups and the largest published relationship group contains 23; the claim does not validate the sealed R3 feature."
+    },
+    {
+      "id": "stack_pressure_dilatometry_2026",
+      "paper": "https://doi.org/10.1038/s41560-026-02087-6",
+      "dataset": "https://doi.org/10.17863/CAM.129108",
+      "resultDate": "2026-06-29",
+      "established": "A 0.38 nm-resolution capacitive dilatometer held pressure fluctuations below 0.8%; changing stack pressure produced a twofold lifetime shift and separated low-pressure cracking from high-pressure lithium plating.",
+      "boundary": "At least two cells per pressure support mechanism evidence but not population-level lifetime equivalence. The fixture is a causal intervention as well as a sensor."
+    },
+    {
+      "id": "batterylife_v12_2026",
+      "paper": "https://doi.org/10.1145/3711896.3737372",
+      "repository": "https://github.com/Ruifeng-Tan/BatteryLife",
+      "resultDate": "2026-08-17",
+      "established": "A current cross-source benchmark exposes processed file-to-aging-condition assignments across many chemistries and protocols.",
+      "boundary": "Dataset integration increases diversity but does not manufacture within-condition replication or raw specimen lineage."
+    }
+  ],
+  "proposedCombination": {
+    "claim": "A fair test of cell-level lifetime order may require both a large same-condition block and an orthogonal mechanical residual measured under a registered boundary condition.",
+    "overlapWithPriorArt": "Expansion diagnostics, active/minimal experiment selection, dynamic-load aging, and controlled-pressure dilatometry all exist separately.",
+    "difference": "RC58 combines an outcome-blind 48-cell acquisition manifest, a cycle-480 feature lock, attrition-conditioned endpoint cadence, an explicit measurement-intervention equivalence gate, and a pressure-adjusted expansion-residual test before ordinal confirmation.",
+    "noveltyBoundary": "No novelty is claimed. A prior-art search must target prospective block-randomized expansion residuals, schedule-equivalence testing, and outcome-blind lifetime-rank confirmation before any stronger statement.",
+    "searchQueries": [
+      "battery expansion residual early life cycle life rank same condition replicate",
+      "lithium ion reference performance test schedule equivalence randomized",
+      "dilatometer fixture pressure intervention battery lifetime prediction",
+      "prospective preregistered battery lifetime validation Harrell concordance",
+      "mechanical electrochemical multimodal battery prognostics external validation"
+    ]
+  },
+  "minimumDecisiveTest": {
+    "input": "Sacrificial cells from the same build definition, independently calibrated pressure/expansion fixtures, and the frozen electrical protocol.",
+    "measurement": "Repeat reversible expansion at registered SOC landmarks; model fixture and pressure trajectory explicitly; compute expansion information conditional on the electrical R3 feature.",
+    "success": "Between-fixture repeatability passes its predefined limit and expansion reduces held-fixture prediction uncertainty or changes ordinal risk beyond R3 without degrading calibration.",
+    "reject": "Residual information vanishes after pressure adjustment, reverses across fixtures, or is smaller than calibration drift and positioning variance.",
+    "stop": "Any swelling, leakage, pressure excursion, temperature excursion, or evidence that the fixture changes aging outside the registered intervention margin stops the branch."
+  }
+}

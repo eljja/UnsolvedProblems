@@ -1,0 +1,71 @@
+{
+  "auditId": "RC58-BATTERYLIFE-V12-METADATA-AUDIT-0.1",
+  "cycleId": "RC-2026-58",
+  "auditedOn": "2026-08-29",
+  "status": "complete-no-new-eligible-public-target",
+  "source": {
+    "url": "https://github.com/Ruifeng-Tan/BatteryLife",
+    "release": "v12",
+    "commit": "3b17bb53202e10711deae0448c91f84144bb3dd9",
+    "commitDate": "2026-08-17T11:04:54+08:00",
+    "file": "name2agingConditionID.json",
+    "sha256": "E7A2EBA8FDD45D425BA470DDF075D18CA83FCFFAE4905916B92E52EE59119133"
+  },
+  "method": "Count committed processed filenames by dataset and committed aging-condition ID. Do not open BatteryLife life-label JSON or any processed cycling pickle.",
+  "totals": {
+    "mappedFiles": 1138,
+    "conditionGroups": 587,
+    "datasets": 15,
+    "groupsAtLeast36": 1
+  },
+  "datasetSummary": [
+    {"dataset": "CALB", "files": 27, "conditionGroups": 4, "maxGroupSize": 14, "maxConditionIds": [398]},
+    {"dataset": "CALCE", "files": 13, "conditionGroups": 4, "maxGroupSize": 4, "maxConditionIds": [2, 4]},
+    {"dataset": "HNEI", "files": 14, "conditionGroups": 2, "maxGroupSize": 13, "maxConditionIds": [6]},
+    {"dataset": "HUST", "files": 77, "conditionGroups": 77, "maxGroupSize": 1, "maxConditionIds": [408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484]},
+    {"dataset": "ISU-ILCC", "files": 240, "conditionGroups": 196, "maxGroupSize": 4, "maxConditionIds": [216, 246, 259, 260, 261, 262, 263, 299, 300, 301, 302, 303, 355, 395]},
+    {"dataset": "MATR", "files": 169, "conditionGroups": 80, "maxGroupSize": 8, "maxConditionIds": [59, 81, 82]},
+    {"dataset": "MICH", "files": 52, "conditionGroups": 16, "maxGroupSize": 11, "maxConditionIds": [121]},
+    {"dataset": "NA-ion", "files": 31, "conditionGroups": 12, "maxGroupSize": 5, "maxConditionIds": [407]},
+    {"dataset": "RWTH", "files": 48, "conditionGroups": 1, "maxGroupSize": 48, "maxConditionIds": [124]},
+    {"dataset": "SNL", "files": 50, "conditionGroups": 19, "maxGroupSize": 4, "maxConditionIds": [89, 95, 98, 103, 105, 106]},
+    {"dataset": "Stanford", "files": 184, "conditionGroups": 62, "maxGroupSize": 6, "maxConditionIds": [136, 174]},
+    {"dataset": "Tongji", "files": 108, "conditionGroups": 11, "maxGroupSize": 26, "maxConditionIds": [129]},
+    {"dataset": "UL-PUR", "files": 2, "conditionGroups": 1, "maxGroupSize": 2, "maxConditionIds": [88]},
+    {"dataset": "XJTU", "files": 23, "conditionGroups": 2, "maxGroupSize": 15, "maxConditionIds": [199]},
+    {"dataset": "ZN-coin", "files": 100, "conditionGroups": 100, "maxGroupSize": 1, "maxConditionIds": [489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588]}
+  ],
+  "adjudication": [
+    {
+      "candidate": "RWTH condition 124",
+      "declaredCount": 48,
+      "sizeGate": true,
+      "untouchedGate": false,
+      "lineageGate": false,
+      "verdict": "ineligible",
+      "reason": "RC55 already opened its trajectories, and the source experiment consists of twelve four-cell start blocks rather than a new untouched 36-cell block."
+    },
+    {
+      "candidate": "Tongji condition 129",
+      "declaredCount": 26,
+      "sizeGate": false,
+      "verdict": "ineligible",
+      "reason": "Largest remaining committed condition group is 26, below the 36-cell eligibility threshold."
+    },
+    {
+      "candidate": "Stanford dynamic-cycling files",
+      "declaredCount": 184,
+      "largestCommittedCondition": 6,
+      "sizeGate": false,
+      "verdict": "ineligible",
+      "reason": "The public study contains 47 duplicated protocols, not one 184-cell condition; repository-wide file count cannot be used as replicate count."
+    }
+  ],
+  "outcomeBoundary": {
+    "lifeLabelFilesOpened": 0,
+    "processedCyclingFilesOpened": 0,
+    "capacityValuesOpened": 0,
+    "eolValuesOpened": 0
+  },
+  "decision": "The committed BatteryLife v12 condition map exposes no new untouched group with at least 36 cells. Do not download outcome payloads; proceed to prospective acquisition."
+}

@@ -1,0 +1,48 @@
+{
+  "auditId": "RC58-FARASIS-METADATA-AUDIT-0.1",
+  "cycleId": "RC-2026-58",
+  "auditedOn": "2026-08-29",
+  "status": "size-gate-failed-and-confirmatory-boundary-contaminated",
+  "source": {
+    "paper": "https://doi.org/10.1038/s41586-025-09951-7",
+    "record": "https://doi.org/10.5281/zenodo.17654407",
+    "recordPublishedOn": "2025-11-19",
+    "paperPublishedOn": "2026-02-04",
+    "file": "number_relationship.xlsx",
+    "bytes": 17446,
+    "sha256": "3274C77E71EF5DD42436E9D09AC08108154B3B87ACE6059B7FF985F320CB3086"
+  },
+  "metadataOnlyCounts": {
+    "cells": 123,
+    "uniqueCellIds": 123,
+    "groups": 37,
+    "largestGroupId": 19,
+    "largestGroupSize": 23,
+    "groupsAtLeast36": 0,
+    "cellTypes": [
+      {"cellType": "PA-b1", "cells": 6, "groups": 3, "maxGroupSize": 2},
+      {"cellType": "PA-b2", "cells": 5, "groups": 3, "maxGroupSize": 2},
+      {"cellType": "PA-b3", "cells": 8, "groups": 4, "maxGroupSize": 2},
+      {"cellType": "PB-b1", "cells": 10, "groups": 6, "maxGroupSize": 3},
+      {"cellType": "PB-b2", "cells": 4, "groups": 2, "maxGroupSize": 2},
+      {"cellType": "PC-b1", "cells": 57, "groups": 9, "maxGroupSize": 23},
+      {"cellType": "PC-b2", "cells": 22, "groups": 5, "maxGroupSize": 14},
+      {"cellType": "PD", "cells": 11, "groups": 5, "maxGroupSize": 4}
+    ]
+  },
+  "boundaryIncident": {
+    "whatHappened": "A first-row schema inspection requested the first eight worksheet rows. The workbook unexpectedly colocated an 'efc life' column with ID relations, causing seven outcome values to be displayed before the access boundary was corrected.",
+    "displayedOutcomeRows": 7,
+    "valuesStoredInArtifacts": false,
+    "subsequentAllowedColumns": ["cell index", "group index", "Cell Type"],
+    "scientificConsequence": "Farasis cannot be represented as an untouched confirmatory source in this workspace. This remains true even though the independent size gate already fails at 23 cells.",
+    "prevention": "Future spreadsheet audits must enumerate headers alone before any row values and explicitly project approved columns by address."
+  },
+  "paperBoundary": "The primary paper reports 123 large-format pouch cells across diverse material-design combinations and cycling protocols. Its 7.2% test error uses the first 50 cycles of 51% of prototypes and is not evidence for the sealed R3 coordinate or for one 36-cell same-condition block.",
+  "decision": {
+    "sizeGate": false,
+    "untouchedGate": false,
+    "eligibleForConfirmation": false,
+    "next": "Retain Discovery Learning as prior art for minimal-experiment selection, not as the RC58 independent target."
+  }
+}

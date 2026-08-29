@@ -1,0 +1,114 @@
+{
+  "resultId": "RC58-ACQUISITION-DESIGN-PYTHON-0.1",
+  "cycleId": "RC-2026-58",
+  "computedOn": "2026-08-29",
+  "status": "prospective-sensitivity-only",
+  "attritionRows": [
+    {
+      "dropoutProbability": 0.05,
+      "usableThreshold": 24,
+      "minimumStartingCellsFor95Percent": 27,
+      "probabilityAtMinimum": 0.9562640547094805,
+      "probabilityWith48StartingCells": 1.0
+    },
+    {
+      "dropoutProbability": 0.05,
+      "usableThreshold": 36,
+      "minimumStartingCellsFor95Percent": 40,
+      "probabilityAtMinimum": 0.9519717397457844,
+      "probabilityWith48StartingCells": 0.9999995505155622
+    },
+    {
+      "dropoutProbability": 0.1,
+      "usableThreshold": 24,
+      "minimumStartingCellsFor95Percent": 30,
+      "probabilityAtMinimum": 0.9741732113380901,
+      "probabilityWith48StartingCells": 0.999999999999696
+    },
+    {
+      "dropoutProbability": 0.1,
+      "usableThreshold": 36,
+      "minimumStartingCellsFor95Percent": 44,
+      "probabilityAtMinimum": 0.9719987455915916,
+      "probabilityWith48StartingCells": 0.9993394020816048
+    },
+    {
+      "dropoutProbability": 0.15,
+      "usableThreshold": 24,
+      "minimumStartingCellsFor95Percent": 32,
+      "probabilityAtMinimum": 0.9587020018521664,
+      "probabilityWith48StartingCells": 0.999999997800731
+    },
+    {
+      "dropoutProbability": 0.15,
+      "usableThreshold": 36,
+      "minimumStartingCellsFor95Percent": 47,
+      "probabilityAtMinimum": 0.9587234165618427,
+      "probabilityWith48StartingCells": 0.9782341849153835
+    },
+    {
+      "dropoutProbability": 0.2,
+      "usableThreshold": 24,
+      "minimumStartingCellsFor95Percent": 35,
+      "probabilityAtMinimum": 0.9656425993045071,
+      "probabilityWith48StartingCells": 0.9999992173512271
+    },
+    {
+      "dropoutProbability": 0.2,
+      "usableThreshold": 36,
+      "minimumStartingCellsFor95Percent": 51,
+      "probabilityAtMinimum": 0.9632128458479722,
+      "probabilityWith48StartingCells": 0.8520864061197658
+    }
+  ],
+  "equivalenceRows": [
+    {
+      "standardizedMargin": 0.5,
+      "targetPower": 0.8,
+      "oneSidedAlphaPerMetric": 0.0125,
+      "minimumPerArmKnownVarianceNormal": 100
+    },
+    {
+      "standardizedMargin": 0.5,
+      "targetPower": 0.9,
+      "oneSidedAlphaPerMetric": 0.0125,
+      "minimumPerArmKnownVarianceNormal": 121
+    },
+    {
+      "standardizedMargin": 0.75,
+      "targetPower": 0.8,
+      "oneSidedAlphaPerMetric": 0.0125,
+      "minimumPerArmKnownVarianceNormal": 45
+    },
+    {
+      "standardizedMargin": 0.75,
+      "targetPower": 0.9,
+      "oneSidedAlphaPerMetric": 0.0125,
+      "minimumPerArmKnownVarianceNormal": 54
+    },
+    {
+      "standardizedMargin": 1.0,
+      "targetPower": 0.8,
+      "oneSidedAlphaPerMetric": 0.0125,
+      "minimumPerArmKnownVarianceNormal": 25
+    },
+    {
+      "standardizedMargin": 1.0,
+      "targetPower": 0.9,
+      "oneSidedAlphaPerMetric": 0.0125,
+      "minimumPerArmKnownVarianceNormal": 31
+    }
+  ],
+  "principalDesign": {
+    "startingCells": 48,
+    "at15PercentDropoutProbabilityAtLeast36": 0.9782341849153835,
+    "at20PercentDropoutProbabilityAtLeast24": 0.9999992173512271,
+    "branchRule": "Choose the pre-registered endpoint cadence at cycle 480 using only usable-cell QC and censoring status, never target lifetime order: at least 36 usable cells selects 50 cycles; 24 to 35 selects 25 cycles; fewer than 24 stops confirmation.",
+    "interpretation": "Forty-eight starts protect the 36-event branch through a 15% independent-dropout sensitivity but not through 20%; the 24-event branch remains above 0.95 through 20%."
+  },
+  "limitations": [
+    "Binomial retention is a sensitivity model; common chamber, protocol, fixture, or batch failures can create correlated losses.",
+    "Equivalence sizes are known-variance Gaussian floors at true difference zero, not final sample sizes.",
+    "No battery outcome, feature, or intervention effect enters these calculations."
+  ]
+}

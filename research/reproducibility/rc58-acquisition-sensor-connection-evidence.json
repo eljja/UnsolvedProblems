@@ -1,0 +1,57 @@
+{
+  "connectionId": "CONN-EVIDENCE-031",
+  "cycleId": "RC-2026-58",
+  "problemIds": ["UP-219", "UP-233", "UP-234", "UP-572"],
+  "type": "Outcome-blind acquisition, observation intervention, and orthogonal latent-state sensing",
+  "strength": "strong-design-hypothesis",
+  "sharedBottleneck": "A hidden specimen state cannot be learned or validated when nominally large datasets fragment into small conditions, the observation schedule changes the process, or an added sensor measures fixture boundary conditions more strongly than specimen susceptibility.",
+  "variableMappings": [
+    {
+      "concept": "experimental unit and domain",
+      "UP-219": "one battery cell inside a chemistry-build-protocol condition",
+      "UP-233": "one manufactured article inside a process and operating domain",
+      "UP-234": "one specimen inside a stress and inspection regime",
+      "UP-572": "one queued autonomous experiment with a declared domain passport"
+    },
+    {
+      "concept": "latent state",
+      "UP-219": "cell-specific degradation susceptibility beyond early capacity",
+      "UP-233": "unobserved defect and microstructure state driving the twin residual",
+      "UP-234": "frailty or damage state separating specimens at equal stress",
+      "UP-572": "hidden state whose uncertainty should determine experiment value"
+    },
+    {
+      "concept": "observation action",
+      "UP-219": "RPT cadence and expansion fixture",
+      "UP-233": "sensor insertion, calibration, and state-update schedule",
+      "UP-234": "inspection interval and load interruption",
+      "UP-572": "robot-selected measurement that changes temperature, rest, throughput, or pressure"
+    },
+    {
+      "concept": "independent verdict",
+      "UP-219": "sealed within-condition lifetime order after cycle-480 feature lock",
+      "UP-233": "future state from a separate register and untouched build",
+      "UP-234": "within-stress endpoint order with at least 100 non-tied pairs",
+      "UP-572": "immutable go, reject, or stop decision from an external adjudicator"
+    }
+  ],
+  "conditionsForTransfer": [
+    "Experimental units map one-to-one through specimen, protocol, sensor, and result files.",
+    "Condition labels include every causal variable needed to justify pooling.",
+    "Observation intervention is bounded in a separate randomized design.",
+    "An orthogonal observable adds conditional information after nuisance fixture and calibration variables are modeled.",
+    "Development and final adjudication use disjoint cells, implementations, and outcome access."
+  ],
+  "breakConditions": [
+    "Pooling repository-wide files across protocols to create apparent replication.",
+    "Selecting endpoint cadence after seeing lifetime order.",
+    "Using pressure-controlled expansion as if it were a passive measurement.",
+    "Treating binomial independent attrition as protection against shared chamber or fixture failure.",
+    "Reusing the Farasis rows exposed during schema inspection as an untouched target."
+  ],
+  "surfaceSimilarityRisk": "All four problems use words such as state, prediction, and experiment. The connection is substantive only when the same unit-domain-observation-verdict mapping and intervention test are implemented; a shared vocabulary alone is not evidence.",
+  "minimumValidation": "Use sacrificial cells to pass cross-fixture repeatability and acute intervention gates, then enroll an untouched 48-cell block with pre-registered cycle-480 branching. Do not open lifetime outcomes until at least 24 usable cells and the applicable endpoint schedule are fixed.",
+  "simultaneousImpact": "A successful design would test UP-219 directly, provide a causal observation operator for UP-233, separate inspection from acceleration in UP-234, and give UP-572 a reusable information-gain gate. Failure would still localize the bottleneck to cohort scale, intervention, or sensor nuisance.",
+  "validationStatus": "Public-source size failure and prospective arithmetic are verified. Expansion residual value, RPT equivalence, and lifetime-rank transport remain untested.",
+  "sourceIds": ["batterylife_kdd_2025", "batterylife_v12_2026", "farasis_discovery_2026", "stanford_dynamic_cycling_2024", "uofm_expansion_2021", "stack_pressure_dilatometry_2026"]
+}

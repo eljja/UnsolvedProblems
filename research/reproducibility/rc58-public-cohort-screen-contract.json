@@ -1,0 +1,79 @@
+{
+  "contractId": "RC58-PUBLIC-COHORT-SCREEN-CONTRACT-0.1",
+  "cycleId": "RC-2026-58",
+  "sealedOn": "2026-08-29",
+  "status": "sealed-after-source-discovery-before-any-confirmatory-analysis",
+  "problemIds": ["UP-219", "UP-233", "UP-234", "UP-572"],
+  "purpose": "Adjudicate whether a current public battery source can support the untouched ordinal lifetime test designed in RC57, and if none can, freeze a prospective acquisition and measurement-intervention plan.",
+  "claimBoundary": "This contract does not validate an early-life feature or a lifetime model. It audits public metadata and computes prospective design sensitivity. The Farasis relationship workbook was found to contain an outcome column during header inspection; seven displayed EFC-life rows disqualify Farasis from being called untouched in this workspace, and their values are not retained in any artifact.",
+  "sourceBoundary": {
+    "batteryLifeV12": {
+      "officialRepository": "https://github.com/Ruifeng-Tan/BatteryLife",
+      "commit": "3b17bb53202e10711deae0448c91f84144bb3dd9",
+      "commitDate": "2026-08-17T11:04:54+08:00",
+      "release": "v12, announced 2026-07",
+      "auditedFile": "name2agingConditionID.json",
+      "sha256": "E7A2EBA8FDD45D425BA470DDF075D18CA83FCFFAE4905916B92E52EE59119133",
+      "allowedFields": ["processed filename", "aging-condition ID"],
+      "lifeLabelsOpened": 0,
+      "processedCyclingFilesOpened": 0
+    },
+    "farasis": {
+      "officialRecord": "https://doi.org/10.5281/zenodo.17654407",
+      "auditedFile": "number_relationship.xlsx",
+      "sha256": "3274C77E71EF5DD42436E9D09AC08108154B3B87ACE6059B7FF985F320CB3086",
+      "allowedFieldsAfterDiscovery": ["cell index", "group index", "Cell Type"],
+      "outcomeColumnDiscovered": "efc life",
+      "displayedOutcomeRowsBeforeBoundaryWasCorrected": 7,
+      "outcomeValuesRetained": false,
+      "consequence": "Farasis is ineligible as an untouched confirmation source in this workspace even independently of its group-size failure."
+    }
+  },
+  "eligibilityGate": {
+    "minimumSameConditionCells": 36,
+    "requiredEdges": ["physical specimen -> stable cell ID", "cell ID -> chemistry and build", "cell ID -> frozen cycling protocol", "cell ID -> result file"],
+    "untouchedRequirement": "No target lifetime, EOL, EFC-life, or capacity trajectory may have been inspected in the workspace that will perform confirmation.",
+    "pass": "At least 36 unique cells form one explicitly declared condition group, every required edge is one-to-one, and target outcomes remain untouched.",
+    "fail": "Reject a source if it has fewer than 36 cells in every declared group, if membership must be inferred, if protocol identity is incomplete, or if target outcomes have already been exposed."
+  },
+  "prospectiveAcquisition": {
+    "startingCells": 48,
+    "oneCondition": "One chemistry, cell design, manufacturing lot definition, formation recipe, temperature, charge protocol, discharge protocol, voltage window, fixture boundary, and endpoint definition.",
+    "randomization": "Randomize cell IDs across cycler channels, chamber positions, fixture positions, and start order; retain channel, chamber, fixture, calibration, and maintenance identifiers in the manifest.",
+    "featureRegister": "Close the candidate coordinate after the nominal cycle-480 reference measurement. Later measurements cannot alter feature construction.",
+    "endpointBranchRule": "Choose the pre-registered endpoint cadence at cycle 480 using only usable-cell QC and censoring status, never target lifetime order: at least 36 usable cells selects 50 cycles; 24 to 35 selects 25 cycles; fewer than 24 stops confirmation.",
+    "finalAdjudication": "After intervention gates pass, require at least 24 observed events, at least 100 within-condition non-tied pairs, Harrell C at least 0.65, a lower 95% bound above 0.50, and agreement between two implementations."
+  },
+  "attritionSensitivity": {
+    "dropoutProbabilities": [0.05, 0.1, 0.15, 0.2],
+    "usableThresholds": [24, 36],
+    "minimumRetentionProbability": 0.95,
+    "distribution": "Independent binomial retention sensitivity; a planning assumption, not a claim that cell losses are independent."
+  },
+  "measurementIntervention": {
+    "metrics": ["cycle life", "peak cell temperature", "cumulative charge throughput", "impedance-change trajectory"],
+    "familywiseAlpha": 0.05,
+    "multiplicityControl": "Bonferroni planning bound across four one-sided equivalence tests, alpha 0.0125 per metric.",
+    "standardizedMargins": [0.5, 0.75, 1.0],
+    "targetPowers": [0.8, 0.9],
+    "sampleSizeMeaning": "Known-variance Gaussian planning floor at true difference zero. Unknown variance, clustering, attrition, and non-Gaussian tails can only increase the required parallel-arm size.",
+    "acuteSentinel": "Before a long-life equivalence campaign, run a separately labelled acute randomized sequence test for fixture-induced temperature, rest-time, throughput, and impedance shifts. It can stop an unsafe or strongly perturbing design but cannot prove lifetime equivalence.",
+    "longTermGate": "Only a parallel randomized conventional-versus-dense schedule study can support lifetime equivalence; do not recycle its cells into the confirmatory cohort."
+  },
+  "orthogonalSensorBoundary": {
+    "candidate": "Reversible and irreversible thickness change measured under a specified mechanical boundary.",
+    "reason": "Expansion contains electrode-state information that terminal voltage can leave weakly identifiable.",
+    "interventionRisk": "Pressure and fixture stiffness are causal aging variables, not neutral sensor details. A 2026 controlled-pressure study reported a twofold lifetime difference and distinct low- and high-pressure degradation paths.",
+    "firstTest": "On sacrificial cells, compare expansion feature repeatability and electrical-feature residual information across independently calibrated fixtures while holding pressure trajectory, temperature, SOC path, and protocol fixed.",
+    "stop": "Stop calling expansion orthogonal if its apparent gain disappears after fixture-pressure adjustment, if between-fixture variance exceeds between-cell signal, or if sensing changes the degradation trajectory."
+  },
+  "prohibited": [
+    "Do not merge cells across protocols to reach 36.",
+    "Do not treat a repository-wide battery count as a same-condition replicate count.",
+    "Do not use Farasis as an untouched target in this workspace.",
+    "Do not set equivalence margins from observed arm differences.",
+    "Do not adapt endpoint cadence from observed lifetime order or candidate performance.",
+    "Do not treat a pressure-coupled expansion fixture as passive without an intervention test."
+  ],
+  "safetyAndScope": "RC58 uses public metadata and offline design calculations. Any future cell cycling requires approved electrical, chemical, thermal, pressure, venting, fire-response, and emergency procedures. Cyber-trust work remains deferred."
+}

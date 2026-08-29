@@ -1,0 +1,100 @@
+{
+  "resultId": "RC58-PUBLIC-COHORT-ACQUISITION-CYCLE-RESULT-0.1",
+  "cycleId": "RC-2026-58",
+  "completedOn": "2026-08-29",
+  "status": "complete-public-target-negative-prospective-acquisition-positive",
+  "problemIds": ["UP-219", "UP-233", "UP-234", "UP-572"],
+  "selectionReason": "RC57 explicitly required an outcome-blind search for a 36-cell manifest-qualified source and, if none passed, a prospective acquisition plus orthogonal-sensor screen. BatteryLife v12 and Farasis made that gate testable with current official metadata, while 2026 dilatometry results sharpened the intervention risk of mechanical sensing.",
+  "newFacts": [
+    "BatteryLife v12's committed map contains 1,138 processed filenames assigned to 587 aging-condition groups across 15 dataset prefixes.",
+    "Only RWTH condition 124 reaches 36 files, with 48; its outcomes were already opened in RC55 and its raw design comprises twelve four-cell start blocks.",
+    "Tongji is the largest untouched committed alternative at 26 files in one condition; Stanford has 184 files but 62 conditions and a maximum committed replicate group of six.",
+    "Farasis contains 123 unique cells across 37 published relationship groups; the largest group has 23 cells.",
+    "The Farasis relationship workbook colocates an EFC-life outcome column with ID metadata. Seven outcome rows were displayed during initial schema inspection; values were not retained, but Farasis is no longer untouched in this workspace.",
+    "No current screened public source jointly passes 36-cell size, explicit lineage, and untouched-outcome gates.",
+    "With 48 prospective starts and independent attrition sensitivity, P(at least 36 usable) is 0.978234 at 15% dropout and P(at least 24 usable) is 0.999999 at 20% dropout.",
+    "The sealed branch selects a 50-cycle endpoint register at 36 or more usable cells, 25 cycles at 24-35, and stops below 24 using only cycle-480 QC status.",
+    "For four equivalence metrics with Bonferroni one-sided alpha 0.0125, a standardized margin 0.75 and 80% power has a known-variance Gaussian floor of 45 cells per arm; this rules out calling a small sentinel pilot an equivalence proof.",
+    "A 2026 high-precision dilatometry study reports pressure fluctuations below 0.8%, 0.38 nm sensor resolution, a twofold lifetime shift across pressure settings, and different low- versus high-pressure degradation paths. Mechanical sensing must therefore model its fixture as a causal intervention."
+  ],
+  "hypotheses": {
+    "H58-0": {
+      "claim": "A current public battery archive contains an untouched explicit same-condition block of at least 36 cells.",
+      "prediction": "At least one official condition map and specimen-protocol-file manifest passes every gate before outcome access.",
+      "decisiveTest": "Count official condition IDs and audit lineage fields without opening life labels or cycling payloads.",
+      "verdict": "rejected-for-screened-current-sources",
+      "reason": "Only outcome-open RWTH reaches 36; Farasis peaks at 23 and all other committed BatteryLife groups peak at 26 or below."
+    },
+    "H58-1": {
+      "claim": "Forty-eight prospective starts can preserve a low-burden 36-event branch under credible attrition while retaining a conservative 24-event fallback.",
+      "prediction": "Under independent dropout sensitivity, P(Nusable>=36)>=0.95 at 15% and P(Nusable>=24)>=0.95 at 20%.",
+      "decisiveTest": "Compute exact binomial tails and minimum starting counts in independent Python and Node implementations.",
+      "verdict": "supported-as-planning-sensitivity",
+      "reason": "The probabilities are 0.978234 and 0.999999 respectively; correlated failures remain outside this model."
+    },
+    "H58-2": {
+      "claim": "A small acute dense-RPT pilot is enough to establish that the endpoint schedule does not alter lifetime.",
+      "prediction": "A small sentinel design would meet multiplicity-controlled lifetime, temperature, throughput, and impedance equivalence.",
+      "decisiveTest": "Calculate prospective equivalence sample floors before selecting a pilot size.",
+      "verdict": "rejected",
+      "reason": "Even the optimistic known-variance normal floor is 45 per arm for margin 0.75 and 80% power; an acute sentinel can detect large perturbations but cannot prove lifetime equivalence."
+    },
+    "H58-3": {
+      "claim": "Expansion adds latent-state information beyond the frozen electrical R3 feature when its mechanical boundary is controlled and modeled.",
+      "prediction": "A pressure-adjusted expansion residual remains repeatable across fixtures and improves held-fixture ordinal information beyond R3.",
+      "decisiveTest": "Use sacrificial cells in independently calibrated fixtures, hold pressure trajectory and protocol fixed, and compare cross-fixture residual information with a predeclared repeatability limit.",
+      "verdict": "untested",
+      "reason": "Prior work supports mechanistic content but also shows pressure can double lifetime and switch degradation paths, so the sensor cannot yet be treated as passive."
+    }
+  },
+  "causalChainOutcome": [
+    {"link": "public repository count -> explicit same-condition block", "verdict": "failed", "fastFailureEvidence": "1,138 BatteryLife files fragment into 587 groups; Farasis fragments 123 cells into 37 groups."},
+    {"link": "48 starts -> predeclared usable-event branch", "verdict": "prospectively bounded", "fastFailureEvidence": "Exact retention tables define 50-cycle, 25-cycle, and stop branches before outcomes."},
+    {"link": "dense RPT schedule -> unchanged degradation", "verdict": "not established", "fastFailureEvidence": "Planning floors separate an acute stop sentinel from a much larger lifetime-equivalence study."},
+    {"link": "expansion residual -> orthogonal susceptibility", "verdict": "not established", "fastFailureEvidence": "Pressure is a demonstrated causal aging variable and must be removed before residual information is credited."},
+    {"link": "qualified cohort and non-interfering measurements -> independent rank verdict", "verdict": "not reached", "fastFailureEvidence": "No eligible untouched public target exists and no prospective cell has been acquired."}
+  ],
+  "minimalAcademicAdvance": "The source search is now a closed negative result rather than an open-ended request for more data. A 48-start experiment has an outcome-independent cadence branch and an explicit distinction between an acute intervention sentinel and genuine lifetime equivalence. Mechanical expansion is promoted only as a pressure-confounded hypothesis with a concrete cross-fixture rejection test.",
+  "mostPromisingNextPath": {
+    "hypothesis": "A same-condition 48-cell cohort can test the sealed R3 ordering and an expansion residual if cohort loss, endpoint cadence, and mechanical intervention are adjudicated before outcomes.",
+    "differentCombination": "Combine a specimen-protocol-file manifest, cycle-480 feature lock, attrition-conditioned fixed endpoint registers, separate randomized schedule-equivalence cells, and pressure-adjusted cross-fixture expansion repeatability.",
+    "exactBottleneck": "The binding resource is no longer a prediction algorithm; it is an untouched sufficiently replicated cohort plus evidence that electrical and mechanical observation actions do not alter the degradation being predicted.",
+    "firstDecisiveAction": "Write an acquisition manifest and fixture/channel randomization table for 48 primary cells, then perform an acute intervention sentinel and expansion repeatability study on separate sacrificial cells without accessing confirmatory outcomes.",
+    "successSignal": "At cycle 480, at least 24 usable cells enter the predeclared endpoint branch; intervention gates pass; expansion residuals cross fixtures; final pair and concordance gates are independently reproduced.",
+    "rejectionAndStop": "Stop below 24 usable cells, after any unregistered pooling, after schedule-equivalence failure, or when expansion gain disappears after pressure/fixture adjustment.",
+    "failureValue": "A failure localizes whether the next investment should address correlated attrition, RPT burden, fixture mechanics, or the capacity-only feature rather than adding another black-box model."
+  },
+  "workPackages": [
+    {"id": "W58-1", "purpose": "Close the public target search.", "method": "Audit only official condition maps and allowed relationship columns; record every rejection and any access-boundary incident.", "output": "Versioned source audit and zero-eligible-target verdict.", "pass": "Every source has a group maximum, lineage verdict, untouched verdict, and content hash.", "failNext": "Keep the search open and do not acquire or analyze outcomes."},
+    {"id": "W58-2", "purpose": "Acquire a pair-powered cohort without outcome-dependent adaptation.", "method": "Start 48 same-condition cells, randomize channels and fixtures, and select the 50-, 25-cycle, or stop branch at cycle 480 using only QC status.", "output": "Signed manifest, randomization table, calibration ledger, and frozen schedule.", "pass": "At least 24 usable cells and every specimen-protocol-file edge are complete.", "failNext": "Stop confirmation; investigate correlated loss before replacement enrollment."},
+    {"id": "W58-3", "purpose": "Separate measurement safety from lifetime equivalence.", "method": "Run an acute randomized intervention sentinel, then size a disjoint parallel dense-versus-conventional study from blinded variance and fixed scientific margins.", "output": "Acute perturbation report and multiplicity-controlled equivalence intervals.", "pass": "No acute safety or instrument shift and every long-term metric remains inside its registered margin.", "failNext": "Reject dense RPT and evaluate a sparse trigger or non-interfering endpoint."},
+    {"id": "W58-4", "purpose": "Test expansion as an orthogonal state coordinate.", "method": "On sacrificial cells, repeat SOC-landmark expansion across independently calibrated fixtures and estimate added information conditional on R3 and pressure trajectory.", "output": "Repeatability variance decomposition and held-fixture residual-information result.", "pass": "Fixture-adjusted expansion is repeatable and improves the frozen adjudication metric beyond R3.", "failNext": "Remove expansion and preserve pressure/fixture effects as nuisance or causal factors."},
+    {"id": "W58-5", "purpose": "Perform untouched ordinal confirmation.", "method": "After W58-2 through W58-4 gates, open endpoints once and compute coverage, pair count, Harrell C, lower bound, and calibration in two implementations.", "output": "Immutable confirm, reject, or inconclusive verdict with scope boundary.", "pass": "Coverage>=90%, events>=24, pairs>=100, C>=0.65, lower 95% bound>0.50, and implementation agreement.", "failNext": "Reject transport at the observed boundary; do not retune on the target cohort."}
+  ],
+  "uncertaintyBudget": [
+    {"category": "source completeness", "observed": "BatteryLife's committed condition map omits a Farasis condition assignment and integrates processed sources with different lineage granularity.", "control": "Audit official source-specific relationship files and hash every input.", "threshold": "No cohort may pass on repository-wide count or inferred group membership."},
+    {"category": "outcome access", "observed": "Seven Farasis EFC-life rows were displayed during schema inspection.", "control": "Disqualify Farasis as untouched and preflight headers separately in future audits.", "threshold": "Any target-outcome exposure prevents an independent-confirmation claim in that workspace."},
+    {"category": "attrition", "observed": "Independent binomial loss does not represent shared chamber, fixture, or protocol failure.", "control": "Randomize physical resources and report correlated failure domains separately.", "threshold": "Fewer than 24 usable cells stops confirmation; 24-35 forces the 25-cycle branch."},
+    {"category": "measurement intervention", "observed": "RPT cadence changes rest, heat, throughput, and possibly aging.", "control": "Acute sentinel plus disjoint randomized long-term equivalence study.", "threshold": "One failed safety or equivalence metric rejects the dense schedule."},
+    {"category": "mechanical confounding", "observed": "Fixture pressure can alter lifetime and degradation mechanism.", "control": "Register pressure trajectory, calibrate fixtures independently, and test held-fixture residual information.", "threshold": "Expansion gain must survive pressure and fixture adjustment and exceed repeatability error."},
+    {"category": "equivalence planning", "observed": "Known-variance Gaussian floors understate unknown-variance, clustered, or heavy-tailed requirements.", "control": "Use blinded pooled variance and a preregistered inflation rule before long-term enrollment.", "threshold": "Never claim equivalence from a sample smaller than the registered model requires."},
+    {"category": "external validity", "observed": "One chemistry-build-protocol cohort cannot establish universal battery transport.", "control": "State the exact domain and require a later untouched domain replication.", "threshold": "A pass supports only the registered cohort until external replication."},
+    {"category": "computation", "observed": "Tail probabilities and inverse-normal approximations use floating point.", "control": "Independent Python and dependency-free Node implementations.", "threshold": "Stop on probability disagreement above 1e-12 or any integer decision mismatch."}
+  ],
+  "failedAttempts": [
+    "BatteryLife v12 did not reveal a new untouched group of 36; integrating more datasets increased diversity, not confirmatory replication.",
+    "Farasis could not supply a 36-cell condition because its largest published group contains 23 cells.",
+    "The Farasis metadata inspection exposed seven EFC-life rows because the relationship workbook colocates outcomes with identifiers; Farasis is permanently excluded as untouched for this workspace.",
+    "A small intervention sentinel cannot establish four-metric lifetime equivalence; its role is limited to fast rejection of large or unsafe perturbations.",
+    "Expansion cannot yet be called an independent passive sensor because pressure and fixture mechanics directly alter degradation."
+  ],
+  "unverifiedClaims": [
+    "Forty-eight cells can be manufactured and operated under a sufficiently narrow single-condition definition without shared failures.",
+    "Scientific equivalence margins for RPT effects can be justified before observing arm differences.",
+    "An expansion residual provides cell-level ordinal information beyond cycle-480 capacity after pressure adjustment.",
+    "The R3 candidate maintains C at least 0.65 in an untouched chemistry-build-protocol domain.",
+    "The binomial attrition sensitivity remains conservative once real chamber and fixture correlations are known."
+  ],
+  "safetyEthics": "This cycle used public metadata, briefly exposed seven Farasis EFC-life rows during schema discovery, and performed offline calculations. No physical battery, personal data, cyber experiment, operational safety decision, or deployment was accessed. Physical work requires laboratory pressure, temperature, voltage, chemical, venting, and fire controls.",
+  "nextCycleStart": "Create a machine-readable 48-cell acquisition manifest schema and channel/chamber/fixture randomization generator. Before long-term enrollment, define scientific equivalence margins from external metrology and safety requirements, preflight an acute RPT-intervention sentinel, and design a cross-fixture expansion repeatability study on disjoint sacrificial cells. Keep confirmatory lifetime outcomes closed."
+}

@@ -75,7 +75,7 @@ for (const file of ["data.js", "expansion-data.js", "translations.js", "priority
 }
 const cycle = sandbox.window.RESEARCH_CYCLES.find((item) => item.id === "RC-2026-57");
 const connection = sandbox.window.RESEARCH_CONNECTIONS.find((item) => item.id === "CONN-EVIDENCE-030");
-assert(sandbox.window.RESEARCH_CYCLES.length === 57, "Site must expose 57 research cycles");
+assert(sandbox.window.RESEARCH_CYCLES.length >= 57, "Site must preserve at least 57 research cycles");
 assert(cycle?.problemIds.join(",") === "UP-219,UP-233,UP-234,UP-572", "RC57 problem mapping changed");
 assert(cycle?.verifiedFindings.length >= 9, "RC57 must expose at least nine verified findings");
 assert(cycle?.artifacts.length >= 10, "RC57 must expose at least ten reproducibility artifacts");
@@ -99,11 +99,11 @@ for (const page of ["index.html", "solve.html", "research-log.html"]) {
   assert(html.includes("research-cycle-57-data.js?v=20260829-cycle57"), `${page} must load RC57 data`);
 }
 const readme = fs.readFileSync(path.join(ROOT, "README.md"), "utf8");
-assert(readme.includes("57개 누적 연구 사이클"), "README cycle count must be 57");
-assert(readme.includes("182개 사이클 기록"), "README research-record count must be 182");
-assert(readme.includes("60개 구조적 연결"), "README connection count must be 60");
-assert(readme.includes("331개 기관·로드맵·원 연구 출처"), "README source count must be 331");
-assert(readme.includes("1,604개 현지화 URL"), "README sitemap count must be 1,604");
+assert(/(?:5[7-9]|[6-9]\d|\d{3,})개 누적 연구 사이클/.test(readme), "README must preserve the RC57 cycle baseline");
+assert(/(?:18[2-9]|19\d|[2-9]\d{2,})개 사이클 기록/.test(readme), "README must preserve the RC57 record baseline");
+assert(/(?:6[0-9]|[7-9]\d|\d{3,})개 구조적 연결/.test(readme), "README must preserve the RC57 connection baseline");
+assert(/(?:33[1-9]|3[4-9]\d|[4-9]\d{2,})개 기관·로드맵·원 연구 출처/.test(readme), "README must preserve the RC57 source baseline");
+assert(/1,(?:60[4-9]|6[1-9]\d|[7-9]\d{2})개 현지화 URL/.test(readme), "README must preserve the RC57 sitemap baseline");
 const publicCopy = fs.readFileSync(path.join(ROOT, "research-cycle-57-data.js"), "utf8");
 for (const prohibited of ["전공자 포인트", "1단계 · 처음 읽는 사람", "2단계 · 전공자 핵심", "개수를 맞추지"] ) {
   assert(!publicCopy.includes(prohibited), `RC57 public copy contains prohibited phrase: ${prohibited}`);

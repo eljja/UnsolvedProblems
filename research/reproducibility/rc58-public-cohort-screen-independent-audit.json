@@ -1,0 +1,56 @@
+{
+  "auditId": "RC58-PUBLIC-COHORT-SCREEN-INDEPENDENT-AUDIT-0.1",
+  "cycleId": "RC-2026-58",
+  "auditedOn": "2026-08-29",
+  "status": "pass-negative-public-target-positive-prospective-design",
+  "screenAdjudication": {
+    "batteryLifeMappedFiles": 1138,
+    "batteryLifeConditionGroups": 587,
+    "batteryLifeDatasets": 15,
+    "onlyBatteryLifeGroupAtLeast36": "RWTH condition 124, 48 files",
+    "rwthEligible": false,
+    "rwthReason": "Outcome trajectories were already opened in RC55 and raw start-batch geometry is twelve blocks of four.",
+    "farasisCells": 123,
+    "farasisGroups": 37,
+    "farasisLargestGroup": 23,
+    "farasisEligible": false,
+    "farasisAdditionalBoundary": "Seven EFC-life rows were displayed during an initial schema check; values were not retained, but untouched status is lost.",
+    "eligibleUntouchedPublicTargets": 0
+  },
+  "designAgreement": {
+    "implementations": ["scripts/run_rc58_acquisition_design.py", "scripts/independent-rc58-acquisition-design.mjs"],
+    "attritionRowsCompared": 8,
+    "equivalenceRowsCompared": 6,
+    "maximumProbabilityDifference": 2.220446049250313e-16,
+    "integerDecisionsEqual": true,
+    "principal": {
+      "startingCells": 48,
+      "probabilityAtLeast36At15PercentIndependentDropout": 0.9782341849153835,
+      "probabilityAtLeast24At20PercentIndependentDropout": 0.999999217351227,
+      "endpointBranch": ">=36 usable: 50-cycle register; 24-35 usable: 25-cycle register; <24: stop"
+    },
+    "equivalencePlanningFloor": {
+      "familywiseAlpha": 0.05,
+      "metrics": 4,
+      "exampleStandardizedMargin": 0.75,
+      "power": 0.8,
+      "knownVarianceNormalMinimumPerArm": 45,
+      "interpretation": "This is a lower planning bound, not authorization to enroll 45 per arm."
+    }
+  },
+  "causalAdjudication": [
+    {"link": "repository-wide count -> same-condition block", "verdict": "failed for all new public candidates", "fastFailureTest": "Count explicit condition IDs before any outcome file."},
+    {"link": "starting cohort -> usable event branch", "verdict": "prospectively bounded", "fastFailureTest": "Apply the sealed cycle-480 QC rule without looking at lifetime order."},
+    {"link": "dense endpoint checks -> unchanged degradation", "verdict": "not established", "fastFailureTest": "Acute intervention sentinel followed by a separate randomized parallel equivalence study."},
+    {"link": "mechanical expansion -> orthogonal latent state", "verdict": "plausible but pressure-confounded", "fastFailureTest": "Cross-fixture repeatability and pressure-adjusted residual-information test on sacrificial cells."},
+    {"link": "sealed R3 feature -> independent lifetime ordering", "verdict": "not reached", "fastFailureTest": "Keep confirmatory outcomes closed until acquisition and intervention gates pass."}
+  ],
+  "outcomeAccounting": {
+    "batteryLifeLifeLabelsOpened": 0,
+    "batteryLifeCyclingPayloadsOpened": 0,
+    "farasisRelationshipRowsWhoseOutcomeColumnWasDisplayed": 7,
+    "farasisOutcomeValuesStored": false,
+    "confirmatoryOutcomeValuesUsedInDesign": 0
+  },
+  "decision": "No current public source qualifies as an untouched 36-cell target. Preserve the negative screen, preregister 48 prospective starts, and test measurement intervention and expansion-fixture repeatability in separate non-confirmatory cells."
+}
