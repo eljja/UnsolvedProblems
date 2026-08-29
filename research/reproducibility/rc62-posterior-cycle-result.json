@@ -1,0 +1,89 @@
+{
+  "cycleId": "RC-2026-62",
+  "reviewedOn": "2026-08-29",
+  "status": "posterior-constraint-not-solution",
+  "selectedProblems": ["UP-003", "UP-002", "UP-005", "UP-625"],
+  "selectionReason": "RC61 ended at a scale degeneracy that could only be sharpened with released joint posterior samples. The official DESI chains allow a controlled supernova-family and CMB-high-ell substitution, while the current Dovekie release supplies a time-separated state check. These tests can reject data-independence assumptions before any speculative early-universe model is enlarged.",
+  "newVerifiedFacts": [
+    "All sixteen DESI chain files match the official SHA-256 manifest; the Dovekie chain is pinned to commit c9a4fcafc4cbd19bd750dee47fc76194a45c181f and blob d3475ed4677987fb417c95be9e829ea30915a5dc.",
+    "After discarding the initial twenty percent of expanded Markov steps, the minimum bulk ESS is 4065.8, maximum split R-hat is 1.00133, and maximum full-versus-tail mean shift is 0.01264 posterior sigma.",
+    "Under the common CamSpec-based CMB combination, Pantheon+, Union3, and original DES-SN5YR give H0*rdrag=9958.74+-87.45, 9717.09+-124.49, and 9842.84+-82.92 km/s.",
+    "The local H0 summary maps those products to required rdrag values of 136.07+-2.06, 132.77+-2.36, and 134.49+-2.01 Mpc, respectively.",
+    "The sampled standard-early-physics rulers remain near 147.45 Mpc, leaving a minimum posterior gap diagnostic of 5.54 sigma across the three supernova families.",
+    "Pantheon+ versus Union3 moves H0*rdrag by 1.588 pooled posterior sigma and the required ruler by 1.052 sigma, failing the preregistered family-stability gate.",
+    "Changing only the DES-SN5YR high-ell CMB likelihood from CamSpec to Plik moves H0*rdrag by 0.0052 sigma and the required ruler by 0.0014 sigma, passing the calibration-choice gate.",
+    "The current Dovekie chain reproduces w0=-0.80288, wa=-0.72950 and H0=67.471; the official reanalysis reports the evolving-dark-energy rejection reduced from 4.2 to 3.2 sigma and supersedes the original DES-SN5YR release.",
+    "Dependency-free Node moments agree with Python to 9.1e-11 in means and 1.2e-8 in standard deviations; its analytic bridge agrees with the Monte Carlo bridge within 0.007 Mpc."
+  ],
+  "hypothesisAdjudication": [
+    {"code": "H62-A", "verdict": "supported", "claim": "The selected released chains have adequate retained-sample stability for the declared posterior comparisons."},
+    {"code": "H62-B", "verdict": "refuted", "claim": "The tested CamSpec-versus-Plik high-ell CMB choice drives the DES-SN5YR H0-rdrag bridge."},
+    {"code": "H62-C", "verdict": "refuted", "claim": "The H0-rdrag bridge is invariant at the one-sigma gate across the three supernova likelihood families."},
+    {"code": "H62-D", "verdict": "supported-as-posterior-diagnostic", "claim": "The local-ladder value requires a ruler materially shorter than the standard-physics ruler in every tested default-CMB supernova family."},
+    {"code": "H62-E", "verdict": "open", "claim": "A controlled current-Dovekie substitution under the exact same CMB likelihood preserves the ruler conflict and identifies which supernova pipeline component moves w0-wa."},
+    {"code": "H62-F", "verdict": "open", "claim": "The full local distance ladder passes the frozen leave-one-anchor, host, photometric-system, and HST-versus-JWST influence contract."}
+  ],
+  "causalChain": [
+    "Input: exact released posterior chains, frozen group definitions, official hashes, and a separately published local H0 summary.",
+    "Bottleneck: BAO and supernovae identify relative geometry while the absolute ruler and ladder calibration remain separate and supernova compilation operators are not interchangeable.",
+    "Bridge: compute H0*rdrag in each joint chain, divide by an independent local-H0 draw, and compare the required ruler with the same chain's standard-physics rdrag.",
+    "Adjudicand: sampling diagnostics, family and CMB-choice influence, controlled release substitution, and leave-one-anchor ladder influence.",
+    "Resolution: one physical model and independent data reductions satisfy the same absolute scale while passing full CMB, BBN, growth, calibration, and held-pipeline tests."
+  ],
+  "workPackages": [
+    {
+      "code": "RC62-W1",
+      "purpose": "Turn the Dovekie state change into a controlled likelihood substitution.",
+      "method": "Use identical DESI DR2 BAO, low-ell CMB, high-ell CMB, lensing, priors, and sampler settings; change only the original DES-SN5YR versus Dovekie distances and covariance, then add calibration, SALT training, bias correction, host-colour, and population changes one at a time.",
+      "deliverable": "A component-wise posterior displacement and likelihood-score ledger for H0*rdrag, w0, and wa.",
+      "pass": "Independent implementations reproduce the baseline and one named component explains a stable held-data improvement without moving another held residual beyond budget.",
+      "fail": "The shift requires several inseparable changes, disappears under identical CMB, or held residuals worsen.",
+      "next": "If failed, report a release-sensitivity envelope and do not attribute the shift to one calibration cause."
+    },
+    {
+      "code": "RC62-W2",
+      "purpose": "Execute the frozen local-ladder influence audit.",
+      "method": "Reconstruct the released baseline with covariance-aware anchor, host, and photometric-system blocks; omit each branch before opening cosmological results and reproduce the fit in a separate implementation.",
+      "deliverable": "Influence functions for Milky Way, LMC, NGC 4258, eligible SMC, calibrator hosts, photometric systems, and HST-JWST method contrasts.",
+      "pass": "No omitted branch moves H0 by one posterior sigma and held residuals do not align with one measurement boundary.",
+      "fail": "One branch dominates, covariance cannot be reproduced, or an implementation discrepancy exceeds the predeclared numerical budget.",
+      "next": "If failed, make that calibration branch the active problem and pause new-physics fitting."
+    },
+    {
+      "code": "RC62-W3",
+      "purpose": "Replace a single short-ruler point target with a family-conditioned falsification envelope.",
+      "method": "For preregistered early-energy, extra-radiation, and recombination families, predict full CMB TT/TE/EE+lensing, BBN abundances, matter power, and each supernova-conditioned BAO bridge before opening held likelihoods.",
+      "deliverable": "A model-by-family-by-held-observable exclusion matrix spanning the 132.8-136.1 Mpc required-ruler centres found here.",
+      "pass": "One model reaches every eligible family-conditioned interval and improves independent held predictions without compensating nuisance drift.",
+      "fail": "The model reaches only one supernova family, breaks CMB or BBN, or relies on a target selected after seeing its fit.",
+      "next": "If all declared model families fail, publish the excluded early-physics region rather than adding unconstrained freedom."
+    },
+    {
+      "code": "RC62-W4",
+      "purpose": "Test whether likelihood-family influence can become a transport-valid uncertainty statement.",
+      "method": "Create survey-block-disjoint development and target supernova sets, record overlap and calibration ancestry, estimate only declared shift nuisances on development data, and assess target standardized-residual coverage and cosmological influence.",
+      "deliverable": "A support-qualified target-coverage and H0*rdrag influence report.",
+      "pass": "The declared shift class covers the held target and cluster-aware intervals attain their promised coverage.",
+      "fail": "Support fails, shared ancestors invalidate independence, or target coverage misses its bound.",
+      "next": "If failed, retain the empirical family envelope but refuse a finite-sample transport guarantee."
+    }
+  ],
+  "uncertaintyBudget": [
+    "Measurement and reduction: the released chains inherit DESI clustering, CMB map/foreground, and supernova photometric systematics that this cycle does not regenerate.",
+    "Sampling: classical split R-hat and autocorrelation ESS are diagnostics, not proofs of posterior correctness; the initial twenty-percent discard was frozen before results.",
+    "Likelihood-family: Pantheon+, Union3, and DES-SN5YR overlap in objects and calibration ancestry, so pairwise shifts are influence diagnostics rather than independent-experiment tensions.",
+    "External calibration: local H0 is introduced as an independent Gaussian draw; non-Gaussian raw-ladder covariance is deferred to RC62-W2.",
+    "Model: all four controlled DESI chains use flat w0-wa with standard pre-recombination physics; the physical viability of a shorter ruler is outside their sampled model.",
+    "Temporal comparison: the Dovekie chain changes both supernova processing and CMB composition, so its 0.73-sigma descriptive w0-wa displacement is not a causal calibration effect.",
+    "Monte Carlo: the seeded local-ruler bridge differs from the independent analytic reciprocal-normal calculation by at most 0.007 Mpc in standard deviation, below the 0.03 Mpc budget."
+  ],
+  "structuralConnection": "CONN-EVIDENCE-035 maps supernova likelihood-family changes to transport validity after distribution shift. RC62 supplies a concrete counterexample to the idea that excellent within-chain convergence guarantees cross-family stability; a finite-sample coverage transfer remains unproved.",
+  "failedOrRejectedAttempts": [
+    "The supernova-family invariance gate failed because Pantheon+ and Union3 differ by 1.588 pooled posterior sigma in H0*rdrag and 1.052 sigma in the required ruler.",
+    "The claim that the tested high-ell CMB calibration choice drives the bridge was rejected; CamSpec versus Plik produced only 0.0052 and 0.0014 sigma shifts in the declared scale quantities.",
+    "A first download audit incorrectly compared GitHub's compressed HTTP Content-Length with the decoded Dovekie file; the fetcher was corrected to freeze the GitHub API blob size, while DESI files remained protected by official SHA-256 values.",
+    "The Dovekie state check could not be treated as a controlled calibration-only experiment because its CMB combination and end-to-end supernova processing differ from the original DESI chain."
+  ],
+  "claimBoundary": "This cycle verifies released posterior arithmetic and narrows causal branches. It does not solve the Hubble tension, establish dynamical dark energy, validate a short-ruler model, or audit raw distance-ladder photometry.",
+  "exactNextStart": "Run the original DES-SN5YR and current Dovekie likelihoods under one identical DESI DR2 plus CMB configuration, with component-wise substitutions and a held residual set. In parallel, execute the frozen leave-one-anchor and leave-one-photometric-system SH0ES audit from its official data release. Open early-universe model grids only if the required-ruler gap survives both controlled tests; otherwise make the identified calibration branch the next active problem."
+}

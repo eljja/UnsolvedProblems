@@ -11,7 +11,7 @@
 - 확장 설명·대표 시도·최근 연구 흐름: [`research-context.js`](./research-context.js)
 - 문제별 해결 시도 설계: [`solution-context.js`](./solution-context.js)
 - 문제별 가설 경쟁·불확실성 예산·실행 프로그램: [`deep-solution-context.js`](./deep-solution-context.js)
-- 반복 연구 사이클·난제 간 구조적 연결: [`research-cycle-data.js`](./research-cycle-data.js), [`research-cycle-03-data.js`](./research-cycle-03-data.js)–[`research-cycle-61-data.js`](./research-cycle-61-data.js)
+- 반복 연구 사이클·난제 간 구조적 연결: [`research-cycle-data.js`](./research-cycle-data.js), [`research-cycle-03-data.js`](./research-cycle-03-data.js)–[`research-cycle-62-data.js`](./research-cycle-62-data.js)
 - 자율 합성 공개 데이터 감사: [`research/alab-public-data-audit.json`](./research/alab-public-data-audit.json)
 - 완전 원장·재생성 기준선: [`research/complete-ledger.schema.json`](./research/complete-ledger.schema.json), [`research/alab-replay-benchmark.json`](./research/alab-replay-benchmark.json)
 - ARROWS 필드 감사·독립 재생 시험: [`research/replay/arrows-ybco-field-audit.json`](./research/replay/arrows-ybco-field-audit.json), [`research/replay/synthetic-replay-fixture.json`](./research/replay/synthetic-replay-fixture.json), [`research/replay/verification-result.json`](./research/replay/verification-result.json)
@@ -81,12 +81,12 @@
 - 31개 불가능·현실 경계 사례
 - 163개 핵심 난제와 130개 로드맵 우선과제
 - 16개 상금 연계 항목(현재 상금·경진 16개)
-- 10개 상금 프로그램과 351개 기관·로드맵·원 연구 출처
-- 61개 누적 연구 사이클, 19개 심층 연구 문제의 197개 사이클 기록과 64개 구조적 연결
+- 10개 상금 프로그램과 358개 기관·로드맵·원 연구 출처
+- 62개 누적 연구 사이클, 19개 심층 연구 문제의 201개 사이클 기록과 65개 구조적 연결
 
-상금 정보는 2026년 8월 5일, 출처 연결·확장 설명·연구 맥락은 2026년 8월 7일 기준으로 검토했습니다. 61차 연구 사이클은 공개 DESI DR2 BAO likelihood를 독립적인 Python·Node 구현으로 다시 적합해 허블상수 긴장, 암흑에너지와 초기 우주 문제의 공통 절대척도 병목을 시험했습니다. Flat ΛCDM의 Ωm=0.297462와 h·r_d=101.5398±0.7357 Mpc를 재현했고, 어느 한 적색편이 구간도 척도를 1σ 이상 움직이지 않았습니다. wCDM과 w0waCDM은 χ²를 낮췄지만 작은 표본 AICc는 악화됐습니다. Full SH0ES H0를 DESI 곱과 함께 만족하려면 r_d=138.72±1.98 Mpc가 필요하지만, 이 짧은 표준자가 BBN·full CMB·성장률을 통과하는지는 아직 시험하지 않았습니다. 외부척도 비교는 발표 marginal을 이용한 진단이며 joint likelihood나 새로운 물리의 증거로 해석하지 않습니다. 공식 데이터·원 논문·두 독립 구현은 2026년 8월 29일 기준으로 확인했습니다. 각 항목은 검증 가능한 질문, 현재까지 축적된 지식, 기술적 병목, 해결 판정 기준과 관련 출처를 함께 기록합니다.
+상금 정보는 2026년 8월 5일, 출처 연결·확장 설명·연구 맥락은 2026년 8월 7일 기준으로 검토했습니다. 62차 연구 사이클은 공식 DESI DR2 `w0wa` 후방분포 16개와 현재 DES-Dovekie 체인 1개를 고정해 초신성 자료군, CMB high-ell likelihood와 절대척도 병목을 분리했습니다. 공통 CamSpec 조합에서 Pantheon+, Union3, 원 DES-SN5YR의 H0·rdrag는 각각 9958.74±87.45, 9717.09±124.49, 9842.84±82.92 km/s였습니다. 지역 H0와 함께 요구되는 rdrag 중심은 132.77–136.07 Mpc인 반면, 같은 체인의 표준 조기우주 값은 약 147.45 Mpc에 남아 최소 5.54σ의 후방분포 간격을 보였습니다. Pantheon+와 Union3의 H0·rdrag 차이는 1.588 pooled σ로 사전등록 안정성 기준을 넘었지만, DES-SN5YR의 CamSpec↔Plik 교체는 0.0052σ였습니다. 이 수치는 discovery significance가 아니며 원 초신성 보정, CMB 지도 제작 또는 거리사다리를 다시 처리한 결과도 아닙니다. 공식 데이터·원 논문·독립 Python·Node 구현은 2026년 8월 29일 기준으로 확인했습니다. 각 항목은 검증 가능한 질문, 현재까지 축적된 지식, 기술적 병목, 해결 판정 기준과 관련 출처를 함께 기록합니다.
 
-Google 소유권 확인 메타 태그, canonical URL, 한국어·영문 `hreflang`, 문제별 구조화 데이터와 1,612개 현지화 URL의 사이트맵을 제공합니다. 사이트맵은 `npm run sitemap`으로 현재 카탈로그에서 다시 생성할 수 있습니다.
+Google 소유권 확인 메타 태그, canonical URL, 한국어·영문 `hreflang`, 문제별 구조화 데이터와 1,614개 현지화 URL의 사이트맵을 제공합니다. 사이트맵은 `npm run sitemap`으로 현재 카탈로그에서 다시 생성할 수 있습니다.
 
 상금은 **증명·반례 상금**, **성능 목표형 연구경진 총상금**, **계산 도전 상금**, **현재 지급을 보증할 수 없는 역사적 제안**을 구분해 기록합니다. 진행 중인 경진이라도 신규 참가 접수가 끝났을 수 있으며, 총상금은 한 문제에 지급되는 금액과 다를 수 있으므로 상세 규정을 반드시 확인해야 합니다.
 

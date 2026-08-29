@@ -1,0 +1,30 @@
+{
+  "id": "CONN-EVIDENCE-035",
+  "reviewedOn": "2026-08-29",
+  "problemIds": ["UP-003", "UP-002", "UP-625"],
+  "type": "Likelihood-family shift and transport validity",
+  "strength": "moderate",
+  "commonStructure": "A target parameter is inferred after a selection, calibration, and standardization operator has transformed heterogeneous observations. Stable inference inside one released sample does not by itself identify the same functional after that operator changes.",
+  "variableMapping": {
+    "cosmology": "theta=(H0*rdrag,w0,wa); P_j is a supernova compilation; C_j is its calibration, selection, light-curve, population, and covariance pipeline; T(P_j,C_j) is the joint cosmological posterior.",
+    "distributionShiftProblem": "theta is the target functional; P_source and P_target are pre- and post-shift laws; C is the observation or labeling mechanism; an interval procedure claims coverage for T(P_target,C_target).",
+    "adjudicand": "The maximum pairwise posterior-mean shift normalized by the pooled posterior standard deviations, supplemented by support, overlap, and covariance checks before any coverage claim."
+  },
+  "conditionsForTransfer": [
+    "The statistical unit and target population are fixed before outcomes are opened.",
+    "Compilation overlap and shared calibration ancestors are recorded rather than counted as independent replication.",
+    "A declared shift class or estimable density ratio connects source and target support.",
+    "Coverage is evaluated on target outcomes excluded from model and threshold development."
+  ],
+  "breakConditions": [
+    "Unknown selection or calibration changes can move observations outside source support.",
+    "Overlapping supernovae and shared covariance make naive family-level independence false.",
+    "Cosmological model misspecification can imitate a data-distribution shift.",
+    "Posterior standard deviations are not repeated-sampling coverage guarantees."
+  ],
+  "surfaceAnalogyRisk": "Calling every compilation difference distribution shift would be empty. The connection is valid only after mapping observation units, selection variables, calibration ancestors, target functional, overlap, and a held coverage experiment.",
+  "minimumValidationTest": "Construct survey-block-disjoint development and target supernova sets. Estimate only preregistered survey-level calibration and selection nuisances on development data, predict target standardized-magnitude residuals, and test target coverage and the induced H0*rdrag shift with cluster-aware intervals. Refuse a finite-sample guarantee if support or overlap conditions fail.",
+  "transferableMethod": "Use a preregistered likelihood-family influence envelope as an admission test, not as a coverage certificate. If the envelope fails, identify the exact calibration, selection, or covariance operator before fitting a larger physical model.",
+  "observedEvidence": "RC62 passed every within-chain sampling gate, yet Pantheon+ versus Union3 moved H0*rdrag by 1.588 pooled posterior sigma and the locally required ruler by 1.052 sigma. CamSpec versus Plik moved the same quantities by only 0.0052 and 0.0014 sigma. Convergence therefore did not imply transport across supernova families.",
+  "validationStatus": "The numerical influence pattern is reproduced by Python and Node. No finite-sample target-coverage theorem or disjoint supernova holdout has been established."
+}

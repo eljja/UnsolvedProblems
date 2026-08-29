@@ -38,26 +38,26 @@ assert(cycleResult.status === "computational-constraint-not-solution", "RC61 res
 assert(cycleResult.hypothesisAdjudication.length === 5 && cycleResult.workPackages.length === 3, "RC61 research program is incomplete");
 
 const sandbox = { window: {} };
-const cycleFiles = ["research-cycle-data.js", ...Array.from({ length: 59 }, (_, index) => `research-cycle-${String(index + 3).padStart(2, "0")}-data.js`)];
+const cycleFiles = ["research-cycle-data.js", ...Array.from({ length: 60 }, (_, index) => `research-cycle-${String(index + 3).padStart(2, "0")}-data.js`)];
 for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", ...cycleFiles]) {
   vm.runInNewContext(fs.readFileSync(path.join(ROOT, file), "utf8"), sandbox, { filename: file });
 }
 
 const cycle = sandbox.window.RESEARCH_CYCLES.find(item => item.id === "RC-2026-61");
 const connection = sandbox.window.RESEARCH_CONNECTIONS.find(item => item.id === "CONN-EVIDENCE-034");
-assert(sandbox.window.RESEARCH_CYCLES.length === 61, "Site must expose 61 research cycles");
-assert(sandbox.window.RESEARCH_CONNECTIONS.length === 64, "Site must expose 64 structural connections");
-assert(Object.keys(sandbox.window.CATALOG_SOURCES).length === 351, "Site must expose 351 catalog sources");
+assert(sandbox.window.RESEARCH_CYCLES.length === 62, "Site must expose 62 research cycles");
+assert(sandbox.window.RESEARCH_CONNECTIONS.length === 65, "Site must expose 65 structural connections");
+assert(Object.keys(sandbox.window.CATALOG_SOURCES).length === 358, "Site must expose 358 catalog sources");
 assert(sandbox.window.PROBLEMS.filter(problem => problem.researchHistory?.length).length === 19, "Site must expose 19 deeply researched problems");
-assert(sandbox.window.PROBLEMS.reduce((sum, problem) => sum + (problem.researchHistory?.length || 0), 0) === 197, "Site must expose 197 problem-cycle records");
+assert(sandbox.window.PROBLEMS.reduce((sum, problem) => sum + (problem.researchHistory?.length || 0), 0) === 201, "Site must expose 201 problem-cycle records");
 assert(cycle?.problemIds.join(",") === "UP-003,UP-002,UP-005", "RC61 problem mapping changed");
 assert(cycle?.verifiedFindings.length === 9 && cycle?.artifacts.length === 8, "RC61 public cycle record is incomplete");
 assert(connection?.problemIds.includes("UP-233") && connection.problemIds.length === 4, "RC61 cross-field connection must include the digital-twin problem");
 
 for (const problemId of cycle?.problemIds || []) {
   const problem = sandbox.window.PROBLEMS.find(item => item.id === problemId);
-  const record = problem?.cycleResearch;
-  assert(record?.cycleId === "RC-2026-61", `${problemId} must show RC61 as current research`);
+  const record = problem?.researchHistory?.find(item => item.cycleId === "RC-2026-61");
+  assert(record?.cycleId === "RC-2026-61", `${problemId} must retain the RC61 research record`);
   assert(record?.updatedDefinition?.text?.length > 300 && record.updatedDefinition.textEn.length > 420, `${problemId} needs a substantive bilingual definition`);
   assert(record?.causalChain?.length === 5 && record.causalChain.every(item => item.title?.text && item.claim?.text && item.failure?.text && item.title?.textEn && item.claim?.textEn && item.failure?.textEn), `${problemId} needs five complete bilingual causal links`);
   assert(record?.hypotheses?.length >= 3 && new Set(record.hypotheses.map(item => item.code)).size === record.hypotheses.length, `${problemId} needs distinct competing hypotheses`);
@@ -81,11 +81,11 @@ for (const prohibited of ["전공자 포인트", "1단계 · 처음 읽는 사�
   assert(!publicCopy.includes(prohibited), `RC61 public copy contains prohibited phrase: ${prohibited}`);
 }
 const readme = fs.readFileSync(path.join(ROOT, "README.md"), "utf8");
-assert(readme.includes("61개 누적 연구 사이클"), "README cycle count must be 61");
-assert(readme.includes("19개 심층 연구 문제의 197개 사이클 기록"), "README curated-problem and record counts changed");
-assert(readme.includes("64개 구조적 연결"), "README connection count must be 64");
-assert(readme.includes("351개 기관·로드맵·원 연구 출처"), "README source count must be 351");
-assert(readme.includes("1,612개 현지화 URL"), "README sitemap count must be 1,612");
+assert(readme.includes("62개 누적 연구 사이클"), "README cycle count must be 62");
+assert(readme.includes("19개 심층 연구 문제의 201개 사이클 기록"), "README curated-problem and record counts changed");
+assert(readme.includes("65개 구조적 연결"), "README connection count must be 65");
+assert(readme.includes("358개 기관·로드맵·원 연구 출처"), "README source count must be 358");
+assert(readme.includes("1,614개 현지화 URL"), "README sitemap count must be 1,614");
 const packageJson = read("package.json");
 assert(packageJson.scripts.pretest?.includes("verify-rc61-bao-cycle.mjs"), "RC61 verifier is not in the default test path");
 const sitemap = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");

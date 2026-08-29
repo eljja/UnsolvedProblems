@@ -1,0 +1,68 @@
+{
+  "cycleId": "RC-2026-62",
+  "frozenOn": "2026-08-29",
+  "claimBoundary": "This cycle audits released posterior samples. It does not rerun DESI clustering, CMB mapmaking, supernova light-curve calibration, or the local distance ladder.",
+  "officialCatalog": {
+    "documentation": "https://data.desi.lbl.gov/public/papers/y3/bao-cosmo-params/README.md",
+    "root": "https://data.desi.lbl.gov/public/papers/y3/bao-cosmo-params/cobaya/base_w_wa/",
+    "checksumManifest": "https://data.desi.lbl.gov/public/papers/y3/bao-cosmo-params/dr2_vac_dr2_bao-cosmo-params_v1.0.sha256sum",
+    "checksumManifestSha256": "DF78872AA8B2D3473A9E8DE78F498180EFD7CBCBEB18211CE4787FAC52067EE5"
+  },
+  "eligibleGroups": [
+    {
+      "id": "pantheonplus-camspec",
+      "supernova": "Pantheon+",
+      "cmbHighEll": "Planck PR4 NPIPE CamSpec TTTEEE",
+      "path": "desi-bao-all_pantheonplus_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/"
+    },
+    {
+      "id": "union3-camspec",
+      "supernova": "Union3",
+      "cmbHighEll": "Planck PR4 NPIPE CamSpec TTTEEE",
+      "path": "desi-bao-all_union3_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/"
+    },
+    {
+      "id": "desy5-camspec",
+      "supernova": "DES-SN5YR (2024 release)",
+      "cmbHighEll": "Planck PR4 NPIPE CamSpec TTTEEE",
+      "path": "desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/"
+    },
+    {
+      "id": "desy5-plik",
+      "supernova": "DES-SN5YR (2024 release)",
+      "cmbHighEll": "Planck PR3 Plik TTTEEE",
+      "path": "desi-bao-all_desy5sn_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck2018-highl-plik-TTTEEE_planck-act-dr6-lensing/"
+    }
+  ],
+  "externalStateCheck": {
+    "id": "des-dovekie-current-release",
+    "repository": "https://github.com/des-science/DES-SN5YR",
+    "commit": "c9a4fcafc4cbd19bd750dee47fc76194a45c181f",
+    "path": "5_COSMOLOGY/chains/w0wacdm/dovekie_bao_cmbactspt_w0wacdm_nautilus.txt",
+    "reasonNotPooled": "The current Dovekie chain changes supernova calibration and processing and uses a Planck+ACT+SPT CMB combination, so it is a temporal external check rather than a one-variable likelihood substitution."
+  },
+  "parameters": ["H0", "rdrag", "H0rdrag", "w", "wa", "omegam"],
+  "processing": {
+    "chainCountPerOfficialGroup": 4,
+    "discardInitialFractionByExpandedMarkovSteps": 0.2,
+    "fullVsTailCheck": true,
+    "localLadder": {"H0": 73.2, "sigma": 0.9, "unit": "km s^-1 Mpc^-1", "source": "Riess et al. 2024 HST full ladder summary"},
+    "requiredRulerDefinition": "rdrag_required = H0rdrag_chain / H0_local_draw",
+    "randomSeed": 20260829
+  },
+  "predeclaredGates": {
+    "sourceIntegrity": "Every official chain SHA-256 must match the DESI checksum manifest; the Dovekie file must be pinned to the declared commit and Git blob.",
+    "sampling": {"minimumBulkEssPerParameter": 1000, "maximumSplitRhat": 1.02, "maximumFullVsTailMeanShiftSigma": 0.2},
+    "supernovaFamilyStability": {"parameters": ["H0rdrag", "rdrag_required"], "maximumPairwiseMeanShiftPooledSigma": 1.0},
+    "cmbCalibrationStability": {"comparison": ["desy5-camspec", "desy5-plik"], "parameters": ["H0rdrag", "rdrag_required"], "maximumMeanShiftPooledSigma": 0.5},
+    "physicalRulerConflict": "For each default-CMB supernova family, the CMB-chain rdrag minus the locally required rdrag must exceed zero by at least three propagated posterior standard deviations to retain the early-ruler bottleneck.",
+    "stateChange": "Dovekie is reported separately. A shift in w0-wa is evidence that the original DES-SN5YR conclusion is release-sensitive, not proof that calibration alone caused the shift."
+  },
+  "localAnchorAuditContract": {
+    "anchors": ["Milky Way parallaxes", "LMC detached eclipsing binaries", "NGC 4258 masers", "SMC detached eclipsing binaries when eligible"],
+    "frozenOutputs": ["H0", "Cepheid zero point", "metallicity slope", "host distance moduli", "supernova intercept"],
+    "requiredInfluenceRuns": ["leave one anchor out", "leave one calibrator host out", "leave one photometric system out", "HST-only versus declared JWST cross-check"],
+    "pass": "No omitted branch shifts H0 by one full posterior sigma, residuals do not align with a photometric-system boundary, and a held implementation reproduces the covariance-aware result.",
+    "stop": "Stop physical-model enlargement if one rung dominates or if the held implementation cannot reproduce the released baseline."
+  }
+}

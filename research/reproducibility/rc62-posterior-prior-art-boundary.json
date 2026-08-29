@@ -1,0 +1,52 @@
+{
+  "cycleId": "RC-2026-62",
+  "reviewedOn": "2026-08-29",
+  "establishedBeforeThisCycle": [
+    {
+      "claim": "DESI DR2 released flat-w0-wa posterior chains for BAO combined with Pantheon+, Union3, and the original DES-SN5YR likelihood under a common default CMB combination, plus alternatives using Plik and HiLLiPOP.",
+      "source": "https://data.desi.lbl.gov/public/papers/y3/bao-cosmo-params/README.html"
+    },
+    {
+      "claim": "The three supernova compilations give materially different strengths and locations for the DESI DR2 dynamical-dark-energy preference.",
+      "source": "https://arxiv.org/abs/2503.14738"
+    },
+    {
+      "claim": "The DES-Dovekie reanalysis supersedes the original DES-SN5YR release in its official repository and reports w0=-0.803+-0.054 and wa=-0.72+-0.21 with the evolving-dark-energy rejection reduced from 4.2 to 3.2 sigma and weak Bayesian preference.",
+      "source": "https://doi.org/10.1093/mnras/stag632"
+    },
+    {
+      "claim": "A 2026 Bayesian reanalysis reports that evidence strength depends strongly on whether the original DES-SN5YR or corrected Dovekie calibration is used.",
+      "source": "https://arxiv.org/abs/2603.05472"
+    },
+    {
+      "claim": "SH0ES reports H0=73.2+-0.9 km/s/Mpc for its full HST distance-ladder summary in the 2024 HST-JWST comparison.",
+      "source": "https://arxiv.org/abs/2408.11770"
+    }
+  ],
+  "boundedContributionOfThisCycle": [
+    "Froze seventeen exact posterior files before analysis: sixteen DESI chain files with official SHA-256 values and one Dovekie chain pinned to a Git commit and blob.",
+    "Applied one retained-chain rule, one sampling gate, and one family/calibration influence metric to all four controlled DESI combinations.",
+    "Converted each joint-chain H0-rdrag product into a locally required rdrag distribution rather than multiplying published Gaussian marginals.",
+    "Separated a controlled CamSpec-versus-Plik substitution from the non-controlled cross-release Dovekie state check.",
+    "Recomputed all retained posterior moments in dependency-free Node and independently derived the local-ruler bridge by analytic reciprocal-normal moments."
+  ],
+  "notClaimed": [
+    "No claim that the posterior summaries or influence metrics are scientifically novel before specialist review.",
+    "No claim that the descriptive original-DESY5 versus Dovekie shift is caused solely by calibration; their CMB combinations and processing also differ.",
+    "No claim that a short sound horizon is physically viable; the sampled chains assume standard pre-recombination physics and retain rdrag near 147 Mpc.",
+    "No claim that a 3-sigma posterior gap is a likelihood-ratio discovery significance.",
+    "No claim that the local distance ladder has passed the declared leave-one-anchor audit; this cycle freezes that contract but does not rerun its raw photometry."
+  ],
+  "searchStrategy": {
+    "queries": [
+      "DESI DR2 public cosmology chains base_w_wa PantheonPlus Union3 DESY5 CamSpec Plik",
+      "DES Dovekie updated calibration cosmology chains DESI DR2 CMB",
+      "DESI DR2 Bayesian evidence supernova calibration Dovekie",
+      "Pantheon+ Union3 DES-SN5YR primary likelihood data release",
+      "SH0ES public distance ladder anchor leave one out data release"
+    ],
+    "priority": "DESI and DES official data repositories, primary collaboration papers, primary compilation papers, then methodological prior art.",
+    "dateRule": "Record the first public result date separately from repository update, journal publication, and this cycle's retrieval date."
+  },
+  "noveltyStatus": "Implementation and synthesis contribution; scientific novelty unestablished."
+}

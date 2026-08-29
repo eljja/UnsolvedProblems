@@ -1,0 +1,181 @@
+{
+  "cycleId": "RC-2026-62",
+  "implementation": "dependency-free Node weighted-moment and analytic independent-ladder bridge",
+  "groups": {
+    "pantheonplus-camspec": {
+      "hashesPassed": true,
+      "total": 227533,
+      "summaries": {
+        "H0": {
+          "mean": 67.51539172976652,
+          "sd": 0.5928971341271165
+        },
+        "rdrag": {
+          "mean": 147.50346644029491,
+          "sd": 0.21129617322868052
+        },
+        "H0rdrag": {
+          "mean": 9958.744070258857,
+          "sd": 87.45121481731628
+        },
+        "w": {
+          "mean": -0.8381844380712208,
+          "sd": 0.05494645281150775
+        },
+        "wa": {
+          "mean": -0.6162733237621744,
+          "sd": 0.20708618821797686
+        },
+        "omegam": {
+          "mean": 0.31138041548386525,
+          "sd": 0.005684316921871366
+        }
+      },
+      "crossRdragProductMean": 1468950.7740492676,
+      "bridge": {
+        "requiredMean": 136.0689919029321,
+        "requiredSd": 2.0565336954692954,
+        "gapMean": 11.434474537362803,
+        "gapSd": 2.057407206130415,
+        "gapZ": 5.557710939911034
+      }
+    },
+    "union3-camspec": {
+      "hashesPassed": true,
+      "total": 245515,
+      "summaries": {
+        "H0": {
+          "mean": 65.90268307122186,
+          "sd": 0.8381100535240892
+        },
+        "rdrag": {
+          "mean": 147.4459676327727,
+          "sd": 0.20917912503342886
+        },
+        "H0rdrag": {
+          "mean": 9717.086733068427,
+          "sd": 124.48870506430346
+        },
+        "w": {
+          "mean": -0.6663886486707978,
+          "sd": 0.08859723582469245
+        },
+        "wa": {
+          "mean": -1.0866135784006388,
+          "sd": 0.29365921008854345
+        },
+        "omegam": {
+          "mean": 0.3275210361443034,
+          "sd": 0.008639084421432311
+        }
+      },
+      "crossRdragProductMean": 1432748.4135482914,
+      "bridge": {
+        "requiredMean": 132.767162874546,
+        "requiredSd": 2.3581073032083344,
+        "gapMean": 14.678804758226704,
+        "gapSd": 2.3490719777777453,
+        "gapZ": 6.248767554629406
+      }
+    },
+    "desy5-camspec": {
+      "hashesPassed": true,
+      "total": 136306,
+      "summaries": {
+        "H0": {
+          "mean": 66.74706781551859,
+          "sd": 0.5600525248738883
+        },
+        "rdrag": {
+          "mean": 147.46483988254258,
+          "sd": 0.20549487264789176
+        },
+        "H0rdrag": {
+          "mean": 9842.838882704998,
+          "sd": 82.91980655804646
+        },
+        "w": {
+          "mean": -0.7523004112816004,
+          "sd": 0.05726439630964612
+        },
+        "wa": {
+          "mean": -0.8612589486312331,
+          "sd": 0.22126338941021648
+        },
+        "omegam": {
+          "mean": 0.3190047029566543,
+          "sd": 0.005613172877197537
+        }
+      },
+      "crossRdragProductMean": 1451474.4777317175,
+      "bridge": {
+        "requiredMean": 134.4853482310485,
+        "requiredSd": 2.005082410825098,
+        "gapMean": 12.979491651494072,
+        "gapSd": 2.003224050839216,
+        "gapZ": 6.4793010277889485
+      }
+    },
+    "desy5-plik": {
+      "hashesPassed": true,
+      "total": 254889,
+      "summaries": {
+        "H0": {
+          "mean": 66.8615106504686,
+          "sd": 0.5606173060827052
+        },
+        "rdrag": {
+          "mean": 147.22155597452237,
+          "sd": 0.2174010420286901
+        },
+        "H0rdrag": {
+          "mean": 9843.446329787566,
+          "sd": 82.7051046106167
+        },
+        "w": {
+          "mean": -0.7533152026177745,
+          "sd": 0.056914565497302005
+        },
+        "wa": {
+          "mean": -0.8469351038301128,
+          "sd": 0.22601769336988728
+        },
+        "omegam": {
+          "mean": 0.3185672932398836,
+          "sd": 0.005636844859802997
+        }
+      },
+      "crossRdragProductMean": 1449169.2745447818,
+      "bridge": {
+        "requiredMean": 134.4936479434998,
+        "requiredSd": 2.0035103543413353,
+        "gapMean": 12.727908031022565,
+        "gapSd": 2.003100111348565,
+        "gapZ": 6.354104799312124
+      }
+    }
+  },
+  "dovekie": {
+    "observedSha256": "9CC1D4455D7D5E0652D556F6EA46D03CAB249EAF47B596DED9DDBA87A216A635",
+    "rows": 51934,
+    "kishEss": 10569.987247597372,
+    "means": {
+      "omegam": 0.31284478871316235,
+      "H0": 67.47112628982389,
+      "w": -0.8028762137659674,
+      "wa": -0.7295005168213361
+    }
+  },
+  "comparison": {
+    "allOfficialHashesPassed": true,
+    "maximumPosteriorMeanAbsoluteDifference": 9.094947017729282e-11,
+    "maximumPosteriorSdAbsoluteDifference": 1.190140608287038e-8,
+    "maximumBridgeMeanAbsoluteDifference": 0.0033527472455823215,
+    "maximumBridgeSdAbsoluteDifference": 0.006928208495647681,
+    "maximumDovekieMeanAbsoluteDifference": 2.842170943040401e-14,
+    "posteriorMomentTolerance": 0.000001,
+    "bridgeMonteCarloToleranceMpc": 0.03,
+    "passed": true
+  },
+  "claimBoundary": "The Node audit checks source hashes, retained-chain moments, and independent ladder algebra. It does not independently reproduce the survey likelihoods."
+}
