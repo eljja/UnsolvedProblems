@@ -1,0 +1,59 @@
+{
+  "contractId": "RC56-RWTH-LANDMARK-DEVELOPMENT-CONTRACT-0.1",
+  "cycleId": "RC-2026-56",
+  "sealedOn": "2026-08-29",
+  "status": "outcome-open-method-development-only",
+  "problemIds": ["UP-219", "UP-233", "UP-234"],
+  "purpose": "Test whether later capacity level, local fade rate, or curvature can repair the RC55 failure of the first-160-cycle fade coordinate. The RWTH outcomes were opened in RC55, so no result from this analysis is confirmatory evidence.",
+  "source": {
+    "dataset": "https://doi.org/10.18154/RWTH-2021-04545",
+    "paper": "https://doi.org/10.1016/j.jpowsour.2021.230024",
+    "input": "research/reproducibility/rc55-rwth-frailty-response-feature-table.json",
+    "inputSha256": "computed-and-recorded-by-the-runner"
+  },
+  "cohort": {
+    "rule": "Use all 48 source cells, including the two former schema pilots, because every outcome is already open and this cycle makes no untouched-target claim.",
+    "batch": "Start batch is floor((cell_id - 1) / 4) + 1, yielding 12 chronological four-cell blocks.",
+    "validation": "Leave one complete start batch out. Fit on the other 44 cells and predict only the four omitted cells. Pool only within-held-batch comparable pairs so fold-specific intercepts cannot create artificial cross-batch ordering.",
+    "exclusions": "A candidate row is unavailable only if the required standardized capacity rounds are missing, non-finite, non-positive, non-increasing in cycle, or its landmark is not earlier than the registered 80%-of-own-BOL event/censor observation. No outcome-based row deletion is allowed."
+  },
+  "endpoint": {
+    "definition": "Remaining source cycles from the candidate landmark to the first observed standardized capacity round at or below 80% of the same cell's BOL capacity; no interpolation.",
+    "event": "All available RC55 cells are retained with their previously adjudicated event/censor flag.",
+    "claimBoundary": "This endpoint is an interval-resolved capacity threshold, not a hazard, safety, warranty, field-pack, or universal digital-twin endpoint."
+  },
+  "candidateOrder": [
+    "R1_capacity_level",
+    "R1_log_slope",
+    "R2_capacity_level",
+    "R2_recent_log_slope",
+    "R2_log_slope_curvature",
+    "R3_capacity_level",
+    "R3_recent_log_slope",
+    "R3_log_slope_curvature"
+  ],
+  "features": {
+    "rounds": "R0 is BOL; R1, R2, and R3 are the first three later standardized full-capacity rounds. Actual source cycle positions, not nominal 160/320/480 labels, enter every derivative.",
+    "capacity_level": "log(Q_Rk / Q_R0).",
+    "recent_log_slope": "[log(Q_Rk) - log(Q_R(k-1))] / [cycle_Rk - cycle_R(k-1)].",
+    "log_slope_curvature": "recent log-capacity slope minus the immediately preceding log-capacity slope. It is a discrete change in fade rate, not a continuous second derivative.",
+    "preprocessing": "Within each training fold, subtract the training mean and divide by its population standard deviation; apply those constants to the held batch. A zero training standard deviation makes the candidate unavailable.",
+    "model": "One-feature Weibull accelerated-failure-time model with log(lambda_i)=intercept+beta*z_i, shared shape, and fixed L2 penalty alpha=1 on beta only. Initialization and BFGS settings match RC55.",
+    "prediction": "Higher predicted median remaining cycles means longer life."
+  },
+  "selection": {
+    "coverageGate": "At least 44 of 48 cells and all 12 held batches must yield predictions.",
+    "pairGate": "At least 60 comparable within-held-batch pairs.",
+    "rankingGate": "Pooled within-held-batch Harrell concordance must be at least 0.65.",
+    "directionGate": "All 12 training-fold beta estimates and the full-cohort beta must have the same nonzero sign.",
+    "choice": "Among candidates satisfying every gate, select the earliest round; within that round use candidateOrder. If none passes, do not inspect Aurora cycling entries and report that the independent source is ready but no transportable coordinate was earned.",
+    "prohibited": "No threshold relaxation, nonlinear feature search, target-informed transformation, feature combination, or post-result reordering."
+  },
+  "independentTransfer": {
+    "source": "Aurora dataset, https://doi.org/10.5281/zenodo.15481956",
+    "boundary": "Only assembly and protocol metadata may be inspected until a candidate passes and a separate Aurora precommit fixes exact cell IDs, cycle mapping, missingness, endpoint, sign, and gates.",
+    "targetClaim": "At most a rank-transport claim across laboratory, format, and chemistry; absolute RUL calibration is out of scope.",
+    "minimumGatesToPrecommit": "At least 90% target coverage, at least 24 observed 80% events, at least 100 comparable pairs, concordance at least 0.65, and a 2000-bootstrap 95% lower bound above 0.50, with an independent implementation."
+  },
+  "safetyAndScope": "Only public historical battery data are processed. No cell operation, destructive experiment, personal data, cyber-trust experiment, operational safety decision, or deployment occurs."
+}

@@ -1,0 +1,4508 @@
+{
+  "auditId": "RC56-AURORA-REMOTE-SOURCE-AUDIT-0.1",
+  "cycleId": "RC-2026-56",
+  "auditedOn": "2026-08-29",
+  "status": "metadata-only-before-any-cycling-data-entry-was-opened",
+  "record": {
+    "id": 15481956,
+    "doi": "10.5281/zenodo.15481956",
+    "title": "Dataset for publication \"Toward an Autonomous Robotic Battery Materials Research Platform Powered by Automated Workflow and Ontologized Findable, Accessible, Interoperable, and Reusable Data Management\"",
+    "publicationDate": "2025-07-01",
+    "license": "cc-by-4.0",
+    "zip": {
+      "url": "https://zenodo.org/api/records/15481956/files/Dataset-rocrate.zip/content",
+      "size": 2507129091,
+      "checksum": "md5:eaec9549b74b59d998e5138dab965b5d",
+      "lastModified": null
+    }
+  },
+  "directory": {
+    "entryCount": 797,
+    "centralDirectoryOffset": 2507033843,
+    "centralDirectorySize": 95226,
+    "tailSha256": "cba281c0e46c03ccdb15edb19741813e7e0af78d16da9f4e4fde7f5d4c9c9557",
+    "centralDirectorySha256": "a3ecaa8bd0ca78790a6e34a3e1d3bd1885f0aded6047551fcf05f600104ed9e7"
+  },
+  "entryClasses": [
+    {
+      "suffix": ".bdf.csv",
+      "count": 199,
+      "uncompressedBytes": 7508269979
+    },
+    {
+      "suffix": ".bdf.parquet",
+      "count": 199,
+      "uncompressedBytes": 1753454452
+    },
+    {
+      "suffix": ".metadata.json",
+      "count": 199,
+      "uncompressedBytes": 11016475
+    },
+    {
+      "suffix": "other",
+      "count": 200,
+      "uncompressedBytes": 163896
+    }
+  ],
+  "metadataFileCount": 199,
+  "metadata": [
+    {
+      "name": "empa__ccid000001/empa__ccid000001.metadata.json",
+      "sha256": "f20e6ca56d2454f9ade0407fc6e9d243ef9c6c96b2ef9aaabd537a611ede0464",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000002/empa__ccid000002.metadata.json",
+      "sha256": "8f5437e7afb0ed3ca8e4560e3e4908fdf7dacded877f382bebede632bf9336ea",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000003/empa__ccid000003.metadata.json",
+      "sha256": "ccf485eddb6f8169a590623ae37fb97cd6e163619c5f750f049d5f3060df363d",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000004/empa__ccid000004.metadata.json",
+      "sha256": "a2ffd3fac34b996ac01dca0ea468e31bd881befc97910f8f94a4bb5b7ac51e4a",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000006/empa__ccid000006.metadata.json",
+      "sha256": "101c482ad9b2d1b4c74f17a9b65f8bb1bc275e05636cbd55b888b35012e921a6",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000009/empa__ccid000009.metadata.json",
+      "sha256": "a92cd91a373e4fb051666de5daf8e607c9066f96157f06bc7b244986cc22a08c",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000010/empa__ccid000010.metadata.json",
+      "sha256": "5e1ee2e0613fa53528128515d592138da3b1d7402b56b78fa91cee92f1f1cd4d",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000012/empa__ccid000012.metadata.json",
+      "sha256": "0c6c2db069b04ab5b08a56c5ffcc2e6b882d06e6b7570298884d94e35e9f926e",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000014/empa__ccid000014.metadata.json",
+      "sha256": "b698a546c855843959824f8a24fc3c26e6c0ca8dd90e6f0c2815a41aeb06c456",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000015/empa__ccid000015.metadata.json",
+      "sha256": "c4d43ba38725786c1251942653a20f7355e7c6fce66a43bc8408aa47e7864086",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000016/empa__ccid000016.metadata.json",
+      "sha256": "971e00758fa5b1ea39750850e1534993aa839b1007642ce420958f6f967ef465",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000017/empa__ccid000017.metadata.json",
+      "sha256": "64c6c88810ab884df426d93b3e635b290b991152936ee04d49f1975e8fd10be5",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000018/empa__ccid000018.metadata.json",
+      "sha256": "d294973cf3fce7771b6da9b7fd3207e9e71d49f7fd92ddaf84bea6b697d52283",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000019/empa__ccid000019.metadata.json",
+      "sha256": "eda19be8ad53b24a1a4a6fd78a0724514b844a442fd98e9bb151cd87c1436f53",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000020/empa__ccid000020.metadata.json",
+      "sha256": "fb4792f77c6d2cf2abd8048f65b5a33aa762f0e65f9837d2f95cb4fa067d06a5",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000021/empa__ccid000021.metadata.json",
+      "sha256": "ac3606ff10abc9329516466e5f6632fa7f17d0dc1870abc958ad9ef56abda384",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000022/empa__ccid000022.metadata.json",
+      "sha256": "6bf653333a60fb8b838c8ffefb80cbb8e71ac2075d58fa449f77587107ac2f8a",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000023/empa__ccid000023.metadata.json",
+      "sha256": "4af811e87832bad8aa447b116de1d2b4fc1e88c3b9d324c4cbfa68b84d13c5b6",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000024/empa__ccid000024.metadata.json",
+      "sha256": "f46a551f3f8012e69791d51e50e1f3cf8e58200dd5a3ac97f246c7aa4525fae9",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000025/empa__ccid000025.metadata.json",
+      "sha256": "442a3dc6f60b23f3647ece0dfd651792f05de1c82e1781c9598c058adc8a60e8",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000026/empa__ccid000026.metadata.json",
+      "sha256": "8b9407924857893d68e89a8c36f538ebebeb7d7511f914648a5f97c22732e4e4",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000027/empa__ccid000027.metadata.json",
+      "sha256": "24c445968a098c33d9bb3e9cf9dcf2da0d619e278c2041fe8faf118fd9018733",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000028/empa__ccid000028.metadata.json",
+      "sha256": "2d7f182720d7a51e1e808a9f35553978f495204289a7b913a76ba86513043628",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000029/empa__ccid000029.metadata.json",
+      "sha256": "594c0b6a22e324636b568c2c012213b32ba36e347241131dcdb6a4869849d32d",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000030/empa__ccid000030.metadata.json",
+      "sha256": "1e0774115e00604b320a521bfcbdb855485dc0c8dd42930b2b3b5c0d9cfff268",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000031/empa__ccid000031.metadata.json",
+      "sha256": "88381e24c5e70b6c12d81eb2da61d3e812649a716e8260fd46676fe9d6ac95ab",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000032/empa__ccid000032.metadata.json",
+      "sha256": "46f82574787054e73589e7d03cd400fa05e8dee0e1c82a62829a072a9283b2eb",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000033/empa__ccid000033.metadata.json",
+      "sha256": "26bb5e252566af03676faf67abdee2d35c5c88c7654b77b70f246f81766a4933",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000034/empa__ccid000034.metadata.json",
+      "sha256": "3b4c65d512940d71a407061f2503ca1c2cfbac3d99e06f77d196e0b5d66465b9",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000035/empa__ccid000035.metadata.json",
+      "sha256": "5fd62c68169a19022a96f740f941b5d02813aa5f34af1f4d41c8f019bb2cddb5",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000036/empa__ccid000036.metadata.json",
+      "sha256": "81d46d864cfce5eff483259f1b379acf94c154e967056d9c4251a75913225692",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000037/empa__ccid000037.metadata.json",
+      "sha256": "846ca27e61224d62946a1e8bbd15d2a181ba20b4f8bd52f6b5698f244c3f055e",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000038/empa__ccid000038.metadata.json",
+      "sha256": "d7b388c0f6fb0cd232844f2fe6eeebe9bd8b6615a4f6687dd4f63793b00f4c5d",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000039/empa__ccid000039.metadata.json",
+      "sha256": "1999d1e7085113711a5c20284e34ebf930d838f43a6699831040c541f43baa82",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000040/empa__ccid000040.metadata.json",
+      "sha256": "644833ccbc78a0d6af9e35284d091f34fd8849afe2e2e94971816d93b49e0311",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000041/empa__ccid000041.metadata.json",
+      "sha256": "72fbc67a2c97333a04f713c1da7a2552231e7bb8fc0626bf4fc23f13fc47d31a",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000042/empa__ccid000042.metadata.json",
+      "sha256": "7c9ca39ef27166eaa4d4c6cee61e9e2676be1626bfc865a1a7baf2c12ab685ad",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000043/empa__ccid000043.metadata.json",
+      "sha256": "60ac01bc5e2fc9f121887f46d27ceda815764ced1f9d5ac690eca53a47ce160e",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000044/empa__ccid000044.metadata.json",
+      "sha256": "8c081b40088baeb09a7e642805b81061f44105f6f29ac1fc5375ebad14968eed",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000045/empa__ccid000045.metadata.json",
+      "sha256": "efca33816e4158d7b60c7c19307c7911d4304a5e4b1569cd4a7f9d65b563cd73",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000046/empa__ccid000046.metadata.json",
+      "sha256": "3f540a4cae70b86942ad6a09d2dee16fcce645b27844f70dd9ef4e683e0fe48e",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000047/empa__ccid000047.metadata.json",
+      "sha256": "84012b17fe55ad1af19eb23ed68266967a860bc93e6bc29ea2d20ea9782f0b05",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000048/empa__ccid000048.metadata.json",
+      "sha256": "7e08ff0f09266be59cfabc1aa96855c334989a531ced7c3c4a5c5b963e34f80d",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000049/empa__ccid000049.metadata.json",
+      "sha256": "86f1b48b43d720c6fe2ef7d50ac5ae75a6655f7815d0397cc1d26d530975efb4",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000050/empa__ccid000050.metadata.json",
+      "sha256": "e06f31283f9d9964bf23633e78e8ece48e365f67471e448ebc0e3fec7614eece",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000051/empa__ccid000051.metadata.json",
+      "sha256": "a1c6c3d58fd9a349605aea2f2e45a36c3ce62bb0665d0b619e3ad7a0ed218950",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000052/empa__ccid000052.metadata.json",
+      "sha256": "c1a033b9c3a1d1c097de538172267914b3bb530bf43dbe1b578733f7ac10be85",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000053/empa__ccid000053.metadata.json",
+      "sha256": "f18e597cfc27f2d06060fc00230419bd1d0e281627ef0fc3609ca2b7716a95bc",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000054/empa__ccid000054.metadata.json",
+      "sha256": "616bb4d9f93ce0c98ec3748ecd6c6e7bf3905b120b5daf9ff58145787335346a",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000055/empa__ccid000055.metadata.json",
+      "sha256": "d99409db29e93fadcab2a852322a9080e911dd87447566bc06bbdd6835360bde",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000056/empa__ccid000056.metadata.json",
+      "sha256": "2a5c7a69aea8bbbfa1c7e71088a0a29a4cd1cab5c38b3872fa4a92f8c7bea05d",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000057/empa__ccid000057.metadata.json",
+      "sha256": "e6b2db9fdd22ffa45980a87b5192610ab48944b3c936e619b43f4f3c0ddf5afd",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000058/empa__ccid000058.metadata.json",
+      "sha256": "fc2fa409e487abaf45ce57b5a18449f8ad44e8a197b2923cfec707402a73fd3c",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000059/empa__ccid000059.metadata.json",
+      "sha256": "496e56c260f1fe4c1694d83b8d0b72155cb74f72de4e8da61946175649e41ce1",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000060/empa__ccid000060.metadata.json",
+      "sha256": "9171915ff5d2cbd19e40db820269863c49930e47182a221746111656362f6200",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000061/empa__ccid000061.metadata.json",
+      "sha256": "2afcce8aa6c05c35918af6b7d08da0d26876ee1fdcd8f8a4c5e9837dcd4e354b",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000062/empa__ccid000062.metadata.json",
+      "sha256": "a230c11508bf842383c1f05a7f83976adce85c16485d7ce7e65dc3a04215707d",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000063/empa__ccid000063.metadata.json",
+      "sha256": "f7a9d30e2698b7b3ad89ed93e374aea793cceb0994d6a81309e9d584df103e9c",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000064/empa__ccid000064.metadata.json",
+      "sha256": "a8598ada748561bffd55606aad5cd01d7c43301563be158403a6905786c8e49e",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000065/empa__ccid000065.metadata.json",
+      "sha256": "a1d900461017b390282bc9e6c485cba3023ad5495c702c181659acbebd0f08f8",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000067/empa__ccid000067.metadata.json",
+      "sha256": "3c0d1f4e07870aae87babcf253fd9b2f0f11ef64c028ded3fb559e1b1a3441aa",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000068/empa__ccid000068.metadata.json",
+      "sha256": "d32275ee9e95832cfaa2310b75607d5d90c121b00844d01e9d696cbb06b3a0bf",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000069/empa__ccid000069.metadata.json",
+      "sha256": "418b3fdb57ba5e619b9321b8b065ef5ca2264831684a50823e6ddd3362f25812",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100002838"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000073/empa__ccid000073.metadata.json",
+      "sha256": "0e3922c56bc4333bafb364316579eb793ee48a4a45394dee47bcff9acd88ce87",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000074/empa__ccid000074.metadata.json",
+      "sha256": "a3f7f0bacefc655b47b028578ef1961fd712b13df2e931f739ca60b34549fdb1",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000075/empa__ccid000075.metadata.json",
+      "sha256": "c5fbbb7e9efd245278c308d29ea21ab908d685e91cba4d5a56d88d3526aed818",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000076/empa__ccid000076.metadata.json",
+      "sha256": "defdf6465a26a287afecc5cbd967e1b45ab4be7e116ae22d11f796e2f89ab8ce",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000077/empa__ccid000077.metadata.json",
+      "sha256": "f8ba8a6debaf47fa2fbd2e22bde1deeeddd4f7fadb09af98385e16d14c1dc9f0",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000078/empa__ccid000078.metadata.json",
+      "sha256": "3133568fc2b7ca5ad7ed966ceaf06a71b76b7323acee58d89e7a1644ba998137",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000079/empa__ccid000079.metadata.json",
+      "sha256": "92e4b5ef612b18ee0e0d93307b7300100ad75b74bd5efc316dbef74d7a79a83b",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000080/empa__ccid000080.metadata.json",
+      "sha256": "0fc7df9e980b2027b03977815174ef93a5c1a22b506a172118af05320703847f",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000081/empa__ccid000081.metadata.json",
+      "sha256": "073e9d77707df540d2a34bf5934334521a85c15e17c0fbc6e6354d32b8477b11",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000082/empa__ccid000082.metadata.json",
+      "sha256": "2859df7b282eef4610fef750800f7483d56d70884dd2fe0d8ef494c0923e3ef1",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000083/empa__ccid000083.metadata.json",
+      "sha256": "a2ae32641ca4c1de1b23ec9f09af3add54497539e03e5b65eb3990eba9827433",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000085/empa__ccid000085.metadata.json",
+      "sha256": "47e9852f93c01560691d337133f859aa1dc4211ce07ad54d040004bca92fe2a8",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000086/empa__ccid000086.metadata.json",
+      "sha256": "ca6f0c83a6fd894cf5f9653eb02458f80852b0281d2b5d9590640e46c741a404",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000087/empa__ccid000087.metadata.json",
+      "sha256": "63eea0f55a1447475605faceb80395452cda3f56a86624d56cd44632ce810d4f",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000088/empa__ccid000088.metadata.json",
+      "sha256": "60fb245ea78f79cb7ae6c5f9c595ce1f08f1547eb00ab5abf6fb8368f7ce3124",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000089/empa__ccid000089.metadata.json",
+      "sha256": "5aff4236f9a70faad9904c8cefb65c0e740cdc5b2dd09e097ac6017dbc56cc83",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000090/empa__ccid000090.metadata.json",
+      "sha256": "dbea22ff6091eca52aa9d71e155fc68d7506e53c91c0897a9705bc5d040f1198",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000091/empa__ccid000091.metadata.json",
+      "sha256": "b1c0d79b8a94d2b5c37008127a6e7c59564a0937172f7efbb5d1c19dd904fa6d",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000092/empa__ccid000092.metadata.json",
+      "sha256": "83526b3191a268d3f9e7c347a5ce89cebdd65dceaf19ecba6063b86591a1d751",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000093/empa__ccid000093.metadata.json",
+      "sha256": "8c8120159af164c5d0da4fca45270f9ef71efed93da3e63a1c18261471c5a7b3",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000094/empa__ccid000094.metadata.json",
+      "sha256": "e8d743ef0a776970da146f1343d282d62c3b57035203f6c9dcc501c9574327c9",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000095/empa__ccid000095.metadata.json",
+      "sha256": "530cf0d42139d2891addaa488436a8dcdbaf794624fd8750883d3e3dff2baaa7",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000096/empa__ccid000096.metadata.json",
+      "sha256": "ba60ffd0d8966db71ed045b3812b02604d421954518a39bcd5f1b1658c65d163",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000097/empa__ccid000097.metadata.json",
+      "sha256": "bdb54beeeb073fec89e75fc027f600632e43a4293130cd309194e5e94004b32f",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000098/empa__ccid000098.metadata.json",
+      "sha256": "11646d905adb32d7f35c0c9591a21e62ea72606eb7d619e067ca9857f4479238",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000099/empa__ccid000099.metadata.json",
+      "sha256": "2d46b75d2306ac5e3def7e526dc36144d5fa6f397479b6b675ec62a6cb1db03d",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000100/empa__ccid000100.metadata.json",
+      "sha256": "1f9f4d2dc18a065961aaa769854eb39ed8d2c4498ba0a81e1fd161ea344cca4e",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000101/empa__ccid000101.metadata.json",
+      "sha256": "d6d795b224ffb6f6ebe2cdc271421fb992a26fdbb926f640205ebf7fc6f234f4",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000103/empa__ccid000103.metadata.json",
+      "sha256": "a3d3c474062b9cc0de961e9cf7eb96473b2453554a5a45523f7533935b2f9e7e",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000104/empa__ccid000104.metadata.json",
+      "sha256": "e23d6de86e103b6154ad25d8c4381298df8ee38fe90b3432fe8186ce87cdfb0e",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000106/empa__ccid000106.metadata.json",
+      "sha256": "915c9734546bd757bb4619e4294e818278427bf9c4fbeef084637b07520e99e5",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000107/empa__ccid000107.metadata.json",
+      "sha256": "2664331e8e85e07034a03b38d1e3eb1d649bfd4fce3a9e18bc33d30cc0ac50f9",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000108/empa__ccid000108.metadata.json",
+      "sha256": "9bfae4a04b30809417a5879a1527e3bdfaeaab7b70ccba62418332745d3c0c7d",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000109/empa__ccid000109.metadata.json",
+      "sha256": "9a1c313ff0f9297b850367d10eb51d4cf3780cf854a366df5f778df56719b032",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000110/empa__ccid000110.metadata.json",
+      "sha256": "da7eec40edf13df7a6a0f4edf4d46c636d8d73c4232bca9c8ebd38210616545a",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000111/empa__ccid000111.metadata.json",
+      "sha256": "f81b8a171c8940f9c94fe2a3681ada840cb233294e740a9f84ea9e9ec5e78e91",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000112/empa__ccid000112.metadata.json",
+      "sha256": "580fec2da64ccc80e4e6615511d6c50a2213ec1eeceac005d588a83a20049574",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000113/empa__ccid000113.metadata.json",
+      "sha256": "1046fc1afc081a1756d1ae0e14e64dd17b4238eacec997b8b0374a2272b6d374",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000114/empa__ccid000114.metadata.json",
+      "sha256": "5dc9816c562a7627b6a004197043b605bf2b161f8105658730e7a8f252ca951d",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000115/empa__ccid000115.metadata.json",
+      "sha256": "db141851cfdb154f65b629ef5cb42078e787bbab480ea73938faee6e245bd6b6",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000116/empa__ccid000116.metadata.json",
+      "sha256": "929a8c009759d1a2867e71c18f7495e01129d1dc1897f86c03bb915d31b4a324",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000117/empa__ccid000117.metadata.json",
+      "sha256": "8514b7007c70ada5fa2dafc45bfc668f1088715c989ebdd2a0479ea662aee047",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000118/empa__ccid000118.metadata.json",
+      "sha256": "ac10ca1c1e36a08e4d1f197d4dad3a31c25abd201ab4b95ae8c9a1e2f25805df",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000119/empa__ccid000119.metadata.json",
+      "sha256": "a967bfe1457759ecfea1aa2d49dc27ed6813eff5f40bd5f8d3afe47ba6892ea2",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000120/empa__ccid000120.metadata.json",
+      "sha256": "2d3ed715506205dca7fe507698a58f3e086cbad55869cca48fb5b0ca230546f2",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000121/empa__ccid000121.metadata.json",
+      "sha256": "213da6eacae1c088cd1814660f4c4f68b826a6301ac8999edb401ab8d42656f1",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000122/empa__ccid000122.metadata.json",
+      "sha256": "2aa8c53d1bef0b08a2b5d21f1d826dbfcd8e5cada76e4378bcf89c81493d0f9b",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000123/empa__ccid000123.metadata.json",
+      "sha256": "c632fa340fcf6458a92dcd122435e1f6dd4ee8332e80151e0e346162b86d1193",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000124/empa__ccid000124.metadata.json",
+      "sha256": "5864ac827885331e852c952e85c914a30e3d49166168ecd9db802a246885cdaa",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000125/empa__ccid000125.metadata.json",
+      "sha256": "88d5b1bdcbd06f8779d99a1445b9111bf2f4427d1039d33a0eff2cdbfded9879",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000126/empa__ccid000126.metadata.json",
+      "sha256": "83cf28d808900aaf6506814749a5d9f5d9829bd6f89fe5c1f9b731b4d5a438f8",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000127/empa__ccid000127.metadata.json",
+      "sha256": "8ab0920e0db8d770e5cb0795c238528d395224a136678b5d6ee7c292405294ce",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000128/empa__ccid000128.metadata.json",
+      "sha256": "b5d12789b4cc81ed3ac87c3c1380ae8264d6825429588eea01fc06010ee0361c",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000129/empa__ccid000129.metadata.json",
+      "sha256": "6c4a481576e8a60defb988d5d32aa0bf8e5fb5233770feb283fd44e8021d8ba8",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000130/empa__ccid000130.metadata.json",
+      "sha256": "f5caa3910cf551f899aa6958bff08c6564640f373faea65f9cca6b651c94938e",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000131/empa__ccid000131.metadata.json",
+      "sha256": "3408b6770f83efb46630ff95342ed63cbbf33746a09b1f07307224d317e662e4",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000132/empa__ccid000132.metadata.json",
+      "sha256": "d8dbd18ceea6df111535573c6207061891d80eb4b612c54f584d4a0eb743768c",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000133/empa__ccid000133.metadata.json",
+      "sha256": "6076972a3d7a6452d20cd871ab8ac7ac0158feda464b4cb73e671527ab038884",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000134/empa__ccid000134.metadata.json",
+      "sha256": "37efbdf985aa0c39730d3795dbd22a4813709f5004c23e1fcae36279bd0b55be",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000135/empa__ccid000135.metadata.json",
+      "sha256": "be0c9a128e0cd836871bd0b4584d61c712a344f9dff928e0e9208fe9d1d752c1",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000136/empa__ccid000136.metadata.json",
+      "sha256": "d7ec9c75333f91b16e7f400ac20b528774be612c31a11ad0d86fc8e8bd17428d",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000137/empa__ccid000137.metadata.json",
+      "sha256": "6d76f446cf5c6a598f91d1ab3543f727b194eb12e1918bf87c762320d069c489",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000138/empa__ccid000138.metadata.json",
+      "sha256": "bb78094ca21525b111d899665e216f0fb562ef53e0267df9be55d0c9ab9e9f7c",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000139/empa__ccid000139.metadata.json",
+      "sha256": "fe2183a463f98fd3d9fddf2d5dc30afeaefaee5a8b7fae771b6ba4678dbce6a3",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000140/empa__ccid000140.metadata.json",
+      "sha256": "718199ed54401ec19e5dbca6df4c60d78e0949422b9836bbbd5ed7a627e077e5",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000141/empa__ccid000141.metadata.json",
+      "sha256": "361332eb91e57241713900b1c2fc35f77b2c1aac5a2d7dc2e0e673936c8e49c1",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000142/empa__ccid000142.metadata.json",
+      "sha256": "5ee23389cfb71c5b1ab812970f8cbaae9a9d3ec5a45fdd06d95ca264b80f61bd",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000143/empa__ccid000143.metadata.json",
+      "sha256": "8c6274c6d2c8da740fab2b3890415fec032ba482ae88e6fc8c969925b860149a",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000144/empa__ccid000144.metadata.json",
+      "sha256": "c8eca677530114968756fcd628940efba65b071a3d51d1aec4c99ff1cfccee3c",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000145/empa__ccid000145.metadata.json",
+      "sha256": "60dfcaa88755b8baf49535ab48f2c3b4b718e7c32ab280bd1abd9c6c901c449f",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000146/empa__ccid000146.metadata.json",
+      "sha256": "b3a1dffcdac442f477a7e1d98c33a3b19ae58ff1a0bb68ab3b80972eb872308f",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000147/empa__ccid000147.metadata.json",
+      "sha256": "a91deafc5fa3fdfb705d68313993af4f364e7f08df2fb8cae658ed1d31e88ebd",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000148/empa__ccid000148.metadata.json",
+      "sha256": "8b65e71f9b2abfeb26c437e15c14e238b8f0f7dec93601e3e6f669b41200a6f1",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000149/empa__ccid000149.metadata.json",
+      "sha256": "a9e424149f65377fbc96a3045456e203ee2edf3303fe343dacd7b0cf19d4dbed",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000150/empa__ccid000150.metadata.json",
+      "sha256": "be3c9a90dbb857505cf45d59f4f8d4f959dab2f9c5705e52980350e325692168",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000157/empa__ccid000157.metadata.json",
+      "sha256": "58725c643930aeec4ce7da635ee46565bf59ae3b75f742d73f463b507f15ea82",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000158/empa__ccid000158.metadata.json",
+      "sha256": "a693801007883197a3459f9efc37f0a62581023db288ffe43bbe6b9c8c0648b4",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000159/empa__ccid000159.metadata.json",
+      "sha256": "cd941128fefb05cee69442cde7623ed311b8c82053b7b4b34d6129a506df65e0",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000160/empa__ccid000160.metadata.json",
+      "sha256": "c5ec715a63d90703a3c9ea798cff6d320604dcb3e512eb72fd21b9e3804141eb",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000161/empa__ccid000161.metadata.json",
+      "sha256": "33e35e6d7ea3b3e1dbe925f772577fd274a86907e218d1ce7604b07e92d02e04",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000162/empa__ccid000162.metadata.json",
+      "sha256": "574e6865c90d177c0befd6f3e2dc521f4ad74809ece7138758358d793d656ee0",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000169/empa__ccid000169.metadata.json",
+      "sha256": "4e13636aaf974ea60da7e5d06d15d536f3551f900cdbc42de993f77dba618699",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000170/empa__ccid000170.metadata.json",
+      "sha256": "ae4c5d3fcf83f0cb5a713ca8cd72501565c08f2dda552efa6decdf7979820121",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000171/empa__ccid000171.metadata.json",
+      "sha256": "4c17b47ad28814c2b2b32587dfb880c29730e7ad6a2b8f76568127206907c63d",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000172/empa__ccid000172.metadata.json",
+      "sha256": "07937d0033eefbba0e14be5cc9ca6cf37a7b115e4df9ed4f2ac7012facf408e7",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000173/empa__ccid000173.metadata.json",
+      "sha256": "6c6ce729aad3e6be51620b0a46b992bbf92118b94f565fca28783fa8bf565828",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000174/empa__ccid000174.metadata.json",
+      "sha256": "3b77757e65a858f42a1404110c99aa951aa7879520e5d0ecc958f526f1d97138",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000181/empa__ccid000181.metadata.json",
+      "sha256": "2327504be093c8c986a8481f11f4f3061fd2f0071ddc87e282fc6bfe3f1ad8df",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000182/empa__ccid000182.metadata.json",
+      "sha256": "9b2f3001adddaa272e13786a36ff75dffcdec6e0f306644b0602288c100ad403",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000183/empa__ccid000183.metadata.json",
+      "sha256": "f141a583678cd63c85075e42f3a2bb4fe6034e6ae5538c353ac69d626019e3bc",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000184/empa__ccid000184.metadata.json",
+      "sha256": "f941a87ef65c703d7bbec37605ce039b3882d14ff3f9d7e37261079f10806e35",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000186/empa__ccid000186.metadata.json",
+      "sha256": "6af363ac145af15fb593acc05fca9a0c37ea1f11055d6f6ff1eb8e0f680c7d76",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000193/empa__ccid000193.metadata.json",
+      "sha256": "ce277ed74667e75be63d4af1191c6eaa42cc330a6dcc9db5df38224859df3d7b",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000194/empa__ccid000194.metadata.json",
+      "sha256": "b85e80476c3e8f1ec7c9bba1a2a89504f79245acf677bc209b20ea2e77f40f38",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000195/empa__ccid000195.metadata.json",
+      "sha256": "0c75b4efdb9e8edcc754cb6c99a68d08829266ce14500f5b84426e420a4dbdc6",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000196/empa__ccid000196.metadata.json",
+      "sha256": "f399b1319947caeea7fde8df000458271739369ff0eb9e147bb48b383f2d5e09",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000197/empa__ccid000197.metadata.json",
+      "sha256": "3fc2642afc5dbe21e65c2269f69048ad2592c3153ba00a0eda95bd69b9d9a6d5",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000198/empa__ccid000198.metadata.json",
+      "sha256": "b9e9d4ffa390a57a9ed9b5312055daee4511917e81b46a07cbc7b0958f6fd8b3",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000205/empa__ccid000205.metadata.json",
+      "sha256": "1ed632f894d0b57a0f06c4620326bd8cb4969b11046e5ba68c3b8626378355cb",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000206/empa__ccid000206.metadata.json",
+      "sha256": "68ae633f45e66121e18887f875b175d13e522bd0d4af21b479ff2eae72922590",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000207/empa__ccid000207.metadata.json",
+      "sha256": "918719cc7bc2110e2eb8d9380255f6aacde23aa9984933d93ea6879e49fb8ac4",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000208/empa__ccid000208.metadata.json",
+      "sha256": "3a35e92e0e4f9f349e48acbfb267cbf666d25df2cff9ef58d91e3c54fb7fed8a",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000209/empa__ccid000209.metadata.json",
+      "sha256": "09726b3e9ea8433627a4760414c78a410ad98f9bf26e2700e5a396308489b8ed",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000210/empa__ccid000210.metadata.json",
+      "sha256": "8d74097620e3d22583de775fa1cf03dc031ee1c7a29eab3d38bc0e1de6cf7a16",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+          "value": "100000030"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000217/empa__ccid000217.metadata.json",
+      "sha256": "f72f19933a34b29ac2f6e7dd95fcc8edd6db675f395400125215f6faea2c7978",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000218/empa__ccid000218.metadata.json",
+      "sha256": "78c6d0558d16158bd70ab2cd9f4a2ad22ff037c5d1d31c4e6d95f0484df27eb7",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000219/empa__ccid000219.metadata.json",
+      "sha256": "914d3ce633a85f10411e8c3b18995220f5ea323bb96e1939be4d2646fc2649d1",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000220/empa__ccid000220.metadata.json",
+      "sha256": "a3a36fc58b62391ece2d429a274ea49fd93d002e388bc7ecb85bc6f9c702c540",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000221/empa__ccid000221.metadata.json",
+      "sha256": "0b9f2508e4f93be25becf592095aabaa5629a2f111790a8f81c824e7d0f5a68e",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000222/empa__ccid000222.metadata.json",
+      "sha256": "c0d927b0b2f47a882314ced1b1508943a70dee00b6e87a07bc158c88bb4194ad",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000223/empa__ccid000223.metadata.json",
+      "sha256": "a45eda72d38cc91d867038f8a648e797db9ead5bfdfaeffcace7528affaa0ea9",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000224/empa__ccid000224.metadata.json",
+      "sha256": "eb5e741196c2ea95645b0e9030865891ba2a13ecc39d9449372ec5a90c8833e4",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000225/empa__ccid000225.metadata.json",
+      "sha256": "52e8c32047166f079216ec544be138f459fc9473367dd0e5e6a5b963ad67eac8",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000226/empa__ccid000226.metadata.json",
+      "sha256": "edbae8947ef920c71fff9b62bc7964bb104bb57bae51ecd0f92364c2dd1b6c74",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000227/empa__ccid000227.metadata.json",
+      "sha256": "1e13f302b2d1f36e9eff0d7929f5ee1356a23ef8a82a288aa71b1f936adff422",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000228/empa__ccid000228.metadata.json",
+      "sha256": "f2166f85968fde271c5cb9ff1334fc4e3cb5926217a5f8fad7173dc0f2a04b7e",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000229/empa__ccid000229.metadata.json",
+      "sha256": "245c30a2160be620598092e85c373b39b95b7ccc536672a705ca16c6c1682793",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000230/empa__ccid000230.metadata.json",
+      "sha256": "f40c0913f63fcd97edef42086964d20fb3e1c85d53da11db186e7783257d3149",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000231/empa__ccid000231.metadata.json",
+      "sha256": "b9e8738275030d926c14d7670387580f513af20795944546a2d3a205f0b75f15",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000232/empa__ccid000232.metadata.json",
+      "sha256": "6fabac312ace1b89daf3396ef5f7714a9d050427dea354f3a69ff04013920169",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000233/empa__ccid000233.metadata.json",
+      "sha256": "59399623fbb9badbf732a5dba202e89dd9458fdbbe7b9001998f1a7dcfc164ce",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000234/empa__ccid000234.metadata.json",
+      "sha256": "855f49be033f6aa903b2cd405f05f2a8180d804455d5657d12957ecbe3548eab",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000235/empa__ccid000235.metadata.json",
+      "sha256": "28232cdef4f5fecd6c1d18ae28b7591faec43e78d6503f32f428166654248bf8",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000236/empa__ccid000236.metadata.json",
+      "sha256": "ad6ad839f35459b4dede0a85842e4cee1f5bc8d59e63e1084931acc29b3fcb6f",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000237/empa__ccid000237.metadata.json",
+      "sha256": "3e87d3c387f61b02058e44ad974c8c05c18e45d4868d81d255a1f1759620606d",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000238/empa__ccid000238.metadata.json",
+      "sha256": "a764a455cb53d854404aae32d563ade742a6c8bf0fb21cadd90c4042b1f592e5",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000239/empa__ccid000239.metadata.json",
+      "sha256": "d4da54a48e1a9f1cc91220780add95d7a162f26bb76495bf70fa713e79efbc20",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000240/empa__ccid000240.metadata.json",
+      "sha256": "b85378dc22bb4aebfbd5907e24abfc1c621401ffbfa59e734d831ac705ed0f7d",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000241/empa__ccid000241.metadata.json",
+      "sha256": "485ee308824636d3a56215d1e8aaee0646c17606ba321e1076add0a91f19b31a",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000242/empa__ccid000242.metadata.json",
+      "sha256": "283c4748ad7a75b0c001cb538952f891a47d75353b7ba0e683eb439781d9adb2",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000243/empa__ccid000243.metadata.json",
+      "sha256": "46e85ece2b2f8e3fc6b1c00b5e89aefcb579308506452453f9704909255b6306",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000244/empa__ccid000244.metadata.json",
+      "sha256": "8486e66ffc3e7c8447577eb847c1b5f78fa99886dab7483c5b3a474fe7eb8194",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000245/empa__ccid000245.metadata.json",
+      "sha256": "a70afaefd9e9b093ebb71e6d79a3a8a0c550b6ffac2c6fa014a77eeba4f3f3f6",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000246/empa__ccid000246.metadata.json",
+      "sha256": "a3632d028e04fc5884294b5d70e3ca49d4d315aa46a594dfdca15030e41a48c9",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000247/empa__ccid000247.metadata.json",
+      "sha256": "810814e303095871b014040983713480758d7d1c4173e04f626689d3c68ef224",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    },
+    {
+      "name": "empa__ccid000249/empa__ccid000249.metadata.json",
+      "sha256": "5a26443b14c48b1fa6a29577107b5898094b0ffe7988cefa1277c721b1034071",
+      "topLevelKeys": [
+        "@context",
+        "@graph"
+      ],
+      "matchedLeaves": [
+        {
+          "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+          "value": "Graphite"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+          "value": " LiFePO4"
+        },
+        {
+          "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+          "value": "Graphite"
+        }
+      ]
+    }
+  ],
+  "frequentLeafPaths": [
+    {
+      "path": "@context[0]",
+      "count": 199
+    },
+    {
+      "path": "@context[1].battery",
+      "count": 199
+    },
+    {
+      "path": "@context[1].chemical",
+      "count": 199
+    },
+    {
+      "path": "@context[1].echem",
+      "count": 199
+    },
+    {
+      "path": "@context[1].emmo",
+      "count": 199
+    },
+    {
+      "path": "@context[1].rdfs",
+      "count": 199
+    },
+    {
+      "path": "@context[1].schema",
+      "count": 199
+    },
+    {
+      "path": "@context[1].unit",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.@type[0]",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.@type[1]",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasCharacterisationEnvironment.@id",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasCharacterisationEnvironment.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasCharacterisationEnvironment.hasCharacterisationEnvironmentProperty[0].@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasCharacterisationEnvironment.hasCharacterisationEnvironmentProperty[0].hasMeasurementUnit",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasCharacterisationEnvironment.hasCharacterisationEnvironmentProperty[0].hasNumericalPart.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasCharacterisationEnvironment.hasCharacterisationEnvironmentProperty[0].hasNumericalPart.hasNumberValue",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasCharacterisationEnvironment.rdfs:comment",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasCharacterisationEnvironment.rdfs:label",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasLab.@id",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasLab.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasLab.rdfs:label",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasOperator.@id",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasOperator.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasOperator.rdfs:label",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasInput[0].@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasInput[0].hasMeasurementUnit",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasInput[0].hasNumericalPart.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasInput[0].hasNumericalPart.hasNumberValue",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasInput[1].@type[0]",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasInput[1].@type[1]",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasInput[1].hasMeasurementUnit",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasInput[1].hasNumericalPart.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasInput[1].hasNumericalPart.hasNumberValue",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasInput[0].@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasInput[0].hasMeasurementUnit",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasInput[0].hasNumericalPart.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasInput[0].hasNumericalPart.hasNumberValue",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasInput[1].@type[0]",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasInput[1].@type[1]",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasInput[1].hasMeasurementUnit",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasInput[1].hasNumericalPart.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasInput[1].hasNumericalPart.hasNumberValue",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasInput[0].@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasInput[0].hasMeasurementUnit",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasInput[0].hasNumericalPart.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasInput[0].hasNumericalPart.hasNumberValue",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasInput[0].@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasInput[0].hasMeasurementUnit",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasInput[0].hasNumericalPart.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasInput[0].hasNumericalPart.hasNumberValue",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasInput[0].@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasInput[0].hasMeasurementUnit",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasInput[0].hasNumericalPart.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasInput[0].hasNumericalPart.hasNumberValue",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasInput[0].@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasInput[0].hasMeasurementUnit",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasInput[0].hasNumericalPart.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasInput[0].hasNumericalPart.hasNumberValue",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasInput[1].@type[0]",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasInput[1].@type[1]",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasInput[1].hasMeasurementUnit",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasInput[1].hasNumericalPart.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasInput[1].hasNumericalPart.hasNumberValue",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasNext.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasNext.hasInput[0].@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasNext.hasInput[0].hasMeasurementUnit",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasNext.hasInput[0].hasNumericalPart.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasNext.hasInput[0].hasNumericalPart.hasNumberValue",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasNext.hasInput[1].@type[0]",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasNext.hasInput[1].@type[1]",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasNext.hasInput[1].hasMeasurementUnit",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasNext.hasInput[1].hasNumericalPart.@type",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasMeasurementParameter.hasTask.hasNext.hasNext.hasNext.hasNext.hasTask.hasNext.hasInput[1].hasNumericalPart.hasNumberValue",
+      "count": 199
+    }
+  ],
+  "matchedLeafValues": [
+    {
+      "path": "@graph[0].hasTestObject.hasNegativeElectrode.hasCoating.hasActiveMaterial.@type",
+      "value": "Graphite",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasMeasuredProperty[0].@reverse.hasOutput.hasTestObject.ElectrochemicalCell.hasNegativeElectrode.@type",
+      "value": "Graphite",
+      "count": 199
+    },
+    {
+      "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+      "value": "100000030",
+      "count": 66
+    },
+    {
+      "path": "@graph[0].hasTestObject.hasPositiveElectrode.schema:productID",
+      "value": "100002838",
+      "count": 32
+    },
+    {
+      "path": "@graph[0].hasTestObject.hasPositiveElectrode.hasCoating.hasActiveMaterial.molecularFormula.rdfs:comment",
+      "value": " LiFePO4",
+      "count": 32
+    }
+  ],
+  "outcomeBoundary": {
+    "cyclingDataEntriesOpened": 0,
+    "cellCapacityValuesObserved": 0,
+    "cellEolValuesObserved": 0,
+    "allowedUse": "Select and preregister a cohort from assembly and protocol metadata only."
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "analysisId": "RC56-RWTH-LANDMARK-DEVELOPMENT-NODE-0.1",
+  "cycleId": "RC-2026-56",
+  "completedOn": "2026-08-29",
+  "status": "independent-outcome-open-method-development-replay",
+  "selectedCandidate": null,
+  "auroraOutcomeAccessAuthorized": false,
+  "results": [
+    {
+      "name": "R1_capacity_level",
+      "predictionCoverage": 48,
+      "withinHeldBatchComparablePairs": 49,
+      "withinHeldBatchConcordance": 0.5714285714285714,
+      "fullCohortBeta": 0.021711811226766353,
+      "fullCohortBetaSign": 1,
+      "foldBetaSigns": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "gates": {
+        "coverage": true,
+        "pairs": false,
+        "ranking": false,
+        "direction": true
+      },
+      "passesAllGates": false
+    },
+    {
+      "name": "R1_log_slope",
+      "predictionCoverage": 48,
+      "withinHeldBatchComparablePairs": 49,
+      "withinHeldBatchConcordance": 0.5918367346938775,
+      "fullCohortBeta": 0.018201006482437145,
+      "fullCohortBetaSign": 1,
+      "foldBetaSigns": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "gates": {
+        "coverage": true,
+        "pairs": false,
+        "ranking": false,
+        "direction": true
+      },
+      "passesAllGates": false
+    },
+    {
+      "name": "R2_capacity_level",
+      "predictionCoverage": 48,
+      "withinHeldBatchComparablePairs": 47,
+      "withinHeldBatchConcordance": 0.6808510638297872,
+      "fullCohortBeta": 0.05160038373079133,
+      "fullCohortBetaSign": 1,
+      "foldBetaSigns": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "gates": {
+        "coverage": true,
+        "pairs": false,
+        "ranking": true,
+        "direction": true
+      },
+      "passesAllGates": false
+    },
+    {
+      "name": "R2_recent_log_slope",
+      "predictionCoverage": 48,
+      "withinHeldBatchComparablePairs": 47,
+      "withinHeldBatchConcordance": 0.7021276595744681,
+      "fullCohortBeta": 0.0527583965301827,
+      "fullCohortBetaSign": 1,
+      "foldBetaSigns": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "gates": {
+        "coverage": true,
+        "pairs": false,
+        "ranking": true,
+        "direction": true
+      },
+      "passesAllGates": false
+    },
+    {
+      "name": "R2_log_slope_curvature",
+      "predictionCoverage": 48,
+      "withinHeldBatchComparablePairs": 47,
+      "withinHeldBatchConcordance": 0.44680851063829785,
+      "fullCohortBeta": 0.0024571492457959457,
+      "fullCohortBetaSign": 1,
+      "foldBetaSigns": [
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1
+      ],
+      "gates": {
+        "coverage": true,
+        "pairs": false,
+        "ranking": false,
+        "direction": false
+      },
+      "passesAllGates": false
+    },
+    {
+      "name": "R3_capacity_level",
+      "predictionCoverage": 48,
+      "withinHeldBatchComparablePairs": 47,
+      "withinHeldBatchConcordance": 0.723404255319149,
+      "fullCohortBeta": 0.08870879006516863,
+      "fullCohortBetaSign": 1,
+      "foldBetaSigns": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "gates": {
+        "coverage": true,
+        "pairs": false,
+        "ranking": true,
+        "direction": true
+      },
+      "passesAllGates": false
+    },
+    {
+      "name": "R3_recent_log_slope",
+      "predictionCoverage": 48,
+      "withinHeldBatchComparablePairs": 47,
+      "withinHeldBatchConcordance": 0.6382978723404256,
+      "fullCohortBeta": 0.07207885734802189,
+      "fullCohortBetaSign": 1,
+      "foldBetaSigns": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "gates": {
+        "coverage": true,
+        "pairs": false,
+        "ranking": false,
+        "direction": true
+      },
+      "passesAllGates": false
+    },
+    {
+      "name": "R3_log_slope_curvature",
+      "predictionCoverage": 48,
+      "withinHeldBatchComparablePairs": 47,
+      "withinHeldBatchConcordance": 0.5319148936170213,
+      "fullCohortBeta": 0.023117320330125823,
+      "fullCohortBetaSign": 1,
+      "foldBetaSigns": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "gates": {
+        "coverage": true,
+        "pairs": false,
+        "ranking": false,
+        "direction": true
+      },
+      "passesAllGates": false
+    }
+  ]
+}

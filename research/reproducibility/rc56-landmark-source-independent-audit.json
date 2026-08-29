@@ -1,0 +1,162 @@
+{
+  "auditId": "RC56-LANDMARK-SOURCE-INDEPENDENT-AUDIT-0.1",
+  "cycleId": "RC-2026-56",
+  "completedOn": "2026-08-29",
+  "status": "pass-negative-stop",
+  "implementationAgreement": {
+    "pass": true,
+    "selectedCandidatePython": null,
+    "selectedCandidateNode": null,
+    "maxConcordanceAbsDifference": 0,
+    "maxFullCohortBetaAbsDifference": 1.1660184963402376e-8,
+    "comparisons": [
+      {
+        "name": "R1_capacity_level",
+        "sameName": true,
+        "concordanceAbsDifference": 0,
+        "betaAbsDifference": 8.25223724770785e-9,
+        "sameComparablePairs": true,
+        "sameFoldSigns": true,
+        "sameGates": true,
+        "sameVerdict": true
+      },
+      {
+        "name": "R1_log_slope",
+        "sameName": true,
+        "concordanceAbsDifference": 0,
+        "betaAbsDifference": 3.4017767006067068e-9,
+        "sameComparablePairs": true,
+        "sameFoldSigns": true,
+        "sameGates": true,
+        "sameVerdict": true
+      },
+      {
+        "name": "R2_capacity_level",
+        "sameName": true,
+        "concordanceAbsDifference": 0,
+        "betaAbsDifference": 4.6912021489653455e-9,
+        "sameComparablePairs": true,
+        "sameFoldSigns": true,
+        "sameGates": true,
+        "sameVerdict": true
+      },
+      {
+        "name": "R2_recent_log_slope",
+        "sameName": true,
+        "concordanceAbsDifference": 0,
+        "betaAbsDifference": 1.000566317993501e-8,
+        "sameComparablePairs": true,
+        "sameFoldSigns": true,
+        "sameGates": true,
+        "sameVerdict": true
+      },
+      {
+        "name": "R2_log_slope_curvature",
+        "sameName": true,
+        "concordanceAbsDifference": 0,
+        "betaAbsDifference": 6.288531787315699e-9,
+        "sameComparablePairs": true,
+        "sameFoldSigns": true,
+        "sameGates": true,
+        "sameVerdict": true
+      },
+      {
+        "name": "R3_capacity_level",
+        "sameName": true,
+        "concordanceAbsDifference": 0,
+        "betaAbsDifference": 4.541081316533635e-9,
+        "sameComparablePairs": true,
+        "sameFoldSigns": true,
+        "sameGates": true,
+        "sameVerdict": true
+      },
+      {
+        "name": "R3_recent_log_slope",
+        "sameName": true,
+        "concordanceAbsDifference": 0,
+        "betaAbsDifference": 5.469175681782623e-9,
+        "sameComparablePairs": true,
+        "sameFoldSigns": true,
+        "sameGates": true,
+        "sameVerdict": true
+      },
+      {
+        "name": "R3_log_slope_curvature",
+        "sameName": true,
+        "concordanceAbsDifference": 0,
+        "betaAbsDifference": 1.1660184963402376e-8,
+        "sameComparablePairs": true,
+        "sameFoldSigns": true,
+        "sameGates": true,
+        "sameVerdict": true
+      }
+    ]
+  },
+  "sourceBoundary": {
+    "officialZipEntries": 797,
+    "metadataFiles": 199,
+    "csvFiles": 199,
+    "parquetFiles": 199,
+    "explicitLiFePO4MetadataCount": 32,
+    "explicitLiFePO4CellIds": [
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      249
+    ],
+    "paperReportedLongTermLfpCells": 36,
+    "unresolvedCountDifference": 4,
+    "cyclingDataEntriesOpened": 0,
+    "cellCapacityValuesObserved": 0,
+    "cellEolValuesObserved": 0
+  },
+  "decision": {
+    "rwthCandidateEarned": false,
+    "auroraMinimumCountGate": false,
+    "auroraCyclingAccessAuthorized": false,
+    "reason": "No RWTH coordinate satisfied every registered gate, and the official Aurora archive exposed 32 explicit LiFePO4 metadata records rather than the paper's 36-cell long-term cohort. The outcome boundary therefore remains closed."
+  },
+  "preservedSignals": [
+    {
+      "candidate": "R2_recent_log_slope",
+      "concordance": 0.7021276595744681,
+      "comparablePairs": 47,
+      "interpretation": "candidate-generation signal only; fails the registered 60-pair gate"
+    },
+    {
+      "candidate": "R3_capacity_level",
+      "concordance": 0.723404255319149,
+      "comparablePairs": 47,
+      "interpretation": "strongest outcome-open signal; fails the registered 60-pair gate and cannot be called confirmation"
+    }
+  ],
+  "nextAction": "Resolve the 36-versus-32 Aurora cohort lineage from an official manifest or author clarification. Independently, acquire or identify a same-condition source with denser endpoint timing so blocked validation yields at least 60 non-tied pairs; do not reopen selection on RWTH outcomes."
+}

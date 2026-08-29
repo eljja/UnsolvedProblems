@@ -1,0 +1,42 @@
+{
+  "evidenceId": "RC56-LANDMARK-SOURCE-CONNECTION-EVIDENCE-0.1",
+  "cycleId": "RC-2026-56",
+  "reviewedOn": "2026-08-29",
+  "problemIds": ["UP-219", "UP-233", "UP-234"],
+  "connectionType": "observation-time information versus endpoint identifiability",
+  "commonStructure": "A cell-specific health coordinate must order two cells that experienced the same imposed stress. Later landmarks can increase signal because degradation mechanisms have separated, but they also shorten forecast horizon; sparse capacity checks then collapse many cells onto tied EOL rounds and remove the comparable pairs needed to validate that ordering.",
+  "variableMapping": [
+    {
+      "rulPrediction": "feature at landmark L -> remaining cycles to own-BOL 80% crossing",
+      "digitalTwin": "observed state at synchronization time L -> latent individual degradation state",
+      "acceleratedLife": "condition-level stress law plus within-condition random effect -> interval-resolved failure order"
+    },
+    {
+      "rulPrediction": "within-batch Harrell concordance",
+      "digitalTwin": "individual-state discriminability",
+      "acceleratedLife": "identifiability of frailty after blocking start time"
+    }
+  ],
+  "evidence": {
+    "earlyLandmark": "At R1, capacity level and log slope produced blocked concordance 0.571 and 0.592.",
+    "laterLandmarks": "R2 recent log slope reached 0.702 and R3 capacity level reached 0.723, with a common coefficient sign in every leave-batch-out fit.",
+    "resolutionLimit": "Only 47 non-tied within-held-batch pairs remained for R2 and R3, below the registered 60-pair gate. The apparent improvement therefore remains candidate-generation evidence.",
+    "independentSourceBoundary": "The Aurora paper describes 36 long-term LFP/graphite cells, while the official archive exposes 32 metadata records explicitly identifying LiFePO4. Zero cycling entries or cell-level outcomes were opened."
+  },
+  "conditionsForTransfer": [
+    "The landmark feature must be defined from the same kind of standardized full-capacity observations using actual cycle positions.",
+    "A complete start or production batch must be held out so condition and individual ordering are not mixed.",
+    "Endpoint timing must leave at least the registered number of non-tied comparable pairs.",
+    "The independent archive must map every declared cohort member to one metadata and one cycling record before outcomes are inspected.",
+    "Chemistry transfer may support only an ordinal frailty claim unless absolute lifetime calibration is separately validated."
+  ],
+  "breakConditions": [
+    "Selecting R2 or R3 after seeing the same RWTH outcomes cannot confirm the coordinate.",
+    "Treating 47 pairs as if they passed a precommitted 60-pair gate converts low endpoint resolution into an outcome-dependent threshold change.",
+    "Assuming that the four Aurora records missing from explicit LFP metadata are equivalent to the paper cohort breaks cell lineage.",
+    "Using per-cycle partial capacity or a smoothed crossing as an exact full-capacity EOL without independent validation changes the endpoint."
+  ],
+  "minimumValidation": "First reconcile a signed or official 36-cell Aurora cohort manifest. Separately identify a source or collect a same-condition cohort whose capacity checks yield at least 60 blocked non-tied pairs. Freeze one RWTH-developed coordinate before any target cycling row is opened; require at least 90% coverage, 24 observed events, 100 target comparable pairs, concordance at least 0.65, bootstrap lower 95% bound above 0.50, and an independent implementation.",
+  "simultaneousImpact": "A valid transportable coordinate would narrow cell-level RUL, bounded battery digital twins, and random-effects accelerated-life models at once. The current negative stop instead establishes that later signal strength and independent cohort lineage are separate gates; neither can substitute for the other.",
+  "validationStatus": "structural connection strengthened; transport hypothesis remains untested because no candidate-source pair passed all opening gates"
+}

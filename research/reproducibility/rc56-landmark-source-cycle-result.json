@@ -1,0 +1,111 @@
+{
+  "resultId": "RC56-LANDMARK-SOURCE-CYCLE-RESULT-0.1",
+  "cycleId": "RC-2026-56",
+  "completedOn": "2026-08-29",
+  "status": "complete-negative-stop-before-independent-outcomes",
+  "problemIds": ["UP-219", "UP-233", "UP-234"],
+  "selectionReason": "RC55 rejected a single first-160-cycle fade coordinate under fixed stress. RC56 therefore tested whether later capacity shape contains a stable within-condition ordering signal and audited an independent dense-capacity source without opening its cell-level outcomes.",
+  "newFacts": [
+    "The official Aurora ZIP contains 797 entries: 199 metadata JSON, 199 BDF CSV, 199 BDF Parquet, and 200 other entries.",
+    "All 199 metadata files identify graphite negative electrodes, while 32 explicitly identify a LiFePO4 positive-electrode formula. The primary paper describes 36 long-term LFP/graphite cells, leaving four cohort members unresolved at the archive-metadata boundary.",
+    "No Aurora BDF cycling entry, cell capacity, or cell EOL value was opened or observed.",
+    "On opened RWTH data, R2 recent log-capacity slope reached blocked concordance 0.702128 and R3 normalized capacity level reached 0.723404; both kept one coefficient sign across all twelve leave-start-batch-out fits.",
+    "R2 and R3 supplied only 47 non-tied within-held-batch comparable pairs, below the registered minimum of 60, so no coordinate earned independent testing.",
+    "Python and dependency-free Node implementations selected no candidate, matched every gate and sign, matched all concordances exactly, and differed in full-cohort beta by at most 1.1661e-8."
+  ],
+  "hypotheses": {
+    "H56-0": {
+      "claim": "No currently registered capacity coordinate and independently traceable cohort jointly support a transport claim.",
+      "verdict": "retained",
+      "reason": "Every capacity candidate missed at least one gate, and the candidate archive did not reconcile the paper's 36-cell LFP cohort."
+    },
+    "H56-1": {
+      "claim": "One of eight registered R1-R3 capacity level, slope, or curvature coordinates stably orders remaining life across start batches.",
+      "verdict": "not-earned",
+      "strongestSignal": "R3_capacity_level, concordance 0.723404, 47 comparable pairs, stable coefficient direction",
+      "failedGate": "47 comparable pairs < 60",
+      "consequence": "Preserve the signal as method-development evidence; do not call it validation and do not use it to open Aurora outcomes."
+    },
+    "H56-2": {
+      "claim": "The official Aurora archive exposes an exact, outcome-blind cohort of at least 36 same-condition LFP/graphite cells for independent transfer testing.",
+      "verdict": "unresolved-and-ineligible",
+      "failedGates": [
+        "32 explicit LiFePO4 metadata records < 36 required cells",
+        "paper cohort count 36 and archive-explicit count 32 are not reconciled",
+        "no RWTH coordinate passed every gate"
+      ]
+    }
+  },
+  "causalChainOutcome": [
+    {
+      "link": "standardized capacity rounds under fixed stress -> candidate latent frailty coordinate",
+      "verdict": "later level and slope show stronger outcome-open association than the first response",
+      "fastFailureEvidence": "R1 C was 0.571-0.592; R2 recent slope and R3 level rose to 0.702 and 0.723"
+    },
+    {
+      "link": "candidate coordinate -> independently distinguishable lifetime order",
+      "verdict": "not identified at the registered resolution",
+      "fastFailureEvidence": "only 47 blocked non-tied pairs versus the 60-pair gate"
+    },
+    {
+      "link": "published independent cohort -> exact target-cell lineage",
+      "verdict": "not reconciled",
+      "fastFailureEvidence": "36 cells in the paper versus 32 explicit LiFePO4 metadata records in the archive"
+    },
+    {
+      "link": "frozen coordinate plus traceable target -> transport claim",
+      "verdict": "outcome access stopped",
+      "fastFailureEvidence": "neither prerequisite passed, so zero target cycling entries were opened"
+    }
+  ],
+  "minimalAcademicAdvance": "Later capacity level and local slope are more promising than one early fade scalar, but sparse EOL rounds can make a seemingly strong concordance statistically ineligible. RC56 also turns paper-to-archive cohort reconciliation into an explicit prerequisite for outcome-blind battery validation.",
+  "mostPromisingNextPath": {
+    "hypothesis": "A later, dimensionless capacity coordinate can transport ordinal cell frailty if endpoint resolution and cohort lineage are repaired before target outcomes are opened.",
+    "differentCombination": "Combine machine-readable cohort lineage, blocked rank validation, and an adaptive measurement schedule that densifies full-capacity checks only near each cell's estimated knee while keeping the final 80% crossing rule independent of the estimator.",
+    "exactBottleneck": "Signal strength, endpoint pair count, and target-cell lineage currently fail as separate prerequisites.",
+    "firstDecisiveAction": "Ask the Aurora authors or repository curator for an official mapping between the 36 paper cells and the 32 explicit LiFePO4 metadata records, without requesting cell-level outcomes. In parallel, quantify how a 50-cycle or adaptive RPT schedule changes expected non-tied pair count in a future same-condition batch.",
+    "successSignal": "An official one-to-one cohort manifest plus a prospectively frozen target design expected to yield at least 100 comparable pairs; only then seal one coordinate and open target cycling data.",
+    "rejectionAndStop": "If the cohort cannot be reconciled, do not use Aurora for confirmation. If prospective timing still cannot meet the pair budget, stop capacity-only ranking and move to an orthogonal, independently repeatable expansion, pressure, acoustic, or excitation observable.",
+    "failureValue": "Failure isolates whether the next investment belongs in data lineage, endpoint sampling, or new sensing rather than model complexity."
+  },
+  "uncertaintyBudget": [
+    {
+      "category": "measurement",
+      "observed": "Capacity checks are standardized but widely spaced in RWTH.",
+      "consequence": "Later features gain biological signal while the EOL label remains quantized."
+    },
+    {
+      "category": "sampling",
+      "observed": "Twelve held start batches contain four cells each and many tied terminal rounds.",
+      "consequence": "The maximum useful blocked pair count fell below the registered decision budget."
+    },
+    {
+      "category": "model",
+      "observed": "Eight scalar coordinates and a one-feature penalized Weibull AFT were fixed before calculation.",
+      "consequence": "Nonlinear combinations may exist, but searching them now would be post-outcome and cannot rescue this cycle."
+    },
+    {
+      "category": "lineage",
+      "observed": "The primary paper reports 36 LFP cells; the archive metadata explicitly classify 32.",
+      "consequence": "Target inclusion cannot be frozen without assuming the identity of four cells."
+    },
+    {
+      "category": "external-validity",
+      "observed": "RWTH uses NMC cylindrical cells and Aurora uses LFP coin cells in another laboratory.",
+      "consequence": "Even a future success would initially validate only ordinal feature transport, not absolute RUL calibration."
+    }
+  ],
+  "failedAttempts": [
+    "R1 capacity level and slope kept stable directions but remained below concordance 0.65.",
+    "R2 capacity level and recent slope and R3 capacity level crossed concordance 0.65 but failed the 60-pair gate.",
+    "R2 curvature changed coefficient sign across folds; R3 recent slope and curvature remained below concordance 0.65.",
+    "The Aurora archive could not be promoted to a 36-cell target cohort from metadata alone."
+  ],
+  "unverifiedClaims": [
+    "The identity and reason for the four-cell difference between the paper's long-term cohort and explicit archive metadata remain unknown.",
+    "Whether R3 capacity level transports across chemistry and cell format remains untested.",
+    "Whether an adaptive RPT schedule preserves degradation dynamics while increasing pair resolution requires prospective validation."
+  ],
+  "safetyEthics": "Only public historical battery metadata and previously opened RWTH capacity results were processed. Aurora cycling outcomes remained closed. No physical cell test, personal data, cyber experiment, safety decision, or deployment occurred.",
+  "nextCycleStart": "Resolve Aurora cohort lineage without outcome access and build a prospective endpoint-pair budget for dense or adaptive capacity checks. Do not select another RWTH feature or open Aurora BDF data unless a new precommit has an exact cohort, an earned coordinate, and sufficient pair power."
+}
