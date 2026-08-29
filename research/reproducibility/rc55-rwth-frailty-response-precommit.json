@@ -1,0 +1,185 @@
+{
+  "precommitId": "RC55-RWTH-FRAILTY-RESPONSE-PRECOMMIT-0.1",
+  "cycleId": "RC-2026-55",
+  "sealedOn": "2026-08-29",
+  "status": "sealed-after-official-record-method-and-aggregate-paper-summary-review-but-before-any-cell-level-capacity-resistance-or-eol-value-was-read",
+  "chronologyBoundary": {
+    "alreadyObserved": [
+      "The official RWTH record, its two-page metadata document, the associated primary paper text, and the official GitLab project landing page were inspected.",
+      "The source reports 48 same-lot commercial C-grade Sanyo/Panasonic UR18650E NMC/graphite cells aged with one common profile at 25 degrees Celsius, with four-cell start batches shifted by two to three days.",
+      "The source reports a BOL characterization followed by periodic RPTs, including capacity and pulse-resistance tests at approximately 70%, 50%, and 30% SOC.",
+      "The paper states that testing continued beyond 80% EOL, that the mean EOL80 was approximately 1175 cycles, that there were about 17 characterization rounds per cell, and that one cell had an incomplete degradation curve.",
+      "The official repository master commit was 488eb68c23898f46308f58b9299088c287b9380d at sealing."
+    ],
+    "notYetObservedAtSeal": [
+      "No raw or processed cell-level result file from the RWTH dataset was cloned, downloaded, opened, parsed, plotted, or summarized.",
+      "No cell-level BOL capacity, first-RPT capacity, 30%-SOC pulse resistance, EOL cycle, censoring time, prediction, error, or hypothesis verdict was observed.",
+      "No target outcome informed the split, feature definitions, model, thresholds, missingness rule, or decision gates."
+    ]
+  },
+  "selection": {
+    "problemIds": ["UP-219", "UP-233", "UP-234"],
+    "reason": "RC54 showed that imposed stress can rank pooled lifetime while early diagnostic changes did not recover triplicate ordering. The RWTH experiment removes the stress-confounding escape route: all 48 cells share chemistry, lot, temperature, and cycling profile, while BOL and repeated capacity and pulse tests precede a recorded 80% EOL. It therefore directly tests whether a sparse early response identifies cell-specific frailty under fixed conditions.",
+    "claimBoundary": "RC55 tests cell-to-cell ordering in one C-grade NMC/graphite lot under one laboratory profile. It cannot establish chemistry transfer, temperature transfer, field-duty transfer, pack RUL, safety, warranty, or a universal digital twin.",
+    "deferredScope": "Cyber-trust experiments, new battery cycling, destructive analysis, field packs, operational safety decisions, and claims beyond the public RWTH cohort remain outside scope."
+  },
+  "sourceManifest": {
+    "record": "https://doi.org/10.18154/RWTH-2021-04545",
+    "metadata": "https://publications.rwth-aachen.de/record/818642/files/Content_RWTH-2021-04545.pdf",
+    "paper": "https://doi.org/10.1016/j.jpowsour.2021.230024",
+    "repository": "https://git.rwth-aachen.de/isea/battery-degradation-trajectory-prediction",
+    "repositoryCommit": "488eb68c23898f46308f58b9299088c287b9380d",
+    "license": "CC BY 4.0 for the dataset, as stated by the official metadata",
+    "cellType": "Sanyo/Panasonic UR18650E commercial C-grade NMC/graphite cylindrical cell",
+    "cohort": "48 cells from one production lot, aged under one profile at 25 degrees Celsius",
+    "resultIntegrity": "After acquisition, record repository commit, source paths, sizes, and SHA-256 hashes before parsing. Any mismatch from the sealed commit stops interpretation until documented."
+  },
+  "cohortAndSplit": {
+    "identifierRule": "Use the source's integer cell number from 1 through 48. If source identifiers cannot be mapped bijectively to these integers without reading outcomes, stop and document the schema failure.",
+    "inclusionRule": [
+      "Include all 48 source cells before inspecting completeness or EOL.",
+      "Require a resolvable BOL capacity record, first post-aging RPT capacity record, and their cycle or charge-throughput positions for the capacity-response arm.",
+      "Require resolvable 30%-SOC 10 ms discharge-pulse resistance at both BOL and first post-aging RPT for the pulse-response arm.",
+      "Define an observed event only from a registered 80%-of-own-BOL capacity crossing; otherwise retain the cell as right-censored at its last resolvable capacity observation.",
+      "Do not remove a cell because its response, lifetime, residual, or trajectory is extreme."
+    ],
+    "pilot": {
+      "cellIds": [1, 2],
+      "use": "Exact file paths, delimiters, units, cycle index, BOL/RPT identity, capacity field, pulse direction, pulse duration, and 30%-SOC mapping only.",
+      "modelWeight": 0,
+      "permittedAmendment": "Before any non-pilot row is read, one dated amendment may map exact source columns and file keys to the quantities already registered here or declare a quantity unavailable. It may not change the split, endpoint, feature meaning, model, thresholds, or hypotheses."
+    },
+    "development": {
+      "rule": "After removing pilot cells 1 and 2, source cell number not divisible by 3.",
+      "candidateCount": 30
+    },
+    "untouchedTarget": {
+      "rule": "Source cell number divisible by 3.",
+      "cellIds": [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48],
+      "candidateCount": 16,
+      "reason": "The arithmetic split is fixed before cell-level results and distributes the four-cell start batches across development and target without outcome-aware selection."
+    }
+  },
+  "endpointContract": {
+    "landmark": "The source cycle or equivalent-full-cycle position of the first post-aging RPT used to form both response coordinates.",
+    "capacityReference": "The same cell's BOL 2 A discharge capacity, using the source's standardized capacity-test definition.",
+    "event": "The first later standardized capacity observation at or below 0.80 times that cell's BOL reference capacity.",
+    "eventTime": "Cycles from the response landmark to the first observed threshold-crossing capacity observation.",
+    "censorTime": "If no crossing is observed, cycles from the response landmark to the last later standardized capacity observation.",
+    "resolution": "No interpolation between RPT capacity observations and no reuse of partial aging-cycle turnover as a full-capacity label.",
+    "minimumTargetEventGate": 14,
+    "prohibitedInterpretation": "The endpoint is an interval-resolved electrochemical capacity threshold, not a physical failure, hazard, warranty, or pack-level retirement event."
+  },
+  "featureContract": {
+    "baselineArm": {
+      "code": "A",
+      "features": [],
+      "definition": "A development-cohort lifetime distribution with no cell-specific predictor."
+    },
+    "capacityResponseArm": {
+      "code": "B",
+      "addsTo": "A",
+      "features": ["early_log_capacity_response_per_efc"],
+      "definition": "log(Q_first_RPT/Q_BOL) divided by the positive cycle or equivalent-full-cycle distance between those two standardized capacity measurements."
+    },
+    "pulseResponseArm": {
+      "code": "C",
+      "addsTo": "B",
+      "features": ["early_log_r10ms_discharge_response_per_efc_soc30"],
+      "definition": "log(R10ms_first_RPT/R10ms_BOL) divided by the positive cycle or equivalent-full-cycle distance between the paired 30%-SOC discharge-pulse measurements. This is the only pulse coordinate permitted."
+    },
+    "rowRules": [
+      "Prefer processed source quantities only when the official code exposes their derivation; otherwise derive them from raw current-voltage-time rows with the same published procedure.",
+      "Map 30% SOC by the source's explicit SOC field or by the published voltage-to-SOC characterization mapping, never by inspecting association with EOL.",
+      "For a discharge pulse, compute R10ms as the signed voltage drop divided by the signed current step and require a finite positive result in ohms or converted milliohms.",
+      "If multiple valid observations represent one cell, round, SOC, and pulse duration, use their median before forming the response.",
+      "Every logarithm input and exposure interval must be finite and strictly positive."
+    ],
+    "preprocessing": "For B and C separately, subtract the non-pilot development mean and divide by the non-pilot development population standard deviation. Replace an exactly zero development standard deviation with one. Pilot and target rows have zero influence.",
+    "missingness": "No imputation, target-derived centering, clipping, proxy substitution, or outcome-aware repair. Fit each arm on development cells complete for that arm and score only target cells complete for that arm; report exact denominators and missing fields.",
+    "coverageGate": "Each active response arm must retain at least 90% of its 16 target candidates."
+  },
+  "modelContract": {
+    "model": "Separate penalized Weibull accelerated-failure-time model for A, B, and C. log(lambda_i)=intercept+x_i beta; each arm has its own shared Weibull shape k.",
+    "likelihood": "Use the right-censored Weibull likelihood in remaining cycles from the first post-aging RPT. Penalize beta, but not intercept or log(k), by fixed L2 alpha 1.0.",
+    "initialization": "Intercept equals log of the development median observed-or-censor time, beta is zero, and log(k)=log(2).",
+    "optimizer": "Primary Python uses deterministic BFGS. A separately written dependency-free Node implementation repeats extraction from the sealed feature table and fits the same likelihood. No target calibration, feature selection, hyperparameter search, ensemble, or outcome-driven restart is allowed.",
+    "prediction": "Predicted remaining median cycles equals lambda_i times (log 2)^(1/k). Predicted survival at horizon t equals exp(-(t/lambda_i)^k).",
+    "independentTolerance": "Absolute disagreement at most 1e-5 for every target prediction and scalar metric; hypothesis verdicts must match exactly."
+  },
+  "metricContract": {
+    "observedEventErrors": ["median_absolute_error_cycles", "mean_absolute_error_cycles", "maximum_absolute_error_cycles"],
+    "ranking": "Harrell concordance over target cells; a pair is comparable when the shorter observed time is an event. Tied prediction receives half credit.",
+    "sameConditionDenominator": "All target cells share the same chemistry, lot, temperature, and aging profile. Report the exact comparable-pair count and require at least 30 pairs for a frailty-ranking claim.",
+    "calibration": "At 900 and 1100 remaining cycles after the response landmark, compare mean predicted survival with target Kaplan-Meier survival and report absolute error and at-risk count.",
+    "pairedImprovement": "Among target cells with observed events and paired predictions, report (A MdAE - B or C MdAE)/A MdAE and C-versus-B change. Use 2000 seeded bootstrap resamples of target cells with seed 55029; intervals are descriptive and cannot rescue a failed gate.",
+    "reporting": "Publish every target prediction, event/censor flag, start batch when recoverable, both registered features, and every registered metric even when a gate fails."
+  },
+  "competingHypotheses": [
+    {
+      "code": "H0",
+      "claim": "A common-condition lifetime distribution is sufficient; the two early responses do not identify stable cell-specific frailty.",
+      "retain": "Retain if neither H1 nor H2 satisfies every success condition."
+    },
+    {
+      "code": "H1",
+      "claim": "The first-RPT capacity response identifies cell-specific EOL ordering under fixed stress.",
+      "success": "Arm B has at least 90% target coverage, at least 14 target events and 30 comparable pairs, Harrell concordance at least 0.65, median absolute error at most 160 cycles, at least 10% MdAE improvement over A, and maximum 900/1100-cycle calibration error at most 0.15.",
+      "reject": "Reject unless every condition holds."
+    },
+    {
+      "code": "H2",
+      "claim": "The 30%-SOC 10 ms pulse-resistance response supplies frailty information beyond the capacity response.",
+      "success": "Arm C has at least 90% target coverage, at least 14 target events and 30 comparable pairs, Harrell concordance at least 0.70, median absolute error at most 140 cycles, at least 10% MdAE improvement over B, no worse calibration error than B, and independent reproduction within tolerance.",
+      "reject": "Reject if any boundary fails; pooled fit or a favorable coefficient sign cannot substitute for held-cell ordering, calibration, coverage, or independent reproduction."
+    }
+  ],
+  "causalChain": [
+    "One lot and one imposed aging profile plus standardized BOL and first-RPT measurements",
+    "latent manufacturing susceptibility that stress descriptors cannot explain",
+    "a preregistered early capacity response and at most one 30%-SOC 10 ms pulse-resistance response",
+    "untouched same-condition EOL time, right censoring, calibration, and pairwise ordering",
+    "retain or reject sparse early electrochemical response as a cell-frailty bridge"
+  ],
+  "fastFailureTests": [
+    "If the official repository cannot be pinned to the sealed commit or acquired files cannot be hashed, stop before parsing.",
+    "If pilot cells cannot establish BOL, first post-aging RPT, capacity units, 30%-SOC identity, discharge sign, or 10 ms duration without outcome-dependent judgment, amend once or declare the affected arm unavailable.",
+    "If fewer than 90% of target cells have an arm's features, that arm fails coverage and is reported without a predictive claim.",
+    "If fewer than 14 target EOL events or 30 comparable target pairs remain, H1 and H2 fail the denominator gate.",
+    "If Python and Node disagree beyond 1e-5, stop interpretation and debug before publication."
+  ],
+  "uncertaintyBudget": [
+    {
+      "category": "measurement",
+      "control": "Use standardized source characterization rounds, one capacity response, one explicitly defined 30%-SOC 10 ms discharge-pulse response, and source-derived units.",
+      "residual": "Pulse timing, fixture resistance, temperature equalization, and RPT interval may obscure a weak manufacturing signal.",
+      "stop": "Unresolvable pulse duration, direction, SOC, or capacity-round identity makes the affected arm unavailable."
+    },
+    {
+      "category": "model",
+      "control": "Freeze two scalar response coordinates, a nested Weibull AFT form, alpha, initialization, and gates before cell-level results; reproduce in an independent runtime.",
+      "residual": "A linear log-scale frailty effect and one Weibull shape may be misspecified.",
+      "stop": "Optimization failure, nonfinite parameters, or independent disagreement blocks a verdict."
+    },
+    {
+      "category": "sampling",
+      "control": "Hold out 16 arithmetic-ID cells and keep pilot cells at zero model weight; report start-batch labels when recoverable.",
+      "residual": "The cohort is one factory-selected C-grade lot, and cells began testing in four-cell batches separated by several days.",
+      "stop": "Do not generalize beyond this lot or interpret start-batch confounding as intrinsic chemistry."
+    },
+    {
+      "category": "endpoint",
+      "control": "Use each cell's own BOL capacity, preserve right censoring, and avoid interpolation between RPTs.",
+      "residual": "RPT spacing makes EOL interval-resolved, and own-BOL normalization differs from nominal-capacity retirement rules.",
+      "stop": "Do not represent the endpoint as a physical failure or safety boundary."
+    },
+    {
+      "category": "extrapolation",
+      "control": "Make only a same-condition held-cell claim and require ranking, absolute error, calibration, coverage, and independent reproduction together.",
+      "residual": "No temperature, duty-cycle, chemistry, laboratory, grade, or pack transfer is tested.",
+      "stop": "Any cross-domain claim requires a new preregistered source and untouched holdout."
+    }
+  ],
+  "minimalAcademicAdvance": "A negative result with adequate target coverage will show whether early capacity fade and a single pulse-resistance response can or cannot order later EOL among nominally identical, same-stress NMC/graphite cells; this directly narrows the frailty signal that RC54 failed to recover across heterogeneous stress conditions.",
+  "safetyEthics": "RC55 uses public, previously collected battery data. It performs no charging, cell opening, personal-data processing, security testing, or operational safety decision."
+}
