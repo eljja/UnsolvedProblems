@@ -112,6 +112,24 @@ for (const sourceId of ["pantheonplus_cosmology_2022", "union3_unity_2023", "des
 for (const page of ["index.html", "solve.html", "research-log.html"]) {
   assert(readText(page).includes("research-cycle-62-data.js?v=20260829-cycle62"), `${page} must load RC62 data`);
 }
+const solvePage = readText("solve.html");
+for (const asset of [
+  "data.js",
+  "expansion-data.js",
+  "translations.js",
+  "priority-data.js",
+  "prize-data.js",
+  "research-context.js",
+  "solution-context.js",
+  "deep-solution-context.js",
+  "research-cycle-data.js",
+  "solve.js",
+]) {
+  assert(
+    solvePage.includes(`${asset}?v=20260829-cycle62`),
+    `solve.html must cache-bust ${asset} for RC62`,
+  );
+}
 const publicCopy = readText("research-cycle-62-data.js");
 for (const prohibited of ["전공자 포인트", "1단계 · 처음 읽는 사람", "2단계 · 전공자 핵심", "개수를 맞추지", "아래 시도는 개별 논문", "난제를 해결했다"]) {
   assert(!publicCopy.includes(prohibited), `RC62 public copy contains prohibited phrase: ${prohibited}`);
