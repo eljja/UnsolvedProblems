@@ -1,0 +1,115 @@
+{
+  "cycleId": "RC-2026-61",
+  "implementation": "dependency-free-node-simpson4096-golden-profile",
+  "sourceIntegrity": {
+    "meanSha256": "51657AFD56F83707E7FB477466A9D259FFED7ADBEF20BF3FEB21D761AB067877",
+    "covarianceSha256": "252A143274C8A07C78694C119617D36594F6D7965D00319CA611C6FFB886E509",
+    "specSha256": "9286726EF7D637BBD9ECA2227AF644535708893C39BCF641390A1C2D10A3B661"
+  },
+  "fullFit": {
+    "Omega_m": 0.2974618149243865,
+    "Omega_mSigma": 0.00861764978180582,
+    "hTimesRdMpc": 101.53977354180051,
+    "hTimesRdSigmaMpc": 0.7357101230658003,
+    "chi2": 10.271041002565328
+  },
+  "leaveOneRedshiftBlockOut": [
+    {
+      "omittedRedshift": 0.295,
+      "Omega_m": 0.2948061630237891,
+      "Omega_mSigma": 0.009575343054156804,
+      "hTimesRdMpc": 101.80773573818801,
+      "hTimesRdSigmaMpc": 0.8577713654738872,
+      "chi2": 9.905276490023125,
+      "hTimesRdShiftInFullSigma": 0.3642225218688948
+    },
+    {
+      "omittedRedshift": 0.51,
+      "Omega_m": 0.2926553452175806,
+      "Omega_mSigma": 0.009052541099947325,
+      "hTimesRdMpc": 102.02840580161697,
+      "hTimesRdSigmaMpc": 0.8221766016867775,
+      "chi2": 5.704342510707694,
+      "hTimesRdShiftInFullSigma": 0.6641641109684081
+    },
+    {
+      "omittedRedshift": 0.706,
+      "Omega_m": 0.2996116308504679,
+      "Omega_mSigma": 0.009000536175602147,
+      "hTimesRdMpc": 101.14248522353023,
+      "hTimesRdSigmaMpc": 0.7926229616382727,
+      "chi2": 5.859592381731216,
+      "hTimesRdShiftInFullSigma": 0.5400065947369761
+    },
+    {
+      "omittedRedshift": 0.934,
+      "Omega_m": 0.2999045500892461,
+      "Omega_mSigma": 0.009106174672437323,
+      "hTimesRdMpc": 101.35148458457078,
+      "hTimesRdSigmaMpc": 0.796305190241668,
+      "chi2": 9.375867923063415,
+      "hTimesRdShiftInFullSigma": 0.2559281860158529
+    },
+    {
+      "omittedRedshift": 1.321,
+      "Omega_m": 0.2989613887514225,
+      "Omega_mSigma": 0.009088078533800475,
+      "hTimesRdMpc": 101.4356744678375,
+      "hTimesRdSigmaMpc": 0.7528941493529544,
+      "chi2": 9.8292624586848,
+      "hTimesRdShiftInFullSigma": 0.1414946875125474
+    },
+    {
+      "omittedRedshift": 1.484,
+      "Omega_m": 0.29780555698137756,
+      "Omega_mSigma": 0.008719980347296902,
+      "hTimesRdMpc": 101.54922271547576,
+      "hTimesRdSigmaMpc": 0.7394072196094612,
+      "chi2": 9.590806285896207,
+      "hTimesRdShiftInFullSigma": 0.012843609703063863
+    },
+    {
+      "omittedRedshift": 2.33,
+      "Omega_m": 0.2991013115824605,
+      "Omega_mSigma": 0.012535684464874797,
+      "hTimesRdMpc": 101.45296110232574,
+      "hTimesRdSigmaMpc": 0.9131962444304804,
+      "chi2": 10.176048039719904,
+      "hTimesRdShiftInFullSigma": 0.11799815817812971
+    }
+  ],
+  "diagnostics": {
+    "planckProductTensionSigma": 2.27610046120372,
+    "shoesStandardRulerTensionSigma": 4.015997289057189,
+    "requiredRdragMpc": 138.71553762541052,
+    "requiredRdragSigmaMpc": 1.979635666933629,
+    "requiredRdragTensionWithPlanckSigma": 4.194284894056742
+  },
+  "comparisonWithPython": {
+    "Omega_m": {
+      "difference": 6.661507123695287e-9,
+      "tolerance": 0.0002,
+      "pass": true
+    },
+    "hTimesRdMpc": {
+      "difference": 5.256130748421128e-7,
+      "tolerance": 0.02,
+      "pass": true
+    },
+    "chi2": {
+      "difference": 4.2099657093785936e-13,
+      "tolerance": 0.02,
+      "pass": true
+    },
+    "shoesStandardRulerTensionSigma": {
+      "difference": 3.4438374374445857e-7,
+      "tolerance": 0.03,
+      "pass": true
+    }
+  },
+  "exactDecisionAgreement": true,
+  "limitations": [
+    "This implementation audits the flat-LambdaCDM core, leave-one-redshift-block influence, and product diagnostics; it does not duplicate SciPy model-extension optimization.",
+    "Simpson quadrature and matrix inversion are independent of the Python quadrature and optimizer but operate on the same frozen Gaussian likelihood."
+  ]
+}

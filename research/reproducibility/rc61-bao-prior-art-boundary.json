@@ -1,0 +1,40 @@
+{
+  "cycleId": "RC-2026-61",
+  "reviewedOn": "2026-08-29",
+  "scope": "Prior-art boundary for a redshift-block stress test of the public DESI DR2 BAO Gaussian likelihood",
+  "verifiedPrecedents": [
+    {
+      "source": "DESI Collaboration, arXiv:2503.14738",
+      "alreadyEstablished": "The official DR2 BAO analysis publishes the 13-element mean vector, covariance, likelihood, flat-LambdaCDM headline Omega_m=0.2975+-0.0086 and h r_d=101.54+-0.73 Mpc, and combined-probe tests of evolving dark energy.",
+      "rc61Difference": "RC61 independently reconstructs the Gaussian fit, removes each of seven redshift blocks in turn, and freezes explicit refutation thresholds before interpreting the scale gap."
+    },
+    {
+      "source": "Planck Collaboration VI, A&A 641 A6 (2020)",
+      "alreadyEstablished": "Under base LambdaCDM, Planck reports H0=67.4+-0.5 km/s/Mpc and r_drag=147.09+-0.26 Mpc.",
+      "rc61Difference": "RC61 uses the published marginals only as a transparent product-level diagnostic; it does not reproduce the Planck likelihood or treat the two marginals as independent in a definitive joint inference."
+    },
+    {
+      "source": "Riess et al., arXiv:2408.11770",
+      "alreadyEstablished": "Joint HST and JWST distance-ladder comparisons report H0=73.2+-0.9 for the full HST ladder and 72.6+-2.0 for the three-method JWST subset.",
+      "rc61Difference": "RC61 converts these summaries into the ruler length required by DESI BAO, without re-fitting photometry, anchors, supernovae, or their covariance."
+    },
+    {
+      "source": "Recent sound-horizon-free and late-time analyses, arXiv:2505.01661, 2509.12331, 2512.07281, 2604.24050",
+      "alreadyEstablished": "The literature already studies late-time expansion freedom, sound-horizon-free H0 inference, and shorter-ruler interpretations of DESI DR2. A short ruler or late-time bridge is therefore not a new concept.",
+      "rc61Difference": "The contribution is a compact, reproducible decision audit: headline replication, leave-one-redshift-block influence, AICc penalties for two smooth extensions, and dual-language numerical agreement."
+    }
+  ],
+  "claimsNotMade": [
+    "RC61 does not claim a new cosmological model.",
+    "RC61 does not establish that early-universe physics is the cause of the Hubble tension.",
+    "RC61 does not independently validate DESI tracer selection, reconstruction, covariance construction, Planck spectra, or local-ladder photometry.",
+    "The 4.016-sigma product diagnostic is not a substitute for a posterior-level joint likelihood."
+  ],
+  "searchStrategy": [
+    "DESI DR2 BAO leave-one-redshift-bin influence h r_d",
+    "DESI DR2 Hubble tension sound horizon independent",
+    "DESI DR2 w0 wa AIC information criterion",
+    "SH0ES JWST DESI DR2 required sound horizon",
+    "CMB independent ruler calibration DESI DR2"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "cycleId": "RC-2026-61",
+  "reviewedOn": "2026-08-29",
+  "status": "computational-constraint-not-solution",
+  "selectedProblems": ["UP-003", "UP-002", "UP-005"],
+  "selectionReason": "Public DESI DR2 likelihood data permit an immediate falsifiable test of whether one redshift block, smooth late expansion, or a changed early ruler is carrying the Hubble-scale conflict. The calculation can reject explanations even without proprietary data or physical equipment.",
+  "newVerifiedFacts": [
+    "The local implementation reproduces the DESI DR2 flat-LambdaCDM headline with Omega_m=0.297462 and h*r_d=101.5398 Mpc.",
+    "The largest leave-one-redshift-block shift in h*r_d is 0.664 full-fit sigma at z=0.51; no one block dominates at the preregistered one-sigma threshold.",
+    "Flat wCDM reduces chi-square by 1.230 but worsens AICc by 2.237; flat w0waCDM reduces chi-square by 4.652 but worsens AICc by 3.148.",
+    "Combining DESI's identified product with the published Planck ruler gives the diagnostic H0=69.03+-0.51 km/s/Mpc, 4.019 sigma from the full SH0ES summary.",
+    "At the SH0ES central H0, DESI requires r_drag=138.72+-1.98 Mpc, 5.69 percent below the Planck base-LambdaCDM ruler and 4.194 propagated sigma away.",
+    "A dependency-free Node implementation agrees with the Python result to 6.7e-9 in Omega_m, 5.3e-7 Mpc in h*r_d, 4.3e-13 in chi-square, and 3.5e-7 in the principal tension diagnostic."
+  ],
+  "hypothesisAdjudication": [
+    {"code": "H61-A", "verdict": "supported", "claim": "The public Gaussian likelihood reproduces the official DESI DR2 flat-LambdaCDM headline."},
+    {"code": "H61-B", "verdict": "refuted", "claim": "One released BAO redshift block alone controls the inferred scale."},
+    {"code": "H61-C", "verdict": "refuted-for-tested-models", "claim": "Smooth late-time w or w0-wa freedom resolves the ruler/local conflict without an information-criterion penalty."},
+    {"code": "H61-D", "verdict": "refuted-as-product-diagnostic", "claim": "DESI BAO, the Planck standard ruler, and the full SH0ES value are compatible within three propagated standard deviations."},
+    {"code": "H61-E", "verdict": "open", "claim": "A physically viable early-universe model can shorten r_drag enough while satisfying BBN, full CMB spectra, structure growth, and independent distance data."}
+  ],
+  "causalChain": [
+    "Input: public 13-element DESI DR2 BAO Gaussian mean and covariance, flat FLRW, and predeclared model bounds.",
+    "Bottleneck: BAO determines h*r_d rather than H0 and r_d separately.",
+    "Bridge: an independent absolute ruler or absolute expansion measurement must break the multiplicative scale symmetry.",
+    "Adjudicand: posterior-level consistency of the inferred short ruler across independent CMB/BBN, BAO, supernova, and distance-ladder reductions.",
+    "Resolution: one predictive physical model passes those independent reductions and out-of-sample observables without calibration reuse or unbudgeted systematics."
+  ],
+  "workPackages": [
+    {
+      "code": "RC61-W1",
+      "purpose": "Replace marginal-Gaussian multiplication with released posterior samples.",
+      "method": "Reweight or jointly sample DESI DR2 chains with each released CMB-prior and supernova likelihood family, keeping source and date manifests frozen.",
+      "deliverable": "A posterior-level distribution of H0, r_drag, w0, and wa for each likelihood family.",
+      "pass": "The short-ruler direction survives all eligible likelihood families with stable effective sample size.",
+      "fail": "The direction changes sign, depends on one likelihood family, or importance weights collapse.",
+      "next": "If failed, isolate the exact likelihood term causing the change before enlarging the model."
+    },
+    {
+      "code": "RC61-W2",
+      "purpose": "Separate local-ladder calibration from sample selection.",
+      "method": "Freeze anchors and supernova selection, then perform leave-one-anchor and leave-one-host-family audits across HST and JWST methods.",
+      "deliverable": "Influence functions for anchors, hosts, calibrator classes, and photometric systems.",
+      "pass": "No omitted rung moves H0 by one full posterior sigma and method offsets fit the declared covariance.",
+      "fail": "One rung dominates or residuals track an instrument or method boundary.",
+      "next": "If failed, treat the responsible calibration branch as the active bottleneck."
+    },
+    {
+      "code": "RC61-W3",
+      "purpose": "Test whether a shorter early ruler is physically admissible.",
+      "method": "For preregistered early-energy or recombination perturbations, predict BBN abundances, full CMB TT/TE/EE+lensing, matter power, and DESI BAO before opening held likelihoods.",
+      "deliverable": "A model-by-observable falsification matrix with one independent pipeline per decisive observable.",
+      "pass": "One model reaches the required ruler interval and improves held joint predictive score without shifting another observable beyond its uncertainty budget.",
+      "fail": "The ruler remains too long, the CMB/BBN fit breaks, or extra freedom only improves development data.",
+      "next": "If all declared families fail, tighten the impossibility region rather than adding unconstrained parameters."
+    }
+  ],
+  "uncertaintyBudget": [
+    "Measurement: DESI mean/covariance is consumed as released and does not expose raw clustering or reconstruction systematics.",
+    "Model: flat wCDM and CPL w0-wa cover only smooth late expansion and are not an exhaustive dark-energy class.",
+    "Statistical: AICc is used for this 13-point likelihood; posterior model probability and look-elsewhere effects are not inferred.",
+    "External calibration: Planck and ladder marginals are propagated as independent Gaussian summaries despite possible covariance and non-Gaussianity.",
+    "Extrapolation: converting a short ruler into early-universe physics requires full CMB, BBN, growth, and independent distance tests not performed here."
+  ],
+  "structuralConnection": "CONN-EVIDENCE-034 maps the BAO h*r_d scale symmetry to gain-state non-identifiability in digital twins. The mathematical mapping is exact under a constant multiplicative calibration; physical transfer remains untested.",
+  "failedOrRejectedAttempts": [
+    "Attributing the scale to one BAO redshift block failed the preregistered one-sigma influence threshold.",
+    "Adding constant-w or CPL freedom improved raw chi-square but failed the AICc rescue rule and demanded an even shorter ruler at the SH0ES central value.",
+    "The cycle did not obtain raw local-ladder or CMB likelihood access and therefore did not upgrade product diagnostics to a joint conclusion."
+  ],
+  "claimBoundary": "This cycle constrains explanations; it does not solve the Hubble tension, establish dynamical dark energy, or prove early new physics.",
+  "exactNextStart": "Load the official DESI DR2 chains and the three released supernova likelihood families. Freeze an eligible-chain manifest and compute posterior-level H0-r_drag bridges under at least two CMB calibration choices. In parallel, define a leave-one-anchor local-ladder audit. Continue only if the inferred ruler shift survives effective-sample-size, likelihood-family, and calibration-independence gates."
+}

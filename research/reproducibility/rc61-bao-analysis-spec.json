@@ -1,0 +1,34 @@
+{
+  "cycleId": "RC-2026-61",
+  "reviewedOn": "2026-08-29",
+  "claimBoundary": "This is a redshift-resolved stress test of the public DESI DR2 Gaussian BAO likelihood. It neither re-runs the DESI clustering analysis nor proves new physics.",
+  "sourceSnapshot": {
+    "repository": "https://github.com/CobayaSampler/bao_data",
+    "commit": "bb0c1c9009dc76d1391300e169e8df38fd1096db",
+    "meanUpstreamSha256": "9A03F3BE91EF33F15F4475EC63B9F8AEFCE462395304EEA19C1DCF312BCACA05",
+    "covarianceUpstreamSha256": "76D77D0A46FEE430C10FB52413BDC5705F126B96174BEB4EDB0B1DDF87D25303",
+    "localMean": "research/reproducibility/rc61-desi-dr2-bao-mean.txt",
+    "localCovariance": "research/reproducibility/rc61-desi-dr2-bao-cov.txt",
+    "retrievedOn": "2026-08-29"
+  },
+  "observables": ["DV_over_rs", "DM_over_rs", "DH_over_rs"],
+  "redshiftBlocks": [0.295, 0.51, 0.706, 0.934, 1.321, 1.484, 2.33],
+  "models": {
+    "flatLambdaCDM": {"parameters": ["Omega_m", "h_times_r_d_Mpc"], "bounds": {"Omega_m": [0.1, 0.5], "h_times_r_d_Mpc": [80, 120]}},
+    "flatWCDM": {"parameters": ["Omega_m", "w", "h_times_r_d_Mpc"], "bounds": {"Omega_m": [0.1, 0.5], "w": [-2.5, -0.3], "h_times_r_d_Mpc": [80, 120]}},
+    "flatW0WaCDM": {"parameters": ["Omega_m", "w0", "wa", "h_times_r_d_Mpc"], "bounds": {"Omega_m": [0.1, 0.5], "w0": [-2.5, 0], "wa": [-5, 5], "h_times_r_d_Mpc": [80, 120]}}
+  },
+  "externalCalibration": {
+    "planckBaseLambdaCDM": {"H0": 67.4, "H0Sigma": 0.5, "rDragMpc": 147.09, "rDragSigmaMpc": 0.26},
+    "shoesHstFull2024": {"H0": 73.2, "H0Sigma": 0.9},
+    "jwstThreeMethod2024": {"H0": 72.6, "H0Sigma": 2.0}
+  },
+  "predeclaredTests": {
+    "headlineReplication": {"targetOmegaM": 0.2975, "toleranceOmegaM": 0.0005, "targetHTimesRdMpc": 101.54, "toleranceHTimesRdMpc": 0.05},
+    "singleBlockDominance": {"rejectIfMaximumLeaveOneBlockShiftBelowFullFitSigma": true},
+    "lateExpansionRescue": {"requiresDeltaAiccAtMostMinus2AndRequiredRdragWithinThreeSigmaOfPlanck": true},
+    "standardRulerLocalCompatibility": {"requiresTensionBelowThreeSigma": true},
+    "crossImplementation": {"omegaMTolerance": 0.0002, "hTimesRdToleranceMpc": 0.02, "chi2Tolerance": 0.02, "derivedTensionToleranceSigma": 0.03}
+  },
+  "independenceCaveat": "Product-level Planck and local-ladder comparisons propagate published marginal errors as independent Gaussian summaries. They are diagnostics, not a replacement for the joint DESI/CMB/SN likelihood."
+}

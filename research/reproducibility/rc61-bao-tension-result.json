@@ -1,0 +1,355 @@
+{
+  "cycleId": "RC-2026-61",
+  "generatedOn": "2026-08-29",
+  "problemIds": [
+    "UP-003",
+    "UP-002",
+    "UP-005"
+  ],
+  "status": "computational-constraint-not-solution",
+  "sourceIntegrity": {
+    "meanLocalSha256": "51657AFD56F83707E7FB477466A9D259FFED7ADBEF20BF3FEB21D761AB067877",
+    "covarianceLocalSha256": "252A143274C8A07C78694C119617D36594F6D7965D00319CA611C6FFB886E509",
+    "specSha256": "9286726EF7D637BBD9ECA2227AF644535708893C39BCF641390A1C2D10A3B661",
+    "rowCount": 13,
+    "covarianceMinimumEigenvalue": 0.00578998687
+  },
+  "fits": {
+    "flatLambdaCDM": {
+      "model": "flatLambdaCDM",
+      "parameters": {
+        "Omega_m": 0.2974618215858936,
+        "h_times_r_d_Mpc": 101.53977301618744
+      },
+      "chi2": 10.271041002564907,
+      "n": 13,
+      "k": 2,
+      "dof": 11,
+      "aic": 14.271041002564907,
+      "aicc": 15.471041002564906,
+      "bic": 15.40093971748798,
+      "optimizerSuccess": true,
+      "deltaChi2FromLambdaCDM": 0.0,
+      "deltaAiccFromLambdaCDM": 0.0,
+      "requiredRdragAtShoesCentralMpc": 138.7155369073599,
+      "requiredRdragShiftFromPlanckFraction": -0.05693427896281256
+    },
+    "flatWCDM": {
+      "model": "flatWCDM",
+      "parameters": {
+        "Omega_m": 0.29769349919259286,
+        "w": -0.9118991312245612,
+        "h_times_r_d_Mpc": 99.75090819282077
+      },
+      "chi2": 9.041046606430422,
+      "n": 13,
+      "k": 3,
+      "dof": 10,
+      "aic": 15.041046606430422,
+      "aicc": 17.707713273097088,
+      "bic": 16.735894678815033,
+      "optimizerSuccess": true,
+      "deltaChi2FromLambdaCDM": -1.2299943961344848,
+      "deltaAiccFromLambdaCDM": 2.236672270532182,
+      "requiredRdragAtShoesCentralMpc": 136.2717325038535,
+      "requiredRdragShiftFromPlanckFraction": -0.0735486266649431
+    },
+    "flatW0WaCDM": {
+      "model": "flatW0WaCDM",
+      "parameters": {
+        "Omega_m": 0.38660597474915936,
+        "w0": -0.17883253202655594,
+        "wa": -2.7166796504993784,
+        "h_times_r_d_Mpc": 91.24964554223781
+      },
+      "chi2": 5.618600031418131,
+      "n": 13,
+      "k": 4,
+      "dof": 9,
+      "aic": 13.618600031418131,
+      "aicc": 18.618600031418133,
+      "bic": 15.878397461264278,
+      "optimizerSuccess": true,
+      "deltaChi2FromLambdaCDM": -4.652440971146776,
+      "deltaAiccFromLambdaCDM": 3.1475590288532267,
+      "requiredRdragAtShoesCentralMpc": 124.65798571343963,
+      "requiredRdragShiftFromPlanckFraction": -0.15250536601101616
+    }
+  },
+  "flatLambdaCDMProfile68": {
+    "Omega_m": {
+      "low": 0.28898463357821613,
+      "high": 0.3062199331317986,
+      "sigmaAverage": 0.008617649776791247
+    },
+    "h_times_r_d_Mpc": {
+      "low": 100.80384502349153,
+      "high": 102.27526526955924,
+      "sigmaAverage": 0.7357101230338543
+    }
+  },
+  "leaveOneRedshiftBlockOut": [
+    {
+      "omittedRedshift": 0.295,
+      "omittedObservables": [
+        "DV_over_rs"
+      ],
+      "Omega_m": 0.29480616867542264,
+      "Omega_mSigma": 0.009575343038041056,
+      "hTimesRdMpc": 101.80773526256768,
+      "hTimesRdSigmaMpc": 0.8577713654890999,
+      "chi2": 9.905276490024264,
+      "hTimesRdShiftInFullSigma": 0.3642225898363852,
+      "OmegaMShiftInFullSigma": 0.3081644043626716
+    },
+    {
+      "omittedRedshift": 0.51,
+      "omittedObservables": [
+        "DM_over_rs",
+        "DH_over_rs"
+      ],
+      "Omega_m": 0.29265534684062,
+      "Omega_mSigma": 0.009052541127547609,
+      "hTimesRdMpc": 102.02840566447409,
+      "hTimesRdSigmaMpc": 0.8221766016677776,
+      "chi2": 5.704342510707393,
+      "hTimesRdShiftInFullSigma": 0.6641646390179802,
+      "OmegaMShiftInFullSigma": 0.5577477467485689
+    },
+    {
+      "omittedRedshift": 0.706,
+      "omittedObservables": [
+        "DM_over_rs",
+        "DH_over_rs"
+      ],
+      "Omega_m": 0.2996116287074984,
+      "Omega_mSigma": 0.009000536170769985,
+      "hTimesRdMpc": 101.1424853977614,
+      "hTimesRdSigmaMpc": 0.7926229616496272,
+      "chi2": 5.859592381730523,
+      "hTimesRdShiftInFullSigma": 0.5400056435104302,
+      "OmegaMShiftInFullSigma": 0.24946559413386357
+    },
+    {
+      "omittedRedshift": 0.934,
+      "omittedObservables": [
+        "DM_over_rs",
+        "DH_over_rs"
+      ],
+      "Omega_m": 0.2999045419692993,
+      "Omega_mSigma": 0.009106174711514314,
+      "hTimesRdMpc": 101.35148522931858,
+      "hTimesRdSigmaMpc": 0.7963051902437002,
+      "chi2": 9.375867923062641,
+      "hTimesRdShiftInFullSigma": 0.2559265952361934,
+      "OmegaMShiftInFullSigma": 0.28345551823007464
+    },
+    {
+      "omittedRedshift": 1.321,
+      "omittedObservables": [
+        "DM_over_rs",
+        "DH_over_rs"
+      ],
+      "Omega_m": 0.2989613949134945,
+      "Omega_mSigma": 0.009088078523560167,
+      "hTimesRdMpc": 101.4356740004696,
+      "hTimesRdSigmaMpc": 0.7528941493714214,
+      "chi2": 9.829262458683653,
+      "hTimesRdShiftInFullSigma": 0.14149460835004093,
+      "OmegaMShiftInFullSigma": 0.1740118670915898
+    },
+    {
+      "omittedRedshift": 1.484,
+      "omittedObservables": [
+        "DM_over_rs",
+        "DH_over_rs"
+      ],
+      "Omega_m": 0.2978055605292319,
+      "Omega_mSigma": 0.008719980364883334,
+      "hTimesRdMpc": 101.54922243798696,
+      "hTimesRdSigmaMpc": 0.7394072195853241,
+      "chi2": 9.590806285896367,
+      "hTimesRdShiftInFullSigma": 0.012843946961813684,
+      "OmegaMShiftInFullSigma": 0.039887782892271205
+    },
+    {
+      "omittedRedshift": 2.33,
+      "omittedObservables": [
+        "DH_over_rs",
+        "DM_over_rs"
+      ],
+      "Omega_m": 0.29910131011158225,
+      "Omega_mSigma": 0.012535684451616541,
+      "hTimesRdMpc": 101.45296120320688,
+      "hTimesRdSigmaMpc": 0.9131962444274748,
+      "chi2": 10.17604803971976,
+      "hTimesRdShiftInFullSigma": 0.11799730663290317,
+      "OmegaMShiftInFullSigma": 0.19024775526432267
+    }
+  ],
+  "blockResidualAudit": [
+    {
+      "redshift": 0.295,
+      "observables": [
+        "DV_over_rs"
+      ],
+      "chi2Contribution": 0.26564032547053457,
+      "residuals": [
+        0.03921803152399317
+      ]
+    },
+    {
+      "redshift": 0.51,
+      "observables": [
+        "DM_over_rs",
+        "DH_over_rs"
+      ],
+      "chi2Contribution": 4.207965135974202,
+      "residuals": [
+        0.3308582996183791,
+        -0.6057559543623121
+      ]
+    },
+    {
+      "redshift": 0.706,
+      "observables": [
+        "DM_over_rs",
+        "DH_over_rs"
+      ],
+      "chi2Contribution": 3.828730002950393,
+      "residuals": [
+        -0.06360872395433503,
+        -0.5435643122716023
+      ]
+    },
+    {
+      "redshift": 0.934,
+      "observables": [
+        "DM_over_rs",
+        "DH_over_rs"
+      ],
+      "chi2Contribution": 0.8221273088117231,
+      "residuals": [
+        -0.10337890983427656,
+        0.16588735175354685
+      ]
+    },
+    {
+      "redshift": 1.321,
+      "observables": [
+        "DM_over_rs",
+        "DH_over_rs"
+      ],
+      "chi2Contribution": 0.41331129706716363,
+      "residuals": [
+        -0.14421051658155903,
+        0.13544285326890027
+      ]
+    },
+    {
+      "redshift": 1.484,
+      "observables": [
+        "DM_over_rs",
+        "DH_over_rs"
+      ],
+      "chi2Contribution": 0.6625148459546845,
+      "residuals": [
+        0.5755064504419565,
+        -0.054259669045062964
+      ]
+    },
+    {
+      "redshift": 2.33,
+      "observables": [
+        "DH_over_rs",
+        "DM_over_rs"
+      ],
+      "chi2Contribution": 0.07075208633624697,
+      "residuals": [
+        -0.004997955829667333,
+        0.13673589019513344
+      ]
+    }
+  ],
+  "externalScaleDiagnostics": {
+    "planckProduct": {
+      "hTimesRdMpc": 99.13866000000002,
+      "sigmaMpc": 0.7560395228425562,
+      "tensionWithDesiSigma": 2.2760999630045644,
+      "assumption": "Published Planck H0 and r_drag marginals propagated as independent Gaussian summaries."
+    },
+    "shoesWithStandardRuler": {
+      "hTimesRdMpc": 107.66988,
+      "sigmaMpc": 1.3374208830805658,
+      "tensionWithDesiSigma": 4.015997633440933
+    },
+    "desiWithStandardRuler": {
+      "H0": 69.03241077992212,
+      "H0Sigma": 0.5148461864657589,
+      "tensionWithShoesSigma": 4.019455474563468
+    },
+    "requiredRulerForShoes": {
+      "rDragMpc": 138.7155369073599,
+      "sigmaMpc": 1.9796356593054465,
+      "fractionalShiftFromPlanck": -0.05693427896281256,
+      "tensionWithPlanckRulerSigma": 4.194285269574746
+    },
+    "requiredRulerForJwst": {
+      "rDragMpc": 139.8619463032885,
+      "sigmaMpc": 3.9839832825496297,
+      "fractionalShiftFromPlanck": -0.049140347383992755,
+      "tensionWithPlanckRulerSigma": 1.8104268755683617
+    }
+  },
+  "hypothesisTests": [
+    {
+      "code": "H61-A",
+      "claim": "The public Gaussian likelihood reproduces the DESI DR2 flat-LambdaCDM headline.",
+      "verdict": "supported",
+      "observed": {
+        "Omega_m": 0.2974618215858936,
+        "hTimesRdMpc": 101.53977301618744
+      }
+    },
+    {
+      "code": "H61-B",
+      "claim": "One redshift block alone controls the inferred BAO scale.",
+      "verdict": "refuted",
+      "observed": {
+        "maximumHTimesRdShiftInFullSigma": 0.6641646390179802,
+        "maximumOmegaMShiftInFullSigma": 0.5577477467485689
+      }
+    },
+    {
+      "code": "H61-C",
+      "claim": "Late-time expansion freedom resolves the local-H0 and standard-ruler conflict without an information-criterion penalty.",
+      "verdict": "refuted",
+      "observed": {
+        "bestExtension": "flatWCDM",
+        "deltaAicc": 2.236672270532182,
+        "requiredRdragMpc": 136.2717325038535,
+        "fractionalShift": -0.0735486266649431
+      }
+    },
+    {
+      "code": "H61-D",
+      "claim": "DESI BAO, the Planck standard ruler, and the full SH0ES local value are compatible within three propagated standard deviations.",
+      "verdict": "refuted",
+      "observed": {
+        "tensionSigma": 4.015997633440933
+      }
+    }
+  ],
+  "inferences": [
+    "DESI BAO alone constrains h*r_d, not H0 and r_d separately.",
+    "No single public BAO redshift block moves the fitted scale by one full-fit standard deviation when removed.",
+    "Within the tested smooth late-time models, improved BAO fit does not by itself restore the Planck ruler at the SH0ES central H0."
+  ],
+  "unresolved": [
+    "The Gaussian consensus likelihood does not re-test clustering reconstruction, tracer selection, or covariance construction.",
+    "The Planck and local-ladder product diagnostics ignore posterior covariance and are not a joint likelihood.",
+    "The calculation does not identify whether any required early-time ruler shift is physically viable or consistent with BBN and the full CMB spectra.",
+    "The local-distance-ladder raw photometry and calibration covariance were not re-fit in this cycle."
+  ],
+  "nextCycleStart": "Use the released DESI DR2 chains to replace independent-Gaussian product propagation with a posterior-level bridge. Construct an outcome-frozen comparison of CMB-prior variants and the three supernova likelihoods, then test whether the inferred short-ruler requirement survives each likelihood family and a leave-one-ladder-rung audit. Do not call the result new physics unless the same direction survives independent CMB, BAO, and distance-ladder reductions."
+}
