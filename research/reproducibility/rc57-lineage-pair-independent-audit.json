@@ -1,0 +1,43 @@
+{
+  "auditId": "RC57-LINEAGE-PAIR-INDEPENDENT-AUDIT-0.1",
+  "cycleId": "RC-2026-57",
+  "completedOn": "2026-08-29",
+  "status": "pass-design-agreement-negative-target-stop",
+  "contractStatus": "prospective-design-from-outcome-open-source",
+  "implementationAgreement": {
+    "pass": true,
+    "comparedDesignRows": 56,
+    "maxProbabilityDifference": 3.3306690738754696e-16,
+    "tolerance": 1e-12,
+    "differences": []
+  },
+  "invariantResults": {
+    "fourCellBlockUpperBound": 72,
+    "twentyFourObservedEvents": {
+      "effectiveObservedEvents": 24,
+      "selectedLargestPassingIntervalCycles": 25,
+      "worstPhaseProbabilityAtLeast100": 0.9993573825678991,
+      "worstPhaseLowerFivePercentPairCount": 150
+    },
+    "thirtySixObservedEvents": {
+      "effectiveObservedEvents": 36,
+      "selectedLargestPassingIntervalCycles": 50,
+      "worstPhaseProbabilityAtLeast100": 0.9936847404193192,
+      "worstPhaseLowerFivePercentPairCount": 159
+    }
+  },
+  "lineageDecision": {
+    "roCrateGraphEntities": 599,
+    "inventoryCells": 199,
+    "explicitLfpCells": 32,
+    "paperLfpCells": 36,
+    "lineageGatePass": false
+  },
+  "adjudication": {
+    "pairDesignPass": true,
+    "auroraTargetEligible": false,
+    "auroraCyclingAccessAuthorized": false,
+    "verdict": "The prospective pair bottleneck is repairable by block size and cadence, but the public Aurora cohort lineage remains unresolved. Exclude Aurora and keep all target cycling outcomes closed."
+  },
+  "claimBoundary": "Agreement verifies deterministic arithmetic and the stated public-metadata boundary. It does not validate a battery lifetime feature, prove schedule non-interference, or identify the four missing Aurora cohort members."
+}

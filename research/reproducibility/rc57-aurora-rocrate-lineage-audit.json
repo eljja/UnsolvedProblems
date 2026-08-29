@@ -1,0 +1,365 @@
+{
+  "auditId": "RC57-AURORA-ROCRATE-LINEAGE-AUDIT-0.1",
+  "cycleId": "RC-2026-57",
+  "auditedOn": "2026-08-29",
+  "status": "lineage-unresolved-aurora-excluded-before-outcomes",
+  "record": {
+    "id": 15481956,
+    "doi": "10.5281/zenodo.15481956",
+    "title": "Dataset for publication \"Toward an Autonomous Robotic Battery Materials Research Platform Powered by Automated Workflow and Ontologized Findable, Accessible, Interoperable, and Reusable Data Management\"",
+    "publicationDate": "2025-07-01",
+    "license": "cc-by-4.0",
+    "zip": {
+      "url": "https://zenodo.org/api/records/15481956/files/Dataset-rocrate.zip/content",
+      "size": 2507129091,
+      "checksum": "md5:eaec9549b74b59d998e5138dab965b5d",
+      "lastModified": null
+    }
+  },
+  "remoteDirectory": {
+    "entryCount": 797,
+    "centralDirectoryOffset": 2507033843,
+    "centralDirectorySize": 95226,
+    "tailSha256": "cba281c0e46c03ccdb15edb19741813e7e0af78d16da9f4e4fde7f5d4c9c9557",
+    "centralDirectorySha256": "a3ecaa8bd0ca78790a6e34a3e1d3bd1885f0aded6047551fcf05f600104ed9e7",
+    "matchesRc56CentralDirectory": true
+  },
+  "roCrate": {
+    "sha256": "291f06f9944b3235bece21a0e5d16a1ae8a789df726be21a56b5d46610d1829f",
+    "uncompressedBytes": 163896,
+    "context": "https://w3id.org/ro/crate/1.1/context",
+    "graphEntityCount": 599,
+    "descriptorConformsTo": {
+      "@id": "https://w3id.org/ro/crate/1.1"
+    },
+    "rootName": "Aurora Battery Assembly & Cycling Experiments",
+    "rootHasPartCount": 199,
+    "cellDatasetCount": 199,
+    "fileEntityCount": 398,
+    "bdfCsvEntityCount": 199,
+    "bdfParquetEntityCount": 199,
+    "metadataJsonEntityCount": 0,
+    "cohortSemanticEntityCount": 0,
+    "cohortSemanticEntities": [],
+    "interpretation": "The crate inventories cell directories and BDF files. It does not state chemistry, Figure 7 membership, or a 36-cell study cohort. RO-Crate permits partial file description, so this is a fitness-for-cohort-selection gap rather than a conformance finding."
+  },
+  "inventoryAgreement": {
+    "crateCells": 199,
+    "physicalMetadataCells": 199,
+    "physicalCsvCells": 199,
+    "physicalParquetCells": 199,
+    "allFourInventoriesEqual": true
+  },
+  "paperToArchiveCohort": {
+    "paperLongTermLfpCells": 36,
+    "archiveExplicitLfpCells": 32,
+    "explicitLfpCellIds": [
+      "ccid000217",
+      "ccid000218",
+      "ccid000219",
+      "ccid000220",
+      "ccid000221",
+      "ccid000222",
+      "ccid000223",
+      "ccid000224",
+      "ccid000225",
+      "ccid000226",
+      "ccid000227",
+      "ccid000228",
+      "ccid000229",
+      "ccid000230",
+      "ccid000231",
+      "ccid000232",
+      "ccid000233",
+      "ccid000234",
+      "ccid000235",
+      "ccid000236",
+      "ccid000237",
+      "ccid000238",
+      "ccid000239",
+      "ccid000240",
+      "ccid000241",
+      "ccid000242",
+      "ccid000243",
+      "ccid000244",
+      "ccid000245",
+      "ccid000246",
+      "ccid000247",
+      "ccid000249"
+    ],
+    "allExplicitLfpHaveOneToOneFiles": true,
+    "oneToOneExplicitLfp": [
+      {
+        "cellId": "ccid000217",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000218",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000219",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000220",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000221",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000222",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000223",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000224",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000225",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000226",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000227",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000228",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000229",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000230",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000231",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000232",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000233",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000234",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000235",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000236",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000237",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000238",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000239",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000240",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000241",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000242",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000243",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000244",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000245",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000246",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000247",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      },
+      {
+        "cellId": "ccid000249",
+        "physicalMetadata": true,
+        "physicalCsv": true,
+        "physicalParquet": true,
+        "crateDataset": true,
+        "crateBdfPartCount": 2
+      }
+    ],
+    "unresolvedCount": 4,
+    "prohibitedInference": "Do not infer four additional cohort members from neighboring IDs, file order, or BDF outcomes."
+  },
+  "decision": {
+    "lineageGatePass": false,
+    "auroraEligibleForConfirmation": false,
+    "reason": "The RO-Crate confirms a complete 199-cell file inventory but contains no chemistry or Figure 7 membership relation, while only 32 per-cell metadata records explicitly identify LiFePO4 versus 36 cells in the paper cohort.",
+    "nextEligibleEvidence": "An official author or curator table that names all 36 Figure 7 cell IDs and binds each to assembly metadata, cycling protocol, and BDF files without revealing cell outcomes."
+  },
+  "outcomeBoundary": {
+    "roCrateOpened": true,
+    "perCellMetadataReusedFromRc56": 199,
+    "cyclingDataEntriesOpened": 0,
+    "cellCapacityValuesObserved": 0,
+    "cellEolValuesObserved": 0
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "contractId": "RC57-LINEAGE-PAIR-DESIGN-CONTRACT-0.1",
+  "cycleId": "RC-2026-57",
+  "sealedOn": "2026-08-29",
+  "status": "prospective-design-from-outcome-open-source",
+  "problemIds": ["UP-219", "UP-233", "UP-234", "UP-572"],
+  "purpose": "Resolve the public Aurora cohort lineage as far as outcome-blind metadata permit and determine whether endpoint cadence or same-condition block size is the binding constraint on a future independent ordinal battery-lifetime test.",
+  "claimBoundary": "RWTH cell outcomes were opened in RC55 and are used only as an empirical design prior. No Aurora BDF cycling row, cell capacity, or EOL value may be opened. A schedule that passes this contract is a prospective design, not validation of a lifetime coordinate.",
+  "sources": {
+    "rwth": "https://doi.org/10.18154/RWTH-2021-04545",
+    "auroraPaper": "https://doi.org/10.1002/batt.202500155",
+    "auroraArchive": "https://doi.org/10.5281/zenodo.15481956",
+    "roCrateSpecification": "https://www.researchobject.org/ro-crate/specification/1.2/introduction.html",
+    "conditionBasedRpt": "https://doi.org/10.1016/j.meaene.2024.100019"
+  },
+  "lineageGate": {
+    "paperCohort": "The primary paper reports one 36-cell LFP/graphite batch in Figure 7.",
+    "requiredManifest": "Before outcomes, one official machine-readable table must map all 36 paper-cohort members to unique cell IDs, assembly metadata, cycling protocol, and BDF entries.",
+    "roCrateTest": "Inspect only ro-crate-metadata.json, the prior metadata-only RC56 audit, the ZIP central directory, and the Zenodo record. Inventory membership alone does not establish study-cohort membership.",
+    "pass": "Exactly 36 unique cells are explicitly assigned to the Figure 7 LFP batch and each maps one-to-one to metadata, CSV, and Parquet entries.",
+    "fail": "If chemistry or paper-cohort membership must be inferred from ID proximity, file order, aggregate counts, or cycling values, exclude Aurora from confirmatory testing."
+  },
+  "pairDesign": {
+    "input": "research/reproducibility/rc55-rwth-frailty-response-feature-table.json",
+    "latentCrossingProxy": "For each of the 48 outcome-open RWTH cells, linearly interpolate cycle time only between the adjacent standardized capacity rounds bracketing 80% of its own BOL capacity. This proxy is used only to compare inspection designs.",
+    "featureRegister": "Keep the candidate coordinate separate: BOL and standardized full-capacity checks nominally at cycles 160, 320, and 480; the frozen candidate is log(Q_R3/Q_R0).",
+    "endpointRegister": "After nominal cycle 480, quantize the interpolated 80% crossing to a fixed grid. Candidate construction may not use the denser endpoint register.",
+    "fixedIntervalsCycles": [200, 160, 100, 80, 50, 40, 25],
+    "effectiveObservedEventCounts": [24, 36],
+    "spreadScales": [1.0, 0.75, 0.5, 0.25],
+    "spreadDefinition": "Scale every empirical crossing deviation from the empirical median by the registered factor. The 0.25 case represents a future same-condition batch whose lifetime spread is only one quarter of RWTH's.",
+    "phaseRobustness": "For each interval, evaluate every integer-cycle phase offset from zero through interval minus one and retain the worst phase.",
+    "samplingDistribution": "Draw future event times with replacement from the 48 transformed empirical crossings. Compute the multinomial pair-count distribution exactly; no Monte Carlo random numbers are used.",
+    "pairDefinition": "Count only non-tied event-event pairs inside one same-condition block. This is conservative with respect to usable event-censor pairs.",
+    "gate": "At the 0.25 spread scale and worst grid phase, require both exact P(non-tied pairs >= 100) >= 0.95 and the lower 5% pair-count quantile >= 100.",
+    "selection": "For each effective event count, select the largest tested interval that passes every gate. The principal design must also preserve at least 24 independently observed events.",
+    "prohibited": "Do not weaken the 100-pair gate, choose a favorable grid phase, count cross-condition pairs, treat interpolated crossings as validation outcomes, or inspect Aurora cycling data."
+  },
+  "measurementIntervention": {
+    "risk": "A denser reference-performance-test schedule can change calendar time, thermal history, rest, and charge throughput and therefore can change the degradation process it is meant to observe.",
+    "control": "All confirmatory cells receive the same frozen schedule and channel-randomization plan. A separate non-confirmatory pilot must compare dense and conventional schedules before claiming transport.",
+    "adaptiveBranch": "A capacity-loss-triggered RPT schedule is retained as a later burden-reduction hypothesis, not substituted for the fixed-grid decisive test until trigger sensitivity and intervention equivalence are independently established."
+  },
+  "decisionRule": "Aurora is eligible only if the lineage gate passes. A future experiment is pair-powered only if the exact worst-phase design gate passes. Failure of either gate keeps target outcomes closed and prevents a transport claim.",
+  "safetyAndScope": "This cycle performs public metadata inspection and offline computation only. Physical cycling would require an approved laboratory protocol, temperature and voltage protection, calibrated channels, and a predefined response to swelling, leakage, venting, or thermal excursion. No cyber-trust work is included."
+}

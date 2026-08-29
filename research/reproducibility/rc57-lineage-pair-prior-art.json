@@ -1,0 +1,65 @@
+{
+  "auditId": "RC57-LINEAGE-PAIR-PRIOR-ART-0.1",
+  "cycleId": "RC-2026-57",
+  "reviewedOn": "2026-08-29",
+  "status": "primary-and-official-sources-reviewed",
+  "searchBoundary": "Searched for Aurora Figure 7 cohort identifiers, RO-Crate cohort membership, battery endpoint inspection cadence, condition-based reference-performance testing, grid-phase sensitivity, and pair-powered lifetime validation. Discovery searches were followed to publisher, repository, institutional, or specification sources before use.",
+  "sources": [
+    {
+      "id": "aurora-platform-2025",
+      "url": "https://doi.org/10.1002/batt.202500155",
+      "publishedOn": "2025-07-07",
+      "result": "The paper reports a Figure 7 batch of 36 LFP/graphite cells, states that Aurora can assemble up to 36 coin cells per batch, and links the Zenodo dataset.",
+      "limit": "The article text does not provide a machine-readable mapping from the 36 plotted curves to archive cell IDs."
+    },
+    {
+      "id": "aurora-dataset-2025",
+      "url": "https://doi.org/10.5281/zenodo.15481956",
+      "publishedOn": "2025-07-01",
+      "result": "The official archive provides 199 cell directories with per-cell metadata and BDF CSV and Parquet payloads plus an RO-Crate document.",
+      "limit": "The RO-Crate inventories files but does not label Figure 7 membership or a 36-cell LFP cohort."
+    },
+    {
+      "id": "ro-crate-1.2",
+      "url": "https://www.researchobject.org/ro-crate/specification/1.2/introduction.html",
+      "publishedOn": "2025-06-04",
+      "result": "The recommendation defines an RO-Crate metadata document that may describe some or all files and contextual provenance.",
+      "limit": "Omission of cohort relations is therefore not by itself a conformance failure; it is a failure of fitness for this outcome-blind selection task."
+    },
+    {
+      "id": "condition-rpt-2024",
+      "url": "https://doi.org/10.1016/j.meaene.2024.100019",
+      "publishedOnline": "2024-09-20",
+      "issueDate": "2024-12",
+      "result": "A capacity-loss-driven method scheduled RPTs in 1% loss steps and produced 44% more aging cycles over the first 100 days than a fixed 200-cycle interval while delivering a deterministic number of RPTs.",
+      "limit": "Its data are available on request, and it does not establish a pair-power or independent lifetime-transport rule."
+    },
+    {
+      "id": "rwth-changepoint-2026",
+      "url": "https://doi.org/10.1016/j.xcrp.2026.103157",
+      "publishedOn": "2026",
+      "result": "The study uses the same 48-cell RWTH source with capacity checks every 160 cycles and reports changepoint features for SOH estimation.",
+      "limit": "It identifies feature utility but calls for validation under varied operating conditions and LFP chemistry; it does not repair the four-cell-block pair ceiling."
+    },
+    {
+      "id": "battery-assessment-2026",
+      "url": "https://doi.org/10.1039/D5EE06439B",
+      "publishedOn": "2026-02-11",
+      "result": "Rate-adaptive transformation and mechanism-informed residual learning enable rapid diagnostics and early lifetime prediction across unseen aging conditions using public datasets.",
+      "limit": "Diagnostic transport remains distinct from a prospectively sealed cell-level EOL rank test."
+    }
+  ],
+  "combinationAssessment": {
+    "proposedCombination": "Separate a sparse feature register from a dense endpoint register, size one same-condition block by an exact non-tied-pair distribution, exhaustively vary grid phase and lifetime-spread compression, and require an outcome-blind paper-to-file manifest before opening a target.",
+    "overlap": "Condition-based RPTs, early-life capacity features, rank metrics, and RO-Crate provenance each have prior art.",
+    "difference": "No reviewed source combined the block-combinatorial ceiling, exact worst-phase pair-power calculation, two-register measurement separation, and cohort-lineage gate into one target-opening rule.",
+    "noveltyBoundary": "The combination is recorded as a testable project proposal, not claimed as literature-first or patent-new. A systematic review and patent search would be required before any novelty claim."
+  },
+  "followUpSearches": [
+    "battery lifetime inspection interval exact pair power interval censoring",
+    "reference performance test grid phase tied event times concordance",
+    "battery cohort manifest RO-Crate study membership",
+    "adaptive RPT measurement intervention battery degradation equivalence",
+    "prospective external validation battery remaining useful life blocked concordance"
+  ]
+}

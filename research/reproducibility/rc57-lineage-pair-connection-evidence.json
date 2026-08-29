@@ -1,0 +1,52 @@
+{
+  "evidenceId": "RC57-LINEAGE-PAIR-CONNECTION-EVIDENCE-0.1",
+  "cycleId": "RC-2026-57",
+  "reviewedOn": "2026-08-29",
+  "problemIds": ["UP-219", "UP-233", "UP-234", "UP-572"],
+  "connectionType": "blocked combinatorial information under measurement intervention and incomplete provenance",
+  "commonStructure": "A latent state can be tested only through distinguishable outcomes inside exchangeable experimental blocks. The number and timing of observations change both statistical information and, potentially, the physical process; a file inventory is insufficient unless it also identifies which records belong to the declared scientific cohort.",
+  "variableMapping": [
+    {
+      "batteryRul": "R3 normalized capacity -> ordinal remaining-life score",
+      "materialsTwin": "synchronized measured state -> latent degradation coordinate",
+      "acceleratedLife": "within-condition frailty -> interval-resolved failure order",
+      "autonomousLab": "candidate experiment -> information gain after accounting for intervention cost"
+    },
+    {
+      "batteryRul": "non-tied EOL pairs within a production block",
+      "materialsTwin": "distinguishable state transitions among nominal replicates",
+      "acceleratedLife": "identifiable random effect after condition blocking",
+      "autonomousLab": "adjudicable outcomes returned per experiment batch"
+    },
+    {
+      "batteryRul": "cell ID to capacity history",
+      "materialsTwin": "physical specimen to digital state history",
+      "acceleratedLife": "specimen to stress and censoring record",
+      "autonomousLab": "request, specimen, protocol, file, and result provenance"
+    }
+  ],
+  "verifiedEvidence": {
+    "combinatorialCeiling": "Twelve independent four-cell blocks contain at most 72 within-block pairs, so no inspection cadence can meet a 100-pair gate without increasing block size or making a stronger exchangeability assumption.",
+    "exactDesign": "Under an exact empirical-resampling calculation with lifetime spread compressed to one quarter and every integer grid phase tested, 24 usable events require a 25-cycle endpoint register; 36 usable events permit 50 cycles.",
+    "lineage": "Aurora's RO-Crate has 599 graph entities and consistently inventories 199 cell directories and 398 BDF file entities, but encodes no LFP or Figure 7 cohort relation. The paper reports 36 LFP cells while per-cell metadata explicitly identify 32.",
+    "measurement": "Published condition-based RPT work shows that capacity-loss triggers can control test burden, but it does not establish equivalence of degradation under the proposed dense endpoint register."
+  },
+  "conditionsForTransfer": [
+    "All compared cells must share a declared stress condition and an exchangeable production or assembly block.",
+    "A machine-readable manifest must bind every scientific cohort member to specimen, protocol, metadata, and result files before outcomes are inspected.",
+    "The feature register and endpoint register must remain separate so denser endpoint measurements cannot redefine the candidate coordinate.",
+    "Pair power must be calculated against narrower-than-development lifetime spreads and unfavorable grid phase, not only the observed development alignment.",
+    "A separate pilot must bound how the measurement schedule changes degradation before endpoint density is treated as passive observation."
+  ],
+  "breakConditions": [
+    "Pooling pairs across unequal conditions to exceed 100 replaces frailty identification with condition discrimination.",
+    "Inferring missing cohort members from neighboring IDs or file order turns provenance into an untested assumption.",
+    "Selecting the grid phase or lifetime-spread scenario after seeing target outcomes invalidates prospective pair power.",
+    "Using an adaptive trigger derived from the same candidate score without a frozen rule couples feature development to endpoint ascertainment.",
+    "If dense RPTs change degradation beyond a predeclared equivalence margin, the schedule cannot validate the original process."
+  ],
+  "minimumValidation": "Use a manifest-verified same-condition block, preserve at least 24 observed events, run the fixed 25-cycle endpoint register after the nominal cycle-480 feature landmark, document calibrated channel randomization, and require at least 100 non-tied within-block pairs before fitting. A lower-burden 50-cycle branch is eligible only with 36 usable events. Independently reproduce the pair count and final rank test.",
+  "simultaneousImpact": "The design turns sample count, inspection timing, intervention burden, and provenance into joint gates for RUL prediction, bounded digital twins, accelerated-life frailty, and autonomous experiment selection. It prevents all four fields from mistaking abundant files or accurate fits for identifiable individual-state evidence.",
+  "surfaceSimilarityRisk": "Not every repeated-measures problem has a pair ceiling or a measurement intervention. The connection applies only when inference is blocked within comparable groups and observation timing can tie outcomes or alter the system.",
+  "validationStatus": "The combinatorial and provenance bottlenecks are verified on public artifacts. The proposed prospective battery schedule, measurement-equivalence claim, and lifetime-coordinate transport remain untested."
+}

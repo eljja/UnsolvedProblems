@@ -100,11 +100,12 @@ for (const page of ["index.html", "solve.html", "research-log.html"]) {
   assert(html.includes("research-cycle-56-data.js?v=20260829-cycle56"), `${page} must load RC56 data`);
 }
 const readme = fs.readFileSync(path.join(ROOT, "README.md"), "utf8");
-assert(readme.includes("56개 누적 연구 사이클"), "README cycle count must be 56");
-assert(readme.includes("178개 사이클 기록"), "README research-record count must be 178");
-assert(readme.includes("59개 구조적 연결"), "README connection count must be 59");
-assert(readme.includes("328개 기관·로드맵·원 연구 출처"), "README source count must be 328");
-assert(readme.includes("1,602개 현지화 URL"), "README sitemap count must be 1,602");
+const readmeCount = (pattern) => Number((readme.match(pattern)?.[1] || "0").replaceAll(",", ""));
+assert(readmeCount(/(\d+)개 누적 연구 사이클/) >= 56, "README must retain at least 56 research cycles");
+assert(readmeCount(/([\d,]+)개 사이클 기록/) >= 178, "README must retain at least 178 research records");
+assert(readmeCount(/(\d+)개 구조적 연결/) >= 59, "README must retain at least 59 structural connections");
+assert(readmeCount(/(\d+)개 기관·로드맵·원 연구 출처/) >= 328, "README must retain at least 328 sources");
+assert(readmeCount(/([\d,]+)개 현지화 URL/) >= 1602, "README must retain at least 1,602 localized URLs");
 assert(!fs.readFileSync(path.join(ROOT, "research-cycle-56-data.js"), "utf8").includes("전공자 포인트"), "RC56 public copy contains a prohibited mechanical heading");
 
 const sitemap = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");

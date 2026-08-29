@@ -1,0 +1,161 @@
+{
+  "resultId": "RC57-LINEAGE-PAIR-CYCLE-RESULT-0.1",
+  "cycleId": "RC-2026-57",
+  "completedOn": "2026-08-29",
+  "status": "complete-design-positive-source-negative-stop",
+  "problemIds": ["UP-219", "UP-233", "UP-234", "UP-572"],
+  "selectionReason": "RC56 stopped at two explicit prerequisites: unresolved Aurora cohort lineage and an insufficient endpoint-pair budget. RC57 tested those prerequisites without opening target outcomes and added autonomous laboratories because experiment scheduling and provenance are causal parts of the measurement, not administrative details.",
+  "newFacts": [
+    "The Aurora RO-Crate contains 599 graph entities: one metadata descriptor, one root dataset, 199 cell datasets, and 398 BDF file entities. It inventories all 199 physical cell directories consistently.",
+    "The RO-Crate contains no chemistry, Figure 7, or 36-cell study-cohort relation. It therefore cannot reconcile the paper's 36-cell LFP batch with the 32 per-cell metadata records that explicitly identify LiFePO4.",
+    "This absence is not called an RO-Crate conformance failure because the specification permits metadata to describe some or all payload files; it is a fitness-for-selection failure for this study.",
+    "Twelve four-cell RWTH blocks have a hard maximum of 72 within-block pairs. No denser RPT schedule can reach the registered 100-pair target while preserving those blocks.",
+    "An exact multinomial calculation resampled 48 interpolated design-proxy crossings, compressed lifetime spread to 100%, 75%, 50%, and 25%, and exhausted every integer phase of seven endpoint grids.",
+    "With 24 usable observed events and quarter-width lifetime spread, the largest registered interval passing worst-phase P(pair>=100)>=0.95 and a lower 5% pair count >=100 was 25 cycles: P=0.999357 and lower 5% count=150.",
+    "With 36 usable events under the same conservative scenario, 50 cycles passed: P=0.993685 and lower 5% count=159. The lower-burden branch therefore depends on retaining all 36 events.",
+    "Python and dependency-free Node implementations matched all 56 design rows, selected intervals, integer quantiles, and gate decisions; their largest probability difference was 3.33e-16.",
+    "Aurora remains excluded and zero BDF cycling entries, cell capacities, or EOL values were opened."
+  ],
+  "hypotheses": {
+    "H57-0": {
+      "claim": "The public Aurora package identifies all 36 Figure 7 LFP cells without outcome access.",
+      "prediction": "The RO-Crate or per-cell metadata contains one explicit 36-member study relation with unique metadata and BDF links.",
+      "decisiveTest": "Parse the remote central directory and RO-Crate graph and join it to the sealed RC56 metadata audit.",
+      "verdict": "rejected-for-current-public-version",
+      "reason": "The inventory is internally complete for 199 cells but has no study-cohort relation, and only 32 records explicitly state LiFePO4."
+    },
+    "H57-1": {
+      "claim": "Increasing endpoint measurement frequency alone can repair the RC56 pair deficit in the existing four-cell blocks.",
+      "prediction": "At least one grid produces 100 within-block non-tied pairs.",
+      "decisiveTest": "Calculate the block-combinatorial ceiling before simulating cadence.",
+      "verdict": "rejected",
+      "reason": "The absolute ceiling is 12*C(4,2)=72."
+    },
+    "H57-2": {
+      "claim": "One larger same-condition block can meet the pair gate with a fixed endpoint register despite a much narrower lifetime distribution and adverse grid alignment.",
+      "prediction": "A registered interval retains exact worst-phase probability at least 0.95 and a lower 5% pair count at least 100 after quarter-spread compression.",
+      "decisiveTest": "Evaluate the exact multinomial distribution for all registered event counts, spreads, intervals, and integer phases.",
+      "verdict": "supported-as-prospective-design",
+      "result": "25 cycles for 24 events; 50 cycles for 36 events. This is design evidence, not feature validation."
+    },
+    "H57-3": {
+      "claim": "A capacity-loss-triggered endpoint register can reduce RPT burden without changing the degradation process or coupling feature and endpoint.",
+      "prediction": "A separate pilot meets a predefined degradation-equivalence margin while triggering before the 80% endpoint with high sensitivity.",
+      "decisiveTest": "Randomize a non-confirmatory pilot between fixed and triggered schedules using identical stress and calibrated channels.",
+      "verdict": "untested",
+      "reason": "Published condition-based RPT results establish feasibility and test-time savings, not equivalence for this coordinate or cohort."
+    }
+  },
+  "causalChainOutcome": [
+    {
+      "link": "declared paper cohort -> outcome-blind specimen manifest",
+      "verdict": "failed for Aurora",
+      "fastFailureEvidence": "599 graph entities inventory files but encode zero chemistry or Figure 7 cohort relations."
+    },
+    {
+      "link": "same-condition block size -> maximum adjudicable pairs",
+      "verdict": "identified",
+      "fastFailureEvidence": "Four cells provide six pairs per block and twelve blocks provide at most 72."
+    },
+    {
+      "link": "endpoint cadence and lifetime spread -> non-tied pair distribution",
+      "verdict": "prospectively bounded",
+      "fastFailureEvidence": "Exact worst-phase distributions distinguish a 25-cycle 24-event default from a conditional 50-cycle 36-event branch."
+    },
+    {
+      "link": "pair-powered schedule plus non-interfering measurement -> independent rank test",
+      "verdict": "not yet reached",
+      "fastFailureEvidence": "No manifest-qualified target or schedule-equivalence pilot exists, so target outcomes remain closed."
+    }
+  ],
+  "minimalAcademicAdvance": "The failed pair gate is now localized to experimental block geometry rather than feature weakness or cadence alone. The project also distinguishes a standards-compliant data package from a package sufficiently expressive for outcome-blind cohort selection.",
+  "mostPromisingNextPath": {
+    "hypothesis": "A fixed R3 capacity coordinate can receive a fair independent ordinal test when a 36-cell same-condition block has explicit specimen lineage and an endpoint register designed against narrow lifetime spread and unfavorable grid alignment.",
+    "differentCombination": "Use two measurement registers: sparse fixed checks through the cycle-480 feature landmark and a separate 25-cycle endpoint register thereafter. Combine this with exact block-level pair power, channel randomization, and a paper-to-file cohort manifest.",
+    "exactBottleneck": "No current public target jointly satisfies exact cohort lineage, sufficient within-condition block size, and demonstrated non-interference of the endpoint schedule.",
+    "firstDecisiveAction": "Metadata-screen alternative public cohorts without opening outcomes. Admit only a source with at least 36 same-condition cells and an explicit specimen-protocol-file manifest; otherwise publish a prospective acquisition preregistration rather than reusing Aurora.",
+    "successSignal": "A sealed target manifest plus a schedule-equivalence pilot and an exact design with at least 24 events, at least 100 non-tied pairs, and no outcome-dependent changes.",
+    "rejectionAndStop": "Exclude any archive whose cohort requires inferred IDs. If dense RPTs fail equivalence or no manifest-qualified block exists, stop capacity-only confirmation and move to a repeatability-qualified orthogonal observable.",
+    "failureValue": "A negative screen tells the platform whether the missing resource is provenance, experimental scale, or a less invasive sensor rather than another prediction model."
+  },
+  "workPackages": [
+    {
+      "id": "W57-1",
+      "purpose": "Screen target provenance before outcomes.",
+      "method": "Inspect only repository metadata, checksums, cohort tables, protocols, and file inventories.",
+      "output": "Candidate-source eligibility table with explicit rejection reasons.",
+      "pass": "At least 36 same-condition cells map one-to-one to metadata and result files.",
+      "failNext": "Exclude the source; do not infer or inspect outcomes."
+    },
+    {
+      "id": "W57-2",
+      "purpose": "Separate feature acquisition from endpoint ascertainment.",
+      "method": "Freeze BOL/160/320/480 checks for the candidate and a 25-cycle post-480 endpoint grid.",
+      "output": "Machine-readable schedule and channel-randomization plan.",
+      "pass": "The endpoint register cannot alter or recompute the feature coordinate.",
+      "failNext": "Redesign before any target cell is tested."
+    },
+    {
+      "id": "W57-3",
+      "purpose": "Bound measurement intervention.",
+      "method": "Run a separate randomized pilot comparing dense and conventional RPT schedules under identical stress.",
+      "output": "Equivalence interval for life, temperature, throughput, and impedance change.",
+      "pass": "Every predefined intervention metric remains within its scientific equivalence margin.",
+      "failNext": "Reject the fixed dense schedule and test a frozen condition-triggered or orthogonal-sensor branch."
+    },
+    {
+      "id": "W57-4",
+      "purpose": "Perform the independent ordinal adjudication.",
+      "method": "Open target outcomes only after W57-1 through W57-3 pass; compute the sealed coordinate and blocked concordance in two implementations.",
+      "output": "Coverage, events, pair count, C, bootstrap lower bound, calibration boundary, and immutable decision.",
+      "pass": "Coverage>=90%, events>=24, pairs>=100, C>=0.65, lower 95% bound>0.50, and implementation agreement.",
+      "failNext": "Reject capacity-only transport; preserve the result as a boundary for the orthogonal-sensor branch."
+    }
+  ],
+  "uncertaintyBudget": [
+    {
+      "category": "lineage",
+      "observed": "The public package lacks an explicit 36-member study relation.",
+      "control": "Require a signed or repository-versioned cohort table before access."
+    },
+    {
+      "category": "sampling",
+      "observed": "Pair information depends on block size, attrition, lifetime spread, and grid phase.",
+      "control": "Use exact worst-phase distributions and the 24-event conservative branch."
+    },
+    {
+      "category": "model",
+      "observed": "Interpolated RWTH crossings are proxies between sparse observations.",
+      "control": "Use them only for relative schedule design and never as confirmation labels."
+    },
+    {
+      "category": "measurement",
+      "observed": "Dense RPTs change rest, temperature history, and charge throughput.",
+      "control": "Randomized schedule-equivalence pilot, common channel calibration, and identical confirmatory schedules."
+    },
+    {
+      "category": "external validity",
+      "observed": "The design prior is NMC cylindrical while the intended target may be LFP coin cells.",
+      "control": "Compress lifetime spread to one quarter and retain the result as a design bound, not chemistry evidence."
+    },
+    {
+      "category": "computation",
+      "observed": "Exact multinomial probabilities use floating-point arithmetic.",
+      "control": "Independent Python and Node implementations agree within 3.33e-16 and match all discrete decisions."
+    }
+  ],
+  "failedAttempts": [
+    "The Aurora RO-Crate did not resolve the four-cell difference; Aurora was excluded without opening BDF outcomes.",
+    "Cadence-only repair of the original four-cell blocks is mathematically impossible because their pair ceiling is 72.",
+    "A 50-cycle schedule is not conservative when only 24 events are usable under quarter-spread and worst-phase analysis; the passing default tightens to 25 cycles.",
+    "Condition-based RPT remains a burden-reduction hypothesis because intervention equivalence is not established by the available paper."
+  ],
+  "unverifiedClaims": [
+    "The identities and disposition of the four Aurora paper-cohort cells absent from explicit LFP metadata remain unknown.",
+    "The quarter-spread sensitivity scenario may still be wider than a highly uniform automated batch.",
+    "A 25-cycle RPT schedule may alter degradation enough to invalidate passive-observation assumptions.",
+    "R3 normalized capacity level has not been tested in any untouched target cohort."
+  ],
+  "safetyEthics": "Only public metadata and previously opened historical RWTH trajectories were processed. No target cycling outcome, physical cell, personal data, cyber experiment, safety decision, or deployment was accessed. A future physical protocol requires laboratory electrical, chemical, thermal, and emergency controls.",
+  "nextCycleStart": "Outcome-blind metadata-screen candidate public cohorts for an explicit same-condition block of at least 36 cells. If one qualifies, freeze its IDs and run a schedule-intervention audit before outcomes. If none qualifies, create a prospective acquisition preregistration and begin the orthogonal-sensor evidence screen rather than reopening Aurora."
+}

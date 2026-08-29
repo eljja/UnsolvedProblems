@@ -1,0 +1,901 @@
+{
+  "analysisId": "RC57-ENDPOINT-PAIR-DESIGN-PYTHON-0.1",
+  "cycleId": "RC-2026-57",
+  "completedOn": "2026-08-29",
+  "status": "exact-design-analysis-not-confirmation",
+  "inputSha256": "ba17090aaa0bdce2bad59c54ba49cd415c56c0814b78c67d550a50a6a61fa20f",
+  "contractSha256": "0e6ca20b9e0b596cec08932162d4894558c498ef914759fdaccbc8db891fc9fc",
+  "sourceCells": 48,
+  "sourceObservedEvents": 48,
+  "crossingProxy": {
+    "minimumCycle": 925.6899070623164,
+    "medianCycle": 1121.8527302403734,
+    "maximumCycle": 1360.2514949594943,
+    "method": "linear interpolation only between adjacent standardized capacity rounds bracketing 80% of own BOL capacity",
+    "claimBoundary": "Outcome-open empirical design prior; not a reconstructed true EOL label."
+  },
+  "existingFourCellBlocks": [
+    {
+      "intervalCycles": 200,
+      "theoreticalMaximum": 72,
+      "minimumAcrossPhases": 25,
+      "maximumAcrossPhases": 45,
+      "phaseZeroPairs": 44,
+      "canReach100": false
+    },
+    {
+      "intervalCycles": 160,
+      "theoreticalMaximum": 72,
+      "minimumAcrossPhases": 30,
+      "maximumAcrossPhases": 48,
+      "phaseZeroPairs": 47,
+      "canReach100": false
+    },
+    {
+      "intervalCycles": 100,
+      "theoreticalMaximum": 72,
+      "minimumAcrossPhases": 44,
+      "maximumAcrossPhases": 58,
+      "phaseZeroPairs": 57,
+      "canReach100": false
+    },
+    {
+      "intervalCycles": 80,
+      "theoreticalMaximum": 72,
+      "minimumAcrossPhases": 52,
+      "maximumAcrossPhases": 60,
+      "phaseZeroPairs": 57,
+      "canReach100": false
+    },
+    {
+      "intervalCycles": 50,
+      "theoreticalMaximum": 72,
+      "minimumAcrossPhases": 58,
+      "maximumAcrossPhases": 63,
+      "phaseZeroPairs": 61,
+      "canReach100": false
+    },
+    {
+      "intervalCycles": 40,
+      "theoreticalMaximum": 72,
+      "minimumAcrossPhases": 58,
+      "maximumAcrossPhases": 67,
+      "phaseZeroPairs": 61,
+      "canReach100": false
+    },
+    {
+      "intervalCycles": 25,
+      "theoreticalMaximum": 72,
+      "minimumAcrossPhases": 63,
+      "maximumAcrossPhases": 68,
+      "phaseZeroPairs": 64,
+      "canReach100": false
+    }
+  ],
+  "futureExactDesigns": [
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 1.0,
+      "intervalCycles": 200,
+      "phaseCount": 200,
+      "worstPhase": {
+        "phase": 139,
+        "binCount": 3,
+        "probabilityAtLeast100": 0.6395463935167952,
+        "lowerFivePercentPairCount": 63,
+        "medianPairCount": 113
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 1.0,
+      "intervalCycles": 160,
+      "phaseCount": 160,
+      "worstPhase": {
+        "phase": 64,
+        "binCount": 4,
+        "probabilityAtLeast100": 0.8633144318660322,
+        "lowerFivePercentPairCount": 83,
+        "medianPairCount": 134
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 1.0,
+      "intervalCycles": 100,
+      "phaseCount": 100,
+      "worstPhase": {
+        "phase": 51,
+        "binCount": 6,
+        "probabilityAtLeast100": 0.9993573825678991,
+        "lowerFivePercentPairCount": 150,
+        "medianPairCount": 191
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 1.0,
+      "intervalCycles": 80,
+      "phaseCount": 80,
+      "worstPhase": {
+        "phase": 64,
+        "binCount": 7,
+        "probabilityAtLeast100": 0.9999874608945996,
+        "lowerFivePercentPairCount": 175,
+        "medianPairCount": 205
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 1.0,
+      "intervalCycles": 50,
+      "phaseCount": 50,
+      "worstPhase": {
+        "phase": 4,
+        "binCount": 10,
+        "probabilityAtLeast100": 0.9999991648458773,
+        "lowerFivePercentPairCount": 198,
+        "medianPairCount": 227
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 1.0,
+      "intervalCycles": 40,
+      "phaseCount": 40,
+      "worstPhase": {
+        "phase": 25,
+        "binCount": 11,
+        "probabilityAtLeast100": 0.9999997470153752,
+        "lowerFivePercentPairCount": 204,
+        "medianPairCount": 231
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 1.0,
+      "intervalCycles": 25,
+      "phaseCount": 25,
+      "worstPhase": {
+        "phase": 10,
+        "binCount": 16,
+        "probabilityAtLeast100": 0.999999984637598,
+        "lowerFivePercentPairCount": 220,
+        "medianPairCount": 245
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.75,
+      "intervalCycles": 200,
+      "phaseCount": 200,
+      "worstPhase": {
+        "phase": 166,
+        "binCount": 3,
+        "probabilityAtLeast100": 0.21021998961232008,
+        "lowerFivePercentPairCount": 23,
+        "medianPairCount": 65
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.75,
+      "intervalCycles": 160,
+      "phaseCount": 160,
+      "worstPhase": {
+        "phase": 75,
+        "binCount": 3,
+        "probabilityAtLeast100": 0.6395463935167952,
+        "lowerFivePercentPairCount": 63,
+        "medianPairCount": 113
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.75,
+      "intervalCycles": 100,
+      "phaseCount": 100,
+      "worstPhase": {
+        "phase": 80,
+        "binCount": 4,
+        "probabilityAtLeast100": 0.9758277196530213,
+        "lowerFivePercentPairCount": 113,
+        "medianPairCount": 159
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.75,
+      "intervalCycles": 80,
+      "phaseCount": 80,
+      "worstPhase": {
+        "phase": 9,
+        "binCount": 5,
+        "probabilityAtLeast100": 0.9986793868411171,
+        "lowerFivePercentPairCount": 145,
+        "medianPairCount": 185
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.75,
+      "intervalCycles": 50,
+      "phaseCount": 50,
+      "worstPhase": {
+        "phase": 16,
+        "binCount": 8,
+        "probabilityAtLeast100": 0.9999970033743008,
+        "lowerFivePercentPairCount": 188,
+        "medianPairCount": 216
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.75,
+      "intervalCycles": 40,
+      "phaseCount": 40,
+      "worstPhase": {
+        "phase": 11,
+        "binCount": 9,
+        "probabilityAtLeast100": 0.9999974768949913,
+        "lowerFivePercentPairCount": 192,
+        "medianPairCount": 222
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.75,
+      "intervalCycles": 25,
+      "phaseCount": 25,
+      "worstPhase": {
+        "phase": 0,
+        "binCount": 14,
+        "probabilityAtLeast100": 0.9999999358358641,
+        "lowerFivePercentPairCount": 213,
+        "medianPairCount": 238
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.5,
+      "intervalCycles": 200,
+      "phaseCount": 200,
+      "worstPhase": {
+        "phase": 141,
+        "binCount": 2,
+        "probabilityAtLeast100": 0.0003676520997734801,
+        "lowerFivePercentPairCount": 0,
+        "medianPairCount": 23
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.5,
+      "intervalCycles": 160,
+      "phaseCount": 160,
+      "worstPhase": {
+        "phase": 118,
+        "binCount": 3,
+        "probabilityAtLeast100": 0.04953541980486086,
+        "lowerFivePercentPairCount": 0,
+        "medianPairCount": 45
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.5,
+      "intervalCycles": 100,
+      "phaseCount": 100,
+      "worstPhase": {
+        "phase": 91,
+        "binCount": 3,
+        "probabilityAtLeast100": 0.6395463935167952,
+        "lowerFivePercentPairCount": 63,
+        "medianPairCount": 113
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.5,
+      "intervalCycles": 80,
+      "phaseCount": 80,
+      "worstPhase": {
+        "phase": 33,
+        "binCount": 4,
+        "probabilityAtLeast100": 0.8633144318660322,
+        "lowerFivePercentPairCount": 83,
+        "medianPairCount": 134
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.5,
+      "intervalCycles": 50,
+      "phaseCount": 50,
+      "worstPhase": {
+        "phase": 47,
+        "binCount": 6,
+        "probabilityAtLeast100": 0.9993573825678991,
+        "lowerFivePercentPairCount": 150,
+        "medianPairCount": 191
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.5,
+      "intervalCycles": 40,
+      "phaseCount": 40,
+      "worstPhase": {
+        "phase": 33,
+        "binCount": 7,
+        "probabilityAtLeast100": 0.9999874608945996,
+        "lowerFivePercentPairCount": 175,
+        "medianPairCount": 205
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.5,
+      "intervalCycles": 25,
+      "phaseCount": 25,
+      "worstPhase": {
+        "phase": 23,
+        "binCount": 10,
+        "probabilityAtLeast100": 0.9999991648458775,
+        "lowerFivePercentPairCount": 198,
+        "medianPairCount": 227
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.25,
+      "intervalCycles": 200,
+      "phaseCount": 200,
+      "worstPhase": {
+        "phase": 102,
+        "binCount": 1,
+        "probabilityAtLeast100": 0,
+        "lowerFivePercentPairCount": 0,
+        "medianPairCount": 0
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.25,
+      "intervalCycles": 160,
+      "phaseCount": 160,
+      "worstPhase": {
+        "phase": 62,
+        "binCount": 1,
+        "probabilityAtLeast100": 0,
+        "lowerFivePercentPairCount": 0,
+        "medianPairCount": 0
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.25,
+      "intervalCycles": 100,
+      "phaseCount": 100,
+      "worstPhase": {
+        "phase": 2,
+        "binCount": 2,
+        "probabilityAtLeast100": 0.0003676520997734801,
+        "lowerFivePercentPairCount": 0,
+        "medianPairCount": 23
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.25,
+      "intervalCycles": 80,
+      "phaseCount": 80,
+      "worstPhase": {
+        "phase": 60,
+        "binCount": 3,
+        "probabilityAtLeast100": 0.04953541980486086,
+        "lowerFivePercentPairCount": 0,
+        "medianPairCount": 45
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.25,
+      "intervalCycles": 50,
+      "phaseCount": 50,
+      "worstPhase": {
+        "phase": 17,
+        "binCount": 3,
+        "probabilityAtLeast100": 0.6395463935167952,
+        "lowerFivePercentPairCount": 63,
+        "medianPairCount": 113
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.25,
+      "intervalCycles": 40,
+      "phaseCount": 40,
+      "worstPhase": {
+        "phase": 18,
+        "binCount": 4,
+        "probabilityAtLeast100": 0.8633144318660322,
+        "lowerFivePercentPairCount": 83,
+        "medianPairCount": 134
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 24,
+      "spreadScale": 0.25,
+      "intervalCycles": 25,
+      "phaseCount": 25,
+      "worstPhase": {
+        "phase": 20,
+        "binCount": 6,
+        "probabilityAtLeast100": 0.9993573825678991,
+        "lowerFivePercentPairCount": 150,
+        "medianPairCount": 191
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 1.0,
+      "intervalCycles": 200,
+      "phaseCount": 200,
+      "worstPhase": {
+        "phase": 139,
+        "binCount": 3,
+        "probabilityAtLeast100": 0.9936847404193192,
+        "lowerFivePercentPairCount": 159,
+        "medianPairCount": 257
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 1.0,
+      "intervalCycles": 160,
+      "phaseCount": 160,
+      "worstPhase": {
+        "phase": 64,
+        "binCount": 4,
+        "probabilityAtLeast100": 0.9995104540581682,
+        "lowerFivePercentPairCount": 209,
+        "medianPairCount": 306
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 1.0,
+      "intervalCycles": 100,
+      "phaseCount": 100,
+      "worstPhase": {
+        "phase": 51,
+        "binCount": 6,
+        "probabilityAtLeast100": 0.9999999936457246,
+        "lowerFivePercentPairCount": 363,
+        "medianPairCount": 433
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 1.0,
+      "intervalCycles": 80,
+      "phaseCount": 80,
+      "worstPhase": {
+        "phase": 64,
+        "binCount": 7,
+        "probabilityAtLeast100": 0.9999999999970728,
+        "lowerFivePercentPairCount": 413,
+        "medianPairCount": 466
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 1.0,
+      "intervalCycles": 50,
+      "phaseCount": 50,
+      "worstPhase": {
+        "phase": 4,
+        "binCount": 10,
+        "probabilityAtLeast100": 0.9999999999999687,
+        "lowerFivePercentPairCount": 465,
+        "medianPairCount": 516
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 1.0,
+      "intervalCycles": 40,
+      "phaseCount": 40,
+      "worstPhase": {
+        "phase": 25,
+        "binCount": 11,
+        "probabilityAtLeast100": 0.9999999999999966,
+        "lowerFivePercentPairCount": 478,
+        "medianPairCount": 525
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 1.0,
+      "intervalCycles": 25,
+      "phaseCount": 25,
+      "worstPhase": {
+        "phase": 10,
+        "binCount": 16,
+        "probabilityAtLeast100": 1.0000000000000002,
+        "lowerFivePercentPairCount": 513,
+        "medianPairCount": 557
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.75,
+      "intervalCycles": 200,
+      "phaseCount": 200,
+      "worstPhase": {
+        "phase": 166,
+        "binCount": 3,
+        "probabilityAtLeast100": 0.8800973094688361,
+        "lowerFivePercentPairCount": 68,
+        "medianPairCount": 161
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.75,
+      "intervalCycles": 160,
+      "phaseCount": 160,
+      "worstPhase": {
+        "phase": 75,
+        "binCount": 3,
+        "probabilityAtLeast100": 0.9936847404193192,
+        "lowerFivePercentPairCount": 159,
+        "medianPairCount": 257
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.75,
+      "intervalCycles": 100,
+      "phaseCount": 100,
+      "worstPhase": {
+        "phase": 80,
+        "binCount": 4,
+        "probabilityAtLeast100": 0.9999903512274192,
+        "lowerFivePercentPairCount": 269,
+        "medianPairCount": 363
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.75,
+      "intervalCycles": 80,
+      "phaseCount": 80,
+      "worstPhase": {
+        "phase": 9,
+        "binCount": 5,
+        "probabilityAtLeast100": 0.9999999744652545,
+        "lowerFivePercentPairCount": 350,
+        "medianPairCount": 421
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.75,
+      "intervalCycles": 50,
+      "phaseCount": 50,
+      "worstPhase": {
+        "phase": 21,
+        "binCount": 7,
+        "probabilityAtLeast100": 0.9999999999997065,
+        "lowerFivePercentPairCount": 443,
+        "medianPairCount": 492
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.75,
+      "intervalCycles": 40,
+      "phaseCount": 40,
+      "worstPhase": {
+        "phase": 11,
+        "binCount": 9,
+        "probabilityAtLeast100": 0.9999999999997652,
+        "lowerFivePercentPairCount": 453,
+        "medianPairCount": 506
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.75,
+      "intervalCycles": 25,
+      "phaseCount": 25,
+      "worstPhase": {
+        "phase": 0,
+        "binCount": 14,
+        "probabilityAtLeast100": 1.0,
+        "lowerFivePercentPairCount": 496,
+        "medianPairCount": 542
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.5,
+      "intervalCycles": 200,
+      "phaseCount": 200,
+      "worstPhase": {
+        "phase": 141,
+        "binCount": 2,
+        "probabilityAtLeast100": 0.061606664218439404,
+        "lowerFivePercentPairCount": 0,
+        "medianPairCount": 35
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.5,
+      "intervalCycles": 160,
+      "phaseCount": 160,
+      "worstPhase": {
+        "phase": 118,
+        "binCount": 3,
+        "probabilityAtLeast100": 0.6274923249443656,
+        "lowerFivePercentPairCount": 35,
+        "medianPairCount": 128
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.5,
+      "intervalCycles": 100,
+      "phaseCount": 100,
+      "worstPhase": {
+        "phase": 91,
+        "binCount": 3,
+        "probabilityAtLeast100": 0.9936847404193192,
+        "lowerFivePercentPairCount": 159,
+        "medianPairCount": 257
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.5,
+      "intervalCycles": 80,
+      "phaseCount": 80,
+      "worstPhase": {
+        "phase": 33,
+        "binCount": 4,
+        "probabilityAtLeast100": 0.9995104540581682,
+        "lowerFivePercentPairCount": 209,
+        "medianPairCount": 306
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.5,
+      "intervalCycles": 50,
+      "phaseCount": 50,
+      "worstPhase": {
+        "phase": 47,
+        "binCount": 6,
+        "probabilityAtLeast100": 0.9999999936457246,
+        "lowerFivePercentPairCount": 363,
+        "medianPairCount": 433
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.5,
+      "intervalCycles": 40,
+      "phaseCount": 40,
+      "worstPhase": {
+        "phase": 33,
+        "binCount": 7,
+        "probabilityAtLeast100": 0.9999999999970728,
+        "lowerFivePercentPairCount": 413,
+        "medianPairCount": 466
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.5,
+      "intervalCycles": 25,
+      "phaseCount": 25,
+      "worstPhase": {
+        "phase": 23,
+        "binCount": 10,
+        "probabilityAtLeast100": 0.9999999999999687,
+        "lowerFivePercentPairCount": 465,
+        "medianPairCount": 516
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.25,
+      "intervalCycles": 200,
+      "phaseCount": 200,
+      "worstPhase": {
+        "phase": 102,
+        "binCount": 1,
+        "probabilityAtLeast100": 0,
+        "lowerFivePercentPairCount": 0,
+        "medianPairCount": 0
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.25,
+      "intervalCycles": 160,
+      "phaseCount": 160,
+      "worstPhase": {
+        "phase": 62,
+        "binCount": 1,
+        "probabilityAtLeast100": 0,
+        "lowerFivePercentPairCount": 0,
+        "medianPairCount": 0
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.25,
+      "intervalCycles": 100,
+      "phaseCount": 100,
+      "worstPhase": {
+        "phase": 2,
+        "binCount": 2,
+        "probabilityAtLeast100": 0.061606664218439404,
+        "lowerFivePercentPairCount": 0,
+        "medianPairCount": 35
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.25,
+      "intervalCycles": 80,
+      "phaseCount": 80,
+      "worstPhase": {
+        "phase": 60,
+        "binCount": 3,
+        "probabilityAtLeast100": 0.6274923249443656,
+        "lowerFivePercentPairCount": 35,
+        "medianPairCount": 128
+      },
+      "passesPairPowerGate": false
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.25,
+      "intervalCycles": 50,
+      "phaseCount": 50,
+      "worstPhase": {
+        "phase": 17,
+        "binCount": 3,
+        "probabilityAtLeast100": 0.9936847404193192,
+        "lowerFivePercentPairCount": 159,
+        "medianPairCount": 257
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.25,
+      "intervalCycles": 40,
+      "phaseCount": 40,
+      "worstPhase": {
+        "phase": 18,
+        "binCount": 4,
+        "probabilityAtLeast100": 0.9995104540581682,
+        "lowerFivePercentPairCount": 209,
+        "medianPairCount": 306
+      },
+      "passesPairPowerGate": true
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "spreadScale": 0.25,
+      "intervalCycles": 25,
+      "phaseCount": 25,
+      "worstPhase": {
+        "phase": 20,
+        "binCount": 6,
+        "probabilityAtLeast100": 0.9999999936457246,
+        "lowerFivePercentPairCount": 363,
+        "medianPairCount": 433
+      },
+      "passesPairPowerGate": true
+    }
+  ],
+  "conservativeSelections": [
+    {
+      "effectiveObservedEvents": 24,
+      "selectedLargestPassingIntervalCycles": 25,
+      "worstPhaseProbabilityAtLeast100": 0.9993573825678991,
+      "worstPhaseLowerFivePercentPairCount": 150
+    },
+    {
+      "effectiveObservedEvents": 36,
+      "selectedLargestPassingIntervalCycles": 50,
+      "worstPhaseProbabilityAtLeast100": 0.9936847404193192,
+      "worstPhaseLowerFivePercentPairCount": 159
+    }
+  ],
+  "principalResult": {
+    "fourCellBlockUpperBound": 72,
+    "whyCadenceAloneCannotRepairRwth": "Twelve four-cell blocks contain at most 12*C(4,2)=72 within-block pairs, below the 100-pair target even with perfectly distinct event times.",
+    "twentyFourEventDesign": {
+      "effectiveObservedEvents": 24,
+      "selectedLargestPassingIntervalCycles": 25,
+      "worstPhaseProbabilityAtLeast100": 0.9993573825678991,
+      "worstPhaseLowerFivePercentPairCount": 150
+    },
+    "thirtySixEventDesign": {
+      "effectiveObservedEvents": 36,
+      "selectedLargestPassingIntervalCycles": 50,
+      "worstPhaseProbabilityAtLeast100": 0.9936847404193192,
+      "worstPhaseLowerFivePercentPairCount": 159
+    },
+    "recommendedFixedDesign": "Use one manifest-verified 36-cell same-condition block and a 25-cycle endpoint register after the nominal cycle-480 feature landmark. This remains pair-powered if only 24 events are usable under the registered quarter-spread, worst-phase sensitivity analysis.",
+    "lowerBurdenBranch": "A 50-cycle endpoint register is pair-powered only if all 36 events remain usable under the same conservative design prior. Treat that as a conditional branch, not the default."
+  },
+  "uncertainty": [
+    "Linear interpolation does not reveal the unobserved true crossing and is used only to compare schedules.",
+    "The empirical resampling prior comes from NMC cylindrical cells and may not describe LFP coin-cell lifetime dispersion.",
+    "Spread scaling and exhaustive grid phase expose, but do not exhaust, distributional shift.",
+    "The calculation counts only event-event pairs and therefore does not depend on a censoring-time model.",
+    "Dense RPTs may perturb degradation; pair power does not establish intervention equivalence."
+  ],
+  "auroraOutcomeAccessAuthorized": false
+}
