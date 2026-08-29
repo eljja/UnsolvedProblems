@@ -1,0 +1,150 @@
+{
+  "auditId": "RC60-PREFLIGHT-INDEPENDENT-AUDIT-1.0",
+  "cycleId": "RC-2026-60",
+  "adjudicatedOn": "2026-08-29",
+  "status": "complete-software-refusal-order-confirmed-physical-work-blocked",
+  "exactAgreementCases": 18,
+  "totalCases": 18,
+  "fixtureSpecHashSha256": "ED935B1636A3DD5E853AA2CCCD46BF22B26AF0F581A5507B85C2F33B099DE690",
+  "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+  "agreement": [
+    {
+      "caseId": "SYNTHETIC-VALID",
+      "expectedFirstFailedGate": null,
+      "verdict": "synthetic-pass-no-physical-authorization",
+      "receiptHashSha256": "5E3A733D08064D463C3F8C9D19CAE31EEA2C48560118E6A0AAD09B585C64B413",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "ADV-G00-CONTEXT",
+      "expectedFirstFailedGate": "G00-CONTEXT",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "D667F94BC86BCB0DE3A7D450F501263DC7576DE842DAB3F5592144B808A23936",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "ADV-G01-UNKNOWN-FIELD",
+      "expectedFirstFailedGate": "G01-CLOSED-PROFILE",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "667C8BD8588326C7BBE8858283B582DADCBBC75D12FA8C5EBC8480F3B1317341",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "ADV-G01-FLOAT",
+      "expectedFirstFailedGate": "G01-CLOSED-PROFILE",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "F9D0675A2E076384D6DE4C2B705F70C3D8DA4E79FB191B910BAC3B8B919A994F",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "ADV-G02-DOMAIN",
+      "expectedFirstFailedGate": "G02-FROZEN-DOMAIN",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "4E275F8FC7195672C4B3FC7CB5C7B2C6D09561A4D4D7F0F5ACF512FD02DB0752",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "ADV-G03-ALLOCATION",
+      "expectedFirstFailedGate": "G03-ALLOCATION-COMMITMENT",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "1E274C86CB352D06EC1DB34F0C6EF76B8689F4EA797DBE0DD16EA3A4AF04B628",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "ADV-G04-LINEAGE",
+      "expectedFirstFailedGate": "G04-SPECIMEN-LINEAGE",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "D4ACFD5ED264E973C9333124737D9A85FBD9E9ACCFB2BE209DF53DE4B705C436",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "ADV-G05-RESOURCE",
+      "expectedFirstFailedGate": "G05-RESOURCE-READINESS",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "B86D698AC42D6145D604E56F0A14CAB7FDBB1F5DB4C7717CF12D77F2FE254851",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "ADV-G06-CONTAINMENT",
+      "expectedFirstFailedGate": "G06-FAILURE-CONTAINMENT",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "37E78187ECC85FEEE476968EB46E47DAC1166948172950A0D9897FA0C4E152FF",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "ADV-G07-OWNER",
+      "expectedFirstFailedGate": "G07-ACCOUNTABLE-OWNERS",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "DB4658DF365AA4029D57E20384292EC344B41D7A9E18823C420D06911561CDA7",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "ADV-G08-MARGIN",
+      "expectedFirstFailedGate": "G08-MARGIN-IDENTIFIABILITY",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "962E6EB028D83F2A1CD171782E64BD3333E87EDFBDFDD104D83AA8CF3435A9A2",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "ADV-G09-SAFETY",
+      "expectedFirstFailedGate": "G09-SAFETY-READINESS",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "05A4D5F6A11404B67076FCCEAD26154D31D3D256062CF167B2F978138C18CB26",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "ADV-G10-SENTINEL",
+      "expectedFirstFailedGate": "G10-ACUTE-SENTINEL",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "6090979A2EFA87ED942F3261321D9E5333CF4937FC5A48AA6D07D711349127F7",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "ADV-G11-EXPANSION",
+      "expectedFirstFailedGate": "G11-EXPANSION-OBSERVER",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "4CC56607BE938B27DA1021B20EFE13E6DB436785CFBE6F47D27D4371C6277356",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "ADV-G12-OUTCOME",
+      "expectedFirstFailedGate": "G12-OUTCOME-ISOLATION",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "A398A287F73B332198E011A076A1B193FF0D1AED9EF5A690F27DFA6B1710EB93",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "ADV-G13-CAPABILITY",
+      "expectedFirstFailedGate": "G13-CAPABILITY-CEILING",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "8C8CD2D9D3E62ABD20BEF40F0BD73934121C1946146CB2C37F2CE24C74A7416C",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "ADV-MULTI-G05-G09",
+      "expectedFirstFailedGate": "G05-RESOURCE-READINESS",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "0C4C6CF8DD1104E80E5846CA2EA63681CA46DFF23FD6AFA58D84EE6AB80CCB1B",
+      "exactAgreement": true
+    },
+    {
+      "caseId": "RC59-PLANNING-PHYSICAL",
+      "expectedFirstFailedGate": "G02-FROZEN-DOMAIN",
+      "verdict": "refused-at-first-failed-gate",
+      "receiptHashSha256": "66825302D2407E6693D61B53DB8448E65ED02186A73DBB456CE8C29858B49935",
+      "exactAgreement": true
+    }
+  ],
+  "decisiveResults": {
+    "syntheticValidVerdict": "synthetic-pass-no-physical-authorization",
+    "syntheticValidPhysicalAuthorization": false,
+    "adversarialCasesRefused": 17,
+    "multiFaultFirstFailure": "G05-RESOURCE-READINESS",
+    "laterFaultNotEvaluatedBeforeRetry": "G09-SAFETY-READINESS",
+    "rc59PlanningFirstFailure": "G02-FROZEN-DOMAIN",
+    "physicalAuthorizations": 0
+  },
+  "interpretation": "Two independent dependency-free implementations agree on every receipt and first-failure position. This verifies deterministic software refusal semantics only. It does not populate RC59 physical resources, margins, safety approvals, owner authenticity, sentinel evidence, expansion qualification, or lifetime outcomes.",
+  "nextDecision": "Keep the physical branch closed. The next admissible input is a real accountable domain and laboratory specification that replaces RC59 placeholders without exposing outcomes.",
+  "auditHashSha256": "1204411CE330E536FACA3525D40A176FB0395A536790E91DC9131E93E3613881"
+}

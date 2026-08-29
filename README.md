@@ -11,7 +11,7 @@
 - 확장 설명·대표 시도·최근 연구 흐름: [`research-context.js`](./research-context.js)
 - 문제별 해결 시도 설계: [`solution-context.js`](./solution-context.js)
 - 문제별 가설 경쟁·불확실성 예산·실행 프로그램: [`deep-solution-context.js`](./deep-solution-context.js)
-- 반복 연구 사이클·난제 간 구조적 연결: [`research-cycle-data.js`](./research-cycle-data.js), [`research-cycle-03-data.js`](./research-cycle-03-data.js)–[`research-cycle-59-data.js`](./research-cycle-59-data.js)
+- 반복 연구 사이클·난제 간 구조적 연결: [`research-cycle-data.js`](./research-cycle-data.js), [`research-cycle-03-data.js`](./research-cycle-03-data.js)–[`research-cycle-60-data.js`](./research-cycle-60-data.js)
 - 자율 합성 공개 데이터 감사: [`research/alab-public-data-audit.json`](./research/alab-public-data-audit.json)
 - 완전 원장·재생성 기준선: [`research/complete-ledger.schema.json`](./research/complete-ledger.schema.json), [`research/alab-replay-benchmark.json`](./research/alab-replay-benchmark.json)
 - ARROWS 필드 감사·독립 재생 시험: [`research/replay/arrows-ybco-field-audit.json`](./research/replay/arrows-ybco-field-audit.json), [`research/replay/synthetic-replay-fixture.json`](./research/replay/synthetic-replay-fixture.json), [`research/replay/verification-result.json`](./research/replay/verification-result.json)
@@ -81,11 +81,11 @@
 - 163개 핵심 난제와 130개 로드맵 우선과제
 - 16개 상금 연계 항목(현재 상금·경진 16개)
 - 10개 상금 프로그램과 343개 기관·로드맵·원 연구 출처
-- 59개 누적 연구 사이클, 16개 심층 연구 문제의 190개 사이클 기록과 62개 구조적 연결
+- 60개 누적 연구 사이클, 16개 심층 연구 문제의 194개 사이클 기록과 63개 구조적 연결
 
-상금 정보는 2026년 8월 5일, 출처 연결·확장 설명·연구 맥락은 2026년 8월 7일 기준으로 검토했습니다. 59차 연구 사이클은 48개 동일조건 cell을 12개 제조 블록, 2개 챔버, 4개 fixture군, 6개 시작 wave와 48개 고유 channel에 배치하는 결과 비의존 계약을 만들었습니다. Python과 Node의 독립 구현은 같은 48개 배치와 SHA-256 지문을 산출했습니다. 단일 챔버 손실 뒤에는 24개, 단일 fixture군 손실 뒤에는 36개가 남으므로 각각 25-cycle 또는 50-cycle 사전 봉인 분기로만 진행합니다. 반복 성능시험과 압력 결합 팽창 측정은 열화 경로를 바꿀 수 있는 개입으로 분리했으며, 네 동등성 판정량의 측정불확도·과학적 최소 차이·안전 허용치가 실제 장비와 SOP에서 확보되기 전에는 물리 시험을 시작하지 않습니다. 관련 원 논문·공식 계측 지침·두 독립 구현은 2026년 8월 29일 기준으로 확인했습니다. 각 항목은 검증 가능한 질문, 현재까지 축적된 지식, 기술적 병목, 해결 판정 기준과 관련 출처를 함께 기록합니다.
+상금 정보는 2026년 8월 5일, 출처 연결·확장 설명·연구 맥락은 2026년 8월 7일 기준으로 검토했습니다. 60차 연구 사이클은 59차에서 설계한 48-cell 실험이 실제 자원이나 결과를 쓰기 전에 불완전한 전제를 거부하도록 열네 단계의 사전검증 계약을 만들었습니다. Dependency-free Node와 Python 구현은 synthetic valid, gate별 결함, 복합 결함과 실제 RC59 계획을 포함한 18개 receipt에 완전 합의했습니다. 17개 입력이 예상한 첫 관문에서 거부됐고 물리 실행 권한은 한 건도 발행되지 않았습니다. 실제 계획은 chemistry·build·protocol placeholder 때문에 G02에서 멈추므로 다음 투자는 cell 구매나 model 확장이 아니라 책임 있는 domain owner와 laboratory specification 확보입니다. Receipt hash는 변경된 내용을 검출하지만 signer, trusted time, 장비 존재나 실험 승인을 증명하지 않습니다. 관련 원 규격·공식 계측 지침·두 독립 구현은 2026년 8월 29일 기준으로 확인했습니다. 각 항목은 검증 가능한 질문, 현재까지 축적된 지식, 기술적 병목, 해결 판정 기준과 관련 출처를 함께 기록합니다.
 
-Google 소유권 확인 메타 태그, canonical URL, 한국어·영문 `hreflang`, 문제별 구조화 데이터와 1,608개 현지화 URL의 사이트맵을 제공합니다. 사이트맵은 `npm run sitemap`으로 현재 카탈로그에서 다시 생성할 수 있습니다.
+Google 소유권 확인 메타 태그, canonical URL, 한국어·영문 `hreflang`, 문제별 구조화 데이터와 1,610개 현지화 URL의 사이트맵을 제공합니다. 사이트맵은 `npm run sitemap`으로 현재 카탈로그에서 다시 생성할 수 있습니다.
 
 상금은 **증명·반례 상금**, **성능 목표형 연구경진 총상금**, **계산 도전 상금**, **현재 지급을 보증할 수 없는 역사적 제안**을 구분해 기록합니다. 진행 중인 경진이라도 신규 참가 접수가 끝났을 수 있으며, 총상금은 한 문제에 지급되는 금액과 다를 수 있으므로 상세 규정을 반드시 확인해야 합니다.
 

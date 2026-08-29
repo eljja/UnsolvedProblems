@@ -1,0 +1,63 @@
+{
+  "connectionEvidenceId": "RC60-GATE-CONNECTION-EVIDENCE-1.0",
+  "cycleId": "RC-2026-60",
+  "connectionId": "CONN-EVIDENCE-033",
+  "reviewedOn": "2026-08-29",
+  "problemIds": ["UP-219", "UP-233", "UP-234", "UP-572"],
+  "connectionType": "typed-preconditions-ordered-refusal-claim-capability-boundary",
+  "strength": "strong-for-software-structure-untested-for-physical-transfer",
+  "sharedStructure": "Each problem has a proposed action whose apparent utility is uninterpretable unless the admissible domain, physical or informational resource, measurement capability, and protected outcome are fixed first. The same ordered rule applies: type the input, reject the earliest violated precondition, and prevent a software pass from granting a stronger physical or scientific claim.",
+  "variableMapping": [
+    {
+      "problemId": "UP-219",
+      "unit": "battery specimen and its frozen manufacturing domain",
+      "resourceOrNuisance": "chamber, fixture, channel, wave, RPT burden",
+      "protectedOutcome": "untouched remaining-life order",
+      "adjudicand": "pre-outcome cohort admission and later Harrell C",
+      "firstUsefulRefusal": "missing chemistry-build-protocol domain or unidentifiable LIFE margin"
+    },
+    {
+      "problemId": "UP-233",
+      "unit": "physical asset and its twin state",
+      "resourceOrNuisance": "sensor calibration, configuration, intervention, lineage",
+      "protectedOutcome": "held-asset residual and transport error",
+      "adjudicand": "whether an update is admissible before it changes the twin",
+      "firstUsefulRefusal": "uncommitted domain, stale resource state, or outcome-contaminated update"
+    },
+    {
+      "problemId": "UP-234",
+      "unit": "accelerated-test specimen",
+      "resourceOrNuisance": "stress protocol, chamber, diagnostics, extrapolation domain",
+      "protectedOutcome": "use-condition lifetime distribution",
+      "adjudicand": "whether accelerated evidence may enter an extrapolation claim",
+      "firstUsefulRefusal": "empty U95 < M <= min(S,H) interval or absent safety envelope"
+    },
+    {
+      "problemId": "UP-572",
+      "unit": "candidate experiment proposed by an autonomous laboratory",
+      "resourceOrNuisance": "instrument availability, calibration, safety authority, information access",
+      "protectedOutcome": "unseen confirmation utility and safe execution",
+      "adjudicand": "admit, refuse, or send the proposal to independent authorization",
+      "firstUsefulRefusal": "earliest failed prerequisite returned as an observable action outcome"
+    }
+  ],
+  "conditionsForTransfer": [
+    "The gate order is frozen before protected outcomes are available.",
+    "Each gate has an observable pass condition and a repair action.",
+    "A later gate cannot waive an earlier failure.",
+    "The final capability is weaker than physical execution or scientific confirmation.",
+    "Independent implementations receive the same finite input language."
+  ],
+  "breakConditions": [
+    "Gate order is changed after seeing which condition fails.",
+    "A schema pass is treated as truth of physical records.",
+    "Owner references are treated as authenticated signatures without verification.",
+    "A synthetic pass is promoted to laboratory readiness.",
+    "The autonomous planner can read protected outcomes while choosing the admission rule."
+  ],
+  "minimumValidation": "Reconstruct the same bundle in independent implementations, inject one fault per gate and at least one multi-fault case, require exact first-failure and receipt-hash agreement, then present a real outcome-blind laboratory bundle to an independent safety and domain owner.",
+  "rc60Result": "Node and Python agree on 18 of 18 receipts. Seventeen cases are refused, including the multi-fault case at G05 before its G09 fault and the actual unresolved RC59 planning input at G02. The only pass is explicitly synthetic and grants zero physical authorizations.",
+  "affectedProblemsIfValidated": "A validated physical transfer would supply a common admission layer for an untouched RUL cohort, twin updates, accelerated-life extrapolation, and autonomous experiment queues without erasing their distinct downstream metrics.",
+  "surfaceSimilarityRisk": "All four fields use workflows and measurements, but that resemblance is insufficient. The connection is valid only where the same pre-outcome type-refuse-capability structure can be instantiated with problem-specific variables and independent adjudication.",
+  "sourceIds": ["rfc_jcs_8785_2020", "json_schema_core_2020", "json_schema_validation_2020", "nist_fips1804_hash_2015", "nist_traceability_2026", "prov_o_2013", "ro_crate_1_2_2025"]
+}

@@ -1,0 +1,992 @@
+{
+  "resultId": "RC60-PREFLIGHT-PYTHON-RESULT-1.0",
+  "cycleId": "RC-2026-60",
+  "implementation": "dependency-free-python",
+  "generatedOn": "2026-08-29",
+  "fixtureSpecHashSha256": "ED935B1636A3DD5E853AA2CCCD46BF22B26AF0F581A5507B85C2F33B099DE690",
+  "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+  "cases": [
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "SYNTHETIC-VALID",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "687459A64A02D1182E2913A1B26D4CF3B510CEBF937A030090E7BA3F882CE631",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "synthetic-pass-no-physical-authorization",
+      "firstFailedGate": null,
+      "retryCondition": null,
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "pass",
+          "detail": "Exact top-level fields; no unknown keys; all numbers are safe integers; no floating point values."
+        },
+        {
+          "id": "G02-FROZEN-DOMAIN",
+          "status": "pass",
+          "detail": "All required domain fields are non-placeholder strings and the recomputed domain commitment matches."
+        },
+        {
+          "id": "G03-ALLOCATION-COMMITMENT",
+          "status": "pass",
+          "detail": "All 48 assignment records and the RC59 allocation hash match the frozen allocation."
+        },
+        {
+          "id": "G04-SPECIMEN-LINEAGE",
+          "status": "pass",
+          "detail": "Exactly 48 unique serial commitments map one-to-one to the frozen assignments; physical mode forbids synthetic identifiers."
+        },
+        {
+          "id": "G05-RESOURCE-READINESS",
+          "status": "pass",
+          "detail": "Every referenced resource exists, is ready, and carries current calibration and configuration records."
+        },
+        {
+          "id": "G06-FAILURE-CONTAINMENT",
+          "status": "pass",
+          "detail": "Recomputed survivorship equals the registered six-domain summary and never falls below 24 cells."
+        },
+        {
+          "id": "G07-ACCOUNTABLE-OWNERS",
+          "status": "pass",
+          "detail": "All four roles have distinct owner IDs and signed-status attestation references; cryptographic authenticity is outside RC60."
+        },
+        {
+          "id": "G08-MARGIN-IDENTIFIABILITY",
+          "status": "pass",
+          "detail": "LIFE, TMAX, QTHRU, and DZ each satisfy U95 < M <= min(S,H) in an explicit integer scale and reference the metrology owner."
+        },
+        {
+          "id": "G09-SAFETY-READINESS",
+          "status": "pass",
+          "detail": "Hazard review, SOP, limits, venting, thermal monitoring, fire response, emergency stop, disposal, and approval references are present and approved."
+        },
+        {
+          "id": "G10-ACUTE-SENTINEL",
+          "status": "pass",
+          "detail": "Twelve non-confirmation specimens pass the registered acute-only safety and carryover screen with a bound receipt."
+        },
+        {
+          "id": "G11-EXPANSION-OBSERVER",
+          "status": "pass",
+          "detail": "Observer is disabled with an explicit exclusion, or U95_exp < M_exp <= D_min and the qualification receipt is bound."
+        },
+        {
+          "id": "G12-OUTCOME-ISOLATION",
+          "status": "pass",
+          "detail": "Outcome store is closed, design-role access is false, the access ledger is committed, and no outcome value is present."
+        },
+        {
+          "id": "G13-CAPABILITY-CEILING",
+          "status": "pass",
+          "detail": "Requested capability is preflight-only or independent-authorization-candidate; direct physical authorization is refused."
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "5E3A733D08064D463C3F8C9D19CAE31EEA2C48560118E6A0AAD09B585C64B413"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "ADV-G00-CONTEXT",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "41EDB198D55D902D984F952A8D70E2AA0F23A7F2E9A51159C0D7EC24FA332E88",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G00-CONTEXT",
+      "retryCondition": "Set a recognized profile, coherent mode and synthetic flag, preflight target, and fixed evaluation time.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "fail",
+          "detail": "Is the evaluation mode explicit and internally coherent?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "D667F94BC86BCB0DE3A7D450F501263DC7576DE842DAB3F5592144B808A23936"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "ADV-G01-UNKNOWN-FIELD",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "A3696DB8B040819518E5BBEAD60FC864A8F61D5F867BFB0818BB6456B6695B94",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G01-CLOSED-PROFILE",
+      "retryCondition": "Remove unknown fields and encode every quantity as an integer in its declared scale.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "fail",
+          "detail": "Can both implementations parse exactly the same finite input language?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "667C8BD8588326C7BBE8858283B582DADCBBC75D12FA8C5EBC8480F3B1317341"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "ADV-G01-FLOAT",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "2078478BD35A656DA770CB24DCF0A6F3B46FF9AC8D62A0CD7B57E02B30A89E20",
+      "bundleHashProfile": "RC60-INVALID-INPUT-SNAPSHOT-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G01-CLOSED-PROFILE",
+      "retryCondition": "Remove unknown fields and encode every quantity as an integer in its declared scale.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "fail",
+          "detail": "Can both implementations parse exactly the same finite input language?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "F9D0675A2E076384D6DE4C2B705F70C3D8DA4E79FB191B910BAC3B8B919A994F"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "ADV-G02-DOMAIN",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "A119A151F8A66DD6B9F55F3EF6B99BFA7EE1CC9E8BB6EBB9D3042626D9016D8E",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G02-FROZEN-DOMAIN",
+      "retryCondition": "Replace every placeholder with accountable domain values and recompute the domain commitment.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "pass",
+          "detail": "Exact top-level fields; no unknown keys; all numbers are safe integers; no floating point values."
+        },
+        {
+          "id": "G02-FROZEN-DOMAIN",
+          "status": "fail",
+          "detail": "Is the chemistry-build-protocol domain fixed before enrollment?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "4E275F8FC7195672C4B3FC7CB5C7B2C6D09561A4D4D7F0F5ACF512FD02DB0752"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "ADV-G03-ALLOCATION",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "1A1570AAF7E4CA51D2B4D0627F39C62E6B4A7021456047500ABBD575DFEB467A",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G03-ALLOCATION-COMMITMENT",
+      "retryCondition": "Restore the RC59 assignment records and allocation hash; do not re-randomize after outcomes.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "pass",
+          "detail": "Exact top-level fields; no unknown keys; all numbers are safe integers; no floating point values."
+        },
+        {
+          "id": "G02-FROZEN-DOMAIN",
+          "status": "pass",
+          "detail": "All required domain fields are non-placeholder strings and the recomputed domain commitment matches."
+        },
+        {
+          "id": "G03-ALLOCATION-COMMITMENT",
+          "status": "fail",
+          "detail": "Is the exact RC59 balanced allocation preserved?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "1E274C86CB352D06EC1DB34F0C6EF76B8689F4EA797DBE0DD16EA3A4AF04B628"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "ADV-G04-LINEAGE",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "8166A7576C56E32C7CFFB42D4A52AFECB8C5F2256E87A3CB91CC809814E2F1BB",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G04-SPECIMEN-LINEAGE",
+      "retryCondition": "Supply 48 unique serial commitments and preserve the one-to-one assignment mapping.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "pass",
+          "detail": "Exact top-level fields; no unknown keys; all numbers are safe integers; no floating point values."
+        },
+        {
+          "id": "G02-FROZEN-DOMAIN",
+          "status": "pass",
+          "detail": "All required domain fields are non-placeholder strings and the recomputed domain commitment matches."
+        },
+        {
+          "id": "G03-ALLOCATION-COMMITMENT",
+          "status": "pass",
+          "detail": "All 48 assignment records and the RC59 allocation hash match the frozen allocation."
+        },
+        {
+          "id": "G04-SPECIMEN-LINEAGE",
+          "status": "fail",
+          "detail": "Does every planned assignment map to one unique specimen serial?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "D4ACFD5ED264E973C9333124737D9A85FBD9E9ACCFB2BE209DF53DE4B705C436"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "ADV-G05-RESOURCE",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "CB8F6D3CF7EC9AEC709813E72EB9153F0B833C2F4AE30B61EE81C8919BA8B64F",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G05-RESOURCE-READINESS",
+      "retryCondition": "Repair missing, expired, or unready resource records before any specimen is connected.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "pass",
+          "detail": "Exact top-level fields; no unknown keys; all numbers are safe integers; no floating point values."
+        },
+        {
+          "id": "G02-FROZEN-DOMAIN",
+          "status": "pass",
+          "detail": "All required domain fields are non-placeholder strings and the recomputed domain commitment matches."
+        },
+        {
+          "id": "G03-ALLOCATION-COMMITMENT",
+          "status": "pass",
+          "detail": "All 48 assignment records and the RC59 allocation hash match the frozen allocation."
+        },
+        {
+          "id": "G04-SPECIMEN-LINEAGE",
+          "status": "pass",
+          "detail": "Exactly 48 unique serial commitments map one-to-one to the frozen assignments; physical mode forbids synthetic identifiers."
+        },
+        {
+          "id": "G05-RESOURCE-READINESS",
+          "status": "fail",
+          "detail": "Are all referenced chambers, fixtures, and channels registered and current?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "B86D698AC42D6145D604E56F0A14CAB7FDBB1F5DB4C7717CF12D77F2FE254851"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "ADV-G06-CONTAINMENT",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "E909C55E9108B19E6F909FF1957E3A547DB0C8EC70858907BC653820476F2C27",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G06-FAILURE-CONTAINMENT",
+      "retryCondition": "Correct the containment register or redesign resource balance without consulting outcomes.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "pass",
+          "detail": "Exact top-level fields; no unknown keys; all numbers are safe integers; no floating point values."
+        },
+        {
+          "id": "G02-FROZEN-DOMAIN",
+          "status": "pass",
+          "detail": "All required domain fields are non-placeholder strings and the recomputed domain commitment matches."
+        },
+        {
+          "id": "G03-ALLOCATION-COMMITMENT",
+          "status": "pass",
+          "detail": "All 48 assignment records and the RC59 allocation hash match the frozen allocation."
+        },
+        {
+          "id": "G04-SPECIMEN-LINEAGE",
+          "status": "pass",
+          "detail": "Exactly 48 unique serial commitments map one-to-one to the frozen assignments; physical mode forbids synthetic identifiers."
+        },
+        {
+          "id": "G05-RESOURCE-READINESS",
+          "status": "pass",
+          "detail": "Every referenced resource exists, is ready, and carries current calibration and configuration records."
+        },
+        {
+          "id": "G06-FAILURE-CONTAINMENT",
+          "status": "fail",
+          "detail": "Does the submitted design retain the preregistered branch after each listed single-domain loss?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "37E78187ECC85FEEE476968EB46E47DAC1166948172950A0D9897FA0C4E152FF"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "ADV-G07-OWNER",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "61658524368BC4EB55625C0A84A44D127CE3E80FE7FF3FE9498EBFC6592CEE79",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G07-ACCOUNTABLE-OWNERS",
+      "retryCondition": "Assign distinct accountable owners and attach their attestation references; obtain independent signature verification outside this validator.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "pass",
+          "detail": "Exact top-level fields; no unknown keys; all numbers are safe integers; no floating point values."
+        },
+        {
+          "id": "G02-FROZEN-DOMAIN",
+          "status": "pass",
+          "detail": "All required domain fields are non-placeholder strings and the recomputed domain commitment matches."
+        },
+        {
+          "id": "G03-ALLOCATION-COMMITMENT",
+          "status": "pass",
+          "detail": "All 48 assignment records and the RC59 allocation hash match the frozen allocation."
+        },
+        {
+          "id": "G04-SPECIMEN-LINEAGE",
+          "status": "pass",
+          "detail": "Exactly 48 unique serial commitments map one-to-one to the frozen assignments; physical mode forbids synthetic identifiers."
+        },
+        {
+          "id": "G05-RESOURCE-READINESS",
+          "status": "pass",
+          "detail": "Every referenced resource exists, is ready, and carries current calibration and configuration records."
+        },
+        {
+          "id": "G06-FAILURE-CONTAINMENT",
+          "status": "pass",
+          "detail": "Recomputed survivorship equals the registered six-domain summary and never falls below 24 cells."
+        },
+        {
+          "id": "G07-ACCOUNTABLE-OWNERS",
+          "status": "fail",
+          "detail": "Are domain, metrology, safety, and adjudication decisions assigned?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "DB4658DF365AA4029D57E20384292EC344B41D7A9E18823C420D06911561CDA7"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "ADV-G08-MARGIN",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "CF52E932F77AD32787C94E05AA9FF6A345B7D46B0EB3F0638C50426EC3E92114",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G08-MARGIN-IDENTIFIABILITY",
+      "retryCondition": "Improve measurement capability, narrow the claim, or abandon the observer; never choose M from arm outcomes.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "pass",
+          "detail": "Exact top-level fields; no unknown keys; all numbers are safe integers; no floating point values."
+        },
+        {
+          "id": "G02-FROZEN-DOMAIN",
+          "status": "pass",
+          "detail": "All required domain fields are non-placeholder strings and the recomputed domain commitment matches."
+        },
+        {
+          "id": "G03-ALLOCATION-COMMITMENT",
+          "status": "pass",
+          "detail": "All 48 assignment records and the RC59 allocation hash match the frozen allocation."
+        },
+        {
+          "id": "G04-SPECIMEN-LINEAGE",
+          "status": "pass",
+          "detail": "Exactly 48 unique serial commitments map one-to-one to the frozen assignments; physical mode forbids synthetic identifiers."
+        },
+        {
+          "id": "G05-RESOURCE-READINESS",
+          "status": "pass",
+          "detail": "Every referenced resource exists, is ready, and carries current calibration and configuration records."
+        },
+        {
+          "id": "G06-FAILURE-CONTAINMENT",
+          "status": "pass",
+          "detail": "Recomputed survivorship equals the registered six-domain summary and never falls below 24 cells."
+        },
+        {
+          "id": "G07-ACCOUNTABLE-OWNERS",
+          "status": "pass",
+          "detail": "All four roles have distinct owner IDs and signed-status attestation references; cryptographic authenticity is outside RC60."
+        },
+        {
+          "id": "G08-MARGIN-IDENTIFIABILITY",
+          "status": "fail",
+          "detail": "Is each measurement claim wider than its uncertainty but no wider than scientific and safety limits?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "962E6EB028D83F2A1CD171782E64BD3333E87EDFBDFDD104D83AA8CF3435A9A2"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "ADV-G09-SAFETY",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "1EEA42F42CFD6C264303B82B3D45328DE02D5995C3BDFCC01A6631E2552414CC",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G09-SAFETY-READINESS",
+      "retryCondition": "Keep the physical queue closed until the laboratory safety owner approves every required control.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "pass",
+          "detail": "Exact top-level fields; no unknown keys; all numbers are safe integers; no floating point values."
+        },
+        {
+          "id": "G02-FROZEN-DOMAIN",
+          "status": "pass",
+          "detail": "All required domain fields are non-placeholder strings and the recomputed domain commitment matches."
+        },
+        {
+          "id": "G03-ALLOCATION-COMMITMENT",
+          "status": "pass",
+          "detail": "All 48 assignment records and the RC59 allocation hash match the frozen allocation."
+        },
+        {
+          "id": "G04-SPECIMEN-LINEAGE",
+          "status": "pass",
+          "detail": "Exactly 48 unique serial commitments map one-to-one to the frozen assignments; physical mode forbids synthetic identifiers."
+        },
+        {
+          "id": "G05-RESOURCE-READINESS",
+          "status": "pass",
+          "detail": "Every referenced resource exists, is ready, and carries current calibration and configuration records."
+        },
+        {
+          "id": "G06-FAILURE-CONTAINMENT",
+          "status": "pass",
+          "detail": "Recomputed survivorship equals the registered six-domain summary and never falls below 24 cells."
+        },
+        {
+          "id": "G07-ACCOUNTABLE-OWNERS",
+          "status": "pass",
+          "detail": "All four roles have distinct owner IDs and signed-status attestation references; cryptographic authenticity is outside RC60."
+        },
+        {
+          "id": "G08-MARGIN-IDENTIFIABILITY",
+          "status": "pass",
+          "detail": "LIFE, TMAX, QTHRU, and DZ each satisfy U95 < M <= min(S,H) in an explicit integer scale and reference the metrology owner."
+        },
+        {
+          "id": "G09-SAFETY-READINESS",
+          "status": "fail",
+          "detail": "Has a qualified owner approved the specified battery hazards and emergency controls?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "05A4D5F6A11404B67076FCCEAD26154D31D3D256062CF167B2F978138C18CB26"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "ADV-G10-SENTINEL",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "1DDC9D008102CB5FE5CFA2C15E0290D24443166D01E4E52056D7C531D77C9A00",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G10-ACUTE-SENTINEL",
+      "retryCondition": "Run or repair the disjoint acute screen; a pass cannot be promoted to lifetime equivalence.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "pass",
+          "detail": "Exact top-level fields; no unknown keys; all numbers are safe integers; no floating point values."
+        },
+        {
+          "id": "G02-FROZEN-DOMAIN",
+          "status": "pass",
+          "detail": "All required domain fields are non-placeholder strings and the recomputed domain commitment matches."
+        },
+        {
+          "id": "G03-ALLOCATION-COMMITMENT",
+          "status": "pass",
+          "detail": "All 48 assignment records and the RC59 allocation hash match the frozen allocation."
+        },
+        {
+          "id": "G04-SPECIMEN-LINEAGE",
+          "status": "pass",
+          "detail": "Exactly 48 unique serial commitments map one-to-one to the frozen assignments; physical mode forbids synthetic identifiers."
+        },
+        {
+          "id": "G05-RESOURCE-READINESS",
+          "status": "pass",
+          "detail": "Every referenced resource exists, is ready, and carries current calibration and configuration records."
+        },
+        {
+          "id": "G06-FAILURE-CONTAINMENT",
+          "status": "pass",
+          "detail": "Recomputed survivorship equals the registered six-domain summary and never falls below 24 cells."
+        },
+        {
+          "id": "G07-ACCOUNTABLE-OWNERS",
+          "status": "pass",
+          "detail": "All four roles have distinct owner IDs and signed-status attestation references; cryptographic authenticity is outside RC60."
+        },
+        {
+          "id": "G08-MARGIN-IDENTIFIABILITY",
+          "status": "pass",
+          "detail": "LIFE, TMAX, QTHRU, and DZ each satisfy U95 < M <= min(S,H) in an explicit integer scale and reference the metrology owner."
+        },
+        {
+          "id": "G09-SAFETY-READINESS",
+          "status": "pass",
+          "detail": "Hazard review, SOP, limits, venting, thermal monitoring, fire response, emergency stop, disposal, and approval references are present and approved."
+        },
+        {
+          "id": "G10-ACUTE-SENTINEL",
+          "status": "fail",
+          "detail": "Has a disjoint acute screen rejected large immediate measurement harm?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "6090979A2EFA87ED942F3261321D9E5333CF4937FC5A48AA6D07D711349127F7"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "ADV-G11-EXPANSION",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "D9D8BA5CBF89BB58384FB55362E3BC34DCB0DDD860E9B572509C7405753F5F52",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G11-EXPANSION-OBSERVER",
+      "retryCondition": "Qualify expansion on stable artifacts and disjoint cells, or disable it before confirmation.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "pass",
+          "detail": "Exact top-level fields; no unknown keys; all numbers are safe integers; no floating point values."
+        },
+        {
+          "id": "G02-FROZEN-DOMAIN",
+          "status": "pass",
+          "detail": "All required domain fields are non-placeholder strings and the recomputed domain commitment matches."
+        },
+        {
+          "id": "G03-ALLOCATION-COMMITMENT",
+          "status": "pass",
+          "detail": "All 48 assignment records and the RC59 allocation hash match the frozen allocation."
+        },
+        {
+          "id": "G04-SPECIMEN-LINEAGE",
+          "status": "pass",
+          "detail": "Exactly 48 unique serial commitments map one-to-one to the frozen assignments; physical mode forbids synthetic identifiers."
+        },
+        {
+          "id": "G05-RESOURCE-READINESS",
+          "status": "pass",
+          "detail": "Every referenced resource exists, is ready, and carries current calibration and configuration records."
+        },
+        {
+          "id": "G06-FAILURE-CONTAINMENT",
+          "status": "pass",
+          "detail": "Recomputed survivorship equals the registered six-domain summary and never falls below 24 cells."
+        },
+        {
+          "id": "G07-ACCOUNTABLE-OWNERS",
+          "status": "pass",
+          "detail": "All four roles have distinct owner IDs and signed-status attestation references; cryptographic authenticity is outside RC60."
+        },
+        {
+          "id": "G08-MARGIN-IDENTIFIABILITY",
+          "status": "pass",
+          "detail": "LIFE, TMAX, QTHRU, and DZ each satisfy U95 < M <= min(S,H) in an explicit integer scale and reference the metrology owner."
+        },
+        {
+          "id": "G09-SAFETY-READINESS",
+          "status": "pass",
+          "detail": "Hazard review, SOP, limits, venting, thermal monitoring, fire response, emergency stop, disposal, and approval references are present and approved."
+        },
+        {
+          "id": "G10-ACUTE-SENTINEL",
+          "status": "pass",
+          "detail": "Twelve non-confirmation specimens pass the registered acute-only safety and carryover screen with a bound receipt."
+        },
+        {
+          "id": "G11-EXPANSION-OBSERVER",
+          "status": "fail",
+          "detail": "Is expansion either qualified independently or excluded from the confirmation feature set?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "4CC56607BE938B27DA1021B20EFE13E6DB436785CFBE6F47D27D4371C6277356"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "ADV-G12-OUTCOME",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "84D1456C2EBEF607C7CF343EB1BD1FC63A61E6C7507FC855AFC31744D6951090",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G12-OUTCOME-ISOLATION",
+      "retryCondition": "Close the outcome store, revoke design-role access, remove outcome values, and bind a fresh access ledger.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "pass",
+          "detail": "Exact top-level fields; no unknown keys; all numbers are safe integers; no floating point values."
+        },
+        {
+          "id": "G02-FROZEN-DOMAIN",
+          "status": "pass",
+          "detail": "All required domain fields are non-placeholder strings and the recomputed domain commitment matches."
+        },
+        {
+          "id": "G03-ALLOCATION-COMMITMENT",
+          "status": "pass",
+          "detail": "All 48 assignment records and the RC59 allocation hash match the frozen allocation."
+        },
+        {
+          "id": "G04-SPECIMEN-LINEAGE",
+          "status": "pass",
+          "detail": "Exactly 48 unique serial commitments map one-to-one to the frozen assignments; physical mode forbids synthetic identifiers."
+        },
+        {
+          "id": "G05-RESOURCE-READINESS",
+          "status": "pass",
+          "detail": "Every referenced resource exists, is ready, and carries current calibration and configuration records."
+        },
+        {
+          "id": "G06-FAILURE-CONTAINMENT",
+          "status": "pass",
+          "detail": "Recomputed survivorship equals the registered six-domain summary and never falls below 24 cells."
+        },
+        {
+          "id": "G07-ACCOUNTABLE-OWNERS",
+          "status": "pass",
+          "detail": "All four roles have distinct owner IDs and signed-status attestation references; cryptographic authenticity is outside RC60."
+        },
+        {
+          "id": "G08-MARGIN-IDENTIFIABILITY",
+          "status": "pass",
+          "detail": "LIFE, TMAX, QTHRU, and DZ each satisfy U95 < M <= min(S,H) in an explicit integer scale and reference the metrology owner."
+        },
+        {
+          "id": "G09-SAFETY-READINESS",
+          "status": "pass",
+          "detail": "Hazard review, SOP, limits, venting, thermal monitoring, fire response, emergency stop, disposal, and approval references are present and approved."
+        },
+        {
+          "id": "G10-ACUTE-SENTINEL",
+          "status": "pass",
+          "detail": "Twelve non-confirmation specimens pass the registered acute-only safety and carryover screen with a bound receipt."
+        },
+        {
+          "id": "G11-EXPANSION-OBSERVER",
+          "status": "pass",
+          "detail": "Observer is disabled with an explicit exclusion, or U95_exp < M_exp <= D_min and the qualification receipt is bound."
+        },
+        {
+          "id": "G12-OUTCOME-ISOLATION",
+          "status": "fail",
+          "detail": "Can design roles remain blind to lifetime outcomes?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "A398A287F73B332198E011A076A1B193FF0D1AED9EF5A690F27DFA6B1710EB93"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "ADV-G13-CAPABILITY",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "B63CB110E40145D3D63F79EE732770D5AF70231247983363AEDE40D78AF3EE61",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G13-CAPABILITY-CEILING",
+      "retryCondition": "Request only a preflight verdict and obtain separate laboratory, safety, and signature authorization for physical work.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "pass",
+          "detail": "Exact top-level fields; no unknown keys; all numbers are safe integers; no floating point values."
+        },
+        {
+          "id": "G02-FROZEN-DOMAIN",
+          "status": "pass",
+          "detail": "All required domain fields are non-placeholder strings and the recomputed domain commitment matches."
+        },
+        {
+          "id": "G03-ALLOCATION-COMMITMENT",
+          "status": "pass",
+          "detail": "All 48 assignment records and the RC59 allocation hash match the frozen allocation."
+        },
+        {
+          "id": "G04-SPECIMEN-LINEAGE",
+          "status": "pass",
+          "detail": "Exactly 48 unique serial commitments map one-to-one to the frozen assignments; physical mode forbids synthetic identifiers."
+        },
+        {
+          "id": "G05-RESOURCE-READINESS",
+          "status": "pass",
+          "detail": "Every referenced resource exists, is ready, and carries current calibration and configuration records."
+        },
+        {
+          "id": "G06-FAILURE-CONTAINMENT",
+          "status": "pass",
+          "detail": "Recomputed survivorship equals the registered six-domain summary and never falls below 24 cells."
+        },
+        {
+          "id": "G07-ACCOUNTABLE-OWNERS",
+          "status": "pass",
+          "detail": "All four roles have distinct owner IDs and signed-status attestation references; cryptographic authenticity is outside RC60."
+        },
+        {
+          "id": "G08-MARGIN-IDENTIFIABILITY",
+          "status": "pass",
+          "detail": "LIFE, TMAX, QTHRU, and DZ each satisfy U95 < M <= min(S,H) in an explicit integer scale and reference the metrology owner."
+        },
+        {
+          "id": "G09-SAFETY-READINESS",
+          "status": "pass",
+          "detail": "Hazard review, SOP, limits, venting, thermal monitoring, fire response, emergency stop, disposal, and approval references are present and approved."
+        },
+        {
+          "id": "G10-ACUTE-SENTINEL",
+          "status": "pass",
+          "detail": "Twelve non-confirmation specimens pass the registered acute-only safety and carryover screen with a bound receipt."
+        },
+        {
+          "id": "G11-EXPANSION-OBSERVER",
+          "status": "pass",
+          "detail": "Observer is disabled with an explicit exclusion, or U95_exp < M_exp <= D_min and the qualification receipt is bound."
+        },
+        {
+          "id": "G12-OUTCOME-ISOLATION",
+          "status": "pass",
+          "detail": "Outcome store is closed, design-role access is false, the access ledger is committed, and no outcome value is present."
+        },
+        {
+          "id": "G13-CAPABILITY-CEILING",
+          "status": "fail",
+          "detail": "Does the request stay within what an unsigned software preflight can authorize?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "8C8CD2D9D3E62ABD20BEF40F0BD73934121C1946146CB2C37F2CE24C74A7416C"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "ADV-MULTI-G05-G09",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "165F9F04701C8F1169620F130E9FDD1581E6D1C0FB39F9F99A9BF86BBF39BB39",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G05-RESOURCE-READINESS",
+      "retryCondition": "Repair missing, expired, or unready resource records before any specimen is connected.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "pass",
+          "detail": "Exact top-level fields; no unknown keys; all numbers are safe integers; no floating point values."
+        },
+        {
+          "id": "G02-FROZEN-DOMAIN",
+          "status": "pass",
+          "detail": "All required domain fields are non-placeholder strings and the recomputed domain commitment matches."
+        },
+        {
+          "id": "G03-ALLOCATION-COMMITMENT",
+          "status": "pass",
+          "detail": "All 48 assignment records and the RC59 allocation hash match the frozen allocation."
+        },
+        {
+          "id": "G04-SPECIMEN-LINEAGE",
+          "status": "pass",
+          "detail": "Exactly 48 unique serial commitments map one-to-one to the frozen assignments; physical mode forbids synthetic identifiers."
+        },
+        {
+          "id": "G05-RESOURCE-READINESS",
+          "status": "fail",
+          "detail": "Are all referenced chambers, fixtures, and channels registered and current?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "0C4C6CF8DD1104E80E5846CA2EA63681CA46DFF23FD6AFA58D84EE6AB80CCB1B"
+    },
+    {
+      "receiptProfile": "RC60-PREFLIGHT-RECEIPT-1.0",
+      "cycleId": "RC-2026-60",
+      "caseId": "RC59-PLANNING-PHYSICAL",
+      "evaluatedAt": "2026-08-29T00:00:00Z",
+      "bundleHashSha256": "DE22648D76C2A5A0D3A4958C297347A4553A71DD68243A90D1E7A31464456F41",
+      "bundleHashProfile": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+      "contractHashSha256": "750583FC74E44D15FAE782BCFAE35E6FB216A7DB27E0847214DFD2345C649A5B",
+      "gateOrderHashSha256": "68763AA0EDCF0D69FAA11E9B651695C994E261A02FDEB1110F9B90DFBE5E1E25",
+      "verdict": "refused-at-first-failed-gate",
+      "firstFailedGate": "G02-FROZEN-DOMAIN",
+      "retryCondition": "Replace every placeholder with accountable domain values and recompute the domain commitment.",
+      "evaluatedGates": [
+        {
+          "id": "G00-CONTEXT",
+          "status": "pass",
+          "detail": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed."
+        },
+        {
+          "id": "G01-CLOSED-PROFILE",
+          "status": "pass",
+          "detail": "Exact top-level fields; no unknown keys; all numbers are safe integers; no floating point values."
+        },
+        {
+          "id": "G02-FROZEN-DOMAIN",
+          "status": "fail",
+          "detail": "Is the chemistry-build-protocol domain fixed before enrollment?"
+        }
+      ],
+      "physicalAuthorization": false,
+      "claimBoundary": "Content-addressed software preflight only; no owner authenticity, trusted time, laboratory existence, safety validity, or physical result is established.",
+      "receiptHashSha256": "66825302D2407E6693D61B53DB8448E65ED02186A73DBB456CE8C29858B49935"
+    }
+  ],
+  "summary": {
+    "cases": 18,
+    "syntheticPasses": 1,
+    "refusals": 17,
+    "physicalAuthorizations": 0,
+    "rc59PlanningFirstFailure": "G02-FROZEN-DOMAIN"
+  },
+  "claimBoundary": "A passing synthetic fixture proves only that two implementations agree on this closed software contract. A digest detects changed content but does not authenticate an owner, prove that a laboratory resource exists, or authorize physical execution."
+}

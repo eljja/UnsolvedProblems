@@ -1,0 +1,1651 @@
+{
+  "fixtureSpecId": "RC60-PREFLIGHT-FIXTURES-1.0",
+  "cycleId": "RC-2026-60",
+  "generatedOn": "2026-08-29",
+  "claimBoundary": "SYNTHETIC-VALID and all ADV cases are artificial software fixtures. RC59-PLANNING-PHYSICAL wraps the actual unresolved RC59 placeholders and must be refused before physical use.",
+  "baseBundle": {
+    "profile": "RC60-PREFLIGHT-BUNDLE-1.0",
+    "cycleId": "RC-2026-60",
+    "evaluationContext": {
+      "mode": "synthetic-test",
+      "synthetic": true,
+      "targetStage": "preflight",
+      "requestedCapability": "preflight-only",
+      "evaluatedAt": "2026-08-29T00:00:00Z"
+    },
+    "domain": {
+      "conditionId": "SYNTHETIC-RC60-CONDITION-01",
+      "chemistry": "SYNTHETIC-NMC-GRAPHITE-VALIDATOR-FIXTURE",
+      "cellDesign": "SYNTHETIC-21700-BUILD-A",
+      "manufacturingLotDefinition": "SYNTHETIC-LOT-A-BLOCKED-BY-PRODUCTION-ORDER",
+      "formationRecipeId": "SYNTHETIC-FORMATION-01",
+      "temperatureSetpointAndTolerance": "SYNTHETIC-25C-PLUSMINUS-1C",
+      "chargeProtocolId": "SYNTHETIC-CHARGE-01",
+      "dischargeProtocolId": "SYNTHETIC-DISCHARGE-01",
+      "voltageWindow": "SYNTHETIC-2P5V-4P2V",
+      "endpointDefinitionId": "SYNTHETIC-EOL-80PCT-01",
+      "commitmentSha256": "B9064445C7EDE5D089DF3F1BB0729A47604B8A0CB7788E5327B4419DD75DB544"
+    },
+    "allocation": {
+      "algorithmVersion": "rc59-v1",
+      "allocationHashSha256": "E03D97B2F4EA042E6D4023A3E5595A224DF59DD83636048AA953A8CEACEF1540",
+      "records": [
+        {
+          "specimenId": "RC59-B01-S1",
+          "manufacturingBlockId": "B01",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 1,
+          "chamberId": "C2",
+          "fixtureGroupId": "F1",
+          "channelPosition": 5,
+          "channelId": "C2-F1-P5"
+        },
+        {
+          "specimenId": "RC59-B01-S2",
+          "manufacturingBlockId": "B01",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 1,
+          "chamberId": "C1",
+          "fixtureGroupId": "F4",
+          "channelPosition": 1,
+          "channelId": "C1-F4-P1"
+        },
+        {
+          "specimenId": "RC59-B01-S3",
+          "manufacturingBlockId": "B01",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 1,
+          "chamberId": "C2",
+          "fixtureGroupId": "F2",
+          "channelPosition": 2,
+          "channelId": "C2-F2-P2"
+        },
+        {
+          "specimenId": "RC59-B01-S4",
+          "manufacturingBlockId": "B01",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 1,
+          "chamberId": "C1",
+          "fixtureGroupId": "F3",
+          "channelPosition": 4,
+          "channelId": "C1-F3-P4"
+        },
+        {
+          "specimenId": "RC59-B02-S1",
+          "manufacturingBlockId": "B02",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 4,
+          "chamberId": "C1",
+          "fixtureGroupId": "F3",
+          "channelPosition": 5,
+          "channelId": "C1-F3-P5"
+        },
+        {
+          "specimenId": "RC59-B02-S2",
+          "manufacturingBlockId": "B02",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 4,
+          "chamberId": "C2",
+          "fixtureGroupId": "F2",
+          "channelPosition": 5,
+          "channelId": "C2-F2-P5"
+        },
+        {
+          "specimenId": "RC59-B02-S3",
+          "manufacturingBlockId": "B02",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 4,
+          "chamberId": "C1",
+          "fixtureGroupId": "F1",
+          "channelPosition": 6,
+          "channelId": "C1-F1-P6"
+        },
+        {
+          "specimenId": "RC59-B02-S4",
+          "manufacturingBlockId": "B02",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 4,
+          "chamberId": "C2",
+          "fixtureGroupId": "F4",
+          "channelPosition": 2,
+          "channelId": "C2-F4-P2"
+        },
+        {
+          "specimenId": "RC59-B03-S1",
+          "manufacturingBlockId": "B03",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 6,
+          "chamberId": "C2",
+          "fixtureGroupId": "F1",
+          "channelPosition": 2,
+          "channelId": "C2-F1-P2"
+        },
+        {
+          "specimenId": "RC59-B03-S2",
+          "manufacturingBlockId": "B03",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 6,
+          "chamberId": "C1",
+          "fixtureGroupId": "F4",
+          "channelPosition": 3,
+          "channelId": "C1-F4-P3"
+        },
+        {
+          "specimenId": "RC59-B03-S3",
+          "manufacturingBlockId": "B03",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 6,
+          "chamberId": "C2",
+          "fixtureGroupId": "F2",
+          "channelPosition": 6,
+          "channelId": "C2-F2-P6"
+        },
+        {
+          "specimenId": "RC59-B03-S4",
+          "manufacturingBlockId": "B03",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 6,
+          "chamberId": "C1",
+          "fixtureGroupId": "F3",
+          "channelPosition": 2,
+          "channelId": "C1-F3-P2"
+        },
+        {
+          "specimenId": "RC59-B04-S1",
+          "manufacturingBlockId": "B04",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 4,
+          "chamberId": "C1",
+          "fixtureGroupId": "F2",
+          "channelPosition": 4,
+          "channelId": "C1-F2-P4"
+        },
+        {
+          "specimenId": "RC59-B04-S2",
+          "manufacturingBlockId": "B04",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 4,
+          "chamberId": "C2",
+          "fixtureGroupId": "F3",
+          "channelPosition": 6,
+          "channelId": "C2-F3-P6"
+        },
+        {
+          "specimenId": "RC59-B04-S3",
+          "manufacturingBlockId": "B04",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 4,
+          "chamberId": "C1",
+          "fixtureGroupId": "F4",
+          "channelPosition": 4,
+          "channelId": "C1-F4-P4"
+        },
+        {
+          "specimenId": "RC59-B04-S4",
+          "manufacturingBlockId": "B04",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 4,
+          "chamberId": "C2",
+          "fixtureGroupId": "F1",
+          "channelPosition": 4,
+          "channelId": "C2-F1-P4"
+        },
+        {
+          "specimenId": "RC59-B05-S1",
+          "manufacturingBlockId": "B05",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 5,
+          "chamberId": "C1",
+          "fixtureGroupId": "F3",
+          "channelPosition": 6,
+          "channelId": "C1-F3-P6"
+        },
+        {
+          "specimenId": "RC59-B05-S2",
+          "manufacturingBlockId": "B05",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 5,
+          "chamberId": "C1",
+          "fixtureGroupId": "F4",
+          "channelPosition": 5,
+          "channelId": "C1-F4-P5"
+        },
+        {
+          "specimenId": "RC59-B05-S3",
+          "manufacturingBlockId": "B05",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 5,
+          "chamberId": "C2",
+          "fixtureGroupId": "F1",
+          "channelPosition": 3,
+          "channelId": "C2-F1-P3"
+        },
+        {
+          "specimenId": "RC59-B05-S4",
+          "manufacturingBlockId": "B05",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 5,
+          "chamberId": "C2",
+          "fixtureGroupId": "F2",
+          "channelPosition": 1,
+          "channelId": "C2-F2-P1"
+        },
+        {
+          "specimenId": "RC59-B06-S1",
+          "manufacturingBlockId": "B06",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 3,
+          "chamberId": "C2",
+          "fixtureGroupId": "F1",
+          "channelPosition": 6,
+          "channelId": "C2-F1-P6"
+        },
+        {
+          "specimenId": "RC59-B06-S2",
+          "manufacturingBlockId": "B06",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 3,
+          "chamberId": "C1",
+          "fixtureGroupId": "F3",
+          "channelPosition": 1,
+          "channelId": "C1-F3-P1"
+        },
+        {
+          "specimenId": "RC59-B06-S3",
+          "manufacturingBlockId": "B06",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 3,
+          "chamberId": "C1",
+          "fixtureGroupId": "F2",
+          "channelPosition": 1,
+          "channelId": "C1-F2-P1"
+        },
+        {
+          "specimenId": "RC59-B06-S4",
+          "manufacturingBlockId": "B06",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 3,
+          "chamberId": "C2",
+          "fixtureGroupId": "F4",
+          "channelPosition": 4,
+          "channelId": "C2-F4-P4"
+        },
+        {
+          "specimenId": "RC59-B07-S1",
+          "manufacturingBlockId": "B07",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 6,
+          "chamberId": "C1",
+          "fixtureGroupId": "F2",
+          "channelPosition": 5,
+          "channelId": "C1-F2-P5"
+        },
+        {
+          "specimenId": "RC59-B07-S2",
+          "manufacturingBlockId": "B07",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 6,
+          "chamberId": "C2",
+          "fixtureGroupId": "F4",
+          "channelPosition": 6,
+          "channelId": "C2-F4-P6"
+        },
+        {
+          "specimenId": "RC59-B07-S3",
+          "manufacturingBlockId": "B07",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 6,
+          "chamberId": "C1",
+          "fixtureGroupId": "F1",
+          "channelPosition": 3,
+          "channelId": "C1-F1-P3"
+        },
+        {
+          "specimenId": "RC59-B07-S4",
+          "manufacturingBlockId": "B07",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 6,
+          "chamberId": "C2",
+          "fixtureGroupId": "F3",
+          "channelPosition": 2,
+          "channelId": "C2-F3-P2"
+        },
+        {
+          "specimenId": "RC59-B08-S1",
+          "manufacturingBlockId": "B08",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 1,
+          "chamberId": "C2",
+          "fixtureGroupId": "F3",
+          "channelPosition": 4,
+          "channelId": "C2-F3-P4"
+        },
+        {
+          "specimenId": "RC59-B08-S2",
+          "manufacturingBlockId": "B08",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 1,
+          "chamberId": "C1",
+          "fixtureGroupId": "F2",
+          "channelPosition": 3,
+          "channelId": "C1-F2-P3"
+        },
+        {
+          "specimenId": "RC59-B08-S3",
+          "manufacturingBlockId": "B08",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 1,
+          "chamberId": "C2",
+          "fixtureGroupId": "F4",
+          "channelPosition": 3,
+          "channelId": "C2-F4-P3"
+        },
+        {
+          "specimenId": "RC59-B08-S4",
+          "manufacturingBlockId": "B08",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 1,
+          "chamberId": "C1",
+          "fixtureGroupId": "F1",
+          "channelPosition": 2,
+          "channelId": "C1-F1-P2"
+        },
+        {
+          "specimenId": "RC59-B09-S1",
+          "manufacturingBlockId": "B09",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 2,
+          "chamberId": "C1",
+          "fixtureGroupId": "F1",
+          "channelPosition": 5,
+          "channelId": "C1-F1-P5"
+        },
+        {
+          "specimenId": "RC59-B09-S2",
+          "manufacturingBlockId": "B09",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 2,
+          "chamberId": "C1",
+          "fixtureGroupId": "F2",
+          "channelPosition": 6,
+          "channelId": "C1-F2-P6"
+        },
+        {
+          "specimenId": "RC59-B09-S3",
+          "manufacturingBlockId": "B09",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 2,
+          "chamberId": "C2",
+          "fixtureGroupId": "F3",
+          "channelPosition": 1,
+          "channelId": "C2-F3-P1"
+        },
+        {
+          "specimenId": "RC59-B09-S4",
+          "manufacturingBlockId": "B09",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 2,
+          "chamberId": "C2",
+          "fixtureGroupId": "F4",
+          "channelPosition": 5,
+          "channelId": "C2-F4-P5"
+        },
+        {
+          "specimenId": "RC59-B10-S1",
+          "manufacturingBlockId": "B10",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 5,
+          "chamberId": "C1",
+          "fixtureGroupId": "F2",
+          "channelPosition": 2,
+          "channelId": "C1-F2-P2"
+        },
+        {
+          "specimenId": "RC59-B10-S2",
+          "manufacturingBlockId": "B10",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 5,
+          "chamberId": "C2",
+          "fixtureGroupId": "F3",
+          "channelPosition": 5,
+          "channelId": "C2-F3-P5"
+        },
+        {
+          "specimenId": "RC59-B10-S3",
+          "manufacturingBlockId": "B10",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 5,
+          "chamberId": "C2",
+          "fixtureGroupId": "F4",
+          "channelPosition": 1,
+          "channelId": "C2-F4-P1"
+        },
+        {
+          "specimenId": "RC59-B10-S4",
+          "manufacturingBlockId": "B10",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 5,
+          "chamberId": "C1",
+          "fixtureGroupId": "F1",
+          "channelPosition": 4,
+          "channelId": "C1-F1-P4"
+        },
+        {
+          "specimenId": "RC59-B11-S1",
+          "manufacturingBlockId": "B11",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 2,
+          "chamberId": "C1",
+          "fixtureGroupId": "F4",
+          "channelPosition": 6,
+          "channelId": "C1-F4-P6"
+        },
+        {
+          "specimenId": "RC59-B11-S2",
+          "manufacturingBlockId": "B11",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 2,
+          "chamberId": "C2",
+          "fixtureGroupId": "F1",
+          "channelPosition": 1,
+          "channelId": "C2-F1-P1"
+        },
+        {
+          "specimenId": "RC59-B11-S3",
+          "manufacturingBlockId": "B11",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 2,
+          "chamberId": "C1",
+          "fixtureGroupId": "F3",
+          "channelPosition": 3,
+          "channelId": "C1-F3-P3"
+        },
+        {
+          "specimenId": "RC59-B11-S4",
+          "manufacturingBlockId": "B11",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 2,
+          "chamberId": "C2",
+          "fixtureGroupId": "F2",
+          "channelPosition": 4,
+          "channelId": "C2-F2-P4"
+        },
+        {
+          "specimenId": "RC59-B12-S1",
+          "manufacturingBlockId": "B12",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 3,
+          "chamberId": "C2",
+          "fixtureGroupId": "F3",
+          "channelPosition": 3,
+          "channelId": "C2-F3-P3"
+        },
+        {
+          "specimenId": "RC59-B12-S2",
+          "manufacturingBlockId": "B12",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 3,
+          "chamberId": "C1",
+          "fixtureGroupId": "F1",
+          "channelPosition": 1,
+          "channelId": "C1-F1-P1"
+        },
+        {
+          "specimenId": "RC59-B12-S3",
+          "manufacturingBlockId": "B12",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 3,
+          "chamberId": "C1",
+          "fixtureGroupId": "F4",
+          "channelPosition": 2,
+          "channelId": "C1-F4-P2"
+        },
+        {
+          "specimenId": "RC59-B12-S4",
+          "manufacturingBlockId": "B12",
+          "conditionId": "RC59-CONDITION-01",
+          "startWave": 3,
+          "chamberId": "C2",
+          "fixtureGroupId": "F2",
+          "channelPosition": 3,
+          "channelId": "C2-F2-P3"
+        }
+      ]
+    },
+    "specimenLineage": [
+      {
+        "assignmentSpecimenId": "RC59-B01-S1",
+        "physicalSerialId": "SYNTHETIC-SERIAL-01",
+        "serialCommitmentSha256": "1BFE449888F6FDB8BD24CE5CAA8CCBDC5B295832B0F252B514D640DE8B8BEA9A"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B01-S2",
+        "physicalSerialId": "SYNTHETIC-SERIAL-02",
+        "serialCommitmentSha256": "1BF6A81982E73EDD599FE7BD0E26E9DEF60E0215864E230648A092C8E227D564"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B01-S3",
+        "physicalSerialId": "SYNTHETIC-SERIAL-03",
+        "serialCommitmentSha256": "E96E371526BAF11C38DAB9B2E85602D5283CBCDC45A73697821B81D8465F6101"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B01-S4",
+        "physicalSerialId": "SYNTHETIC-SERIAL-04",
+        "serialCommitmentSha256": "5C5662FB79DE180BA0D9750A863B43D48245AF16BB3E94C79F7FB9208A7E4C07"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B02-S1",
+        "physicalSerialId": "SYNTHETIC-SERIAL-05",
+        "serialCommitmentSha256": "4FE8D0D5F7CA328F66443EDD1837A2FC8A0D3749BB0E3AA598AF0CA9EE7E0099"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B02-S2",
+        "physicalSerialId": "SYNTHETIC-SERIAL-06",
+        "serialCommitmentSha256": "E7B4830CAE3DA3E2F673E1E51FB605E0D59A4EA814274CC9557D21FF059BE148"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B02-S3",
+        "physicalSerialId": "SYNTHETIC-SERIAL-07",
+        "serialCommitmentSha256": "44184972F0E7971B80FE215F8DE87212D48B592FF1A87327C7A24F90600AEDE3"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B02-S4",
+        "physicalSerialId": "SYNTHETIC-SERIAL-08",
+        "serialCommitmentSha256": "427E43710E7BAA550B9C91AE76B524C2C86307725CDF672E83E8DB84AF2021C1"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B03-S1",
+        "physicalSerialId": "SYNTHETIC-SERIAL-09",
+        "serialCommitmentSha256": "29AD4E278951E746DCB2F75D60D92A254A31B50C4BFF65F48B5FA24F6AB05CC2"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B03-S2",
+        "physicalSerialId": "SYNTHETIC-SERIAL-10",
+        "serialCommitmentSha256": "B5B2C6BDA95413FBD3FEAA99EEF1E50361C4927B6BE1DAB1DEEA3F3743E3C12B"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B03-S3",
+        "physicalSerialId": "SYNTHETIC-SERIAL-11",
+        "serialCommitmentSha256": "7D268F84C08D7A6FA87B12AECEB1D3FAE5501F20A19AAAD6025B62536C605BC1"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B03-S4",
+        "physicalSerialId": "SYNTHETIC-SERIAL-12",
+        "serialCommitmentSha256": "3F8D23FE63A3A8858059ACA4FC5F59357AC8D85A1833D173B1EF4E574BE0AECC"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B04-S1",
+        "physicalSerialId": "SYNTHETIC-SERIAL-13",
+        "serialCommitmentSha256": "F64CB2B4C71162067A72C5DB419D08719E391C5B77E75D20A395BF6627D56404"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B04-S2",
+        "physicalSerialId": "SYNTHETIC-SERIAL-14",
+        "serialCommitmentSha256": "BED85F18EB3EE977D405467425272FA072EEF6238993623E1CBAF02041B84FFA"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B04-S3",
+        "physicalSerialId": "SYNTHETIC-SERIAL-15",
+        "serialCommitmentSha256": "9334C138873BC2B9C56A8DD264D0E8F11795F44A82055A9AD9E19972F7200BD3"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B04-S4",
+        "physicalSerialId": "SYNTHETIC-SERIAL-16",
+        "serialCommitmentSha256": "D021FDCA3DB684A478C049B311A14C35AC8ED40E36DABE16A9E8CC2DF65DE974"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B05-S1",
+        "physicalSerialId": "SYNTHETIC-SERIAL-17",
+        "serialCommitmentSha256": "B6070EDAF67BF32777530F0B22C0FA0E71DA9716171C205C8E7A3F1B4EA6F6D8"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B05-S2",
+        "physicalSerialId": "SYNTHETIC-SERIAL-18",
+        "serialCommitmentSha256": "D57D702E8E726D53564AB48A061C3908474CF1AE1ABD49E35DD602E7CD1042CF"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B05-S3",
+        "physicalSerialId": "SYNTHETIC-SERIAL-19",
+        "serialCommitmentSha256": "56690389B1EBFD65BA3B31A7DEC06241E146BCEF33394CB77BFB51FDE8CC6608"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B05-S4",
+        "physicalSerialId": "SYNTHETIC-SERIAL-20",
+        "serialCommitmentSha256": "A312BA3DC289650699FD60688AF27C62AEF31379F9378D59DC20D856DFDC7649"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B06-S1",
+        "physicalSerialId": "SYNTHETIC-SERIAL-21",
+        "serialCommitmentSha256": "6FFE3D3A0A2D23B92AE203A3926BF476BF7740A49246E2EE9A902AD82D0E404F"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B06-S2",
+        "physicalSerialId": "SYNTHETIC-SERIAL-22",
+        "serialCommitmentSha256": "D1503AF3FC1AE48D1B97A9051230B825F96A1BF784018C618FFE3C6E2147934C"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B06-S3",
+        "physicalSerialId": "SYNTHETIC-SERIAL-23",
+        "serialCommitmentSha256": "78FFF45B2A4EE8733F1F30F63B6193A43BD45024DCE8E0A16502AACEFF7A93BE"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B06-S4",
+        "physicalSerialId": "SYNTHETIC-SERIAL-24",
+        "serialCommitmentSha256": "55DADBA435534DF38FF3441B06670B0A6CD5FFEE767B22CE53816D8564D1817F"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B07-S1",
+        "physicalSerialId": "SYNTHETIC-SERIAL-25",
+        "serialCommitmentSha256": "398E73D000EAADE1138273F1BBD72191A5AEC36C3717BDF514B50A83C9E95ED7"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B07-S2",
+        "physicalSerialId": "SYNTHETIC-SERIAL-26",
+        "serialCommitmentSha256": "DC182F458CAC7D5F859A7B454E7860037DF4B38A2D25C1F9C6A0CCA3F4202123"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B07-S3",
+        "physicalSerialId": "SYNTHETIC-SERIAL-27",
+        "serialCommitmentSha256": "A73D968F69035ABCEF3B6CEAC42BC3B3366A5643E8174E6EAEA89918E0763259"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B07-S4",
+        "physicalSerialId": "SYNTHETIC-SERIAL-28",
+        "serialCommitmentSha256": "D4C2969987A3949239BE47CEB09BF977D9CB0BB2D8C40545B65E32CB54173514"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B08-S1",
+        "physicalSerialId": "SYNTHETIC-SERIAL-29",
+        "serialCommitmentSha256": "D4BDC62819F6E4A1DD6C834B2988B2505CF9E99ED6CD7132B3317114DFB337E3"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B08-S2",
+        "physicalSerialId": "SYNTHETIC-SERIAL-30",
+        "serialCommitmentSha256": "425A63A934BCE500424E9AC569F907495CB10CBC159E77423E0645238FBEA189"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B08-S3",
+        "physicalSerialId": "SYNTHETIC-SERIAL-31",
+        "serialCommitmentSha256": "11BA01A3B4EE4318CDE555D17CD24E51FA6289196195C1AE8242FEC85660A5C3"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B08-S4",
+        "physicalSerialId": "SYNTHETIC-SERIAL-32",
+        "serialCommitmentSha256": "3C2DBFD7D69F8B88EADAFECA4CE16604C5AE0309D79E6EB1D057C46A99B35942"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B09-S1",
+        "physicalSerialId": "SYNTHETIC-SERIAL-33",
+        "serialCommitmentSha256": "8373A9BE0F3813FB2B68CA7B62EBF4CE8D220351AAAF18EBF6DEA55A059C4744"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B09-S2",
+        "physicalSerialId": "SYNTHETIC-SERIAL-34",
+        "serialCommitmentSha256": "3711F33E6B698886D74CE1A301F65D270A05F603092BEE2027A445A45C5BB30E"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B09-S3",
+        "physicalSerialId": "SYNTHETIC-SERIAL-35",
+        "serialCommitmentSha256": "93256DDA6BD6A707DBE65985FDFE7380849CC0E0812A7020D958B80DD80570AF"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B09-S4",
+        "physicalSerialId": "SYNTHETIC-SERIAL-36",
+        "serialCommitmentSha256": "3B592B701D313CA31BEF50A63C77659DCC3F07EA70E122AF1B8A497507C1F22A"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B10-S1",
+        "physicalSerialId": "SYNTHETIC-SERIAL-37",
+        "serialCommitmentSha256": "CBB5E251C4E810F3502ABC32B210AF8A53128CF56FFE42EE5105856F5F6ADB63"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B10-S2",
+        "physicalSerialId": "SYNTHETIC-SERIAL-38",
+        "serialCommitmentSha256": "A658B9A732108F034F1B2F55C0A03D8871E8DC4E5B92733B2156BD45F78AE021"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B10-S3",
+        "physicalSerialId": "SYNTHETIC-SERIAL-39",
+        "serialCommitmentSha256": "C4613E6164FE38B6A4B62130AF882330A62305EC9800DAEFC008DE7460A1545A"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B10-S4",
+        "physicalSerialId": "SYNTHETIC-SERIAL-40",
+        "serialCommitmentSha256": "E845D82A0273D0D66338B4368835D775CC888283058B1763F5173A9D61E1AD27"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B11-S1",
+        "physicalSerialId": "SYNTHETIC-SERIAL-41",
+        "serialCommitmentSha256": "67FC3619FBD889B4F5E54FB12E04B628808F4C03903FEC0EAA36DFE4F5EEC0EF"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B11-S2",
+        "physicalSerialId": "SYNTHETIC-SERIAL-42",
+        "serialCommitmentSha256": "E660411C524DB83B9501CF5765779836518A8B66F762389F86DB606101DA9EFA"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B11-S3",
+        "physicalSerialId": "SYNTHETIC-SERIAL-43",
+        "serialCommitmentSha256": "A6CA00DD18AD61942E6D82C70B694338842FCFAA7DEB3C32DD340ED99A0454F4"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B11-S4",
+        "physicalSerialId": "SYNTHETIC-SERIAL-44",
+        "serialCommitmentSha256": "69DDC8E5FFD3A1B86239A303B0032CBFCAE1D7524E650111FC1A6EBC18E9E151"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B12-S1",
+        "physicalSerialId": "SYNTHETIC-SERIAL-45",
+        "serialCommitmentSha256": "703D7FA4F636F21E9D62B9C4DD5BD8E87702D374C88F5E3596B80578898F1104"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B12-S2",
+        "physicalSerialId": "SYNTHETIC-SERIAL-46",
+        "serialCommitmentSha256": "FF42BD63E2AFF9A91FBACBE3A059594C09CA4A880A3A2665DC66B25C3AC0C1D7"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B12-S3",
+        "physicalSerialId": "SYNTHETIC-SERIAL-47",
+        "serialCommitmentSha256": "3A55657E148AC483C6E8F2851B1495502CF6A07D14EA76B2BE8BF0789C93797E"
+      },
+      {
+        "assignmentSpecimenId": "RC59-B12-S4",
+        "physicalSerialId": "SYNTHETIC-SERIAL-48",
+        "serialCommitmentSha256": "658127BE2F927AEF821566899A00AECA4BC9CF9199E0485699D724BF494CDDBE"
+      }
+    ],
+    "resources": {
+      "chambers": [
+        {
+          "id": "C1",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1",
+          "configurationId": "SYNTHETIC-CONFIG-C1"
+        },
+        {
+          "id": "C2",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2",
+          "configurationId": "SYNTHETIC-CONFIG-C2"
+        }
+      ],
+      "fixtures": [
+        {
+          "id": "C1-F1",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F1",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F1"
+        },
+        {
+          "id": "C1-F2",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F2",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F2"
+        },
+        {
+          "id": "C1-F3",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F3",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F3"
+        },
+        {
+          "id": "C1-F4",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F4",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F4"
+        },
+        {
+          "id": "C2-F1",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F1",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F1"
+        },
+        {
+          "id": "C2-F2",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F2",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F2"
+        },
+        {
+          "id": "C2-F3",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F3",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F3"
+        },
+        {
+          "id": "C2-F4",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F4",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F4"
+        }
+      ],
+      "channels": [
+        {
+          "id": "C2-F1-P5",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F1-P5",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F1-P5"
+        },
+        {
+          "id": "C1-F4-P1",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F4-P1",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F4-P1"
+        },
+        {
+          "id": "C2-F2-P2",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F2-P2",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F2-P2"
+        },
+        {
+          "id": "C1-F3-P4",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F3-P4",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F3-P4"
+        },
+        {
+          "id": "C1-F3-P5",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F3-P5",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F3-P5"
+        },
+        {
+          "id": "C2-F2-P5",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F2-P5",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F2-P5"
+        },
+        {
+          "id": "C1-F1-P6",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F1-P6",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F1-P6"
+        },
+        {
+          "id": "C2-F4-P2",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F4-P2",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F4-P2"
+        },
+        {
+          "id": "C2-F1-P2",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F1-P2",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F1-P2"
+        },
+        {
+          "id": "C1-F4-P3",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F4-P3",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F4-P3"
+        },
+        {
+          "id": "C2-F2-P6",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F2-P6",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F2-P6"
+        },
+        {
+          "id": "C1-F3-P2",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F3-P2",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F3-P2"
+        },
+        {
+          "id": "C1-F2-P4",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F2-P4",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F2-P4"
+        },
+        {
+          "id": "C2-F3-P6",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F3-P6",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F3-P6"
+        },
+        {
+          "id": "C1-F4-P4",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F4-P4",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F4-P4"
+        },
+        {
+          "id": "C2-F1-P4",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F1-P4",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F1-P4"
+        },
+        {
+          "id": "C1-F3-P6",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F3-P6",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F3-P6"
+        },
+        {
+          "id": "C1-F4-P5",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F4-P5",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F4-P5"
+        },
+        {
+          "id": "C2-F1-P3",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F1-P3",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F1-P3"
+        },
+        {
+          "id": "C2-F2-P1",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F2-P1",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F2-P1"
+        },
+        {
+          "id": "C2-F1-P6",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F1-P6",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F1-P6"
+        },
+        {
+          "id": "C1-F3-P1",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F3-P1",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F3-P1"
+        },
+        {
+          "id": "C1-F2-P1",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F2-P1",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F2-P1"
+        },
+        {
+          "id": "C2-F4-P4",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F4-P4",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F4-P4"
+        },
+        {
+          "id": "C1-F2-P5",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F2-P5",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F2-P5"
+        },
+        {
+          "id": "C2-F4-P6",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F4-P6",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F4-P6"
+        },
+        {
+          "id": "C1-F1-P3",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F1-P3",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F1-P3"
+        },
+        {
+          "id": "C2-F3-P2",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F3-P2",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F3-P2"
+        },
+        {
+          "id": "C2-F3-P4",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F3-P4",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F3-P4"
+        },
+        {
+          "id": "C1-F2-P3",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F2-P3",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F2-P3"
+        },
+        {
+          "id": "C2-F4-P3",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F4-P3",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F4-P3"
+        },
+        {
+          "id": "C1-F1-P2",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F1-P2",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F1-P2"
+        },
+        {
+          "id": "C1-F1-P5",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F1-P5",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F1-P5"
+        },
+        {
+          "id": "C1-F2-P6",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F2-P6",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F2-P6"
+        },
+        {
+          "id": "C2-F3-P1",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F3-P1",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F3-P1"
+        },
+        {
+          "id": "C2-F4-P5",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F4-P5",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F4-P5"
+        },
+        {
+          "id": "C1-F2-P2",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F2-P2",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F2-P2"
+        },
+        {
+          "id": "C2-F3-P5",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F3-P5",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F3-P5"
+        },
+        {
+          "id": "C2-F4-P1",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F4-P1",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F4-P1"
+        },
+        {
+          "id": "C1-F1-P4",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F1-P4",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F1-P4"
+        },
+        {
+          "id": "C1-F4-P6",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F4-P6",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F4-P6"
+        },
+        {
+          "id": "C2-F1-P1",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F1-P1",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F1-P1"
+        },
+        {
+          "id": "C1-F3-P3",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F3-P3",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F3-P3"
+        },
+        {
+          "id": "C2-F2-P4",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F2-P4",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F2-P4"
+        },
+        {
+          "id": "C2-F3-P3",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F3-P3",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F3-P3"
+        },
+        {
+          "id": "C1-F1-P1",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F1-P1",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F1-P1"
+        },
+        {
+          "id": "C1-F4-P2",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C1-F4-P2",
+          "configurationId": "SYNTHETIC-CONFIG-C1-F4-P2"
+        },
+        {
+          "id": "C2-F2-P3",
+          "status": "ready",
+          "calibrationStatus": "current",
+          "calibrationId": "SYNTHETIC-CAL-C2-F2-P3",
+          "configurationId": "SYNTHETIC-CONFIG-C2-F2-P3"
+        }
+      ]
+    },
+    "failureContainment": {
+      "chamberId": {
+        "domainCount": 2,
+        "largestDomainSize": 24,
+        "usableAfterWorstSingleDomainLoss": 24
+      },
+      "fixtureGroupId": {
+        "domainCount": 4,
+        "largestDomainSize": 12,
+        "usableAfterWorstSingleDomainLoss": 36
+      },
+      "startWave": {
+        "domainCount": 6,
+        "largestDomainSize": 8,
+        "usableAfterWorstSingleDomainLoss": 40
+      },
+      "manufacturingBlockId": {
+        "domainCount": 12,
+        "largestDomainSize": 4,
+        "usableAfterWorstSingleDomainLoss": 44
+      },
+      "channelId": {
+        "domainCount": 48,
+        "largestDomainSize": 1,
+        "usableAfterWorstSingleDomainLoss": 47
+      },
+      "chamberFixture": {
+        "domainCount": 8,
+        "largestDomainSize": 6,
+        "usableAfterWorstSingleDomainLoss": 42
+      }
+    },
+    "owners": [
+      {
+        "role": "domain",
+        "ownerId": "SYNTHETIC-OWNER-01",
+        "attestationId": "SYNTHETIC-ATTESTATION-DOMAIN",
+        "status": "signed-reference-present-not-cryptographically-verified"
+      },
+      {
+        "role": "metrology",
+        "ownerId": "SYNTHETIC-OWNER-02",
+        "attestationId": "SYNTHETIC-ATTESTATION-METROLOGY",
+        "status": "signed-reference-present-not-cryptographically-verified"
+      },
+      {
+        "role": "safety",
+        "ownerId": "SYNTHETIC-OWNER-03",
+        "attestationId": "SYNTHETIC-ATTESTATION-SAFETY",
+        "status": "signed-reference-present-not-cryptographically-verified"
+      },
+      {
+        "role": "adjudication",
+        "ownerId": "SYNTHETIC-OWNER-04",
+        "attestationId": "SYNTHETIC-ATTESTATION-ADJUDICATION",
+        "status": "signed-reference-present-not-cryptographically-verified"
+      }
+    ],
+    "margins": [
+      {
+        "metric": "LIFE",
+        "scale": "parts-per-million",
+        "u95Scaled": 10,
+        "marginScaled": 20,
+        "scientificLimitScaled": 30,
+        "safetyLimitScaled": 40,
+        "ownerAttestationId": "SYNTHETIC-ATTESTATION-METROLOGY"
+      },
+      {
+        "metric": "TMAX",
+        "scale": "milli-celsius",
+        "u95Scaled": 11,
+        "marginScaled": 21,
+        "scientificLimitScaled": 31,
+        "safetyLimitScaled": 41,
+        "ownerAttestationId": "SYNTHETIC-ATTESTATION-METROLOGY"
+      },
+      {
+        "metric": "QTHRU",
+        "scale": "parts-per-million",
+        "u95Scaled": 12,
+        "marginScaled": 22,
+        "scientificLimitScaled": 32,
+        "safetyLimitScaled": 42,
+        "ownerAttestationId": "SYNTHETIC-ATTESTATION-METROLOGY"
+      },
+      {
+        "metric": "DZ",
+        "scale": "parts-per-million",
+        "u95Scaled": 13,
+        "marginScaled": 23,
+        "scientificLimitScaled": 33,
+        "safetyLimitScaled": 43,
+        "ownerAttestationId": "SYNTHETIC-ATTESTATION-METROLOGY"
+      }
+    ],
+    "safety": {
+      "status": "approved-reference-present-not-externally-verified",
+      "hazardReviewId": "SYNTHETIC-HAZARD-REVIEW-01",
+      "sopId": "SYNTHETIC-SOP-01",
+      "electricalLimitsId": "SYNTHETIC-ELECTRICAL-LIMITS-01",
+      "ventingControlId": "SYNTHETIC-VENTING-01",
+      "thermalMonitoringId": "SYNTHETIC-THERMAL-01",
+      "fireResponseId": "SYNTHETIC-FIRE-01",
+      "emergencyStopId": "SYNTHETIC-ESTOP-01",
+      "disposalPlanId": "SYNTHETIC-DISPOSAL-01",
+      "ownerAttestationId": "SYNTHETIC-ATTESTATION-SAFETY"
+    },
+    "acuteSentinel": {
+      "status": "passed-synthetic-fixture-only",
+      "claimScope": "acute-large-effect-and-safety-screen-only-not-lifetime-equivalence",
+      "specimenSerialIds": [
+        "SYNTHETIC-SENTINEL-01",
+        "SYNTHETIC-SENTINEL-02",
+        "SYNTHETIC-SENTINEL-03",
+        "SYNTHETIC-SENTINEL-04",
+        "SYNTHETIC-SENTINEL-05",
+        "SYNTHETIC-SENTINEL-06",
+        "SYNTHETIC-SENTINEL-07",
+        "SYNTHETIC-SENTINEL-08",
+        "SYNTHETIC-SENTINEL-09",
+        "SYNTHETIC-SENTINEL-10",
+        "SYNTHETIC-SENTINEL-11",
+        "SYNTHETIC-SENTINEL-12"
+      ],
+      "safetyEvents": 0,
+      "materialCarryoverDetected": false,
+      "receiptSha256": "DDC98555BE0541DD7672554C062E644564AC5049DF6A4B7B50A9DAB3657553C3"
+    },
+    "expansionObserver": {
+      "enabled": false,
+      "qualificationStatus": "excluded-before-confirmation",
+      "exclusionReason": "SYNTHETIC-FIXTURE-DOES-NOT-CLAIM-PHYSICAL-EXPANSION-QUALIFICATION",
+      "u95ExpScaled": null,
+      "marginExpScaled": null,
+      "minimumDetectableContrastScaled": null,
+      "qualificationReceiptSha256": null
+    },
+    "outcomeIsolation": {
+      "storeStatus": "closed",
+      "designRoleAccess": false,
+      "outcomeValuesPresent": false,
+      "accessLedgerSha256": "F7466C73B0C3DD2517BE1D777E699ACFFFBD386441F1F0E87F4E59025035C082"
+    }
+  },
+  "cases": [
+    {
+      "id": "SYNTHETIC-VALID",
+      "expectedFirstFailedGate": null,
+      "mutations": []
+    },
+    {
+      "id": "ADV-G00-CONTEXT",
+      "expectedFirstFailedGate": "G00-CONTEXT",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "profile"
+          ],
+          "value": "UNKNOWN-PROFILE"
+        }
+      ]
+    },
+    {
+      "id": "ADV-G01-UNKNOWN-FIELD",
+      "expectedFirstFailedGate": "G01-CLOSED-PROFILE",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "unknownField"
+          ],
+          "value": "forbidden"
+        }
+      ]
+    },
+    {
+      "id": "ADV-G01-FLOAT",
+      "expectedFirstFailedGate": "G01-CLOSED-PROFILE",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "margins",
+            0,
+            "u95Scaled"
+          ],
+          "value": 10.5
+        }
+      ]
+    },
+    {
+      "id": "ADV-G02-DOMAIN",
+      "expectedFirstFailedGate": "G02-FROZEN-DOMAIN",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "domain",
+            "chemistry"
+          ],
+          "value": "TO_BE_FROZEN_BEFORE_ACQUISITION"
+        }
+      ]
+    },
+    {
+      "id": "ADV-G03-ALLOCATION",
+      "expectedFirstFailedGate": "G03-ALLOCATION-COMMITMENT",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "allocation",
+            "allocationHashSha256"
+          ],
+          "value": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "id": "ADV-G04-LINEAGE",
+      "expectedFirstFailedGate": "G04-SPECIMEN-LINEAGE",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "specimenLineage",
+            1,
+            "physicalSerialId"
+          ],
+          "value": "SYNTHETIC-SERIAL-01"
+        }
+      ]
+    },
+    {
+      "id": "ADV-G05-RESOURCE",
+      "expectedFirstFailedGate": "G05-RESOURCE-READINESS",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "resources",
+            "channels",
+            0,
+            "calibrationStatus"
+          ],
+          "value": "expired"
+        }
+      ]
+    },
+    {
+      "id": "ADV-G06-CONTAINMENT",
+      "expectedFirstFailedGate": "G06-FAILURE-CONTAINMENT",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "failureContainment",
+            "chamberId",
+            "usableAfterWorstSingleDomainLoss"
+          ],
+          "value": 23
+        }
+      ]
+    },
+    {
+      "id": "ADV-G07-OWNER",
+      "expectedFirstFailedGate": "G07-ACCOUNTABLE-OWNERS",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "owners",
+            2,
+            "status"
+          ],
+          "value": "unsigned"
+        }
+      ]
+    },
+    {
+      "id": "ADV-G08-MARGIN",
+      "expectedFirstFailedGate": "G08-MARGIN-IDENTIFIABILITY",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "margins",
+            0,
+            "marginScaled"
+          ],
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "ADV-G09-SAFETY",
+      "expectedFirstFailedGate": "G09-SAFETY-READINESS",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "safety",
+            "status"
+          ],
+          "value": "pending"
+        }
+      ]
+    },
+    {
+      "id": "ADV-G10-SENTINEL",
+      "expectedFirstFailedGate": "G10-ACUTE-SENTINEL",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "acuteSentinel",
+            "materialCarryoverDetected"
+          ],
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "ADV-G11-EXPANSION",
+      "expectedFirstFailedGate": "G11-EXPANSION-OBSERVER",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "expansionObserver",
+            "enabled"
+          ],
+          "value": true
+        },
+        {
+          "op": "set",
+          "path": [
+            "expansionObserver",
+            "qualificationStatus"
+          ],
+          "value": "qualified"
+        },
+        {
+          "op": "set",
+          "path": [
+            "expansionObserver",
+            "u95ExpScaled"
+          ],
+          "value": 20
+        },
+        {
+          "op": "set",
+          "path": [
+            "expansionObserver",
+            "marginExpScaled"
+          ],
+          "value": 20
+        },
+        {
+          "op": "set",
+          "path": [
+            "expansionObserver",
+            "minimumDetectableContrastScaled"
+          ],
+          "value": 30
+        },
+        {
+          "op": "set",
+          "path": [
+            "expansionObserver",
+            "qualificationReceiptSha256"
+          ],
+          "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ]
+    },
+    {
+      "id": "ADV-G12-OUTCOME",
+      "expectedFirstFailedGate": "G12-OUTCOME-ISOLATION",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "outcomeIsolation",
+            "designRoleAccess"
+          ],
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "ADV-G13-CAPABILITY",
+      "expectedFirstFailedGate": "G13-CAPABILITY-CEILING",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "evaluationContext",
+            "requestedCapability"
+          ],
+          "value": "open-physical-enrollment"
+        }
+      ]
+    },
+    {
+      "id": "ADV-MULTI-G05-G09",
+      "expectedFirstFailedGate": "G05-RESOURCE-READINESS",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "resources",
+            "channels",
+            0,
+            "calibrationStatus"
+          ],
+          "value": "expired"
+        },
+        {
+          "op": "set",
+          "path": [
+            "safety",
+            "status"
+          ],
+          "value": "pending"
+        }
+      ]
+    },
+    {
+      "id": "RC59-PLANNING-PHYSICAL",
+      "expectedFirstFailedGate": "G02-FROZEN-DOMAIN",
+      "mutations": [
+        {
+          "op": "set",
+          "path": [
+            "evaluationContext",
+            "mode"
+          ],
+          "value": "physical"
+        },
+        {
+          "op": "set",
+          "path": [
+            "evaluationContext",
+            "synthetic"
+          ],
+          "value": false
+        },
+        {
+          "op": "set",
+          "path": [
+            "evaluationContext",
+            "requestedCapability"
+          ],
+          "value": "independent-authorization-candidate"
+        },
+        {
+          "op": "set",
+          "path": [
+            "domain"
+          ],
+          "value": {
+            "conditionId": "RC59-CONDITION-01",
+            "chemistry": "TO_BE_FROZEN_BEFORE_ACQUISITION",
+            "cellDesign": "TO_BE_FROZEN_BEFORE_ACQUISITION",
+            "manufacturingLotDefinition": "TO_BE_FROZEN_BEFORE_ACQUISITION",
+            "formationRecipeId": "TO_BE_FROZEN_BEFORE_ACQUISITION",
+            "temperatureSetpointAndTolerance": "TO_BE_FROZEN_BEFORE_ACQUISITION",
+            "chargeProtocolId": "TO_BE_FROZEN_BEFORE_ACQUISITION",
+            "dischargeProtocolId": "TO_BE_FROZEN_BEFORE_ACQUISITION",
+            "voltageWindow": "TO_BE_FROZEN_BEFORE_ACQUISITION",
+            "endpointDefinitionId": "TO_BE_FROZEN_BEFORE_ACQUISITION",
+            "commitmentSha256": "1B6DDCB09ABB8B1E17C4297A85D81347885EF9A042583DFFC16A161075C542BC"
+          }
+        }
+      ]
+    }
+  ]
+}

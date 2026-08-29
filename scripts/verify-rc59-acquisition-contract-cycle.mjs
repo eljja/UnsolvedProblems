@@ -77,9 +77,9 @@ for (const page of ["index.html", "solve.html", "research-log.html"]) {
   assert(html.includes("research-cycle-59-data.js?v=20260829-cycle59"), `${page} must load RC59 data`);
 }
 const readme = fs.readFileSync(path.join(ROOT, "README.md"), "utf8");
-assert(readme.includes("59개 누적 연구 사이클"), "README cycle count must be 59");
-assert(readme.includes("190개 사이클 기록"), "README record count must be 190");
-assert(readme.includes("62개 구조적 연결"), "README connection count must be 62");
+assert(readme.includes("60개 누적 연구 사이클"), "README cycle count must include RC60");
+assert(readme.includes("194개 사이클 기록"), "README record count must include RC60");
+assert(readme.includes("63개 구조적 연결"), "README connection count must include RC60");
 assert(readme.includes("343개 기관·로드맵·원 연구 출처"), "README source count must be 343");
 const publicCopy = fs.readFileSync(path.join(ROOT, "research-cycle-59-data.js"), "utf8");
 for (const prohibited of ["전공자 포인트", "1단계 · 처음 읽는 사람", "2단계 · 전공자 핵심", "개수를 맞추지", "아래 시도는 개별 논문"]) {

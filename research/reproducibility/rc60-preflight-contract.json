@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contractId": "RC60-PREFLIGHT-CONTRACT-1.0",
+  "cycleId": "RC-2026-60",
+  "reviewedOn": "2026-08-29",
+  "problemIds": ["UP-219", "UP-233", "UP-234", "UP-572"],
+  "purpose": "Reject an incomplete RC59 battery experiment before physical enrollment or outcome access, and emit a deterministic content-addressed receipt naming the first failed gate.",
+  "claimBoundary": "A passing synthetic fixture proves only that two implementations agree on this closed software contract. A digest detects changed content but does not authenticate an owner, prove that a laboratory resource exists, or authorize physical execution.",
+  "canonicalizationProfile": {
+    "name": "RC60-JCS-COMPATIBLE-RESTRICTED-1",
+    "basis": "RFC 8785 deterministic property ordering and UTF-8 serialization",
+    "restriction": "All numbers are integers within the IEEE-754 safe-integer interval; keys and fixture strings are ASCII; arrays retain order; duplicate keys, unknown fields, NaN, Infinity, and floating-point numbers are forbidden.",
+    "fullRfc8785ConformanceClaimed": false,
+    "digest": "SHA-256 uppercase hexadecimal"
+  },
+  "evaluationRule": "Evaluate gates in the listed order and stop at the first failure. A receipt records only gates actually evaluated.",
+  "gateOrder": [
+    {
+      "id": "G00-CONTEXT",
+      "question": "Is the evaluation mode explicit and internally coherent?",
+      "pass": "Known profile; mode is synthetic-test or physical; synthetic flag matches the mode; target is preflight; evaluatedAt is fixed.",
+      "retry": "Set a recognized profile, coherent mode and synthetic flag, preflight target, and fixed evaluation time."
+    },
+    {
+      "id": "G01-CLOSED-PROFILE",
+      "question": "Can both implementations parse exactly the same finite input language?",
+      "pass": "Exact top-level fields; no unknown keys; all numbers are safe integers; no floating point values.",
+      "retry": "Remove unknown fields and encode every quantity as an integer in its declared scale."
+    },
+    {
+      "id": "G02-FROZEN-DOMAIN",
+      "question": "Is the chemistry-build-protocol domain fixed before enrollment?",
+      "pass": "All required domain fields are non-placeholder strings and the recomputed domain commitment matches.",
+      "retry": "Replace every placeholder with accountable domain values and recompute the domain commitment."
+    },
+    {
+      "id": "G03-ALLOCATION-COMMITMENT",
+      "question": "Is the exact RC59 balanced allocation preserved?",
+      "pass": "All 48 assignment records and the RC59 allocation hash match the frozen allocation.",
+      "retry": "Restore the RC59 assignment records and allocation hash; do not re-randomize after outcomes."
+    },
+    {
+      "id": "G04-SPECIMEN-LINEAGE",
+      "question": "Does every planned assignment map to one unique specimen serial?",
+      "pass": "Exactly 48 unique serial commitments map one-to-one to the frozen assignments; physical mode forbids synthetic identifiers.",
+      "retry": "Supply 48 unique serial commitments and preserve the one-to-one assignment mapping."
+    },
+    {
+      "id": "G05-RESOURCE-READINESS",
+      "question": "Are all referenced chambers, fixtures, and channels registered and current?",
+      "pass": "Every referenced resource exists, is ready, and carries current calibration and configuration records.",
+      "retry": "Repair missing, expired, or unready resource records before any specimen is connected."
+    },
+    {
+      "id": "G06-FAILURE-CONTAINMENT",
+      "question": "Does the submitted design retain the preregistered branch after each listed single-domain loss?",
+      "pass": "Recomputed survivorship equals the registered six-domain summary and never falls below 24 cells.",
+      "retry": "Correct the containment register or redesign resource balance without consulting outcomes."
+    },
+    {
+      "id": "G07-ACCOUNTABLE-OWNERS",
+      "question": "Are domain, metrology, safety, and adjudication decisions assigned?",
+      "pass": "All four roles have distinct owner IDs and signed-status attestation references; cryptographic authenticity is outside RC60.",
+      "retry": "Assign distinct accountable owners and attach their attestation references; obtain independent signature verification outside this validator."
+    },
+    {
+      "id": "G08-MARGIN-IDENTIFIABILITY",
+      "question": "Is each measurement claim wider than its uncertainty but no wider than scientific and safety limits?",
+      "pass": "LIFE, TMAX, QTHRU, and DZ each satisfy U95 < M <= min(S,H) in an explicit integer scale and reference the metrology owner.",
+      "retry": "Improve measurement capability, narrow the claim, or abandon the observer; never choose M from arm outcomes."
+    },
+    {
+      "id": "G09-SAFETY-READINESS",
+      "question": "Has a qualified owner approved the specified battery hazards and emergency controls?",
+      "pass": "Hazard review, SOP, limits, venting, thermal monitoring, fire response, emergency stop, disposal, and approval references are present and approved.",
+      "retry": "Keep the physical queue closed until the laboratory safety owner approves every required control."
+    },
+    {
+      "id": "G10-ACUTE-SENTINEL",
+      "question": "Has a disjoint acute screen rejected large immediate measurement harm?",
+      "pass": "Twelve non-confirmation specimens pass the registered acute-only safety and carryover screen with a bound receipt.",
+      "retry": "Run or repair the disjoint acute screen; a pass cannot be promoted to lifetime equivalence."
+    },
+    {
+      "id": "G11-EXPANSION-OBSERVER",
+      "question": "Is expansion either qualified independently or excluded from the confirmation feature set?",
+      "pass": "Observer is disabled with an explicit exclusion, or U95_exp < M_exp <= D_min and the qualification receipt is bound.",
+      "retry": "Qualify expansion on stable artifacts and disjoint cells, or disable it before confirmation."
+    },
+    {
+      "id": "G12-OUTCOME-ISOLATION",
+      "question": "Can design roles remain blind to lifetime outcomes?",
+      "pass": "Outcome store is closed, design-role access is false, the access ledger is committed, and no outcome value is present.",
+      "retry": "Close the outcome store, revoke design-role access, remove outcome values, and bind a fresh access ledger."
+    },
+    {
+      "id": "G13-CAPABILITY-CEILING",
+      "question": "Does the request stay within what an unsigned software preflight can authorize?",
+      "pass": "Requested capability is preflight-only or independent-authorization-candidate; direct physical authorization is refused.",
+      "retry": "Request only a preflight verdict and obtain separate laboratory, safety, and signature authorization for physical work."
+    }
+  ],
+  "receiptSemantics": {
+    "syntheticPass": "synthetic-pass-no-physical-authorization",
+    "physicalPass": "ready-for-independent-authorization",
+    "failure": "refused-at-first-failed-gate",
+    "tamperEvidence": "receiptHashSha256 covers the canonical receipt payload excluding that hash field",
+    "notProvided": ["owner authentication", "trusted timestamp", "laboratory existence", "safety approval validity", "physical authorization"]
+  },
+  "sourceIds": [
+    "rfc_jcs_8785_2020",
+    "json_schema_core_2020",
+    "json_schema_validation_2020",
+    "nist_fips1804_hash_2015",
+    "nist_traceability_2026",
+    "prov_o_2013",
+    "ro_crate_1_2_2025"
+  ]
+}

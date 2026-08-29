@@ -1,0 +1,294 @@
+{
+  "resultId": "RC60-PREFLIGHT-CYCLE-RESULT-1.0",
+  "cycleId": "RC-2026-60",
+  "completedOn": "2026-08-29",
+  "status": "complete-software-refusal-order-confirmed-physical-evidence-not-started",
+  "problemIds": ["UP-219", "UP-233", "UP-234", "UP-572"],
+  "selectionReason": "RC59 ended with a reproducible 48-cell allocation but no frozen physical domain, accountable laboratory, populated uncertainty margins, safety authority, or sentinel evidence. A preflight refusal contract is the highest-information next step because it can expose the earliest missing premise without consuming cells or opening outcomes, and its typed gate structure transfers to twin updates, accelerated-life claims, and autonomous experiment admission.",
+  "newFacts": [
+    "RC60 defines fourteen ordered gates from evaluation context through a capability ceiling. Evaluation stops at the first failure and records a specific repair condition.",
+    "The canonical profile is deliberately narrower than full RFC 8785: keys and fixture strings are ASCII, arrays retain order, and every admissible number is an IEEE-754 safe integer. Full JCS conformance is not claimed.",
+    "Dependency-free Node and Python implementations agree exactly on all 18 receipts, their first-failure positions, and their SHA-256 receipt hashes.",
+    "The suite contains one clearly labelled synthetic pass, fourteen gate-targeted adversaries plus a second G01 numeric adversary, one multi-fault adversary, and the unresolved RC59 planning input.",
+    "All seventeen non-valid cases are refused and no case emits physical authorization.",
+    "The multi-fault fixture contains an expired channel calibration at G05 and pending safety approval at G09; both implementations stop at G05, showing that a later failure cannot mask the earliest repair.",
+    "The actual RC59 planning input reaches G02 and is refused because chemistry, cell design, manufacturing-lot definition, formation, temperature, charge, discharge, voltage, and endpoint fields remain placeholders.",
+    "A synthetic bundle reaches all fourteen gates but its verdict is synthetic-pass-no-physical-authorization. It cannot open a laboratory queue.",
+    "RFC 8785 supplies deterministic JSON representation rules but is Informational, not Internet Standards Track. RC60 therefore cites its mechanics without overstating its status.",
+    "JSON Schema 2020-12 can express structural assertions, but it cannot establish that a laboratory, serial, calibration, owner, or safety approval exists in the physical world.",
+    "FIPS 180-4 defines message digests that detect changed content; RC60 receipts are content-addressed and tamper-evident, not immutable, authenticated, or trusted-time evidence.",
+    "No real laboratory or official public protocol reviewed in this cycle supplied the complete RC59 chemistry-build-resource-margin-safety-owner-sentinel bundle. The physical branch remains closed."
+  ],
+  "hypotheses": {
+    "H60-0": {
+      "claim": "A finite, restricted input profile lets independent languages produce exactly the same preflight receipts.",
+      "prediction": "Node and Python agree on the contract hash, fixture hash, bundle hash, evaluated-gate prefix, first failure, verdict, retry condition, and receipt hash for every case.",
+      "decisiveTest": "Evaluate all fixtures without shared validator code or third-party packages and compare parsed receipts byte-for-byte after deterministic canonicalization.",
+      "successSignal": "18 of 18 receipt objects and hashes agree.",
+      "rejection": "Any disagreement in a gate prefix, verdict, or hash rejects the profile as cross-language deterministic.",
+      "stopCondition": "Stop expansion of the contract until the minimal mismatch is isolated.",
+      "verdict": "supported-in-software",
+      "reason": "All 18 receipts agree exactly."
+    },
+    "H60-1": {
+      "claim": "First-failure semantics identify one actionable repair even when several later conditions are also broken.",
+      "prediction": "The G05 plus G09 fixture stops at G05 and does not evaluate G09 before retry.",
+      "decisiveTest": "Inject an expired calibration and pending safety approval into the same otherwise valid bundle.",
+      "successSignal": "Both implementations emit G05-RESOURCE-READINESS and the same retry condition.",
+      "rejection": "A G09 result, aggregate error list, or implementation disagreement rejects the ordered-refusal claim.",
+      "stopCondition": "Do not use the validator for staged admission if order is not reproducible.",
+      "verdict": "supported-for-the-registered-fault-pair",
+      "reason": "Both receipts stop at G05; broader combinations remain untested."
+    },
+    "H60-2": {
+      "claim": "The unresolved RC59 plan already satisfies enough prerequisites to reach physical resource enrollment.",
+      "prediction": "Its first failure occurs after G04 specimen lineage.",
+      "decisiveTest": "Wrap the actual RC59 frozenDomain placeholders in the RC60 physical-mode envelope without fabricating replacements.",
+      "successSignal": "G00 through G04 pass.",
+      "rejection": "Any earlier refusal shows that physical enrollment is premature.",
+      "stopCondition": "Keep the physical branch closed at the first failed gate.",
+      "verdict": "rejected",
+      "reason": "The plan stops at G02-FROZEN-DOMAIN before serials or resources can be adjudicated."
+    },
+    "H60-3": {
+      "claim": "A software-valid bundle can directly authorize battery execution.",
+      "prediction": "The valid fixture emits physicalAuthorization=true or an open-physical-enrollment verdict.",
+      "decisiveTest": "Run the fully populated synthetic fixture through all fourteen gates and inspect the capability field.",
+      "successSignal": "Direct authorization is emitted.",
+      "rejection": "The receipt remains explicitly non-authorizing.",
+      "stopCondition": "Never connect this validator directly to physical actuation.",
+      "verdict": "rejected-by-design",
+      "reason": "The synthetic pass grants zero physical authority, and G13 rejects a direct-open request."
+    },
+    "H60-4": {
+      "claim": "The type-refuse-capability structure can be instantiated across RUL, twins, accelerated testing, and autonomous laboratories without using identical downstream claims.",
+      "prediction": "Each field supplies a distinct unit, nuisance resource, protected outcome, adjudicand, and earliest useful refusal while preserving the same ordered prerequisite logic.",
+      "decisiveTest": "Map the variables explicitly and require a problem-specific physical or held-data pilot for each transfer.",
+      "successSignal": "The mapping survives independent pilots without outcome-dependent gate changes.",
+      "rejection": "The mapping collapses to keywords, cannot name a protected outcome, or requires different order after results are seen.",
+      "stopCondition": "Keep the connection at software-structure status until at least one physical transfer is independently adjudicated.",
+      "verdict": "supported-as-structural-hypothesis-not-physical-transfer",
+      "reason": "The variable mapping is explicit, but only the battery software instance has been executed."
+    }
+  },
+  "causalChainOutcome": [
+    {
+      "link": "restricted finite input language -> cross-language canonical commitment",
+      "verdict": "supported-for-registered-fixtures",
+      "failureMode": "Floating-point formatting, non-ASCII key sorting, duplicate keys, or unsupported values could diverge outside the restricted profile.",
+      "fastFailureTest": "Add one boundary fixture at a time and require exact Node-Python hash agreement before admitting the value class."
+    },
+    {
+      "link": "canonical commitment plus frozen gate order -> reproducible first refusal",
+      "verdict": "supported-for-18-cases",
+      "failureMode": "A mutable gate order or validator-specific exception could choose a different repair.",
+      "fastFailureTest": "Bind the ordered gate IDs in the receipt and use multi-fault adversaries."
+    },
+    {
+      "link": "first refusal plus retry condition -> cheaper correction before physical consumption",
+      "verdict": "plausible-not-measured",
+      "failureMode": "The first syntactic repair may expose a costlier later blocker, so local repair does not guarantee global economic value.",
+      "fastFailureTest": "Measure repair time and newly exposed gate across real rejected submissions; compare with unordered review."
+    },
+    {
+      "link": "all software gates pass plus independent owner verification -> admissible physical authorization candidate",
+      "verdict": "not-reached",
+      "failureMode": "References may be forged, expired, or detached from actual resources; no cryptographic or institutional authority exists in RC60.",
+      "fastFailureTest": "Have a real laboratory owner independently verify serials, calibrations, safety records, signatures, and domain commitments outside the validator."
+    },
+    {
+      "link": "authorized outcome-blind experiment -> later problem-specific scientific verdict",
+      "verdict": "not-started",
+      "failureMode": "Even a perfectly admitted experiment can fail through model error, intervention effects, attrition, extrapolation, or insufficient information.",
+      "fastFailureTest": "Use the existing disjoint sentinel, expansion exclusion or qualification, branch register, and untouched confirmation outcome."
+    }
+  ],
+  "minimalAcademicAdvance": "RC60 turns an informal instruction to check a manifest into an executable negative-result protocol. It establishes exactly where the current physical plan stops, demonstrates first-failure agreement under targeted and compound faults, and prevents a synthetic software pass from being mistaken for experiment authorization. The advance is contract precision and reproducible refusal, not a battery-lifetime result.",
+  "mostPromisingNextPath": {
+    "hypothesis": "A real outcome-blind laboratory submission will either fail at one concrete upstream premise or reach a narrow independent-authorization-candidate state without exposing lifetime outcomes.",
+    "differentCombination": "Combine the RC59 resource-balanced allocation and metrology intervals with RC60 typed preconditions, deterministic receipts, first-failure repair, and an external human safety/domain authorization boundary.",
+    "exactBottleneck": "No accountable chemistry-build owner and laboratory currently provide the domain, serial, resource, calibration, safety, four-margin, and sentinel records required before G13.",
+    "requiredInputs": "One named cell build, qualified battery laboratory, 48 serial commitments, resource registry, result-level calibration chains, four signed scientific and safety limits, disjoint acute-sentinel receipt, and role-separated outcome access ledger.",
+    "firstDecisiveAction": "Obtain a real but outcome-free domain and laboratory specification and run it unchanged through both validators. Do not fill missing fields with synthetic values.",
+    "expectedResults": {
+      "earlyRefusal": "The first failed gate identifies the next accountable repair and no cell is consumed.",
+      "softwarePass": "The bundle becomes only an independent-authorization candidate; laboratory and safety owners adjudicate it outside RC60.",
+      "implementationDisagreement": "The validator profile is reopened and physical use remains prohibited."
+    },
+    "successSignal": "Two implementations agree, all references are independently verified by their accountable owners, no outcome was accessed, and an external authority signs the separate physical decision.",
+    "rejectionAndStop": "Stop at any placeholder, invalid serial, unavailable resource, expired calibration, empty margin interval, unsigned owner, safety gap, failed sentinel, unqualified enabled observer, outcome leak, implementation disagreement, or direct-open request.",
+    "failureValue": "Every refusal narrows the investment decision to domain definition, procurement, metrology, safety, observer design, access control, or validator interoperability."
+  },
+  "workPackages": [
+    {
+      "id": "W60-1",
+      "purpose": "Make the validator language finite and independently reproducible.",
+      "method": "Use exact top-level fields, ASCII keys and fixture strings, ordered arrays, safe integers, recursive key sorting, UTF-8, and SHA-256.",
+      "input": "RC60 contract and RC59 frozen allocation.",
+      "output": "Dependency-free Node and Python validators.",
+      "pass": "All fixture, bundle, gate-order, and receipt commitments agree.",
+      "failNext": "Remove the divergent value class or specify its serialization before proceeding."
+    },
+    {
+      "id": "W60-2",
+      "purpose": "Test every refusal boundary without physical resources.",
+      "method": "Start from one labelled synthetic valid bundle, inject one registered fault per gate, add a G01 numeric adversary and a compound G05/G09 fault.",
+      "input": "Compact base bundle and deterministic mutation list.",
+      "output": "Eighteen content-addressed receipts.",
+      "pass": "Expected and observed first failures agree in both implementations; direct physical authorizations equal zero.",
+      "failNext": "Reduce to the smallest counterexample and repair the contract, not the expected label."
+    },
+    {
+      "id": "W60-3",
+      "purpose": "Adjudicate the real RC59 planning state without inventing evidence.",
+      "method": "Preserve its placeholder frozenDomain values, switch only the evaluation envelope to physical mode, and run the ordered preflight.",
+      "input": "Published RC59 planning manifest.",
+      "output": "Refusal receipt 66825302D2407E6693D61B53DB8448E65ED02186A73DBB456CE8C29858B49935.",
+      "pass": "The earliest factual blocker is reported before serial or resource claims.",
+      "failNext": "If the validator accepts placeholders, halt and repair G02."
+    },
+    {
+      "id": "W60-4",
+      "purpose": "Prevent provenance evidence from exceeding its authority.",
+      "method": "Separate content commitment, reference presence, external authenticity, physical authorization, and scientific confirmation in the contract and receipts.",
+      "input": "RFC 8785, FIPS 180-4, JSON Schema, NIST traceability, PROV-O, and RO-Crate boundaries.",
+      "output": "G13 capability ceiling and explicit claim boundary.",
+      "pass": "Synthetic pass remains non-authorizing; direct-open request is refused.",
+      "failNext": "Remove any actuator or public copy implying laboratory approval."
+    },
+    {
+      "id": "W60-5",
+      "purpose": "Test whether ordered refusal improves a real research queue.",
+      "method": "Invite one accountable laboratory to submit an outcome-free bundle, preserve every failed receipt, and record repair cost and the next exposed gate.",
+      "input": "Real domain, serial, resource, margin, safety, sentinel, owner, and access-ledger records.",
+      "output": "Independent physical-readiness review or a precise stopped gate.",
+      "pass": "Independent owners verify all references and issue a separate authorization candidate without outcome access.",
+      "failNext": "Keep physical work blocked and use the first refusal as the next cycle's exact start."
+    }
+  ],
+  "uncertaintyBudget": [
+    {
+      "category": "serialization scope",
+      "observed": "Exact agreement is proven only for the restricted ASCII and safe-integer profile.",
+      "control": "Reject floats and unknown fields; label the profile JCS-compatible restricted rather than fully conformant.",
+      "threshold": "Any new value class requires cross-language boundary fixtures."
+    },
+    {
+      "category": "structural completeness",
+      "observed": "Closed fields reduce ambiguity but cannot prove that their values are true.",
+      "control": "Separate schema and semantic checks from independent physical verification.",
+      "threshold": "No schema pass is evidence of laboratory existence."
+    },
+    {
+      "category": "owner authenticity",
+      "observed": "RC60 checks reference presence and distinct roles, not cryptographic signatures or institutional authority.",
+      "control": "Require external verification before physical authorization.",
+      "threshold": "Reference presence alone never opens a queue."
+    },
+    {
+      "category": "trusted time and immutability",
+      "observed": "A local SHA-256 receipt is content-addressed but can be regenerated with a different input or time.",
+      "control": "Use fixed evaluation time for reproducibility and avoid immutable or trusted-timestamp claims.",
+      "threshold": "Do not infer chronology or signer identity from the hash."
+    },
+    {
+      "category": "gate-order utility",
+      "observed": "One compound fault proves ordering, not that the chosen order minimizes total repair cost.",
+      "control": "Freeze the present order and measure real repair sequences before optimization.",
+      "threshold": "No post-outcome reordering."
+    },
+    {
+      "category": "adversarial coverage",
+      "observed": "Eighteen fixtures cover registered boundaries, not every malformed JSON or semantic combination.",
+      "control": "Add minimal counterexamples when a new failure class is observed.",
+      "threshold": "Unseen classes remain outside the verified envelope."
+    },
+    {
+      "category": "physical transfer",
+      "observed": "No cell, chamber, instrument, calibration, safety approval, or owner was accessed.",
+      "control": "Keep physicalAuthorization false and require separate qualified review.",
+      "threshold": "Zero physical claims until independent evidence exists."
+    },
+    {
+      "category": "scientific validity",
+      "observed": "Admission quality does not establish RUL concordance, twin transport, accelerated extrapolation, or autonomous utility.",
+      "control": "Retain problem-specific held outcomes and success criteria after authorization.",
+      "threshold": "Never call an admitted experiment a solved problem."
+    }
+  ],
+  "decisionTree": [
+    {
+      "condition": "Implementations disagree on any receipt field or hash",
+      "decision": "Invalidate the validator result",
+      "next": "Reduce to the smallest divergent value and repair the canonical profile."
+    },
+    {
+      "condition": "First failure is G00 or G01",
+      "decision": "Reject the envelope",
+      "next": "Repair mode coherence or the finite input language before interpreting science."
+    },
+    {
+      "condition": "First failure is G02 through G06",
+      "decision": "Reject experimental identity or physical-resource readiness",
+      "next": "Freeze the domain, restore allocation and lineage, or repair resources and containment."
+    },
+    {
+      "condition": "First failure is G07 through G11",
+      "decision": "Reject accountable scientific or safety readiness",
+      "next": "Obtain owners, identifiable margins, safety approval, sentinel evidence, or observer exclusion/qualification."
+    },
+    {
+      "condition": "First failure is G12",
+      "decision": "Quarantine the submission",
+      "next": "Close protected outcomes and bind a new independent access ledger."
+    },
+    {
+      "condition": "First failure is G13",
+      "decision": "Refuse the requested capability",
+      "next": "Downgrade to preflight-only and seek separate physical authorization."
+    },
+    {
+      "condition": "All gates pass in synthetic mode",
+      "decision": "Record software interoperability only",
+      "next": "Do not infer physical readiness."
+    },
+    {
+      "condition": "All gates pass in physical mode and references are independently verified",
+      "decision": "Send to qualified independent authorization",
+      "next": "The external authority may approve or refuse; RC60 never actuates the experiment."
+    }
+  ],
+  "failedAttempts": [
+    "The term immutable receipt was rejected because a local digest provides tamper evidence but no trusted publication time, append-only witness, or authenticated signer.",
+    "Full RFC 8785 conformance was not claimed because the two compact implementations intentionally support only ASCII keys and safe integers; broader Unicode and ECMAScript number boundaries were not tested.",
+    "A public protocol could not be promoted into a filled physical manifest because general guidance does not name the actual cell build, laboratory resources, scientific limits, safety authority, and owners for RC59.",
+    "The valid fixture could not be called a physical dry run because every identity, calibration, owner, safety, sentinel, and margin value is synthetic.",
+    "First-failure ordering could not be claimed globally optimal from one multi-fault pair; it is a deterministic repair policy whose economic utility needs real submissions.",
+    "Owner attestation references could not be treated as verified signatures without a separate trust root and institutional authorization process."
+  ],
+  "unverifiedClaims": [
+    "A real laboratory can populate every RC60 field without exposing lifetime outcomes.",
+    "The fourteen-gate order minimizes total correction time or experiment cost.",
+    "External owner and safety review will accept the same capability boundary.",
+    "Four non-empty U95 < M <= min(S,H) intervals exist for the eventual cell build and waveform.",
+    "A disjoint acute sentinel will pass without material carryover.",
+    "Ordered refusal improves autonomous-laboratory information gain in an operational queue.",
+    "A physically admitted cohort will validate R3 lifetime ordering, twin transport, or accelerated-life extrapolation."
+  ],
+  "safetyEthics": "RC60 performed official-source review, local schema and validator development, and synthetic software testing only. It did not access a battery, laboratory instrument, person, private dataset, cyber system, or operational actuator. Battery execution remains subject to qualified personnel, electrical and pressure limits, thermal and venting controls, fire response, emergency stop, chemical handling, disposal, and independent institutional approval.",
+  "artifacts": [
+    "research/reproducibility/rc60-preflight-contract.json",
+    "research/reproducibility/rc60-preflight-fixtures.json",
+    "scripts/run-rc60-preflight.mjs",
+    "research/reproducibility/rc60-preflight-node.json",
+    "scripts/independent_rc60_preflight.py",
+    "research/reproducibility/rc60-preflight-python.json",
+    "scripts/adjudicate-rc60-preflight.mjs",
+    "research/reproducibility/rc60-preflight-independent-audit.json",
+    "research/reproducibility/rc60-preflight-prior-art-boundary.json",
+    "research/reproducibility/rc60-gate-connection-evidence.json",
+    "research/reproducibility/rc60-preflight-cycle-result.json"
+  ],
+  "sourceIds": ["rfc_jcs_8785_2020", "json_schema_core_2020", "json_schema_validation_2020", "nist_fips1804_hash_2015", "nist_traceability_2026", "prov_o_2013", "ro_crate_1_2_2025", "inl_rpt_effects_2005", "condition_based_rpt_2024", "nist_simple_gauge_2017", "stack_pressure_dilatometry_2026"],
+  "nextCycleStart": "Seek one real, outcome-blind chemistry-build and battery-laboratory specification whose accountable owners can populate G02 through G12. Run the unchanged bundle through both RC60 validators, preserve the first refusal, and measure repair time plus the next exposed gate. If no accountable owner accepts the request, keep physical work blocked and test the restricted canonical profile at its next interoperability boundary: escaped control characters, non-ASCII values with ASCII keys, and maximum safe integers. Do not add physical authorization, signature infrastructure, or lifetime outcomes without separate authority."
+}
