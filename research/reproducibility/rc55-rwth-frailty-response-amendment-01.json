@@ -1,0 +1,69 @@
+{
+  "amendmentId": "RC55-RWTH-FRAILTY-RESPONSE-AMENDMENT-01",
+  "cycleId": "RC-2026-55",
+  "dated": "2026-08-29",
+  "status": "sealed-after-pilot-cells-1-and-2-before-any-non-pilot-cell-result-file-was-opened",
+  "parent": "RC55-RWTH-FRAILTY-RESPONSE-PRECOMMIT-0.1",
+  "sourceIntegrity": {
+    "repositoryCommit": "488eb68c23898f46308f58b9299088c287b9380d",
+    "processedP001GitTree": "0b525ffafd634535b5af81d629fc4c09b1b8ec5e",
+    "preprocessedCapacityDatasetGitBlob": "f06152ceebc82f3d08e4b085d5e7d06323418478",
+    "metadataSha256": "cf46179103e954fd953e6b7ef8f5b1dcc4b11cf9fdd4349dc61340b46efcc644"
+  },
+  "pilotInspection": {
+    "cells": [
+      {
+        "registeredId": 1,
+        "sourceId": "epSanyo002"
+      },
+      {
+        "registeredId": 2,
+        "sourceId": "epSanyo003"
+      }
+    ],
+    "observedForSchemaOnly": [
+      "Directory and MAT-variable names",
+      "BOL, cycling, and check-up program labels",
+      "Capacity and cumulative-cycle mapping",
+      "Pulse structure fields, durations, currents, and SOC support"
+    ],
+    "modelWeight": 0
+  },
+  "identifierMapping": {
+    "rule": "The official metadata.cell_names array contains epSanyo002 through epSanyo049 in ascending order. Registered cell n maps to metadata.cell_names[n-1].",
+    "count": 48,
+    "bijective": true
+  },
+  "capacityMapping": {
+    "sourceRoot": "Processed Experimental Data/P001/<sourceId>",
+    "testOrder": "Sort immediate TS* test directories lexicographically; their zero-padded numeric identifiers preserve chronology. EIS subdirectories do not contain capacity or aging-cycle rows.",
+    "file": "lean_data.mat",
+    "capacityField": "CapDCH1",
+    "cycleIncrementField": "subcycles",
+    "cycleConstruction": "Starting at zero, add every finite subcycles value before recording a capacity row. For multiple finite CapDCH1 values at the same cumulative cycle, use their median.",
+    "bol": "The first finite capacity row at cumulative cycle zero.",
+    "firstRpt": "The earliest finite capacity row at a strictly positive cumulative cycle.",
+    "response": "log(CapDCH1_firstRpt/CapDCH1_bol) divided by the first-RPT cumulative cycle.",
+    "event": "The first later capacity row at or below 0.80 times CapDCH1_bol; otherwise right-censor at the final later capacity row.",
+    "unit": "aging-program cycles"
+  },
+  "pulseMapping": {
+    "registeredCoordinate": "early_log_r10ms_discharge_response_per_efc_soc30",
+    "availability": "unavailable",
+    "evidence": [
+      "The official pulse.mat structure exposes resistance, Ah_act, Duration, and Current.",
+      "Both pilot cells expose only Duration values 2 and 10.",
+      "The official PlotPulseResistance.m example sets PulseLength=2 and labels the result as 2-second pulse resistance, confirming that Duration is expressed in seconds.",
+      "No 0.01-second observation exists in either pilot, so a 10 ms coordinate cannot be formed without changing the registered feature."
+    ],
+    "consequence": "Arm C and H2 are declared unavailable before non-pilot results. A 2-second or 10-second substitute is prohibited. Arm A and the preregistered capacity-response Arm B remain unchanged."
+  },
+  "unchanged": [
+    "Target cell IDs and pilot zero weight",
+    "80%-of-own-BOL endpoint and right-censoring",
+    "Arm A and Arm B feature meaning",
+    "Weibull AFT likelihood, penalty, initialization, and optimizer",
+    "Coverage, event, comparable-pair, error, ranking, calibration, improvement, and independent-reproduction gates",
+    "All claim and safety boundaries"
+  ]
+}
