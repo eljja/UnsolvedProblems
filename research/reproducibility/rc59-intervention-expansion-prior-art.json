@@ -1,0 +1,90 @@
+{
+  "auditId": "RC59-INTERVENTION-EXPANSION-PRIOR-ART-0.1",
+  "cycleId": "RC-2026-59",
+  "reviewedOn": "2026-08-29",
+  "status": "prior-art-bounded-no-novelty-claim",
+  "searchBoundary": {
+    "queries": [
+      "lithium ion reference performance test effect on aging control group",
+      "condition based reference performance test battery capacity loss",
+      "battery stack pressure dilatometry fixture repeatability",
+      "battery expansion pseudo constant pressure dataset",
+      "NIST gauge repeatability reproducibility stability uncertainty traceability",
+      "ISO 5725-2 2025 repeatability reproducibility balanced experiment",
+      "battery acquisition manifest provenance physical specimen channel chamber"
+    ],
+    "preferredEvidence": "primary papers, national-laboratory reports, official repositories, NIST guidance, ISO catalogue, and W3C or RO-Crate specifications",
+    "searchLimit": "A targeted search can bound overlap but cannot prove worldwide novelty. No RC59 method is labelled unprecedented."
+  },
+  "sources": [
+    {
+      "id": "inl_rpt_effects_2005",
+      "url": "https://inldigitallibrary.inl.gov/sites/sti/sti/3310955.pdf",
+      "publishedOn": "2005-07-01",
+      "overlap": "Direct no-RPT control and partial-RPT arms already establish that diagnostic actions can alter degradation and that components differ in sign.",
+      "remainingGap": "The small commercial-cell groups and older chemistry do not establish four-metric equivalence for RC59's unspecified modern build or schedule."
+    },
+    {
+      "id": "condition_based_rpt_2024",
+      "url": "https://doi.org/10.1016/j.meaene.2024.100019",
+      "publishedOn": "2024-12-01",
+      "overlap": "Capacity-triggered scheduling already reduces early calendar time relative to fixed 200-cycle spacing.",
+      "remainingGap": "Efficiency is not a non-interference proof and the data are available only on request."
+    },
+    {
+      "id": "uofm_expansion_2021",
+      "url": "https://doi.org/10.7302/7tw1-kc35",
+      "publishedOn": "2021-04-27",
+      "overlap": "Voltage, temperature, and expansion under pseudo-constant pressure have already been recorded across stress factors for aging diagnostics.",
+      "remainingGap": "The public record does not supply RC59's two-fixture stable-artifact gauge study or an untouched 48-cell ordinal confirmation."
+    },
+    {
+      "id": "stack_pressure_dilatometry_2026",
+      "url": "https://doi.org/10.1038/s41560-026-02087-6",
+      "publishedOn": "2026-06-29",
+      "overlap": "Compliant pressure control, high-resolution expansion, and long-term pressure-dependent mechanisms are established.",
+      "remainingGap": "The paper's below-0.8-percent pressure fluctuation and 0.38-nm resolution are apparatus performance, not universal fit-for-purpose margins or cross-fixture R&R."
+    },
+    {
+      "id": "nist_measurement_process",
+      "url": "https://www.nist.gov/publications/nistsematech-engineering-statistics-handbook-chapter-2-measurement-process",
+      "publishedOn": "2003-06-01",
+      "updatedOn": "2017-02-17",
+      "overlap": "Repeatability, reproducibility, stability, calibration, and uncertainty are standard measurement-process concepts.",
+      "remainingGap": "Battery cells are not stable check standards; RC59 must separate inert-artifact gauge behavior from live-cell interaction."
+    },
+    {
+      "id": "nist_traceability",
+      "url": "https://www.nist.gov/metrology/metrological-traceability",
+      "reviewedOn": "2026-08-29",
+      "overlap": "Documented calibration chains and uncertainty are established requirements for traceable results.",
+      "remainingGap": "Traceability alone does not decide whether uncertainty is small enough for the intended battery-state contrast."
+    },
+    {
+      "id": "iso_5725_2_2025",
+      "url": "https://www.iso.org/standard/90054.html",
+      "publishedOn": "2025-12-01",
+      "overlap": "Balanced precision experiments for continuous standardized methods are established.",
+      "remainingGap": "RC59 is not yet a multi-laboratory standardized-method study and claims no ISO conformity."
+    },
+    {
+      "id": "prov_o_2013",
+      "url": "https://www.w3.org/TR/prov-o/",
+      "publishedOn": "2013-04-30",
+      "overlap": "Entity-activity-agent provenance and derivation relations are already standardized for interoperable lineage.",
+      "remainingGap": "PROV-O does not impose battery-specific uniqueness, outcome-access, randomization, or safety gates."
+    },
+    {
+      "id": "ro_crate_1_2",
+      "url": "https://www.researchobject.org/ro-crate/specification/1.2/introduction.html",
+      "publishedOn": "2024-09-12",
+      "overlap": "Machine-readable research-object packaging with data, software, equipment, and contextual metadata is established.",
+      "remainingGap": "RC59's schema adds cohort-specific physical-resource and decision gates; future export may wrap it in RO-Crate rather than replace those constraints."
+    }
+  ],
+  "rc59Combination": {
+    "description": "A deterministic resource-balanced 48-cell manifest is coupled to failure-containment branches, an external fit-for-purpose margin interval, a disjoint acute intervention sentinel, and a two-layer inert-artifact/live-cell expansion gauge study.",
+    "differenceFromPriorWork": "The contribution is an executable falsification contract that makes unsupported margins and correlated physical-resource loss explicit. It is not a new battery chemistry, prognostic feature, RPT waveform, dilatometer, provenance ontology, or statistical definition.",
+    "noveltyVerdict": "combination-proposed-priority-not-established"
+  }
+}

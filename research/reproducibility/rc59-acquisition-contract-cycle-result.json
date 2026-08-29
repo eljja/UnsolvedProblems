@@ -1,0 +1,197 @@
+{
+  "resultId": "RC59-ACQUISITION-CONTRACT-CYCLE-RESULT-0.1",
+  "cycleId": "RC-2026-59",
+  "completedOn": "2026-08-29",
+  "status": "complete-software-contract-positive-physical-evidence-not-started",
+  "problemIds": ["UP-219", "UP-233", "UP-234", "UP-572"],
+  "selectionReason": "RC58 closed the search for an untouched public cohort and identified the binding next step: an outcome-blind 48-cell physical-resource manifest plus measurement-intervention and expansion-repeatability gates. This cluster can advance without opening lifetime outcomes and exposes shared failure domains across prognostics, twins, accelerated testing, and autonomous laboratories.",
+  "newFacts": [
+    "A deterministic SHA-256 ranking design assigns 48 planned cells to 12 four-cell manufacturing blocks, two chambers, four fixture groups per chamber, six start waves, and 48 unique channels; independent Python and Node implementations produce the same E03D97...E1540 allocation hash.",
+    "Every manufacturing block spans all four fixture groups and splits two cells per chamber. Every chamber-fixture intersection contains exactly one cell from each start wave and uses all six channel positions.",
+    "Loss of one whole fixture group leaves 36 cells, one start wave leaves 40, one manufacturing block leaves 44, one chamber-fixture intersection leaves 42, and one channel leaves 47; all preserve the 50-cycle branch.",
+    "Loss of one entire chamber leaves 24 cells and therefore preserves only the registered 25-cycle fallback. The design contains but does not eliminate shared-resource failure.",
+    "INL's 2005 control comparison found that RPT components could accelerate degradation, improve apparent performance, or change impedance behavior; it explicitly called for longer mini-RPT, full-RPT, and control comparisons before standardization.",
+    "The 2024 condition-triggered RPT study improved test throughput but did not prove lifetime, temperature, throughput, and impedance equivalence between schedules.",
+    "NIST states that traceability is a property of a measurement result, requires a documented calibration and uncertainty chain, and does not by itself establish fitness for purpose.",
+    "NIST's preliminary time-variability design uses at least ten stable check standards, randomized repeat measurements, and a second session about one month later; battery cells cannot serve as stable standards because their state changes.",
+    "The RC59 expansion contract therefore separates twelve inert compliant check artifacts from twelve disjoint live sacrificial cells and keeps both outside the 48-cell confirmation cohort.",
+    "The 2026 pressure-dilatometry study demonstrates that pressure control is part of the causal treatment: its published sub-0.8-percent fluctuation and 0.38-nm resolution are apparatus benchmarks, not universal RC59 acceptance limits.",
+    "No searched source supplies universal numerical equivalence margins for an unspecified RC59 chemistry, build, waveform, instrument chain, and safety system. Four numerical margins remain deliberately unset, so physical enrollment is blocked rather than supported by invented thresholds."
+  ],
+  "hypotheses": {
+    "H59-0": {
+      "claim": "The 48 planned cells can be assigned so manufacturing block, chamber, fixture, channel, and start wave are not aliased.",
+      "prediction": "Every block spans four fixtures and two chambers; every chamber-fixture intersection spans all six waves and positions; independent implementations return identical records and hashes.",
+      "decisiveTest": "Generate the allocation from the same public seed in dependency-free Python and Node and compare all 48 records.",
+      "verdict": "supported-in-software",
+      "reason": "Both implementations produced the same 48 records and allocation hash E03D97B2F4EA042E6D4023A3E5595A224DF59DD83636048AA953A8CEACEF1540."
+    },
+    "H59-1": {
+      "claim": "The balanced assignment preserves an outcome-independent confirmation branch after any one registered physical failure domain is lost.",
+      "prediction": "Worst single-domain survivorship remains at least 24 cells and the predeclared branch follows only the usable count.",
+      "decisiveTest": "Delete every chamber, fixture group, wave, manufacturing block, chamber-fixture intersection, or channel in turn and record the smallest remaining cohort.",
+      "verdict": "supported-for-enumerated-single-domain-loss",
+      "reason": "The worst case is one chamber, leaving exactly 24 cells and the 25-cycle fallback; multiple or unregistered correlated failures remain unbounded."
+    },
+    "H59-2": {
+      "claim": "External metrology and safety evidence currently justify four numerical long-term RPT equivalence margins.",
+      "prediction": "For every metric, a signed interval U95 < M <= min(S,H) can be populated without observing RC59 arm differences.",
+      "decisiveTest": "Trace each proposed number to the specified cell, waveform, instrument uncertainty, scientific contrast, safety allowance, and accountable owner.",
+      "verdict": "not-yet-identifiable",
+      "reason": "The sources establish hazards and measurement principles but not universal fit-for-purpose numbers for an unspecified experiment. All four M values remain null and physical work is blocked."
+    },
+    "H59-3": {
+      "claim": "Expansion can be separated from fixture and pressure effects well enough to add cell-level information beyond R3.",
+      "prediction": "A two-layer stable-artifact and live-cell study yields U95_exp < M_exp <= D_min, then a pressure-adjusted residual replicates in held fixtures and cells.",
+      "decisiveTest": "Measure twelve inert compliant artifacts across two fixtures and two sessions, then run a balanced A-B/B-A study on twelve disjoint sacrificial cells before any confirmation outcome is opened.",
+      "verdict": "protocol-ready-evidence-untested",
+      "reason": "The design separates gauge stability from evolving cells, but no artifact, fixture, pressure trajectory, margin, or live-cell result exists."
+    }
+  },
+  "causalChainOutcome": [
+    {
+      "link": "stable specimen identity and frozen domain -> interpretable cohort",
+      "verdict": "schema-defined-not-populated",
+      "fastFailureEvidence": "The schema requires serial commitments, protocol IDs, resource records, calibration and maintenance IDs, file hashes, and signed owners before physical use."
+    },
+    {
+      "link": "balanced physical assignment -> bounded shared-resource loss",
+      "verdict": "supported-in-software-for-single-domains",
+      "fastFailureEvidence": "Independent generators agree; one chamber is the binding loss with 24 survivors."
+    },
+    {
+      "link": "traceable measurement -> fit-for-purpose non-interference verdict",
+      "verdict": "failed-until-external-margins",
+      "fastFailureEvidence": "NIST separates traceability from fitness for purpose, and no specified RC59 experiment exists from which to justify S, H, M, or U95."
+    },
+    {
+      "link": "pressure-controlled repeatable expansion -> orthogonal susceptibility",
+      "verdict": "untested",
+      "fastFailureEvidence": "The stable-artifact and sacrificial-cell layers are preregistered but unexecuted."
+    },
+    {
+      "link": "qualified cohort and non-interfering observer -> untouched lifetime-order verdict",
+      "verdict": "not-reached",
+      "fastFailureEvidence": "No cell has been acquired, no physical gate has passed, and confirmatory outcomes remain closed."
+    }
+  ],
+  "minimalAcademicAdvance": "The prospective cohort is no longer a count of 48 exchangeable cells. It is a reproducible block-wave-resource design with an explicit chamber-loss fallback and machine-readable lineage requirements. The intervention question is no longer hidden behind a generic pilot: an acute large-effect sentinel, a disjoint long-term equivalence study, and a fit-for-purpose margin interval now have distinct claims and stop rules. Expansion repeatability is split into stable-artifact metrology and live-cell interaction rather than asking degrading cells to serve as their own standards.",
+  "mostPromisingNextPath": {
+    "hypothesis": "Once an actual cell build and laboratory are named, the RC59 contracts can reject an unfit experiment before expensive lifetime outcomes are exposed.",
+    "differentCombination": "Combine cryptographic deterministic block randomization, physical failure-containment analysis, traceability and uncertainty, a disjoint randomized intervention sentinel, and a two-layer expansion gauge study.",
+    "exactBottleneck": "The remaining blockers are physical and accountable: actual resource IDs, a frozen battery domain, signed fit-for-purpose scientific and safety limits, calibration-derived uncertainties, and disjoint sacrificial resources.",
+    "firstDecisiveAction": "Instantiate the manifest for one qualified laboratory, sign the four S and H values, estimate U95 before and after the measurement process, and let the machine gate either open or refuse the acute sentinel.",
+    "successSignal": "All required lineage edges are complete; every U95 < M <= min(S,H) interval is non-empty; acute safety and carryover gates pass; stable-artifact and cell-fixture uncertainty is smaller than M_exp; no outcome has been accessed.",
+    "rejectionAndStop": "Stop on a missing owner, placeholder domain field, expired calibration, unmatched physical serial, empty margin interval, safety breach, material carryover, pressure mismatch, or outcome access.",
+    "failureValue": "A stopped gate identifies whether the next investment belongs in resource redundancy, metrology, fixture mechanics, protocol burden, or scientific margin definition before a lifetime campaign is consumed."
+  },
+  "workPackages": [
+    {
+      "id": "W59-1",
+      "purpose": "Instantiate the physical cohort without breaking outcome blindness.",
+      "method": "Replace every planning placeholder with a signed chemistry-build-protocol domain, commit physical serials, and map the 48 deterministic assignments to calibrated laboratory resources.",
+      "output": "Schema-valid signed acquisition manifest and resource registry.",
+      "pass": "All 48 specimen-resource-file edges are unique and complete; safety, metrology, custody, and adjudication owners sign before use.",
+      "failNext": "Keep the queue closed and repair lineage or resource capacity; do not substitute outcomes or replacement cells."
+    },
+    {
+      "id": "W59-2",
+      "purpose": "Make measurement capability smaller than the claim.",
+      "method": "For LIFE, TMAX, QTHRU, and DZ, freeze scientific and safety limits externally, estimate full U95, and select M only inside U95 < M <= min(S,H).",
+      "output": "Signed four-metric margin and uncertainty registry.",
+      "pass": "All four intervals are non-empty and were fixed without arm outcomes.",
+      "failNext": "Improve metrology, weaken the scientific claim before enrollment, or abandon dense RPT; never choose M from observed arm differences."
+    },
+    {
+      "id": "W59-3",
+      "purpose": "Reject large immediate RPT perturbations cheaply.",
+      "method": "Randomize twelve disjoint sacrificial cells to six dense-conventional and six conventional-dense sequences, freezing SOC, thermal, rest, waveform, and traceability conditions.",
+      "output": "Acute safety, thermal, throughput, recovery, impedance, and carryover report.",
+      "pass": "No hard safety event or registered large acute perturbation is detected; the conclusion remains limited to the acute screen.",
+      "failNext": "Reject the dense schedule or redesign it; do not start lifetime equivalence."
+    },
+    {
+      "id": "W59-4",
+      "purpose": "Separate expansion gauge error from live-cell response.",
+      "method": "Run twelve stable compliant artifacts across two fixtures and two sessions, then twelve disjoint cells in balanced A-B/B-A order at fixed SOC, temperature, and pressure trajectory.",
+      "output": "Repeatability, remount, fixture, session, pressure, and cell-interaction uncertainty budget.",
+      "pass": "U95_exp < M_exp <= D_min and the pressure-adjusted residual survives held fixtures and cells.",
+      "failNext": "Remove expansion from the confirmation feature and retain pressure or fixture only as causal or nuisance variables."
+    },
+    {
+      "id": "W59-5",
+      "purpose": "Open the 48-cell campaign only after upstream falsification gates.",
+      "method": "Run a machine preflight over the signed manifest, resource status, margin registry, sentinel verdict, expansion verdict, and outcome-access ledger.",
+      "output": "Immutable open-or-refuse receipt with the first failed gate.",
+      "pass": "Every gate passes and lifetime outcomes remain inaccessible to design roles.",
+      "failNext": "Refuse physical enrollment or the affected observer and preserve the failed receipt for the next cycle."
+    }
+  ],
+  "uncertaintyBudget": [
+    {
+      "category": "manufacturing block",
+      "observed": "Twelve four-cell blocks are a design abstraction until an actual lot and production order are supplied.",
+      "control": "Commit the lot and block definition before serial assignment; every block spans all fixtures and two chambers.",
+      "threshold": "No inferred or post-outcome block labels."
+    },
+    {
+      "category": "correlated resource loss",
+      "observed": "One chamber loss leaves 24; two-domain or facility-wide loss is not bounded.",
+      "control": "Monitor chamber, fixture, channel, and wave failures separately and use only the sealed usable-count branch.",
+      "threshold": "Below 24 usable cells stops confirmation."
+    },
+    {
+      "category": "metrological traceability",
+      "observed": "Calibration of an instrument is insufficient without a full result-level chain and uncertainty.",
+      "control": "Require reference, calibration, configuration, maintenance, raw-file, and uncertainty records for every metric.",
+      "threshold": "Any broken edge blocks the metric."
+    },
+    {
+      "category": "fit for purpose",
+      "observed": "No universal LIFE, TMAX, QTHRU, or DZ margin applies to an unspecified battery experiment.",
+      "control": "Use the signed interval U95 < M <= min(S,H).",
+      "threshold": "An empty or unsigned interval blocks long-term enrollment."
+    },
+    {
+      "category": "RPT carryover",
+      "observed": "Diagnostic charge-discharge, rest, and temperature histories can irreversibly alter degradation.",
+      "control": "Use crossover only for an acute screen and a disjoint parallel design for lifetime equivalence.",
+      "threshold": "Material sequence or period effect rejects the acute design."
+    },
+    {
+      "category": "expansion gauge stability",
+      "observed": "A battery cannot be assumed stable across a month-long gauge study.",
+      "control": "Use inert compliant artifacts for stability and separate live cells for interaction.",
+      "threshold": "U95_exp must remain below the predeclared expansion margin."
+    },
+    {
+      "category": "pressure intervention",
+      "observed": "Pressure can change lifetime and mechanism, not merely sensor offset.",
+      "control": "Register full pressure trajectory and test fixture-adjusted residuals in held fixtures.",
+      "threshold": "Pressure mismatch or lost residual gain rejects expansion."
+    },
+    {
+      "category": "claim scope",
+      "observed": "Software balance does not establish laboratory feasibility, safety, equivalence, or prognostic validity.",
+      "control": "Expose each status separately and keep all physical claims untested.",
+      "threshold": "Do not call the cohort acquired, the observer passive, or the lifetime problem solved before independent physical evidence."
+    }
+  ],
+  "failedAttempts": [
+    "A numerical four-metric equivalence table could not be justified from general standards or papers because the target chemistry, waveform, instrument chain, scientific contrast, and safety system are unspecified; the fields remain null.",
+    "A calibrated expansion sensor could not be treated as sufficient evidence because NIST traceability is result-specific and fitness for purpose depends on uncertainty relative to the intended contrast.",
+    "Live battery cells could not be used as the long-term gauge-stability standard because their measurands change with time, SOC, cycling, and pressure history.",
+    "The acute twelve-cell sentinel could not be promoted to lifetime equivalence; it is retained only as a fast large-perturbation and safety rejection test.",
+    "Single-domain balance could not guarantee protection from simultaneous chamber, facility, protocol, or procurement failures."
+  ],
+  "unverifiedClaims": [
+    "A qualified laboratory has two suitable chambers, eight fixture groups, 48 channels, and a homogeneous 48-cell build matching the planning resource cube.",
+    "The required four scientific and safety limit pairs can be signed before outcomes and leave non-empty fit-for-purpose intervals.",
+    "Twelve stable compliant artifacts can represent the intended fixture load and remain stable across the gauge-study interval.",
+    "The acute sentinel has acceptable washout and can distinguish a large RPT perturbation without harmful carryover.",
+    "Pressure-adjusted expansion adds ordinal information beyond R3 after the full uncertainty envelope.",
+    "The R3 coordinate predicts untouched lifetime order in the prospective cell build."
+  ],
+  "safetyEthics": "RC59 performed literature review, schema design, deterministic allocation, and offline verification only. No battery, laboratory instrument, personal data, cyber system, or operational decision was accessed. Physical execution requires qualified battery-laboratory ownership, guarding, calibrated pressure and electrical limits, thermal and venting controls, fire and emergency procedures, chemical handling, and disposal approval.",
+  "nextCycleStart": "Build a dependency-free preflight validator and refusal receipt for a filled RC59 manifest and margin registry. Seek one real laboratory or public protocol specification that can populate the frozen domain, resource inventory, safety limits, and calibration chain without opening lifetime outcomes. If no accountable physical owner is available, keep the physical branch blocked and test the validator with clearly labelled synthetic valid and adversarial manifests."
+}

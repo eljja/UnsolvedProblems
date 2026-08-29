@@ -1,0 +1,51 @@
+{
+  "auditId": "RC59-ACQUISITION-CONTRACT-INDEPENDENT-AUDIT-0.1",
+  "cycleId": "RC-2026-59",
+  "completedOn": "2026-08-29",
+  "status": "pass-computational-contract-physical-work-blocked",
+  "outcomeValuesUsed": 0,
+  "allocationAgreement": {
+    "hashSha256": "E03D97B2F4EA042E6D4023A3E5595A224DF59DD83636048AA953A8CEACEF1540",
+    "exactRecordAgreement": true,
+    "specimens": 48,
+    "uniqueChannels": 48
+  },
+  "singleFailureContainment": {
+    "chamberId": {
+      "usable": 24,
+      "branch": "25-cycle"
+    },
+    "fixtureGroupId": {
+      "usable": 36,
+      "branch": "50-cycle"
+    },
+    "startWave": {
+      "usable": 40,
+      "branch": "50-cycle"
+    },
+    "manufacturingBlockId": {
+      "usable": 44,
+      "branch": "50-cycle"
+    },
+    "channelId": {
+      "usable": 47,
+      "branch": "50-cycle"
+    },
+    "chamberId+fixtureGroupId": {
+      "usable": 42,
+      "branch": "50-cycle"
+    }
+  },
+  "interventionVerdict": {
+    "acuteSentinel": "preregistered-but-not-executed",
+    "longTermEquivalence": "blocked-until-four-external-fit-for-purpose-margins-and-U95-are-signed",
+    "unsupportedMarginsInserted": 0
+  },
+  "expansionVerdict": {
+    "stableArtifactGaugeStudy": "preregistered-but-not-executed",
+    "sacrificialCellCrossover": "preregistered-but-not-executed",
+    "pressureAdjustedResidual": "untested"
+  },
+  "claimBoundary": "This audit confirms deterministic balance, single-domain containment arithmetic, and logical stop gates. It does not validate physical resources, measurement equivalence, expansion repeatability, battery lifetime prediction, or safety.",
+  "failures": []
+}

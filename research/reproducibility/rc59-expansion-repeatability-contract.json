@@ -1,0 +1,76 @@
+{
+  "contractId": "RC59-EXPANSION-REPEATABILITY-CONTRACT-0.1",
+  "cycleId": "RC-2026-59",
+  "sealedOn": "2026-08-29",
+  "status": "protocol-sealed-fit-for-purpose-expansion-margin-unresolved-physical-work-blocked",
+  "claimBoundary": "Expansion is treated as the output of a coupled cell-fixture-pressure measurement system, not as a passive cell property. No fixture, artifact, cell, or result is claimed to exist.",
+  "priorEvidence": [
+    {
+      "source": "https://doi.org/10.7302/7tw1-kc35",
+      "publishedOn": "2021-04-27",
+      "role": "The UofM record provides public voltage, temperature, and reversible and irreversible expansion data measured with a displacement sensor in pseudo-constant-pressure fixtures across several stress conditions."
+    },
+    {
+      "source": "https://doi.org/10.1038/s41560-026-02087-6",
+      "publishedOn": "2026-06-29",
+      "role": "A compliant pneumatic dilatometer held pressure fluctuations below 0.8 percent with 0.38 nm sensor resolution; pressure changed lifetime about twofold and selected different low- and high-pressure degradation paths. These are published performance facts, not automatic acceptance limits for RC59."
+    },
+    {
+      "source": "https://www.itl.nist.gov/div898/handbook/mpc/section4/mpc431.htm",
+      "reviewedOn": "2026-08-29",
+      "role": "NIST's preliminary time-variability design uses at least ten effectively identical stable check standards, two repeats, randomized order, and a second session about a month later."
+    },
+    {
+      "source": "https://www.itl.nist.gov/div898/handbook/mpc/section4/mpc46.htm",
+      "reviewedOn": "2026-08-29",
+      "role": "NIST requires short- and long-term sources, resolution, nonlinearity, hysteresis, drift, and configuration differences to enter the uncertainty analysis when relevant."
+    },
+    {
+      "source": "https://www.iso.org/standard/90054.html",
+      "publishedOn": "2025-12-01",
+      "role": "ISO 5725-2:2025 describes balanced experiments for estimating repeatability and reproducibility of continuous standardized measurement methods; RC59 uses this as a design boundary, not a claim of formal ISO conformity."
+    }
+  ],
+  "twoLayerStudy": {
+    "stableArtifactLayer": {
+      "purpose": "Separate gauge drift and fixture differences from battery-state change.",
+      "objects": "Twelve stable inert compliant check artifacts whose thickness and compliance span the intended cell range; batteries are not valid stable standards because their state changes with time and cycling.",
+      "design": "Each artifact is measured twice on each of two independently calibrated fixtures in randomized order at session 1 and again about one month later. Remount between repeats and retain operator, fixture, pressure, temperature, sensor, firmware, calibration, and timestamp IDs.",
+      "outputs": ["within-mount repeatability", "remount repeatability", "between-fixture bias", "fixture-by-artifact interaction", "between-session drift", "expanded uncertainty U95_exp"]
+    },
+    "sacrificialCellLayer": {
+      "purpose": "Measure how live-cell compliance, SOC, pressure, and remount order interact with the fixture.",
+      "objects": "Twelve disjoint sacrificial cells, one from each manufacturing block; none belongs to the 48-cell confirmation cohort.",
+      "design": "Six cells follow fixture A then B and six follow B then A. At fixed temperature and registered pressure trajectory, collect the same SOC landmarks and reversible expansion path, with one remount repeat per fixture. Balance sequence within manufacturing block pairing and retain full current-voltage-temperature-pressure histories.",
+      "outputs": ["landmark expansion", "reversible expansion amplitude", "pressure-normalized residual", "fixture bias", "sequence and period effect", "cell-by-fixture interaction"]
+    }
+  },
+  "uncertaintyModel": {
+    "components": [
+      "sensor resolution divided by sqrt(3)",
+      "short-run repeatability",
+      "remount variation",
+      "between-fixture bias and interaction",
+      "between-session drift",
+      "nonlinearity and hysteresis",
+      "pressure-control uncertainty",
+      "temperature and SOC landmark uncertainty",
+      "time alignment and sampling uncertainty",
+      "live-cell sequence and period effects"
+    ],
+    "decisionFormula": "Open expansion adjudication only when U95_exp < M_exp <= D_min, where D_min is the smallest externally justified cell-state contrast the observer is meant to distinguish and M_exp was frozen without RC59 cell outcomes.",
+    "currentState": "U95_exp, M_exp, and D_min are unset because no actual fixture, instrument chain, stable artifact set, or target cell build has been specified.",
+    "stop": "If U95_exp is not smaller than M_exp, improve the fixture or remove expansion. Never redefine the target contrast from the same sacrificial-cell differences used to estimate fixture error."
+  },
+  "pressureGate": {
+    "registeredVariables": ["absolute stack pressure", "pressure fluctuation", "pressure relaxation", "contact area", "fixture compliance", "cell thickness", "temperature", "SOC path"],
+    "publishedBenchmark": "The 2026 pneumatic system's below-0.8-percent fluctuation and 0.38-nm resolution are comparison points only. A different fixture must establish its own uncertainty and biological non-interference.",
+    "reject": "Reject the observer if pressure trajectory differs by fixture beyond the signed allowance, expansion gain vanishes after pressure adjustment, or fixture interaction exceeds the minimum cell-state contrast."
+  },
+  "orthogonalInformationGate": {
+    "development": "Define the expansion residual conditional on the frozen cycle-480 R3 electrical coordinate using only one fixture family or an explicitly separated development subset.",
+    "adjudication": "In held fixtures and held cells, require the residual direction to replicate, its added ordinal information to exceed the full U95_exp envelope, and both implementations to agree.",
+    "failureMeaning": "Failure preserves pressure and fixture effects as causal or nuisance variables but removes expansion from the confirmation feature set."
+  },
+  "safety": "Only a qualified battery laboratory may execute the design. Pressure fixtures require mechanical guarding and pressure limits; cells require approved voltage, temperature, venting, chemical, fire, emergency-stop, and disposal controls."
+}

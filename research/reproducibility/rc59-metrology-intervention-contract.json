@@ -1,0 +1,99 @@
+{
+  "contractId": "RC59-RPT-METROLOGY-INTERVENTION-CONTRACT-0.1",
+  "cycleId": "RC-2026-59",
+  "sealedOn": "2026-08-29",
+  "status": "protocol-sealed-numeric-fit-for-purpose-margins-unresolved-physical-work-blocked",
+  "problemIds": ["UP-219", "UP-233", "UP-234", "UP-572"],
+  "claimBoundary": "No battery was acquired or tested. This contract separates traceability, acute harm screening, and lifetime equivalence. It does not convert a null acute pilot into evidence of non-interference.",
+  "verifiedBasis": [
+    {
+      "source": "https://inldigitallibrary.inl.gov/sites/sti/sti/3310955.pdf",
+      "publishedOn": "2005-07-01",
+      "finding": "INL compared partial RPT groups with a no-RPT control. Multiple capacity tests and a 0 C pulse test accelerated degradation, while other components changed measured performance differently; the report requested longer control-comparison work before standardizing the mini RPT."
+    },
+    {
+      "source": "https://doi.org/10.1016/j.meaene.2024.100019",
+      "publishedOn": "2024-12-01",
+      "finding": "A capacity-triggered RPT schedule produced 44 percent more aging cycles than fixed 200-cycle spacing during the first 100 days, but the study did not establish schedule equivalence for lifetime, temperature, throughput, and impedance."
+    },
+    {
+      "source": "https://www.nist.gov/metrology/metrological-traceability",
+      "reviewedOn": "2026-08-29",
+      "finding": "Traceability belongs to a measurement result and requires a documented calibration chain and uncertainty; calibration alone does not establish fitness for purpose."
+    },
+    {
+      "source": "https://www.itl.nist.gov/div898/handbook/mpc/section4/mpc46.htm",
+      "reviewedOn": "2026-08-29",
+      "finding": "The uncertainty budget must include short-term repeatability and, where relevant, reproducibility, stability, resolution, nonlinearity, hysteresis, drift, and configuration differences."
+    }
+  ],
+  "marginRule": {
+    "formula": "For metric i, long-term equivalence may open only when U95_i < M_i <= min(S_i, H_i), where U95_i is the expanded measurement uncertainty, S_i is the smallest scientifically consequential change fixed without arm outcomes, and H_i is the laboratory or product safety/qualification allowance.",
+    "emptyIntervalDecision": "If no positive M_i satisfies the interval, the measurement cannot support an equivalence claim; improve the measurement or abandon the dense schedule.",
+    "antiCircularity": "Neither M_i, S_i, H_i, variance inflation, nor the estimand may be chosen from observed dense-versus-conventional arm differences.",
+    "multiplicity": "Four co-primary metrics use Bonferroni one-sided alpha 0.0125; every metric must pass.",
+    "currentVerdict": "The searched primary and metrology sources do not supply universal numerical S_i or H_i values for the still-unspecified RC59 chemistry, build, RPT waveform, and safety system. Supplying numbers now would be unsupported, so long-term enrollment remains blocked."
+  },
+  "metricRegistry": [
+    {
+      "metricId": "LIFE",
+      "estimand": "difference in registered end-of-life time or cycle count between dense and conventional RPT schedules",
+      "unit": "cycles or equivalent full cycles, fixed before enrollment",
+      "U95": null,
+      "scientificLimitS": null,
+      "safetyLimitH": null,
+      "equivalenceMarginM": null,
+      "requiredExternalOwner": "battery lifetime and product-qualification owner",
+      "status": "blocked"
+    },
+    {
+      "metricId": "TMAX",
+      "estimand": "within-cell or parallel-arm increase in registered peak surface temperature caused by the RPT action",
+      "unit": "degree Celsius",
+      "U95": null,
+      "scientificLimitS": null,
+      "safetyLimitH": null,
+      "equivalenceMarginM": null,
+      "requiredExternalOwner": "laboratory thermal-safety owner",
+      "status": "blocked"
+    },
+    {
+      "metricId": "QTHRU",
+      "estimand": "additional charge throughput imposed by the observation schedule through the same adjudication time",
+      "unit": "ampere-hour or equivalent full cycles",
+      "U95": null,
+      "scientificLimitS": null,
+      "safetyLimitH": null,
+      "equivalenceMarginM": null,
+      "requiredExternalOwner": "protocol and lifetime-model owner",
+      "status": "blocked"
+    },
+    {
+      "metricId": "DZ",
+      "estimand": "schedule-induced change in the preregistered impedance summary at fixed SOC, temperature, rest, and frequency definition",
+      "unit": "ohm or percent, fixed before enrollment",
+      "U95": null,
+      "scientificLimitS": null,
+      "safetyLimitH": null,
+      "equivalenceMarginM": null,
+      "requiredExternalOwner": "electrochemical diagnostics and metrology owner",
+      "status": "blocked"
+    }
+  ],
+  "acuteSentinel": {
+    "purpose": "Reject a large, immediately detectable perturbation before committing to a long-duration equivalence study.",
+    "sample": "Twelve disjoint sacrificial cells, one from each manufacturing block, randomized six to dense-then-conventional and six to conventional-then-dense order.",
+    "controls": "Freeze SOC, temperature, rest, connection, firmware, and waveform; record complete current, voltage, surface temperature, elapsed time, and impedance provenance. Use a washout justified from the cell relaxation response, not a fixed convenient duration.",
+    "outcomes": ["peak-temperature increment", "added charge throughput", "rest-recovery shift", "fixed-condition impedance shift", "sequence-by-period carryover"],
+    "successLanguage": "No registered large acute perturbation detected; lifetime equivalence remains untested.",
+    "reject": "Stop on any hard safety breach, missing traceability edge, failed margin registry, material sequence carryover, or adjusted interval crossing the preregistered acute rejection threshold.",
+    "forbiddenConclusion": "A non-significant acute comparison is not evidence that lifetime is unchanged."
+  },
+  "longTermEquivalence": {
+    "design": "Disjoint parallel randomization of dense versus conventional RPT schedules within manufacturing blocks; no crossover because degradation carryover is irreversible.",
+    "sizing": "After external margins are signed, use blinded pooled variance and registered correlation or clustering inflation. The RC58 known-variance normal values are lower-bound sensitivity calculations, not the final sample size.",
+    "pass": "Every two one-sided equivalence interval lies inside its signed M_i, no safety stop occurs, missingness remains inside its registered bound, and an independent implementation reproduces the verdict.",
+    "stop": "Stop rather than weaken a margin, pool an unregistered build, replace failed cells after randomization, or inspect lifetime rank to choose cadence."
+  },
+  "nextExecutableAction": "A qualified laboratory must freeze the exact chemistry, cell format, RPT waveform, safety SOP, instrument chain, and four S/H values. The metrology owner then estimates U95 from calibration and gauge studies; software opens the study only if all four intervals U95 < M <= min(S,H) are non-empty and signed."
+}

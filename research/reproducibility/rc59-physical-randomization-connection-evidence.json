@@ -1,0 +1,59 @@
+{
+  "connectionId": "CONN-EVIDENCE-032",
+  "cycleId": "RC-2026-59",
+  "problemIds": ["UP-219", "UP-233", "UP-234", "UP-572"],
+  "type": "shared physical-resource confounding, observation intervention, and provenance-preserving adjudication",
+  "strength": "strong-design-connection-physical-validation-pending",
+  "sharedBottleneck": "A predictive signal, digital state, accelerated endpoint, or autonomous action is not identifiable when specimen lineage, physical-resource assignment, and the causal effect of observation are collapsed into one dataset.",
+  "variableMapping": [
+    {
+      "problemId": "UP-219",
+      "unit": "individual cell",
+      "latentTarget": "cell-specific susceptibility and lifetime order",
+      "resourceNuisance": "manufacturing block, chamber, fixture group, channel, and start wave",
+      "observationAction": "RPT cadence and optional pressure-controlled expansion",
+      "verdict": "held-out ordinal concordance after intervention and metrology gates"
+    },
+    {
+      "problemId": "UP-233",
+      "unit": "physical asset paired to a digital state record",
+      "latentTarget": "state and parameter trajectory",
+      "resourceNuisance": "sensor chain, calibration, fixture, firmware, and maintenance history",
+      "observationAction": "diagnostic schedule entering the state transition",
+      "verdict": "independent residual and forecast audit with intact entity-activity lineage"
+    },
+    {
+      "problemId": "UP-234",
+      "unit": "life-test specimen under a registered stress history",
+      "latentTarget": "use-condition lifetime and degradation path",
+      "resourceNuisance": "stress chamber, channel, start time, and inspection burden",
+      "observationAction": "capacity, pulse, impedance, temperature, and rest sequence",
+      "verdict": "all-metric equivalence before endpoint-resolution credit"
+    },
+    {
+      "problemId": "UP-572",
+      "unit": "experiment proposal and physical execution slot",
+      "latentTarget": "expected information gain",
+      "resourceNuisance": "availability and shared-failure structure of laboratory resources",
+      "observationAction": "which measurement the planner authorizes",
+      "verdict": "capability-limited queue opening only after signed machine gates"
+    }
+  ],
+  "conditionsForTransfer": [
+    "Experimental units and physical resources have stable identifiers and one-to-one lineage.",
+    "Randomization is generated before outcomes and is independently reproducible.",
+    "The observation action is recorded as a treatment whenever it can change the target dynamics.",
+    "Fit-for-purpose margins are fixed externally and measurement uncertainty is smaller than the claimed contrast.",
+    "Development and final adjudication use disjoint data, fixtures, implementations, or reviewers."
+  ],
+  "breakConditions": [
+    "An entire chamber, fixture family, manufacturing block, or time wave is perfectly aligned with one hypothesis arm.",
+    "A repository row is treated as a specimen without physical identity and protocol lineage.",
+    "A calibrated instrument is assumed fit for purpose without an uncertainty budget.",
+    "A null acute test is promoted to long-term equivalence.",
+    "The planner can read target outcomes while selecting or replacing experiments."
+  ],
+  "minimumValidation": "Reproduce the 48-cell assignment hash in independent Python and Node implementations; verify exact balance and single-domain survivorship; then populate external margins and U95 values, execute the disjoint sentinel and gauge studies, and retain an untouched outcome-opening event.",
+  "surfaceSimilarityRisk": "Blocking and provenance are generic words. The connection is substantive only when the same unit-resource-action-verdict graph and its failure domains can be written for each problem; it does not imply that one battery result solves all four problems.",
+  "validationStatus": "The software allocation and containment arithmetic agree independently. No physical resource, intervention equivalence, expansion repeatability, or lifetime outcome has been tested."
+}

@@ -122,10 +122,10 @@ for (const page of ["index.html", "solve.html", "research-log.html"]) {
   assert(html.includes("research-cycle-58-data.js?v=20260829-cycle58"), `${page} must load RC58 data`);
 }
 const readme = fs.readFileSync(path.join(ROOT, "README.md"), "utf8");
-assert(readme.includes("58개 누적 연구 사이클"), "README cycle count must be 58");
-assert(readme.includes("186개 사이클 기록"), "README record count must be 186");
-assert(readme.includes("61개 구조적 연결"), "README connection count must be 61");
-assert(readme.includes("336개 기관·로드맵·원 연구 출처"), "README source count must be 336");
+assert(readme.includes("59개 누적 연구 사이클"), "README cycle count must include RC59");
+assert(readme.includes("190개 사이클 기록"), "README record count must include RC59");
+assert(readme.includes("62개 구조적 연결"), "README connection count must include RC59");
+assert(readme.includes("343개 기관·로드맵·원 연구 출처"), "README source count must include RC59");
 const publicCopy = fs.readFileSync(path.join(ROOT, "research-cycle-58-data.js"), "utf8");
 for (const prohibited of ["전공자 포인트", "1단계 · 처음 읽는 사람", "2단계 · 전공자 핵심", "개수를 맞추지"]) {
   assert(!publicCopy.includes(prohibited), `RC58 public copy contains prohibited phrase: ${prohibited}`);
