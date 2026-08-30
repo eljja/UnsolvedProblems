@@ -1,0 +1,84 @@
+{
+  "cycleId": "RC-2026-65",
+  "reviewedOn": "2026-08-31",
+  "status": "public-host-summary-reproduced-object-semantic-closure-failed",
+  "selectedProblems": ["UP-003", "UP-625", "UP-626"],
+  "selectionReason": "The 2025 version-of-record supplies numerical HST-JWST summaries for most common hosts and a machine-readable table for the background-free NGC 3447 control. These data can directly distinguish a distance-growing crowding bias from a common offset, test host leverage, and expose whether the published object table actually reaches the differential result. No cyber-trust problem or inaccessible global ladder intervention was selected.",
+  "newVerifiedFacts": [
+    "Thirteen 2025 Table A1 rows, the NGC 3447 all-sample row, and four nonduplicate 2024 Table 3 rows yield eighteen unique numerical SN-host contrasts; NGC 4038 lacks a numerical public row needed for the full nineteen-host fit.",
+    "Using the shared NGC 4258 contrast term sqrt(0.017^2+0.017^2)=0.024042 mag, the eighteen-host GLS mean is -0.020824+-0.027528 mag, reproducing the published -0.022+-0.029 mag.",
+    "The eighteen-host distance trend is -0.005095+-0.015397 mag per mag, reproducing the published -0.005+-0.014 within the frozen tolerance.",
+    "A +0.07 mag-per-mag crowding trend required by the proposed HST crowding solution is 4.877 standard errors above the reproduced slope.",
+    "Across all eighteen leave-one-host-out refits, the required +0.07 slope remains at least 3.719 standard errors away; NGC 5468 is the weakest deletion case.",
+    "The common mean is not fully host-stable at the 0.01 mag gate: deleting NGC 1448 moves it by -0.013192 mag.",
+    "The published NGC 3447A-minus-spiral contrast of 0.002+-0.028 mag excludes a 0.17 mag crowding offset by exactly 6.0 standard errors.",
+    "The version-of-record machine-readable table contains 142 rows: 63 spiral, 55 NGC 3447A, and 24 other NGC 3447 Cepheids. The paper reports 144 in the all-sample fit and 154 phase corrections.",
+    "Applying the declared W_H=F150W-0.4(V-I) relation and fixed -3.25 slope with unweighted, F150W-error, or propagated-error fits reproduces neither both component scatters nor the 0.002 mag contrast.",
+    "The three frozen object fits give NGC 3447A-minus-spiral contrasts from -0.061970 to -0.039807 mag, rather than +0.002 mag; no post-outcome coefficient or exclusion search was opened.",
+    "Independent standard-library Python and dependency-free Node implementations agree to numerical precision on source counts, GLS results, every host deletion, and all three object-level fits."
+  ],
+  "hypothesisAdjudication": [
+    {"code": "H65-A", "verdict": "supported-on-public-subset", "claim": "The public numerical host rows reproduce the published mean HST-JWST contrast and distance slope."},
+    {"code": "H65-B", "verdict": "rejected", "claim": "A distance-growing HST crowding bias with slope +0.07 mag per mag is compatible with the public subset."},
+    {"code": "H65-C", "verdict": "rejected-at-threshold", "claim": "No single host moves the common HST-JWST mean by 0.01 mag or more."},
+    {"code": "H65-D", "verdict": "supported-as-published-summary", "claim": "The published within-NGC 3447 differential contrast excludes a 0.17 mag crowding offset by at least five sigma."},
+    {"code": "H65-E", "verdict": "not-supported-by-released-object-table", "claim": "The version-of-record NGC 3447 Cepheid table and declared formula are sufficient to independently regenerate the two component summaries."},
+    {"code": "H65-F", "verdict": "not-admissible", "claim": "The complete nineteen-host result and its current global H0 impact can be independently refitted from the public release."}
+  ],
+  "causalChain": [
+    "Input and assumptions: pinned version-of-record host and Cepheid tables, the earlier numerical F150W host table, a shared NGC 4258 covariance term, declared Wesenheit coefficient and period slope, and no post-outcome tuning.",
+    "Bottleneck: host summaries omit one numerical host, while the machine-readable object table does not contain all reported identities or the complete transformation-selection-covariance lineage needed to reach the component summaries.",
+    "Bridge: separate the aggregate host estimand from object-level semantic closure; test the former by covariance-aware GLS and deletions, and require an executable ledger before interpreting the latter.",
+    "Independent adjudicands: mean contrast, distance slope, all leave-one-host-out movements, published differential perfect-host contrast, object-table row identities, component intercepts and scatters, and Python-Node agreement.",
+    "Resolution criterion: a complete nineteen-host table and PHOST-SEMANTIC-1 release reproduce every object-to-summary fixture independently, then a current global ladder release carries the verified branch and covariance ancestry into H0."
+  ],
+  "workPackages": [
+    {
+      "code": "RC65-W1",
+      "purpose": "Maintain a covariance-explicit public common-host fixture.",
+      "method": "Pin every numerical table; preserve host, filter, sign, error, and source identity; represent the NGC 4258 contrast as shared off-diagonal covariance; publish complete and leave-one-host-out fits.",
+      "deliverable": "Eighteen-host fixture, covariance rule, mean and slope receipt, deletion table, and two independent implementations.",
+      "pass": "Published mean and slope meet frozen tolerances, every deletion is identified, and both implementations agree within 1e-10.",
+      "fail": "A source hash change, duplicate host, sign mismatch, non-positive covariance, or solver disagreement closes the result.",
+      "next": "Add NGC 4038 only from an author or journal numerical table with defined covariance; never digitise the plotted point for the primary result."
+    },
+    {
+      "code": "RC65-W2",
+      "purpose": "Close the object-to-summary semantic gap for NGC 3447.",
+      "method": "Request or construct PHOST-SEMANTIC-1: stable IDs, all raw and corrected photometry, phase and artificial-star corrections, cut flags, 144- and 154-object membership, covariance ancestors, design matrix, likelihood, and executable fixtures.",
+      "deliverable": "Reference and independent builds reproducing all, spiral, and tidal distances, errors, scatters, and the differential contrast.",
+      "pass": "Counts and identities close, all three fixture rows agree within 0.001 mag, and independent differential contrast agrees within 0.001 mag.",
+      "fail": "Any inferred correction, unexplained identity gap, fixture mismatch, or post-outcome tuning keeps the published contrast as a cited summary rather than an independent reconstruction.",
+      "next": "Localise failure to selection, transformation, covariance, or raw photometry before collecting more hosts."
+    },
+    {
+      "code": "RC65-W3",
+      "purpose": "Distinguish crowding bias, shared calibration, and Cepheid population mismatch without distance-filter confounding.",
+      "method": "In a new SN host, preselect matched low- and high-background fields, observe each with HST and JWST, develop artificial-star corrections on designated tiles, and adjudicate the within-host HST-JWST difference-in-differences on sealed tiles with an independent reduction.",
+      "deliverable": "Matched-field ledger, sealed-tile residual gradient, artificial-star prediction, covariance budget, and competing-hypothesis decision tree.",
+      "pass": "A crowding gradient is independently reproduced and predicts the sealed artificial-star bias; a null below 0.01 mag rejects a cosmologically material gradient over the tested range.",
+      "fail": "Failed balance, tile leakage, incomplete covariance, or reduction disagreement prevents cosmological transport.",
+      "next": "Use the observed failure boundary to choose a new host or measurement axis by expected information gain rather than simply increasing sample size."
+    }
+  ],
+  "uncertaintyBudget": [
+    "Table rounding: host distances are reported to 0.01 or 0.001 mag, so the fixture reproduces the publication only within declared millimagnitude tolerances.",
+    "Shared anchor: off-diagonal covariance is reconstructed from two 0.017 mag NGC 4258 intercept errors; sensitivity from zero to 0.03 mag changes the mean uncertainty but not the sign or required-slope decision.",
+    "Host influence: NGC 1448 crosses the 0.01 mag mean-movement gate, so the common offset is reported with a leverage warning even though the distance slope survives every deletion.",
+    "Filter-host confounding: F115W and F150W each contain nine primary rows, but filter is not randomized over host; their separate means are descriptive only.",
+    "Missing host: NGC 4038 is plotted but lacks a numerical public row in the frozen tables; the audit stops at eighteen hosts.",
+    "Object coverage: 142 released rows do not equal either the 144 all-fit count or the 154 phase-correction count; the exact relation is unknown.",
+    "Object model: missing per-object corrections, inclusion lineage, intrinsic-scatter treatment, and covariance can move component intercepts and scatters; searching these choices after observing the mismatch would invalidate the test.",
+    "Global transport: a host-summary crowding test is not a current global H0 refit and does not adjudicate early-universe physics."
+  ],
+  "failedOrRejectedAttempts": [
+    "Treating the published common mean as completely host-insensitive fails because deleting NGC 1448 moves it by 0.013192 mag.",
+    "Calling the eighteen-row result a reproduction of the full nineteen-host analysis fails because NGC 4038 has no numerical row in the public tables.",
+    "Calling the machine-readable table complete fails against both the 144 all-fit count and 154 phase-correction count.",
+    "Three obvious fixed-slope reconstructions fail the published component contrast and both scatter gates; no post-hoc coefficient, clipping, or weighting search was used to manufacture agreement.",
+    "Converting the host contrast directly into a global H0 correction remains inadmissible without the current distance-ladder rows, parameters, and covariance ancestry."
+  ],
+  "structuralConnection": "CONN-EVIDENCE-038 separates aggregate numerical reproduction from object-level semantic closure across Hubble calibration, finite-sample leverage, and post-selection inference.",
+  "claimBoundary": "RC65 reproduces an eighteen-host public summary subset and audits the published NGC 3447 differential claim and released table. It does not allege that the publication is incorrect, identify an omitted correction, reproduce all nineteen hosts, calculate current global H0, or resolve the Hubble tension.",
+  "exactNextStart": "Obtain the PHOST-SEMANTIC-1 fields for NGC 3447, beginning with the exact 144-object all-fit and 154-object phase-correction identity ledgers, per-object correction columns, and likelihood/covariance recipe. Re-run the frozen three component fixtures before adding any alternative. In parallel, request the numerical NGC 4038 row and covariance. Only after both close should the matched within-host, sealed-tile HST-JWST crowding-gradient experiment be registered."
+}

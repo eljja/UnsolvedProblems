@@ -135,11 +135,11 @@ for (const prohibited of ["전공자 포인트", "1단계 · 처음 읽는 사�
   assert(!publicCopy.includes(prohibited), `RC62 public copy contains prohibited phrase: ${prohibited}`);
 }
 const readme = readText("README.md");
-assert(readme.includes("64개 누적 연구 사이클"), "README cycle count must be 64");
-assert(readme.includes("20개 심층 연구 문제의 207개 사이클 기록"), "README problem-cycle record count changed");
-assert(readme.includes("67개 구조적 연결"), "README connection count must be 67");
-assert(readme.includes("364개 기관·로드맵·원 연구 출처"), "README source count must be 364");
-assert(readme.includes("1,618개 현지화 URL"), "README sitemap count must be 1,618");
+assert(readme.includes("65개 누적 연구 사이클"), "README cycle count must be 65");
+assert(readme.includes("20개 심층 연구 문제의 210개 사이클 기록"), "README problem-cycle record count changed");
+assert(readme.includes("68개 구조적 연결"), "README connection count must be 68");
+assert(readme.includes("367개 기관·로드맵·원 연구 출처"), "README source count must be 367");
+assert(readme.includes("1,620개 현지화 URL"), "README sitemap count must be 1,620");
 const packageJson = read("package.json");
 assert(packageJson.scripts["verify:rc62"]?.includes("verify-rc62-posterior-cycle.mjs"), "RC62 verifier script is missing");
 assert(packageJson.scripts.pretest?.includes("verify-rc62-posterior-cycle.mjs"), "RC62 verifier is not in the default test path");

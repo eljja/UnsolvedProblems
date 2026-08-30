@@ -1,0 +1,41 @@
+{
+  "id": "CONN-EVIDENCE-038",
+  "cycleId": "RC-2026-65",
+  "reviewedOn": "2026-08-31",
+  "problemIds": ["UP-003", "UP-625", "UP-626"],
+  "type": "summary-microdata-semantic-closure",
+  "strength": "strong-for-detecting-a-reproducibility-boundary",
+  "commonStructure": "An aggregate estimate can be numerically reproduced from published group summaries even when the released object table cannot regenerate the group summaries. The first result validates arithmetic on a declared estimand; it does not validate hidden selection, transformation, or covariance steps between observations and that estimand.",
+  "variableMapping": {
+    "UP-003": "host summaries are HST-JWST distance contrasts; microdata are NGC 3447 Cepheid photometry; the target is a crowding-dependent distance bias and ultimately its effect on H0",
+    "UP-625": "hosts and Cepheids are finite sampling units; shared NGC 4258 calibration is a common covariance ancestor; leave-one-host-out movement measures leverage but not population transport",
+    "UP-626": "the published fit encodes selected transformations and inclusion; semantic closure requires those choices to be replayable rather than inferred after inspecting discrepancies"
+  },
+  "validWhen": [
+    "The summary estimand, sign convention, host identities, and shared covariance term are fixed before fitting.",
+    "Every object-level transformation and selection flag needed to create a summary is public and keyed to a stable identity.",
+    "A host is removed with its complete covariance row and column, not as an independent scalar.",
+    "Object-level alternatives are limited to declared formulas and weights; failure does not trigger a coefficient or exclusion search."
+  ],
+  "breaksWhen": [
+    "A visually present host without a numerical row is silently reconstructed from a figure.",
+    "The common anchor term is ignored or added twice on the covariance diagonal.",
+    "A microdata discrepancy is tuned away by searching Wesenheit coefficients, clipping rules, or weights after outcomes are known.",
+    "Agreement of aggregate means is used to claim that the unreleased object-to-summary pipeline or global H0 fit has been reproduced."
+  ],
+  "minimumValidationTest": "Pin source bytes and parse host and object identities independently. Reproduce the published aggregate mean and distance slope with an explicit covariance matrix. Remove every host in turn. Then apply only the declared object-level formula and three frozen weighting rules to both NGC 3447 components. Semantic closure requires the object table to reproduce the component contrast and scatters; otherwise the claim stops at the aggregate summary and a transformation-selection-covariance ledger is requested.",
+  "observedEvidence": {
+    "publicHostRows": 18,
+    "publishedHostRows": 19,
+    "glsMeanMag": -0.020824018568800687,
+    "glsDistanceSlopeMagPerMag": -0.0050953760803880265,
+    "requiredCrowdingSlopeExclusionSigma": 4.877136597789243,
+    "minimumDeletionExclusionSigma": 3.718716020709363,
+    "maximumMeanMovementMag": 0.01319210564887828,
+    "machineReadableCepheids": 142,
+    "publishedAllSampleCepheids": 144,
+    "publishedPhaseCorrections": 154,
+    "declaredObjectFitsClosing": 0
+  },
+  "claimBoundary": "The connection detects where reproducibility stops. It does not show that the published NGC 3447 contrast is wrong, identify the missing operation, or infer a global H0 shift from the eighteen-host subset."
+}

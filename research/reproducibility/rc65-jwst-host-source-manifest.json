@@ -1,0 +1,53 @@
+{
+  "cycleId": "RC-2026-65",
+  "fetchedOn": "2026-08-30T16:37:37.194Z",
+  "sourcePolicy": "Version-of-record IOP/AAS machine-readable tables are primary. Versioned arXiv HTML is retained to freeze narrative methods and the earlier five-host table.",
+  "files": [
+    {
+      "id": "riess-perfect-host-2025-table1-vor",
+      "url": "https://iopscience.iop.org/2041-8205/992/2/L34/suppdata/apjlae0ad6t1_ascii.txt?doi=10.3847/2041-8213/ae0ad6",
+      "file": "apjlae0ad6t1_ascii.txt",
+      "publishedOn": "2025-10-17",
+      "role": "version-of-record NGC 3447 distance-summary table",
+      "bytes": 873,
+      "sha256": "a4b2f2ab2f0225b9e3f4a89e6e19138d9caaa84281338ba396d66b6434b54d6a"
+    },
+    {
+      "id": "riess-perfect-host-2025-table-a1-vor",
+      "url": "https://iopscience.iop.org/2041-8205/992/2/L34/suppdata/apjlae0ad6t2_ascii.txt?doi=10.3847/2041-8213/ae0ad6",
+      "file": "apjlae0ad6t2_ascii.txt",
+      "publishedOn": "2025-10-17",
+      "role": "version-of-record host-level HST-JWST distance table",
+      "bytes": 636,
+      "sha256": "e0868e6914be9367c40fff71cbe4ed7e9180475514cb0a8b527b98d094235394"
+    },
+    {
+      "id": "riess-perfect-host-2025-table-a2-vor",
+      "url": "https://content.cld.iop.org/journals/2041-8205/992/2/L34/revision1/apjlae0ad6t3_mrt.txt",
+      "file": "apjlae0ad6t3_mrt.txt",
+      "publishedOn": "2025-10-17",
+      "role": "version-of-record machine-readable NGC 3447 Cepheid photometry",
+      "bytes": 12541,
+      "sha256": "87a4e1b0d89b91694e42d7cf57f4b098d50c4ffe580ab4f32b39318434e24326"
+    },
+    {
+      "id": "riess-perfect-host-2025-html-v1",
+      "url": "https://arxiv.org/html/2509.01667v1",
+      "file": "2509.01667v1.html",
+      "publishedOn": "2025-09-01",
+      "role": "latest host-level HST-JWST comparison and NGC 3447 differential control",
+      "bytes": 209160,
+      "sha256": "2a8ddb01ef8d3d7ba7cd4830297b9c342c89a2e34f2fc1d8917dfdf22f4eccfb"
+    },
+    {
+      "id": "riess-crowding-2024-html-v1",
+      "url": "https://arxiv.org/html/2401.04773v1",
+      "file": "2401.04773v1.html",
+      "publishedOn": "2024-01-09",
+      "role": "earlier five-host F150W comparison used for named rows not repeated numerically in 2025",
+      "bytes": 230640,
+      "sha256": "e465c7f2976d80d64d4e7236230ad1adf6cf9ea047f8ab0547b290fbf65cf963"
+    }
+  ],
+  "totalBytes": 453850
+}

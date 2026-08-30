@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "cycleId": "RC-2026-65",
+  "frozenOn": "2026-08-31",
+  "contractStatus": "Frozen before the production Python and Node implementations. Source-shape observations used to define admissible coverage are recorded explicitly and are not presented as blinded preregistration.",
+  "purpose": "Test whether the public HST-JWST common-host summaries reproduce the published crowding adjudication, whether that result is driven by one host, and whether the version-of-record NGC 3447 Cepheid table is semantically sufficient to reproduce the paper's differential perfect-host result.",
+  "sources": {
+    "requiredFiles": [
+      "apjlae0ad6t1_ascii.txt",
+      "apjlae0ad6t2_ascii.txt",
+      "apjlae0ad6t3_mrt.txt",
+      "2509.01667v1.html",
+      "2401.04773v1.html"
+    ],
+    "versionOfRecordTable1Rows": 5,
+    "versionOfRecordTableA1Rows": 13,
+    "machineReadableCepheidRows": 142,
+    "machineReadableGroups": {
+      "N3447Spiral": 63,
+      "N3447A": 55,
+      "N3447": 24
+    },
+    "publishedAllCepheidCount": 144,
+    "publishedPhaseCorrectionCount": 154,
+    "rule": "Every local file must match the frozen source manifest. A count mismatch between the machine-readable table and a published result is an audit outcome, not a parser repair target."
+  },
+  "hostSummaryGate": {
+    "sample": "Eighteen unique numerical SN-host rows: thirteen from 2025 Table A1, NGC 3447 from 2025 Table 1, and four nonduplicate hosts from 2024 Table 3. NGC 4038 is visible in the 2025 figure but has no numerical row in the public tables and is excluded.",
+    "contrast": "JWST distance modulus minus HST distance modulus",
+    "sharedAnchorStandardDeviationMag": 0.024041630560342617,
+    "sharedAnchorDerivation": "sqrt(0.017^2 + 0.017^2), using the separate JWST and HST NGC 4258 intercept errors in 2024 Table 3",
+    "covariance": "Keep each published contrast variance on the diagonal and add the squared shared-anchor term to every off-diagonal element.",
+    "publishedMeanMag": -0.022,
+    "publishedMeanStandardErrorMag": 0.029,
+    "publishedDistanceSlopeMagPerMag": -0.005,
+    "publishedDistanceSlopeStandardError": 0.014,
+    "tolerances": {
+      "meanMag": 0.005,
+      "meanStandardErrorMag": 0.005,
+      "slopeMagPerMag": 0.005,
+      "slopeStandardError": 0.005
+    }
+  },
+  "hostInfluenceGate": {
+    "unit": "One named host, with its complete contrast and covariance row and column removed together",
+    "materialMeanMovementMag": 0.01,
+    "requiredCrowdingSlopeMagPerMag": 0.07,
+    "minimumExclusionSigma": 3,
+    "rule": "Report every leave-one-host-out mean and slope. A crowding explanation is rejected on this public subset only if the required +0.07 mag/mag slope lies at least three standard errors above the reproduced slope for the complete subset and under every single-host deletion."
+  },
+  "perfectHostPublishedGate": {
+    "publishedTidalMinusSpiralMag": 0.002,
+    "publishedStandardErrorMag": 0.028,
+    "requiredCrowdingOffsetMag": 0.17,
+    "minimumExclusionSigma": 5,
+    "rule": "Use the published differential contrast as the primary adjudicand. It must exclude the required 0.17 mag offset by at least five standard errors."
+  },
+  "objectLevelSemanticClosureGate": {
+    "formula": "W_H = F150W - 0.4 * (V-I); fixed period slope = -3.25 mag/dex",
+    "declaredFits": [
+      "unweighted fixed-slope intercept and population RMS",
+      "fixed-slope intercept weighted by e_F150W",
+      "fixed-slope intercept weighted by sqrt(e_F150W^2 + (0.4*e_V-I)^2)"
+    ],
+    "publishedSpiralScatterMag": 0.194,
+    "publishedTidalScatterMag": 0.121,
+    "maximumContrastResidualMag": 0.01,
+    "maximumScatterResidualMag": 0.01,
+    "rule": "Semantic closure passes only if a declared fit reproduces both component scatters and the tidal-minus-spiral contrast. Do not search additional coefficients, exclusions, or weights after failure; record the missing transformation, selection, or covariance lineage instead."
+  },
+  "sensitivityEnvelope": {
+    "sharedAnchorStandardDeviationMag": [0, 0.017, 0.024041630560342617, 0.03],
+    "filterGroups": ["F115W", "F150W"],
+    "warning": "Filter-group comparisons are descriptive because filter and host membership are confounded. NGC 5643 is not duplicated in the primary unique-host sample."
+  },
+  "independentImplementationGate": {
+    "implementations": ["Python standard library", "dependency-free Node.js"],
+    "maximumDifference": {
+      "hostMeanMag": 1e-10,
+      "hostSlopeMagPerMag": 1e-10,
+      "leaveOneOutValue": 1e-10,
+      "objectInterceptMag": 1e-9,
+      "objectScatterMag": 1e-9
+    }
+  },
+  "claimBoundary": "This audit can adjudicate the public eighteen-host summary subset, the published NGC 3447 differential contrast, and the semantic sufficiency of the released NGC 3447 table. It cannot reproduce the complete nineteen-host fit, reconstruct unpublished per-Cepheid corrections or covariance, perform a current global H0 refit, or resolve the Hubble tension."
+}

@@ -81,8 +81,8 @@ for (const page of ["index.html", "solve.html", "research-log.html"]) assert(rea
 const publicCopy = readText("research-cycle-64-data.js");
 for (const prohibited of ["전공자 포인트", "1단계 · 처음 읽는 사람", "2단계 · 전공자 핵심", "개수를 맞추지", "아래 시도는 개별 논문", "난제를 해결했다"]) assert(!publicCopy.includes(prohibited), `RC64 public copy contains prohibited phrase: ${prohibited}`);
 const readme = readText("README.md");
-assert(readme.includes("64개 누적 연구 사이클") && readme.includes("20개 심층 연구 문제의 207개 사이클 기록"), "README RC64 cycle counts changed");
-assert(readme.includes("67개 구조적 연결") && readme.includes("364개 기관·로드맵·원 연구 출처") && readme.includes("1,618개 현지화 URL"), "README RC64 source, connection, or sitemap counts changed");
+assert(readme.includes("65개 누적 연구 사이클") && readme.includes("20개 심층 연구 문제의 210개 사이클 기록"), "README RC65 cycle counts changed");
+assert(readme.includes("68개 구조적 연결") && readme.includes("367개 기관·로드맵·원 연구 출처") && readme.includes("1,620개 현지화 URL"), "README RC65 source, connection, or sitemap counts changed");
 assert(read("package.json").scripts["verify:rc64"]?.includes("verify-rc64-smc-anchor-cycle.mjs"), "RC64 verifier script is missing");
 const sitemap = readText("sitemap.xml");
 assert(sitemap.includes("cycle=RC-2026-64&amp;lang=ko") && sitemap.includes("cycle=RC-2026-64&amp;lang=en"), "Sitemap missing RC64 localized URLs");

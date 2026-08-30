@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "cycleId": "RC-2026-65",
+  "contractId": "PHOST-SEMANTIC-1",
+  "reviewedOn": "2026-08-31",
+  "purpose": "Define the smallest public release that can turn the NGC 3447 object table into an independently reproducible differential-distance result without guessing hidden corrections or selections.",
+  "requiredTables": {
+    "observations": [
+      "stable Cepheid ID and sky coordinates",
+      "raw and calibrated F090W and F150W fluxes or magnitudes for every epoch",
+      "F555W and F814W colour inputs with observation identifiers",
+      "per-measurement uncertainty and quality flags",
+      "artificial-star input, recovered value, local background, and crowding correction",
+      "phase correction and the light-curve data or template version that generated it",
+      "photometric zero-point, aperture, CRNL, colour, and metallicity corrections as separate columns"
+    ],
+    "selection": [
+      "one row per candidate Cepheid with every cut as a Boolean column",
+      "region assignment before fitting: spiral, NGC 3447A, or other",
+      "pre-fit and post-fit inclusion flags",
+      "outlier iteration and reason code",
+      "the exact 144-object all-sample membership and the exact 154-object phase-correction pool"
+    ],
+    "covariance": [
+      "component-level covariance blocks keyed to observation IDs",
+      "shared photometric, anchor, colour, metallicity, phase-template, and artificial-star ancestors",
+      "rule for rebuilding covariance after a row or correction is removed"
+    ],
+    "model": [
+      "machine-readable design matrix and outcome vector",
+      "fixed or fitted period slope and pivot",
+      "Wesenheit coefficient and its treatment of intrinsic colour",
+      "anchor constraints and geometric-distance terms",
+      "likelihood, intrinsic-scatter treatment, clipping, and convergence rule"
+    ]
+  },
+  "executableFixtures": [
+    {
+      "name": "all-sample",
+      "expectedN": 144,
+      "expectedDistanceModulusMag": 31.934,
+      "expectedStandardErrorMag": 0.023,
+      "expectedScatterMag": 0.174
+    },
+    {
+      "name": "spiral",
+      "expectedN": 63,
+      "expectedDistanceModulusMag": 31.909,
+      "expectedStandardErrorMag": 0.030,
+      "expectedScatterMag": 0.194
+    },
+    {
+      "name": "tidal-perfect-host",
+      "expectedN": 55,
+      "expectedDistanceModulusMag": 31.911,
+      "expectedStandardErrorMag": 0.025,
+      "expectedScatterMag": 0.121
+    }
+  ],
+  "admissionTests": [
+    "Every observation, correction, selection decision, and covariance component resolves to a stable ID.",
+    "The all-sample membership contains exactly 144 unique Cepheids and the phase-correction ledger contains exactly 154 identities or explicitly documents their relation.",
+    "A reference implementation reproduces all three fixture rows within 0.001 mag in distance and scatter and 0.001 mag in reported standard error.",
+    "A dependency-free independent implementation reproduces the differential tidal-minus-spiral contrast within 0.001 mag.",
+    "Deleting an observation or correction ancestor rebuilds every affected covariance component and leaves an auditable receipt."
+  ],
+  "prospectiveDecisiveExperiment": {
+    "design": "Within a new SN Ia host, preselect multiple fields spanning surface brightness and crowding while matching period, colour, and metallicity distributions. Observe every field with both HST and JWST, develop the crowding model on designated tiles, and adjudicate on sealed tiles and a separately reduced artificial-star stream.",
+    "competingPredictions": {
+      "hstCrowdingBias": "Within the same host, HST-minus-JWST distance residual grows with background or artificial-star crowding while the matched low-background field approaches zero.",
+      "sharedCalibrationOffset": "The residual is approximately field-invariant after matching, even when artificial-star crowding changes strongly.",
+      "cepheidPopulationMismatch": "Residuals track period, colour, or metallicity imbalance rather than local background and disappear after matched reweighting."
+    },
+    "primaryAdjudicand": "Difference-in-differences of HST-minus-JWST Cepheid distance residual between high- and low-background fields in the same host, estimated on sealed tiles.",
+    "success": "A nonzero background gradient is reproduced by the independent reduction and quantitatively predicts the artificial-star bias on sealed tiles.",
+    "rejection": "The gradient is below 0.01 mag across the preregistered crowding range or reverses under independent reduction.",
+    "stop": "Stop before cosmological interpretation if period-colour-metallicity balance fails, tile identities leak, covariance ancestry is incomplete, or the two reductions disagree beyond the frozen uncertainty budget."
+  },
+  "claimBoundary": "This is a proposed release and experiment contract, not evidence that an unpublished correction exists and not a claim of methodological novelty. Similar ingredients exist separately; the contribution is a falsifiable integration and admission test."
+}

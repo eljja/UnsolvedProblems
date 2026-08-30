@@ -1,0 +1,27 @@
+{
+  "cycleId": "RC-2026-65",
+  "reviewedOn": "2026-08-31",
+  "purpose": "Keep the proposed path inside a verified prior-art boundary rather than labelling familiar components as novel.",
+  "queries": [
+    "JWST HST Cepheid crowding common host distance residual",
+    "NGC 3447 background free Cepheid artificial star test differential distance",
+    "within host Cepheid crowding surface brightness HST JWST",
+    "Cepheid artificial star bias withheld field cross validation",
+    "SH0ES machine readable NGC 3447 Cepheid photometry phase correction covariance"
+  ],
+  "found": [
+    "The 2024 primary study already compares JWST and HST Cepheid distances in common hosts and quantifies the distance-dependent crowding slope needed to remove the tension.",
+    "The 2025 primary study already uses a low-background component of NGC 3447, artificial-star tests, and a within-system differential distance as a crowding control.",
+    "The 2025 journal release supplies host summaries and an object photometry table, while the MAST DOI supplies observation-level archive access."
+  ],
+  "notVerifiedInReviewedSources": [
+    "A public executable ledger that maps every NGC 3447 object through phase, crowding, colour, metallicity, selection, and covariance operations to all three published Table 1 rows.",
+    "A prospectively matched, within-one-host high-versus-low-background HST-JWST difference-in-differences adjudicated on sealed image tiles by an independent reduction."
+  ],
+  "proposedDifference": "Combine the already established common-host, low-background, and artificial-star ideas with a semantic release contract and a prospective matched-field sealed-tile decision. The claimed contribution is the falsifiable integration and stop rules, not novelty of any individual ingredient.",
+  "recheckBeforeExecution": [
+    "Search NASA ADS and arXiv for newer papers using the exact phrases matched field, within-host difference-in-differences, sealed tiles, and independent reduction with Cepheid crowding.",
+    "Inspect the version-of-record supplementary files and MAST observation products for a newly added correction or selection ledger.",
+    "Contact or check the authors' official data repository for NGC 4038 and NGC 3447 fit inputs before registering a new observation programme."
+  ]
+}
