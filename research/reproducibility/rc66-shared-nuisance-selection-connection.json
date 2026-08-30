@@ -1,0 +1,34 @@
+{
+  "id": "CONN-EVIDENCE-039",
+  "cycleId": "RC-2026-66",
+  "problemIds": ["UP-003", "UP-625", "UP-626"],
+  "type": "shared-nuisance cancellation plus boundary-defined selection and identity-preserving transformation",
+  "strength": "strong at host-summary and analytic-ellipse layers; open at chord and per-object phase layers",
+  "commonStructure": "A contrast can cancel a shared nuisance only after the compared units and transformation path are fixed. NGC 4258 contributes a common covariance mode to both NGC 3447 component distances, while ellipses, a chord, phase corrections, fit membership, and publication membership determine which objects enter each estimate. The same algebra appears in finite-sample estimands with shared ancestors and in post-selection inference with a candidate-to-published crosswalk.",
+  "variableMapping": [
+    {"up003": "spiral and tidal distance moduli", "up625": "two finite-sample estimators", "up626": "two post-selection targets", "shared": "reported marginal estimates"},
+    {"up003": "NGC 4258 intercept uncertainty", "up625": "shared calibration or sampling ancestor", "up626": "shared preprocessing and fitted nuisance", "shared": "common covariance mode that cancels in a contrast"},
+    {"up003": "ellipses, chord, 154/144/142 identities", "up625": "sampling frame and missingness crosswalk", "up626": "candidate, selected, and published model ledgers", "shared": "membership-changing transformation"},
+    {"up003": "0.002+-0.028 mag component contrast", "up625": "paired or clustered contrast with covariance", "up626": "selection-adjusted contrast", "shared": "final adjudicand"}
+  ],
+  "validWhen": [
+    "The two estimates carry the same additive nuisance with the same coefficient.",
+    "Stable identities connect the preselection population, fitted population, and released population.",
+    "Every geometric and algorithmic boundary is executable before observing the outcome.",
+    "Marginal standard errors and covariance refer to the same estimator and object set.",
+    "Independent code reproduces both membership and the contrast."
+  ],
+  "breaksWhen": [
+    "A common term enters the two components with unequal coefficients or interacts with background, color, or period.",
+    "A figure-only boundary or undocumented outlier rule changes membership.",
+    "Corrected-only data erase the map from raw observation to published value.",
+    "Standard errors come from different likelihoods or include different nuisance terms.",
+    "The shared mode is subtracted twice or ignored."
+  ],
+  "surfaceSimilarityRisk": "Two estimates sharing an anchor does not by itself guarantee cancellation. The coefficient, object set, corrections, and likelihood must match. Likewise, coordinate clusters that look visually separate do not make the selection reproducible if a chord or exclusion is unspecified.",
+  "transferableMethod": "Represent every estimate as a value plus named shared and unique error components, then maintain an identity crosswalk across every selection or correction stage. Calculate contrasts from the full covariance, and treat any unmapped identity or boundary as an explicit nonidentification region rather than a tuning opportunity.",
+  "minimumValidationTest": "Pin the source bytes; reproduce all 63 spiral and 55 tidal ellipse labels from coordinates; list every disagreement rather than correcting it; infer the covariance from the three published errors and reconstruct 0.028 mag; then require a 154-row crosswalk to execute the 154-to-144-to-142 transitions. The connection is promoted to object-level only when an independent implementation reproduces all component fixtures within 0.001 mag.",
+  "evidence": "RC66 closes nineteen host summaries, all named component ellipse labels, and a common-mode sigma of 0.019248 mag that reconstructs the 0.028-mag component contrast error. Two chord-dependent IDs and the per-object phase and selection lineage remain open.",
+  "validationStatus": "Strongly verified for the numerical host fixture, analytic ellipses, and summary covariance in Python and Node. Not validated for the chord equation, per-object corrections, object likelihood, or global H0 transport.",
+  "reviewedOn": "2026-08-31"
+}

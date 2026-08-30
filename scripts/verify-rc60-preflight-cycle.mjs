@@ -74,11 +74,12 @@ for (const page of ["index.html", "solve.html", "research-log.html"]) {
   assert(html.includes("research-cycle-60-data.js?v=20260829-cycle60"), `${page} must load RC60 data`);
 }
 const readme = fs.readFileSync(path.join(ROOT, "README.md"), "utf8");
-assert(readme.includes("65개 누적 연구 사이클"), "README cycle count must include RC65");
-assert(readme.includes("210개 사이클 기록"), "README record count must include RC65");
-assert(readme.includes("68개 구조적 연결"), "README connection count must include RC65");
-assert(readme.includes("367개 기관·로드맵·원 연구 출처"), "README source count must include RC65");
-assert(readme.includes("1,620개 현지화 URL"), "README sitemap count must be 1,620");
+const readmeCount = pattern => Number(readme.match(pattern)?.[1].replaceAll(",", ""));
+assert(readmeCount(/([\d,]+)개 누적 연구 사이클/) >= 65, "README must retain the RC65 cycle baseline");
+assert(readmeCount(/심층 연구 문제의 ([\d,]+)개 사이클 기록/) >= 210, "README must retain the RC65 record baseline");
+assert(readmeCount(/([\d,]+)개 구조적 연결/) >= 68, "README must retain the RC65 connection baseline");
+assert(readmeCount(/([\d,]+)개 기관·로드맵·원 연구 출처/) >= 367, "README must retain the RC65 source baseline");
+assert(readmeCount(/([\d,]+)개 현지화 URL/) >= 1620, "README must retain the RC65 sitemap baseline");
 const publicCopy = fs.readFileSync(path.join(ROOT, "research-cycle-60-data.js"), "utf8");
 for (const prohibited of ["전공자 포인트", "1단계 · 처음 읽는 사람", "2단계 · 전공자 핵심", "개수를 맞추지", "아래 시도는 개별 논문", "immutable receipt"]) {
   assert(!publicCopy.includes(prohibited), `RC60 public copy contains prohibited phrase: ${prohibited}`);

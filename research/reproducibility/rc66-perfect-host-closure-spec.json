@@ -1,0 +1,45 @@
+{
+  "cycleId": "RC-2026-66",
+  "reviewedOn": "2026-08-31",
+  "selectedProblems": ["UP-003", "UP-625", "UP-626"],
+  "frozenInputs": {
+    "hostBaseline": "RC65's verified eighteen-host numerical fixture and shared NGC 4258 term",
+    "newHost": "NGC 4038 from version-of-record Table A2: HST R22 31.612+-0.121 mag and JWST SH0ES 31.67+-0.035 mag",
+    "objectTable": "RC65-pinned version-of-record NGC 3447 MRT with 142 rows",
+    "authorSource": "arXiv:2509.01667v1 source archive"
+  },
+  "nineteenHostGate": {
+    "sharedAnchorStandardDeviationMag": 0.024041630560342617,
+    "requiredCrowdingSlopeMagPerMag": 0.07,
+    "publicationToleranceMag": 0.005,
+    "deletionGateSigma": 3,
+    "rule": "Add only the journal numerical NGC 4038 row, preserve the RC65 covariance rule, and recompute the common mean, distance slope, every leave-one-host-out fit, and zero-to-0.03-mag shared-anchor sensitivity."
+  },
+  "regionReplayGate": {
+    "coordinateSystem": "Tangent-plane offsets in arcminutes using RA*cos(dec) and declination",
+    "angleConvention": "The reported PA rotates the RA-like tangent-plane axis toward declination; reported major and minor values are semiaxes.",
+    "spiral": {"raDeg": 163.35, "decDeg": 16.774, "positionAngleDeg": 95, "majorSemiaxisArcmin": 1.6, "minorSemiaxisArcmin": 0.7},
+    "tidal": {"raDeg": 163.372, "decDeg": 16.786, "positionAngleDeg": -30, "majorSemiaxisArcmin": 0.6, "minorSemiaxisArcmin": 0.5},
+    "pass": "All 63 N3447Spiral rows fall only inside the spiral ellipse, all 55 N3447A rows fall only inside the tidal ellipse, and every remaining ellipse disagreement is listed by stable ID rather than silently reassigned.",
+    "claimBoundary": "The chord shown in figures but not specified numerically is not reconstructed from the outcome."
+  },
+  "summaryCovarianceGate": {
+    "spiralStandardErrorMag": 0.03,
+    "tidalStandardErrorMag": 0.025,
+    "contrastStandardErrorMag": 0.028,
+    "rule": "Infer the unique covariance that makes Var(tidal-spiral)=Var(tidal)+Var(spiral)-2Cov, then decompose the two marginal errors into one common mode plus component-specific terms.",
+    "pass": "The reconstructed contrast error agrees to 1e-12 mag and the implied common-mode standard deviation is consistent with the paper's approximately 0.02-mag NGC 4258 term."
+  },
+  "phaseLineageGate": {
+    "reportedPhaseCorrections": 154,
+    "reportedAllFitObjects": 144,
+    "releasedObjectRows": 142,
+    "requiredFields": ["stable object identity", "uncorrected F090W and F150W", "phase estimate", "per-object correction", "fit inclusion flag", "outlier iteration", "correction uncertainty and shared ancestors"],
+    "pass": "Every reported phase correction maps to a stable identity and the 154-to-144-to-142 transitions are executable without reading a plotted boundary or fitting an unreported parameter."
+  },
+  "independentImplementationGate": {
+    "implementations": ["Python standard library", "dependency-free Node.js"],
+    "tolerance": 1e-10,
+    "rule": "The implementations parse the new table independently and must agree on all nineteen-host, region, covariance, and phase-count adjudicands."
+  }
+}

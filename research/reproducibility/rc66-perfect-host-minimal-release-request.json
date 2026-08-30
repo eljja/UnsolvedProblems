@@ -1,0 +1,37 @@
+{
+  "contractId": "PHOST-SEMANTIC-2",
+  "cycleId": "RC-2026-66",
+  "purpose": "Close only the remaining object-to-summary gap after the nineteen-host, ellipse, and summary-covariance layers have been reproduced.",
+  "identityCrosswalk": {
+    "rows": 154,
+    "required": ["stableCepheidId", "raDeg", "decDeg", "componentLabel", "inside144Fit", "inside142PublishedTable", "exclusionReason", "sourceObservationIds"],
+    "knownBoundaryCases": ["135027", "136273"],
+    "gate": "Every reported count is an executable projection of the same 154-row ledger."
+  },
+  "geometricSelection": {
+    "required": ["tangent-plane projection", "position-angle convention", "semiaxis convention", "numeric chord half-plane", "boundary inclusion rule"],
+    "gate": "Coordinates alone reproduce 63 spiral, 55 tidal, 24 other labels including the two chord exclusions."
+  },
+  "photometricTransformation": {
+    "required": ["raw and calibrated F090W per epoch", "raw and calibrated F150W per epoch", "F555W and F814W values and observation IDs", "light-curve template identifier", "phase estimate", "phase uncertainty", "F090W correction", "F150W correction", "crowding correction", "aperture correction", "zero point", "CRNL term", "color term", "metallicity term", "uncertainty and shared-ancestor tags"],
+    "gate": "Corrected published values are regenerated from raw columns without inferred constants."
+  },
+  "fitReceipt": {
+    "required": ["design-matrix row", "outcome value", "fixed slope and pivot", "Wesenheit coefficient", "weight", "intrinsic scatter rule", "outlier residual and iteration", "final inclusion", "anchor row", "covariance block identifiers", "likelihood or normal equations"],
+    "fixtures": [
+      {"name": "all", "n": 144, "muMag": 31.934, "standardErrorMag": 0.023, "scatterMag": 0.174},
+      {"name": "spiral", "n": 63, "muMag": 31.909, "standardErrorMag": 0.030, "scatterMag": 0.194},
+      {"name": "tidal", "n": 55, "muMag": 31.911, "standardErrorMag": 0.025, "scatterMag": 0.121},
+      {"name": "tidal-minus-spiral", "valueMag": 0.002, "standardErrorMag": 0.028}
+    ],
+    "gate": "A reference build and an independent build reproduce every value within 0.001 mag."
+  },
+  "prospectiveCrossover": {
+    "hypothesis": "If the single-epoch phase algorithm is unbiased across background regimes, its error relative to a two-epoch estimate has the same mean in the spiral and tidal components after period, color, and phase-ambiguity matching.",
+    "primaryAdjudicand": "(single-epoch minus two-epoch mean)_tidal minus (single-epoch minus two-epoch mean)_spiral",
+    "minimumDesign": "Predeclare balanced strata, seal validation identities, obtain a second F090W/F150W epoch, freeze the first-epoch algorithm before opening it, and use an independent reduction for the final contrast.",
+    "success": "Absolute contrast below 0.01 mag with compatible independent reductions over the registered background range.",
+    "reject": "A reproducible contrast at or above 0.01 mag that tracks first-epoch phase ambiguity after matching.",
+    "stop": "Identity leakage, post-outcome strata changes, phase-dependent missingness, or reduction disagreement."
+  }
+}

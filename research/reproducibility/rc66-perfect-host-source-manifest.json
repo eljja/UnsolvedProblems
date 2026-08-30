@@ -1,0 +1,42 @@
+{
+  "cycleId": "RC-2026-66",
+  "fetchedOn": "2026-08-31",
+  "sourcePolicy": "The version-of-record machine-readable table supplies the missing numerical NGC 4038 row. The versioned arXiv source archive is used only to audit what transformation and selection material was actually deposited; RC65 source bytes remain the frozen basis for the other eighteen hosts and the NGC 3447 object table.",
+  "files": [
+    {
+      "id": "riess-jwst-validation-2024-table-a2-vor",
+      "url": "https://iopscience.iop.org/0004-637X/977/1/120/suppdata/apjad8c21t6_ascii.txt?doi=10.3847/1538-4357/ad8c21",
+      "file": "apjad8c21t6_ascii.txt",
+      "publishedOn": "2024-12-10",
+      "role": "version-of-record machine-readable distance-modulus table containing the numerical NGC 4038 HST and JWST/SH0ES row",
+      "bytes": 3447,
+      "sha256": "8822f7470eddb30c5cd0f0614b5f03b41ba087446b79ec2dc14ce2fc41cabfb9"
+    },
+    {
+      "id": "riess-perfect-host-2025-arxiv-source-v1",
+      "url": "https://export.arxiv.org/e-print/2509.01667v1",
+      "file": "2509.01667v1.tar",
+      "publishedOn": "2025-09-01",
+      "role": "versioned author source archive used to audit deposited methods, tables, and ancillary files",
+      "bytes": 18416991,
+      "sha256": "fefae8d124cb178c22cc90a3984cc1838d999b8b17d7d2e019170dd9c740e33e",
+      "archiveMembers": 16,
+      "mainTexBytes": 50918,
+      "mainTexSha256": "8effae414f274a706c5a8accf06d013d2bb1d090b37b95483297cf5d7ded5d90"
+    }
+  ],
+  "frozenPredecessors": [
+    {
+      "file": "research/reproducibility/rc65-jwst-host-source-manifest.json",
+      "sha256": "2cb820e58713516dd8c67b4316007f071eca22d038cc4ee9cf02c1e3b2250edc"
+    },
+    {
+      "file": "research/reproducibility/rc65-jwst-host-audit-python.json",
+      "sha256": "216391ba894402b193ab586cab0cb6b5b859eb219a6d027891c4ea1a005ebdeb"
+    },
+    {
+      "file": "research/reproducibility/rc65-jwst-host-audit-node.json",
+      "sha256": "5d71389059367ba5c2182729328135c1528a1a3d8040a4e6989a41efa80b2215"
+    }
+  ]
+}

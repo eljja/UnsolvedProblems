@@ -1,0 +1,24 @@
+{
+  "cycleId": "RC-2026-66",
+  "reviewedOn": "2026-08-31",
+  "queries": [
+    "JWST Cepheid single epoch phase correction two epoch validation NGC 3447",
+    "Cepheid phase correction F090W F150W single epoch",
+    "NGC 4038 JWST Cepheid F150W distance modulus",
+    "JWST GO-2581 NGC 4038 Cepheids",
+    "NGC 3447 component covariance phase-correction ledger"
+  ],
+  "found": [
+    "Riess et al. 2023 used two JWST epochs to confirm identities, test photometric stability, and constrain phases in NGC 4258 and NGC 5584.",
+    "Riess et al. 2025 describes the NGC 3447 single-epoch F090W-to-F150W phase method and aggregate scatter reductions.",
+    "Riess et al. 2024 Table A2 publishes the missing numerical NGC 4038 HST and JWST/SH0ES distances; the text identifies GO-2581 and 22 recovered Cepheids.",
+    "The 2025 paper explicitly notes that component distance errors include an approximately 0.02-mag NGC 4258 term and that the within-system difference is independent of that anchor."
+  ],
+  "notVerifiedInReviewedSources": [
+    "A public 154-row stable-ID phase-correction ledger connected to the 144 fit objects and 142 released rows.",
+    "A numerical half-plane equation for the NGC 3447A exclusion chord.",
+    "A preregistered, balanced, sealed-identity second-epoch crossover in NGC 3447 that compares single- and two-epoch corrections between the spiral and tidal components.",
+    "An executable object-level covariance recipe that regenerates the 0.002+-0.028 mag contrast from the released photometry."
+  ],
+  "noveltyBoundary": "The component methods—two-epoch phase constraints, single-epoch color-based phase inference, artificial-star tests, and common-anchor cancellation—already exist. The proposed contribution is their prospective combination in one stable-ID, balanced, sealed crossover with explicit selection and covariance receipts; novelty is not asserted until a broader literature and programme search confirms it."
+}

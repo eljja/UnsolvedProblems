@@ -1,0 +1,86 @@
+{
+  "cycleId": "RC-2026-66",
+  "reviewedOn": "2026-08-31",
+  "status": "nineteen-host-summary-and-component-covariance-closed-object-phase-lineage-open",
+  "selectedProblems": ["UP-003", "UP-625", "UP-626"],
+  "selectionReason": "RC65 ended with two exact requests: a numerical NGC 4038 row and PHOST-SEMANTIC-1 fields for NGC 3447. A version-of-record 2024 machine-readable table closes the first request, while the 2025 source archive and released coordinates permit stronger localization of the second without opening a new fit or any cyber-trust work.",
+  "newVerifiedFacts": [
+    "The version-of-record 2024 Table A2 supplies NGC 4038 at HST 31.612+-0.121 mag and JWST/SH0ES 31.67+-0.035 mag; the JWST observations came from GO-2581 and recovered 22 Cepheids.",
+    "Adding that journal row to the frozen RC65 fixture closes nineteen numerical hosts. Shared-anchor GLS gives a mean JWST-minus-HST contrast of -0.0199077+-0.0274902 mag and a distance slope of -0.00493787+-0.0153955 mag per mag.",
+    "The +0.07 mag-per-mag trend required by the tested HST-crowding explanation is 4.8675 standard errors from the nineteen-host slope and remains at least 3.7011 standard errors away under all nineteen single-host deletions.",
+    "NGC 4038 has low leverage in this fit: removing it returns the RC65 mean and changes the nineteen-host mean by only -0.0009163 mag.",
+    "Deleting NGC 1448 still moves the common mean most, by -0.0128502 mag, so the common-offset branch remains host-sensitive at the frozen 0.01-mag gate even though the distance-trend decision is stable.",
+    "Using the published tangent-plane ellipses with their reported dimensions as semiaxes reproduces all 63 spiral labels and all 55 NGC 3447A labels from coordinates alone.",
+    "Exactly two rows labelled as other NGC 3447 objects, IDs 135027 and 136273, lie inside the NGC 3447A ellipse. They localize the effect of the figure-defined chord whose numerical equation is not published; the other 22 unassigned rows lie outside both ellipses.",
+    "The reported component standard errors 0.030 and 0.025 mag together with the 0.028-mag differential error imply covariance 0.0003705 mag^2, correlation 0.494, and a common-mode standard deviation 0.019248 mag, quantitatively matching the paper's approximately 0.02-mag NGC 4258 term.",
+    "Treating the component estimates as independent would give a 0.039051-mag differential error, 39.47% larger than the published value; explicit common-mode cancellation reconstructs 0.028 mag exactly.",
+    "The 2025 arXiv source archive contains sixteen files and only one illustrative Table B photometry row. It supplies the F090W phase transformation and aggregate phase statistics but no per-object phase-correction ledger, uncorrected photometry, selection flags, or executable 154-to-144-to-142 identity mapping.",
+    "The reported W_H scatter change 0.19 to 0.17 implies an effective-size multiplier 1.2491, reproducing the stated approximately 25% statistical-weight gain, but this aggregate check cannot reconstruct individual corrected magnitudes.",
+    "Standard-library Python and dependency-free Node independently parse the new journal row and agree on every nineteen-host fit, deletion, ellipse metric, covariance decomposition, and phase-count diagnostic within numerical precision."
+  ],
+  "hypothesisAdjudication": [
+    {"code": "H66-A", "verdict": "supported", "claim": "A primary numerical source exists for NGC 4038 and closes the nineteen-host summary fixture without digitising a figure."},
+    {"code": "H66-B", "verdict": "rejected", "claim": "Adding NGC 4038 makes the distance-growing +0.07 mag-per-mag crowding trend compatible with the common-host data."},
+    {"code": "H66-C", "verdict": "supported-with-explicit-boundary", "claim": "The published ellipse parameters recover the two named component samples; only two stable IDs depend on the nonnumeric chord boundary."},
+    {"code": "H66-D", "verdict": "rejected", "claim": "The spiral and tidal component errors may be combined as independent uncertainties."},
+    {"code": "H66-E", "verdict": "supported-at-summary-level", "claim": "One shared approximately 0.02-mag nuisance term explains why the component difference is more precise than naive quadrature."},
+    {"code": "H66-F", "verdict": "not-admissible", "claim": "The author source archive and version-of-record MRT close the per-object phase, selection, and likelihood lineage."}
+  ],
+  "causalChain": [
+    "Input and assumptions: the hash-pinned RC65 eighteen-host fixture, one version-of-record NGC 4038 row, the unchanged shared NGC 4258 covariance rule, published ellipse parameters, Table 1 component errors, and the versioned author source archive.",
+    "Bottleneck: RC65 mixed a now-solvable host-row absence with a deeper object-semantic gap; the latter includes a figure-only chord, three incompatible object counts, and corrected-only photometry.",
+    "Bridge: close each layer separately—numerical host coverage by a journal table, component membership by coordinate replay, and summary covariance by variance algebra—without treating any layer as proof of the next.",
+    "Independent adjudicands: nineteen-host mean and slope, all host deletions, 142 coordinate memberships, the two chord-dependent identities, covariance and correlation implied by published errors, and source-archive field coverage.",
+    "Resolution criterion: a stable-ID release must make the 154 phase corrections, 144 fitted objects, 142 published rows, chord rule, correction columns, selection receipt, and component likelihood executable; only then may the object result be transported into an independently validated current global H0 fit."
+  ],
+  "workPackages": [
+    {
+      "code": "RC66-W1",
+      "purpose": "Preserve the completed nineteen-host common-systematic test.",
+      "method": "Pin the journal NGC 4038 row beside the RC65 fixture, retain shared-anchor covariance, and rerun the full fit and all host deletions in two implementations whenever a source version changes.",
+      "deliverable": "Nineteen-host receipt with the added-row lineage, mean, slope, influence ordering, and source hashes.",
+      "pass": "Both implementations agree within 1e-10, the paper's mean and slope remain within 0.005 mag tolerances, and the required slope remains at least three standard errors away under every deletion.",
+      "fail": "A source change, duplicate host, filter mismatch, covariance alteration, or deletion below three standard errors reopens the aggregate conclusion.",
+      "next": "Do not add plotted or reprocessed values unless their estimator and covariance ancestry are documented."
+    },
+    {
+      "code": "RC66-W2",
+      "purpose": "Turn the remaining NGC 3447 ambiguity into the smallest executable release.",
+      "method": "Publish a crosswalk for all 154 correction identities with 144-fit and 142-table flags; provide the chord half-plane equation, raw and corrected photometry, phase estimate and uncertainty, every correction component, rejection iteration, and the component covariance/likelihood recipe.",
+      "deliverable": "PHOST-SEMANTIC-2 ledger and reference code reproducing the three Table 1 rows and 0.002+-0.028 mag contrast.",
+      "pass": "Every transition is identity-preserving, the coordinate classifier—including the two chord exclusions—is executable, and an independent implementation matches distances, scatters, and contrast within 0.001 mag.",
+      "fail": "Any inferred identity, figure-read boundary, unexplained correction, or outcome-tuned fit keeps object closure open.",
+      "next": "Localize mismatch to identity, geometry, phase, photometry, rejection, or covariance before changing the model."
+    },
+    {
+      "code": "RC66-W3",
+      "purpose": "Experimentally distinguish single-epoch phase error from background-dependent photometric bias.",
+      "method": "Before new data, stratify NGC 3447 Cepheids by component, background, period, and first-epoch phase ambiguity; seal a balanced validation subset. Obtain a second F090W/F150W epoch, run the existing single-epoch correction blind to it, then compare single-epoch and two-epoch mean magnitudes within each component using an independent reduction.",
+      "deliverable": "Stable-ID crossover ledger and the preregistered difference-in-differences: (single minus two epoch)_tidal minus (single minus two epoch)_spiral.",
+      "pass": "Independent reductions agree and the contrast is below 0.01 mag over the tested background range, or a nonzero contrast predicts phase ambiguity rather than artificial-star crowding residuals on the sealed subset.",
+      "fail": "Unbalanced selection, reuse of the second epoch in model development, phase-dependent censoring, or reduction disagreement blocks causal transport.",
+      "next": "If phase dominates, revise and retest the phase template; if background dominates and agrees with artificial stars, refine the crowding model; if neither does, inspect color and population terms."
+    }
+  ],
+  "uncertaintyBudget": [
+    "NGC 4038 values are rounded in the journal table; the row closes the publication-level fixture, not raw-photometry precision.",
+    "The nineteen-host GLS inherits RC65's shared-anchor approximation tau=sqrt(0.017^2+0.017^2) mag; it is not the unpublished full ladder covariance.",
+    "NGC 4038's 2024 HST entry is the R22 value rather than an object-level same-slope refit demonstrated here; the low-leverage deletion bounds its effect on the current summary.",
+    "The ellipse replay depends on an explicit tangent-plane angle convention that is validated against all named labels; the chord itself remains nonnumeric and is not inferred.",
+    "The covariance decomposition is uniquely implied by three rounded standard errors under a shared-additive-mode model; it does not identify every physical covariance ancestor.",
+    "Phase-scatter reductions are aggregate, and scatter differences do not identify the sign or object-wise distribution of corrections.",
+    "The 154, 144, and 142 populations may differ for legitimate selection reasons, but no released crosswalk currently proves those reasons.",
+    "Neither the complete object likelihood nor a current global H0 fit is reproduced, so no new cosmological parameter estimate is claimed."
+  ],
+  "failedOrRejectedAttempts": [
+    "RC65's statement that no numerical NGC 4038 row was public was too narrow because it searched the 2025 supplements and 2024 Table 3 but not the 2024 version-of-record Table A2; the earlier record remains preserved and is superseded here.",
+    "Naively adding 0.030 and 0.025 mag in quadrature gives 0.039051 mag and fails the published 0.028-mag differential error.",
+    "Calling the region selection fully executable fails because the chord is only drawn; two exact stable IDs remain dependent on that boundary.",
+    "Calling the arXiv source package a complete data release fails because its Table B has one row and contains no correction ledger.",
+    "Using the aggregate 25% statistical-weight check as object-level validation fails because it admits many incompatible sets of individual corrections.",
+    "Reopening color coefficients, clipping thresholds, or weights after the RC65 object mismatch remains prohibited; no result-driven search was performed."
+  ],
+  "structuralConnection": "CONN-EVIDENCE-039 separates shared-nuisance cancellation from geometric selection and identity-preserving transformation across Hubble calibration, finite-sample inference, and post-selection inference.",
+  "claimBoundary": "RC66 closes the public numerical nineteen-host summary, all named ellipse memberships, and the summary-level common covariance implied by the published component errors. It does not assert an error in the paper, reconstruct the chord prospectively, recover per-object phase corrections, reproduce the component likelihood from released objects, refit current H0, or resolve the Hubble tension.",
+  "exactNextStart": "Publish or obtain PHOST-SEMANTIC-2 beginning with one 154-row stable-ID crosswalk carrying in-144-fit and in-142-table flags, the numeric chord half-plane that excludes IDs 135027 and 136273, uncorrected and corrected F090W/F150W, phase estimate and uncertainty, all correction components, outlier iteration, and the shared covariance recipe. Re-run the unchanged three RC65 object fixtures. If they close, preregister the balanced second-epoch crossover and seal its validation identities before collecting or inspecting the new epoch."
+}

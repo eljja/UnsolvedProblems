@@ -11,7 +11,7 @@
 - 확장 설명·대표 시도·최근 연구 흐름: [`research-context.js`](./research-context.js)
 - 문제별 해결 시도 설계: [`solution-context.js`](./solution-context.js)
 - 문제별 가설 경쟁·불확실성 예산·실행 프로그램: [`deep-solution-context.js`](./deep-solution-context.js)
-- 반복 연구 사이클·난제 간 구조적 연결: [`research-cycle-data.js`](./research-cycle-data.js), [`research-cycle-03-data.js`](./research-cycle-03-data.js)–[`research-cycle-65-data.js`](./research-cycle-65-data.js)
+- 반복 연구 사이클·난제 간 구조적 연결: [`research-cycle-data.js`](./research-cycle-data.js), [`research-cycle-03-data.js`](./research-cycle-03-data.js)–[`research-cycle-66-data.js`](./research-cycle-66-data.js)
 - JWST–HST 18-host GLS·NGC 3447 의미론 폐쇄 감사: [`research/reproducibility/rc65-jwst-host-audit-spec.json`](./research/reproducibility/rc65-jwst-host-audit-spec.json), [`research/reproducibility/rc65-jwst-host-audit-python.json`](./research/reproducibility/rc65-jwst-host-audit-python.json), [`research/reproducibility/rc65-jwst-host-audit-node.json`](./research/reproducibility/rc65-jwst-host-audit-node.json), [`research/reproducibility/rc65-perfect-host-semantic-release-contract.json`](./research/reproducibility/rc65-perfect-host-semantic-release-contract.json), [`scripts/verify-rc65-jwst-host-cycle.mjs`](./scripts/verify-rc65-jwst-host-cycle.mjs)
 - 자율 합성 공개 데이터 감사: [`research/alab-public-data-audit.json`](./research/alab-public-data-audit.json)
 - 완전 원장·재생성 기준선: [`research/complete-ledger.schema.json`](./research/complete-ledger.schema.json), [`research/alab-replay-benchmark.json`](./research/alab-replay-benchmark.json)
@@ -82,12 +82,14 @@
 - 31개 불가능·현실 경계 사례
 - 163개 핵심 난제와 130개 로드맵 우선과제
 - 16개 상금 연계 항목(현재 상금·경진 16개)
-- 10개 상금 프로그램과 367개 기관·로드맵·원 연구 출처
-- 65개 누적 연구 사이클, 20개 심층 연구 문제의 210개 사이클 기록과 68개 구조적 연결
+- 10개 상금 프로그램과 369개 기관·로드맵·원 연구 출처
+- 66개 누적 연구 사이클, 20개 심층 연구 문제의 213개 사이클 기록과 69개 구조적 연결
 
 상금 정보는 2026년 8월 5일, 출처 연결·확장 설명·연구 맥락은 2026년 8월 7일 기준으로 검토했습니다. 65차 연구 사이클은 2025 출판본의 HST–JWST host 표와 NGC 3447 세페이드 표를 byte·SHA-256으로 고정했습니다. 공개 수치로 구성 가능한 18개 고유 host의 공유앵커 GLS는 평균 −0.020824±0.027528 mag와 거리기울기 −0.005095±0.015397 mag/mag를 주어 발표 요약을 재현했습니다. HST crowding 해결에 필요한 +0.07 기울기는 전체 4.877σ, 모든 단일-host 삭제에서도 최소 3.719σ 배제됐습니다. 다만 NGC 1448 삭제는 평균을 0.013192 mag 움직여 0.01 mag 안정성 문턱을 넘었습니다. 발표된 NGC 3447A−spiral 0.002±0.028 mag는 필요한 0.17 mag를 6σ 배제하지만, machine-readable 표 142행은 논문의 all-fit 144개·phase-correction 154개와 닫히지 않았고 세 사전 고정 object fit도 component 결과를 재현하지 못했습니다. Python과 독립 Node가 일치했습니다. 이 결과는 논문 오류를 주장하지 않으며, 18-host 요약 재현과 object-to-summary 공개 계보의 불충분성을 구분합니다. 공식 데이터·원 논문·독립 구현은 2026년 8월 31일 기준으로 확인했습니다. 각 항목은 검증 가능한 질문, 현재까지 축적된 지식, 기술적 병목, 해결 판정 기준과 관련 출처를 함께 기록합니다.
 
-Google 소유권 확인 메타 태그, canonical URL, 한국어·영문 `hreflang`, 문제별 구조화 데이터와 1,620개 현지화 URL의 사이트맵을 제공합니다. 사이트맵은 `npm run sitemap`으로 현재 카탈로그에서 다시 생성할 수 있습니다.
+66차 사이클은 2024 출판본의 NGC 4038 수치행을 편입해 19-host GLS를 평균 −0.019908±0.027490 mag, 거리기울기 −0.004938±0.015395 mag/mag로 닫았습니다. 필요한 +0.07 기울기는 전체 4.868σ, 모든 단일-host 삭제에서 최소 3.701σ 떨어져 있습니다. 좌표와 발표 타원은 spiral 63개와 tidal 55개를 모두 재현했지만, figure-only chord에 의존하는 ID 135027·136273은 수치 경계가 공개될 때까지 미식별로 남습니다. 성분오차 0.030·0.025 mag와 차이오차 0.028 mag는 공분산 0.0003705 mag²와 공통모드 0.019248 mag를 요구합니다. 2025 저자 source archive에는 개체별 phase correction ledger가 없어 154→144→142 계보와 object likelihood는 닫히지 않았습니다. Python과 독립 Node가 모든 19-host·영역·공분산 판정에서 일치했으며, 현재 결론은 Hubble tension의 해결이나 새 H0 추정을 뜻하지 않습니다.
+
+Google 소유권 확인 메타 태그, canonical URL, 한국어·영문 `hreflang`, 문제별 구조화 데이터와 1,622개 현지화 URL의 사이트맵을 제공합니다. 사이트맵은 `npm run sitemap`으로 현재 카탈로그에서 다시 생성할 수 있습니다.
 
 상금은 **증명·반례 상금**, **성능 목표형 연구경진 총상금**, **계산 도전 상금**, **현재 지급을 보증할 수 없는 역사적 제안**을 구분해 기록합니다. 진행 중인 경진이라도 신규 참가 접수가 끝났을 수 있으며, 총상금은 한 문제에 지급되는 금액과 다를 수 있으므로 상세 규정을 반드시 확인해야 합니다.
 

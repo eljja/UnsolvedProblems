@@ -1,0 +1,313 @@
+{
+  "cycleId": "RC-2026-66",
+  "implementation": "python-standard-library",
+  "sourceAudit": {
+    "newSourceHashes": [
+      {
+        "file": "apjad8c21t6_ascii.txt",
+        "bytes": 3447,
+        "sha256": "8822f7470eddb30c5cd0f0614b5f03b41ba087446b79ec2dc14ce2fc41cabfb9",
+        "matchesManifest": true
+      },
+      {
+        "file": "2509.01667v1.tar",
+        "bytes": 18416991,
+        "sha256": "fefae8d124cb178c22cc90a3984cc1838d999b8b17d7d2e019170dd9c740e33e",
+        "matchesManifest": true
+      }
+    ],
+    "predecessorHashes": [
+      {
+        "file": "research/reproducibility/rc65-jwst-host-source-manifest.json",
+        "sha256": "2cb820e58713516dd8c67b4316007f071eca22d038cc4ee9cf02c1e3b2250edc",
+        "matchesManifest": true
+      },
+      {
+        "file": "research/reproducibility/rc65-jwst-host-audit-python.json",
+        "sha256": "216391ba894402b193ab586cab0cb6b5b859eb219a6d027891c4ea1a005ebdeb",
+        "matchesManifest": true
+      },
+      {
+        "file": "research/reproducibility/rc65-jwst-host-audit-node.json",
+        "sha256": "5d71389059367ba5c2182729328135c1528a1a3d8040a4e6989a41efa80b2215",
+        "matchesManifest": true
+      }
+    ],
+    "allHashesMatch": true,
+    "authorSourceArchive": {
+      "fileMembers": [
+        "00README.json",
+        "aasjournal.bst",
+        "aastex631.cls",
+        "combined.png",
+        "composite-figure.jpg",
+        "jw_crowd2.pdf",
+        "main.bbl",
+        "main.tex",
+        "N3447_metallicity_map.pdf",
+        "n3447_new5.pdf",
+        "stampsn3447.png",
+        "stellar-pops.pdf",
+        "summary_new3.pdf",
+        "wes115.pdf",
+        "wes150.pdf",
+        "xy-plot.png"
+      ],
+      "memberCount": 16,
+      "mainTexBytes": 50918,
+      "mainTexSha256": "8effae414f274a706c5a8accf06d013d2bb1d090b37b95483297cf5d7ded5d90",
+      "inlineTableBPhotometryRows": 1,
+      "containsPhaseTransform": true,
+      "containsReportedPhaseCount": true,
+      "containsExecutablePerObjectCorrectionLedger": false
+    }
+  },
+  "nineteenHostClosure": {
+    "hostCount": 19,
+    "addedRow": {
+      "host": "NGC4038",
+      "hst": 31.612,
+      "hstSigma": 0.121,
+      "jwst": 31.67,
+      "jwstSigma": 0.035,
+      "delta": 0.05800000000000338,
+      "sigma": 0.12596031120952345,
+      "filter": "F150W",
+      "source": "2024-table-a2-shoes"
+    },
+    "glsMeanMag": -0.019907736918756382,
+    "glsMeanStandardErrorMag": 0.027490248717688116,
+    "glsDistanceInterceptMag": -0.009601528777033914,
+    "glsDistanceSlopeMagPerMag": -0.004937865054505372,
+    "glsDistanceSlopeStandardError": 0.015395458212750967,
+    "requiredCrowdingSlopeMagPerMag": 0.07,
+    "requiredCrowdingSlopeExclusionSigma": 4.867530671639228,
+    "leaveOneHostOut": [
+      {
+        "removedHost": "NGC1448",
+        "meanMag": -0.032757966144922615,
+        "meanMovementMag": -0.012850229226166233,
+        "slopeMagPerMag": -0.0006944832059530351,
+        "slopeStandardError": 0.015508136863034813,
+        "requiredSlopeExclusionSigma": 4.558541353504583
+      },
+      {
+        "removedHost": "NGC1559",
+        "meanMag": -0.011543899767722198,
+        "meanMovementMag": 0.008363837151034184,
+        "slopeMagPerMag": -0.005062652573651448,
+        "slopeStandardError": 0.01539558893210837,
+        "requiredSlopeExclusionSigma": 4.875594750201731
+      },
+      {
+        "removedHost": "NGC5584",
+        "meanMag": -0.025179074245687237,
+        "meanMovementMag": -0.005271337326930855,
+        "slopeMagPerMag": -0.007565321237794544,
+        "slopeStandardError": 0.015613931106081134,
+        "requiredSlopeExclusionSigma": 4.967699723459475
+      },
+      {
+        "removedHost": "NGC5468",
+        "meanMag": -0.015608989293452082,
+        "meanMovementMag": 0.0042987476253043,
+        "slopeMagPerMag": 0.00527198032394824,
+        "slopeStandardError": 0.017488990086484257,
+        "requiredSlopeExclusionSigma": 3.7010724665041987
+      },
+      {
+        "removedHost": "NGC3447",
+        "meanMag": -0.02403684289860821,
+        "meanMovementMag": -0.004129105979851829,
+        "slopeMagPerMag": -0.007600425867892863,
+        "slopeStandardError": 0.015656628087064587,
+        "requiredSlopeExclusionSigma": 4.956394533763364
+      },
+      {
+        "removedHost": "M101",
+        "meanMag": -0.01658497742969887,
+        "meanMovementMag": 0.0033227594890575113,
+        "slopeMagPerMag": -0.03611669529773292,
+        "slopeStandardError": 0.02380614252756638,
+        "requiredSlopeExclusionSigma": 4.457534234068155
+      },
+      {
+        "removedHost": "NGC4536",
+        "meanMag": -0.023225743890124,
+        "meanMovementMag": -0.0033180069713676166,
+        "slopeMagPerMag": -0.002274252424601924,
+        "slopeStandardError": 0.015582626757766246,
+        "requiredSlopeExclusionSigma": 4.638130242616578
+      },
+      {
+        "removedHost": "NGC2525",
+        "meanMag": -0.017086029793283407,
+        "meanMovementMag": 0.0028217071254729754,
+        "slopeMagPerMag": -0.0028880324245918725,
+        "slopeStandardError": 0.015508432103273401,
+        "requiredSlopeExclusionSigma": 4.6998969295682205
+      },
+      {
+        "removedHost": "NGC1365",
+        "meanMag": -0.0175302249945998,
+        "meanMovementMag": 0.0023775119241565834,
+        "slopeMagPerMag": -0.005271831364974803,
+        "slopeStandardError": 0.015400749518588473,
+        "requiredSlopeExclusionSigma": 4.887543380542801
+      },
+      {
+        "removedHost": "NGC5643",
+        "meanMag": -0.017711584388512405,
+        "meanMovementMag": 0.002196152530243977,
+        "slopeMagPerMag": -0.00819671728128775,
+        "slopeStandardError": 0.015911029186824868,
+        "requiredSlopeExclusionSigma": 4.9146234579243036
+      },
+      {
+        "removedHost": "NGC5861",
+        "meanMag": -0.017942947298039098,
+        "meanMovementMag": 0.0019647896207172846,
+        "slopeMagPerMag": -0.0030891138846508726,
+        "slopeStandardError": 0.01552988025025412,
+        "requiredSlopeExclusionSigma": 4.706353990299114
+      },
+      {
+        "removedHost": "NGC3972",
+        "meanMag": -0.02149542152393118,
+        "meanMovementMag": -0.001587684605174798,
+        "slopeMagPerMag": -0.005271211416976621,
+        "slopeStandardError": 0.015400413443717228,
+        "requiredSlopeExclusionSigma": 4.8876097834687915
+      },
+      {
+        "removedHost": "NGC7250",
+        "meanMag": -0.01866772231944601,
+        "meanMovementMag": 0.0012400145993103733,
+        "slopeMagPerMag": -0.004681608590069126,
+        "slopeStandardError": 0.015397834805387109,
+        "requiredSlopeExclusionSigma": 4.850137018221608
+      },
+      {
+        "removedHost": "NGC3147",
+        "meanMag": -0.018667722319446026,
+        "meanMovementMag": 0.001240014599310356,
+        "slopeMagPerMag": -0.002391648093204142,
+        "slopeStandardError": 0.015647620206103913,
+        "requiredSlopeExclusionSigma": 4.62636791663471
+      },
+      {
+        "removedHost": "NGC4424",
+        "meanMag": -0.021090411397370792,
+        "meanMovementMag": -0.0011826744786144101,
+        "slopeMagPerMag": -0.0039489316376969,
+        "slopeStandardError": 0.015417712620899571,
+        "requiredSlopeExclusionSigma": 4.796362045135995
+      },
+      {
+        "removedHost": "NGC4038",
+        "meanMag": -0.020824018568800687,
+        "meanMovementMag": -0.0009162816500443045,
+        "slopeMagPerMag": -0.0050953760803880265,
+        "slopeStandardError": 0.015397431376932934,
+        "requiredSlopeExclusionSigma": 4.877136597789243
+      },
+      {
+        "removedHost": "NGC3370",
+        "meanMag": -0.020377984442361975,
+        "meanMovementMag": -0.00047024752360559294,
+        "slopeMagPerMag": -0.0056029148795058124,
+        "slopeStandardError": 0.015673882142678622,
+        "requiredSlopeExclusionSigma": 4.823496450419621
+      },
+      {
+        "removedHost": "NGC4639",
+        "meanMag": -0.01972554654710819,
+        "meanMovementMag": 0.0001821903716481936,
+        "slopeMagPerMag": -0.004869485767586999,
+        "slopeStandardError": 0.01541640246770878,
+        "requiredSlopeExclusionSigma": 4.856482303469226
+      },
+      {
+        "removedHost": "NGC2442",
+        "meanMag": -0.01990448642509138,
+        "meanMovementMag": 3.2504936650010197e-06,
+        "slopeMagPerMag": -0.004938105526882487,
+        "slopeStandardError": 0.01539566967507254,
+        "requiredSlopeExclusionSigma": 4.867479434702108
+      }
+    ],
+    "maximumMeanInfluence": {
+      "removedHost": "NGC1448",
+      "meanMag": -0.032757966144922615,
+      "meanMovementMag": -0.012850229226166233,
+      "slopeMagPerMag": -0.0006944832059530351,
+      "slopeStandardError": 0.015508136863034813,
+      "requiredSlopeExclusionSigma": 4.558541353504583
+    },
+    "minimumLeaveOneOutRequiredSlopeExclusionSigma": 3.7010724665041987,
+    "publishedMeanAndSlopeReproduced": true
+  },
+  "regionReplay": {
+    "releasedRows": 142,
+    "labelCounts": {
+      "N3447Spiral": 63,
+      "N3447A": 55,
+      "N3447": 24
+    },
+    "allSpiralLabelsInsideSpiralOnly": true,
+    "allTidalLabelsInsideTidalOnly": true,
+    "figureDefinedChordExclusions": [
+      {
+        "id": "135027.00",
+        "ra": 163.3776,
+        "dec": 16.78432,
+        "tidalEllipseMetric": 0.32227948833621173
+      },
+      {
+        "id": "136273.00",
+        "ra": 163.37861,
+        "dec": 16.78479,
+        "tidalEllipseMetric": 0.4348270351085321
+      }
+    ],
+    "otherRowsOutsideBothEllipses": 22,
+    "analyticEllipseLabelsClosed": true,
+    "numericChordBoundaryAvailable": false
+  },
+  "summaryCovarianceClosure": {
+    "impliedCovarianceMag2": 0.0003705,
+    "impliedCorrelation": 0.494,
+    "impliedCommonModeSigmaMag": 0.01924837655492016,
+    "spiralSpecificSigmaMag": 0.023010866998007702,
+    "tidalSpecificSigmaMag": 0.015953056133543822,
+    "reconstructedContrastSigmaMag": 0.028000000000000004,
+    "naiveIndependentContrastSigmaMag": 0.03905124837953327,
+    "naiveOverstatementFraction": 0.3946874421261881,
+    "closesPublishedContrastError": true
+  },
+  "phaseCorrectionLineage": {
+    "reportedPhaseCorrections": 154,
+    "reportedAllFitObjects": 144,
+    "releasedObjectRows": 142,
+    "releasedMinusAll": -2,
+    "releasedMinusCorrections": -12,
+    "wholeSampleEffectiveSizeMultiplier": 1.2491349480968859,
+    "spiralQuadratureScatterRemovedMag": 0.05258326730053966,
+    "tidalQuadratureScatterRemovedMag": 0.06424951361683608,
+    "identityMappingExecutable": false,
+    "reason": "The version-of-record MRT publishes corrected F150W only; the source archive contains one illustrative Table B row and no per-object correction ledger, uncorrected photometry, phase estimates, or fit flags."
+  },
+  "gates": {
+    "sourceIntegrity": true,
+    "completeNineteenHostNumericalFixture": true,
+    "publishedNineteenHostSummary": true,
+    "crowdingSlopeUnderEveryDeletion": true,
+    "componentEllipseReplay": true,
+    "numericChordBoundary": false,
+    "summaryCovarianceClosure": true,
+    "objectPhaseLineage": false,
+    "objectLevelFitClosure": false,
+    "globalH0Refit": false
+  },
+  "claimBoundary": "The numerical nineteen-host summary, analytic ellipse memberships, and summary-level component covariance now close. The figure-defined chord, 154-to-144-to-142 identity transitions, per-object phase corrections, object-level component likelihood, and current global H0 refit do not."
+}

@@ -89,7 +89,8 @@ assert(new Set(updatedDefinitions).size === 3 && new Set(EnglishDefinitions).siz
 assert(sources.shoes_perfect_host_2025.publishedOn === "2025-10-17" && sources.shoes_perfect_host_tables_2025 && sources.shoes_jwst_crowding_2024 && sources.mast_perfect_host_2025, "RC65 primary sources missing or stale");
 
 for (const page of ["index.html", "solve.html", "research-log.html"]) assert(readText(page).includes("research-cycle-65-data.js?v=20260831-cycle65"), `${page}: RC65 script missing`);
-assert(readText("scripts/generate-sitemap.mjs").includes("length: 63"), "Sitemap generator omits RC65");
+const sitemapCycleCount = Number(readText("scripts/generate-sitemap.mjs").match(/length:\s*(\d+)/)?.[1]);
+assert(sitemapCycleCount >= 63, "Sitemap generator omits RC65");
 assert(!readText("research-cycle-65-data.js").includes("전공자 포인트") && !readText("research-cycle-65-data.js").includes("1단계") && !readText("research-cycle-65-data.js").includes("개수를 맞"), "RC65 public prose contains forbidden mechanical or editorial wording");
 
 if (failures.length) {
