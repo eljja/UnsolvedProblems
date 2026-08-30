@@ -11,7 +11,7 @@
 - 확장 설명·대표 시도·최근 연구 흐름: [`research-context.js`](./research-context.js)
 - 문제별 해결 시도 설계: [`solution-context.js`](./solution-context.js)
 - 문제별 가설 경쟁·불확실성 예산·실행 프로그램: [`deep-solution-context.js`](./deep-solution-context.js)
-- 반복 연구 사이클·난제 간 구조적 연결: [`research-cycle-data.js`](./research-cycle-data.js), [`research-cycle-03-data.js`](./research-cycle-03-data.js)–[`research-cycle-63-data.js`](./research-cycle-63-data.js)
+- 반복 연구 사이클·난제 간 구조적 연결: [`research-cycle-data.js`](./research-cycle-data.js), [`research-cycle-03-data.js`](./research-cycle-03-data.js)–[`research-cycle-64-data.js`](./research-cycle-64-data.js)
 - 자율 합성 공개 데이터 감사: [`research/alab-public-data-audit.json`](./research/alab-public-data-audit.json)
 - 완전 원장·재생성 기준선: [`research/complete-ledger.schema.json`](./research/complete-ledger.schema.json), [`research/alab-replay-benchmark.json`](./research/alab-replay-benchmark.json)
 - ARROWS 필드 감사·독립 재생 시험: [`research/replay/arrows-ybco-field-audit.json`](./research/replay/arrows-ybco-field-audit.json), [`research/replay/synthetic-replay-fixture.json`](./research/replay/synthetic-replay-fixture.json), [`research/replay/verification-result.json`](./research/replay/verification-result.json)
@@ -81,12 +81,12 @@
 - 31개 불가능·현실 경계 사례
 - 163개 핵심 난제와 130개 로드맵 우선과제
 - 16개 상금 연계 항목(현재 상금·경진 16개)
-- 10개 상금 프로그램과 362개 기관·로드맵·원 연구 출처
-- 63개 누적 연구 사이클, 19개 심층 연구 문제의 204개 사이클 기록과 66개 구조적 연결
+- 10개 상금 프로그램과 364개 기관·로드맵·원 연구 출처
+- 64개 누적 연구 사이클, 20개 심층 연구 문제의 207개 사이클 기록과 67개 구조적 연결
 
-상금 정보는 2026년 8월 5일, 출처 연결·확장 설명·연구 맥락은 2026년 8월 7일 기준으로 검토했습니다. 63차 연구 사이클은 공식 SH0ES-2022 compact 선형계의 6개 파일 49,462,230 byte를 commit과 SHA-256으로 고정했습니다. 공분산을 whitening한 QR fit은 H0=73.042819±1.007148 km/s/Mpc로 발표값을 재현했고, 독립 Node 구현은 H0에서 1.7×10⁻¹² 이내로 일치했습니다. 3,491개 식별 가능한 단일행과 83개 식별 가능한 design-signature block의 최대 익명 이동은 각각 0.304σ와 0.679σ였습니다. 그러나 공개 FITS에는 행·모수 label과 covariance ancestry가 없고 2024~2025 SMC·JWST 분기를 포함하지 않아 named 앵커·host·측광계 인과 감사에는 자료가 불충분하다고 판정했습니다. 이 익명 민감도는 현재 거리사다리의 물리 branch 안정성을 증명하지 않습니다. 공식 데이터·원 논문·독립 Python·Node 구현은 2026년 8월 29일 기준으로 확인했습니다. 각 항목은 검증 가능한 질문, 현재까지 축적된 지식, 기술적 병목, 해결 판정 기준과 관련 출처를 함께 기록합니다.
+상금 정보는 2026년 8월 5일, 출처 연결·확장 설명·연구 맥락은 2026년 8월 7일 기준으로 검토했습니다. 64차 연구 사이클은 2024 SMC 세페이드 원 연구의 공식 표를 commit과 SHA-256으로 고정하고 88개 별·264개 세 필터 관측을 이름 단위로 감사했습니다. 발표한 고정기울기 영점 16.467 mag, 산포 0.1017 mag와 자유기울기 −3.31±0.05를 재현했습니다. 최대 단일별 영점 이동은 0.002676 mag였습니다. 같은 별의 잔차로 최적화한 기하 평면은 훈련 산포를 줄였지만 leave-one-star RMS 0.105127 mag로 외부 식쌍성 기하의 0.102207 mag보다 나빴습니다. 주기 꺾임 전체 탐색의 20,000회 null bootstrap은 전역 p=0.499725를 주었습니다. Python과 독립 Node 구현이 일치했습니다. 이 결과는 named SMC 하위 보정의 단일별 안정성과 선택 편향을 판정하지만, 최신 전역 거리사다리의 행·모수·공분산 계보가 공개되지 않아 SMC 제거 후 H0 재적합은 아직 수행하지 않았습니다. 공식 데이터·원 논문·독립 구현은 2026년 8월 31일 기준으로 확인했습니다. 각 항목은 검증 가능한 질문, 현재까지 축적된 지식, 기술적 병목, 해결 판정 기준과 관련 출처를 함께 기록합니다.
 
-Google 소유권 확인 메타 태그, canonical URL, 한국어·영문 `hreflang`, 문제별 구조화 데이터와 1,616개 현지화 URL의 사이트맵을 제공합니다. 사이트맵은 `npm run sitemap`으로 현재 카탈로그에서 다시 생성할 수 있습니다.
+Google 소유권 확인 메타 태그, canonical URL, 한국어·영문 `hreflang`, 문제별 구조화 데이터와 1,618개 현지화 URL의 사이트맵을 제공합니다. 사이트맵은 `npm run sitemap`으로 현재 카탈로그에서 다시 생성할 수 있습니다.
 
 상금은 **증명·반례 상금**, **성능 목표형 연구경진 총상금**, **계산 도전 상금**, **현재 지급을 보증할 수 없는 역사적 제안**을 구분해 기록합니다. 진행 중인 경진이라도 신규 참가 접수가 끝났을 수 있으며, 총상금은 한 문제에 지급되는 금액과 다를 수 있으므로 상세 규정을 반드시 확인해야 합니다.
 

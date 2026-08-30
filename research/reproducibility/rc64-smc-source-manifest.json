@@ -1,0 +1,21 @@
+{
+  "cycleId": "RC-2026-64",
+  "frozenOn": "2026-08-31",
+  "repository": "https://github.com/lbreuval/SMC_Cepheids_HST",
+  "commit": "c06da1a2f28761d9149d8aeedf3ebfd3e1967312",
+  "files": [
+    {
+      "name": "Table1.dat",
+      "url": "https://raw.githubusercontent.com/lbreuval/SMC_Cepheids_HST/c06da1a2f28761d9149d8aeedf3ebfd3e1967312/Table1.dat",
+      "bytes": 22254,
+      "sha256": "68db2618e65e794a8d7685332b7ed14232c70a1efcb390b087c1594f1eae94dc"
+    },
+    {
+      "name": "Table2.dat",
+      "url": "https://raw.githubusercontent.com/lbreuval/SMC_Cepheids_HST/c06da1a2f28761d9149d8aeedf3ebfd3e1967312/Table2.dat",
+      "bytes": 10970,
+      "sha256": "122930e4eedd790b0b01cb7133632d66ef5e28b42a7b39308435e4e8f8de9b55"
+    }
+  ],
+  "totalBytes": 33224
+}

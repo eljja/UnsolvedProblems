@@ -1,0 +1,38 @@
+{
+  "id": "CONN-EVIDENCE-037",
+  "cycleId": "RC-2026-64",
+  "reviewedOn": "2026-08-31",
+  "problemIds": ["UP-003", "UP-625", "UP-626"],
+  "type": "calibration-transfer-and-post-selection",
+  "strength": "strong-with-subbranch-boundary",
+  "commonStructure": "A calibration is estimated after choosing a geometric correction, outlier rule, slope, or breakpoint on the same finite sample. Training residuals then mix physical fit, model selection, and random noise, so they cannot by themselves certify transfer to a new star or to the global distance ladder.",
+  "variableMapping": {
+    "UP-003": "target = SMC Cepheid zero point and downstream H0; model choice = geometry, slope, outlier, or period break; external target = eclipsing-binary geometry and the current full ladder",
+    "UP-625": "target = finite-sample calibration functional; observation unit = Cepheid; dependence unit = shared camera, calibration, geometry, and selection ancestor; diagnostic = leave-one-object-out displacement",
+    "UP-626": "target = evidence for a selected breakpoint or geometry; search = candidate period pivots or affine planes; correction = maximum-statistic bootstrap or object-level cross-validation"
+  },
+  "validWhen": [
+    "The Cepheid, filter, geometry, and outlier identities are fixed before evaluating outcomes.",
+    "The resampling unit preserves all three filters and every transformation belonging to one Cepheid.",
+    "The external eclipsing-binary plane was estimated without the Cepheid residuals used for adjudication.",
+    "A breakpoint is judged by the maximum statistic over the entire frozen search range, not by a local p-value at the winning pivot."
+  ],
+  "breaksWhen": [
+    "The same Cepheid residuals choose a geometry plane and report its training scatter as validation.",
+    "The winning period pivot is tested as if it had been specified before inspecting the data.",
+    "Photometric rows are resampled independently although filters and reductions share a Cepheid and calibration ancestors.",
+    "A sub-branch magnitude shift is presented as a covariance-preserving global H0 refit without a current row, parameter, and covariance lineage release."
+  ],
+  "minimumValidationTest": "Freeze the object-level sample, outlier policy, slope, geometry candidates, pivot range, and random seed. Compare the external eclipsing-binary plane with a same-Cepheid affine plane under leave-one-Cepheid-out prediction, and compare the largest scanned period-break statistic with a null distribution that repeats the complete search. Two independent implementations must agree within the declared tolerances.",
+  "observedEvidence": {
+    "singleCepheidMaximumShiftMag": 0.0026761454156698505,
+    "externalDebGeometryRmsMag": 0.10220660864034836,
+    "sameSampleAffineTrainingRmsMag": 0.10175891071991948,
+    "sameSampleAffineLeaveOneOutRmsMag": 0.1051266912519996,
+    "crossValidatedGainVersusExternalDebMag": -0.002920082611651234,
+    "periodBreakWinningPivotLogP": 0.959,
+    "periodBreakObservedMaximumStatistic": 1.9443645276327974,
+    "periodBreakGlobalPValue": 0.49972501374931255
+  },
+  "claimBoundary": "This connection is verified for the published 88-object SMC Cepheid table. It does not prove a universal theorem about model selection, identify all shared photometric covariance, or measure the SMC branch's covariance-preserving effect on the current global H0 fit."
+}

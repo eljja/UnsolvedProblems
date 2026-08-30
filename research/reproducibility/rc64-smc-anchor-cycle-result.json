@@ -1,0 +1,79 @@
+{
+  "cycleId": "RC-2026-64",
+  "reviewedOn": "2026-08-31",
+  "status": "named-smc-subbranch-reproduced-global-deletion-still-blocked",
+  "selectedProblems": ["UP-003", "UP-625", "UP-626"],
+  "selectionReason": "RC63 stopped because the 2022 compact ladder lacked names and omitted the later SMC branch. The primary 2024 SMC study separately releases 88 named Cepheids, their three-filter observations, periods, geometry terms, and derived Wesenheit magnitudes. This makes a real named influence, calibration-transfer, and look-elsewhere audit possible without pretending that the unreleased current global covariance is available.",
+  "newVerifiedFacts": [
+    "The official pinned tables contain 264 frame-level measurements and 88 Cepheid-level rows; every Cepheid has F555W, F814W, and F160W coverage.",
+    "Recomputing the published Wesenheit quantity from the rounded table columns leaves at most 0.001514 mag residual, consistent with tabular rounding.",
+    "After excluding the declared outlier OGLE-1455 and fixing the slope at -3.26, the reproduced intercept is 16.466751 mag and RMS scatter is 0.101624 mag, matching the paper's 16.467 and 0.1017.",
+    "The free-slope fit gives -3.315734+-0.052630, consistent with the published -3.31+-0.05.",
+    "OGLE-0896 has the largest leave-one-Cepheid-out pivot-zero-point displacement, only -0.002676 mag, equivalent to a linearized -0.123 percent distance-ladder scale change.",
+    "No geometry correction has 0.112333 mag RMS, the external eclipsing-binary plane has 0.102207 mag, and the published same-Cepheid plane has 0.101687 mag in sample.",
+    "A newly fitted same-Cepheid affine plane reaches 0.101759 mag training RMS but 0.105127 mag leave-one-out RMS, 0.002920 mag worse than the external eclipsing-binary plane; its tiny training gain does not transfer.",
+    "The frozen period-break scan peaks at logP=0.959 with statistic 1.944365. Repeating the entire scan in 20,000 null simulations gives global p=0.499725+-0.003535, so the selected break is not evidence of nonlinearity.",
+    "A dependency-free Node implementation reproduces the Python baseline, object influence, geometry transfer, and breakpoint bootstrap to numerical precision."
+  ],
+  "hypothesisAdjudication": [
+    {"code": "H64-A", "verdict": "supported", "claim": "The public named SMC tables reproduce the published fixed- and free-slope Cepheid calibration."},
+    {"code": "H64-B", "verdict": "rejected-at-declared-threshold", "claim": "One SMC Cepheid moves the zero point by at least 0.01 mag when omitted."},
+    {"code": "H64-C", "verdict": "rejected-for-transfer", "claim": "A geometry plane optimized on the Cepheid residuals improves held-one-Cepheid prediction by at least 0.005 mag relative to external eclipsing-binary geometry."},
+    {"code": "H64-D", "verdict": "rejected", "claim": "A scanned period breakpoint is globally significant at p<0.01 under the frozen search."},
+    {"code": "H64-E", "verdict": "not-admissible", "claim": "Deleting the SMC anchor from the current full ladder moves global H0 by less than one full-fit sigma."}
+  ],
+  "causalChain": [
+    "Input and assumptions: pinned 2024 SMC frame and Cepheid tables, declared Wesenheit coefficient, fixed-slope baseline, one published outlier rule, external eclipsing-binary geometry, and a frozen breakpoint search.",
+    "Bottleneck: small in-sample residual improvements can arise from reusing the 87 retained Cepheids for model choice, while the current full-ladder covariance and row ancestry are still absent.",
+    "Bridge: use a geometry estimated from independent eclipsing binaries or evaluate a Cepheid-fitted plane on a held-out Cepheid; repeat the complete period-break search under the null.",
+    "Independent adjudicands: object-level zero-point displacement, held-one-Cepheid RMS, maximum-search bootstrap p-value, and agreement of separate Python and Node implementations.",
+    "Resolution criterion: the named SMC sub-branch passes object influence and independent calibration-transfer gates, then a current semantic ladder release supports covariance-preserving SMC deletion and independent global refit."
+  ],
+  "workPackages": [
+    {
+      "code": "RC64-W1",
+      "purpose": "Turn the SMC sub-branch into a reproducible named calibration fixture.",
+      "method": "Pin raw tables by commit and SHA-256; preserve Cepheid IDs, frame IDs, filters, geometry, selection, and transformation metadata; reproduce every published summary before sensitivity analysis.",
+      "deliverable": "Versioned 88-object fixture with parser, identity checks, baseline fit, and independent implementation receipt.",
+      "pass": "All 88 objects and 264 filter rows are present, derived magnitudes agree within 0.002 mag, and published intercept, scatter, and free slope pass frozen tolerances.",
+      "fail": "A missing filter, unidentified object, hash change, or baseline mismatch stops downstream claims.",
+      "next": "On failure, repair source semantics or parser before altering the scientific model."
+    },
+    {
+      "code": "RC64-W2",
+      "purpose": "Adjudicate whether geometry and period structure transfer beyond the data that selected them.",
+      "method": "Compare no correction, external eclipsing-binary geometry, the published Cepheid plane, and a freshly fitted affine plane; evaluate the last by leave-one-Cepheid-out prediction. Scan frozen period pivots and bootstrap the complete maximum search.",
+      "deliverable": "Geometry training-versus-holdout table, period-break maximum-statistic null distribution, and explicit rejection or retention decisions.",
+      "pass": "A Cepheid-fitted geometry gains at least 0.005 mag over external geometry in leave-one-out RMS, or a period break reaches global p<0.01.",
+      "fail": "Training-only improvement or global p>=0.01 keeps external geometry and one-slope calibration primary.",
+      "next": "Use failed alternatives only as sensitivity analyses and search for an independent geometry or larger predeclared sample."
+    },
+    {
+      "code": "RC64-W3",
+      "purpose": "Measure the SMC anchor's actual contribution to the current global distance ladder.",
+      "method": "Acquire current HST-JWST-SMC y-L-C arrays with observation and parameter dictionaries and covariance-component ancestry; validate Table2 Cepheid identities; remove SMC rows and descended covariance; refit independently.",
+      "deliverable": "Full-versus-no-SMC H0, rank, covariance rebuild hash, and held common-host residual table.",
+      "pass": "Two implementations agree, the reduced model remains identified, absolute H0 movement stays below one full-fit sigma, and held residuals meet their frozen budget.",
+      "fail": "Missing ancestry, rank loss, implementation disagreement, a one-sigma movement, or held residual failure makes SMC calibration the active problem.",
+      "next": "Only after passing should the early-universe model grid closed in RC62 and RC63 be reopened."
+    }
+  ],
+  "uncertaintyBudget": [
+    "Photometric rounding: the public table is rounded, leaving a maximum 0.001514 mag reconstruction residual; this is smaller than the 0.01 mag influence gate but retained in the receipt.",
+    "Finite sample: 87 retained Cepheids share camera and calibration ancestors; leave-one-object-out diagnoses single-object leverage but is not a complete cluster-covariance estimate.",
+    "Geometry: the external eclipsing-binary plane has its own distance and planar-structure uncertainty; the audit tests relative transfer, not the full absolute DEB systematic budget.",
+    "Selection: OGLE-1455 is a published 3.4-sigma exclusion. Retaining it shifts the pivot zero point by 0.003788 mag, so the outlier rule remains visible.",
+    "Extinction law: changing the Wesenheit coefficient on total colour is confounded with the intrinsic period-colour relation. Only a residualized sensitivity is admissible without a joint colour model.",
+    "Search multiplicity: local breakpoint statistics are invalid after scanning pivots; the complete scan is repeated in each of 20,000 null simulations, with Monte Carlo SE 0.003535.",
+    "Global transport: sub-branch magnitude changes are linearized scale equivalents, not a covariance-preserving H0 refit; current global lineage remains the dominant unresolved uncertainty."
+  ],
+  "failedOrRejectedAttempts": [
+    "The published same-Cepheid geometry reduces training RMS by roughly five ten-thousandths of a magnitude relative to external geometry, but a freshly optimized plane worsens held-one-Cepheid RMS; it is not promoted to the primary correction.",
+    "The winning breakpoint has different short- and long-period slopes, but half of null simulations produce an equal or larger maximum somewhere in the frozen search; the local-looking feature is rejected as evidence for a break.",
+    "A naive change from Wesenheit coefficient 0.386 to 0.362 moves the zero point by 0.024594 mag, but it applies a dust coefficient to total colour and therefore mixes intrinsic period-colour structure with extinction; the number is preserved as an inadmissible diagnostic, not a cosmological shift.",
+    "The SMC-only sub-branch cannot be converted into a current covariance-preserving global H0 deletion because no current global row, parameter, and covariance ancestry release was found."
+  ],
+  "structuralConnection": "CONN-EVIDENCE-037 links calibration transfer, finite-sample influence, and post-selection inference: a model chosen on the same stars must earn its claim on held objects or a search-adjusted null distribution.",
+  "claimBoundary": "RC64 reproduces and audits the named 2024 SMC Cepheid sub-branch. It does not recalculate the current global SH0ES covariance, prove that SMC cannot shift H0 materially, establish a universal Cepheid law, or resolve the Hubble tension.",
+  "exactNextStart": "Obtain or construct a current semantic HST-JWST-SMC ladder release. Map the 88 Table2 Cepheid IDs and their frame IDs to global observation rows and covariance ancestors before viewing the no-SMC H0 result. Use external eclipsing-binary geometry as the primary SMC correction and the same-Cepheid plane only as a sensitivity branch. Execute covariance-preserving SMC deletion in two implementations; keep the early-physics grid closed unless the reduced fit remains identified, moves H0 by less than one full-fit sigma, and passes held common-host residuals."
+}

@@ -1,0 +1,94 @@
+{
+  "cycleId": "RC-2026-64",
+  "implementation": "dependency-free-node",
+  "source": {
+    "table1Sha256": "68db2618e65e794a8d7685332b7ed14232c70a1efcb390b087c1594f1eae94dc",
+    "table2Sha256": "122930e4eedd790b0b01cb7133632d66ef5e28b42a7b39308435e4e8f8de9b55"
+  },
+  "semanticAudit": {
+    "table1Rows": 264,
+    "table2Rows": 88,
+    "threeFilterCoverageComplete": true,
+    "largeDriftFlaggedFrames": 17,
+    "largeDriftFlaggedCepheids": 13,
+    "maximumDerivedMHWResidualMag": 0.0015140000000002374
+  },
+  "baseline": {
+    "slope": -3.26,
+    "interceptLogP0Mag": 16.46675149425288,
+    "magnitudeAtLogP1": 13.20675149425288,
+    "rmsMag": 0.10162356861362029,
+    "sampleSdMag": 0.10221269568585468,
+    "freeSlope": -3.3157339707691027,
+    "freeSlopeStandardError": 0.052629867688735274
+  },
+  "singleCepheidInfluence": {
+    "maximum": {
+      "id": "OGLE-0896",
+      "shiftMag": -0.0026761454156698505,
+      "absoluteShiftMag": 0.0026761454156698505
+    },
+    "topFive": [
+      {
+        "id": "OGLE-0896",
+        "shiftMag": -0.0026761454156698505,
+        "absoluteShiftMag": 0.0026761454156698505
+      },
+      {
+        "id": "OGLE-1117",
+        "shiftMag": -0.002620331462178882,
+        "absoluteShiftMag": 0.002620331462178882
+      },
+      {
+        "id": "OGLE-0668",
+        "shiftMag": 0.0023975755145642097,
+        "absoluteShiftMag": 0.0023975755145642097
+      },
+      {
+        "id": "OGLE-1747",
+        "shiftMag": 0.0021557150494473376,
+        "absoluteShiftMag": 0.0021557150494473376
+      },
+      {
+        "id": "OGLE-1107",
+        "shiftMag": -0.002132424485434825,
+        "absoluteShiftMag": 0.002132424485434825
+      }
+    ]
+  },
+  "geometryTransfer": {
+    "noGeometryRmsMag": 0.1123331383603948,
+    "externalDebGeometryRmsMag": 0.10220660864034836,
+    "cepheidEquation6RmsMag": 0.10168657271909166,
+    "sameSampleAffineTrainingRmsMag": 0.10175891071991948,
+    "sameSampleAffineLeaveOneOutRmsMag": 0.1051266912519996,
+    "crossValidatedGainVersusExternalDebMag": -0.002920082611651234
+  },
+  "breakSearch": {
+    "observed": {
+      "pivotLogP": 0.959,
+      "shortCount": 39,
+      "longCount": 48,
+      "shortSlope": -4.048793978155958,
+      "longSlope": -3.420561076279775,
+      "localStatistic": 1.9443645276327974
+    },
+    "bootstrap": {
+      "replicates": 20000,
+      "seed": 20260831,
+      "exceedances": 9994,
+      "globalPValue": 0.49972501374931255,
+      "monteCarloStandardError": 0.0035354449862168083,
+      "meanNullMaximumStatistic": 2.04375727314751
+    }
+  },
+  "gates": {
+    "sourceShape": true,
+    "derivedIdentity": true,
+    "publishedBaseline": true,
+    "singleCepheidInfluence": true,
+    "sameSampleGeometryTransfers": false,
+    "periodBreak": false,
+    "globalNamedDeletion": false
+  }
+}

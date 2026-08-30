@@ -43,18 +43,18 @@ assert(cycleResult.newVerifiedFacts.length === 9 && cycleResult.hypothesisAdjudi
 assert(cycleResult.failedOrRejectedAttempts.length === 4 && cycleResult.exactNextStart.includes("row dictionary"), "RC63 failure history or exact handoff is missing");
 
 const sandbox = { window: {} };
-const cycleFiles = ["research-cycle-data.js", ...Array.from({ length: 61 }, (_, index) => `research-cycle-${String(index + 3).padStart(2, "0")}-data.js`)];
+const cycleFiles = ["research-cycle-data.js", ...Array.from({ length: 62 }, (_, index) => `research-cycle-${String(index + 3).padStart(2, "0")}-data.js`)];
 for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", ...cycleFiles]) {
   vm.runInNewContext(readText(file), sandbox, { filename: file });
 }
 
 const cycle = sandbox.window.RESEARCH_CYCLES.find(item => item.id === "RC-2026-63");
 const connection = sandbox.window.RESEARCH_CONNECTIONS.find(item => item.id === "CONN-EVIDENCE-036");
-assert(sandbox.window.RESEARCH_CYCLES.length === 63, "Site must expose 63 research cycles");
-assert(Object.keys(sandbox.window.CATALOG_SOURCES).length === 362, "Site must expose 362 catalog sources");
-assert(sandbox.window.PROBLEMS.filter(problem => problem.researchHistory?.length).length === 19, "Site must expose 19 deeply researched problems");
-assert(sandbox.window.PROBLEMS.reduce((sum, problem) => sum + (problem.researchHistory?.length || 0), 0) === 204, "Site must expose 204 problem-cycle records");
-assert(sandbox.window.RESEARCH_CONNECTIONS.length === 66, "Site must expose 66 structural connections");
+assert(sandbox.window.RESEARCH_CYCLES.length === 64, "Site must expose 64 research cycles");
+assert(Object.keys(sandbox.window.CATALOG_SOURCES).length === 364, "Site must expose 364 catalog sources");
+assert(sandbox.window.PROBLEMS.filter(problem => problem.researchHistory?.length).length === 20, "Site must expose 20 deeply researched problems");
+assert(sandbox.window.PROBLEMS.reduce((sum, problem) => sum + (problem.researchHistory?.length || 0), 0) === 207, "Site must expose 207 problem-cycle records");
+assert(sandbox.window.RESEARCH_CONNECTIONS.length === 67, "Site must expose 67 structural connections");
 assert(cycle?.problemIds.join(",") === "UP-003,UP-005,UP-625" && cycle?.verifiedFindings.length === 9 && cycle?.artifacts.length === 8, "RC63 public cycle record is incomplete");
 assert(cycle?.resultMatrix?.rows?.length === 7 && cycle?.resultMatrix?.columns?.length === 4 && cycle?.sourceIds.length >= 7, "RC63 result matrix or source ledger is incomplete");
 assert(connection?.strength === "strong" && connection.problemIds.includes("UP-625") && connection.minimumTest.text.length > 100, "RC63 semantic-identifiability connection is incomplete");
@@ -62,7 +62,7 @@ assert(connection?.strength === "strong" && connection.problemIds.includes("UP-6
 for (const problemId of cycle?.problemIds || []) {
   const problem = sandbox.window.PROBLEMS.find(item => item.id === problemId);
   const record = problem?.researchHistory?.find(item => item.cycleId === "RC-2026-63");
-  assert(problem?.cycleResearch === record, `${problemId} must expose RC63 as current research`);
+  assert(record?.cycleId === "RC-2026-63", `${problemId} must preserve the RC63 research record`);
   assert(record?.centralQuestion?.text?.length > 80 && record.centralQuestion.textEn.length > 100, `${problemId} needs a specific bilingual question`);
   assert(record?.updatedDefinition?.text?.length > 300 && record.updatedDefinition.textEn.length > 400, `${problemId} needs a substantive bilingual definition`);
   assert(record?.technicalAxes?.length === 3 && record.technicalAxes.every(item => item.text && item.textEn), `${problemId} needs distinct bilingual technical axes`);
@@ -82,8 +82,8 @@ for (const page of ["index.html", "solve.html", "research-log.html"]) assert(rea
 const publicCopy = readText("research-cycle-63-data.js");
 for (const prohibited of ["전공자 포인트", "1단계 · 처음 읽는 사람", "2단계 · 전공자 핵심", "개수를 맞추지", "아래 시도는 개별 논문", "난제를 해결했다"]) assert(!publicCopy.includes(prohibited), `RC63 public copy contains prohibited phrase: ${prohibited}`);
 const readme = readText("README.md");
-assert(readme.includes("63개 누적 연구 사이클") && readme.includes("19개 심층 연구 문제의 204개 사이클 기록"), "README RC63 cycle counts changed");
-assert(readme.includes("66개 구조적 연결") && readme.includes("362개 기관·로드맵·원 연구 출처") && readme.includes("1,616개 현지화 URL"), "README RC63 source, connection, or sitemap counts changed");
+assert(readme.includes("64개 누적 연구 사이클") && readme.includes("20개 심층 연구 문제의 207개 사이클 기록"), "README current cycle counts changed");
+assert(readme.includes("67개 구조적 연결") && readme.includes("364개 기관·로드맵·원 연구 출처") && readme.includes("1,618개 현지화 URL"), "README current source, connection, or sitemap counts changed");
 assert(read("package.json").scripts["verify:rc63"]?.includes("verify-rc63-shoes-cycle.mjs"), "RC63 verifier script is missing");
 const sitemap = readText("sitemap.xml");
 assert(sitemap.includes("cycle=RC-2026-63&amp;lang=ko") && sitemap.includes("cycle=RC-2026-63&amp;lang=en"), "Sitemap missing RC63 localized URLs");

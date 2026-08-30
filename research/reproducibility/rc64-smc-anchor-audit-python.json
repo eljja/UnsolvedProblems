@@ -1,0 +1,247 @@
+{
+  "cycleId": "RC-2026-64",
+  "reviewedOn": "2026-08-31",
+  "source": {
+    "repository": "https://github.com/lbreuval/SMC_Cepheids_HST",
+    "commit": "c06da1a2f28761d9149d8aeedf3ebfd3e1967312",
+    "files": [
+      {
+        "name": "Table1.dat",
+        "bytes": 22254,
+        "sha256": "68db2618e65e794a8d7685332b7ed14232c70a1efcb390b087c1594f1eae94dc"
+      },
+      {
+        "name": "Table2.dat",
+        "bytes": 10970,
+        "sha256": "122930e4eedd790b0b01cb7133632d66ef5e28b42a7b39308435e4e8f8de9b55"
+      }
+    ]
+  },
+  "semanticAudit": {
+    "table1Rows": 264,
+    "table2Rows": 88,
+    "uniqueTable1Cepheids": 88,
+    "uniqueTable2Cepheids": 88,
+    "threeFilterCoverageComplete": true,
+    "largeDriftFlaggedFrames": 17,
+    "largeDriftFlaggedCepheids": 13,
+    "maximumDerivedMHWResidualMag": 0.0015140000000002374,
+    "meanDerivedMHWResidualMag": 0.00026484090909014005,
+    "maximumEq6GeometryReconstructionResidualMag": 0.000497564282617019,
+    "globalLadderRowDictionary": false,
+    "globalParameterDictionary": false,
+    "covarianceAncestry": false,
+    "globalNamedDeletionAdmissible": false
+  },
+  "publishedBaselineReproduction": {
+    "sampleSize": 87,
+    "excludedCepheid": "OGLE-1455",
+    "fit": {
+      "slope": -3.26,
+      "interceptLogP0Mag": 16.46675149425288,
+      "magnitudeAtLogP1": 13.20675149425288,
+      "rmsMag": 0.10162356861362029,
+      "sampleSdMag": 0.10221269568585468,
+      "interceptStandardErrorMag": 0.01095835122643658
+    },
+    "freeFit": {
+      "slope": -3.3157339707691027,
+      "slopeStandardError": 0.05262986768873524,
+      "interceptLogP0Mag": 16.52447971618294,
+      "magnitudeAtLogP1": 13.20874574541384,
+      "rmsMag": 0.10095975012921446,
+      "sampleSigmaMag": 0.10214060607033744,
+      "deltaFromBaselineAtLogP1Mag": 0.001994251160960303,
+      "linearizedH0Equivalent": {
+        "percent": 0.0918808445084629,
+        "kmPerSecondPerMpc": 0.06722921392684231
+      }
+    },
+    "outlierResidualMag": 0.3333685057471225,
+    "outlierResidualInPublishedScatter": 3.2779597418596116,
+    "published": {
+      "interceptLogP0Mag": 16.467,
+      "scatterMag": 0.1017,
+      "freeSlope": -3.31
+    }
+  },
+  "singleCepheidInfluence": {
+    "maximum": {
+      "id": "OGLE-0896",
+      "shiftMag": -0.0026761454156698505,
+      "absoluteShiftMag": 0.0026761454156698505
+    },
+    "topFive": [
+      {
+        "id": "OGLE-0896",
+        "shiftMag": -0.0026761454156698505,
+        "absoluteShiftMag": 0.0026761454156698505
+      },
+      {
+        "id": "OGLE-1117",
+        "shiftMag": -0.002620331462178882,
+        "absoluteShiftMag": 0.002620331462178882
+      },
+      {
+        "id": "OGLE-0668",
+        "shiftMag": 0.0023975755145642097,
+        "absoluteShiftMag": 0.0023975755145642097
+      },
+      {
+        "id": "OGLE-1747",
+        "shiftMag": 0.0021557150494473376,
+        "absoluteShiftMag": 0.0021557150494473376
+      },
+      {
+        "id": "OGLE-1107",
+        "shiftMag": -0.002132424485434825,
+        "absoluteShiftMag": 0.002132424485434825
+      }
+    ],
+    "materialThresholdMag": 0.01,
+    "passes": true,
+    "maximumLinearizedH0Equivalent": {
+      "percent": -0.12316514022062686,
+      "kmPerSecondPerMpc": -0.09011993309943267
+    }
+  },
+  "geometryTransfer": {
+    "noGeometryRmsMag": 0.1123331383603948,
+    "externalDebGeometryRmsMag": 0.10220660864034829,
+    "cepheidEquation6RmsMag": 0.10168657271909164,
+    "sameSampleAffineTrainingRmsMag": 0.10175891071991942,
+    "sameSampleAffineLeaveOneOutRmsMag": 0.10512669125199939,
+    "sameSampleAffineCoefficients": {
+      "interceptLogP0Mag": 16.46647273319421,
+      "xMagPerKpc": 0.11884735745575037,
+      "yMagPerKpc": -0.10336207851522947
+    },
+    "crossValidatedGainVersusExternalDebMag": -0.0029200826116510953,
+    "materialGainThresholdMag": 0.005,
+    "materialTransferSupported": false
+  },
+  "breakSearch": {
+    "observed": {
+      "pivotLogP": 0.959,
+      "shortCount": 39,
+      "longCount": 48,
+      "shortSlope": -4.048793978155958,
+      "longSlope": -3.420561076279775,
+      "localStatistic": 1.9443645276327974
+    },
+    "bootstrap": {
+      "replicates": 20000,
+      "seed": 20260831,
+      "exceedances": 9994,
+      "globalPValue": 0.49972501374931255,
+      "monteCarloStandardError": 0.0035354449862168083,
+      "meanNullMaximumStatistic": 2.043757273147511
+    },
+    "globalSignificanceThreshold": 0.01,
+    "breakSupported": false
+  },
+  "analysisChoiceEnvelope": {
+    "retainOutlier": {
+      "slope": -3.26,
+      "interceptLogP0Mag": 16.470539772727275,
+      "magnitudeAtLogP1": 13.210539772727275,
+      "rmsMag": 0.10704454741726233,
+      "sampleSdMag": 0.10765798824115032,
+      "interceptStandardErrorMag": 0.011476380107208566,
+      "deltaFromBaselineAtLogP1Mag": 0.0037882784743956677,
+      "linearizedH0Equivalent": {
+        "percent": 0.17460893504726016,
+        "kmPerSecondPerMpc": 0.12776135777408026
+      }
+    },
+    "freeSlope": {
+      "slope": -3.3157339707691027,
+      "slopeStandardError": 0.05262986768873524,
+      "interceptLogP0Mag": 16.52447971618294,
+      "magnitudeAtLogP1": 13.20874574541384,
+      "rmsMag": 0.10095975012921446,
+      "sampleSigmaMag": 0.10214060607033744,
+      "deltaFromBaselineAtLogP1Mag": 0.001994251160960303,
+      "linearizedH0Equivalent": {
+        "percent": 0.0918808445084629,
+        "kmPerSecondPerMpc": 0.06722921392684231
+      }
+    },
+    "noGeometry": {
+      "slope": -3.26,
+      "interceptLogP0Mag": 16.469685402298847,
+      "magnitudeAtLogP1": 13.209685402298847,
+      "rmsMag": 0.1123331383603948,
+      "sampleSdMag": 0.1129843504150391,
+      "interceptStandardErrorMag": 0.012113193832046922,
+      "deltaFromBaselineAtLogP1Mag": 0.0029339080459678257,
+      "linearizedH0Equivalent": {
+        "percent": 0.13520277527026003,
+        "kmPerSecondPerMpc": 0.09892787066524927
+      }
+    },
+    "externalDebGeometry": {
+      "slope": -3.26,
+      "interceptLogP0Mag": 16.466396855425998,
+      "magnitudeAtLogP1": 13.206396855425998,
+      "rmsMag": 0.10220660864034829,
+      "sampleSdMag": 0.10279911568308193,
+      "interceptStandardErrorMag": 0.011021222049407267,
+      "deltaFromBaselineAtLogP1Mag": -0.0003546388268809153,
+      "linearizedH0Equivalent": {
+        "percent": -0.01633038797042019,
+        "kmPerSecondPerMpc": -0.011948944877956454
+      }
+    },
+    "cepheidEquation6Geometry": {
+      "slope": -3.26,
+      "interceptLogP0Mag": 16.466995501746524,
+      "magnitudeAtLogP1": 13.206995501746524,
+      "rmsMag": 0.10168657271909164,
+      "sampleSdMag": 0.10227606503557696,
+      "interceptStandardErrorMag": 0.010965145133852756,
+      "deltaFromBaselineAtLogP1Mag": 0.00024400749364517083,
+      "linearizedH0Equivalent": {
+        "percent": 0.011237591718971096,
+        "kmPerSecondPerMpc": 0.008222545860771152
+      }
+    },
+    "residualizedAlternateR": {
+      "slope": -3.26,
+      "interceptLogP0Mag": 16.466751494252875,
+      "magnitudeAtLogP1": 13.206751494252876,
+      "rmsMag": 0.10245862896043566,
+      "sampleSdMag": 0.10305259700277147,
+      "interceptStandardErrorMag": 0.011048398099425906,
+      "deltaFromBaselineAtLogP1Mag": -3.552713678800501e-15,
+      "linearizedH0Equivalent": {
+        "percent": -1.6653345369377348e-13,
+        "kmPerSecondPerMpc": -1.2185252806773405e-13
+      }
+    },
+    "naiveAlternateRNotAdmissible": {
+      "slope": -3.26,
+      "interceptLogP0Mag": 16.491345172413805,
+      "magnitudeAtLogP1": 13.231345172413805,
+      "rmsMag": 0.10235182819902579,
+      "sampleSdMag": 0.10294517710132607,
+      "interceptStandardErrorMag": 0.01103688147714284,
+      "deltaFromBaselineAtLogP1Mag": 0.024593678160925947,
+      "linearizedH0Equivalent": {
+        "percent": 1.13901871204507,
+        "kmPerSecondPerMpc": 0.8334199916033778
+      }
+    }
+  },
+  "claimBoundary": "The named SMC photometric table supports row-level finite-sample and model-selection audits, but not a covariance-preserving deletion of SMC from the current global SH0ES ladder.",
+  "gates": {
+    "sourceShape": true,
+    "derivedIdentity": true,
+    "publishedBaseline": true,
+    "singleCepheidInfluence": true,
+    "externalGeometryNotWorse": true,
+    "sameSampleGeometryTransfers": false,
+    "periodBreak": false,
+    "globalNamedDeletion": false
+  }
+}

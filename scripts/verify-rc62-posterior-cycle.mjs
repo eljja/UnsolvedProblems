@@ -71,18 +71,18 @@ assert(cycleResult.newVerifiedFacts.length === 9 && cycleResult.hypothesisAdjudi
 assert(cycleResult.failedOrRejectedAttempts.length === 4 && cycleResult.exactNextStart.includes("identical DESI DR2 plus CMB"), "RC62 failure record or exact handoff is missing");
 
 const sandbox = { window: {} };
-const cycleFiles = ["research-cycle-data.js", ...Array.from({ length: 61 }, (_, index) => `research-cycle-${String(index + 3).padStart(2, "0")}-data.js`)];
+const cycleFiles = ["research-cycle-data.js", ...Array.from({ length: 62 }, (_, index) => `research-cycle-${String(index + 3).padStart(2, "0")}-data.js`)];
 for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", ...cycleFiles]) {
   vm.runInNewContext(readText(file), sandbox, { filename: file });
 }
 
 const cycle = sandbox.window.RESEARCH_CYCLES.find(item => item.id === "RC-2026-62");
 const connection = sandbox.window.RESEARCH_CONNECTIONS.find(item => item.id === "CONN-EVIDENCE-035");
-assert(sandbox.window.RESEARCH_CYCLES.length === 63, "Site must expose 63 research cycles");
-assert(Object.keys(sandbox.window.CATALOG_SOURCES).length === 362, "Site must expose 362 catalog sources");
-assert(sandbox.window.PROBLEMS.filter(problem => problem.researchHistory?.length).length === 19, "Site must expose 19 deeply researched problems");
-assert(sandbox.window.PROBLEMS.reduce((sum, problem) => sum + (problem.researchHistory?.length || 0), 0) === 204, "Site must expose 204 problem-cycle records");
-assert(sandbox.window.RESEARCH_CONNECTIONS.length === 66, "Site must expose 66 structural connections");
+assert(sandbox.window.RESEARCH_CYCLES.length === 64, "Site must expose 64 research cycles");
+assert(Object.keys(sandbox.window.CATALOG_SOURCES).length === 364, "Site must expose 364 catalog sources");
+assert(sandbox.window.PROBLEMS.filter(problem => problem.researchHistory?.length).length === 20, "Site must expose 20 deeply researched problems");
+assert(sandbox.window.PROBLEMS.reduce((sum, problem) => sum + (problem.researchHistory?.length || 0), 0) === 207, "Site must expose 207 problem-cycle records");
+assert(sandbox.window.RESEARCH_CONNECTIONS.length === 67, "Site must expose 67 structural connections");
 assert(cycle?.problemIds.join(",") === "UP-003,UP-002,UP-005,UP-625", "RC62 public problem mapping changed");
 assert(cycle?.verifiedFindings.length === 9 && cycle?.artifacts.length === 7, "RC62 public cycle record is incomplete");
 assert(cycle?.resultMatrix?.rows?.length >= 7 && cycle?.resultMatrix?.columns?.length === 4 && cycle?.sourceIds.length >= 10, "RC62 public evidence matrix or source ledger is incomplete");
@@ -135,11 +135,11 @@ for (const prohibited of ["전공자 포인트", "1단계 · 처음 읽는 사�
   assert(!publicCopy.includes(prohibited), `RC62 public copy contains prohibited phrase: ${prohibited}`);
 }
 const readme = readText("README.md");
-assert(readme.includes("63개 누적 연구 사이클"), "README cycle count must be 63");
-assert(readme.includes("19개 심층 연구 문제의 204개 사이클 기록"), "README problem-cycle record count changed");
-assert(readme.includes("66개 구조적 연결"), "README connection count must be 66");
-assert(readme.includes("362개 기관·로드맵·원 연구 출처"), "README source count must be 362");
-assert(readme.includes("1,616개 현지화 URL"), "README sitemap count must be 1,616");
+assert(readme.includes("64개 누적 연구 사이클"), "README cycle count must be 64");
+assert(readme.includes("20개 심층 연구 문제의 207개 사이클 기록"), "README problem-cycle record count changed");
+assert(readme.includes("67개 구조적 연결"), "README connection count must be 67");
+assert(readme.includes("364개 기관·로드맵·원 연구 출처"), "README source count must be 364");
+assert(readme.includes("1,618개 현지화 URL"), "README sitemap count must be 1,618");
 const packageJson = read("package.json");
 assert(packageJson.scripts["verify:rc62"]?.includes("verify-rc62-posterior-cycle.mjs"), "RC62 verifier script is missing");
 assert(packageJson.scripts.pretest?.includes("verify-rc62-posterior-cycle.mjs"), "RC62 verifier is not in the default test path");

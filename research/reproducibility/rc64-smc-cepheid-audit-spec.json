@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "cycleId": "RC-2026-64",
+  "frozenOn": "2026-08-31",
+  "purpose": "Test the first current, named SH0ES branch available at observation level: whether the 2024 SMC Cepheid anchor reproduces its published period-luminosity relation, is dominated by one star, gains transferable precision from same-sample geometry fitting, or shows a period break after accounting for the scanned breakpoint.",
+  "source": {
+    "repository": "https://github.com/lbreuval/SMC_Cepheids_HST",
+    "commit": "c06da1a2f28761d9149d8aeedf3ebfd3e1967312",
+    "requiredFiles": ["Table1.dat", "Table2.dat"],
+    "expectedTable1Rows": 264,
+    "expectedTable2Rows": 88,
+    "expectedFiltersPerCepheid": ["F555W", "F814W", "F160W"]
+  },
+  "derivedQuantityGate": {
+    "formula": "m_H_W = F160W - 0.386 * (F555W - F814W) + Geo + 0.0293",
+    "maximumAbsoluteRoundingResidualMag": 0.002,
+    "identityRule": "All 88 published m_H_W values must be reproducible from named columns before any influence or model-selection claim is opened."
+  },
+  "baselineGate": {
+    "excludedCepheid": "OGLE-1455",
+    "fixedSlopeMagPerDex": -3.26,
+    "publishedInterceptAtLogP0Mag": 16.467,
+    "publishedScatterMag": 0.1017,
+    "publishedFreeSlopeMagPerDex": -3.31,
+    "interceptToleranceMag": 0.003,
+    "scatterToleranceMag": 0.003,
+    "freeSlopeToleranceMagPerDex": 0.08
+  },
+  "singleCepheidInfluenceGate": {
+    "estimand": "Fixed-slope magnitude at logP=1 after excluding OGLE-1455",
+    "materialShiftMag": 0.01,
+    "rule": "No single retained Cepheid may change the pivoted zero point by 0.01 mag or more under exact leave-one-out refitting."
+  },
+  "geometryTransferGate": {
+    "noGeometry": "Use the published three-filter Wesenheit magnitude plus CRNL but no line-of-sight correction.",
+    "externalGeometry": "Apply the detached-eclipsing-binary plane d=3.086*x-4.248*y+d_SMC from Equation 4.",
+    "sameSampleGeometry": "Fit an affine tangent-plane correction to the retained Cepheids, reporting both training and leave-one-out prediction RMS.",
+    "externalNotWorseToleranceMag": 0.003,
+    "materialCrossValidatedGainMag": 0.005,
+    "rule": "A lower training scatter from same-sample geometry is not evidence of transfer. It is material only if leave-one-out RMS improves on the externally fixed DEB geometry by at least 0.005 mag."
+  },
+  "breakSearchGate": {
+    "sample": "87 Cepheids after the declared OGLE-1455 exclusion",
+    "pivotRangeLogP": [0.85, 1.5],
+    "minimumCountPerSide": 9,
+    "localStatistic": "Absolute difference of short- and long-period OLS slopes divided by their separate classical standard errors in quadrature.",
+    "null": "One linear period-luminosity relation with Gaussian residuals at the fitted RMS and the observed logP values.",
+    "bootstrapReplicates": 20000,
+    "prng": "xorshift32 plus Box-Muller",
+    "seed": 20260831,
+    "globalSignificanceThreshold": 0.01,
+    "rule": "A period break is admitted only when the maximum scanned local statistic has a parametric-bootstrap global p-value below 0.01."
+  },
+  "analysisChoiceEnvelope": {
+    "reportedAlternatives": [
+      "retain OGLE-1455",
+      "free rather than LMC-fixed slope, compared at logP=1",
+      "omit the geometric correction",
+      "use the externally fixed DEB geometry",
+      "change the Wesenheit coefficient from 0.386 to 0.362 only after removing an internally fitted period-color relation"
+    ],
+    "warning": "Applying a different Wesenheit coefficient directly to total color is not an admissible host-specific dust test because intrinsic Cepheid color must first be separated from color excess."
+  },
+  "independentImplementationGate": {
+    "implementations": ["Python standard library", "dependency-free Node.js"],
+    "maximumDifference": {
+      "interceptMag": 1e-10,
+      "scatterMag": 1e-10,
+      "maximumLeaveOneOutShiftMag": 1e-10,
+      "breakStatistic": 1e-9,
+      "bootstrapPValue": 1e-12
+    }
+  },
+  "claimBoundary": "This audit can test the named SMC photometric sub-branch and its finite-sample/model-selection stability. It cannot remove SMC from the current global distance ladder or calculate a covariance-preserving SMC effect on H0 because the current global design matrix and covariance ancestry remain unreleased."
+}
