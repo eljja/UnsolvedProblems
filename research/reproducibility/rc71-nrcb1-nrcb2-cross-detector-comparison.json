@@ -1,0 +1,105 @@
+{
+  "cycleId": "RC-2026-71",
+  "experimentId": "PHOST-DETECTOR-BASELINE-1-NRCB1-NRCB2-COMPARISON",
+  "reviewedOn": "2026-09-01",
+  "inputs": {
+    "nrcb1": {
+      "file": "research/reproducibility/rc70-nrcb1-detector-baseline-result.json",
+      "sha256": "28c35826f89bb75e46531b2ce6f9a2b2f2775192d3c46d7aea82127f8badf637"
+    },
+    "nrcb2": {
+      "file": "research/reproducibility/rc71-nrcb2-detector-baseline-result.json",
+      "sha256": "c47d8cae2114236097ef4577ed0bc7f51cc180b74511481ea3d6167a8fe08a57"
+    }
+  },
+  "detectors": [
+    {
+      "detector": "NRCB1",
+      "expectedImageIndices": [
+        1,
+        5,
+        9,
+        13,
+        17,
+        21,
+        25,
+        29
+      ],
+      "catalogueRows": 14140,
+      "matchedRange": [
+        983,
+        1039
+      ],
+      "sigmaRangePixels": [
+        0.08,
+        0.1
+      ],
+      "psfStarRange": [
+        120,
+        121
+      ],
+      "maxAbsolutePsfAdjustment": 0.00285,
+      "apertureStarRange": [
+        200,
+        200
+      ],
+      "elapsed": "39:11.13",
+      "maximumResidentKb": 2443108,
+      "gates": {
+        "geometry": true,
+        "alignment": true,
+        "psf": true,
+        "aperture": true
+      }
+    },
+    {
+      "detector": "NRCB2",
+      "expectedImageIndices": [
+        2,
+        6,
+        10,
+        14,
+        18,
+        22,
+        26,
+        30
+      ],
+      "catalogueRows": 29382,
+      "matchedRange": [
+        1339,
+        1535
+      ],
+      "sigmaRangePixels": [
+        0.08,
+        0.15
+      ],
+      "psfStarRange": [
+        91,
+        96
+      ],
+      "maxAbsolutePsfAdjustment": 0.005902,
+      "apertureStarRange": [
+        129,
+        200
+      ],
+      "elapsed": "44:59.74",
+      "maximumResidentKb": 2454604,
+      "gates": {
+        "geometry": true,
+        "alignment": true,
+        "psf": false,
+        "aperture": true
+      }
+    }
+  ],
+  "exactContrasts": {
+    "catalogueRowRatioNrcb2OverNrcb1": 2.0779349363507778,
+    "minimumMatchedStarDifference": 356,
+    "maximumMatchedStarDifference": 496,
+    "minimumPsfStarDifference": -29,
+    "maximumPsfStarDifference": -25
+  },
+  "verifiedBoundary": "In these two frozen 800-by-800 tiles, NRCB2 has more catalogue rows and alignment matches but fewer usable PSF stars than NRCB1. Total detections or alignment matches therefore cannot substitute for the detector-specific PSF-star gate in this experiment.",
+  "inferenceBoundary": "Two tiles do not establish a universal relation between crowding and PSF support. NRCB3, NRCB4, spatially disjoint validation tiles, and a preregistered rescue design remain necessary.",
+  "decision": "NRCB2 fails only the PSF-star-count portion of the measurement-operator qualification. Keep the four-detector and artificial-star gates closed and design a fresh PSF-support validation rather than relaxing the documented threshold."
+}

@@ -1,0 +1,777 @@
+{
+  "cycleId": "RC-2026-71",
+  "experimentId": "PHOST-DETECTOR-BASELINE-1-NRCB2",
+  "reviewedOn": "2026-09-01",
+  "software": {
+    "name": "DOLPHOT",
+    "version": "3.0",
+    "binarySha256": "b0a3f74cddda42c24e7265fc5a8e0f94a2fbc147abc770e9cd21d330207c0c06",
+    "parameterFile": "research/reproducibility/rc70-detector-baseline-nrcb2.param",
+    "parameterSha256": "c08ad6f8f4006b88cb0927d1da5c1213ae3fcfb424f8924078de24726682771c"
+  },
+  "tile": {
+    "id": "nrcb2",
+    "detector": "NRCB2",
+    "photsec": [
+      1,
+      1,
+      8430,
+      783,
+      9230,
+      1583
+    ],
+    "expectedImageIndices": [
+      2,
+      6,
+      10,
+      14,
+      18,
+      22,
+      26,
+      30
+    ],
+    "unexpectedImageIndices": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      11,
+      12,
+      13,
+      15,
+      16,
+      17,
+      19,
+      20,
+      21,
+      23,
+      24,
+      25,
+      27,
+      28,
+      29,
+      31,
+      32
+    ]
+  },
+  "alignment": [
+    {
+      "imageIndex": 1,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 2,
+      "matched": 1339,
+      "used": 1267,
+      "sigmaPixels": 0.14,
+      "expected": true
+    },
+    {
+      "imageIndex": 3,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 4,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 5,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 6,
+      "matched": 1342,
+      "used": 1284,
+      "sigmaPixels": 0.14,
+      "expected": true
+    },
+    {
+      "imageIndex": 7,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 8,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 9,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 10,
+      "matched": 1355,
+      "used": 1281,
+      "sigmaPixels": 0.15,
+      "expected": true
+    },
+    {
+      "imageIndex": 11,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 12,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 13,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 14,
+      "matched": 1348,
+      "used": 1269,
+      "sigmaPixels": 0.13,
+      "expected": true
+    },
+    {
+      "imageIndex": 15,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 16,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 17,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 18,
+      "matched": 1528,
+      "used": 1466,
+      "sigmaPixels": 0.08,
+      "expected": true
+    },
+    {
+      "imageIndex": 19,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 20,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 21,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 22,
+      "matched": 1533,
+      "used": 1465,
+      "sigmaPixels": 0.08,
+      "expected": true
+    },
+    {
+      "imageIndex": 23,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 24,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 25,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 26,
+      "matched": 1535,
+      "used": 1483,
+      "sigmaPixels": 0.09,
+      "expected": true
+    },
+    {
+      "imageIndex": 27,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 28,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 29,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 30,
+      "matched": 1528,
+      "used": 1474,
+      "sigmaPixels": 0.08,
+      "expected": true
+    },
+    {
+      "imageIndex": 31,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 32,
+      "matched": 0,
+      "used": 0,
+      "sigmaPixels": 0,
+      "expected": false
+    }
+  ],
+  "psf": [
+    {
+      "imageIndex": 1,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 2,
+      "stars": 92,
+      "centralPixelAdjustment": -0.005902,
+      "expected": true
+    },
+    {
+      "imageIndex": 3,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 4,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 5,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 6,
+      "stars": 92,
+      "centralPixelAdjustment": -0.002235,
+      "expected": true
+    },
+    {
+      "imageIndex": 7,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 8,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 9,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 10,
+      "stars": 91,
+      "centralPixelAdjustment": -0.004225,
+      "expected": true
+    },
+    {
+      "imageIndex": 11,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 12,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 13,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 14,
+      "stars": 94,
+      "centralPixelAdjustment": -0.00384,
+      "expected": true
+    },
+    {
+      "imageIndex": 15,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 16,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 17,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 18,
+      "stars": 96,
+      "centralPixelAdjustment": -0.002009,
+      "expected": true
+    },
+    {
+      "imageIndex": 19,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 20,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 21,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 22,
+      "stars": 95,
+      "centralPixelAdjustment": -0.00186,
+      "expected": true
+    },
+    {
+      "imageIndex": 23,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 24,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 25,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 26,
+      "stars": 96,
+      "centralPixelAdjustment": -0.001455,
+      "expected": true
+    },
+    {
+      "imageIndex": 27,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 28,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 29,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 30,
+      "stars": 96,
+      "centralPixelAdjustment": -0.002412,
+      "expected": true
+    },
+    {
+      "imageIndex": 31,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 32,
+      "stars": 0,
+      "centralPixelAdjustment": 0,
+      "expected": false
+    }
+  ],
+  "aperture": [
+    {
+      "imageIndex": 1,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 2,
+      "stars": 129,
+      "expected": true
+    },
+    {
+      "imageIndex": 3,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 4,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 5,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 6,
+      "stars": 142,
+      "expected": true
+    },
+    {
+      "imageIndex": 7,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 8,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 9,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 10,
+      "stars": 140,
+      "expected": true
+    },
+    {
+      "imageIndex": 11,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 12,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 13,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 14,
+      "stars": 148,
+      "expected": true
+    },
+    {
+      "imageIndex": 15,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 16,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 17,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 18,
+      "stars": 200,
+      "expected": true
+    },
+    {
+      "imageIndex": 19,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 20,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 21,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 22,
+      "stars": 200,
+      "expected": true
+    },
+    {
+      "imageIndex": 23,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 24,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 25,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 26,
+      "stars": 200,
+      "expected": true
+    },
+    {
+      "imageIndex": 27,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 28,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 29,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 30,
+      "stars": 200,
+      "expected": true
+    },
+    {
+      "imageIndex": 31,
+      "stars": 0,
+      "expected": false
+    },
+    {
+      "imageIndex": 32,
+      "stars": 0,
+      "expected": false
+    }
+  ],
+  "gates": {
+    "geometry": {
+      "pass": true,
+      "criterion": "Exactly the predeclared eight NRCB2 exposures match; the other 24 are structural zeros."
+    },
+    "alignment": {
+      "pass": true,
+      "criterion": "Each expected image has at least 100 matched stars and sigma below 0.30 pixels."
+    },
+    "psf": {
+      "pass": false,
+      "criterion": "Each expected image has at least 100 PSF stars and absolute central-pixel adjustment below 0.05."
+    },
+    "aperture": {
+      "pass": true,
+      "criterion": "Each expected image has at least 100 total aperture stars."
+    },
+    "typedWarnings": {
+      "pass": true,
+      "criterion": "Supported images have no typed warning, every unsupported image has exactly the three expected structural warnings, and no warning line is unclassified."
+    },
+    "nrcb2Baseline": {
+      "pass": false
+    },
+    "twoDetectorBaseline": {
+      "pass": false,
+      "criterion": "Both NRCB1 and NRCB2 pass their frozen detector-level gates."
+    },
+    "fourDetectorBaseline": {
+      "pass": false,
+      "criterion": "NRCB1-4 must all pass; NRCB3 and NRCB4 remain unexecuted."
+    },
+    "sealedAst": {
+      "pass": false,
+      "criterion": "The 3,072-row AST remains closed until all four detector baselines and independent receipt parsers pass."
+    }
+  },
+  "warnings": {
+    "totalLines": 72,
+    "noAlignmentStars": 24,
+    "lowPsfStars": 24,
+    "lowApertureStars": 24,
+    "expectedExposureWarnings": 0,
+    "unclassifiedWarningLines": 0,
+    "warningCountByImage": {
+      "1": 3,
+      "2": 0,
+      "3": 3,
+      "4": 3,
+      "5": 3,
+      "6": 0,
+      "7": 3,
+      "8": 3,
+      "9": 3,
+      "10": 0,
+      "11": 3,
+      "12": 3,
+      "13": 3,
+      "14": 0,
+      "15": 3,
+      "16": 3,
+      "17": 3,
+      "18": 0,
+      "19": 3,
+      "20": 3,
+      "21": 3,
+      "22": 0,
+      "23": 3,
+      "24": 3,
+      "25": 3,
+      "26": 0,
+      "27": 3,
+      "28": 3,
+      "29": 3,
+      "30": 0,
+      "31": 3,
+      "32": 3
+    },
+    "warningsOnlyOutsideSupport": true
+  },
+  "output": {
+    "catalogueRows": 29382,
+    "timing": {
+      "elapsed": "44:59.74",
+      "userSeconds": 63300.49,
+      "systemSeconds": 35.93,
+      "maximumResidentKb": 2454604
+    },
+    "receipts": [
+      {
+        "kind": "log",
+        "file": "research/reproducibility/rc71-nrcb2-baseline-log.txt",
+        "bytes": 17853,
+        "sha256": "ca4e497dfaa4c3b7fec1104411aa5ab5f88f9b9f220af66ddb9d6b97a01813ac",
+        "rows": 393
+      },
+      {
+        "kind": "warnings",
+        "file": "research/reproducibility/rc71-nrcb2-baseline-warnings.txt",
+        "bytes": 7371,
+        "sha256": "ab538119057fc178d9eed71be31804956567e6fe9b4cb842e73da366916ff60c",
+        "rows": 72
+      },
+      {
+        "kind": "psfs",
+        "file": "research/reproducibility/rc71-nrcb2-baseline-psfs.txt",
+        "bytes": 13804,
+        "sha256": "54c786731168b1696e641eebbdf809fc42113bcd515f53f8ba518087c514db3a",
+        "rows": 165
+      },
+      {
+        "kind": "apcor",
+        "file": "research/reproducibility/rc71-nrcb2-baseline-apcor.txt",
+        "bytes": 219938,
+        "sha256": "84b96f80367d8a9ef11c15a24c384028adad0de97339715864c5ebe4bfb66cd9",
+        "rows": 2784
+      },
+      {
+        "kind": "info",
+        "file": "research/reproducibility/rc71-nrcb2-baseline-info.txt",
+        "bytes": 40807,
+        "sha256": "949977e73b5131bcabb6a929a5035c5af282868912bbd21c128648234468ea41",
+        "rows": 167
+      },
+      {
+        "kind": "timing",
+        "file": "research/reproducibility/rc71-nrcb2-baseline-timing.txt",
+        "bytes": 883,
+        "sha256": "06e865ba7dca9ac631b793ac92dfa6d4d3abeabdab761385a062af99f77fa75a",
+        "rows": 23
+      }
+    ]
+  },
+  "inferenceBoundary": "This run qualifies detector support and measurement-operator quality for NRCB2. It estimates no artificial-star recovery effect, Cepheid distance contrast, or Hubble-constant shift.",
+  "nextDecision": "Keep the sealed AST closed and diagnose the first failed NRCB2 gate without reading any artificial-star outcome."
+}

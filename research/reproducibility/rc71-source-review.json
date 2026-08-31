@@ -1,0 +1,69 @@
+{
+  "cycleId": "RC-2026-71",
+  "reviewedOn": "2026-09-01",
+  "scope": "NRCB2 transport of the frozen NGC 3447 DOLPHOT measurement-operator baseline",
+  "sources": [
+    {
+      "id": "dolphot_output_quality_2026",
+      "type": "official-documentation",
+      "title": "DOLPHOT JWST — Examining the logs",
+      "url": "https://dolphot-jwst.readthedocs.io/en/latest/post-processing/output.html",
+      "checkedOn": "2026-09-01",
+      "resultDate": "living documentation; crawled as current on 2026-09-01",
+      "supports": "For a moderately populated NIRCam field, at least 100 matches with alignment sigma below 0.30 pixel, at least 100 PSF stars with absolute central-pixel adjustment below 0.05, and at least 100 aperture stars are the documented diagnostics."
+    },
+    {
+      "id": "dolphot_parameter_definitions_2026",
+      "type": "official-documentation",
+      "title": "DOLPHOT JWST — Parameter definitions",
+      "url": "https://dolphot-jwst.readthedocs.io/en/latest/running_dolphot/definitions.html",
+      "checkedOn": "2026-09-01",
+      "resultDate": "living documentation; crawled as current on 2026-09-01",
+      "supports": "JWST reductions require UseWCS=2; FitSky=2 is described as robust over a wide crowding range; PSF residual and aperture-correction diagnostics require explicit inspection."
+    },
+    {
+      "id": "nircam_field_of_view_2026",
+      "type": "official-instrument-documentation",
+      "title": "NIRCam Field of View",
+      "url": "https://jwst-docs.stsci.edu/jwst-near-infrared-camera/nircam-instrumentation/nircam-field-of-view",
+      "checkedOn": "2026-09-01",
+      "resultDate": "living STScI instrument documentation; crawled on 2026-09-01",
+      "supports": "A NIRCam module has four short-wave detectors separated by physical gaps, so detector support must be evaluated before treating zero matches as alignment failures."
+    },
+    {
+      "id": "dolphot_jwst_crowded_photometry_2024",
+      "type": "primary-paper",
+      "title": "The JWST Resolved Stellar Populations Early Release Science Program V. DOLPHOT Stellar Photometry for NIRCam and NIRISS",
+      "url": "https://doi.org/10.3847/1538-4365/ad2600",
+      "publishedOn": "2024-04-01",
+      "checkedOn": "2026-09-01",
+      "supports": "The NIRCam/NIRISS DOLPHOT modules and their crowded-field validation; it does not validate this NGC 3447 tile or cross-detector transport."
+    },
+    {
+      "id": "shoes_perfect_host_2025",
+      "type": "primary-preprint",
+      "title": "A Perfect Host in the Distance Ladder",
+      "url": "https://arxiv.org/abs/2509.01667",
+      "publishedOn": "2025-09-01",
+      "checkedOn": "2026-09-01",
+      "supports": "Scientific context for NGC 3447 and the distance-ladder target; it does not supply the RC71 detector-quality result."
+    }
+  ],
+  "classification": {
+    "verifiedBeforeRun": [
+      "The NRCB2 parameter hash c08ad6f8f4006b88cb0927d1da5c1213ae3fcfb424f8924078de24726682771c matches the RC70 independent design audit.",
+      "The DOLPHOT 3.0 binary hash matches the NRCB1 baseline binary.",
+      "No NRCB2 output existed before execution, so the run did not overwrite a previous receipt.",
+      "The official quality thresholds and NIRCam detector-gap description remain current on the review date."
+    ],
+    "inferencesToTest": [
+      "The WCS support partition should predict positive alignment only for image indices 2, 6, 10, 14, 18, 22, 26, and 30.",
+      "A baseline that passed on NRCB1 may or may not transport to NRCB2 because stellar density, background, and PSF sampling can change by detector and sky region."
+    ],
+    "proposalsNotYetValidated": [
+      "A two-detector pass is evidence for transport but not a licence to open the 3,072-row artificial-star test.",
+      "After four-detector qualification, an exposure-support mask should route each artificial star only to images that geometrically cover it."
+    ]
+  },
+  "statusChangeReview": "No source establishes that the Hubble-tension, finite-sample transport, or post-selection problems are solved. RC71 therefore retains all scientific inference gates until detector-specific evidence is produced."
+}

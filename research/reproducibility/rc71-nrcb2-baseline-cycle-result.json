@@ -1,0 +1,102 @@
+{
+  "cycleId": "RC-2026-71",
+  "reviewedOn": "2026-09-01",
+  "selectedProblems": [
+    "UP-003",
+    "UP-625",
+    "UP-626"
+  ],
+  "selectionReason": "RC70 left a frozen NRCB2 run as the exact next experiment. It could distinguish cross-detector transport from a detector-specific calibration-support failure using already prepared public CAL data, a fixed DOLPHOT binary, and independently parseable diagnostics without opening any artificial-star or Cepheid outcome.",
+  "newVerifiedFacts": [
+    "The NRCB2 parameter and DOLPHOT binary hashes matched the RC70 preregistration, and no prior NRCB2 output was overwritten.",
+    "The WCS-declared images 2, 6, 10, 14, 18, 22, 26, and 30 alone produced positive alignment solutions; the other twenty-four images returned zero matches.",
+    "Supported NRCB2 images matched 1,339 to 1,535 stars with alignment sigma 0.08 to 0.15 pixel, passing the documented alignment guidance.",
+    "The NRCB2 run identified 98 global PSF stars and used only 91 to 96 per supported image, below the preregistered desirable count of 100.",
+    "Maximum absolute central-pixel PSF adjustment was 0.005902, below the documented 0.05 diagnostic threshold.",
+    "Supported images used 129 to 200 aperture stars, all above the documented desirable count of 100.",
+    "All seventy-two warning lines were the three expected structural diagnostics for each unsupported image; supported-image and unclassified warnings were zero.",
+    "The run wrote 29,382 catalogue rows in 44:59.74 with peak RSS 2,454,604 kB.",
+    "Node and independent Python parsers agreed exactly on all thirty-two alignment, PSF, and aperture rows, warning types, hashes, and gate decisions.",
+    "NRCB2 contained 2.078 times as many catalogue rows as NRCB1 and 356 to 496 more alignment matches, yet 25 to 29 fewer usable PSF stars per image.",
+    "The preregistered NRCB2 PSF gate failed; the two-detector, four-detector, artificial-star, distance, and Hubble-constant gates remain closed."
+  ],
+  "hypothesisAdjudication": [
+    {
+      "id": "H71-A",
+      "claim": "The NRCB1 measurement-operator qualification transfers unchanged to NRCB2.",
+      "prediction": "Every supported NRCB2 image passes alignment, PSF-star count, central adjustment, and aperture-star count.",
+      "result": "Rejected under the preregistered gate because PSF-star counts were 91 to 96, although every other diagnostic passed."
+    },
+    {
+      "id": "H71-B",
+      "claim": "More detections and alignment matches guarantee adequate PSF calibration support.",
+      "prediction": "NRCB2 should have at least as many usable PSF stars as NRCB1 because its catalogue and alignment counts are larger.",
+      "result": "Rejected for these frozen tiles: NRCB2 had 29,382 catalogue rows but fewer usable PSF stars than NRCB1."
+    },
+    {
+      "id": "H71-C",
+      "claim": "NRCB2 warnings indicate a failed reduction.",
+      "prediction": "Warnings occur in WCS-supported images or cannot be assigned to the preregistered detector topology.",
+      "result": "Rejected: all seventy-two warnings were fully classified outside support, and supported images had zero warnings."
+    },
+    {
+      "id": "H71-D",
+      "claim": "Ninety-one to ninety-six PSF stars are sufficient for the required distance-scale accuracy despite missing the count proxy.",
+      "prediction": "A fresh spatial holdout and independent PSF-free flux check remain within a preregistered 0.01-mag residual boundary without threshold tuning.",
+      "result": "Open. The current PSF adjustment is small, but it was estimated from the calibration stars and is not an independent sufficiency test."
+    }
+  ],
+  "survivingHypotheses": [
+    "NRCB2 may fail only a conservative calibration-support proxy while retaining adequate out-of-sample photometric accuracy.",
+    "Alternatively, crowding or spatial coverage may leave the PSF solution underconstrained in specific detector regions even though global detections are abundant.",
+    "A fresh validation, not post-hoc relaxation of the 100-star gate, is required to separate these explanations."
+  ],
+  "failedOrRejectedAttempts": [
+    "Treating every zero-match image as an alignment failure is rejected by exact WCS support separation.",
+    "Using total catalogue rows as a proxy for PSF calibration support is rejected by the NRCB1/NRCB2 contrast.",
+    "Using alignment-star abundance as a proxy for PSF-star abundance is rejected by the same contrast.",
+    "Declaring success from the small central-pixel adjustment alone is disallowed because that statistic is not independent of the selected PSF stars.",
+    "Relaxing the 100-star rule after seeing 91 to 96 is disallowed; the original validation is preserved as a failed gate."
+  ],
+  "newCombination": {
+    "name": "Proxy-failure escalation to fresh PSF validation",
+    "description": "Instead of tuning the tile until a count threshold passes, preserve the failed count gate and test the quantity it proxies: spatially transported flux accuracy. Freeze a coordinate-hash validation split before residuals are read, compare NRCB1 and NRCB2 with the same withheld-star rule, and use an independent aperture or physics-based PSF prediction so the DOLPHOT calibration stars do not judge themselves.",
+    "differenceFromPriorWork": "DOLPHOT diagnostics, external PSF models, and held-out validation are established separately. RC71 proposes their explicit use as an escalation path after a preregistered proxy fails, while retaining the failed proxy and requiring fresh adjudication data. No novelty claim is made pending a broader literature review."
+  },
+  "minimumDecisiveTest": {
+    "input": "Frozen NRCB1 and NRCB2 receipts, CAL hashes, WCS geometry, and a coordinate-hash rule specified before validation residuals are inspected.",
+    "bottleneck": "The 100-star gate fails, but its actual photometric consequence is unidentified.",
+    "bridge": "A PSF solution with fewer than 100 selected stars may be accepted only if it predicts flux for spatially withheld stars and an independent measurement agrees within a preregistered accuracy bound.",
+    "adjudicand": "Per-quadrant held-out PSF-minus-independent-aperture residual, spatial slope, tail residual, and first divergence from the NRCB1 control.",
+    "success": "Every preregistered spatial cell has adequate support and median cross-method residual at or below 0.01 mag, with no detector-specific tail or trend exceeding its frozen bound.",
+    "rejection": "An unsupported cell, residual above 0.01 mag, systematic spatial trend, parser disagreement, or any validation-driven change retires the candidate and requires a new holdout.",
+    "stop": "Do not run the sealed 3,072-row artificial-star experiment or infer Cepheid distances while the NRCB2 PSF-support question is unresolved."
+  },
+  "uncertaintyBudget": [
+    "Measurement error: independent aperture or physics-based PSF measurements have their own background and centering error and must be reported separately.",
+    "Model error: DOLPHOT and a comparison implementation may share upstream CAL and WCS systematics despite different flux estimators.",
+    "Sampling error: only 98 global PSF stars were reported, so spatial cells can be sparse even when the detector-wide count appears close to 100.",
+    "Selection error: choosing a larger tile, different PSF list, or relaxed threshold after viewing this result invalidates the current validation for the changed pipeline.",
+    "Transport error: NRCB1 and NRCB2 cover different sky and detector regions, so their contrast cannot yet be generalized to NRCB3, NRCB4, or the real Cepheid population."
+  ],
+  "connections": [
+    {
+      "id": "CONN-EVIDENCE-041",
+      "commonStructure": "A proxy can pass at one stage while the target measurement remains unidentified: alignment abundance did not guarantee PSF support, just as nominal sample size does not guarantee target-population coverage and a clean selected run does not guarantee selective-error control.",
+      "mapping": "Catalogue rows and alignment matches map to available observations; usable PSF stars map to effective calibration support; fresh residual validation maps to out-of-sample risk; parameter changes map to adaptive selection events.",
+      "validWhen": "Support, proxy, target quantity, and adaptation history are recorded separately before the next validation outcome.",
+      "breaksWhen": "The count proxy is silently redefined, the failed run is deleted, or the same calibration stars and implementation are reused as final adjudicators.",
+      "minimumTest": "Require the same coordinate-hash holdout and independent flux comparison on NRCB1 and NRCB2 before accepting a proxy-failure rescue."
+    }
+  ],
+  "insufficientEvidence": [
+    "Whether the 91 to 96 PSF stars yield biased flux outside the calibration sample.",
+    "Whether a larger common-support tile exists without weakening the frozen WCS margin.",
+    "Whether a curated external PSF-star list improves or biases spatial transport.",
+    "Whether NRCB3 and NRCB4 pass the original detector-level gate.",
+    "Any effect on artificial-star recovery, Cepheid photometry, component distance, or the Hubble constant."
+  ],
+  "safetyEthicsBoundary": "The cycle uses public astronomical images and local computation. It performs no cyber-trust work, no human-subject inference, no autonomous telescope action, and no claim about cosmological resolution beyond the measured detector diagnostics.",
+  "claimBoundary": "RC71 verifies a detector-specific PSF-star-count failure and exact independent reproduction. It does not prove that NRCB2 photometry is inaccurate, does not validate a rescue method, and does not estimate a Cepheid-distance or Hubble-constant effect.",
+  "exactNextStart": "Before opening any new residual or artificial-star outcome, preregister a PSF-support rescue protocol. Preserve the failed NRCB2 tile as development data; define a coordinate-hash spatial holdout or a disjoint validation tile using WCS alone; select an independent aperture or physics-based PSF adjudicator; freeze per-cell support and a 0.01-mag residual boundary; then test the unchanged NRCB1 control and NRCB2 candidate. If the fresh validation fails, diagnose spatial support or calibration-star selection without relaxing the original receipt. If it passes, proceed to NRCB3 under the original gate while retaining NRCB2 as a separately justified exception rather than retroactively marking the 100-star gate as passed."
+}

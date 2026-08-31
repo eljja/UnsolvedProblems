@@ -1,0 +1,40 @@
+{
+  "cycleId": "RC-2026-71",
+  "reviewedOn": "2026-09-01",
+  "question": "What part of the NRCB2 transport test is established practice, and what part is a project-specific validation combination?",
+  "establishedMethods": [
+    "NIRCam detector footprints and physical detector gaps are documented by STScI.",
+    "DOLPHOT uses WCS alignment and publishes matched-star, residual, PSF-star, central-adjustment, aperture-star, and warning diagnostics.",
+    "Artificial-star tests are an established way to measure completeness and photometric bias in crowded fields.",
+    "Independent parsing, preregistration, holdouts, and conditional-risk reporting are established validation practices in their respective fields."
+  ],
+  "rc71Combination": "RC71 transfers one frozen, outcome-blind detector-tile qualification contract from NRCB1 to NRCB2, preserves every raw diagnostic receipt, classifies support-outside warnings separately from support-inside failures, and requires an independent standard-library parser before allowing the next detector. This is a project-specific combination of established components, not a claimed new theorem or new photometry algorithm.",
+  "noveltyBoundary": "No claim of methodological novelty is made without a broader literature search and expert review. The contribution of this cycle is a falsifiable cross-detector transport receipt and a sharper failure boundary.",
+  "validityConditions": [
+    "The parameter file and DOLPHOT binary hashes equal the preregistered values.",
+    "Only photsec differs among detector baselines.",
+    "Expected image membership is fixed from WCS before the photometric outcome is read.",
+    "Every expected NRCB2 exposure passes the published quality diagnostics.",
+    "Every warning line is typed and independently reproduced."
+  ],
+  "breakConditions": [
+    "Any parameter is changed after reading NRCB2 results.",
+    "A WCS-supported image fails alignment, PSF, or aperture qualification.",
+    "An unsupported image produces a positive alignment solution inconsistent with the frozen partition.",
+    "Node and Python disagree on a diagnostic row, warning type, receipt hash, or gate decision."
+  ],
+  "searchQueries": [
+    "DOLPHOT JWST detector-specific alignment PSF aperture diagnostics",
+    "NIRCam short-wave detector gaps WCS footprint crowded photometry",
+    "cross-detector transport validation crowded-field photometry",
+    "structural zero observational support conditional risk measurement pipeline",
+    "outcome-blind detector qualification artificial star tests"
+  ],
+  "primarySources": [
+    "https://doi.org/10.3847/1538-4365/ad2600",
+    "https://dolphot-jwst.readthedocs.io/en/latest/post-processing/output.html",
+    "https://dolphot-jwst.readthedocs.io/en/latest/running_dolphot/definitions.html",
+    "https://jwst-docs.stsci.edu/jwst-near-infrared-camera/nircam-instrumentation/nircam-field-of-view",
+    "https://arxiv.org/abs/2509.01667"
+  ]
+}
