@@ -1,0 +1,89 @@
+{
+  "cycleId": "RC-2026-68",
+  "reviewedOn": "2026-08-31",
+  "status": "target-first-mosaic-ledger-closed-identity-resolving-psf-and-injection-open",
+  "selectedProblems": ["UP-003", "UP-625", "UP-626"],
+  "selectionReason": "RC67 ended at PHOST-FORCED-1. The official 2026 reprocessed mosaics, segmentation maps, catalogs, and the 142-row target table make its first target-first gate executable without cyber-trust work or unpublished data.",
+  "newVerifiedFacts": [
+    "Four official F090W/F150W i2d and segmentation products totaling 2,779,971,840 bytes were hash-pinned; all identify GO-2875 observation 012 visit 001, pipeline 2.0.1, and 2026-07-18 processing.",
+    "Every one of the 142 author coordinates maps inside both mosaics with finite SCI and ERR, positive WHT, and nonzero CON. The closest edge distance is 39.63 pixels; 139 F090W and 140 F150W centers receive four context contributions.",
+    "Across all targets, 0.3-arcsec catalog recovery is 42/142 in F090W and 57/142 in F150W, leaving 100 and 85 explicit catalog-miss rows rather than deleting them.",
+    "Seventy-one F090W and 116 F150W target centers carry a nonzero segmentation label. Among catalog misses, 35/100 and 64/85 are already inside an island whose catalog centroid lies beyond 0.3 arcsec.",
+    "Large islands create many-to-one identity collisions. F150W labels 2532, 6373, and 2245 cover 18, 13, and 11 target coordinates with isophotal areas 2,726,434, 1,525,723, and 1,321,113 pixels; none of those target coordinates is a 0.3-arcsec catalog match.",
+    "The equivalent F090W collision groups include labels 1352 and 3604 with 11 and 10 spiral targets and areas 1,160,958 and 851,361 pixels; none is a 0.3-arcsec catalog match.",
+    "A pipeline-metadata 70-percent aperture proxy is positive above the constructed five-sigma error proxy for every catalog miss in both bands. This proves local flux is available, not that it belongs uniquely to the Cepheid.",
+    "The 70-percent and 50-percent aperture reductions preserve flux rank only approximately: Spearman correlations are 0.9216 and 0.9293, while median reference-minus-sensitivity differences are -0.3212 and -0.2635 mag in F090W and F150W.",
+    "After an even-ID median calibration, the odd-ID F150W tidal-minus-spiral residual is 0.0485+-0.0536 mag for the 70-percent aperture and 0.0235+-0.0606 mag for the 50-percent aperture. Their 0.0251-mag difference fails the preregistered 0.01-mag robustness gate.",
+    "The i2d aperture result cannot be promoted to a Cepheid distance because it does not perform exposure-level multi-PSF deblending, uses a single epoch, and inherits correlated-resampling and background-model uncertainty.",
+    "A dependency-free Node implementation independently parses the FITS blocks, implements TAN WCS and both aperture reductions, and reproduces all 284 rows with zero categorical mismatches; WCS differences stay below 4e-9 pixel and flux differences below 1.3e-24 Jy.",
+    "Official DOLPHOT documentation preserves one row per artificial star including non-detections, so the next collision-conditioned intervention can retain the target population rather than conditioning on successful recovery."
+  ],
+  "hypothesisAdjudication": [
+    {"code": "H68-A", "verdict": "rejected", "claim": "Catalog omission is explained by missing mosaic coverage or zero contributing exposure."},
+    {"code": "H68-B", "verdict": "rejected-as-an-identity-rule", "claim": "A catalog miss means there is no significant local flux at the target coordinate."},
+    {"code": "H68-C", "verdict": "rejected", "claim": "Every target coordinate can be joined one-to-one to a segmentation label and catalog centroid."},
+    {"code": "H68-D", "verdict": "rejected-at-0.01-mag-gate", "claim": "A simple fixed aperture supplies a reduction-insensitive proxy for the odd-ID component contrast."},
+    {"code": "H68-E", "verdict": "supported-as-next-test-not-yet-causal", "claim": "Segmentation-collision state is a measurable candidate mechanism that can stratify an exposure-level artificial-star intervention."},
+    {"code": "H68-F", "verdict": "not-admissible", "claim": "The mosaic ledger reproduces DOLPHOT, the paper's phase-corrected component likelihood, or H0."}
+  ],
+  "causalChain": [
+    "Input and assumptions: 142 stable published identities, the RC67 even-ID transform, four hash-pinned official mosaic products, two catalog products, and aperture metadata read from those catalogs.",
+    "Bottleneck: source catalogs collapse a continuous blended scene into a many-to-one segmentation partition, so missing centroid matches and significant local flux do not identify target-specific flux.",
+    "Bridge: retain every target, record its collision topology, then intervene with one-at-a-time stars on calibrated exposures and fit the same scenes with DOLPHOT and an independent model.",
+    "Independent adjudicands: inclusion, input-minus-output magnitude, residual support, pipeline agreement, and an odd-ID component contrast under a frozen target population.",
+    "Resolution criterion: collision-conditioned injection surfaces and exposure-level fluxes agree across pipelines within registered tolerances; PHOST-SEMANTIC-2 separately closes phase, author selection, and covariance before any H0 transport."
+  ],
+  "workPackages": [
+    {
+      "code": "PF1A-W1",
+      "purpose": "Close the detection-independent mosaic ledger.",
+      "method": "Map every frozen coordinate to SCI, ERR, WHT, CON, segmentation, nearest and second catalog source, local background, and two fixed-aperture measurements.",
+      "deliverable": "A bilingual research record plus a 284-row JSON/CSV ledger and independent Node audit.",
+      "pass": "All rows are present, all coordinates have valid coverage, and independent categorical and numerical results agree.",
+      "fail": "Any target is deleted, re-centered from validation outcomes, or lacks a typed failure state.",
+      "next": "Use the ledger as the immutable sampling frame for artificial-star and PSF work."
+    },
+    {
+      "code": "CAST-W2",
+      "purpose": "Test segmentation collision as a missingness mechanism.",
+      "method": "Block one-at-a-time artificial stars by collision multiplicity, label area, centroid distance, background, magnitude, colour, and component; preserve non-detections.",
+      "deliverable": "Collision-conditioned inclusion and residual surfaces with simultaneous intervals.",
+      "pass": "Both pipelines agree on inclusion within 0.02 and median residual within 0.01 mag over supported strata.",
+      "fail": "Component cells lack overlap, real residuals leave injection support, or pipelines disagree.",
+      "next": "Report partial bounds where support fails instead of extrapolating or deleting targets."
+    },
+    {
+      "code": "PSF-W3",
+      "purpose": "Replace mosaic aperture proxies with exposure-level target-specific measurements.",
+      "method": "Download the 32 relevant NIRCam module-B CAL files, version DOLPHOT PSFs and parameter files, archive mask/sky/alignment receipts, and independently fit the same scenes.",
+      "deliverable": "Two exposure-level flux ledgers, residual diagnostics, and the first-divergence report.",
+      "pass": "Odd-ID flux residuals agree within 0.01 mag and both pipelines retain identical target identities.",
+      "fail": "Alignment leakage, PSF mismatch, shared-background disagreement, or target-set divergence blocks the contrast.",
+      "next": "Localize the failure to astrometry, PSF, sky, blend model, or unsupported transport before changing parameters."
+    }
+  ],
+  "uncertaintyBudget": [
+    "Mosaic resampling: i2d ERR is a resampled uncertainty estimate and does not by itself close drizzle-correlated noise or the full exposure covariance.",
+    "Scene identity: a positive aperture sum can be a mixture of the Cepheid, unresolved neighbours, galaxy structure, and background-model error.",
+    "Segmentation semantics: a nonzero label denotes a pixel island; huge islands and label classification flags are not author identities or proof of a recovered star.",
+    "Aperture choice: the two pipeline-metadata apertures differ by median 0.26-0.32 mag and move the validation component contrast by 0.025 mag.",
+    "Background choice: clean-annulus pixels were insufficient for 18 F090W and 41 F150W rows, forcing an explicitly flagged all-pixel annulus sensitivity state.",
+    "Astrometry: the transform was frozen in RC67, but exposure-level distortion and alignment remain to be checked per detector without odd-ID tuning.",
+    "Phase: the public F150W table is phase-corrected whereas the mosaic is a single observed epoch; their residual is not a pure photometric error.",
+    "Selection: the released 142 rows still do not identify the reported 154 phase-correction targets or 144 fitted objects.",
+    "Shared calibration: visit, detector, PSF, aperture correction, and anchor terms must not be averaged down as independent object errors.",
+    "External validity: NGC 3447 collision strata do not automatically represent other SN hosts or a current global distance ladder."
+  ],
+  "failedOrRejectedAttempts": [
+    "The public z.MAST Astrocut endpoint returned no registered survey at a test NGC 3447 coordinate; the experiment therefore hash-pinned the official products directly rather than claiming unavailable cutouts.",
+    "Treating a nonzero segmentation value as a target detection fails because up to eighteen author coordinates share one label and several islands cover more than a million pixels.",
+    "Treating high aperture signal-to-noise as target-specific flux fails because every catalog miss passes five sigma while large fractions lie inside unrelated or extended scene islands.",
+    "Treating the 70-percent aperture as a robust substitute fails because a second pipeline-metadata aperture shifts magnitudes by roughly 0.3 mag and the component contrast by 0.025 mag.",
+    "Calling the two aperture calculations independent science pipelines would be misleading; they share the same i2d pixels, WCS, calibration, and background family.",
+    "Using the descriptive component residual as a crowding correction fails because single-epoch phase, blends, resampling, and author selection remain unresolved.",
+    "The result does not reopen transform or radius tuning on odd IDs; doing so after viewing collision states would invalidate the validation split."
+  ],
+  "structuralConnection": "CONN-EVIDENCE-041 identifies a many-to-one observation operator linking Cepheid scene deblending, finite-sample missingness after shift, and post-selection inference.",
+  "claimBoundary": "RC68 closes target-first mosaic coverage, segmentation topology, and reproducible fixed-aperture diagnostics. It does not reproduce DOLPHOT, identify target flux inside collisions, validate artificial-star transport, recover phase or author selection, refit the component likelihood, or change H0.",
+  "exactNextStart": "Execute PHOST-COLLISION-AST-1. Pin the 32 NIRCam module-B CAL files for four dithers in F090W and F150W, DOLPHOT/NIRCam source and PSF versions, masks, sky products, alignment logs, and one frozen parameter file. Run the 48-environment, 3,072-injection-per-band pilot with non-detections preserved, then run an independent fixed-scene PSF reduction on the identical injection manifest. Adjudicate collision-conditioned inclusion and residual support before opening any odd-ID component-distance comparison. Continue requesting PHOST-SEMANTIC-2 in parallel."
+}

@@ -1,0 +1,44 @@
+{
+  "id": "CONN-EVIDENCE-041",
+  "cycleId": "RC-2026-68",
+  "type": "Many-to-one segmentation, selective missingness, and identity collision",
+  "strength": "strong-at-observation-layer",
+  "problemIds": ["UP-003", "UP-625", "UP-626"],
+  "commonStructure": "A fixed scientific target set is passed through an observation operator that partitions pixels into labeled islands. The map from target identities to labels is neither injective nor equivalent to target detection: several targets can occupy one large island, and a finite forced-aperture value can exist without a target-specific catalog row.",
+  "variableMapping": [
+    {
+      "UP-003": "Cepheid identity T_i, sky coordinate x_i, scene I, segmentation label S(x_i), DOLPHOT flux Y_i",
+      "UP-625": "target unit T_i, deployment environment C_i, observation indicator R_i, shifted error Y_i-hat(Y_i)",
+      "UP-626": "candidate identity T_i, many-to-one selection map S, selected catalog row R_i, conditional test statistic"
+    },
+    {
+      "shared": "collision multiplicity K_s = number of fixed targets whose coordinates lie in segment s; K_s=0 at blank pixels and K_s>1 records an identity collision rather than multiple detections"
+    }
+  ],
+  "evidence": [
+    "All 142 coordinates have valid F090W and F150W mosaic coverage, so catalog omission is not caused by missing mosaic footprint.",
+    "Among catalog misses, 35/100 F090W and 64/85 F150W coordinates lie in nonzero segmentation islands.",
+    "F150W labels 2532, 6373, and 2245 contain 18, 13, and 11 target coordinates; their isophotal areas are 2,726,434, 1,525,723, and 1,321,113 pixels, and none of those targets is within 0.3 arcsec of the segment centroid.",
+    "Every catalog-missed coordinate has a positive greater-than-five-sigma fixed-aperture proxy in both bands, demonstrating that local flux significance does not establish target identity.",
+    "A dependency-free Node FITS/WCS/aperture implementation reproduces all 284 Python rows, categorical states, and fluxes to floating-point precision."
+  ],
+  "validWhen": [
+    "the target frame exists independently of the source catalog",
+    "segmentation and deblending affect whether a target receives its own catalog row",
+    "collision state is measured before the scientific residual is adjudicated",
+    "injections reproduce the local PSF, background, and collision topology",
+    "the final estimator retains targets outside the catalog rather than silently redefining the population"
+  ],
+  "breaksWhen": [
+    "every target is isolated and maps one-to-one to a stable source label",
+    "segmentation labels are incorrectly treated as author identities",
+    "large galaxy islands are interpreted as detections of every target they cover",
+    "aperture signal-to-noise is interpreted as deblended target flux",
+    "injections are sampled only from blank sky and fail to cover large-island or blended environments"
+  ],
+  "transferableMethod": "Construct a target-to-segment bipartite collision graph before fitting outcomes. Block artificial-star interventions by collision multiplicity, segment area, centroid distance, local background, and target magnitude; retain non-detections as explicit rows. Compare the resulting inclusion and residual surfaces with an exposure-level multi-PSF reduction and an independent scene model.",
+  "minimumValidationTest": "Select a sealed pilot spanning blank pixels, isolated labels, and the largest collision islands in both components. At each cell, run one-at-a-time artificial stars through the unchanged DOLPHOT configuration and an independently implemented forward scene fit. The connection survives if collision state predicts inclusion or residual after magnitude and background matching, both pipelines agree on the direction, and injected residuals cover real-source residuals. It is rejected as a useful bridge if collision state adds no predictive information or the effect vanishes under independent deblending.",
+  "failureBoundary": "The current ledger establishes observation-layer many-to-one structure, not a photometric bias. Component population, single-epoch phase, PSF mismatch, and author selection remain potential alternative explanations until the intervention is run.",
+  "validationStatus": "verified for mosaic coverage, segmentation topology, catalog matching, and fixed-aperture sensitivity; unverified for exposure-level target flux, artificial-star transport, and distance contrast",
+  "reviewedOn": "2026-08-31"
+}

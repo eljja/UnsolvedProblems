@@ -1,0 +1,71 @@
+{
+  "cycleId": "RC-2026-68",
+  "experimentId": "PHOST-PF1A",
+  "implementation": "dependency-free-node-fits-tan-wcs-and-aperture-reduction",
+  "rows": 284,
+  "counts": {
+    "F090W": {
+      "rows": 142,
+      "validCoverage": 142,
+      "centerSegmented": 71,
+      "catalogMatched": 42,
+      "catalogMisses": 100,
+      "catalogMissCenterSegmented": 35,
+      "catalogMissReferenceSnrAbove3": 100,
+      "catalogMissReferenceSnrAbove5": 100,
+      "referencePositiveFlux": 142,
+      "sensitivityPositiveFlux": 142,
+      "fluxSignDiscordance": 0
+    },
+    "F150W": {
+      "rows": 142,
+      "validCoverage": 142,
+      "centerSegmented": 116,
+      "catalogMatched": 57,
+      "catalogMisses": 85,
+      "catalogMissCenterSegmented": 64,
+      "catalogMissReferenceSnrAbove3": 85,
+      "catalogMissReferenceSnrAbove5": 85,
+      "referencePositiveFlux": 142,
+      "sensitivityPositiveFlux": 142,
+      "fluxSignDiscordance": 0
+    }
+  },
+  "maxAbsoluteDifference": {
+    "x": 2.510205376893282e-9,
+    "y": 3.906279744114727e-9,
+    "centerScienceMJySr": 0,
+    "centerErrorMJySr": 0,
+    "centerWeight": 0,
+    "nearestCatalogDistanceArcsec": 1.1365930419060533e-10,
+    "secondCatalogDistanceArcsec": 1.2472078925185315e-10,
+    "reference.fluxJy": 0,
+    "reference.pipelineErrorJy": 1.2407709188295415e-24,
+    "reference.annulusNoiseJy": 0,
+    "reference.backgroundLevelErrorJy": 0,
+    "reference.combinedErrorJy": 1.6543612251060553e-24,
+    "reference.signalToNoise": 2.842170943040401e-14,
+    "reference.backgroundMJySr": 0,
+    "reference.backgroundRobustSigmaMJySr": 0,
+    "reference.finiteWeightFraction": 0,
+    "reference.apertureSegmentedFraction": 0,
+    "sensitivity.fluxJy": 0,
+    "sensitivity.pipelineErrorJy": 8.271806125530277e-25,
+    "sensitivity.annulusNoiseJy": 0,
+    "sensitivity.backgroundLevelErrorJy": 0,
+    "sensitivity.combinedErrorJy": 3.308722450212111e-24,
+    "sensitivity.signalToNoise": 2.842170943040401e-14,
+    "sensitivity.backgroundMJySr": 0,
+    "sensitivity.backgroundRobustSigmaMJySr": 0,
+    "sensitivity.finiteWeightFraction": 0,
+    "sensitivity.apertureSegmentedFraction": 0
+  },
+  "mismatches": [],
+  "gates": {
+    "allRowsRecomputed": true,
+    "categoricalAgreement": true,
+    "wcsAgreementWithin1e_6Pixel": true,
+    "fluxAgreementWithin1e_12Jy": true
+  },
+  "claimBoundary": "The independent implementation reproduces FITS headers, TAN WCS, center states, catalog distances, sigma-clipped backgrounds, and both fixed-aperture fluxes. It is not an independent exposure-level PSF pipeline."
+}

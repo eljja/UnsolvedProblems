@@ -1,0 +1,50 @@
+{
+  "contractId": "PHOST-COLLISION-AST-1",
+  "cycleId": "RC-2026-68",
+  "purpose": "Determine whether the many-to-one segmentation topology found by PHOST-PF1A predicts target recovery and photometric residuals after magnitude and local background are controlled.",
+  "frozenInputs": [
+    "The 142 author identities and the 284-row PHOST-PF1A ledger",
+    "The even-ID development and odd-ID validation split",
+    "The fixed +0.02, -0.08 arcsec coordinate transform",
+    "The 32 relevant NIRCam module-B calibrated exposures: four dithers times four short-wave detectors in each of F090W and F150W",
+    "Collision strata defined by center-label state, label multiplicity, isophotal area, centroid distance, local background, period, magnitude, colour, and component before injection outcomes"
+  ],
+  "pilot": {
+    "sample": "Forty-eight sealed target environments balanced across blank, isolated-label, and large-collision states and across spiral and tidal components where support exists.",
+    "intervention": "At each environment inject one star at a time at preregistered nearby offsets that preserve detector, label topology, and background while avoiding the real target core. Use 64 magnitude-colour draws per environment for 3,072 injections per band and pipeline.",
+    "referencePipeline": "DOLPHOT NIRCam with versioned PSF files, masks, sky products, alignment logs, and a frozen parameter file following the published JWST workflow.",
+    "independentPipeline": "A separately implemented fixed-scene PSF or linear field-deblending model that shares only the input exposure manifest and injection list.",
+    "outputs": "One row per injection including non-detections, input and output flux, crowding, sharpness, fit flags, collision stratum, and pipeline identity."
+  },
+  "hypotheses": [
+    {
+      "code": "CAST-A",
+      "claim": "Collision topology adds no information once magnitude and local background are matched.",
+      "prediction": "Within matched cells, inclusion and median residual differ by less than 0.02 and 0.01 mag across collision states.",
+      "reject": "A simultaneous interval excludes both tolerances in the same direction in both pipelines."
+    },
+    {
+      "code": "CAST-B",
+      "claim": "The apparent component recoverability difference is mediated by collision topology rather than component identity itself.",
+      "prediction": "Conditioning on collision and background removes the component coefficient while preserving calibrated injection coverage.",
+      "reject": "A component coefficient remains and predicts held-out odd-ID inclusion in both pipelines."
+    },
+    {
+      "code": "CAST-C",
+      "claim": "Exposure-level PSF residuals can bridge catalog misses to target-specific magnitudes.",
+      "prediction": "Injected and real-source residual diagnostics share support and both pipelines agree within 0.01 mag over supported strata.",
+      "reject": "Real residuals lie outside injection support or pipelines disagree beyond 0.01 mag."
+    }
+  ],
+  "uncertaintyBudget": [
+    {"source": "PSF model and aperture correction", "control": "Version and hash PSFs; compare DOLPHOT with an independent scene model", "stop": "Residual disagreement exceeds 0.01 mag"},
+    {"source": "Detector mask and astrometric alignment", "control": "Archive every mask and alignment log by exposure and freeze on even IDs", "stop": "Odd-ID outcomes alter alignment choices"},
+    {"source": "Finite injection counts", "control": "Simultaneous binomial and residual intervals by sealed cell", "stop": "Cells lack the precision to distinguish the registered effect"},
+    {"source": "Injection transport", "control": "Compare injected and real PSF, background, sharpness, and residual distributions", "stop": "Real targets leave injection support"},
+    {"source": "Single-epoch phase", "control": "Keep phase uncertainty separate from measurement residuals", "stop": "Aperture residuals are interpreted as mean magnitudes"},
+    {"source": "Shared exposure and calibration", "control": "Cluster uncertainty by exposure, detector, and calibration ancestor", "stop": "Object counts average common terms down"}
+  ],
+  "success": "Both pipelines close the injection ledger, agree on inclusion within 0.02 and median residual within 0.01 mag over supported strata, and make a stable odd-ID branch decision without changing the target population.",
+  "failure": "Pipeline disagreement, unsupported collision cells, phase-selection leakage, or residual mismatch blocks a component-distance interpretation but still localizes which bridge failed.",
+  "claimBoundary": "Passing the pilot would validate or reject collision topology as a missingness mechanism over tested environments. It would not close the author phase-selection ledger, a second epoch, the full component covariance, or H0."
+}

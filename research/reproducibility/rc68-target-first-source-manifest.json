@@ -1,0 +1,71 @@
+{
+  "cycleId": "RC-2026-68",
+  "reviewedOn": "2026-08-31",
+  "observationDate": "2024-05-23",
+  "pipelineDate": "2026-07-18",
+  "pipelineVersion": "2.0.1",
+  "files": [
+    {
+      "path": ".cache/rc68-target-first/f090w_i2d.fits",
+      "role": "Official NIRCam F090W resampled science mosaic",
+      "dataUri": "mast:JWST/product/jw02875-o012_t009_nircam_clear-f090w_i2d.fits",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw02875-o012_t009_nircam_clear-f090w_i2d.fits",
+      "bytes": 1216140480,
+      "sha256": "eeb24ecd78f08ef78f43da9324a0a364bfbaa6273eebe779829cf049ee212ffc"
+    },
+    {
+      "path": ".cache/rc68-target-first/f090w_segm.fits",
+      "role": "Official NIRCam F090W segmentation image",
+      "dataUri": "mast:JWST/product/jw02875-o012_t009_nircam_clear-f090w_segm.fits",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw02875-o012_t009_nircam_clear-f090w_segm.fits",
+      "bytes": 173845440,
+      "sha256": "ef1a829435ed182fabdbc3a322aa6755bcafbefd82a7e23f6663fe1b770d50a1"
+    },
+    {
+      "path": ".cache/rc68-target-first/f150w_i2d.fits",
+      "role": "Official NIRCam F150W resampled science mosaic",
+      "dataUri": "mast:JWST/product/jw02875-o012_t009_nircam_clear-f150w_i2d.fits",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw02875-o012_t009_nircam_clear-f150w_i2d.fits",
+      "bytes": 1216140480,
+      "sha256": "562ff6afd1e03c9ba5d8ce73649ded3b4b66f1e901be30cbea9ae23bbfec54c0"
+    },
+    {
+      "path": ".cache/rc68-target-first/f150w_segm.fits",
+      "role": "Official NIRCam F150W segmentation image",
+      "dataUri": "mast:JWST/product/jw02875-o012_t009_nircam_clear-f150w_segm.fits",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw02875-o012_t009_nircam_clear-f150w_segm.fits",
+      "bytes": 173845440,
+      "sha256": "08b5c1d8194f00d1789de5cef62eb5c497c31cbd30c0b85e8fb609628e39b4ce"
+    },
+    {
+      "path": ".cache/rc67-mast/f090w_cat.ecsv",
+      "role": "Official NIRCam F090W level-3 source catalog",
+      "dataUri": "mast:JWST/product/jw02875-o012_t009_nircam_clear-f090w_cat.ecsv",
+      "bytes": 7203818,
+      "sha256": "9b0063362639b6933b097bcde34305c57485146b3f8dbbab27a4f57fddc3951f"
+    },
+    {
+      "path": ".cache/rc67-mast/f150w_cat.ecsv",
+      "role": "Official NIRCam F150W level-3 source catalog",
+      "dataUri": "mast:JWST/product/jw02875-o012_t009_nircam_clear-f150w_cat.ecsv",
+      "bytes": 12315103,
+      "sha256": "f50661a091197dc795038ed206061be5bcb4a38567f757cc9cff6334811aa58a"
+    },
+    {
+      "path": ".cache/rc65-jwst-host-source/apjlae0ad6t3_mrt.txt",
+      "role": "Version-of-record 142-row NGC 3447 Cepheid target table",
+      "url": "https://iopscience.iop.org/2041-8205/989/1/L32/suppdata/apjlae0ad6t3_mrt.txt?doi=10.3847/2041-8213/ae0ad6",
+      "bytes": 12541,
+      "sha256": "87a4e1b0d89b91694e42d7cf57f4b098d50c4ffe580ab4f32b39318434e24326"
+    }
+  ],
+  "officialDocumentation": [
+    "https://jwst-pipeline.readthedocs.io/en/1.19.x/jwst/data_products/science_products.html",
+    "https://jwst-pipeline.readthedocs.io/en/1.19.x/jwst/source_catalog/main.html",
+    "https://dolphot-jwst.readthedocs.io/en/latest/",
+    "https://dolphot-jwst.readthedocs.io/en/latest/asts/output.html",
+    "https://doi.org/10.3847/1538-4365/ad2600",
+    "https://arxiv.org/abs/2509.01667"
+  ],
+  "claimBoundary": "The pinned mosaics and segmentation images support a target-first mosaic ledger. They are not the individual calibrated exposures on which DOLPHOT performs multi-PSF photometry."
+}

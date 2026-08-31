@@ -1,0 +1,35 @@
+{
+  "cycleId": "RC-2026-68",
+  "reviewedOn": "2026-08-31",
+  "queries": [
+    "JWST NIRCam DOLPHOT artificial star test output non-detection",
+    "crowded field forced photometry known positions deblending",
+    "photutils segmentation label deblend source catalog",
+    "linearized field deblending fixed scene PSF photometry",
+    "NGC 3447 Cepheid segmentation collision artificial stars"
+  ],
+  "verifiedExistingMethods": [
+    "DOLPHOT's JWST modules perform crowded-field PSF fitting on calibrated exposures and provide artificial-star tests.",
+    "DOLPHOT artificial-star output preserves one row per injected star and represents non-detections explicitly, enabling completeness and residual estimates.",
+    "Photutils segmentation labels identify pixel islands, and deblending depends on threshold levels and contrast; a label is not an external scientific identity.",
+    "Photutils supports fixed-position forced PSF fitting, while linearized field-deblending and Bayesian star-field methods already address blended scenes.",
+    "The Perfect Host paper used DOLPHOT and artificial-star tests and reported aggregate F150W crowding bias and dispersion by region."
+  ],
+  "notVerifiedInReviewedSources": [
+    "A released NGC 3447 author-ID to DOLPHOT/MAST measurement ledger retaining all 142 published targets.",
+    "An artificial-star design blocked on the observed target-to-segment collision graph for NGC 3447.",
+    "A public two-pipeline comparison that keeps non-detections and compares collision-conditioned inclusion and magnitude residuals.",
+    "A released 154-to-144-to-142 identity and phase-selection crosswalk.",
+    "A demonstrated path from the current mosaic aperture proxies to the paper's component likelihood or a global H0 fit."
+  ],
+  "noveltyBoundary": "No constituent method is claimed as new. The research proposal is a testable combination of stable target identities, a segmentation-collision graph, one-at-a-time artificial-star interventions, disjoint development and validation identities, and an independent scene reduction. Methodological novelty must not be claimed without a broader literature and code search.",
+  "primarySources": [
+    "https://doi.org/10.3847/1538-4365/ad2600",
+    "https://dolphot-jwst.readthedocs.io/en/latest/asts/create.html",
+    "https://dolphot-jwst.readthedocs.io/en/latest/asts/output.html",
+    "https://photutils.readthedocs.io/en/2.3.0/user_guide/segmentation.html",
+    "https://photutils.readthedocs.io/en/2.3.0/user_guide/psf.html",
+    "https://arxiv.org/abs/2106.08411",
+    "https://arxiv.org/abs/2509.01667"
+  ]
+}

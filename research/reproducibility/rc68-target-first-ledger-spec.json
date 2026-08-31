@@ -1,0 +1,91 @@
+{
+  "cycleId": "RC-2026-68",
+  "reviewedOn": "2026-08-31",
+  "experimentId": "PHOST-PF1A",
+  "selectedProblems": ["UP-003", "UP-625", "UP-626"],
+  "question": "At every published NGC 3447 Cepheid coordinate, what do the official F090W and F150W mosaics contain before a source detector is allowed to delete a row?",
+  "frozenInputs": {
+    "targetTable": "The 142-row version-of-record NGC 3447 MRT pinned in RC65",
+    "bands": ["F090W", "F150W"],
+    "products": {
+      "F090W": {
+        "i2d": "jw02875-o012_t009_nircam_clear-f090w_i2d.fits",
+        "segmentation": "jw02875-o012_t009_nircam_clear-f090w_segm.fits",
+        "catalog": "jw02875-o012_t009_nircam_clear-f090w_cat.ecsv"
+      },
+      "F150W": {
+        "i2d": "jw02875-o012_t009_nircam_clear-f150w_i2d.fits",
+        "segmentation": "jw02875-o012_t009_nircam_clear-f150w_segm.fits",
+        "catalog": "jw02875-o012_t009_nircam_clear-f150w_cat.ecsv"
+      }
+    },
+    "coordinateTransform": {
+      "xArcsec": 0.02,
+      "yArcsec": -0.08,
+      "definition": "Add x/cos(dec)/3600 degrees to right ascension and y/3600 degrees to declination.",
+      "provenance": "Frozen on even author IDs in RC67; it is not re-estimated in RC68."
+    },
+    "developmentSplit": "Even integer author IDs",
+    "validationSplit": "Odd integer author IDs",
+    "catalogMatchRadiusArcsec": 0.3
+  },
+  "ledgerGate": {
+    "rowsPerBand": 142,
+    "requiredFields": [
+      "author ID and component",
+      "raw and transformed sky coordinate",
+      "mosaic pixel coordinate and edge distance",
+      "finite SCI and ERR state",
+      "positive WHT state",
+      "CON contribution bit count",
+      "segmentation label at the coordinate",
+      "segmentation occupancy inside the aperture and background annulus",
+      "nearest catalog label and distance",
+      "forced aperture flux and error",
+      "local background and robust scatter"
+    ],
+    "pass": "All 142 targets have one explicit row in each band; no target is dropped because its center label is zero, its nearest catalog distance exceeds 0.3 arcsec, or its flux is non-positive.",
+    "fail": "A coordinate falls outside the product footprint or frozen edge margin, has no contributing exposure, or cannot be mapped without an outcome-dependent astrometric choice.",
+    "nextOnFailure": "Preserve the row with a typed failure state and open a preregistered transform or exposure-level branch; never delete it."
+  },
+  "measurementReceipts": {
+    "reference": {
+      "name": "Pipeline-metadata 70-percent aperture",
+      "apertureRadiusPixels": {"F090W": 2.3332438, "F150W": 2.7442563},
+      "backgroundInnerPixels": 8.0,
+      "backgroundOuterPixels": 13.0,
+      "apertureCorrection": {"F090W": 1.4367015, "F150W": 1.4373972},
+      "fractionalPixelMethod": "32 by 32 deterministic subpixel integration",
+      "background": "Sigma-clipped median of finite annulus pixels outside all segmentation labels",
+      "error": "Quadrature of ERR with the same fractional weights; reported separately from empirical annulus noise"
+    },
+    "sensitivity": {
+      "name": "Pipeline-metadata 50-percent aperture",
+      "apertureRadiusPixels": {"F090W": 1.3864133, "F150W": 1.5689266},
+      "backgroundInnerPixels": 6.0,
+      "backgroundOuterPixels": 10.0,
+      "apertureCorrection": {"F090W": 2.0056102, "F150W": 2.0056353},
+      "fractionalPixelMethod": "32 by 32 deterministic subpixel integration",
+      "background": "Sigma-clipped median of finite annulus pixels outside all segmentation labels",
+      "purpose": "Expose aperture and local-background sensitivity; it is not an independent DOLPHOT reduction."
+    },
+    "units": "SCI and ERR are converted from MJy/sr to Jy per output pixel using PIXAR_SR. Positive corrected flux is also expressed as AB and Vega magnitude using the catalog metadata offsets F090W=0.48407587 and F150W=1.2045733; non-positive values remain numeric fluxes with null magnitudes.",
+    "validationResidual": "For each reduction, subtract the even-ID median of forced F150W Vega magnitude minus the published phase-corrected F150W. Apply that one frozen additive calibration to odd IDs and compare tidal-minus-spiral residual means. This descriptive contrast mixes phase, aperture, and crowding and is not a distance estimate."
+  },
+  "sealedAdjudicands": [
+    "number of complete target-first rows and valid-coverage rows by band",
+    "center segmentation occupancy by component and catalog-recovery state",
+    "fraction of catalog misses whose coordinate lies inside a nonzero segmentation island",
+    "forced-flux signal-to-noise by component and catalog-recovery state",
+    "reference-versus-sensitivity flux agreement and sign discordance",
+    "odd-ID component contrasts in F150W forced-minus-published magnitude, reported only where both magnitudes are finite"
+  ],
+  "claimBoundary": "PHOST-PF1A can distinguish no coverage, no segmented island, blended-island membership, and measurable local flux at fixed coordinates. It cannot reproduce DOLPHOT multi-exposure PSF photometry, phase corrections, artificial-star debiasing, the 154-to-144-to-142 author selection, or a global H0 fit.",
+  "stopRules": [
+    "Do not tune the RC67 coordinate transform on odd IDs.",
+    "Do not treat a segmentation label as an author stable ID.",
+    "Do not call an i2d aperture magnitude a Cepheid mean magnitude or a DOLPHOT reproduction.",
+    "Do not infer a crowding correction when aperture and annulus choices disagree materially.",
+    "Do not transport any component contrast into H0 without phase, PSF, artificial-star, and covariance closure."
+  ]
+}

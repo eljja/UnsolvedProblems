@@ -95,7 +95,7 @@ assert(new Set(siteCycle.problemIds.map(id => problems.find(problem => problem.i
 assert(sources.mast_jwst_cepheid_doi_2025.publishedOn === "2025-08-19" && sources.mast_ngc3447_level3_catalogs_2026.publishedOn === "2026-07-18", "RC67 primary source dates missing");
 
 for (const page of ["index.html", "solve.html", "research-log.html"]) assert(readText(page).includes("research-cycle-67-data.js?v=20260831-cycle67"), `${page}: RC67 script missing`);
-assert(readText("scripts/generate-sitemap.mjs").includes("length: 65"), "Sitemap generator omits RC67");
+assert(Number(readText("scripts/generate-sitemap.mjs").match(/length: (\d+)/)?.[1]) >= 65, "Sitemap generator omits RC67");
 const publicProse = readText("research-cycle-67-data.js");
 for (const forbidden of ["전공자 포인트", "1단계", "개수를 맞", "아래 시도는 개별 논문"]) assert(!publicProse.includes(forbidden), `RC67 public prose contains forbidden wording: ${forbidden}`);
 
