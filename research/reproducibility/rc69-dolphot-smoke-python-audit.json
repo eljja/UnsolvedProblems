@@ -1,0 +1,87 @@
+{
+  "cycleId": "RC-2026-69",
+  "auditId": "PHOST-COLLISION-AST-1-SMOKE-PYTHON-AUDIT",
+  "reviewedOn": "2026-09-01",
+  "status": "pass",
+  "implementation": "Python standard library; direct parse of committed DOLPHOT raw rows and generated column receipts",
+  "ledger": {
+    "rows": 16,
+    "uniqueInjectionIds": 16,
+    "typedNonDetections": 0
+  },
+  "columnContract": {
+    "artificialStarInputColumns": 68,
+    "combinedF090WVegaMagOneBased": 17,
+    "combinedF150WVegaMagOneBased": 30,
+    "passDetectedColumnPreserved": true
+  },
+  "stateSummary": {
+    "blank": {
+      "n": 4,
+      "recoveryF090W": 1.0,
+      "recoveryF150W": 1.0,
+      "medianResidualF090WMag": -0.171166,
+      "medianResidualF150WMag": -0.1045,
+      "residualRangeF090WMag": [
+        -0.24572,
+        -0.108612
+      ],
+      "residualRangeF150WMag": [
+        -0.223,
+        -0.081
+      ]
+    },
+    "isolated": {
+      "n": 4,
+      "recoveryF090W": 1.0,
+      "recoveryF150W": 1.0,
+      "medianResidualF090WMag": 0.042334,
+      "medianResidualF150WMag": -0.0175,
+      "residualRangeF090WMag": [
+        0.009388,
+        0.12228
+      ],
+      "residualRangeF150WMag": [
+        -0.049,
+        0.018
+      ]
+    },
+    "large-collision": {
+      "n": 8,
+      "recoveryF090W": 1.0,
+      "recoveryF150W": 1.0,
+      "medianResidualF090WMag": 0.007334,
+      "medianResidualF150WMag": -0.0245,
+      "residualRangeF090WMag": [
+        -0.03472,
+        0.02628
+      ],
+      "residualRangeF150WMag": [
+        -0.134,
+        0.012
+      ]
+    }
+  },
+  "rawReceipts": [
+    {
+      "window": "blank",
+      "rows": 4,
+      "bytes": 15304,
+      "sha256": "9244a671e4de6ecac11a24506721e98ce784ebd030e84cc3a02fc85c9e3620d0"
+    },
+    {
+      "window": "isolated",
+      "rows": 4,
+      "bytes": 15304,
+      "sha256": "fcf2a10f31ddaea5465641d25a5fac73f65f5fb0a8c50ab212e9bd25a70fc4ee"
+    },
+    {
+      "window": "collision",
+      "rows": 8,
+      "bytes": 30608,
+      "sha256": "b3bf05b105d364b0df22e46be2f605e37f32de5f5d919ac33358465c763bdc9e"
+    }
+  ],
+  "agreement": "Exact agreement with the Node adjudicator for row identity, raw hashes, recovery fractions, medians, and ranges.",
+  "scientificBoundary": "This audit verifies parsing and arithmetic only; it does not turn the 16-row smoke run into an inferential collision-bias test."
+}

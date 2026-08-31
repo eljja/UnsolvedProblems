@@ -111,7 +111,7 @@ assert(new Set(siteCycle.problemIds.map(id => problems.find(problem => problem.i
 assert(sources.jwst_resampled_science_products_2026.publishedOn === "2026-07-18" && sources.dolphot_jwst_crowded_photometry_2024.publishedOn === "2024-04-01" && sources.linear_field_deblending_2021.publishedOn === "2021-06-15", "RC68 primary-source dates are missing");
 
 for (const page of ["index.html", "solve.html", "research-log.html"]) assert(readText(page).includes("research-cycle-68-data.js?v=20260831-cycle68"), `${page}: RC68 script is missing`);
-assert(readText("scripts/generate-sitemap.mjs").includes("length: 66"), "Sitemap generator omits RC68");
+assert(/length:\s*(?:6[6-9]|[7-9]\d)/.test(readText("scripts/generate-sitemap.mjs")), "Sitemap generator omits RC68");
 const publicProse = readText("research-cycle-68-data.js");
 for (const forbidden of ["전공자 포인트", "1단계", "개수를 맞", "아래 시도는 개별 논문"]) assert(!publicProse.includes(forbidden), `RC68 public prose contains forbidden wording: ${forbidden}`);
 

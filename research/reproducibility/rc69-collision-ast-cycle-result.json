@@ -1,0 +1,94 @@
+{
+  "cycleId": "RC-2026-69",
+  "reviewedOn": "2026-09-01",
+  "selectedProblems": [
+    "UP-003",
+    "UP-625",
+    "UP-626"
+  ],
+  "selectionReason": "RC68 left an exact exposure-level intervention whose archive products were public and whose first failure could be localized without opening the cosmological endpoint. It can remove implementation ambiguity now while preserving the independent scientific gate.",
+  "newVerifiedFacts": [
+    "The complete GO-2875 observation 012 visit 001 Module-B grid contains 32 CAL products: two bands by four dithers by four SW detectors.",
+    "The 32 CAL products total 3,762,339,840 bytes and every file has a recorded SHA-256, MAST URI, detector, filter, exposure time lineage, pipeline version, and CRDS context.",
+    "All CAL headers report JWST pipeline 2.0.1 and CRDS jwst_1535.pmap.",
+    "DOLPHOT 3.0 stable source, NIRCam module, F090W/F150W PSF archives, and the 3.1 candidate sensitivity branch have byte and SHA-256 receipts.",
+    "The sealed intervention contains 48 environments and 3,072 unique injections, with exactly 1,024 rows in each blank, isolated, and large-collision state.",
+    "The isolated-versus-large-collision comparison is balanced across spiral/tidal component and even/odd development split; blank spiral-development support is absent and explicitly excluded from component inference.",
+    "DOLPHOT 3.0, nircammask, and calcsky were compiled and the 32 CAL images plus the reference mosaic completed masking and sky-map preprocessing.",
+    "Three state-specific DOLPHOT baselines and 16 prespecified smoke injections completed; every injection produced exactly one parseable artificial-star row.",
+    "A Node adjudicator and a Python standard-library parser agree exactly on row identities, raw hashes, recovery fractions, residual medians, and residual ranges.",
+    "The smoke baselines contain too few PSF/aperture stars and cover only the NRCB3 footprint; their residuals are execution diagnostics and cannot adjudicate collision bias."
+  ],
+  "statusChanges": [
+    {
+      "item": "PHOST-COLLISION-AST-1 data and interface",
+      "from": "specified",
+      "to": "archive-complete, row-exact, executable"
+    },
+    {
+      "item": "DOLPHOT artificial-star plumbing",
+      "from": "unexecuted",
+      "to": "smoke-verified across all three collision states"
+    },
+    {
+      "item": "collision-conditioned photometric effect",
+      "from": "open",
+      "to": "open; deliberately not inferred from the smoke subset"
+    },
+    {
+      "item": "distance-component contrast",
+      "from": "sealed",
+      "to": "sealed"
+    }
+  ],
+  "hypothesisAdjudication": [
+    {
+      "code": "H69-A",
+      "claim": "The official native-exposure grid is incomplete or internally inconsistent.",
+      "prediction": "At least one band-dither-detector cell, expected byte count, FITS identity, or calibration header fails.",
+      "result": "Rejected: all 32 cells and 3,762,339,840 bytes were retrieved and independently audited."
+    },
+    {
+      "code": "H69-B",
+      "claim": "The RC68 injection contract cannot be represented exactly in DOLPHOT input semantics.",
+      "prediction": "Environment counts, two-filter input magnitudes, identity order, or the 68-column exposure-expanded output prefix diverges.",
+      "result": "Rejected: CSV, DOLPHOT input, and independent Node audit preserve all 3,072 identities exactly."
+    },
+    {
+      "code": "H69-C",
+      "claim": "The real DOLPHOT AST path cannot preserve typed outputs across the three collision states.",
+      "prediction": "A selected injection is lost, duplicated, truncated, or cannot be joined to its frozen identity.",
+      "result": "Rejected for executable plumbing: 16 of 16 prespecified rows completed and two parsers agree exactly."
+    },
+    {
+      "code": "H69-D",
+      "claim": "Collision state changes inclusion or magnitude residual after matching magnitude, colour, component, split, and local scene.",
+      "prediction": "The full balanced surface differs between isolated and large-collision cells and replicates in an independent fixed-scene pipeline.",
+      "result": "Not tested: smoke windows are unbalanced, locally calibrated, and share one DOLPHOT implementation."
+    },
+    {
+      "code": "H69-E",
+      "claim": "DOLPHOT release and calibration-context transport is negligible at the 0.01-mag gate.",
+      "prediction": "Stable 3.0, candidate 3.1, and a context-matched PSF/calibration branch agree on the sealed validation rows within 0.01 mag.",
+      "result": "Open: source and header contexts are pinned, but the sensitivity branches have not run."
+    }
+  ],
+  "failedOrRejectedAttempts": [
+    "A 650-by-2,650-pixel baseline produced 226,459 candidates and was stopped before measurement; state-specific windows replaced it without observing artificial-star outcomes.",
+    "Lowercase global rsky2 and apsky names were rejected by DOLPHOT 3.0; the accepted image-wide img_RSky2 and img_apsky names were frozen before recorded runs.",
+    "The documented nircammask -etctime spelling was unavailable in the built 3.0 executable; its default effective-exposure behavior was used and recorded.",
+    "calcsky overflowed on a long absolute basename; the same binary completed from a short working-directory basename for all 33 images.",
+    "The first AST adjudicator used regular-catalog column offsets and produced impossible roughly -25-mag residuals; the generated artificial-star .columns receipts exposed the inserted Pass Detected column, and both implementations now parse F090W/F150W magnitudes at one-based columns 17 and 30.",
+    "Small-window baselines triggered low PSF/aperture-star warnings and non-overlap warnings for 24 detector-frame combinations, blocking scientific use of the smoke residuals."
+  ],
+  "connectionUpdate": {
+    "id": "CONN-EVIDENCE-041",
+    "commonStructure": "A fixed identity set is passed through a many-to-one observation operator; selection and measurement must be intervened on without letting the output catalog redefine the denominator.",
+    "variables": "Cepheid identity/segment/inclusion/residual map to target unit/environment/observation indicator/outcome and to candidate/selection map/conditional statistic.",
+    "verifiedThisCycle": "The same 3,072-row identity ledger can drive a real exposure-level AST executable while preserving blank, isolated, and collision states and non-detection semantics.",
+    "stillUnverified": "No collision effect, cross-pipeline replication, real-source coverage, or distance transport has yet been established."
+  },
+  "minimumMeaningfulAdvance": "Complete one field-wide reference reduction with adequate alignment, PSF, and aperture-star counts, then run the sealed 3,072 DOLPHOT injections without changing identities or gates.",
+  "exactNextStart": "Run the corrected field-wide DOLPHOT 3.0 reference baseline and retain its alignment, PSF, aperture-correction, sky, mask, and warning receipts. Execute all 3,072 sealed injection rows, preserving 99.999 non-detections. Independently implement the fixed-scene pipeline from only the shared CAL hashes and injection coordinates. Adjudicate overlap, inclusion difference <=0.02, median residual difference <=0.01 mag, and calibration-context sensitivity before opening any odd-ID component contrast.",
+  "claimBoundary": "RC69 proves archive completeness, design balance, executable DOLPHOT input/output plumbing, and independent parsing. It does not prove a collision-induced photometric bias, an unbiased Cepheid flux, a component distance difference, or a change in H0."
+}

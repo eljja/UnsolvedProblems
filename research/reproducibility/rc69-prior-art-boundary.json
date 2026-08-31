@@ -1,0 +1,76 @@
+{
+  "cycleId": "RC-2026-69",
+  "reviewedOn": "2026-09-01",
+  "claim": "RC69 does not claim a new photometry algorithm. Its contribution is a falsifiable validation design that carries a frozen target-to-collision ledger into native-exposure artificial-star intervention while separating executable plumbing from scientific adjudication.",
+  "queries": [
+    "DOLPHOT JWST NIRCam artificial star tests one row non-detection 99.999",
+    "DOLPHOT NIRCam calibrated exposure crowded field photometry PSF",
+    "JWST NIRCam fixed position forced PSF photometry artificial star completeness",
+    "crowded field injection recovery segmentation collision deblending",
+    "JWST NIRCam DOLPHOT CRDS calibration context PSF library sensitivity",
+    "fixed scene linear deblending independent PSF photometry"
+  ],
+  "establishedMethods": [
+    {
+      "method": "DOLPHOT crowded-field PSF photometry on JWST CAL exposures",
+      "boundary": "The exposure-level PSF workflow, alignment, masking, sky estimation, and NIRCam calibration are established; RC69 only pins their exact executable and data lineage."
+    },
+    {
+      "method": "One-at-a-time artificial-star tests",
+      "boundary": "Input-output residuals, recovery fractions, one row per injection, and retained non-detections are established DOLPHOT practice."
+    },
+    {
+      "method": "Fixed-position and fixed-scene PSF fitting",
+      "boundary": "Forced positions and simultaneous scene fitting are established. They are used here as an implementation-independent adjudicator, not presented as a new estimator."
+    },
+    {
+      "method": "NIRCam PSF simulation and empirical calibration",
+      "boundary": "STPSF/WebbPSF and instrument PSF characterization are established; the proposed version/context crossing is a sensitivity test."
+    }
+  ],
+  "specificCombinationUnderTest": [
+    "Freeze 142 publication identities before running any source detector.",
+    "Map those identities to blank, isolated, and many-to-one segmentation states without treating a segment label as a star identity.",
+    "Balance 48 environments across collision state, galaxy component, and development/validation split, then retain all 3,072 one-at-a-time injection identities.",
+    "Give DOLPHOT and an independently implemented fixed-scene pipeline only the shared CAL hashes, coordinates, and injection ledger.",
+    "Require agreement in inclusion and residual surfaces before opening the distance-component statistic."
+  ],
+  "noveltyBoundary": "The reviewed sources establish every constituent technique. They do not establish that this exact target-first collision graph, blocked intervention, independent scene-model adjudication, and sealed distance gate has already been applied to NGC 3447. This is a prior-art search result, not a patentability or priority claim.",
+  "primarySources": [
+    {
+      "title": "DOLPHOT Stellar Photometry for JWST NIRCam and NIRISS Imaging",
+      "url": "https://doi.org/10.3847/1538-4365/ad2600",
+      "role": "Primary methods and validation paper"
+    },
+    {
+      "title": "DOLPHOT JWST — Working with artificial star tests",
+      "url": "https://dolphot-jwst.readthedocs.io/en/latest/asts/output.html",
+      "role": "Official row, non-detection, residual, completeness, and identical-postprocessing contract"
+    },
+    {
+      "title": "DOLPHOT official distribution",
+      "url": "http://americano.dolphinsim.com/dolphot/",
+      "role": "Release, module, PSF, and manual distribution"
+    },
+    {
+      "title": "JWST Science Calibration Pipeline",
+      "url": "https://jwst-docs.stsci.edu/jwst-science-calibration-pipeline",
+      "role": "Official distinction between native-grid CAL exposures and combined I2D mosaics"
+    },
+    {
+      "title": "MAST API Curl Download",
+      "url": "https://outerspace.stsci.edu/spaces/MASTDOCS/pages/113771439/API%2BCurl%2BDownload",
+      "role": "Official archive URI and large-product retrieval procedure"
+    },
+    {
+      "title": "NIRCam Point Spread Functions",
+      "url": "https://jwst-docs.stsci.edu/jwst-near-infrared-camera/nircam-performance/nircam-point-spread-functions",
+      "role": "Official instrument PSF variability and STPSF context"
+    },
+    {
+      "title": "Linearized Field Deblending: PSF Photometry for Impatient Astronomers",
+      "url": "https://arxiv.org/abs/2106.08411",
+      "role": "Primary independent fixed-scene deblending method"
+    }
+  ]
+}

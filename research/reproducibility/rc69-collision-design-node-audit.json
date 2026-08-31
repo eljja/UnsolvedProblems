@@ -1,0 +1,45 @@
+{
+  "cycleId": "RC-2026-69",
+  "auditedOn": "2026-09-01",
+  "implementation": "dependency-free Node.js audit independent of the Python sampling implementation",
+  "verdict": "pass",
+  "verified": {
+    "exposureGrid": {
+      "files": 32,
+      "cells": 32,
+      "bands": {
+        "F090W": 16,
+        "F150W": 16
+      },
+      "totalBytes": 3762339840,
+      "allSha256Match": true,
+      "calibrationContext": "jwst_1535.pmap"
+    },
+    "intervention": {
+      "environments": 48,
+      "injections": 3072,
+      "collisionStates": {
+        "blank": 1024,
+        "isolated": 1024,
+        "large-collision": 1024
+      },
+      "topologyRules": {
+        "unsegmented-local-field": 1024,
+        "adjacent-to-single-label": 1024,
+        "inside-original-collision-label": 1024
+      },
+      "uniqueInjectionIds": 3072
+    },
+    "frozenInterface": {
+      "dolphotRows": 3072,
+      "csvRows": 3072,
+      "parameterImages": 32,
+      "parameterNamesAcceptedByDolphot30": [
+        "img_RSky2",
+        "img_apsky"
+      ]
+    }
+  },
+  "supportBoundary": "Blank environments have no spiral-development support and are sampled from tidal and other rows. The confirmatory isolated-versus-large-collision comparison is separately balanced across spiral/tidal component and even/odd split; blank-state component contrasts are descriptive only.",
+  "claimBoundary": "This audit proves archive identity, design balance, topology-rule compliance, and a row-exact DOLPHOT interface. It does not prove recovery, photometric accuracy, pipeline independence, or a distance-ladder result."
+}

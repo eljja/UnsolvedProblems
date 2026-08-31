@@ -1,0 +1,4870 @@
+{
+  "cycleId": "RC-2026-69",
+  "experimentId": "PHOST-COLLISION-AST-1",
+  "reviewedOn": "2026-09-01",
+  "samplingFrame": "The 142 frozen author identities and their RC68 F150W mosaic collision states; injection outcomes were unavailable when this manifest was sealed.",
+  "environmentCount": 48,
+  "injectionCountPerEnvironment": 64,
+  "injectionCountPerBandPerPipeline": 3072,
+  "referenceShape": [
+    4390,
+    9891
+  ],
+  "collisionDefinition": {
+    "blank": "center segmentation label is zero",
+    "isolated": "center label occurs for one author target and has isophotal area below 10,000 pixels",
+    "large-collision": "center label contains at least four author targets or has isophotal area at least 10,000 pixels",
+    "intermediate": "excluded from the 48-environment pilot but retained in the parent ledger"
+  },
+  "offsetRules": {
+    "coreExclusion": "Every injection is 4.0-12.0 F150W mosaic pixels (0.125-0.375 arcsec) from the real target center.",
+    "blank": "The injection pixel is unsegmented and at most 4 percent of its 5x5 neighborhood is segmented.",
+    "isolated": "The injection pixel is unsegmented and at most 24 percent of its 5x5 neighborhood is segmented, retaining the nearby single-label scene without injecting on its core.",
+    "large-collision": "The injection pixel stays inside the original collision label and at least 60 percent of its 5x5 neighborhood carries that label."
+  },
+  "magnitudeColourGrid": {
+    "f150wOffsetsMag": [
+      -0.6,
+      -0.2,
+      0.2,
+      0.6
+    ],
+    "f090wMinusF150wProxyQuantiles": {
+      "q25": 0.8146115812750745,
+      "q75": 1.0847199740939102
+    },
+    "boundary": "The colour anchors are quartiles of the RC68 fixed-aperture proxy, not target-specific Cepheid colours or phase-corrected F090W measurements."
+  },
+  "standardization": {
+    "centers": {
+      "logPeriod": 1.4915737704918033,
+      "publishedPhaseCorrectedF150WVegaMag": 24.852311475409834,
+      "colourVI": 1.0300409836065574,
+      "logBackground": 0.36305605863594365,
+      "localDensity": 2.918032786885246
+    },
+    "scales": {
+      "logPeriod": 0.16415980409109296,
+      "publishedPhaseCorrectedF150WVegaMag": 0.5494993859088622,
+      "colourVI": 0.22618371314229457,
+      "logBackground": 0.06202462672609959,
+      "localDensity": 3.0152349878097238
+    },
+    "fields": [
+      "logPeriod",
+      "publishedPhaseCorrectedF150WVegaMag",
+      "colourVI",
+      "logBackground",
+      "localDensity"
+    ]
+  },
+  "cellCounts": {
+    "blank|other|development": 4,
+    "blank|other|validation": 4,
+    "blank|tidal|development": 4,
+    "blank|tidal|validation": 4,
+    "isolated|spiral|development": 4,
+    "isolated|spiral|validation": 4,
+    "isolated|tidal|development": 4,
+    "isolated|tidal|validation": 4,
+    "large-collision|spiral|development": 4,
+    "large-collision|spiral|validation": 4,
+    "large-collision|tidal|development": 4,
+    "large-collision|tidal|validation": 4
+  },
+  "topologyCounts": {
+    "unsegmented-local-field": 1024,
+    "adjacent-to-single-label": 1024,
+    "inside-original-collision-label": 1024
+  },
+  "featureBalance": {
+    "blank": {
+      "logPeriod": {
+        "mean": 1.4249375,
+        "min": 1.241,
+        "max": 1.608
+      },
+      "publishedPhaseCorrectedF150WVegaMag": {
+        "mean": 25.107875,
+        "min": 24.475,
+        "max": 25.646
+      },
+      "colourVI": {
+        "mean": 1.072375,
+        "min": 0.715,
+        "max": 1.482
+      },
+      "logBackground": {
+        "mean": 0.3226620984823735,
+        "min": 0.3098168909847494,
+        "max": 0.3351152936918982
+      },
+      "localDensity": {
+        "mean": 2.875,
+        "min": 0.0,
+        "max": 8.0
+      }
+    },
+    "isolated": {
+      "logPeriod": {
+        "mean": 1.5339375,
+        "min": 1.258,
+        "max": 2.064
+      },
+      "publishedPhaseCorrectedF150WVegaMag": {
+        "mean": 24.7026875,
+        "min": 22.998,
+        "max": 25.642
+      },
+      "colourVI": {
+        "mean": 1.0485625,
+        "min": 0.644,
+        "max": 1.61
+      },
+      "logBackground": {
+        "mean": 0.3330090270616354,
+        "min": 0.3159889374819622,
+        "max": 0.34234953700779314
+      },
+      "localDensity": {
+        "mean": 5.75,
+        "min": 2.0,
+        "max": 10.0
+      }
+    },
+    "large-collision": {
+      "logPeriod": {
+        "mean": 1.5416875,
+        "min": 1.259,
+        "max": 2.06
+      },
+      "publishedPhaseCorrectedF150WVegaMag": {
+        "mean": 24.684625,
+        "min": 23.177,
+        "max": 25.607
+      },
+      "colourVI": {
+        "mean": 0.9960625,
+        "min": 0.656,
+        "max": 1.364
+      },
+      "logBackground": {
+        "mean": 0.40135854817415073,
+        "min": 0.33679603325838653,
+        "max": 0.7337514466061271
+      },
+      "localDensity": {
+        "mean": 1.5,
+        "min": 0.0,
+        "max": 6.0
+      }
+    }
+  },
+  "environments": [
+    {
+      "authorId": 3366,
+      "host": "N3447Spiral",
+      "component": "spiral",
+      "split": "development",
+      "collisionState": "isolated",
+      "centerLabel": 961,
+      "labelMultiplicity": 1,
+      "labelAreaPixels": 49.0,
+      "logPeriod": 1.575,
+      "publishedPhaseCorrectedF150WVegaMag": 24.543,
+      "colourVI": 0.815,
+      "backgroundMJySr": 0.40629467368125916,
+      "catalogSourcesWithin1Arcsec": 9,
+      "offsetCandidateCount": 916,
+      "offsets": [
+        {
+          "x": 8895.32419087993,
+          "y": 431.19938197095826,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 8893.82419087993,
+          "y": 441.5916868163715,
+          "radiusPixels": 12.0,
+          "angleDegrees": 60,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 8885.740412747928,
+          "y": 443.0170750071048,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 8883.227924221215,
+          "y": 435.0561076290775,
+          "radiusPixels": 6.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.2,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 8875.82419087993,
+          "y": 431.19938197095826,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 8879.338909505692,
+          "y": 422.7141005967197,
+          "radiusPixels": 12.0,
+          "angleDegrees": 225,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 8887.82419087993,
+          "y": 419.19938197095826,
+          "radiusPixels": 12.0,
+          "angleDegrees": 270,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 8896.309472254168,
+          "y": 422.7141005967197,
+          "radiusPixels": 12.0,
+          "angleDegrees": 315,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        }
+      ]
+    },
+    {
+      "authorId": 4945,
+      "host": "N3447Spiral",
+      "component": "spiral",
+      "split": "validation",
+      "collisionState": "isolated",
+      "centerLabel": 4181,
+      "labelMultiplicity": 1,
+      "labelAreaPixels": 98.0,
+      "logPeriod": 1.706,
+      "publishedPhaseCorrectedF150WVegaMag": 24.002,
+      "colourVI": 1.068,
+      "backgroundMJySr": 0.3883195221424103,
+      "catalogSourcesWithin1Arcsec": 10,
+      "offsetCandidateCount": 847,
+      "offsets": [
+        {
+          "x": 9740.231825249904,
+          "y": 908.425652672699,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9738.731825249904,
+          "y": 918.8179575181123,
+          "radiusPixels": 12.0,
+          "angleDegrees": 60,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9730.648047117902,
+          "y": 920.2433457088455,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9728.90160303431,
+          "y": 911.6395907211318,
+          "radiusPixels": 5.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.16,
+          "sameLabelFraction5x5": 0.16,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9720.731825249904,
+          "y": 908.425652672699,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9723.539291932477,
+          "y": 900.7122013564606,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.16,
+          "sameLabelFraction5x5": 0.16,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9731.685956336933,
+          "y": 896.4713162955981,
+          "radiusPixels": 12.0,
+          "angleDegrees": 265,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.2,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9740.445276566143,
+          "y": 899.2331193552712,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        }
+      ]
+    },
+    {
+      "authorId": 7553,
+      "host": "N3447Spiral",
+      "component": "spiral",
+      "split": "validation",
+      "collisionState": "isolated",
+      "centerLabel": 4252,
+      "labelMultiplicity": 1,
+      "labelAreaPixels": 462.0,
+      "logPeriod": 1.258,
+      "publishedPhaseCorrectedF150WVegaMag": 25.577,
+      "colourVI": 0.65,
+      "backgroundMJySr": 0.4009902775287628,
+      "catalogSourcesWithin1Arcsec": 2,
+      "offsetCandidateCount": 495,
+      "offsets": [
+        {
+          "x": 9535.52570147208,
+          "y": 937.4895679905144,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9537.855526003546,
+          "y": 944.3724852267269,
+          "radiusPixels": 12.0,
+          "angleDegrees": 35,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9532.621895549792,
+          "y": 942.0857620682269,
+          "radiusPixels": 6.5,
+          "angleDegrees": 45,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.16,
+          "sameLabelFraction5x5": 0.16,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9532.129943191987,
+          "y": 948.7658794399453,
+          "radiusPixels": 12.0,
+          "angleDegrees": 70,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.16,
+          "sameLabelFraction5x5": 0.16,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9526.123919294247,
+          "y": 933.4111829488495,
+          "radiusPixels": 4.5,
+          "angleDegrees": 245,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.24,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9528.02570147208,
+          "y": 925.4895679905144,
+          "radiusPixels": 12.0,
+          "angleDegrees": 270,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.24,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9531.882427130198,
+          "y": 932.8933013318006,
+          "radiusPixels": 6.0,
+          "angleDegrees": 310,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9536.510982846317,
+          "y": 929.0042866162759,
+          "radiusPixels": 12.0,
+          "angleDegrees": 315,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        }
+      ]
+    },
+    {
+      "authorId": 9061,
+      "host": "N3447Spiral",
+      "component": "spiral",
+      "split": "validation",
+      "collisionState": "isolated",
+      "centerLabel": 4435,
+      "labelMultiplicity": 1,
+      "labelAreaPixels": 34.0,
+      "logPeriod": 1.349,
+      "publishedPhaseCorrectedF150WVegaMag": 24.983,
+      "colourVI": 1.61,
+      "backgroundMJySr": 0.4004286229610443,
+      "catalogSourcesWithin1Arcsec": 8,
+      "offsetCandidateCount": 1004,
+      "offsets": [
+        {
+          "x": 9506.517902471109,
+          "y": 998.6435960848569,
+          "radiusPixels": 7.5,
+          "angleDegrees": 15,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9504.34487791483,
+          "y": 1007.5781466910278,
+          "radiusPixels": 12.0,
+          "angleDegrees": 65,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9494.202039633054,
+          "y": 1007.5781466910278,
+          "radiusPixels": 12.0,
+          "angleDegrees": 115,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.16,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9488.85091922302,
+          "y": 1001.562563256606,
+          "radiusPixels": 11.5,
+          "angleDegrees": 155,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9487.682348858472,
+          "y": 993.5966247053577,
+          "radiusPixels": 12.0,
+          "angleDegrees": 195,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9496.979153028537,
+          "y": 993.4258450694321,
+          "radiusPixels": 4.0,
+          "angleDegrees": 235,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.2,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9500.319327686913,
+          "y": 984.748116869487,
+          "radiusPixels": 12.0,
+          "angleDegrees": 275,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9509.103283305409,
+          "y": 989.8195360103755,
+          "radiusPixels": 12.0,
+          "angleDegrees": 325,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.08,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        }
+      ]
+    },
+    {
+      "authorId": 23741,
+      "host": "N3447Spiral",
+      "component": "spiral",
+      "split": "validation",
+      "collisionState": "large-collision",
+      "centerLabel": 2245,
+      "labelMultiplicity": 11,
+      "labelAreaPixels": 1321113.0,
+      "logPeriod": 1.302,
+      "publishedPhaseCorrectedF150WVegaMag": 25.607,
+      "colourVI": 0.82,
+      "backgroundMJySr": 0.4120528995990753,
+      "catalogSourcesWithin1Arcsec": 4,
+      "offsetCandidateCount": 739,
+      "offsets": [
+        {
+          "x": 8824.349223131556,
+          "y": 1270.3282515969354,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 2245,
+          "segmentedFraction5x5": 0.76,
+          "sameLabelFraction5x5": 0.76,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 8825.334504505794,
+          "y": 1278.813532971174,
+          "radiusPixels": 12.0,
+          "angleDegrees": 45,
+          "candidateLabel": 2245,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 8819.599223131556,
+          "y": 1275.0913913177499,
+          "radiusPixels": 5.5,
+          "angleDegrees": 60,
+          "candidateLabel": 2245,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 8816.849223131556,
+          "y": 1282.3282515969354,
+          "radiusPixels": 12.0,
+          "angleDegrees": 90,
+          "candidateLabel": 2245,
+          "segmentedFraction5x5": 0.64,
+          "sameLabelFraction5x5": 0.64,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 8813.385121516418,
+          "y": 1272.3282515969354,
+          "radiusPixels": 4.0,
+          "angleDegrees": 150,
+          "candidateLabel": 2245,
+          "segmentedFraction5x5": 0.64,
+          "sameLabelFraction5x5": 0.64,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 8806.456918286143,
+          "y": 1264.3282515969354,
+          "radiusPixels": 12.0,
+          "angleDegrees": 210,
+          "candidateLabel": 2245,
+          "segmentedFraction5x5": 0.64,
+          "sameLabelFraction5x5": 0.64,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 8814.10220443024,
+          "y": 1264.4372509811972,
+          "radiusPixels": 6.5,
+          "angleDegrees": 245,
+          "candidateLabel": 2245,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 8818.933001263558,
+          "y": 1258.510558560789,
+          "radiusPixels": 12.0,
+          "angleDegrees": 280,
+          "candidateLabel": 2245,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        }
+      ]
+    },
+    {
+      "authorId": 25440,
+      "host": "N3447Spiral",
+      "component": "spiral",
+      "split": "development",
+      "collisionState": "isolated",
+      "centerLabel": 2133,
+      "labelMultiplicity": 1,
+      "labelAreaPixels": 214.0,
+      "logPeriod": 1.402,
+      "publishedPhaseCorrectedF150WVegaMag": 25.041,
+      "colourVI": 1.02,
+      "backgroundMJySr": 0.40761637687683105,
+      "catalogSourcesWithin1Arcsec": 5,
+      "offsetCandidateCount": 326,
+      "offsets": [
+        {
+          "x": 7278.813901561538,
+          "y": 593.3017291554786,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 7282.590213010969,
+          "y": 597.4059708753866,
+          "radiusPixels": 12.0,
+          "angleDegrees": 20,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.16,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 7275.04214839782,
+          "y": 598.6262174433571,
+          "radiusPixels": 6.5,
+          "angleDegrees": 55,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.2,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 7274.419730102768,
+          "y": 604.8928390709474,
+          "radiusPixels": 12.0,
+          "angleDegrees": 75,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 7270.616655619557,
+          "y": 601.2712867402125,
+          "radiusPixels": 8.0,
+          "angleDegrees": 95,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 7260.438208117098,
+          "y": 598.3731482963669,
+          "radiusPixels": 12.0,
+          "angleDegrees": 155,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.24,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 7269.230123429535,
+          "y": 581.4840361193321,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.08,
+          "sameLabelFraction5x5": 0.08,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 7272.182142449873,
+          "y": 588.3776903904176,
+          "radiusPixels": 5.0,
+          "angleDegrees": 280,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.24,
+          "topologyRule": "adjacent-to-single-label"
+        }
+      ]
+    },
+    {
+      "authorId": 26714,
+      "host": "N3447",
+      "component": "other",
+      "split": "development",
+      "collisionState": "blank",
+      "centerLabel": 0,
+      "labelMultiplicity": 0,
+      "labelAreaPixels": null,
+      "logPeriod": 1.514,
+      "publishedPhaseCorrectedF150WVegaMag": 24.847,
+      "colourVI": 0.966,
+      "backgroundMJySr": 0.380778968334198,
+      "catalogSourcesWithin1Arcsec": 2,
+      "offsetCandidateCount": 1013,
+      "offsets": [
+        {
+          "x": 9691.66436883675,
+          "y": 1788.2830907559674,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9682.080590704747,
+          "y": 1800.1007837921138,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9681.100191064274,
+          "y": 1790.8542411947135,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9674.971835519322,
+          "y": 1795.9965420722058,
+          "radiusPixels": 12.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9672.16436883675,
+          "y": 1788.2830907559674,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9674.971835519322,
+          "y": 1780.569639439729,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9682.080590704747,
+          "y": 1776.4653977198209,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9684.945785636251,
+          "y": 1783.8514558674124,
+          "radiusPixels": 4.5,
+          "angleDegrees": 280,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        }
+      ]
+    },
+    {
+      "authorId": 36326,
+      "host": "N3447Spiral",
+      "component": "spiral",
+      "split": "development",
+      "collisionState": "isolated",
+      "centerLabel": 5685,
+      "labelMultiplicity": 1,
+      "labelAreaPixels": 48.0,
+      "logPeriod": 1.673,
+      "publishedPhaseCorrectedF150WVegaMag": 23.965,
+      "colourVI": 0.644,
+      "backgroundMJySr": 0.39503467082977295,
+      "catalogSourcesWithin1Arcsec": 3,
+      "offsetCandidateCount": 1021,
+      "offsets": [
+        {
+          "x": 9219.505051242575,
+          "y": 1881.10845292938,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9218.887968478788,
+          "y": 1890.938277460848,
+          "radiusPixels": 12.0,
+          "angleDegrees": 55,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9209.921273110573,
+          "y": 1892.9261459655265,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9202.812517925147,
+          "y": 1888.8219042456185,
+          "radiusPixels": 12.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9200.005051242575,
+          "y": 1881.10845292938,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9208.557851248539,
+          "y": 1878.2159086857907,
+          "radiusPixels": 4.5,
+          "angleDegrees": 220,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.24,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9209.921273110573,
+          "y": 1869.2907598932336,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9219.718502558813,
+          "y": 1871.9159196119524,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.08,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        }
+      ]
+    },
+    {
+      "authorId": 54441,
+      "host": "N3447Spiral",
+      "component": "spiral",
+      "split": "validation",
+      "collisionState": "large-collision",
+      "centerLabel": 2245,
+      "labelMultiplicity": 11,
+      "labelAreaPixels": 1321113.0,
+      "logPeriod": 1.714,
+      "publishedPhaseCorrectedF150WVegaMag": 24.165,
+      "colourVI": 0.8,
+      "backgroundMJySr": 1.0828797817230225,
+      "catalogSourcesWithin1Arcsec": 0,
+      "offsetCandidateCount": 1224,
+      "offsets": [
+        {
+          "x": 8306.131335163638,
+          "y": 1956.7829034443298,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 2245,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 8306.344786479876,
+          "y": 1965.9754367617575,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 2245,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 8296.547557031636,
+          "y": 1968.6005964804763,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 2245,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 8295.567157391162,
+          "y": 1959.354053883076,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 2245,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 8286.631335163638,
+          "y": 1956.7829034443298,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 2245,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 8289.43880184621,
+          "y": 1949.0694521280914,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 2245,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 8296.547557031636,
+          "y": 1944.9652104081833,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 2245,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 8306.344786479876,
+          "y": 1947.5903701269021,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 2245,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        }
+      ]
+    },
+    {
+      "authorId": 67873,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "validation",
+      "collisionState": "isolated",
+      "centerLabel": 7429,
+      "labelMultiplicity": 1,
+      "labelAreaPixels": 97.0,
+      "logPeriod": 1.753,
+      "publishedPhaseCorrectedF150WVegaMag": 23.933,
+      "colourVI": 1.502,
+      "backgroundMJySr": 0.37161508202552795,
+      "catalogSourcesWithin1Arcsec": 2,
+      "offsetCandidateCount": 826,
+      "offsets": [
+        {
+          "x": 9614.981522190592,
+          "y": 2904.6462613687813,
+          "radiusPixels": 12.0,
+          "angleDegrees": 10,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.2,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9607.46565242708,
+          "y": 2908.7061235689453,
+          "radiusPixels": 7.5,
+          "angleDegrees": 55,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.2,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9600.058000613215,
+          "y": 2914.1535931522467,
+          "radiusPixels": 12.0,
+          "angleDegrees": 105,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9592.771524309033,
+          "y": 2908.562483236778,
+          "radiusPixels": 12.0,
+          "angleDegrees": 150,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.12,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9598.817162936146,
+          "y": 2901.3977975338166,
+          "radiusPixels": 4.5,
+          "angleDegrees": 195,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.2,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9596.280911918233,
+          "y": 2892.7326587053103,
+          "radiusPixels": 12.0,
+          "angleDegrees": 235,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9604.209698067418,
+          "y": 2890.608146859677,
+          "radiusPixels": 12.0,
+          "angleDegrees": 275,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9611.649110528684,
+          "y": 2894.0772018625394,
+          "radiusPixels": 12.0,
+          "angleDegrees": 315,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        }
+      ]
+    },
+    {
+      "authorId": 77714,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "development",
+      "collisionState": "isolated",
+      "centerLabel": 7714,
+      "labelMultiplicity": 1,
+      "labelAreaPixels": 255.0,
+      "logPeriod": 1.626,
+      "publishedPhaseCorrectedF150WVegaMag": 24.504,
+      "colourVI": 1.306,
+      "backgroundMJySr": 0.39356929063796997,
+      "catalogSourcesWithin1Arcsec": 7,
+      "offsetCandidateCount": 497,
+      "offsets": [
+        {
+          "x": 9395.958148192709,
+          "y": 3001.116145438742,
+          "radiusPixels": 7.5,
+          "angleDegrees": 15,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.2,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9393.78512363643,
+          "y": 3010.050696044913,
+          "radiusPixels": 12.0,
+          "angleDegrees": 65,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9384.609462775634,
+          "y": 3010.451314049904,
+          "radiusPixels": 12.0,
+          "angleDegrees": 110,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9377.838011051103,
+          "y": 3004.2464217413612,
+          "radiusPixels": 12.0,
+          "angleDegrees": 155,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.08,
+          "sameLabelFraction5x5": 0.04,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9377.122594580072,
+          "y": 2996.069174059243,
+          "radiusPixels": 12.0,
+          "angleDegrees": 195,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.12,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9386.132610531962,
+          "y": 2995.4888184011725,
+          "radiusPixels": 4.5,
+          "angleDegrees": 235,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.12,
+          "sameLabelFraction5x5": 0.12,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9381.830787259329,
+          "y": 2989.345178069005,
+          "radiusPixels": 12.0,
+          "angleDegrees": 235,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9389.759573408513,
+          "y": 2987.220666223372,
+          "radiusPixels": 12.0,
+          "angleDegrees": 275,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.12,
+          "sameLabelFraction5x5": 0.04,
+          "topologyRule": "adjacent-to-single-label"
+        }
+      ]
+    },
+    {
+      "authorId": 79416,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "development",
+      "collisionState": "large-collision",
+      "centerLabel": 7523,
+      "labelMultiplicity": 4,
+      "labelAreaPixels": 27863.0,
+      "logPeriod": 1.598,
+      "publishedPhaseCorrectedF150WVegaMag": 24.275,
+      "colourVI": 1.156,
+      "backgroundMJySr": 0.40180718898773193,
+      "catalogSourcesWithin1Arcsec": 5,
+      "offsetCandidateCount": 673,
+      "offsets": [
+        {
+          "x": 9351.107227400627,
+          "y": 3022.6889092118345,
+          "radiusPixels": 7.5,
+          "angleDegrees": 105,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 0.6,
+          "sameLabelFraction5x5": 0.6,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9342.656065393483,
+          "y": 3021.4444655146663,
+          "radiusPixels": 12.0,
+          "angleDegrees": 150,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9341.23067720275,
+          "y": 3013.360687382663,
+          "radiusPixels": 12.0,
+          "angleDegrees": 190,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9350.219943114149,
+          "y": 3012.61603838992,
+          "radiusPixels": 4.0,
+          "angleDegrees": 225,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 0.92,
+          "sameLabelFraction5x5": 0.92,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9344.563088864657,
+          "y": 3006.9591841404276,
+          "radiusPixels": 12.0,
+          "angleDegrees": 225,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9350.964592106893,
+          "y": 3003.62677247852,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 0.68,
+          "sameLabelFraction5x5": 0.68,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9356.218007201951,
+          "y": 3008.6471571118914,
+          "radiusPixels": 7.5,
+          "angleDegrees": 295,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 0.6,
+          "sameLabelFraction5x5": 0.6,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9363.384989067541,
+          "y": 3011.682243938084,
+          "radiusPixels": 11.0,
+          "angleDegrees": 340,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 0.6,
+          "sameLabelFraction5x5": 0.6,
+          "topologyRule": "inside-original-collision-label"
+        }
+      ]
+    },
+    {
+      "authorId": 79644,
+      "host": "N3447Spiral",
+      "component": "spiral",
+      "split": "development",
+      "collisionState": "large-collision",
+      "centerLabel": 2532,
+      "labelMultiplicity": 18,
+      "labelAreaPixels": 2726434.0,
+      "logPeriod": 1.522,
+      "publishedPhaseCorrectedF150WVegaMag": 24.834,
+      "colourVI": 1.228,
+      "backgroundMJySr": 0.48435327410697937,
+      "catalogSourcesWithin1Arcsec": 0,
+      "offsetCandidateCount": 1224,
+      "offsets": [
+        {
+          "x": 6276.265072459652,
+          "y": 1551.557206194293,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 2532,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 6276.478523775891,
+          "y": 1560.7497395117207,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 2532,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 6266.681294327649,
+          "y": 1563.3748992304395,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 2532,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 6265.7008946871765,
+          "y": 1554.1283566330392,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 2532,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 6256.765072459652,
+          "y": 1551.557206194293,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 2532,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 6259.572539142225,
+          "y": 1543.8437548780546,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 2532,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 6266.681294327649,
+          "y": 1539.7395131581466,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 2532,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 6276.478523775891,
+          "y": 1542.3646728768654,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 2532,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        }
+      ]
+    },
+    {
+      "authorId": 82374,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "development",
+      "collisionState": "blank",
+      "centerLabel": 0,
+      "labelMultiplicity": 0,
+      "labelAreaPixels": null,
+      "logPeriod": 1.241,
+      "publishedPhaseCorrectedF150WVegaMag": 25.599,
+      "colourVI": 1.049,
+      "backgroundMJySr": 0.36987732350826263,
+      "catalogSourcesWithin1Arcsec": 0,
+      "offsetCandidateCount": 1224,
+      "offsets": [
+        {
+          "x": 9776.371736844641,
+          "y": 3268.5902912373417,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9776.58518816088,
+          "y": 3277.7828245547694,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9766.787958712639,
+          "y": 3280.407984273488,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9765.807559072166,
+          "y": 3271.161441676088,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9756.871736844641,
+          "y": 3268.5902912373417,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9759.679203527214,
+          "y": 3260.876839921103,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9766.787958712639,
+          "y": 3256.7725982011953,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9776.58518816088,
+          "y": 3259.397757919914,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        }
+      ]
+    },
+    {
+      "authorId": 83980,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "development",
+      "collisionState": "blank",
+      "centerLabel": 0,
+      "labelMultiplicity": 0,
+      "labelAreaPixels": null,
+      "logPeriod": 1.381,
+      "publishedPhaseCorrectedF150WVegaMag": 25.046,
+      "colourVI": 1.021,
+      "backgroundMJySr": 0.3792710155248642,
+      "catalogSourcesWithin1Arcsec": 3,
+      "offsetCandidateCount": 1224,
+      "offsets": [
+        {
+          "x": 9441.86743620321,
+          "y": 3140.9249511002645,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9442.080887519449,
+          "y": 3150.117484417692,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9432.283658071208,
+          "y": 3152.742644136411,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9431.303258430735,
+          "y": 3143.496101539011,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9422.36743620321,
+          "y": 3140.9249511002645,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9425.174902885783,
+          "y": 3133.211499784026,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9432.283658071208,
+          "y": 3129.107258064118,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9442.080887519449,
+          "y": 3131.732417782837,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        }
+      ]
+    },
+    {
+      "authorId": 84747,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "validation",
+      "collisionState": "large-collision",
+      "centerLabel": 7523,
+      "labelMultiplicity": 4,
+      "labelAreaPixels": 27863.0,
+      "logPeriod": 1.498,
+      "publishedPhaseCorrectedF150WVegaMag": 24.806,
+      "colourVI": 1.103,
+      "backgroundMJySr": 0.4567243456840515,
+      "catalogSourcesWithin1Arcsec": 0,
+      "offsetCandidateCount": 1087,
+      "offsets": [
+        {
+          "x": 9250.42422186569,
+          "y": 3064.5036850895603,
+          "radiusPixels": 7.5,
+          "angleDegrees": 10,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 0.68,
+          "sameLabelFraction5x5": 0.68,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9249.038163718098,
+          "y": 3073.5936286024717,
+          "radiusPixels": 12.0,
+          "angleDegrees": 60,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 0.8,
+          "sameLabelFraction5x5": 0.8,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9238.93392199819,
+          "y": 3074.477635206489,
+          "radiusPixels": 12.0,
+          "angleDegrees": 110,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9232.645858872685,
+          "y": 3069.201323757058,
+          "radiusPixels": 12.0,
+          "angleDegrees": 150,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9231.220470681952,
+          "y": 3061.117545625055,
+          "radiusPixels": 12.0,
+          "angleDegrees": 190,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9240.467013279353,
+          "y": 3060.1371459845823,
+          "radiusPixels": 4.0,
+          "angleDegrees": 230,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9243.038163718098,
+          "y": 3051.201323757058,
+          "radiusPixels": 12.0,
+          "angleDegrees": 270,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 0.96,
+          "sameLabelFraction5x5": 0.96,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9252.230697035526,
+          "y": 3055.4878724408195,
+          "radiusPixels": 12.0,
+          "angleDegrees": 320,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        }
+      ]
+    },
+    {
+      "authorId": 86410,
+      "host": "N3447Spiral",
+      "component": "spiral",
+      "split": "development",
+      "collisionState": "large-collision",
+      "centerLabel": 2532,
+      "labelMultiplicity": 18,
+      "labelAreaPixels": 2726434.0,
+      "logPeriod": 1.662,
+      "publishedPhaseCorrectedF150WVegaMag": 24.405,
+      "colourVI": 0.656,
+      "backgroundMJySr": 0.45150527358055115,
+      "catalogSourcesWithin1Arcsec": 0,
+      "offsetCandidateCount": 1221,
+      "offsets": [
+        {
+          "x": 5928.262640679375,
+          "y": 1513.6967244280836,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 2532,
+          "segmentedFraction5x5": 0.96,
+          "sameLabelFraction5x5": 0.96,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5928.476091995613,
+          "y": 1522.8892577455113,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 2532,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5918.678862547372,
+          "y": 1525.51441746423,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 2532,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5917.698462906899,
+          "y": 1516.2678748668297,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 2532,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5908.762640679375,
+          "y": 1513.6967244280836,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 2532,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5911.5701073619475,
+          "y": 1505.9832731118452,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 2532,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5918.678862547372,
+          "y": 1501.8790313919371,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 2532,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5928.476091995613,
+          "y": 1504.504191110656,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 2532,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        }
+      ]
+    },
+    {
+      "authorId": 86627,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "validation",
+      "collisionState": "large-collision",
+      "centerLabel": 7523,
+      "labelMultiplicity": 4,
+      "labelAreaPixels": 27863.0,
+      "logPeriod": 1.443,
+      "publishedPhaseCorrectedF150WVegaMag": 24.886,
+      "colourVI": 0.941,
+      "backgroundMJySr": 0.4120289534330368,
+      "catalogSourcesWithin1Arcsec": 2,
+      "offsetCandidateCount": 823,
+      "offsets": [
+        {
+          "x": 9240.990225057772,
+          "y": 3096.4356584937386,
+          "radiusPixels": 12.0,
+          "angleDegrees": 20,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 0.64,
+          "sameLabelFraction5x5": 0.64,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9233.161113602378,
+          "y": 3095.22396101742,
+          "radiusPixels": 4.5,
+          "angleDegrees": 40,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 0.76,
+          "sameLabelFraction5x5": 0.76,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9225.963913608342,
+          "y": 3098.826607302214,
+          "radiusPixels": 7.5,
+          "angleDegrees": 120,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 0.72,
+          "sameLabelFraction5x5": 0.72,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9217.896220572196,
+          "y": 3094.415194905834,
+          "radiusPixels": 12.0,
+          "angleDegrees": 170,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9220.521380290915,
+          "y": 3084.617965457592,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9229.019320897674,
+          "y": 3088.392185761782,
+          "radiusPixels": 4.0,
+          "angleDegrees": 260,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9227.63013547634,
+          "y": 3080.5137237376844,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9235.713913608342,
+          "y": 3081.9391119284173,
+          "radiusPixels": 12.0,
+          "angleDegrees": 300,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        }
+      ]
+    },
+    {
+      "authorId": 88606,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "development",
+      "collisionState": "isolated",
+      "centerLabel": 8593,
+      "labelMultiplicity": 1,
+      "labelAreaPixels": 26.0,
+      "logPeriod": 1.454,
+      "publishedPhaseCorrectedF150WVegaMag": 24.691,
+      "colourVI": 0.803,
+      "backgroundMJySr": 0.38865071535110474,
+      "catalogSourcesWithin1Arcsec": 9,
+      "offsetCandidateCount": 750,
+      "offsets": [
+        {
+          "x": 9369.977518175116,
+          "y": 3197.63663880057,
+          "radiusPixels": 7.5,
+          "angleDegrees": 30,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.16,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9362.43645873376,
+          "y": 3205.8409751776708,
+          "radiusPixels": 12.0,
+          "angleDegrees": 95,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9362.614086758398,
+          "y": 3198.810677565631,
+          "radiusPixels": 5.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.12,
+          "sameLabelFraction5x5": 0.12,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9352.606634202293,
+          "y": 3198.9580579414583,
+          "radiusPixels": 12.0,
+          "angleDegrees": 155,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9359.857096498587,
+          "y": 3192.196165753607,
+          "radiusPixels": 4.0,
+          "angleDegrees": 205,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.2,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9359.378085926824,
+          "y": 3182.610327351139,
+          "radiusPixels": 12.0,
+          "angleDegrees": 250,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.16,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9369.482327646732,
+          "y": 3183.4943339551564,
+          "radiusPixels": 12.0,
+          "angleDegrees": 300,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9366.350209828488,
+          "y": 3189.790878579125,
+          "radiusPixels": 5.0,
+          "angleDegrees": 305,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.16,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        }
+      ]
+    },
+    {
+      "authorId": 89582,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "development",
+      "collisionState": "isolated",
+      "centerLabel": 9066,
+      "labelMultiplicity": 1,
+      "labelAreaPixels": 198.0,
+      "logPeriod": 2.064,
+      "publishedPhaseCorrectedF150WVegaMag": 22.998,
+      "colourVI": 1.024,
+      "backgroundMJySr": 0.4008145034313202,
+      "catalogSourcesWithin1Arcsec": 4,
+      "offsetCandidateCount": 530,
+      "offsets": [
+        {
+          "x": 9538.11296402421,
+          "y": 3293.5671041782202,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9538.326415340449,
+          "y": 3302.759637495648,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9528.529185892208,
+          "y": 3305.3847972143667,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.04,
+          "sameLabelFraction5x5": 0.04,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9521.420430706783,
+          "y": 3301.280555494459,
+          "radiusPixels": 12.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9518.61296402421,
+          "y": 3293.5671041782202,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9528.529185892208,
+          "y": 3281.7494111420738,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9531.394380823713,
+          "y": 3289.1354692896653,
+          "radiusPixels": 4.5,
+          "angleDegrees": 280,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.12,
+          "sameLabelFraction5x5": 0.12,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9538.326415340449,
+          "y": 3284.3745708607926,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.16,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        }
+      ]
+    },
+    {
+      "authorId": 91477,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "validation",
+      "collisionState": "large-collision",
+      "centerLabel": 7523,
+      "labelMultiplicity": 4,
+      "labelAreaPixels": 27863.0,
+      "logPeriod": 1.385,
+      "publishedPhaseCorrectedF150WVegaMag": 25.102,
+      "colourVI": 0.658,
+      "backgroundMJySr": 0.40248164534568787,
+      "catalogSourcesWithin1Arcsec": 2,
+      "offsetCandidateCount": 508,
+      "offsets": [
+        {
+          "x": 9186.173558425766,
+          "y": 3166.571744222724,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9188.093806935089,
+          "y": 3173.1678732407613,
+          "radiusPixels": 11.5,
+          "angleDegrees": 35,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 0.6,
+          "sameLabelFraction5x5": 0.6,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9168.281253580353,
+          "y": 3160.571744222724,
+          "radiusPixels": 12.0,
+          "angleDegrees": 210,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 0.72,
+          "sameLabelFraction5x5": 0.72,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9172.673558425766,
+          "y": 3156.179439377311,
+          "radiusPixels": 12.0,
+          "angleDegrees": 240,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 0.64,
+          "sameLabelFraction5x5": 0.64,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9177.638282245356,
+          "y": 3162.708040917568,
+          "radiusPixels": 4.0,
+          "angleDegrees": 255,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 0.64,
+          "sameLabelFraction5x5": 0.64,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9180.757336557768,
+          "y": 3154.7540511865777,
+          "radiusPixels": 12.0,
+          "angleDegrees": 280,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9182.423558425766,
+          "y": 3160.076553694341,
+          "radiusPixels": 7.5,
+          "angleDegrees": 300,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9187.866091743193,
+          "y": 3158.8582929064855,
+          "radiusPixels": 12.0,
+          "angleDegrees": 320,
+          "candidateLabel": 7523,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        }
+      ]
+    },
+    {
+      "authorId": 92989,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "validation",
+      "collisionState": "isolated",
+      "centerLabel": 8604,
+      "labelMultiplicity": 1,
+      "labelAreaPixels": 221.0,
+      "logPeriod": 1.653,
+      "publishedPhaseCorrectedF150WVegaMag": 24.309,
+      "colourVI": 0.646,
+      "backgroundMJySr": 0.3943575918674469,
+      "catalogSourcesWithin1Arcsec": 7,
+      "offsetCandidateCount": 688,
+      "offsets": [
+        {
+          "x": 9198.928392102696,
+          "y": 3205.644230032056,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9201.258216634164,
+          "y": 3212.5271472682684,
+          "radiusPixels": 12.0,
+          "angleDegrees": 35,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9195.532633822604,
+          "y": 3216.920541481487,
+          "radiusPixels": 12.0,
+          "angleDegrees": 70,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9189.103991663122,
+          "y": 3210.6289228607575,
+          "radiusPixels": 5.5,
+          "angleDegrees": 115,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.16,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9180.552698658257,
+          "y": 3210.7156491729443,
+          "radiusPixels": 12.0,
+          "angleDegrees": 155,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.08,
+          "sameLabelFraction5x5": 0.08,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9184.183948405529,
+          "y": 3203.703087193787,
+          "radiusPixels": 7.5,
+          "angleDegrees": 195,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.24,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9187.324150382789,
+          "y": 3194.367918582625,
+          "radiusPixels": 12.0,
+          "angleDegrees": 250,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.08,
+          "sameLabelFraction5x5": 0.08,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9197.428392102696,
+          "y": 3195.2519251866424,
+          "radiusPixels": 12.0,
+          "angleDegrees": 300,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        }
+      ]
+    },
+    {
+      "authorId": 93366,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "development",
+      "collisionState": "isolated",
+      "centerLabel": 9489,
+      "labelMultiplicity": 1,
+      "labelAreaPixels": 43.0,
+      "logPeriod": 1.36,
+      "publishedPhaseCorrectedF150WVegaMag": 25.606,
+      "colourVI": 0.911,
+      "backgroundMJySr": 0.3766397535800934,
+      "catalogSourcesWithin1Arcsec": 2,
+      "offsetCandidateCount": 1108,
+      "offsets": [
+        {
+          "x": 9564.201474330064,
+          "y": 3389.6459947792428,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.12,
+          "sameLabelFraction5x5": 0.12,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9564.414925646302,
+          "y": 3398.8385280966704,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9554.617696198062,
+          "y": 3401.463687815389,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9547.508941012637,
+          "y": 3397.3594460954814,
+          "radiusPixels": 12.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9544.701474330064,
+          "y": 3389.6459947792428,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9553.637296557588,
+          "y": 3387.0748443404964,
+          "radiusPixels": 4.0,
+          "angleDegrees": 220,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.2,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9554.617696198062,
+          "y": 3377.8283017430963,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9564.414925646302,
+          "y": 3380.453461461815,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        }
+      ]
+    },
+    {
+      "authorId": 100493,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "validation",
+      "collisionState": "blank",
+      "centerLabel": 0,
+      "labelMultiplicity": 0,
+      "labelAreaPixels": null,
+      "logPeriod": 1.574,
+      "publishedPhaseCorrectedF150WVegaMag": 24.56,
+      "colourVI": 1.326,
+      "backgroundMJySr": 0.37174543738365173,
+      "catalogSourcesWithin1Arcsec": 2,
+      "offsetCandidateCount": 1224,
+      "offsets": [
+        {
+          "x": 9026.232436641018,
+          "y": 3296.55678319697,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9026.445887957256,
+          "y": 3305.749316514398,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9016.648658509015,
+          "y": 3308.3744762331166,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9015.668258868542,
+          "y": 3299.1279336357165,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9006.732436641018,
+          "y": 3296.55678319697,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9009.53990332359,
+          "y": 3288.8433318807315,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9016.648658509015,
+          "y": 3284.7390901608237,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9026.445887957256,
+          "y": 3287.3642498795425,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        }
+      ]
+    },
+    {
+      "authorId": 103898,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "development",
+      "collisionState": "blank",
+      "centerLabel": 0,
+      "labelMultiplicity": 0,
+      "labelAreaPixels": null,
+      "logPeriod": 1.608,
+      "publishedPhaseCorrectedF150WVegaMag": 24.475,
+      "colourVI": 0.887,
+      "backgroundMJySr": 0.3706674575805664,
+      "catalogSourcesWithin1Arcsec": 3,
+      "offsetCandidateCount": 1224,
+      "offsets": [
+        {
+          "x": 9046.365093234677,
+          "y": 3379.5820713723833,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9046.578544550915,
+          "y": 3388.774604689811,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9036.781315102675,
+          "y": 3391.39976440853,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9035.800915462201,
+          "y": 3382.1532218111297,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9026.865093234677,
+          "y": 3379.5820713723833,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9029.67255991725,
+          "y": 3371.8686200561447,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9036.781315102675,
+          "y": 3367.764378336237,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9046.578544550915,
+          "y": 3370.3895380549557,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        }
+      ]
+    },
+    {
+      "authorId": 108400,
+      "host": "N3447Spiral",
+      "component": "spiral",
+      "split": "development",
+      "collisionState": "large-collision",
+      "centerLabel": 6373,
+      "labelMultiplicity": 13,
+      "labelAreaPixels": 1525723.0,
+      "logPeriod": 1.338,
+      "publishedPhaseCorrectedF150WVegaMag": 25.528,
+      "colourVI": 0.905,
+      "backgroundMJySr": 0.5962150692939758,
+      "catalogSourcesWithin1Arcsec": 0,
+      "offsetCandidateCount": 1224,
+      "offsets": [
+        {
+          "x": 7140.168109963441,
+          "y": 2565.0097773819166,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 7140.381561279679,
+          "y": 2574.2023106993443,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 7130.584331831437,
+          "y": 2576.827470418063,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 7129.603932190965,
+          "y": 2567.580927820663,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 7120.668109963441,
+          "y": 2565.0097773819166,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 7123.475576646013,
+          "y": 2557.296326065678,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 7130.584331831437,
+          "y": 2553.19208434577,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 7140.381561279679,
+          "y": 2555.817244064489,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        }
+      ]
+    },
+    {
+      "authorId": 110026,
+      "host": "N3447",
+      "component": "other",
+      "split": "development",
+      "collisionState": "blank",
+      "centerLabel": 0,
+      "labelMultiplicity": 0,
+      "labelAreaPixels": null,
+      "logPeriod": 1.428,
+      "publishedPhaseCorrectedF150WVegaMag": 25.37,
+      "colourVI": 0.715,
+      "backgroundMJySr": 0.3704555183649063,
+      "catalogSourcesWithin1Arcsec": 1,
+      "offsetCandidateCount": 1224,
+      "offsets": [
+        {
+          "x": 8484.89688159457,
+          "y": 3237.7483854876446,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 8485.110332910808,
+          "y": 3246.940918805072,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 8475.313103462568,
+          "y": 3249.566078523791,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 8474.332703822094,
+          "y": 3240.319535926391,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 8465.39688159457,
+          "y": 3237.7483854876446,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 8468.204348277142,
+          "y": 3230.034934171406,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 8475.313103462568,
+          "y": 3225.930692451498,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 8485.110332910808,
+          "y": 3228.555852170217,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        }
+      ]
+    },
+    {
+      "authorId": 110491,
+      "host": "N3447Spiral",
+      "component": "spiral",
+      "split": "validation",
+      "collisionState": "large-collision",
+      "centerLabel": 6373,
+      "labelMultiplicity": 13,
+      "labelAreaPixels": 1525723.0,
+      "logPeriod": 2.06,
+      "publishedPhaseCorrectedF150WVegaMag": 23.177,
+      "colourVI": 1.364,
+      "backgroundMJySr": 0.6484147310256958,
+      "catalogSourcesWithin1Arcsec": 0,
+      "offsetCandidateCount": 1224,
+      "offsets": [
+        {
+          "x": 7096.567823723086,
+          "y": 2586.109056635618,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 7096.781275039324,
+          "y": 2595.3015899530455,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 7086.984045591083,
+          "y": 2597.9267496717644,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 7086.00364595061,
+          "y": 2588.6802070743643,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 7077.067823723086,
+          "y": 2586.109056635618,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 7079.875290405658,
+          "y": 2578.3956053193792,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 7086.984045591083,
+          "y": 2574.2913635994714,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 7096.781275039324,
+          "y": 2576.9165233181902,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        }
+      ]
+    },
+    {
+      "authorId": 116574,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "development",
+      "collisionState": "large-collision",
+      "centerLabel": 10183,
+      "labelMultiplicity": 6,
+      "labelAreaPixels": 197824.0,
+      "logPeriod": 1.259,
+      "publishedPhaseCorrectedF150WVegaMag": 25.558,
+      "colourVI": 0.691,
+      "backgroundMJySr": 0.4118218719959259,
+      "catalogSourcesWithin1Arcsec": 0,
+      "offsetCandidateCount": 759,
+      "offsets": [
+        {
+          "x": 9427.75122820348,
+          "y": 3825.6270214576125,
+          "radiusPixels": 7.5,
+          "angleDegrees": 35,
+          "candidateLabel": 10183,
+          "segmentedFraction5x5": 0.72,
+          "sameLabelFraction5x5": 0.72,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9420.56171895834,
+          "y": 3833.2795345620807,
+          "radiusPixels": 12.0,
+          "angleDegrees": 95,
+          "candidateLabel": 10183,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9411.2152830259,
+          "y": 3827.32519818498,
+          "radiusPixels": 12.0,
+          "angleDegrees": 150,
+          "candidateLabel": 10183,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9409.789894835167,
+          "y": 3819.2414200529765,
+          "radiusPixels": 12.0,
+          "angleDegrees": 190,
+          "candidateLabel": 10183,
+          "segmentedFraction5x5": 0.76,
+          "sameLabelFraction5x5": 0.76,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9417.743884566156,
+          "y": 3820.2899220045697,
+          "radiusPixels": 4.0,
+          "angleDegrees": 195,
+          "candidateLabel": 10183,
+          "segmentedFraction5x5": 0.6,
+          "sameLabelFraction5x5": 0.6,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9414.7246706351,
+          "y": 3811.495373653512,
+          "radiusPixels": 12.0,
+          "angleDegrees": 235,
+          "candidateLabel": 10183,
+          "segmentedFraction5x5": 0.8,
+          "sameLabelFraction5x5": 0.8,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9428.490505107526,
+          "y": 3811.495373653512,
+          "radiusPixels": 12.0,
+          "angleDegrees": 305,
+          "candidateLabel": 10183,
+          "segmentedFraction5x5": 0.76,
+          "sameLabelFraction5x5": 0.76,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9425.054787865349,
+          "y": 3818.4326539413905,
+          "radiusPixels": 4.5,
+          "angleDegrees": 320,
+          "candidateLabel": 10183,
+          "segmentedFraction5x5": 0.68,
+          "sameLabelFraction5x5": 0.68,
+          "topologyRule": "inside-original-collision-label"
+        }
+      ]
+    },
+    {
+      "authorId": 116985,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "validation",
+      "collisionState": "isolated",
+      "centerLabel": 10210,
+      "labelMultiplicity": 1,
+      "labelAreaPixels": 147.0,
+      "logPeriod": 1.299,
+      "publishedPhaseCorrectedF150WVegaMag": 25.396,
+      "colourVI": 1.543,
+      "backgroundMJySr": 0.39398059248924255,
+      "catalogSourcesWithin1Arcsec": 5,
+      "offsetCandidateCount": 526,
+      "offsets": [
+        {
+          "x": 9182.87761816191,
+          "y": 3714.6626485251254,
+          "radiusPixels": 7.5,
+          "angleDegrees": 15,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.24,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9180.493284474762,
+          "y": 3723.144045237778,
+          "radiusPixels": 11.5,
+          "angleDegrees": 65,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9171.383174464743,
+          "y": 3720.082721619024,
+          "radiusPixels": 8.5,
+          "angleDegrees": 120,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.12,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9169.231924070164,
+          "y": 3713.8502188416915,
+          "radiusPixels": 6.5,
+          "angleDegrees": 170,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.2,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9164.042064549274,
+          "y": 3709.6156771456263,
+          "radiusPixels": 12.0,
+          "angleDegrees": 195,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9168.75025722853,
+          "y": 3702.8916811553886,
+          "radiusPixels": 12.0,
+          "angleDegrees": 235,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.04,
+          "sameLabelFraction5x5": 0.04,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9176.679043377715,
+          "y": 3700.7671693097554,
+          "radiusPixels": 12.0,
+          "angleDegrees": 275,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.16,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9180.221785955551,
+          "y": 3706.168289332544,
+          "radiusPixels": 8.0,
+          "angleDegrees": 305,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.08,
+          "topologyRule": "adjacent-to-single-label"
+        }
+      ]
+    },
+    {
+      "authorId": 117715,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "validation",
+      "collisionState": "large-collision",
+      "centerLabel": 9953,
+      "labelMultiplicity": 2,
+      "labelAreaPixels": 33044.0,
+      "logPeriod": 1.596,
+      "publishedPhaseCorrectedF150WVegaMag": 24.435,
+      "colourVI": 0.989,
+      "backgroundMJySr": 0.4004533886909485,
+      "catalogSourcesWithin1Arcsec": 5,
+      "offsetCandidateCount": 340,
+      "offsets": [
+        {
+          "x": 9179.200083020822,
+          "y": 3726.0466897528063,
+          "radiusPixels": 7.5,
+          "angleDegrees": 15,
+          "candidateLabel": 9953,
+          "segmentedFraction5x5": 0.64,
+          "sameLabelFraction5x5": 0.64,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9180.765150419522,
+          "y": 3731.4976044259324,
+          "radiusPixels": 11.5,
+          "angleDegrees": 40,
+          "candidateLabel": 9953,
+          "segmentedFraction5x5": 0.68,
+          "sameLabelFraction5x5": 0.68,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9174.24994506906,
+          "y": 3727.382155091693,
+          "radiusPixels": 4.0,
+          "angleDegrees": 55,
+          "candidateLabel": 9953,
+          "segmentedFraction5x5": 0.88,
+          "sameLabelFraction5x5": 0.88,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9171.955639323654,
+          "y": 3732.105546914537,
+          "radiusPixels": 8.0,
+          "angleDegrees": 90,
+          "candidateLabel": 9953,
+          "segmentedFraction5x5": 0.76,
+          "sameLabelFraction5x5": 0.76,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9167.851397603747,
+          "y": 3735.381858363968,
+          "radiusPixels": 12.0,
+          "angleDegrees": 110,
+          "candidateLabel": 9953,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9162.763106006227,
+          "y": 3731.818998230776,
+          "radiusPixels": 12.0,
+          "angleDegrees": 140,
+          "candidateLabel": 9953,
+          "segmentedFraction5x5": 0.76,
+          "sameLabelFraction5x5": 0.76,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9168.6790311465,
+          "y": 3726.399852659941,
+          "radiusPixels": 4.0,
+          "angleDegrees": 145,
+          "candidateLabel": 9953,
+          "segmentedFraction5x5": 0.64,
+          "sameLabelFraction5x5": 0.64,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9183.546749239124,
+          "y": 3720.999718373307,
+          "radiusPixels": 12.0,
+          "angleDegrees": 345,
+          "candidateLabel": 9953,
+          "segmentedFraction5x5": 0.68,
+          "sameLabelFraction5x5": 0.68,
+          "topologyRule": "inside-original-collision-label"
+        }
+      ]
+    },
+    {
+      "authorId": 119172,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "development",
+      "collisionState": "large-collision",
+      "centerLabel": 10183,
+      "labelMultiplicity": 6,
+      "labelAreaPixels": 197824.0,
+      "logPeriod": 1.38,
+      "publishedPhaseCorrectedF150WVegaMag": 25.3,
+      "colourVI": 1.064,
+      "backgroundMJySr": 0.40515685081481934,
+      "catalogSourcesWithin1Arcsec": 6,
+      "offsetCandidateCount": 118,
+      "offsets": [
+        {
+          "x": 9315.75124756402,
+          "y": 3819.7738791012557,
+          "radiusPixels": 12.0,
+          "angleDegrees": 15,
+          "candidateLabel": 10183,
+          "segmentedFraction5x5": 0.76,
+          "sameLabelFraction5x5": 0.76,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9313.686417090179,
+          "y": 3822.1680505600257,
+          "radiusPixels": 11.0,
+          "angleDegrees": 30,
+          "candidateLabel": 10183,
+          "segmentedFraction5x5": 0.84,
+          "sameLabelFraction5x5": 0.84,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9310.303777980718,
+          "y": 3820.9698738326583,
+          "radiusPixels": 7.5,
+          "angleDegrees": 35,
+          "candidateLabel": 10183,
+          "segmentedFraction5x5": 0.64,
+          "sameLabelFraction5x5": 0.64,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9310.877652069823,
+          "y": 3823.385564981298,
+          "radiusPixels": 9.5,
+          "angleDegrees": 45,
+          "candidateLabel": 10183,
+          "segmentedFraction5x5": 0.92,
+          "sameLabelFraction5x5": 0.92,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9311.873588964789,
+          "y": 3825.8605838774533,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 10183,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9309.16013764855,
+          "y": 3825.32830459787,
+          "radiusPixels": 10.0,
+          "angleDegrees": 60,
+          "candidateLabel": 10183,
+          "segmentedFraction5x5": 0.96,
+          "sameLabelFraction5x5": 0.96,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9306.725288723494,
+          "y": 3823.71574521592,
+          "radiusPixels": 7.5,
+          "angleDegrees": 70,
+          "candidateLabel": 10183,
+          "segmentedFraction5x5": 0.76,
+          "sameLabelFraction5x5": 0.76,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9307.265966189781,
+          "y": 3828.2591604754944,
+          "radiusPixels": 12.0,
+          "angleDegrees": 75,
+          "candidateLabel": 10183,
+          "segmentedFraction5x5": 0.64,
+          "sameLabelFraction5x5": 0.64,
+          "topologyRule": "inside-original-collision-label"
+        }
+      ]
+    },
+    {
+      "authorId": 121541,
+      "host": "N3447",
+      "component": "other",
+      "split": "validation",
+      "collisionState": "blank",
+      "centerLabel": 0,
+      "labelMultiplicity": 0,
+      "labelAreaPixels": null,
+      "logPeriod": 1.359,
+      "publishedPhaseCorrectedF150WVegaMag": 25.311,
+      "colourVI": 1.016,
+      "backgroundMJySr": 0.36317548155784607,
+      "catalogSourcesWithin1Arcsec": 0,
+      "offsetCandidateCount": 1224,
+      "offsets": [
+        {
+          "x": 8166.900207855728,
+          "y": 3318.500396227687,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 8167.113659171966,
+          "y": 3327.6929295451146,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 8157.3164297237245,
+          "y": 3330.3180892638334,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 8156.336030083252,
+          "y": 3321.0715466664333,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 8147.400207855728,
+          "y": 3318.500396227687,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 8150.2076745383,
+          "y": 3310.7869449114482,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 8157.3164297237245,
+          "y": 3306.6827031915404,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 8167.113659171966,
+          "y": 3309.3078629102592,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        }
+      ]
+    },
+    {
+      "authorId": 125140,
+      "host": "N3447",
+      "component": "other",
+      "split": "development",
+      "collisionState": "blank",
+      "centerLabel": 0,
+      "labelMultiplicity": 0,
+      "labelAreaPixels": null,
+      "logPeriod": 1.459,
+      "publishedPhaseCorrectedF150WVegaMag": 24.962,
+      "colourVI": 1.345,
+      "backgroundMJySr": 0.366804301738739,
+      "catalogSourcesWithin1Arcsec": 0,
+      "offsetCandidateCount": 1224,
+      "offsets": [
+        {
+          "x": 7969.103747293071,
+          "y": 3304.380934945452,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 7969.317198609309,
+          "y": 3313.5734682628795,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 7959.519969161068,
+          "y": 3316.1986279815983,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 7958.539569520595,
+          "y": 3306.952085384198,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 7949.603747293071,
+          "y": 3304.380934945452,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 7952.4112139756435,
+          "y": 3296.667483629213,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 7959.519969161068,
+          "y": 3292.5632419093054,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 7969.317198609309,
+          "y": 3295.188401628024,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        }
+      ]
+    },
+    {
+      "authorId": 128801,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "validation",
+      "collisionState": "isolated",
+      "centerLabel": 10586,
+      "labelMultiplicity": 1,
+      "labelAreaPixels": 1356.0,
+      "logPeriod": 1.525,
+      "publishedPhaseCorrectedF150WVegaMag": 24.762,
+      "colourVI": 1.009,
+      "backgroundMJySr": 0.39325353503227234,
+      "catalogSourcesWithin1Arcsec": 4,
+      "offsetCandidateCount": 604,
+      "offsets": [
+        {
+          "x": 9144.97689365246,
+          "y": 3952.094572266991,
+          "radiusPixels": 7.5,
+          "angleDegrees": 20,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.2,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9142.033440716474,
+          "y": 3960.805732641479,
+          "radiusPixels": 12.0,
+          "angleDegrees": 70,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9137.929198996566,
+          "y": 3955.529421192048,
+          "radiusPixels": 6.0,
+          "angleDegrees": 90,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.16,
+          "sameLabelFraction5x5": 0.16,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9131.929198996566,
+          "y": 3959.9217260374617,
+          "radiusPixels": 12.0,
+          "angleDegrees": 120,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.08,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9126.652887547136,
+          "y": 3953.633662911956,
+          "radiusPixels": 12.0,
+          "angleDegrees": 160,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9126.652887547136,
+          "y": 3945.4251794721404,
+          "radiusPixels": 12.0,
+          "angleDegrees": 200,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9134.48774037846,
+          "y": 3944.614508926314,
+          "radiusPixels": 6.0,
+          "angleDegrees": 235,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.2,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 9137.929198996566,
+          "y": 3937.529421192048,
+          "radiusPixels": 12.0,
+          "angleDegrees": 270,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.2,
+          "topologyRule": "adjacent-to-single-label"
+        }
+      ]
+    },
+    {
+      "authorId": 130307,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "validation",
+      "collisionState": "blank",
+      "centerLabel": 0,
+      "labelMultiplicity": 0,
+      "labelAreaPixels": null,
+      "logPeriod": 1.378,
+      "publishedPhaseCorrectedF150WVegaMag": 25.179,
+      "colourVI": 0.715,
+      "backgroundMJySr": 0.3922191560268402,
+      "catalogSourcesWithin1Arcsec": 8,
+      "offsetCandidateCount": 938,
+      "offsets": [
+        {
+          "x": 9227.308678852449,
+          "y": 4026.2254780456715,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.04,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9227.522130168687,
+          "y": 4035.418011363099,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9217.724900720446,
+          "y": 4038.043171081818,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9216.744501079973,
+          "y": 4028.796628484418,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9210.616145535021,
+          "y": 4033.93892936191,
+          "radiusPixels": 12.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9207.808678852449,
+          "y": 4026.2254780456715,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9218.806387810851,
+          "y": 4014.769239017616,
+          "radiusPixels": 11.5,
+          "angleDegrees": 265,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.04,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9220.843955032859,
+          "y": 4022.361774740515,
+          "radiusPixels": 4.0,
+          "angleDegrees": 285,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        }
+      ]
+    },
+    {
+      "authorId": 132433,
+      "host": "N3447Spiral",
+      "component": "spiral",
+      "split": "validation",
+      "collisionState": "large-collision",
+      "centerLabel": 6373,
+      "labelMultiplicity": 13,
+      "labelAreaPixels": 1525723.0,
+      "logPeriod": 1.547,
+      "publishedPhaseCorrectedF150WVegaMag": 24.546,
+      "colourVI": 1.154,
+      "backgroundMJySr": 0.5100432932376862,
+      "catalogSourcesWithin1Arcsec": 0,
+      "offsetCandidateCount": 1224,
+      "offsets": [
+        {
+          "x": 5857.432055588626,
+          "y": 2475.420362109071,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5857.645506904864,
+          "y": 2484.6128954264987,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5847.848277456623,
+          "y": 2487.2380551452175,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5846.86787781615,
+          "y": 2477.9915125478174,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5837.932055588626,
+          "y": 2475.420362109071,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5840.739522271198,
+          "y": 2467.7069107928323,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5847.848277456623,
+          "y": 2463.6026690729245,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5857.645506904864,
+          "y": 2466.2278287916433,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        }
+      ]
+    },
+    {
+      "authorId": 132923,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "validation",
+      "collisionState": "blank",
+      "centerLabel": 0,
+      "labelMultiplicity": 0,
+      "labelAreaPixels": null,
+      "logPeriod": 1.383,
+      "publishedPhaseCorrectedF150WVegaMag": 25.377,
+      "colourVI": 1.268,
+      "backgroundMJySr": 0.386645570397377,
+      "catalogSourcesWithin1Arcsec": 4,
+      "offsetCandidateCount": 661,
+      "offsets": [
+        {
+          "x": 9076.86359058258,
+          "y": 4028.794935568543,
+          "radiusPixels": 12.0,
+          "angleDegrees": 35,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9067.033766051112,
+          "y": 4029.4120183323307,
+          "radiusPixels": 7.5,
+          "angleDegrees": 90,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9055.216073014966,
+          "y": 4019.8282402003274,
+          "radiusPixels": 12.0,
+          "angleDegrees": 190,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9064.462615612367,
+          "y": 4018.847840559855,
+          "radiusPixels": 4.0,
+          "angleDegrees": 230,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9059.320314734874,
+          "y": 4012.719485014903,
+          "radiusPixels": 12.0,
+          "angleDegrees": 230,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9067.033766051112,
+          "y": 4009.9120183323307,
+          "radiusPixels": 12.0,
+          "angleDegrees": 270,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9076.86359058258,
+          "y": 4015.029101096118,
+          "radiusPixels": 12.0,
+          "angleDegrees": 325,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9071.363893070034,
+          "y": 4019.4120183323307,
+          "radiusPixels": 5.0,
+          "angleDegrees": 330,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.04,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        }
+      ]
+    },
+    {
+      "authorId": 133848,
+      "host": "N3447Spiral",
+      "component": "spiral",
+      "split": "development",
+      "collisionState": "large-collision",
+      "centerLabel": 6373,
+      "labelMultiplicity": 13,
+      "labelAreaPixels": 1525723.0,
+      "logPeriod": 1.863,
+      "publishedPhaseCorrectedF150WVegaMag": 23.368,
+      "colourVI": 1.282,
+      "backgroundMJySr": 0.49249935150146484,
+      "catalogSourcesWithin1Arcsec": 0,
+      "offsetCandidateCount": 1224,
+      "offsets": [
+        {
+          "x": 5860.418962909701,
+          "y": 2515.3126896909785,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5860.632414225939,
+          "y": 2524.505223008406,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5850.835184777698,
+          "y": 2527.130382727125,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5849.854785137225,
+          "y": 2517.883840129725,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5840.918962909701,
+          "y": 2515.3126896909785,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5843.726429592273,
+          "y": 2507.59923837474,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5850.835184777698,
+          "y": 2503.494996654832,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 5860.632414225939,
+          "y": 2506.120156373551,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 6373,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        }
+      ]
+    },
+    {
+      "authorId": 137012,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "development",
+      "collisionState": "blank",
+      "centerLabel": 0,
+      "labelMultiplicity": 0,
+      "labelAreaPixels": null,
+      "logPeriod": 1.319,
+      "publishedPhaseCorrectedF150WVegaMag": 25.222,
+      "colourVI": 1.377,
+      "backgroundMJySr": 0.39516305923461914,
+      "catalogSourcesWithin1Arcsec": 5,
+      "offsetCandidateCount": 956,
+      "offsets": [
+        {
+          "x": 9265.265838086578,
+          "y": 4226.09090514882,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.04,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9263.765838086578,
+          "y": 4236.483209994233,
+          "radiusPixels": 12.0,
+          "angleDegrees": 60,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9252.69441894569,
+          "y": 4236.96659859326,
+          "radiusPixels": 12.0,
+          "angleDegrees": 115,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.04,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9254.489229909423,
+          "y": 4228.385210894224,
+          "radiusPixels": 4.0,
+          "angleDegrees": 145,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9245.765838086578,
+          "y": 4226.09090514882,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9248.57330476915,
+          "y": 4218.3774538325815,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9255.942532221075,
+          "y": 4215.750423742192,
+          "radiusPixels": 10.5,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9259.13391865988,
+          "y": 4222.332134665676,
+          "radiusPixels": 4.0,
+          "angleDegrees": 290,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        }
+      ]
+    },
+    {
+      "authorId": 138397,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "validation",
+      "collisionState": "blank",
+      "centerLabel": 0,
+      "labelMultiplicity": 0,
+      "labelAreaPixels": null,
+      "logPeriod": 1.365,
+      "publishedPhaseCorrectedF150WVegaMag": 25.169,
+      "colourVI": 0.803,
+      "backgroundMJySr": 0.37145911157131195,
+      "catalogSourcesWithin1Arcsec": 0,
+      "offsetCandidateCount": 1224,
+      "offsets": [
+        {
+          "x": 9106.73930049366,
+          "y": 4195.283023857553,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9106.952751809898,
+          "y": 4204.475557174981,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9097.155522361658,
+          "y": 4207.1007168937,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9096.175122721184,
+          "y": 4197.8541742963,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9087.23930049366,
+          "y": 4195.283023857553,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9090.046767176233,
+          "y": 4187.569572541315,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9097.155522361658,
+          "y": 4183.4653308214065,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 9106.952751809898,
+          "y": 4186.090490540126,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        }
+      ]
+    },
+    {
+      "authorId": 141792,
+      "host": "N3447Spiral",
+      "component": "spiral",
+      "split": "development",
+      "collisionState": "isolated",
+      "centerLabel": 9108,
+      "labelMultiplicity": 1,
+      "labelAreaPixels": 104.0,
+      "logPeriod": 1.361,
+      "publishedPhaseCorrectedF150WVegaMag": 25.642,
+      "colourVI": 1.147,
+      "backgroundMJySr": 0.4033183753490448,
+      "catalogSourcesWithin1Arcsec": 7,
+      "offsetCandidateCount": 913,
+      "offsets": [
+        {
+          "x": 6979.946418440268,
+          "y": 3294.506624717175,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 6979.329335676481,
+          "y": 3304.3364492486426,
+          "radiusPixels": 12.0,
+          "angleDegrees": 55,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 6969.340589899038,
+          "y": 3306.0977346326436,
+          "radiusPixels": 12.0,
+          "angleDegrees": 105,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 6967.9410821966785,
+          "y": 3297.6612951171055,
+          "radiusPixels": 5.5,
+          "angleDegrees": 145,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.2,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 6960.628725404121,
+          "y": 3292.4228465851716,
+          "radiusPixels": 12.0,
+          "angleDegrees": 190,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.16,
+          "sameLabelFraction5x5": 0.16,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 6971.400549527296,
+          "y": 3282.552288340074,
+          "radiusPixels": 12.0,
+          "angleDegrees": 265,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 6972.795041411258,
+          "y": 3290.521845924808,
+          "radiusPixels": 4.0,
+          "angleDegrees": 275,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.24,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 6980.159869756506,
+          "y": 3285.314091399747,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.08,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        }
+      ]
+    },
+    {
+      "authorId": 149841,
+      "host": "N3447Spiral",
+      "component": "spiral",
+      "split": "validation",
+      "collisionState": "isolated",
+      "centerLabel": 8335,
+      "labelMultiplicity": 1,
+      "labelAreaPixels": 42.0,
+      "logPeriod": 1.485,
+      "publishedPhaseCorrectedF150WVegaMag": 25.291,
+      "colourVI": 1.079,
+      "backgroundMJySr": 0.40825244784355164,
+      "catalogSourcesWithin1Arcsec": 8,
+      "offsetCandidateCount": 859,
+      "offsets": [
+        {
+          "x": 5950.565667070683,
+          "y": 3146.4123844799087,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 5949.8149369723915,
+          "y": 3154.455851132658,
+          "radiusPixels": 10.5,
+          "angleDegrees": 50,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.12,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 5940.98188893868,
+          "y": 3158.230077516055,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.08,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 5937.3203337472905,
+          "y": 3151.2332915525576,
+          "radiusPixels": 7.5,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.2,
+          "sameLabelFraction5x5": 0.04,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 5931.065667070683,
+          "y": 3146.4123844799087,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 5940.001489298207,
+          "y": 3143.8412340411624,
+          "radiusPixels": 4.0,
+          "angleDegrees": 220,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.24,
+          "sameLabelFraction5x5": 0.12,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 5940.98188893868,
+          "y": 3134.5946914437623,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        },
+        {
+          "x": 5950.779118386921,
+          "y": 3137.219851162481,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "adjacent-to-single-label"
+        }
+      ]
+    },
+    {
+      "authorId": 158741,
+      "host": "N3447",
+      "component": "other",
+      "split": "validation",
+      "collisionState": "blank",
+      "centerLabel": 0,
+      "labelMultiplicity": 0,
+      "labelAreaPixels": null,
+      "logPeriod": 1.558,
+      "publishedPhaseCorrectedF150WVegaMag": 24.919,
+      "colourVI": 0.918,
+      "backgroundMJySr": 0.3981015682220459,
+      "catalogSourcesWithin1Arcsec": 4,
+      "offsetCandidateCount": 940,
+      "offsets": [
+        {
+          "x": 6435.738840743366,
+          "y": 3912.8237538460476,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6433.310259884255,
+          "y": 3923.6994472904876,
+          "radiusPixels": 12.0,
+          "angleDegrees": 65,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6425.944534997962,
+          "y": 3916.1003620232036,
+          "radiusPixels": 4.0,
+          "angleDegrees": 125,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6416.238840743366,
+          "y": 3912.8237538460476,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6419.046307425939,
+          "y": 3905.110302529809,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6426.155062611363,
+          "y": 3901.006060809901,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6429.0202575428675,
+          "y": 3908.3921189574926,
+          "radiusPixels": 4.5,
+          "angleDegrees": 280,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6435.952292059605,
+          "y": 3903.63122052862,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        }
+      ]
+    },
+    {
+      "authorId": 162049,
+      "host": "N3447",
+      "component": "other",
+      "split": "validation",
+      "collisionState": "blank",
+      "centerLabel": 0,
+      "labelMultiplicity": 0,
+      "labelAreaPixels": null,
+      "logPeriod": 1.389,
+      "publishedPhaseCorrectedF150WVegaMag": 25.646,
+      "colourVI": 1.482,
+      "backgroundMJySr": 0.3934857249259949,
+      "catalogSourcesWithin1Arcsec": 7,
+      "offsetCandidateCount": 905,
+      "offsets": [
+        {
+          "x": 6051.044151099116,
+          "y": 3962.0366661960225,
+          "radiusPixels": 7.5,
+          "angleDegrees": 20,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6048.100698163129,
+          "y": 3970.747826570511,
+          "radiusPixels": 12.0,
+          "angleDegrees": 70,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6038.925037302332,
+          "y": 3970.34720856552,
+          "radiusPixels": 12.0,
+          "angleDegrees": 115,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6040.3712252950745,
+          "y": 3961.1619881680426,
+          "radiusPixels": 4.0,
+          "angleDegrees": 155,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6032.405346527752,
+          "y": 3956.36568657985,
+          "radiusPixels": 12.0,
+          "angleDegrees": 195,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.04,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6045.042325356193,
+          "y": 3947.517178743979,
+          "radiusPixels": 12.0,
+          "angleDegrees": 275,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6045.161142146182,
+          "y": 3955.124848902779,
+          "radiusPixels": 4.5,
+          "angleDegrees": 285,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6052.42294531753,
+          "y": 3952.400851414528,
+          "radiusPixels": 11.0,
+          "angleDegrees": 320,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.04,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        }
+      ]
+    },
+    {
+      "authorId": 164975,
+      "host": "N3447",
+      "component": "other",
+      "split": "validation",
+      "collisionState": "blank",
+      "centerLabel": 0,
+      "labelMultiplicity": 0,
+      "labelAreaPixels": null,
+      "logPeriod": 1.362,
+      "publishedPhaseCorrectedF150WVegaMag": 25.085,
+      "colourVI": 1.005,
+      "backgroundMJySr": 0.3881954848766327,
+      "catalogSourcesWithin1Arcsec": 5,
+      "offsetCandidateCount": 970,
+      "offsets": [
+        {
+          "x": 6190.009801163523,
+          "y": 4240.903395100473,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6180.426023031519,
+          "y": 4252.72108813662,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6179.445623391047,
+          "y": 4243.474545539219,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6173.317267846095,
+          "y": 4248.616846416711,
+          "radiusPixels": 12.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6170.509801163523,
+          "y": 4240.903395100473,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6173.317267846095,
+          "y": 4233.189943784235,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6180.426023031519,
+          "y": 4229.085702064326,
+          "radiusPixels": 12.0,
+          "angleDegrees": 260,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6183.291217963024,
+          "y": 4236.471760211918,
+          "radiusPixels": 4.5,
+          "angleDegrees": 280,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        }
+      ]
+    },
+    {
+      "authorId": 165662,
+      "host": "N3447",
+      "component": "other",
+      "split": "development",
+      "collisionState": "blank",
+      "centerLabel": 0,
+      "labelMultiplicity": 0,
+      "labelAreaPixels": null,
+      "logPeriod": 1.481,
+      "publishedPhaseCorrectedF150WVegaMag": 24.959,
+      "colourVI": 1.265,
+      "backgroundMJySr": 0.39549729228019714,
+      "catalogSourcesWithin1Arcsec": 2,
+      "offsetCandidateCount": 1016,
+      "offsets": [
+        {
+          "x": 6109.840772185555,
+          "y": 4256.84474121791,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6110.054223501793,
+          "y": 4266.037274535338,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6100.256994053551,
+          "y": 4268.662434254057,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6099.276594413079,
+          "y": 4259.415891656657,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6093.148238868127,
+          "y": 4264.5581925341485,
+          "radiusPixels": 12.0,
+          "angleDegrees": 140,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6090.340772185555,
+          "y": 4256.84474121791,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6097.269353044666,
+          "y": 4245.96904777347,
+          "radiusPixels": 12.0,
+          "angleDegrees": 245,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        },
+        {
+          "x": 6108.340772185555,
+          "y": 4246.452436372497,
+          "radiusPixels": 12.0,
+          "angleDegrees": 300,
+          "candidateLabel": 0,
+          "segmentedFraction5x5": 0.0,
+          "sameLabelFraction5x5": 0.0,
+          "topologyRule": "unsegmented-local-field"
+        }
+      ]
+    },
+    {
+      "authorId": 3051006,
+      "host": "N3447A",
+      "component": "tidal",
+      "split": "development",
+      "collisionState": "large-collision",
+      "centerLabel": 9953,
+      "labelMultiplicity": 2,
+      "labelAreaPixels": 33044.0,
+      "logPeriod": 1.5,
+      "publishedPhaseCorrectedF150WVegaMag": 24.962,
+      "colourVI": 1.126,
+      "backgroundMJySr": 0.45684221386909485,
+      "catalogSourcesWithin1Arcsec": 0,
+      "offsetCandidateCount": 1208,
+      "offsets": [
+        {
+          "x": 9123.775630770851,
+          "y": 3779.8392924380405,
+          "radiusPixels": 7.5,
+          "angleDegrees": 0,
+          "candidateLabel": 9953,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9123.98908208709,
+          "y": 3789.031825755468,
+          "radiusPixels": 12.0,
+          "angleDegrees": 50,
+          "candidateLabel": 9953,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9114.191852638849,
+          "y": 3791.656985474187,
+          "radiusPixels": 12.0,
+          "angleDegrees": 100,
+          "candidateLabel": 9953,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9113.211452998376,
+          "y": 3782.410442876787,
+          "radiusPixels": 4.0,
+          "angleDegrees": 140,
+          "candidateLabel": 9953,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9104.275630770851,
+          "y": 3779.8392924380405,
+          "radiusPixels": 12.0,
+          "angleDegrees": 180,
+          "candidateLabel": 9953,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9107.083097453424,
+          "y": 3772.125841121802,
+          "radiusPixels": 12.0,
+          "angleDegrees": 220,
+          "candidateLabel": 9953,
+          "segmentedFraction5x5": 0.96,
+          "sameLabelFraction5x5": 0.96,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9114.278676727681,
+          "y": 3768.5140032784,
+          "radiusPixels": 11.5,
+          "angleDegrees": 260,
+          "candidateLabel": 9953,
+          "segmentedFraction5x5": 0.64,
+          "sameLabelFraction5x5": 0.64,
+          "topologyRule": "inside-original-collision-label"
+        },
+        {
+          "x": 9123.98908208709,
+          "y": 3770.646759120613,
+          "radiusPixels": 12.0,
+          "angleDegrees": 310,
+          "candidateLabel": 9953,
+          "segmentedFraction5x5": 1.0,
+          "sameLabelFraction5x5": 1.0,
+          "topologyRule": "inside-original-collision-label"
+        }
+      ]
+    }
+  ],
+  "supportBoundary": "Blank environments have no spiral-development support and are sampled from tidal and other rows. The confirmatory isolated-versus-large-collision comparison is separately balanced across spiral/tidal component and even/odd split; blank-state component contrasts are descriptive only."
+}

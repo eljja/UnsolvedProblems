@@ -1,0 +1,121 @@
+{
+  "cycleId": "RC-2026-69",
+  "experimentId": "PHOST-COLLISION-AST-1-SMOKE",
+  "reviewedOn": "2026-09-01",
+  "purpose": "Exercise the real DOLPHOT artificial-star path across all observed collision states before spending the sealed 3,072-row confirmatory ledger.",
+  "selectionRule": "Within three frozen state-specific windows, retain offset 1 and draw indices 1, 4, 5, and 8 for every included environment. This rule was chosen without recovery outcomes.",
+  "windows": [
+    {
+      "id": "blank",
+      "photsec": [
+        1,
+        1,
+        5980,
+        3890,
+        6120,
+        4040
+      ],
+      "states": [
+        "blank"
+      ],
+      "environmentCount": 1,
+      "injectionCount": 4,
+      "injectionIds": [
+        "I-162049-01-01",
+        "I-162049-01-04",
+        "I-162049-01-05",
+        "I-162049-01-08"
+      ],
+      "input": "research/reproducibility/rc69-dolphot-smoke-blank-input.txt",
+      "parameterFile": "research/reproducibility/rc69-dolphot-smoke-blank.param"
+    },
+    {
+      "id": "isolated",
+      "photsec": [
+        1,
+        1,
+        5880,
+        3075,
+        6020,
+        3220
+      ],
+      "states": [
+        "isolated"
+      ],
+      "environmentCount": 1,
+      "injectionCount": 4,
+      "injectionIds": [
+        "I-149841-01-01",
+        "I-149841-01-04",
+        "I-149841-01-05",
+        "I-149841-01-08"
+      ],
+      "input": "research/reproducibility/rc69-dolphot-smoke-isolated-input.txt",
+      "parameterFile": "research/reproducibility/rc69-dolphot-smoke-isolated.param"
+    },
+    {
+      "id": "collision",
+      "photsec": [
+        1,
+        1,
+        5780,
+        2400,
+        5940,
+        2590
+      ],
+      "states": [
+        "large-collision"
+      ],
+      "environmentCount": 2,
+      "injectionCount": 8,
+      "injectionIds": [
+        "I-133848-01-01",
+        "I-133848-01-04",
+        "I-133848-01-05",
+        "I-133848-01-08",
+        "I-132433-01-01",
+        "I-132433-01-04",
+        "I-132433-01-05",
+        "I-132433-01-08"
+      ],
+      "input": "research/reproducibility/rc69-dolphot-smoke-collision-input.txt",
+      "parameterFile": "research/reproducibility/rc69-dolphot-smoke-collision.param"
+    }
+  ],
+  "environmentCount": 4,
+  "injectionCount": 16,
+  "collisionStateCounts": {
+    "blank": 4,
+    "isolated": 4,
+    "large-collision": 8
+  },
+  "componentCounts": {
+    "other": 4,
+    "spiral": 12
+  },
+  "splitCounts": {
+    "validation": 12,
+    "development": 4
+  },
+  "selectedInjectionIds": [
+    "I-162049-01-01",
+    "I-162049-01-04",
+    "I-162049-01-05",
+    "I-162049-01-08",
+    "I-149841-01-01",
+    "I-149841-01-04",
+    "I-149841-01-05",
+    "I-149841-01-08",
+    "I-133848-01-01",
+    "I-133848-01-04",
+    "I-133848-01-05",
+    "I-133848-01-08",
+    "I-132433-01-01",
+    "I-132433-01-04",
+    "I-132433-01-05",
+    "I-132433-01-08"
+  ],
+  "success": "DOLPHOT emits exactly one typed output row per selected injection and completes without changing the frozen image, PSF, sky, alignment, or photometry parameters.",
+  "failure": "Any lost or duplicate row, unreadable source, parameter fallback, PSF lookup failure, coordinate rejection, or non-finite output blocks the full pilot.",
+  "inferenceBoundary": "The smoke set tests executable plumbing and output semantics only. Its 16 outcomes are not powered or balanced for a collision-effect estimate and cannot open the preregistered 0.02/0.01-mag scientific gates."
+}
