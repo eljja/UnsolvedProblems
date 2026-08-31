@@ -1,0 +1,11 @@
+{
+  "cycle": "RC-2026-73",
+  "lockedAt": "2026-09-01T06:34:00+09:00",
+  "phase": "after metadata and WCS support audit; before SCI, DQ, or AREA pixel ranges were downloaded",
+  "contract": "research/reproducibility/rc73-nircam-calibration-contract.json",
+  "supportAudit": ".cache/rc73-nircam-calibration/rc73-header-support.json",
+  "supportedProducts": 24,
+  "pixelDataReadBeforeLock": false,
+  "mutableAfterLock": ["source citations", "narrative interpretation", "independent implementation details"],
+  "immutableAfterLock": ["selected products", "measurement operator", "thresholds", "stopping rules", "claim boundary"]
+}

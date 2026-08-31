@@ -84,8 +84,11 @@ const siteConnection = connections.find(item => item.id === "CONN-EVIDENCE-042")
 assert(siteConnection?.reviewedOn === "2026-09-01" && siteConnection.validationStatus.text.includes("support enumeration"), "RC72 site connection is missing");
 
 for (const page of ["index.html", "solve.html", "research-log.html"]) assert(text(page).includes("research-cycle-72-data.js?v=20260901-cycle72"), `${page}: RC72 script is missing`);
-assert(text("scripts/generate-sitemap.mjs").includes("length: 70"), "Sitemap generator omits RC72");
-assert((text("sitemap.xml").match(/<loc>/g) || []).length === 1634, "RC72 sitemap URL count changed");
+const sitemapGenerator = text("scripts/generate-sitemap.mjs");
+const cycleSpan = Number(sitemapGenerator.match(/length:\s*(\d+)/)?.[1] || 0);
+assert(cycleSpan >= 70, "Sitemap generator omits RC72");
+const sitemap = text("sitemap.xml");
+assert(sitemap.includes("research-log.html?cycle=RC-2026-72&amp;lang=ko") && sitemap.includes("research-log.html?cycle=RC-2026-72&amp;lang=en"), "RC72 localized sitemap URLs are missing");
 const publicProse = text("research-cycle-72-data.js");
 for (const forbidden of ["전공자 포인트", "1단계", "개수를 맞", "아래 시도는 개별 논문"]) assert(!publicProse.includes(forbidden), `RC72 public prose contains forbidden wording: ${forbidden}`);
 

@@ -1,0 +1,74 @@
+{
+  "cycle": "RC-2026-73",
+  "title": "Isolated-standard local NIRCam measurement-operator adjudication",
+  "status": "locked_before_pixel_measurement",
+  "selection": {
+    "proposalId": "6605",
+    "filters": ["F090W", "F150W"],
+    "targets": ["WDFS0458-56", "WDFS2317-29", "WDFS0122-30"],
+    "detectorAnchors": ["NRCB1", "NRCA3"],
+    "supportedCalProducts": 24,
+    "supportPerTargetDetectorFilter": 4,
+    "selectionRule": "Use every public CAL product whose precise FITS target coordinate falls on the detector; exclude out-of-footprint companion-detector products before reading pixels."
+  },
+  "causalChain": [
+    "public Cycle 3 isolated-standard CAL products and their delivered calibration reference state",
+    "unknown local repeatability of the SCI/PHOTMJSR*AREA aperture operator under the registered dither pattern",
+    "if the same operator is stable, four exposures per target-filter will agree and the matched NRCB1 dither signature will replicate across two stars and two dates",
+    "independently recomputed group scatter, dither excursion, DQ support, and cross-star matched-pattern difference",
+    "qualification of the local isolated-star operator only; a separate spatial/crowding holdout remains required before reopening TRGB or H0"
+  ],
+  "competingHypotheses": [
+    {
+      "id": "H73-M",
+      "claim": "The official isolated-star aperture operator is locally stable at the sampled anchors.",
+      "prediction": "All six groups retain 4/4 support, robust scatter is at most 1%, maximum dither excursion is at most 2%, and the matched NRCB1 pattern differs by at most 1% between the two standards.",
+      "decisiveTest": "Run one frozen r=5 pixel aperture with a 20-35 pixel background annulus after SCI/PHOTMJSR*AREA conversion on all 24 products.",
+      "rejection": "Failure of any registered support, DQ, scatter, excursion, or matched-pattern gate."
+    },
+    {
+      "id": "H73-P",
+      "claim": "A detector-position or sampling-phase signature dominates the residual.",
+      "prediction": "Normalized flux changes with dither position and the same signed four-position pattern repeats for the two NRCB1 standards despite their different dates and spectra.",
+      "decisiveTest": "Compare pattern-number-normalized NRCB1 residual vectors across WDFS0458-56 and WDFS0122-30 separately in F090W and F150W.",
+      "rejection": "The pattern fails the 1% matched-replication gate or changes sign without a registered detector-state explanation."
+    },
+    {
+      "id": "H73-T",
+      "claim": "Source, epoch, or calibration-state dependence prevents local transfer.",
+      "prediction": "Within-star repeats may be tight while matched NRCB1 patterns disagree across the two dates or filters.",
+      "decisiveTest": "Use the difference of normalized pattern vectors, not their absolute stellar fluxes, so intrinsic source brightness cancels.",
+      "rejection": "Both filters satisfy the 1% cross-star matched-pattern gate."
+    }
+  ],
+  "measurement": {
+    "conversion": "SCI / PHOTMJSR * AREA",
+    "centroid": "local maximum followed by three positive-flux center-of-mass iterations",
+    "apertureRadiusPixels": 5,
+    "backgroundAnnulusPixels": [20, 35],
+    "fractionalPixelSamplesPerAxis": 12,
+    "centralDqRadiusPixels": 3
+  },
+  "gates": {
+    "supportPerGroup": 4,
+    "centralDoNotUsePixels": 0,
+    "maximumRobustSigmaFraction": 0.01,
+    "maximumDitherExcursionFraction": 0.02,
+    "maximumMatchedNrcb1PatternDifference": 0.01
+  },
+  "uncertaintyBudget": {
+    "samplingPhase": "bounded by four registered detector positions and cross-star pattern replication",
+    "centroiding": "reported as WCS-to-measured offset; r=3, r=5, and r=8 fluxes are retained for sensitivity analysis",
+    "background": "3-sigma iterated annulus mean with the retained scatter and sample count",
+    "badPixels": "DO_NOT_USE flags within r=3 are a hard failure",
+    "sourceSpectrumAndBrightness": "cancelled only in within-target normalization and matched-pattern differences; absolute cross-star flux is not compared",
+    "spatialExtrapolation": "unbounded outside the three sampled anchors and therefore excluded from the claim"
+  },
+  "stoppingRules": [
+    "Stop before flux measurement if any target-detector-filter group has fewer than four in-footprint CAL products.",
+    "Do not substitute another star, detector, aperture, or threshold after pixels are read.",
+    "If the local operator fails, do not reopen the crowded-field PSF, TRGB, distance, or H0 branches.",
+    "If it passes, advance only to a separately locked wide-position or crowded-field transfer holdout."
+  ],
+  "claimBoundary": "Passing qualifies local isolated-star repeatability at NRCB1 and NRCA3 anchors. It does not validate full-detector spatial transfer, crowded-field PSF subtraction, TRGB edge recovery, distance, or H0."
+}

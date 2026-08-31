@@ -1,0 +1,28 @@
+{
+  "id": "CONN-EVIDENCE-043",
+  "cycle": "RC-2026-73",
+  "type": "replicated nuisance cancellation before transport",
+  "problemIds": ["UP-003", "UP-625", "UP-626"],
+  "strength": "strong-for-local-adjudication; unverified-for-spatial-or-population-transport",
+  "commonStructure": "Each problem asks whether an error measured in one environment can be carried to another after nuisance parameters and adaptive choices are removed. The relevant object is not an average fit but a residual pattern that must reproduce under an independent source and epoch.",
+  "mapping": {
+    "UP-003": "standard star and epoch -> nuisance; detector dither position -> covariate; normalized flux residual -> local measurement error; crowded-field distance -> unopened target",
+    "UP-625": "source domain -> first standard; target domain -> second standard; overlap -> identical detector/filter/pattern support; transport loss -> matched normalized-pattern difference",
+    "UP-626": "locked product list and gates -> selection rule; SCI/DQ/AREA access -> outcome reveal; failed F090W gate -> terminal branch; Program 7565 -> fresh holdout"
+  },
+  "conditionsForValidity": [
+    "The two standards share detector, filter, and dither-pattern support.",
+    "Normalization removes only intrinsic stellar brightness and does not fit away pattern-specific residuals.",
+    "Selection and thresholds are fixed before pixel access.",
+    "The development outcomes are retired before a corrected operator is tested."
+  ],
+  "conditionsThatBreakIt": [
+    "Different dither definitions, detector coordinates, saturation states, or unmodeled jump processing make pattern numbers non-comparable.",
+    "A target-specific offset or flexible pattern fit is estimated on the same four outcomes used for judgment.",
+    "Passing isolated stars is treated as evidence for crowding, background structure, or full-detector spatial transfer without a new bridge."
+  ],
+  "surfaceAnalogyRisk": "A matching four-number pattern can occur by chance with n=4, and a failed pattern can reflect exposure-state differences rather than detector phase. Correlation is descriptive only; the registered maximum absolute difference is the decision quantity.",
+  "minimumValidation": "Develop the jump/STPSF correction only on the retired Program 6605 rows, freeze it, then require both new Program 7565 standards to satisfy 4/4 support, <=1% robust scatter, <=2% maximum excursion, and <=1% cross-star pattern difference in both filters.",
+  "simultaneousImpact": "A passing fresh holdout would advance the measurement-operator node in UP-003, provide a real finite-sample overlap certificate for UP-625, and validate the fresh-holdout transition in UP-626. It would still not advance detector-wide or distance-scale claims.",
+  "validationStatus": "RC73 verified support enumeration and exact independent gate reproduction. F090W pattern transfer failed, so the proposed transport bridge remains closed."
+}

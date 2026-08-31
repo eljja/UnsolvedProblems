@@ -1,0 +1,43 @@
+{
+  "cycle": "RC-2026-73",
+  "reviewedOn": "2026-09-01",
+  "establishedBeforeThisCycle": [
+    {
+      "method": "NIRCam absolute calibration with standard stars, CALSPEC models, detector-specific PHOTMJSR values, and subarray corrections",
+      "source": "https://jwst-docs.stsci.edu/jwst-near-infrared-camera/nircam-performance/nircam-absolute-flux-calibration-and-zeropoints"
+    },
+    {
+      "method": "Per-image source finding, jump-step fallback, OPD/type/position-specific STPSF generation, r=5 aperture photometry, and PSF aperture correction",
+      "source": "https://github.com/spacetelescope/nircam-fluxcal"
+    },
+    {
+      "method": "Four-position NIRCam dither patterns for pixel-phase sampling and mitigation of bad pixels and flat-field uncertainty",
+      "source": "https://jwst-docs.stsci.edu/jwst-near-infrared-camera/nircam-operations/nircam-dithers-and-mosaics/nircam-subpixel-dithers/nircam-standard-subpixel-dithers"
+    },
+    {
+      "method": "Epoch-specific PSFs and crowded-field artificial-star validation",
+      "source": "https://arxiv.org/abs/2402.03504"
+    }
+  ],
+  "cycleSpecificCombination": {
+    "description": "A support-first byte-range audit selected only in-footprint CAL products, then a frozen raw r=5 operator was tested at three anchors. Two NRCB1 standards observed months apart were compared by difference-in-differences on their normalized four-position patterns so intrinsic stellar flux cancelled. Python made the pixel measurements and Node independently recomputed every gate.",
+    "noveltyClaim": "No claim is made that aperture photometry, dither differencing, or standard-star calibration is new. The contribution is the explicit control-first adjudication and claim boundary linking an isolated-star operator failure to a prohibition on reopening a crowded-field distance branch.",
+    "searchedTerms": [
+      "JWST NIRCam standard star dither repeatability F090W aperture correction",
+      "NIRCam pixel phase photometry four point dither CALSPEC",
+      "NIRCam flux calibration per exposure STPSF jump step",
+      "crowded field photometry external isolated standard transfer holdout"
+    ]
+  },
+  "similarities": [
+    "The measurement conversion and aperture radius follow the public calibration code rather than inventing a new photometric scale.",
+    "The use of different stars and epochs follows the official multi-class, multi-cycle calibration program.",
+    "The concern about temporal PSF variation is already documented in JWST crowded-field photometry work."
+  ],
+  "differences": [
+    "RC73 deliberately omitted the official STPSF aperture correction to test whether the simpler raw operator could qualify; its failure is therefore a diagnostic branch, not a competing calibration release.",
+    "The cross-star comparison used normalized pattern vectors rather than absolute flux or a fitted target-specific offset.",
+    "The experiment had an immutable downstream stop: no result could be propagated to the NGC 3447 detector residual, TRGB, distance, or H0."
+  ],
+  "nextSearchBoundary": "Before claiming improvement, search for analyses that cross-validate per-image STPSF or jump-step corrections on standards excluded from calibration-factor fitting, especially Program 7565 hot standards in F090W and F150W."
+}

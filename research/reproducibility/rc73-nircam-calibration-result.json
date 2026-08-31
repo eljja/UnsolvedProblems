@@ -1,0 +1,988 @@
+{
+  "cycle": "RC-2026-73",
+  "generatedAt": "2026-08-31T22:16:43Z",
+  "claimBoundary": "This probe can qualify isolated-star local repeatability at three detector anchors. It cannot qualify full-detector spatial transfer, crowded-field PSF subtraction, TRGB, distance, or H0.",
+  "measurementOperator": {
+    "scienceConversion": "SCI / PHOTMJSR * AREA, matching the public nircam-fluxcal imaging path",
+    "apertureRadiusPixels": 5.0,
+    "backgroundAnnulusPixels": [
+      20.0,
+      35.0
+    ],
+    "centroid": "local peak followed by three positive-flux center-of-mass iterations",
+    "fractionalPixelSampling": 12
+  },
+  "registeredThresholds": {
+    "groupSupport": 4,
+    "robustSigmaFraction": 0.01,
+    "maxAbsDeviationFraction": 0.02,
+    "matchedNrcb1PatternDifference": 0.01,
+    "centralDoNotUsePixels": 0
+  },
+  "measurements": [
+    {
+      "filename": "jw06605006001_02103_00001_nrcb1_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605006001_02103_00001_nrcb1_cal.fits",
+      "target": "WDFS0458-56",
+      "detector": "NRCB1",
+      "filter": "F090W",
+      "patternNumber": 1,
+      "wcsX": 1365.3793259601134,
+      "wcsY": 1364.467549287061,
+      "centroidX": 1365.4083423731709,
+      "centroidY": 1363.9852777997878,
+      "centroidOffsetPixels": 0.48314360149282765,
+      "photmjsr": 3.5920000076293945,
+      "backgroundDnPerSecond": 0.042652267100870445,
+      "backgroundStdDnPerSecond": 0.11775611104894339,
+      "backgroundPixels": 2574,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 911.3840368717322,
+        "r5": 1000.4552583587749,
+        "r8": 1068.967951501926
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.305555555555557,
+        "r5": 78.57638888888889,
+        "r8": 201.0902777777778
+      }
+    },
+    {
+      "filename": "jw06605006001_02103_00002_nrcb1_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605006001_02103_00002_nrcb1_cal.fits",
+      "target": "WDFS0458-56",
+      "detector": "NRCB1",
+      "filter": "F090W",
+      "patternNumber": 2,
+      "wcsX": 1387.2982067743633,
+      "wcsY": 1386.16470366089,
+      "centroidX": 1387.3767860887167,
+      "centroidY": 1385.7791585671164,
+      "centroidOffsetPixels": 0.393471381395273,
+      "photmjsr": 3.5920000076293945,
+      "backgroundDnPerSecond": 0.064688108266175,
+      "backgroundStdDnPerSecond": 0.11716141478489883,
+      "backgroundPixels": 2576,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 879.9344612502608,
+        "r5": 968.1436125828683,
+        "r8": 1032.2727836855117
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.270833333333336,
+        "r5": 78.45138888888889,
+        "r8": 200.95138888888889
+      }
+    },
+    {
+      "filename": "jw06605006001_02103_00003_nrcb1_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605006001_02103_00003_nrcb1_cal.fits",
+      "target": "WDFS0458-56",
+      "detector": "NRCB1",
+      "filter": "F090W",
+      "patternNumber": 3,
+      "wcsX": 1366.7404756486123,
+      "wcsY": 1384.9470793076957,
+      "centroidX": 1366.7767526272064,
+      "centroidY": 1384.5480514557855,
+      "centroidOffsetPixels": 0.40067349023361437,
+      "photmjsr": 3.5920000076293945,
+      "backgroundDnPerSecond": 0.08176275667635942,
+      "backgroundStdDnPerSecond": 0.1292885466213462,
+      "backgroundPixels": 2581,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 903.0203590073395,
+        "r5": 991.8022019821175,
+        "r8": 1059.4402207826233
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.25,
+        "r5": 78.46527777777777,
+        "r8": 201.02083333333334
+      }
+    },
+    {
+      "filename": "jw06605006001_02103_00004_nrcb1_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605006001_02103_00004_nrcb1_cal.fits",
+      "target": "WDFS0458-56",
+      "detector": "NRCB1",
+      "filter": "F090W",
+      "patternNumber": 4,
+      "wcsX": 1385.9287896986818,
+      "wcsY": 1365.6887934169301,
+      "centroidX": 1386.0271889915898,
+      "centroidY": 1365.3560226485663,
+      "centroidOffsetPixels": 0.34701412813061583,
+      "photmjsr": 3.5920000076293945,
+      "backgroundDnPerSecond": 0.006867625911334563,
+      "backgroundStdDnPerSecond": 0.12619931585583272,
+      "backgroundPixels": 2572,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 918.5219855726587,
+        "r5": 1003.6804356088232,
+        "r8": 1069.291872279686
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.270833333333336,
+        "r5": 78.55555555555554,
+        "r8": 201.10416666666669
+      }
+    },
+    {
+      "filename": "jw06605006001_02107_00001_nrcb1_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605006001_02107_00001_nrcb1_cal.fits",
+      "target": "WDFS0458-56",
+      "detector": "NRCB1",
+      "filter": "F150W",
+      "patternNumber": 1,
+      "wcsX": 1365.4012678084441,
+      "wcsY": 1364.3462592705064,
+      "centroidX": 1365.3547668713168,
+      "centroidY": 1363.8328677151521,
+      "centroidOffsetPixels": 0.5154931874067532,
+      "photmjsr": 2.385999917984009,
+      "backgroundDnPerSecond": 0.09812370973156209,
+      "backgroundStdDnPerSecond": 0.04534912144998429,
+      "backgroundPixels": 2574,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 545.4637769619525,
+        "r5": 607.4820661408968,
+        "r8": 644.9301722142349
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.305555555555557,
+        "r5": 78.59027777777777,
+        "r8": 201.07638888888889
+      }
+    },
+    {
+      "filename": "jw06605006001_02107_00002_nrcb1_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605006001_02107_00002_nrcb1_cal.fits",
+      "target": "WDFS0458-56",
+      "detector": "NRCB1",
+      "filter": "F150W",
+      "patternNumber": 2,
+      "wcsX": 1387.2917879970623,
+      "wcsY": 1386.0624926257076,
+      "centroidX": 1387.3090169932282,
+      "centroidY": 1385.6194372071732,
+      "centroidOffsetPixels": 0.44339028203331987,
+      "photmjsr": 2.385999917984009,
+      "backgroundDnPerSecond": 0.05179177680979547,
+      "backgroundStdDnPerSecond": 0.04499624612489957,
+      "backgroundPixels": 2579,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 543.9018036453995,
+        "r5": 605.7131535651408,
+        "r8": 645.176983977891
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.243055555555557,
+        "r5": 78.51388888888889,
+        "r8": 201.03472222222223
+      }
+    },
+    {
+      "filename": "jw06605006001_02107_00003_nrcb1_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605006001_02107_00003_nrcb1_cal.fits",
+      "target": "WDFS0458-56",
+      "detector": "NRCB1",
+      "filter": "F150W",
+      "patternNumber": 3,
+      "wcsX": 1366.738397779283,
+      "wcsY": 1384.848671725593,
+      "centroidX": 1366.715658311142,
+      "centroidY": 1384.4004068851702,
+      "centroidOffsetPixels": 0.4488412309164538,
+      "photmjsr": 2.385999917984009,
+      "backgroundDnPerSecond": 0.07454650656352169,
+      "backgroundStdDnPerSecond": 0.044184751398422324,
+      "backgroundPixels": 2583,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 545.1016059452317,
+        "r5": 607.5777953604695,
+        "r8": 646.4338580262192
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.256944444444446,
+        "r5": 78.5625,
+        "r8": 201.0625
+      }
+    },
+    {
+      "filename": "jw06605006001_02107_00004_nrcb1_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605006001_02107_00004_nrcb1_cal.fits",
+      "target": "WDFS0458-56",
+      "detector": "NRCB1",
+      "filter": "F150W",
+      "patternNumber": 4,
+      "wcsX": 1385.9397291643127,
+      "wcsY": 1365.5754310604436,
+      "centroidX": 1385.9568745773624,
+      "centroidY": 1365.217715736806,
+      "centroidOffsetPixels": 0.3581259805624765,
+      "photmjsr": 2.385999917984009,
+      "backgroundDnPerSecond": 0.06870295286862901,
+      "backgroundStdDnPerSecond": 0.047954054446668205,
+      "backgroundPixels": 2566,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 546.0633464631742,
+        "r5": 610.013320620424,
+        "r8": 651.0023760565687
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.208333333333336,
+        "r5": 78.44444444444444,
+        "r8": 200.9861111111111
+      }
+    },
+    {
+      "filename": "jw06605009001_06101_00001_nrca3_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605009001_06101_00001_nrca3_cal.fits",
+      "target": "WDFS2317-29",
+      "detector": "NRCA3",
+      "filter": "F090W",
+      "patternNumber": 1,
+      "wcsX": 898.1462241174119,
+      "wcsY": 1028.2796860890658,
+      "centroidX": 898.5383835308271,
+      "centroidY": 1028.3308686618975,
+      "centroidOffsetPixels": 0.39548534902302596,
+      "photmjsr": 3.0910000801086426,
+      "backgroundDnPerSecond": 0.086627220918915,
+      "backgroundStdDnPerSecond": 0.03540651611261972,
+      "backgroundPixels": 2580,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 641.8033533025772,
+        "r5": 702.6792662935402,
+        "r8": 752.3728581856834
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.305555555555557,
+        "r5": 77.97222222222223,
+        "r8": 200.09722222222223
+      }
+    },
+    {
+      "filename": "jw06605009001_06101_00002_nrca3_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605009001_06101_00002_nrca3_cal.fits",
+      "target": "WDFS2317-29",
+      "detector": "NRCA3",
+      "filter": "F090W",
+      "patternNumber": 2,
+      "wcsX": 919.7289957606162,
+      "wcsY": 1049.5417949870246,
+      "centroidX": 920.0936513503265,
+      "centroidY": 1049.705261617468,
+      "centroidOffsetPixels": 0.39961861615236155,
+      "photmjsr": 3.0910000801086426,
+      "backgroundDnPerSecond": 0.08713279911155898,
+      "backgroundStdDnPerSecond": 0.034466387538407826,
+      "backgroundPixels": 2567,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 643.4279887771447,
+        "r5": 703.8390867577716,
+        "r8": 754.7962112748935
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.26388888888889,
+        "r5": 78.53472222222223,
+        "r8": 201.08333333333334
+      }
+    },
+    {
+      "filename": "jw06605009001_06101_00003_nrca3_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605009001_06101_00003_nrca3_cal.fits",
+      "target": "WDFS2317-29",
+      "detector": "NRCA3",
+      "filter": "F090W",
+      "patternNumber": 3,
+      "wcsX": 899.5593802229704,
+      "wcsY": 1048.317663700702,
+      "centroidX": 899.9798003922853,
+      "centroidY": 1048.3731907544673,
+      "centroidOffsetPixels": 0.42407118797035254,
+      "photmjsr": 3.0910000801086426,
+      "backgroundDnPerSecond": 0.08600404300928023,
+      "backgroundStdDnPerSecond": 0.035726893788641384,
+      "backgroundPixels": 2568,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 633.9016993614082,
+        "r5": 694.8775710063667,
+        "r8": 744.4270483915618
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.263888888888886,
+        "r5": 78.5,
+        "r8": 201.01388888888889
+      }
+    },
+    {
+      "filename": "jw06605009001_06101_00004_nrca3_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605009001_06101_00004_nrca3_cal.fits",
+      "target": "WDFS2317-29",
+      "detector": "NRCA3",
+      "filter": "F090W",
+      "patternNumber": 4,
+      "wcsX": 918.3125711348574,
+      "wcsY": 1029.505996711913,
+      "centroidX": 918.7882550558528,
+      "centroidY": 1029.6538108291338,
+      "centroidOffsetPixels": 0.49812067407738914,
+      "photmjsr": 3.0910000801086426,
+      "backgroundDnPerSecond": 0.08853945302903954,
+      "backgroundStdDnPerSecond": 0.03432587799473031,
+      "backgroundPixels": 2558,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 645.6509493015825,
+        "r5": 706.7356473199334,
+        "r8": 756.6790069632107
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.263888888888886,
+        "r5": 78.53472222222223,
+        "r8": 201.08333333333331
+      }
+    },
+    {
+      "filename": "jw06605009001_10101_00001_nrca3_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605009001_10101_00001_nrca3_cal.fits",
+      "target": "WDFS2317-29",
+      "detector": "NRCA3",
+      "filter": "F150W",
+      "patternNumber": 1,
+      "wcsX": 898.2498791662937,
+      "wcsY": 1028.1748413710086,
+      "centroidX": 898.6414990899062,
+      "centroidY": 1028.21792700035,
+      "centroidOffsetPixels": 0.3939829133681463,
+      "photmjsr": 2.312999963760376,
+      "backgroundDnPerSecond": 0.10397636703180688,
+      "backgroundStdDnPerSecond": 0.03115546097991027,
+      "backgroundPixels": 2579,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 370.8261889297057,
+        "r5": 410.7411793717068,
+        "r8": 438.69944883854635
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.229166666666664,
+        "r5": 77.99305555555556,
+        "r8": 200.06944444444446
+      }
+    },
+    {
+      "filename": "jw06605009001_10101_00002_nrca3_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605009001_10101_00002_nrca3_cal.fits",
+      "target": "WDFS2317-29",
+      "detector": "NRCA3",
+      "filter": "F150W",
+      "patternNumber": 2,
+      "wcsX": 919.8174107970005,
+      "wcsY": 1049.4455711437736,
+      "centroidX": 920.1821975839933,
+      "centroidY": 1049.5857924673187,
+      "centroidOffsetPixels": 0.39080867383065077,
+      "photmjsr": 2.312999963760376,
+      "backgroundDnPerSecond": 0.09105424916008438,
+      "backgroundStdDnPerSecond": 0.03226987370009912,
+      "backgroundPixels": 2580,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 373.67408542075384,
+        "r5": 412.7680651389379,
+        "r8": 439.67163058838116
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.298611111111107,
+        "r5": 78.5625,
+        "r8": 201.08333333333331
+      }
+    },
+    {
+      "filename": "jw06605009001_10101_00003_nrca3_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605009001_10101_00003_nrca3_cal.fits",
+      "target": "WDFS2317-29",
+      "detector": "NRCA3",
+      "filter": "F150W",
+      "patternNumber": 3,
+      "wcsX": 899.653087017574,
+      "wcsY": 1048.2244264050864,
+      "centroidX": 900.0620804947478,
+      "centroidY": 1048.2513609749437,
+      "centroidOffsetPixels": 0.4098794157116323,
+      "photmjsr": 2.312999963760376,
+      "backgroundDnPerSecond": 0.11535702550740748,
+      "backgroundStdDnPerSecond": 0.030286324890611553,
+      "backgroundPixels": 2566,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 366.0230202883788,
+        "r5": 406.17050674184827,
+        "r8": 433.02595832632977
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.29861111111111,
+        "r5": 78.58333333333334,
+        "r8": 201.07638888888889
+      }
+    },
+    {
+      "filename": "jw06605009001_10101_00004_nrca3_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605009001_10101_00004_nrca3_cal.fits",
+      "target": "WDFS2317-29",
+      "detector": "NRCA3",
+      "filter": "F150W",
+      "patternNumber": 4,
+      "wcsX": 918.4063615564864,
+      "wcsY": 1029.4085956401252,
+      "centroidX": 918.85802041876,
+      "centroidY": 1029.534235018024,
+      "centroidOffsetPixels": 0.4688080429654045,
+      "photmjsr": 2.312999963760376,
+      "backgroundDnPerSecond": 0.09697242709640096,
+      "backgroundStdDnPerSecond": 0.0308324279174314,
+      "backgroundPixels": 2577,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 374.18969830057347,
+        "r5": 414.499858106057,
+        "r8": 442.39239894295383
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.236111111111114,
+        "r5": 78.50694444444444,
+        "r8": 201.02777777777777
+      }
+    },
+    {
+      "filename": "jw06605105001_05101_00001_nrcb1_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605105001_05101_00001_nrcb1_cal.fits",
+      "target": "WDFS0122-30",
+      "detector": "NRCB1",
+      "filter": "F090W",
+      "patternNumber": 1,
+      "wcsX": 1365.4184060319096,
+      "wcsY": 1364.3972138747376,
+      "centroidX": 1366.6738437266972,
+      "centroidY": 1364.7377843687213,
+      "centroidOffsetPixels": 1.3008120797662812,
+      "photmjsr": 3.5920000076293945,
+      "backgroundDnPerSecond": 0.05290699671451266,
+      "backgroundStdDnPerSecond": 0.043720239395200644,
+      "backgroundPixels": 2576,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 468.93697783331686,
+        "r5": 515.5447624205663,
+        "r8": 550.6422299707331
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.284722222222225,
+        "r5": 78.57638888888889,
+        "r8": 201.07638888888886
+      }
+    },
+    {
+      "filename": "jw06605105001_05101_00002_nrcb1_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605105001_05101_00002_nrcb1_cal.fits",
+      "target": "WDFS0122-30",
+      "detector": "NRCB1",
+      "filter": "F090W",
+      "patternNumber": 2,
+      "wcsX": 1387.3226662572015,
+      "wcsY": 1386.1071538084404,
+      "centroidX": 1388.5925870694482,
+      "centroidY": 1386.3762615722828,
+      "centroidOffsetPixels": 1.2981208949622496,
+      "photmjsr": 3.5920000076293945,
+      "backgroundDnPerSecond": 0.041449676342933665,
+      "backgroundStdDnPerSecond": 0.04288613981987399,
+      "backgroundPixels": 2574,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 468.6832378499178,
+        "r5": 515.8457627971153,
+        "r8": 550.7104476671174
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.243055555555557,
+        "r5": 78.50694444444446,
+        "r8": 201.06944444444446
+      }
+    },
+    {
+      "filename": "jw06605105001_05101_00003_nrcb1_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605105001_05101_00003_nrcb1_cal.fits",
+      "target": "WDFS0122-30",
+      "detector": "NRCB1",
+      "filter": "F090W",
+      "patternNumber": 3,
+      "wcsX": 1366.7650281109295,
+      "wcsY": 1384.8903340811887,
+      "centroidX": 1368.0663309165525,
+      "centroidY": 1384.9763505797653,
+      "centroidOffsetPixels": 1.3041425650401928,
+      "photmjsr": 3.5920000076293945,
+      "backgroundDnPerSecond": 0.061880872338185955,
+      "backgroundStdDnPerSecond": 0.04543048216044969,
+      "backgroundPixels": 2561,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 471.93111171769215,
+        "r5": 517.2849009795287,
+        "r8": 552.0863238609926
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.270833333333336,
+        "r5": 78.52777777777777,
+        "r8": 201.04861111111111
+      }
+    },
+    {
+      "filename": "jw06605105001_05101_00004_nrcb1_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605105001_05101_00004_nrcb1_cal.fits",
+      "target": "WDFS0122-30",
+      "detector": "NRCB1",
+      "filter": "F090W",
+      "patternNumber": 4,
+      "wcsX": 1385.96766220429,
+      "wcsY": 1365.6142123124193,
+      "centroidX": 1387.1634004778682,
+      "centroidY": 1365.7304841334335,
+      "centroidOffsetPixels": 1.201378023463745,
+      "photmjsr": 3.5920000076293945,
+      "backgroundDnPerSecond": 0.061297553773503814,
+      "backgroundStdDnPerSecond": 0.04506301382354821,
+      "backgroundPixels": 2572,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 471.3068906405362,
+        "r5": 517.8702295893362,
+        "r8": 553.8808292064411
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.305555555555557,
+        "r5": 78.58333333333333,
+        "r8": 201.08333333333334
+      }
+    },
+    {
+      "filename": "jw06605105001_09101_00001_nrcb1_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605105001_09101_00001_nrcb1_cal.fits",
+      "target": "WDFS0122-30",
+      "detector": "NRCB1",
+      "filter": "F150W",
+      "patternNumber": 1,
+      "wcsX": 1365.4376766256871,
+      "wcsY": 1364.2997755102979,
+      "centroidX": 1366.5924240574939,
+      "centroidY": 1364.5755025928286,
+      "centroidOffsetPixels": 1.1872097772951427,
+      "photmjsr": 2.385999917984009,
+      "backgroundDnPerSecond": 0.10045648296090465,
+      "backgroundStdDnPerSecond": 0.01610523202001926,
+      "backgroundPixels": 2572,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 280.58374702989045,
+        "r5": 311.64850024573184,
+        "r8": 331.9048978456075
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.28472222222222,
+        "r5": 78.5625,
+        "r8": 201.08333333333331
+      }
+    },
+    {
+      "filename": "jw06605105001_09101_00002_nrcb1_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605105001_09101_00002_nrcb1_cal.fits",
+      "target": "WDFS0122-30",
+      "detector": "NRCB1",
+      "filter": "F150W",
+      "patternNumber": 2,
+      "wcsX": 1387.3350401246018,
+      "wcsY": 1386.0058663624222,
+      "centroidX": 1388.524953200382,
+      "centroidY": 1386.2127494901004,
+      "centroidOffsetPixels": 1.2077639489695404,
+      "photmjsr": 2.385999917984009,
+      "backgroundDnPerSecond": 0.09713361351645589,
+      "backgroundStdDnPerSecond": 0.016793821092402985,
+      "backgroundPixels": 2581,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 282.01490809286963,
+        "r5": 314.0897579932381,
+        "r8": 334.9550388067222
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.26388888888889,
+        "r5": 78.47916666666667,
+        "r8": 201.02083333333334
+      }
+    },
+    {
+      "filename": "jw06605105001_09101_00003_nrcb1_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605105001_09101_00003_nrcb1_cal.fits",
+      "target": "WDFS0122-30",
+      "detector": "NRCB1",
+      "filter": "F150W",
+      "patternNumber": 3,
+      "wcsX": 1366.764306279323,
+      "wcsY": 1384.8122714383992,
+      "centroidX": 1367.9799959854506,
+      "centroidY": 1384.8422349996874,
+      "centroidOffsetPixels": 1.2160589116444729,
+      "photmjsr": 2.385999917984009,
+      "backgroundDnPerSecond": 0.09297958234769797,
+      "backgroundStdDnPerSecond": 0.016756257353626257,
+      "backgroundPixels": 2573,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 280.2946652410764,
+        "r5": 313.45098591747023,
+        "r8": 333.5728322400922
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.291666666666664,
+        "r5": 78.5625,
+        "r8": 201.10416666666669
+      }
+    },
+    {
+      "filename": "jw06605105001_09101_00004_nrcb1_cal.fits",
+      "dataURI": "mast:JWST/product/jw06605105001_09101_00004_nrcb1_cal.fits",
+      "target": "WDFS0122-30",
+      "detector": "NRCB1",
+      "filter": "F150W",
+      "patternNumber": 4,
+      "wcsX": 1385.987080291882,
+      "wcsY": 1365.50733730446,
+      "centroidX": 1387.09426979901,
+      "centroidY": 1365.5517534920928,
+      "centroidOffsetPixels": 1.1080800523509329,
+      "photmjsr": 2.385999917984009,
+      "backgroundDnPerSecond": 0.10109089594137449,
+      "backgroundStdDnPerSecond": 0.017522714155277046,
+      "backgroundPixels": 2578,
+      "badDoNotUsePixelsR3": 0,
+      "fluxDnPerSecond": {
+        "r3": 282.0930975103281,
+        "r5": 314.14889688124975,
+        "r8": 334.407310237113
+      },
+      "effectiveAreaPixels": {
+        "r3": 28.291666666666664,
+        "r5": 78.54861111111111,
+        "r8": 201.11111111111111
+      }
+    }
+  ],
+  "groups": {
+    "WDFS0122-30|NRCB1|F090W": {
+      "r3": {
+        "n": 4,
+        "meanFluxDnPerSecond": 470.21455451036576,
+        "sampleStdFraction": 0.003498149741902256,
+        "robustSigmaFraction": 0.004137041205793394,
+        "maxAbsDeviationFraction": 0.0036505828900039727,
+        "normalizedByPattern": {
+          "1": 0.9972829920622529,
+          "2": 0.99674336609584,
+          "3": 1.003650582890004,
+          "4": 1.0023230589519032
+        }
+      },
+      "r5": {
+        "n": 4,
+        "meanFluxDnPerSecond": 516.6364139466366,
+        "sampleStdFraction": 0.0021668515135406024,
+        "robustSigmaFraction": 0.002497195677153518,
+        "maxAbsDeviationFraction": 0.0023881701122736576,
+        "normalizedByPattern": {
+          "1": 0.9978870023548454,
+          "2": 0.9984696178430756,
+          "3": 1.0012552096898055,
+          "4": 1.0023881701122737
+        }
+      },
+      "r8": {
+        "n": 4,
+        "meanFluxDnPerSecond": 551.8299576763211,
+        "sampleStdFraction": 0.0027553850566264166,
+        "robustSigmaFraction": 0.0019414398527228512,
+        "maxAbsDeviationFraction": 0.003716491831570634,
+        "normalizedByPattern": {
+          "1": 0.9978476563494497,
+          "2": 0.9979712772138761,
+          "3": 1.000464574605103,
+          "4": 1.0037164918315706
+        }
+      }
+    },
+    "WDFS0122-30|NRCB1|F150W": {
+      "r3": {
+        "n": 4,
+        "meanFluxDnPerSecond": 281.24660446854114,
+        "sampleStdFraction": 0.00334327690337638,
+        "robustSigmaFraction": 0.003977547763260457,
+        "maxAbsDeviationFraction": 0.003384713672414108,
+        "normalizedByPattern": {
+          "1": 0.9976431450971532,
+          "2": 1.002731779200607,
+          "3": 0.9966152863275859,
+          "4": 1.0030097893746541
+        }
+      },
+      "r5": {
+        "n": 4,
+        "meanFluxDnPerSecond": 313.33453525942247,
+        "sampleStdFraction": 0.003726346713731244,
+        "robustSigmaFraction": 0.001648853568377619,
+        "maxAbsDeviationFraction": 0.005380942168710212,
+        "normalizedByPattern": {
+          "1": 0.9946190578312898,
+          "2": 1.0024102760750275,
+          "3": 1.0003716496106991,
+          "4": 1.0025990164829837
+        }
+      },
+      "r8": {
+        "n": 4,
+        "meanFluxDnPerSecond": 333.7100197823837,
+        "sampleStdFraction": 0.003988075852009685,
+        "robustSigmaFraction": 0.003067844873480825,
+        "maxAbsDeviationFraction": 0.005409253033377248,
+        "normalizedByPattern": {
+          "1": 0.9945907469666228,
+          "2": 1.0037308410012693,
+          "3": 0.9995889019383327,
+          "4": 1.0020895100937754
+        }
+      }
+    },
+    "WDFS0458-56|NRCB1|F090W": {
+      "r3": {
+        "n": 4,
+        "meanFluxDnPerSecond": 903.2152106754978,
+        "sampleStdFraction": 0.018559956091300466,
+        "robustSigmaFraction": 0.012666807685178225,
+        "maxAbsDeviationFraction": 0.02577541780748549,
+        "normalizedByPattern": {
+          "1": 1.0090441636718286,
+          "2": 0.9742245821925145,
+          "3": 0.9997842688366457,
+          "4": 1.016946985299011
+        }
+      },
+      "r5": {
+        "n": 4,
+        "meanFluxDnPerSecond": 991.020377133146,
+        "sampleStdFraction": 0.01620008233202995,
+        "robustSigmaFraction": 0.008839554889627883,
+        "maxAbsDeviationFraction": 0.02308405061907637,
+        "normalizedByPattern": {
+          "1": 1.009520370562836,
+          "2": 0.9769159493809236,
+          "3": 1.0007889089538533,
+          "4": 1.0127747711023871
+        }
+      },
+      "r8": {
+        "n": 4,
+        "meanFluxDnPerSecond": 1057.4932070624368,
+        "sampleStdFraction": 0.01647626333858811,
+        "robustSigmaFraction": 0.006862433014372217,
+        "maxAbsDeviationFraction": 0.023849253317648977,
+        "normalizedByPattern": {
+          "1": 1.0108508918665913,
+          "2": 0.976150746682351,
+          "3": 1.0018411595527834,
+          "4": 1.0111572018982744
+        }
+      }
+    },
+    "WDFS0458-56|NRCB1|F150W": {
+      "r3": {
+        "n": 4,
+        "meanFluxDnPerSecond": 545.1326332539395,
+        "sampleStdFraction": 0.0016718322128653669,
+        "robustSigmaFraction": 0.0013074653883663105,
+        "maxAbsDeviationFraction": 0.002257853471719584,
+        "normalizedByPattern": {
+          "1": 1.0006074553013573,
+          "2": 0.9977421465282804,
+          "3": 0.9999430830098675,
+          "4": 1.0017073151604945
+        }
+      },
+      "r5": {
+        "n": 4,
+        "meanFluxDnPerSecond": 607.6965839217328,
+        "sampleStdFraction": 0.0029068513824606246,
+        "robustSigmaFraction": 0.002275211298921967,
+        "maxAbsDeviationFraction": 0.003812324702798797,
+        "normalizedByPattern": {
+          "1": 0.9996469985408646,
+          "2": 0.996736150228471,
+          "3": 0.9998045265278658,
+          "4": 1.0038123247027988
+        }
+      },
+      "r8": {
+        "n": 4,
+        "meanFluxDnPerSecond": 646.8858475687284,
+        "sampleStdFraction": 0.004362797729896414,
+        "robustSigmaFraction": 0.0017260342762289629,
+        "maxAbsDeviationFraction": 0.006363608824202727,
+        "normalizedByPattern": {
+          "1": 0.9969767844483786,
+          "2": 0.9973583228057006,
+          "3": 0.9993012839217182,
+          "4": 1.0063636088242027
+        }
+      }
+    },
+    "WDFS2317-29|NRCA3|F090W": {
+      "r3": {
+        "n": 4,
+        "meanFluxDnPerSecond": 641.1959976856781,
+        "sampleStdFraction": 0.007972927409521819,
+        "robustSigmaFraction": 0.0044384583859390465,
+        "maxAbsDeviationFraction": 0.011376082119348596,
+        "normalizedByPattern": {
+          "1": 1.0009472230317895,
+          "2": 1.0034809810097423,
+          "3": 0.9886239178806514,
+          "4": 1.0069478780778172
+        }
+      },
+      "r5": {
+        "n": 4,
+        "meanFluxDnPerSecond": 702.032892844403,
+        "sampleStdFraction": 0.0072162609512089835,
+        "robustSigmaFraction": 0.0042757995277372205,
+        "maxAbsDeviationFraction": 0.010192288582156595,
+        "normalizedByPattern": {
+          "1": 1.00092071675804,
+          "2": 1.0025728052514042,
+          "3": 0.9898077114178434,
+          "4": 1.0066987665727118
+        }
+      },
+      "r8": {
+        "n": 4,
+        "meanFluxDnPerSecond": 752.0687812038373,
+        "sampleStdFraction": 0.007167937795529781,
+        "robustSigmaFraction": 0.004235952227872516,
+        "maxAbsDeviationFraction": 0.010160949374927286,
+        "normalizedByPattern": {
+          "1": 1.0004043207076876,
+          "2": 1.0036265699883067,
+          "3": 0.9898390506250727,
+          "4": 1.0061300586789332
+        }
+      }
+    },
+    "WDFS2317-29|NRCA3|F150W": {
+      "r3": {
+        "n": 4,
+        "meanFluxDnPerSecond": 371.17824823485296,
+        "sampleStdFraction": 0.01008028935025015,
+        "robustSigmaFraction": 0.006698102290961824,
+        "maxAbsDeviationFraction": 0.013888820185422923,
+        "normalizedByPattern": {
+          "1": 0.9990515087917423,
+          "2": 1.0067240933372845,
+          "3": 0.9861111798145771,
+          "4": 1.008113218056396
+        }
+      },
+      "r5": {
+        "n": 4,
+        "meanFluxDnPerSecond": 411.04490233963753,
+        "sampleStdFraction": 0.00874441430897679,
+        "robustSigmaFraction": 0.006766915039137235,
+        "maxAbsDeviationFraction": 0.011858547740270065,
+        "normalizedByPattern": {
+          "1": 0.9992610954029548,
+          "2": 1.0041921522186317,
+          "3": 0.9881414522597299,
+          "4": 1.0084053001186832
+        }
+      },
+      "r8": {
+        "n": 4,
+        "meanFluxDnPerSecond": 438.4473591740528,
+        "sampleStdFraction": 0.008981093887860244,
+        "robustSigmaFraction": 0.006233319781392034,
+        "maxAbsDeviationFraction": 0.012364998292921259,
+        "normalizedByPattern": {
+          "1": 1.0005749599335447,
+          "2": 1.0027922882615479,
+          "3": 0.9876350017070787,
+          "4": 1.0089977500978287
+        }
+      }
+    }
+  },
+  "matchedNrcb1Replication": {
+    "F090W": {
+      "patterns": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "maxAbsNormalizedDifference": 0.02155366846215201,
+      "rmsNormalizedDifference": 0.013304085806090049,
+      "pearsonCorrelation": 0.443544627750193,
+      "differences": {
+        "1": 0.011633368207990546,
+        "2": -0.02155366846215201,
+        "3": -0.00046630073595221866,
+        "4": 0.01038660099011346
+      }
+    },
+    "F150W": {
+      "patterns": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "maxAbsNormalizedDifference": 0.005674125846556577,
+      "rmsNormalizedDifference": 0.003849338817541081,
+      "pearsonCorrelation": 0.11904146181292664,
+      "differences": {
+        "1": 0.005027940709574796,
+        "2": -0.005674125846556577,
+        "3": -0.000567123082833354,
+        "4": 0.0012133082198151346
+      }
+    }
+  },
+  "decision": {
+    "supportFourOfFourPerGroup": true,
+    "zeroDoNotUsePixelsWithinR3": true,
+    "maxRobustSigmaAtMostOnePercent": true,
+    "maxDitherExcursionAtMostTwoPercent": false,
+    "matchedNrcb1PatternDifferenceAtMostOnePercent": false,
+    "localMeasurementOperatorQualified": false
+  }
+}

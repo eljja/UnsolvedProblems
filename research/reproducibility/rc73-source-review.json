@@ -1,0 +1,82 @@
+{
+  "cycle": "RC-2026-73",
+  "reviewedOn": "2026-09-01",
+  "scope": "Public isolated-star NIRCam calibration data and the boundary between a local aperture repeatability probe and a qualified crowded-field PSF adjudicator",
+  "sources": [
+    {
+      "id": "nircam-flux-calibration-status-2026",
+      "type": "official living instrument documentation",
+      "url": "https://jwst-docs.stsci.edu/jwst-near-infrared-camera/nircam-performance/nircam-absolute-flux-calibration-and-zeropoints",
+      "publishedOrUpdated": "updated 2026-05-08",
+      "researchResultDate": "jwst_1490.pmap delivered 2026-03-16",
+      "usedFor": "SCI units, PHOTMJSR conversion, detector/subarray dependence, calibration-star/program roster, and current CRDS delivery state"
+    },
+    {
+      "id": "boyer-nircam-absolute-calibration-2026",
+      "type": "primary preprint submitted to AJ",
+      "url": "https://arxiv.org/abs/2608.08717",
+      "publishedOrUpdated": "submitted 2026-08-09",
+      "researchResultDate": "19 standards observed over 3.5 years; calibration incorporated in 2026-03",
+      "usedFor": "typical calibration-factor scatter below 2%, about half below 1%, residual detector offsets usually below 1% but occasionally 4-5%, and stability below 0.4% per year"
+    },
+    {
+      "id": "stsci-nircam-fluxcal-code-2026",
+      "type": "official analysis-code repository",
+      "url": "https://github.com/spacetelescope/nircam-fluxcal",
+      "publishedOrUpdated": "repository reviewed at commit d15993c on 2026-09-01",
+      "researchResultDate": "scripts used for Boyer et al. 2026",
+      "usedFor": "star footprint selection, jump-step fallback, per-image STPSF using OPD/type/position, r=5 aperture photometry, PSF aperture correction, CALSPEC fluxes, and PHOTMJSR derivation"
+    },
+    {
+      "id": "stsci-nircam-subpixel-dithers",
+      "type": "official instrument documentation",
+      "url": "https://jwst-docs.stsci.edu/jwst-near-infrared-camera/nircam-operations/nircam-dithers-and-mosaics/nircam-subpixel-dithers/nircam-standard-subpixel-dithers",
+      "publishedOrUpdated": "reviewed 2026-09-01",
+      "researchResultDate": "instrument dither design",
+      "usedFor": "four-position pixel-phase sampling and the distinction between subpixel and primary dithers"
+    },
+    {
+      "id": "weizz-dolphot-jwst-2024",
+      "type": "primary paper",
+      "url": "https://arxiv.org/abs/2402.03504",
+      "publishedOrUpdated": "submitted 2024-02-05",
+      "researchResultDate": "JWST ERS crowded-field photometry tests",
+      "usedFor": "time-dependent PSF scatter, custom epoch PSFs, and the limitation of aperture corrections in crowded fields"
+    },
+    {
+      "id": "mast-api",
+      "type": "official archive API and public data products",
+      "url": "https://mast.stsci.edu/api/v0/invoke",
+      "publishedOrUpdated": "queried 2026-09-01",
+      "researchResultDate": "Cycle 1-4 calibration observations",
+      "usedFor": "observation inventory, product lineage, public access state, FITS WCS support, and byte-range SCI/DQ/AREA reads"
+    }
+  ],
+  "confirmedFacts": [
+    "The official March 2026 imaging calibration includes all listed standard-star programs and detector-specific PHOTMJSR values; the three Cycle 3 hot standards used here are on that official roster.",
+    "MAST returned 7,085 public observation rows across twelve Cycle 1-4 calibration programs; Program 6605 supplied the three selected hot standards and Program 7565 already exposes two new Cycle 4 hot standards for a future holdout.",
+    "Forty-eight Program 6605 CAL products were checked by precise FITS target coordinates. Twenty-four products actually contained the standard: three target-detector anchors, two filters, and four dither positions per group.",
+    "A header sample spanning all six target-filter groups was reprocessed on 2026-07-12 with JWST pipeline 2.0.1 under CRDS context jwst_1535.pmap. This cycle did not diff that build context against jwst_1490.pmap, so reference-file identity is not assumed from the serial number.",
+    "All six groups retained 4/4 support and zero DO_NOT_USE pixels inside r=3. Their r=5 robust scatter was below 1%.",
+    "WDFS0458-56 NRCB1 F090W nevertheless had a 2.308405% maximum dither excursion, and its normalized pattern differed from WDFS0122-30 by as much as 2.155367%. Both registered gates failed.",
+    "F150W passed the cross-star matched-pattern gate at 0.567413%, so the failure is not a universal property of the geometry or implementation.",
+    "Independent Node recomputation matched every Python group metric and decision exactly at the retained numeric precision."
+  ],
+  "inferences": [
+    "The raw r=5 aperture operator is repeatable in a robust central sense but not sufficiently transferable to treat the sampled F090W dither signature as a fixed detector-position correction.",
+    "Because the official calibration path applies jump-step adjudication and per-image STPSF aperture corrections before comparing with CALSPEC, this failure does not falsify jwst_1490.pmap, PHOTMJSR, or Boyer et al.'s aggregate calibration result.",
+    "The failure persists from r=3 through r=8 for WDFS0458-56 F090W, so a simple increase in aperture radius is unlikely to be the sole remedy.",
+    "The divergence between F090W and F150W makes a filter-dependent PSF, jump, or exposure-state term more plausible than a target-independent four-position flat-field signature."
+  ],
+  "unverifiedProposals": [
+    "On the retired RC73 development data, decompose the WDFS0458-56 F090W pattern-2 deficit with the official jump flag/no-jump branch and per-image STPSF aperture fractions; do not change RC73's verdict.",
+    "Freeze the resulting operator before opening Program 7565 WDFS1304+10 and WDFS1557+55 pixels. Use those Cycle 4 standards as the independent two-star holdout with the same dither-pattern gates.",
+    "Only if the fresh isolated-star holdout passes should a wide-position calibration design be written; only after that should a new disjoint crowded-field tile be opened."
+  ],
+  "prizeStatus": {
+    "checked": true,
+    "finding": "No official cash prize or challenge award is attached to this calibration subproblem. The broader Hubble-tension problem has no single official solution prize recorded by this cycle.",
+    "amount": null,
+    "currency": null
+  }
+}

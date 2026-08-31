@@ -1,0 +1,89 @@
+{
+  "cycle": "RC-2026-73",
+  "runtime": "Node v25.8.2",
+  "input": "research/reproducibility/rc73-nircam-calibration-result.json",
+  "algorithm": "Independent JavaScript regrouping and recomputation from the frozen per-exposure r=5 measurements",
+  "groups": {
+    "WDFS0458-56|NRCB1|F090W": {
+      "n": 4,
+      "robustSigmaFraction": 0.008839554889627883,
+      "maxAbsDeviationFraction": 0.02308405061907637,
+      "normalizedByPattern": {
+        "1": 1.009520370562836,
+        "2": 0.9769159493809236,
+        "3": 1.0007889089538533,
+        "4": 1.0127747711023871
+      }
+    },
+    "WDFS0458-56|NRCB1|F150W": {
+      "n": 4,
+      "robustSigmaFraction": 0.002275211298921967,
+      "maxAbsDeviationFraction": 0.003812324702798797,
+      "normalizedByPattern": {
+        "1": 0.9996469985408646,
+        "2": 0.996736150228471,
+        "3": 0.9998045265278658,
+        "4": 1.0038123247027988
+      }
+    },
+    "WDFS2317-29|NRCA3|F090W": {
+      "n": 4,
+      "robustSigmaFraction": 0.0042757995277372205,
+      "maxAbsDeviationFraction": 0.010192288582156595,
+      "normalizedByPattern": {
+        "1": 1.00092071675804,
+        "2": 1.0025728052514042,
+        "3": 0.9898077114178434,
+        "4": 1.0066987665727118
+      }
+    },
+    "WDFS2317-29|NRCA3|F150W": {
+      "n": 4,
+      "robustSigmaFraction": 0.006766915039137235,
+      "maxAbsDeviationFraction": 0.011858547740270065,
+      "normalizedByPattern": {
+        "1": 0.9992610954029548,
+        "2": 1.0041921522186317,
+        "3": 0.9881414522597299,
+        "4": 1.0084053001186832
+      }
+    },
+    "WDFS0122-30|NRCB1|F090W": {
+      "n": 4,
+      "robustSigmaFraction": 0.002497195677153518,
+      "maxAbsDeviationFraction": 0.0023881701122736576,
+      "normalizedByPattern": {
+        "1": 0.9978870023548454,
+        "2": 0.9984696178430756,
+        "3": 1.0012552096898055,
+        "4": 1.0023881701122737
+      }
+    },
+    "WDFS0122-30|NRCB1|F150W": {
+      "n": 4,
+      "robustSigmaFraction": 0.001648853568377619,
+      "maxAbsDeviationFraction": 0.005380942168710212,
+      "normalizedByPattern": {
+        "1": 0.9946190578312898,
+        "2": 1.0024102760750275,
+        "3": 1.0003716496106991,
+        "4": 1.0025990164829837
+      }
+    }
+  },
+  "matchedNrcb1MaximumDifference": {
+    "F090W": 0.02155366846215201,
+    "F150W": 0.005674125846556577
+  },
+  "decision": {
+    "supportFourOfFourPerGroup": true,
+    "zeroDoNotUsePixelsWithinR3": true,
+    "maxRobustSigmaAtMostOnePercent": true,
+    "maxDitherExcursionAtMostTwoPercent": false,
+    "matchedNrcb1PatternDifferenceAtMostOnePercent": false,
+    "localMeasurementOperatorQualified": false
+  },
+  "maximumAbsoluteMetricDifferenceFromPython": 0,
+  "tolerance": 1e-12,
+  "reproduced": true
+}

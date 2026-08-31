@@ -1,0 +1,39 @@
+{
+  "cycle": "RC-2026-73",
+  "status": "completed-negative-local-adjudication",
+  "selectedProblems": ["UP-003", "UP-625", "UP-626"],
+  "newFacts": [
+    "The current official NIRCam calibration documentation and the August 2026 primary preprint supersede the older calibration state used in early JWST work.",
+    "Program 6605 provides three public hot standards with exactly four in-footprint CAL exposures per F090W/F150W target-detector group at the sampled anchors.",
+    "The simple r=5 operator passes support, central DQ, and robust-scatter gates but fails the registered F090W excursion and cross-star replication gates.",
+    "Program 7565 already has public F090W/F150W observations of two different Cycle 4 hot standards, enabling a fresh future holdout."
+  ],
+  "changedProblemStates": [
+    "UP-003 advances from 'no external isolated-star test' to 'raw external operator tested and rejected'; its crowded-field, TRGB, distance, and H0 states remain unchanged.",
+    "UP-625 gains a concrete matched-support transport statistic, but F090W transfer fails.",
+    "UP-626 validates preregistered support-first outcome access and a terminal negative decision with exact independent recomputation."
+  ],
+  "reproducedOrRejectedApproaches": [
+    "The official SCI/PHOTMJSR*AREA r=5 aperture core was reproduced on public CAL products, but the simplified operator without the full STPSF/jump/CALSPEC chain was rejected for transfer.",
+    "A fixed detector-position correction inferred from the four NRCB1 dither residuals was rejected in F090W because the pattern did not reproduce across standards.",
+    "Changing aperture from r=3 to r=8 does not remove the WDFS0458-56 F090W excursion, so aperture size alone is not a supported rescue."
+  ],
+  "survivingHypotheses": [
+    "A filter- and exposure-state-specific term, including jump processing or time-dependent PSF aperture fraction, may explain the F090W divergence.",
+    "The full official per-image STPSF correction may qualify where the deliberately simplified raw aperture operator failed.",
+    "A corrected operator may transfer if developed on retired Program 6605 data and tested once on the new Program 7565 standards."
+  ],
+  "minimumDecisiveNextTest": "On retired Program 6605 only, compare the registered raw result with the official jump-aware and per-image STPSF aperture-corrected branches. Freeze the winning branch and all thresholds before reading Program 7565 WDFS1304+10 and WDFS1557+55 pixels; then repeat the two-filter matched-pattern adjudication once.",
+  "newConnection": "CONN-EVIDENCE-043",
+  "insufficientClaims": [
+    "The current test does not identify whether the F090W failure comes from jump handling, PSF aperture fraction, residual flat field, or epoch/source interaction.",
+    "Three local anchors do not characterize detector-wide spatial variation.",
+    "No isolated-star result identifies error in crowded-field PSF subtraction, Cepheid photometry, TRGB, distance, or H0."
+  ],
+  "failuresPreserved": [
+    "RC71's 91-96 PSF-star count remains below 100.",
+    "RC72's EE80 support and core-adjudicator failures remain immutable.",
+    "RC73's two F090W gate failures remain terminal for the simple raw operator."
+  ],
+  "nextStart": "Inventory Program 7565 products and WCS support without reading pixels. In parallel, use only retired Program 6605 outcomes to lock an official jump/STPSF correction implementation and an uncertainty budget. The first Program 7565 pixel access begins only after both artifacts are hashed."
+}
