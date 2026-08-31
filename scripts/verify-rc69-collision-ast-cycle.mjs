@@ -96,7 +96,7 @@ assert(connection?.reviewedOn === "2026-09-01" && connection.validationStatus.te
 assert(sources.dolphot_official_distribution_2026.publishedOn === "2026-08-01" && sources.nircam_psf_stpsf_2025.publishedOn === "2025-07-01", "RC69 source dates changed");
 
 for (const page of ["index.html", "solve.html", "research-log.html"]) assert(readText(page).includes("research-cycle-69-data.js?v=20260901-cycle69"), `${page}: RC69 script is missing`);
-assert(/length:\s*(67|68|69)/.test(readText("scripts/generate-sitemap.mjs")), "Sitemap generator omits RC69");
+assert(Number(readText("scripts/generate-sitemap.mjs").match(/length:\s*(\d+)/)?.[1]) >= 67, "Sitemap generator omits RC69");
 const publicProse = readText("research-cycle-69-data.js");
 for (const forbidden of ["전공자 포인트", "1단계", "개수를 맞", "아래 시도는 개별 논문"]) assert(!publicProse.includes(forbidden), `RC69 public prose contains forbidden wording: ${forbidden}`);
 

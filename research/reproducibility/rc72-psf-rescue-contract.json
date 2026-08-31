@@ -1,0 +1,115 @@
+{
+  "cycleId": "RC-2026-72",
+  "experimentId": "PHOST-PSF-SUPPORT-RESCUE-1",
+  "sealedOn": "2026-09-01",
+  "problemIds": ["UP-003", "UP-625", "UP-626"],
+  "parentFailure": {
+    "cycleId": "RC-2026-71",
+    "artifact": "research/reproducibility/rc71-nrcb2-detector-baseline-result.json",
+    "immutableDecision": "The NRCB2 PSF-star-count gate remains failed at 91-96 stars per supported image. No RC72 outcome can retroactively convert the original 100-star gate to a pass.",
+    "closedDownstreamGates": ["NRCB3", "NRCB4", "3072-row artificial-star test", "Cepheid distance", "H0"]
+  },
+  "developmentInspection": {
+    "disclosure": "Before this contract was written, catalogue-only support counts were inspected at several isolation radii. No CAL-pixel aperture flux, cross-method residual, detector offset, or pass/fail outcome was computed.",
+    "consequence": "RC72 makes no claim that catalogue support is an untouched holdout. The frozen information boundary applies to CAL-pixel flux outcomes, and every inspected support rule is recorded rather than hidden."
+  },
+  "inputs": {
+    "referenceImage": ".cache/rc69-phost-ast/dolphot-work/f150w_i2d.fits",
+    "catalogues": {
+      "NRCB1": ".cache/rc69-phost-ast/dolphot-work/rc70-nrcb1.phot",
+      "NRCB2": ".cache/rc69-phost-ast/dolphot-work/rc70-nrcb2.phot"
+    },
+    "psfTrainingReceipts": {
+      "NRCB1": ".cache/rc69-phost-ast/dolphot-work/rc70-nrcb1.phot.psfs",
+      "NRCB2": ".cache/rc69-phost-ast/dolphot-work/rc70-nrcb2.phot.psfs"
+    },
+    "calManifest": "research/reproducibility/rc69-phost-cal-source-manifest.json",
+    "calDirectory": ".cache/rc69-phost-ast/cal"
+  },
+  "eligibility": {
+    "sourceTypeMaximum": 2,
+    "snrMinimumPerFilter": 10,
+    "sharpnessSquaredMaximumPerFilter": 0.01,
+    "crowdingMaximumPerFilter": 0.5,
+    "qualityFlagMaximumPerFilter": 2,
+    "edgeMarginReferencePixels": 20,
+    "psfTrainingExclusionRadiusReferencePixels": 0.1,
+    "neighborPool": "type <= 2 and max(F090W SNR, F150W SNR) >= 4",
+    "reason": "The source cuts follow the DOLPHOT JWST purity-oriented F090W/F150W recommendations. The extra SNR floor, edge margin, explicit PSF-star exclusion, and isolation tests serve this validation design."
+  },
+  "spatialSplit": {
+    "grid": [2, 2],
+    "cells": ["x0y0", "x1y0", "x0y1", "x1y1"],
+    "selectionPerCell": 8,
+    "minimumValidPerCell": 6,
+    "hash": "SHA-256('RC72|CORE-DIAGNOSTIC|detector|cell|x.toFixed(3)|y.toFixed(3)'); retain the eight lexicographically smallest digests",
+    "role": {"NRCB1": "development control and aperture-offset calibration", "NRCB2": "single-use candidate"}
+  },
+  "tracks": [
+    {
+      "id": "EE80-INDEPENDENT",
+      "purpose": "Ask whether a conventional large-aperture, non-overlapping validation set has adequate spatial support before any residual is read.",
+      "apertureRadiusPixels": 5.1,
+      "neighborExclusionRadiusPixels": 10.2,
+      "physicalBasis": "The official empirical F090W EE80 radius is 0.157 arcsec; at the 0.031 arcsec short-wave scale this is about 5.1 pixels. Twice that radius prevents two selected apertures from overlapping.",
+      "supportGate": "At least eight eligible stars in every 2x2 cell of each detector.",
+      "stop": "If any cell fails support, record support failure and do not compute a large-aperture residual."
+    },
+    {
+      "id": "CORE-DIAGNOSTIC",
+      "purpose": "Test whether a small, independently integrated core measurement calibrated only on NRCB1 transfers to NRCB2.",
+      "apertureRadiusPixels": 3.0,
+      "neighborExclusionRadiusPixels": 6.0,
+      "backgroundAnnulusPixels": [7.0, 10.0],
+      "pixelIntegration": "Treat DOLPHOT reference x,y as Astropy zero-origin WCS coordinates; use deterministic 8x8 subpixel area weights; estimate background by three iterations of a 3-MAD sigma-clipped median annulus; SCI/PHOTMJSR yields DN/s.",
+      "dataQuality": "Exclude non-finite pixels and any DQ != 0 sample. Require at least 90% of the geometric aperture weight and at least 40 valid annulus pixels.",
+      "calibration": "For each filter, freeze one additive aperture-to-DOLPHOT magnitude offset as the median over all valid NRCB1 star-exposure records. Apply that offset unchanged to NRCB2.",
+      "aggregation": "Require at least three valid exposures per star and filter, take that star's median residual, then compute cell and detector summaries. Medians and the 90th percentile use NumPy's linear quantile convention.",
+      "gates": {
+        "exposureCompleteness": "At least three of four exposures are valid for every counted star and filter.",
+        "support": "At least six valid stars per NRCB2 cell and filter.",
+        "median": "Absolute NRCB2 detector median residual <= 0.01 mag in each filter.",
+        "cell": "Absolute median residual <= 0.01 mag in every NRCB2 cell and filter.",
+        "tail": "NRCB2 90th percentile absolute residual <= 0.03 mag in each filter.",
+        "spatial": "Maximum minus minimum NRCB2 cell median <= 0.02 mag in each filter.",
+        "control": "NRCB1 90th percentile absolute residual <= 0.03 mag after its single per-filter offset is fitted."
+      },
+      "interpretation": "A pass is evidence for core-flux transport under this integrator, not a PSF-independent absolute-flux validation and not a replacement for the failed 100-star gate. A failure retires this exact holdout."
+    }
+  ],
+  "causalChain": [
+    "Frozen RC71 catalogues, PSF-training receipts, CAL hashes, official source-quality cuts, and fixed coordinate hash",
+    "Need to distinguish a conservative PSF-star-count proxy failure from detector-specific out-of-sample flux error without reusing PSF training stars",
+    "If an independently integrated small core needs only a control-derived per-filter offset, the unchanged mapping should transfer from NRCB1 to NRCB2",
+    "Per-cell support, median residual, 90th-percentile absolute residual, and cell-median range computed from previously unopened CAL pixels",
+    "Only a separate NRCB2 diagnostic qualification is possible; the original PSF gate and every downstream science gate remain unchanged"
+  ],
+  "adaptationPolicy": {
+    "forbidden": [
+      "Lower the 100-star threshold after seeing RC71",
+      "Change source cuts, radii, cells, hash seed, background rule, or residual gates after reading CAL-pixel results",
+      "Use NRCB2 to fit the aperture offset it is meant to test",
+      "Treat the small-core result as an absolute PSF-independent flux measurement",
+      "Open artificial-star, Cepheid-distance, or H0 outcomes"
+    ],
+    "allowedAfterFailure": [
+      "Retire this holdout and design a disjoint sky tile",
+      "Replace the core integrator with a physics-based STPSF prediction under a new preregistration",
+      "Collect or construct additional spatial support without changing the RC71 receipt"
+    ]
+  },
+  "uncertaintyBudget": [
+    "Selection uncertainty: catalogue quality cuts and the support scan were development choices, so only CAL-pixel outcomes are single-use.",
+    "Measurement uncertainty: centering, undersampling, DQ masking, background structure, and neighbor wings can move a 3-pixel aperture.",
+    "Calibration uncertainty: one NRCB1 offset absorbs aperture fraction and zeropoint but may not transport across detector-dependent PSF structure.",
+    "Sampling uncertainty: only eight selected stars per cell are attempted, with a frozen minimum of six valid stars.",
+    "Extrapolation uncertainty: two detector tiles in one host do not represent NRCB3-4, Cepheids, or the distance ladder."
+  ],
+  "sources": [
+    "https://dolphot-jwst.readthedocs.io/en/latest/post-processing/catalogs.html",
+    "https://dolphot-jwst.readthedocs.io/en/latest/post-processing/output.html",
+    "https://jwst-docs.stsci.edu/jwst-near-infrared-camera/nircam-performance/nircam-point-spread-functions",
+    "https://jwst-docs.stsci.edu/jwst-near-infrared-camera/nircam-performance/nircam-absolute-flux-calibration-and-zeropoints",
+    "https://proceedings.neurips.cc/paper_files/paper/2015/file/bad5f33780c42f2588878a9d07405083-Paper.pdf"
+  ]
+}

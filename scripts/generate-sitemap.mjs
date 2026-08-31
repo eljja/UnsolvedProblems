@@ -10,7 +10,7 @@ const lastModified = process.env.SITEMAP_LASTMOD || new Intl.DateTimeFormat("en-
 }).format(new Date());
 const sandbox = { window: {} };
 
-const researchCycleFiles = ["research-cycle-data.js", ...Array.from({ length: 69 }, (_, index) => `research-cycle-${String(index + 3).padStart(2, "0")}-data.js`)];
+const researchCycleFiles = ["research-cycle-data.js", ...Array.from({ length: 70 }, (_, index) => `research-cycle-${String(index + 3).padStart(2, "0")}-data.js`)];
 for (const file of ["data.js", "expansion-data.js", "translations.js", "priority-data.js", "prize-data.js", "research-context.js", "solution-context.js", "deep-solution-context.js", ...researchCycleFiles]) {
   vm.runInNewContext(fs.readFileSync(path.join(root, file), "utf8"), sandbox, { filename: file });
 }

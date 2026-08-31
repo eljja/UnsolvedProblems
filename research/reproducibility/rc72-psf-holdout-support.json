@@ -1,0 +1,88 @@
+{
+  "cycleId": "RC-2026-72",
+  "experimentId": "PHOST-PSF-SUPPORT-RESCUE-1",
+  "openedData": "DOLPHOT catalogue coordinates and quality metrics only; no CAL-pixel aperture flux",
+  "supportRulesWereDevelopmentInspected": true,
+  "detectors": [
+    {
+      "detector": "NRCB1",
+      "catalogue": ".cache/rc69-phost-ast/dolphot-work/rc70-nrcb1.phot",
+      "catalogueSha256": "e0561d948d78dba8198cb6864e91609f1cdbc0cf1dfb2a178be592a648369772",
+      "catalogueRows": 14140,
+      "psfTrainingStars": 228,
+      "purityEligibleBeforeIsolation": 1526,
+      "tracks": {
+        "EE80-INDEPENDENT": {
+          "neighborExclusionRadiusPixels": 10.2,
+          "perCell": {
+            "x0y0": 14,
+            "x1y0": 19,
+            "x0y1": 4,
+            "x1y1": 12
+          },
+          "total": 49,
+          "minimumCell": 4,
+          "supportPass": false
+        },
+        "CORE-DIAGNOSTIC": {
+          "neighborExclusionRadiusPixels": 6,
+          "perCell": {
+            "x0y0": 58,
+            "x1y0": 92,
+            "x0y1": 21,
+            "x1y1": 89
+          },
+          "total": 260,
+          "minimumCell": 21,
+          "supportPass": true
+        }
+      }
+    },
+    {
+      "detector": "NRCB2",
+      "catalogue": ".cache/rc69-phost-ast/dolphot-work/rc70-nrcb2.phot",
+      "catalogueSha256": "6c5f4241d41f6f2ecc881072e2ba379abd0a3c4837aa7dfb96b3a7c10d3b9fe4",
+      "catalogueRows": 29382,
+      "psfTrainingStars": 165,
+      "purityEligibleBeforeIsolation": 1964,
+      "tracks": {
+        "EE80-INDEPENDENT": {
+          "neighborExclusionRadiusPixels": 10.2,
+          "perCell": {
+            "x0y0": 0,
+            "x1y0": 0,
+            "x0y1": 0,
+            "x1y1": 0
+          },
+          "total": 0,
+          "minimumCell": 0,
+          "supportPass": false
+        },
+        "CORE-DIAGNOSTIC": {
+          "neighborExclusionRadiusPixels": 6,
+          "perCell": {
+            "x0y0": 22,
+            "x1y0": 24,
+            "x0y1": 14,
+            "x1y1": 31
+          },
+          "total": 91,
+          "minimumCell": 14,
+          "supportPass": true
+        }
+      }
+    }
+  ],
+  "gates": {
+    "ee80Independent": {
+      "pass": false,
+      "criterion": "At least eight eligible non-overlapping EE80 stars in every 2x2 cell of both detectors."
+    },
+    "coreDiagnostic": {
+      "pass": true,
+      "criterion": "At least eight eligible six-pixel-isolated stars in every 2x2 cell of both detectors."
+    }
+  },
+  "firstDivergence": "EE80-INDEPENDENT support",
+  "decision": "Stop the large-aperture route without reading a residual; continue only the separately bounded core diagnostic if its support gate passes."
+}

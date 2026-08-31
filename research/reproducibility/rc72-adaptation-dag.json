@@ -1,0 +1,18 @@
+{
+  "cycleId": "RC-2026-72",
+  "id": "PHOST-PSF-RESCUE-DAG-1",
+  "root": "RC71-NRCB2-PSF-COUNT-FAIL",
+  "nodes": [
+    {"id": "RC71-NRCB2-PSF-COUNT-FAIL", "state": "immutable-failure", "next": ["EE80-SUPPORT", "CORE-SUPPORT"]},
+    {"id": "EE80-SUPPORT", "state": "support-only", "pass": "EE80-RESIDUAL-FUTURE", "fail": "PHYSICS-PSF-OR-NEW-TILE"},
+    {"id": "EE80-RESIDUAL-FUTURE", "state": "not-authorized-in-RC72", "next": []},
+    {"id": "CORE-SUPPORT", "state": "single-use-CAL-outcome", "pass": "CORE-TRANSFER", "fail": "RETIRE-RC72-HOLDOUT"},
+    {"id": "CORE-TRANSFER", "state": "diagnostic-only", "pass": "SEPARATE-NRCB2-DIAGNOSTIC-QUALIFICATION", "fail": "RETIRE-RC72-HOLDOUT"},
+    {"id": "SEPARATE-NRCB2-DIAGNOSTIC-QUALIFICATION", "state": "cannot-overwrite-RC71", "next": ["PREREGISTER-NRCB3-ORIGINAL-GATE"]},
+    {"id": "RETIRE-RC72-HOLDOUT", "state": "terminal-for-this-design", "next": ["PHYSICS-PSF-OR-NEW-TILE"]},
+    {"id": "PHYSICS-PSF-OR-NEW-TILE", "state": "requires-new-contract", "next": []},
+    {"id": "PREREGISTER-NRCB3-ORIGINAL-GATE", "state": "requires-new-cycle", "next": []}
+  ],
+  "firstDivergenceRule": "Stop at the earliest failed support, integrity, control, median, tail, or spatial gate. Later metrics may be reported diagnostically but cannot reverse the decision.",
+  "nonRetroactivity": "No path changes RC71-NRCB2-PSF-COUNT-FAIL, and no failed RC72 node may be repaired with the same CAL-pixel holdout."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "CONN-EVIDENCE-042",
+  "cycleId": "RC-2026-72",
+  "type": "Support-first transport under adaptive validation",
+  "strength": "strong-for-the-validation-structure",
+  "problemIds": ["UP-003", "UP-625", "UP-626"],
+  "commonStructure": "A measurement rule learned or qualified in a source domain is proposed for a target domain. The residual is interpretable only if the target has support under the same eligibility rule and the adjudicator itself passes on an independent control before target outcomes are used.",
+  "variableMapping": [
+    {
+      "UP-003": "source domain NRCB1, target domain NRCB2, unit star, observation operator WCS plus PSF/aperture measurement, target residual in magnitudes",
+      "UP-625": "source distribution P, target distribution Q, overlap indicator S(x), transported loss L_Q, finite cell counts n_c",
+      "UP-626": "analysis choice A, holdout transcript T, pre-outcome contract C, first-divergence gate G, retired outcome after failure"
+    }
+  ],
+  "evidence": [
+    "The EE80 route fails before residual estimation because NRCB2 has no eligible 10.2-pixel-isolated star in any 2x2 cell.",
+    "The core route has catalogue support but the adjudicator fails its NRCB1 control before the NRCB2 result can be interpreted.",
+    "The frozen adaptation DAG prevents either failure from being repaired by a result-dependent threshold change.",
+    "Independent Python and Node implementations agree on the first divergence and all downstream diagnostic gates."
+  ],
+  "validWhen": [
+    "source and target units share the same eligibility definition",
+    "support is measured before target residuals are interpreted",
+    "the adjudicator is qualified on a control not used as the target",
+    "analysis adaptations are represented as explicit branches before outcomes",
+    "a failed holdout is retired rather than repeatedly optimized"
+  ],
+  "breaksWhen": [
+    "spatial dependence makes nominal cell counts a poor measure of effective support",
+    "source and target require different nuisance parameters or calibration offsets",
+    "the control does not span the target's PSF, background, or crowding regime",
+    "holdout outcomes leak into source selection or gate design",
+    "a proxy failure is silently relabeled as success"
+  ],
+  "transferableMethod": "Use a two-dimensional gate: establish support under a frozen eligibility rule, then qualify the adjudicator on a source-domain control before revealing a target-domain effect. Record every adaptation as a directed branch with a first-divergence and a retired-holdout state.",
+  "minimumValidationTest": "On a fresh external NIRCam calibration field, preregister isolated stars that span detector position and subpixel phase. Require the same WCS-to-pixel integrator to pass a 0.03-mag tail bound without fitting spatial offsets, then transfer a frozen physics-based PSF or scene model to a disjoint NGC 3447 tile. The connection survives if support and control qualification predict target validity; it weakens if those gates do not discriminate target failure.",
+  "failureBoundary": "RC72 verifies the logical validation structure and two negative branches in one two-detector tile. It does not establish population-level transport guarantees, an effective sample-size theorem, or a corrected photometric operator.",
+  "validationStatus": "verified for support enumeration, non-retroactive branch execution, first-divergence preservation, and independent numerical adjudication; unverified for a physics-based replacement and external detector transport",
+  "reviewedOn": "2026-09-01"
+}

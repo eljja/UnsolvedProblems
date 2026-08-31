@@ -1,0 +1,124 @@
+{
+  "cycleId": "RC-2026-72",
+  "reviewedOn": "2026-09-01",
+  "selectedProblems": ["UP-003", "UP-625", "UP-626"],
+  "selectionReason": "RC71 left a detector-level proxy failure whose practical meaning could be tested without opening artificial stars or Cepheid outcomes. The same experiment also exposes a general transport problem—support before loss—and a post-selection problem—how to adapt after a failed gate without optimizing on the failure.",
+  "newVerifiedFacts": [
+    "The purity-oriented catalogue rule yields 260 six-pixel-isolated candidates in NRCB1 and 91 in NRCB2, with at least 21 and 14 respectively in every 2x2 cell.",
+    "At the physically motivated 10.2-pixel non-overlap distance, NRCB1 has only 49 candidates and its sparsest cell has four; NRCB2 has zero in all four cells.",
+    "The EE80-INDEPENDENT route therefore stops on support and computes no large-aperture residual.",
+    "The coordinate hash selected exactly eight core candidates per cell and detector, excluding every listed DOLPHOT PSF-training coordinate.",
+    "All sixteen original CAL files match the RC69 MAST manifest hashes before aperture integration.",
+    "The first core divergence is the NRCB1 control: p90 absolute residual is 0.302521 mag in F090W and 0.210339 mag in F150W, exceeding 0.03 mag.",
+    "NRCB1 retains cell-median ranges of 0.186440 and 0.204194 mag after one per-filter offset, so a global core fraction is not spatially stable at the required level.",
+    "NRCB2 detector medians are +0.302432 mag in F090W and +0.165408 mag in F150W, but they are not interpretable as detector effects because the control failed first.",
+    "NRCB2 also misses the valid-star minimum in one F090W cell, while the other candidate residual, tail, and spatial gates fail diagnostically.",
+    "Node independently reconstructs the control-only offsets, all valid measurement residuals, star medians, filter summaries, and gates from the Python output rows.",
+    "The original NRCB2 100-star PSF failure and the NRCB3-4, artificial-star, distance, and H0 closures are unchanged."
+  ],
+  "hypothesisAdjudication": [
+    {
+      "code": "H72-A",
+      "claim": "A conventional non-overlapping EE80 aperture holdout has enough spatial support to adjudicate both detectors.",
+      "prediction": "Every 2x2 cell in NRCB1 and NRCB2 contains at least eight purity-selected stars separated by 10.2 pixels.",
+      "result": "Rejected at support: NRCB1 minimum cell is four and NRCB2 has zero in every cell.",
+      "decision": "No EE80 residual was computed."
+    },
+    {
+      "code": "H72-B",
+      "claim": "A single per-filter core-aperture offset learned on NRCB1 leaves a sufficiently small control tail.",
+      "prediction": "NRCB1 p90 absolute residual is at most 0.03 mag in F090W and F150W.",
+      "result": "Rejected: 0.302521 and 0.210339 mag.",
+      "decision": "Retire the exact core holdout before interpreting NRCB2."
+    },
+    {
+      "code": "H72-C",
+      "claim": "If the core adjudicator were qualified, its unchanged NRCB1 offset would transport to NRCB2 within 0.01 mag.",
+      "prediction": "Both detector medians and every cell median stay within 0.01 mag, p90 stays within 0.03 mag, and cell range stays within 0.02 mag.",
+      "result": "Not adjudicable as a detector hypothesis because H72-B failed first; diagnostic NRCB2 values exceed all effect gates.",
+      "decision": "Do not estimate a detector correction from the failed diagnostic."
+    },
+    {
+      "code": "H72-D",
+      "claim": "A support-first adaptation DAG can preserve a failed proxy while testing a separate rescue without post-outcome threshold repair.",
+      "prediction": "The large-aperture branch stops on support, the core branch stops at the control, and neither path changes RC71 or opens downstream outcomes.",
+      "result": "Supported for this execution and independently reproduced.",
+      "decision": "Retain the state-machine pattern for future measurement-operator rescues."
+    }
+  ],
+  "survivingHypotheses": [
+    "NRCB2 may still have adequate PSF photometry; RC72 rejected adjudicators, not the underlying photometry.",
+    "A physics-based PSF or neighbor-aware scene model may separate aperture fraction, subpixel phase, and crowding better than a global small-core offset.",
+    "A disjoint tile or external calibration field may provide the isolated support missing from the current NRCB2 tile."
+  ],
+  "failedOrRejectedAttempts": [
+    "The original 100-star gate remains failed; its threshold was not reduced to 91.",
+    "The EE80 large-aperture route was stopped before residuals because target support was zero.",
+    "The small-core route was retired at the NRCB1 control tail rather than recalibrated by cell or detector.",
+    "An initial Python execution stopped before producing an output because unsigned DQ data cannot be memory mapped under Astropy; rerunning with in-memory DQ loading changed no scientific rule and is recorded as an implementation failure.",
+    "NRCB2 diagnostic residuals were not promoted to a correction or a distance-ladder effect after the control failure."
+  ],
+  "minimumMeaningfulAdvance": "A public isolated-star calibration field must first qualify WCS centering, subpixel integration, and a physics-based PSF or scene-model residual to the frozen tail bound; only then may a fresh, disjoint NGC 3447 holdout test detector transport.",
+  "newApproach": {
+    "name": "External integrator qualification followed by disjoint physics-PSF transport",
+    "hypothesis": "The large RC72 control tail is dominated by an unmodeled measurement operator—subpixel centering, spatial PSF fraction, neighbor wings, or local background—rather than irreducible source noise.",
+    "difference": "Instead of tuning aperture radii on NGC 3447, qualify the entire pixel-to-flux operator on isolated calibration stars with known spatial and subpixel coverage, freeze its nuisance model, then test it once on a disjoint target tile.",
+    "bottleneck": "The current adjudicator cannot tell detector error from its own spatially varying aperture fraction.",
+    "requirements": ["public NIRCam isolated-star CAL exposures", "STPSF or an independently validated scene model", "detector position and subpixel-phase stratification", "a disjoint NGC 3447 validation tile", "independent pixel and decision implementations"],
+    "firstTest": "Select at least eight isolated calibration stars in each detector-position/subpixel stratum using WCS and catalogue metrics only. Before fitting target data, require the model to keep p90 absolute residual within 0.03 mag and cell-median range within 0.02 mag under leave-one-exposure-out validation.",
+    "success": "The external control passes every frozen support, tail, and spatial gate, and the unchanged model produces an interpretable fresh-tile NRCB1/NRCB2 contrast.",
+    "reject": "The external control repeats a tail above 0.03 mag or requires target-specific spatial offsets.",
+    "stop": "Stop on inadequate stratum support, a failed external control, leakage from the target tile, or disagreement between independent implementations.",
+    "failureValue": "Failure identifies whether centering, PSF physics, background, or crowding must be modeled before another detector claim is attempted.",
+    "priorArtSearch": ["NIRCam isolated standard star subpixel phase aperture photometry", "STPSF empirical residual detector position", "JWST NIRCam PSF photometry external validation crowded field", "scene model photometry NIRCam undersampled PSF"]
+  },
+  "workPackages": [
+    {
+      "code": "W72-1",
+      "purpose": "Qualify the adjudicator away from NGC 3447.",
+      "method": "Freeze an isolated-star calibration dataset and stratify by detector position, filter, and subpixel phase.",
+      "input": "Official CAL products, WCS and CRDS receipts, and a source list not derived from NGC 3447 residuals.",
+      "output": "External support manifest and leave-one-exposure-out residual ledger.",
+      "pass": "Every stratum has adequate support; p90 <=0.03 mag and spatial range <=0.02 mag.",
+      "fail": "Any control gate fails.",
+      "next": "Localize the first nuisance term; do not open a target tile."
+    },
+    {
+      "code": "W72-2",
+      "purpose": "Separate centering, PSF, neighbor, and background contributions.",
+      "method": "Compare fixed aperture, STPSF forward model, and neighbor-aware scene model under the same external stars and residual definition.",
+      "input": "External ledger from W72-1 and frozen model families.",
+      "output": "First-divergence table and uncertainty decomposition.",
+      "pass": "One model passes without target-specific offsets and two implementations agree.",
+      "fail": "No model passes or selection changes after outcomes.",
+      "next": "Acquire additional calibration support or stop the rescue program."
+    },
+    {
+      "code": "W72-3",
+      "purpose": "Test detector transport once on untouched target data.",
+      "method": "Apply the winning frozen operator to a WCS-selected disjoint NGC 3447 tile with a new coordinate hash.",
+      "input": "Qualified operator, disjoint tile, immutable RC71 and RC72 failures.",
+      "output": "One NRCB1 control and NRCB2 candidate decision receipt.",
+      "pass": "Support and control pass before NRCB2 effect gates, with no spatial or tail excess.",
+      "fail": "Retire the new tile and keep every downstream gate closed.",
+      "next": "Only a passing result can authorize a separately preregistered NRCB3 baseline."
+    }
+  ],
+  "uncertaintyBudget": [
+    "Measurement: subpixel centering, undersampling, DQ masks, annular background, and neighbor wings dominate the rejected core integrator.",
+    "Calibration: one NRCB1 offset cannot represent detector-position PSF fraction or time-dependent focus.",
+    "Sampling: only 26-27 stars per detector-filter retained at least three valid exposures, and some cells fell below six.",
+    "Selection: catalogue support radii were explored before the CAL outcome; the experiment is transparent but not a pristine catalogue holdout.",
+    "Extrapolation: one host and two detector tiles do not establish transport to NRCB3-4, Cepheids, or H0."
+  ],
+  "connections": [
+    {
+      "id": "CONN-EVIDENCE-042",
+      "problemIds": ["UP-003", "UP-625", "UP-626"],
+      "commonStructure": "Support must precede target loss, and adjudicator qualification must precede target interpretation under an immutable adaptation graph.",
+      "minimumTest": "Qualify the same operator on an external isolated-star control, then transfer it once to a disjoint target tile."
+    }
+  ],
+  "claimBoundary": "RC72 rejects a large-aperture support route and a small-core adjudicator for the current two-detector tiles. It does not prove NRCB2 photometry inaccurate, does not calculate a correction, does not validate a replacement PSF model, and does not estimate a Cepheid distance or Hubble constant.",
+  "exactNextStart": "Do not reuse the RC72 holdout. Identify a public isolated NIRCam calibration-star dataset and preregister detector-position and subpixel-phase strata, WCS centering checks, STPSF or scene-model parameters, leave-one-exposure-out residuals, the same 0.03-mag tail and 0.02-mag spatial bounds, and an independent implementation. Only after that external control passes may a fresh disjoint NGC 3447 tile be selected."
+}

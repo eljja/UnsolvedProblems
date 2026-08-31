@@ -90,8 +90,8 @@ const connection = connections.find(item => item.id === "CONN-EVIDENCE-041");
 assert(connection?.reviewedOn === "2026-09-01" && connection.validationStatus.text.includes("PSF count transport"), "RC71 connection update is missing");
 
 for (const page of ["index.html", "solve.html", "research-log.html"]) assert(text(page).includes("research-cycle-71-data.js?v=20260901-cycle71"), `${page}: RC71 script is missing`);
-assert(text("scripts/generate-sitemap.mjs").includes("length: 69"), "Sitemap generator omits RC71");
-assert((text("sitemap.xml").match(/<loc>/g) || []).length === 1632, "RC71 sitemap URL count changed");
+assert(Number(text("scripts/generate-sitemap.mjs").match(/length:\s*(\d+)/)?.[1]) >= 69, "Sitemap generator omits RC71");
+assert((text("sitemap.xml").match(/<loc>/g) || []).length >= 1632, "RC71 sitemap URL count changed");
 const publicProse = text("research-cycle-71-data.js");
 for (const forbidden of ["전공자 포인트", "1단계", "개수를 맞", "아래 시도는 개별 논문"]) assert(!publicProse.includes(forbidden), `RC71 public prose contains forbidden wording: ${forbidden}`);
 

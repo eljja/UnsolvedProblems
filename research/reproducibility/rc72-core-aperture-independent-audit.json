@@ -1,0 +1,151 @@
+{
+  "cycleId": "RC-2026-72",
+  "experimentId": "PHOST-PSF-SUPPORT-RESCUE-1-INDEPENDENT-DECISION-AUDIT",
+  "implementation": "Node.js recomputation from per-exposure aperture and DOLPHOT rows; no Python summaries or gates trusted",
+  "resultSha256": "df5a6ccd292ea2710c1dce03feab0b8832bc3c94a84f6d5e82e39f6e58aa2f3c",
+  "offsets": {
+    "F090W": 25.773254362000003,
+    "F150W": 25.482389634
+  },
+  "summaries": {
+    "NRCB1": {
+      "F090W": {
+        "n": 27,
+        "median": 0.00948434200000392,
+        "p90abs": 0.3025205284000036,
+        "spatialRange": 0.18644027725000178,
+        "cells": {
+          "x0y0": {
+            "n": 7,
+            "median": 0.061690769000005474,
+            "p90abs": 0.292606572800002
+          },
+          "x1y0": {
+            "n": 8,
+            "median": -0.020315548749998413,
+            "p90abs": 0.07386102405000354
+          },
+          "x0y1": {
+            "n": 6,
+            "median": 0.009020106250003934,
+            "p90abs": 0.07026176349999957
+          },
+          "x1y1": {
+            "n": 6,
+            "median": 0.16612472850000337,
+            "p90abs": 0.5607895267500025
+          }
+        }
+      },
+      "F150W": {
+        "n": 26,
+        "median": -0.003082365999999226,
+        "p90abs": 0.21033870699999913,
+        "spatialRange": 0.20419355825000185,
+        "cells": {
+          "x0y0": {
+            "n": 8,
+            "median": 0.08380928875000127,
+            "p90abs": 0.23756252709999898
+          },
+          "x1y0": {
+            "n": 8,
+            "median": 0.006231557500000484,
+            "p90abs": 0.10344211160000058
+          },
+          "x0y1": {
+            "n": 5,
+            "median": -0.12038426950000058,
+            "p90abs": 0.2316815006999992
+          },
+          "x1y1": {
+            "n": 5,
+            "median": 0.05561587800000112,
+            "p90abs": 0.10713788339999937
+          }
+        }
+      }
+    },
+    "NRCB2": {
+      "F090W": {
+        "n": 27,
+        "median": 0.3024319590000033,
+        "p90abs": 0.7344004994000026,
+        "spatialRange": 0.237049442,
+        "cells": {
+          "x0y0": {
+            "n": 5,
+            "median": 0.469889086000002,
+            "p90abs": 0.7575764532000037
+          },
+          "x1y0": {
+            "n": 7,
+            "median": 0.3056332965000035,
+            "p90abs": 0.8028316038000022
+          },
+          "x0y1": {
+            "n": 8,
+            "median": 0.36250694650000437,
+            "p90abs": 0.7228375158000023
+          },
+          "x1y1": {
+            "n": 7,
+            "median": 0.232839644000002,
+            "p90abs": 0.2871999021000033
+          }
+        }
+      },
+      "F150W": {
+        "n": 27,
+        "median": 0.16540829150000036,
+        "p90abs": 0.7104943514000011,
+        "spatialRange": 0.2471366967499975,
+        "cells": {
+          "x0y0": {
+            "n": 7,
+            "median": 0.17036764800000093,
+            "p90abs": 0.8558395191000018
+          },
+          "x1y0": {
+            "n": 7,
+            "median": 0.1252876260000022,
+            "p90abs": 0.5200934213000005
+          },
+          "x0y1": {
+            "n": 6,
+            "median": 0.3724243227499997,
+            "p90abs": 0.8573282310000012
+          },
+          "x1y1": {
+            "n": 7,
+            "median": 0.14235169699999872,
+            "p90abs": 0.3473880731000002
+          }
+        }
+      }
+    }
+  },
+  "gates": {
+    "ee80IndependentSupport": false,
+    "coreCatalogueSupport": true,
+    "nrcb1ControlTail": false,
+    "nrcb2ValidSupport": false,
+    "nrcb2DetectorMedian": false,
+    "nrcb2CellMedian": false,
+    "nrcb2Tail": false,
+    "nrcb2SpatialRange": false,
+    "coreDiagnostic": false
+  },
+  "checks": {
+    "offsetsMatch": true,
+    "measurementRowsMatch": true,
+    "starRowsMatch": true,
+    "summaryRowsMatch": true,
+    "gatesMatch": true,
+    "originalFailureImmutable": true,
+    "astStillClosed": true
+  },
+  "status": "pass",
+  "firstDivergence": "EE80-INDEPENDENT support",
+  "conclusion": "The independent decision implementation reproduces the large-aperture support failure and the small-core control failure. The NRCB2 rescue is rejected without changing any frozen threshold."
+}

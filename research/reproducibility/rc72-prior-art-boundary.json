@@ -1,0 +1,34 @@
+{
+  "cycleId": "RC-2026-72",
+  "reviewedOn": "2026-09-01",
+  "question": "Which elements of support-first PSF rescue are established, and what did RC72 actually add?",
+  "establishedMethods": [
+    "DOLPHOT quality cuts, per-frame photometry, PSF diagnostics, and aperture corrections are established software practices.",
+    "NIRCam encircled-energy curves, PHOTMJSR conversion, detector-dependent calibration, and STPSF modeling are established instrument methods.",
+    "Spatial holdouts, preregistered thresholds, controlled holdout access, and independent decision code are established validation practices.",
+    "Aperture photometry with annular background estimation is established and is known to be sensitive to centering and crowding in undersampled fields."
+  ],
+  "rc72Combination": "RC72 combines a physically sized EE80 support gate, a coordinate-hash 2x2 spatial split, explicit PSF-training-star exclusion, a control-only aperture offset, a single-use CAL-pixel outcome, a non-retroactive adaptation DAG, and an independent decision implementation. This is a project-specific validation receipt, not a claimed new photometry method.",
+  "noveltyBoundary": "No claim of methodological novelty is made. The contribution is the falsifiable ordering of support before residuals and the preserved negative result: neither a non-overlapping EE80 sample nor the frozen small-core adjudicator rescues NRCB2 in this tile.",
+  "validityConditions": [
+    "Every sealed contract and candidate-manifest hash matches before CAL pixels are opened.",
+    "PSF-training coordinates are excluded and NRCB2 never fits its own aperture offset.",
+    "The large-aperture branch stops on support without computing residuals.",
+    "The small-core branch stops at the first control or candidate gate and is never retuned on the same pixels.",
+    "Python and Node independently agree on every numerical decision."
+  ],
+  "breakConditions": [
+    "The pre-outcome catalogue support inspection is described as a fully untouched holdout.",
+    "A global aperture offset is fitted on NRCB2 or separately by NRCB2 cell.",
+    "The 3-pixel core is described as containing a PSF-independent total flux.",
+    "Thresholds or radii are changed after observing the RC72 result.",
+    "A local detector diagnostic is transported to Cepheid distance or H0."
+  ],
+  "searchQueries": [
+    "JWST NIRCam crowded field independent aperture PSF photometry validation",
+    "DOLPHOT PSF star holdout detector spatial validation",
+    "NIRCam undersampling centroid aperture correction detector dependence",
+    "STPSF spatial PSF validation NIRCam short wavelength crowded field",
+    "adaptive holdout preregistration astronomical pipeline validation"
+  ]
+}

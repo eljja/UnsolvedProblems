@@ -1,0 +1,94 @@
+{
+  "cycleId": "RC-2026-72",
+  "reviewedOn": "2026-09-01",
+  "scope": "Support-first independent-flux rescue after the frozen NRCB2 PSF-star-count failure",
+  "sources": [
+    {
+      "id": "dolphot_catalog_culling_2026",
+      "type": "official-documentation",
+      "title": "DOLPHOT JWST — Culling the catalog",
+      "url": "https://dolphot-jwst.readthedocs.io/en/latest/post-processing/catalogs.html",
+      "checkedOn": "2026-09-01",
+      "resultDate": "living documentation; crawled as current on 2026-09-01",
+      "supports": "Defines source type, SNR, sharpness, crowding, and flag semantics and gives simultaneous F090W/F150W purity-oriented cuts, mostly pure to SNR 10. It does not guarantee isolated aperture support in NGC 3447."
+    },
+    {
+      "id": "dolphot_output_quality_2026",
+      "type": "official-documentation",
+      "title": "DOLPHOT JWST — Examining the logs",
+      "url": "https://dolphot-jwst.readthedocs.io/en/latest/post-processing/output.html",
+      "checkedOn": "2026-09-01",
+      "resultDate": "living documentation; crawled as current on 2026-09-01",
+      "supports": "Defines the per-frame columns and the desirable 100-star PSF/aperture diagnostics that RC71 preserved as failed."
+    },
+    {
+      "id": "nircam_psf_encircled_energy_2026",
+      "type": "official-instrument-documentation",
+      "title": "NIRCam Point Spread Functions",
+      "url": "https://jwst-docs.stsci.edu/jwst-near-infrared-camera/nircam-performance/nircam-point-spread-functions",
+      "checkedOn": "2026-09-01",
+      "resultDate": "living STScI documentation; crawled on 2026-09-01",
+      "supports": "Reports an empirical F090W EE80 radius of 0.157 arcsec and a 0.031 arcsec short-wave pixel scale, motivating a 5.1-pixel aperture and 10.2-pixel non-overlap test."
+    },
+    {
+      "id": "nircam_flux_calibration_2026",
+      "type": "official-calibration-documentation",
+      "title": "NIRCam Absolute Flux Calibration and Zeropoints",
+      "url": "https://jwst-docs.stsci.edu/jwst-near-infrared-camera/nircam-performance/nircam-absolute-flux-calibration-and-zeropoints",
+      "checkedOn": "2026-09-01",
+      "resultDate": "latest imaging calibration update reported as March 2026",
+      "supports": "CAL SCI arrays are MJy/sr; PHOTMJSR converts surface brightness to DN/s; PIXAR_SR and calibration factors vary by detector. The page also documents continuing calibration updates."
+    },
+    {
+      "id": "adaptive_holdout_dwork_2015",
+      "type": "primary-paper",
+      "title": "Generalization in Adaptive Data Analysis and Holdout Reuse",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2015/file/bad5f33780c42f2588878a9d07405083-Paper.pdf",
+      "publishedOn": "2015-12-01",
+      "checkedOn": "2026-09-01",
+      "supports": "Shows why repeated analyst access can overfit a holdout and motivates a controlled, one-use outcome boundary. It does not prove validity under astronomical spatial dependence."
+    },
+    {
+      "id": "dolphot_jwst_crowded_photometry_2024",
+      "type": "primary-paper",
+      "title": "The JWST Resolved Stellar Populations Early Release Science Program V. DOLPHOT Stellar Photometry for NIRCam and NIRISS",
+      "url": "https://doi.org/10.3847/1538-4365/ad2600",
+      "publishedOn": "2024-04-01",
+      "checkedOn": "2026-09-01",
+      "supports": "Validates the JWST DOLPHOT modules in crowded-field applications; it does not validate the RC72 core integrator or NRCB1-to-NRCB2 transport."
+    },
+    {
+      "id": "shoes_perfect_host_2025",
+      "type": "primary-preprint",
+      "title": "The Perfect Host: JWST Cepheid Observations in a Background-Free SN Ia Host Confirm No Bias in Hubble-Constant Measurements",
+      "url": "https://arxiv.org/abs/2509.01667",
+      "publishedOn": "2025-09-01",
+      "checkedOn": "2026-09-01",
+      "supports": "NGC 3447 and the published distance-ladder context. It does not adjudicate detector-level PSF support or this raw-pixel diagnostic."
+    }
+  ],
+  "classification": {
+    "verifiedBeforePixelOpening": [
+      "RC71's 91-96-star PSF failure and all downstream closed gates remain immutable.",
+      "The 16 CAL files required by the two-detector diagnostic match the RC69 MAST manifest hashes.",
+      "Catalogue support rules and their exploratory inspection were disclosed before CAL-pixel residuals were computed.",
+      "The coordinate-hash rule selected exactly eight stars in each 2x2 cell and detector for the core route."
+    ],
+    "verifiedByRC72": [
+      "The large EE80 non-overlap route has inadequate support: NRCB1's minimum cell has four stars and NRCB2 has zero in every cell.",
+      "The core route had catalogue support but failed first at the NRCB1 control tail, with p90 absolute residuals 0.303 and 0.210 mag.",
+      "NRCB2 residuals therefore cannot be interpreted as detector transport error under this adjudicator.",
+      "Python measurement and Node decision implementations reproduce offsets, rows, summaries, and gates."
+    ],
+    "inferences": [
+      "A global core-aperture offset is insufficient to absorb centering, undersampling, neighbor wings, and background structure across the NRCB1 tile.",
+      "A physics-based PSF or an externally qualified scene model is more informative than retuning the failed aperture on the retired holdout."
+    ],
+    "unverifiedProposals": [
+      "Qualify WCS centering and the pixel integrator on isolated public calibration stars before returning to NGC 3447.",
+      "Use a fresh disjoint tile or a preregistered STPSF/scene-model adjudicator with explicit focus, jitter, and neighbor terms."
+    ]
+  },
+  "prizeReview": "No active cash prize or official challenge award was found for these three problem records; RC72 adds no prize amount.",
+  "statusChangeReview": "No cited source or RC72 result resolves the Hubble tension, finite-sample transport, or post-selection inference. RC72 narrows the validation path by rejecting two rescue routes for this tile."
+}

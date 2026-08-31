@@ -1,0 +1,33 @@
+{
+  "cycleId": "RC-2026-72",
+  "sealedOn": "2026-09-01",
+  "outcomeBoundary": "No CAL-pixel aperture flux or cross-method residual had been computed when these hashes were created.",
+  "developmentInspectionDisclosed": true,
+  "artifacts": [
+    {
+      "file": "research/reproducibility/rc72-psf-rescue-contract.json",
+      "bytes": 8103,
+      "sha256": "8e77f9652af3b8851b48e5a5383c5cb02d84f961800b43ddac86dbce1a8b9411"
+    },
+    {
+      "file": "research/reproducibility/rc72-adaptation-dag.json",
+      "bytes": 1447,
+      "sha256": "ccb6f36a532d90401a29eb31292724a9fa0475ed8d30bf6f85929a0f27485e24"
+    },
+    {
+      "file": "research/reproducibility/rc72-psf-holdout-support.json",
+      "bytes": 2664,
+      "sha256": "3856b9247e566ec3f23bfe75ca4d09708be722f3b831043d450874dcd2fab220"
+    },
+    {
+      "file": "research/reproducibility/rc72-core-holdout-manifest.json",
+      "bytes": 217642,
+      "sha256": "c41d933f3c9c38a92de2c5d85f23d9e8cbb720139b65e391e13562eb79a29303"
+    }
+  ],
+  "candidateCounts": {
+    "NRCB1": 32,
+    "NRCB2": 32
+  },
+  "authorizedNextAction": "Run exactly one frozen CORE-DIAGNOSTIC CAL-pixel integration."
+}
