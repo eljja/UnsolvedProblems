@@ -1,0 +1,39 @@
+{
+  "id": "CONN-EVIDENCE-040",
+  "cycleId": "RC-2026-67",
+  "problemIds": ["UP-003", "UP-625", "UP-626"],
+  "type": "Detection-conditioned selection and missingness",
+  "strength": "moderate empirical diagnostic; strong structural correspondence",
+  "sharedBottleneck": "The scientific target exists before a detector-specific threshold and deblender create the observed catalogue. Conditioning inference on catalogue inclusion can change both the represented population and the measurement-error law.",
+  "variableMapping": [
+    {
+      "up003": "Cepheid coordinate, local background, crowding, and custom PSF flux",
+      "up625": "Latent target, deployment covariates, selection probability, and shifted outcome error",
+      "up626": "Candidate identity, data-selected inclusion event, reported statistic, and conditional law"
+    },
+    {
+      "up003": "F090W/F150W segmentation inclusion",
+      "up625": "Missing-not-at-random observation indicator",
+      "up626": "Selection event on which valid inference must condition"
+    }
+  ],
+  "validWhen": [
+    "The author-coordinate list is fixed independently of the archive catalogue.",
+    "The coordinate transform and matching radius are frozen on a disjoint development split.",
+    "Artificial stars reproduce the magnitude, colour, PSF, and local-background range of the real targets.",
+    "Inclusion probabilities and measurement residuals are estimated separately by background and component strata.",
+    "The confirmatory reduction is independent of the pipeline used to tune detection and deblending."
+  ],
+  "breaksWhen": [
+    "Detection is effectively complete over the target population.",
+    "Missingness is independent of the scientific residual after conditioning on recorded covariates.",
+    "The catalogue coordinates are too uncertain for a fixed-radius crossmatch.",
+    "Different components contain intrinsically different source populations that injections do not reproduce.",
+    "The same catalogue is used to define targets, tune the transform, and judge recovery."
+  ],
+  "surfaceAnalogyRisk": "A recovery-rate difference is not itself a crowding bias. Dust, source density, morphology, astrometric residuals, segmentation, and component population all change together. The connection is causal only if controlled injections or forced measurements isolate the detector and background path.",
+  "minimumValidationTest": "Hash the author IDs and coordinates, learn one rigid translation on even IDs, and keep odd IDs untouched. At every odd-ID position, run forced PSF photometry whether or not a catalogue source exists. Inject magnitude- and colour-matched stars into frozen local-background strata, process them through two independent reductions, and estimate inclusion probabilities and conditional magnitude residuals. The link is supported only if the observed component recovery contrast falls inside the injection-predicted range and inverse-probability or forced-measurement sensitivity changes the published component contrast by less than the preregistered 0.01-mag threshold.",
+  "transferableMethod": "Replace complete-case analysis with a target-first ledger: frozen target identity, detector-independent position, detection indicator for every pipeline, forced measurement, injection-derived inclusion probability, and a final adjudication set never used to tune the detector.",
+  "validationStatus": "The public-catalogue recoverability diagnostic is independently reproduced. The causal bridge to Cepheid magnitude bias remains unvalidated until position-forced photometry and matched injections are completed.",
+  "reviewedOn": "2026-08-31"
+}

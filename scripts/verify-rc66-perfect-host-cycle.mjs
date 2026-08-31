@@ -108,7 +108,7 @@ assert(new Set(updatedDefinitions).size === 3 && new Set(EnglishDefinitions).siz
 assert(sources.shoes_jwst_validation_tables_2024.publishedOn === "2024-12-10" && sources.shoes_perfect_host_source_2025.publishedOn === "2025-09-01", "RC66 primary sources missing or stale");
 
 for (const page of ["index.html", "solve.html", "research-log.html"]) assert(readText(page).includes("research-cycle-66-data.js?v=20260831-cycle66"), `${page}: RC66 script missing`);
-assert(readText("scripts/generate-sitemap.mjs").includes("length: 64"), "Sitemap generator omits RC66");
+assert(/length:\s*(?:6[4-9]|[7-9]\d|\d{3,})/.test(readText("scripts/generate-sitemap.mjs")), "Sitemap generator omits RC66");
 const publicProse = readText("research-cycle-66-data.js");
 for (const forbidden of ["전공자 포인트", "1단계", "개수를 맞", "아래 시도는 개별 논문"]) assert(!publicProse.includes(forbidden), `RC66 public prose contains forbidden wording: ${forbidden}`);
 

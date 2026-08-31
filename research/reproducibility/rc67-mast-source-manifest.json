@@ -1,0 +1,57 @@
+{
+  "cycleId": "RC-2026-67",
+  "reviewedOn": "2026-08-31",
+  "doi": "10.17909/96p0-6z78",
+  "files": [
+    {
+      "path": ".cache/rc67-mast/datacite-doi.json",
+      "role": "DataCite DOI metadata",
+      "url": "https://api.datacite.org/dois/10.17909/96p0-6z78",
+      "bytes": 3723,
+      "sha256": "47f4facda89516cf33ba909717e2f973cfdb04940c37b2935cb04e3146b534ed"
+    },
+    {
+      "path": ".cache/rc67-mast/mast-doi-caom.json",
+      "role": "MAST DOI observation inventory",
+      "url": "https://mast.stsci.edu/api/v0/invoke",
+      "bytes": 324227,
+      "sha256": "597ec0ccca00584ca2f88cb3a1d940023e2bc2fb8bb1b09c48920763e87650ac"
+    },
+    {
+      "path": ".cache/rc67-mast/mast-ngc3447-observations.json",
+      "role": "GO-2875 NGC-3447 observation rows",
+      "url": "https://mast.stsci.edu/api/v0/invoke",
+      "bytes": 17825,
+      "sha256": "0c12f44fab6824bfc2865920dbab8b90901af132ef5ce0820a6e8f6cd2512637"
+    },
+    {
+      "path": ".cache/rc67-mast/mast-ngc3447-products.json",
+      "role": "Products for the six NGC-3447 observation rows",
+      "url": "https://mast.stsci.edu/api/v0/invoke",
+      "bytes": 1091828,
+      "sha256": "4b5a56294432964a42f647a93c4ced5a6a76868efb1a286f0ee164bd94bdf902"
+    },
+    {
+      "path": ".cache/rc67-mast/f090w_cat.ecsv",
+      "role": "Official JWST pipeline NIRCam F090W level-3 source catalog",
+      "url": "mast:JWST/product/jw02875-o012_t009_nircam_clear-f090w_cat.ecsv",
+      "bytes": 7203818,
+      "sha256": "9b0063362639b6933b097bcde34305c57485146b3f8dbbab27a4f57fddc3951f"
+    },
+    {
+      "path": ".cache/rc67-mast/f150w_cat.ecsv",
+      "role": "Official JWST pipeline NIRCam F150W level-3 source catalog",
+      "url": "mast:JWST/product/jw02875-o012_t009_nircam_clear-f150w_cat.ecsv",
+      "bytes": 12315103,
+      "sha256": "f50661a091197dc795038ed206061be5bcb4a38567f757cc9cff6334811aa58a"
+    },
+    {
+      "path": ".cache/rc65-jwst-host-source/apjlae0ad6t3_mrt.txt",
+      "role": "Version-of-record phase-corrected NGC 3447 Cepheid table",
+      "url": "https://iopscience.iop.org/2041-8205/989/1/L32/suppdata/apjlae0ad6t3_mrt.txt?doi=10.3847/2041-8213/ae0ad6",
+      "bytes": 12541,
+      "sha256": "87a4e1b0d89b91694e42d7cf57f4b098d50c4ffe580ab4f32b39318434e24326"
+    }
+  ],
+  "claimBoundary": "The MAST catalogs are official pipeline source lists, not the paper's custom crowded-field PSF photometry or its phase, fit-selection, and covariance ledger. Their source labels cannot be treated as author stable IDs."
+}

@@ -1,0 +1,50 @@
+{
+  "contractId": "PHOST-FORCED-1",
+  "cycleId": "RC-2026-67",
+  "purpose": "Distinguish source-detection selection from flux-measurement bias without treating the first-pass MAST source catalog as Cepheid photometry.",
+  "sealedInputs": [
+    "The 142 published author IDs and coordinates",
+    "The even-ID development and odd-ID validation split",
+    "The +0.02 arcsec RA*cos(dec), -0.08 arcsec declination transform learned separately in each band",
+    "The official calibrated exposures and data-quality masks",
+    "Magnitude, colour, period, local-background, and component strata defined before validation outcomes"
+  ],
+  "workPackages": [
+    {
+      "id": "PF-1",
+      "objective": "Create a target-first ledger independent of source detection.",
+      "method": "Place one row at every frozen author coordinate and attach band, exposure, detector, local background, data-quality state, nearest catalogue source, and forced-flux result.",
+      "deliverable": "A 142-row identity crosswalk for each band with explicit unmatched states.",
+      "pass": "No row is deleted because a source catalogue omitted it; every coordinate maps through a documented astrometric transform.",
+      "failure": "Ambiguous coordinate transforms or detector-edge and mask states cannot be resolved without outcome-dependent choices.",
+      "next": "Split ambiguous transforms into preregistered sensitivity branches rather than choosing the best-fitting branch."
+    },
+    {
+      "id": "PF-2",
+      "objective": "Estimate detection and photometric error separately.",
+      "method": "Inject PSF-shaped stars spanning the real magnitude, colour, background, and crowding strata, then run the unchanged catalogue and forced-photometry pipelines.",
+      "deliverable": "Inclusion-probability and magnitude-residual curves with binomial, calibration, PSF, and background uncertainty.",
+      "pass": "Both independent pipelines agree within 0.02 in inclusion probability and 0.01 mag in median residual over supported strata.",
+      "failure": "Injected residuals fail to cover real-source residuals or unsupported strata dominate a component.",
+      "next": "Report a partial-identification interval over supported strata and do not extrapolate into unsupported backgrounds."
+    },
+    {
+      "id": "PF-3",
+      "objective": "Test whether detection conditioning can move the component contrast.",
+      "method": "Compare complete-case, forced-measurement, and injection-weighted component contrasts on the sealed validation set while preserving shared-anchor covariance.",
+      "deliverable": "One preregistered contrast table and a branch decision.",
+      "pass": "Both independent reductions keep every contrast shift below 0.01 mag and agree on its uncertainty interval.",
+      "failure": "Any admissible correction exceeds 0.01 mag, changes sign across reductions, or depends on a few high-weight targets.",
+      "next": "Localize the discrepancy to detection, flux bias, astrometry, or unsupported transport before any H0 refit."
+    }
+  ],
+  "uncertaintyBudget": [
+    {"source": "Astrometric transform", "control": "Disjoint development split and transform sensitivity grid", "stop": "Validation-dependent transform changes"},
+    {"source": "Finite injection counts", "control": "Simultaneous binomial intervals by background and magnitude", "stop": "Effective injections below the preregistered precision target"},
+    {"source": "PSF and detector mismatch", "control": "Exposure-specific PSFs, detector masks, and residual diagnostics", "stop": "Injected and real residual distributions are incompatible"},
+    {"source": "Selection model extrapolation", "control": "Overlap diagnostics and partial identification", "stop": "Component strata lack common support"},
+    {"source": "Shared calibration", "control": "Preserve ancestor covariance in all contrasts", "stop": "A common term is averaged down as independent noise"}
+  ],
+  "safetyAndEthics": "Uses public astronomical data and simulated source injections. It makes no claim about unpublished author intent and preserves unmatched identities rather than reverse-engineering hidden selection rules.",
+  "claimBoundary": "Passing PHOST-FORCED-1 would constrain detection-conditioned bias for the tested data and strata. It would not recover the missing 154-to-144-to-142 selection reasons, individual phase corrections, or a current global-H0 likelihood."
+}

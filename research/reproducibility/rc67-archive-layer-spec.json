@@ -1,0 +1,47 @@
+{
+  "cycleId": "RC-2026-67",
+  "reviewedOn": "2026-08-31",
+  "selectedProblems": ["UP-003", "UP-625", "UP-626"],
+  "frozenDesign": {
+    "objectTable": "The 142-row version-of-record NGC 3447 MRT pinned in RC65",
+    "catalogs": ["NIRCam F090W level-3 CAT generated 2026-07-18", "NIRCam F150W level-3 CAT generated 2026-07-18"],
+    "projection": "Tangent-plane arcseconds about RA 163.36 deg, Dec 16.78 deg; x=(RA-RA0)cos(Dec0)3600, y=(Dec-Dec0)3600",
+    "developmentSplit": "Even integer author IDs",
+    "validationSplit": "Odd integer author IDs",
+    "translationGridArcsec": {"minimum": -0.5, "maximum": 0.5, "step": 0.02},
+    "translationObjective": "Maximize development matches within 0.10 arcsec, then minimize matched squared residual, L1 shift, x shift, and y shift in that order",
+    "validationRadiiArcsec": [0.05, 0.1, 0.15, 0.2, 0.3, 0.5],
+    "negativeControls": {"count": 36, "radiusArcsec": 5, "angles": "ten-degree increments from zero"}
+  },
+  "archiveInventoryGate": {
+    "doiRows": 115,
+    "ngc3447ObservationRows": 6,
+    "requiredFilters": ["F090W", "F150W", "F277W", "F356W", "CLEAR;F090W", "CLEAR;F150W"],
+    "requiredLevel3Catalogs": 6,
+    "rule": "Observation and product identities must be read from pinned official API responses; filenames are not inferred from paper prose."
+  },
+  "semanticGate": {
+    "requiredAuthorFields": ["author stable ID", "period", "phase estimate and uncertainty", "uncorrected F090W", "uncorrected F150W", "phase correction", "fit inclusion", "publication inclusion", "exclusion reason", "outlier iteration", "covariance ancestors"],
+    "pass": "All 154 reported correction targets map to author IDs and the 154-to-144-to-142 transitions execute without coordinate inference.",
+    "claimBoundary": "Generic MAST segmentation labels, coordinates, and aperture magnitudes do not satisfy the author-lineage gate."
+  },
+  "crossmatchGate": {
+    "purpose": "Measure archive-catalog recoverability, not reproduce the paper's custom photometry or infer a crowding correction.",
+    "confirmatoryRadiusArcsec": 0.3,
+    "dualBandRule": "A validation object is recovered only when each frozen translated coordinate has a nearest F090W and F150W catalog source within the radius.",
+    "componentContrast": "Compare tidal and spiral validation recovery with an exact Fisher test; preserve the other component separately.",
+    "breaksWhen": "Coordinate uncertainties exceed the radius, nearest-neighbour ambiguity dominates, the catalog segmentation changes, or component membership proxies different source populations."
+  },
+  "nextExperiment": {
+    "name": "Position-forced injection crossover",
+    "minimumTest": "Freeze the author-coordinate transform on the development split, force PSF photometry at every validation coordinate irrespective of catalog detection, and inject artificial stars matched in magnitude and colour across local-background strata.",
+    "success": "Two independent reductions reproduce inclusion probabilities and magnitude-bias curves within preregistered tolerances, and inverse-probability sensitivity changes the component contrast by less than 0.01 mag.",
+    "reject": "Recovery depends on unmodelled component-specific structure, injected and real residuals disagree, or the two reductions disagree beyond the uncertainty budget.",
+    "stop": "Do not use the first-pass catalogs to estimate a Cepheid distance or global H0; stop causal interpretation until custom-PSF and author-lineage receipts are available."
+  },
+  "independentImplementationGate": {
+    "implementations": ["Python standard library", "dependency-free Node.js"],
+    "tolerance": 1e-10,
+    "rule": "Both implementations independently parse the pinned text catalogs and agree on shifts, validation counts, control counts, component tables, residual summaries, and exact-test probabilities."
+  }
+}

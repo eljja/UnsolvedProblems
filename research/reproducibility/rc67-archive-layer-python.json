@@ -1,0 +1,1373 @@
+{
+  "cycleId": "RC-2026-67",
+  "implementation": "python-standard-library",
+  "sourceAudit": {
+    "files": [
+      {
+        "path": ".cache/rc67-mast/datacite-doi.json",
+        "bytes": 3723,
+        "sha256": "47f4facda89516cf33ba909717e2f973cfdb04940c37b2935cb04e3146b534ed",
+        "matchesManifest": true
+      },
+      {
+        "path": ".cache/rc67-mast/mast-doi-caom.json",
+        "bytes": 324227,
+        "sha256": "597ec0ccca00584ca2f88cb3a1d940023e2bc2fb8bb1b09c48920763e87650ac",
+        "matchesManifest": true
+      },
+      {
+        "path": ".cache/rc67-mast/mast-ngc3447-observations.json",
+        "bytes": 17825,
+        "sha256": "0c12f44fab6824bfc2865920dbab8b90901af132ef5ce0820a6e8f6cd2512637",
+        "matchesManifest": true
+      },
+      {
+        "path": ".cache/rc67-mast/mast-ngc3447-products.json",
+        "bytes": 1091828,
+        "sha256": "4b5a56294432964a42f647a93c4ced5a6a76868efb1a286f0ee164bd94bdf902",
+        "matchesManifest": true
+      },
+      {
+        "path": ".cache/rc67-mast/f090w_cat.ecsv",
+        "bytes": 7203818,
+        "sha256": "9b0063362639b6933b097bcde34305c57485146b3f8dbbab27a4f57fddc3951f",
+        "matchesManifest": true
+      },
+      {
+        "path": ".cache/rc67-mast/f150w_cat.ecsv",
+        "bytes": 12315103,
+        "sha256": "f50661a091197dc795038ed206061be5bcb4a38567f757cc9cff6334811aa58a",
+        "matchesManifest": true
+      },
+      {
+        "path": ".cache/rc65-jwst-host-source/apjlae0ad6t3_mrt.txt",
+        "bytes": 12541,
+        "sha256": "87a4e1b0d89b91694e42d7cf57f4b098d50c4ffe580ab4f32b39318434e24326",
+        "matchesManifest": true
+      }
+    ],
+    "allHashesMatch": true
+  },
+  "doiInventory": {
+    "doi": "10.17909/96p0-6z78",
+    "title": "JWST Cepheid Cycle 1-2",
+    "createdOn": "2025-08-19T17:13:49.000Z",
+    "rows": 115,
+    "proposalCounts": {
+      "1685": 36,
+      "1995": 39,
+      "2875": 40
+    },
+    "instrumentCounts": {
+      "NIRCAM/IMAGE": 87,
+      "NIRISS/IMAGE": 28
+    },
+    "principalInvestigatorCounts": {
+      "Freedman, Wendy L.": 39,
+      "Riess, Adam": 76
+    }
+  },
+  "ngc3447Archive": {
+    "observationRows": 6,
+    "obsids": [
+      215364232,
+      215364233,
+      215364234,
+      215364235,
+      215364236,
+      215364237
+    ],
+    "filters": [
+      "CLEAR;F090W",
+      "CLEAR;F150W",
+      "F090W",
+      "F150W",
+      "F277W",
+      "F356W"
+    ],
+    "minimumMjd": 60453.59744774306,
+    "maximumMjd": 60453.65886490741,
+    "spanDays": 0.061417164353770204,
+    "distinctVisitRoots": [
+      "jw02875-o012"
+    ],
+    "secondEpochPublic": false,
+    "productRows": 1428,
+    "productInventory": {
+      "L1|other|UNCAL": 88,
+      "L1|other|preview-or-auxiliary": 88,
+      "L2|other|ANNNN_CRF": 88,
+      "L2|other|ASN": 88,
+      "L2|other|CAL": 88,
+      "L2|other|I2D": 80,
+      "L2|other|POOL": 88,
+      "L2|other|RATE": 88,
+      "L2|other|RATEINTS": 88,
+      "L2|other|TRAPSFILLED": 88,
+      "L2|other|preview-or-auxiliary": 520,
+      "L3|Minimum Recommended Products|ASN": 6,
+      "L3|Minimum Recommended Products|CAT": 6,
+      "L3|Minimum Recommended Products|I2D": 6,
+      "L3|Minimum Recommended Products|POOL": 6,
+      "L3|Minimum Recommended Products|SEGM": 6,
+      "L3|other|preview-or-auxiliary": 6
+    },
+    "level3CatalogRows": 6,
+    "pipelineVersion": [
+      "2.0.1"
+    ]
+  },
+  "catalogAudit": {
+    "f090w": {
+      "rows": 6636,
+      "columns": 59,
+      "generatedOn": "2026-07-18 06:55:28 UTC",
+      "versionLine": "- version: {Python: 3.13.13, astropy: 7.2.0, gwcs: 1.0.3, jwst: 2.0.1, numpy: 2.4.4, photutils: 2.3.0, scipy: 1.17.1}",
+      "requiredAuthorFieldsPresent": [],
+      "requiredAuthorFieldsMissing": [
+        "author stable ID",
+        "period",
+        "phase estimate and uncertainty",
+        "uncorrected F090W",
+        "uncorrected F150W",
+        "phase correction",
+        "fit inclusion",
+        "publication inclusion",
+        "exclusion reason",
+        "outlier iteration",
+        "covariance ancestors"
+      ],
+      "genericSegmentationLabel": true
+    },
+    "f150w": {
+      "rows": 11327,
+      "columns": 59,
+      "generatedOn": "2026-07-18 06:54:26 UTC",
+      "versionLine": "- version: {Python: 3.13.13, astropy: 7.2.0, gwcs: 1.0.3, jwst: 2.0.1, numpy: 2.4.4, photutils: 2.3.0, scipy: 1.17.1}",
+      "requiredAuthorFieldsPresent": [],
+      "requiredAuthorFieldsMissing": [
+        "author stable ID",
+        "period",
+        "phase estimate and uncertainty",
+        "uncorrected F090W",
+        "uncorrected F150W",
+        "phase correction",
+        "fit inclusion",
+        "publication inclusion",
+        "exclusion reason",
+        "outlier iteration",
+        "covariance ancestors"
+      ],
+      "genericSegmentationLabel": true
+    }
+  },
+  "split": {
+    "developmentRows": 63,
+    "validationRows": 79,
+    "rule": "even author ID development; odd author ID validation"
+  },
+  "translation": {
+    "f090w": {
+      "xArcsec": 0.02,
+      "yArcsec": -0.08,
+      "developmentMatchesAt0_1": 13,
+      "matchedSquaredResidual": 0.04145119578457268
+    },
+    "f150w": {
+      "xArcsec": 0.02,
+      "yArcsec": -0.08,
+      "developmentMatchesAt0_1": 11,
+      "matchedSquaredResidual": 0.041641601526538036
+    }
+  },
+  "validationSensitivity": {
+    "f090w": [
+      {
+        "radiusArcsec": 0.05,
+        "matched": 4,
+        "total": 79,
+        "components": {
+          "spiral": {
+            "matched": 1,
+            "total": 35
+          },
+          "tidal": {
+            "matched": 3,
+            "total": 30
+          },
+          "other": {
+            "matched": 0,
+            "total": 14
+          }
+        }
+      },
+      {
+        "radiusArcsec": 0.1,
+        "matched": 10,
+        "total": 79,
+        "components": {
+          "spiral": {
+            "matched": 5,
+            "total": 35
+          },
+          "tidal": {
+            "matched": 5,
+            "total": 30
+          },
+          "other": {
+            "matched": 0,
+            "total": 14
+          }
+        }
+      },
+      {
+        "radiusArcsec": 0.15,
+        "matched": 15,
+        "total": 79,
+        "components": {
+          "spiral": {
+            "matched": 6,
+            "total": 35
+          },
+          "tidal": {
+            "matched": 8,
+            "total": 30
+          },
+          "other": {
+            "matched": 1,
+            "total": 14
+          }
+        }
+      },
+      {
+        "radiusArcsec": 0.2,
+        "matched": 16,
+        "total": 79,
+        "components": {
+          "spiral": {
+            "matched": 6,
+            "total": 35
+          },
+          "tidal": {
+            "matched": 9,
+            "total": 30
+          },
+          "other": {
+            "matched": 1,
+            "total": 14
+          }
+        }
+      },
+      {
+        "radiusArcsec": 0.3,
+        "matched": 25,
+        "total": 79,
+        "components": {
+          "spiral": {
+            "matched": 7,
+            "total": 35
+          },
+          "tidal": {
+            "matched": 16,
+            "total": 30
+          },
+          "other": {
+            "matched": 2,
+            "total": 14
+          }
+        }
+      },
+      {
+        "radiusArcsec": 0.5,
+        "matched": 37,
+        "total": 79,
+        "components": {
+          "spiral": {
+            "matched": 10,
+            "total": 35
+          },
+          "tidal": {
+            "matched": 22,
+            "total": 30
+          },
+          "other": {
+            "matched": 5,
+            "total": 14
+          }
+        }
+      }
+    ],
+    "f150w": [
+      {
+        "radiusArcsec": 0.05,
+        "matched": 11,
+        "total": 79,
+        "components": {
+          "spiral": {
+            "matched": 3,
+            "total": 35
+          },
+          "tidal": {
+            "matched": 4,
+            "total": 30
+          },
+          "other": {
+            "matched": 4,
+            "total": 14
+          }
+        }
+      },
+      {
+        "radiusArcsec": 0.1,
+        "matched": 18,
+        "total": 79,
+        "components": {
+          "spiral": {
+            "matched": 7,
+            "total": 35
+          },
+          "tidal": {
+            "matched": 7,
+            "total": 30
+          },
+          "other": {
+            "matched": 4,
+            "total": 14
+          }
+        }
+      },
+      {
+        "radiusArcsec": 0.15,
+        "matched": 25,
+        "total": 79,
+        "components": {
+          "spiral": {
+            "matched": 8,
+            "total": 35
+          },
+          "tidal": {
+            "matched": 13,
+            "total": 30
+          },
+          "other": {
+            "matched": 4,
+            "total": 14
+          }
+        }
+      },
+      {
+        "radiusArcsec": 0.2,
+        "matched": 29,
+        "total": 79,
+        "components": {
+          "spiral": {
+            "matched": 9,
+            "total": 35
+          },
+          "tidal": {
+            "matched": 15,
+            "total": 30
+          },
+          "other": {
+            "matched": 5,
+            "total": 14
+          }
+        }
+      },
+      {
+        "radiusArcsec": 0.3,
+        "matched": 37,
+        "total": 79,
+        "components": {
+          "spiral": {
+            "matched": 12,
+            "total": 35
+          },
+          "tidal": {
+            "matched": 18,
+            "total": 30
+          },
+          "other": {
+            "matched": 7,
+            "total": 14
+          }
+        }
+      },
+      {
+        "radiusArcsec": 0.5,
+        "matched": 48,
+        "total": 79,
+        "components": {
+          "spiral": {
+            "matched": 13,
+            "total": 35
+          },
+          "tidal": {
+            "matched": 25,
+            "total": 30
+          },
+          "other": {
+            "matched": 10,
+            "total": 14
+          }
+        }
+      }
+    ]
+  },
+  "negativeControlSensitivity": {
+    "f090w": [
+      {
+        "radiusArcsec": 0.05,
+        "counts": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean": 0.25,
+        "sampleStandardDeviation": 0.5
+      },
+      {
+        "radiusArcsec": 0.1,
+        "counts": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          3,
+          2,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          2,
+          0,
+          0,
+          2,
+          3,
+          2,
+          1,
+          3,
+          0,
+          2,
+          2,
+          1,
+          3,
+          2,
+          2,
+          0,
+          0
+        ],
+        "mean": 1.2222222222222223,
+        "sampleStandardDeviation": 0.959497222838566
+      },
+      {
+        "radiusArcsec": 0.15,
+        "counts": [
+          4,
+          4,
+          1,
+          1,
+          4,
+          4,
+          2,
+          3,
+          4,
+          4,
+          2,
+          3,
+          1,
+          1,
+          1,
+          1,
+          3,
+          5,
+          4,
+          4,
+          4,
+          2,
+          3,
+          5,
+          3,
+          1,
+          6,
+          2,
+          3,
+          2,
+          3,
+          3,
+          4,
+          5,
+          0,
+          3
+        ],
+        "mean": 2.9166666666666665,
+        "sampleStandardDeviation": 1.4417251570848824
+      },
+      {
+        "radiusArcsec": 0.2,
+        "counts": [
+          8,
+          6,
+          3,
+          2,
+          5,
+          7,
+          5,
+          6,
+          7,
+          5,
+          5,
+          8,
+          4,
+          4,
+          3,
+          5,
+          4,
+          7,
+          7,
+          5,
+          8,
+          3,
+          3,
+          6,
+          4,
+          7,
+          7,
+          5,
+          6,
+          3,
+          8,
+          3,
+          5,
+          10,
+          2,
+          5
+        ],
+        "mean": 5.305555555555555,
+        "sampleStandardDeviation": 1.9393584277051807
+      },
+      {
+        "radiusArcsec": 0.3,
+        "counts": [
+          12,
+          12,
+          10,
+          9,
+          7,
+          15,
+          10,
+          9,
+          11,
+          14,
+          12,
+          15,
+          11,
+          9,
+          9,
+          9,
+          8,
+          12,
+          17,
+          11,
+          10,
+          12,
+          5,
+          11,
+          8,
+          11,
+          10,
+          15,
+          11,
+          10,
+          12,
+          12,
+          10,
+          21,
+          7,
+          10
+        ],
+        "mean": 11.027777777777779,
+        "sampleStandardDeviation": 2.990328325128111
+      },
+      {
+        "radiusArcsec": 0.5,
+        "counts": [
+          22,
+          24,
+          23,
+          23,
+          24,
+          24,
+          22,
+          18,
+          20,
+          22,
+          26,
+          27,
+          22,
+          18,
+          18,
+          16,
+          21,
+          25,
+          23,
+          22,
+          22,
+          22,
+          12,
+          21,
+          21,
+          24,
+          21,
+          21,
+          24,
+          25,
+          26,
+          24,
+          25,
+          26,
+          20,
+          18
+        ],
+        "mean": 22.0,
+        "sampleStandardDeviation": 3.116774889895918
+      }
+    ],
+    "f150w": [
+      {
+        "radiusArcsec": 0.05,
+        "counts": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "mean": 0.3333333333333333,
+        "sampleStandardDeviation": 0.5345224838248488
+      },
+      {
+        "radiusArcsec": 0.1,
+        "counts": [
+          0,
+          3,
+          4,
+          1,
+          1,
+          1,
+          1,
+          1,
+          5,
+          1,
+          2,
+          4,
+          1,
+          5,
+          1,
+          1,
+          4,
+          2,
+          1,
+          1,
+          2,
+          3,
+          2,
+          0,
+          3,
+          2,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          2,
+          3
+        ],
+        "mean": 1.7222222222222223,
+        "sampleStandardDeviation": 1.3858697343671664
+      },
+      {
+        "radiusArcsec": 0.15,
+        "counts": [
+          3,
+          5,
+          6,
+          3,
+          4,
+          3,
+          4,
+          3,
+          10,
+          4,
+          5,
+          7,
+          2,
+          8,
+          3,
+          3,
+          6,
+          8,
+          3,
+          3,
+          4,
+          7,
+          4,
+          1,
+          5,
+          6,
+          4,
+          5,
+          3,
+          3,
+          3,
+          1,
+          4,
+          2,
+          3,
+          5
+        ],
+        "mean": 4.25,
+        "sampleStandardDeviation": 1.9910514092523364
+      },
+      {
+        "radiusArcsec": 0.2,
+        "counts": [
+          7,
+          6,
+          11,
+          5,
+          5,
+          7,
+          6,
+          7,
+          12,
+          6,
+          8,
+          9,
+          5,
+          11,
+          5,
+          9,
+          8,
+          11,
+          9,
+          5,
+          11,
+          10,
+          8,
+          3,
+          8,
+          10,
+          6,
+          7,
+          4,
+          5,
+          7,
+          3,
+          7,
+          8,
+          5,
+          5
+        ],
+        "mean": 7.194444444444445,
+        "sampleStandardDeviation": 2.3882981920120976
+      },
+      {
+        "radiusArcsec": 0.3,
+        "counts": [
+          15,
+          16,
+          20,
+          14,
+          9,
+          14,
+          11,
+          12,
+          21,
+          22,
+          19,
+          20,
+          13,
+          18,
+          13,
+          16,
+          12,
+          17,
+          13,
+          17,
+          17,
+          16,
+          14,
+          12,
+          16,
+          20,
+          15,
+          15,
+          14,
+          14,
+          13,
+          17,
+          14,
+          21,
+          14,
+          9
+        ],
+        "mean": 15.36111111111111,
+        "sampleStandardDeviation": 3.2702361450580972
+      },
+      {
+        "radiusArcsec": 0.5,
+        "counts": [
+          32,
+          28,
+          34,
+          33,
+          26,
+          30,
+          26,
+          25,
+          35,
+          36,
+          38,
+          34,
+          30,
+          32,
+          29,
+          33,
+          30,
+          31,
+          27,
+          34,
+          30,
+          34,
+          31,
+          34,
+          30,
+          33,
+          27,
+          28,
+          27,
+          27,
+          26,
+          32,
+          37,
+          37,
+          30,
+          30
+        ],
+        "mean": 31.0,
+        "sampleStandardDeviation": 3.488757453797637
+      }
+    ]
+  },
+  "dualBandValidation": [
+    {
+      "radiusArcsec": 0.05,
+      "matched": 1,
+      "total": 79,
+      "components": {
+        "spiral": {
+          "matched": 0,
+          "total": 35
+        },
+        "tidal": {
+          "matched": 1,
+          "total": 30
+        },
+        "other": {
+          "matched": 0,
+          "total": 14
+        }
+      }
+    },
+    {
+      "radiusArcsec": 0.1,
+      "matched": 2,
+      "total": 79,
+      "components": {
+        "spiral": {
+          "matched": 0,
+          "total": 35
+        },
+        "tidal": {
+          "matched": 2,
+          "total": 30
+        },
+        "other": {
+          "matched": 0,
+          "total": 14
+        }
+      }
+    },
+    {
+      "radiusArcsec": 0.15,
+      "matched": 7,
+      "total": 79,
+      "components": {
+        "spiral": {
+          "matched": 0,
+          "total": 35
+        },
+        "tidal": {
+          "matched": 7,
+          "total": 30
+        },
+        "other": {
+          "matched": 0,
+          "total": 14
+        }
+      }
+    },
+    {
+      "radiusArcsec": 0.2,
+      "matched": 8,
+      "total": 79,
+      "components": {
+        "spiral": {
+          "matched": 0,
+          "total": 35
+        },
+        "tidal": {
+          "matched": 8,
+          "total": 30
+        },
+        "other": {
+          "matched": 0,
+          "total": 14
+        }
+      }
+    },
+    {
+      "radiusArcsec": 0.3,
+      "matched": 15,
+      "total": 79,
+      "components": {
+        "spiral": {
+          "matched": 1,
+          "total": 35
+        },
+        "tidal": {
+          "matched": 14,
+          "total": 30
+        },
+        "other": {
+          "matched": 0,
+          "total": 14
+        }
+      }
+    },
+    {
+      "radiusArcsec": 0.5,
+      "matched": 25,
+      "total": 79,
+      "components": {
+        "spiral": {
+          "matched": 2,
+          "total": 35
+        },
+        "tidal": {
+          "matched": 21,
+          "total": 30
+        },
+        "other": {
+          "matched": 2,
+          "total": 14
+        }
+      }
+    }
+  ],
+  "dualBandControlsAt0_3": {
+    "rows": [
+      {
+        "angleDegrees": 0,
+        "all": 5,
+        "spiral": 0,
+        "tidal": 4,
+        "other": 1
+      },
+      {
+        "angleDegrees": 10,
+        "all": 5,
+        "spiral": 0,
+        "tidal": 5,
+        "other": 0
+      },
+      {
+        "angleDegrees": 20,
+        "all": 8,
+        "spiral": 0,
+        "tidal": 7,
+        "other": 1
+      },
+      {
+        "angleDegrees": 30,
+        "all": 4,
+        "spiral": 0,
+        "tidal": 4,
+        "other": 0
+      },
+      {
+        "angleDegrees": 40,
+        "all": 4,
+        "spiral": 0,
+        "tidal": 4,
+        "other": 0
+      },
+      {
+        "angleDegrees": 50,
+        "all": 6,
+        "spiral": 0,
+        "tidal": 6,
+        "other": 0
+      },
+      {
+        "angleDegrees": 60,
+        "all": 1,
+        "spiral": 0,
+        "tidal": 1,
+        "other": 0
+      },
+      {
+        "angleDegrees": 70,
+        "all": 3,
+        "spiral": 0,
+        "tidal": 3,
+        "other": 0
+      },
+      {
+        "angleDegrees": 80,
+        "all": 5,
+        "spiral": 1,
+        "tidal": 4,
+        "other": 0
+      },
+      {
+        "angleDegrees": 90,
+        "all": 7,
+        "spiral": 0,
+        "tidal": 6,
+        "other": 1
+      },
+      {
+        "angleDegrees": 100,
+        "all": 4,
+        "spiral": 1,
+        "tidal": 3,
+        "other": 0
+      },
+      {
+        "angleDegrees": 110,
+        "all": 5,
+        "spiral": 1,
+        "tidal": 2,
+        "other": 2
+      },
+      {
+        "angleDegrees": 120,
+        "all": 2,
+        "spiral": 0,
+        "tidal": 2,
+        "other": 0
+      },
+      {
+        "angleDegrees": 130,
+        "all": 4,
+        "spiral": 0,
+        "tidal": 4,
+        "other": 0
+      },
+      {
+        "angleDegrees": 140,
+        "all": 6,
+        "spiral": 0,
+        "tidal": 5,
+        "other": 1
+      },
+      {
+        "angleDegrees": 150,
+        "all": 5,
+        "spiral": 0,
+        "tidal": 5,
+        "other": 0
+      },
+      {
+        "angleDegrees": 160,
+        "all": 4,
+        "spiral": 0,
+        "tidal": 3,
+        "other": 1
+      },
+      {
+        "angleDegrees": 170,
+        "all": 6,
+        "spiral": 1,
+        "tidal": 3,
+        "other": 2
+      },
+      {
+        "angleDegrees": 180,
+        "all": 4,
+        "spiral": 0,
+        "tidal": 3,
+        "other": 1
+      },
+      {
+        "angleDegrees": 190,
+        "all": 6,
+        "spiral": 2,
+        "tidal": 4,
+        "other": 0
+      },
+      {
+        "angleDegrees": 200,
+        "all": 3,
+        "spiral": 0,
+        "tidal": 3,
+        "other": 0
+      },
+      {
+        "angleDegrees": 210,
+        "all": 5,
+        "spiral": 0,
+        "tidal": 3,
+        "other": 2
+      },
+      {
+        "angleDegrees": 220,
+        "all": 2,
+        "spiral": 0,
+        "tidal": 2,
+        "other": 0
+      },
+      {
+        "angleDegrees": 230,
+        "all": 5,
+        "spiral": 0,
+        "tidal": 4,
+        "other": 1
+      },
+      {
+        "angleDegrees": 240,
+        "all": 3,
+        "spiral": 0,
+        "tidal": 2,
+        "other": 1
+      },
+      {
+        "angleDegrees": 250,
+        "all": 6,
+        "spiral": 0,
+        "tidal": 4,
+        "other": 2
+      },
+      {
+        "angleDegrees": 260,
+        "all": 5,
+        "spiral": 1,
+        "tidal": 3,
+        "other": 1
+      },
+      {
+        "angleDegrees": 270,
+        "all": 7,
+        "spiral": 0,
+        "tidal": 6,
+        "other": 1
+      },
+      {
+        "angleDegrees": 280,
+        "all": 5,
+        "spiral": 0,
+        "tidal": 5,
+        "other": 0
+      },
+      {
+        "angleDegrees": 290,
+        "all": 3,
+        "spiral": 1,
+        "tidal": 2,
+        "other": 0
+      },
+      {
+        "angleDegrees": 300,
+        "all": 5,
+        "spiral": 0,
+        "tidal": 5,
+        "other": 0
+      },
+      {
+        "angleDegrees": 310,
+        "all": 4,
+        "spiral": 0,
+        "tidal": 4,
+        "other": 0
+      },
+      {
+        "angleDegrees": 320,
+        "all": 7,
+        "spiral": 1,
+        "tidal": 5,
+        "other": 1
+      },
+      {
+        "angleDegrees": 330,
+        "all": 10,
+        "spiral": 1,
+        "tidal": 7,
+        "other": 2
+      },
+      {
+        "angleDegrees": 340,
+        "all": 2,
+        "spiral": 0,
+        "tidal": 2,
+        "other": 0
+      },
+      {
+        "angleDegrees": 350,
+        "all": 2,
+        "spiral": 0,
+        "tidal": 2,
+        "other": 0
+      }
+    ],
+    "summary": {
+      "all": {
+        "mean": 4.666666666666667,
+        "sampleStandardDeviation": 1.867006771737662
+      },
+      "spiral": {
+        "mean": 0.2777777777777778,
+        "sampleStandardDeviation": 0.5133147801223568
+      },
+      "tidal": {
+        "mean": 3.8055555555555554,
+        "sampleStandardDeviation": 1.5084418535020916
+      },
+      "other": {
+        "mean": 0.5833333333333334,
+        "sampleStandardDeviation": 0.7319250547113999
+      }
+    }
+  },
+  "componentRecoveryExactTestAt0_3": {
+    "oddsRatio": 29.75,
+    "greaterPValue": 2.5291952921516962e-05,
+    "twoSidedPValue": 4.095414875734042e-05
+  },
+  "f150wResidualDiagnosticAt0_1": {
+    "all": {
+      "count": 18,
+      "median": 0.038155862596990886,
+      "mean": 0.01161357090299712,
+      "sampleStandardDeviation": 0.3209932090989821,
+      "rootMeanSquare": 0.3121654329406488
+    },
+    "unextendedOnly": {
+      "count": 9,
+      "median": 0.039313181301086075,
+      "mean": 0.005000314186582323,
+      "sampleStandardDeviation": 0.16235630372084667,
+      "rootMeanSquare": 0.1531526410483807
+    }
+  },
+  "identityAudit": {
+    "matchedCatalogLabelEqualsAuthorIdAt0_3": {
+      "f090w": 0,
+      "f150w": 0
+    },
+    "catalogLabelsAreAuthorStableIds": false
+  },
+  "gates": {
+    "sourceHashes": true,
+    "doiInventory": true,
+    "observationIdentity": true,
+    "publicLevel3CatalogLayer": true,
+    "coordinateCrosswalkComplete": false,
+    "authorIdentityMapping": false,
+    "phaseLedger": false,
+    "selectionLineage": false,
+    "objectCovariance": false,
+    "secondEpoch": false,
+    "archiveCatalogRecoverabilityDiagnostic": true,
+    "customPsfPhotometryReproduced": false,
+    "globalH0Refit": false
+  },
+  "claimBoundary": "The crossmatch measures whether an official first-pass segmentation catalog contains a nearby source. It neither validates the paper's custom PSF magnitudes nor identifies crowding, phase, or component membership as the cause of recovery differences."
+}

@@ -1,0 +1,33 @@
+{
+  "cycleId": "RC-2026-67",
+  "reviewedOn": "2026-08-31",
+  "queries": [
+    "MAST DOI 10.17909/96p0-6z78 NGC 3447 source catalog",
+    "JWST source_catalog segmentation aperture photometry photutils",
+    "JWST calwebb_image3 source catalog first pass source list",
+    "NGC 3447 JWST F090W F150W second epoch",
+    "Cepheid forced PSF photometry artificial star injection detection completeness"
+  ],
+  "verifiedExistingMethods": [
+    "MAST assigns a DOI to the Cycle 1-2 Cepheid observation collection and exposes observation and product identities through its portal and API.",
+    "The JWST image3 pipeline already creates segmentation-based source catalogs with aperture and isophotal measurements and optional deblending.",
+    "Official JWST documentation describes this catalog as a basic first-pass source list rather than a science-specific crowded-field PSF reduction.",
+    "The Perfect Host study uses custom PSF photometry, artificial-star tests, component comparisons, and a single-epoch phase correction.",
+    "Forced photometry, artificial-star completeness tests, sample splitting, and selective-inference conditioning are established methods in their respective fields."
+  ],
+  "notVerifiedInReviewedSources": [
+    "A published author-ID to MAST segmentation-label crosswalk for NGC 3447.",
+    "A target-first forced-photometry ledger that retains all 142 published coordinates regardless of catalog detection.",
+    "A disjoint-split, dual-band injection study that predicts the observed tidal-versus-spiral archive-catalog recovery contrast.",
+    "A public second JWST NGC 3447 epoch under the target name or sky footprint reviewed on 2026-08-31.",
+    "A public 154-row phase and selection ledger or object-level covariance ancestry."
+  ],
+  "noveltyBoundary": "No component method is claimed as new. The proposed contribution is the preregistered combination of author-fixed identities, disjoint astrometric calibration, detection-independent forced measurements, matched injections, and selective-inference accounting in one falsifiable archive audit. A broader bibliographic and programme search is required before claiming methodological novelty.",
+  "primarySources": [
+    "https://doi.org/10.17909/96p0-6z78",
+    "https://mast.stsci.edu/api/v0/_services.html",
+    "https://jwst-pipeline.readthedocs.io/en/1.19.x/jwst/source_catalog/main.html",
+    "https://jwst-docs.stsci.edu/jwst-science-calibration-pipeline/stages-of-jwst-data-processing/calwebb_image3",
+    "https://arxiv.org/abs/2509.01667"
+  ]
+}
