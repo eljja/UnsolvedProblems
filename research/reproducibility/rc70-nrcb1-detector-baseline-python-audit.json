@@ -1,0 +1,53 @@
+{
+  "cycleId": "RC-2026-70",
+  "experimentId": "PHOST-DETECTOR-BASELINE-1-NRCB1-INDEPENDENT-AUDIT",
+  "reviewedOn": "2026-09-01",
+  "status": "pass",
+  "checks": {
+    "alignmentRows": true,
+    "psfRows": true,
+    "apertureRows": true,
+    "geometryGate": true,
+    "alignmentGate": true,
+    "psfGate": true,
+    "apertureGate": true,
+    "receiptHashes": true,
+    "sealedAstStillClosed": true
+  },
+  "recomputed": {
+    "expectedImageIndices": [
+      1,
+      5,
+      9,
+      13,
+      17,
+      21,
+      25,
+      29
+    ],
+    "matchedRange": [
+      983,
+      1039
+    ],
+    "sigmaRangePixels": [
+      0.08,
+      0.1
+    ],
+    "psfStarRange": [
+      120,
+      121
+    ],
+    "maxAbsolutePsfAdjustment": 0.00285,
+    "apertureStarRange": [
+      200,
+      200
+    ],
+    "gates": {
+      "geometry": true,
+      "alignment": true,
+      "psf": true,
+      "aperture": true
+    }
+  },
+  "independenceBoundary": "This parser uses only the Python standard library and committed text receipts. It shares neither the Node parser nor the DOLPHOT binary, but it does not independently rerun the photometric model."
+}

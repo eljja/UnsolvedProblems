@@ -1,0 +1,1302 @@
+{
+  "cycleId": "RC-2026-70",
+  "experimentId": "PHOST-DETECTOR-BASELINE-1",
+  "reviewedOn": "2026-09-01",
+  "question": "Can detector-stratified reference reductions supply auditable alignment, PSF, and aperture-correction receipts before the sealed 3,072-row AST is spent?",
+  "inputBoundary": {
+    "reference": "f150w_i2d.fits",
+    "referenceSha256": "8a8fdc3a09ffff42e7099249584333f555fd0f0c5f13cb5c17d5de6a4d4b1d88",
+    "referenceShape": [
+      9891,
+      4390
+    ],
+    "calExposureCount": 32,
+    "detectorCount": 4,
+    "exposuresPerDetector": 8
+  },
+  "design": {
+    "tileSize": [
+      800,
+      800
+    ],
+    "perimeterSamplesPerEdge": 17,
+    "detectorEdgeMargin": 64.0,
+    "selection": "For each detector, choose the nearest-to-median 800x800 reference square whose sampled perimeter remains inside all four dithers in both filters.",
+    "reason": "A local reference window is expected to overlap one short-wave detector, not all four. Detector-specific expected-image sets separate geometric non-overlap from alignment failure."
+  },
+  "gates": {
+    "geometry": "Every tile must retain its entire sampled perimeter at least 64 detector pixels inside all eight expected exposures.",
+    "alignment": "All eight expected exposures must match; warnings from the 24 geometrically disjoint exposures are classified as expected non-overlap.",
+    "psf": "Record per-image PSF-star counts and central-pixel adjustments; the documentation target is at least 100 PSF stars per expected exposure and |adjustment| < 0.05.",
+    "aperture": "Record per-image aperture-star counts and corrections; fewer than 100 stars in an expected exposure keeps the scientific AST gate closed.",
+    "stop": "Do not run the 3,072-row AST if any expected exposure lacks alignment, PSF/aperture evidence is inadequate, or detector-to-detector receipts cannot be parsed independently."
+  },
+  "tiles": [
+    {
+      "id": "nrcb1",
+      "detector": "NRCB1",
+      "photsec": [
+        1,
+        1,
+        8400,
+        2955,
+        9200,
+        3755
+      ],
+      "center": [
+        8800.486951,
+        3354.892649
+      ],
+      "size": [
+        800,
+        800
+      ],
+      "expectedImageIndices": [
+        1,
+        5,
+        9,
+        13,
+        17,
+        21,
+        25,
+        29
+      ],
+      "expectedImages": [
+        "jw02875012001_02101_00001_nrcb1_cal",
+        "jw02875012001_02101_00002_nrcb1_cal",
+        "jw02875012001_02101_00003_nrcb1_cal",
+        "jw02875012001_02101_00004_nrcb1_cal",
+        "jw02875012001_04101_00001_nrcb1_cal",
+        "jw02875012001_04101_00002_nrcb1_cal",
+        "jw02875012001_04101_00003_nrcb1_cal",
+        "jw02875012001_04101_00004_nrcb1_cal"
+      ],
+      "filterCounts": {
+        "F090W": 4,
+        "F150W": 4
+      },
+      "dithers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "edgeMarginInEveryExposure": 64.0,
+      "selectionBasis": "FITS WCS footprints only; no source catalogue or AST outcome was read"
+    },
+    {
+      "id": "nrcb2",
+      "detector": "NRCB2",
+      "photsec": [
+        1,
+        1,
+        8430,
+        783,
+        9230,
+        1583
+      ],
+      "center": [
+        8829.889287,
+        1183.326421
+      ],
+      "size": [
+        800,
+        800
+      ],
+      "expectedImageIndices": [
+        2,
+        6,
+        10,
+        14,
+        18,
+        22,
+        26,
+        30
+      ],
+      "expectedImages": [
+        "jw02875012001_02101_00001_nrcb2_cal",
+        "jw02875012001_02101_00002_nrcb2_cal",
+        "jw02875012001_02101_00003_nrcb2_cal",
+        "jw02875012001_02101_00004_nrcb2_cal",
+        "jw02875012001_04101_00001_nrcb2_cal",
+        "jw02875012001_04101_00002_nrcb2_cal",
+        "jw02875012001_04101_00003_nrcb2_cal",
+        "jw02875012001_04101_00004_nrcb2_cal"
+      ],
+      "filterCounts": {
+        "F090W": 4,
+        "F150W": 4
+      },
+      "dithers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "edgeMarginInEveryExposure": 64.0,
+      "selectionBasis": "FITS WCS footprints only; no source catalogue or AST outcome was read"
+    },
+    {
+      "id": "nrcb3",
+      "detector": "NRCB3",
+      "photsec": [
+        1,
+        1,
+        6226,
+        2934,
+        7026,
+        3734
+      ],
+      "center": [
+        6625.644846,
+        3333.797444
+      ],
+      "size": [
+        800,
+        800
+      ],
+      "expectedImageIndices": [
+        3,
+        7,
+        11,
+        15,
+        19,
+        23,
+        27,
+        31
+      ],
+      "expectedImages": [
+        "jw02875012001_02101_00001_nrcb3_cal",
+        "jw02875012001_02101_00002_nrcb3_cal",
+        "jw02875012001_02101_00003_nrcb3_cal",
+        "jw02875012001_02101_00004_nrcb3_cal",
+        "jw02875012001_04101_00001_nrcb3_cal",
+        "jw02875012001_04101_00002_nrcb3_cal",
+        "jw02875012001_04101_00003_nrcb3_cal",
+        "jw02875012001_04101_00004_nrcb3_cal"
+      ],
+      "filterCounts": {
+        "F090W": 4,
+        "F150W": 4
+      },
+      "dithers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "edgeMarginInEveryExposure": 64.0,
+      "selectionBasis": "FITS WCS footprints only; no source catalogue or AST outcome was read"
+    },
+    {
+      "id": "nrcb4",
+      "detector": "NRCB4",
+      "photsec": [
+        1,
+        1,
+        6240,
+        755,
+        7040,
+        1555
+      ],
+      "center": [
+        6639.594858,
+        1155.217558
+      ],
+      "size": [
+        800,
+        800
+      ],
+      "expectedImageIndices": [
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32
+      ],
+      "expectedImages": [
+        "jw02875012001_02101_00001_nrcb4_cal",
+        "jw02875012001_02101_00002_nrcb4_cal",
+        "jw02875012001_02101_00003_nrcb4_cal",
+        "jw02875012001_02101_00004_nrcb4_cal",
+        "jw02875012001_04101_00001_nrcb4_cal",
+        "jw02875012001_04101_00002_nrcb4_cal",
+        "jw02875012001_04101_00003_nrcb4_cal",
+        "jw02875012001_04101_00004_nrcb4_cal"
+      ],
+      "filterCounts": {
+        "F090W": 4,
+        "F150W": 4
+      },
+      "dithers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "edgeMarginInEveryExposure": 64.0,
+      "selectionBasis": "FITS WCS footprints only; no source catalogue or AST outcome was read"
+    }
+  ],
+  "exposures": [
+    {
+      "filename": "jw02875012001_02101_00001_nrcb1_cal.fits",
+      "basename": "jw02875012001_02101_00001_nrcb1_cal",
+      "filter": "F090W",
+      "dither": 1,
+      "detector": 1,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          7813.045274,
+          2331.550403
+        ],
+        [
+          9837.404087,
+          2368.425026
+        ],
+        [
+          9794.716636,
+          4385.45056
+        ],
+        [
+          7792.159909,
+          4353.475805
+        ]
+      ],
+      "center": [
+        8809.331477,
+        3359.725449
+      ]
+    },
+    {
+      "filename": "jw02875012001_02101_00001_nrcb2_cal.fits",
+      "basename": "jw02875012001_02101_00001_nrcb2_cal",
+      "filter": "F090W",
+      "dither": 1,
+      "detector": 2,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          7836.940681,
+          136.954956
+        ],
+        [
+          9890.978405,
+          187.599538
+        ],
+        [
+          9826.458078,
+          2236.706037
+        ],
+        [
+          7800.610821,
+          2191.413093
+        ]
+      ],
+      "center": [
+        8838.746996,
+        1188.168406
+      ]
+    },
+    {
+      "filename": "jw02875012001_02101_00001_nrcb3_cal.fits",
+      "basename": "jw02875012001_02101_00001_nrcb3_cal",
+      "filter": "F090W",
+      "dither": 1,
+      "detector": 3,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          5619.721472,
+          2319.418885
+        ],
+        [
+          7652.990227,
+          2329.854703
+        ],
+        [
+          7638.316303,
+          4352.512746
+        ],
+        [
+          5626.972961,
+          4352.716672
+        ]
+      ],
+      "center": [
+        6634.500241,
+        3338.625751
+      ]
+    },
+    {
+      "filename": "jw02875012001_02101_00001_nrcb4_cal.fits",
+      "basename": "jw02875012001_02101_00001_nrcb4_cal",
+      "filter": "F090W",
+      "dither": 1,
+      "detector": 4,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          5620.588792,
+          118.506833
+        ],
+        [
+          7684.020341,
+          140.877007
+        ],
+        [
+          7662.084027,
+          2196.132173
+        ],
+        [
+          5627.195579,
+          2184.733002
+        ]
+      ],
+      "center": [
+        6648.472185,
+        1160.062254
+      ]
+    },
+    {
+      "filename": "jw02875012001_02101_00002_nrcb1_cal.fits",
+      "basename": "jw02875012001_02101_00002_nrcb1_cal",
+      "filter": "F090W",
+      "dither": 2,
+      "detector": 1,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          7809.110953,
+          2317.818838
+        ],
+        [
+          9833.46986,
+          2354.688117
+        ],
+        [
+          9790.787731,
+          4371.713759
+        ],
+        [
+          7788.230924,
+          4339.744291
+        ]
+      ],
+      "center": [
+        8805.399867,
+        3345.991251
+      ]
+    },
+    {
+      "filename": "jw02875012001_02101_00002_nrcb2_cal.fits",
+      "basename": "jw02875012001_02101_00002_nrcb2_cal",
+      "filter": "F090W",
+      "dither": 2,
+      "detector": 2,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          7833.000569,
+          123.223328
+        ],
+        [
+          9887.038424,
+          173.862487
+        ],
+        [
+          9822.523503,
+          2222.969155
+        ],
+        [
+          7796.67613,
+          2177.681559
+        ]
+      ],
+      "center": [
+        8834.809657,
+        1174.434132
+      ]
+    },
+    {
+      "filename": "jw02875012001_02101_00002_nrcb3_cal.fits",
+      "basename": "jw02875012001_02101_00002_nrcb3_cal",
+      "filter": "F090W",
+      "dither": 2,
+      "detector": 3,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          5615.787128,
+          2305.693109
+        ],
+        [
+          7649.055908,
+          2316.123559
+        ],
+        [
+          7634.387322,
+          4338.781637
+        ],
+        [
+          5623.043985,
+          4338.990873
+        ]
+      ],
+      "center": [
+        6630.568586,
+        3324.897294
+      ]
+    },
+    {
+      "filename": "jw02875012001_02101_00002_nrcb4_cal.fits",
+      "basename": "jw02875012001_02101_00002_nrcb4_cal",
+      "filter": "F090W",
+      "dither": 2,
+      "detector": 4,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          5616.648638,
+          104.781053
+        ],
+        [
+          7680.080245,
+          127.145779
+        ],
+        [
+          7658.149355,
+          2182.401003
+        ],
+        [
+          5623.26088,
+          2171.007204
+        ]
+      ],
+      "center": [
+        6644.53478,
+        1146.33376
+      ]
+    },
+    {
+      "filename": "jw02875012001_02101_00003_nrcb1_cal.fits",
+      "basename": "jw02875012001_02101_00003_nrcb1_cal",
+      "filter": "F090W",
+      "dither": 3,
+      "detector": 1,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          7799.314249,
+          2335.503185
+        ],
+        [
+          9823.673134,
+          2372.37331
+        ],
+        [
+          9780.990167,
+          4389.398932
+        ],
+        [
+          7778.433377,
+          4357.428629
+        ]
+      ],
+      "center": [
+        8795.602732,
+        3363.676014
+      ]
+    },
+    {
+      "filename": "jw02875012001_02101_00003_nrcb2_cal.fits",
+      "basename": "jw02875012001_02101_00003_nrcb2_cal",
+      "filter": "F090W",
+      "dither": 3,
+      "detector": 2,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          7823.204779,
+          140.907689
+        ],
+        [
+          9877.242606,
+          191.547707
+        ],
+        [
+          9812.726833,
+          2240.654342
+        ],
+        [
+          7786.879484,
+          2195.3659
+        ]
+      ],
+      "center": [
+        8825.013425,
+        1192.118909
+      ]
+    },
+    {
+      "filename": "jw02875012001_02101_00003_nrcb3_cal.fits",
+      "basename": "jw02875012001_02101_00003_nrcb3_cal",
+      "filter": "F090W",
+      "dither": 3,
+      "detector": 3,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          5605.99043,
+          2323.37654
+        ],
+        [
+          7639.259203,
+          2333.807839
+        ],
+        [
+          7624.589774,
+          4356.465911
+        ],
+        [
+          5613.246438,
+          4356.674307
+        ]
+      ],
+      "center": [
+        6620.771461,
+        3342.581149
+      ]
+    },
+    {
+      "filename": "jw02875012001_02101_00003_nrcb4_cal.fits",
+      "basename": "jw02875012001_02101_00003_nrcb4_cal",
+      "filter": "F090W",
+      "dither": 3,
+      "detector": 4,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          5606.852859,
+          122.464487
+        ],
+        [
+          7670.284452,
+          144.830076
+        ],
+        [
+          7648.352705,
+          2200.085286
+        ],
+        [
+          5613.464238,
+          2188.690637
+        ]
+      ],
+      "center": [
+        6634.738564,
+        1164.017621
+      ]
+    },
+    {
+      "filename": "jw02875012001_02101_00004_nrcb1_cal.fits",
+      "basename": "jw02875012001_02101_00004_nrcb1_cal",
+      "filter": "F090W",
+      "dither": 4,
+      "detector": 1,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          7795.372254,
+          2321.763273
+        ],
+        [
+          9819.731185,
+          2358.630717
+        ],
+        [
+          9777.050885,
+          4375.656392
+        ],
+        [
+          7774.494058,
+          4343.688741
+        ]
+      ],
+      "center": [
+        8791.662095,
+        3349.934781
+      ]
+    },
+    {
+      "filename": "jw02875012001_02101_00004_nrcb2_cal.fits",
+      "basename": "jw02875012001_02101_00004_nrcb2_cal",
+      "filter": "F090W",
+      "dither": 4,
+      "detector": 2,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          7819.25988,
+          127.167743
+        ],
+        [
+          9873.297772,
+          177.805042
+        ],
+        [
+          9808.784709,
+          2226.911761
+        ],
+        [
+          7782.937303,
+          2181.626001
+        ]
+      ],
+      "center": [
+        8821.069916,
+        1178.377637
+      ]
+    },
+    {
+      "filename": "jw02875012001_02101_00004_nrcb3_cal.fits",
+      "basename": "jw02875012001_02101_00004_nrcb3_cal",
+      "filter": "F090W",
+      "dither": 4,
+      "detector": 3,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          5602.04843,
+          2309.639532
+        ],
+        [
+          7635.317213,
+          2320.068139
+        ],
+        [
+          7620.650461,
+          4342.726225
+        ],
+        [
+          5609.307129,
+          4342.937285
+        ]
+      ],
+      "center": [
+        6616.830808,
+        3328.842795
+      ]
+    },
+    {
+      "filename": "jw02875012001_02101_00004_nrcb4_cal.fits",
+      "basename": "jw02875012001_02101_00004_nrcb4_cal",
+      "filter": "F090W",
+      "dither": 4,
+      "detector": 4,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          5602.907944,
+          108.727475
+        ],
+        [
+          7666.339566,
+          131.090333
+        ],
+        [
+          7644.410539,
+          2186.345571
+        ],
+        [
+          5609.522059,
+          2174.953616
+        ]
+      ],
+      "center": [
+        6630.795027,
+        1150.279249
+      ]
+    },
+    {
+      "filename": "jw02875012001_04101_00001_nrcb1_cal.fits",
+      "basename": "jw02875012001_04101_00001_nrcb1_cal",
+      "filter": "F150W",
+      "dither": 1,
+      "detector": 1,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          7812.99575,
+          2331.558723
+        ],
+        [
+          9837.486886,
+          2368.469087
+        ],
+        [
+          9794.689762,
+          4385.652495
+        ],
+        [
+          7792.050356,
+          4353.718416
+        ]
+      ],
+      "center": [
+        8809.305688,
+        3359.84968
+      ]
+    },
+    {
+      "filename": "jw02875012001_04101_00001_nrcb2_cal.fits",
+      "basename": "jw02875012001_04101_00001_nrcb2_cal",
+      "filter": "F150W",
+      "dither": 1,
+      "detector": 2,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          7836.773525,
+          137.158831
+        ],
+        [
+          9890.965221,
+          187.579063
+        ],
+        [
+          9826.543338,
+          2236.759598
+        ],
+        [
+          7800.533395,
+          2191.599697
+        ]
+      ],
+      "center": [
+        8838.70387,
+        1188.274297
+      ]
+    },
+    {
+      "filename": "jw02875012001_04101_00001_nrcb3_cal.fits",
+      "basename": "jw02875012001_04101_00001_nrcb3_cal",
+      "filter": "F150W",
+      "dither": 1,
+      "detector": 3,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          5619.632576,
+          2319.605478
+        ],
+        [
+          7652.995527,
+          2329.853502
+        ],
+        [
+          7638.317228,
+          4352.61328
+        ],
+        [
+          5626.865816,
+          4352.953386
+        ]
+      ],
+      "center": [
+        6634.452787,
+        3338.756412
+      ]
+    },
+    {
+      "filename": "jw02875012001_04101_00001_nrcb4_cal.fits",
+      "basename": "jw02875012001_04101_00001_nrcb4_cal",
+      "filter": "F150W",
+      "dither": 1,
+      "detector": 4,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          5620.546687,
+          118.633036
+        ],
+        [
+          7684.079942,
+          140.949072
+        ],
+        [
+          7661.955419,
+          2196.174366
+        ],
+        [
+          5626.977655,
+          2184.884136
+        ]
+      ],
+      "center": [
+        6648.389926,
+        1160.160153
+      ]
+    },
+    {
+      "filename": "jw02875012001_04101_00002_nrcb1_cal.fits",
+      "basename": "jw02875012001_04101_00002_nrcb1_cal",
+      "filter": "F150W",
+      "dither": 2,
+      "detector": 1,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          7809.059244,
+          2317.823635
+        ],
+        [
+          9833.550447,
+          2354.730079
+        ],
+        [
+          9790.757227,
+          4371.913565
+        ],
+        [
+          7788.117764,
+          4339.983365
+        ]
+      ],
+      "center": [
+        8805.371171,
+        3346.112661
+      ]
+    },
+    {
+      "filename": "jw02875012001_04101_00002_nrcb2_cal.fits",
+      "basename": "jw02875012001_04101_00002_nrcb2_cal",
+      "filter": "F150W",
+      "dither": 2,
+      "detector": 2,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          7832.832773,
+          123.423697
+        ],
+        [
+          9887.024563,
+          173.839952
+        ],
+        [
+          9822.606646,
+          2223.020609
+        ],
+        [
+          7796.596619,
+          2177.864631
+        ]
+      ],
+      "center": [
+        8834.76515,
+        1174.537222
+      ]
+    },
+    {
+      "filename": "jw02875012001_04101_00002_nrcb3_cal.fits",
+      "basename": "jw02875012001_04101_00002_nrcb3_cal",
+      "filter": "F150W",
+      "dither": 2,
+      "detector": 3,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          5615.69605,
+          2305.874636
+        ],
+        [
+          7649.059017,
+          2316.118723
+        ],
+        [
+          7634.384633,
+          4338.878525
+        ],
+        [
+          5622.933226,
+          4339.222526
+        ]
+      ],
+      "center": [
+        6630.518231,
+        3325.023603
+      ]
+    },
+    {
+      "filename": "jw02875012001_04101_00002_nrcb4_cal.fits",
+      "basename": "jw02875012001_04101_00002_nrcb4_cal",
+      "filter": "F150W",
+      "dither": 2,
+      "detector": 4,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          5616.605898,
+          104.902191
+        ],
+        [
+          7680.139195,
+          127.214231
+        ],
+        [
+          7658.01865,
+          2182.439567
+        ],
+        [
+          5623.040867,
+          2171.153277
+        ]
+      ],
+      "center": [
+        6644.451152,
+        1146.427317
+      ]
+    },
+    {
+      "filename": "jw02875012001_04101_00003_nrcb1_cal.fits",
+      "basename": "jw02875012001_04101_00003_nrcb1_cal",
+      "filter": "F150W",
+      "dither": 3,
+      "detector": 1,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          7799.263537,
+          2335.50837
+        ],
+        [
+          9823.754725,
+          2372.415386
+        ],
+        [
+          9780.960937,
+          4389.598858
+        ],
+        [
+          7778.321488,
+          4357.668092
+        ]
+      ],
+      "center": [
+        8795.575172,
+        3363.797677
+      ]
+    },
+    {
+      "filename": "jw02875012001_04101_00003_nrcb2_cal.fits",
+      "basename": "jw02875012001_04101_00003_nrcb2_cal",
+      "filter": "F150W",
+      "dither": 3,
+      "detector": 2,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          7823.037684,
+          141.108442
+        ],
+        [
+          9877.229453,
+          191.525279
+        ],
+        [
+          9812.81096,
+          2240.705911
+        ],
+        [
+          7786.800952,
+          2195.54936
+        ]
+      ],
+      "center": [
+        8824.969762,
+        1192.222248
+      ]
+    },
+    {
+      "filename": "jw02875012001_04101_00003_nrcb3_cal.fits",
+      "basename": "jw02875012001_04101_00003_nrcb3_cal",
+      "filter": "F150W",
+      "dither": 3,
+      "detector": 3,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          5605.900348,
+          2323.558749
+        ],
+        [
+          7639.263309,
+          2333.803412
+        ],
+        [
+          7624.588355,
+          4356.563208
+        ],
+        [
+          5613.136949,
+          4356.906641
+        ]
+      ],
+      "center": [
+        6620.72224,
+        3342.708003
+      ]
+    },
+    {
+      "filename": "jw02875012001_04101_00003_nrcb4_cal.fits",
+      "basename": "jw02875012001_04101_00003_nrcb4_cal",
+      "filter": "F150W",
+      "dither": 3,
+      "detector": 4,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          5606.810819,
+          122.586306
+        ],
+        [
+          7670.344104,
+          144.898932
+        ],
+        [
+          7648.22298,
+          2200.124256
+        ],
+        [
+          5613.245203,
+          2188.83739
+        ]
+      ],
+      "center": [
+        6634.655777,
+        1164.111721
+      ]
+    },
+    {
+      "filename": "jw02875012001_04101_00004_nrcb1_cal.fits",
+      "basename": "jw02875012001_04101_00004_nrcb1_cal",
+      "filter": "F150W",
+      "dither": 4,
+      "detector": 1,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          7795.313387,
+          2321.770068
+        ],
+        [
+          9819.804553,
+          2358.678054
+        ],
+        [
+          9777.009796,
+          4375.861501
+        ],
+        [
+          7774.370367,
+          4343.929775
+        ]
+      ],
+      "center": [
+        8791.624526,
+        3350.059849
+      ]
+    },
+    {
+      "filename": "jw02875012001_04101_00004_nrcb2_cal.fits",
+      "basename": "jw02875012001_04101_00004_nrcb2_cal",
+      "filter": "F150W",
+      "dither": 4,
+      "detector": 2,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          7819.088588,
+          127.370151
+        ],
+        [
+          9873.28033,
+          177.787972
+        ],
+        [
+          9808.860852,
+          2226.968572
+        ],
+        [
+          7782.850869,
+          2181.81105
+        ]
+      ],
+      "center": [
+        8821.02016,
+        1178.484436
+      ]
+    },
+    {
+      "filename": "jw02875012001_04101_00004_nrcb3_cal.fits",
+      "basename": "jw02875012001_04101_00004_nrcb3_cal",
+      "filter": "F150W",
+      "dither": 4,
+      "detector": 3,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          5601.950204,
+          2309.819399
+        ],
+        [
+          7635.313157,
+          2320.065035
+        ],
+        [
+          7620.637231,
+          4342.82482
+        ],
+        [
+          5609.18583,
+          4343.16729
+        ]
+      ],
+      "center": [
+        6616.771605,
+        3328.969136
+      ]
+    },
+    {
+      "filename": "jw02875012001_04101_00004_nrcb4_cal.fits",
+      "basename": "jw02875012001_04101_00004_nrcb4_cal",
+      "filter": "F150W",
+      "dither": 4,
+      "detector": 4,
+      "shape": [
+        2048,
+        2048
+      ],
+      "referenceFootprint": [
+        [
+          5602.86173,
+          108.846956
+        ],
+        [
+          7666.395003,
+          131.16057
+        ],
+        [
+          7644.272892,
+          2186.385882
+        ],
+        [
+          5609.295124,
+          2175.098042
+        ]
+      ],
+      "center": [
+        6630.706187,
+        1150.372862
+      ]
+    }
+  ]
+}

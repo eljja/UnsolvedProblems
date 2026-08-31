@@ -1,0 +1,116 @@
+{
+  "cycleId": "RC-2026-70",
+  "experimentId": "PHOST-DETECTOR-BASELINE-1",
+  "reviewedOn": "2026-09-01",
+  "sourceParameterFile": "research/reproducibility/rc69-dolphot-reference.param",
+  "invariantParameters": [
+    "FitSky=2",
+    "SecondPass=5",
+    "PSFPhotIt=2",
+    "ApCor=1",
+    "UseWCS=2",
+    "PSFres=1",
+    "InterpPSFlib=1"
+  ],
+  "changedParameter": "photsec only",
+  "tiles": [
+    {
+      "tileId": "nrcb1",
+      "detector": "NRCB1",
+      "photsec": [
+        1,
+        1,
+        8400,
+        2955,
+        9200,
+        3755
+      ],
+      "expectedImageIndices": [
+        1,
+        5,
+        9,
+        13,
+        17,
+        21,
+        25,
+        29
+      ],
+      "parameterFile": "research/reproducibility/rc70-detector-baseline-nrcb1.param",
+      "outputRoot": "rc70-nrcb1.phot"
+    },
+    {
+      "tileId": "nrcb2",
+      "detector": "NRCB2",
+      "photsec": [
+        1,
+        1,
+        8430,
+        783,
+        9230,
+        1583
+      ],
+      "expectedImageIndices": [
+        2,
+        6,
+        10,
+        14,
+        18,
+        22,
+        26,
+        30
+      ],
+      "parameterFile": "research/reproducibility/rc70-detector-baseline-nrcb2.param",
+      "outputRoot": "rc70-nrcb2.phot"
+    },
+    {
+      "tileId": "nrcb3",
+      "detector": "NRCB3",
+      "photsec": [
+        1,
+        1,
+        6226,
+        2934,
+        7026,
+        3734
+      ],
+      "expectedImageIndices": [
+        3,
+        7,
+        11,
+        15,
+        19,
+        23,
+        27,
+        31
+      ],
+      "parameterFile": "research/reproducibility/rc70-detector-baseline-nrcb3.param",
+      "outputRoot": "rc70-nrcb3.phot"
+    },
+    {
+      "tileId": "nrcb4",
+      "detector": "NRCB4",
+      "photsec": [
+        1,
+        1,
+        6240,
+        755,
+        7040,
+        1555
+      ],
+      "expectedImageIndices": [
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32
+      ],
+      "parameterFile": "research/reproducibility/rc70-detector-baseline-nrcb4.param",
+      "outputRoot": "rc70-nrcb4.phot"
+    }
+  ],
+  "executionContract": "Run each outputRoot with DOLPHOT 3.0 from the preprocessed working directory and capture stdout/stderr without modifying the parameter file.",
+  "inferenceBoundary": "These catalogues calibrate the measurement operator. No artificial-star outcome or Hubble-constant effect is estimated in this stage."
+}

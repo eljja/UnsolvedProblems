@@ -1,0 +1,87 @@
+{
+  "cycleId": "RC-2026-70",
+  "reviewedOn": "2026-09-01",
+  "selectedProblems": [
+    "UP-003",
+    "UP-625",
+    "UP-626"
+  ],
+  "selectionReason": "RC69 left the measurement operator as the first unresolved gate. Public WCS metadata, an already-built reference binary, and explicit official quality thresholds allowed a detector-support hypothesis to be tested without opening the sealed artificial-star outcomes or the cosmological endpoint.",
+  "newVerifiedFacts": [
+    "A compact reference tile cannot overlap all four NIRCam short-wave detectors; the detector gaps make three quarters of the 32 image-tile pairs structural non-overlaps.",
+    "Four 800-by-800 reference tiles were selected from WCS footprints alone, with every sampled perimeter at least 64 native detector pixels inside all eight same-detector exposures.",
+    "The four expected-image sets form an exact partition of image indices 1 through 32, with four F090W and four F150W dithers per detector.",
+    "NRCB1 was the prespecified first pilot, using only a photsec change from the RC69 DOLPHOT 3.0 reference parameters.",
+    "All eight expected NRCB1 images matched 983 to 1,039 stars with alignment sigma between 0.08 and 0.10 pixels.",
+    "Every one of the other 24 images had zero matches, exactly as predicted by the outcome-blind WCS support partition.",
+    "Each expected NRCB1 image used 120 or 121 PSF stars; the largest absolute central-pixel adjustment was 0.002850, well inside the documented 0.05 diagnostic threshold.",
+    "Each expected NRCB1 image supplied 200 total aperture stars, twice the documented desirable count of 100.",
+    "The run wrote 14,140 catalogue rows in 39 minutes 11.13 seconds and reached 2,443,108 kB maximum resident memory.",
+    "A Node adjudicator and a separate Python standard-library parser agree exactly on all 32 alignment, PSF, and aperture rows, every gate, and every committed receipt hash."
+  ],
+  "statusChanges": [
+    {
+      "item": "RC69 non-overlap warnings",
+      "from": "unexplained detector-frame warnings",
+      "to": "predicted structural zeros for geometrically disjoint detectors"
+    },
+    {
+      "item": "NRCB1 measurement-operator baseline",
+      "from": "unqualified",
+      "to": "alignment, PSF, aperture, and independent-parser gates passed"
+    },
+    {
+      "item": "four-detector baseline",
+      "from": "open",
+      "to": "one of four detectors passed; three remain"
+    },
+    {
+      "item": "sealed 3,072-row artificial-star test",
+      "from": "closed",
+      "to": "closed until all four detector baselines pass"
+    }
+  ],
+  "hypothesisAdjudication": [
+    {
+      "code": "H70-A",
+      "claim": "The 24 zero-match warnings in a local tile are failed astrometric alignments.",
+      "prediction": "At least one zero will occur inside the tile's predeclared same-detector WCS support, or a supposedly disjoint image will match.",
+      "result": "Rejected for NRCB1: the eight supported images all match strongly and the 24 unsupported images are exactly zero."
+    },
+    {
+      "code": "H70-B",
+      "claim": "An 800-by-800 detector tile remains too small to qualify the PSF and aperture corrections.",
+      "prediction": "An expected NRCB1 image uses fewer than 100 PSF or aperture stars, or has an absolute central-pixel PSF adjustment of at least 0.05.",
+      "result": "Rejected for NRCB1: 120-121 PSF stars, maximum absolute adjustment 0.002850, and 200 aperture stars per expected image."
+    },
+    {
+      "code": "H70-C",
+      "claim": "A detector-stratified baseline can be transported unchanged across NRCB1-4.",
+      "prediction": "The unchanged NRCB2-4 parameter files pass the same geometry, alignment, PSF, and aperture gates.",
+      "result": "Open: the parameters and WCS tiles are frozen, but only NRCB1 was executed."
+    },
+    {
+      "code": "H70-D",
+      "claim": "Collision state changes inclusion or flux residual after detector support is conditioned correctly.",
+      "prediction": "The sealed balanced AST surface differs between isolated and collision cells and replicates in an independent fixed-scene implementation.",
+      "result": "Not tested: no sealed artificial-star row was opened in RC70."
+    }
+  ],
+  "failedOrRejectedAttempts": [
+    "Treating all 32 images as if a compact tile should overlap every detector was rejected by the official focal-plane topology and exact WCS footprints.",
+    "The earlier interpretation of 24 zero-match warnings as possible alignment failures was rejected for NRCB1 by the exact supported-versus-unsupported match pattern.",
+    "A single monolithic full-mosaic baseline was not pursued after the support audit showed that detector-specific structural zeros would make its warning count scientifically ambiguous.",
+    "The 800-by-800 pilot produced 73,545 initial candidates and required about 55,008 user CPU seconds, so running four detectors concurrently was rejected as an unnecessary resource and audit risk.",
+    "The successful NRCB1 receipt was not generalized to NRCB2-4 and was not used to open the artificial-star or distance gates."
+  ],
+  "connectionUpdate": {
+    "id": "CONN-EVIDENCE-041",
+    "commonStructure": "A measurement exists only on a predeclared support set. Structural zeros outside that set must not be counted as failed observations or used to select a favorable analysis branch.",
+    "variables": "Detector tile/exposure membership maps to unit/support membership; matched-star count maps to observation availability; PSF and aperture receipts map to measurement quality; an AST row maps to a post-selection outcome.",
+    "verifiedThisCycle": "WCS support predicted the complete 8-versus-24 match pattern before outcomes, and two parsers reproduced the quality gates from committed receipts.",
+    "stillUnverified": "Transport across NRCB2-4, the collision effect, finite-sample coverage, independent scene-model replication, and distance transport remain open."
+  },
+  "minimumMeaningfulAdvance": "Pass the unchanged NRCB2, NRCB3, and NRCB4 detector baselines with the same independently parsed quality gates; this closes a necessary measurement-operator condition without spending any sealed artificial-star outcome.",
+  "exactNextStart": "Run rc70-detector-baseline-nrcb2.param, then NRCB3 and NRCB4 sequentially with DOLPHOT 3.0. Preserve stdout, warnings, PSF, aperture, info, timing, parameter, and binary hashes. Require at least 100 matched stars with sigma below 0.30, at least 100 PSF stars with absolute central adjustment below 0.05, and at least 100 aperture stars in each of the eight expected images. If every detector passes and an independent parser agrees, freeze a support-aware AST scheduler that dispatches each of the 3,072 injection identities only to its covering detector exposures while retaining 99.999 non-detections. Then implement the fixed-scene comparison before any distance inference.",
+  "claimBoundary": "RC70 verifies detector support semantics and a qualified NRCB1 reference reduction. It does not verify the other three detectors, an artificial-star recovery rate, collision-induced photometric bias, a Cepheid component distance difference, or any change in the Hubble constant."
+}

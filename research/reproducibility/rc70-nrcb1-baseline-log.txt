@@ -1,0 +1,390 @@
+Using 24 threads
+Image 1: Reading FITS file jw02875012001_02101_00001_nrcb1_cal.fits
+Image 2: Reading FITS file jw02875012001_02101_00001_nrcb2_cal.fits
+Image 3: Reading FITS file jw02875012001_02101_00001_nrcb3_cal.fits
+Image 4: Reading FITS file jw02875012001_02101_00001_nrcb4_cal.fits
+Image 5: Reading FITS file jw02875012001_02101_00002_nrcb1_cal.fits
+Image 6: Reading FITS file jw02875012001_02101_00002_nrcb2_cal.fits
+Image 7: Reading FITS file jw02875012001_02101_00002_nrcb3_cal.fits
+Image 8: Reading FITS file jw02875012001_02101_00002_nrcb4_cal.fits
+Image 9: Reading FITS file jw02875012001_02101_00003_nrcb1_cal.fits
+Image 10: Reading FITS file jw02875012001_02101_00003_nrcb2_cal.fits
+Image 11: Reading FITS file jw02875012001_02101_00003_nrcb3_cal.fits
+Image 12: Reading FITS file jw02875012001_02101_00003_nrcb4_cal.fits
+Image 13: Reading FITS file jw02875012001_02101_00004_nrcb1_cal.fits
+Image 14: Reading FITS file jw02875012001_02101_00004_nrcb2_cal.fits
+Image 15: Reading FITS file jw02875012001_02101_00004_nrcb3_cal.fits
+Image 16: Reading FITS file jw02875012001_02101_00004_nrcb4_cal.fits
+Image 17: Reading FITS file jw02875012001_04101_00001_nrcb1_cal.fits
+Image 18: Reading FITS file jw02875012001_04101_00001_nrcb2_cal.fits
+Image 19: Reading FITS file jw02875012001_04101_00001_nrcb3_cal.fits
+Image 20: Reading FITS file jw02875012001_04101_00001_nrcb4_cal.fits
+Image 21: Reading FITS file jw02875012001_04101_00002_nrcb1_cal.fits
+Image 22: Reading FITS file jw02875012001_04101_00002_nrcb2_cal.fits
+Image 23: Reading FITS file jw02875012001_04101_00002_nrcb3_cal.fits
+Image 24: Reading FITS file jw02875012001_04101_00002_nrcb4_cal.fits
+Image 25: Reading FITS file jw02875012001_04101_00003_nrcb1_cal.fits
+Image 26: Reading FITS file jw02875012001_04101_00003_nrcb2_cal.fits
+Image 27: Reading FITS file jw02875012001_04101_00003_nrcb3_cal.fits
+Image 28: Reading FITS file jw02875012001_04101_00003_nrcb4_cal.fits
+Image 29: Reading FITS file jw02875012001_04101_00004_nrcb1_cal.fits
+Image 30: Reading FITS file jw02875012001_04101_00004_nrcb2_cal.fits
+Image 31: Reading FITS file jw02875012001_04101_00004_nrcb3_cal.fits
+Image 32: Reading FITS file jw02875012001_04101_00004_nrcb4_cal.fits
+Image 0: Reading FITS file f150w_i2d.fits
+Reading IMAGE extension: 2048x2048
+  GAIN=2.01 EXP=429s NOISE=6.08 BAD=-1735.80 SAT=911200.06
+Reading IMAGE extension: 2048x2048
+  GAIN=2.14 EXP=429s NOISE=6.59 BAD=-1711.41 SAT=330666.09
+Reading IMAGE extension: 2048x2048
+  GAIN=1.94 EXP=429s NOISE=6.12 BAD=-2338.20 SAT=695542.69
+Reading IMAGE extension: 2048x2048
+  GAIN=2.03 EXP=429s NOISE=6.46 BAD=-295.04 SAT=460704.75
+Reading IMAGE extension: 2048x2048
+  GAIN=2.01 EXP=429s NOISE=6.08 BAD=-2744.97 SAT=983732.12
+Reading IMAGE extension: 2048x2048
+  GAIN=2.14 EXP=429s NOISE=6.59 BAD=-2295.35 SAT=120669.27
+Reading IMAGE extension: 2048x2048
+  GAIN=1.94 EXP=429s NOISE=6.12 BAD=-2340.21 SAT=353946.81
+Reading IMAGE extension: 2048x2048
+  GAIN=2.03 EXP=429s NOISE=6.46 BAD=-1533.60 SAT=3276562.75
+Reading IMAGE extension: 2048x2048
+  GAIN=2.01 EXP=429s NOISE=6.08 BAD=-591.35 SAT=844797.00
+Reading IMAGE extension: 2048x2048
+  GAIN=2.14 EXP=429s NOISE=6.59 BAD=-1796.41 SAT=711345.19
+Reading IMAGE extension: 2048x2048
+  GAIN=1.94 EXP=429s NOISE=6.12 BAD=-562.15 SAT=136921.11
+Reading IMAGE extension: 2048x2048
+  GAIN=2.03 EXP=429s NOISE=6.46 BAD=-552.88 SAT=2779300.25
+Reading IMAGE extension: 2048x2048
+  GAIN=2.01 EXP=429s NOISE=6.08 BAD=-446.39 SAT=956391.81
+Reading IMAGE extension: 2048x2048
+  GAIN=2.14 EXP=429s NOISE=6.59 BAD=-1238.14 SAT=706513.69
+Reading IMAGE extension: 2048x2048
+  GAIN=1.94 EXP=429s NOISE=6.12 BAD=-1441.52 SAT=126196.53
+Reading IMAGE extension: 2048x2048
+  GAIN=2.03 EXP=429s NOISE=6.46 BAD=-1649.03 SAT=2426679.25
+Reading IMAGE extension: 2048x2048
+  GAIN=2.01 EXP=536s NOISE=9.95 BAD=-7495.70 SAT=1494842.75
+Reading IMAGE extension: 2048x2048
+  GAIN=2.14 EXP=536s NOISE=10.79 BAD=-10481.85 SAT=103674.66
+Reading IMAGE extension: 2048x2048
+  GAIN=1.94 EXP=536s NOISE=10.02 BAD=-5165.07 SAT=320052.94
+Reading IMAGE extension: 2048x2048
+  GAIN=2.03 EXP=536s NOISE=10.58 BAD=-1179.64 SAT=651052.69
+Reading IMAGE extension: 2048x2048
+  GAIN=2.01 EXP=536s NOISE=9.95 BAD=-2147.85 SAT=1532110.75
+Reading IMAGE extension: 2048x2048
+  GAIN=2.14 EXP=536s NOISE=10.79 BAD=-17007.72 SAT=117935.83
+Reading IMAGE extension: 2048x2048
+  GAIN=1.94 EXP=536s NOISE=10.02 BAD=-1124.11 SAT=309696.09
+Reading IMAGE extension: 2048x2048
+  GAIN=2.03 EXP=536s NOISE=10.58 BAD=-5947.31 SAT=519859.31
+Reading IMAGE extension: 2048x2048
+  GAIN=2.01 EXP=536s NOISE=9.95 BAD=-4954.83 SAT=1354256.25
+Reading IMAGE extension: 2048x2048
+  GAIN=2.14 EXP=536s NOISE=10.79 BAD=-1333.67 SAT=108505.64
+Reading IMAGE extension: 2048x2048
+  GAIN=1.94 EXP=536s NOISE=10.02 BAD=-7549.28 SAT=338970.59
+Reading IMAGE extension: 2048x2048
+  GAIN=2.03 EXP=536s NOISE=10.58 BAD=-16283.98 SAT=613893.31
+Reading IMAGE extension: 2048x2048
+  GAIN=2.01 EXP=536s NOISE=9.95 BAD=-6559.72 SAT=1486645.12
+Reading IMAGE extension: 2048x2048
+  GAIN=2.14 EXP=536s NOISE=10.79 BAD=-20909.04 SAT=111001.30
+Reading IMAGE extension: 2048x2048
+  GAIN=1.94 EXP=536s NOISE=10.02 BAD=-16540.81 SAT=321350.25
+Reading IMAGE extension: 2048x2048
+  GAIN=2.03 EXP=536s NOISE=10.58 BAD=-23460.83 SAT=579947.94
+Reading IMAGE extension: 9891x4390
+  GAIN=2.05 EXP=2490s NOISE=11.46 BAD=-7997.96 SAT=9099744.00
+** Extension 1, Chip 1 **
+CD matrix not found; using PC matrix instead
+reference rmsi = 0.000083, rmsf = 0.000030
+reverse rmsi = 2.621345, rmsf = 0.000181
+forward rmsi = 2.615588, rmsf = 0.000181
+reverse rmsi = 3.496095, rmsf = 0.000294
+forward rmsi = 3.486733, rmsf = 0.000426
+reverse rmsi = 2.878108, rmsf = 0.000154
+forward rmsi = 2.871130, rmsf = 0.000135
+reverse rmsi = 3.720793, rmsf = 0.000142
+forward rmsi = 3.710800, rmsf = 0.000220
+reverse rmsi = 2.621321, rmsf = 0.000186
+forward rmsi = 2.615555, rmsf = 0.000182
+reverse rmsi = 3.496087, rmsf = 0.000300
+forward rmsi = 3.486723, rmsf = 0.000293
+reverse rmsi = 2.878078, rmsf = 0.000136
+forward rmsi = 2.871094, rmsf = 0.000136
+reverse rmsi = 3.720797, rmsf = 0.000148
+forward rmsi = 3.710813, rmsf = 0.000132
+reverse rmsi = 2.621345, rmsf = 0.000202
+forward rmsi = 2.615531, rmsf = 0.000179
+reverse rmsi = 3.496098, rmsf = 0.000303
+forward rmsi = 3.486761, rmsf = 0.000313
+reverse rmsi = 2.878089, rmsf = 0.000147
+forward rmsi = 2.871129, rmsf = 0.000144
+reverse rmsi = 3.720799, rmsf = 0.000133
+forward rmsi = 3.710786, rmsf = 0.000151
+reverse rmsi = 2.621322, rmsf = 0.000184
+forward rmsi = 2.615616, rmsf = 0.000179
+reverse rmsi = 3.496092, rmsf = 0.000298
+forward rmsi = 3.486765, rmsf = 0.000297
+reverse rmsi = 2.878082, rmsf = 0.000144
+forward rmsi = 2.871108, rmsf = 0.000150
+reverse rmsi = 3.720799, rmsf = 0.000152
+forward rmsi = 3.710779, rmsf = 0.000166
+reverse rmsi = 2.629742, rmsf = 0.000219
+forward rmsi = 2.623914, rmsf = 0.000120
+reverse rmsi = 3.510208, rmsf = 0.000236
+forward rmsi = 3.500873, rmsf = 0.000195
+reverse rmsi = 2.855463, rmsf = 0.000220
+forward rmsi = 2.848741, rmsf = 0.000125
+reverse rmsi = 3.708340, rmsf = 0.000218
+forward rmsi = 3.698755, rmsf = 0.000221
+reverse rmsi = 2.629717, rmsf = 0.000138
+forward rmsi = 2.623828, rmsf = 0.000121
+reverse rmsi = 3.510202, rmsf = 0.000196
+forward rmsi = 3.500934, rmsf = 0.000225
+reverse rmsi = 2.855445, rmsf = 0.000125
+forward rmsi = 2.848858, rmsf = 0.000122
+reverse rmsi = 3.708336, rmsf = 0.000221
+forward rmsi = 3.698767, rmsf = 0.000217
+reverse rmsi = 2.629735, rmsf = 0.000177
+forward rmsi = 2.623723, rmsf = 0.000119
+reverse rmsi = 3.510206, rmsf = 0.000196
+forward rmsi = 3.500938, rmsf = 0.000201
+reverse rmsi = 2.855454, rmsf = 0.000122
+forward rmsi = 2.848834, rmsf = 0.000124
+reverse rmsi = 3.708334, rmsf = 0.000218
+forward rmsi = 3.698769, rmsf = 0.000224
+reverse rmsi = 2.629717, rmsf = 0.000124
+forward rmsi = 2.623776, rmsf = 0.000118
+reverse rmsi = 3.510199, rmsf = 0.000204
+forward rmsi = 3.500956, rmsf = 0.000214
+reverse rmsi = 2.855437, rmsf = 0.000122
+forward rmsi = 2.848852, rmsf = 0.000122
+reverse rmsi = 3.708337, rmsf = 0.000222
+forward rmsi = 3.698772, rmsf = 0.000218
+1042 stars for alignment
+image 1: 1002 matched, 953 used, 0.05 0.01 1.000000 0.00000 -0.002, sig=0.10
+image 2: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 3: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 4: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 5: 1004 matched, 949 used, 0.04 0.06 1.000000 0.00000 -0.001, sig=0.10
+image 6: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 7: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 8: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 9: 983 matched, 936 used, -0.01 0.06 1.000000 0.00000 -0.002, sig=0.10
+image 10: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 11: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 12: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 13: 988 matched, 931 used, 0.00 0.12 1.000000 0.00000 -0.002, sig=0.10
+image 14: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 15: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 16: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 17: 1039 matched, 985 used, -0.01 -0.02 1.000000 0.00000 0.000, sig=0.08
+image 18: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 19: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 20: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 21: 1035 matched, 968 used, -0.02 0.03 1.000000 0.00000 0.000, sig=0.08
+image 22: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 23: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 24: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 25: 1033 matched, 983 used, -0.07 0.03 1.000000 0.00000 0.001, sig=0.08
+image 26: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 27: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 28: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 29: 1037 matched, 987 used, -0.05 0.09 1.000000 0.00000 0.000, sig=0.09
+image 30: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 31: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+image 32: 0 matched, 0 used, 0.00 0.00 1.000000 0.00000 0.000, sig=0.00
+Finding stars: .......
+73545 found
+9874 stars eliminated
+21797 stars eliminated
+6512 stars eliminated
+3103 stars eliminated
+1636 stars eliminated
+849 stars eliminated
+490 stars eliminated
+247 stars eliminated
+144 stars eliminated
+94 stars eliminated
+57 stars eliminated
+19 stars eliminated
+14 stars eliminated
+158 PSF stars; 7728 neighbors
+Central pixel PSF adjustments:
+image 1: 120 stars, 0.000042
+image 2: 0 stars, 0.000000
+image 3: 0 stars, 0.000000
+image 4: 0 stars, 0.000000
+image 5: 121 stars, -0.001099
+image 6: 0 stars, 0.000000
+image 7: 0 stars, 0.000000
+image 8: 0 stars, 0.000000
+image 9: 121 stars, -0.002850
+image 10: 0 stars, 0.000000
+image 11: 0 stars, 0.000000
+image 12: 0 stars, 0.000000
+image 13: 120 stars, -0.001684
+image 14: 0 stars, 0.000000
+image 15: 0 stars, 0.000000
+image 16: 0 stars, 0.000000
+image 17: 120 stars, -0.000493
+image 18: 0 stars, 0.000000
+image 19: 0 stars, 0.000000
+image 20: 0 stars, 0.000000
+image 21: 121 stars, -0.000830
+image 22: 0 stars, 0.000000
+image 23: 0 stars, 0.000000
+image 24: 0 stars, 0.000000
+image 25: 121 stars, -0.001707
+image 26: 0 stars, 0.000000
+image 27: 0 stars, 0.000000
+image 28: 0 stars, 0.000000
+image 29: 120 stars, -0.000665
+image 30: 0 stars, 0.000000
+image 31: 0 stars, 0.000000
+image 32: 0 stars, 0.000000
+9270 stars eliminated
+1055 stars eliminated
+1232 stars eliminated
+445 stars eliminated
+76 stars eliminated
+44 stars eliminated
+16 stars eliminated
+4 stars eliminated
+2 stars eliminated
+2 stars eliminated
+2 stars eliminated
+Aperture corrections:
+image 1: 200 total aperture stars
+  200 stars used, -0.007 (-0.008 +/- 0.000, 0.003)
+  181 stars used, -0.049 (-0.047 +/- 0.001, 0.006)
+  200 stars used,  0.118 (0.118 +/- 0.000, 0.001)
+image 2: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 3: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 4: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 5: 200 total aperture stars
+  200 stars used, -0.007 (-0.008 +/- 0.000, 0.003)
+  188 stars used, -0.045 (-0.045 +/- 0.000, 0.005)
+  200 stars used,  0.118 (0.118 +/- 0.000, 0.001)
+image 6: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 7: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 8: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 9: 200 total aperture stars
+  200 stars used, -0.005 (-0.006 +/- 0.000, 0.003)
+  184 stars used, -0.042 (-0.040 +/- 0.000, 0.005)
+  200 stars used,  0.118 (0.118 +/- 0.000, 0.001)
+image 10: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 11: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 12: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 13: 200 total aperture stars
+  200 stars used, -0.007 (-0.008 +/- 0.000, 0.003)
+  185 stars used, -0.056 (-0.053 +/- 0.001, 0.005)
+  200 stars used,  0.118 (0.118 +/- 0.000, 0.001)
+image 14: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 15: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 16: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 17: 200 total aperture stars
+  200 stars used,  0.000 (-0.000 +/- 0.000, 0.002)
+  171 stars used, -0.013 (-0.014 +/- 0.000, 0.003)
+  200 stars used,  0.136 (0.135 +/- 0.000, 0.001)
+image 18: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 19: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 20: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 21: 200 total aperture stars
+  200 stars used,  0.000 (0.000 +/- 0.000, 0.002)
+  180 stars used, -0.013 (-0.015 +/- 0.000, 0.003)
+  200 stars used,  0.135 (0.135 +/- 0.000, 0.001)
+image 22: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 23: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 24: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 25: 200 total aperture stars
+  200 stars used,  0.000 (0.000 +/- 0.000, 0.002)
+  172 stars used, -0.006 (-0.010 +/- 0.000, 0.003)
+  200 stars used,  0.136 (0.136 +/- 0.000, 0.001)
+image 26: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 27: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 28: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 29: 200 total aperture stars
+  200 stars used,  0.001 (0.001 +/- 0.000, 0.002)
+  175 stars used, -0.009 (-0.010 +/- 0.000, 0.003)
+  200 stars used,  0.135 (0.135 +/- 0.000, 0.001)
+image 30: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 31: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+image 32: 0 total aperture stars
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+  0 stars used,  0.000 (0.000 +/- 0.000, 0.000)
+14140 stars written; 2421 stars deleted

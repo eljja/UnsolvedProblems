@@ -1,0 +1,78 @@
+{
+  "cycleId": "RC-2026-70",
+  "reviewedOn": "2026-09-01",
+  "sources": [
+    {
+      "id": "dolphot_output_quality_2026",
+      "type": "official-software-documentation",
+      "title": "DOLPHOT JWST — Output and Logs",
+      "url": "https://dolphot-jwst.readthedocs.io/en/latest/post-processing/output.html",
+      "publicationDate": null,
+      "resultDate": null,
+      "reviewDate": "2026-09-01",
+      "claimsUsed": [
+        "For moderately populated NIRCam images, alignment should normally retain at least 100 matched stars with sigma below 0.30 pixels.",
+        "At least 100 stars per image are desirable for PSF measurement, and the absolute central-pixel PSF adjustment should remain below 0.05.",
+        "At least 100 stars per image are desirable for aperture correction."
+      ]
+    },
+    {
+      "id": "dolphot_parameter_definitions_2026",
+      "type": "official-software-documentation",
+      "title": "DOLPHOT JWST — Parameter Definitions",
+      "url": "https://dolphot-jwst.readthedocs.io/en/latest/running_dolphot/definitions.html",
+      "publicationDate": null,
+      "resultDate": null,
+      "reviewDate": "2026-09-01",
+      "claimsUsed": [
+        "JWST reductions require WCS-based alignment settings.",
+        "FitSky=2 is a robust sky-fitting mode for crowded fields.",
+        "PSF-star and aperture-correction outputs are quality-control artifacts rather than optional presentation details."
+      ]
+    },
+    {
+      "id": "nircam_field_of_view_2026",
+      "type": "official-instrument-documentation",
+      "title": "NIRCam Field of View",
+      "url": "https://jwst-docs.stsci.edu/jwst-near-infrared-camera/nircam-instrumentation/nircam-field-of-view",
+      "publicationDate": null,
+      "resultDate": null,
+      "reviewDate": "2026-09-01",
+      "claimsUsed": [
+        "A NIRCam module has four short-wavelength detectors arranged in a two-by-two layout.",
+        "The short-wavelength detector footprints are separated by physical gaps, so a compact sky tile need not overlap all four detectors."
+      ]
+    },
+    {
+      "id": "dolphot_jwst_crowded_photometry_2024",
+      "type": "primary-paper",
+      "title": "DOLPHOT Stellar Photometry for JWST NIRCam and NIRISS Imaging",
+      "url": "https://doi.org/10.3847/1538-4365/ad2600",
+      "publicationDate": "2024-04-01",
+      "resultDate": "2024-01-10",
+      "reviewDate": "2026-09-01",
+      "claimsUsed": [
+        "DOLPHOT was validated for crowded-field photometry on calibrated JWST exposures.",
+        "PSF and aperture-correction mismatch can contribute approximately hundredth-magnitude systematics, while detector-dependent offsets can be larger."
+      ]
+    },
+    {
+      "id": "shoes_perfect_host_2025",
+      "type": "primary-paper",
+      "title": "A Perfect Host for a Test of the Hubble Constant",
+      "url": "https://arxiv.org/abs/2509.01667",
+      "publicationDate": "2025-09-01",
+      "resultDate": "2025-09-01",
+      "reviewDate": "2026-09-01",
+      "claimsUsed": [
+        "NGC 3447 contains two interacting components that support a differential Cepheid-distance comparison.",
+        "The published component comparison does not remove the need to validate target-specific flux recovery on native exposures."
+      ]
+    }
+  ],
+  "factInferenceProposalBoundary": {
+    "verifiedFacts": "Instrument topology, software diagnostics, the 32 archived exposure identities, WCS footprint membership, and the real reference-run output are treated as facts only when independently parsed.",
+    "inference": "Classifying zero matches outside a detector's predeclared support as geometric non-overlap is an inference tested by exact agreement between WCS membership and DOLPHOT match rows.",
+    "proposal": "Running the remaining three detector tiles, enlarging failed calibration regions, and only then spending the sealed artificial-star rows remain proposed next actions."
+  }
+}

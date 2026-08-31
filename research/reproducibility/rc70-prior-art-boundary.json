@@ -1,0 +1,59 @@
+{
+  "cycleId": "RC-2026-70",
+  "reviewedOn": "2026-09-01",
+  "question": "Does a detector-stratified reference reduction distinguish geometric non-overlap from failed astrometric alignment before an artificial-star campaign?",
+  "queries": [
+    "DOLPHOT JWST output alignment matched stars sigma quality threshold",
+    "DOLPHOT JWST PSF stars central pixel adjustment aperture correction stars",
+    "NIRCam short wavelength detector field of view gap four detectors",
+    "DOLPHOT JWST crowded field photometry aperture correction PSF residual",
+    "NGC 3447 JWST Cepheid Perfect Host native exposure photometry"
+  ],
+  "establishedMethods": [
+    {
+      "method": "DOLPHOT output-quality receipts",
+      "boundary": "The official documentation defines alignment, PSF-star, central-pixel-adjustment, and aperture-star diagnostics. RC70 applies those published diagnostics; it does not introduce them."
+    },
+    {
+      "method": "NIRCam detector geometry",
+      "boundary": "STScI documents four short-wave detectors arranged with physical gaps. RC70 uses that instrument topology to predeclare which exposures can overlap each reference tile."
+    },
+    {
+      "method": "Detector-level crowded-field validation",
+      "boundary": "The DOLPHOT JWST validation literature reports detector- and epoch-dependent PSF and aperture effects. RC70 narrows the current archive problem to an auditable detector support check before injections."
+    },
+    {
+      "method": "NGC 3447 two-component distance comparison",
+      "boundary": "The Perfect Host study supplies the scientific target and published Cepheid set. RC70 does not reinterpret its distance result; it tests whether a later exposure-level intervention has a valid measurement operator."
+    }
+  ],
+  "primarySources": [
+    {
+      "title": "DOLPHOT JWST — Output and Logs",
+      "url": "https://dolphot-jwst.readthedocs.io/en/latest/post-processing/output.html",
+      "use": "Published alignment, PSF, and aperture-correction diagnostics and recommended counts"
+    },
+    {
+      "title": "DOLPHOT JWST — Parameter Definitions",
+      "url": "https://dolphot-jwst.readthedocs.io/en/latest/running_dolphot/definitions.html",
+      "use": "UseWCS, FitSky, PSF-star, and aperture-correction parameter semantics"
+    },
+    {
+      "title": "NIRCam Field of View",
+      "url": "https://jwst-docs.stsci.edu/jwst-near-infrared-camera/nircam-instrumentation/nircam-field-of-view",
+      "use": "Official four-detector short-wave focal-plane layout and inter-detector gaps"
+    },
+    {
+      "title": "DOLPHOT Stellar Photometry for JWST NIRCam and NIRISS",
+      "url": "https://arxiv.org/abs/2402.03504",
+      "use": "Primary validation of JWST crowded-field photometry, PSF and aperture-correction systematics"
+    },
+    {
+      "title": "A Perfect Host for a Test of the Hubble Constant",
+      "url": "https://arxiv.org/abs/2509.01667",
+      "use": "Primary NGC 3447 Cepheid and two-component scientific context"
+    }
+  ],
+  "testedCombination": "Outcome-blind WCS tiling plus a predeclared detector-to-exposure support partition, followed by a real DOLPHOT 3.0 reference run and independent parsing, tests whether zero matches are structural zeros rather than alignment failures. This is a reproducible validation design, not a claim of method priority or patentability.",
+  "noveltyBoundary": "The constituent instrument geometry, WCS, photometry software, and quality diagnostics are established. The research contribution of this cycle is their falsifiable combination at the exact handoff left by RC69, with scientific inference stopped unless the measurement-operator receipts pass."
+}
