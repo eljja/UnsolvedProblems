@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 const dir='research/reproducibility/';
-const input=fs.readFileSync(dir+'rc74-aperture-pixels.json');
+const input=Buffer.from(fs.readFileSync(dir+'rc74-aperture-pixels.json','utf8').replaceAll('\r\n','\n'),'utf8');
 const pixels=JSON.parse(input);
 // Integrate piecewise constant / circular boundary segments analytically.
 function overlap(x,y,r) {
@@ -80,6 +80,6 @@ assert(maxRelativeFluxDifference<=1e-8);
 const familyRows=rows.filter(r=>r.range), bad=familyRows.find(r=>r.pattern===2);
 const optimisticPattern2Deficit=1-4*bad.range.upper/(bad.range.upper+familyRows.filter(r=>r.pattern!==2).reduce((s,r)=>s+r.range.lower,0));
 assert(Math.abs(optimisticPattern2Deficit-python.finiteFamilyEnvelope.optimisticPattern2Deficit)<1e-12);
-const result={cycle:'RC-2026-74',inputSha256:crypto.createHash('sha256').update(input).digest('hex'),method:'Piecewise circle antiderivative; no Python weights or fluxes used to compute sums.',maxDiskAreaError,maxRelativeFluxDifference,optimisticPattern2Deficit,missingR5ExposureCount:rows.filter(r=>r.missingR5).length,rows,reproduced:true,boundary:'Independent aperture geometry and pixel sums, not independent MAST retrieval, unit conversion, centroid, background or physical calibration.'};
+const result={cycle:'RC-2026-74',hashPolicy:'JSON SHA-256 uses UTF-8 bytes with CRLF normalized to LF.',inputSha256:crypto.createHash('sha256').update(input).digest('hex'),method:'Piecewise circle antiderivative; no Python weights or fluxes used to compute sums.',maxDiskAreaError,maxRelativeFluxDifference,optimisticPattern2Deficit,missingR5ExposureCount:rows.filter(r=>r.missingR5).length,rows,reproduced:true,boundary:'Independent aperture geometry and pixel sums, not independent MAST retrieval, unit conversion, centroid, background or physical calibration.'};
 if(process.argv.includes('--write')) fs.writeFileSync(dir+'rc74-independent-aperture-audit.json',JSON.stringify(result,null,2)+'\n');
 console.log(JSON.stringify({reproduced:true,maxDiskAreaError,maxRelativeFluxDifference,missingR5ExposureCount:result.missingR5ExposureCount}));

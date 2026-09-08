@@ -3,6 +3,7 @@
   "reviewedOn": "2026-09-09",
   "status": "completed-exploratory-decomposition-not-physical-validation",
   "baseline": "4d08dd42e2d2a7465155e68291bc3c14a6a7b2de",
+  "reproducibilityNote": "Before public release verification, Git's Windows CRLF-to-LF conversion was found to invalidate raw JSON hashes on Linux. JSON input hashes now explicitly normalize CRLF to LF; binary NPZ hashes remain byte-exact. Tests accept equivalent line endings and reject changed data. This changes no measured flux or scientific decision; the initial implementation remains in Git history.",
   "selectedProblems": ["UP-003", "UP-625"],
   "selection": {
     "catalogInventory": "744 entries across 13 disciplines; prior cycle records and latest RC59-RC73 next-start paths inspected. This is a structural and continuation review, not a refreshed literature review of every claim in all 744 entries.",

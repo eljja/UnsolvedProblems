@@ -6,7 +6,8 @@
     "scipy": "1.11.1",
     "astropy": "5.1"
   },
-  "inputResultSha256": "84cac0e72d365f09f785e4ede2850240eb73f7be654e681fb0562aadb299d123",
+  "hashPolicy": "JSON SHA-256 uses UTF-8 bytes with CRLF normalized to LF; NPZ cache hashes use unmodified bytes.",
+  "inputResultSha256": "0cff2e128f90c1d515f9f13b7161e10acc4f024a4aa286ac97bcd572f63cf74c",
   "cacheHashes": [
     {
       "filename": "jw06605006001_02103_00001_nrcb1_cal.fits",

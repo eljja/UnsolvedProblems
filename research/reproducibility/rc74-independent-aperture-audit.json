@@ -1,6 +1,7 @@
 {
   "cycle": "RC-2026-74",
-  "inputSha256": "69356972150482b16db4109115d91ea8207a661ef50e983aa0470e28a1966f7f",
+  "hashPolicy": "JSON SHA-256 uses UTF-8 bytes with CRLF normalized to LF.",
+  "inputSha256": "699fe33f12c934984e8f196609bdac40f2152d76005f51cb799986b50b65a0b8",
   "method": "Piecewise circle antiderivative; no Python weights or fluxes used to compute sums.",
   "maxDiskAreaError": 1.1368683772161603e-13,
   "maxRelativeFluxDifference": 1.3322676295501878e-15,
