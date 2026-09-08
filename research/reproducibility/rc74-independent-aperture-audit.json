@@ -1,0 +1,313 @@
+{
+  "cycle": "RC-2026-74",
+  "inputSha256": "69356972150482b16db4109115d91ea8207a661ef50e983aa0470e28a1966f7f",
+  "method": "Piecewise circle antiderivative; no Python weights or fluxes used to compute sums.",
+  "maxDiskAreaError": 1.1368683772161603e-13,
+  "maxRelativeFluxDifference": 1.3322676295501878e-15,
+  "optimisticPattern2Deficit": 0.02224362272009206,
+  "missingR5ExposureCount": 2,
+  "rows": [
+    {
+      "filename": "jw06605006001_02103_00001_nrcb1_cal.fits",
+      "fluxes": {
+        "r3": 911.3089251003248,
+        "r5": 1000.4061866696867,
+        "r8": 1068.9372859594866
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 1,
+      "range": {
+        "lower": 999.4500748796833,
+        "upper": 1000.4108288541486
+      }
+    },
+    {
+      "filename": "jw06605006001_02103_00002_nrcb1_cal.fits",
+      "fluxes": {
+        "r3": 879.865888408128,
+        "r5": 968.241133588001,
+        "r8": 1032.326779020998
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 2,
+      "range": {
+        "lower": 966.8570723825957,
+        "upper": 968.3341813876726
+      }
+    },
+    {
+      "filename": "jw06605006001_02103_00003_nrcb1_cal.fits",
+      "fluxes": {
+        "r3": 903.0936810846748,
+        "r5": 991.8530470389503,
+        "r8": 1059.4626718646523
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 3,
+      "range": {
+        "lower": 990.9214520115931,
+        "upper": 991.9040679764279
+      }
+    },
+    {
+      "filename": "jw06605006001_02103_00004_nrcb1_cal.fits",
+      "fluxes": {
+        "r3": 918.5495670660673,
+        "r5": 1003.6697097769501,
+        "r8": 1069.2593613971894
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 4,
+      "range": {
+        "lower": 1002.7481012336101,
+        "upper": 1003.832604008933
+      }
+    },
+    {
+      "filename": "jw06605006001_02107_00001_nrcb1_cal.fits",
+      "fluxes": {
+        "r3": 545.2764299590673,
+        "r5": 607.4654661288309,
+        "r8": 644.9289192307606
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 1,
+      "range": null
+    },
+    {
+      "filename": "jw06605006001_02107_00002_nrcb1_cal.fits",
+      "fluxes": {
+        "r3": 543.9939968290694,
+        "r5": 605.7228727669623,
+        "r8": 645.1736297797496
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 2,
+      "range": null
+    },
+    {
+      "filename": "jw06605006001_02107_00003_nrcb1_cal.fits",
+      "fluxes": {
+        "r3": 545.196927597266,
+        "r5": 607.580063006997,
+        "r8": 646.4434227485123
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 3,
+      "range": null
+    },
+    {
+      "filename": "jw06605006001_02107_00004_nrcb1_cal.fits",
+      "fluxes": {
+        "r3": 546.3285962374031,
+        "r5": 610.0523976865958,
+        "r8": 651.0160090376424
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 4,
+      "range": null
+    },
+    {
+      "filename": "jw06605009001_06101_00001_nrca3_cal.fits",
+      "fluxes": {
+        "r3": 641.7582942726823,
+        "r5": null,
+        "r8": null
+      },
+      "missingR5": 1,
+      "missingAreaR5": 0.6029151829952859,
+      "pattern": 1,
+      "range": null
+    },
+    {
+      "filename": "jw06605009001_06101_00002_nrca3_cal.fits",
+      "fluxes": {
+        "r3": 643.4156980480984,
+        "r5": 703.829948016145,
+        "r8": 754.7928876480685
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 2,
+      "range": null
+    },
+    {
+      "filename": "jw06605009001_06101_00003_nrca3_cal.fits",
+      "fluxes": {
+        "r3": 633.9000731306901,
+        "r5": 694.8837485735862,
+        "r8": 744.4492963214167
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 3,
+      "range": null
+    },
+    {
+      "filename": "jw06605009001_06101_00004_nrca3_cal.fits",
+      "fluxes": {
+        "r3": 645.6992718222547,
+        "r5": 706.7539719648591,
+        "r8": 756.6697069463378
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 4,
+      "range": null
+    },
+    {
+      "filename": "jw06605009001_10101_00001_nrca3_cal.fits",
+      "fluxes": {
+        "r3": 370.9274605818664,
+        "r5": null,
+        "r8": null
+      },
+      "missingR5": 1,
+      "missingAreaR5": 0.5204661838335447,
+      "pattern": 1,
+      "range": null
+    },
+    {
+      "filename": "jw06605009001_10101_00002_nrca3_cal.fits",
+      "fluxes": {
+        "r3": 373.59574432064954,
+        "r5": 412.76621222326906,
+        "r8": 439.6672438563277
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 2,
+      "range": null
+    },
+    {
+      "filename": "jw06605009001_10101_00003_nrca3_cal.fits",
+      "fluxes": {
+        "r3": 365.94676603425006,
+        "r5": 406.1638594853988,
+        "r8": 433.02559028870456
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 3,
+      "range": null
+    },
+    {
+      "filename": "jw06605009001_10101_00004_nrca3_cal.fits",
+      "fluxes": {
+        "r3": 374.2458162338297,
+        "r5": 414.5003212583918,
+        "r8": 442.3996704777609
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 4,
+      "range": null
+    },
+    {
+      "filename": "jw06605105001_05101_00001_nrcb1_cal.fits",
+      "fluxes": {
+        "r3": 468.91534077228437,
+        "r5": 515.5205999066941,
+        "r8": 550.6253114285142
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 1,
+      "range": null
+    },
+    {
+      "filename": "jw06605105001_05101_00002_nrcb1_cal.fits",
+      "fluxes": {
+        "r3": 468.69989102335774,
+        "r5": 515.834791642576,
+        "r8": 550.7065378100114
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 2,
+      "range": null
+    },
+    {
+      "filename": "jw06605105001_05101_00003_nrcb1_cal.fits",
+      "fluxes": {
+        "r3": 471.9395737196872,
+        "r5": 517.2690014059517,
+        "r8": 552.0820388152831
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 3,
+      "range": null
+    },
+    {
+      "filename": "jw06605105001_05101_00004_nrcb1_cal.fits",
+      "fluxes": {
+        "r3": 471.2639763473575,
+        "r5": 517.8433756043408,
+        "r8": 553.8662984737991
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 4,
+      "range": null
+    },
+    {
+      "filename": "jw06605105001_09101_00001_nrcb1_cal.fits",
+      "fluxes": {
+        "r3": 280.54395140381575,
+        "r5": 311.6436455124737,
+        "r8": 331.90259883811297
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 1,
+      "range": null
+    },
+    {
+      "filename": "jw06605105001_09101_00002_nrcb1_cal.fits",
+      "fluxes": {
+        "r3": 282.00922937138415,
+        "r5": 314.09723826592466,
+        "r8": 334.9564608126397
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 2,
+      "range": null
+    },
+    {
+      "filename": "jw06605105001_09101_00003_nrcb1_cal.fits",
+      "fluxes": {
+        "r3": 280.2416433148316,
+        "r5": 313.45231376168925,
+        "r8": 333.5704238299191
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 3,
+      "range": null
+    },
+    {
+      "filename": "jw06605105001_09101_00004_nrcb1_cal.fits",
+      "fluxes": {
+        "r3": 282.0792940169528,
+        "r5": 314.1495072713419,
+        "r8": 334.40190173584693
+      },
+      "missingR5": 0,
+      "missingAreaR5": 0,
+      "pattern": 4,
+      "range": null
+    }
+  ],
+  "reproduced": true,
+  "boundary": "Independent aperture geometry and pixel sums, not independent MAST retrieval, unit conversion, centroid, background or physical calibration."
+}

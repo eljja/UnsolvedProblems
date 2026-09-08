@@ -1,0 +1,19 @@
+{
+  "cycle": "RC-2026-74",
+  "reviewedOn": "2026-09-09",
+  "status": "exploratory-on-retired-Program-6605",
+  "purpose": "Bound numerical-aperture, background-estimator and centering contributions before assigning the F090W deficit to a physical cause.",
+  "inputs": "All 24 cached RC73 SCI/DQ/AREA strips, original exposure centroids and original backgrounds. No Program 7565 pixel access.",
+  "comparisons": [
+    "Change only 12x12 midpoint aperture weights to circle-square overlap integrated by SciPy quadrature; preserve original centroids and backgrounds.",
+    "At fixed centroid compare original MAD-clipped annulus background to center-selected annulus with Astropy default standard-deviation clipping.",
+    "Perturb centroid by the eight axial and diagonal offsets in {-0.25,0,0.25} pixels. This is a declared sensitivity box, not a confidence region.",
+    "Compare r3/r5 and r8/r5 concentration across dithers; a concentration difference does not by itself identify PSF physics.",
+    "Count bit-4 and DO_NOT_USE aperture support and inspect local peak rates; do not infer the official global-image peakrate from a strip."
+  ],
+  "numericalAgreementTolerance": 1e-8,
+  "numericalOnlyRescueCriterion": "Recomputed F090W excursion <=0.02 AND cross-star pattern difference <=0.01, with no change to flux samples, centroid, background or thresholds.",
+  "independentCheck": "A JavaScript circle-square antiderivative implementation recomputes aperture flux directly from exported converted pixel cutouts, not Python flux summaries. This validates geometry and sums, not MAST extraction, units, centroids or physical calibration.",
+  "stopRules": ["Missing cached input: stop rather than fetch pixels.", "Non-finite pixel with positive aperture weight: refuse qualification.", "Independent geometry or flux discrepancy > tolerance: withhold numerical conclusion.", "Do not optimize sensitivity settings for a pass or declare a repeated development result an independent holdout."],
+  "prospectiveStatus": "RC73 outcomes were already known. This design is not a fresh-data preregistration and its local timestamp is not external attestation."
+}

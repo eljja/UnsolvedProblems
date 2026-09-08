@@ -106,7 +106,7 @@ assert(Object.keys(sources).length === 289 && cycles.length === 50 && connection
 assert(problems.filter(item => item.researchHistory?.length).length === 12 && problems.reduce((sum, item) => sum + (item.researchHistory?.length || 0), 0) === 160, "RC50 research-record count changed.");
 for (const page of ["index.html", "solve.html", "research-log.html"]) assert(read(page).includes("research-cycle-50-data.js"), `${page} does not load RC50.`);
 assert(read("research-log.js").includes("cycleWindowStart") && read("research-log.js").includes("slice(cycleWindowStart, cycleWindowStart + 9)"), "Research-log cycle navigation is not bounded around the current record.");
-assert(read("research-log.html").includes("research-log.js?v=20260825-cycle50"), "Research-log cache version was not advanced for the bounded navigator.");
+assert(Number(read("research-log.html").match(/research-log\.js\?v=(\d{8})-cycle\d+/)?.[1]) >= 20260825, "Research-log cache version predates the bounded navigator.");
 const publicText = read("research-cycle-50-data.js");
 for (const phrase of ["1단계", "2단계", "전공자 포인트", "핵심 아이디어", "아래 시도는 개별 논문", "개수를 맞추지", "문제 수를 맞추", "분량 목표"]) assert(!publicText.includes(phrase), `RC50 contains forbidden wording: ${phrase}`);
 const packageJson = read("package.json");

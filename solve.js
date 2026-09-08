@@ -141,7 +141,7 @@
       description,
       url: canonical,
       inLanguage: lang,
-      dateModified: item.solutionLab.deepDive?.reviewedOn || item.solutionLab.reviewedOn,
+      dateModified: item.cycleResearch?.reviewedOn || item.solutionLab.deepDive?.reviewedOn || item.solutionLab.reviewedOn,
       isAccessibleForFree: true,
       isPartOf: {
         "@type": "CollectionPage",
@@ -243,9 +243,11 @@
     return [
       `<span>${escapeHTML(label(meta.approaches[problem.approach]))}</span>`,
       `<span>${escapeHTML(label(nature))}</span>`,
-      `<span>${escapeHTML(problem.nature === "boundary" ? t("boundary") : t("proposals"))}</span>`,
-      `<span>${escapeHTML(t("gates"))}</span>`,
-      `<span>${escapeHTML(t("reviewed"))} · ${escapeHTML(lab.deepDive?.reviewedOn || lab.reviewedOn)}</span>`
+      ...(!problem.cycleResearch?.focusedPage ? [
+        `<span>${escapeHTML(problem.nature === "boundary" ? t("boundary") : t("proposals"))}</span>`,
+        `<span>${escapeHTML(t("gates"))}</span>`
+      ] : []),
+      `<span>${escapeHTML(t("reviewed"))} · ${escapeHTML(problem.cycleResearch?.reviewedOn || lab.deepDive?.reviewedOn || lab.reviewedOn)}</span>`
     ].join("");
   }
 

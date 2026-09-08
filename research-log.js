@@ -9,7 +9,7 @@
   const cycle = cycles.find(item => item.id === params.get("cycle")) || cycles.at(-1);
   const $ = id => document.getElementById(id);
   const esc = value => String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
-  const pair = item => lang === "en" ? (item?.textEn || item?.text || "") : (item?.text || "");
+  const pair = item => typeof item === "string" ? item : lang === "en" ? (item?.textEn || item?.text || "") : (item?.text || "");
   const local = (item, key) => lang === "en" ? (item?.[`${key}En`] || item?.[key] || "") : (item?.[key] || "");
   const text = (id, value) => { if ($(id)) $(id).textContent = value; };
   const UI = {
@@ -33,7 +33,8 @@
     const cycleConnections = connections.filter(connection => (cycle.connectionIds || []).includes(connection.id));
     const cycleRecord = problem => (problem.researchHistory || []).find(record => record.cycleId === cycle.id) || problem.cycleResearch;
     updateStatic();
-    text("cycle-id", `${cycle.id} · ${cycle.startedOn} · ${t("active")}`);
+    const cycleStatus = cycle.status?.startsWith("completed") ? (lang === "en" ? "Cycle completed" : "사이클 완료") : t("active");
+    text("cycle-id", `${cycle.id} · ${cycle.startedOn} · ${cycleStatus}`);
     text("cycle-title", local(cycle, "title"));
     text("cycle-reason", local(cycle, "selectionReason"));
     text("cycle-meta", "");

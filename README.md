@@ -87,8 +87,18 @@
 - 31개 불가능·현실 경계 사례
 - 163개 핵심 난제와 130개 로드맵 우선과제
 - 16개 상금 연계 항목(현재 상금·경진 16개)
-- 10개 상금 프로그램과 394개 기관·로드맵·원 연구 출처
-- 73개 누적 연구 사이클, 20개 심층 연구 문제의 234개 사이클 기록과 73개 구조적 연결
+- 10개 상금 프로그램과 397개 기관·로드맵·원 연구 출처 및 재현 자료
+- 74개 누적 연구 사이클, 20개 심층 연구 문제의 236개 사이클 기록과 74개 구조적 연결
+
+### RC74 · 조리개 오차 분해
+
+[한글 연구 기록](https://eljja.github.io/UnsolvedProblems/research-log.html?cycle=RC-2026-74&lang=ko) · [English](https://eljja.github.io/UnsolvedProblems/research-log.html?cycle=RC-2026-74&lang=en)
+
+기존 Program 6605 픽셀을 다시 적분해도 F090W 결손은 2.300747% 남았다. 아홉 중심과 두 배경의 유한 조합을 모두 포함한 낙관적 하한도 2.224362%로, 시험한 계산 보정만으로는 2% 기준을 통과할 수 없다. 두 NRCA3 노출의 결측 픽셀은 전체 광량 `null`로 정정했다. Python 적분과 JavaScript 원시함수 구현이 픽셀 합을 독립 검산했으며, 새로운 표준성·물리 PSF·거리 검증은 아직 수행하지 않았다.
+
+재현: `python scripts/run_rc74_aperture_decomposition.py --write` (기존 RC73 캐시 필요), `node scripts/independent-rc74-aperture-audit.mjs --write`, `node scripts/verify-rc74-aperture-cycle.mjs`. 공개 픽셀 cutout을 이용한 Node 검산은 추가 다운로드 없이 실행된다.
+
+### 이전 연구 기록
 
 상금 정보는 2026년 8월 5일, 출처 연결·확장 설명·연구 맥락은 2026년 8월 7일 기준으로 검토했습니다. 65차 연구 사이클은 2025 출판본의 HST–JWST host 표와 NGC 3447 세페이드 표를 byte·SHA-256으로 고정했습니다. 공개 수치로 구성 가능한 18개 고유 host의 공유앵커 GLS는 평균 −0.020824±0.027528 mag와 거리기울기 −0.005095±0.015397 mag/mag를 주어 발표 요약을 재현했습니다. HST crowding 해결에 필요한 +0.07 기울기는 전체 4.877σ, 모든 단일-host 삭제에서도 최소 3.719σ 배제됐습니다. 다만 NGC 1448 삭제는 평균을 0.013192 mag 움직여 0.01 mag 안정성 문턱을 넘었습니다. 발표된 NGC 3447A−spiral 0.002±0.028 mag는 필요한 0.17 mag를 6σ 배제하지만, machine-readable 표 142행은 논문의 all-fit 144개·phase-correction 154개와 닫히지 않았고 세 사전 고정 object fit도 component 결과를 재현하지 못했습니다. Python과 독립 Node가 일치했습니다. 이 결과는 논문 오류를 주장하지 않으며, 18-host 요약 재현과 object-to-summary 공개 계보의 불충분성을 구분합니다. 공식 데이터·원 논문·독립 구현은 2026년 8월 31일 기준으로 확인했습니다. 각 항목은 검증 가능한 질문, 현재까지 축적된 지식, 기술적 병목, 해결 판정 기준과 관련 출처를 함께 기록합니다.
 

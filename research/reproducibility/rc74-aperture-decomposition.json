@@ -1,0 +1,2033 @@
+{
+  "cycle": "RC-2026-74",
+  "status": "development-only",
+  "runtime": {
+    "numpy": "1.26.4",
+    "scipy": "1.11.1",
+    "astropy": "5.1"
+  },
+  "inputResultSha256": "84cac0e72d365f09f785e4ede2850240eb73f7be654e681fb0562aadb299d123",
+  "cacheHashes": [
+    {
+      "filename": "jw06605006001_02103_00001_nrcb1_cal.fits",
+      "sha256": "e1638fb030b64bcad5d07031bb3f9b4375ad2af09c56c805e96c4e9e32c02635"
+    },
+    {
+      "filename": "jw06605006001_02103_00002_nrcb1_cal.fits",
+      "sha256": "88499a71a92d209c0a05b44f4979f707e4c90f3cca341d9c944064960e079aaa"
+    },
+    {
+      "filename": "jw06605006001_02103_00003_nrcb1_cal.fits",
+      "sha256": "eb1d00cffc9ca6364a9761ae3446f3d10a46b19a2cec9de2d0890e2cf042b95a"
+    },
+    {
+      "filename": "jw06605006001_02103_00004_nrcb1_cal.fits",
+      "sha256": "3fea95e4d1dbf84f99f5ca4a02e269acaf5fb13946d81a50f56c0459c646c4e4"
+    },
+    {
+      "filename": "jw06605006001_02107_00001_nrcb1_cal.fits",
+      "sha256": "bd42c3de07c651ba2288a7818f3cbf67f9093d43c6da5c5e79c5dd03458a56ac"
+    },
+    {
+      "filename": "jw06605006001_02107_00002_nrcb1_cal.fits",
+      "sha256": "39f1e53e9d3419e4ca272966a642d42f0e4e4ce1a9bc94a58444155fc77362f2"
+    },
+    {
+      "filename": "jw06605006001_02107_00003_nrcb1_cal.fits",
+      "sha256": "1fd61ca51724de09f74b4b65ac94ce4f8aba63b439cf3e9302862950db8b51d7"
+    },
+    {
+      "filename": "jw06605006001_02107_00004_nrcb1_cal.fits",
+      "sha256": "8ca4d8d0daff6abafe5496feabfe27494b25c64ed1aa5f6d6454a68a274c95a9"
+    },
+    {
+      "filename": "jw06605009001_06101_00001_nrca3_cal.fits",
+      "sha256": "60cda10332896c781d213d38dbfea1adca0aafe2b65e8d937b6d1b48f6e7fa7f"
+    },
+    {
+      "filename": "jw06605009001_06101_00002_nrca3_cal.fits",
+      "sha256": "33869c86653f9f0e58add1f2309e88081ab0245661fc314951ca9843dfb3926b"
+    },
+    {
+      "filename": "jw06605009001_06101_00003_nrca3_cal.fits",
+      "sha256": "38939cfa35710267e80d07f69753063ecb3385087892ffba0d75bcf70a6aa57b"
+    },
+    {
+      "filename": "jw06605009001_06101_00004_nrca3_cal.fits",
+      "sha256": "557f06a1656dc89e9b0ff61d41ee914dadbf7a768a376ea0c2484097e0b51632"
+    },
+    {
+      "filename": "jw06605009001_10101_00001_nrca3_cal.fits",
+      "sha256": "0b7c7df69b2184554e4669eb9809a7821b031ed409cee8c5afe1e7c0205777d4"
+    },
+    {
+      "filename": "jw06605009001_10101_00002_nrca3_cal.fits",
+      "sha256": "926bb409c2a859442f4fcff0a80715badf32aea049321fcebc8f8db65392e3ea"
+    },
+    {
+      "filename": "jw06605009001_10101_00003_nrca3_cal.fits",
+      "sha256": "cd5132437dbcc9fd1431be278a332af4f70e4c2546615f7560d710fa2d4e1110"
+    },
+    {
+      "filename": "jw06605009001_10101_00004_nrca3_cal.fits",
+      "sha256": "b016153ab228fa9e34e308235ec26de33817d1fc83910080b1ee5449b9e86d32"
+    },
+    {
+      "filename": "jw06605105001_05101_00001_nrcb1_cal.fits",
+      "sha256": "f55412aad89be2120ac7ba1441b8a856a0ba31657d5fd867429dad94e44c0509"
+    },
+    {
+      "filename": "jw06605105001_05101_00002_nrcb1_cal.fits",
+      "sha256": "38ff93e65fa68d3a9faf4a030c520f5d9bb7a4dae8cb3eeeea7fed209b61a32a"
+    },
+    {
+      "filename": "jw06605105001_05101_00003_nrcb1_cal.fits",
+      "sha256": "5a266a8c225f6ee07d661a5d447c1df54986a709f0142d1a3d334b2bbfeb6e4d"
+    },
+    {
+      "filename": "jw06605105001_05101_00004_nrcb1_cal.fits",
+      "sha256": "e5cf74409ec5adb99207cea344994d1472b9bba1175514f79e738c5e76193d50"
+    },
+    {
+      "filename": "jw06605105001_09101_00001_nrcb1_cal.fits",
+      "sha256": "ef8389496f367f52f18aa1eeeebb0ea1e80bf007d7c99e1879f6395486852a33"
+    },
+    {
+      "filename": "jw06605105001_09101_00002_nrcb1_cal.fits",
+      "sha256": "ed0ad0e7014b3739e37cc48315e08c4a36471bc7bbf4b82c4f156efe10fa3415"
+    },
+    {
+      "filename": "jw06605105001_09101_00003_nrcb1_cal.fits",
+      "sha256": "80742960a22483e9bda3d65d196bc12f9fa5a8ea3711812d7fe97f89628d33fa"
+    },
+    {
+      "filename": "jw06605105001_09101_00004_nrcb1_cal.fits",
+      "sha256": "47879fb943bf3a87627e89bfe0b833912d0b774b6021eb38c5b832db37947b8b"
+    }
+  ],
+  "rows": [
+    {
+      "filename": "jw06605006001_02103_00001_nrcb1_cal.fits",
+      "group": "WDFS0458-56|NRCB1|F090W",
+      "pattern": 1,
+      "oldR5": 1000.4552583587749,
+      "exactR5": 1000.4061866696865,
+      "exactR3": 911.308925100325,
+      "exactR8": 1068.9372859594878,
+      "numericalFraction": -4.9049358957775624e-05,
+      "stdBackgroundR5": 1000.4108288541486,
+      "originalBackground": 0.042652267100870445,
+      "stdBackground": 0.04259316097256103,
+      "backgroundFraction": 4.640299634317557e-06,
+      "concentrationR3R5": 0.9109389138566178,
+      "concentrationR8R5": 1.0685032741730023,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 999.7284231752377
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 1000.0909953935471
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 999.6833411325648
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 1000.0733955078144
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 1000.4061866696865
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 1000.0214947035103
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 999.5389412307735
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 999.8378987848748
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 999.4500748796831
+        }
+      ],
+      "maximumShiftFraction": 0.0009557235878220327,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 250.2026138772302,
+      "areaErrorR5": -1.4210854715202004e-14
+    },
+    {
+      "filename": "jw06605006001_02103_00002_nrcb1_cal.fits",
+      "group": "WDFS0458-56|NRCB1|F090W",
+      "pattern": 2,
+      "oldR5": 968.1436125828683,
+      "exactR5": 968.2411335880014,
+      "exactR3": 879.8658884081282,
+      "exactR8": 1032.3267790209975,
+      "numericalFraction": 0.00010072989571541235,
+      "stdBackgroundR5": 968.2383623460864,
+      "originalBackground": 0.064688108266175,
+      "stdBackground": 0.06472339281411608,
+      "backgroundFraction": -2.8621402445860866e-06,
+      "concentrationR3R5": 0.9087259959175852,
+      "concentrationR8R5": 1.0661876914849864,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 966.8598436245106
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 967.7024811707308
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 967.8282394277198
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 967.3206470256032
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 968.2411335880014
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 968.3341813876725
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 967.1081674725826
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 967.9081808571414
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 967.9061239936061
+        }
+      ],
+      "maximumShiftFraction": 0.0014265970692364238,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 230.08598532564713,
+      "areaErrorR5": -1.4210854715202004e-14
+    },
+    {
+      "filename": "jw06605006001_02103_00003_nrcb1_cal.fits",
+      "group": "WDFS0458-56|NRCB1|F090W",
+      "pattern": 3,
+      "oldR5": 991.8022019821175,
+      "exactR5": 991.8530470389505,
+      "exactR3": 903.0936810846749,
+      "exactR8": 1059.462671864653,
+      "numericalFraction": 5.126531956811675e-05,
+      "stdBackgroundR5": 991.8860514648959,
+      "originalBackground": 0.08176275667635942,
+      "stdBackground": 0.08134253127371188,
+      "backgroundFraction": 3.32755200418422e-05,
+      "concentrationR3R5": 0.9105115760653705,
+      "concentrationR8R5": 1.0681649615611328,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 991.0962554699856
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 991.8151169571464
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 991.8676504422059
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 991.1742198334234
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 991.8530470389505
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 991.8710635504832
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 990.9214520115933
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 991.5437252505747
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 991.4503623862693
+        }
+      ],
+      "maximumShiftFraction": 0.0009392470287190591,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 3,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 238.59869690964942,
+      "areaErrorR5": 0.0
+    },
+    {
+      "filename": "jw06605006001_02103_00004_nrcb1_cal.fits",
+      "group": "WDFS0458-56|NRCB1|F090W",
+      "pattern": 4,
+      "oldR5": 1003.6804356088232,
+      "exactR5": 1003.6697097769504,
+      "exactR3": 918.5495670660678,
+      "exactR8": 1069.2593613971903,
+      "numericalFraction": -1.0686500894419027e-05,
+      "stdBackgroundR5": 1003.6724321035426,
+      "originalBackground": 0.006867625911334563,
+      "stdBackground": 0.0068329641726247075,
+      "backgroundFraction": 2.712372970670174e-06,
+      "concentrationR3R5": 0.9151910814068512,
+      "concentrationR8R5": 1.0653498366856324,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 1003.3488554504248
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 1003.829881682341
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 1003.711654409761
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 1003.259949851765
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 1003.6697097769504
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 1003.5440392696921
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 1002.7481012336103
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 1003.1641063316729
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 1003.0011166648274
+        }
+      ],
+      "maximumShiftFraction": 0.0009182388731696633,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 311.24508329197346,
+      "areaErrorR5": 0.0
+    },
+    {
+      "filename": "jw06605006001_02107_00001_nrcb1_cal.fits",
+      "group": "WDFS0458-56|NRCB1|F150W",
+      "pattern": 1,
+      "oldR5": 607.4820661408968,
+      "exactR5": 607.4654661288306,
+      "exactR3": 545.2764299590671,
+      "exactR8": 644.9289192307601,
+      "numericalFraction": -2.7325929424781847e-05,
+      "stdBackgroundR5": 607.4673807676603,
+      "originalBackground": 0.09812370973156209,
+      "stdBackground": 0.0980993317928444,
+      "backgroundFraction": 3.1518480250181113e-06,
+      "concentrationR3R5": 0.8976253966071965,
+      "concentrationR8R5": 1.061671741343045,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 607.564850809835
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 607.6861700640789
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 607.81176357333
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 607.3554657052384
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 607.4654661288306
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 607.6050497722401
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 607.1329059881703
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 607.2492007385017
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 607.3795873915128
+        }
+      ],
+      "maximumShiftFraction": 0.0005700693517711741,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 113.14232593517737,
+      "areaErrorR5": 0.0
+    },
+    {
+      "filename": "jw06605006001_02107_00002_nrcb1_cal.fits",
+      "group": "WDFS0458-56|NRCB1|F150W",
+      "pattern": 2,
+      "oldR5": 605.7131535651408,
+      "exactR5": 605.7228727669624,
+      "exactR3": 543.9939968290691,
+      "exactR8": 645.1736297797494,
+      "numericalFraction": 1.604588205550428e-05,
+      "stdBackgroundR5": 605.7350143176141,
+      "originalBackground": 0.05179177680979547,
+      "stdBackground": 0.051637185785553506,
+      "backgroundFraction": 2.004472869954199e-05,
+      "concentrationR3R5": 0.8980905646572108,
+      "concentrationR8R5": 1.0651300434348379,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 606.1019064968934
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 606.0725475431179
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 606.0626118114938
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 605.7356463508221
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 605.7228727669624
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 605.7236327629756
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 605.3386784817294
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 605.3637790564278
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 605.3679316460284
+        }
+      ],
+      "maximumShiftFraction": 0.0006342740261366941,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 106.71359418307087,
+      "areaErrorR5": 1.4210854715202004e-14
+    },
+    {
+      "filename": "jw06605006001_02107_00003_nrcb1_cal.fits",
+      "group": "WDFS0458-56|NRCB1|F150W",
+      "pattern": 3,
+      "oldR5": 607.5777953604695,
+      "exactR5": 607.5800630069969,
+      "exactR3": 545.196927597266,
+      "exactR8": 646.4434227485124,
+      "numericalFraction": 3.7322735371159155e-06,
+      "stdBackgroundR5": 607.5773570154431,
+      "originalBackground": 0.07454650656352169,
+      "stdBackground": 0.0745809603180625,
+      "backgroundFraction": -4.45372012425338e-06,
+      "concentrationR3R5": 0.8973252428643097,
+      "concentrationR8R5": 1.0639641787276157,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 607.8985201326441
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 607.8965373747426
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 607.7684007312504
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 607.578079078645
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 607.5800630069969
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 607.4728952824328
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 607.2549479023278
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 607.2840081899685
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 607.1980888577143
+        }
+      ],
+      "maximumShiftFraction": 0.0006286811772461265,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 114.46202031188022,
+      "areaErrorR5": 0.0
+    },
+    {
+      "filename": "jw06605006001_02107_00004_nrcb1_cal.fits",
+      "group": "WDFS0458-56|NRCB1|F150W",
+      "pattern": 4,
+      "oldR5": 610.013320620424,
+      "exactR5": 610.0523976865957,
+      "exactR3": 546.3285962374031,
+      "exactR8": 651.0160090376426,
+      "numericalFraction": 6.405936534625845e-05,
+      "stdBackgroundR5": 610.038052940514,
+      "originalBackground": 0.06870295286862901,
+      "stdBackground": 0.06888559584833262,
+      "backgroundFraction": -2.3513957384646567e-05,
+      "concentrationR3R5": 0.8955437242918113,
+      "concentrationR8R5": 1.0671476933889394,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 610.2546355528148
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 610.2575812105897
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 610.2138541760236
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 610.0310632930757
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 610.0523976865957
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 610.0087140642179
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 609.7393279077863
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 609.7990928952604
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 609.7526518005112
+        }
+      ],
+      "maximumShiftFraction": 0.0005131850640970326,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 129.97177263786705,
+      "areaErrorR5": 0.0
+    },
+    {
+      "filename": "jw06605009001_06101_00001_nrca3_cal.fits",
+      "group": "WDFS2317-29|NRCA3|F090W",
+      "pattern": 1,
+      "oldR5": 702.6792662935402,
+      "exactR5": null,
+      "exactR3": 641.7582942726824,
+      "exactR8": null,
+      "numericalFraction": null,
+      "stdBackgroundR5": null,
+      "originalBackground": 0.086627220918915,
+      "stdBackground": 0.08656583051572703,
+      "backgroundFraction": null,
+      "concentrationR3R5": null,
+      "concentrationR8R5": null,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": null
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": null
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": null
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": null
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": null
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": null
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": null
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": null
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": null
+        }
+      ],
+      "maximumShiftFraction": null,
+      "missingPixelsR5": 1,
+      "missingAreaR5": 0.6029151829952866,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 1,
+      "localPeakDnPerSecond": 149.9760572571986,
+      "areaErrorR5": 0.0
+    },
+    {
+      "filename": "jw06605009001_06101_00002_nrca3_cal.fits",
+      "group": "WDFS2317-29|NRCA3|F090W",
+      "pattern": 2,
+      "oldR5": 703.8390867577716,
+      "exactR5": 703.829948016145,
+      "exactR3": 643.4156980480984,
+      "exactR8": 754.7928876480685,
+      "numericalFraction": -1.2984134866278474e-05,
+      "stdBackgroundR5": 703.8266739387345,
+      "originalBackground": 0.08713279911155898,
+      "stdBackground": 0.08717448595987541,
+      "backgroundFraction": -4.6518017876584494e-06,
+      "concentrationR3R5": 0.914163570137455,
+      "concentrationR8R5": 1.072408029490036,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 703.5172837258015
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 703.4966545726955
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 703.0980622168462
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 703.8477936108526
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 703.829948016145
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 703.4288369529116
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 703.9704071274504
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 703.9096398682404
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 703.4168548099485
+        }
+      ],
+      "maximumShiftFraction": 0.0010398616901166058,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 215.08919815425526,
+      "areaErrorR5": 0.0
+    },
+    {
+      "filename": "jw06605009001_06101_00003_nrca3_cal.fits",
+      "group": "WDFS2317-29|NRCA3|F090W",
+      "pattern": 3,
+      "oldR5": 694.8775710063667,
+      "exactR5": 694.8837485735863,
+      "exactR3": 633.9000731306903,
+      "exactR8": 744.4492963214168,
+      "numericalFraction": 8.890151988572015e-06,
+      "stdBackgroundR5": 694.8869156590522,
+      "originalBackground": 0.08600404300928023,
+      "stdBackground": 0.08596371842471263,
+      "backgroundFraction": 4.557719866626897e-06,
+      "concentrationR3R5": 0.9122390247748929,
+      "concentrationR8R5": 1.071329266009711,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 694.701361833208
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 694.5545363035834
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 693.9549803386743
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 695.0521516947556
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 694.8837485735863
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 694.3013177841692
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 695.1785350864634
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 694.9992807146816
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 694.3682935495025
+        }
+      ],
+      "maximumShiftFraction": 0.0013365807400425034,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 181.31882074129473,
+      "areaErrorR5": -1.4210854715202004e-14
+    },
+    {
+      "filename": "jw06605009001_06101_00004_nrca3_cal.fits",
+      "group": "WDFS2317-29|NRCA3|F090W",
+      "pattern": 4,
+      "oldR5": 706.7356473199334,
+      "exactR5": 706.7539719648591,
+      "exactR3": 645.6992718222546,
+      "exactR8": 756.6697069463376,
+      "numericalFraction": 2.5928570315247867e-05,
+      "stdBackgroundR5": 706.7501153928085,
+      "originalBackground": 0.08853945302903954,
+      "stdBackground": 0.08858855642945947,
+      "backgroundFraction": -5.4567391251092445e-06,
+      "concentrationR3R5": 0.9136125121831783,
+      "concentrationR8R5": 1.0706267484322822,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 706.5609575637948
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 706.6129692437763
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 706.1777651253952
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 706.7137408278676
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 706.7539719648591
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 706.3556266208544
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 706.6328715789257
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 706.6544638268226
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 706.2493169844272
+        }
+      ],
+      "maximumShiftFraction": 0.0008152863122395937,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 203.94962635129116,
+      "areaErrorR5": 1.4210854715202004e-14
+    },
+    {
+      "filename": "jw06605009001_10101_00001_nrca3_cal.fits",
+      "group": "WDFS2317-29|NRCA3|F150W",
+      "pattern": 1,
+      "oldR5": 410.7411793717068,
+      "exactR5": null,
+      "exactR3": 370.92746058186646,
+      "exactR8": null,
+      "numericalFraction": null,
+      "stdBackgroundR5": null,
+      "originalBackground": 0.10397636703180688,
+      "stdBackground": 0.10392460426954442,
+      "backgroundFraction": null,
+      "concentrationR3R5": null,
+      "concentrationR8R5": null,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": null
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": null
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": null
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": null
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": null
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": null
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": null
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": null
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": null
+        }
+      ],
+      "maximumShiftFraction": null,
+      "missingPixelsR5": 1,
+      "missingAreaR5": 0.5204661838335453,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 1,
+      "localPeakDnPerSecond": 82.17663087181774,
+      "areaErrorR5": 1.4210854715202004e-14
+    },
+    {
+      "filename": "jw06605009001_10101_00002_nrca3_cal.fits",
+      "group": "WDFS2317-29|NRCA3|F150W",
+      "pattern": 2,
+      "oldR5": 412.7680651389379,
+      "exactR5": 412.7662122232691,
+      "exactR3": 373.5957443206495,
+      "exactR8": 439.66724385632756,
+      "numericalFraction": -4.488999574503438e-06,
+      "stdBackgroundR5": 412.7674972694542,
+      "originalBackground": 0.09105424916008438,
+      "stdBackground": 0.09103788744388772,
+      "backgroundFraction": 3.1132542999134927e-06,
+      "concentrationR3R5": 0.9051025332436078,
+      "concentrationR8R5": 1.0651725621827481,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 413.1405456525646
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 412.8962534041009
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 412.6655507979631
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 412.99792293779706
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 412.7662122232691
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 412.5508724664496
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 412.828112349584
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 412.61137841369475
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 412.39962000887
+        }
+      ],
+      "maximumShiftFraction": 0.0009068897070794169,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 77.56239783987711,
+      "areaErrorR5": 0.0
+    },
+    {
+      "filename": "jw06605009001_10101_00003_nrca3_cal.fits",
+      "group": "WDFS2317-29|NRCA3|F150W",
+      "pattern": 3,
+      "oldR5": 406.17050674184827,
+      "exactR5": 406.1638594853987,
+      "exactR3": 365.9467660342501,
+      "exactR8": 433.0255902887048,
+      "numericalFraction": -1.6365679780361297e-05,
+      "stdBackgroundR5": 406.16686235702264,
+      "originalBackground": 0.11535702550740748,
+      "stdBackground": 0.11531879175841404,
+      "backgroundFraction": 7.393251649112642e-06,
+      "concentrationR3R5": 0.9009830822907218,
+      "concentrationR8R5": 1.0661352067053413,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 406.49484121506447
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 406.2187216591583
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 405.93926344579666
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 406.43705921400914
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 406.1638594853987
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 405.89283051483403
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 406.33935606359194
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 406.08167088190726
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 405.8160871448672
+        }
+      ],
+      "maximumShiftFraction": 0.0008562365469249045,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 85.23391001216402,
+      "areaErrorR5": 0.0
+    },
+    {
+      "filename": "jw06605009001_10101_00004_nrca3_cal.fits",
+      "group": "WDFS2317-29|NRCA3|F150W",
+      "pattern": 4,
+      "oldR5": 414.499858106057,
+      "exactR5": 414.50032125839186,
+      "exactR3": 374.2458162338297,
+      "exactR8": 442.3996704777609,
+      "numericalFraction": 1.1173763412308801e-06,
+      "stdBackgroundR5": 414.49776521075034,
+      "originalBackground": 0.09697242709640096,
+      "stdBackground": 0.09700497170575482,
+      "backgroundFraction": -6.16657577912072e-06,
+      "concentrationR3R5": 0.9028842609763185,
+      "concentrationR8R5": 1.067308389857621,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 414.9002960140481
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 414.63536905865533
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 414.3598148913615
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 414.7618198249662
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 414.50032125839186
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 414.2507121261506
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 414.64336842418635
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 414.39883564908416
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 414.16583018757945
+        }
+      ],
+      "maximumShiftFraction": 0.0009649564430780355,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 78.80015051599796,
+      "areaErrorR5": 1.4210854715202004e-14
+    },
+    {
+      "filename": "jw06605105001_05101_00001_nrcb1_cal.fits",
+      "group": "WDFS0122-30|NRCB1|F090W",
+      "pattern": 1,
+      "oldR5": 515.5447624205663,
+      "exactR5": 515.5205999066941,
+      "exactR3": 468.91534077228437,
+      "exactR8": 550.6253114285146,
+      "numericalFraction": -4.6867926188798315e-05,
+      "stdBackgroundR5": 515.5192081311948,
+      "originalBackground": 0.05290699671451266,
+      "stdBackground": 0.05292471735054408,
+      "backgroundFraction": -2.6997475941481497e-06,
+      "concentrationR3R5": 0.9095957384770949,
+      "concentrationR8R5": 1.068095652294349,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 515.2634772526186
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 515.3268898233625
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 515.1117509708799
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 515.4460841182231
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 515.5205999066941
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 515.3343773758385
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 515.2796996790485
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 515.313592757251
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 515.108602902081
+        }
+      ],
+      "maximumShiftFraction": 0.0007991863073709693,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 132.96242892125125,
+      "areaErrorR5": 0.0
+    },
+    {
+      "filename": "jw06605105001_05101_00002_nrcb1_cal.fits",
+      "group": "WDFS0122-30|NRCB1|F090W",
+      "pattern": 2,
+      "oldR5": 515.8457627971153,
+      "exactR5": 515.834791642576,
+      "exactR3": 468.69989102335785,
+      "exactR8": 550.7065378100118,
+      "numericalFraction": -2.126828469006803e-05,
+      "stdBackgroundR5": 515.8325490604411,
+      "originalBackground": 0.041449676342933665,
+      "stdBackground": 0.04147822978549831,
+      "backgroundFraction": -4.347481347033444e-06,
+      "concentrationR3R5": 0.9086240374187903,
+      "concentrationR8R5": 1.0676025478165083,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 515.6254248668264
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 515.6430424526038
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 515.330887605975
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 515.8183755895831
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 515.834791642576
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 515.5126688951045
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 515.4987460997186
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 515.4738725269033
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 515.1225337779634
+        }
+      ],
+      "maximumShiftFraction": 0.001380786787072763,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 132.24207776994555,
+      "areaErrorR5": -1.4210854715202004e-14
+    },
+    {
+      "filename": "jw06605105001_05101_00003_nrcb1_cal.fits",
+      "group": "WDFS0122-30|NRCB1|F090W",
+      "pattern": 3,
+      "oldR5": 517.2849009795287,
+      "exactR5": 517.2690014059515,
+      "exactR3": 471.9395737196872,
+      "exactR8": 552.0820388152823,
+      "numericalFraction": -3.073658934782397e-05,
+      "stdBackgroundR5": 517.2674321350671,
+      "originalBackground": 0.061880872338185955,
+      "stdBackground": 0.06190085291564989,
+      "backgroundFraction": -3.0337616986342297e-06,
+      "concentrationR3R5": 0.912367786271635,
+      "concentrationR8R5": 1.0673016115690444,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 516.9756641307135
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 517.0843337198563
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 516.854386671932
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 517.1211511776205
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 517.2690014059515
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 517.0500024095965
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 517.0532413328963
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 517.2343103985899
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 517.0338226511094
+        }
+      ],
+      "maximumShiftFraction": 0.0008015456810528399,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 172.95081216197775,
+      "areaErrorR5": 0.0
+    },
+    {
+      "filename": "jw06605105001_05101_00004_nrcb1_cal.fits",
+      "group": "WDFS0122-30|NRCB1|F090W",
+      "pattern": 4,
+      "oldR5": 517.8702295893362,
+      "exactR5": 517.8433756043407,
+      "exactR3": 471.2639763473575,
+      "exactR8": 553.8662984737988,
+      "numericalFraction": -5.18546606101955e-05,
+      "stdBackgroundR5": 517.8339976086952,
+      "originalBackground": 0.061297553773503814,
+      "stdBackground": 0.06141695812256731,
+      "backgroundFraction": -1.8109714418179657e-05,
+      "concentrationR3R5": 0.910051182555684,
+      "concentrationR8R5": 1.0695633555752608,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 517.582361197897
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 517.677221259564
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 517.5499545879845
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 517.7090209937556
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 517.8433756043407
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 517.7419399526793
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 517.5753464402453
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 517.770544158641
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 517.6665323001729
+        }
+      ],
+      "maximumShiftFraction": 0.0005666211641961461,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 1,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 137.46048329489628,
+      "areaErrorR5": 0.0
+    },
+    {
+      "filename": "jw06605105001_09101_00001_nrcb1_cal.fits",
+      "group": "WDFS0122-30|NRCB1|F150W",
+      "pattern": 1,
+      "oldR5": 311.64850024573184,
+      "exactR5": 311.64364551247377,
+      "exactR3": 280.54395140381564,
+      "exactR8": 331.9025988381129,
+      "numericalFraction": -1.5577592236915017e-05,
+      "stdBackgroundR5": 311.64251250342375,
+      "originalBackground": 0.10045648296090465,
+      "stdBackground": 0.10047090888017454,
+      "backgroundFraction": -3.635591696915519e-06,
+      "concentrationR3R5": 0.9002075140742334,
+      "concentrationR8R5": 1.0650067909850203,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 311.69803488727666
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 311.6891877508438
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 311.65558276292825
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 311.6590156813073
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 311.64364551247377
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 311.59863476929263
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 311.63868044514413
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 311.63048164007296
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 311.59493768242635
+        }
+      ],
+      "maximumShiftFraction": 0.00017452425417974204,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 51.194731257472824,
+      "areaErrorR5": -1.4210854715202004e-14
+    },
+    {
+      "filename": "jw06605105001_09101_00002_nrcb1_cal.fits",
+      "group": "WDFS0122-30|NRCB1|F150W",
+      "pattern": 2,
+      "oldR5": 314.0897579932381,
+      "exactR5": 314.09723826592466,
+      "exactR3": 282.0092293713842,
+      "exactR8": 334.95646081263993,
+      "numericalFraction": 2.3815716673869503e-05,
+      "stdBackgroundR5": 314.0989020848009,
+      "originalBackground": 0.09713361351645589,
+      "stdBackground": 0.09711242911657086,
+      "backgroundFraction": 5.297145831084649e-06,
+      "concentrationR3R5": 0.8978405252090318,
+      "concentrationR8R5": 1.0664100794450642,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 314.106858559709
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 314.1522035267644
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 314.1811418391694
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 314.0640849915815
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 314.09723826592466
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 314.1155431369979
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 314.0529848879778
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 314.08592470471115
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 314.08939645527107
+        }
+      ],
+      "maximumShiftFraction": 0.0002671261094429056,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 58.444915900454234,
+      "areaErrorR5": 0.0
+    },
+    {
+      "filename": "jw06605105001_09101_00003_nrcb1_cal.fits",
+      "group": "WDFS0122-30|NRCB1|F150W",
+      "pattern": 3,
+      "oldR5": 313.45098591747023,
+      "exactR5": 313.4523137616893,
+      "exactR3": 280.24164331483155,
+      "exactR8": 333.5704238299192,
+      "numericalFraction": 4.2362100574067085e-06,
+      "stdBackgroundR5": 313.45495297491095,
+      "originalBackground": 0.09297958234769797,
+      "stdBackground": 0.09294597884128943,
+      "backgroundFraction": 8.419823704475249e-06,
+      "concentrationR3R5": 0.8940487308952931,
+      "concentrationR8R5": 1.0641823626273348,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 313.43427438929336
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 313.4600573295337
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 313.4498965267193
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 313.43244281000284
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 313.4523137616893
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 313.4272775594255
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 313.3926298754043
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 313.3963152063265
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 313.35988450219435
+        }
+      ],
+      "maximumShiftFraction": 0.0002948750270359568,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 65.68144313716424,
+      "areaErrorR5": 0.0
+    },
+    {
+      "filename": "jw06605105001_09101_00004_nrcb1_cal.fits",
+      "group": "WDFS0122-30|NRCB1|F150W",
+      "pattern": 4,
+      "oldR5": 314.14889688124975,
+      "exactR5": 314.1495072713418,
+      "exactR3": 282.0792940169529,
+      "exactR8": 334.40190173584676,
+      "numericalFraction": 1.942996133763586e-06,
+      "stdBackgroundR5": 314.14889879222085,
+      "originalBackground": 0.10109089594137449,
+      "stdBackground": 0.10109864333816528,
+      "backgroundFraction": -1.936909359678829e-06,
+      "concentrationR3R5": 0.8979141698074071,
+      "concentrationR8R5": 1.0644673761878998,
+      "shiftSensitivity": [
+        {
+          "dx": -0.25,
+          "dy": -0.25,
+          "flux": 314.1728612793679
+        },
+        {
+          "dx": -0.25,
+          "dy": 0,
+          "flux": 314.16729172762274
+        },
+        {
+          "dx": -0.25,
+          "dy": 0.25,
+          "flux": 314.14797275400156
+        },
+        {
+          "dx": 0,
+          "dy": -0.25,
+          "flux": 314.16176158417534
+        },
+        {
+          "dx": 0,
+          "dy": 0,
+          "flux": 314.1495072713418
+        },
+        {
+          "dx": 0,
+          "dy": 0.25,
+          "flux": 314.1255358020116
+        },
+        {
+          "dx": 0.25,
+          "dy": -0.25,
+          "flux": 314.11387625444695
+        },
+        {
+          "dx": 0.25,
+          "dy": 0,
+          "flux": 314.0966220008729
+        },
+        {
+          "dx": 0.25,
+          "dy": 0.25,
+          "flux": 314.06855189790105
+        }
+      ],
+      "maximumShiftFraction": 0.00025769696137334375,
+      "missingPixelsR5": 0,
+      "missingAreaR5": 0.0,
+      "bit4PixelsR2": 0,
+      "doNotUsePixelsR5": 0,
+      "localPeakDnPerSecond": 55.211534841748076,
+      "areaErrorR5": -1.4210854715202004e-14
+    }
+  ],
+  "groups": {
+    "oldR5": {
+      "WDFS0122-30|NRCB1|F090W": {
+        "n": 4,
+        "mean": 516.6364139466366,
+        "normalized": [
+          0.9978870023548454,
+          0.9984696178430756,
+          1.0012552096898055,
+          1.0023881701122737
+        ],
+        "maximumExcursion": 0.0023881701122736576
+      },
+      "WDFS0122-30|NRCB1|F150W": {
+        "n": 4,
+        "mean": 313.33453525942247,
+        "normalized": [
+          0.9946190578312898,
+          1.0024102760750275,
+          1.0003716496106991,
+          1.0025990164829837
+        ],
+        "maximumExcursion": 0.005380942168710212
+      },
+      "WDFS0458-56|NRCB1|F090W": {
+        "n": 4,
+        "mean": 991.020377133146,
+        "normalized": [
+          1.009520370562836,
+          0.9769159493809236,
+          1.0007889089538533,
+          1.0127747711023871
+        ],
+        "maximumExcursion": 0.02308405061907637
+      },
+      "WDFS0458-56|NRCB1|F150W": {
+        "n": 4,
+        "mean": 607.6965839217328,
+        "normalized": [
+          0.9996469985408646,
+          0.996736150228471,
+          0.9998045265278658,
+          1.0038123247027988
+        ],
+        "maximumExcursion": 0.003812324702798797
+      },
+      "WDFS2317-29|NRCA3|F090W": {
+        "n": 4,
+        "mean": 702.032892844403,
+        "normalized": [
+          1.00092071675804,
+          1.0025728052514042,
+          0.9898077114178434,
+          1.0066987665727118
+        ],
+        "maximumExcursion": 0.010192288582156595
+      },
+      "WDFS2317-29|NRCA3|F150W": {
+        "n": 4,
+        "mean": 411.04490233963753,
+        "normalized": [
+          0.9992610954029548,
+          1.0041921522186317,
+          0.9881414522597299,
+          1.0084053001186832
+        ],
+        "maximumExcursion": 0.011858547740270065
+      }
+    },
+    "exactR5": {
+      "WDFS0122-30|NRCB1|F090W": {
+        "n": 4,
+        "mean": 516.6169421398906,
+        "normalized": [
+          0.997877843052039,
+          0.9984860146202815,
+          1.0012621716650638,
+          1.0023739706626154
+        ],
+        "maximumExcursion": 0.0023739706626153545
+      },
+      "WDFS0122-30|NRCB1|F150W": {
+        "n": 4,
+        "mean": 313.33567620285737,
+        "normalized": [
+          0.9945999424295108,
+          1.0024304990491228,
+          1.0003722447448227,
+          1.002597313776544
+        ],
+        "maximumExcursion": 0.005400057570489225
+      },
+      "WDFS0458-56|NRCB1|F090W": {
+        "n": 4,
+        "mean": 991.0425192683972,
+        "normalized": [
+          1.009448300369798,
+          0.9769925253083711,
+          1.0008178536791255,
+          1.0127413206427054
+        ],
+        "maximumExcursion": 0.023007474691628893
+      },
+      "WDFS0458-56|NRCB1|F150W": {
+        "n": 4,
+        "mean": 607.7051998973463,
+        "normalized": [
+          0.9996055097627004,
+          0.9967380118999823,
+          0.9997940829034034,
+          1.003862395433914
+        ],
+        "maximumExcursion": 0.00386239543391409
+      },
+      "WDFS2317-29|NRCA3|F090W": {
+        "n": 3,
+        "mean": null,
+        "normalized": null,
+        "maximumExcursion": null,
+        "status": "incomplete-aperture-support"
+      },
+      "WDFS2317-29|NRCA3|F150W": {
+        "n": 3,
+        "mean": null,
+        "normalized": null,
+        "maximumExcursion": null,
+        "status": "incomplete-aperture-support"
+      }
+    },
+    "stdBackgroundR5": {
+      "WDFS0122-30|NRCB1|F090W": {
+        "n": 4,
+        "mean": 516.6132967338496,
+        "normalized": [
+          0.9978821903935268,
+          0.998488719360604,
+          1.0012661993126255,
+          1.0023628909332438
+        ],
+        "maximumExcursion": 0.002362890933243822
+      },
+      "WDFS0122-30|NRCB1|F150W": {
+        "n": 4,
+        "mean": 313.3363165888391,
+        "normalized": [
+          0.994594293748471,
+          1.0024337603258497,
+          1.0003786231591774,
+          1.002593322766502
+        ],
+        "maximumExcursion": 0.00540570625152903
+      },
+      "WDFS0458-56|NRCB1|F090W": {
+        "n": 4,
+        "mean": 991.0519186921683,
+        "normalized": [
+          1.009443410567562,
+          0.9769804629648591,
+          1.0008416640510907,
+          1.0127344624164887
+        ],
+        "maximumExcursion": 0.023019537035140925
+      },
+      "WDFS0458-56|NRCB1|F150W": {
+        "n": 4,
+        "mean": 607.7044512603079,
+        "normalized": [
+          0.9996098917950067,
+          0.9967592191589029,
+          0.9997908617509692,
+          1.0038400272951211
+        ],
+        "maximumExcursion": 0.003840027295121118
+      },
+      "WDFS2317-29|NRCA3|F090W": {
+        "n": 3,
+        "mean": null,
+        "normalized": null,
+        "maximumExcursion": null,
+        "status": "incomplete-aperture-support"
+      },
+      "WDFS2317-29|NRCA3|F150W": {
+        "n": 3,
+        "mean": null,
+        "normalized": null,
+        "maximumExcursion": null,
+        "status": "incomplete-aperture-support"
+      }
+    }
+  },
+  "matchedPatterns": {
+    "oldR5": {
+      "F090W": 0.02155366846215201,
+      "F150W": 0.005674125846556577
+    },
+    "exactR5": {
+      "F090W": 0.02149348931191042,
+      "F150W": 0.005692487149140502
+    },
+    "stdBackgroundR5": {
+      "F090W": 0.02150825639574494,
+      "F150W": 0.005674541166946878
+    }
+  },
+  "finiteFamilyEnvelope": {
+    "group": "WDFS0458-56|NRCB1|F090W",
+    "ranges": [
+      {
+        "pattern": 1,
+        "lower": 999.4500748796831,
+        "upper": 1000.4108288541485
+      },
+      {
+        "pattern": 2,
+        "lower": 966.8570723825957,
+        "upper": 968.3341813876725
+      },
+      {
+        "pattern": 3,
+        "lower": 990.9214520115933,
+        "upper": 991.9040679764285
+      },
+      {
+        "pattern": 4,
+        "lower": 1002.7481012336103,
+        "upper": 1003.8326040089333
+      }
+    ],
+    "optimisticPattern2Deficit": 0.02224362272009206,
+    "family": "Nine discrete center offsets times two fixed backgrounds per exposure. A rectangular flux envelope gives an optimistic lower bound on the pattern-2 deficit. Not a bound on untested continuous centers or spatially structured sky.",
+    "cannotReachTwoPercent": true
+  },
+  "summary": {
+    "maxNumericalFraction": 0.00010072989571541235,
+    "maxBackgroundFraction": 3.32755200418422e-05,
+    "maxShiftFraction": 0.0014265970692364238,
+    "maxAreaError": 1.4210854715202004e-14,
+    "bit4R2ExposureCount": 2,
+    "doNotUseR5ExposureCount": 2,
+    "missingR5ExposureCount": 2
+  },
+  "preservedFailure": "Initial strict flux calculation stopped at a non-finite aperture sample. Diagnostic v2 records null full-aperture flux for that exposure and retains it as failed support, rather than deleting it or silently summing the surviving pixels.",
+  "boundary": "No fresh holdout, physical-cause identification, absolute calibration, distance or H0 qualification."
+}

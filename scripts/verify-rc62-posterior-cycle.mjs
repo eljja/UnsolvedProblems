@@ -126,7 +126,7 @@ for (const asset of [
   "solve.js",
 ]) {
   assert(
-    solvePage.includes(`${asset}?v=20260829-cycle62`),
+    Number(solvePage.match(new RegExp(`${asset.replaceAll(".", "\\.")}\\?v=(\\d{8})-cycle\\d+`))?.[1]) >= 20260829,
     `solve.html must cache-bust ${asset} for RC62`,
   );
 }

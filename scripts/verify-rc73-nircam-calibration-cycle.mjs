@@ -77,7 +77,7 @@ const siteConnection = connections.find(item => item.id === "CONN-EVIDENCE-043")
 assert(siteConnection?.reviewedOn === "2026-09-01" && siteConnection.validationStatus.text.includes("F090W pattern transport"), "RC73 site connection is missing");
 
 for (const page of ["index.html", "solve.html", "research-log.html"]) assert(text(page).includes("research-cycle-73-data.js?v=20260901-cycle73"), `${page}: RC73 script is missing`);
-assert(text("scripts/generate-sitemap.mjs").includes("length: 71"), "Sitemap generator omits RC73");
+assert(Number(text("scripts/generate-sitemap.mjs").match(/length: (\d+)/)?.[1]) >= 71 && text("sitemap.xml").includes("cycle=RC-2026-73&amp;lang=ko"), "Sitemap generator omits RC73");
 const publicProse = text("research-cycle-73-data.js");
 for (const forbidden of ["전공자 포인트", "1단계", "개수를 맞", "아래 시도는 개별 논문"]) assert(!publicProse.includes(forbidden), `RC73 public prose contains forbidden wording: ${forbidden}`);
 
