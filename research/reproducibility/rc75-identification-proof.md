@@ -46,11 +46,11 @@ d(S_t,S_u) = s(t,u) = #{ i : A_i(t)∩A_i(u)=∅ }.
 
 **기존 기준의 필요성을 깨는 최소 차원 반례:** S_0={00,11}, S_1={01,10}. 모든 좌표의 주변집합이 {0,1}이므로 s=0이지만 δ=1이다. 고장이 없으면 두 비트의 같음/다름으로 상태를 정확히 구별한다. 한 좌표에서는 주변집합과 공동집합이 같으므로 이런 반례가 없다.
 
-**오류 하나에도 복원되는 구성:** S_0={1000,0100,0010,0001}, S_1={1111}. 주변집합은 좌표마다 겹쳐 s=0이지만 δ=3이다. 최대 한 비트 오류를 교정할 수 있다. 동시에 소거 하나까지 허용하면 2g+a=3이 되어 보장이 깨진다. 정상 출력 1000과 1111에서 두 번째 좌표를 소거하고 세 번째 값을 바꾸면 관측 1⊥10을 두 세계가 공유한다. 출력 사이의 알려진 구조가 주는 이득과, 모든 센서를 함께 바꾸는 제한 없는 공통 고장은 다른 현상이다.
+**오류 하나에도 복원되는 구성:** S_0={1000,0100,0010,0001}, S_1={1111}. 주변집합은 좌표마다 겹쳐 s=0이지만 δ=3이다. 최대 한 비트 오류를 교정할 수 있다. 동시에 소거 하나까지 허용하면 2g+a=3이 되어 보장이 깨진다. 두 세계 모두 두 번째 좌표를 소거한 뒤, 정상 출력 1000에서는 세 번째 비트를, 1111에서는 네 번째 비트를 바꾸면 공통 관측 1⊥10이 나온다. 출력 사이의 알려진 구조가 주는 이득과, 모든 센서를 함께 바꾸는 제한 없는 공통 고장은 다른 현상이다.
 
 ### 전체 상태 대신 필요한 결론만 복원한다
 
-목표가 h:T→L이면 서로 다른 h값을 가진 상태쌍에 대해서만 거리를 최소화한 δ_h를 사용한다. 위 충분성·필요성 증명에서 ‘서로 다른 상태’를 ‘서로 다른 h값’으로 바꾸면, **h의 강건한 식별은 δ_h>2g+a와 동치**다. 복원기는 h(C(y))가 하나일 때만 그 값을 반환한다.
+목표가 h:T→L이면 서로 다른 h값을 가진 상태쌍에 대해서만 거리를 최소화한 δ_h를 사용한다. h가 상수이면 δ_h=∞로 둔다. 위 충분성·필요성 증명에서 ‘서로 다른 상태’를 ‘서로 다른 h값’으로 바꾸면, **h의 강건한 식별은 δ_h>2g+a와 동치**다. 복원기는 h(C(y))가 하나일 때만 그 값을 반환한다.
 
 예를 들어 S_0=S_1={000}, S_2={111}, h(0)=h(1)=below, h(2)=above이면 전체 상태의 δ=0이지만 δ_h=3이다. 오류 하나가 있어도 위/아래 결론은 정확하다. 이는 RC74의 결측 광량에서도 ‘정확한 총광량’과 ‘문턱 통과 여부’를 구분할 수 있다는 연결이다. 다만 실제 광량에서는 연속 지지집합과 광학적 상한을 정해야 하며, 이 이진 구성으로 별의 광량이나 H₀를 판정하지 않았다.
 
@@ -92,7 +92,7 @@ The stronger example S_0={1000,0100,0010,0001}, S_1={1111} has s=0 and δ=3, cor
 
 ### Target decisions and inverse design
 
-For a target function h:T→L, minimize distance only across pairs with different h values, giving δ_h. The same two proofs show that robust identification of h is equivalent to δ_h>2g+a. Decode only when h(C(y)) is a singleton. With S_0=S_1={000}, S_2={111}, h(0)=h(1)=below and h(2)=above, full-state distance is zero but target distance is three: one-error threshold classification succeeds without full-state recovery.
+For a target function h:T→L, minimize distance only across pairs with different h values, giving δ_h; set δ_h=∞ when h is constant. The same two proofs show that robust identification of h is equivalent to δ_h>2g+a. Decode only when h(C(y)) is a singleton. With S_0=S_1={000}, S_2={111}, h(0)=h(1)=below and h(2)=above, full-state distance is zero but target distance is three: one-error threshold classification succeeds without full-state recovery.
 
 This supplies a structural link to RC74: bounding a missing quantity enough to decide a threshold need not identify its exact value. Real fluxes require calibrated continuous support and optical bounds; the binary example does not adjudicate stellar flux or H₀.
 
