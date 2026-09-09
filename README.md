@@ -11,7 +11,7 @@
 - 확장 설명·대표 시도·최근 연구 흐름: [`research-context.js`](./research-context.js)
 - 문제별 해결 시도 설계: [`solution-context.js`](./solution-context.js)
 - 문제별 가설 경쟁·불확실성 예산·실행 프로그램: [`deep-solution-context.js`](./deep-solution-context.js)
-- 반복 연구 사이클·난제 간 구조적 연결: [`research-cycle-data.js`](./research-cycle-data.js), [`research-cycle-03-data.js`](./research-cycle-03-data.js)–[`research-cycle-73-data.js`](./research-cycle-73-data.js)
+- 반복 연구 사이클·난제 간 구조적 연결: [`research-cycle-data.js`](./research-cycle-data.js), [`research-cycle-03-data.js`](./research-cycle-03-data.js)–[`research-cycle-76-data.js`](./research-cycle-76-data.js)
 - JWST–HST 18-host GLS·NGC 3447 의미론 폐쇄 감사: [`research/reproducibility/rc65-jwst-host-audit-spec.json`](./research/reproducibility/rc65-jwst-host-audit-spec.json), [`research/reproducibility/rc65-jwst-host-audit-python.json`](./research/reproducibility/rc65-jwst-host-audit-python.json), [`research/reproducibility/rc65-jwst-host-audit-node.json`](./research/reproducibility/rc65-jwst-host-audit-node.json), [`research/reproducibility/rc65-perfect-host-semantic-release-contract.json`](./research/reproducibility/rc65-perfect-host-semantic-release-contract.json), [`scripts/verify-rc65-jwst-host-cycle.mjs`](./scripts/verify-rc65-jwst-host-cycle.mjs)
 - MAST NGC 3447 검출 선택 감사·forced-photometry 계약: [`research/reproducibility/rc67-archive-layer-spec.json`](./research/reproducibility/rc67-archive-layer-spec.json), [`research/reproducibility/rc67-archive-layer-python.json`](./research/reproducibility/rc67-archive-layer-python.json), [`research/reproducibility/rc67-archive-layer-node.json`](./research/reproducibility/rc67-archive-layer-node.json), [`research/reproducibility/rc67-position-forced-photometry-contract.json`](./research/reproducibility/rc67-position-forced-photometry-contract.json), [`scripts/verify-rc67-mast-archive-layer-cycle.mjs`](./scripts/verify-rc67-mast-archive-layer-cycle.mjs)
 - NGC 3447 표적 우선 mosaic·segmentation collision 감사: [`research/reproducibility/rc68-target-first-ledger-spec.json`](./research/reproducibility/rc68-target-first-ledger-spec.json), [`research/reproducibility/rc68-target-first-ledger-python.json`](./research/reproducibility/rc68-target-first-ledger-python.json), [`research/reproducibility/rc68-target-first-ledger-node.json`](./research/reproducibility/rc68-target-first-ledger-node.json), [`research/reproducibility/rc68-collision-ast-contract.json`](./research/reproducibility/rc68-collision-ast-contract.json), [`scripts/verify-rc68-target-first-cycle.mjs`](./scripts/verify-rc68-target-first-cycle.mjs)
@@ -87,8 +87,16 @@
 - 31개 불가능·현실 경계 사례
 - 163개 핵심 난제와 130개 로드맵 우선과제
 - 16개 상금 연계 항목(현재 상금·경진 16개)
-- 10개 상금 프로그램과 399개 기관·로드맵·원 연구 출처 및 재현 자료
-- 75개 누적 연구 사이클, 20개 심층 연구 문제의 238개 사이클 기록과 75개 구조적 연결
+- 10개 상금 프로그램과 402개 기관·로드맵·원 연구 출처 및 재현 자료
+- 76개 누적 연구 사이클, 20개 심층 연구 문제의 240개 사이클 기록과 76개 구조적 연결
+
+### RC76 · 공유 편향과 유계 잡음의 정확한 식별 반경
+
+[한글 연구 기록](https://eljja.github.io/UnsolvedProblems/research-log.html?cycle=RC-2026-76&lang=ko) · [English](https://eljja.github.io/UnsolvedProblems/research-log.html?cycle=RC-2026-76&lang=en)
+
+연속 선형 관측에서 최소최대 오차의 상한과 같은 관측을 만드는 두 세계의 하한을 일치시켰다. 공유 편향을 상쇄하는 두 센서의 반경은 명시한 모형에서 `1/10`, 같은 부호 센서는 `11/10`이다. 닫힌 문턱 클래스는 여유가 반경보다 엄격히 클 때만 항상 구별된다. 오류·결측 아래에는 전체 가능 상태집합의 끝점 중점을 사용하는 비선형 복원기를 구성했다. 고정 선형 평균에 임의 오류 내성이 있다는 경로는 실패했다.
+
+이는 기존 집합 기반 추정과 선형계획 쌍대성의 조건부 적용이다. 계수 보정 불확실성, 물리 측정과 임의 분포 이동의 보장은 남아 있다. 재현: `node scripts/run-rc76-continuous.mjs --write`, `npm run verify:rc76`. [손 증명](research/reproducibility/rc76-continuous-proof.md) · [실행 결과](research/reproducibility/rc76-continuous-result.json).
 
 ### RC75 · 결합지원에서 목표 판정의 필요충분조건
 

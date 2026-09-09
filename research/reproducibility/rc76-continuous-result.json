@@ -1,0 +1,5452 @@
+{
+  "cycle": "RC-2026-76",
+  "arithmetic": "exact reduced BigInt rationals; no tolerance",
+  "generalCoefficientCertificateCases": 1152,
+  "fixtures": [
+    {
+      "name": "opposite-pair",
+      "model": {
+        "alpha": [
+          "1",
+          "1"
+        ],
+        "beta": [
+          "1",
+          "-1"
+        ],
+        "eta": [
+          "1/10",
+          "1/10"
+        ],
+        "B": "1"
+      },
+      "faults": [
+        {
+          "g": 0,
+          "a": 0,
+          "retained": 2,
+          "radius": "1/10",
+          "worst": {
+            "K": [
+              0,
+              1
+            ],
+            "radius": "1/10",
+            "halfDifference": {
+              "t": "1/10",
+              "b": "0"
+            },
+            "dual": [
+              {
+                "constraint": "+0",
+                "multiplier": "1/2"
+              },
+              {
+                "constraint": "+1",
+                "multiplier": "1/2"
+              }
+            ],
+            "exactGap": "0"
+          },
+          "cells": [
+            {
+              "K": [
+                0,
+                1
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            }
+          ],
+          "collision": {
+            "observation": [
+              "0",
+              "0"
+            ],
+            "worlds": [
+              {
+                "t": "1/10",
+                "b": "0",
+                "noise": [
+                  "-1/10",
+                  "-1/10"
+                ],
+                "healthy": [
+                  "0",
+                  "0"
+                ],
+                "substitutions": 0
+              },
+              {
+                "t": "-1/10",
+                "b": "0",
+                "noise": [
+                  "1/10",
+                  "1/10"
+                ],
+                "healthy": [
+                  "0",
+                  "0"
+                ],
+                "substitutions": 0
+              }
+            ],
+            "erasures": []
+          }
+        },
+        {
+          "g": 0,
+          "a": 1,
+          "retained": 1,
+          "radius": "11/10",
+          "worst": {
+            "K": [
+              0
+            ],
+            "radius": "11/10",
+            "halfDifference": {
+              "t": "11/10",
+              "b": "-1"
+            },
+            "dual": [
+              {
+                "constraint": "+0",
+                "multiplier": "1"
+              },
+              {
+                "constraint": "-b",
+                "multiplier": "1"
+              }
+            ],
+            "exactGap": "0"
+          },
+          "cells": [
+            {
+              "K": [
+                0
+              ],
+              "radius": "11/10",
+              "halfDifference": {
+                "t": "11/10",
+                "b": "-1"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1"
+                },
+                {
+                  "constraint": "-b",
+                  "multiplier": "1"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1
+              ],
+              "radius": "11/10",
+              "halfDifference": {
+                "t": "11/10",
+                "b": "1"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1"
+                },
+                {
+                  "constraint": "+b",
+                  "multiplier": "1"
+                }
+              ],
+              "exactGap": "0"
+            }
+          ],
+          "collision": {
+            "observation": [
+              "0",
+              null
+            ],
+            "worlds": [
+              {
+                "t": "11/10",
+                "b": "-1",
+                "noise": [
+                  "-1/10",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "21/10"
+                ],
+                "substitutions": 0
+              },
+              {
+                "t": "-11/10",
+                "b": "1",
+                "noise": [
+                  "1/10",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "-21/10"
+                ],
+                "substitutions": 0
+              }
+            ],
+            "erasures": [
+              1
+            ]
+          }
+        },
+        {
+          "g": 1,
+          "a": 0,
+          "retained": 0,
+          "radius": "unbounded",
+          "worst": {
+            "radius": "unbounded",
+            "K": []
+          },
+          "cells": [
+            {
+              "radius": "unbounded",
+              "K": []
+            }
+          ],
+          "collision": null
+        },
+        {
+          "g": 1,
+          "a": 1,
+          "retained": 0,
+          "radius": "unbounded",
+          "worst": {
+            "radius": "unbounded",
+            "K": []
+          },
+          "cells": [
+            {
+              "radius": "unbounded",
+              "K": []
+            }
+          ],
+          "collision": null
+        }
+      ]
+    },
+    {
+      "name": "same-sign-pair",
+      "model": {
+        "alpha": [
+          "1",
+          "1"
+        ],
+        "beta": [
+          "1",
+          "1"
+        ],
+        "eta": [
+          "1/10",
+          "1/10"
+        ],
+        "B": "1"
+      },
+      "faults": [
+        {
+          "g": 0,
+          "a": 0,
+          "retained": 2,
+          "radius": "11/10",
+          "worst": {
+            "K": [
+              0,
+              1
+            ],
+            "radius": "11/10",
+            "halfDifference": {
+              "t": "11/10",
+              "b": "-1"
+            },
+            "dual": [
+              {
+                "constraint": "+0",
+                "multiplier": "1"
+              },
+              {
+                "constraint": "-b",
+                "multiplier": "1"
+              }
+            ],
+            "exactGap": "0"
+          },
+          "cells": [
+            {
+              "K": [
+                0,
+                1
+              ],
+              "radius": "11/10",
+              "halfDifference": {
+                "t": "11/10",
+                "b": "-1"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1"
+                },
+                {
+                  "constraint": "-b",
+                  "multiplier": "1"
+                }
+              ],
+              "exactGap": "0"
+            }
+          ],
+          "collision": {
+            "observation": [
+              "0",
+              "0"
+            ],
+            "worlds": [
+              {
+                "t": "11/10",
+                "b": "-1",
+                "noise": [
+                  "-1/10",
+                  "-1/10"
+                ],
+                "healthy": [
+                  "0",
+                  "0"
+                ],
+                "substitutions": 0
+              },
+              {
+                "t": "-11/10",
+                "b": "1",
+                "noise": [
+                  "1/10",
+                  "1/10"
+                ],
+                "healthy": [
+                  "0",
+                  "0"
+                ],
+                "substitutions": 0
+              }
+            ],
+            "erasures": []
+          }
+        },
+        {
+          "g": 0,
+          "a": 1,
+          "retained": 1,
+          "radius": "11/10",
+          "worst": {
+            "K": [
+              0
+            ],
+            "radius": "11/10",
+            "halfDifference": {
+              "t": "11/10",
+              "b": "-1"
+            },
+            "dual": [
+              {
+                "constraint": "+0",
+                "multiplier": "1"
+              },
+              {
+                "constraint": "-b",
+                "multiplier": "1"
+              }
+            ],
+            "exactGap": "0"
+          },
+          "cells": [
+            {
+              "K": [
+                0
+              ],
+              "radius": "11/10",
+              "halfDifference": {
+                "t": "11/10",
+                "b": "-1"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1"
+                },
+                {
+                  "constraint": "-b",
+                  "multiplier": "1"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1
+              ],
+              "radius": "11/10",
+              "halfDifference": {
+                "t": "11/10",
+                "b": "-1"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1"
+                },
+                {
+                  "constraint": "-b",
+                  "multiplier": "1"
+                }
+              ],
+              "exactGap": "0"
+            }
+          ],
+          "collision": {
+            "observation": [
+              "0",
+              null
+            ],
+            "worlds": [
+              {
+                "t": "11/10",
+                "b": "-1",
+                "noise": [
+                  "-1/10",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "1/10"
+                ],
+                "substitutions": 0
+              },
+              {
+                "t": "-11/10",
+                "b": "1",
+                "noise": [
+                  "1/10",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "-1/10"
+                ],
+                "substitutions": 0
+              }
+            ],
+            "erasures": [
+              1
+            ]
+          }
+        },
+        {
+          "g": 1,
+          "a": 0,
+          "retained": 0,
+          "radius": "unbounded",
+          "worst": {
+            "radius": "unbounded",
+            "K": []
+          },
+          "cells": [
+            {
+              "radius": "unbounded",
+              "K": []
+            }
+          ],
+          "collision": null
+        },
+        {
+          "g": 1,
+          "a": 1,
+          "retained": 0,
+          "radius": "unbounded",
+          "worst": {
+            "radius": "unbounded",
+            "K": []
+          },
+          "cells": [
+            {
+              "radius": "unbounded",
+              "K": []
+            }
+          ],
+          "collision": null
+        }
+      ]
+    },
+    {
+      "name": "four-balanced",
+      "model": {
+        "alpha": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "beta": [
+          "1",
+          "1",
+          "-1",
+          "-1"
+        ],
+        "eta": [
+          "1/10",
+          "1/10",
+          "1/10",
+          "1/10"
+        ],
+        "B": "1"
+      },
+      "faults": [
+        {
+          "g": 0,
+          "a": 0,
+          "retained": 4,
+          "radius": "1/10",
+          "worst": {
+            "K": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "radius": "1/10",
+            "halfDifference": {
+              "t": "1/10",
+              "b": "0"
+            },
+            "dual": [
+              {
+                "constraint": "+0",
+                "multiplier": "1/2"
+              },
+              {
+                "constraint": "+2",
+                "multiplier": "1/2"
+              }
+            ],
+            "exactGap": "0"
+          },
+          "cells": [
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+2",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            }
+          ],
+          "collision": {
+            "observation": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "worlds": [
+              {
+                "t": "1/10",
+                "b": "0",
+                "noise": [
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "substitutions": 0
+              },
+              {
+                "t": "-1/10",
+                "b": "0",
+                "noise": [
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "substitutions": 0
+              }
+            ],
+            "erasures": []
+          }
+        },
+        {
+          "g": 0,
+          "a": 1,
+          "retained": 3,
+          "radius": "1/10",
+          "worst": {
+            "K": [
+              0,
+              1,
+              2
+            ],
+            "radius": "1/10",
+            "halfDifference": {
+              "t": "1/10",
+              "b": "0"
+            },
+            "dual": [
+              {
+                "constraint": "+0",
+                "multiplier": "1/2"
+              },
+              {
+                "constraint": "+2",
+                "multiplier": "1/2"
+              }
+            ],
+            "exactGap": "0"
+          },
+          "cells": [
+            {
+              "K": [
+                0,
+                1,
+                2
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+2",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                3
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                3
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+2",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                3
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+2",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            }
+          ],
+          "collision": {
+            "observation": [
+              "0",
+              "0",
+              "0",
+              null
+            ],
+            "worlds": [
+              {
+                "t": "1/10",
+                "b": "0",
+                "noise": [
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "1/10"
+                ],
+                "substitutions": 0
+              },
+              {
+                "t": "-1/10",
+                "b": "0",
+                "noise": [
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "-1/10"
+                ],
+                "substitutions": 0
+              }
+            ],
+            "erasures": [
+              3
+            ]
+          }
+        },
+        {
+          "g": 1,
+          "a": 0,
+          "retained": 2,
+          "radius": "11/10",
+          "worst": {
+            "K": [
+              0,
+              1
+            ],
+            "radius": "11/10",
+            "halfDifference": {
+              "t": "11/10",
+              "b": "-1"
+            },
+            "dual": [
+              {
+                "constraint": "+0",
+                "multiplier": "1"
+              },
+              {
+                "constraint": "-b",
+                "multiplier": "1"
+              }
+            ],
+            "exactGap": "0"
+          },
+          "cells": [
+            {
+              "K": [
+                0,
+                1
+              ],
+              "radius": "11/10",
+              "halfDifference": {
+                "t": "11/10",
+                "b": "-1"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1"
+                },
+                {
+                  "constraint": "-b",
+                  "multiplier": "1"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+2",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                3
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+2",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                3
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                2,
+                3
+              ],
+              "radius": "11/10",
+              "halfDifference": {
+                "t": "11/10",
+                "b": "1"
+              },
+              "dual": [
+                {
+                  "constraint": "+2",
+                  "multiplier": "1"
+                },
+                {
+                  "constraint": "+b",
+                  "multiplier": "1"
+                }
+              ],
+              "exactGap": "0"
+            }
+          ],
+          "collision": {
+            "observation": [
+              "0",
+              "0",
+              "-21/10",
+              "21/10"
+            ],
+            "worlds": [
+              {
+                "t": "11/10",
+                "b": "-1",
+                "noise": [
+                  "-1/10",
+                  "-1/10",
+                  "0",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "21/10",
+                  "21/10"
+                ],
+                "substitutions": 1
+              },
+              {
+                "t": "-11/10",
+                "b": "1",
+                "noise": [
+                  "1/10",
+                  "1/10",
+                  "0",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "-21/10",
+                  "-21/10"
+                ],
+                "substitutions": 1
+              }
+            ],
+            "erasures": []
+          }
+        },
+        {
+          "g": 1,
+          "a": 1,
+          "retained": 1,
+          "radius": "11/10",
+          "worst": {
+            "K": [
+              0
+            ],
+            "radius": "11/10",
+            "halfDifference": {
+              "t": "11/10",
+              "b": "-1"
+            },
+            "dual": [
+              {
+                "constraint": "+0",
+                "multiplier": "1"
+              },
+              {
+                "constraint": "-b",
+                "multiplier": "1"
+              }
+            ],
+            "exactGap": "0"
+          },
+          "cells": [
+            {
+              "K": [
+                0
+              ],
+              "radius": "11/10",
+              "halfDifference": {
+                "t": "11/10",
+                "b": "-1"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1"
+                },
+                {
+                  "constraint": "-b",
+                  "multiplier": "1"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1
+              ],
+              "radius": "11/10",
+              "halfDifference": {
+                "t": "11/10",
+                "b": "-1"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1"
+                },
+                {
+                  "constraint": "-b",
+                  "multiplier": "1"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                2
+              ],
+              "radius": "11/10",
+              "halfDifference": {
+                "t": "11/10",
+                "b": "1"
+              },
+              "dual": [
+                {
+                  "constraint": "+2",
+                  "multiplier": "1"
+                },
+                {
+                  "constraint": "+b",
+                  "multiplier": "1"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                3
+              ],
+              "radius": "11/10",
+              "halfDifference": {
+                "t": "11/10",
+                "b": "1"
+              },
+              "dual": [
+                {
+                  "constraint": "+3",
+                  "multiplier": "1"
+                },
+                {
+                  "constraint": "+b",
+                  "multiplier": "1"
+                }
+              ],
+              "exactGap": "0"
+            }
+          ],
+          "collision": {
+            "observation": [
+              "0",
+              null,
+              "-21/10",
+              "21/10"
+            ],
+            "worlds": [
+              {
+                "t": "11/10",
+                "b": "-1",
+                "noise": [
+                  "-1/10",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "1/10",
+                  "21/10",
+                  "21/10"
+                ],
+                "substitutions": 1
+              },
+              {
+                "t": "-11/10",
+                "b": "1",
+                "noise": [
+                  "1/10",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "-1/10",
+                  "-21/10",
+                  "-21/10"
+                ],
+                "substitutions": 1
+              }
+            ],
+            "erasures": [
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "six-balanced",
+      "model": {
+        "alpha": [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "beta": [
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        "eta": [
+          "1/10",
+          "1/10",
+          "1/10",
+          "1/10",
+          "1/10",
+          "1/10"
+        ],
+        "B": "1"
+      },
+      "faults": [
+        {
+          "g": 0,
+          "a": 0,
+          "retained": 6,
+          "radius": "1/10",
+          "worst": {
+            "K": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "radius": "1/10",
+            "halfDifference": {
+              "t": "1/10",
+              "b": "0"
+            },
+            "dual": [
+              {
+                "constraint": "+0",
+                "multiplier": "1/2"
+              },
+              {
+                "constraint": "+3",
+                "multiplier": "1/2"
+              }
+            ],
+            "exactGap": "0"
+          },
+          "cells": [
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            }
+          ],
+          "collision": {
+            "observation": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "worlds": [
+              {
+                "t": "1/10",
+                "b": "0",
+                "noise": [
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "substitutions": 0
+              },
+              {
+                "t": "-1/10",
+                "b": "0",
+                "noise": [
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "substitutions": 0
+              }
+            ],
+            "erasures": []
+          }
+        },
+        {
+          "g": 0,
+          "a": 1,
+          "retained": 5,
+          "radius": "1/10",
+          "worst": {
+            "K": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "radius": "1/10",
+            "halfDifference": {
+              "t": "1/10",
+              "b": "0"
+            },
+            "dual": [
+              {
+                "constraint": "+0",
+                "multiplier": "1/2"
+              },
+              {
+                "constraint": "+3",
+                "multiplier": "1/2"
+              }
+            ],
+            "exactGap": "0"
+          },
+          "cells": [
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                3,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                3,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            }
+          ],
+          "collision": {
+            "observation": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              null
+            ],
+            "worlds": [
+              {
+                "t": "1/10",
+                "b": "0",
+                "noise": [
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1/10"
+                ],
+                "substitutions": 0
+              },
+              {
+                "t": "-1/10",
+                "b": "0",
+                "noise": [
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "-1/10"
+                ],
+                "substitutions": 0
+              }
+            ],
+            "erasures": [
+              5
+            ]
+          }
+        },
+        {
+          "g": 1,
+          "a": 0,
+          "retained": 4,
+          "radius": "1/10",
+          "worst": {
+            "K": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "radius": "1/10",
+            "halfDifference": {
+              "t": "1/10",
+              "b": "0"
+            },
+            "dual": [
+              {
+                "constraint": "+0",
+                "multiplier": "1/2"
+              },
+              {
+                "constraint": "+3",
+                "multiplier": "1/2"
+              }
+            ],
+            "exactGap": "0"
+          },
+          "cells": [
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                4
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                3,
+                4
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                3,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                3,
+                4
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                3,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                3,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                3,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                3,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                2,
+                3,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+2",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            }
+          ],
+          "collision": {
+            "observation": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "-1/10",
+              "1/10"
+            ],
+            "worlds": [
+              {
+                "t": "1/10",
+                "b": "0",
+                "noise": [
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "0",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1/10",
+                  "1/10"
+                ],
+                "substitutions": 1
+              },
+              {
+                "t": "-1/10",
+                "b": "0",
+                "noise": [
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "0",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "-1/10",
+                  "-1/10"
+                ],
+                "substitutions": 1
+              }
+            ],
+            "erasures": []
+          }
+        },
+        {
+          "g": 1,
+          "a": 1,
+          "retained": 3,
+          "radius": "11/10",
+          "worst": {
+            "K": [
+              0,
+              1,
+              2
+            ],
+            "radius": "11/10",
+            "halfDifference": {
+              "t": "11/10",
+              "b": "-1"
+            },
+            "dual": [
+              {
+                "constraint": "+0",
+                "multiplier": "1"
+              },
+              {
+                "constraint": "-b",
+                "multiplier": "1"
+              }
+            ],
+            "exactGap": "0"
+          },
+          "cells": [
+            {
+              "K": [
+                0,
+                1,
+                2
+              ],
+              "radius": "11/10",
+              "halfDifference": {
+                "t": "11/10",
+                "b": "-1"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1"
+                },
+                {
+                  "constraint": "-b",
+                  "multiplier": "1"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                3
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                4
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                3
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                4
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                3,
+                4
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                3,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                3
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                4
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                3,
+                4
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                3,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                2,
+                3,
+                4
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+2",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                2,
+                3,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+2",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                2,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+2",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                3,
+                4,
+                5
+              ],
+              "radius": "11/10",
+              "halfDifference": {
+                "t": "11/10",
+                "b": "1"
+              },
+              "dual": [
+                {
+                  "constraint": "+3",
+                  "multiplier": "1"
+                },
+                {
+                  "constraint": "+b",
+                  "multiplier": "1"
+                }
+              ],
+              "exactGap": "0"
+            }
+          ],
+          "collision": {
+            "observation": [
+              "0",
+              "0",
+              "0",
+              null,
+              "-21/10",
+              "21/10"
+            ],
+            "worlds": [
+              {
+                "t": "11/10",
+                "b": "-1",
+                "noise": [
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "21/10",
+                  "21/10",
+                  "21/10"
+                ],
+                "substitutions": 1
+              },
+              {
+                "t": "-11/10",
+                "b": "1",
+                "noise": [
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "-21/10",
+                  "-21/10",
+                  "-21/10"
+                ],
+                "substitutions": 1
+              }
+            ],
+            "erasures": [
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "eight-balanced",
+      "model": {
+        "alpha": [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "beta": [
+          "1",
+          "1",
+          "1",
+          "1",
+          "-1",
+          "-1",
+          "-1",
+          "-1"
+        ],
+        "eta": [
+          "1/10",
+          "1/10",
+          "1/10",
+          "1/10",
+          "1/10",
+          "1/10",
+          "1/10",
+          "1/10"
+        ],
+        "B": "1"
+      },
+      "faults": [
+        {
+          "g": 0,
+          "a": 0,
+          "retained": 8,
+          "radius": "1/10",
+          "worst": {
+            "K": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "radius": "1/10",
+            "halfDifference": {
+              "t": "1/10",
+              "b": "0"
+            },
+            "dual": [
+              {
+                "constraint": "+0",
+                "multiplier": "1/2"
+              },
+              {
+                "constraint": "+4",
+                "multiplier": "1/2"
+              }
+            ],
+            "exactGap": "0"
+          },
+          "cells": [
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            }
+          ],
+          "collision": {
+            "observation": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "worlds": [
+              {
+                "t": "1/10",
+                "b": "0",
+                "noise": [
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "substitutions": 0
+              },
+              {
+                "t": "-1/10",
+                "b": "0",
+                "noise": [
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "substitutions": 0
+              }
+            ],
+            "erasures": []
+          }
+        },
+        {
+          "g": 0,
+          "a": 1,
+          "retained": 7,
+          "radius": "1/10",
+          "worst": {
+            "K": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "radius": "1/10",
+            "halfDifference": {
+              "t": "1/10",
+              "b": "0"
+            },
+            "dual": [
+              {
+                "constraint": "+0",
+                "multiplier": "1/2"
+              },
+              {
+                "constraint": "+4",
+                "multiplier": "1/2"
+              }
+            ],
+            "exactGap": "0"
+          },
+          "cells": [
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            }
+          ],
+          "collision": {
+            "observation": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              null
+            ],
+            "worlds": [
+              {
+                "t": "1/10",
+                "b": "0",
+                "noise": [
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1/10"
+                ],
+                "substitutions": 0
+              },
+              {
+                "t": "-1/10",
+                "b": "0",
+                "noise": [
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "-1/10"
+                ],
+                "substitutions": 0
+              }
+            ],
+            "erasures": [
+              7
+            ]
+          }
+        },
+        {
+          "g": 1,
+          "a": 0,
+          "retained": 6,
+          "radius": "1/10",
+          "worst": {
+            "K": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "radius": "1/10",
+            "halfDifference": {
+              "t": "1/10",
+              "b": "0"
+            },
+            "dual": [
+              {
+                "constraint": "+0",
+                "multiplier": "1/2"
+              },
+              {
+                "constraint": "+4",
+                "multiplier": "1/2"
+              }
+            ],
+            "exactGap": "0"
+          },
+          "cells": [
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                5,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                5,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+6",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                4,
+                5,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                4,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                3,
+                4,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                3,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                4,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                3,
+                4,
+                5,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                3,
+                4,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                3,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                4,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                3,
+                4,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                3,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+2",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            }
+          ],
+          "collision": {
+            "observation": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "-1/10",
+              "1/10"
+            ],
+            "worlds": [
+              {
+                "t": "1/10",
+                "b": "0",
+                "noise": [
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "0",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1/10",
+                  "1/10"
+                ],
+                "substitutions": 1
+              },
+              {
+                "t": "-1/10",
+                "b": "0",
+                "noise": [
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "0",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "-1/10",
+                  "-1/10"
+                ],
+                "substitutions": 1
+              }
+            ],
+            "erasures": []
+          }
+        },
+        {
+          "g": 1,
+          "a": 1,
+          "retained": 5,
+          "radius": "1/10",
+          "worst": {
+            "K": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "radius": "1/10",
+            "halfDifference": {
+              "t": "1/10",
+              "b": "0"
+            },
+            "dual": [
+              {
+                "constraint": "+0",
+                "multiplier": "1/2"
+              },
+              {
+                "constraint": "+4",
+                "multiplier": "1/2"
+              }
+            ],
+            "exactGap": "0"
+          },
+          "cells": [
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+6",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                3,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+7",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                4,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                4,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                5,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                5,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                2,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+6",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                3,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                3,
+                4,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                3,
+                4,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                3,
+                5,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                3,
+                5,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                3,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+6",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                4,
+                5,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                4,
+                5,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                4,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                1,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                3,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                3,
+                4,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                3,
+                4,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                3,
+                5,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                3,
+                5,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                3,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+6",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                4,
+                5,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                4,
+                5,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                4,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                2,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                3,
+                4,
+                5,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                3,
+                4,
+                5,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                3,
+                4,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                3,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                0,
+                4,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+0",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                3,
+                4,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                3,
+                4,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                3,
+                5,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                3,
+                5,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                3,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+6",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                4,
+                5,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                4,
+                5,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                4,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                2,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                3,
+                4,
+                5,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                3,
+                4,
+                5,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                3,
+                4,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                3,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                1,
+                4,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+1",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+2",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                2,
+                3,
+                4,
+                5,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+2",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                2,
+                3,
+                4,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+2",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                2,
+                3,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+2",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+5",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                2,
+                4,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+2",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            },
+            {
+              "K": [
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "radius": "1/10",
+              "halfDifference": {
+                "t": "1/10",
+                "b": "0"
+              },
+              "dual": [
+                {
+                  "constraint": "+3",
+                  "multiplier": "1/2"
+                },
+                {
+                  "constraint": "+4",
+                  "multiplier": "1/2"
+                }
+              ],
+              "exactGap": "0"
+            }
+          ],
+          "collision": {
+            "observation": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              null,
+              "-1/10",
+              "1/10"
+            ],
+            "worlds": [
+              {
+                "t": "1/10",
+                "b": "0",
+                "noise": [
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1/10",
+                  "1/10",
+                  "1/10"
+                ],
+                "substitutions": 1
+              },
+              {
+                "t": "-1/10",
+                "b": "0",
+                "noise": [
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "1/10",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "healthy": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "-1/10",
+                  "-1/10",
+                  "-1/10"
+                ],
+                "substitutions": 1
+              }
+            ],
+            "erasures": [
+              5
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "observedDecision": {
+    "observation": [
+      "1/2",
+      "-1/10"
+    ],
+    "joint": {
+      "status": "feasible",
+      "lo": "1/10",
+      "hi": "3/10",
+      "estimate": "1/5",
+      "pieces": [
+        {
+          "K": [
+            0,
+            1
+          ],
+          "lo": "1/10",
+          "hi": "3/10",
+          "loWitness": [
+            "1/10",
+            "3/10"
+          ],
+          "hiWitness": [
+            "3/10",
+            "3/10"
+          ]
+        }
+      ],
+      "thresholdZero": "above"
+    },
+    "marginal": {
+      "lo": "-3/5",
+      "hi": "1",
+      "thresholdZero": "abstain"
+    }
+  },
+  "robustDecision": {
+    "status": "feasible",
+    "lo": "1/10",
+    "hi": "3/10",
+    "estimate": "1/5",
+    "pieces": [
+      {
+        "K": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "lo": "1/10",
+        "hi": "3/10",
+        "loWitness": [
+          "1/10",
+          "3/10"
+        ],
+        "hiWitness": [
+          "3/10",
+          "3/10"
+        ]
+      }
+    ],
+    "thresholdZero": "above"
+  },
+  "zeroMargin": {
+    "observation": [
+      "0",
+      "0"
+    ],
+    "worlds": [
+      {
+        "t": "1/20",
+        "b": "0",
+        "noise": [
+          "-1/20",
+          "-1/20"
+        ]
+      },
+      {
+        "t": "-1/20",
+        "b": "0",
+        "noise": [
+          "1/20",
+          "1/20"
+        ]
+      }
+    ]
+  },
+  "interpretation": "Conditional minimax and counterexamples in an exact known bounded model; not physical calibration, novel theory or arbitrary-shift coverage."
+}

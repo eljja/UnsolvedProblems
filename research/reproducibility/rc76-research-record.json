@@ -1,0 +1,38 @@
+{
+  "cycle": "RC-2026-76",
+  "reviewedOn": "2026-09-10",
+  "baseline": "9359e1ca736889ffac08bed3f1e741c7ee9740b9",
+  "selectedProblems": ["UP-315", "UP-625"],
+  "selection": "Execute RC75's explicitly unexecuted continuous common-bias model; distinguish target classification from complete state recovery.",
+  "actualWork": [
+    "Derived and hand-proved the exact continuous bounded-model minimax radius using matching zero-observation worlds and LP duality.",
+    "Extended the radius to indexed arbitrary substitutions and erasures using maximum retained-subset ambiguity and a nonlinear feasible-set midpoint.",
+    "Constructed a zero-margin threshold impossibility witness and a one-error collision for four balanced sensors.",
+    "Executed exact rational primal/dual checks on 1152 general-coefficient cases and stored fixture certificates and collision histories.",
+    "Executed observation-specific feasible sets with and without an outlier; both selected joint-model fixtures gave [1/10,3/10]. Marginal-only relaxation gave [-3/5,1].",
+    "Derived and tested minimal six/eight-sensor constructions within the explicitly restricted plus/minus unit-response family.",
+    "A separate Python Fraction implementation checked 4320 parameter/fault combinations and 34452 subset evaluations with 27 cached polygons and no mismatches."
+  ],
+  "achievementClasses": {
+    "proof": "Complete handwritten model-conditional minimax and margin arguments; internal same-model adversarial review, not external or proof-assistant validation.",
+    "counterexamples": "Uniform zero-margin classification fails when radius is positive. Fixed linear estimators fail under arbitrary replacement. Four balanced sensors lose the small radius under one replacement.",
+    "construction": "Nonlinear feasible-set decoder; exact conditional sensor-count optimum only in the identical-bound +/-1 response family.",
+    "calculation": "Exact rational arithmetic, no floating tolerance or statistical extrapolation. Finite checks do not supply the general theorem.",
+    "novelty": "Application of established set-membership estimation, LP duality and error/erasure reasoning. No new foundational theorem claim.",
+    "originalProblem": "Unrestricted finite-measurement verification and arbitrary distribution-shift coverage remain unsolved."
+  },
+  "failures": [
+    {"route":"Cancel common bias and infer exact classification at every threshold-adjacent state", "rejection":"Opposite states +/-1/20 with admissible opposite residual errors give identical zero readings."},
+    {"route":"Use one fixed average under arbitrary replacements", "rejection":"Replacing a nonzero-weight reading by an unbounded value gives unbounded error; use the nonlinear feasible set instead."},
+    {"route":"Preserve one-error robustness with only two sensors of each bias sign", "rejection":"A retained common-healthy pair can have one sign, permitting radius 11/10; three of each sign are necessary in the restricted family."}
+  ],
+  "implementationBoundary": "Observation decoder stops on alpha_K=0 branches rather than classify infeasible/unbounded LPs; current observation fixtures all have alpha_i=1. Radius solver explicitly reports such radii as unbounded.",
+  "unresolvedDependencies": ["Physical validity of known coefficient and disturbance bounds", "Coverage of unobserved support after environmental shift", "Unknown or drifting nuisance response coefficients"],
+  "notExecuted": ["Physical measurements", "Coefficient-drift model", "Proof-assistant verification", "External expert validation"],
+  "nextExecutableTarget": "Set beta_i=betaBar_i+u_i, |u_i|<=rho_i. Construct cross-threshold feasible worlds retaining common b and compare the exact feasible set with the eta_i+B*rho_i outer approximation. Do not assert empirical validity of rho or B.",
+  "safety": "Offline synthetic measurement mathematics only; no personal data, physical intervention, paid resources or cyber operations.",
+  "sources": [
+    {"title":"Convex Optimization", "authors":"Stephen Boyd; Lieven Vandenberghe", "publicationYear":2004, "editionNote":"Seventh printing with corrections 2009", "url":"https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf", "reviewedOn":"2026-09-10"},
+    {"title":"A linear programming approach to online set membership parameter estimation for linear regression models", "authors":"M. Casini; A. Garulli; A. Vicino", "publicationDate":null, "resultDate":null, "url":"https://www3.diism.unisi.it/casini/pdf/IJACSP_2017a.pdf", "reviewedOn":"2026-09-10", "dateCaveat":"Not inferred from the filename."}
+  ]
+}

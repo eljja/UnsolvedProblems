@@ -23,7 +23,7 @@ for(const f of ['data.js','expansion-data.js','translations.js','priority-data.j
 const c=s.window.RESEARCH_CYCLES.find(c=>c.id==='RC-2026-75');
 assert.ok(c); assert.equal(c.problemIds.length,2);
 for(const p of s.window.PROBLEMS.filter(p=>c.problemIds.includes(p.id))) {
-  assert.equal(p.cycleResearch.cycleId,c.id);
+  assert.ok(p.researchHistory.some(record=>record.cycleId===c.id));
   assert.ok(p.researchHistory.length>1);
 }
 for(const f of ['index.html','solve.html','research-log.html'])assert.ok(read(f).includes('research-cycle-75-data.js'));
