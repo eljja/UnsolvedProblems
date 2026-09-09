@@ -1,0 +1,229 @@
+{
+  "cycle": "RC-2026-75",
+  "method": "Independent Python forward enumeration of permitted channel actions",
+  "scope": "All nonempty binary joint supports of lengths 1 through 3; unordered pairs including identical supports; error and erasure budgets 0 and 1",
+  "exhaustiveCaseCount": 131064,
+  "mismatchCount": 0,
+  "byLength": [
+    {
+      "length": 1,
+      "nonemptySupports": 3,
+      "unorderedSupportPairsIncludingIdentical": 6,
+      "cells": [
+        {
+          "errors": 0,
+          "erasures": 0,
+          "cases": 6,
+          "identified": 1,
+          "ambiguous": 5,
+          "mismatches": 0
+        },
+        {
+          "errors": 0,
+          "erasures": 1,
+          "cases": 6,
+          "identified": 0,
+          "ambiguous": 6,
+          "mismatches": 0
+        },
+        {
+          "errors": 1,
+          "erasures": 0,
+          "cases": 6,
+          "identified": 0,
+          "ambiguous": 6,
+          "mismatches": 0
+        },
+        {
+          "errors": 1,
+          "erasures": 1,
+          "cases": 6,
+          "identified": 0,
+          "ambiguous": 6,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "length": 2,
+      "nonemptySupports": 15,
+      "unorderedSupportPairsIncludingIdentical": 120,
+      "cells": [
+        {
+          "errors": 0,
+          "erasures": 0,
+          "cases": 120,
+          "identified": 25,
+          "ambiguous": 95,
+          "mismatches": 0
+        },
+        {
+          "errors": 0,
+          "erasures": 1,
+          "cases": 120,
+          "identified": 2,
+          "ambiguous": 118,
+          "mismatches": 0
+        },
+        {
+          "errors": 1,
+          "erasures": 0,
+          "cases": 120,
+          "identified": 0,
+          "ambiguous": 120,
+          "mismatches": 0
+        },
+        {
+          "errors": 1,
+          "erasures": 1,
+          "cases": 120,
+          "identified": 0,
+          "ambiguous": 120,
+          "mismatches": 0
+        }
+      ]
+    },
+    {
+      "length": 3,
+      "nonemptySupports": 255,
+      "unorderedSupportPairsIncludingIdentical": 32640,
+      "cells": [
+        {
+          "errors": 0,
+          "erasures": 0,
+          "cases": 32640,
+          "identified": 3025,
+          "ambiguous": 29615,
+          "mismatches": 0
+        },
+        {
+          "errors": 0,
+          "erasures": 1,
+          "cases": 32640,
+          "identified": 116,
+          "ambiguous": 32524,
+          "mismatches": 0
+        },
+        {
+          "errors": 1,
+          "erasures": 0,
+          "cases": 32640,
+          "identified": 4,
+          "ambiguous": 32636,
+          "mismatches": 0
+        },
+        {
+          "errors": 1,
+          "erasures": 1,
+          "cases": 32640,
+          "identified": 0,
+          "ambiguous": 32640,
+          "mismatches": 0
+        }
+      ]
+    }
+  ],
+  "counterexamplesToTheorem": [],
+  "correlatedSupportExamples": [
+    {
+      "name": "parity_without_faults",
+      "length": 2,
+      "leftSupportIntegers": [
+        0,
+        3
+      ],
+      "rightSupportIntegers": [
+        1,
+        2
+      ],
+      "integerEncoding": "coordinate i is integer bit i (least-significant first)",
+      "errors": 0,
+      "erasures": 0,
+      "minimumCrossDistance": 1,
+      "marginalSeparators": 0,
+      "identifiesTruth": true,
+      "theoremPrediction": true,
+      "firstCollision": null
+    },
+    {
+      "name": "parity_one_erasure",
+      "length": 2,
+      "leftSupportIntegers": [
+        0,
+        3
+      ],
+      "rightSupportIntegers": [
+        1,
+        2
+      ],
+      "integerEncoding": "coordinate i is integer bit i (least-significant first)",
+      "errors": 0,
+      "erasures": 1,
+      "minimumCrossDistance": 1,
+      "marginalSeparators": 0,
+      "identifiesTruth": false,
+      "theoremPrediction": false,
+      "firstCollision": [
+        null,
+        0
+      ]
+    },
+    {
+      "name": "weight_one_vs_all_one_corrects_one_error",
+      "length": 4,
+      "leftSupportIntegers": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "rightSupportIntegers": [
+        15
+      ],
+      "integerEncoding": "coordinate i is integer bit i (least-significant first)",
+      "errors": 1,
+      "erasures": 0,
+      "minimumCrossDistance": 3,
+      "marginalSeparators": 0,
+      "identifiesTruth": true,
+      "theoremPrediction": true,
+      "firstCollision": null
+    },
+    {
+      "name": "weight_one_vs_all_one_boundary_collision",
+      "length": 4,
+      "leftSupportIntegers": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "rightSupportIntegers": [
+        15
+      ],
+      "integerEncoding": "coordinate i is integer bit i (least-significant first)",
+      "errors": 1,
+      "erasures": 1,
+      "minimumCrossDistance": 3,
+      "marginalSeparators": 0,
+      "identifiesTruth": false,
+      "theoremPrediction": false,
+      "firstCollision": [
+        null,
+        1,
+        1,
+        0
+      ]
+    }
+  ],
+  "criteria": {
+    "exhaustive_case_count_is_131064": true,
+    "all_exhaustive_predictions_match": true,
+    "all_examples_match": true,
+    "parity_has_no_marginal_separator_but_identifies": true,
+    "one_error_example_has_no_marginal_separator_but_identifies": true,
+    "threshold_equality_is_ambiguous": true
+  },
+  "qualifies": true,
+  "validationBoundary": "Same abstract model and assumptions; independent implementation, not external scientific validation. Finite checks do not prove the general theorem or calibrate physical sensor supports."
+}

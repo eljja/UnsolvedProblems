@@ -87,8 +87,18 @@
 - 31개 불가능·현실 경계 사례
 - 163개 핵심 난제와 130개 로드맵 우선과제
 - 16개 상금 연계 항목(현재 상금·경진 16개)
-- 10개 상금 프로그램과 397개 기관·로드맵·원 연구 출처 및 재현 자료
-- 74개 누적 연구 사이클, 20개 심층 연구 문제의 236개 사이클 기록과 74개 구조적 연결
+- 10개 상금 프로그램과 399개 기관·로드맵·원 연구 출처 및 재현 자료
+- 75개 누적 연구 사이클, 20개 심층 연구 문제의 238개 사이클 기록과 75개 구조적 연결
+
+### RC75 · 결합지원에서 목표 판정의 필요충분조건
+
+[한글 연구 기록](https://eljja.github.io/UnsolvedProblems/research-log.html?cycle=RC-2026-75&lang=ko) · [English](https://eljja.github.io/UnsolvedProblems/research-log.html?cycle=RC-2026-75&lang=en)
+
+정확히 명시한 유한 상태와 정상 결합지원에서, 서로 다른 목표값의 최소 해밍 거리 δ가 `2g+a`보다 클 때 그리고 그때만 오류 g개와 위치가 알려진 결측 a개에도 목표 판정이 유일함을 손 증명했다. 고전 오류정정 거리 원리의 적용이며 새로운 원천 정리의 발견이 아니다. 주변 범위가 모두 겹쳐도 결합지원의 거리가 3인 예와 오류 하나를 정정하는 복호기를 구성했다. 131,064개 유한 조건, 127,891개 충돌 증거, 28,116개 복호기 소속 검사는 일반 증명과 구분한다. 물리적 지원 보정과 분포 이동 뒤의 포함률은 미해결이다.
+
+Proof and construction: the inter-target distance condition is necessary and sufficient for the specified finite-support channel, not a proof of physical support validity or finite-sample coverage under unknown shift. The hand proof, finite executable checks and same-model review are distinct from external or Lean validation.
+
+재현: `node scripts/run-rc75-identification.mjs --write`, `npm run verify:rc75`. [증명 문서](research/reproducibility/rc75-identification-proof.md) · [실행 결과](research/reproducibility/rc75-identification-result.json).
 
 ### RC74 · 조리개 오차 분해
 

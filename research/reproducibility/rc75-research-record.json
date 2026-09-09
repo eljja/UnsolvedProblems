@@ -1,0 +1,35 @@
+{
+  "cycle": "RC-2026-75",
+  "reviewedOn": "2026-09-10",
+  "baseline": "0e6bd577caf7c9a2b81e48a294c70f0722e3905c",
+  "selectedProblems": ["UP-315", "UP-625"],
+  "selection": "Continue RC41's explicit finite identification boundary rather than another measurement-pipeline qualification cycle. The missing link is a general argument and a constructive decoder. RC74 is retained as the set-valued threshold application, not reanalyzed.",
+  "actualWork": [
+    "Proved delta > 2g+a necessary and sufficient for finite truth identification from arbitrary nonempty healthy joint supports under indexed bounded substitutions and erasures.",
+    "Proved the product-support separator corollary and identified its rectangularity assumption.",
+    "Constructed correlated-output counterexamples to extending marginal-separator necessity beyond product supports.",
+    "Derived target-functional decoding by comparing only classes with different target values.",
+    "Implemented decoder, explicit ambiguous-history constructor, and exact least-cost additional-test selection for a small fixture.",
+    "Executed 131064 binary support-pair and error/erasure cases; produced 127891 explicit collision certificates during replay. A separate Python forward-channel implementation matched total ambiguous cases with zero theorem mismatches."
+  ],
+  "achievementClasses": {
+    "analyticResult": "Handwritten general proof with same-model adversarial review; not proof-assistant or external expert verification.",
+    "construction": "Known-support decoder and exact small inverse design; minimum additional-test cost 4 with unique ABC fixture solution.",
+    "counterexample": "Marginal overlaps do not imply joint ambiguity. Added one-error-correctable four-coordinate example.",
+    "novelty": "Classical minimum-distance theory applied to repository supports. No new information-theoretic theorem or priority claim.",
+    "originalProblem": "Neither UP-315's arbitrary-object verification nor UP-625's arbitrary distribution-shift uncertainty is solved."
+  },
+  "failurePreserved": {
+    "route": "Use the count of disjoint marginal supports as a necessary condition for arbitrary joint supports.",
+    "reason": "Coordinate-wise common elements need not be jointly realizable. Parity supports have zero marginal separators but disjoint joint supports.",
+    "replacement": "Minimum cross-truth joint-support Hamming distance; marginal count retained only as a sufficient bound outside products.",
+    "priorRecord": "RC41 historical enumeration remains unchanged and valid in its original product-support model."
+  },
+  "resourceAndSafetyBoundary": "Finite offline mathematics and synthetic metrology only. No physical sensors, personal data, production network tests, paid APIs or cyber operations. Lean/lake were not found on PATH; no formal verification claim is made.",
+  "nextExecutableTarget": "For y_i=alpha_i*t+beta_i*b+epsilon_i, |b|<=B and |epsilon_i|<=eta_i, construct cross-threshold feasible worlds or a conditional target-decision certificate. Fix known alpha,beta,B,eta first; compare joint-nuisance inference with marginal intervals. Physical calibration of these bounds is not yet available.",
+  "sources": [
+    {"title":"MIT 18.310 Matrix Hamming Codes", "url":"https://math.mit.edu/classes/18.310/matrix_hamming_codes.html", "publicationDate":null, "resultDate":null, "reviewedOn":"2026-09-10", "use":"Classical error-correction distance relationship, section 9.2; undated teaching notes, not new research."},
+    {"title":"Secure estimation and control for cyber-physical systems under adversarial attacks", "url":"https://arxiv.org/abs/1205.5073", "publicationDate":"2012-05-22", "resultDate":null, "journalYear":2014, "reviewedOn":"2026-09-10", "use":"Prior state-estimation/error-correction connection; no cyber operations performed."},
+    {"title":"A Library for Formalization of Linear Error-correcting Codes", "url":"https://staff.aist.go.jp/reynald.affeldt/documents/ecc.pdf", "publicationDate":null, "resultDate":null, "reviewedOn":"2026-09-10", "use":"Prior formalized coding work; formal validity is not inherited by this result."}
+  ]
+}

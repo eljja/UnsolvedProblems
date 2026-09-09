@@ -1,0 +1,399 @@
+{
+  "cycle": "RC-2026-75",
+  "date": "2026-09-10",
+  "status": "analytic-proof-and-finite-computation-not-physical-validation",
+  "cases": 131064,
+  "collisionCertificates": 127891,
+  "decoderMembershipChecks": 28116,
+  "byDimension": [
+    {
+      "n": 1,
+      "nonemptySupports": 3,
+      "cases": 24
+    },
+    {
+      "n": 2,
+      "nonemptySupports": 15,
+      "cases": 480
+    },
+    {
+      "n": 3,
+      "nonemptySupports": 255,
+      "cases": 130560
+    }
+  ],
+  "examples": {
+    "parity": {
+      "S": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "T": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "g": 0,
+      "a": 0,
+      "marginalSeparators": 0,
+      "distance": 1,
+      "exact": true,
+      "ambiguousObservations": 0,
+      "witness": null
+    },
+    "oneError": {
+      "S": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "T": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "g": 1,
+      "a": 0,
+      "marginalSeparators": 0,
+      "distance": 3,
+      "exact": true,
+      "ambiguousObservations": 0,
+      "witness": null
+    },
+    "overBudget": {
+      "S": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "T": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "g": 1,
+      "a": 1,
+      "marginalSeparators": 0,
+      "distance": 3,
+      "exact": false,
+      "ambiguousObservations": 12,
+      "witness": {
+        "x": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "z": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "y": [
+          1,
+          null,
+          1,
+          0
+        ]
+      }
+    },
+    "coupled": {
+      "S": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "T": [
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "g": 0,
+      "a": 1,
+      "marginalSeparators": 0,
+      "distance": 2,
+      "exact": true,
+      "ambiguousObservations": 0,
+      "witness": null
+    }
+  },
+  "functional": {
+    "supports": [
+      [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    ],
+    "labels": [
+      "below",
+      "below",
+      "above"
+    ],
+    "fullStateIdentifiable": false,
+    "targetIdentifiable": true,
+    "admissibleObservations": 8
+  },
+  "inverseDesign": {
+    "g": 1,
+    "a": 0,
+    "designs": [
+      {
+        "tests": [],
+        "cost": 0,
+        "distance": 1,
+        "passes": false
+      },
+      {
+        "tests": [
+          "A"
+        ],
+        "cost": 2,
+        "distance": 2,
+        "passes": false
+      },
+      {
+        "tests": [
+          "B"
+        ],
+        "cost": 1,
+        "distance": 1,
+        "passes": false
+      },
+      {
+        "tests": [
+          "A",
+          "B"
+        ],
+        "cost": 3,
+        "distance": 2,
+        "passes": false
+      },
+      {
+        "tests": [
+          "C"
+        ],
+        "cost": 1,
+        "distance": 1,
+        "passes": false
+      },
+      {
+        "tests": [
+          "A",
+          "C"
+        ],
+        "cost": 3,
+        "distance": 2,
+        "passes": false
+      },
+      {
+        "tests": [
+          "B",
+          "C"
+        ],
+        "cost": 2,
+        "distance": 2,
+        "passes": false
+      },
+      {
+        "tests": [
+          "A",
+          "B",
+          "C"
+        ],
+        "cost": 4,
+        "distance": 3,
+        "passes": true
+      },
+      {
+        "tests": [
+          "D"
+        ],
+        "cost": 3,
+        "distance": 2,
+        "passes": false
+      },
+      {
+        "tests": [
+          "A",
+          "D"
+        ],
+        "cost": 5,
+        "distance": 3,
+        "passes": true
+      },
+      {
+        "tests": [
+          "B",
+          "D"
+        ],
+        "cost": 4,
+        "distance": 2,
+        "passes": false
+      },
+      {
+        "tests": [
+          "A",
+          "B",
+          "D"
+        ],
+        "cost": 6,
+        "distance": 3,
+        "passes": true
+      },
+      {
+        "tests": [
+          "C",
+          "D"
+        ],
+        "cost": 4,
+        "distance": 2,
+        "passes": false
+      },
+      {
+        "tests": [
+          "A",
+          "C",
+          "D"
+        ],
+        "cost": 6,
+        "distance": 3,
+        "passes": true
+      },
+      {
+        "tests": [
+          "B",
+          "C",
+          "D"
+        ],
+        "cost": 5,
+        "distance": 3,
+        "passes": true
+      },
+      {
+        "tests": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "cost": 7,
+        "distance": 4,
+        "passes": true
+      }
+    ],
+    "optimalCost": 4,
+    "optimalDesigns": [
+      {
+        "tests": [
+          "A",
+          "B",
+          "C"
+        ],
+        "cost": 4,
+        "distance": 3,
+        "passes": true
+      }
+    ]
+  },
+  "limits": [
+    "Known exact healthy joint supports; indexed coordinates; bounded arbitrary substitutions and indexed erasures.",
+    "Enumerations test code only; the general claim rests on the written proof.",
+    "No physical support calibration, external peer review or proof-assistant kernel verification.",
+    "Classical error/erasure distance theory reconstructed; no novelty claim."
+  ]
+}

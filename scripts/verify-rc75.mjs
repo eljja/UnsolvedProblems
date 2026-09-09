@@ -1,0 +1,32 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+import {run,decode,collision,separation} from './run-rc75-identification.mjs';
+const root=new URL('../',import.meta.url);
+const read=name=>fs.readFileSync(new URL(name,root),'utf8');
+const saved=JSON.parse(read('research/reproducibility/rc75-identification-result.json'));
+assert.deepEqual(run(),saved);
+const audit=JSON.parse(read('research/reproducibility/rc75-independent-audit.json'));
+assert.equal(audit.exhaustiveCaseCount,saved.cases);
+assert.equal(audit.mismatchCount,0);
+assert.equal(audit.byLength.flatMap(x=>x.cells).reduce((sum,x)=>sum+x.ambiguous,0),saved.collisionCertificates);
+assert.equal(saved.cases-saved.collisionCertificates,3173);
+assert.equal(saved.examples.parity.exact,true);
+assert.equal(saved.examples.oneError.exact,true);
+assert.equal(saved.examples.overBudget.exact,false);
+assert.deepEqual(decode([[[0]],[[1]]],[null],0,0),[]);
+assert.deepEqual(decode([[[0]],[[1]]],[9],0,0),[]);
+assert.equal(separation([[0,2],[1,2]],[[2,0]]),2);
+assert.deepEqual(decode([[[0,2]],[[2,0]]],collision([[0,2]],[[2,0]],1,0).y,1,0),[0,1]);
+const s={window:{}};
+for(const f of ['data.js','expansion-data.js','translations.js','priority-data.js','prize-data.js','research-context.js','solution-context.js','deep-solution-context.js','research-cycle-data.js',...fs.readdirSync(root).filter(f=>/^research-cycle-\d{2}-data.js$/.test(f)).sort()])vm.runInNewContext(read(f),s,{filename:f});
+const c=s.window.RESEARCH_CYCLES.find(c=>c.id==='RC-2026-75');
+assert.ok(c); assert.equal(c.problemIds.length,2);
+for(const p of s.window.PROBLEMS.filter(p=>c.problemIds.includes(p.id))) {
+  assert.equal(p.cycleResearch.cycleId,c.id);
+  assert.ok(p.researchHistory.length>1);
+}
+for(const f of ['index.html','solve.html','research-log.html'])assert.ok(read(f).includes('research-cycle-75-data.js'));
+for(const lang of ['ko','en'])assert.ok(read('sitemap.xml').includes('RC-2026-75&amp;lang='+lang));
+for(const a of c.artifacts) if(!/^https?:/.test(a.url))assert.ok(fs.existsSync(new URL(a.url,root)),a.url);
+console.log('RC75: exact replay, constructive examples, history preservation and site links verified.');
